@@ -129,14 +129,14 @@ $(function() {
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    reference operator *()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>reference<span class="keyword">&gt;</span>(*it_);}</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    pointer operator -&gt;()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>pointer<span class="keyword">&gt;</span>(std::addressof(*it_));}</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    iterator &amp; operator ++() {++it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    iterator&amp; operator ++() {++it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    iterator operator ++(<span class="keywordtype">int</span>) {iterator tmp(*<span class="keyword">this</span>); ++(*this); <span class="keywordflow">return</span> tmp;}</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    iterator &amp; operator --() {--it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    iterator&amp; operator --() {--it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    iterator operator --(<span class="keywordtype">int</span>) {iterator tmp(*<span class="keyword">this</span>); --(*this); <span class="keywordflow">return</span> tmp;}</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    iterator &amp; operator +=(difference_type n) {it_ += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    iterator&amp; operator +=(difference_type n) {it_ += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    iterator operator +(difference_type n)<span class="keyword"> const </span>{<span class="keywordflow">return</span> iterator(it_ + n);}</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    iterator &amp; operator -=(difference_type n) {it_ -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    iterator&amp; operator -=(difference_type n) {it_ -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    iterator operator -(difference_type n)<span class="keyword"> const </span>{<span class="keywordflow">return</span> iterator(it_ - n);}</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    difference_type operator -(<span class="keyword">const</span> iterator &amp; other)<span class="keyword"> const </span>{<span class="keywordflow">return</span> it_ - <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.it_;}</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
@@ -172,14 +172,14 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    reference operator*()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>reference<span class="keyword">&gt;</span>(*it_);}</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    pointer operator-&gt;()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>pointer<span class="keyword">&gt;</span>(std::addressof(*it_));}</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    const_iterator &amp; operator ++() {++it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    const_iterator&amp; operator ++() {++it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    const_iterator operator ++(<span class="keywordtype">int</span>) {const_iterator tmp(*<span class="keyword">this</span>); ++(*this); <span class="keywordflow">return</span> tmp;}</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    const_iterator &amp; operator --() {--it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    const_iterator&amp; operator --() {--it_; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    const_iterator operator --(<span class="keywordtype">int</span>) {const_iterator tmp(*<span class="keyword">this</span>); --(*this); <span class="keywordflow">return</span> tmp;}</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    const_iterator &amp; operator +=(difference_type n) {it_ += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    const_iterator&amp; operator +=(difference_type n) {it_ += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    const_iterator operator +(difference_type n)<span class="keyword"> const </span>{<span class="keywordflow">return</span> const_iterator(it_ + n);}</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    const_iterator &amp; operator -=(difference_type n) {it_ -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    const_iterator&amp; operator -=(difference_type n) {it_ -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    const_iterator operator -(difference_type n)<span class="keyword"> const </span>{<span class="keywordflow">return</span> const_iterator(it_ - n);}</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    difference_type operator -(<span class="keyword">const</span> const_iterator &amp; other)<span class="keyword"> const </span>{<span class="keywordflow">return</span> it_ - <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.it_;}</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
@@ -251,8 +251,8 @@ $(function() {
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  reference front() {<span class="keywordflow">return</span> at(0);}</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  const_reference front()<span class="keyword"> const </span>{<span class="keywordflow">return</span> at(0);}</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  const_base_type &amp; items() const noexcept {<span class="keywordflow">return</span> items_;}</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  base_type &amp; items() noexcept {<span class="keywordflow">return</span> items_;}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  const_base_type&amp; items() const noexcept {<span class="keywordflow">return</span> items_;}</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  base_type&amp; items() noexcept {<span class="keywordflow">return</span> items_;}</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  </div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <a class="code hl_enumeration" href="group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100">size_type</a> max_size() const noexcept {<span class="keywordflow">return</span> std::min(items_.max_size(), npos / 2);}</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  </div>
@@ -408,8 +408,8 @@ $(function() {
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  const_reference operator [](size_type index)<span class="keyword"> const </span>{<span class="keywordflow">return</span> at(index);}</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  reference operator [](size_type index) {<span class="keywordflow">return</span> at(index);}</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keyword">operator</span> <span class="keyword">const</span> base_type &amp; () <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> items_;}</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keyword">operator</span> base_type &amp; () <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> items_;}</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keyword">operator</span> <span class="keyword">const</span> base_type&amp; () <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> items_;}</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keyword">operator</span> base_type&amp; () <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> items_;}</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  </div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  iterator to_type_iterator(<span class="keyword">typename</span> base_type::iterator it) { <span class="keywordflow">return</span> iterator(it); }</div>
@@ -451,7 +451,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2025 14:24:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 20:58:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

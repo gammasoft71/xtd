@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t, <span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structxtd_1_1non__const__overload.html#a4738e083706b9783ac1f2199f1685870">   34</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1non__const__overload.html#a4738e083706b9783ac1f2199f1685870">of</a>(result_t (type_t::*method)(args_t...)) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structxtd_1_1non__const__overload.html#a4738e083706b9783ac1f2199f1685870">   34</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1non__const__overload.html#a4738e083706b9783ac1f2199f1685870">of</a>(result_t (type_t::*method)(args_t...)) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  };</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t, <span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structxtd_1_1const__overload.html#a13c9db2d77ec51e1885cf54b4744972b">   61</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1const__overload.html#a13c9db2d77ec51e1885cf54b4744972b">of</a>(result_t (type_t::*method)(args_t...) const) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structxtd_1_1const__overload.html#a13c9db2d77ec51e1885cf54b4744972b">   61</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1const__overload.html#a13c9db2d77ec51e1885cf54b4744972b">of</a>(result_t (type_t::*method)(args_t...) const) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  };</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t&gt;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">   95</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">of</a>(result_t (*method)(args_t...)) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">   95</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="structxtd_1_1overload.html#a7360587d3f0a0bb9d203ce62edcc0113">of</a>(result_t (*method)(args_t...)) noexcept -&gt; decltype(method) {<span class="keywordflow">return</span> method;}</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  };</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
@@ -161,7 +161,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2025 14:24:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 20:58:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

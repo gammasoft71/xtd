@@ -7,7 +7,7 @@ var searchData=
   ['abstract_5fobject_4',['abstract_object',['../classxtd_1_1abstract__object.html',1,'xtd']]],
   ['access_5fviolation_5fexception_5',['access_violation_exception',['../classxtd_1_1access__violation__exception.html',1,'xtd']]],
   ['actions_5fsystem_5fimages_6',['actions_system_images',['../classxtd_1_1drawing_1_1actions__system__images.html',1,'xtd::drawing']]],
-  ['adjustement_5frule_7',['adjustement_rule',['../classxtd_1_1time__zone__info_1_1adjustement__rule.html',1,'xtd::time_zone_info']]],
+  ['adjustment_5frule_7',['adjustment_rule',['../classxtd_1_1time__zone__info_1_1adjustment__rule.html',1,'xtd::time_zone_info']]],
   ['alpha_8',['alpha',['../structxtd_1_1drawing_1_1helpers_1_1alpha.html',1,'xtd::drawing::helpers']]],
   ['animation_9',['animation',['../classxtd_1_1forms_1_1animation.html',1,'xtd::forms']]],
   ['animation_5fupdated_5fevent_5fargs_10',['animation_updated_event_args',['../classxtd_1_1forms_1_1animation__updated__event__args.html',1,'xtd::forms']]],

@@ -19,7 +19,8 @@ var searchData=
   ['null_5fpointer_5fexception_2ehpp_16',['null_pointer_exception.hpp',['../null__pointer__exception_8hpp.html',1,'']]],
   ['null_5fptr_2ehpp_17',['null_ptr.hpp',['../null__ptr_8hpp.html',1,'']]],
   ['nullopt_2ehpp_18',['nullopt.hpp',['../nullopt_8hpp.html',1,'']]],
-  ['number_5fstyles_2ehpp_19',['number_styles.hpp',['../number__styles_8hpp.html',1,'']]],
-  ['numeric_5fliterals_2ehpp_20',['numeric_literals.hpp',['../numeric__literals_8hpp.html',1,'']]],
-  ['numeric_5fup_5fdown_2ehpp_21',['numeric_up_down.hpp',['../numeric__up__down_8hpp.html',1,'']]]
+  ['number_5fformat_5finfo_2ehpp_19',['number_format_info.hpp',['../number__format__info_8hpp.html',1,'']]],
+  ['number_5fstyles_2ehpp_20',['number_styles.hpp',['../number__styles_8hpp.html',1,'']]],
+  ['numeric_5fliterals_2ehpp_21',['numeric_literals.hpp',['../numeric__literals_8hpp.html',1,'']]],
+  ['numeric_5fup_5fdown_2ehpp_22',['numeric_up_down.hpp',['../numeric__up__down_8hpp.html',1,'']]]
 ];

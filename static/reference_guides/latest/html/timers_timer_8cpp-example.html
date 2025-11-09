@@ -92,7 +92,7 @@ $(function() {
 <div class="line">      set_timer();</div>
 <div class="line">      </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;\nPress the Enter key to exit the application...\n&quot;</span>);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;The application started at {:t}.{:d3}&quot;</span>, date_time::now(), date_time::now().millisecond());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;The application started at {:HH:mm:ss:fff}&quot;</span>, date_time::now());</div>
 <div class="line">      console::read_line();</div>
 <div class="line">      a_timer.stop();</div>
 <div class="line">      a_timer.close();</div>
@@ -108,8 +108,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> on_timed_event(<span class="keywordtype">object</span>&amp; source, <span class="keyword">const</span> timers::elapsed_event_args&amp; e) {</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;The elapsed event was raised at {:t}.{:d3}&quot;</span>,</div>
-<div class="line">                          e.signal_time(), e.signal_time().millisecond());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;The elapsed event was raised at {:HH:mm:ss:fff}&quot;</span>, e.signal_time());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -141,7 +140,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2025 14:24:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 20:58:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

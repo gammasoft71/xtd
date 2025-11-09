@@ -2,7 +2,7 @@ var searchData=
 [
   ['magenta_5fcolors_0',['magenta_colors',['../group__colors.html#ga93fe9c12f0db7ff77ce77110a1f0e430',1,'xtd::drawing']]],
   ['main_5fmenu_5fref_1',['main_menu_ref',['../classxtd_1_1forms_1_1form.html#a7053e06ec58069bc384c019653e3b500',1,'xtd::forms::form']]],
-  ['mapped_5ftype_2',['mapped_type',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f',1,'xtd::collections::generic::dictionary::mapped_type'],['../classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea',1,'xtd::collections::generic::idictionary::mapped_type']]],
+  ['mapped_5ftype_2',['mapped_type',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f',1,'xtd::collections::generic::dictionary::mapped_type'],['../classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea',1,'xtd::collections::generic::idictionary::mapped_type'],['../classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aa086c7110d8dc50935371d537fac981c',1,'xtd::collections::generic::ordered_dictionary::mapped_type']]],
   ['margin_3',['margin',['../group__style__sheets.html#ga6e27be4676daa69a3f7135b9a9391017',1,'xtd::forms::style_sheets']]],
   ['menu_5fitem_5fcollection_4',['menu_item_collection',['../classxtd_1_1forms_1_1context__menu.html#a3825e49cd13feddfa175b3e1454a211c',1,'xtd::forms::context_menu::menu_item_collection'],['../classxtd_1_1forms_1_1menu.html#a7434673bc425c4f9b9e5a965195e81d2',1,'xtd::forms::menu::menu_item_collection']]],
   ['menu_5fitem_5fref_5',['menu_item_ref',['../group__xtd__forms.html#ga2fcb46723a55d811cf023b8a9a499702',1,'xtd::forms']]],

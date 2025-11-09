@@ -131,11 +131,11 @@ $(function() {
 <div class="line">  label.back_color(color_converter::average(color::black, label.fore_color(), 0.20));</div>
 <div class="line">  label.segment_style(segment_style::modern);</div>
 <div class="line">  label.show_back_digit(<span class="keyword">false</span>);</div>
-<div class="line">  label.text(date_time::now().to_long_time_string());</div>
+<div class="line">  label.text(date_time::now().to_string(<span class="stringliteral">&quot;HH:mm:ss&quot;</span>));</div>
 <div class="line">  </div>
 <div class="line">  clock_timer.tick += <a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">    label.text(show_seconds ? now.to_long_time_string() : now.to_short_time_string().replace(<span class="charliteral">&#39;:&#39;</span>, now.second() % 2 ? <span class="charliteral">&#39; &#39;</span> : <span class="charliteral">&#39;:&#39;</span>));</div>
+<div class="line">    label.text(show_seconds ? now.to_string(<span class="stringliteral">&quot;HH:mm:ss&quot;</span>) : now.to_string(<span class="stringliteral">&quot;HH:mm&quot;</span>).replace(<span class="charliteral">&#39;:&#39;</span>, now.second() % 2 ? <span class="charliteral">&#39; &#39;</span> : <span class="charliteral">&#39;:&#39;</span>));</div>
 <div class="line">    form_main.center_to_screen();</div>
 <div class="line">  };</div>
 <div class="line">  </div>
@@ -151,7 +151,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2025 14:24:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 20:58:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

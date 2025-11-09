@@ -10,11 +10,12 @@ var searchData=
   ['orange_5fcolors_7',['orange_colors',['../classxtd_1_1drawing_1_1orange__colors.html',1,'xtd::drawing']]],
   ['order_5fby_5fdescending_5fview_8',['order_by_descending_view',['../classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html',1,'xtd::ranges::views']]],
   ['order_5fby_5fview_9',['order_by_view',['../classxtd_1_1ranges_1_1views_1_1order__by__view.html',1,'xtd::ranges::views']]],
-  ['ostream_5fevent_5flistener_10',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
-  ['ostream_5ftrace_5flistener_11',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
-  ['ostream_5funit_5ftest_12',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
-  ['out_5fof_5fmemory_5fexception_13',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
-  ['output_5fdata_5freceived_5fevent_14',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
-  ['overflow_5fexception_15',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
-  ['overload_16',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
+  ['ordered_5fdictionary_10',['ordered_dictionary',['../classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html',1,'xtd::collections::generic']]],
+  ['ostream_5fevent_5flistener_11',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
+  ['ostream_5ftrace_5flistener_12',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
+  ['ostream_5funit_5ftest_13',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
+  ['out_5fof_5fmemory_5fexception_14',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
+  ['output_5fdata_5freceived_5fevent_15',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
+  ['overflow_5fexception_16',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
+  ['overload_17',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
 ];

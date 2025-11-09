@@ -96,11 +96,11 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(<span class="stringliteral">&quot;F&quot;</span>, culture_info::current_culture());}</div>
 <div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(fmt, culture_info::current_culture());}</div>
-<div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{</div>
+<div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt, <span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a>&amp; culture)<span class="keyword"> const override </span>{</div>
 <div class="line">    <span class="keywordflow">if</span> (fmt == <span class="stringliteral">&quot;F&quot;</span>) <span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (fmt == <span class="stringliteral">&quot;N&quot;</span>) <span class="keywordflow">return</span> name_;</div>
 <div class="line">    <span class="keywordflow">if</span> (fmt == <span class="stringliteral">&quot;R&quot;</span>) <span class="keywordflow">return</span> rank_;</div>
-<div class="line">    <span class="keywordflow">throw</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a> {};</div>
+<div class="line">    <span class="keywordflow">throw</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1format__exception.html">xtd::format_exception</a> {};</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
@@ -125,13 +125,14 @@ $(function() {
 <div class="line"><span class="comment">// Jean-Luc Picard</span></div>
 <div class="line"><span class="comment">// Captain</span></div>
 <div class="ttc" id="aclassxtd_1_1format__exception_html"><div class="ttname"><a href="classxtd_1_1format__exception.html">xtd::format_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> format_exception.hpp:18</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:41</div></div>
-<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:19</div></div>
+<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:20</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2025 14:24:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 20:58:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
