@@ -120,7 +120,240 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/linked_list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates many features of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="comment">// Create the link list.</span></div>
+<div class="line">    <span class="keyword">auto</span> sentence = linked_list&lt;string&gt; { <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>, <span class="stringliteral">&quot;jumps&quot;</span>, <span class="stringliteral">&quot;over&quot;</span>, <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;dog&quot;</span> };</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;The linked list values:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Add the word &#39;today&#39; to the beginning of the linked list.</span></div>
+<div class="line">    sentence.add_first(<span class="stringliteral">&quot;today&quot;</span>);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 1: Add &#39;today&#39; to beginning of the list:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Move the first node to be the last node.</span></div>
+<div class="line">    <span class="keyword">auto</span> node = *sentence.first();</div>
+<div class="line">    sentence.remove(node);</div>
+<div class="line">    sentence.add_last(node);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 2: Move first node to be last node:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Change the last node to &#39;yesterday&#39;.</span></div>
+<div class="line">    sentence.remove_last();</div>
+<div class="line">    sentence.add_last(<span class="stringliteral">&quot;yesterday&quot;</span>);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 3: Change the last node to &#39;yesterday&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Move the last node to be the first node.</span></div>
+<div class="line">    node = *sentence.last();</div>
+<div class="line">    sentence.remove(node);</div>
+<div class="line">    sentence.add_first(node);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 4: Move last node to be first node:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Indicate the last occurence of &#39;the&#39;.</span></div>
+<div class="line">    sentence.remove_first();</div>
+<div class="line">    node = *sentence.find_last(<span class="stringliteral">&quot;the&quot;</span>);</div>
+<div class="line">    indicate_node(node, <span class="stringliteral">&quot;Test 5: Indicate last occurence of &#39;the&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Add &#39;lazy&#39; and &#39;old&#39; after &#39;the&#39; (the linked_list_node named node).</span></div>
+<div class="line">    sentence.add_after(node, <span class="stringliteral">&quot;old&quot;</span>);</div>
+<div class="line">    sentence.add_after(*sentence.find_last(<span class="stringliteral">&quot;the&quot;</span>), <span class="stringliteral">&quot;lazy&quot;</span>);</div>
+<div class="line">    indicate_node(*sentence.find_last(<span class="stringliteral">&quot;the&quot;</span>), <span class="stringliteral">&quot;Test 6: Add &#39;lazy&#39; and &#39;old&#39; after &#39;the&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Indicate &#39;fox&#39; node.</span></div>
+<div class="line">    node = *sentence.find_last(<span class="stringliteral">&quot;fox&quot;</span>);</div>
+<div class="line">    indicate_node(node, <span class="stringliteral">&quot;Test 7: Indicate the &#39;fox&#39; node:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Add &#39;quick&#39; and &#39;brown&#39; before &#39;fox&#39;:</span></div>
+<div class="line">    sentence.add_before(*sentence.find(<span class="stringliteral">&quot;fox&quot;</span>), <span class="stringliteral">&quot;quick&quot;</span>);</div>
+<div class="line">    sentence.add_before(*sentence.find(<span class="stringliteral">&quot;fox&quot;</span>), <span class="stringliteral">&quot;brown&quot;</span>);</div>
+<div class="line">    indicate_node(*sentence.find(<span class="stringliteral">&quot;fox&quot;</span>), <span class="stringliteral">&quot;Test 8: Add &#39;quick&#39; and &#39;brown&#39; before &#39;fox&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Keep a reference to the current node, &#39;fox&#39;, and to the previous node in the list. Indicate the &#39;dog&#39; node.</span></div>
+<div class="line">    node = *sentence.find_last(<span class="stringliteral">&quot;dog&quot;</span>)-&gt;previous();</div>
+<div class="line">    indicate_node(*sentence.find(<span class="stringliteral">&quot;dog&quot;</span>), <span class="stringliteral">&quot;Test 9: Indicate the &#39;dog&#39; node:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// The add_before method throws an invalid_operation_exception if you try to add a node that already belongs to a list.</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 10: Throw exception by adding node (fox) already in the list:&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">try</span> {</div>
+<div class="line">      sentence.add_before(*sentence.find(<span class="stringliteral">&quot;fox&quot;</span>), node);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1invalid__operation__exception.html">invalid_operation_exception</a>&amp; ex) {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Exception message: {}&quot;</span>, ex.<a class="code hl_function" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>());</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Remove the &#39;fox&#39; node, and then add it before the &#39;dog&#39; node.</span></div>
+<div class="line">    <span class="comment">// Indicate the node referred to by current.</span></div>
+<div class="line">    node = *sentence.find(<span class="stringliteral">&quot;fox&quot;</span>);</div>
+<div class="line">    sentence.remove(node);</div>
+<div class="line">    sentence.add_before(*sentence.find(<span class="stringliteral">&quot;dog&quot;</span>), node);</div>
+<div class="line">    node = *sentence.find(<span class="stringliteral">&quot;dog&quot;</span>);</div>
+<div class="line">    indicate_node(node, <span class="stringliteral">&quot;Test 11: Move a referenced node (fox) before the current node (dog):&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Remove the node referred to by node.</span></div>
+<div class="line">    sentence.remove(node);</div>
+<div class="line">    node = sentence.find(<span class="stringliteral">&quot;dog&quot;</span>) ? *sentence.find(<span class="stringliteral">&quot;dog&quot;</span>) : linked_list_node&lt;string&gt;(<span class="stringliteral">&quot;dog&quot;</span>);</div>
+<div class="line">    indicate_node(node, <span class="stringliteral">&quot;Test 12: Remove current node (dog) and attempt to indicate it:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Add the node after the &#39;brown&#39; node.</span></div>
+<div class="line">    sentence.add_after(*sentence.find(<span class="stringliteral">&quot;brown&quot;</span>), node);</div>
+<div class="line">    indicate_node(node, <span class="stringliteral">&quot;Test 13: Add node removed in test 12 after a referenced node (brown):&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// The Remove method finds and removes the first node that that has the specified value.</span></div>
+<div class="line">    sentence.remove(<span class="stringliteral">&quot;old&quot;</span>);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 14: Remove node that has the value &#39;old&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// When the linked list is cast to icollection(Of string), the add method adds a node to the end of the list.</span></div>
+<div class="line">    sentence.remove_last();</div>
+<div class="line">    <span class="keyword">auto</span>&amp; icoll = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;icollection&lt;string&gt;</a>&gt;(sentence);</div>
+<div class="line">    icoll.add(<span class="stringliteral">&quot;rhinoceros&quot;</span>);</div>
+<div class="line">    display(sentence, <span class="stringliteral">&quot;Test 15: Remove last node, cast to icollection, and add &#39;rhinoceros&#39;:&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 16: Copy the list to an array:&quot;</span>);</div>
+<div class="line">    <span class="comment">// Create an array with the same number of elements as the linked list.</span></div>
+<div class="line">    <span class="keyword">auto</span> sarray = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a>(sentence.count());</div>
+<div class="line">    sentence.copy_to(sarray, 0);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> : sarray)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 17: linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Release all the nodes.</span></div>
+<div class="line">    sentence.clear();</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Test 18: Cleared linked list Contains &#39;jumps&#39; = {0}&quot;</span>, sentence.contains(<span class="stringliteral">&quot;jumps&quot;</span>));</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line">    console::write_line(test);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> word : words)</div>
+<div class="line">      console::write(word + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">    console::write_line();</div>
+<div class="line">    console::write_line();</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
+<div class="line">    console::write_line(test);</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a> = node.list();</div>
+<div class="line">    <span class="keywordflow">if</span> (!l) {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Node &#39;{0}&#39; is not in the list.\n&quot;</span>, node.value());</div>
+<div class="line">      <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> result = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {<span class="stringliteral">&quot;(&quot;</span> + node.value() + <span class="stringliteral">&quot;)&quot;</span>};</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> node_previous = node.previous();</div>
+<div class="line">    <span class="keywordflow">while</span> (node_previous) {</div>
+<div class="line">      result.insert(0, node_previous-&gt;value() + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">      node_previous = node_previous-&gt;previous();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> node_next = node.next();</div>
+<div class="line">    <span class="keywordflow">while</span> (node_next) {</div>
+<div class="line">      result.append(<span class="stringliteral">&quot; &quot;</span> + node_next-&gt;value());</div>
+<div class="line">      node_next = node_next-&gt;next();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(result);</div>
+<div class="line">    console::write_line();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The linked list values:</span></div>
+<div class="line"><span class="comment">// the fox jumps over the dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 1: Add &#39;today&#39; to beginning of the list:</span></div>
+<div class="line"><span class="comment">// today the fox jumps over the dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 2: Move first node to be last node:</span></div>
+<div class="line"><span class="comment">// the fox jumps over the dog today</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 3: Change the last node to &#39;yesterday&#39;:</span></div>
+<div class="line"><span class="comment">// the fox jumps over the dog yesterday</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 4: Move last node to be first node:</span></div>
+<div class="line"><span class="comment">// yesterday the fox jumps over the dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 5: Indicate last occurence of &#39;the&#39;:</span></div>
+<div class="line"><span class="comment">// the fox jumps over (the) dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 6: Add &#39;lazy&#39; and &#39;old&#39; after &#39;the&#39;:</span></div>
+<div class="line"><span class="comment">// the fox jumps over (the) lazy old dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 7: Indicate the &#39;fox&#39; node:</span></div>
+<div class="line"><span class="comment">// the (fox) jumps over the lazy old dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 8: Add &#39;quick&#39; and &#39;brown&#39; before &#39;fox&#39;:</span></div>
+<div class="line"><span class="comment">// the quick brown (fox) jumps over the lazy old dog</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 9: Indicate the &#39;dog&#39; node:</span></div>
+<div class="line"><span class="comment">// the quick brown fox jumps over the lazy old (dog)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 10: Throw exception by adding node (fox) already in the list:</span></div>
+<div class="line"><span class="comment">// Exception message: The linked_list node belongs a linked_list.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 11: Move a referenced node (fox) before the current node (dog):</span></div>
+<div class="line"><span class="comment">// the quick brown jumps over the lazy old fox (dog)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 12: Remove current node (dog) and attempt to indicate it:</span></div>
+<div class="line"><span class="comment">// Node &#39;dog&#39; is not in the list.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 13: Add node removed in test 12 after a referenced node (brown):</span></div>
+<div class="line"><span class="comment">// the quick brown (dog) jumps over the lazy old fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 14: Remove node that has the value &#39;old&#39;:</span></div>
+<div class="line"><span class="comment">// the quick brown dog jumps over the lazy fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 15: Remove last node, cast to icollection, and add &#39;rhinoceros&#39;:</span></div>
+<div class="line"><span class="comment">// the quick brown dog jumps over the lazy rhinoceros</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 16: Copy the list to an array:</span></div>
+<div class="line"><span class="comment">// the</span></div>
+<div class="line"><span class="comment">// quick</span></div>
+<div class="line"><span class="comment">// brown</span></div>
+<div class="line"><span class="comment">// dog</span></div>
+<div class="line"><span class="comment">// jumps</span></div>
+<div class="line"><span class="comment">// over</span></div>
+<div class="line"><span class="comment">// the</span></div>
+<div class="line"><span class="comment">// lazy</span></div>
+<div class="line"><span class="comment">// rhinoceros</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 17: linked list Contains &#39;jumps&#39; = true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test 18: Cleared linked list Contains &#39;jumps&#39; = false</span></div>
+<div class="line"> </div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1exception_html_a472b56575bd47dbd829931c900a16600"><div class="ttname"><a href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">xtd::exception::message</a></div><div class="ttdeci">virtual const xtd::string &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
+<div class="ttc" id="aclassxtd_1_1invalid__operation__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__operation__exception.html">xtd::invalid_operation_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> invalid_operation_exception.hpp:18</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__strings_html_ga80050d927e8b925c2668c1faebf0b941"><div class="ttname"><a href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a></div><div class="ttdeci">xtd::text::basic_string_builder&lt; char &gt; string_builder</div><div class="ttdoc">Represents a mutable string of characters of UTF-8 code units. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> string_builder.hpp:19</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:124</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">xtd::console_key::l</a></div><div class="ttdeci">@ l</div><div class="ttdoc">The L key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:110</div></div>
+<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is a general-purpose linked list. It supports enumerators and implements the xtd::collections::generic::icollection interface, consistent with other collection classes in the xtd Framework. </dd>
+<dd>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; provides separate nodes of type <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;type_t&gt;, so insertion and removal are O(1) operations. </dd>
+<dd>
+You can remove nodes and reinsert them, either in the same list or in another list, which results in no additional objects allocated on the heap. Because the list also maintains an internal count, getting the xtd::collections::generic::linked_list::count property is an O(1) operation. </dd>
+<dd>
+Each node in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; object is of the type <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;type_t&gt;. Because the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is doubly linked, each node points forward to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html#a712db12e343e2ceb0076ccf4b74ee306" title="Gets the next node in the LinkedList&lt;T&gt;.">xtd::collections::generic::linked_list_node::next</a> node and backward to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html#a52f1896c943036d1abfb923a4b01b15e" title="Gets the previous node in the LinkedList&lt;T&gt;.">xtd::collections::generic::linked_list_node::previous</a> node. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typ_t&gt; class does not support chaining, splitting, cycles, or other features that can leave the list in an inconsistent state. The list remains consistent on a single thread. The only multithreaded scenario supported by <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is multithreaded read operations. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a8e935a6198ebd6b27a78a776b0c2358a" id="r_a8e935a6198ebd6b27a78a776b0c2358a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e935a6198ebd6b27a78a776b0c2358a">value_type</a></td></tr>
@@ -857,7 +1090,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 9 2025 12:13:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 21:04:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
