@@ -31,6 +31,15 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
+      /// @par Examples
+      /// The following code example demonstrates many features of the xtd::collections::generic::linked_list <type_t> class.
+      /// @include generic_linked_list.cpp
+      /// @remarks xtd::collections::generic::linked_list <type_t> is a general-purpose linked list. It supports enumerators and implements the xtd::collections::generic::icollection interface, consistent with other collection classes in the xtd Framework.
+      /// @remarks xtd::collections::generic::linked_list <type_t> provides separate nodes of type xtd::collections::generic::linked_list_node <type_t>, so insertion and removal are O(1) operations.
+      /// @remarks You can remove nodes and reinsert them, either in the same list or in another list, which results in no additional objects allocated on the heap. Because the list also maintains an internal count, getting the xtd::collections::generic::linked_list::count property is an O(1) operation.
+      /// @remarks Each node in a xtd::collections::generic::linked_list <type_t> object is of the type xtd::collections::generic::linked_list_node <type_t>. Because the xtd::collections::generic::linked_list <type_t> is doubly linked, each node points forward to the xtd::collections::generic::linked_list_node::next node and backward to the xtd::collections::generic::linked_list_node::previous node.
+      /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
+      /// @remarks The xtd::collections::generic::linked_list <typ_t> class does not support chaining, splitting, cycles, or other features that can leave the list in an inconsistent state. The list remains consistent on a single thread. The only multithreaded scenario supported by xtd::collections::generic::linked_list <type_t> is multithreaded read operations.
       template<class type_t, class allocator_t>
       class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
