@@ -122,6 +122,7 @@ namespace xtd {
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
@@ -138,6 +139,7 @@ namespace xtd {
         void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
           ++data_->version;
@@ -264,6 +266,7 @@ namespace xtd {
         void remove(linked_list_node<type_t>& node) {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           node.data_->value = *node.data_->iterator;
           data_->items.erase(node.data_->iterator);
           ++data_->version;
