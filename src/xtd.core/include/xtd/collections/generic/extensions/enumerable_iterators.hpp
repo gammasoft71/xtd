@@ -103,9 +103,7 @@ namespace xtd {
               return static_cast<difference_type>(pos_ - value.pos_);
             }
             
-            operator enumerable_iterator<const iterator_enumerable_t>() const noexcept {
-              return enumerable_iterator<const iterator_enumerable_t>(enumerable_, pos_);
-            }
+            operator enumerable_iterator<const iterator_enumerable_t>() const noexcept {return enumerable_iterator<const iterator_enumerable_t>(*enumerable_, pos_);}
             
           private:
             void reset() {
