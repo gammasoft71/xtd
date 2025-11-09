@@ -20,11 +20,11 @@ namespace xtd {
       class linked_list;
       /// @endcond
       
-      /// @brief Represents a doubly linked list.
+      /// @brief Represents a node in a LinkedList<T>. This class cannot be inherited.
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// using linked_list_node = xtd::collections::generic::linked_list<type_t>::linked_list_node;
+      /// class linked_list_node final : public xtd::object;
       /// ```
       /// @par Header
       /// ```cpp
@@ -35,8 +35,12 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
+      /// @par Examples
+      /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+      /// @include generic_linked_list_node.cpp
+      /// @remarks Each element of the xtd::collections::generic::linked_list <type_t> collection has a virtual xtd::collections::generic::linked_list_node <type_t>. The xtd::collections::generic::linked_list_node <type_t> contains a value, a reference to the xtd::collections::generic::linked_list <type_t> that it belongs to, a reference to the next node, and a reference to the previous node.
       template<class type_t>
-      class linked_list_node : public xtd::object {
+      class linked_list_node final : public xtd::object {
       public:
         /// @name Public Aliases
         
@@ -54,15 +58,36 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
+        /// @brief Initializes a new instance of the xtd::collections::generic::linked_list_node <type_t> class, containing the specified value.
+        /// @param The value to contain in the xtd::collections::generic::linked_list_node <type_t>.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
+        /// @remarks The xtd::collections::generic::linked_list_node::list, xtd::collections::generic::linked_list_node::next, and xtd::collections::generic::linked_list_node::previous properties are set to xtd::nullopt.
         linked_list_node(const value_type & value) {data_->value = value;}
+        /// @}
+
+        /// @cond
         linked_list_node(value_type&& value) {data_->value = std::move(value);}
         linked_list_node(linked_list_node&&) = default;
         linked_list_node(const linked_list_node&) = default;
-        /// @}
+        /// @endcond
         
         /// @name Public Properties
+        
+        /// @{
+        /// @brief Gets the xtd::collections::generic::linked_list <type_t> that the xtd::collections::generic::linked_list_node <type_t> belongs to.
+        /// @return A reference to the xtd::collections::generic::linked_list <ype_t> that the xtd::collections::generic::linked_list_node <type_t> belongs to, or null if the xtd::collections::generic::linked_list_node <type_t> is not linked.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
         xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
         
+        /// @brief Gets the next node in the LinkedList<T>.
+        /// @return A reference to the next node in the xtd::collections::generic::linked_list <type_t>, or null if the current node is the last element (Last) of the xtd::collections::generic::linked_list <type_t>.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
         xtd::optional<linked_list_node> next() const {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == end()) return xtd::nullopt;
@@ -71,17 +96,34 @@ namespace xtd {
           return linked_list_node {*data_->list, tmp, data_->version};
         }
         
+        /// @brief Gets the previous node in the LinkedList<T>.
+        /// @return A reference to the previous node in the xtd::collections::generic::linked_list <type_t>, or null if the current node is the first element (Last) of the xtd::collections::generic::linked_list <type_t>.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
         xtd::optional<linked_list_node> previous() const {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
           auto tmp = data_->iterator;
           return linked_list_node {*data_->list, --tmp, data_->version};
         }
-        
+
+        /// @brief Gets the value contained in the node.
+        /// @return The value contained in the node.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
+        /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
         const value_type& value() const {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
         }
+        /// @brief Gets the value contained in the node.
+        /// @return The value contained in the node.
+        /// @par Examples
+        /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
+        /// @include generic_linked_list_node.cpp
+        /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
         value_type& value() {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
