@@ -57,7 +57,7 @@ namespace xtd {
           /// The following code example demonstrates how to reverse the order of words in a string by using enumerable::aggregate.
           /// @include enumerable_aggregate.cpp
           source_t aggregate(const std::function<source_t(const source_t&, const source_t&)>& func) const {
-            return xtd::linq::enumerable::aggregate(base(), func);
+            return xtd::linq::enumerable::aggregate(self(), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
           /// @param seed The initial accumulator value.
@@ -67,7 +67,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate2.cpp
           source_t aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func);
+            return xtd::linq::enumerable::aggregate(self(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
           /// @tparam accumulate_t The type of the accumulator value.
@@ -79,7 +79,7 @@ namespace xtd {
           /// @include enumerable_aggregate2.cpp
           template<class accumulate_t>
           accumulate_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func);
+            return xtd::linq::enumerable::aggregate(self(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @param seed The initial accumulator value.
@@ -90,7 +90,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
           source_t aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func, const std::function<source_t(const source_t&)>& result_selector) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
+            return xtd::linq::enumerable::aggregate(self(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @tparam result_t The type of the resulting value.
@@ -104,7 +104,7 @@ namespace xtd {
           /// @include enumerable_aggregate3.cpp
           template<class result_t, class accumulate_t>
           result_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
+            return xtd::linq::enumerable::aggregate(self(), seed, func, result_selector);
           }
           
           /// @brief Determines whether all elements of a sequence satisfy a condition.
@@ -114,7 +114,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_all.cpp
           bool all(const std::function<bool(const source_t&)>& predicate) const {
-            return xtd::linq::enumerable::all(base(), predicate);
+            return xtd::linq::enumerable::all(self(), predicate);
           }
           
           /// @brief Determines whether a sequence contains any elements.
@@ -123,7 +123,7 @@ namespace xtd {
           /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
           /// @include enumerable_any.cpp
           bool any() const noexcept {
-            return xtd::linq::enumerable::any(base());
+            return xtd::linq::enumerable::any(self());
           }
           /// @brief Determines whether any element of a sequence satisfies a condition.
           /// @param predicate A function to test each element for a condition.
@@ -132,7 +132,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_any.cpp
           bool any(const std::function<bool(const source_t&)>& predicate) const {
-            return xtd::linq::enumerable::any(base(), predicate);
+            return xtd::linq::enumerable::any(self(), predicate);
           }
           
           /// @brief Appends a value to the end of the sequence.
@@ -142,7 +142,7 @@ namespace xtd {
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
           auto append(const source_t& element) const noexcept {
-            return xtd::linq::enumerable::append(base(), element);
+            return xtd::linq::enumerable::append(self(), element);
           }
           
           /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
@@ -151,14 +151,14 @@ namespace xtd {
           /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
           /// @include enumerable_as_enumerable.cpp
           auto as_enumerable() const noexcept {
-            return xtd::linq::enumerable::as_enumerable(base());
+            return xtd::linq::enumerable::as_enumerable(self());
           }
           
           /// @brief Computes the average of a sequence of source_t values.
           /// @return The average of this sequence of values.
           /// @exception xtd::invalid_operation_exception this sequence contains no elements.
           auto average() const noexcept {
-            return xtd::linq::enumerable::average(base());
+            return xtd::linq::enumerable::average(self());
           }
           
           /// @brief Casts the elements of an xtd::collections::generic::ienumerable to the specified type.
@@ -167,7 +167,7 @@ namespace xtd {
           /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
           template <class result_t>
           auto cast() const noexcept {
-            return xtd::linq::enumerable::cast<result_t>(base());
+            return xtd::linq::enumerable::cast<result_t>(self());
           }
           
           /// @brief Splits the elements of a sequence into chunks of size at most size.
@@ -176,21 +176,21 @@ namespace xtd {
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
           auto chunk(size_t size) const {
-            return xtd::linq::enumerable::chunk(base(), size);
+            return xtd::linq::enumerable::chunk(self(), size);
           }
           
           /// @brief Concatenates two sequences.
           /// @param second The sequence to concatenate to the current sequence.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
           auto concat(const ienumerable<source_t>& second) const noexcept {
-            return xtd::linq::enumerable::concat(base(), second);
+            return xtd::linq::enumerable::concat(self(), second);
           }
           
           /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
           /// @param value The value to locate in the sequence.
           /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
           bool contains(const source_t& value) const noexcept {
-            return xtd::linq::enumerable::contains(base(), value);
+            return xtd::linq::enumerable::contains(self(), value);
           }
           
           /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
@@ -198,7 +198,7 @@ namespace xtd {
           /// @param comparer An equality comparer to compare values.
           /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
           bool contains(const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
-            return xtd::linq::enumerable::contains(base(), value, comparer);
+            return xtd::linq::enumerable::contains(self(), value, comparer);
           }
           
           /// @brief Returns the number of elements in current sequence.
@@ -207,7 +207,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
           /// @include enumerable_count.cpp
           size_t count() const noexcept {
-            return xtd::linq::enumerable::count(base());
+            return xtd::linq::enumerable::count(self());
           }
           
           /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
@@ -217,14 +217,14 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
           /// @include enumerable_count2.cpp
           size_t count(const std::function<bool(const source_t&)>& predicate) const noexcept {
-            return xtd::linq::enumerable::count(base(), predicate);
+            return xtd::linq::enumerable::count(self(), predicate);
           }
           
           /// @brief Returns the number of elements with the specified value.
           /// @param value The value to search for.
           /// @return A number representing the number of elements in the sequence that are equal to the `value`.
           xtd::size count(const source_t& value) const noexcept {
-            return xtd::linq::enumerable::count(base(), value);
+            return xtd::linq::enumerable::count(self(), value);
           }
           
           /// @brief Returns the count of elements in the current sequence grouped by key.
@@ -236,7 +236,7 @@ namespace xtd {
           /// @include enumerable_count_by.cpp
           template <class key_t>
           auto count_by(const std::function<key_t(const source_t&)>& key_selector) const noexcept {
-            return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector);
+            return xtd::linq::enumerable::count_by<key_t, source_t>(self(), key_selector);
           }
           
           /// @brief Returns the count of elements in the current sequence grouped by key.
@@ -249,26 +249,26 @@ namespace xtd {
           /// @include enumerable_count_by.cpp
           template <class key_t>
           auto count_by(const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) const noexcept {
-            return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector, key_comparer);
+            return xtd::linq::enumerable::count_by<key_t, source_t>(self(), key_selector, key_comparer);
           }
           
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           auto default_if_empty() const noexcept {
-            return xtd::linq::enumerable::default_if_empty(base());
+            return xtd::linq::enumerable::default_if_empty(self());
           }
           
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           auto default_if_empty(const source_t& default_value) const noexcept {
-            return xtd::linq::enumerable::default_if_empty(base(), default_value);
+            return xtd::linq::enumerable::default_if_empty(self(), default_value);
           }
           
           /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
           /// @return An enumerable distinct elements from the source sequence.
           auto distinct() const noexcept {
-            return xtd::linq::enumerable::distinct(base());
+            return xtd::linq::enumerable::distinct(self());
           }
           
           /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
@@ -276,7 +276,7 @@ namespace xtd {
           /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
           /// @return An enumerable distinct elements from the source sequence.
           auto distinct(const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
-            return xtd::linq::enumerable::distinct(base(), comparer);
+            return xtd::linq::enumerable::distinct(self(), comparer);
           }
           
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
@@ -284,26 +284,26 @@ namespace xtd {
           /// @param default_value The default value to return if the sequence is empty.
           /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           source_t first_or_default(const std::function<bool(const source_t&)>& predicate, const source_t& default_value) const noexcept {
-            return xtd::linq::enumerable::first_or_default(base(), predicate, default_value);
+            return xtd::linq::enumerable::first_or_default(self(), predicate, default_value);
           }
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           source_t first_or_default(const std::function<bool(const source_t&)>& predicate) const noexcept {
-            return xtd::linq::enumerable::first_or_default(base(), predicate);
+            return xtd::linq::enumerable::first_or_default(self(), predicate);
           }
           
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param default_value The default value to return if the sequence is empty.
           /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           source_t first_or_default(const source_t default_value) const noexcept {
-            return xtd::linq::enumerable::first_or_default(base(), default_value);
+            return xtd::linq::enumerable::first_or_default(self(), default_value);
           }
           
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @return default `source_t {}`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
           source_t first_or_default() const noexcept {
-            return xtd::linq::enumerable::first_or_default(base());
+            return xtd::linq::enumerable::first_or_default(self());
           }
           
           /// @brief Sorts the elements of a sequence in ascending order according to a key.
@@ -312,7 +312,7 @@ namespace xtd {
           /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
           /// @include linq_order_by.cpp
           auto order_by(const std::function<source_t(const source_t&)>& key_selector) const {
-            return xtd::linq::enumerable::order_by(base(), key_selector);
+            return xtd::linq::enumerable::order_by(self(), key_selector);
           }
           
           /// @brief Sorts the elements of a sequence in descending order according to a key.
@@ -322,7 +322,7 @@ namespace xtd {
           /// @include linq_order_by.cpp
           template<class key_t>
           auto order_by_descending(const std::function<key_t(const source_t&)>& key_selector) const {
-            return xtd::linq::enumerable::order_by_descending<key_t, source_t>(base(), key_selector);
+            return xtd::linq::enumerable::order_by_descending<key_t, source_t>(self(), key_selector);
           }
           
           /// @brief Sorts the elements of a sequence in descending order according to a key.
@@ -331,7 +331,7 @@ namespace xtd {
           /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
           /// @include linq_order_by.cpp
           auto order_by_descending(const std::function<source_t(const source_t&)>& key_selector) const {
-            return xtd::linq::enumerable::order_by_descending(base(), key_selector);
+            return xtd::linq::enumerable::order_by_descending(self(), key_selector);
           }
           
           /// @brief Sorts the elements of a sequence in ascending order according to a key.
@@ -341,7 +341,7 @@ namespace xtd {
           /// @include linq_order_by.cpp
           template<class key_t>
           auto order_by(const std::function<key_t(const source_t&)>& key_selector) const {
-            return xtd::linq::enumerable::order_by<key_t, source_t>(base(), key_selector);
+            return xtd::linq::enumerable::order_by<key_t, source_t>(self(), key_selector);
           }
           
           /// @brief Projects each element of a sequence into a new form.
@@ -354,7 +354,7 @@ namespace xtd {
           /// @include enumerable_select.cpp
           template<class result_t>
           auto select(const std::function<result_t(const source_t&)>& selector) const {
-            return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
+            return xtd::linq::enumerable::select<result_t, source_t>(self(), selector);
           }
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
@@ -364,7 +364,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
           /// @include enumerable_select.cpp
           auto select(const std::function<source_t(const source_t&)>& selector) const {
-            return xtd::linq::enumerable::select(base(), selector);
+            return xtd::linq::enumerable::select(self(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
           /// @tparam result_t The type of the resulting value.
@@ -376,7 +376,7 @@ namespace xtd {
           /// @include enumerable_select.cpp
           template<class result_t>
           auto select(const std::function<result_t(const source_t&, size_t index)>& selector) const {
-            return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
+            return xtd::linq::enumerable::select<result_t, source_t>(self(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
           /// @param source A sequence of values to invoke a transform function on.
@@ -386,7 +386,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
           auto select(const std::function<source_t(const source_t&, size_t index)>& selector) const {
-            return xtd::linq::enumerable::select(base(), selector);
+            return xtd::linq::enumerable::select(self(), selector);
           }
           
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
@@ -403,7 +403,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
           /// @include enumerable_where.cpp
           auto where(const std::function<bool(const source_t&)>& predicate) const {
-            return xtd::linq::enumerable::where(base(), predicate);
+            return xtd::linq::enumerable::where(self(), predicate);
           }
           /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
           /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
@@ -412,12 +412,12 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
           /// @include enumerable_where2.cpp
           auto where(const std::function<bool(const source_t&, size_t)>& predicate) const {
-            return xtd::linq::enumerable::where(base(), predicate);
+            return xtd::linq::enumerable::where(self(), predicate);
           }
           /// @}
           
         private:
-          const enumerable_t& base() const noexcept {return static_cast<const enumerable_t&>(*this);}
+          const enumerable_t& self() const noexcept {return static_cast<const enumerable_t&>(*this);}
         };
       }
     }
