@@ -510,22 +510,22 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(find_on_not_empty_list) {
       auto list = linked_list {42, 84, 21, 42};
-
+      
       assert::are_equal(list, list.find(42)->list());
       assert::are_equal(84, list.find(42)->next()->value());
       assert::is_null(list.find(42)->previous());
       assert::are_equal(42, list.find(42)->value());
-
+      
       assert::are_equal(list, list.find(84)->list());
       assert::are_equal(21, list.find(84)->next()->value());
       assert::are_equal(42, list.find(84)->previous()->value());
       assert::are_equal(84, list.find(84)->value());
-
+      
       assert::are_equal(list, list.find(21)->list());
       assert::are_equal(42, list.find(21)->next()->value());
       assert::are_equal(84, list.find(21)->previous()->value());
       assert::are_equal(21, list.find(21)->value());
-
+      
       assert::is_null(linked_list<int> {}.find(12));
     }
     
@@ -545,7 +545,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(42, list.find_last(21)->next()->value());
       assert::are_equal(84, list.find_last(21)->previous()->value());
       assert::are_equal(21, list.find_last(21)->value());
-
+      
       assert::are_equal(list, list.find_last(84)->list());
       assert::are_equal(21, list.find_last(84)->next()->value());
       assert::are_equal(42, list.find_last(84)->previous()->value());
@@ -620,25 +620,25 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(remove_node_on_not_empty_list) {
       auto list = linked_list {42, 84, 21, 42};
-
+      
       auto node = *list.find(84);
       list.remove(node);
       assert::is_true(node.list().is_empty());
       assert::are_equal(84, node.value());
       collection_assert::are_equal({42, 21, 42}, list);
-
+      
       node = *list.find(42);
       list.remove(node);
       assert::is_true(node.list().is_empty());
       assert::are_equal(42, node.value());
       collection_assert::are_equal({21, 42}, list);
-
+      
       node = *list.find(42);
       list.remove(node);
       assert::is_true(node.list().is_empty());
       assert::are_equal(42, node.value());
       collection_assert::are_equal({21}, list);
-
+      
       node = *list.find(21);
       list.remove(node);
       assert::is_true(node.list().is_empty());
