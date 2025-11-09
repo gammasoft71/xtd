@@ -1106,7 +1106,7 @@ namespace xtd {
 namespace xtd::collections::generic::extensions {
   template <class enumerable_t, class source_t>
   inline xtd::collections::generic::list<source_t> enumerable<enumerable_t, source_t>::to_list() const noexcept {
-    return xtd::linq::enumerable::to_list(base());
+    return xtd::linq::enumerable::to_list(self());
   }
 }
 
