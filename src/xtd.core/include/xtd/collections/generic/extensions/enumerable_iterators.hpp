@@ -269,7 +269,7 @@ namespace xtd {
             return result;
           }
           /// @}
-        
+          
         private:
           const enumerable_t& self() const noexcept {return static_cast<const enumerable_t&>(self_);}
           enumerable_t& self() noexcept {return static_cast<enumerable_t&>(self_);}
