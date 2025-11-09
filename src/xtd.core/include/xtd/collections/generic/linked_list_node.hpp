@@ -66,7 +66,7 @@ namespace xtd {
         /// @remarks The xtd::collections::generic::linked_list_node::list, xtd::collections::generic::linked_list_node::next, and xtd::collections::generic::linked_list_node::previous properties are set to xtd::nullopt.
         linked_list_node(const value_type & value) {data_->value = value;}
         /// @}
-
+        
         /// @cond
         linked_list_node(value_type&& value) {data_->value = std::move(value);}
         linked_list_node(linked_list_node&&) = default;
@@ -107,7 +107,7 @@ namespace xtd {
           auto tmp = data_->iterator;
           return linked_list_node {*data_->list, --tmp, data_->version};
         }
-
+        
         /// @brief Gets the value contained in the node.
         /// @return The value contained in the node.
         /// @par Examples
