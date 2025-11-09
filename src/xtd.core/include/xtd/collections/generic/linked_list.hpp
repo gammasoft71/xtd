@@ -121,7 +121,7 @@ namespace xtd {
         
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
@@ -138,7 +138,7 @@ namespace xtd {
         
         void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
@@ -153,7 +153,7 @@ namespace xtd {
         }
         
         void add_first(linked_list_node<type_t>& node) {
-          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
           data_->items.push_front(node.data_->value.value());
           ++data_->version;
           node = {self_, data_->items.begin(), data_->version};
@@ -166,7 +166,7 @@ namespace xtd {
         }
         
         void add_last(linked_list_node<type_t>& node) {
-          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
           data_->items.push_back(node.data_->value.value());
           ++data_->version;
           auto tmp = data_->items.end();
