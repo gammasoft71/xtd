@@ -6,6 +6,7 @@
 #include "../../../icomparable.hpp"
 #include "../../../iequatable.hpp"
 #include "../../../ptrdiff.hpp"
+#include "../../../self.hpp"
 #include "../../../size.hpp"
 #include <limits>
 
@@ -60,7 +61,7 @@ namespace xtd {
             static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
             
             enumerable_iterator() = default;
-            enumerable_iterator(iterator_enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
+            enumerable_iterator(iterator_enumerable_t& enumerable, xtd::size pos) : enumerable_ {&enumerable}, enumerator_ {enumerable.get_enumerator()}, pos_ {pos} {reset();}
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
@@ -89,9 +90,9 @@ namespace xtd {
             }
             
             template<class value_t>
-            const enumerable_iterator operator +(value_t value) const noexcept {return enumerable_iterator {enumerable_, pos_ + value};}
+            const enumerable_iterator operator +(value_t value) const noexcept {return enumerable_iterator {*enumerable_, pos_ + value};}
             template<class value_t>
-            enumerable_iterator operator +(value_t value) noexcept {return enumerable_iterator {enumerable_, pos_ + value};}
+            enumerable_iterator operator +(value_t value) noexcept {return enumerable_iterator {*enumerable_, pos_ + value};}
             template<class value_t>
             enumerable_iterator& operator +=(value_t value) noexcept {
               *this = *this + value;
@@ -141,22 +142,22 @@ namespace xtd {
           virtual const_iterator begin() const {return cbegin();}
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual iterator begin() {return iterator {static_cast<enumerable_t*>(this), 0};}
+          virtual iterator begin() {return iterator {self(), 0};}
           
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual const_iterator cbegin() const {return const_iterator {static_cast<const enumerable_t*>(this), 0};}
+          virtual const_iterator cbegin() const {return const_iterator {self(), 0};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual const_iterator cend() const {return const_iterator {static_cast<const enumerable_t*>(this), const_iterator::npos()};}
+          virtual const_iterator cend() const {return const_iterator {self(), const_iterator::npos()};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
           virtual const_iterator end() const {return cend();}
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual iterator end() {return iterator {static_cast<enumerable_t*>(this), iterator::npos()};}
+          virtual iterator end() {return iterator {self(), iterator::npos()};}
           /// @}
           
           /// @name Public Static Methods
@@ -270,6 +271,10 @@ namespace xtd {
             return result;
           }
           /// @}
+        
+        private:
+          const enumerable_t& self() const noexcept {return static_cast<const enumerable_t&>(self_);}
+          enumerable_t& self() noexcept {return static_cast<enumerable_t&>(self_);}
         };
       }
     }
