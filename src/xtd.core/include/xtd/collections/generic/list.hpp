@@ -161,7 +161,6 @@ namespace xtd {
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
-        /// @param alloc The allocator to use for all memory allocations of this container.
         template <std::input_iterator input_iterator_t>
         list(input_iterator_t first, input_iterator_t last) {
           for (auto iterator = first; iterator != last; ++iterator)
