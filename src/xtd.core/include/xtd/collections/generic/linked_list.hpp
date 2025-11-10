@@ -111,7 +111,7 @@ namespace xtd {
         /// @}
         
         /// @name Public Properties
-
+        
         /// @{
         /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
         /// @return The number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
