@@ -20,7 +20,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// using linked_list = std::list<type_t, xtd::collections::generic::helpers::allocator<type_t>>;
+      /// class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -40,6 +40,13 @@ namespace xtd {
       /// @remarks Each node in a xtd::collections::generic::linked_list <type_t> object is of the type xtd::collections::generic::linked_list_node <type_t>. Because the xtd::collections::generic::linked_list <type_t> is doubly linked, each node points forward to the xtd::collections::generic::linked_list_node::next node and backward to the xtd::collections::generic::linked_list_node::previous node.
       /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
       /// @remarks The xtd::collections::generic::linked_list <typ_t> class does not support chaining, splitting, cycles, or other features that can leave the list in an inconsistent state. The list remains consistent on a single thread. The only multithreaded scenario supported by xtd::collections::generic::linked_list <type_t> is multithreaded read operations.
+      /// @par Linq extension
+      /// * As xtd::collections::generic::linked_list <type_t> inherits the xtd::collections::generic::ienumerable <type_t> interface, it automatically inherits the xtd::collections::generic::extensions::enumerable <type_t> interface and at the same time all the methods of xtd::linq::enumerable.
+      /// * Thanks to xtd::linq, xtd::collections::generic::linked_list <type_t> can be manipulated by the classes of xtd::ranges::views and can be combined with [std::ranges](https://en.cppreference.com/w/cpp/ranges.html).
+      /// <br>The following example shows the xtd::ranges::views and [std::ranges](https://en.cppreference.com/w/cpp/ranges.html) usage :
+      /// @include ranges_views.cpp
+      /// @par Performance considerations
+      /// As xtd::collections::generic::linked_list <type_t> instantiates and uses only the methods of [std::list](https://en.cppreference.com/w/cpp/container/list), the performance of xtd::collections::generic::linked_list <type_t> is practically identical to that of [std::list](https://en.cppreference.com/w/cpp/container/list).
       template<class type_t, class allocator_t>
       class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
@@ -61,11 +68,28 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
+        /// @brief Initializes a new instance of the xtd::collections::generic::linked_list <type_t> class that is empty.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
+        /// @remarks This constructor is an O(1) operation.
         linked_list() = default;
-        linked_list(linked_list&&) = default;
+        /// @brief Move constructor with specified list.
+        /// @param list The xtd::collections::generic::linked_list <type_t> which elements will be moved from.
+        linked_list(linked_list&& list) = default;
+        /// @brief Default copy constructor with specified list.
+        /// @param linked_list The xtd::collections::generic::linked_list <type_t> which elements will be inserted from.
         linked_list(const linked_list & list) {*data_ = *list.data_;}
-        linked_list(std::list < type_t > && list) {data_->items = std::move(list);}
-        linked_list(const std::list < type_t >& list) {data_->items = list;}
+        /// @brief Move constructor with specified base type list.
+        /// @param list The xtd::collections::generic::linked_list::base_type which elements will be moved from.
+        linked_list(base_type&& list) {data_->items = std::move(list);}
+        /// @brief Copy constructor with specified base type list.
+        /// @param list The xtd::collections::generic::linked_list::base_type which elements will be inserted from.
+        linked_list(const base_type& list) {data_->items = list;}
+        /// @brief Initializes a new instance of the xtd::collections::generic::linked_list <typer_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable and has sufficient capacity to accommodate the number of elements copied.
+        /// @param collection The xtd::collections::generic::ienumerable whose elements are copied to the new xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks xtd::collections::generic::linked_list <typer_t> allows duplicate values.
+        /// @remarks If collection has no elements then the new xtd::collections::generic::linked_list <typer_t> is empty, and the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
+        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
         linked_list(const xtd::collections::generic::ienumerable < type_t >& collection) {
           for (const auto& item : collection)
             add(item);
@@ -79,7 +103,6 @@ namespace xtd {
         /// @brief Constructs the container with the contents of the range [first, last).
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
-        /// @param alloc The allocator to use for all memory allocations of this container.
         template < std::input_iterator input_iterator_t >
         linked_list(input_iterator_t first, input_iterator_t last) {
           for (auto iterator = first; iterator != last; ++iterator)
@@ -88,40 +111,52 @@ namespace xtd {
         /// @}
         
         /// @name Public Properties
+
+        /// @{
+        /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
+        /// @return The number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         size_type count() const noexcept override {return data_->items.size();}
         
-        xtd::optional<linked_list_node<type_t>> first() const {
-          if (!count()) return xtd::nullopt;
-          return linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version};
-        }
+        /// @brief Gets the first node of the xtd::collections::generic::linked_list <typer_t>.
+        /// @return The first xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        xtd::optional<linked_list_node<type_t>> first() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
+        /// @brief Gets the first node of the xtd::collections::generic::linked_list <typer_t>.
+        /// @return The first xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        xtd::optional<linked_list_node<type_t>> first() {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, data_->items.begin(), data_->version}} : xtd::nullopt;}
         
-        xtd::optional<linked_list_node<type_t>> first() {
-          if (!count()) return xtd::nullopt;
-          return linked_list_node<type_t> {self_, data_->items.begin(), data_->version};
-        }
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        const base_type& items() const noexcept {return data_->items;}
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        base_type& items() noexcept {return data_->items;}
         
-        const base_type& items() const noexcept {
-          return data_->items;
-        }
-        
-        base_type& items() noexcept {
-          return data_->items;
-        }
-        
-        xtd::optional<linked_list_node<type_t>> last() const {
-          if (!count()) return xtd::nullopt;
-          auto tmp = data_->items.end();
-          return linked_list_node<type_t> {const_cast<linked_list&>(self_), --tmp, data_->version};
-        }
-        
-        xtd::optional<linked_list_node<type_t>> last() {
-          if (!count()) return xtd::nullopt;
-          auto tmp = data_->items.end();
-          return linked_list_node<type_t> {self_, --tmp, data_->version};
-        }
+        /// @brief Gets the last node of the xtd::collections::generic::linked_list <typer_t>.
+        /// @return The last xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        xtd::optional<linked_list_node<type_t>> last() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
+        /// @brief Gets the last node of the xtd::collections::generic::linked_list <typer_t>.
+        /// @return The last xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
+        xtd::optional<linked_list_node<type_t>> last() {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, --data_->items.end(), data_->version}} : xtd::nullopt;}
         /// @}
         
         /// @name Public Methods
+        
+        /// @{
         linked_list_node<type_t> add_after(const linked_list_node<type_t>& node, const type_t& value) {
           auto new_node = linked_list_node {value};
           add_after(node, new_node);
@@ -298,6 +333,7 @@ namespace xtd {
         /// @return A string that represents the current object.
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
         /// @}
+        
         /// @name Public Operators
         
         /// @{
