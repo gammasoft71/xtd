@@ -115,7 +115,9 @@ Inheritance diagram for xtd::collections::generic::linked_list&lt; type_t, alloc
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class allocator_t&gt;<br />
 class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><p>Represents a doubly linked list. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">using </span>linked_list = std::list&lt;type_t, xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a0b991936506920e5c0ed7d6b09819859">linked_list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> xtd::collections::generic::icollection&lt;type_t&gt;;</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1linked__list_html_a0b991936506920e5c0ed7d6b09819859"><div class="ttname"><a href="#a0b991936506920e5c0ed7d6b09819859">xtd::collections::generic::linked_list::linked_list</a></div><div class="ttdeci">linked_list()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::linked_list &lt;type_t&gt; class that is empty...</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/linked_list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -129,7 +131,7 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="comment">// Create the link list.</span></div>
-<div class="line">    <span class="keyword">auto</span> sentence = linked_list&lt;string&gt; { <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>, <span class="stringliteral">&quot;jumps&quot;</span>, <span class="stringliteral">&quot;over&quot;</span>, <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;dog&quot;</span> };</div>
+<div class="line">    <span class="keyword">auto</span> sentence = <a class="code hl_function" href="#a0b991936506920e5c0ed7d6b09819859">linked_list&lt;string&gt;</a> { <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>, <span class="stringliteral">&quot;jumps&quot;</span>, <span class="stringliteral">&quot;over&quot;</span>, <span class="stringliteral">&quot;the&quot;</span>, <span class="stringliteral">&quot;dog&quot;</span> };</div>
 <div class="line">    display(sentence, <span class="stringliteral">&quot;The linked list values:&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add the word &#39;today&#39; to the beginning of the linked list.</span></div>
@@ -231,18 +233,18 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> linked_list&lt;string&gt;&amp; words, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
-<div class="line">    console::write_line(test);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(test);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> word : words)</div>
-<div class="line">      console::write(word + <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line">    console::write_line();</div>
-<div class="line">    console::write_line();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(word + <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> indicate_node(<span class="keyword">const</span> linked_list_node&lt;string&gt;&amp; node, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; test) {</div>
-<div class="line">    console::write_line(test);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(test);</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a> = node.list();</div>
 <div class="line">    <span class="keywordflow">if</span> (!l) {</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;Node &#39;{0}&#39; is not in the list.\n&quot;</span>, node.value());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Node &#39;{0}&#39; is not in the list.\n&quot;</span>, node.value());</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -260,8 +262,8 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line">      node_next = node_next-&gt;next();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    console::write_line(result);</div>
-<div class="line">    console::write_line();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(result);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -333,6 +335,7 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <div class="line"><span class="comment">// Test 18: Cleared linked list Contains &#39;jumps&#39; = false</span></div>
 <div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html_a472b56575bd47dbd829931c900a16600"><div class="ttname"><a href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">xtd::exception::message</a></div><div class="ttdeci">virtual const xtd::string &amp; message() const noexcept</div><div class="ttdoc">Gets message associate to the exception.</div></div>
 <div class="ttc" id="aclassxtd_1_1invalid__operation__exception_html"><div class="ttname"><a href="classxtd_1_1invalid__operation__exception.html">xtd::invalid_operation_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> invalid_operation_exception.hpp:18</div></div>
@@ -347,13 +350,63 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; provides separate nodes of type <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;type_t&gt;, so insertion and removal are O(1) operations. </dd>
 <dd>
-You can remove nodes and reinsert them, either in the same list or in another list, which results in no additional objects allocated on the heap. Because the list also maintains an internal count, getting the xtd::collections::generic::linked_list::count property is an O(1) operation. </dd>
+You can remove nodes and reinsert them, either in the same list or in another list, which results in no additional objects allocated on the heap. Because the list also maintains an internal count, getting the <a class="el" href="#a0e7521b6d906ae506d1a757a51ef26b0" title="Gets the number of nodes actually contained in the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::count</a> property is an O(1) operation. </dd>
 <dd>
 Each node in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; object is of the type <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;type_t&gt;. Because the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is doubly linked, each node points forward to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html#a712db12e343e2ceb0076ccf4b74ee306" title="Gets the next node in the LinkedList&lt;T&gt;.">xtd::collections::generic::linked_list_node::next</a> node and backward to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html#a52f1896c943036d1abfb923a4b01b15e" title="Gets the previous node in the LinkedList&lt;T&gt;.">xtd::collections::generic::linked_list_node::previous</a> node. </dd>
 <dd>
-If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>. </dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typ_t&gt; class does not support chaining, splitting, cycles, or other features that can leave the list in an inconsistent state. The list remains consistent on a single thread. The only multithreaded scenario supported by <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is multithreaded read operations. </dd></dl>
+<dl class="section user"><dt>Linq extension</dt><dd><ul>
+<li>As <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; inherits the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; interface, it automatically inherits the <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" title="Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.">xtd::collections::generic::extensions::enumerable</a> &lt;type_t&gt; interface and at the same time all the methods of <a class="el" href="classxtd_1_1linq_1_1enumerable.html" title="Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.">xtd::linq::enumerable</a>.</li>
+<li>Thanks to <a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; can be manipulated by the classes of <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and can be combined with <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a>. <br  />
+The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> and <a href="https://en.cppreference.com/w/cpp/ranges.html">std::ranges</a> usage : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">//string names[] = {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
+<div class="line">  <span class="comment">//auto names = fixed_array&lt;string, 8&gt; {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
+<div class="line">  <span class="comment">//auto names = std::vector {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = std::list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = array {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="keyword">auto</span> names = {<span class="stringliteral">&quot;Burke&quot;</span>_s, <span class="stringliteral">&quot;Connor&quot;</span>_s, <span class="stringliteral">&quot;Frank&quot;</span>_s, <span class="stringliteral">&quot;Everett&quot;</span>_s, <span class="stringliteral">&quot;Albert&quot;</span>_s, <span class="stringliteral">&quot;George&quot;</span>_s, <span class="stringliteral">&quot;Harris&quot;</span>_s, <span class="stringliteral">&quot;David&quot;</span>_s};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// xtd::linq query</span></div>
+<div class="line">  <span class="keyword">auto</span> query1 = from(names)</div>
+<div class="line">    .where(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length() == 5;})</div>
+<div class="line">    .order_by(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;})</div>
+<div class="line">    .<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42">select</a>(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.to_upper();});</div>
+<div class="line">  println(query1);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// xtd::ranges query</span></div>
+<div class="line">  <span class="keyword">auto</span> query2 = names</div>
+<div class="line">    | where(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> s.length() == 5;})</div>
+<div class="line">    | <a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">order_by</a>(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;})</div>
+<div class="line">    | <a class="code hl_variable" href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">select</a>(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.to_upper();});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(query2);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// std::ranges combined with xtd::ranges query</span></div>
+<div class="line">  <span class="keyword">auto</span> query3 = names</div>
+<div class="line">    | std::views::filter(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length() == 5;})</div>
+<div class="line">    | <a class="code hl_variable" href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">order_by</a>(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>;})</div>
+<div class="line">    | std::views::transform(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> s) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.to_upper();});</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(query3);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Console output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// [BURKE, DAVID, FRANK]</span></div>
+<div class="line"><span class="comment">// [BURKE, DAVID, FRANK]</span></div>
+<div class="line"><span class="comment">// [BURKE, DAVID, FRANK]</span></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
+<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="group__ranges.html#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
+<div class="ttc" id="agroup__ranges_html_ga7afb21b332d0583925f7568616d4f5c4"><div class="ttname"><a href="group__ranges.html#ga7afb21b332d0583925f7568616d4f5c4">xtd::ranges::views::order_by</a></div><div class="ttdeci">constexpr auto order_by</div><div class="ttdoc">The xtd::ranges::views::order_by instance.</div><div class="ttdef"><b>Definition</b> order_by.hpp:40</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42">xtd::console_key::select</a></div><div class="ttdeci">@ select</div><div class="ttdoc">The SELECT key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:54</div></div>
+<div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
+</div><!-- fragment --> </li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Performance considerations</dt><dd>As <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; instantiates and uses only the methods of <a href="https://en.cppreference.com/w/cpp/container/list">std::list</a>, the performance of <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is practically identical to that of <a href="https://en.cppreference.com/w/cpp/container/list">std::list</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a8e935a6198ebd6b27a78a776b0c2358a" id="r_a8e935a6198ebd6b27a78a776b0c2358a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e935a6198ebd6b27a78a776b0c2358a">value_type</a></td></tr>
@@ -373,50 +426,53 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html"
 <tr class="separator:aba47c858a4d15fcaed6eda2a88d82570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a31525a62c78579881d7d9978b0b06512" id="r_a31525a62c78579881d7d9978b0b06512"><td class="memItemLeft" align="right" valign="top"><a id="a31525a62c78579881d7d9978b0b06512" name="a31525a62c78579881d7d9978b0b06512"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>linked_list</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a31525a62c78579881d7d9978b0b06512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22cedd5cddbac523bd42adf89b027fdc" id="r_a22cedd5cddbac523bd42adf89b027fdc"><td class="memItemLeft" align="right" valign="top"><a id="a22cedd5cddbac523bd42adf89b027fdc" name="a22cedd5cddbac523bd42adf89b027fdc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>linked_list</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
+<tr class="memitem:a0b991936506920e5c0ed7d6b09819859" id="r_a0b991936506920e5c0ed7d6b09819859"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b991936506920e5c0ed7d6b09819859">linked_list</a> ()=default</td></tr>
+<tr class="memdesc:a0b991936506920e5c0ed7d6b09819859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; class that is empty.  <br /></td></tr>
+<tr class="separator:a0b991936506920e5c0ed7d6b09819859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ed2b398282005645849d756b3f16f7" id="r_a67ed2b398282005645849d756b3f16f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67ed2b398282005645849d756b3f16f7">linked_list</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)=default</td></tr>
+<tr class="memdesc:a67ed2b398282005645849d756b3f16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified list.  <br /></td></tr>
+<tr class="separator:a67ed2b398282005645849d756b3f16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cedd5cddbac523bd42adf89b027fdc" id="r_a22cedd5cddbac523bd42adf89b027fdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22cedd5cddbac523bd42adf89b027fdc">linked_list</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
+<tr class="memdesc:a22cedd5cddbac523bd42adf89b027fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
 <tr class="separator:a22cedd5cddbac523bd42adf89b027fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32d20c51e524c32e3da42f2c27d2112f" id="r_a32d20c51e524c32e3da42f2c27d2112f"><td class="memItemLeft" align="right" valign="top"><a id="a32d20c51e524c32e3da42f2c27d2112f" name="a32d20c51e524c32e3da42f2c27d2112f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>linked_list</b> (std::list&lt; type_t &gt; &amp;&amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
-<tr class="separator:a32d20c51e524c32e3da42f2c27d2112f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cbf88ccd039f3525f7b5e2df5ef36cc" id="r_a5cbf88ccd039f3525f7b5e2df5ef36cc"><td class="memItemLeft" align="right" valign="top"><a id="a5cbf88ccd039f3525f7b5e2df5ef36cc" name="a5cbf88ccd039f3525f7b5e2df5ef36cc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>linked_list</b> (const std::list&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
-<tr class="separator:a5cbf88ccd039f3525f7b5e2df5ef36cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a050a0b28162b446de5d3682e69f411b9" id="r_a050a0b28162b446de5d3682e69f411b9"><td class="memItemLeft" align="right" valign="top"><a id="a050a0b28162b446de5d3682e69f411b9" name="a050a0b28162b446de5d3682e69f411b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>linked_list</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
+<tr class="memitem:a837dc07c512602014cca71dd36b91626" id="r_a837dc07c512602014cca71dd36b91626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a837dc07c512602014cca71dd36b91626">linked_list</a> (<a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
+<tr class="memdesc:a837dc07c512602014cca71dd36b91626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified base type list.  <br /></td></tr>
+<tr class="separator:a837dc07c512602014cca71dd36b91626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9497d0d9ef95e0e47569eaab9505ae1" id="r_ac9497d0d9ef95e0e47569eaab9505ae1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9497d0d9ef95e0e47569eaab9505ae1">linked_list</a> (const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>)</td></tr>
+<tr class="memdesc:ac9497d0d9ef95e0e47569eaab9505ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor with specified base type list.  <br /></td></tr>
+<tr class="separator:ac9497d0d9ef95e0e47569eaab9505ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050a0b28162b446de5d3682e69f411b9" id="r_a050a0b28162b446de5d3682e69f411b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a050a0b28162b446de5d3682e69f411b9">linked_list</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a050a0b28162b446de5d3682e69f411b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:a050a0b28162b446de5d3682e69f411b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03ed87d713d9daf3f28208a17bcb4b31" id="r_a03ed87d713d9daf3f28208a17bcb4b31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ed87d713d9daf3f28208a17bcb4b31">linked_list</a> (std::initializer_list&lt; type_t &gt; items)</td></tr>
+<tr class="memitem:a03ed87d713d9daf3f28208a17bcb4b31" id="r_a03ed87d713d9daf3f28208a17bcb4b31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ed87d713d9daf3f28208a17bcb4b31">linked_list</a> (std::initializer_list&lt; type_t &gt; <a class="el" href="#a248727f32865e83edffc080baf836513">items</a>)</td></tr>
 <tr class="memdesc:a03ed87d713d9daf3f28208a17bcb4b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
 <tr class="separator:a03ed87d713d9daf3f28208a17bcb4b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6488fe1681fea23f5fc62717f17353df" id="r_a6488fe1681fea23f5fc62717f17353df"><td class="memTemplParams" colspan="2">template&lt;std::input_iterator input_iterator_t&gt; </td></tr>
-<tr class="memitem:a6488fe1681fea23f5fc62717f17353df"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6488fe1681fea23f5fc62717f17353df">linked_list</a> (input_iterator_t first, input_iterator_t last)</td></tr>
+<tr class="memitem:a6488fe1681fea23f5fc62717f17353df"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a6488fe1681fea23f5fc62717f17353df">linked_list</a> (input_iterator_t <a class="el" href="#a63b198281f46f4fac468f1c88015a350">first</a>, input_iterator_t <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b">last</a>)</td></tr>
 <tr class="memdesc:a6488fe1681fea23f5fc62717f17353df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
 <tr class="separator:a6488fe1681fea23f5fc62717f17353df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a0e7521b6d906ae506d1a757a51ef26b0" id="r_a0e7521b6d906ae506d1a757a51ef26b0"><td class="memItemLeft" align="right" valign="top"><a id="a0e7521b6d906ae506d1a757a51ef26b0" name="a0e7521b6d906ae506d1a757a51ef26b0"></a>
-<a class="el" href="#a71826fe6b10c770a63535a5bf1b06409">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> () const noexcept override</td></tr>
+<tr class="memitem:a0e7521b6d906ae506d1a757a51ef26b0" id="r_a0e7521b6d906ae506d1a757a51ef26b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a71826fe6b10c770a63535a5bf1b06409">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e7521b6d906ae506d1a757a51ef26b0">count</a> () const noexcept override</td></tr>
+<tr class="memdesc:a0e7521b6d906ae506d1a757a51ef26b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;.  <br /></td></tr>
 <tr class="separator:a0e7521b6d906ae506d1a757a51ef26b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b198281f46f4fac468f1c88015a350" id="r_a63b198281f46f4fac468f1c88015a350"><td class="memItemLeft" align="right" valign="top"><a id="a63b198281f46f4fac468f1c88015a350" name="a63b198281f46f4fac468f1c88015a350"></a>
-<a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>first</b> () const</td></tr>
+<tr class="memitem:a63b198281f46f4fac468f1c88015a350" id="r_a63b198281f46f4fac468f1c88015a350"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63b198281f46f4fac468f1c88015a350">first</a> () const</td></tr>
+<tr class="memdesc:a63b198281f46f4fac468f1c88015a350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;.  <br /></td></tr>
 <tr class="separator:a63b198281f46f4fac468f1c88015a350"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c63ba3f3e91516316f0eb261b71182" id="r_a25c63ba3f3e91516316f0eb261b71182"><td class="memItemLeft" align="right" valign="top"><a id="a25c63ba3f3e91516316f0eb261b71182" name="a25c63ba3f3e91516316f0eb261b71182"></a>
-<a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>first</b> ()</td></tr>
+<tr class="memitem:a25c63ba3f3e91516316f0eb261b71182" id="r_a25c63ba3f3e91516316f0eb261b71182"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25c63ba3f3e91516316f0eb261b71182">first</a> ()</td></tr>
+<tr class="memdesc:a25c63ba3f3e91516316f0eb261b71182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the first node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;.  <br /></td></tr>
 <tr class="separator:a25c63ba3f3e91516316f0eb261b71182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248727f32865e83edffc080baf836513" id="r_a248727f32865e83edffc080baf836513"><td class="memItemLeft" align="right" valign="top"><a id="a248727f32865e83edffc080baf836513" name="a248727f32865e83edffc080baf836513"></a>
-const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () const noexcept</td></tr>
+<tr class="memitem:a248727f32865e83edffc080baf836513" id="r_a248727f32865e83edffc080baf836513"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a248727f32865e83edffc080baf836513">items</a> () const noexcept</td></tr>
+<tr class="memdesc:a248727f32865e83edffc080baf836513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:a248727f32865e83edffc080baf836513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab84df0585ef3be9587c4e2a61d4a6e32" id="r_ab84df0585ef3be9587c4e2a61d4a6e32"><td class="memItemLeft" align="right" valign="top"><a id="ab84df0585ef3be9587c4e2a61d4a6e32" name="ab84df0585ef3be9587c4e2a61d4a6e32"></a>
-<a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () noexcept</td></tr>
+<tr class="memitem:ab84df0585ef3be9587c4e2a61d4a6e32" id="r_ab84df0585ef3be9587c4e2a61d4a6e32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab84df0585ef3be9587c4e2a61d4a6e32">items</a> () noexcept</td></tr>
+<tr class="memdesc:ab84df0585ef3be9587c4e2a61d4a6e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:ab84df0585ef3be9587c4e2a61d4a6e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f70af6b4f0424519f92c6755d84733b" id="r_a8f70af6b4f0424519f92c6755d84733b"><td class="memItemLeft" align="right" valign="top"><a id="a8f70af6b4f0424519f92c6755d84733b" name="a8f70af6b4f0424519f92c6755d84733b"></a>
-<a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>last</b> () const</td></tr>
+<tr class="memitem:a8f70af6b4f0424519f92c6755d84733b" id="r_a8f70af6b4f0424519f92c6755d84733b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f70af6b4f0424519f92c6755d84733b">last</a> () const</td></tr>
+<tr class="memdesc:a8f70af6b4f0424519f92c6755d84733b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;.  <br /></td></tr>
 <tr class="separator:a8f70af6b4f0424519f92c6755d84733b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb54c2d9363c05f9e629528a07867b5f" id="r_aeb54c2d9363c05f9e629528a07867b5f"><td class="memItemLeft" align="right" valign="top"><a id="aeb54c2d9363c05f9e629528a07867b5f" name="aeb54c2d9363c05f9e629528a07867b5f"></a>
-<a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>last</b> ()</td></tr>
+<tr class="memitem:aeb54c2d9363c05f9e629528a07867b5f" id="r_aeb54c2d9363c05f9e629528a07867b5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb54c2d9363c05f9e629528a07867b5f">last</a> ()</td></tr>
+<tr class="memdesc:aeb54c2d9363c05f9e629528a07867b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;.  <br /></td></tr>
 <tr class="separator:aeb54c2d9363c05f9e629528a07867b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
@@ -485,7 +541,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_last</b> ()</t
 <tr class="memitem:aadd67db76434fd80347a1b0b0d73f923" id="r_aadd67db76434fd80347a1b0b0d73f923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd67db76434fd80347a1b0b0d73f923">operator=</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
 <tr class="memdesc:aadd67db76434fd80347a1b0b0d73f923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.  <br /></td></tr>
 <tr class="separator:aadd67db76434fd80347a1b0b0d73f923"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ca977e9508fe12270e4179745c727d" id="r_a88ca977e9508fe12270e4179745c727d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88ca977e9508fe12270e4179745c727d">operator=</a> (const std::initializer_list&lt; type_t &gt; &amp;items)</td></tr>
+<tr class="memitem:a88ca977e9508fe12270e4179745c727d" id="r_a88ca977e9508fe12270e4179745c727d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88ca977e9508fe12270e4179745c727d">operator=</a> (const std::initializer_list&lt; type_t &gt; &amp;<a class="el" href="#a248727f32865e83edffc080baf836513">items</a>)</td></tr>
 <tr class="memdesc:a88ca977e9508fe12270e4179745c727d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with those identified by initializer list ilist.  <br /></td></tr>
 <tr class="separator:a88ca977e9508fe12270e4179745c727d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40bf8ec1f45a8d301cd4c0cc41c80f7d" id="r_a40bf8ec1f45a8d301cd4c0cc41c80f7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40bf8ec1f45a8d301cd4c0cc41c80f7d">operator const base_type &amp;</a> () const noexcept</td></tr>
@@ -614,8 +670,222 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0b991936506920e5c0ed7d6b09819859" name="a0b991936506920e5c0ed7d6b09819859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b991936506920e5c0ed7d6b09819859">&#9670;&#160;</a></span>linked_list() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; class that is empty. </p>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; allows duplicate values. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain std::nullopt. </dd>
+<dd>
+This constructor is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a67ed2b398282005645849d756b3f16f7" name="a67ed2b398282005645849d756b3f16f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ed2b398282005645849d756b3f16f7">&#9670;&#160;</a></span>linked_list() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a>&lt; type_t, allocator_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor with specified list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; which elements will be moved from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22cedd5cddbac523bd42adf89b027fdc" name="a22cedd5cddbac523bd42adf89b027fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cedd5cddbac523bd42adf89b027fdc">&#9670;&#160;</a></span>linked_list() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">linked_list</a>&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default copy constructor with specified list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">linked_list</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a837dc07c512602014cca71dd36b91626" name="a837dc07c512602014cca71dd36b91626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837dc07c512602014cca71dd36b91626">&#9670;&#160;</a></span>linked_list() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor with specified base type list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6" title="Represents the list base type.">xtd::collections::generic::linked_list::base_type</a> which elements will be moved from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9497d0d9ef95e0e47569eaab9505ae1" name="ac9497d0d9ef95e0e47569eaab9505ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9497d0d9ef95e0e47569eaab9505ae1">&#9670;&#160;</a></span>linked_list() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor with specified base type list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6" title="Represents the list base type.">xtd::collections::generic::linked_list::base_type</a> which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a050a0b28162b446de5d3682e69f411b9" name="a050a0b28162b446de5d3682e69f411b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a050a0b28162b446de5d3682e69f411b9">&#9670;&#160;</a></span>linked_list() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::linked_list </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> and has sufficient capacity to accommodate the number of elements copied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt; allows duplicate values. </dd>
+<dd>
+If collection has no elements then the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt; is empty, and the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain <a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d" title="Represents a nullopt value. Used to indicate that an std::optional does not contain a value.">xtd::nullopt</a>. </dd>
+<dd>
+This constructor is an O(n) operation, where n is the number of elements in collection. </dd></dl>
+
+</div>
+</div>
 <a id="a03ed87d713d9daf3f28208a17bcb4b31" name="a03ed87d713d9daf3f28208a17bcb4b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03ed87d713d9daf3f28208a17bcb4b31">&#9670;&#160;</a></span>linked_list() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ed87d713d9daf3f28208a17bcb4b31">&#9670;&#160;</a></span>linked_list() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -650,7 +920,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div>
 </div>
 <a id="a6488fe1681fea23f5fc62717f17353df" name="a6488fe1681fea23f5fc62717f17353df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6488fe1681fea23f5fc62717f17353df">&#9670;&#160;</a></span>linked_list() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6488fe1681fea23f5fc62717f17353df">&#9670;&#160;</a></span>linked_list() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -685,7 +955,6 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">first</td><td>The first iterator the range to copy the elements from. </td></tr>
     <tr><td class="paramname">last</td><td>The last iterator the range to copy the elements from. </td></tr>
-    <tr><td class="paramname">alloc</td><td>The allocator to use for all memory allocations of this container. </td></tr>
   </table>
   </dd>
 </dl>
@@ -693,6 +962,239 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0e7521b6d906ae506d1a757a51ef26b0" name="a0e7521b6d906ae506d1a757a51ef26b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7521b6d906ae506d1a757a51ef26b0">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a71826fe6b10c770a63535a5bf1b06409">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a63b198281f46f4fac468f1c88015a350" name="a63b198281f46f4fac468f1c88015a350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b198281f46f4fac468f1c88015a350">&#9670;&#160;</a></span>first() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the first node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The first <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;typer_t&gt; of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; allows duplicate values. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain std::nullopt. </dd>
+<dd>
+Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a25c63ba3f3e91516316f0eb261b71182" name="a25c63ba3f3e91516316f0eb261b71182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c63ba3f3e91516316f0eb261b71182">&#9670;&#160;</a></span>first() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the first node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The first <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;typer_t&gt; of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; allows duplicate values. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain std::nullopt. </dd>
+<dd>
+Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a248727f32865e83edffc080baf836513" name="a248727f32865e83edffc080baf836513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248727f32865e83edffc080baf836513">&#9670;&#160;</a></span>items() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::items </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying base type items. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base type items. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="ab84df0585ef3be9587c4e2a61d4a6e32" name="ab84df0585ef3be9587c4e2a61d4a6e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84df0585ef3be9587c4e2a61d4a6e32">&#9670;&#160;</a></span>items() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::items </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying base type items. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base type items. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a8f70af6b4f0424519f92c6755d84733b" name="a8f70af6b4f0424519f92c6755d84733b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f70af6b4f0424519f92c6755d84733b">&#9670;&#160;</a></span>last() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the last node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The last <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;typer_t&gt; of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; allows duplicate values. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain std::nullopt. </dd>
+<dd>
+Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
+<a id="aeb54c2d9363c05f9e629528a07867b5f" name="aeb54c2d9363c05f9e629528a07867b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb54c2d9363c05f9e629528a07867b5f">&#9670;&#160;</a></span>last() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the last node of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The last <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html" title="Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.">xtd::collections::generic::linked_list_node</a> &lt;typer_t&gt; of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;typer_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; allows duplicate values. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; is empty, the <a class="el" href="#a63b198281f46f4fac468f1c88015a350" title="Gets the first node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::first</a> and <a class="el" href="#a8f70af6b4f0424519f92c6755d84733b" title="Gets the last node of the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::last</a> properties contain std::nullopt. </dd>
+<dd>
+Retrieving the value of this property is an O(1) operation. </dd></dl>
+
+</div>
+</div>
 <a id="a353e5d6958158501eaa6d8651d74f709" name="a353e5d6958158501eaa6d8651d74f709"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a353e5d6958158501eaa6d8651d74f709">&#9670;&#160;</a></span>clear()</h2>
 
@@ -719,11 +1221,11 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>xtd::collections::generic::linked_list::count is set to 0, and references to other objects from elements of the collection are also released. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a0e7521b6d906ae506d1a757a51ef26b0" title="Gets the number of nodes actually contained in the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::count</a> is set to 0, and references to other objects from elements of the collection are also released. </dd>
 <dd>
 xtd::collections::generic::linked_list::capacity remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;, call the xtd::collections::generic::linked_list::trim_excess method or set the xtd::collections::generic::linked_list::capacity property directly. Decreasing the capacity reallocates memory and copies all the elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt; to the default capacity. </dd>
 <dd>
-This method is an O(n) operation, where n is xtd::collections::generic::linked_list::count. </dd></dl>
+This method is an O(n) operation, where n is <a class="el" href="#a0e7521b6d906ae506d1a757a51ef26b0" title="Gets the number of nodes actually contained in the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::count</a>. </dd></dl>
 
 </div>
 </div>
@@ -879,7 +1381,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if item is successfully removed; otherwise, <code>false</code>. This method also returns <code>false</code> if item was not found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If type <code>typ_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the equality comparer is the <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method of that interface; otherwise, the default equality comparer is <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a>. </dd>
 <dd>
-This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count. </dd></dl>
+This method performs a linear search; therefore, this method is an O(n) operation, where n is <a class="el" href="#a0e7521b6d906ae506d1a757a51ef26b0" title="Gets the number of nodes actually contained in the xtd::collections::generic::linked_list &lt;typer_t&gt;.">xtd::collections::generic::linked_list::count</a>. </dd></dl>
 
 </div>
 </div>
@@ -1090,7 +1592,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2025 14:26:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Nov 10 2025 20:17:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
