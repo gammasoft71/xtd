@@ -15,7 +15,7 @@ var searchData=
   ['order_5fby_5fdescending_2ehpp_12',['order_by_descending.hpp',['../order__by__descending_8hpp.html',1,'']]],
   ['order_5fby_5fdescending_5fview_2ehpp_13',['order_by_descending_view.hpp',['../order__by__descending__view_8hpp.html',1,'']]],
   ['order_5fby_5fview_2ehpp_14',['order_by_view.hpp',['../order__by__view_8hpp.html',1,'']]],
-  ['ordered_5fdictionary_2ehpp_15',['ordered_dictionary.hpp',['../ordered__dictionary_8hpp.html',1,'']]],
+  ['ordered_5fdictionary_2ehpp_15',['ordered_dictionary.hpp',['../generic_2ordered__dictionary_8hpp.html',1,'(Global Namespace)'],['../specialized_2ordered__dictionary_8hpp.html',1,'(Global Namespace)']]],
   ['orientation_2ehpp_16',['orientation.hpp',['../orientation_8hpp.html',1,'']]],
   ['ostream_5fevent_5flistener_2ehpp_17',['ostream_event_listener.hpp',['../ostream__event__listener_8hpp.html',1,'']]],
   ['ostream_5ftrace_5flistener_2ehpp_18',['ostream_trace_listener.hpp',['../ostream__trace__listener_8hpp.html',1,'']]],

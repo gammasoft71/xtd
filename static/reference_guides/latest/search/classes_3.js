@@ -17,7 +17,7 @@ var searchData=
   ['devices_5fsystem_5fimages_14',['devices_system_images',['../classxtd_1_1drawing_1_1devices__system__images.html',1,'xtd::drawing']]],
   ['dialog_5fclosed_5fevent_5fargs_15',['dialog_closed_event_args',['../classxtd_1_1forms_1_1dialog__closed__event__args.html',1,'xtd::forms']]],
   ['dictionary_16',['dictionary',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],
-  ['dictionary_3c_20key_5ftype_2c_20mapped_5ftype_20_2a_20_3e_17',['dictionary&lt; key_type, mapped_type * &gt;',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],
+  ['dictionary_3c_20key_5ftype_2c_20mapped_5ftype_20_3e_17',['dictionary&lt; key_type, mapped_type &gt;',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],
   ['dictionary_3c_20xtd_3a_3aany_5fobject_2c_20xtd_3a_3aany_5fobject_20_3e_18',['dictionary&lt; xtd::any_object, xtd::any_object &gt;',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],
   ['dictionary_3c_20xtd_3a_3astring_2c_20xtd_3a_3astring_20_3e_19',['dictionary&lt; xtd::string, xtd::string &gt;',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],
   ['directory_20',['directory',['../classxtd_1_1io_1_1directory.html',1,'xtd::io']]],

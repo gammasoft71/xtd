@@ -159,6 +159,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_01_4.html">xtd::collections::generic::key_value_pair&lt; &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a key/value pair that can be set or retrieved.  <a href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked list.  <a href="classxtd_1_1collections_1_1generic_1_1linked__list.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">xtd::collections::generic::linked_list_node&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a node in a LinkedList&lt;T&gt;. This class cannot be inherited.  <a href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt; type_t, allocator_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.  <a href="classxtd_1_1collections_1_1generic_1_1list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,10 +175,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga1ca27aa86abc9e77e43d120bf0f70ddc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1ca27aa86abc9e77e43d120bf0f70ddc">xtd::collections::generic::hash_set</a></td></tr>
 <tr class="memdesc:ga1ca27aa86abc9e77e43d120bf0f70ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
 <tr class="separator:ga1ca27aa86abc9e77e43d120bf0f70ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga36d5acde97ed7e5d15b584a81bcf759d" id="r_ga36d5acde97ed7e5d15b584a81bcf759d"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
-<tr class="memitem:ga36d5acde97ed7e5d15b584a81bcf759d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga36d5acde97ed7e5d15b584a81bcf759d">xtd::collections::generic::linked_list</a></td></tr>
-<tr class="memdesc:ga36d5acde97ed7e5d15b584a81bcf759d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked list.  <br /></td></tr>
-<tr class="separator:ga36d5acde97ed7e5d15b584a81bcf759d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac9e976ddf15ea2a475599a469c15e49d" id="r_gac9e976ddf15ea2a475599a469c15e49d"><td class="memTemplParams" colspan="2">template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </td></tr>
 <tr class="memitem:gac9e976ddf15ea2a475599a469c15e49d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gac9e976ddf15ea2a475599a469c15e49d">xtd::collections::generic::queue</a></td></tr>
 <tr class="memdesc:gac9e976ddf15ea2a475599a469c15e49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
@@ -223,34 +225,6 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ga1ca27aa86abc9e77e43d120bf0f70ddc" title="Represents a set of values.">xtd::collections::generic::hash_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_set">std::unordered_set</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ga36d5acde97ed7e5d15b584a81bcf759d" name="ga36d5acde97ed7e5d15b584a81bcf759d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga36d5acde97ed7e5d15b584a81bcf759d">&#9670;&#160;</a></span>linked_list</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#ga36d5acde97ed7e5d15b584a81bcf759d">xtd::collections::generic::linked_list</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="linked__list_8hpp.html">xtd.core/include/xtd/collections/generic/linked_list.hpp</a>&gt;</code></p>
-
-<p>Represents a doubly linked list. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="#ga36d5acde97ed7e5d15b584a81bcf759d">linked_list</a> = std::list&lt;type_t, xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_ga36d5acde97ed7e5d15b584a81bcf759d"><div class="ttname"><a href="#ga36d5acde97ed7e5d15b584a81bcf759d">xtd::collections::generic::linked_list</a></div><div class="ttdeci">std::forward_list&lt; type_t, allocator_t &gt; linked_list</div><div class="ttdoc">Represents a doubly linked list.</div><div class="ttdef"><b>Definition</b> linked_list.hpp:32</div></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/linked_list&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
 </div>
 </div>
@@ -416,7 +390,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 4 2025 10:02:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 9 2025 21:04:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
