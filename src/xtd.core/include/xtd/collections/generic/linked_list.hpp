@@ -20,7 +20,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t>;
+      /// class linked_list : public xtd::object, public xtd::collections::generic::icollection <type_t>;
       /// ```
       /// @par Header
       /// ```cpp
