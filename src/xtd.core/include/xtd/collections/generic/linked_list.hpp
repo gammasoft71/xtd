@@ -2,7 +2,7 @@
 /// @brief Contains xtd::collections::generic::linked_list <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "helpers/comparer.hpp"
+#include "helpers/equator.hpp"
 #include "../object_model/read_only_collection.hpp"
 #include "icollection.hpp"
 #include "linked_list_node.hpp"
@@ -181,7 +181,7 @@ namespace xtd {
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
-          auto result = data_->items.insert(iterator, new_node.data_->value.value());
+          auto result = data_->items.insert(iterator, std::move(*new_node.data_->value));
           ++data_->version;
           new_node = {self_, result, data_->version};
         }
@@ -209,7 +209,7 @@ namespace xtd {
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs to a linked_list.");
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
-          auto result = data_->items.insert(iterator, new_node.data_->value.value());
+          auto result = data_->items.insert(iterator, std::move(*new_node.data_->value));
           ++data_->version;
           new_node = {self_, result, data_->version};
         }
@@ -271,7 +271,7 @@ namespace xtd {
         /// @return `true` if item is found in the xtd::colllections::generic::linked_list <type_t>; otherwise, `false`.
         bool contains(const type_t& value) const noexcept override {
           for (const auto& item : data_->items)
-            if (item == value) return true;
+            if (xtd::collections::generic::helpers::equator<type_t> {}(item, value)) return true;
           return false;
         }
         
@@ -296,7 +296,7 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
         xtd::optional<linked_list_node<type_t>> find(const type_t value) const noexcept {
           for (auto node = first(); node; node = node->next())
-            if (node->value() == value) return node;
+            if (xtd::collections::generic::helpers::equator<type_t> {}(node->value(), value)) return node;
           return xtd::nullopt;
         }
         
@@ -307,7 +307,7 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
         xtd::optional<linked_list_node<type_t>> find_last(const type_t value) const noexcept {
           for (auto node = last(); node; node = node->previous())
-            if (node->value() == value) return node;
+            if (xtd::collections::generic::helpers::equator<type_t> {}(node->value(), value)) return node;
           return xtd::nullopt;
         }
         
