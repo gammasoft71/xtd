@@ -56,7 +56,7 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = typename icollection<type_t>::value_type;
         /// @brief Represents the list base type.
-        using base_type = std::list<value_type>;
+        using base_type = std::list<value_type, allocator_t>;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the reference of list value type.
