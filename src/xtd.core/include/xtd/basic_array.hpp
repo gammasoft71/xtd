@@ -535,7 +535,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     reference operator [](size_type index) override {return at(index);}
-
+    
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     operator const base_type& () const noexcept {return data_->items;}
@@ -645,7 +645,7 @@ namespace xtd {
     
     template<class value_t, xtd::size rank_>
     static xtd::string internal_to_string(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size base_index = 0);
-        
+    
     struct array_data {
       __xtd_raw_array_data__ < value_type > items;
       std::vector < size_type > lower_bound {0};

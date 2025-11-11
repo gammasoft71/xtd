@@ -146,7 +146,7 @@ namespace xtd {
     
     xtd::string to_string() const noexcept override;
     /// @}
-
+    
     /// @name Public Operators
     
     /// @{

@@ -194,8 +194,8 @@ namespace xtd {
     void set_value(const value_type& value, size_type index) {operator()(index) = value;}
     
     xtd::string to_string() const noexcept override;
-/// @}
-        
+    /// @}
+    
     /// @name Public Operators
     
     /// @{
