@@ -234,7 +234,7 @@ namespace xtd {
           ++data_->version;
           node = {self_, data_->items.begin(), data_->version};
         }
-
+        
         /// @brief Adds a new node containing the specified value at the end of the xtd::collections::generic::linked_list <type_t>.
         /// @param value The value to add at the start of the end of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
@@ -369,7 +369,7 @@ namespace xtd {
           ++data_->version;
           node.data_->list = null;
         }
-       
+        
         /// @brief Removes the node at the start of the xtd::collections::generic::linked_list <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::linked_list <type_t> is empty.
         /// @remarks This method is an O(1) operation.
