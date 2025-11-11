@@ -85,10 +85,10 @@ namespace xtd {
         /// @brief Copy constructor with specified base type list.
         /// @param list The xtd::collections::generic::linked_list::base_type which elements will be inserted from.
         linked_list(const base_type& list) {data_->items = list;}
-        /// @brief Initializes a new instance of the xtd::collections::generic::linked_list <typer_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable and has sufficient capacity to accommodate the number of elements copied.
-        /// @param collection The xtd::collections::generic::ienumerable whose elements are copied to the new xtd::collections::generic::linked_list <typer_t>.
-        /// @remarks xtd::collections::generic::linked_list <typer_t> allows duplicate values.
-        /// @remarks If collection has no elements then the new xtd::collections::generic::linked_list <typer_t> is empty, and the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
+        /// @brief Initializes a new instance of the xtd::collections::generic::linked_list <type_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable and has sufficient capacity to accommodate the number of elements copied.
+        /// @param collection The xtd::collections::generic::ienumerable whose elements are copied to the new xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks If collection has no elements then the new xtd::collections::generic::linked_list <type_t> is empty, and the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
         linked_list(const xtd::collections::generic::ienumerable < type_t >& collection) {
           for (const auto& item : collection)
@@ -113,19 +113,19 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
-        /// @return The number of nodes actually contained in the xtd::collections::generic::linked_list <typer_t>.
+        /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::linked_list <type_t>.
+        /// @return The number of nodes actually contained in the xtd::collections::generic::linked_list <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
         size_type count() const noexcept override {return data_->items.size();}
         
-        /// @brief Gets the first node of the xtd::collections::generic::linked_list <typer_t>.
-        /// @return The first xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @brief Gets the first node of the xtd::collections::generic::linked_list <type_t>.
+        /// @return The first xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
         xtd::optional<linked_list_node<type_t>> first() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
-        /// @brief Gets the first node of the xtd::collections::generic::linked_list <typer_t>.
-        /// @return The first xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @brief Gets the first node of the xtd::collections::generic::linked_list <type_t>.
+        /// @return The first xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
@@ -140,14 +140,14 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation.
         base_type& items() noexcept {return data_->items;}
         
-        /// @brief Gets the last node of the xtd::collections::generic::linked_list <typer_t>.
-        /// @return The last xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @brief Gets the last node of the xtd::collections::generic::linked_list <type_t>.
+        /// @return The last xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
         xtd::optional<linked_list_node<type_t>> last() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
-        /// @brief Gets the last node of the xtd::collections::generic::linked_list <typer_t>.
-        /// @return The last xtd::collections::generic::linked_list_node <typer_t> of the xtd::collections::generic::linked_list <typer_t>.
+        /// @brief Gets the last node of the xtd::collections::generic::linked_list <type_t>.
+        /// @return The last xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
@@ -157,10 +157,10 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        /// @brief Adds a new node containing the specified value after the specified existing node in the ::collections::generic::linked_list <type_t>.
+        /// @brief Adds a new node containing the specified value after the specified existing node in the xtd::collections::generic::linked_list <type_t>.
         /// @param node The xtd::collections::generic::linked_list_node <type_t> after which to insert `value`.
-        /// @param value The value to add to the ::collections::generic::linked_list <type_t>.
-        /// @return The new LinkedListNode<T> containing value.
+        /// @param value The value to add to the xtd::collections::generic::linked_list <type_t>.
+        /// @return The new xtd::collections::generic::linked_list_node <type_t> containing value.
         /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks Retrieving the value of this property is an O(1) operation.
@@ -177,7 +177,7 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs to a linked_list.");
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
@@ -186,10 +186,10 @@ namespace xtd {
           new_node = {self_, result, data_->version};
         }
         
-        /// @brief Adds a new node containing the specified value before the specified existing node in the ::collections::generic::linked_list <type_t>.
+        /// @brief Adds a new node containing the specified value before the specified existing node in the xtd::collections::generic::linked_list <type_t>.
         /// @param node The xtd::collections::generic::linked_list_node <type_t> before which to insert `value`.
-        /// @param value The value to add to the ::collections::generic::linked_list <type_t>.
-        /// @return The new LinkedListNode<T> containing value.
+        /// @param value The value to add to the xtd::collections::generic::linked_list <type_t>.
+        /// @return The new xtd::collections::generic::linked_list_node <type_t> containing value.
         /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks Retrieving the value of this property is an O(1) operation.
@@ -206,7 +206,7 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs to a linked_list.");
           if (node.data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
@@ -214,27 +214,43 @@ namespace xtd {
           new_node = {self_, result, data_->version};
         }
         
+        /// @brief Adds a new node containing the specified value at the start of the xtd::collections::generic::linked_list <type_t>.
+        /// @param value The value to add at the start of the start of the xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         linked_list_node<type_t> add_first(const type_t& value) {
           auto new_node = linked_list_node {value};
           add_first(new_node);
           return new_node;
         }
-        
+        /// @brief Adds the specified new node at the start of the xtd::collections::generic::linked_list <type_t>.
+        /// @param node The new xtd::collections::generic::linked_list_node <type_t> to add at the start of the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_first(linked_list_node<type_t>& node) {
-          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs to a linked_list.");
           data_->items.push_front(node.data_->value.value());
           ++data_->version;
           node = {self_, data_->items.begin(), data_->version};
         }
-        
+
+        /// @brief Adds a new node containing the specified value at the end of the xtd::collections::generic::linked_list <type_t>.
+        /// @param value The value to add at the start of the end of the xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         linked_list_node<type_t> add_last(const type_t& value) {
           auto new_node = linked_list_node {value};
           add_last(new_node);
           return new_node;
         }
-        
+        /// @brief Adds the specified new node at the end of the xtd::collections::generic::linked_list <type_t>.
+        /// @param node The new xtd::collections::generic::linked_list_node <type_t> to add at the end of the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_last(linked_list_node<type_t>& node) {
-          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs to a linked_list.");
           data_->items.push_back(node.data_->value.value());
           ++data_->version;
           auto tmp = data_->items.end();
@@ -269,16 +285,26 @@ namespace xtd {
         void copy_to(xtd::array < type_t >& array, size_type array_index) const override {
           if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           auto index = array_index;
-          for (auto item : data_->items)
+          for (const auto& item : data_->items)
             array[index++] = item;
         }
         
+        /// @brief Finds the first node that contains the specified value.
+        /// @param value The value to locate in the xtd::collections::generic::linked_list <type_t>.
+        /// @return The first xtd::collections::generic::linked_list_node <type_t> that contains the specified value, if found; otherwise, xtd::nullopt.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
         xtd::optional<linked_list_node<type_t>> find(const type_t value) const noexcept {
           for (auto node = first(); node; node = node->next())
             if (node->value() == value) return node;
           return xtd::nullopt;
         }
         
+        /// @brief Finds the last node that contains the specified value.
+        /// @param value The value to locate in the xtd::collections::generic::linked_list <type_t>.
+        /// @return The last xtd::collections::generic::linked_list_node <type_t> that contains the specified value, if found; otherwise, xtd::nullopt.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
         xtd::optional<linked_list_node<type_t>> find_last(const type_t value) const noexcept {
           for (auto node = last(); node; node = node->previous())
             if (node->value() == value) return node;
@@ -330,7 +356,10 @@ namespace xtd {
           remove(*node);
           return true;
         }
-        
+        /// @brief Removes the specified node from the xtd::collections::generic::linked_list <type_t>.
+        /// @param node The xtd::collections::generic::linked_list_node <type_t> to remove from the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception node is not in the current xtd::collections::generic::linked_list <type_t>.
+        /// @remarks This method is an O(1) operation.
         void remove(linked_list_node<type_t>& node) {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
@@ -340,13 +369,19 @@ namespace xtd {
           ++data_->version;
           node.data_->list = null;
         }
-        
+       
+        /// @brief Removes the node at the start of the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception The xtd::collections::generic::linked_list <type_t> is empty.
+        /// @remarks This method is an O(1) operation.
         void remove_first() {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.erase(data_->items.begin());
           ++data_->version;
         }
         
+        /// @brief Removes the node at the end of the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception The xtd::collections::generic::linked_list <type_t> is empty.
+        /// @remarks This method is an O(1) operation.
         void remove_last() {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.erase(--data_->items.end());
