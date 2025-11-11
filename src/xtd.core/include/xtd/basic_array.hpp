@@ -372,6 +372,7 @@ namespace xtd {
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
+      if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
@@ -534,7 +535,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     reference operator [](size_type index) override {return at(index);}
-    
+
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     operator const base_type& () const noexcept {return data_->items;}
@@ -639,6 +640,12 @@ namespace xtd {
       return begin() + (value - data_->items.begin());
     }
     
+    template<class value_t, xtd::size rank_>
+    static xtd::size internal_compute_index(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size index);
+    
+    template<class value_t, xtd::size rank_>
+    static xtd::string internal_to_string(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size base_index = 0);
+        
     struct array_data {
       __xtd_raw_array_data__ < value_type > items;
       std::vector < size_type > lower_bound {0};

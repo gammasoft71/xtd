@@ -98,8 +98,51 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
 }
 
 template<class type_t, class allocator_t>
+template<class value_t, xtd::size rank_>
+xtd::size xtd::basic_array<type_t, allocator_t>::internal_compute_index(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size index) {
+  auto relative = index - items.get_lower_bound(rank);
+  auto multiplier = xtd::size {1};
+  for (auto r = rank + 1; r < rank_; ++r)
+    multiplier *= items.get_length(r);
+  return relative * multiplier;
+}
+
+template<class type_t, class allocator_t>
+template<class value_t, xtd::size rank_>
+xtd::string xtd::basic_array<type_t, allocator_t>::internal_to_string(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size base_index) {
+  auto result = xtd::string {"["};
+  for (auto index = items.get_lower_bound(rank); index <= items.get_upper_bound(rank); ++index) {
+    if (index != items.get_lower_bound(rank)) result += ", ";
+    auto offset = base_index + internal_compute_index(items, rank, index);
+    if (rank + 1 < rank_) result += internal_to_string(items, rank + 1, offset);
+    else result += xtd::string::format("{}", items[offset]);
+  }
+  result += "]";
+  return result;
+}
+
+template<class type_t, class allocator_t>
 inline xtd::collections::object_model::read_only_collection<type_t> xtd::array<>::as_read_only(const xtd::array<type_t, 1, allocator_t>& array) {
   return xtd::collections::object_model::read_only_collection<type_t> {array};
 }
 
+template<class type_t, xtd::size rank_, class allocator_t>
+inline xtd::string xtd::array<type_t, rank_, allocator_t>::to_string() const noexcept {
+  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+}
+
+template<class type_t, class allocator_t>
+inline xtd::string xtd::array<type_t, 1, allocator_t>::to_string() const noexcept {
+  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+}
+
+template<class type_t, class allocator_t>
+inline xtd::string xtd::array<type_t, 2, allocator_t>::to_string() const noexcept {
+  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+}
+
+template<class type_t, class allocator_t>
+inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcept {
+  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+}
 /// @endcond

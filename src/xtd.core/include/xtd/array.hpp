@@ -92,6 +92,12 @@ namespace xtd {
     xtd::size rank() const noexcept override {return rank_;}
     /// @}
     
+    /// @name Public Methods
+    
+    /// @{
+    xtd::string to_string() const noexcept override;
+    /// @}
+
     /// @name Public Operators
     
     /// @{

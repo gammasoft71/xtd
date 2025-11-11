@@ -192,9 +192,10 @@ namespace xtd {
     /// @exception ArgumentException The current Array does ! have exactly one dimension.
     /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
     void set_value(const value_type& value, size_type index) {operator()(index) = value;}
-    /// @}
     
-    
+    xtd::string to_string() const noexcept override;
+/// @}
+        
     /// @name Public Operators
     
     /// @{
