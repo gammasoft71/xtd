@@ -86,7 +86,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__specialized__collections.html">specialized</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -109,15 +109,15 @@ Inheritance diagram for xtd::collections::generic::ordered_dictionary&lt; key_t,
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;<br />
 class xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt;</div><p>Represents a collection of key/value pairs that are accessible by the key or index. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> allocator_t = xtd::collections::<span class="keyword">generic</span>::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> allocator_t = xtd::collections::<span class="keyword">generic</span>::helpers::allocator &lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ordered__dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a></div><div class="ttdoc">Represents a collection of key/value pairs that are accessible by the key or index.</div><div class="ttdef"><b>Definition</b> ordered_dictionary.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/specialized/ordered_dictionary&gt;</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/ordered_dictionary&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1specialized.html" title="The xtd::collections::specialized namespace contains specialized and strongly-typed collections; for ...">xtd::collections::specialized</a> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -150,36 +150,39 @@ class xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocato
 <tr class="separator:a30c1327a031eb5926af29191fa8fd364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:acddf93d2b7cf461dc67aaf98f3479a15"><td class="memItemLeft" align="right" valign="top"><a id="acddf93d2b7cf461dc67aaf98f3479a15" name="acddf93d2b7cf461dc67aaf98f3479a15"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>)</td></tr>
+<tr class="memitem:adb9f2f5dcc150f5e9d45e7d44d54427b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#adb9f2f5dcc150f5e9d45e7d44d54427b">ordered_dictionary</a> () noexcept=default</td></tr>
+<tr class="memdesc:adb9f2f5dcc150f5e9d45e7d44d54427b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> class.  <br /></td></tr>
+<tr class="separator:adb9f2f5dcc150f5e9d45e7d44d54427b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acddf93d2b7cf461dc67aaf98f3479a15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#acddf93d2b7cf461dc67aaf98f3479a15">ordered_dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>)</td></tr>
+<tr class="memdesc:acddf93d2b7cf461dc67aaf98f3479a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; and uses the default equality comparer for the key type.  <br /></td></tr>
 <tr class="separator:acddf93d2b7cf461dc67aaf98f3479a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e939cb351ecffc99b67f1c879149e2e"><td class="memItemLeft" align="right" valign="top"><a id="a4e939cb351ecffc99b67f1c879149e2e" name="a4e939cb351ecffc99b67f1c879149e2e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;collection)</td></tr>
+<tr class="memitem:a4e939cb351ecffc99b67f1c879149e2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a4e939cb351ecffc99b67f1c879149e2e">ordered_dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a4e939cb351ecffc99b67f1c879149e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a4e939cb351ecffc99b67f1c879149e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e731fcbb97b892b17747c86c3624bf"><td class="memItemLeft" align="right" valign="top"><a id="ae3e731fcbb97b892b17747c86c3624bf" name="ae3e731fcbb97b892b17747c86c3624bf"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (size_t capacity)</td></tr>
+<tr class="memitem:ae3e731fcbb97b892b17747c86c3624bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae3e731fcbb97b892b17747c86c3624bf">ordered_dictionary</a> (size_t capacity)</td></tr>
+<tr class="memdesc:ae3e731fcbb97b892b17747c86c3624bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacit.  <br /></td></tr>
 <tr class="separator:ae3e731fcbb97b892b17747c86c3624bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="memTemplParams" colspan="2"><a id="aab22c8fb9e23d6e06ca4c08cf17cc87c" name="aab22c8fb9e23d6e06ca4c08cf17cc87c"></a>
-template&lt;class input_iterator_t &gt; </td></tr>
-<tr class="memitem:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ordered_dictionary</b> (input_iterator_t first, input_iterator_t last)</td></tr>
+<tr class="memitem:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aab22c8fb9e23d6e06ca4c08cf17cc87c">ordered_dictionary</a> (input_iterator_t first, input_iterator_t last)</td></tr>
+<tr class="memdesc:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources.  <br /></td></tr>
 <tr class="separator:aab22c8fb9e23d6e06ca4c08cf17cc87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a60c5904f9ebbb35f7e9cade3800680"><td class="memItemLeft" align="right" valign="top"><a id="a5a60c5904f9ebbb35f7e9cade3800680" name="a5a60c5904f9ebbb35f7e9cade3800680"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memitem:a5a60c5904f9ebbb35f7e9cade3800680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a5a60c5904f9ebbb35f7e9cade3800680">ordered_dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memdesc:a5a60c5904f9ebbb35f7e9cade3800680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:a5a60c5904f9ebbb35f7e9cade3800680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35d19e9d18e43e1fb68231a6f0bbc3f"><td class="memItemLeft" align="right" valign="top"><a id="ae35d19e9d18e43e1fb68231a6f0bbc3f" name="ae35d19e9d18e43e1fb68231a6f0bbc3f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
+<tr class="memitem:ae35d19e9d18e43e1fb68231a6f0bbc3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae35d19e9d18e43e1fb68231a6f0bbc3f">ordered_dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
+<tr class="memdesc:ae35d19e9d18e43e1fb68231a6f0bbc3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:ae35d19e9d18e43e1fb68231a6f0bbc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bb01a96a0ccb33da8b360c58c71ef89"><td class="memItemLeft" align="right" valign="top"><a id="a0bb01a96a0ccb33da8b360c58c71ef89" name="a0bb01a96a0ccb33da8b360c58c71ef89"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ordered_dictionary</b> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ab613405f6897108c5c07c1a07aed3d88">base_value_type</a> &gt; init)</td></tr>
 <tr class="separator:a0bb01a96a0ccb33da8b360c58c71ef89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplParams" colspan="2"><a id="a9aef358cb8c51730cb37dc3f3314b5a6" name="a9aef358cb8c51730cb37dc3f3314b5a6"></a>
-template&lt;class init_key_t , class init_value_t &gt; </td></tr>
-<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ordered_dictionary</b> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init)</td></tr>
+<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplParams" colspan="2">template&lt;class init_key_t , class init_value_t &gt; </td></tr>
+<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a9aef358cb8c51730cb37dc3f3314b5a6">ordered_dictionary</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init)</td></tr>
+<tr class="memdesc:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources.  <br /></td></tr>
 <tr class="separator:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a3ab587f627aabe1ab0dbaf0aa6fe9e13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a27a9d943fc78f2af929108739cb2e45c">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13">count</a> () const noexcept override</td></tr>
-<tr class="memdesc:a3ab587f627aabe1ab0dbaf0aa6fe9e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a3ab587f627aabe1ab0dbaf0aa6fe9e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a3ab587f627aabe1ab0dbaf0aa6fe9e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a778e1f925a3bccd28975b0c46478ff60"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a2a55294d5b42f4dbda860fa759c75ed6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a778e1f925a3bccd28975b0c46478ff60">items</a> () const noexcept</td></tr>
 <tr class="memdesc:a778e1f925a3bccd28975b0c46478ff60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
@@ -188,51 +191,51 @@ template&lt;class init_key_t , class init_value_t &gt; </td></tr>
 <tr class="memdesc:a96b05807e8a69f6b0facc1c093cd8c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:a96b05807e8a69f6b0facc1c093cd8c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a8b8ca2adca14edd83767d4e2837f6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae69cda5979ccfc360cd1bb9727807ba0">key_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a5a8b8ca2adca14edd83767d4e2837f6b">keys</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5a8b8ca2adca14edd83767d4e2837f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the keys of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a5a8b8ca2adca14edd83767d4e2837f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection containing the keys in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a5a8b8ca2adca14edd83767d4e2837f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1cee28758a9d6d8dcab77ae7d20fb21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a30c1327a031eb5926af29191fa8fd364">value_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aa1cee28758a9d6d8dcab77ae7d20fb21">values</a> () const noexcept override</td></tr>
-<tr class="memdesc:aa1cee28758a9d6d8dcab77ae7d20fb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the values of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:aa1cee28758a9d6d8dcab77ae7d20fb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection containing the values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:aa1cee28758a9d6d8dcab77ae7d20fb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a8ac0bd5ec9c29ba3c71f081296cffd74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74">add</a> (const key_t &amp;key, const value_t &amp;value) override</td></tr>
-<tr class="memdesc:a8ac0bd5ec9c29ba3c71f081296cffd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a8ac0bd5ec9c29ba3c71f081296cffd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a8ac0bd5ec9c29ba3c71f081296cffd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9eb6f276c7d878b8508cde62206361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a9a9eb6f276c7d878b8508cde62206361">add</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;item) override</td></tr>
 <tr class="memdesc:a9a9eb6f276c7d878b8508cde62206361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a9a9eb6f276c7d878b8508cde62206361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7eff78de264c19252ca7b096d7476f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ab7eff78de264c19252ca7b096d7476f5">clear</a> () noexcept override</td></tr>
-<tr class="memdesc:ab7eff78de264c19252ca7b096d7476f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:ab7eff78de264c19252ca7b096d7476f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:ab7eff78de264c19252ca7b096d7476f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b731b7e87a341bedce184220d7daf7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a1b731b7e87a341bedce184220d7daf7e">contains</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;item) const noexcept override</td></tr>
-<tr class="memdesc:a1b731b7e87a341bedce184220d7daf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a1b731b7e87a341bedce184220d7daf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a1b731b7e87a341bedce184220d7daf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f9f40e3e73163b47661680dd7487507"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a7f9f40e3e73163b47661680dd7487507">contains_key</a> (const key_t &amp;key) const noexcept override</td></tr>
-<tr class="memdesc:a7f9f40e3e73163b47661680dd7487507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains the specified key.  <br /></td></tr>
+<tr class="memdesc:a7f9f40e3e73163b47661680dd7487507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified key.  <br /></td></tr>
 <tr class="separator:a7f9f40e3e73163b47661680dd7487507"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab659d7884864f50869c48522380d609"><td class="memItemLeft" align="right" valign="top"><a id="aab659d7884864f50869c48522380d609" name="aab659d7884864f50869c48522380d609"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains_value</b> (const value_t &amp;value) const noexcept</td></tr>
+<tr class="memitem:aab659d7884864f50869c48522380d609"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aab659d7884864f50869c48522380d609">contains_value</a> (const value_t &amp;value) const noexcept</td></tr>
+<tr class="memdesc:aab659d7884864f50869c48522380d609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified value.  <br /></td></tr>
 <tr class="separator:aab659d7884864f50869c48522380d609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae855654f81318949f43b59479bf1628"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aae855654f81318949f43b59479bf1628">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> array_index) const override</td></tr>
 <tr class="memdesc:aae855654f81318949f43b59479bf1628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
 <tr class="separator:aae855654f81318949f43b59479bf1628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22536731f8be4b55ac46c26a50195dac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a22536731f8be4b55ac46c26a50195dac">get_enumerator</a> () const noexcept override</td></tr>
-<tr class="memdesc:a22536731f8be4b55ac46c26a50195dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
+<tr class="memdesc:a22536731f8be4b55ac46c26a50195dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a22536731f8be4b55ac46c26a50195dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0baa4be008db4460850aa69a3d65c279"><td class="memItemLeft" align="right" valign="top"><a id="a0baa4be008db4460850aa69a3d65c279" name="a0baa4be008db4460850aa69a3d65c279"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, const key_t &amp;key)</td></tr>
+<tr class="memitem:a0baa4be008db4460850aa69a3d65c279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a0baa4be008db4460850aa69a3d65c279">insert</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, const key_t &amp;key)</td></tr>
+<tr class="memdesc:a0baa4be008db4460850aa69a3d65c279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key at the specified index.  <br /></td></tr>
 <tr class="separator:a0baa4be008db4460850aa69a3d65c279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bdebd0f3c453ea722d31f4849262b74"><td class="memItemLeft" align="right" valign="top"><a id="a9bdebd0f3c453ea722d31f4849262b74" name="a9bdebd0f3c453ea722d31f4849262b74"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, const key_t &amp;key, const value_t &amp;value)</td></tr>
+<tr class="memitem:a9bdebd0f3c453ea722d31f4849262b74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a9bdebd0f3c453ea722d31f4849262b74">insert</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, const key_t &amp;key, const value_t &amp;value)</td></tr>
+<tr class="memdesc:a9bdebd0f3c453ea722d31f4849262b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key and value at the specified index.  <br /></td></tr>
 <tr class="separator:a9bdebd0f3c453ea722d31f4849262b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ede01c8864c3474ff7ab0bea30069fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a5ede01c8864c3474ff7ab0bea30069fe">remove</a> (const key_t &amp;key) noexcept override</td></tr>
-<tr class="memdesc:a5ede01c8864c3474ff7ab0bea30069fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the element with the specified key from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a5ede01c8864c3474ff7ab0bea30069fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the value with the specified key from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a5ede01c8864c3474ff7ab0bea30069fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09864a181dd2b5c7c2c4652960d62b61"><td class="memItemLeft" align="right" valign="top"><a id="a09864a181dd2b5c7c2c4652960d62b61" name="a09864a181dd2b5c7c2c4652960d62b61"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;item) noexcept override</td></tr>
+<tr class="memitem:a09864a181dd2b5c7c2c4652960d62b61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a09864a181dd2b5c7c2c4652960d62b61">remove</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;item) noexcept override</td></tr>
+<tr class="memdesc:a09864a181dd2b5c7c2c4652960d62b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:a09864a181dd2b5c7c2c4652960d62b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e10655a0661c625988f91fe649330d5"><td class="memItemLeft" align="right" valign="top"><a id="a4e10655a0661c625988f91fe649330d5" name="a4e10655a0661c625988f91fe649330d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_at</b> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index)</td></tr>
+<tr class="memitem:a4e10655a0661c625988f91fe649330d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a4e10655a0661c625988f91fe649330d5">remove_at</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index)</td></tr>
+<tr class="memdesc:a4e10655a0661c625988f91fe649330d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the entry at the specified index from the OrderedDictionary collection.  <br /></td></tr>
 <tr class="separator:a4e10655a0661c625988f91fe649330d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb9419ec7a7b3374c23d4dc9293ce27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#abbb9419ec7a7b3374c23d4dc9293ce27">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:abbb9419ec7a7b3374c23d4dc9293ce27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
@@ -255,6 +258,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_at</b> (<a cla
 <tr class="memitem:ae735dfd42ad4dadae4167d169690181f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae735dfd42ad4dadae4167d169690181f">operator=</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html">ilist</a>)</td></tr>
 <tr class="memdesc:ae735dfd42ad4dadae4167d169690181f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of <code>other</code>.  <br /></td></tr>
 <tr class="separator:ae735dfd42ad4dadae4167d169690181f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe8853d753672263d482f44b31ececc"><td class="memItemLeft" align="right" valign="top">const value_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a7fe8853d753672263d482f44b31ececc">operator()</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index) const</td></tr>
+<tr class="memdesc:a7fe8853d753672263d482f44b31ececc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified index.  <br /></td></tr>
+<tr class="separator:a7fe8853d753672263d482f44b31ececc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac92b0ce1c41ce4ccf1915dc396d932bb"><td class="memItemLeft" align="right" valign="top">value_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ac92b0ce1c41ce4ccf1915dc396d932bb">operator()</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index)</td></tr>
+<tr class="memdesc:ac92b0ce1c41ce4ccf1915dc396d932bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value at the specified index.  <br /></td></tr>
+<tr class="separator:ac92b0ce1c41ce4ccf1915dc396d932bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120bc920109ca0845f87b10236154f6c"><td class="memItemLeft" align="right" valign="top">const value_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a120bc920109ca0845f87b10236154f6c">operator[]</a> (const key_t &amp;key) const override</td></tr>
 <tr class="memdesc:a120bc920109ca0845f87b10236154f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element with the specified key.  <br /></td></tr>
 <tr class="separator:a120bc920109ca0845f87b10236154f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -706,6 +715,365 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adb9f2f5dcc150f5e9d45e7d44d54427b" name="adb9f2f5dcc150f5e9d45e7d44d54427b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb9f2f5dcc150f5e9d45e7d44d54427b">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> class. </p>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the creation and population of an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection. This code is part of a larger code example that can be viewed at <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a>. <div class="fragment"><div class="line"><span class="comment">// Creates and initializes a ordered_dictionary.</span></div>
+<div class="line"><span class="keyword">auto</span> my_ordered_dictionary = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary&lt;string, string&gt;</a> {};</div>
+<div class="line">my_ordered_dictionary.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74">add</a>(<span class="stringliteral">&quot;test_key1&quot;</span>, <span class="stringliteral">&quot;test_value1&quot;</span>);</div>
+<div class="line">my_ordered_dictionary.add(<span class="stringliteral">&quot;test_key2&quot;</span>, <span class="stringliteral">&quot;test_value2&quot;</span>);</div>
+<div class="line">my_ordered_dictionary.add(<span class="stringliteral">&quot;key_to_delete&quot;</span>, <span class="stringliteral">&quot;value_to_delete&quot;</span>);</div>
+<div class="line">my_ordered_dictionary.add(<span class="stringliteral">&quot;test_key3&quot;</span>, <span class="stringliteral">&quot;test_value3&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Display the contents using the key and value collections</span></div>
+<div class="line">display_contents(my_ordered_dictionary.keys(), my_ordered_dictionary.values(), my_ordered_dictionary.count());</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ordered__dictionary_html_a8ac0bd5ec9c29ba3c71f081296cffd74"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74">xtd::collections::generic::ordered_dictionary::add</a></div><div class="ttdeci">void add(const key_t &amp;key, const value_t &amp;value) override</div><div class="ttdoc">Adds an element with the provided key and value to the xtd::collections::generic::ordered_dictionary ...</div><div class="ttdef"><b>Definition</b> ordered_dictionary.hpp:195</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The comparer determines whether two keys are equal. Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection must be unique. The default comparer is the key's implementation of '==' operator. </dd></dl>
+
+</div>
+</div>
+<a id="acddf93d2b7cf461dc67aaf98f3479a15" name="acddf93d2b7cf461dc67aaf98f3479a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acddf93d2b7cf461dc67aaf98f3479a15">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dictionary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; and uses the default equality comparer for the key type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dictionary</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`dictionary` contains one or more duplicate keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; must be unique according to the default equality comparer; likewise, every key in the source <code>dictionary</code> must also be unique according to the default equality comparer. </dd>
+<dd>
+The initial capacity of the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is large enough to contain all the elements in dictionary. </dd>
+<dd>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a>. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface by using a constructor that accepts a comparer parameter. </dd>
+<dd>
+This constructor is an O(n) operation, where n is the number of elements in dictionary. </dd></dl>
+
+</div>
+</div>
+<a id="a4e939cb351ecffc99b67f1c879149e2e" name="a4e939cb351ecffc99b67f1c879149e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e939cb351ecffc99b67f1c879149e2e">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>collection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`dictionary` contains one or more duplicate keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3e731fcbb97b892b17747c86c3624bf" name="ae3e731fcbb97b892b17747c86c3624bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e731fcbb97b892b17747c86c3624bf">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>capacity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">capacity</td><td>The initial number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; can contain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; must be unique according to the specified comparer; likewise, every key in the source <code>dictionary</code> must also be unique according to the specified comparer. </dd>
+<dd>
+The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is the number of elements that can be added to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; before resizing is necessary. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;, the capacity is automatically increased as required by reallocating the internal array. </dd>
+<dd>
+If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd>
+<dd>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. If type TKey implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. </dd>
+<dd>
+This constructor is an O(1) operation. </dd>
+<dd>
+xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::generic::ordered_dictionary::bucket_count are equivalent properties. </dd></dl>
+
+</div>
+</div>
+<a id="aab22c8fb9e23d6e06ca4c08cf17cc87c" name="aab22c8fb9e23d6e06ca4c08cf17cc87c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab22c8fb9e23d6e06ca4c08cf17cc87c">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class input_iterator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The fist iterator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">last</td><td>Thaae last itezrator of the range [first, last) to copy the elements from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`dictionary` contains one or more duplicate keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::ordered_dictionary::max_load_factor() to <code>1.0</code>. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending <a href="https://cplusplus.github.io/LWG/issue2844">LWG2844</a>. </dd>
+<dd>
+xtd::collections::generic::ordered_dictionary::bucket_count and xtd::collections::generic::ordered_dictionary::capacity are equivalent properties. </dd></dl>
+
+</div>
+</div>
+<a id="a5a60c5904f9ebbb35f7e9cade3800680" name="a5a60c5904f9ebbb35f7e9cade3800680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a60c5904f9ebbb35f7e9cade3800680">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling </dd></dl>
+
+</div>
+</div>
+<a id="ae35d19e9d18e43e1fb68231a6f0bbc3f" name="ae35d19e9d18e43e1fb68231a6f0bbc3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35d19e9d18e43e1fb68231a6f0bbc3f">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/move_constructor">Move constructor</a>. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to other. </dd></dl>
+
+</div>
+</div>
+<a id="a9aef358cb8c51730cb37dc3f3314b5a6" name="a9aef358cb8c51730cb37dc3f3314b5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aef358cb8c51730cb37dc3f3314b5a6">&#9670;&#160;</a></span>ordered_dictionary() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class init_key_t , class init_value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::ordered_dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt;&#160;</td>
+          <td class="paramname"><em>init</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`dictionary` contains one or more duplicate keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>(init.begin(), init.end())</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:67</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3ab587f627aabe1ab0dbaf0aa6fe9e13" name="a3ab587f627aabe1ab0dbaf0aa6fe9e13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ab587f627aabe1ab0dbaf0aa6fe9e13">&#9670;&#160;</a></span>count()</h2>
@@ -732,11 +1100,11 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is the number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; can store. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is the number of elements that are actually in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd>
+<p>Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is the number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; can store. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a> property is the number of elements that are actually in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd>
 <dd>
-The capacity is always greater than or equal to <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a>. If <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements. </dd>
+The capacity is always greater than or equal to <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a>. If <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements. </dd>
 <dd>
 Getting the value of this property is an O(1) operation. </dd></dl>
 
@@ -829,9 +1197,11 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Gets an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the keys of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the keys of the object that implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The order of the keys in the returned <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is unspecified, but it is guaranteed to be the same order as the corresponding values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9b17f2c004a86dc970ccb5a95e60151" title="Gets an xtd::collections::generic::icollection &lt;type_t&gt; containing the values of the xtd::collections...">xtd::collections::generic::idictionary::values</a> property. </dd></dl>
+<p>Gets a collection containing the keys in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae69cda5979ccfc360cd1bb9727807ba0" title="Represents the idictionary key collection type.">xtd::collections::generic::ordered_dictionary::key_collection</a> containing the keys in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The order of the keys in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae69cda5979ccfc360cd1bb9727807ba0" title="Represents the idictionary key collection type.">xtd::collections::generic::ordered_dictionary::key_collection</a> is unspecified, but it is the same order as the associated values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a30c1327a031eb5926af29191fa8fd364" title="Represents the idictionary value collection type.">xtd::collections::generic::ordered_dictionary::value_collection</a> returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#aa1cee28758a9d6d8dcab77ae7d20fb21" title="Gets a collection containing the values in the xtd::collections::generic::ordered_dictionary &lt;key_t,...">xtd::collections::generic::ordered_dictionary::values</a> property. </dd>
+<dd>
+Getting the value of this property is an O(1) operation. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a6784f23fccd9a8021528e645b0d73e22">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -862,9 +1232,11 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Gets an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the values of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the values of the object that implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The order of the values in the returned <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is unspecified, but it is guaranteed to be the same order as the corresponding values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a6784f23fccd9a8021528e645b0d73e22" title="Gets an xtd::collections::generic::icollection &lt;type_t&gt; containing the keys of the xtd::collections::...">xtd::collections::generic::idictionary::keys</a> property. </dd></dl>
+<p>Gets a collection containing the values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a30c1327a031eb5926af29191fa8fd364" title="Represents the idictionary value collection type.">xtd::collections::generic::ordered_dictionary::value_collection</a> containing the values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The order of the values in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a30c1327a031eb5926af29191fa8fd364" title="Represents the idictionary value collection type.">xtd::collections::generic::ordered_dictionary::value_collection</a> is unspecified, but it is the same order as the associated keys in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#ae69cda5979ccfc360cd1bb9727807ba0" title="Represents the idictionary key collection type.">xtd::collections::generic::ordered_dictionary::key_collection</a> returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a5a8b8ca2adca14edd83767d4e2837f6b" title="Gets a collection containing the keys in the xtd::collections::generic::ordered_dictionary &lt;key_t,...">xtd::collections::generic::ordered_dictionary::keys</a> property. </dd>
+<dd>
+Getting the value of this property is an O(1) operation. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9b17f2c004a86dc970ccb5a95e60151">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -906,7 +1278,7 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </p>
+<p>Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The object to use as the key of the element to add. </td></tr>
@@ -916,14 +1288,12 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>An element with the same key already exists in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>An element with the same key already exists in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#afbe4cf9e4466426c4ced32dc30777f79" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
-<dd>
-Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74" title="Adds an element with the provided key and value to the xtd::collections::generic::ordered_dictionary ...">xtd::collections::generic::ordered_dictionary::add</a> method does not modify existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#afbe4cf9e4466426c4ced32dc30777f79">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -996,8 +1366,8 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged. </dd></dl>
+<p>Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#af14af0908d5e7bde4a3e33ebca358852">xtd::collections::generic::icollection&lt; xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt; &gt;</a>.</p>
 
@@ -1029,14 +1399,14 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </p>
+<p>Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to be added to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+    <tr><td class="paramname">item</td><td>The object to be added to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>item</code> ; otherwise, <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>item</code> ; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1066,17 +1436,55 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains the specified key. </p>
+<p>Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">The</td><td>key to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+    <tr><td class="paramname">The</td><td>key to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>key</code> ; otherwise, <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>key</code> ; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method approaches an O(1) operation. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#aad1ca9a4fd67aecfd518cf2a2df6f73d">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aab659d7884864f50869c48522380d609" name="aab659d7884864f50869c48522380d609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab659d7884864f50869c48522380d609">&#9670;&#160;</a></span>contains_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::contains_value </td>
+          <td>(</td>
+          <td class="paramtype">const value_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains the specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">The</td><td>value to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>key</code> ; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method performs a linear search; therefore, the average execution time is proportional to <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a>. That is, this method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a3ab587f627aabe1ab0dbaf0aa6fe9e13" title="Gets the number of key/value pairs contained in the xtd::collections::generic::ordered_dictionary &lt;ke...">xtd::collections::generic::ordered_dictionary::count</a>. </dd></dl>
 
 </div>
 </div>
@@ -1158,15 +1566,130 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Returns an enumerator that iterates through a collection. </p>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> object that can be used to iterate through the collection. </dd></dl>
+<p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__collections.html#ga46ca5358d7207b976828dddad86adcf8" title="Supports a simple iteration over a non-generic collection.">xtd::collections::enumerator</a> structure for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#aaa7f31bc15aecee93e381b36c71c3058">xtd::collections::generic::ienumerable&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
+<a id="a0baa4be008db4460850aa69a3d65c279" name="a0baa4be008db4460850aa69a3d65c279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0baa4be008db4460850aa69a3d65c279">&#9670;&#160;</a></span>insert() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const key_t &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index at which the element should be inserted. </td></tr>
+    <tr><td class="paramname">key</td><td>The key of the entry to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range</td><td>index is out of range. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bdebd0f3c453ea722d31f4849262b74" name="a9bdebd0f3c453ea722d31f4849262b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bdebd0f3c453ea722d31f4849262b74">&#9670;&#160;</a></span>insert() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const key_t &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts a new entry into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> collection with the specified key and value at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index at which the element should be inserted. </td></tr>
+    <tr><td class="paramname">key</td><td>The key of the entry to add. </td></tr>
+    <tr><td class="paramname">value</td><td>The value of the entry to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range</td><td>index is out of range. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5ede01c8864c3474ff7ab0bea30069fe" name="a5ede01c8864c3474ff7ab0bea30069fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ede01c8864c3474ff7ab0bea30069fe">&#9670;&#160;</a></span>remove()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ede01c8864c3474ff7ab0bea30069fe">&#9670;&#160;</a></span>remove() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1191,17 +1714,98 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 </table>
 </div><div class="memdoc">
 
-<p>Removes the element with the specified key from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </p>
+<p>Removes the value with the specified key from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>The key of the element to remove. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the element is successfully removed; otherwise, <code>false</code>. This method also returns <code>false</code> if key was not found in the original <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html" title="Provides a base class for implementations of the xtd::collections::generic::icomparer &lt;type_t&gt; generi...">xtd::collections::generic::comparer</a> &lt;type_t&gt;.Default, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt;x implementation to use for comparing keys. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the element is successfully found and removed; otherwise, <code>false</code>. This method returns <code>false</code> if key is not found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; does not contain an element with the specified key, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; remains unchanged. No exception is thrown. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a350ca7a421a2515680c138c2a093b7bc">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a09864a181dd2b5c7c2c4652960d62b61" name="a09864a181dd2b5c7c2c4652960d62b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09864a181dd2b5c7c2c4652960d62b61">&#9670;&#160;</a></span>remove() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to remove from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item is successfully removed; otherwise, <code>false</code>. This method also returns <code>false</code> if item value was not found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a4e10655a0661c625988f91fe649330d5" name="a4e10655a0661c625988f91fe649330d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e10655a0661c625988f91fe649330d5">&#9670;&#160;</a></span>remove_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::remove_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the entry at the specified index from the OrderedDictionary collection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the entry to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range</td><td>index is out of range. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The entries that follow the removed entry move up to occupy the vacated spot and the indexes of the entries that move are also updated. </dd></dl>
 
 </div>
 </div>
@@ -1281,7 +1885,7 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified key; otherwise, <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified key; otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a4126d8c6dd5d5dbc84926aaf5198770e">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -1437,6 +2041,98 @@ template&lt;class init_key_t , class init_value_t &gt; </div>
 
 </div>
 </div>
+<a id="a7fe8853d753672263d482f44b31ececc" name="a7fe8853d753672263d482f44b31ececc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe8853d753672263d482f44b31ececc">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const value_t &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the value to get or set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the item at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range</td><td>index is out of range. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property allows you to access a specific element in the collection by using the following syntax: <code>my_collection[index]</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ac92b0ce1c41ce4ccf1915dc396d932bb" name="ac92b0ce1c41ce4ccf1915dc396d932bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac92b0ce1c41ce4ccf1915dc396d932bb">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">value_t &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the value at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based index of the value to get or set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the item at the specified index. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::argument_out_of_range</td><td>index is out of range. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property allows you to access a specific element in the collection by using the following syntax: <code>my_collection[index]</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a120bc920109ca0845f87b10236154f6c" name="a120bc920109ca0845f87b10236154f6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a120bc920109ca0845f87b10236154f6c">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
@@ -1474,15 +2170,13 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
 <dd>
-You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>o</code>perator []` overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#afbe4cf9e4466426c4ced32dc30777f79" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
-<dd>
-Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74" title="Adds an element with the provided key and value to the xtd::collections::generic::ordered_dictionary ...">xtd::collections::generic::ordered_dictionary::add</a> method does not modify existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#abbd9d09bab50fce4e72deaa00985e3b2">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -1524,16 +2218,13 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 <dl class="section return"><dt>Returns</dt><dd>The element with the specified key. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
 <dd>
-You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#afbe4cf9e4466426c4ced32dc30777f79" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
-<dd>
-Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a8ac0bd5ec9c29ba3c71f081296cffd74" title="Adds an element with the provided key and value to the xtd::collections::generic::ordered_dictionary ...">xtd::collections::generic::ordered_dictionary::add</a> method does not modify existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a1428322c2f912bd597f667bd1aec0bdc">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -1606,7 +2297,7 @@ template&lt;class key_t , class value_t , class allocator_t  = xtd::collections:
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2025 21:00:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 11 2025 12:33:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
