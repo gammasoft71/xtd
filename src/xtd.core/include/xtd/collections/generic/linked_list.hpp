@@ -157,12 +157,24 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        /// @brief Adds a new node containing the specified value after the specified existing node in the ::collections::generic::linked_list <type_t>.
+        /// @param node The xtd::collections::generic::linked_list_node <type_t> after which to insert `value`.
+        /// @param value The value to add to the ::collections::generic::linked_list <type_t>.
+        /// @return The new LinkedListNode<T> containing value.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         linked_list_node<type_t> add_after(const linked_list_node<type_t>& node, const type_t& value) {
           auto new_node = linked_list_node {value};
           add_after(node, new_node);
           return new_node;
         }
-        
+        /// @brief Adds the specified new node after the specified existing node in the xtd::collections::generic::linked_list <type_t>.
+        /// @param node The xtd::collections::generic::linked_list_node <type_t> after which to insert `new_node`.
+        /// @param new_node The new xtd::collections::generic::linked_list_node <type_t> to add to the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>. <br>-or-<br> `new_node` belongs to another xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
@@ -174,12 +186,24 @@ namespace xtd {
           new_node = {self_, result, data_->version};
         }
         
+        /// @brief Adds a new node containing the specified value before the specified existing node in the ::collections::generic::linked_list <type_t>.
+        /// @param node The xtd::collections::generic::linked_list_node <type_t> before which to insert `value`.
+        /// @param value The value to add to the ::collections::generic::linked_list <type_t>.
+        /// @return The new LinkedListNode<T> containing value.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         linked_list_node<type_t> add_before(const linked_list_node<type_t>& node, const type_t& value) {
           auto new_node = linked_list_node {value};
           add_before(node, new_node);
           return new_node;
         }
-        
+        /// @brief Adds the specified new node before the specified existing node in the xtd::collections::generic::linked_list <type_t>.
+        /// @param node The xtd::collections::generic::linked_list_node <type_t> before which to insert `new_node`.
+        /// @param new_node The new xtd::collections::generic::linked_list_node <type_t> to add to the xtd::collections::generic::linked_list <type_t>.
+        /// @exception xtd::invalid_operation_exception `node` is not in the current xtd::collections::generic::linked_list <type_t>. <br>-or-<br> `new_node` belongs to another xtd::collections::generic::linked_list <type_t>.
+        /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
+        /// @remarks Retrieving the value of this property is an O(1) operation.
         void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The linked_list node belongs a linked_list.");
