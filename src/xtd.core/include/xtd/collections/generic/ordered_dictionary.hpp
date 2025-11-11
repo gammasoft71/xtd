@@ -394,7 +394,7 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        const value_t& operator ()(xtd::size index) const {return operator [](data_->keys[index]);}
+        const value_t& operator()(xtd::size index) const {return operator [](data_->keys[index]);}
         /// @brief Sets the value at the specified index.
         /// @param index The zero-based index of the value to get or set.
         /// @return The value of the item at the specified index.
@@ -402,8 +402,8 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        value_t& operator ()(xtd::size index) {return operator [](data_->keys[index]);}
-
+        value_t& operator()(xtd::size index) {return operator [](data_->keys[index]);}
+        
         /// @brief Gets the element with the specified key.
         /// @param key The key of the element to get.
         /// @return The element with the specified key.
