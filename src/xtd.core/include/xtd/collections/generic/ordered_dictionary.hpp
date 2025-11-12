@@ -242,9 +242,8 @@ namespace xtd {
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         void copy_to(xtd::array<value_type>& array, xtd::size array_index) const override {
           if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-          auto index = size_type {0};
           for (const auto& item : self_)
-            array[array_index + index++] = item;
+            array[array_index++] = item;
         }
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
