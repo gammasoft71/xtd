@@ -284,9 +284,9 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::linked_list::count.
         void copy_to(xtd::array < type_t >& array, size_type array_index) const override {
           if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          auto index = array_index;
+          auto dest_index = array_index;
           for (const auto& item : data_->items)
-            array[index++] = item;
+            array[dest_index++] = item;
         }
         
         /// @brief Finds the first node that contains the specified value.
