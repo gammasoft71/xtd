@@ -444,16 +444,10 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
-          if (index + count > self_.count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          auto i = size_type {0}, c = size_type {0};
-          for (const type_t& item : self_) {
-            if (i >= index + count) return;
-            if (i >= index) {
-              array[array_index + c] = item;
-              c += 1;
-            }
-            i += 1;
-          }
+          if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          auto dest_index = array_index;
+          for (auto i = index; i < (index + count); ++i)
+            array[dest_index++] = self_[i];
         }
         
         /// @brief Ensures that the capacity of this list is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
