@@ -32,7 +32,7 @@ inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(
   for (const auto& item : self_) {
     if (index++ < start_index) continue;
     if (index - 1 > start_index + count) break;
-    if (std::find(values.begin(), values.end(), item) != values.end()) return index - 1;
+    if (std::find(values.items().begin(), values.items().end(), item) != values.items().end()) return index - 1;
   }
   return npos;
 }
@@ -69,7 +69,7 @@ inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of
   for (auto iterator = chars().crbegin(); iterator != chars().crend(); ++iterator) {
     if (index-- > start_index + count) continue;
     if (index + 1 < start_index) break;
-    if (std::find(values.begin(), values.end(), *iterator) != values.end()) return index + 1;
+    if (std::find(values.items().begin(), values.items().end(), *iterator) != values.items().end()) return index + 1;
   }
   return npos;
 }
@@ -138,7 +138,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   auto sub_string = basic_string {};
   auto split_char_separators = separators.length() == 0 ? default_split_separators : separators;
   for (auto it = chars().begin(); it != chars().end(); ++it) {
-    auto is_separator = std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+    auto is_separator = std::find(split_char_separators.items().begin(), split_char_separators.items().end(), *it) != split_char_separators.items().end();
     if (!is_separator) sub_string.chars_.append(basic_string(1, *it));
     auto is_last = (it + 1 == chars().end());
     auto should_add = is_last || is_separator;
@@ -154,7 +154,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
     }
   }
   
-  if (length() > 0 && std::find(split_char_separators.begin(), split_char_separators.end(), self_[length() - 1]) != split_char_separators.end() && options != xtd::string_split_options::remove_empty_entries) result.push_back(basic_string {});
+  if (length() > 0 && std::find(split_char_separators.items().begin(), split_char_separators.items().end(), self_[length() - 1]) != split_char_separators.items().end() && options != xtd::string_split_options::remove_empty_entries) result.push_back(basic_string {});
   
   return result;
 }
@@ -213,7 +213,7 @@ template<class char_t, class traits_t, class allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_end(const xtd::array<value_type>& trim_chars) const noexcept {
   if (!length()) return self_;
   auto result = chars_;
-  while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
+  while (std::find(trim_chars.items().begin(), trim_chars.items().end(), result[result.size() - 1]) != trim_chars.items().end())
     result.erase(result.size() - 1, 1);
   return result;
 }
@@ -225,7 +225,7 @@ template<class char_t, class traits_t, class allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim_start(const xtd::array<value_type>& trim_chars) const noexcept {
   if (!length()) return self_;
   auto result = chars_;
-  while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
+  while (std::find(trim_chars.items().begin(), trim_chars.items().end(), result[0]) != trim_chars.items().end())
     result.erase(0, 1);
   return result;
 }
