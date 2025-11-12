@@ -70,16 +70,7 @@ inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::arra
 
 template<class type_t, class allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) const {
-  auto position = xtd::size {0};
-  for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
-    if (indexes[index1] >= get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-    auto multiplicand = xtd::size {1};
-    for (auto index2 = index1 + 1; index2 < indexes.size(); ++index2)
-      multiplicand *= get_length(index2);
-    position += indexes[index1] * multiplicand;
-  }
-  if (position >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-  return data_->items[position];
+  return data_->items[compute_index(self_, indexes)];
 }
 
 template<class type_t, class allocator_t>
@@ -98,23 +89,39 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
 }
 
 template<class type_t, class allocator_t>
-template<class value_t, xtd::size rank_>
-xtd::size xtd::basic_array<type_t, allocator_t>::internal_compute_index(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size index) {
+template<class value_t>
+xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, const xtd::array < size_type >& indexes) {
+  auto position = xtd::size {0};
+  for (auto index1 = xtd::size {0}; index1 < indexes.length(); ++index1) {
+    if (indexes[index1] >= items.get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+    auto multiplier = xtd::size {1};
+    for (auto index2 = index1 + 1; index2 < indexes.length(); ++index2)
+      multiplier *= items.get_length(index2);
+    position += indexes[index1] * multiplier;
+  }
+  if (position >= items.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+  return position;
+}
+
+template<class type_t, class allocator_t>
+template<class value_t>
+xtd::size xtd::basic_array<type_t, allocator_t>::compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index) {
   auto relative = index - items.get_lower_bound(rank);
   auto multiplier = xtd::size {1};
-  for (auto r = rank + 1; r < rank_; ++r)
+  for (auto r = rank + 1; r < items.rank(); ++r)
     multiplier *= items.get_length(r);
+  if (relative * multiplier >= items.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return relative * multiplier;
 }
 
 template<class type_t, class allocator_t>
-template<class value_t, xtd::size rank_>
-xtd::string xtd::basic_array<type_t, allocator_t>::internal_to_string(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size base_index) {
+template<class value_t>
+xtd::string xtd::basic_array<type_t, allocator_t>::to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index) {
   auto result = xtd::string {"["};
   for (auto index = items.get_lower_bound(rank); index <= items.get_upper_bound(rank); ++index) {
     if (index != items.get_lower_bound(rank)) result += ", ";
-    auto offset = base_index + internal_compute_index(items, rank, index);
-    if (rank + 1 < rank_) result += internal_to_string(items, rank + 1, offset);
+    auto offset = base_index + compute_index(items, rank, index);
+    if (rank + 1 < items.rank()) result += to_string(items, rank + 1, offset);
     else result += xtd::string::format("{}", items[offset]);
   }
   result += "]";
@@ -128,21 +135,21 @@ inline xtd::collections::object_model::read_only_collection<type_t> xtd::array<>
 
 template<class type_t, xtd::size rank_, class allocator_t>
 inline xtd::string xtd::array<type_t, rank_, allocator_t>::to_string() const noexcept {
-  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+  return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
 template<class type_t, class allocator_t>
 inline xtd::string xtd::array<type_t, 1, allocator_t>::to_string() const noexcept {
-  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+  return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
 template<class type_t, class allocator_t>
 inline xtd::string xtd::array<type_t, 2, allocator_t>::to_string() const noexcept {
-  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+  return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 
 template<class type_t, class allocator_t>
 inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcept {
-  return xtd::basic_array<type_t, allocator_t>::internal_to_string(self_, 0);
+  return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 /// @endcond

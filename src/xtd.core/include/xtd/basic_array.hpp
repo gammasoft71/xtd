@@ -98,45 +98,11 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Returns a reference to the last element in the container.
-    /// @return Reference to the first element.
-    /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual reference back() {return at(length() - 1);}
-    /// @brief Returns a reference to the last element in the container.
-    /// @return Reference to the first element.
-    /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual const_reference back() const {return at(length() - 1);}
-    
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    const_iterator begin() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::begin();}
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    iterator begin() noexcept override {return xtd::collections::generic::ienumerable<value_type>::begin();}
-    
-    /// @brief Returns an iterator to the first element of the enumerable.
-    /// @return Iterator to the first element.
-    const_iterator cbegin() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::cbegin();}
-    
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    const_iterator cend() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::cend();}
-    
     using xtd::collections::generic::extensions::enumerable<xtd::collections::generic::ienumerable<value_type>, value_type>::count;
     /// @brief Gets the number of elements contained in the xtd::array <type_t>.
     /// @return The number of elements contained in the xtd::array <type_t>.
     /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
     size_type count() const noexcept override {return data_->items.size();}
-    
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
-    /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
-    virtual const_reverse_iterator crbegin() const noexcept {return data_->items.crbegin();}
-    
-    /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
-    /// @return Reverse iterator to the element following the last element.
-    /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-    virtual const_reverse_iterator crend() const noexcept {return data_->items.crend();}
     
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
@@ -147,24 +113,30 @@ namespace xtd {
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
     virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
     
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    const_iterator end() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::end();}
-    /// @brief Returns an iterator to the element following the last element of the enumerable.
-    /// @return Iterator to the element following the last element.
-    iterator end() noexcept override {return xtd::collections::generic::ienumerable<value_type>::end();}
-    
-    /// @brief Returns a reference to the first element in the container.
-    /// @return Reference to the first element.
-    /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual reference front() {return at(0);}
-    /// @brief Returns a reference to the first element in the container.
-    /// @return Reference to the first element.
-    /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual const_reference front() const {return at(0);}
-    
+    /// @brief Gets a value indicating whether the xtd::collections::generic::ilist <type_t> has a fixed size.
+    /// @return `true` if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, `false`.
+    /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
     bool is_fixed_size() const noexcept override {return true;}
+
+    /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
+    /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
+    /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
     bool is_read_only() const noexcept override {return false;}
+
+    /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
+    /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
+    /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
+    /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
+    /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+    /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+    /// @code
+    /// icollection& my_collection = some_collection;
+    /// lock_(my_collection.sync_root()) {
+    ///   for (auto item : my_collection) {
+    ///     // Insert your code here.
+    ///   }
+    /// }
+    /// @endcode
     bool is_synchronized() const noexcept override {return false;}
     
     /// @brief Returns the underlying base type items.
@@ -188,7 +160,7 @@ namespace xtd {
     
     /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::array::begin(), xtd::array::end()) for the largest container.
     /// @return Maximum number of elements.
-    virtual size_type max_size() const noexcept {return data_->items.max_size();}
+    virtual size_type max_length() const noexcept {return data_->items.max_size();}
     
     /// @brief Gets the rank (number of dimensions) of the array.
     /// @return The rank (number of dimensions) of the array.
@@ -196,48 +168,34 @@ namespace xtd {
     /// The following code example demonstrates methods to get the rank of an array.
     /// @include array_get_length.cpp
     virtual size_type rank() const noexcept {return 1;}
-    
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
-    /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
-    virtual reverse_iterator rbegin() noexcept {return data_->items.rbegin();}
-    /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
-    /// @return Reverse iterator to the first element.
-    /// @remarks If the vector is empty, the returned iterator will be equal to xtd::array::rend().
-    virtual const_reverse_iterator rbegin() const noexcept {return data_->items.rbegin();}
-    
-    /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
-    /// @return Reverse iterator to the element following the last element.
-    /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-    virtual reverse_iterator rend() noexcept {return data_->items.rend();}
-    /// @brief Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.
-    /// @return Reverse iterator to the element following the last element.
-    /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
-    virtual const_reverse_iterator rend() const noexcept {return data_->items.rend();}
-    
+        
+    /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+    /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+    /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
+    /// @remarks Most collection classes in the xts::.collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the xtd::collections::generic::icollection::sync_root property. The synchronizing code must perform operations on the xtd::collections::generic::icollection::sync_root property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
+    /// @remarks In the absence of a `synchronized` method on a collection, the expected usage for the xtd::collections::generic::icollection::sync_root looks as follows:
+    /// @code
+    /// icollection& my_collection = some_collection;
+    /// lock_(my_collection.sync_root()) {
+    ///   // Some operation on the collection, which is now thread safe.
+    /// }
+    /// @encode
+    /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+    /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+    /// @code
+    /// icollection& my_collection = some_collection;
+    /// lock_(my_collection.sync_root()) {
+    ///   for (auto item : my_collection) {
+    ///     // Insert your code here.
+    ///   }
+    /// }
+    /// @endcode
     const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
     /// @}
     
     /// @name Public Methods
     
     /// @{
-    /// @brief Returns a reference to the element at specified location pos, with bounds checking.
-    /// @param index The position of the element to return.
-    /// @return Reference to the requested element.
-    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
-    virtual reference at(size_type index) {
-      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return (reference)data_->items.at(index);
-    }
-    /// @brief Returns a reference to the element at specified location pos, with bounds checking.
-    /// @param index The position of the element to return.
-    /// @return Reference to the requested element.
-    /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
-    virtual const_reference at(size_type index) const {
-      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return (reference)data_->items.at(index);
-    }
-    
     /// @brief Determines whether an element is in the array.
     /// @param value The object to be added to the end of the array.
     bool contains(const type_t& value) const noexcept override {
@@ -246,21 +204,33 @@ namespace xtd {
       return false;
     }
     
-    void copy_to(xtd::array<type_t>& array, size_type index) const override {
-      if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-      if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
-      if (index + length() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      for (auto increment = size_type {0}; increment < length(); ++increment)
-        array[index + increment] = at(increment);
+    void copy_to(xtd::array<type_t>& array) const {
+      copy_to(0, array, 0);
     }
     
-    /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 64-bit integer.
-    /// @param array The one-dimensional array that is the destination of the elements copied from the current array.
-    /// @param index A 64-bit integer that represents the index in array at which copying begins.
-    /// @exception xtd::argument_exception `array` is multidimensional.
-    /// @exception xtd::argument_out_of_range_exception `index` is outside the range of valid indexes for array.
-    void copy_to(xtd::array<type_t>& array, xtd::int64 index) const {copy_to(array, static_cast<xtd::size>(index));}
+    void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
+      return copy_to(0, array, array_index);
+    }
+
+    void copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const {
+      return copy_to(compute_index(self_, indexes), array, array_index);
+    }
     
+    void copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index, size_type count) const {
+      return copy_to(compute_index(self_, indexes), array, array_index, count);
+    }
+    
+    void copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index) const {
+      return copy_to(index, array, array_index, length() - index);
+    }
+    
+    void copy_to(const size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
+      if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+      if (index + count > self_.length() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      for (auto i = index; i < (index + count); ++i)
+        array[array_index++] = self_[i];
+    }
+
     bool equals(const object & obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
     bool equals(const basic_array & rhs) const noexcept override {
       if (count() != rhs.count()) return false;
@@ -373,7 +343,7 @@ namespace xtd {
     void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
       if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-      if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
+      if (new_size > max_length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
     }
@@ -529,12 +499,18 @@ namespace xtd {
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If pos is not within the range of the container.
-    const_reference operator [](size_type index) const override {return at(index);}
+    const_reference operator [](size_type index) const override {
+      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      return data_->items.at(index);
+    }
     /// @brief Returns a reference to the element at specified location index.
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
-    reference operator [](size_type index) override {return at(index);}
+    reference operator [](size_type index) override {
+      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      return data_->items.at(index);
+    }
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
@@ -628,23 +604,14 @@ namespace xtd {
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
     
-    typename __xtd_raw_array_data__ < value_type >::iterator to_base_type_iterator(iterator value) noexcept {
-      if (value == begin()) return data_->items.begin();
-      if (value == end()) return data_->items.end();
-      return data_->items.begin() + (value - begin());
-    }
+    template<class value_t>
+    static xtd::size compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes);
     
-    iterator to_iterator(typename __xtd_raw_array_data__ < value_type >::iterator value) noexcept {
-      if (value == data_->items.begin()) return begin();
-      if (value == data_->items.end()) return end();
-      return begin() + (value - data_->items.begin());
-    }
+    template<class value_t>
+    static xtd::size compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index);
     
-    template<class value_t, xtd::size rank_>
-    static xtd::size internal_compute_index(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size index);
-    
-    template<class value_t, xtd::size rank_>
-    static xtd::string internal_to_string(const xtd::array<value_t, rank_>& items, xtd::size rank, xtd::size base_index = 0);
+    template<class value_t>
+    static xtd::string to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index);
     
     struct array_data {
       __xtd_raw_array_data__ < value_type > items;
