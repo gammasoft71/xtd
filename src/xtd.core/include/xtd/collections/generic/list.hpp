@@ -445,9 +445,8 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
           if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          auto dest_index = array_index;
           for (auto i = index; i < (index + count); ++i)
-            array[dest_index++] = self_[i];
+            array[array_index++] = self_[i];
         }
         
         /// @brief Ensures that the capacity of this list is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
