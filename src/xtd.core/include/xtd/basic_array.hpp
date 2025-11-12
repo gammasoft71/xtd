@@ -117,12 +117,12 @@ namespace xtd {
     /// @return `true` if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, `false`.
     /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
     bool is_fixed_size() const noexcept override {return true;}
-
+    
     /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
     /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
     /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
     bool is_read_only() const noexcept override {return false;}
-
+    
     /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
     /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
     /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
@@ -168,7 +168,7 @@ namespace xtd {
     /// The following code example demonstrates methods to get the rank of an array.
     /// @include array_get_length.cpp
     virtual size_type rank() const noexcept {return 1;}
-        
+    
     /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
     /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
     /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
@@ -211,7 +211,7 @@ namespace xtd {
     void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
       return copy_to(0, array, array_index);
     }
-
+    
     void copy_to(const xtd::array<size_type>& indexes, xtd::array<type_t>& array, size_type array_index) const {
       return copy_to(compute_index(self_, indexes), array, array_index);
     }
@@ -230,7 +230,7 @@ namespace xtd {
       for (auto i = index; i < (index + count); ++i)
         array[array_index++] = self_[i];
     }
-
+    
     bool equals(const object & obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
     bool equals(const basic_array & rhs) const noexcept override {
       if (count() != rhs.count()) return false;
