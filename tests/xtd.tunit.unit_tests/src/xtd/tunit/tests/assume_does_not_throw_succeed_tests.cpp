@@ -8,8 +8,8 @@ namespace xtd::tunit::tests {
   class test_class_(assume_does_not_throw_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      auto v = array {1, 2, 3, 4};
-      xtd::tunit::assume::does_not_throw([&] {v.at(2);});
+      auto a = array {1, 2, 3, 4};
+      xtd::tunit::assume::does_not_throw([&] {a[2];});
     }
   };
   

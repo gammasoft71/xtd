@@ -8,8 +8,8 @@ namespace xtd::tunit::tests {
   class test_class_(assert_throws_any_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      auto v = array {1, 2, 3, 4};
-      xtd::tunit::assert::throws_any([&] {v.at(5);});
+      auto a = array {1, 2, 3, 4};
+      xtd::tunit::assert::throws_any([&] {a[5];});
     }
   };
   
