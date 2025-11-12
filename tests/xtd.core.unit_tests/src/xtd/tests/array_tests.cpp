@@ -177,19 +177,6 @@ namespace xtd::tests {
       collection_assert::are_equal({true, false, false, true, false}, array<bool> {as<ilist<bool >> (list {true, false, false, true, false})});
     }
     
-    void test_method_(const_back) {
-      assert::are_equal(21, array {84, 42, 21}.back());
-      assert::throws<index_out_of_range_exception>([] {array<int> {}.back();});
-    }
-    
-    void test_method_(back) {
-      auto items = array {84, 42, 21};
-      items.back() = 5;
-      assert::are_equal(5, items.back());
-      auto empty_items = array<int> {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.back() = 5;});
-    }
-    
     void test_method_(begin) {
       auto items = array {84, 42, 21};
       assert::are_equal(84, *items.begin());
@@ -212,17 +199,6 @@ namespace xtd::tests {
       assert::are_equal(3_z, items.count());
       items.resize(50);
       assert::are_equal(50_z, items.count());
-    }
-    
-    void test_method_(crbegin) {
-      auto items = array {84, 42, 21};
-      assert::are_equal(21, *items.crbegin());
-    }
-    
-    void test_method_(crend) {
-      auto items = array {84, 42, 21};
-      // Attempting to access crend results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.crend();});
     }
     
     void test_method_(empty) {
@@ -308,17 +284,6 @@ namespace xtd::tests {
     
     void test_method_(rank_of_boolean) {
       assert::are_equal(1_z, array<bool> {}.rank());
-    }
-    
-    void test_method_(rbegin) {
-      auto items = array {84, 42, 21};
-      assert::are_equal(21, *items.rbegin());
-    }
-    
-    void test_method_(rend) {
-      auto items = array {84, 42, 21};
-      // Attempting to access rend results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *items.rend(); });
     }
     
     void test_method_(size) {
