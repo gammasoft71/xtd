@@ -26,28 +26,28 @@ tetris::tetrominoes shape::tetrominoes() const noexcept {
 int shape::max_x() const noexcept {
   auto result = coords_[0].first;
   for (auto i = 0; i < 4; ++i)
-    result = math::max(result, coords_.at(i).first);
+    result = math::max(result, coords_[i].first);
   return result;
 }
 
 int shape::max_y() const noexcept {
   auto result = coords_[0].second;
   for (auto i = 0; i < 4; ++i)
-    result = math::max(result, coords_.at(i).second);
+    result = math::max(result, coords_[i].second);
   return result;
 }
 
 int shape::min_x() const noexcept {
   auto result = coords_[0].first;
   for (auto i = 0; i < 4; ++i)
-    result = math::min(result, coords_.at(i).first);
+    result = math::min(result, coords_[i].first);
   return result;
 }
 
 int shape::min_y() const noexcept {
   auto result = coords_[0].second;
   for (auto i = 0; i < 4; ++i)
-    result = math::min(result, coords_.at(i).second);
+    result = math::min(result, coords_[i].second);
   return result;
 }
 
@@ -88,9 +88,9 @@ shape shape::rotate_right() const noexcept {
 }
 
 void shape::x(int index, int x) {
-  coords_.at(index) = key_value_pair<>::create(x, coords_.at(index).second);
+  coords_[index] = key_value_pair<>::create(x, coords_[index].second);
 }
 
 void shape::y(int index, int y) {
-      coords_.at(index) = key_value_pair<>::create(coords_.at(index).first, y);
+      coords_[index] = key_value_pair<>::create(coords_[index].first, y);
 }
