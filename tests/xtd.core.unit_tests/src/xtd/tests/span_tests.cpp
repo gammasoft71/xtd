@@ -618,11 +618,11 @@ namespace xtd::tests {
       assert::are_equal(0, s.at(3));
       assert::are_equal(0, s.at(4));
       
-      assert::are_equal(0, a.at(0));
-      assert::are_equal(0, a.at(1));
-      assert::are_equal(0, a.at(2));
-      assert::are_equal(0, a.at(3));
-      assert::are_equal(0, a.at(4));
+      assert::are_equal(0, a[0]);
+      assert::are_equal(0, a[1]);
+      assert::are_equal(0, a[2]);
+      assert::are_equal(0, a[3]);
+      assert::are_equal(0, a[4]);
     }
     
     void test_method_(copy_to) {
@@ -637,11 +637,11 @@ namespace xtd::tests {
       assert::are_equal(40, sc.at(3));
       assert::are_equal(50, sc.at(4));
       
-      assert::are_equal(10, ac.at(0));
-      assert::are_equal(20, ac.at(1));
-      assert::are_equal(30, ac.at(2));
-      assert::are_equal(40, ac.at(3));
-      assert::are_equal(50, ac.at(4));
+      assert::are_equal(10, ac[0]);
+      assert::are_equal(20, ac[1]);
+      assert::are_equal(30, ac[2]);
+      assert::are_equal(40, ac[3]);
+      assert::are_equal(50, ac[4]);
       
       auto sc2 = span<int, 4> {ac};
       assert::throws<argument_exception>([&] {s.copy_to(sc2);});
@@ -679,11 +679,11 @@ namespace xtd::tests {
       assert::are_equal(42, s.at(3));
       assert::are_equal(42, s.at(4));
       
-      assert::are_equal(42, a.at(0));
-      assert::are_equal(42, a.at(1));
-      assert::are_equal(42, a.at(2));
-      assert::are_equal(42, a.at(3));
-      assert::are_equal(42, a.at(4));
+      assert::are_equal(42, a[0]);
+      assert::are_equal(42, a[1]);
+      assert::are_equal(42, a[2]);
+      assert::are_equal(42, a[3]);
+      assert::are_equal(42, a[4]);
     }
     
     void test_method_(first) {
@@ -815,11 +815,11 @@ namespace xtd::tests {
       assert::are_equal(40, sc.at(3));
       assert::are_equal(50, sc.at(4));
       
-      assert::are_equal(10, ac.at(0));
-      assert::are_equal(20, ac.at(1));
-      assert::are_equal(30, ac.at(2));
-      assert::are_equal(40, ac.at(3));
-      assert::are_equal(50, ac.at(4));
+      assert::are_equal(10, ac[0]);
+      assert::are_equal(20, ac[1]);
+      assert::are_equal(30, ac[2]);
+      assert::are_equal(40, ac[3]);
+      assert::are_equal(50, ac[4]);
       
       auto sc2 = span<int, 4> {ac};
       assert::is_false(s.try_copy_to(sc2));
