@@ -84,7 +84,7 @@ namespace xtd {
     array(const array& array) : basic_array<type_t, allocator_t>(array) {}
     /// @brief Move constructor with specified array.
     /// @param array The xtd::array which elements will be inserted from.
-    array(const array&& array) : basic_array<type_t, allocator_t>(std::move(array)) {}
+    array(const array&& array) = default;
     /// @brief Copy constructor with specified base type array.
     /// @param array The xtd::array::base_type which elements will be inserted from.
     array(const base_type& array) : basic_array<type_t, allocator_t>(array) {}
