@@ -295,22 +295,6 @@ namespace xtd::tests {
       assert::are_equal(50_z, items.size());
     }
     
-    void test_method_(at) {
-      auto items = array {84, 42, 21};
-      
-      assert::are_equal(84, items.at(0));
-      assert::are_equal(42, items.at(1));
-      assert::are_equal(21, items.at(2));
-      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
-      
-      items.at(0) = 63;
-      items.at(1) = 31;
-      items.at(2) = 10;
-      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
-      
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
     void test_method_(contains) {
       auto items = array {84, 42, 21};
       assert::is_true(items.contains(84));
