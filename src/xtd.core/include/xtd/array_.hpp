@@ -50,6 +50,14 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd:
 }
 
 template<class type_t, class allocator_t>
+xtd::array<xtd::size, 1> xtd::basic_array<type_t, allocator_t>::get_lengths() const {
+  auto result = xtd::array<xtd::size, 1>(rank());
+  for (auto r = xtd::size {}; r < rank(); ++r)
+    result[r] = get_length(r);
+  return result;
+}
+
+template<class type_t, class allocator_t>
 inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noexcept {
   return xtd::string::format("[{}]", xtd::string::join(", ", *this));
 }
