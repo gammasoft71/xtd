@@ -268,9 +268,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    </div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">  288</a></span>    <span class="keyword">constexpr</span> <a class="code hl_typedef" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> <a class="code hl_function" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a>(<a class="code hl_typedef" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension)<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(dimension) - <a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(dimension) + 1;}</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html#adf2b0e9b1579f51755893946a0bdf369">  292</a></span>    <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;size_type, 1&gt;</a> <a class="code hl_function" href="classxtd_1_1basic__array.html#adf2b0e9b1579f51755893946a0bdf369">get_lengths</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    </div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html#a06fe84abedf478ba9a5059c08b7ff020">  301</a></span>    <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> <a class="code hl_function" href="classxtd_1_1basic__array.html#a06fe84abedf478ba9a5059c08b7ff020">get_long_length</a>(<a class="code hl_typedef" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension)<span class="keyword"> const </span>{<span class="keywordflow">return</span> <span class="keyword">static_cast &lt;</span> <a class="code hl_typedef" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> <span class="keyword">&gt;</span> (<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(dimension) + 1);}</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    </div>
 <div class="foldopen" id="foldopen00310" data-start="{" data-end="}">
@@ -329,7 +329,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>      <span class="keywordflow">return</span> <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>;</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    }</div>
 </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span></div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    </div>
 <div class="foldopen" id="foldopen00414" data-start="{" data-end="}">
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html#ac29d8f865aaa14d1f3ce4ae201fdf1b5">  414</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#ac29d8f865aaa14d1f3ce4ae201fdf1b5">swap</a>(basic_array &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>      data_-&gt;items.swap(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.data_-&gt;items);</div>
@@ -593,7 +593,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 13 2025 20:33:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 13 2025 21:08:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
