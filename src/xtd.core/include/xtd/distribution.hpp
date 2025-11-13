@@ -46,8 +46,6 @@ namespace xtd {
     
     /// @cond
     distribution() = default;
-    distribution(const distribution&) = default;
-    distribution& operator =(const distribution&) = default;
     /// @endcond
     
     /// @name Public Properties
