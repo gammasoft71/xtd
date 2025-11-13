@@ -208,6 +208,10 @@ namespace xtd {
       copy_to(0, array, 0);
     }
     
+    /// @brief Copies the elements of the xtd::array <type_t> to an xtd::array, starting at a particular xtd::array index.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+    /// @param array_index The zero-based index in `array` at which copying begins.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
       return copy_to(0, array, array_index);
     }
@@ -281,8 +285,12 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_get_length.cpp
-    constexpr size_type get_length(size_type dimension) const {return get_upper_bound(dimension) + 1;}
-    
+    constexpr size_type get_length(size_type dimension) const {return get_upper_bound(dimension) - get_lower_bound(dimension) + 1;}
+
+    /// @brief Gets an array of the number of elements of all the dimensions of the array.
+    /// @return The array of the number of elements of all the dimensions of the array;
+    xtd::array<size_type, 1> get_lengths() const;
+
     /// @brief Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.
     /// @param dimension A zero-based dimension of the array whose length needs to be determined.
     /// @return A 64-bit integer that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
@@ -354,76 +362,6 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
     void set_value(const type_t& value, const xtd::array < size_type >& indexes) {operator()(indexes) = value;}
     
-    /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
-    /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
-    virtual void swap(basic_array & other) noexcept {
-      data_->items.swap(other.data_->items);
-    }
-    
-    xtd::string to_string() const noexcept override;
-    /// @}
-    
-    /// @name Public Static Methods
-    
-    /// @{
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value) noexcept {return index_of(array, value, 0, array.length());}
-    
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @param index The zero-based starting index of the search.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value, size_type index) {return index_of(array, value, index, array.length() - index);}
-    
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @param index The zero-based starting index of the search.
-    /// @param count The number of elements in the section to search
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value, size_type index, size_type count) {
-      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      
-      if (array.size() == 0) return npos;
-      for (auto increment = size_type {0}; increment < count; ++increment) {
-        if (xtd::collections::generic::helpers::equator < type_t > {}(array[index + increment], value))
-          return index + increment;
-      }
-      return npos;
-    }
-    
-    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
-    static void reverse(basic_array & array) noexcept {reverse(array, 0, array.count());}
-    /// @brief Reverses the order of the elements in the specified range.
-    /// @param index The zero-based starting index of the range to reverse.
-    /// @param count The number of elements in the range to reverse.
-    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is `count`.
-    static void reverse(basic_array & array, size_type index, size_type count) {
-      if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if (count == 0) return;
-      array.data_->items.increment_version();
-      std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
-    }
-    
     /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
     /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
     /// @par Examples
@@ -469,6 +407,74 @@ namespace xtd {
       data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), __comparer__ {comparer});
       return self_;
+    }
+
+    /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
+    /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
+    virtual void swap(basic_array & other) noexcept {
+      data_->items.swap(other.data_->items);
+    }
+    
+    xtd::string to_string() const noexcept override;
+    /// @}
+    
+    /// @name Public Static Methods
+    
+    /// @{
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    static size_type index_of(const basic_array & array, const value_type & value) noexcept {return index_of(array, value, 0, array.length());}
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @param index The zero-based starting index of the search.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    static size_type index_of(const basic_array & array, const value_type & value, size_type index) {return index_of(array, value, index, array.length() - index);}
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @param index The zero-based starting index of the search.
+    /// @param count The number of elements in the section to search
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    static size_type index_of(const basic_array & array, const value_type & value, size_type index, size_type count) {
+      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      
+      if (array.size() == 0) return npos;
+      for (auto increment = size_type {0}; increment < count; ++increment) {
+        if (xtd::collections::generic::helpers::equator < type_t > {}(array[index + increment], value))
+          return index + increment;
+      }
+      return npos;
+    }
+    
+    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
+    static void reverse(basic_array & array) noexcept {reverse(array, 0, array.count());}
+    /// @brief Reverses the order of the elements in the specified range.
+    /// @param index The zero-based starting index of the range to reverse.
+    /// @param count The number of elements in the range to reverse.
+    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is `count`.
+    static void reverse(basic_array & array, size_type index, size_type count) {
+      if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      if (count == 0) return;
+      array.data_->items.increment_version();
+      std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
     }
     /// @}
     
@@ -599,7 +605,7 @@ namespace xtd {
     }
     
     void add(const type_t& item) override {}
-    void clear() override {}
+    void clear() override {fill(value_type {});}
     void insert(size_type index, const type_t& value) override {}
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
