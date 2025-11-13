@@ -82,8 +82,6 @@ namespace xtd {
     
     /// @cond
     operating_system() = default;
-    operating_system(const operating_system&) = default;
-    operating_system& operator =(const operating_system&) = default;
     /// @endcond
     
     /// @name Public Properties
