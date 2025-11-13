@@ -59,11 +59,6 @@ namespace xtd {
       settings() = default;
       /// @}
       
-      /// @cond
-      settings(const settings&) = default;
-      settings& operator =(const settings&) = default;
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
