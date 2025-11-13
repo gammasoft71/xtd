@@ -106,6 +106,13 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     array(size_type length, const value_type& value) : basic_array<type_t, allocator_t>(array<xtd::size> {length}, value) {}
+    /// @brief Initializes a new instance of the array class with lengths for each rank specified.
+    /// @param lengths the lengths for each rank.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
+    array(const array<xtd::size, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.
     array(std::initializer_list<type_t> items) : basic_array<type_t, allocator_t>(items) {}
