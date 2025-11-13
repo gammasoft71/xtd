@@ -114,7 +114,7 @@ inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_al
     if (source_array.get_length(r) != destination_array.get_length(r)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (source_index < source_array.get_lower_bound(0) || destination_index < destination_array.get_lower_bound(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (source_index + length > source_array.length() || destination_index + length > destination_array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-
+  
   for (auto i = xtd::size {}; i < length; ++i)
     destination_array.data_->items[destination_index + i] = as<destination_type_t>(source_array.data_->items[source_index + i]);
 }
