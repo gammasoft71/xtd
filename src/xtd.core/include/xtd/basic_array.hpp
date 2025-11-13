@@ -286,11 +286,11 @@ namespace xtd {
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_get_length.cpp
     constexpr size_type get_length(size_type dimension) const {return get_upper_bound(dimension) - get_lower_bound(dimension) + 1;}
-
+    
     /// @brief Gets an array of the number of elements of all the dimensions of the array.
     /// @return The array of the number of elements of all the dimensions of the array;
     xtd::array<size_type, 1> get_lengths() const;
-
+    
     /// @brief Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.
     /// @param dimension A zero-based dimension of the array whose length needs to be determined.
     /// @return A 64-bit integer that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
@@ -408,7 +408,7 @@ namespace xtd {
       std::sort(data_->items.begin(), data_->items.end(), __comparer__ {comparer});
       return self_;
     }
-
+    
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
     virtual void swap(basic_array & other) noexcept {

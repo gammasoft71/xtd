@@ -85,7 +85,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const array<xtd::size, 1>& lengths, const type_t & value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
+    array(const array<xtd::size, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
     /// @}
     
     /// @cond
