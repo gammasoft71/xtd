@@ -505,31 +505,31 @@ namespace xtd::tests {
     }
     
     void test_method_(index_of_with_array_and_value_type) {
-      assert::are_equal(array<int>::npos, array<int>::index_of(array<int> {}, 42));
-      assert::are_equal(1_z, array<int>::index_of(array {84, 42, 21, 42}, 42));
-      assert::are_equal(array<int>::npos, array<int>::index_of(array {84, 42, 21, 42}, 0));
+      assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42));
+      assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42));
+      assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0));
     }
     
     void test_method_(index_of_with_array_value_type_and_index) {
-      assert::are_equal(array<int>::npos, array<int>::index_of(array<int> {}, 42, 0));
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {}, 42, 1);});
-      assert::are_equal(1_z, array<int>::index_of(array {84, 42, 21, 42}, 42, 0));
-      assert::are_equal(3_z, array<int>::index_of(array {84, 42, 21, 42}, 42, 2));
-      assert::are_equal(array<int>::npos, array<int>::index_of(array {84, 42, 21, 42}, 42, 4));
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {84, 42, 21, 42}, 42, 5);});
-      assert::are_equal(array<int>::npos, array<int>::index_of(array {84, 42, 21, 42}, 0, 0));
+      assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0));
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 1);});
+      assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42, 0));
+      assert::are_equal(3_z, array<>::index_of(array {84, 42, 21, 42}, 42, 2));
+      assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 42, 4));
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5);});
+      assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0));
     }
     
     void test_method_(index_of_with_array_value_type_index_and_count) {
-      assert::are_equal(array<int>::npos, array<int>::index_of(array<int> {}, 42, 0, 0));
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {}, 42, 1, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {}, 42, 0, 1);});
-      assert::are_equal(1_z, array<int>::index_of(array {84, 42, 21, 42}, 42, 0, 4));
-      assert::are_equal(3_z, array<int>::index_of(array {84, 42, 21, 42}, 42, 2, 2));
-      assert::are_equal(array<int>::npos, array<int>::index_of(array {84, 42, 21, 42}, 42, 4, 0));
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {84, 42, 21, 42}, 42, 4, 1);});
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::index_of(array<int> {84, 42, 21, 42}, 42, 5, 0);});
-      assert::are_equal(array<int>::npos, array<int>::index_of(array {84, 42, 21, 42}, 0, 0, 4));
+      assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0, 0));
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 1, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 0, 1);});
+      assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42, 0, 4));
+      assert::are_equal(3_z, array<>::index_of(array {84, 42, 21, 42}, 42, 2, 2));
+      assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 42, 4, 0));
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {84, 42, 21, 42}, 42, 4, 1);});
+      assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {84, 42, 21, 42}, 42, 5, 0);});
+      assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0, 4));
     }
     
     void test_method_(equal_copy_operator_with_array) {
