@@ -215,11 +215,16 @@ namespace xtd {
       destination_array.data_->items.swap(tmp_array.data_->items);
     }
     
+    /// @brief Converts an array of one type to an array of another type.
+    /// @param array The zero-based xtd::array <type_t> to convert to a target type.
+    /// @param converter A xtd::converter <output_t, input_t> that converts each element from one type to another type.
+    /// @return An array of the target type containing the converted elements from the source array.
+    /// @remarks The xtd::converter <output_t, input_t> is a delegate to a method that converts an object to the target type. The elements of array are individually passed to the xtd::converter <output_t, input_t>, and the converted elements are saved in the new array.
+    /// @remarks The source array remains unchanged.
+    /// @remarks This method is an O(n) operation, where n is the xtd::basic_array::length of array.
     template<class output_t, class input_t, xtd::size rank, class allocator_t, class converter_t>
     static xtd::array<output_t, rank> convert_all(const xtd::array<input_t, rank, allocator_t>& array, converter_t converter) {
-      auto result = xtd::array<output_t, rank>(array.get_lengths(), output_t {});
-      result.data_->lower_bound = array.data_->lower_bound;
-      result.data_->upper_bound = array.data_->upper_bound;
+      auto result = create_instance<output_t, rank>(array.get_lengths());
       for (auto i = xtd::size {0}; i < array.length(); ++i)
         result[i] = converter(array[i]);
       return result;
@@ -259,6 +264,64 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception The sum of the `source_index` and `length` is greater than `source_array` size.<ber>-or-<br>The sum of the `destination_index` and `length` is greater than `destination_array` size.
     template<class source_type_t, xtd::size source_rank, class source_allocator_t, class destination_type_t, xtd::size destination_rank, class destination_allocator_t>
     inline static void copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, xtd::size source_index, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size destination_index, xtd::size length); // defined in as.hpp file
+
+    /// @brief Creates a one-dimensional xtd::array <type_t> of the specified Type and length, with zero-based indexing.
+    /// @param length The size of the xtd::array <type_t> to create.
+    /// @return A new one-dimensional xtd::array <type_t> of the specified Type with the specified length, using zero-based indexing.
+    /// @exception xtd::argument_exception elementType is not a valid Type.
+    /// @exception xtd::not_supported_exception elementType is not supported. For example, Void is not supported.  -or-  elementType is an open generic type.
+    /// @exception xtd::argument_out_of_range_exception length is less than zero.
+    /// @remarks Unlike most classes, xtd::array <type_t> provides the create_instance method, instead of public constructors, to allow for late bound access.
+    /// @remarks Pointer-type elements are initialized to null. Value-type elements are initialized to zero.
+    /// @remarks This method is an O(n) operation, where n is length.
+    /// @param EXamples
+    /// The following code example shows how to create and initialize a one-dimensional xtd::array <type_t>.
+    /// @include array_create_instance1.cpp
+    template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::array<type_t, 1, allocator_t> create_instance(xtd::size length) {return xtd::array<type_t, 1, allocator_t>(length);}
+    /// @brief Creates a two-dimensional xtd::array <type_t> of the specified Type and dimension lengths, with zero-based indexing.
+    /// @param length1 The size of the first dimension of the xtd::array <type_t> to create.
+    /// @param length2 The size of the second dimension of the xtd::array <type_t> to create.
+    /// @return A new two-dimensional xtd::array <type_t> of the specified Type with the specified length for each dimension, using zero-based indexing.
+    /// @exception xtd::argument_exception elementType is not a valid Type.
+    /// @exception xtd::not_supported_exception elementType is not supported. For example, Void is not supported.  -or-  elementType is an open generic type.
+    /// @exception xtd::argument_out_of_range_exception length1 is less than zero.  -or-  xtd::argument_out_of_range_exception length2 is less than zero.
+    /// @remarks Unlike most classes, xtd::array <type_t> provides the create_instance method, instead of public constructors, to allow for late bound access.
+    /// @remarks Pointer-type elements are initialized to null. Value-type elements are initialized to zero.
+    /// @remarks This method is an O(n) operation, where n is length.
+    /// @param EXamples
+    /// The following code example shows how to create and initialize a two-dimensional xtd::array <type_t>.
+    /// @include array_create_instance2.cpp
+    template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::array<type_t, 2, allocator_t> create_instance(xtd::size length1, xtd::size length2) {return xtd::array<type_t, 2, allocator_t>(length1, length2);}
+    /// @brief Creates a three-dimensional xtd::array <type_t> of the specified Type and dimension lengths, with zero-based indexing.
+    /// @param length1 The size of the first dimension of the xtd::array <type_t> to create.
+    /// @param length2 The size of the second dimension of the xtd::array <type_t> to create.
+    /// @param length3 The size of the third dimension of the xtd::array <type_t> to create.
+    /// @return A new three-dimensional xtd::array <type_t> of the specified Type with the specified length for each dimension, using zero-based indexing.
+    /// @exception xtd::argument_exception elementType is not a valid Type.
+    /// @exception xtd::not_supported_exception elementType is not supported. For example, Void is not supported.  -or-  elementType is an open generic type.
+    /// @exception xtd::argument_out_of_range_exception length1 is less than zero.  -or-  xtd::argument_out_of_range_exception length2 is less than zero.  -or-  xtd::argument_out_of_range_exception length3 is less than zero.
+    /// @remarks Unlike most classes, xtd::array <type_t> provides the create_instance method, instead of public constructors, to allow for late bound access.
+    /// @remarks Pointer-type elements are initialized to null. Value-type elements are initialized to zero.
+    /// @remarks This method is an O(n) operation, where n is length.
+    /// @param EXamples
+    /// The following code example shows how to create and initialize a three-dimensional xtd::array <type_t>.
+    /// @include array_create_instance3.cpp
+    template<typename type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::array<type_t, 3, allocator_t> create_instance(xtd::size length1, xtd::size length2, xtd::size length3) {return xtd::array<type_t, 3, allocator_t>(length1, length2, length3);}
+    /// @brief Creates a multidimensional xtd::array <type_t> of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers.
+    /// @param An array of 32-bit integers that represent the size of each dimension of the xtd::array <type_t> to create.
+    /// @return A new multidimensional xtd::array <type_t> of the specified Type with the specified length for each dimension, using zero-based indexing.
+    /// @exception xtd::argument_exception elementType is not a valid Type.
+    /// @exception xtd::not_supported_exception elementType is not supported. For example, Void is not supported.  -or-  elementType is an open generic type.
+    /// @exception xtd::argument_out_of_range_exception length1 is less than zero.  -or-  xtd::argument_out_of_range_exception length2 is less than zero.  -or-  xtd::argument_out_of_range_exception length3 is less than zero.
+    /// @remarks Unlike most classes, xtd::array <type_t> provides the create_instance method, instead of public constructors, to allow for late bound access.
+    /// @remarks The number of elements in the lengths array must equal the number of dimensions in the new xtd::array <type_t>. Each element of the lengths array must specify the length of the corresponding dimension in the new xtd::array <type_t>.
+    /// @remarks Pointer-type elements are initialized to null. Value-type elements are initialized to zero.
+    /// @remarks This method is an O(n) operation, where n is length.
+    template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::array<type_t, rank, allocator_t> create_instance(const xtd::array<xtd::size>& lengths) {return xtd::array<type_t, rank, allocator_t>(lengths, type_t {});}
     /// @}
   };
 }
