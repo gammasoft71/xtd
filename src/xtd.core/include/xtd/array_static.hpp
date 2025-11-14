@@ -264,7 +264,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception The sum of the `source_index` and `length` is greater than `source_array` size.<ber>-or-<br>The sum of the `destination_index` and `length` is greater than `destination_array` size.
     template<class source_type_t, xtd::size source_rank, class source_allocator_t, class destination_type_t, xtd::size destination_rank, class destination_allocator_t>
     inline static void copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, xtd::size source_index, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size destination_index, xtd::size length); // defined in as.hpp file
-
+    
     /// @brief Creates a one-dimensional xtd::array <type_t> of the specified Type and length, with zero-based indexing.
     /// @param length The size of the xtd::array <type_t> to create.
     /// @return A new one-dimensional xtd::array <type_t> of the specified Type with the specified length, using zero-based indexing.
