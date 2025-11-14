@@ -177,8 +177,8 @@ namespace xtd {
     template<class type_t, xtd::size rank, class allocator_t>
     inline static void clear(const array<type_t, rank, allocator_t>& array, xtd::size index, xtd::size length) {
       if (index + length > array.data_->items.size()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      for (auto i = xtd::size {}; i < length; ++i)
-        array.data_->items[index + i] = type_t {};
+      for (auto increment = xtd::size {}; increment < length; ++increment)
+        array.data_->items[index + increment] = type_t {};
     }
     
     /// @brief Copies a range of elements from an xtd::array starting at the specified source index and pastes them to another xtd::array starting at the specified destination index. Guarantees that all changes are undone if the copy does not succeed completely.
@@ -222,8 +222,8 @@ namespace xtd {
     /// @remarks The xtd::converter <output_t, input_t> is a delegate to a method that converts an object to the target type. The elements of array are individually passed to the xtd::converter <output_t, input_t>, and the converted elements are saved in the new array.
     /// @remarks The source array remains unchanged.
     /// @remarks This method is an O(n) operation, where n is the xtd::basic_array::length of array.
-    template<class output_t, class input_t, xtd::size rank, class allocator_t, class converter_t>
-    static xtd::array<output_t, rank> convert_all(const xtd::array<input_t, rank, allocator_t>& array, converter_t converter) {
+    template<class output_t, class input_t, xtd::size rank, class allocator_t, class converter_t, class destination_allocator_t = xtd::collections::generic::helpers::allocator<output_t>>
+    static xtd::array<output_t, rank, destination_allocator_t> convert_all(const xtd::array<input_t, rank, allocator_t>& array, converter_t converter) {
       auto result = create_instance<output_t, rank>(array.get_lengths());
       for (auto i = xtd::size {0}; i < array.length(); ++i)
         result[i] = converter(array[i]);
@@ -320,8 +320,90 @@ namespace xtd {
     /// @remarks The number of elements in the lengths array must equal the number of dimensions in the new xtd::array <type_t>. Each element of the lengths array must specify the length of the corresponding dimension in the new xtd::array <type_t>.
     /// @remarks Pointer-type elements are initialized to null. Value-type elements are initialized to zero.
     /// @remarks This method is an O(n) operation, where n is length.
-    template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    template<class type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
     static xtd::array<type_t, rank, allocator_t> create_instance(const xtd::array<xtd::size>& lengths) {return xtd::array<type_t, rank, allocator_t>(lengths, type_t {});}
+
+    /// @brief Determines whether the xtd::array <type_t> contains elements that match the conditions defined by the specified predicate..
+    /// @param match The xtd::predicate function that defines the conditions of the elements to search for.
+    /// @return `true` if the xtd::array <type_t> contains one or more elements that match the conditions defined by the specified predicate; otherwise, `false`.
+    /// @remarks The xtd::predicate is a method that returns `true` if the object passed to it matches the conditions defined in the pointer function. The elements of the current xtd::array <type_t> are individually passed to the Predicate pointer function, and processing is stopped when a match is found.
+    /// @remarks This method is an O(n) operation, where n is Count.
+    template<class type_t, xtd::size rank, class allocator_t, class predicate_t>
+    static bool exists(const xtd::array<type_t, rank, allocator_t>& array, predicate_t match) {
+      for (const type_t& elem : array)
+        if (match(elem)) return true;
+      return false;
+    }
+
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value) noexcept {return index_of(array, value, 0, array.length());}
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @param index The zero-based starting index of the search.
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value, xtd::size index) {return index_of(array, value, index, array.length() - index);}
+    /// @brief Determines the index of a specific item in the array specified.
+    /// @param array The object to locate in the array.
+    /// @param value The object to locate in the array.
+    /// @param index The zero-based starting index of the search.
+    /// @param count The number of elements in the section to search
+    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
+    /// @par Examples
+    /// The following code example shows how to determine the index of the first occurrence of a specified element.
+    /// @include array_index_of.cpp
+    template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value, xtd::size index, xtd::size count) {
+      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      for (auto increment = xtd::size {0}; increment < count; ++increment)
+        if (xtd::collections::generic::helpers::equator<type_t> {}(array[index + increment], value)) return index + increment;
+      return xtd::npos;
+    }
+
+    /// @brief Changes the number of elements of a one-dimensional array to the specified new size.
+    /// @param array The one-dimensional, zero-based array to resize, or null to create a new array with the specified size.
+    /// @param newSize The size of the new array.
+    /// @exception ArgumentOutOfRangeException newSize is less than zero.
+    /// @remarks This method allocates a new array with the specified size, copies elements from the old array to the new one, and then replaces the old array with the new one. array must be a one-dimensional array.
+    /// @remarks If newSize is greater than the Length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the Length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the Length of the old array, this method does nothing.
+    /// @remarks This method is an O(n) operation, where n is old size.
+    template<class type_t, class allocator_t>
+    static void resize(xtd::array<type_t, 1, allocator_t>& array, int32 new_size) {array.resize(new_size);}
+    
+    /// @brief Reverses the order of the elements in the entire List<T>.
+    /// @remarks This method uses Array.Reverse to reverse the order of the elements, such that the element at List<T>[i], where i is any index within the range, moves to List<T>[j], where j equals index plus index plus count minus i minus 1.
+    /// @remarks This method is an O(n) operation, where n is Count.
+    /// @par Examples
+    /// The following code example demonstrates both overloads of the Reverse method. The code example creates a List<T> of strings and adds six strings. The Reverse() method overload is used to reverse the list, and then the Reverse(Int32, Int32) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+    /// @include ListReverse.cpp
+    template<class type_t, class allocator_t>
+    static void reverse(xtd::array<type_t, 1, allocator_t>& array) {array.reverse();}
+    
+    /// @brief Reverses the order of the elements in the specified range.
+    /// @param index The zero-based starting index of the range to reverse.
+    /// @param count The number of elements in the range to reverse.
+    /// @exception ArgumentOutOfRangeException index is less than 0. -or- count is less than 0.
+    /// @exception ArgumentException ndex and count do ! denote a valid range of elements in the List<T>.
+    /// @remarks This method uses Array.Reverse to reverse the order of the elements, such that the element at List<T>[i], where i is any index within the range, moves to List<T>[j], where j equals index plus index plus count minus i minus 1.
+    /// @remarks This method is an O(n) operation, where n is Count.
+    /// @par Examples
+    /// The following code example demonstrates both overloads of the Reverse method. The code example creates a List<T> of strings and adds six strings. The Reverse() method overload is used to reverse the list, and then the Reverse(Int32, Int32) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+    /// @include ListReverse.cpp
+    template<class type_t, class allocator_t>
+    static void reverse(xtd::array<type_t, 1, allocator_t>& array, int32 index, int32 count) {array.reverse(index, count);}
     /// @}
   };
 }
