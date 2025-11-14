@@ -203,7 +203,7 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="line"><span class="comment">// After copying the last two elements of the Object array to the integer array,</span></div>
 <div class="line"><span class="comment">// integer array:  1  2  3  29  30</span></div>
 <div class="line"><span class="comment">// Object array:   1  2  28  29  30</span></div>
-<div class="ttc" id="aclassxtd_1_1array_3_4_html_a4734a1accda10c5d05265755d9498a7e"><div class="ttname"><a href="#a4734a1accda10c5d05265755d9498a7e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static void copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array)</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:234</div></div>
+<div class="ttc" id="aclassxtd_1_1array_3_4_html_a4734a1accda10c5d05265755d9498a7e"><div class="ttname"><a href="#a4734a1accda10c5d05265755d9498a7e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static void copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array)</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:239</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -248,9 +248,9 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <tr class="memitem:a97c0735de732b3143525dc843709be94"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a97c0735de732b3143525dc843709be94">constrained_copy</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> source_index, <a class="el" href="classxtd_1_1array.html">array</a>&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> destination_index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>)</td></tr>
 <tr class="memdesc:a97c0735de732b3143525dc843709be94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements from an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> starting at the specified source index and pastes them to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> starting at the specified destination index. Guarantees that all changes are undone if the copy does not succeed completely.  <br /></td></tr>
 <tr class="separator:a97c0735de732b3143525dc843709be94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf67bdac74d1eb8cbcd63337f21e78b9" id="r_adf67bdac74d1eb8cbcd63337f21e78b9"><td class="memTemplParams" colspan="2"><a id="adf67bdac74d1eb8cbcd63337f21e78b9" name="adf67bdac74d1eb8cbcd63337f21e78b9"></a>
-template&lt;class output_t, class input_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> rank, class allocator_t, class converter_t&gt; </td></tr>
-<tr class="memitem:adf67bdac74d1eb8cbcd63337f21e78b9"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; output_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>convert_all</b> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; input_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, converter_t <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818">converter</a>)</td></tr>
+<tr class="memitem:adf67bdac74d1eb8cbcd63337f21e78b9" id="r_adf67bdac74d1eb8cbcd63337f21e78b9"><td class="memTemplParams" colspan="2">template&lt;class output_t, class input_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> rank, class allocator_t, class converter_t&gt; </td></tr>
+<tr class="memitem:adf67bdac74d1eb8cbcd63337f21e78b9"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; output_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adf67bdac74d1eb8cbcd63337f21e78b9">convert_all</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; input_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, converter_t <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818">converter</a>)</td></tr>
+<tr class="memdesc:adf67bdac74d1eb8cbcd63337f21e78b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an array of one type to an array of another type.  <br /></td></tr>
 <tr class="separator:adf67bdac74d1eb8cbcd63337f21e78b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4734a1accda10c5d05265755d9498a7e" id="r_a4734a1accda10c5d05265755d9498a7e"><td class="memTemplParams" colspan="2">template&lt;class source_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> source_rank, class source_allocator_t, class destination_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> destination_rank, class destination_allocator_t&gt; </td></tr>
 <tr class="memitem:a4734a1accda10c5d05265755d9498a7e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4734a1accda10c5d05265755d9498a7e">copy</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const <a class="el" href="classxtd_1_1array.html">array</a>&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array)</td></tr>
@@ -268,6 +268,22 @@ template&lt;class output_t, class input_t, <a class="el" href="group__types.html
 <tr class="memitem:a5af55de4e24e975bc8246178beb70ae4"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5af55de4e24e975bc8246178beb70ae4">copy</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> source_index, const <a class="el" href="classxtd_1_1array.html">array</a>&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> destination_index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>)</td></tr>
 <tr class="memdesc:a5af55de4e24e975bc8246178beb70ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements from an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> starting at the specified source index and pastes them to another <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> starting at the specified destination index. The length and the indexes are specified as 64-bit integers.  <br /></td></tr>
 <tr class="separator:a5af55de4e24e975bc8246178beb70ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3cb0ea2bd6c09fc47c52c26d8d6194" id="r_a9a3cb0ea2bd6c09fc47c52c26d8d6194"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:a9a3cb0ea2bd6c09fc47c52c26d8d6194"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 1, allocator_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9a3cb0ea2bd6c09fc47c52c26d8d6194">create_instance</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>)</td></tr>
+<tr class="memdesc:a9a3cb0ea2bd6c09fc47c52c26d8d6194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and length, with zero-based indexing.  <br /></td></tr>
+<tr class="separator:a9a3cb0ea2bd6c09fc47c52c26d8d6194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b06304c158e6082e5741a945b95c83" id="r_a92b06304c158e6082e5741a945b95c83"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:a92b06304c158e6082e5741a945b95c83"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a92b06304c158e6082e5741a945b95c83">create_instance</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length1, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length2)</td></tr>
+<tr class="memdesc:a92b06304c158e6082e5741a945b95c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a two-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing.  <br /></td></tr>
+<tr class="separator:a92b06304c158e6082e5741a945b95c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1c1b6d6041c2c84d5eac83465c5e97" id="r_a0b1c1b6d6041c2c84d5eac83465c5e97"><td class="memTemplParams" colspan="2">template&lt;typename type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:a0b1c1b6d6041c2c84d5eac83465c5e97"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0b1c1b6d6041c2c84d5eac83465c5e97">create_instance</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length1, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length2, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length3)</td></tr>
+<tr class="memdesc:a0b1c1b6d6041c2c84d5eac83465c5e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a three-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing.  <br /></td></tr>
+<tr class="separator:a0b1c1b6d6041c2c84d5eac83465c5e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1766507623541f10e0ce9742214a8d7b" id="r_a1766507623541f10e0ce9742214a8d7b"><td class="memTemplParams" colspan="2">template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> rank, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:a1766507623541f10e0ce9742214a8d7b"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>, allocator_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1766507623541f10e0ce9742214a8d7b">create_instance</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;lengths)</td></tr>
+<tr class="memdesc:a1766507623541f10e0ce9742214a8d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a multidimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers.  <br /></td></tr>
+<tr class="separator:a1766507623541f10e0ce9742214a8d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a4dbeb21711b15525741125c0b2249a26" id="r_a4dbeb21711b15525741125c0b2249a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array</a> ()=default</td></tr>
@@ -1272,6 +1288,52 @@ template&lt;class source_type_t, <a class="el" href="group__types.html#ga221e5b8
 
 </div>
 </div>
+<a id="adf67bdac74d1eb8cbcd63337f21e78b9" name="adf67bdac74d1eb8cbcd63337f21e78b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf67bdac74d1eb8cbcd63337f21e78b9">&#9670;&#160;</a></span>convert_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class output_t, class input_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> rank, class allocator_t, class converter_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; output_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a> &gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::convert_all </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; input_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">converter_t</td>          <td class="paramname"><span class="paramname"><em>converter</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts an array of one type to an array of another type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The zero-based <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to convert to a target type. </td></tr>
+    <tr><td class="paramname">converter</td><td>A <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;output_t, input_t&gt; that converts each element from one type to another type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of the target type containing the converted elements from the source array. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;output_t, input_t&gt; is a delegate to a method that converts an object to the target type. The elements of array are individually passed to the <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;output_t, input_t&gt;, and the converted elements are saved in the new array. </dd>
+<dd>
+The source array remains unchanged. </dd>
+<dd>
+This method is an O(n) operation, where n is the <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">xtd::basic_array::length</a> of array. </dd></dl>
+
+</div>
+</div>
 <a id="a4734a1accda10c5d05265755d9498a7e" name="a4734a1accda10c5d05265755d9498a7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4734a1accda10c5d05265755d9498a7e">&#9670;&#160;</a></span>copy() <span class="overload">[1/4]</span></h2>
 
@@ -1503,6 +1565,238 @@ The sum of the `destination_index` and `length` is greater than `destination_arr
 
 </div>
 </div>
+<a id="a9a3cb0ea2bd6c09fc47c52c26d8d6194" name="a9a3cb0ea2bd6c09fc47c52c26d8d6194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3cb0ea2bd6c09fc47c52c26d8d6194">&#9670;&#160;</a></span>create_instance() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 1, allocator_t &gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::create_instance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and length, with zero-based indexing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>The size of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type with the specified length, using zero-based indexing. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>elementType is not a valid Type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>elementType is not supported. For example, Void is not supported. -or- elementType is an open generic type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>length is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike most classes, <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; provides the create_instance method, instead of public constructors, to allow for late bound access. </dd>
+<dd>
+Pointer-type elements are initialized to null. Value-type elements are initialized to zero. </dd>
+<dd>
+This method is an O(n) operation, where n is length. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">EXamples</td><td>The following code example shows how to create and initialize a one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;. <div class="fragment"></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92b06304c158e6082e5741a945b95c83" name="a92b06304c158e6082e5741a945b95c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b06304c158e6082e5741a945b95c83">&#9670;&#160;</a></span>create_instance() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::create_instance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a two-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length1</td><td>The size of the first dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+    <tr><td class="paramname">length2</td><td>The size of the second dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new two-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type with the specified length for each dimension, using zero-based indexing. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>elementType is not a valid Type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>elementType is not supported. For example, Void is not supported. -or- elementType is an open generic type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>length1 is less than zero. -or- <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> length2 is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike most classes, <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; provides the create_instance method, instead of public constructors, to allow for late bound access. </dd>
+<dd>
+Pointer-type elements are initialized to null. Value-type elements are initialized to zero. </dd>
+<dd>
+This method is an O(n) operation, where n is length. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">EXamples</td><td>The following code example shows how to create and initialize a two-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;. <div class="fragment"></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b1c1b6d6041c2c84d5eac83465c5e97" name="a0b1c1b6d6041c2c84d5eac83465c5e97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b1c1b6d6041c2c84d5eac83465c5e97">&#9670;&#160;</a></span>create_instance() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::create_instance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>length3</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a three-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length1</td><td>The size of the first dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+    <tr><td class="paramname">length2</td><td>The size of the second dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+    <tr><td class="paramname">length3</td><td>The size of the third dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new three-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type with the specified length for each dimension, using zero-based indexing. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>elementType is not a valid Type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>elementType is not supported. For example, Void is not supported. -or- elementType is an open generic type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>length1 is less than zero. -or- <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> length2 is less than zero. -or- <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> length3 is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike most classes, <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; provides the create_instance method, instead of public constructors, to allow for late bound access. </dd>
+<dd>
+Pointer-type elements are initialized to null. Value-type elements are initialized to zero. </dd>
+<dd>
+This method is an O(n) operation, where n is length. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">EXamples</td><td>The following code example shows how to create and initialize a three-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;. <div class="fragment"></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1766507623541f10e0ce9742214a8d7b" name="a1766507623541f10e0ce9742214a8d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1766507623541f10e0ce9742214a8d7b">&#9670;&#160;</a></span>create_instance() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> rank, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>, allocator_t &gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::create_instance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lengths</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a multidimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">An</td><td>array of 32-bit integers that represent the size of each dimension of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new multidimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; of the specified Type with the specified length for each dimension, using zero-based indexing. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>elementType is not a valid Type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>elementType is not supported. For example, Void is not supported. -or- elementType is an open generic type. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>length1 is less than zero. -or- <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> length2 is less than zero. -or- <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> length3 is less than zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike most classes, <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; provides the create_instance method, instead of public constructors, to allow for late bound access. </dd>
+<dd>
+The number of elements in the lengths array must equal the number of dimensions in the new <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;. Each element of the lengths array must specify the length of the corresponding dimension in the new <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;. </dd>
+<dd>
+Pointer-type elements are initialized to null. Value-type elements are initialized to zero. </dd>
+<dd>
+This method is an O(n) operation, where n is length. </dd></dl>
+
+</div>
+</div>
 <a id="a2580a0452fad2d6279b669977324fe11" name="a2580a0452fad2d6279b669977324fe11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2580a0452fad2d6279b669977324fe11">&#9670;&#160;</a></span>rank()</h2>
 
@@ -1598,7 +1892,7 @@ The sum of the `destination_index` and `length` is greater than `destination_arr
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 13 2025 21:08:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 14 2025 12:08:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
