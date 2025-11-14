@@ -322,7 +322,7 @@ namespace xtd {
     /// @remarks This method is an O(n) operation, where n is length.
     template<class type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
     static xtd::array<type_t, rank, allocator_t> create_instance(const xtd::array<xtd::size>& lengths) {return xtd::array<type_t, rank, allocator_t>(lengths, type_t {});}
-
+    
     /// @brief Determines whether the xtd::array <type_t> contains elements that match the conditions defined by the specified predicate..
     /// @param match The xtd::predicate function that defines the conditions of the elements to search for.
     /// @return `true` if the xtd::array <type_t> contains one or more elements that match the conditions defined by the specified predicate; otherwise, `false`.
@@ -334,7 +334,7 @@ namespace xtd {
         if (match(elem)) return true;
       return false;
     }
-
+    
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
     /// @param value The object to locate in the array.
@@ -372,7 +372,7 @@ namespace xtd {
         if (xtd::collections::generic::helpers::equator<type_t> {}(array[index + increment], value)) return index + increment;
       return xtd::npos;
     }
-
+    
     /// @brief Changes the number of elements of a one-dimensional array to the specified new size.
     /// @param array The one-dimensional, zero-based array to resize, or null to create a new array with the specified size.
     /// @param newSize The size of the new array.
