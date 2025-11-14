@@ -333,7 +333,11 @@ namespace xtd {
     /// @brief Determines the index of a specific item in the xtd::array <type_t>.
     /// @param value The object to locate in the xtd::array.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
-    size_type index_of(const type_t& value) const noexcept override {return index_of(*this, value, 0, count());}
+    size_type index_of(const type_t& value) const noexcept override {
+      for (auto increment = xtd::size {0}; increment < count(); ++increment)
+        if (xtd::collections::generic::helpers::equator<type_t> {}(data_->items[increment], value)) return increment;
+      return xtd::npos;
+    }
     
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
@@ -421,44 +425,6 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value) noexcept {return index_of(array, value, 0, array.length());}
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @param index The zero-based starting index of the search.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value, size_type index) {return index_of(array, value, index, array.length() - index);}
-    /// @brief Determines the index of a specific item in the array specified.
-    /// @param array The object to locate in the array.
-    /// @param value The object to locate in the array.
-    /// @param index The zero-based starting index of the search.
-    /// @param count The number of elements in the section to search
-    /// @return int32 The index of value if found in the array; otherwise, -1.
-    /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
-    /// @par Examples
-    /// The following code example shows how to determine the index of the first occurrence of a specified element.
-    /// @include array_index_of.cpp
-    static size_type index_of(const basic_array & array, const value_type & value, size_type index, size_type count) {
-      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      
-      if (array.size() == 0) return npos;
-      for (auto increment = size_type {0}; increment < count; ++increment) {
-        if (xtd::collections::generic::helpers::equator < type_t > {}(array[index + increment], value))
-          return index + increment;
-      }
-      return npos;
-    }
     
     /// @brief Reverses the order of the elements in the entire xtd::basic_array.
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
