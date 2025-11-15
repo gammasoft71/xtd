@@ -123,7 +123,7 @@ namespace xtd {
     /// @include array_constructor.cpp
     array(const array<xtd::size, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
     /// @}
-       
+    
     /// @name Public Properties
     
     /// @{

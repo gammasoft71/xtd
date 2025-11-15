@@ -168,7 +168,7 @@ namespace xtd {
     /// @param other Another base type container to use as data source.
     /// @return This current instance.
     array& operator=(array&&) = default;
-
+    
     using xtd::basic_array<type_t, allocator_t>::operator();
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.

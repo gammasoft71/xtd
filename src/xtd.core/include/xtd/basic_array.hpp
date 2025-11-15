@@ -341,7 +341,7 @@ namespace xtd {
         if (xtd::collections::generic::helpers::equator<type_t> {}(data_->items[increment], value)) return increment;
       return xtd::npos;
     }
-
+    
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
@@ -548,16 +548,16 @@ namespace xtd {
     }
     
     void add(const type_t& item) override {}
-
+    
     void clear() override {fill(value_type {});}
-
+    
     template<class value_t>
     static xtd::size compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes);
     template<class value_t>
     static xtd::size compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index);
     
     void insert(size_type index, const type_t& value) override {}
-   
+    
     bool remove(const type_t& item) override {return false;}
     
     void remove_at(size_type index) override {}
@@ -568,7 +568,7 @@ namespace xtd {
       data_->items.increment_version();
       std::reverse(data_->items.begin() + index, data_->items.begin() + index + count);
     }
-
+    
     template<class value_t>
     static xtd::string to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index);
     
