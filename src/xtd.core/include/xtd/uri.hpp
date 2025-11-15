@@ -519,7 +519,7 @@ namespace xtd {
     /// @param part = One of the xtd::uri_partial values that specifies the end of the URI portion to return.
     /// @return string A string that contains the specified portion of the xtd::uri instance.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @exception ArgumentException The specified part is not valid.
+    /// @exception xtd::argument_exception The specified part is not valid.
     /// @remarks The get_left_part method returns a string containing the leftmost portion of the URI string, ending with the portion specified by part.
     /// @remarks get_left_part includes delimiters in the following cases:
     /// @remarks   * scheme includes the scheme delimiter.
@@ -630,21 +630,21 @@ namespace xtd {
     /// @brief Gets the decimal value of a hexadecimal digit.
     /// @param digit The hexadecimal digit (0-9, a-f, A-F) to convert.
     /// @return int32 An int32 value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit.
-    /// @exception ArgumentException digit is not a valid hexadecimal digit (0-9, a-f, A-F).
-    /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an ArgumentException exception is thrown.
+    /// @exception xtd::argument_exception digit is not a valid hexadecimal digit (0-9, a-f, A-F).
+    /// @remarks The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an xtd::argument_exception exception is thrown.
     static int32 from_hex(char digit);
     
     /// @brief Converts a specified character into its hexadecimal equivalent.
     /// @param character The character to convert to hexadecimal representation.
     /// @return string The hexadecimal representation of the specified character.
-    /// @exception ArgumentOutOfRangeException character is greater than 255.
+    /// @exception xtd::argument_out_of_range_exception character is greater than 255.
     static xtd::string hex_escape(char character);
     
     /// @brief Converts a specified hexadecimal representation of a character to the character.
     /// @param pattern The hexadecimal representation of a character.
     /// @param index The location in pattern where the hexadecimal representation of a character begins.
     /// @return Char The character represented by the hexadecimal encoding at position index. If the character at index is not hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned.
-    /// @exception ArgumentOutOfRangeException index is less than 0 or greater than or equal to the number of characters in pattern.
+    /// @exception xtd::argument_out_of_range_exception index is less than 0 or greater than or equal to the number of characters in pattern.
     static char hex_unescape(const xtd::string& pattern, size_t& index);
     
     /// @brief  Determines whether a specified character is a valid hexadecimal digit.
