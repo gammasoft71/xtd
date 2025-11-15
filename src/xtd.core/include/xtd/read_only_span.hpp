@@ -409,7 +409,7 @@ namespace xtd {
   inline const read_only_span<type_t, extent> read_only_span<type_t, extent>::empty_read_only_span;
   
   /// @cond
-  // C++17 deduction guides for xtd::read_only_span
+  // Deduction guides for xtd::read_only_span
   // {
   template<class iterator_t>
   read_only_span(iterator_t first, iterator_t last) -> read_only_span<typename iterator_t::value_type>;
