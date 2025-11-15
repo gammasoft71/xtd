@@ -121,7 +121,7 @@ namespace xtd {
           /// @param b The second key to check.
           /// @return `true` if keys are equals; otherwise `false`.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
-          bool operator()(const key_t & a, const key_t & b) const {
+          result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
             if (&a == &b) return true;
             if (comparer) return comparer->equals(a, b);
             return equator_t {}(a, b);
@@ -131,8 +131,8 @@ namespace xtd {
         private:
           friend class dictionary;
           equator() = default;
-          explicit equator(const iequality_comparer < key_t >* comparer) : comparer {comparer} {}
-          const iequality_comparer < key_t >* comparer = nullptr;
+          explicit equator(const iequality_comparer<first_argument_type>* comparer) : comparer {comparer} {}
+          const iequality_comparer<first_argument_type>* comparer = nullptr;
         };
         /// @}
         
@@ -270,23 +270,18 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
-        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources.
-        /// @param first The fist iterator of the range [first, last) to copy the elements from.
-        /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
-        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
-        /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
-        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
-        template < class input_iterator_t >
-        explicit dictionary(input_iterator_t first, input_iterator_t last) {
-          for (auto iterator = first; iterator != last; ++iterator) {
-            const auto& [key, value] = *iterator;
-            add(key, value);
-          }
-        }
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
+        dictionary(dictionary&& other) noexcept = default;
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
         dictionary(const dictionary & other) noexcept : data_(xtd::new_ptr < dictionary_data > (other.data_->comparer, other.data_->items, other.data_->version)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
+        dictionary(std::unordered_map < key_t, value_t > && other) noexcept : data_(xtd::new_ptr < dictionary_data>(std::move(other))) {}
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
@@ -297,14 +292,6 @@ namespace xtd {
             add(key, value);
           }
         }
-        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
-        /// @param other Another container to be used as source to initialize the elements of the container with.
-        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
-        dictionary(dictionary&& other) noexcept = default;
-        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
-        /// @param other Another container to be used as source to initialize the elements of the container with.
-        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
-        dictionary(std::unordered_map < key_t, value_t > && other) noexcept : data_(xtd::new_ptr < dictionary_data>(std::move(other.data_->items))) {}
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources.
         /// @param init Initializer list to initialize the elements of the container with.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
@@ -333,6 +320,19 @@ namespace xtd {
             self_[key] = value;
           }
         }
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources.
+        /// @param first The fist iterator of the range [first, last) to copy the elements from.
+        /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
+        template < class input_iterator_t >
+        explicit dictionary(input_iterator_t first, input_iterator_t last) {
+          for (auto iterator = first; iterator != last; ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @}
         
         /// @name Public Properties
@@ -343,9 +343,9 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
         size_type capacity() const noexcept {return items().bucket_count();}
         
-        /// @brief Gets the td::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
+        /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
-        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the td::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
         const iequality_comparer < key_t >& comparer() const noexcept {
           if (data_->comparer) return *data_->comparer;
           return equality_comparer < key_t >::default_equality_comparer();
@@ -658,8 +658,8 @@ namespace xtd {
         
         struct dictionary_data {
           dictionary_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}
-          dictionary_data(ptr < iequality_comparer < key_t>> comparer) : comparer {comparer},  items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
-          dictionary_data(ptr < iequality_comparer < key_t>> comparer, const base_type & items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
+          dictionary_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
+          dictionary_data(ptr<iequality_comparer<key_type>> comparer, const base_type & items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
             for (const auto& item : items)
               this->items.insert(item);
           }
@@ -668,31 +668,31 @@ namespace xtd {
               this->items.insert(item);
           }
           
-          ptr < iequality_comparer < key_t>> comparer;
+          ptr<iequality_comparer<key_type>> comparer;
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
         };
-        xtd::ptr < dictionary_data > data_ = xtd::new_ptr < dictionary_data > ();
+        xtd::ptr<dictionary_data> data_ = xtd::new_ptr<dictionary_data>();
       };
       
       /// @cond
-      // C++17 deduction guides for xtd::collections::generic::dictionary
+      // Deduction guides for xtd::collections::generic::dictionary
       // {
       template < class key_t, class value_t >
-      dictionary(idictionary < key_t, value_t >) -> dictionary < key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, helpers::allocator < std::pair < const key_t, value_t >>>;
+      dictionary(idictionary < key_t, value_t >) -> dictionary<key_t, value_t>;
       
       template < class key_t, class value_t >
-      dictionary(ienumerable < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t >, helpers::allocator < std::pair < const key_t, value_t >>>;
+      dictionary(ienumerable < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template < class key_t, class value_t >
-      dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary < key_t, value_t >;
+      dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template < class key_t, class value_t >
-      dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary < key_t, value_t >;
+      dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
       
       template < class input_iterator_t >
-      dictionary(input_iterator_t, input_iterator_t) -> dictionary < helpers::iterator_key_t < input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t >>;
+      dictionary(input_iterator_t, input_iterator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>;
       // }
       /// @endcond
     }
