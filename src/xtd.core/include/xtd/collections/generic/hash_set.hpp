@@ -163,7 +163,7 @@ namespace xtd {
           if (data_->comparer) return *data_->comparer;
           return equality_comparer<key_type>::default_equality_comparer();
         }
-
+        
         /// @brief Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -361,7 +361,7 @@ namespace xtd {
             if (match(item) && remove(item)) ++nb_removed;
           return nb_removed;
         }
-
+        
         /// @brief Determines whether the current set and the specified collection contain the same elements.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is equal to `other`; otherwise, `false`.
@@ -372,7 +372,7 @@ namespace xtd {
             if (!contains(item)) return false;
           return true;
         }
-
+        
         /// @brief Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.
         /// @param other The collection to compare to the current set.
         /// @remarks Any duplicate elements in `other` are ignored.
@@ -385,7 +385,7 @@ namespace xtd {
         /// @brief Gets a string that represents the current object.
         /// @return A string that represents the current object.
         xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
-
+        
         /// @brief Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
         /// @param other The collection to compare to the current set.
         /// @remarks Any duplicate elements in `other` are ignored.
@@ -393,14 +393,14 @@ namespace xtd {
           for (const auto& item : other)
             if (!contains(item)) items().insert(item);
         }
-
+        
         /// @}
         
         /// @name Public Operators
         
         /// @{
         /// @}
-
+        
       private:
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
@@ -420,7 +420,7 @@ namespace xtd {
             if (!contains(item)) return false;
           return true;
         }
-
+        
         struct hash_set_data {
           hash_set_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}
           hash_set_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
@@ -440,7 +440,7 @@ namespace xtd {
         };
         xtd::ptr <hash_set_data> data_ = xtd::new_ptr<hash_set_data>();
       };
-
+      
       /// @cond
       // Deduction guides for xtd::collections::generic::hash_set
       // {

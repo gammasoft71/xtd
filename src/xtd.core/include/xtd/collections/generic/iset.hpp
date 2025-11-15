@@ -44,7 +44,7 @@ namespace xtd {
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
         using const_iterator = typename icollection<type_t>::const_iterator;
         /// @}
-
+        
         /// @name Public Properties
         
         /// @{
@@ -97,7 +97,7 @@ namespace xtd {
         virtual const xtd::object& sync_root() const noexcept = 0;
         /// @}
         
-
+        
         /// @name Public Methods
         
         /// @{
@@ -105,7 +105,7 @@ namespace xtd {
         /// @param item The element to add to the set.
         /// @return `true` if the element is added to the set; `false` if the element is already in the set.
         virtual bool add(const type_t& item) noexcept = 0;
-
+        
         /// @brief Removes all items from the xtd::collections::generic::iset <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::iset <type_t> is read-only.
         /// @remarks xtd::collections::generic::iset::count must be set to 0, and references to other objects from elements of the collection must be released.
@@ -122,7 +122,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::iset <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         virtual void copy_to(xtd::array<type_t>& array, xtd::size array_index) const = 0;
-
+        
         /// @brief Removes all elements in the specified collection from the current set.
         /// @param other The collection of items to remove from the set.
         /// @remarks This method is an O(n) operation, where n is the number of elements in the other parameter.
@@ -165,7 +165,7 @@ namespace xtd {
         /// @remarks Implementations can vary in how they determine equality of objects; for example, xtd::collections::generic::list <type_t> uses xtd::collections::generic::compoarer <type_t>::default_comparer, whereas, xtd::collections::generic::dictionary <key_t, value_t> allows the user to specify the xtd::collections::generic::icompoarer <type_t> implementation to use for comparing keys.
         /// @remarks In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
         virtual bool remove(const type_t& item) = 0;
-
+        
         /// @brief Determines whether the current set and the specified collection contain the same elements.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is equal to `other`; otherwise, `false`.
