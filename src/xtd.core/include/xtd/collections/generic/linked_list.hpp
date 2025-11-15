@@ -439,7 +439,7 @@ namespace xtd {
       };
       
       /// @cond
-      // C++17 deduction guides for xtd::collections::generic::linked_list
+      // Deduction guides for xtd::collections::generic::linked_list
       // {
       template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
       linked_list(linked_list < type_t, allocator_t >&&) -> linked_list < type_t, allocator_t >;
@@ -447,17 +447,20 @@ namespace xtd {
       template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
       linked_list(const list < type_t, allocator_t >&) -> linked_list < type_t, allocator_t >;
       
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
-      linked_list(const std::list < type_t >&) -> linked_list < type_t, allocator_t >;
+      template < class type_t>
+      linked_list(const std::list < type_t >&) -> linked_list < type_t >;
       
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
-      linked_list(std::list < type_t >&&) -> linked_list < type_t, allocator_t >;
+      template < class type_t>
+      linked_list(std::list < type_t >&&) -> linked_list < type_t >;
       
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
-      linked_list(const ienumerable < type_t >&) -> linked_list < type_t, allocator_t >;
+      template < class type_t>
+      linked_list(const ienumerable < type_t >&) -> linked_list < type_t >;
       
-      template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
-      linked_list(std::initializer_list < type_t >) -> linked_list < type_t, allocator_t >;
+      template < class type_t>
+      linked_list(std::initializer_list < type_t >) -> linked_list < type_t >;
+      
+      template <class input_iterator_t>
+      linked_list(input_iterator_t, input_iterator_t) -> linked_list<typename input_iterator_t::value_type>;
       // }
       /// @endcond
     }
