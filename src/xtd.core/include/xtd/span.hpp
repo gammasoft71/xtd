@@ -466,7 +466,7 @@ namespace xtd {
   inline const span<type_t, extent> span<type_t, extent>::empty_span;
   
   /// @cond
-  // C++17 deduction guides for xtd::span
+  // Deduction guides for xtd::span
   // {
   template<class iterator_t>
   span(iterator_t, iterator_t) -> span<typename iterator_t::value_type>;
