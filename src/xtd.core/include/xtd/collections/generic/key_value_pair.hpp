@@ -161,7 +161,7 @@ namespace xtd {
       };
       
       /// @cond
-      // C++17 deduction guides for xtd::collections::generic::key_value_pair
+      // Deduction guides for xtd::collections::generic::key_value_pair
       // {
       template < class key_t, class value_t >
       key_value_pair(key_t, value_t) -> key_value_pair < key_t, value_t >;
