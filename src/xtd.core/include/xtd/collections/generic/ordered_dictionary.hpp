@@ -468,13 +468,13 @@ namespace xtd {
       };
       
       /// @cond
-      // C++17 deduction guides for xtd::collections::specialized::ordered_dictionary
+      // Deduction guides for xtd::collections::specialized::ordered_dictionary
       // {
       template < class key_t, class value_t >
-      ordered_dictionary(xtd::collections::generic::idictionary < key_t, value_t >) -> ordered_dictionary < key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
+      ordered_dictionary(xtd::collections::generic::idictionary < key_t, value_t >) -> ordered_dictionary < key_t, value_t>;
       
       template < class key_t, class value_t >
-      ordered_dictionary(xtd::collections::generic::ienumerable < key_value_pair < key_t, value_t>>) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair < const key_t, value_t >>>;
+      ordered_dictionary(xtd::collections::generic::ienumerable < key_value_pair < key_t, value_t>>) -> ordered_dictionary<key_t, value_t>;
       
       template < class key_t, class value_t >
       ordered_dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
