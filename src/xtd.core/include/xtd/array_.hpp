@@ -13,34 +13,37 @@
 
 /// @cond
 namespace xtd {
-  // C++17 deduction guides for xtd::array
+  // Deduction guides for xtd::array
   // {
   template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(type_t, type_t, allocator_t = allocator_t()) -> array<type_t, rank, allocator_t>;
   
-  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(std::initializer_list<type_t>) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(std::initializer_list<type_t>) -> array<type_t, rank>;
   
-  template<class type_t, xtd::size length, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(const type_t(&a)[length]) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size length, xtd::size rank = 1>
+  array(const type_t(&a)[length]) -> array<type_t, rank>;
   
-  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t, rank>;
   
-  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(const xtd::collections::generic::ilist<type_t>&) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(const xtd::collections::generic::ilist<type_t>&) -> array<type_t, rank>;
   
-  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(const std::vector<type_t>&) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(const std::vector<type_t>&) -> array<type_t, rank>;
   
   template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(const array<type_t, rank, allocator_t>&) -> array<type_t, rank, allocator_t>;
   
-  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(std::vector<type_t>&&) -> array<type_t, rank, allocator_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(std::vector<type_t>&&) -> array<type_t, rank>;
   
   template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(array<type_t, rank, allocator_t>&&) -> array<type_t, rank, allocator_t>;
+  
+  template <class input_iterator_t>
+  array(input_iterator_t, input_iterator_t) -> array<typename input_iterator_t::value_type>;
   // }
 }
 
