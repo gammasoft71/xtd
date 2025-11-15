@@ -377,7 +377,7 @@ namespace xtd {
     /// @param dateTime The date and time to convert.
     /// @return date_time The Coordinated Universal Time (UTC) that corresponds to the dateTime parameter. The xtd::date_time value's Kind property is always set to xtd::date_timeKind.Utc.
     /// @exception ArgumentNullException dateTime is null.
-    /// @exception ArgumentException time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`.
+    /// @exception xtd::argument_exception time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`.
     static xtd::date_time convert_time_to_utc(const xtd::date_time& date_time);
     
     /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.
