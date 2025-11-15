@@ -382,7 +382,7 @@ namespace xtd {
   /// @}
   
   /// @cond
-  // C++17 deduction guides for xtd::reference_wrapper_object
+  // Deduction guides for xtd::reference_wrapper_object
   // {
   template<class type_t>
   reference_wrapper_object(type_t&) -> reference_wrapper_object<type_t>;
