@@ -280,7 +280,7 @@ namespace xtd {
   /// @}
   
   /// @cond
-  // C++17 deduction guides for xtd::reference_wrapper_object
+  // Deduction guides for xtd::reference_wrapper_object
   // {
   template<class type_t>
   unique_ptr_object(type_t*) -> unique_ptr_object<type_t, std::default_delete<type_t>>;
