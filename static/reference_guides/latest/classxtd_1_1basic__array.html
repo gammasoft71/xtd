@@ -273,6 +273,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a63ff23cf9bbd59f42928e36dcc042425" id="r_a63ff23cf9bbd59f42928e36dcc042425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ff23cf9bbd59f42928e36dcc042425">index_of</a> (const type_t &amp;value) const noexcept override</td></tr>
 <tr class="memdesc:a63ff23cf9bbd59f42928e36dcc042425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a63ff23cf9bbd59f42928e36dcc042425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfdb65a842f52bcf807aff4260b2acca" id="r_acfdb65a842f52bcf807aff4260b2acca"><td class="memItemLeft" align="right" valign="top"><a id="acfdb65a842f52bcf807aff4260b2acca" name="acfdb65a842f52bcf807aff4260b2acca"></a>
+<a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>index_of</b> (const type_t &amp;value, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> index) const</td></tr>
+<tr class="separator:acfdb65a842f52bcf807aff4260b2acca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32771541a99ac98dcc4973be10f596f7" id="r_a32771541a99ac98dcc4973be10f596f7"><td class="memItemLeft" align="right" valign="top"><a id="a32771541a99ac98dcc4973be10f596f7" name="a32771541a99ac98dcc4973be10f596f7"></a>
+<a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>index_of</b> (const type_t &amp;value, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> index, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> <a class="el" href="#a2e50b538f5aa4913d3180fcee49499c2">count</a>) const</td></tr>
+<tr class="separator:a32771541a99ac98dcc4973be10f596f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a795fd3bff66d49a57311b81cf697953f" id="r_a795fd3bff66d49a57311b81cf697953f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795fd3bff66d49a57311b81cf697953f">resize</a> (<a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe">value_type</a> value)</td></tr>
 <tr class="memdesc:a795fd3bff66d49a57311b81cf697953f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. / @param new_size The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. void resize(size_type new_size) {resize(new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe" title="Represents the array value type.">value_type</a> {});}.  <br /></td></tr>
 <tr class="separator:a795fd3bff66d49a57311b81cf697953f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -291,9 +297,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:abdd2289581f85c14ab799af32e51f9e3" id="r_abdd2289581f85c14ab799af32e51f9e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdd2289581f85c14ab799af32e51f9e3">sort</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a2e50b538f5aa4913d3180fcee49499c2">count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer)</td></tr>
 <tr class="memdesc:abdd2289581f85c14ab799af32e51f9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
 <tr class="separator:abdd2289581f85c14ab799af32e51f9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac29d8f865aaa14d1f3ce4ae201fdf1b5" id="r_ac29d8f865aaa14d1f3ce4ae201fdf1b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac29d8f865aaa14d1f3ce4ae201fdf1b5">swap</a> (<a class="el" href="classxtd_1_1basic__array.html">basic_array</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
-<tr class="memdesc:ac29d8f865aaa14d1f3ce4ae201fdf1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.  <br /></td></tr>
-<tr class="separator:ac29d8f865aaa14d1f3ce4ae201fdf1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4ec27387ef0582948fc499fde1eba65" id="r_ac4ec27387ef0582948fc499fde1eba65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4ec27387ef0582948fc499fde1eba65">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:ac4ec27387ef0582948fc499fde1eba65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:ac4ec27387ef0582948fc499fde1eba65"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -326,14 +329,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:ab39c6f97b33ca7b85614188ce9443f72" id="r_ab39c6f97b33ca7b85614188ce9443f72"><td class="memItemLeft" align="right" valign="top">const type_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab39c6f97b33ca7b85614188ce9443f72">operator()</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes) const</td></tr>
 <tr class="memdesc:ab39c6f97b33ca7b85614188ce9443f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.  <br /></td></tr>
 <tr class="separator:ab39c6f97b33ca7b85614188ce9443f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:ad1bc2546d5b6d814fdebcd0318d76e91" id="r_ad1bc2546d5b6d814fdebcd0318d76e91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1bc2546d5b6d814fdebcd0318d76e91">reverse</a> (<a class="el" href="classxtd_1_1basic__array.html">basic_array</a> &amp;<a class="el" href="classxtd_1_1array.html">array</a>) noexcept</td></tr>
-<tr class="memdesc:ad1bc2546d5b6d814fdebcd0318d76e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a>.  <br /></td></tr>
-<tr class="separator:ad1bc2546d5b6d814fdebcd0318d76e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5089c1fc7d9e8010517893f5cf4a946" id="r_af5089c1fc7d9e8010517893f5cf4a946"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5089c1fc7d9e8010517893f5cf4a946">reverse</a> (<a class="el" href="classxtd_1_1basic__array.html">basic_array</a> &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> index, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> <a class="el" href="#a2e50b538f5aa4913d3180fcee49499c2">count</a>)</td></tr>
-<tr class="memdesc:af5089c1fc7d9e8010517893f5cf4a946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the specified range.  <br /></td></tr>
-<tr class="separator:af5089c1fc7d9e8010517893f5cf4a946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1821,36 +1816,6 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 
 </div>
 </div>
-<a id="ac29d8f865aaa14d1f3ce4ae201fdf1b5" name="ac29d8f865aaa14d1f3ce4ae201fdf1b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac29d8f865aaa14d1f3ce4ae201fdf1b5">&#9670;&#160;</a></span>swap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::swap </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>All iterators and references remain valid. The xtd::array::end() iterator is invalidated. </dd></dl>
-
-</div>
-</div>
 <a id="ac4ec27387ef0582948fc499fde1eba65" name="ac4ec27387ef0582948fc499fde1eba65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4ec27387ef0582948fc499fde1eba65">&#9670;&#160;</a></span>to_string()</h2>
 
@@ -1878,121 +1843,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 <p>Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
-<div class="line">  <span class="keyword">namespace </span>object_test {</div>
-<div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
-<div class="line">    };</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  ptr&lt;object&gt; obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
-<div class="line">  console::write_line(obj1-&gt;to_string());</div>
-<div class="line"> </div>
-<div class="line">  ptr&lt;object&gt; obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
-<div class="line">  console::write_line(obj2-&gt;to_string());</div>
-<div class="line"> </div>
-<div class="line">  ptr&lt;object&gt; obj3 = new_ptr&lt;boolean_object&gt;();</div>
-<div class="line">  console::write_line(obj3-&gt;to_string());</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// examples::object_test::object1</span></div>
-<div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
-</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
-
-</div>
-</div>
-<a id="ad1bc2546d5b6d814fdebcd0318d76e91" name="ad1bc2546d5b6d814fdebcd0318d76e91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1bc2546d5b6d814fdebcd0318d76e91">&#9670;&#160;</a></span>reverse() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::reverse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a>. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This method uses std::reverse to reverse the order of the elements, such that the element at <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt;[i], where <code>i</code> is any index within the range, moves to <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt;[j], where <code>j</code> equals index plus index plus count minus <code>i</code> minus 1. </dd>
-<dd>
-This method is an O(n) operation, where n is <a class="el" href="#a2e50b538f5aa4913d3180fcee49499c2" title="Gets the number of elements contained in the xtd::array &lt;type_t&gt;.">xtd::basic_array::count</a>. </dd></dl>
-
-</div>
-</div>
-<a id="af5089c1fc7d9e8010517893f5cf4a946" name="af5089c1fc7d9e8010517893f5cf4a946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5089c1fc7d9e8010517893f5cf4a946">&#9670;&#160;</a></span>reverse() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::reverse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reverses the order of the elements in the specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to reverse. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of elements in the range to reverse. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`index` and `count` do not denote a valid range of elements in the <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method uses std::reverse to reverse the order of the elements, such that the element at <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt;[i], where <code>i</code> is any index within the range, moves to <a class="el" href="classxtd_1_1basic__array.html" title="Base object that represent array.">xtd::basic_array</a> &lt;type_t&gt;[j], where <code>j</code> equals index plus index plus count minus <code>i</code> minus 1. </dd>
-<dd>
-This method is an O(n) operation, where n is <code>count</code>. </dd></dl>
 
 </div>
 </div>
@@ -2325,7 +2177,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2025 20:22:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 15 2025 10:48:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

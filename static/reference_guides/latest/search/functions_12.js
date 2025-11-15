@@ -339,7 +339,7 @@ var searchData=
   ['suspend_336',['suspend',['../classxtd_1_1threading_1_1thread.html#a2416048e9a9f8adffc8cb8a969bb2760',1,'xtd::threading::thread']]],
   ['suspend_5flayout_337',['suspend_layout',['../classxtd_1_1forms_1_1control.html#a2e31708a4a3c0b83d00ef2e0abf3c05a',1,'xtd::forms::control']]],
   ['svalbard_5fand_5fjan_5fmayen_338',['svalbard_and_jan_mayen',['../classxtd_1_1forms_1_1countries.html#a038ce7f4b190987d5bf1d7ef6c702d3f',1,'xtd::forms::countries']]],
-  ['swap_339',['swap',['../classxtd_1_1basic__array.html#ac29d8f865aaa14d1f3ce4ae201fdf1b5',1,'xtd::basic_array::swap()'],['../classxtd_1_1reference__wrapper__object.html#a4151e67e8c201308474722b1f1d30e1d',1,'xtd::reference_wrapper_object::swap()'],['../classxtd_1_1text_1_1basic__string__builder.html#aa4adcc8a4f6c42434091cc96fcc49061',1,'xtd::text::basic_string_builder::swap()']]],
+  ['swap_339',['swap',['../classxtd_1_1reference__wrapper__object.html#a4151e67e8c201308474722b1f1d30e1d',1,'xtd::reference_wrapper_object::swap()'],['../classxtd_1_1text_1_1basic__string__builder.html#aa4adcc8a4f6c42434091cc96fcc49061',1,'xtd::text::basic_string_builder::swap()']]],
   ['sweden_340',['sweden',['../classxtd_1_1forms_1_1countries.html#a24d2a66c649106efb051f6ae1c2958f2',1,'xtd::forms::countries']]],
   ['switch_5fbutton_341',['switch_button',['../classxtd_1_1forms_1_1switch__button.html#a717369c5954a6afef8fca74f5f8596cd',1,'xtd::forms::switch_button']]],
   ['switch_5fobject_342',['switch_object',['../classxtd_1_1diagnostics_1_1switch__object.html#a756caeeb3bbedf49e899e636696a370c',1,'xtd::diagnostics::switch_object']]],

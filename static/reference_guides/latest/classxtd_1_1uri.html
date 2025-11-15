@@ -1533,7 +1533,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>This instance represents a relative URI, and this property is valid only for absolute URIs. </td></tr>
-    <tr><td class="paramname">ArgumentException</td><td>The specified part is not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The specified part is not valid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1976,11 +1976,11 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> An <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> value that contains a number from 0 to 15 that corresponds to the specified hexadecimal digit. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentException</td><td>digit is not a valid hexadecimal digit (0-9, a-f, A-F). </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>digit is not a valid hexadecimal digit (0-9, a-f, A-F). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an ArgumentException exception is thrown. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The from_hex method converts a character representing a hexadecimal digit (0-9, a-f, A-F) to its decimal value (0 to 15). If digit is not a valid hexadecimal digit, an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> exception is thrown. </dd></dl>
 
 </div>
 </div>
@@ -2017,7 +2017,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="section return"><dt>Returns</dt><dd>string The hexadecimal representation of the specified character. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentOutOfRangeException</td><td>character is greater than 255. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>character is greater than 255. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2062,7 +2062,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="section return"><dt>Returns</dt><dd>Char The character represented by the hexadecimal encoding at position index. If the character at index is not hexadecimal encoded, the character at index is returned. The value of index is incremented to point to the character following the one returned. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentOutOfRangeException</td><td>index is less than 0 or greater than or equal to the number of characters in pattern. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is less than 0 or greater than or equal to the number of characters in pattern. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2574,7 +2574,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2025 20:22:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 15 2025 10:49:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

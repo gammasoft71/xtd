@@ -3462,7 +3462,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>array is null. </td></tr>
-    <tr><td class="paramname">ArgumentException</td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; is greater than the number of elements that the destination array can contain. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; is greater than the number of elements that the destination array can contain. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3578,8 +3578,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>array is null. </td></tr>
-    <tr><td class="paramname">ArgumentOutOfRangeException</td><td>The arrayIndex or count is less than 0. </td></tr>
-    <tr><td class="paramname">ArgumentException</td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; is greater than the number of elements that the destination array can contain. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The arrayIndex or count is less than 0. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; is greater than the number of elements that the destination array can contain. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5362,7 +5362,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentOutOfRangeException</td><td>index is less than 0 or index is greater than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is less than 0 or index is greater than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5638,7 +5638,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="line"><span class="comment">// Coelophysis</span></div>
 <div class="line"><span class="comment">// Pachycephalosaurus</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method uses <a class="el" href="classxtd_1_1basic__array.html#ad1bc2546d5b6d814fdebcd0318d76e91">xtd::array::reverse</a> to reverse the order of the elements. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses xtd::array::reverse to reverse the order of the elements. </dd>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
 
@@ -5745,7 +5745,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="line"><span class="comment">// Coelophysis</span></div>
 <div class="line"><span class="comment">// Pachycephalosaurus</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method uses <a class="el" href="classxtd_1_1basic__array.html#ad1bc2546d5b6d814fdebcd0318d76e91">xtd::array::reverse</a> to reverse the order of the elements. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses xtd::array::reverse to reverse the order of the elements. </dd>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
 
@@ -6803,7 +6803,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2025 20:22:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 15 2025 10:49:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
