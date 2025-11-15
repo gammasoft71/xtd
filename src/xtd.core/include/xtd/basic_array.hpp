@@ -333,12 +333,15 @@ namespace xtd {
     /// @brief Determines the index of a specific item in the xtd::array <type_t>.
     /// @param value The object to locate in the xtd::array.
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
-    size_type index_of(const type_t& value) const noexcept override {
-      for (auto increment = xtd::size {0}; increment < count(); ++increment)
+    size_type index_of(const type_t& value) const noexcept override  {return index_of(value, 0, length());}
+    size_type index_of(const type_t& value, size_type index) const {return index_of(value, index, length() - index);}
+    size_type index_of(const type_t& value, size_type index, size_type count) const {
+      if (index > length() || index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      for (auto increment = index; increment < (index + count); ++increment)
         if (xtd::collections::generic::helpers::equator<type_t> {}(data_->items[increment], value)) return increment;
       return xtd::npos;
     }
-    
+
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
@@ -413,35 +416,9 @@ namespace xtd {
       return self_;
     }
     
-    /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
-    /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
-    virtual void swap(basic_array & other) noexcept {
-      data_->items.swap(other.data_->items);
-    }
-    
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
-    /// @}
-    
-    /// @name Public Static Methods
-    
-    /// @{
-    
-    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
-    static void reverse(basic_array & array) noexcept {reverse(array, 0, array.count());}
-    /// @brief Reverses the order of the elements in the specified range.
-    /// @param index The zero-based starting index of the range to reverse.
-    /// @param count The number of elements in the range to reverse.
-    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
-    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
-    /// @remarks This method is an O(n) operation, where n is `count`.
-    static void reverse(basic_array & array, size_type index, size_type count) {
-      if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if (count == 0) return;
-      array.data_->items.increment_version();
-      std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
-    }
     /// @}
     
     /// @name Public Operators
@@ -571,17 +548,27 @@ namespace xtd {
     }
     
     void add(const type_t& item) override {}
+
     void clear() override {fill(value_type {});}
-    void insert(size_type index, const type_t& value) override {}
-    bool remove(const type_t& item) override {return false;}
-    void remove_at(size_type index) override {}
-    
+
     template<class value_t>
     static xtd::size compute_index(const xtd::basic_array<value_t>& items, const xtd::array<size_type>& indexes);
-    
     template<class value_t>
     static xtd::size compute_index(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size index);
     
+    void insert(size_type index, const type_t& value) override {}
+   
+    bool remove(const type_t& item) override {return false;}
+    
+    void remove_at(size_type index) override {}
+    
+    void reverse(size_type index, size_type count) {
+      if (index > length() || index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      if (count == 0) return;
+      data_->items.increment_version();
+      std::reverse(data_->items.begin() + index, data_->items.begin() + index + count);
+    }
+
     template<class value_t>
     static xtd::string to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index);
     

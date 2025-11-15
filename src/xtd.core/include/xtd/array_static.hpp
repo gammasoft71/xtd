@@ -338,39 +338,36 @@ namespace xtd {
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
     /// @param value The object to locate in the array.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @return The index of value if found in the array; otherwise, -1.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
     template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value) noexcept {return index_of(array, value, 0, array.length());}
+    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value) noexcept {return array.index_of(value);}
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
     /// @param value The object to locate in the array.
     /// @param index The zero-based starting index of the search.
-    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @return The index of value if found in the array; otherwise, -1.
     /// @exception xtd::argument_out_of_range_exception The parameters `index` is less than 0.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
     template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value, xtd::size index) {return index_of(array, value, index, array.length() - index);}
+    static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value, xtd::size index) {return array.index_of(value, index);}
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
     /// @param value The object to locate in the array.
     /// @param index The zero-based starting index of the search.
     /// @param count The number of elements in the section to search
-    /// @return int32 The index of value if found in the array; otherwise, -1.
+    /// @return The index of value if found in the array; otherwise, -1.
     /// @exception xtd::argument_out_of_range_exception The parameters `index` and `count` do not specify a valid section in the 'array'.
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
     template<typename type_t, xtd::size rank, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
     static xtd::size index_of(const xtd::array<type_t, rank, allocator_t>& array, const type_t& value, xtd::size index, xtd::size count) {
-      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      for (auto increment = xtd::size {0}; increment < count; ++increment)
-        if (xtd::collections::generic::helpers::equator<type_t> {}(array[index + increment], value)) return index + increment;
-      return xtd::npos;
+      return array.index_of(value, index, count);
     }
 
     /// @brief Changes the number of elements of a one-dimensional array to the specified new size.
@@ -383,25 +380,17 @@ namespace xtd {
     template<class type_t, class allocator_t>
     static void resize(xtd::array<type_t, 1, allocator_t>& array, int32 new_size) {array.resize(new_size);}
     
-    /// @brief Reverses the order of the elements in the entire List<T>.
-    /// @remarks This method uses Array.Reverse to reverse the order of the elements, such that the element at List<T>[i], where i is any index within the range, moves to List<T>[j], where j equals index plus index plus count minus i minus 1.
-    /// @remarks This method is an O(n) operation, where n is Count.
-    /// @par Examples
-    /// The following code example demonstrates both overloads of the Reverse method. The code example creates a List<T> of strings and adds six strings. The Reverse() method overload is used to reverse the list, and then the Reverse(Int32, Int32) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
-    /// @include ListReverse.cpp
+    /// @brief Reverses the order of the elements in the entire xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
     template<class type_t, class allocator_t>
-    static void reverse(xtd::array<type_t, 1, allocator_t>& array) {array.reverse();}
-    
+    static void reverse(xtd::array<type_t, 1, allocator_t>& array) {array.reverse(0, array.length());}
     /// @brief Reverses the order of the elements in the specified range.
     /// @param index The zero-based starting index of the range to reverse.
     /// @param count The number of elements in the range to reverse.
-    /// @exception ArgumentOutOfRangeException index is less than 0. -or- count is less than 0.
-    /// @exception ArgumentException ndex and count do ! denote a valid range of elements in the List<T>.
-    /// @remarks This method uses Array.Reverse to reverse the order of the elements, such that the element at List<T>[i], where i is any index within the range, moves to List<T>[j], where j equals index plus index plus count minus i minus 1.
-    /// @remarks This method is an O(n) operation, where n is Count.
-    /// @par Examples
-    /// The following code example demonstrates both overloads of the Reverse method. The code example creates a List<T> of strings and adds six strings. The Reverse() method overload is used to reverse the list, and then the Reverse(Int32, Int32) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
-    /// @include ListReverse.cpp
+    /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
+    /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
+    /// @remarks This method is an O(n) operation, where n is `count`.
     template<class type_t, class allocator_t>
     static void reverse(xtd::array<type_t, 1, allocator_t>& array, int32 index, int32 count) {array.reverse(index, count);}
     /// @}
