@@ -120,10 +120,6 @@ namespace xtd {
     array(std::initializer_list<std::initializer_list<type_t>> items) : basic_array<type_t, allocator_t>(items) {}
     /// @}
     
-    /// @cond
-    ~array() {}
-    /// @endcond
-    
     /// @name Public Properties
     
     /// @{
@@ -143,8 +139,8 @@ namespace xtd {
     /// @param index1 The position of the Array element to get.
     /// @param index2 The position of the Array element to get.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     const value_type& get_value(size_type index1, size_type index2) const {return operator()(index1, index2);}
     
     using xtd::basic_array<type_t, allocator_t>::set_value;
@@ -152,8 +148,8 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param index1 The position of the Array element to get.
     /// @param index2 The position of the Array element to get.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     void set_value(const value_type& value, size_type index1, size_type index2) {operator()(index1, index2) = value;}
     
     /// @brief Returns a xtd::string that represents the current object.
