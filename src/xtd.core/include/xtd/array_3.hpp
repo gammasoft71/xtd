@@ -129,6 +129,11 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Gets the rank (number of dimensions) of the array.
+    /// @return The rank (number of dimensions) of the array.
+    /// @par Examples
+    /// The following code example demonstrates methods to get the rank of an array.
+    /// @include array_get_length.cpp
     xtd::size rank() const noexcept override {return 3;}
     /// @}
     
@@ -153,15 +158,23 @@ namespace xtd {
     /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
     void set_value(const value_type& value, size_type index1, size_type index2, size_type index3) {operator()(index1, index2, index3) = value;}
     
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
     /// @}
     
     /// @name Public Operators
     
     /// @{
+    /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
+    /// @param other Another container to use as data source.
+    /// @return This current instance.
     array& operator=(const array&) = default;
+    /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
+    /// @param other Another base type container to use as data source.
+    /// @return This current instance.
     array& operator=(array&&) = default;
-    
+
     using xtd::basic_array<type_t, allocator_t>::operator();
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
