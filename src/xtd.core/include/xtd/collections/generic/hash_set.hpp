@@ -17,8 +17,8 @@ namespace xtd {
       /// @brief Represents a set of values.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-      /// using hash_set = std::unordered_set<type_t, hasher_t, equator_t, allocator_t>;
+      /// template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
+      /// class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t>
       /// ```
       /// @par Header
       /// ```cpp
@@ -31,7 +31,432 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::hash_set class is same as [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set).
       template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
-      using hash_set = std::unordered_set<type_t, hasher_t, equator_t, allocator_t>;
+      class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t> {
+      public:
+        /// @name Public Classes
+        
+        /// @{
+        /// @brief Represents the dictionary hasher type.
+        struct hasher {
+          /// @name Public Aliases
+          
+          /// @{
+          /// @brief Represents the argument type.
+          using argument_type = type_t;
+          /// @brief Represents the result type.
+          using result_type = xtd::size;
+          /// @}
+          
+          /// @name Public Operators
+          
+          /// @{
+          /// @brief Serves as a hash function for a specified key with a particular type (type_t).
+          /// @param key The key to hash.
+          /// @return A hash code for the spesified key.
+          /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
+          size_t operator()(const key_t& key) const {
+            if (comparer) return comparer->get_hash_code(key);
+            return hasher_t {}(key);
+          }
+          /// @}
+          
+        private:
+          friend class hash_set;
+          hasher() = default;
+          explicit hasher(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
+          const iequality_comparer<key_t>* comparer = nullptr;
+        };
+        
+        /// @brief Represents the dictionary equator type.
+        struct equator {
+          /// @name Public Aliases
+          
+          /// @{
+          /// @brief Represents the first argument type.
+          using first_argument_type = type_t;
+          /// @brief Represents the second argument type.
+          using second_argument_type = type_t;
+          /// @brief Represents the result type.
+          using result_type = bool;
+          /// @}
+          
+          /// @name Public Operators
+          
+          /// @{
+          /// @brief checks if the specified a and b keys are equal.
+          /// @param a The first key to check.
+          /// @param b The second key to check.
+          /// @return `true` if keys are equals; otherwise `false`.
+          /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
+          result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
+            if (&a == &b) return true;
+            if (comparer) return comparer->equals(a, b);
+            return equator_t {}(a, b);
+          }
+          /// @}
+          
+        private:
+          friend class hash_set;
+          equator() = default;
+          explicit equator(const iequality_comparer<first_argument_type>* comparer) : comparer {comparer} {}
+          const iequality_comparer<first_argument_type>* comparer = nullptr;
+        };
+        /// @}
+        
+        /// @name Public Aliases
+        
+        /// @{
+        /// @brief Represents the dictionary key type.
+        using key_type = typename xtd::collections::generic::iset<type_t>::key_type;
+        /// @brief Represents the dictionary value type.
+        using value_type = typename xtd::collections::generic::iset <type_t>::value_type;
+        /// @brief Represents the dictionary size type.
+        using size_type = xtd::size;
+        /// @brief Represents the dictionary base type.
+        using base_type = std::unordered_set<key_type, hasher, equator, allocator_t>;
+        /// @}
+        
+        /// @name Public Constructors
+        
+        /// @{
+        hash_set() noexcept = default;
+        //template < class equality_comparer_t >
+        //hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
+        hash_set(const ienumerable<value_type>& collection) noexcept {
+          for (const auto& item : collection)
+            add(item);
+        }
+        template < class equality_comparer_t >
+        hash_set(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {
+          for (const auto& item : collection)
+            add(item);
+        }
+        hash_set(hash_set&& other) noexcept = default;
+        hash_set(const hash_set& other) noexcept : data_(xtd::new_ptr<hash_set_data>(other.data_->comparer, other.data_->items, other.data_->version)) {}
+        hash_set(std::unordered_set<key_type>&& other) noexcept : data_(xtd::new_ptr<hash_set_data>(std::move(other))) {}
+        hash_set(const std::unordered_set<key_type>& other) noexcept {
+          for (auto iterator = other.begin(); iterator != other.end(); ++iterator)
+            add(*iterator);
+        }
+        hash_set(std::initializer_list <value_type> init) {
+          for (const auto& value : init)
+            add(value);
+        }
+        template <class input_iterator_t>
+        explicit hash_set(input_iterator_t first, input_iterator_t last) {
+          for (auto iterator = first; iterator != last; ++iterator)
+            add(*iterator);
+        }
+        /// @}
+        
+        /// @name Public Properties
+        
+        /// @{
+        /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
+        /// @return The total numbers of elements the internal data structure can hold without resizing.
+        size_type capacity() const noexcept {return items().bucket_count();}
+        
+        /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the set.
+        /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::hash_set <type_t> and to provide hash values for the keys.
+        /// @remarks xtd::collections::generic::hash_set <type_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
+        const iequality_comparer<key_type>& comparer() const noexcept {
+          if (data_->comparer) return *data_->comparer;
+          return equality_comparer<key_type>::default_equality_comparer();
+        }
+
+        /// @brief Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @return the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
+        /// @remarks Getting the value of this property is an O(1) operation.
+        size_type count() const noexcept override {return items().size();}
+        
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        virtual const base_type& items() const noexcept {return data_->items;}
+        /// @brief Returns the underlying base type items.
+        /// @return The underlying base type items.
+        virtual base_type& items() noexcept {return data_->items;}
+        /// @}
+        
+        /// @name Public Methods
+        
+        /// @{
+        /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
+        /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
+        /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
+        bool add(const key_type& item) noexcept override {
+          if (contains(item)) return false;
+          items().insert(item);
+          return true;
+        }
+        
+        /// @brief Removes all keys and values from the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks The xtd::collections::generic::dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
+        void clear() noexcept override {
+          items().clear();
+          ++data_->version;
+        }
+        
+        /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
+        bool contains(const value_type & item) const noexcept override {
+          return items().find(item) != items().end();
+        }
+        
+        /// @brief Copies the complete hash_set <type_t> to a compatible one-dimensional array, starting at the beginning of the target array.
+        /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>.
+        /// @exception ArgumentException The number of elements in the source hash_set <type_t> exceeds the number of elements that the destination array can contain.
+        /// @exception ArgumentNullException array is null.
+        void copy_to(xtd::array<type_t>& array) const {
+          copy_to(0, array, 0, count());
+        }
+        
+        /// @brief Copies the complete hash_set <type_t> to a compatible one-dimensional array, starting at the specified array index.
+        /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>. The array must have zero-based indexing.
+        /// @param index The zero-based index in array at which copying begins.
+        /// @exception ArgumentException The number of elements in the source array is greater than the available space from index to the end of the destination array.
+        /// @exception ArgumentNullException array is null.
+        /// @exception ArgumentOutOfRangeException index is less than zero.
+        void copy_to(xtd::array<type_t>& array, size_type index) const override {
+          copy_to(0, array, index, count());
+        }
+        
+        /// @brief Copies a specified number of elements from hash_set <type_t> to a compatible one-dimensional array, starting at the specified array index
+        /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>. The array must have zero-based indexing.
+        /// @param index The zero-based index in array at which copying begins.
+        /// @param count The number of elements to copy.
+        /// @exception ArgumentException The number of elements in the source (count) array is greater than the available space from index to the end of the destination array.
+        /// @exception ArgumentNullException array is null.
+        /// @exception ArgumentOutOfRangeException index is less than zero or count is less than zero.
+        void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
+          if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          auto increment = size_type {};
+          for (const auto& item : self_) {
+            if (increment >= index + count) return;
+            if (increment++ >= index) array[array_index++] = item;
+          }
+        }
+        
+        /// @brief Removes all elements in the specified collection from the current set.
+        /// @param other The collection of items to remove from the set.
+        /// @remarks This method is an O(n) operation, where n is the number of elements in the other parameter.
+        void except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+          if (&other == this) {
+            clear();
+            return;
+          }
+          for (const type_t& item : other)
+            remove(item);
+        }
+        
+        /// @brief Returns an enumerator that iterates through the xtd::collections::generic::hash_set <type_t>.
+        /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::hash_set <type_t>.
+        enumerator<value_type> get_enumerator() const noexcept override {
+          struct hash_set_enumerator : public ienumerator < value_type > {
+            explicit hash_set_enumerator(const hash_set & items, size_type version) : items_(items), version_(version) {}
+            
+            const value_type& current() const override {
+              if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              value_ = value_type {*iterator_};
+              return value_;
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
+              else iterator_ = items_.items().cbegin();
+              return  iterator_ != items_.data_->items.cend();
+            }
+            
+            void reset() override {
+              index_ = 0;
+              version_ = items_.data_->version;
+              iterator_ = items_.items().cend();
+            }
+            
+          private:
+            size_type index_ = 0;
+            const hash_set& items_;
+            typename hash_set::base_type::const_iterator iterator_ = items_.data_->items.cend();
+            mutable value_type value_;
+            size_type version_ = 0;
+          };
+          return {new_ptr < hash_set_enumerator > (self_, data_->version)};
+        }
+        
+        /// @brief Modifies the current set so that it contains only elements that are also in a specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @remarks This method ignores any duplicate elements in `other`.
+        void intersect_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+          auto to_keep = hash_set {other};
+          auto to_remove = hash_set {};
+          for (const type_t& item : self_)
+            if (!to_keep.contains(item))
+              to_remove.add(item);
+          except_with(to_remove);
+        }
+        
+        /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
+        bool is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          auto set = hash_set {other};
+          if (count() == 0) return set.count() > 0;
+          if (count() >= set.count()) return false;
+          return sub_set(set);
+        }
+        
+        /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
+        bool is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          auto set = hash_set {other};
+          if (set.count() == 0) return count() > 0;
+          if (set.count() >= count()) return false;
+          return super_set(set);
+        }
+        
+        /// @brief Determines whether a set is a subset of a specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set is a subset of `other`; otherwise, `false`.
+        bool is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          return sub_set(hash_set {other});
+        }
+        
+        /// @brief Determines whether a set is a superset of a specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set is a superset of `other`; otherwise, `false`.
+        bool is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          return super_set(hash_set {other});
+        }
+        
+        /// @brief Determines whether the current set overlaps with the specified collection.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set and `other` share at least one common element; otherwise, `false`.
+        bool overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          if (count() == 0) return false;
+          for (const auto& item : other)
+            if (contains(item)) return true;
+          return false;
+        }
+        
+        /// @brief Removes a specified item from the hash_set <type_t>.
+        /// @param item The element to remove.
+        /// @return true if the element was removed, false otherwise.
+        /// @exception ArgumentNullException item is null.
+        bool remove(const type_t& item) noexcept override {
+          return items().erase(item) == 1;
+        }
+        
+        /// @brief Removes all elements that match the conditions defined by the specified predicate from a hash_set <type_t> collection.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to remove.
+        /// @return The number of elements that were removed from the hash_set <type_t> collection.
+        template<class predicate_t>
+        size_type remove_where(predicate_t match) noexcept {
+          auto nb_removed = size_type {};
+          for (const auto& item : self_)
+            if (match(item) && remove(item)) ++nb_removed;
+          return nb_removed;
+        }
+
+        /// @brief Determines whether the current set and the specified collection contain the same elements.
+        /// @param other The collection to compare to the current set.
+        /// @return `true` if the current set is equal to `other`; otherwise, `false`.
+        bool set_equals(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+          auto set = hash_set {other};
+          if (count() != set.count()) return false;
+          for (const auto& item : other)
+            if (!contains(item)) return false;
+          return true;
+        }
+
+        /// @brief Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.
+        /// @param other The collection to compare to the current set.
+        /// @remarks Any duplicate elements in `other` are ignored.
+        void symetric_excep_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+          for (const auto& item : other)
+            if (contains(item)) remove(item);
+            else items().insert(item);
+        }
+        
+        /// @brief Gets a string that represents the current object.
+        /// @return A string that represents the current object.
+        xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
+
+        /// @brief Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
+        /// @param other The collection to compare to the current set.
+        /// @remarks Any duplicate elements in `other` are ignored.
+        void union_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+          for (const auto& item : other)
+            if (!contains(item)) items().insert(item);
+        }
+
+        /// @}
+        
+        /// @name Public Operators
+        
+        /// @{
+        /// @}
+
+      private:
+        bool is_read_only() const noexcept override {return false;}
+        bool is_synchronized() const noexcept override {return false;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+        bool sub_set(const hash_set& set) const noexcept {
+          if (count() == 0) return true;
+          if (count() > set.count()) return false;
+          for (const auto& item : self_)
+            if (!set.contains(item)) return false;
+          return true;
+        }
+        
+        bool super_set(const hash_set& set) const noexcept {
+          if (set.count() == 0) return true;
+          if (set.count() > count()) return false;
+          for (const auto& item : set)
+            if (!contains(item)) return false;
+          return true;
+        }
+
+        struct hash_set_data {
+          hash_set_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}
+          hash_set_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
+          hash_set_data(ptr<iequality_comparer<key_type>> comparer, const base_type& items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
+            for (const auto& item : items)
+              this->items.insert(item);
+          }
+          hash_set_data(base_type&& items, size_type version) noexcept : items {size_type {}, hasher {}, equator {}, allocator_t {}}, version {version} {
+            for (auto&& item : items)
+              this->items.insert(item);
+          }
+          
+          ptr<iequality_comparer<key_type>> comparer;
+          base_type items;
+          size_type version = 0;
+          xtd::object sync_root;
+        };
+        xtd::ptr <hash_set_data> data_ = xtd::new_ptr<hash_set_data>();
+      };
+
+      /// @cond
+      // Deduction guides for xtd::collections::generic::hash_set
+      // {
+      template<class type_t>
+      hash_set(iset<type_t>) -> hash_set<type_t>;
+      
+      template<class type_t>
+      hash_set(ienumerable<type_t>) -> hash_set<type_t>;
+      
+      template <class type_t>
+      hash_set(std::initializer_list<type_t>) -> hash_set<type_t>;
+      
+      template <class input_iterator_t >
+      hash_set(input_iterator_t, input_iterator_t) -> hash_set<typename input_iterator_t::value_type>;
+      // }
+      /// @endcond
     }
   }
 }
