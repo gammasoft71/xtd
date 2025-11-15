@@ -457,16 +457,16 @@ namespace xtd::tests {
     
     void test_method_(reverse) {
       auto items = array<int> {1, 2, 3, 4, 5};
-      array<int>::reverse(items);
+      array<>::reverse(items);
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
     }
     
     void test_method_(reverse_with_index_and_count) {
       auto items = array<int> {1, 2, 3, 4, 5};
-      array<int>::reverse(items, 1, 3);
+      array<>::reverse(items, 1, 3);
       collection_assert::are_equal({1, 4, 3, 2, 5}, items);
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::reverse(items, 6, 0);});
-      assert::throws<argument_out_of_range_exception>([&] {array<int>::reverse(items, 1, 5);});
+      assert::throws<argument_out_of_range_exception>([&] {array<>::reverse(items, 6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {array<>::reverse(items, 1, 5);});
     }
     
     void test_method_(set_value_with_index) {
@@ -494,7 +494,7 @@ namespace xtd::tests {
     void test_method_(swap) {
       auto items1 = array<int> {1, 2, 3, 4, 5};
       auto items2 = array<int> {6, 7, 8, 9, 10};
-      items1.swap(items2);
+      std::swap(items1, items2);
       collection_assert::are_equal({6, 7, 8, 9, 10}, items1);
       collection_assert::are_equal({1, 2, 3, 4, 5}, items2);
     }
