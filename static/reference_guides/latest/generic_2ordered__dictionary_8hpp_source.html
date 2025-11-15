@@ -415,13 +415,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>      };</div>
 </div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>      </div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>      <span class="comment">// C++17 deduction guides for xtd::collections::specialized::ordered_dictionary</span></div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>      <span class="comment">// Deduction guides for xtd::collections::specialized::ordered_dictionary</span></div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>      <span class="comment">// {</span></div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>      <span class="keyword">template</span> &lt; <span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t &gt;</div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>(xtd::collections::generic::idictionary &lt; key_t, value_t &gt;) -&gt; ordered_dictionary &lt; key_t, value_t, xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt;;</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>(xtd::collections::generic::idictionary &lt; key_t, value_t &gt;) -&gt; ordered_dictionary &lt; key_t, value_t&gt;;</div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>      </div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>      <span class="keyword">template</span> &lt; <span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t &gt;</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>(xtd::collections::generic::ienumerable &lt; key_value_pair &lt; key_t, value_t&gt;&gt;) -&gt; <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary&lt;key_t, value_t, xtd::collections::generic::helpers::allocator&lt;std::pair &lt; const key_t, value_t &gt;</a>&gt;&gt;;</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>(xtd::collections::generic::ienumerable &lt; key_value_pair &lt; key_t, value_t&gt;&gt;) -&gt; <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary&lt;key_t, value_t&gt;</a>;</div>
 <div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>      </div>
 <div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>      <span class="keyword">template</span> &lt; <span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t &gt;</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">ordered_dictionary</a>(std::initializer_list &lt; key_value_pair &lt; key_t, value_t&gt;&gt;) -&gt; ordered_dictionary &lt; key_t, value_t &gt;;</div>
@@ -522,7 +522,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 15 2025 10:48:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 15 2025 23:11:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
