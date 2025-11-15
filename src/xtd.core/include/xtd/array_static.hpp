@@ -373,7 +373,7 @@ namespace xtd {
     /// @brief Changes the number of elements of a one-dimensional array to the specified new size.
     /// @param array The one-dimensional, zero-based array to resize, or null to create a new array with the specified size.
     /// @param newSize The size of the new array.
-    /// @exception ArgumentOutOfRangeException newSize is less than zero.
+    /// @exception xtd::argument_out_of_range_exception newSize is less than zero.
     /// @remarks This method allocates a new array with the specified size, copies elements from the old array to the new one, and then replaces the old array with the new one. array must be a one-dimensional array.
     /// @remarks If newSize is greater than the Length of the old array, a new array is allocated and all the elements are copied from the old array to the new one. If newSize is less than the Length of the old array, a new array is allocated and elements are copied from the old array to the new one until the new one is filled; the rest of the elements in the old array are ignored. If newSize is equal to the Length of the old array, this method does nothing.
     /// @remarks This method is an O(n) operation, where n is old size.
