@@ -153,10 +153,6 @@ namespace xtd {
     array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
     /// @}
     
-    /// @cond
-    ~array() {}
-    /// @endcond
-    
     /// @name Public Properties
     
     /// @{
@@ -175,10 +171,9 @@ namespace xtd {
     /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 32-bit integer.
     /// @param array The one-dimensional array that is the destination of the elements copied from the current array.
     /// @param index The index in array at which copying begins.
-    /// @exception ArgumentOutOfRangeException index is less than the lower bound of array.
-    /// @exception ArgumentException array is multidimensional.  -or-  The number of elements in the source array is greater than the available number of elements from index to the end of the destination array.
-    /// @exception ArrayTypeMismatchException The type of the source Array cannot be cast automatically to the type of the destination array.
-    /// @exception RankException The source array is multidimensional.
+    /// @exception xtd::argument_out_of_range_exception index is less than the lower bound of array.
+    /// @exception xtd::argument_exception array is multidimensional.  -or-  The number of elements in the source array is greater than the available number of elements from index to the end of the destination array.
+    /// @exception xtd::rank_exception The source array is multidimensional.
     /// @exception InvalidCastException At least one element in the source Array cannot be cast to the type of destination array.
     /// @remarks This method copies all the elements of the current array instance to the array destination array, starting at index index. The array destination array must already have been dimensioned and must have a sufficient number of elements to accommodate the copied elements. Otherwise, the method throws an exception.
     /// @remarks This method supports the System.Collections.ICollection interface. If implementing System.Collections.ICollection is not explicitly required, use Copy to avoid an extra indirection.
@@ -193,16 +188,16 @@ namespace xtd {
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index The position of the Array element to get.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     const value_type& get_value(size_type index) const {return operator()(index);}
     
     using xtd::basic_array<type_t, allocator_t>::set_value;
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
     /// @param index The position of the Array element to set.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     void set_value(const value_type& value, size_type index) {operator()(index) = value;}
     
     /// @brief Returns a xtd::string that represents the current object.
@@ -226,8 +221,8 @@ namespace xtd {
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
     /// @param index A 32-bit integer that represents the position of the Array element to set.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
@@ -236,8 +231,8 @@ namespace xtd {
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index A 32-bit integer that represents the position of the Array element to get.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
@@ -246,8 +241,8 @@ namespace xtd {
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
     /// @param index A 32-bit integer that represents the position of the Array element to set.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include ArrayArrayOperator.cpp
@@ -256,8 +251,8 @@ namespace xtd {
     /// @brief Gets the element at the specified index.
     /// @param index The zero-based index of the element to get.
     /// @return The value at the specified position in the one-dimensional Array.
-    /// @exception ArgumentException The current Array does ! have exactly one dimension.
-    /// @exception IndexOutOfRangeException index is less than 0 or index is equal to or greater than Count.
+    /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
+    /// @exception xtd::index_out_of_range_exception index is less than 0 or index is equal to or greater than Count.
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include ArrayArrayOperator.cpp
