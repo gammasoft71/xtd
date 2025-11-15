@@ -102,7 +102,12 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include ArrayConstructor.cpp
     array() = default;
-    
+    /// @brief Copy constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array(const array& array) : xtd::basic_array<type_t, allocator_t>(array) {}
+    /// @brief Move constructor with specified array.
+    /// @param array The xtd::array which elements will be inserted from.
+    array(array&& array) = default;
     /// @brief Initializes a new instance of the array class with lengths for each rank specified.
     /// @param lengths the lengths for each rank.
     /// @remarks The array class is not thread safe.
@@ -118,12 +123,7 @@ namespace xtd {
     /// @include array_constructor.cpp
     array(const array<xtd::size, 1>& lengths, const type_t& value) : xtd::basic_array<type_t, allocator_t>(lengths, value) {}
     /// @}
-    
-    /// @cond
-    array(const array& array) : xtd::basic_array<type_t, allocator_t>(array) {}
-    array(array&& array) = default;
-    /// @endcond
-    
+       
     /// @name Public Properties
     
     /// @{
