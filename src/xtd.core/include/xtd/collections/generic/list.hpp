@@ -413,7 +413,7 @@ namespace xtd {
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
-        /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the copy_to(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
@@ -435,8 +435,8 @@ namespace xtd {
         /// @param arrayIndex The zero-based index in array at which copying begins;
         /// @param count The number of elements to copy.
         /// @exception ArgumentNullException array is null.
-        /// @exception ArgumentOutOfRangeException The arrayIndex or count is less than 0.
-        /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
+        /// @exception xtd::argument_out_of_range_exception The arrayIndex or count is less than 0.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
@@ -834,7 +834,7 @@ namespace xtd {
         
         /// @brief Removes the element at the specified index of the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
-        /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
+        /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.erase(data_->items.begin() + index);
