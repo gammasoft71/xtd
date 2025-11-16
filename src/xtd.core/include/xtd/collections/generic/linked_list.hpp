@@ -89,7 +89,7 @@ namespace xtd {
         /// @param collection The xtd::collections::generic::ienumerable whose elements are copied to the new xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If collection has no elements then the new xtd::collections::generic::linked_list <type_t> is empty, and the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain xtd::nullopt.
-        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in collection.
         linked_list(const xtd::collections::generic::ienumerable < type_t >& collection) {
           for (const auto& item : collection)
             add(item);
