@@ -325,21 +325,24 @@ Classes</h2></td></tr>
 <tr class="memitem:ae7ddf7990763fbea30e0c6e38b5ae659" id="r_ae7ddf7990763fbea30e0c6e38b5ae659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7ddf7990763fbea30e0c6e38b5ae659">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &gt; &amp;collection)</td></tr>
 <tr class="memdesc:ae7ddf7990763fbea30e0c6e38b5ae659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ae7ddf7990763fbea30e0c6e38b5ae659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd1d7beda0f8576d701cd22e9e3a12d8" id="r_acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; </td></tr>
-<tr class="memitem:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acd1d7beda0f8576d701cd22e9e3a12d8">dictionary</a> (const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer&lt;type_t&gt;</a>.  <br /></td></tr>
-<tr class="separator:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbb370eca36bc97719ef31f02cfe4d9" id="r_abfbb370eca36bc97719ef31f02cfe4d9"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</td></tr>
+<tr class="memitem:abfbb370eca36bc97719ef31f02cfe4d9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abfbb370eca36bc97719ef31f02cfe4d9">dictionary</a> (const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:abfbb370eca36bc97719ef31f02cfe4d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the default initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer&lt;type_t&gt;</a>.  <br /></td></tr>
+<tr class="separator:abfbb370eca36bc97719ef31f02cfe4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6774979878cb116ae4c205f9ada90d" id="r_a8d6774979878cb116ae4c205f9ada90d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d6774979878cb116ae4c205f9ada90d">dictionary</a> (size_t <a class="el" href="#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>)</td></tr>
 <tr class="memdesc:a8d6774979878cb116ae4c205f9ada90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacit.  <br /></td></tr>
 <tr class="separator:a8d6774979878cb116ae4c205f9ada90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349de516d0b938124c175ce956b3ac28" id="r_a349de516d0b938124c175ce956b3ac28"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; </td></tr>
-<tr class="memitem:a349de516d0b938124c175ce956b3ac28"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a349de516d0b938124c175ce956b3ac28">dictionary</a> (size_t <a class="el" href="#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:a349de516d0b938124c175ce956b3ac28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a349de516d0b938124c175ce956b3ac28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab609bca970bff889772b49d51f204487" id="r_ab609bca970bff889772b49d51f204487"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; </td></tr>
-<tr class="memitem:ab609bca970bff889772b49d51f204487"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab609bca970bff889772b49d51f204487">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:ab609bca970bff889772b49d51f204487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ab609bca970bff889772b49d51f204487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e0352e1fa0f5dcad6f37d4123f7736" id="r_ab0e0352e1fa0f5dcad6f37d4123f7736"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</td></tr>
+<tr class="memitem:ab0e0352e1fa0f5dcad6f37d4123f7736"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab0e0352e1fa0f5dcad6f37d4123f7736">dictionary</a> (size_t <a class="el" href="#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:ab0e0352e1fa0f5dcad6f37d4123f7736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:ab0e0352e1fa0f5dcad6f37d4123f7736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc94e920a888c3124fde147a146e8de1" id="r_afc94e920a888c3124fde147a146e8de1"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</td></tr>
+<tr class="memitem:afc94e920a888c3124fde147a146e8de1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afc94e920a888c3124fde147a146e8de1">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:afc94e920a888c3124fde147a146e8de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:afc94e920a888c3124fde147a146e8de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e18164c1d61bd817872588bd77c6789" id="r_a2e18164c1d61bd817872588bd77c6789"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; </td></tr>
 <tr class="memitem:a2e18164c1d61bd817872588bd77c6789"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2e18164c1d61bd817872588bd77c6789">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &gt; &amp;collection, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
 <tr class="memdesc:a2e18164c1d61bd817872588bd77c6789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -770,7 +773,7 @@ The initial capacity of the new <a class="el" href="classxtd_1_1collections_1_1g
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a>. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface by using a constructor that accepts a comparer parameter. </dd>
 <dd>
-This constructor is an O(n) operation, where n is the number of elements in dictionary. </dd></dl>
+This constructor is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in dictionary. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows how to use the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;(<a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;key_t&gt;) constructor to initialize a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; with sorted content from another dictionary. The code example creates a <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; and populates it with data in random order, then passes the <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;(<a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;key_t&gt;) constructor, creating a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> &lt;key_t, value_t&gt; to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; improves retrieval speed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -850,15 +853,16 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 
 </div>
 </div>
-<a id="acd1d7beda0f8576d701cd22e9e3a12d8" name="acd1d7beda0f8576d701cd22e9e3a12d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd1d7beda0f8576d701cd22e9e3a12d8">&#9670;&#160;</a></span>dictionary() <span class="overload">[4/15]</span></h2>
+<a id="abfbb370eca36bc97719ef31f02cfe4d9" name="abfbb370eca36bc97719ef31f02cfe4d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbb370eca36bc97719ef31f02cfe4d9">&#9670;&#160;</a></span>dictionary() <span class="overload">[4/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_t&gt;, class equator_t = helpers::equator&lt;key_t&gt;, class allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class equality_comparer_t&gt; </div>
+template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -938,15 +942,16 @@ This constructor is an O(1) operation. </dd>
 
 </div>
 </div>
-<a id="a349de516d0b938124c175ce956b3ac28" name="a349de516d0b938124c175ce956b3ac28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a349de516d0b938124c175ce956b3ac28">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/15]</span></h2>
+<a id="ab0e0352e1fa0f5dcad6f37d4123f7736" name="ab0e0352e1fa0f5dcad6f37d4123f7736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e0352e1fa0f5dcad6f37d4123f7736">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_t&gt;, class equator_t = helpers::equator&lt;key_t&gt;, class allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class equality_comparer_t&gt; </div>
+template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -993,15 +998,16 @@ This constructor is an O(1) operation. </dd>
 
 </div>
 </div>
-<a id="ab609bca970bff889772b49d51f204487" name="ab609bca970bff889772b49d51f204487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab609bca970bff889772b49d51f204487">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/15]</span></h2>
+<a id="afc94e920a888c3124fde147a146e8de1" name="afc94e920a888c3124fde147a146e8de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc94e920a888c3124fde147a146e8de1">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_t&gt;, class equator_t = helpers::equator&lt;key_t&gt;, class allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class equality_comparer_t&gt; </div>
+template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#a01385837c5b1f6254a863510f5e490f1">key_type</a>&gt;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1046,7 +1052,7 @@ Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1diction
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. </dd>
 <dd>
-This constructor is an O(n) operation, where n is the number of elements in dictionary. </dd></dl>
+This constructor is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in dictionary. </dd></dl>
 
 </div>
 </div>
@@ -2646,7 +2652,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 15 2025 23:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 16 2025 12:05:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
