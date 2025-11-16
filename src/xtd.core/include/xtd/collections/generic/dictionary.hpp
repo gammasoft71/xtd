@@ -219,6 +219,7 @@ namespace xtd {
         /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         dictionary(const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr < equality_comparer_t > (comparer))) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the specified initial capacit.
         /// @param capacity The initial number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can contain.
@@ -242,6 +243,7 @@ namespace xtd {
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
         template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         dictionary(size_t capacity, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr < equality_comparer_t > (comparer))) {
           ensure_capacity(capacity);
         }
@@ -256,6 +258,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in dictionary.
         template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         dictionary(const idictionary < key_t, value_t >& dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
