@@ -30,7 +30,7 @@ public:
   
   static void display_set(const hash_set<int>& collection) {
     console::write("{");
-    for (auto i : collection.to_array().sort())
+    for (auto i : collection)
       console::write(" {}", i);
     console::write_line(" }");
   }
@@ -38,9 +38,9 @@ public:
 
 startup_(example::main);
 
-// This code produces the following output :
+// This code can produce the following output :
 //
-// even_numbers contains 5 elements: { 0 2 4 6 8 }
-// odd_numbers contains 5 elements: { 1 3 5 7 9 }
+// even_numbers contains 5 elements: { 8 6 4 2 0 }
+// odd_numbers contains 5 elements: { 9 7 5 3 1 }
 // numbers union_with odd_numbers...
-// numbers contains 10 elements: { 0 1 2 3 4 5 6 7 8 9 }
+// numbers contains 10 elements: { 1 3 5 7 9 0 2 4 6 8 }
