@@ -1,6 +1,6 @@
 # generic_linked_list_node
 
-Shows how to use [xtd::collections::generic::generic_linked_list_node](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1linked__list__node.html) class.
+Shows how to use [xtd::collections::generic::linked_list_node](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1linked__list__node.html) class.
 
 ## Sources
 
