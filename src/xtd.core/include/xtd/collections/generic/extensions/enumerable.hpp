@@ -402,7 +402,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collections::generic::list <type_t> that contains the query results.
           /// @include enumerable_to_list.cpp
           list<source_t> to_list() const noexcept;
-
+          
           /// @brief Filters a sequence of values based on a predicate.
           /// @param predicate A function to test each element for a condition.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
