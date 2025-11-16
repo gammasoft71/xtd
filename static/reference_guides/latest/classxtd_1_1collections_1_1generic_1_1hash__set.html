@@ -214,10 +214,10 @@ Classes</h2></td></tr>
 <tr class="memitem:a8c367ef02978617714598cb0c6636b9c" id="r_a8c367ef02978617714598cb0c6636b9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c367ef02978617714598cb0c6636b9c">hash_set</a> () noexcept=default</td></tr>
 <tr class="memdesc:a8c367ef02978617714598cb0c6636b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty and uses the default equality comparer for the set type.  <br /></td></tr>
 <tr class="separator:a8c367ef02978617714598cb0c6636b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace60f69bdaa55d25f26d061b6f1bd143" id="r_ace60f69bdaa55d25f26d061b6f1bd143"><td class="memTemplParams" colspan="2"><a id="ace60f69bdaa55d25f26d061b6f1bd143" name="ace60f69bdaa55d25f26d061b6f1bd143"></a>
-template&lt;class equality_comparer_t&gt; <br />
+<tr class="memitem:ace60f69bdaa55d25f26d061b6f1bd143" id="r_ace60f69bdaa55d25f26d061b6f1bd143"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; <br />
 requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&gt;</td></tr>
-<tr class="memitem:ace60f69bdaa55d25f26d061b6f1bd143"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hash_set</b> (const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
+<tr class="memitem:ace60f69bdaa55d25f26d061b6f1bd143"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ace60f69bdaa55d25f26d061b6f1bd143">hash_set</a> (const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
+<tr class="memdesc:ace60f69bdaa55d25f26d061b6f1bd143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty and uses the specified equality comparer for the set type.  <br /></td></tr>
 <tr class="separator:ace60f69bdaa55d25f26d061b6f1bd143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7118a1d1921eb58f8875ebfdc1087521" id="r_a7118a1d1921eb58f8875ebfdc1087521"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7118a1d1921eb58f8875ebfdc1087521">hash_set</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection) noexcept</td></tr>
 <tr class="memdesc:a7118a1d1921eb58f8875ebfdc1087521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
@@ -227,6 +227,9 @@ template&lt;class equality_comparer_t&gt; <br />
 requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&gt;</td></tr>
 <tr class="memitem:a200516cdb82d179cd798f587875750c4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hash_set</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
 <tr class="separator:a200516cdb82d179cd798f587875750c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4da52366f299e4fa338454f33ce21af" id="r_ab4da52366f299e4fa338454f33ce21af"><td class="memItemLeft" align="right" valign="top"><a id="ab4da52366f299e4fa338454f33ce21af" name="ab4da52366f299e4fa338454f33ce21af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>hash_set</b> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
+<tr class="separator:ab4da52366f299e4fa338454f33ce21af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41cd1b23d1ed5f2fe5c9f2e178b1de14" id="r_a41cd1b23d1ed5f2fe5c9f2e178b1de14"><td class="memItemLeft" align="right" valign="top"><a id="a41cd1b23d1ed5f2fe5c9f2e178b1de14" name="a41cd1b23d1ed5f2fe5c9f2e178b1de14"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>hash_set</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
 <tr class="separator:a41cd1b23d1ed5f2fe5c9f2e178b1de14"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +286,9 @@ template&lt;class input_iterator_t&gt; </td></tr>
 <tr class="memitem:a9351076ed354cc82df0074697bef89af" id="r_a9351076ed354cc82df0074697bef89af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9351076ed354cc82df0074697bef89af">copy_to</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> array_index, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#ad9d6849a21b62a94d9db096e134d5b29">count</a>) const</td></tr>
 <tr class="memdesc:a9351076ed354cc82df0074697bef89af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a specified number of elements from <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified array index.  <br /></td></tr>
 <tr class="separator:a9351076ed354cc82df0074697bef89af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9f94287fc0d6c319c1b838260ff9d1" id="r_a6a9f94287fc0d6c319c1b838260ff9d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9f94287fc0d6c319c1b838260ff9d1">ensure_capacity</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
+<tr class="memdesc:a6a9f94287fc0d6c319c1b838260ff9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.  <br /></td></tr>
+<tr class="separator:a6a9f94287fc0d6c319c1b838260ff9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5c832c07fe13bb53b0b7db12ac83af" id="r_a8e5c832c07fe13bb53b0b7db12ac83af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5c832c07fe13bb53b0b7db12ac83af">except_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept override</td></tr>
 <tr class="memdesc:a8e5c832c07fe13bb53b0b7db12ac83af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements in the specified collection from the current set.  <br /></td></tr>
 <tr class="separator:a8e5c832c07fe13bb53b0b7db12ac83af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -627,7 +633,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8c367ef02978617714598cb0c6636b9c" name="a8c367ef02978617714598cb0c6636b9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c367ef02978617714598cb0c6636b9c">&#9670;&#160;</a></span>hash_set() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c367ef02978617714598cb0c6636b9c">&#9670;&#160;</a></span>hash_set() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -669,8 +675,49 @@ This constructor is an O(1) operation. </dd></dl>
 
 </div>
 </div>
+<a id="ace60f69bdaa55d25f26d061b6f1bd143" name="ace60f69bdaa55d25f26d061b6f1bd143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace60f69bdaa55d25f26d061b6f1bd143">&#9670;&#160;</a></span>hash_set() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::hash_set </td>
+          <td>(</td>
+          <td class="paramtype">const equality_comparer_t &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty and uses the specified equality comparer for the set type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; implementation to use when comparing values in the set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is the number of elements that the object can hold. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object's capacity automatically increases as elements are added to the object. </dd>
+<dd>
+This constructor is an O(1) operation. </dd></dl>
+
+</div>
+</div>
 <a id="a7118a1d1921eb58f8875ebfdc1087521" name="a7118a1d1921eb58f8875ebfdc1087521"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7118a1d1921eb58f8875ebfdc1087521">&#9670;&#160;</a></span>hash_set() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7118a1d1921eb58f8875ebfdc1087521">&#9670;&#160;</a></span>hash_set() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1176,6 +1223,42 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6a9f94287fc0d6c319c1b838260ff9d1" name="a6a9f94287fc0d6c319c1b838260ff9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9f94287fc0d6c319c1b838260ff9d1">&#9670;&#160;</a></span>ensure_capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::ensure_capacity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">capacity</td><td>The number of entries. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
 
 </div>
 </div>
@@ -1712,7 +1795,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:05:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 16 2025 16:19:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
