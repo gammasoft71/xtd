@@ -125,7 +125,7 @@ namespace xtd {
         
         /// @brief Removes all elements in the specified collection from the current set.
         /// @param other The collection of items to remove from the set.
-        /// @remarks This method is an O(n) operation, where n is the number of elements in the other parameter.
+        /// @remarks This method is an O(`n`) operation, where `n` is the number of elements in the other parameter.
         virtual void except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept = 0;
         
         /// @brief Modifies the current set so that it contains only elements that are also in a specified collection.
