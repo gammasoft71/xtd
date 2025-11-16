@@ -80,7 +80,7 @@ namespace xtd {
         /// @remarks Every key in a xtd::collections::generic::ordered_dictionary <key_t, value_t> must be unique according to the default equality comparer; likewise, every key in the source `dictionary` must also be unique according to the default equality comparer.
         /// @remarks The initial capacity of the new xtd::collections::generic::ordered_dictionary <key_t, value_t> is large enough to contain all the elements in dictionary.
         /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, xtd::collections::generic::equality_comparer::default_equality_comparer. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter.
-        /// @remarks This constructor is an O(n) operation, where n is the number of elements in dictionary.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in dictionary.
         ordered_dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary) {
           data_->items = dictionary;
           data_->keys.capacity(dictionary.count());
