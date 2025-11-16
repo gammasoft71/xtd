@@ -140,11 +140,13 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::hash_set <type_t> object is the number of elements that the object can hold. A xtd::collections::generic::hash_set <type_t> object's capacity automatically increases as elements are added to the object.
         /// @remarks This constructor is an O(1) operation.
         hash_set() noexcept = default;
-        
+        /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that is empty and uses the specified equality comparer for the set type.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing values in the set.
+        /// @remarks The capacity of a xtd::collections::generic::hash_set <type_t> object is the number of elements that the object can hold. A xtd::collections::generic::hash_set <type_t> object's capacity automatically increases as elements are added to the object.
+        /// @remarks This constructor is an O(1) operation.
         template < class equality_comparer_t >
         requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
-        
         /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new set.
         /// @par Examples
@@ -163,6 +165,9 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        hash_set(size_type capacity) noexcept {
+          ensure_capacity(capacity);
+        }
         hash_set(hash_set&& other) noexcept = default;
         hash_set(const hash_set& other) noexcept : data_(xtd::new_ptr<hash_set_data>(other.data_->comparer, other.data_->items, other.data_->version)) {}
         hash_set(std::unordered_set<key_type>&& other) noexcept : data_(xtd::new_ptr<hash_set_data>(std::move(other))) {}
@@ -171,6 +176,7 @@ namespace xtd {
             add(*iterator);
         }
         hash_set(std::initializer_list <value_type> init) {
+          ensure_capacity(init.size());
           for (const auto& value : init)
             add(value);
         }
@@ -269,6 +275,14 @@ namespace xtd {
             if (increment >= index + count) return;
             if (increment++ >= index) array[array_index++] = item;
           }
+        }
+        
+        /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
+        /// @param capacity The number of entries.
+        /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
+        xtd::size ensure_capacity(xtd::size capacity) noexcept {
+          data_->items.reserve(capacity);
+          return self_.capacity();
         }
         
         /// @brief Removes all elements in the specified collection from the current set.
@@ -458,11 +472,11 @@ namespace xtd {
           hash_set_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
           hash_set_data(ptr<iequality_comparer<key_type>> comparer, const base_type& items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
             for (const auto& item : items)
-              this->items.insert(item);
+              self_.items.insert(item);
           }
           hash_set_data(base_type&& items, size_type version) noexcept : items {size_type {}, hasher {}, equator {}, allocator_t {}}, version {version} {
             for (auto&& item : items)
-              this->items.insert(item);
+              self_.items.insert(item);
           }
           
           ptr<iequality_comparer<key_type>> comparer;
