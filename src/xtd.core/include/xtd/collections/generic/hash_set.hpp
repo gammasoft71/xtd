@@ -141,8 +141,9 @@ namespace xtd {
         /// @remarks This constructor is an O(1) operation.
         hash_set() noexcept = default;
         
-        //template < class equality_comparer_t >
-        //hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
+        template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
+        hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
         
         /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new set.
@@ -157,6 +158,7 @@ namespace xtd {
             add(item);
         }
         template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         hash_set(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {
           for (const auto& item : collection)
             add(item);
