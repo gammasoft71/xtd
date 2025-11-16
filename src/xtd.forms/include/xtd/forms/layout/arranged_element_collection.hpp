@@ -155,7 +155,7 @@ namespace xtd {
         /// The following code example demonstrates the xtd::forms::layout::arranged_element_collection <type_t> constructor and various methods of the xtd::forms::layout::arranged_element_collection <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::forms::layout::arranged_element_collection::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::forms::layout::arranged_element_collection <type_t> in the same order they are read by the enumerator of the collection.
-        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in collection.
         arranged_element_collection(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
         
         /// @brief Default copy constructor with specified list.
