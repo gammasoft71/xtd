@@ -30,6 +30,9 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::hash_set class is same as [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set).
+      /// @par Examples
+      /// The following example demonstrates how to merge two disparate sets. This example creates two xtd::collections::generic::hash_set <type_t> objects and populates them with even and odd numbers, respectively. A third xtd::collections::generic::hash_set <type_t> object is created from the set that contains the even numbers. The example then calls the xtd::collections::generic::hash_set::union_with method, which adds the odd number set to the third set.
+      /// @include generic_hash_set.cpp
       template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
       class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t> {
       public:
@@ -119,9 +122,36 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
+        /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that is empty and uses the default equality comparer for the set type.
+        /// @par Examples
+        /// The following example demonstrates how to create and populate two xtd::collections::generic::hash_set <type_t> objects. This example is part of a larger example provided for the xtd::collections::generic::hash_set::union_with method.
+        /// ```cpp
+        /// auto even_numbers = hash_set<int> {};
+        /// auto odd_numbers = hash_set<int> {};
+        ///
+        /// for (auto i = 0; i < 5; ++i) {
+        ///   // Populate even_numbers with just even numbers.
+        ///   even_numbers.add(i * 2);
+        ///
+        ///   // Populate odd_numbers with just odd numbers.
+        ///   odd_numbers.add((i * 2) + 1);
+        /// }
+        /// ```
+        /// @remarks The capacity of a xtd::collections::generic::hash_set <type_t> object is the number of elements that the object can hold. A xtd::collections::generic::hash_set <type_t> object's capacity automatically increases as elements are added to the object.
+        /// @remarks This constructor is an O(1) operation.
         hash_set() noexcept = default;
+        
         //template < class equality_comparer_t >
         //hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
+        
+        /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
+        /// @param collection The collection whose elements are copied to the new set.
+        /// @par Examples
+        /// The following example shows how to create a xtd::collections::generic::hash_set <type_t> collection from an existing set. In this example, two sets are created with even and odd integers, respectively. A third xtd::collections::generic::hash_set <type_t> object is then created from the even integer set.
+        /// @include generic_hash_set.cpp
+        /// @remarks The capacity of a xtd::collections::generic::hash_set <type_t> object is the number of elements that the object can hold. A xtd::collections::generic::hash_set <type_t> object's capacity automatically increases as elements are added to the object.
+        /// @remarks If `collection` contains duplicates, the set will contain one of each unique element. No exception will be thrown. Therefore, the size of the resulting set is not identical to the size of `collection`.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in the `collection` parameter.
         hash_set(const ienumerable<value_type>& collection) noexcept {
           for (const auto& item : collection)
             add(item);
@@ -241,7 +271,7 @@ namespace xtd {
         
         /// @brief Removes all elements in the specified collection from the current set.
         /// @param other The collection of items to remove from the set.
-        /// @remarks This method is an O(n) operation, where n is the number of elements in the other parameter.
+        /// @remarks This method is an O(`n`) operation, where `n` is the number of elements in the other parameter.
         void except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
           if (&other == this) {
             clear();
