@@ -77,14 +77,14 @@ namespace xtd {
       /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
       template<class type_t, class allocator_t>
       class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t >> {
-        struct __comparer__ {
-          __comparer__(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_(comparer) {}
+        struct internal_comparer {
+          internal_comparer(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_(comparer) {}
           bool operator()(const type_t& e1, const type_t& e2) const {return comparer_.compare(e1, e2) < 0;}
           const xtd::collections::generic::icomparer<type_t>& comparer_;
         };
         
-        struct __comparison_comparer__ {
-          __comparison_comparer__(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
+        struct comparison_comparer {
+          comparison_comparer(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
           bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
           xtd::comparison<const type_t&> comparison_;
         };
@@ -138,7 +138,7 @@ namespace xtd {
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
-        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in collection.
         list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
@@ -304,7 +304,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         /// @remarks If the new xtd::collections::generic::list::count (the current xtd::collections::generic::list::count plus the size of the collection) will be greater than xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array to accommodate the new elements, and the existing elements are copied to the new array before the new elements are added.
-        /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(n) operation, where n is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
+        /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(`n`) operation, where `n` is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
         void add_range(const xtd::collections::generic::ienumerable<type_t>& enumerable) {insert_range(count(), enumerable);}
         
         /// @brief Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list <type_t>.
@@ -314,7 +314,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         /// @remarks If the new xtd::collections::generic::list::count (the current xtd::collections::generic::list::count plus the size of the collection) will be greater than xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array to accommodate the new elements, and the existing elements are copied to the new array before the new elements are added.
-        /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(n) operation, where n is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
+        /// @remarks If the xtd::collections::generic::list <type_t> can accommodate the new elements without increasing the xtd::collections::generic::list::capacity, this method is an O(`n`) operation, where `n` is the number of elements to be added. If the capacity needs to be increased to accommodate the new elements, this method becomes an O(n + m) operation, where n is the number of elements to be added and m is xtd::collections::generic::list::count.
         void add_range(std::initializer_list<type_t> il) {insert_range(count(), il);}
         
         /// @cond
@@ -374,7 +374,7 @@ namespace xtd {
           auto last = data_->items.begin();
           std::advance(first, index);
           std::advance(last, index + count);
-          auto position = std::lower_bound(first, last, item, __comparer__{comparer});
+          auto position = std::lower_bound(first, last, item, internal_comparer{comparer});
           
           if (position != data_->items.end() && !comparer.compare(item, *position))
             return std::distance(data_->items.begin(), position);
@@ -921,7 +921,7 @@ namespace xtd {
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         list<type_t>& sort(xtd::comparison<const type_t&> comparison) {
           data_->items.increment_version();
-          std::sort(data_->items.begin(), data_->items.end(), __comparison_comparer__ {comparison});
+          std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
           return self_;
         }
         
@@ -945,7 +945,7 @@ namespace xtd {
         list<type_t>& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
-          std::sort(data_->items.begin() + index, data_->items.begin() + index + count, __comparer__ {comparer});
+          std::sort(data_->items.begin() + index, data_->items.begin() + index + count, internal_comparer {comparer});
           return self_;
         }
         
