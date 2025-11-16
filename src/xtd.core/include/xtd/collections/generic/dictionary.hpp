@@ -269,6 +269,7 @@ namespace xtd {
         /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         template < class equality_comparer_t >
+        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         dictionary(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           for (const auto& item : collection)
             add(item);
@@ -460,7 +461,7 @@ namespace xtd {
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
         xtd::size ensure_capacity(xtd::size capacity) noexcept {
           data_->items.reserve(capacity);
-          return this->capacity();
+          return self_.capacity();
         }
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -664,11 +665,11 @@ namespace xtd {
           dictionary_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
           dictionary_data(ptr<iequality_comparer<key_type>> comparer, const base_type & items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
             for (const auto& item : items)
-              this->items.insert(item);
+              self_.items.insert(item);
           }
           dictionary_data(base_type&& items, size_type version) noexcept : items {size_type {}, hasher {}, equator {}, allocator_t {}}, version {version} {
             for (auto&& item : items)
-              this->items.insert(item);
+              self_.items.insert(item);
           }
           
           ptr<iequality_comparer<key_type>> comparer;
