@@ -1525,9 +1525,8 @@ template&lt;class item_t , class collection_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test fails.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a34472044617550faf939f05c223b6227"><div class="ttname"><a href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">xtd::basic_array::at</a></div><div class="ttdeci">virtual reference at(size_type index)</div><div class="ttdoc">Returns a reference to the element at specified location pos, with bounds checking.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:228</div></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.at(2);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.at(5);}); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_a96b01a836e97f9785cfb960eea649f41"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a></div><div class="ttdeci">static void does_not_throw(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that the statement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1583,8 +1582,8 @@ template&lt;class item_t , class collection_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a96b01a836e97f9785cfb960eea649f41">xtd::tunit::valid::does_not_throw</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4893,8 +4892,8 @@ template&lt;class exception_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test fails.</span></div>
+<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
+<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(2);}); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4957,8 +4956,8 @@ template&lt;class exception_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">xtd::tunit::valid::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5006,8 +5005,8 @@ template&lt;class exception_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.at(2);}); <span class="comment">// test fails.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_ab5511b4f160e977e09edf2e46b2131f5"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a></div><div class="ttdeci">static void throws_any(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that the statement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -5063,8 +5062,8 @@ template&lt;class exception_t &gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#ab5511b4f160e977e09edf2e46b2131f5">xtd::tunit::valid::throws_any</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test fails.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5076,7 +5075,7 @@ template&lt;class exception_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 11 2025 12:34:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 16 2025 12:15:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

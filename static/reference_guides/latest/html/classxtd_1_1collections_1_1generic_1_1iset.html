@@ -94,30 +94,35 @@ Inheritance diagram for xtd::collections::generic::iset&lt; type_t &gt;:</div>
  <div class="center">
   <img src="classxtd_1_1collections_1_1generic_1_1iset.png" usemap="#xtd::collections::generic::iset_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd::collections::generic::iset_3C_20type_5Ft_20_3E_map" name="xtd::collections::generic::iset_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections." alt="xtd::collections::generic::icollection&lt; type_t &gt;" shape="rect" coords="1348,112,2012,136"/>
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type." alt="xtd::collections::generic::ienumerable&lt; type_t &gt;" shape="rect" coords="1011,56,1675,80"/>
-<area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html" alt="xtd::collections::generic::extensions::collection_common&lt; type_t, icollection&lt; type_t &gt; &gt;" shape="rect" coords="1685,56,2349,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,664,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable__abstract.html" title="Abstract object that represent ienumerable." alt="xtd::collections::generic::ienumerable_abstract" shape="rect" coords="674,0,1338,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" alt="xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;" shape="rect" coords="1348,0,2012,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" alt="xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;" shape="rect" coords="2022,0,2686,24"/>
+<area href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values." alt="xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;" shape="rect" coords="1011,168,1675,192"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t&gt;<br />
 class xtd::collections::generic::iset&lt; type_t &gt;</div><p>Provides the base interface for the abstraction of sets. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1iset.html">iset</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a>&lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1icollection_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a></div><div class="ttdoc">Defines methods to manipulate generic collections.</div><div class="ttdef"><b>Definition</b> icollection.hpp:45</div></div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1iset.html">iset</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt;type_t&gt;</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a></div><div class="ttdoc">Exposes the enumerator, which supports a simple iteration over a collection of a specified type.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1iset_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a></div><div class="ttdoc">Provides the base interface for the abstraction of sets.</div><div class="ttdef"><b>Definition</b> iset.hpp:33</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/iset&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<div class="fragment"></div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>This interface provides methods for implementing sets, which are collections that have unique elements and specific operations. The <a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; and <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> &lt;type_t&gt; collections implement this interface. </dd></dl>
+<div class="fragment"></div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>This interface provides methods for implementing sets, which are collections that have unique elements and specific operations. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; and <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> &lt;type_t&gt; collections implement this interface. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
+<tr class="memitem:ab95a56b5b5154ff445ac8e73de04c341"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#ab95a56b5b5154ff445ac8e73de04c341">key_type</a> = type_t</td></tr>
+<tr class="memdesc:ab95a56b5b5154ff445ac8e73de04c341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the set key type.  <br /></td></tr>
+<tr class="separator:ab95a56b5b5154ff445ac8e73de04c341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a6a6fc5756fa354eafd9518529c83c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a87a6a6fc5756fa354eafd9518529c83c">value_type</a> = type_t</td></tr>
+<tr class="memdesc:a87a6a6fc5756fa354eafd9518529c83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the set value type.  <br /></td></tr>
+<tr class="separator:a87a6a6fc5756fa354eafd9518529c83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c90c2b3002b6b97d6f7fe2cbeeb9ac4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a8c90c2b3002b6b97d6f7fe2cbeeb9ac4">iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&lt; type_t &gt;::iterator</td></tr>
 <tr class="memdesc:a8c90c2b3002b6b97d6f7fe2cbeeb9ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> value type.  <br /></td></tr>
 <tr class="separator:a8c90c2b3002b6b97d6f7fe2cbeeb9ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,16 +130,39 @@ class xtd::collections::generic::iset&lt; type_t &gt;</div><p>Provides the base 
 <tr class="memdesc:ab95f65f25267d12c8ca228fd8506c724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> value type.  <br /></td></tr>
 <tr class="separator:ab95f65f25267d12c8ca228fd8506c724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:af934990c5b9794a99ed287def25e7750"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#af934990c5b9794a99ed287def25e7750">count</a> () const noexcept=0</td></tr>
+<tr class="memdesc:af934990c5b9794a99ed287def25e7750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:af934990c5b9794a99ed287def25e7750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30547b4f3bb9e5d5369a97dfa0ead7b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#ab30547b4f3bb9e5d5369a97dfa0ead7b">is_read_only</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ab30547b4f3bb9e5d5369a97dfa0ead7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
+<tr class="separator:ab30547b4f3bb9e5d5369a97dfa0ead7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab900ecf4db1ffc1ecae01fe76b041261"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#ab900ecf4db1ffc1ecae01fe76b041261">is_synchronized</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ab900ecf4db1ffc1ecae01fe76b041261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
+<tr class="separator:ab900ecf4db1ffc1ecae01fe76b041261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e594678bf868bcff31540782f2cb71"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#ae0e594678bf868bcff31540782f2cb71">sync_root</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ae0e594678bf868bcff31540782f2cb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:ae0e594678bf868bcff31540782f2cb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:acefcde9027a07fe7e5c3d732a5b47314"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#acefcde9027a07fe7e5c3d732a5b47314">add</a> (const type_t &amp;item) noexcept=0</td></tr>
 <tr class="memdesc:acefcde9027a07fe7e5c3d732a5b47314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the current set and returns a value to indicate if the element was successfully added.  <br /></td></tr>
 <tr class="separator:acefcde9027a07fe7e5c3d732a5b47314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152df384045335f981d8f480d7716f3d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a152df384045335f981d8f480d7716f3d">clear</a> ()=0</td></tr>
+<tr class="memdesc:a152df384045335f981d8f480d7716f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a152df384045335f981d8f480d7716f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0caa180322645a82b9b36983c896506e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a0caa180322645a82b9b36983c896506e">contains</a> (const type_t &amp;item) const noexcept=0</td></tr>
+<tr class="memdesc:a0caa180322645a82b9b36983c896506e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; contains a specific value.  <br /></td></tr>
+<tr class="separator:a0caa180322645a82b9b36983c896506e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed30f23b7f62a57d42a028bc82dbec45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#aed30f23b7f62a57d42a028bc82dbec45">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> array_index) const =0</td></tr>
+<tr class="memdesc:aed30f23b7f62a57d42a028bc82dbec45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
+<tr class="separator:aed30f23b7f62a57d42a028bc82dbec45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700097182833551442845d2b4a229fca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a700097182833551442845d2b4a229fca">except_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=0</td></tr>
 <tr class="memdesc:a700097182833551442845d2b4a229fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements in the specified collection from the current set.  <br /></td></tr>
 <tr class="separator:a700097182833551442845d2b4a229fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353cc2fdd00efd1887863d1976017f67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a353cc2fdd00efd1887863d1976017f67">intersec_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=0</td></tr>
-<tr class="memdesc:a353cc2fdd00efd1887863d1976017f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are also in a specified collection.  <br /></td></tr>
-<tr class="separator:a353cc2fdd00efd1887863d1976017f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f0d3d0295ecf3ac69c2f013537a1cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a64f0d3d0295ecf3ac69c2f013537a1cb">intersect_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=0</td></tr>
+<tr class="memdesc:a64f0d3d0295ecf3ac69c2f013537a1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are also in a specified collection.  <br /></td></tr>
+<tr class="separator:a64f0d3d0295ecf3ac69c2f013537a1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12501ce920c0774f10aaec0b7a5bdc55"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a12501ce920c0774f10aaec0b7a5bdc55">is_proper_subset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept=0</td></tr>
 <tr class="memdesc:a12501ce920c0774f10aaec0b7a5bdc55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set is a proper (strict) superset of a specified collection.  <br /></td></tr>
 <tr class="separator:a12501ce920c0774f10aaec0b7a5bdc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +178,9 @@ class xtd::collections::generic::iset&lt; type_t &gt;</div><p>Provides the base 
 <tr class="memitem:a38e6b3963a34832d59aa0a5b0844ca0e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a38e6b3963a34832d59aa0a5b0844ca0e">overlaps</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept=0</td></tr>
 <tr class="memdesc:a38e6b3963a34832d59aa0a5b0844ca0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set overlaps with the specified collection.  <br /></td></tr>
 <tr class="separator:a38e6b3963a34832d59aa0a5b0844ca0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8764ec75de1bbac04e697a71eeb45a5a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a8764ec75de1bbac04e697a71eeb45a5a">remove</a> (const type_t &amp;item)=0</td></tr>
+<tr class="memdesc:a8764ec75de1bbac04e697a71eeb45a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a8764ec75de1bbac04e697a71eeb45a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c029866fa48a778edb16c24f80e9603"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a1c029866fa48a778edb16c24f80e9603">set_equals</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept=0</td></tr>
 <tr class="memdesc:a1c029866fa48a778edb16c24f80e9603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set and the specified collection contain the same elements.  <br /></td></tr>
 <tr class="separator:a1c029866fa48a778edb16c24f80e9603"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,10 +193,6 @@ class xtd::collections::generic::iset&lt; type_t &gt;</div><p>Provides the base 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_classxtd_1_1collections_1_1generic_1_1icollection"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1collections_1_1generic_1_1icollection')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection&lt; type_t &gt;</a></td></tr>
-<tr class="memitem:aabf331b843fac4f0cc1f5ac55e839e2c inherit pub_types_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#aabf331b843fac4f0cc1f5ac55e839e2c">value_type</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt;::value_type</td></tr>
-<tr class="memdesc:aabf331b843fac4f0cc1f5ac55e839e2c inherit pub_types_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> value type.  <br /></td></tr>
-<tr class="separator:aabf331b843fac4f0cc1f5ac55e839e2c inherit pub_types_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; type_t &gt;</a></td></tr>
 <tr class="memitem:a1b6f4bbb7a3c18056332b28dae525927 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a1b6f4bbb7a3c18056332b28dae525927">value_type</a> = type_t</td></tr>
 <tr class="memdesc:a1b6f4bbb7a3c18056332b28dae525927 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> value type.  <br /></td></tr>
@@ -196,31 +223,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a417e4adb1792949e9a54516bee2ca3d2 inherit pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2">list</a> = typename <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a417e4adb1792949e9a54516bee2ca3d2 inherit pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
 <tr class="separator:a417e4adb1792949e9a54516bee2ca3d2 inherit pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1icollection')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection&lt; type_t &gt;</a></td></tr>
-<tr class="memitem:ab1b79f5d91774cc70b8a4e21d979e1ea inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#ab1b79f5d91774cc70b8a4e21d979e1ea">count</a> () const noexcept=0</td></tr>
-<tr class="memdesc:ab1b79f5d91774cc70b8a4e21d979e1ea inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ab1b79f5d91774cc70b8a4e21d979e1ea inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a817ed0a0b5cdb551aac7512c52ed4c96 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96">is_read_only</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a817ed0a0b5cdb551aac7512c52ed4c96 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
-<tr class="separator:a817ed0a0b5cdb551aac7512c52ed4c96 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a182c2916a22a16eba26db94e8e9c0423 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a182c2916a22a16eba26db94e8e9c0423">is_synchronized</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a182c2916a22a16eba26db94e8e9c0423 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
-<tr class="separator:a182c2916a22a16eba26db94e8e9c0423 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b277c3530daec2186daa89e213da290 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">sync_root</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a2b277c3530daec2186daa89e213da290 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a2b277c3530daec2186daa89e213da290 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af14af0908d5e7bde4a3e33ebca358852 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#af14af0908d5e7bde4a3e33ebca358852">clear</a> ()=0</td></tr>
-<tr class="memdesc:af14af0908d5e7bde4a3e33ebca358852 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:af14af0908d5e7bde4a3e33ebca358852 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bcee883f64746e43b1755f9f1b5d18c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a6bcee883f64746e43b1755f9f1b5d18c">contains</a> (const type_t &amp;item) const noexcept=0</td></tr>
-<tr class="memdesc:a6bcee883f64746e43b1755f9f1b5d18c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; contains a specific value.  <br /></td></tr>
-<tr class="separator:a6bcee883f64746e43b1755f9f1b5d18c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5395bfa3efc35df844dc5c1d3197621c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a5395bfa3efc35df844dc5c1d3197621c">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> array_index) const =0</td></tr>
-<tr class="memdesc:a5395bfa3efc35df844dc5c1d3197621c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
-<tr class="separator:a5395bfa3efc35df844dc5c1d3197621c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86dc990732868e3e519a93f4d7f03112 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a86dc990732868e3e519a93f4d7f03112">remove</a> (const type_t &amp;item)=0</td></tr>
-<tr class="memdesc:a86dc990732868e3e519a93f4d7f03112 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a86dc990732868e3e519a93f4d7f03112 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1icollection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; type_t &gt;</a></td></tr>
 <tr class="memitem:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#aaa7f31bc15aecee93e381b36c71c3058">get_enumerator</a> () const =0</td></tr>
 <tr class="memdesc:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
@@ -356,6 +358,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a057c689f8c51e80cbf49b14e8cad1b00 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a057c689f8c51e80cbf49b14e8cad1b00">select</a> (const std::function&lt; type_t(const type_t &amp;, size_t index)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:a057c689f8c51e80cbf49b14e8cad1b00 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="separator:a057c689f8c51e80cbf49b14e8cad1b00 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2a0936730aa6dcaf0c0545ecdfd269 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5f2a0936730aa6dcaf0c0545ecdfd269">to_array</a> () const noexcept</td></tr>
+<tr class="memdesc:a5f2a0936730aa6dcaf0c0545ecdfd269 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a5f2a0936730aa6dcaf0c0545ecdfd269 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9186b87e4e781e16cfeca4d3e83ca6ba inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2">list</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a9186b87e4e781e16cfeca4d3e83ca6ba">to_list</a> () const noexcept</td></tr>
 <tr class="memdesc:a9186b87e4e781e16cfeca4d3e83ca6ba inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a9186b87e4e781e16cfeca4d3e83ca6ba inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -365,22 +370,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2cebfce505a8ba369e428df6c5935491 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2cebfce505a8ba369e428df6c5935491">where</a> (const std::function&lt; bool(const type_t &amp;, size_t)&gt; &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const</td></tr>
 <tr class="memdesc:a2cebfce505a8ba369e428df6c5935491 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.  <br /></td></tr>
 <tr class="separator:a2cebfce505a8ba369e428df6c5935491 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html">xtd::collections::generic::extensions::collection_common&lt; type_t, icollection&lt; type_t &gt; &gt;</a></td></tr>
-<tr class="memitem:ae00caa713cc9231e66bfb0a3ff4a37be inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#ae00caa713cc9231e66bfb0a3ff4a37be">empty</a> () const noexcept</td></tr>
-<tr class="memdesc:ae00caa713cc9231e66bfb0a3ff4a37be inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the container is empty.  <br /></td></tr>
-<tr class="separator:ae00caa713cc9231e66bfb0a3ff4a37be inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a553ecd2072a2b7e879ac952bdc4fa906 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a553ecd2072a2b7e879ac952bdc4fa906">size</a> () const noexcept</td></tr>
-<tr class="memdesc:a553ecd2072a2b7e879ac952bdc4fa906 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a553ecd2072a2b7e879ac952bdc4fa906 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf5974fb69a6141cfc334820ac868e60 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#aaf5974fb69a6141cfc334820ac868e60">operator&lt;&lt;</a> (const type_t &amp;item)</td></tr>
-<tr class="memdesc:aaf5974fb69a6141cfc334820ac868e60 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shift left operator adds an item to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:aaf5974fb69a6141cfc334820ac868e60 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7c6c4a6d95d6b58aa04da2c269faa6d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#ac7c6c4a6d95d6b58aa04da2c269faa6d">operator&lt;&lt;</a> (type_t &amp;&amp;item)</td></tr>
-<tr class="memdesc:ac7c6c4a6d95d6b58aa04da2c269faa6d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shift left operator adds an item to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ac7c6c4a6d95d6b58aa04da2c269faa6d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f69574c3e3126f9beb35db079b99ea0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a6f69574c3e3126f9beb35db079b99ea0">operator&gt;&gt;</a> (const type_t &amp;item)</td></tr>
-<tr class="memdesc:a6f69574c3e3126f9beb35db079b99ea0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shift right operator removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a6f69574c3e3126f9beb35db079b99ea0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;</a></td></tr>
 <tr class="memitem:a39bebb497fb8cc571f2064b1385bc07a inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a39bebb497fb8cc571f2064b1385bc07a">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
 <tr class="memdesc:a39bebb497fb8cc571f2064b1385bc07a inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
@@ -402,6 +391,42 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a385ff7eb8493f644dbfa729c4a815fbd inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab95a56b5b5154ff445ac8e73de04c341" name="ab95a56b5b5154ff445ac8e73de04c341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95a56b5b5154ff445ac8e73de04c341">&#9670;&#160;</a></span>key_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::key_type =  type_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the set key type. </p>
+
+</div>
+</div>
+<a id="a87a6a6fc5756fa354eafd9518529c83c" name="a87a6a6fc5756fa354eafd9518529c83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a6a6fc5756fa354eafd9518529c83c">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::value_type =  type_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the set value type. </p>
+
+</div>
+</div>
 <a id="a8c90c2b3002b6b97d6f7fe2cbeeb9ac4" name="a8c90c2b3002b6b97d6f7fe2cbeeb9ac4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c90c2b3002b6b97d6f7fe2cbeeb9ac4">&#9670;&#160;</a></span>iterator</h2>
 
@@ -439,6 +464,169 @@ template&lt;class type_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af934990c5b9794a99ed287def25e7750" name="af934990c5b9794a99ed287def25e7750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af934990c5b9794a99ed287def25e7750">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#ad9d6849a21b62a94d9db096e134d5b29">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab30547b4f3bb9e5d5369a97dfa0ead7b" name="ab30547b4f3bb9e5d5369a97dfa0ead7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30547b4f3bb9e5d5369a97dfa0ead7b">&#9670;&#160;</a></span>is_read_only()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::is_read_only </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96" title="Gets a value indicating whether the xtd::collections::generic::icollection &lt;type_t&gt; is read-only.">xtd::collections::generic::icollection::is_read_only</a> property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns <code>true</code>, even though individual array elements can be modified. </dd></dl>
+
+</div>
+</div>
+<a id="ab900ecf4db1ffc1ecae01fe76b041261" name="ab900ecf4db1ffc1ecae01fe76b041261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab900ecf4db1ffc1ecae01fe76b041261">&#9670;&#160;</a></span>is_synchronized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::is_synchronized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe). </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> returns an object, which can be used to synchronize access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd>
+<dd>
+Most collection classes in the <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace also implement a <code>synchronized</code> method, which provides a synchronized wrapper around the underlying collection. </dd>
+<dd>
+Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads. </dd>
+<dd>
+The following code example shows how to lock the collection using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> property during the entire enumeration. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&amp; my_collection = some_collection;</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">sync_root</a>()) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : my_collection) {</div>
+<div class="line">    <span class="comment">// Insert your code here.</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1icollection_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a></div><div class="ttdoc">Defines methods to manipulate generic collections.</div><div class="ttdef"><b>Definition</b> icollection.hpp:45</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1icollection_html_a2b277c3530daec2186daa89e213da290"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">xtd::collections::generic::icollection::sync_root</a></div><div class="ttdeci">virtual const xtd::object &amp; sync_root() const noexcept=0</div><div class="ttdoc">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:67</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ae0e594678bf868bcff31540782f2cb71" name="ae0e594678bf868bcff31540782f2cb71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e594678bf868bcff31540782f2cb71">&#9670;&#160;</a></span>sync_root()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::sync_root </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an object that can be used to synchronize access to the the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>An object that can be used to synchronize access to the the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's <code>sync_root</code> property. </dd>
+<dd>
+Most collection classes in the xts::.collections namespace also implement a <code>synchronized</code> method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> property. The synchronizing code must perform operations on the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance. </dd>
+<dd>
+In the absence of a <code>synchronized</code> method on a collection, the expected usage for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> looks as follows: <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&amp; my_collection = some_collection;</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">sync_root</a>()) {</div>
+<div class="line">  <span class="comment">// Some operation on the collection, which is now thread safe.</span></div>
+<div class="line">}</div>
+<div class="line">@encode</div>
+<div class="line">@remarks Enumerating through <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> collection <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> intrinsically not <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> thread-safe procedure. Even when <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> collection <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> <span class="keyword">synchronized</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a> threads can still modify the collection, which causes the <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a> to <span class="keywordflow">throw</span> an <a class="code hl_class" href="classxtd_1_1exception.html">exception</a>. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or <span class="keywordflow">catch</span> the exceptions resulting from changes made by <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a> threads.</div>
+<div class="line">@remarks The following code example shows how to lock the collection <span class="keyword">using </span>the <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">xtd::collections::generic::icollection::sync_root</a> <span class="keyword">property</span> during the entire enumeration.</div>
+<div class="line">@code</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1icollection.html">icollection</a>&amp; my_collection = some_collection;</div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290">sync_root</a>()) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : my_collection) {</div>
+<div class="line">    <span class="comment">// Insert your code here.</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:38</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="acefcde9027a07fe7e5c3d732a5b47314" name="acefcde9027a07fe7e5c3d732a5b47314"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acefcde9027a07fe7e5c3d732a5b47314">&#9670;&#160;</a></span>add()</h2>
 
@@ -474,7 +662,140 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the element is added to the set; <code>false</code> if the element is already in the set. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a730d78dcfbf97aa94f662db6fbaee23d">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#aa24152ccb0c559f8dd1234221541f284">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a152df384045335f981d8f480d7716f3d" name="a152df384045335f981d8f480d7716f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152df384045335f981d8f480d7716f3d">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#af934990c5b9794a99ed287def25e7750" title="Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::iset::count</a> must be set to 0, and references to other objects from elements of the collection must be released. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a8cbb204a6efaf9fc69daf84d86cd859a">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a0caa180322645a82b9b36983c896506e" name="a0caa180322645a82b9b36983c896506e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0caa180322645a82b9b36983c896506e">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; contains a specific value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item is found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Implementations can vary in how they determine equality of objects; for example, <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; uses xtd::collections::generic::compoarer &lt;type_t&gt;::default_comparer, whereas <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; allows the user to specify the xtd::collections::generic::icompoarer &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#aa007a1874b5087bf999531c92e9b8db1">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aed30f23b7f62a57d42a028bc82dbec45" name="aed30f23b7f62a57d42a028bc82dbec45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed30f23b7f62a57d42a028bc82dbec45">&#9670;&#160;</a></span>copy_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::copy_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>array_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> that is the destination of the elements copied from <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> must have zero-based indexing. </td></tr>
+    <tr><td class="paramname">array_index</td><td>The zero-based index in <code>array</code> at which copying begins. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; is greater than the available space from `array_index` to the end of the destination `array`. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#af5a9dc4012520670818f924a8dc9c634">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -511,12 +832,14 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(n) operation, where n is the number of elements in the other parameter. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in the other parameter. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a8e5c832c07fe13bb53b0b7db12ac83af">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a353cc2fdd00efd1887863d1976017f67" name="a353cc2fdd00efd1887863d1976017f67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a353cc2fdd00efd1887863d1976017f67">&#9670;&#160;</a></span>intersec_with()</h2>
+<a id="a64f0d3d0295ecf3ac69c2f013537a1cb" name="a64f0d3d0295ecf3ac69c2f013537a1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f0d3d0295ecf3ac69c2f013537a1cb">&#9670;&#160;</a></span>intersect_with()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -527,7 +850,7 @@ template&lt;class type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::intersec_with </td>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::intersect_with </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -549,6 +872,8 @@ template&lt;class type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method ignores any duplicate elements in <code>other</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#aef768a9a0b22c492c7d60aa05be7b93c">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -587,6 +912,8 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a proper superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a474a6c8a07f16673f603899ae3dcfd03">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a03d14373d9853c6f0334994a47924b4a" name="a03d14373d9853c6f0334994a47924b4a"></a>
@@ -623,6 +950,8 @@ template&lt;class type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a proper superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a78f535d76760c4d632374b50ef56ff42">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -661,6 +990,8 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a subset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#aa33255bdfd7b12c104aa55639c84f4cb">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a6788e027767aba1738c3119a03e3b8eb" name="a6788e027767aba1738c3119a03e3b8eb"></a>
@@ -697,6 +1028,8 @@ template&lt;class type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a668d36e7e067ed18bbc4755b2e4ac480">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -735,6 +1068,56 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set and <code>other</code> share at least one common element; otherwise, <code>false</code>. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#ad12fff06cade9baec9a475bfc8912bde">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a8764ec75de1bbac04e697a71eeb45a5a" name="a8764ec75de1bbac04e697a71eeb45a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8764ec75de1bbac04e697a71eeb45a5a">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a>&lt; type_t &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to remove from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item was successfully removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;; otherwise, <code>false</code>. This method also returns <code>false</code> if item is not found in the original <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt;. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html" title="Provides the base interface for the abstraction of sets.">xtd::collections::generic::iset</a> &lt;type_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Implementations can vary in how they determine equality of objects; for example, <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; uses xtd::collections::generic::compoarer &lt;type_t&gt;::default_comparer, whereas, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; allows the user to specify the xtd::collections::generic::icompoarer &lt;type_t&gt; implementation to use for comparing keys. </dd>
+<dd>
+In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a1dbdd6e9a2063db4fca35d62421a1d8a">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="a1c029866fa48a778edb16c24f80e9603" name="a1c029866fa48a778edb16c24f80e9603"></a>
@@ -771,6 +1154,8 @@ template&lt;class type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is equal to <code>other</code>; otherwise, <code>false</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a9cdf148f9a5b46ff2e023aa7c618f596">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -809,6 +1194,8 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Any duplicate elements in <code>other</code> are ignored. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#a3dd21ad11bdf76683434813f32b14fd1">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
 </div>
 </div>
 <a id="aaed950b09a454e52fb3c46c81004fd44" name="aaed950b09a454e52fb3c46c81004fd44"></a>
@@ -846,6 +1233,8 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Any duplicate elements in <code>other</code> are ignored. </dd></dl>
 
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html#aad2ab6b19b231e7ed237431eeaa7a03e">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -855,7 +1244,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 11 2025 12:33:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 16 2025 12:14:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

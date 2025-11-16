@@ -362,6 +362,10 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <tr class="memitem:a8c6c8465cd791e35bb31259209ab4eed"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1linq_1_1enumerable.html#a8c6c8465cd791e35bb31259209ab4eed">select</a> (const <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; source_t(const source_t &amp;, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>)&gt; &amp;selector)</td></tr>
 <tr class="memdesc:a8c6c8465cd791e35bb31259209ab4eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="separator:a8c6c8465cd791e35bb31259209ab4eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f96a57b1a44cb46023f060e482a040"><td class="memTemplParams" colspan="2">template&lt;class source_t &gt; </td></tr>
+<tr class="memitem:a80f96a57b1a44cb46023f060e482a040"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1linq_1_1enumerable.html#a80f96a57b1a44cb46023f060e482a040">to_array</a> (const <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
+<tr class="memdesc:a80f96a57b1a44cb46023f060e482a040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a80f96a57b1a44cb46023f060e482a040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452f69ae6e7daea4c93977fc2ba8b044"><td class="memTemplParams" colspan="2">template&lt;class source_t &gt; </td></tr>
 <tr class="memitem:a452f69ae6e7daea4c93977fc2ba8b044"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1linq_1_1enumerable.html#a452f69ae6e7daea4c93977fc2ba8b044">to_list</a> (const <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
 <tr class="memdesc:a452f69ae6e7daea4c93977fc2ba8b044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -2261,7 +2265,7 @@ template&lt;class source_t &gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:129</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:105</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4096,6 +4100,51 @@ template&lt;class source_t &gt; </div>
 
 </div>
 </div>
+<a id="a80f96a57b1a44cb46023f060e482a040" name="a80f96a57b1a44cb46023f060e482a040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f96a57b1a44cb46023f060e482a040">&#9670;&#160;</a></span>to_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::to_array </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">source_t</td><td>The type of the elements of source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; to create a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; that contains elements from the input sequence. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> include file <code>#include &lt;xtd/array&gt;</code> is needeed to use this method. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a80f96a57b1a44cb46023f060e482a040" title="Creates a xtd::array &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;type_t&gt;.">xtd::linq::enumerable::to_array</a> to force immediate query evaluation and return a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; that contains the query results. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a452f69ae6e7daea4c93977fc2ba8b044" name="a452f69ae6e7daea4c93977fc2ba8b044"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a452f69ae6e7daea4c93977fc2ba8b044">&#9670;&#160;</a></span>to_list()</h2>
 
@@ -4318,7 +4367,7 @@ template&lt;class source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 11 2025 12:34:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 16 2025 12:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
