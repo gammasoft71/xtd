@@ -164,3 +164,21 @@ inline xtd::string xtd::array<type_t, 3, allocator_t>::to_string() const noexcep
   return xtd::basic_array<type_t, allocator_t>::to_string(self_, 0, 0);
 }
 /// @endcond
+
+/// @cond
+namespace xtd::collections::generic::extensions {
+  template <class enumerable_t, class source_t>
+  inline xtd::array<source_t> enumerable<enumerable_t, source_t>::to_array() const noexcept {
+    return xtd::linq::enumerable::to_array(self());
+  }
+}
+
+namespace xtd::linq {
+  template <class source_t>
+  inline auto enumerable::to_array(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+    auto result = xtd::array<source_t> {};
+    result = xtd::array<source_t> {source};
+    return result;
+  }
+}
+/// @endcond

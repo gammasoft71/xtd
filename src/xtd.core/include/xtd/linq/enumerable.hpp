@@ -894,6 +894,17 @@ namespace xtd {
         return result;
       }
       
+      /// @brief Creates a xtd::array <type_t> from an xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
+      /// @return A xtd::array <type_t> that contains elements from the input sequence.
+      /// @remarks The xtd::collections::generic::list include file `#include <xtd/array>` is needeed to use this method.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::to_array to force immediate query evaluation and return a xtd::array <type_t> that contains the query results.
+      /// @include enumerable_to_array.cpp
+      template<class source_t>
+      inline static auto to_array(const ienumerable<source_t>& source) noexcept; // Defined in include/xtd/array.hpp
+      
       /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
