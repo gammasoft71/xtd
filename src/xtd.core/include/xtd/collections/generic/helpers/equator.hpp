@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__polymorphic_equator.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../iequality_comparer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -46,7 +47,17 @@ namespace xtd {
           /// @brief Represents the result type.
           using result_type = bool;
           /// @}
+
+          /// @name Public Constructors
           
+          /// @{
+          /// @brief Initializes a new instance of the hasher.
+          equator() = default;
+          /// @brief Initializes a new instance of the hasher with specified comparer.
+          /// @param comparer A comparer used to hash the key.
+          explicit equator(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
+          /// @}
+
           /// @name Public Operators
           
           /// @{
@@ -57,9 +68,13 @@ namespace xtd {
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
             if (&a == &b) return true;
+            if (comparer) return comparer->equals(a, b);
             return __polymorphic_equator__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(a, b);
           }
           /// @}
+
+        private:
+          const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
         };
       }
     }
