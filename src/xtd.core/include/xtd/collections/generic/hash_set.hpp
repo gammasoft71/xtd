@@ -36,87 +36,17 @@ namespace xtd {
       template<class type_t, class hasher_t = xtd::collections::generic::helpers::hasher<type_t>, class equator_t = xtd::collections::generic::helpers::equator<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
       class hash_set : public xtd::object, public xtd::collections::generic::iset<type_t> {
       public:
-        /// @name Public Classes
-        
-        /// @{
-        /// @brief Represents the dictionary hasher type.
-        struct hasher {
-          /// @name Public Aliases
-          
-          /// @{
-          /// @brief Represents the argument type.
-          using argument_type = type_t;
-          /// @brief Represents the result type.
-          using result_type = xtd::size;
-          /// @}
-          
-          /// @name Public Operators
-          
-          /// @{
-          /// @brief Serves as a hash function for a specified key with a particular type (type_t).
-          /// @param key The key to hash.
-          /// @return A hash code for the spesified key.
-          /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          size_t operator()(const key_t& key) const {
-            if (comparer) return comparer->get_hash_code(key);
-            return hasher_t {}(key);
-          }
-          /// @}
-          
-        private:
-          friend class hash_set;
-          hasher() = default;
-          explicit hasher(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
-          const iequality_comparer<key_t>* comparer = nullptr;
-        };
-        
-        /// @brief Represents the dictionary equator type.
-        struct equator {
-          /// @name Public Aliases
-          
-          /// @{
-          /// @brief Represents the first argument type.
-          using first_argument_type = type_t;
-          /// @brief Represents the second argument type.
-          using second_argument_type = type_t;
-          /// @brief Represents the result type.
-          using result_type = bool;
-          /// @}
-          
-          /// @name Public Operators
-          
-          /// @{
-          /// @brief checks if the specified a and b keys are equal.
-          /// @param a The first key to check.
-          /// @param b The second key to check.
-          /// @return `true` if keys are equals; otherwise `false`.
-          /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
-          result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
-            if (&a == &b) return true;
-            if (comparer) return comparer->equals(a, b);
-            return equator_t {}(a, b);
-          }
-          /// @}
-          
-        private:
-          friend class hash_set;
-          equator() = default;
-          explicit equator(const iequality_comparer<first_argument_type>* comparer) : comparer {comparer} {}
-          const iequality_comparer<first_argument_type>* comparer = nullptr;
-        };
-        /// @}
-        
         /// @name Public Aliases
         
         /// @{
-        /// @brief Represents the dictionary key type.
+        /// @brief Represents the hash set key type.
         using key_type = typename xtd::collections::generic::iset<type_t>::key_type;
-        /// @brief Represents the dictionary value type.
+        /// @brief Represents the hash set value type.
         using value_type = typename xtd::collections::generic::iset <type_t>::value_type;
-        /// @brief Represents the dictionary size type.
+        /// @brief Represents the hash set size type.
         using size_type = xtd::size;
-        /// @brief Represents the dictionary base type.
-        using base_type = std::unordered_set<key_type, hasher, equator, allocator_t>;
+        /// @brief Represents the hash set base type.
+        using base_type = std::unordered_set<key_type, hasher_t, equator_t, allocator_t>;
         /// @}
         
         /// @name Public Constructors
@@ -159,12 +89,21 @@ namespace xtd {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that uses the specified equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
+        /// @param collection The collection whose elements are copied to the new set.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing values in the set.
+        /// @par Examples
+        /// The following example uses a supplied xtd::collections::generic::iequality_comparer <type_t> to allow case-insensitive comparisons on the elements of a xtd::collections::generic::hash_set <type_t> collection of vehicle types.
+        /// @include generic_hash_set2.cpp
         template < class equality_comparer_t >
         requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
         hash_set(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {
           for (const auto& item : collection)
             add(item);
         }
+        /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that is empty, but has reserved space for capacity items and uses the default equality comparer for the set type.
+        /// @param capacity The initial size of the xtd::collections::generic::hash_set <type_t>.
+        /// @remarks Since resizes are relatively expensive (require rehashing), this attempts to minimize the need to resize by setting the initial capacity based on the value of the capacity.
         hash_set(size_type capacity) noexcept {
           ensure_capacity(capacity);
         }
@@ -226,6 +165,7 @@ namespace xtd {
         bool add(const key_type& item) noexcept override {
           if (contains(item)) return false;
           items().insert(item);
+          ++data_->version;
           return true;
         }
         
@@ -392,9 +332,10 @@ namespace xtd {
         /// @brief Removes a specified item from the hash_set <type_t>.
         /// @param item The element to remove.
         /// @return true if the element was removed, false otherwise.
-        /// @exception ArgumentNullException item is null.
         bool remove(const type_t& item) noexcept override {
-          return items().erase(item) == 1;
+          auto result = items().erase(item) == 1;
+          ++data_->version;
+          return result;
         }
         
         /// @brief Removes all elements that match the conditions defined by the specified predicate from a hash_set <type_t> collection.
@@ -402,10 +343,12 @@ namespace xtd {
         /// @return The number of elements that were removed from the hash_set <type_t> collection.
         template<class predicate_t>
         size_type remove_where(predicate_t match) noexcept {
-          auto nb_removed = size_type {};
+          auto to_remove = hash_set {};
           for (const auto& item : self_)
-            if (match(item) && remove(item)) ++nb_removed;
-          return nb_removed;
+            if (match(item)) to_remove.add(item);
+          for (const auto& item : to_remove)
+            remove(item);
+          return to_remove.count();
         }
         
         /// @brief Determines whether the current set and the specified collection contain the same elements.
@@ -425,7 +368,7 @@ namespace xtd {
         void symetric_excep_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
           for (const auto& item : other)
             if (contains(item)) remove(item);
-            else items().insert(item);
+            else add(item);
         }
         
         /// @brief Gets a string that represents the current object.
@@ -437,7 +380,7 @@ namespace xtd {
         /// @remarks Any duplicate elements in `other` are ignored.
         void union_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
           for (const auto& item : other)
-            if (!contains(item)) items().insert(item);
+            if (!contains(item)) add(item);
         }
         
         /// @}
@@ -468,18 +411,17 @@ namespace xtd {
         }
         
         struct hash_set_data {
-          hash_set_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}
-          hash_set_data(ptr<iequality_comparer<key_type>> comparer) : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
-          hash_set_data(ptr<iequality_comparer<key_type>> comparer, const base_type& items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
+          hash_set_data() = default;
+          hash_set_data(ptr<iequality_comparer<key_type>> comparer) : items  {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}} {}
+          hash_set_data(ptr<iequality_comparer<key_type>> comparer, const base_type& items, size_type version) noexcept : items {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}}, version {version} {
             for (const auto& item : items)
               self_.items.insert(item);
           }
-          hash_set_data(base_type&& items, size_type version) noexcept : items {size_type {}, hasher {}, equator {}, allocator_t {}}, version {version} {
+          hash_set_data(base_type&& items, size_type version) noexcept : version {version} {
             for (auto&& item : items)
               self_.items.insert(item);
           }
           
-          ptr<iequality_comparer<key_type>> comparer;
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
