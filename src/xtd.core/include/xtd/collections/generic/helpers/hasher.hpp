@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__polymorphic_hasher.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../iequality_comparer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -45,7 +46,17 @@ namespace xtd {
           /// @brief Represents the result type.
           using result_type = xtd::size;
           /// @}
+
+          /// @name Public Constructors
           
+          /// @{
+          /// @brief Initializes a new instance of the hasher.
+          hasher() = default;
+          /// @brief Initializes a new instance of the hasher with specified comparer.
+          /// @param comparer A comparer used to hash the key.
+          explicit hasher(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
+          /// @}
+
           /// @name Public Operators
           
           /// @{
@@ -53,7 +64,13 @@ namespace xtd {
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          result_type operator()(const argument_type& key) const {return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);}
+          result_type operator()(const argument_type& key) const {
+            if (comparer) return comparer->get_hash_code(key);
+            return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);
+          }
+
+        private:
+          const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
           /// @}
         };
       }
