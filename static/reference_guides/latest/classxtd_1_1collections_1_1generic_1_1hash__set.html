@@ -98,7 +98,6 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1collections_1_1generic_1_1hash__set-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, allocator_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a></div></div></div>
 </div><!--header-->
@@ -127,7 +126,7 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1iset_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset</a></div><div class="ttdoc">Provides the base interface for the abstraction of sets.</div><div class="ttdef"><b>Definition</b> iset.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gab599dabbf34e1e5238de4589ab6614b9"><div class="ttname"><a href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:38</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/hash_set&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -136,50 +135,53 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_set">std::unordered_set</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; objects and populates them with even and odd numbers, respectively. A third <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is created from the set that contains the even numbers. The example then calls the <a class="el" href="#aad2ab6b19b231e7ed237431eeaa7a03e" title="Modifies the current set so that it contains all elements that are present in the current set,...">xtd::collections::generic::hash_set::union_with</a> method, which adds the odd number set to the third set. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>example {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
-<div class="line">    <span class="keyword">auto</span> odd_numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set&lt;int&gt;</a> {};</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">      <span class="comment">// Populate even_numbers with just even numbers.</span></div>
-<div class="line">      even_numbers.add(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2);</div>
+<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      <span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> odd_numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set&lt;int&gt;</a> {};</div>
 <div class="line">      </div>
-<div class="line">      <span class="comment">// Populate odd_numbers with just odd numbers.</span></div>
-<div class="line">      odd_numbers.add((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2) + 1);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">        <span class="comment">// Populate even_numbers with just even numbers.</span></div>
+<div class="line">        even_numbers.add(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// Populate odd_numbers with just odd numbers.</span></div>
+<div class="line">        odd_numbers.add((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2) + 1);</div>
+<div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
+<div class="line">      display_set(even_numbers);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
+<div class="line">      display_set(odd_numbers);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
+<div class="line">      <span class="keyword">auto</span> numbers = even_numbers;</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
+<div class="line">      numbers.union_with(odd_numbers);</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
+<div class="line">      display_set(numbers);</div>
 <div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
-<div class="line">    display_set(even_numbers);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
-<div class="line">    display_set(odd_numbers);</div>
-<div class="line">    </div>
-<div class="line">    <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
-<div class="line">    <span class="keyword">auto</span> numbers = even_numbers;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
-<div class="line">    numbers.union_with(odd_numbers);</div>
-<div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
-<div class="line">    display_set(numbers);</div>
-<div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection.to_array().sort())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; }&quot;</span>);</div>
-<div class="line">  }</div>
-<div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
+<div class="line">      console::write(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection)</div>
+<div class="line">        console::write(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot; }&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// even_numbers contains 5 elements: { 0 2 4 6 8 }</span></div>
-<div class="line"><span class="comment">// odd_numbers contains 5 elements: { 1 3 5 7 9 }</span></div>
+<div class="line"><span class="comment">// even_numbers contains 5 elements: { 8 6 4 2 0 }</span></div>
+<div class="line"><span class="comment">// odd_numbers contains 5 elements: { 9 7 5 3 1 }</span></div>
 <div class="line"><span class="comment">// numbers union_with odd_numbers...</span></div>
-<div class="line"><span class="comment">// numbers contains 10 elements: { 0 1 2 3 4 5 6 7 8 9 }</span></div>
+<div class="line"><span class="comment">// numbers contains 10 elements: { 1 3 5 7 9 0 2 4 6 8 }</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1hash__set_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a></div><div class="ttdoc">Represents a set of values.</div><div class="ttdef"><b>Definition</b> hash_set.hpp:37</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -187,28 +189,19 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1hash__set_1_1equator.html">equator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary equator type.  <a href="structxtd_1_1collections_1_1generic_1_1hash__set_1_1equator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1hash__set_1_1hasher.html">hasher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary hasher type.  <a href="structxtd_1_1collections_1_1generic_1_1hash__set_1_1hasher.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:afe06b0fdb4083dc3332247a8a2cd05b2" id="r_afe06b0fdb4083dc3332247a8a2cd05b2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a></td></tr>
-<tr class="memdesc:afe06b0fdb4083dc3332247a8a2cd05b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary key type.  <br /></td></tr>
+<tr class="memdesc:afe06b0fdb4083dc3332247a8a2cd05b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the hash set key type.  <br /></td></tr>
 <tr class="separator:afe06b0fdb4083dc3332247a8a2cd05b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d07d66b9f0fb844a1c0dcb369058d6e" id="r_a0d07d66b9f0fb844a1c0dcb369058d6e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a></td></tr>
-<tr class="memdesc:a0d07d66b9f0fb844a1c0dcb369058d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary value type.  <br /></td></tr>
+<tr class="memdesc:a0d07d66b9f0fb844a1c0dcb369058d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the hash set value type.  <br /></td></tr>
 <tr class="separator:a0d07d66b9f0fb844a1c0dcb369058d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d8abafe1d9225d958ee756844140a55" id="r_a7d8abafe1d9225d958ee756844140a55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td></tr>
-<tr class="memdesc:a7d8abafe1d9225d958ee756844140a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary size type.  <br /></td></tr>
+<tr class="memdesc:a7d8abafe1d9225d958ee756844140a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the hash set size type.  <br /></td></tr>
 <tr class="separator:a7d8abafe1d9225d958ee756844140a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade76d33c4e93f37d6e1135d15cf43eb9" id="r_ade76d33c4e93f37d6e1135d15cf43eb9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade76d33c4e93f37d6e1135d15cf43eb9">base_type</a></td></tr>
-<tr class="memdesc:ade76d33c4e93f37d6e1135d15cf43eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary base type.  <br /></td></tr>
-<tr class="separator:ade76d33c4e93f37d6e1135d15cf43eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05a7903d0092a7f095691aa20376335" id="r_aa05a7903d0092a7f095691aa20376335"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a></td></tr>
+<tr class="memdesc:aa05a7903d0092a7f095691aa20376335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the hash set base type.  <br /></td></tr>
+<tr class="separator:aa05a7903d0092a7f095691aa20376335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a8c367ef02978617714598cb0c6636b9c" id="r_a8c367ef02978617714598cb0c6636b9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c367ef02978617714598cb0c6636b9c">hash_set</a> () noexcept=default</td></tr>
@@ -222,13 +215,13 @@ requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_
 <tr class="memitem:a7118a1d1921eb58f8875ebfdc1087521" id="r_a7118a1d1921eb58f8875ebfdc1087521"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7118a1d1921eb58f8875ebfdc1087521">hash_set</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection) noexcept</td></tr>
 <tr class="memdesc:a7118a1d1921eb58f8875ebfdc1087521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:a7118a1d1921eb58f8875ebfdc1087521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a200516cdb82d179cd798f587875750c4" id="r_a200516cdb82d179cd798f587875750c4"><td class="memTemplParams" colspan="2"><a id="a200516cdb82d179cd798f587875750c4" name="a200516cdb82d179cd798f587875750c4"></a>
-template&lt;class equality_comparer_t&gt; <br />
+<tr class="memitem:a200516cdb82d179cd798f587875750c4" id="r_a200516cdb82d179cd798f587875750c4"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t&gt; <br />
 requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&gt;</td></tr>
-<tr class="memitem:a200516cdb82d179cd798f587875750c4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hash_set</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
+<tr class="memitem:a200516cdb82d179cd798f587875750c4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a200516cdb82d179cd798f587875750c4">hash_set</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
+<tr class="memdesc:a200516cdb82d179cd798f587875750c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that uses the specified equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:a200516cdb82d179cd798f587875750c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4da52366f299e4fa338454f33ce21af" id="r_ab4da52366f299e4fa338454f33ce21af"><td class="memItemLeft" align="right" valign="top"><a id="ab4da52366f299e4fa338454f33ce21af" name="ab4da52366f299e4fa338454f33ce21af"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>hash_set</b> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
+<tr class="memitem:ab4da52366f299e4fa338454f33ce21af" id="r_ab4da52366f299e4fa338454f33ce21af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4da52366f299e4fa338454f33ce21af">hash_set</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
+<tr class="memdesc:ab4da52366f299e4fa338454f33ce21af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty, but has reserved space for capacity items and uses the default equality comparer for the set type.  <br /></td></tr>
 <tr class="separator:ab4da52366f299e4fa338454f33ce21af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41cd1b23d1ed5f2fe5c9f2e178b1de14" id="r_a41cd1b23d1ed5f2fe5c9f2e178b1de14"><td class="memItemLeft" align="right" valign="top"><a id="a41cd1b23d1ed5f2fe5c9f2e178b1de14" name="a41cd1b23d1ed5f2fe5c9f2e178b1de14"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>hash_set</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
@@ -260,10 +253,10 @@ template&lt;class input_iterator_t&gt; </td></tr>
 <tr class="memitem:ad9d6849a21b62a94d9db096e134d5b29" id="r_ad9d6849a21b62a94d9db096e134d5b29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d6849a21b62a94d9db096e134d5b29">count</a> () const noexcept override</td></tr>
 <tr class="memdesc:ad9d6849a21b62a94d9db096e134d5b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:ad9d6849a21b62a94d9db096e134d5b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4528f50e541aa3f3c8fa6508629b5b28" id="r_a4528f50e541aa3f3c8fa6508629b5b28"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="#ade76d33c4e93f37d6e1135d15cf43eb9">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4528f50e541aa3f3c8fa6508629b5b28">items</a> () const noexcept</td></tr>
+<tr class="memitem:a4528f50e541aa3f3c8fa6508629b5b28" id="r_a4528f50e541aa3f3c8fa6508629b5b28"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4528f50e541aa3f3c8fa6508629b5b28">items</a> () const noexcept</td></tr>
 <tr class="memdesc:a4528f50e541aa3f3c8fa6508629b5b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:a4528f50e541aa3f3c8fa6508629b5b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b0baff52fab2e852ea6282789645715" id="r_a7b0baff52fab2e852ea6282789645715"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#ade76d33c4e93f37d6e1135d15cf43eb9">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0baff52fab2e852ea6282789645715">items</a> () noexcept</td></tr>
+<tr class="memitem:a7b0baff52fab2e852ea6282789645715" id="r_a7b0baff52fab2e852ea6282789645715"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0baff52fab2e852ea6282789645715">items</a> () noexcept</td></tr>
 <tr class="memdesc:a7b0baff52fab2e852ea6282789645715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:a7b0baff52fab2e852ea6282789645715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -573,7 +566,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
       </table>
 </div><div class="memdoc">
 
-<p>Represents the dictionary key type. </p>
+<p>Represents the hash set key type. </p>
 
 </div>
 </div>
@@ -591,7 +584,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
       </table>
 </div><div class="memdoc">
 
-<p>Represents the dictionary value type. </p>
+<p>Represents the hash set value type. </p>
 
 </div>
 </div>
@@ -609,12 +602,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
       </table>
 </div><div class="memdoc">
 
-<p>Represents the dictionary size type. </p>
+<p>Represents the hash set size type. </p>
 
 </div>
 </div>
-<a id="ade76d33c4e93f37d6e1135d15cf43eb9" name="ade76d33c4e93f37d6e1135d15cf43eb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade76d33c4e93f37d6e1135d15cf43eb9">&#9670;&#160;</a></span>base_type</h2>
+<a id="aa05a7903d0092a7f095691aa20376335" name="aa05a7903d0092a7f095691aa20376335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa05a7903d0092a7f095691aa20376335">&#9670;&#160;</a></span>base_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -627,13 +620,13 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
       </table>
 </div><div class="memdoc">
 
-<p>Represents the dictionary base type. </p>
+<p>Represents the hash set base type. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8c367ef02978617714598cb0c6636b9c" name="a8c367ef02978617714598cb0c6636b9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c367ef02978617714598cb0c6636b9c">&#9670;&#160;</a></span>hash_set() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c367ef02978617714598cb0c6636b9c">&#9670;&#160;</a></span>hash_set() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,7 +669,7 @@ This constructor is an O(1) operation. </dd></dl>
 </div>
 </div>
 <a id="ace60f69bdaa55d25f26d061b6f1bd143" name="ace60f69bdaa55d25f26d061b6f1bd143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace60f69bdaa55d25f26d061b6f1bd143">&#9670;&#160;</a></span>hash_set() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ace60f69bdaa55d25f26d061b6f1bd143">&#9670;&#160;</a></span>hash_set() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -717,7 +710,7 @@ This constructor is an O(1) operation. </dd></dl>
 </div>
 </div>
 <a id="a7118a1d1921eb58f8875ebfdc1087521" name="a7118a1d1921eb58f8875ebfdc1087521"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7118a1d1921eb58f8875ebfdc1087521">&#9670;&#160;</a></span>hash_set() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7118a1d1921eb58f8875ebfdc1087521">&#9670;&#160;</a></span>hash_set() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -750,39 +743,160 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; collection from an existing set. In this example, two sets are created with even and odd integers, respectively. A third <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is then created from the even integer set. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">      <span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> odd_numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set&lt;int&gt;</a> {};</div>
+<div class="line">      </div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">        <span class="comment">// Populate even_numbers with just even numbers.</span></div>
+<div class="line">        even_numbers.add(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// Populate odd_numbers with just odd numbers.</span></div>
+<div class="line">        odd_numbers.add((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2) + 1);</div>
+<div class="line">      }</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
+<div class="line">      display_set(even_numbers);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
+<div class="line">      display_set(odd_numbers);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
+<div class="line">      <span class="keyword">auto</span> numbers = even_numbers;</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
+<div class="line">      numbers.union_with(odd_numbers);</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
+<div class="line">      display_set(numbers);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
+<div class="line">      console::write(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection)</div>
+<div class="line">        console::write(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot; }&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// even_numbers contains 5 elements: { 8 6 4 2 0 }</span></div>
+<div class="line"><span class="comment">// odd_numbers contains 5 elements: { 9 7 5 3 1 }</span></div>
+<div class="line"><span class="comment">// numbers union_with odd_numbers...</span></div>
+<div class="line"><span class="comment">// numbers contains 10 elements: { 1 3 5 7 9 0 2 4 6 8 }</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is the number of elements that the object can hold. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object's capacity automatically increases as elements are added to the object. </dd>
+<dd>
+If <code>collection</code> contains duplicates, the set will contain one of each unique element. No exception will be thrown. Therefore, the size of the resulting set is not identical to the size of <code>collection</code>. </dd>
+<dd>
+This constructor is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in the <code>collection</code> parameter. </dd></dl>
+
+</div>
+</div>
+<a id="a200516cdb82d179cd798f587875750c4" name="a200516cdb82d179cd798f587875750c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200516cdb82d179cd798f587875750c4">&#9670;&#160;</a></span>hash_set() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class equality_comparer_t&gt; <br />
+requires std::derived_from&lt;equality_comparer_t, <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&gt;</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::hash_set </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const equality_comparer_t &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that uses the specified equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The collection whose elements are copied to the new set. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; implementation to use when comparing values in the set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses a supplied <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to allow case-insensitive comparisons on the elements of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; collection of vehicle types. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
-<div class="line">    <span class="keyword">auto</span> odd_numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set&lt;int&gt;</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> all_vehicles = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;string&gt;</a>(<a class="code hl_function" href="classxtd_1_1basic__string__comparer.html#a455d50963d3e18ce3a590d77e4e3a8fb">string_comparer::ordinal_ignore_case</a>());</div>
+<div class="line">    <span class="keyword">auto</span> some_vehicles = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">      <span class="comment">// Populate even_numbers with just even numbers.</span></div>
-<div class="line">      even_numbers.add(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2);</div>
-<div class="line">      </div>
-<div class="line">      <span class="comment">// Populate odd_numbers with just odd numbers.</span></div>
-<div class="line">      odd_numbers.add((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 2) + 1);</div>
+<div class="line">    some_vehicles.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<span class="stringliteral">&quot;Planes&quot;</span>);</div>
+<div class="line">    some_vehicles.add(<span class="stringliteral">&quot;Trains&quot;</span>);</div>
+<div class="line">    some_vehicles.add(<span class="stringliteral">&quot;Automobiles&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Add in the vehicles contained in the some_vehicles list.</span></div>
+<div class="line">    all_vehicles.union_with(some_vehicles);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">    </div>
+<div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Ships&quot;</span>);</div>
+<div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Motorcycles&quot;</span>);</div>
+<div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Rockets&quot;</span>);</div>
+<div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Helicopters&quot;</span>);</div>
+<div class="line">    all_vehicles.add(<span class="stringliteral">&quot;Submarines&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe updated hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Verify that the &#39;All Vehicles&#39; set contains at least the vehicles in</span></div>
+<div class="line">    <span class="comment">// the &#39;Some Vehicles&#39; list.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (all_vehicles.is_superset_of(some_vehicles)) {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains everything in &quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;&#39;Some&#39; vechicles list.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;even_numbers contains {} elements: &quot;</span>, even_numbers.count());</div>
-<div class="line">    display_set(even_numbers);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;odd_numbers contains {} elements: &quot;</span>, odd_numbers.count());</div>
-<div class="line">    display_set(odd_numbers);</div>
+<div class="line">    <span class="comment">// Check for Rockets. Here the OrdinalIgnoreCase comparer will compare</span></div>
+<div class="line">    <span class="comment">// true for the mixed-case vehicle type.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (all_vehicles.contains(<span class="stringliteral">&quot;roCKeTs&quot;</span>))</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe &#39;All&#39; vehicles set contains &#39;roCKeTs&#39;&quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// Create a new hash_set populated with even numbers.</span></div>
-<div class="line">    <span class="keyword">auto</span> numbers = even_numbers;</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers union_with odd_numbers...&quot;</span>);</div>
-<div class="line">    numbers.union_with(odd_numbers);</div>
+<div class="line">    all_vehicles.except_with(some_vehicles);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe excepted hash_set contains:\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;numbers contains {} elements: &quot;</span>, numbers.count());</div>
-<div class="line">    display_set(numbers);</div>
+<div class="line">    <span class="comment">// Remove all the vehicles that are not &#39;super cool&#39;.</span></div>
+<div class="line">    all_vehicles.remove_where(is_not_super_cool);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nThe super cool vehicles are:\n&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> vehicle : all_vehicles)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(vehicle);</div>
 <div class="line">  }</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_set(<span class="keyword">const</span> hash_set&lt;int&gt;&amp; collection) {</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : collection.to_array().sort())</div>
-<div class="line">      console::write(<span class="stringliteral">&quot; {}&quot;</span>, i);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot; }&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Predicate to determine vehicle &#39;coolness&#39;.</span></div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> is_not_super_cool(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vehicle) {</div>
+<div class="line">    <span class="keywordtype">bool</span> super_cool = (vehicle == <span class="stringliteral">&quot;Helicopters&quot;</span>) || (vehicle == <span class="stringliteral">&quot;Motorcycles&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> !super_cool;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -790,16 +904,79 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// even_numbers contains 5 elements: { 0 2 4 6 8 }</span></div>
-<div class="line"><span class="comment">// odd_numbers contains 5 elements: { 1 3 5 7 9 }</span></div>
-<div class="line"><span class="comment">// numbers union_with odd_numbers...</span></div>
-<div class="line"><span class="comment">// numbers contains 10 elements: { 0 1 2 3 4 5 6 7 8 9 }</span></div>
+<div class="line"><span class="comment">// The current hash_set contains:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Trains</span></div>
+<div class="line"><span class="comment">// Automobiles</span></div>
+<div class="line"><span class="comment">// Planes</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The updated hash_set contains:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Submarines</span></div>
+<div class="line"><span class="comment">// Helicopters</span></div>
+<div class="line"><span class="comment">// Ships</span></div>
+<div class="line"><span class="comment">// Rockets</span></div>
+<div class="line"><span class="comment">// Motorcycles</span></div>
+<div class="line"><span class="comment">// Trains</span></div>
+<div class="line"><span class="comment">// Automobiles</span></div>
+<div class="line"><span class="comment">// Planes</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The &#39;All&#39; vehicles set contains everything in &#39;Some&#39; vechicles list.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The &#39;All&#39; vehicles set contains &#39;roCKeTs&#39;</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The excepted hash_set contains:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Submarines</span></div>
+<div class="line"><span class="comment">// Helicopters</span></div>
+<div class="line"><span class="comment">// Ships</span></div>
+<div class="line"><span class="comment">// Rockets</span></div>
+<div class="line"><span class="comment">// Motorcycles</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The super cool vehicles are:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Helicopters</span></div>
+<div class="line"><span class="comment">// Motorcycles</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string__comparer_html_a455d50963d3e18ce3a590d77e4e3a8fb"><div class="ttname"><a href="classxtd_1_1basic__string__comparer.html#a455d50963d3e18ce3a590d77e4e3a8fb">xtd::basic_string_comparer&lt; char &gt;::ordinal_ignore_case</a></div><div class="ttdeci">static const basic_string_comparer &amp; ordinal_ignore_case()</div><div class="ttdef"><b>Definition</b> basic_string_comparer.hpp:104</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:284</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is the number of elements that the object can hold. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object's capacity automatically increases as elements are added to the object. </dd>
-<dd>
-If <code>collection</code> contains duplicates, the set will contain one of each unique element. No exception will be thrown. Therefore, the size of the resulting set is not identical to the size of <code>collection</code>. </dd>
-<dd>
-This constructor is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in the <code>collection</code> parameter. </dd></dl>
+
+</div>
+</div>
+<a id="ab4da52366f299e4fa338454f33ce21af" name="ab4da52366f299e4fa338454f33ce21af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4da52366f299e4fa338454f33ce21af">&#9670;&#160;</a></span>hash_set() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::hash_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty, but has reserved space for capacity items and uses the default equality comparer for the set type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">capacity</td><td>The initial size of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Since resizes are relatively expensive (require rehashing), this attempts to minimize the need to resize by setting the initial capacity based on the value of the capacity. </dd></dl>
 
 </div>
 </div>
@@ -914,7 +1091,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="#ade76d33c4e93f37d6e1135d15cf43eb9">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -944,7 +1121,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#ade76d33c4e93f37d6e1135d15cf43eb9">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1593,12 +1770,6 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the element was removed, false otherwise. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td>item is null. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a8764ec75de1bbac04e697a71eeb45a5a">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
@@ -1795,7 +1966,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 16:19:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 18 2025 10:22:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
