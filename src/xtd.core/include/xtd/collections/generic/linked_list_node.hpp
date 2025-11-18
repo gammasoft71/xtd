@@ -137,21 +137,21 @@ namespace xtd {
         
       private:
         friend class linked_list<type_t>;
-        using iterator = typename base_type::iterator;
+        using iterator_type = typename base_type::iterator;
         
-        linked_list_node(linked_list_type & list, iterator iterator, size_type version) {
+        linked_list_node(linked_list_type & list, iterator_type iterator, size_type version) {
           data_->list = &list;
           data_->iterator = iterator;
           data_->version = version;
         }
         
-        iterator begin() const {return data_->list->data_->items.begin();}
+        iterator_type begin() const {return data_->list->data_->items.begin();}
         void check_stale() const {if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");}
-        iterator end() const {return data_->list->data_->items.end();}
+        iterator_type end() const {return data_->list->data_->items.end();}
         
         struct node_data {
           linked_list<type_t>* list = null;
-          iterator iterator;
+          iterator_type iterator;
           xtd::optional < value_type > value;
           size_type version;
         };
