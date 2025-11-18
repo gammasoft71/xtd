@@ -47,7 +47,7 @@ namespace xtd {
           /// @brief Represents the result type.
           using result_type = bool;
           /// @}
-
+          
           /// @name Public Constructors
           
           /// @{
@@ -57,7 +57,7 @@ namespace xtd {
           /// @param comparer A comparer used to hash the key.
           explicit equator(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
           /// @}
-
+          
           /// @name Public Operators
           
           /// @{
@@ -72,7 +72,7 @@ namespace xtd {
             return __polymorphic_equator__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(a, b);
           }
           /// @}
-
+          
         private:
           const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
         };

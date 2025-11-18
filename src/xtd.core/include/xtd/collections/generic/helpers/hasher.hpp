@@ -46,7 +46,7 @@ namespace xtd {
           /// @brief Represents the result type.
           using result_type = xtd::size;
           /// @}
-
+          
           /// @name Public Constructors
           
           /// @{
@@ -56,7 +56,7 @@ namespace xtd {
           /// @param comparer A comparer used to hash the key.
           explicit hasher(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
           /// @}
-
+          
           /// @name Public Operators
           
           /// @{
@@ -68,7 +68,7 @@ namespace xtd {
             if (comparer) return comparer->get_hash_code(key);
             return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);
           }
-
+          
         private:
           const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
           /// @}
