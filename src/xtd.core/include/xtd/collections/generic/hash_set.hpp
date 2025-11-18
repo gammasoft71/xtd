@@ -74,9 +74,7 @@ namespace xtd {
         /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing values in the set.
         /// @remarks The capacity of a xtd::collections::generic::hash_set <type_t> object is the number of elements that the object can hold. A xtd::collections::generic::hash_set <type_t> object's capacity automatically increases as elements are added to the object.
         /// @remarks This constructor is an O(1) operation.
-        template < class equality_comparer_t >
-        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
-        hash_set(const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {}
+        hash_set(const xtd::collections::generic::iequality_comparer<key_type>& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(comparer)) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::hash_set <type_t> class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new set.
         /// @par Examples
@@ -95,9 +93,7 @@ namespace xtd {
         /// @par Examples
         /// The following example uses a supplied xtd::collections::generic::iequality_comparer <type_t> to allow case-insensitive comparisons on the elements of a xtd::collections::generic::hash_set <type_t> collection of vehicle types.
         /// @include generic_hash_set2.cpp
-        template < class equality_comparer_t >
-        requires std::derived_from<equality_comparer_t, xtd::collections::generic::iequality_comparer<key_type>>
-        hash_set(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(new_ptr<equality_comparer_t>(comparer))) {
+        hash_set(const ienumerable < value_type >& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(comparer)) {
           for (const auto& item : collection)
             add(item);
         }
@@ -137,8 +133,8 @@ namespace xtd {
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::hash_set <type_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::hash_set <type_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
         const iequality_comparer<key_type>& comparer() const noexcept {
-          if (data_->comparer) return *data_->comparer;
-          return equality_comparer<key_type>::default_equality_comparer();
+          if (!data_->comparer) return equality_comparer <key_type>::default_equality_comparer();
+          return *data_->comparer;
         }
         
         /// @brief Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -412,8 +408,8 @@ namespace xtd {
         
         struct hash_set_data {
           hash_set_data() = default;
-          hash_set_data(ptr<iequality_comparer<key_type>> comparer) : items  {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}} {}
-          hash_set_data(ptr<iequality_comparer<key_type>> comparer, const base_type& items, size_type version) noexcept : items {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}}, version {version} {
+          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer) : comparer {&comparer}, items  {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}} {}
+          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer, const base_type& items, size_type version) noexcept : comparer {&comparer}, items {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}}, version {version} {
             for (const auto& item : items)
               self_.items.insert(item);
           }
@@ -422,6 +418,7 @@ namespace xtd {
               self_.items.insert(item);
           }
           
+          const xtd::collections::generic::iequality_comparer<key_type>* comparer = null;
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
