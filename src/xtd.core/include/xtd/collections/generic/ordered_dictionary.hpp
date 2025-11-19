@@ -87,10 +87,33 @@ namespace xtd {
           for (const auto& item : dictionary)
             data_->keys.add(item.first);
         }
+        /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::idictionary <key_t, value_t> and uses the default equality comparer for the key type, and uses the specified xtd::collections::generic::iequality_comparer <key_type>.
+        /// @param dictionary The xtd::collections::generic::idictionary <key_t, value_t> whose elements are copied to the new xtd::collections::generic::ordered_dictionary <key_t, value_t>.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <key_type> implementation to use when comparing keys.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        /// @remarks Every key in a xtd::collections::generic::ordered_dictionary <key_t, value_t> must be unique according to the default equality comparer; likewise, every key in the source `dictionary` must also be unique according to the default equality comparer.
+        /// @remarks The initial capacity of the new xtd::collections::generic::ordered_dictionary <key_t, value_t> is large enough to contain all the elements in dictionary.
+        /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, xtd::collections::generic::equality_comparer::default_equality_comparer. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter.
+        /// @remarks This constructor is an O(`n`) operation, where `n` is the number of elements in dictionary.
+        ordered_dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary, const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
+          data_->items = base_type(dictionary, comparer);
+          data_->keys.capacity(dictionary.count());
+          for (const auto& item : dictionary)
+            data_->keys.add(item.first);
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>.
         /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::ordered_dictionary <key_t, value_t>
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         ordered_dictionary(const xtd::collections::generic::ienumerable < value_type >& collection) {
+          for (const auto& item : collection)
+            add(item);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>, and uses the specified xtd::collections::generic::iequality_comparer <key_type>.
+        /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::ordered_dictionary <key_t, value_t>
+        /// @param comparer The xtd::collections::generic::iequality_comparer <key_type> implementation to use when comparing keys.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        ordered_dictionary(const xtd::collections::generic::ienumerable < value_type >& collection, const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
+          data_->items = base_type(comparer);
           for (const auto& item : collection)
             add(item);
         }
@@ -105,6 +128,30 @@ namespace xtd {
         ordered_dictionary(size_t capacity) {
           data_->keys.capacity(capacity);
           data_->items.ensure_capacity(capacity);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that is empty, has the specified initial capacit, and uses the specified xtd::collections::generic::iequality_comparer <key_type>.
+        /// @param capacity The initial number of elements that the xtd::collections::generic::ordered_dictionary <key_t, value_t> can contain.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <key_type> implementation to use when comparing keys.
+        /// @remarks Every key in a xtd::collections::generic::ordered_dictionary <key_t, value_t> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::ordered_dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::ordered_dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::ordered_dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks This constructor is an O(1) operation.
+        /// @remarks xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::generic::ordered_dictionary::bucket_count are equivalent properties.
+        ordered_dictionary(size_t capacity, const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
+          data_->items = base_type(capacity, comparer);
+          data_->keys.capacity(capacity);
+        }
+        /// @brief Initializes a new instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class that is empty, and uses the specified xtd::collections::generic::iequality_comparer <key_type>.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <key_type> implementation to use when comparing keys.
+        /// @remarks Every key in a xtd::collections::generic::ordered_dictionary <key_t, value_t> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::ordered_dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::ordered_dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::ordered_dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::ordered_dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks This constructor is an O(1) operation.
+        /// @remarks xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::generic::ordered_dictionary::bucket_count are equivalent properties.
+        ordered_dictionary(const xtd::collections::generic::iequality_comparer<key_type>& comparer) {
+          data_->items = base_type(comparer);
         }
         /// @brief Initializes instance of the xtd::collections::generic::ordered_dictionary <key_t, value_t> class from a variety of data sources.
         /// @param first The fist iterator of the range [first, last) to copy the elements from.
@@ -153,6 +200,13 @@ namespace xtd {
         /// @remarks Getting the value of this property is an O(1) operation.
         size_type count() const noexcept override {return data_->items.count();}
         
+        /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
+        /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
+        const iequality_comparer < key_t >& comparer() const noexcept {
+          return data_->items.comparer();
+        }
+
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
         virtual const base_type& items() const noexcept {return data_->items;}
