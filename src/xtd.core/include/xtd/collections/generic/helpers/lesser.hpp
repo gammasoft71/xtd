@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__polymorphic_lesser.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../icomparer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -47,6 +48,16 @@ namespace xtd {
           using result_type = bool;
           /// @}
           
+          /// @name Public Constructors
+          
+          /// @{
+          /// @brief Initializes a new instance of the comparer.
+          lesser() = default;
+          /// @brief Initializes a new instance of the comparer with specified comparer.
+          /// @param comparer A comparer used to hash the key.
+          explicit lesser(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_ {&comparer} {}
+          /// @}
+
           /// @name Public Operators
           
           /// @{
@@ -55,9 +66,13 @@ namespace xtd {
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
           constexpr result_type operator()(const first_argument_type& lhs, const second_argument_type& rhs) const {
+            if (comparer_) return comparer_->compare(lhs, rhs) < 0;
             return __polymorphic_lesser__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(lhs, rhs);
           }
           /// @}
+          
+        private:
+          const xtd::collections::generic::icomparer<type_t>* comparer_ = nullptr;
         };
       }
     }
