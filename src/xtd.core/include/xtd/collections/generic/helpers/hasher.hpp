@@ -68,10 +68,10 @@ namespace xtd {
             if (comparer) return comparer->get_hash_code(key);
             return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);
           }
+          /// @}
           
         private:
           const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
-          /// @}
         };
       }
     }
