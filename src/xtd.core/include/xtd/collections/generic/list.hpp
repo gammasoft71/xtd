@@ -913,7 +913,7 @@ namespace xtd {
           std::sort(data_->items.begin(), data_->items.end(), [&](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});
           return self_;
         }
-
+        
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.

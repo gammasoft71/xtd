@@ -718,7 +718,7 @@ namespace xtd {
       inline static auto from(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
-
+      
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
       /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.

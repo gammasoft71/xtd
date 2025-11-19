@@ -113,7 +113,7 @@ namespace xtd {
         bool contains(const_reference value) const noexcept override {
           return data_->items.contains(value);
         }
-
+        
         /// @brief Copies the entire xtd::colllections::generic::linked_list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param array The one-dimensional Array that is the destination of the elements copied from xtd::colllections::generic::linked_list <type_t>. The Array must have zero-based indexing.
         /// @param array_index The zero-based index in array at which copying begins.
@@ -124,7 +124,7 @@ namespace xtd {
         void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
           data_->items.copy_to(array, array_index);
         }
-
+        
         /// @brief Removes and returns the object at the beginning of the xtd::collections::generic::queue <type_t>.
         /// @return The object that is removed from the beginning of the xtd::collections::generic::queue <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
@@ -140,7 +140,7 @@ namespace xtd {
           data_->items.add_last(value);
           ensure_capacity(count());
         }
-
+        
         size_type ensure_capacity(size_type capacity) {
           if (data_->capacity < capacity) data_->capacity = capacity;
           return data_->capacity;
@@ -179,21 +179,21 @@ namespace xtd {
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
         string to_string() const noexcept override {return data_->items.to_string();}
-
+        
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::queue <type_t>,
         /// if that number is less than 90 percent of current capacity.
         void trim_excess() {
           data_->capacity = count();
         }
         /// @}
-
+        
       private:
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object& sync_root() const noexcept override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
         void add(const type_t& value) override {enqueue(value);}
         bool remove(const type_t&) override {return false;}
-
+        
         struct queue_data {
           base_type items;
           xtd::size capacity = 0;

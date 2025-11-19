@@ -206,7 +206,7 @@ namespace xtd {
         const iequality_comparer < key_t >& comparer() const noexcept {
           return data_->items.comparer();
         }
-
+        
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
         virtual const base_type& items() const noexcept {return data_->items;}
