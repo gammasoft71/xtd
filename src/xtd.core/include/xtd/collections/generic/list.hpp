@@ -4,6 +4,7 @@
 #pragma once
 #include "helpers/allocator.hpp"
 #include "helpers/equator.hpp"
+#include "helpers/lesser.hpp"
 #include "comparer.hpp"
 #include "ilist.hpp"
 #define __XTD_CORE_INTERNAL__
@@ -77,18 +78,6 @@ namespace xtd {
       /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
       template<class type_t, class allocator_t>
       class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t >> {
-        struct internal_comparer {
-          internal_comparer(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_(comparer) {}
-          bool operator()(const type_t& e1, const type_t& e2) const {return comparer_.compare(e1, e2) < 0;}
-          const xtd::collections::generic::icomparer<type_t>& comparer_;
-        };
-        
-        struct comparison_comparer {
-          comparison_comparer(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
-          bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
-          xtd::comparison<const type_t&> comparison_;
-        };
-        
       public:
         /// @name Public Aliases
         
@@ -374,7 +363,7 @@ namespace xtd {
           auto last = data_->items.begin();
           std::advance(first, index);
           std::advance(last, index + count);
-          auto position = std::lower_bound(first, last, item, internal_comparer{comparer});
+          auto position = std::lower_bound(first, last, item, helpers::lesser<type_t>{comparer});
           
           if (position != data_->items.end() && !comparer.compare(item, *position))
             return std::distance(data_->items.begin(), position);
@@ -920,6 +909,11 @@ namespace xtd {
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         list<type_t>& sort(xtd::comparison<const type_t&> comparison) {
+          struct comparison_comparer {
+            comparison_comparer(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
+            bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
+            xtd::comparison<const type_t&> comparison_;
+          };
           data_->items.increment_version();
           std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
           return self_;
@@ -945,7 +939,7 @@ namespace xtd {
         list<type_t>& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
-          std::sort(data_->items.begin() + index, data_->items.begin() + index + count, internal_comparer {comparer});
+          std::sort(data_->items.begin() + index, data_->items.begin() + index + count, helpers::lesser<type_t> {comparer});
           return self_;
         }
         
@@ -1058,7 +1052,7 @@ namespace xtd {
         const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct list_data {
-          __xtd_raw_array_data__<value_type> items;
+          __xtd_raw_array_data__<value_type, allocator_t> items;
           xtd::object sync_root;
         };
         
