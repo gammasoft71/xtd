@@ -347,7 +347,7 @@ namespace xtd {
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-    basic_array < type_t >& sort() {return sort(xtd::collections::generic::comparer < type_t >::default_comparer);}
+    basic_array < type_t >& sort() {return sort(dynamic_cast<const xtd::collections::generic::icomparer<type_t>&>(xtd::collections::generic::comparer < type_t >::default_comparer));}
     
     /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
