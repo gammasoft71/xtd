@@ -909,16 +909,11 @@ namespace xtd {
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         list<type_t>& sort(xtd::comparison<const type_t&> comparison) {
-          struct comparison_comparer {
-            comparison_comparer(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
-            bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
-            xtd::comparison<const type_t&> comparison_;
-          };
           data_->items.increment_version();
-          std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
+          std::sort(data_->items.begin(), data_->items.end(), [&](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});
           return self_;
         }
-        
+
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
