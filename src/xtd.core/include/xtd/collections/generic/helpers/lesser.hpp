@@ -57,7 +57,7 @@ namespace xtd {
           /// @param comparer A comparer used to hash the key.
           explicit lesser(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_ {&comparer} {}
           /// @}
-
+          
           /// @name Public Operators
           
           /// @{
