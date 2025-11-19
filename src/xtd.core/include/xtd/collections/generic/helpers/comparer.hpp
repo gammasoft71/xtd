@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__polymorphic_comparer.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../icomparer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -40,6 +41,16 @@ namespace xtd {
           using result_type = int32;
           /// @}
           
+          /// @name Public Constructors
+          
+          /// @{
+          /// @brief Initializes a new instance of the comparer.
+          comparer() = default;
+          /// @brief Initializes a new instance of the comparer with specified comparer.
+          /// @param comparer A comparer used to hash the key.
+          explicit comparer(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_ {&comparer} {}
+          /// @}
+
           /// @name Public Operators
           
           /// @{
@@ -54,9 +65,13 @@ namespace xtd {
           /// | Zero              | x equals y.          |
           /// | Greater than zero | x is greater than y. |
           constexpr result_type operator()(const first_argument_type& x, const second_argument_type& y) const {
+            if (comparer_) return comparer_->compare(x, y);
             return __polymorphic_comparer__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(x, y);
           }
           /// @}
+          
+        private:
+          const xtd::collections::generic::icomparer<type_t>* comparer_ = nullptr;
         };
       }
     }
