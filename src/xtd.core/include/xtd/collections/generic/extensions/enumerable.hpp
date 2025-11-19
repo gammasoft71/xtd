@@ -306,6 +306,20 @@ namespace xtd {
             return xtd::linq::enumerable::first_or_default(self());
           }
           
+          /// @brief Sorts the elements of a sequence in ascending order.
+          /// @param source A sequence of values to order.
+          /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+          auto order() {
+            return xtd::linq::enumerable::order(self());
+          }
+          /// @brief Sorts the elements of a sequence in ascending order.
+          /// @param source A sequence of values to order.
+          /// @param comparer An xtd::collections::generic::icomparer <source_t> to compare keys.
+          /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+          auto order(const xtd::collections::generic::icomparer<source_t>& comparer) {
+            return xtd::linq::enumerable::order(self(), comparer);
+          }
+          
           /// @brief Sorts the elements of a sequence in ascending order according to a key.
           /// @param key_selector A function to extract a key from an element.
           /// @par Examples
