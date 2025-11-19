@@ -5,7 +5,7 @@ var searchData=
   ['animation_5fupdated_5fevent_5fhandler_2',['animation_updated_event_handler',['../group__events.html#ga747bb4a467cac9c03802d9dc5b76f452',1,'xtd::forms']]],
   ['any_3',['any',['../group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8',1,'xtd']]],
   ['argument_5fcollection_4',['argument_collection',['../group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa',1,'xtd']]],
-  ['argument_5ftype_5',['argument_type',['../structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html#a2d7e12484adc7cf0506275914807c5c5',1,'xtd::collections::generic::dictionary::hasher::argument_type'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html#a7084c96751d1b25f759fcd9e7e68019d',1,'xtd::collections::generic::helpers::hasher::argument_type']]],
+  ['argument_5ftype_5',['argument_type',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html#a7084c96751d1b25f759fcd9e7e68019d',1,'xtd::collections::generic::helpers::hasher']]],
   ['array_5flist_6',['array_list',['../group__collections.html#ga83a0a06ecb97330626993339079ebbf6',1,'xtd::collections::array_list'],['../namespacextd_1_1collections.html#a83a0a06ecb97330626993339079ebbf6',1,'xtd::collections::array_list']]],
   ['artist_5fcollection_7',['artist_collection',['../classxtd_1_1forms_1_1about__box.html#af04d25f871c2cbf1e8354d83a68fe9ad',1,'xtd::forms::about_box::artist_collection'],['../classxtd_1_1forms_1_1about__dialog.html#ad0cfb445d88c415a4fb7323b83e4ae08',1,'xtd::forms::about_dialog::artist_collection']]],
   ['async_5fcallback_8',['async_callback',['../group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a',1,'xtd']]],
