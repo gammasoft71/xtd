@@ -123,13 +123,13 @@ namespace xtd {
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        xtd::optional<linked_list_node<type_t>> first() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
+        xtd::optional<linked_list_node<type_t>> first() const noexcept {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
         /// @brief Gets the first node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The first xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        xtd::optional<linked_list_node<type_t>> first() {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, data_->items.begin(), data_->version}} : xtd::nullopt;}
+        xtd::optional<linked_list_node<type_t>> first() noexcept {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, data_->items.begin(), data_->version}} : xtd::nullopt;}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
@@ -145,13 +145,13 @@ namespace xtd {
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        xtd::optional<linked_list_node<type_t>> last() const {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
+        xtd::optional<linked_list_node<type_t>> last() const noexcept {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
         /// @brief Gets the last node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The last xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        xtd::optional<linked_list_node<type_t>> last() {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, --data_->items.end(), data_->version}} : xtd::nullopt;}
+        xtd::optional<linked_list_node<type_t>> last() noexcept {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, --data_->items.end(), data_->version}} : xtd::nullopt;}
         /// @}
         
         /// @name Public Methods
