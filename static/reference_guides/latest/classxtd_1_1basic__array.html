@@ -288,9 +288,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:ab88cfef04f0ae0cb609068f0a2ff0a25" id="r_ab88cfef04f0ae0cb609068f0a2ff0a25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88cfef04f0ae0cb609068f0a2ff0a25">sort</a> ()</td></tr>
 <tr class="memdesc:ab88cfef04f0ae0cb609068f0a2ff0a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
 <tr class="separator:ab88cfef04f0ae0cb609068f0a2ff0a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bfc756583b9aac6e8851cc26a36ccf8" id="r_a2bfc756583b9aac6e8851cc26a36ccf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bfc756583b9aac6e8851cc26a36ccf8">sort</a> (comparison_comparer <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>)</td></tr>
-<tr class="memdesc:a2bfc756583b9aac6e8851cc26a36ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a2bfc756583b9aac6e8851cc26a36ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abecd4633c437dd5619b05df8e838c510" id="r_abecd4633c437dd5619b05df8e838c510"><td class="memTemplParams" colspan="2">template&lt;class comparison_t&gt; </td></tr>
+<tr class="memitem:abecd4633c437dd5619b05df8e838c510"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abecd4633c437dd5619b05df8e838c510">sort</a> (comparison_t &amp;&amp;<a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a>)</td></tr>
+<tr class="memdesc:abecd4633c437dd5619b05df8e838c510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#ga6aa9a3d2680df2fc027c12383aa9e7cc" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:abecd4633c437dd5619b05df8e838c510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c1920205ef433c6639a21ed08b81bf7" id="r_a3c1920205ef433c6639a21ed08b81bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c1920205ef433c6639a21ed08b81bf7">sort</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer)</td></tr>
 <tr class="memdesc:a3c1920205ef433c6639a21ed08b81bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
 <tr class="separator:a3c1920205ef433c6639a21ed08b81bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1673,13 +1674,15 @@ The following code example demonstrates the <a class="el" href="classxtd_1_1coll
 
 </div>
 </div>
-<a id="a2bfc756583b9aac6e8851cc26a36ccf8" name="a2bfc756583b9aac6e8851cc26a36ccf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bfc756583b9aac6e8851cc26a36ccf8">&#9670;&#160;</a></span>sort() <span class="overload">[2/4]</span></h2>
+<a id="abecd4633c437dd5619b05df8e838c510" name="abecd4633c437dd5619b05df8e838c510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abecd4633c437dd5619b05df8e838c510">&#9670;&#160;</a></span>sort() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class comparison_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1687,7 +1690,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1basic__array.html">basic_array</a>&lt; type_t &gt; &amp; <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::sort </td>
           <td>(</td>
-          <td class="paramtype">comparison_comparer</td>          <td class="paramname"><span class="paramname"><em>comparison</em></span></td><td>)</td>
+          <td class="paramtype">comparison_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>comparison</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2177,7 +2180,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 19 2025 10:49:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Nov 19 2025 21:33:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
