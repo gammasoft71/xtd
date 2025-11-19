@@ -363,7 +363,7 @@ namespace xtd {
           auto last = data_->items.begin();
           std::advance(first, index);
           std::advance(last, index + count);
-          auto position = std::lower_bound(first, last, item, helpers::lesser<type_t>{comparer});
+          auto position = std::lower_bound(first, last, item, helpers::lesser<type_t> {comparer});
           
           if (position != data_->items.end() && !comparer.compare(item, *position))
             return std::distance(data_->items.begin(), position);
