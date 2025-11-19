@@ -3,7 +3,9 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
+#include "../collections/generic/helpers/lesser.hpp"
 //#include "../collections/generic/iequality_comparer.hpp"
+#include "../collections/generic/comparer.hpp"
 #include "../collections/generic/equality_comparer.hpp"
 #include "../collections/generic/enumerator.hpp"
 #define __XTD_STD_INTERNAL__
@@ -715,6 +717,25 @@ namespace xtd {
       template<class source_t, size_t length>
       inline static auto from(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
+      }
+
+      /// @brief Sorts the elements of a sequence in ascending order.
+      /// @param source A sequence of values to order.
+      /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+      template<class source_t>
+      inline static auto order(const ienumerable<source_t>& source) {
+        return order(source, xtd::collections::generic::comparer<source_t>::default_comparer);
+      }
+      /// @brief Sorts the elements of a sequence in ascending order.
+      /// @param source A sequence of values to order.
+      /// @param comparer An xtd::collections::generic::icomparer <source_t> to compare keys.
+      /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
+      template<class source_t>
+      inline static auto order(const ienumerable<source_t>& source, const xtd::collections::generic::icomparer<source_t>& comparer) {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result.items = __xtd_raw_array_data__<source_t> {source.begin(), source.end()};
+        std::sort(result.items.begin(), result.items.end(), xtd::collections::generic::helpers::lesser<source_t>(comparer));
+        return result;
       }
       
       /// @brief Sorts the elements of a sequence in ascending order according to a key.
