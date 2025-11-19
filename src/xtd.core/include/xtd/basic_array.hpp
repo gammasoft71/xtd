@@ -25,20 +25,6 @@ namespace xtd {
   /// @ingroup xtd_core system
   template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t >> {
-    class internal_comparer {
-    public:
-      internal_comparer(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_(comparer) { }
-      internal_comparer(const internal_comparer&) = default;
-      internal_comparer(internal_comparer&&) = default;
-      internal_comparer& operator=(const internal_comparer & comparer) = default;
-      internal_comparer& operator=(internal_comparer&&) = default;
-      
-      bool operator()(const type_t& e1, const type_t& e2) const noexcept {return comparer_.compare(e1, e2) < 0;}
-      
-    private:
-      const xtd::collections::generic::icomparer<type_t>& comparer_;
-    };
-    
     class comparison_comparer {
       template<class comparison_t>
       using comparison = std::function<int32(comparison_t x, comparison_t y)>;
@@ -412,7 +398,7 @@ namespace xtd {
     basic_array < type_t >& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t >& comparer) {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       data_->items.increment_version();
-      std::sort(data_->items.begin(), data_->items.end(), internal_comparer {comparer});
+      std::sort(data_->items.begin(), data_->items.end(), xtd::collections::generic::helpers::lesser<type_t> {comparer});
       return self_;
     }
     
