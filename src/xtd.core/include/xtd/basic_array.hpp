@@ -25,23 +25,6 @@ namespace xtd {
   /// @ingroup xtd_core system
   template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t >> {
-    class comparison_comparer {
-      template<class comparison_t>
-      using comparison = std::function<int32(comparison_t x, comparison_t y)>;
-      
-    public:
-      comparison_comparer() = default;
-      comparison_comparer(comparison<const type_t&> c) : comparer(c) {}
-      
-      comparison_comparer(const comparison_comparer & mc) = default;
-      comparison_comparer& operator=(const comparison_comparer & mc) = default;
-      
-      bool operator()(const type_t& e1, const type_t& e2) const {return comparer(e1, e2) < 0;}
-      
-    private:
-      comparison<const type_t&> comparer;
-    };
-    
   public:
     /// @name Public Aliases
     
@@ -371,9 +354,10 @@ namespace xtd {
     /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array < type_t >& sort(comparison_comparer comparison) {
+    template<class comparison_t>
+    basic_array < type_t >& sort(comparison_t&& comparison) {
       data_->items.increment_version();
-      std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
+      std::sort(data_->items.begin(), data_->items.end(), [&](const type_t& x, const type_t& y) {return comparison(x, y) < 0;});
       return self_;
     }
     
