@@ -90,7 +90,7 @@ namespace xtd {
         /// @brief Gets a value indicating whether the xtd::collections::generic::ilist <type_t> has a fixed size.
         /// @return `true` if the xtd::collections::generic::ilist <type_t> has a fixed size; otherwise, `false`.
         /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
-        virtual bool is_fixed_size() const noexcept = 0;
+        virtual auto is_fixed_size() const noexcept -> bool = 0;
         /// @}
         
         /// @name Public Methods
@@ -100,7 +100,7 @@ namespace xtd {
         /// @param item The object to locate in the xtd::collections::generic::ilist <type_t>.
         /// @return The index of item if found in the list; otherwise, xtd::collections::generic::ilist::npos.
         /// @remarks If an object occurs multiple times in the list, the xtd::collections::generic::ilist::index_of method always returns the first instance found.
-        virtual xtd::size index_of(const type_t& item) const noexcept = 0;
+        virtual auto index_of(const type_t& item) const noexcept -> xtd::size = 0;
         
         /// @brief Inserts an item to the xtd::collections::generic::ilist <type_t> at the specified index.
         /// @param index The zero-based index at which item should be inserted.
@@ -109,14 +109,14 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The xtd::collections::generic::ilist <type_t> is read-only.
         /// @remarks If `index` equals the number of items in the xtd::collections::generic::ilist <type_t>, then item is appended to the list.
         /// @remarks In collections of contiguous elements, such as lists, the elements that follow the insertion point move down to accommodate the new element. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
-        virtual void insert(xtd::size index, const type_t& item) = 0;
+        virtual auto insert(xtd::size index, const type_t& item) -> void = 0;
         
         /// @brief Removes the xtd::collections::generic::ilist <type_t> item at the specified index.
         /// @param index The zero-based index of the item to remove.
         /// @exception xtd::argument_out_of_range_exception `index` is not a valid index in the xtd::collections::generic::ilist <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::ilist <type_t> is read-only.
         /// @remarks In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
-        virtual void remove_at(xtd::size index) = 0;
+        virtual auto remove_at(xtd::size index) -> void = 0;
         /// @}
         
         /// @name Public Operators
@@ -125,11 +125,11 @@ namespace xtd {
         /// @brief Gets the element at the specified index.
         /// @param index The zero-based index of the element to get.
         /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        virtual const type_t& operator [](xtd::size index) const = 0;
+        virtual auto operator [](xtd::size index) const -> const type_t& = 0;
         /// @brief Sets the element at the specified index.
         /// @param index The zero-based index of the element to set.
         /// @remarks This operator provides the ability to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        virtual type_t& operator [](xtd::size index) = 0;
+        virtual auto operator [](xtd::size index) -> type_t& = 0;
         /// @}
       };
     }
