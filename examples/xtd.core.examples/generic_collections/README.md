@@ -26,6 +26,7 @@
 * [generic_list_iterator_vs_vector_iterator](generic_list_iterator_vs_vector_iterator/README.md) highlights the difference between [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) and std::vector when modifying a collection during iteration.
 * [generic_list_reverse](generic_list_reverse/README.md) shows how to use [xtd::collections::generic::list::reverse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [generic_ordered_dictionary](generic_ordered_dictionary/README.md) shows how to use [xtd::collections::generic::ordered_dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html) clss.
+* [generic_queue](generic_queue/README.md) shows how to use [xtd::collections::generic::queue](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1queue.html) clss.
 * [mix_generic_list_and_std_vector_api](mix_generic_list_and_std_vector_api/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 
 ## Build and run any project

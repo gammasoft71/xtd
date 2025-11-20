@@ -29,5 +29,6 @@ add_projects(
   generic_list_iterator_vs_vector_iterator
   generic_list_reverse
   generic_ordered_dictionary
+  generic_queue
   mix_generic_list_and_std_vector_api
 )
