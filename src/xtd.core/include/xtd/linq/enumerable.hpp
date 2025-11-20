@@ -362,7 +362,7 @@ namespace xtd {
       inline static auto as_enumerable(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
-
+      
       /// @cond
       template<xtd::size size_>
       inline static auto as_enumerable(std::bitset<size_> source); // defined in xtd/collections/bit_array.hpp
