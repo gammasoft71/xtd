@@ -198,27 +198,27 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::ordered_dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::ordered_dictionary <key_t, value_t> can store. The xtd::collections::generic::ordered_dictionary::count property is the number of elements that are actually in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::ordered_dictionary::count. If xtd::collections::generic::ordered_dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        size_type count() const noexcept override {return data_->items.count();}
+        auto count() const noexcept -> size_type override {return data_->items.count();}
         
         /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        const iequality_comparer < key_t >& comparer() const noexcept {
+        auto comparer() const noexcept -> const iequality_comparer < key_t >& {
           return data_->items.comparer();
         }
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type& items() const noexcept {return data_->items;}
+        virtual auto items() const noexcept -> const base_type& {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type& items() noexcept {return data_->items;}
+        virtual auto items() noexcept -> base_type& {return data_->items;}
         
         /// @brief Gets a collection containing the keys in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return A xtd::collections::generic::ordered_dictionary::key_collection containing the keys in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @remarks The order of the keys in the xtd::collections::generic::ordered_dictionary::key_collection is unspecified, but it is the same order as the associated values in the xtd::collections::generic::ordered_dictionary::value_collection returned by the xtd::collections::generic::ordered_dictionary::values property.
         /// @remarks Getting the value of this property is an O(1) operation.
-        key_collection keys() const noexcept override {
+        auto keys() const noexcept -> key_collection override {
           auto keys = key_collection {};
           for (const auto& key : data_->keys)
             keys.add(key);
@@ -229,7 +229,7 @@ namespace xtd {
         /// @return A xtd::collections::generic::ordered_dictionary::value_collection containing the values in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @remarks The order of the values in the xtd::collections::generic::ordered_dictionary::value_collection is unspecified, but it is the same order as the associated keys in the xtd::collections::generic::ordered_dictionary::key_collection returned by the xtd::collections::generic::ordered_dictionary::keys property.
         /// @remarks Getting the value of this property is an O(1) operation.
-        value_collection values() const noexcept override {
+        auto values() const noexcept -> value_collection override {
           auto values = value_collection {};
           for (const auto& key : data_->keys)
             values.add(data_->items[key]);
@@ -246,20 +246,20 @@ namespace xtd {
         /// @exception xtd::argument_exception An element with the same key already exists in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::ordered_dictionary::add method does not modify existing elements.
-        void add(const key_t & key, const value_t& value) override {
+        auto add(const key_t & key, const value_t& value) -> void override {
           insert(count(), key, value);
         }
         
         /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
         /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
-        void add(const value_type & item) override {
+        auto add(const value_type & item) -> void override {
           insert(count(), item.key(), item.value());
         }
         
         /// @brief Removes all keys and values from the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @remarks The xtd::collections::generic::ordered_dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
-        void clear() noexcept override {
+        auto clear() noexcept -> void override {
           lock_(data_->sync_op) {
             data_->keys.clear();
             data_->items.clear();
@@ -270,7 +270,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::ordered_dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
-        bool contains(const value_type & item) const noexcept override {
+        auto contains(const value_type & item) const noexcept -> bool override {
           return data_->items.contains(item);
         }
         
@@ -278,7 +278,7 @@ namespace xtd {
         /// @param The key to locate in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::ordered_dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method approaches an O(1) operation.
-        bool contains_key(const key_t & key) const noexcept override {
+        auto contains_key(const key_t & key) const noexcept -> bool override {
           return data_->items.contains_key(key);
         }
         
@@ -286,7 +286,7 @@ namespace xtd {
         /// @param The value to locate in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::ordered_dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method performs a linear search; therefore, the average execution time is proportional to xtd::collections::generic::ordered_dictionary::count. That is, this method is an O(n) operation, where n is xtd::collections::generic::ordered_dictionary::count.
-        bool contains_value(const value_t& value) const noexcept {
+        auto contains_value(const value_t& value) const noexcept -> bool {
           return data_->items.contains_value(value);
         }
         
@@ -294,7 +294,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        void copy_to(xtd::array<value_type>& array, xtd::size array_index) const override {
+        auto copy_to(xtd::array<value_type>& array, xtd::size array_index) const -> void override {
           if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           for (const auto& item : self_)
             array[array_index++] = item;
@@ -302,22 +302,22 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
-        xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
+        auto get_enumerator() const noexcept -> xtd::collections::generic::enumerator<value_type> override {
           struct ordered_dictionary_enumerator : public ienumerator<value_type> {
             explicit ordered_dictionary_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
             
-            const value_type& current() const override {
+            auto current() const -> const value_type& override {
               if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return (value_ = value_type {key_t {items_.data_->keys[index_]}, value_t {items_.data_->items[items_.data_->keys[index_]]}});
             }
             
-            bool move_next() override {
+            auto move_next() -> bool override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return ++index_ < items_.data_->keys.count();
             }
             
-            void reset() override {
+            auto reset() -> void override {
               version_ = items_.data_->version;
               index_ = xtd::npos;
             }
@@ -337,7 +337,7 @@ namespace xtd {
         /// @param key The key of the entry to add.
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
-        void insert(xtd::size index, const key_t & key) {insert(index, key, value_t {});}
+        auto insert(xtd::size index, const key_t & key) -> void {insert(index, key, value_t {});}
         
         /// @brief Inserts a new entry into the xtd::collections::generic::ordered_dictionary collection with the specified key and value at the specified index.
         /// @param index The zero-based index at which the element should be inserted.
@@ -345,7 +345,7 @@ namespace xtd {
         /// @param value The value of the entry to add.
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
-        void insert(xtd::size index, const key_t & key, const value_t& value) {
+        auto insert(xtd::size index, const key_t & key, const value_t& value) -> void {
           if (contains_key(key)) return xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           lock_(data_->sync_op) {
             data_->items.add(key, value);
@@ -358,7 +358,7 @@ namespace xtd {
         /// @param key The key of the element to remove.
         /// @return `true` if the element is successfully found and removed; otherwise, `false`. This method returns `false` if key is not found in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @remarks If the xtd::collections::generic::ordered_dictionary <key_t, value_t> does not contain an element with the specified key, the xtd::collections::generic::ordered_dictionary <key_t, value_t> remains unchanged. No exception is thrown.
-        bool remove(const key_t & key) noexcept override {
+        auto remove(const key_t & key) noexcept -> bool override {
           if (!contains_key(key)) return false;
           lock_(data_->sync_op) {
             remove_at(get_index(key));
@@ -370,7 +370,7 @@ namespace xtd {
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @param item The object to remove from the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
         /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item value was not found in the xtd::collections::generic::ordered_dictionary <key_t, value_t>.
-        bool remove(const value_type & item) noexcept override {
+        auto remove(const value_type & item) noexcept -> bool override {
           lock_(data_->sync_op) {
             auto result = data_->items.remove(item.first);
             if (!result) return false;
@@ -385,7 +385,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range index is out of range.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks The entries that follow the removed entry move up to occupy the vacated spot and the indexes of the entries that move are also updated.
-        void remove_at(xtd::size index) {
+        auto remove_at(xtd::size index) -> void {
           lock_(data_->sync_op) {
             data_->items.remove(data_->keys[index]);
             data_->keys.remove_at(index);
@@ -395,13 +395,13 @@ namespace xtd {
         
         /// @brief Gets a string that represents the current object.
         /// @return A string that represents the current object.
-        xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
+        auto to_string() const noexcept -> xtd::string override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
         
         /// @brief Gets the value associated with the specified key.
         /// @param key The key of the value to get.
         /// @param value When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.
         /// @return `true` if the xtd::collections::generic::ordered_dictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
-        bool try_get_value(const key_t & key, value_t& value) const override {
+        auto try_get_value(const key_t & key, value_t& value) const -> bool override {
           return data_->items.try_get_value(key, value);
         }
         /// @}
@@ -412,18 +412,18 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        ordered_dictionary& operator =(ordered_dictionary&& other) noexcept = default;
+        auto operator =(ordered_dictionary&& other) noexcept -> ordered_dictionary& = default;
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        ordered_dictionary& operator =(const ordered_dictionary & other) noexcept {
+        auto operator =(const ordered_dictionary & other) noexcept -> ordered_dictionary& {
           *data_ = *other.data_;
           return self_;
         }
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
-        ordered_dictionary& operator =(std::initializer_list<base_value_type> ilist) {
+        auto operator =(std::initializer_list<base_value_type> ilist) -> ordered_dictionary& {
           clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
@@ -433,7 +433,7 @@ namespace xtd {
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
         template < class init_key_t, class init_value_t >
-        ordered_dictionary& operator =(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) {
+        auto operator =(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) -> ordered_dictionary& {
           clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
@@ -447,7 +447,7 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        const value_t& operator()(xtd::size index) const {return operator [](data_->keys[index]);}
+        auto operator()(xtd::size index) const -> const value_t& {return operator [](data_->keys[index]);}
         /// @brief Sets the value at the specified index.
         /// @param index The zero-based index of the value to get or set.
         /// @return The value of the item at the specified index.
@@ -455,7 +455,7 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property allows you to access a specific element in the collection by using the following syntax: `my_collection[index]`.
-        value_t& operator()(xtd::size index) {return operator [](data_->keys[index]);}
+        auto operator()(xtd::size index) -> value_t& {return operator [](data_->keys[index]);}
         
         /// @brief Gets the element with the specified key.
         /// @param key The key of the element to get.
@@ -464,14 +464,14 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::ordered_dictionary::add method does not modify existing elements.
-        const value_t& operator [](const key_t & key) const override {return data_->items[key];}
+        auto operator [](const key_t & key) const -> const value_t& override {return data_->items[key];}
         /// @brief Sets the element with the specified key.
         /// @param key The key of the element to set.
         /// @return The element with the specified key.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::ordered_dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::ordered_dictionary::add method does not modify existing elements.
-        value_t& operator [](const key_t & key) override {
+        auto operator [](const key_t & key) -> value_t& override {
           auto iterator = data_->items.items().find(key);
           if (iterator != data_->items.items().end())
             return iterator->second;
@@ -488,7 +488,7 @@ namespace xtd {
         /// @}
         
       private:
-        xtd::size get_index(const key_t & key) const noexcept {
+        auto get_index(const key_t & key) const noexcept -> xtd::size {
           auto index = xtd::size {0};
           for (const auto& item_key : data_->keys) {
             if (item_key == key) return index;
@@ -497,9 +497,9 @@ namespace xtd {
           return xtd::npos;
         }
         
-        bool is_read_only() const noexcept override {return false;}
-        bool is_synchronized() const noexcept override {return false;}
-        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+        auto is_read_only() const noexcept -> bool override {return false;}
+        auto is_synchronized() const noexcept -> bool override {return false;}
+        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
         
         struct dictionary_data {
           dictionary_data() noexcept = default;
