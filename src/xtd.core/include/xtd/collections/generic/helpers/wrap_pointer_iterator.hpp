@@ -77,17 +77,17 @@ namespace xtd {
           /// @{
           /// @brief Gets iterator data.
           /// @return The iterator data.
-          const value_t& data() const noexcept {return data_;}
+          auto data() const noexcept -> const value_t& {return data_;}
           /// @brief Gets iterator data.
           /// @return The iterator data.
-          value_t& data() noexcept {return data_;}
+          auto data() noexcept -> value_t& {return data_;}
           /// @}
           
           /// @name Public methods
           
           /// @{
-          int32 compare_to(const wrap_pointer_iterator& rhs) const noexcept override {return data_ < rhs.data_ ? -1 : data_ > rhs.data_ ? 1 : 0;}
-          bool equals(const wrap_pointer_iterator& rhs) const noexcept override {return data_ == rhs.data_;}
+          auto compare_to(const wrap_pointer_iterator& rhs) const noexcept -> int32 override {return data_ < rhs.data_ ? -1 : data_ > rhs.data_ ? 1 : 0;}
+          auto equals(const wrap_pointer_iterator& rhs) const noexcept -> bool override {return data_ == rhs.data_;}
           /// @}
           
           /// @name Public Operators
@@ -95,43 +95,43 @@ namespace xtd {
           /// @{
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          const std::remove_pointer_t<value_t>& operator *() const noexcept {return *data_;}
+          auto operator *() const noexcept -> const std::remove_pointer_t<value_t>& {return *data_;}
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          std::remove_pointer_t<value_t>& operator *() noexcept {return *data_;}
+          auto operator *() noexcept -> std::remove_pointer_t<value_t>& {return *data_;}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
-          const value_t& operator ->() const noexcept {return data_;}
+          auto operator ->() const noexcept -> const value_t& {return data_;}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
-          value_t& operator ->() noexcept {return data_;}
+          auto operator ->() noexcept -> value_t& {return data_;}
           
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator& operator ++() const noexcept {++data_; return *const_cast<wrap_pointer_iterator*>(this);}
+          auto operator ++() const noexcept -> wrap_pointer_iterator& {++data_; return *const_cast<wrap_pointer_iterator*>(this);}
           /// @brief Post increments the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
+          auto operator ++(int) const noexcept -> wrap_pointer_iterator {auto current = *this; operator ++(); return current;}
           
           /// @brief Pre decrements the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator& operator --() const noexcept {--data_; return *const_cast<wrap_pointer_iterator*>(this);}
+          auto operator --() const noexcept -> wrap_pointer_iterator& {--data_; return *const_cast<wrap_pointer_iterator*>(this);}
           /// @brief Post decrements the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator operator --(int) const noexcept {auto current = *this; operator --(); return current;}
+          auto operator --(int) const noexcept -> wrap_pointer_iterator {auto current = *this; operator --(); return current;}
           
           /// @brief Add operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_iterator {data_ + value};}
+          auto operator +(xtd::size value) const noexcept -> wrap_pointer_iterator {return wrap_pointer_iterator {data_ + value};}
           /// @brief Add equal operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_iterator& operator +=(xtd::size value) noexcept {*this = *this + value; return *this;}
+          auto operator +=(xtd::size value) noexcept -> wrap_pointer_iterator& {*this = *this + value; return *this;}
           /// @brief Subtract The specified iterator from the current iterator.
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.
-          xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
+          auto operator -(wrap_pointer_iterator value) const noexcept -> xtd::ptrdiff {return data_ - value.data_;}
           /// @}
           
         private:
