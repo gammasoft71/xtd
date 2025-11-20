@@ -407,6 +407,9 @@ namespace xtd {
   template<class type_t, size_t size>
   inline xtd::string to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc);
   
+  template<size_t size>
+  inline xtd::string to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc);
+
   template<class type_t, class allocator_t>
   inline xtd::string to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   

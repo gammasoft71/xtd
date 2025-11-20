@@ -239,6 +239,14 @@ inline xtd::string xtd::to_string(const std::array<type_t, size>& values, const 
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
+template<size_t size>
+inline xtd::string xtd::to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc) {
+  auto result = xtd::string {"["};
+  for (auto index = size_t {0}; index < values.size(); ++index)
+    result += (index ? ", " : "") + to_string(static_cast<bool>(values[index]), fmt, loc);
+  return result + "]";
+}
+
 template<class type_t, class allocator_t>
 inline xtd::string xtd::to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
