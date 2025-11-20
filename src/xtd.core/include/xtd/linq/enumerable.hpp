@@ -361,6 +361,31 @@ namespace xtd {
       inline static auto as_enumerable(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
+
+      /// @cond
+      template<class source_t, class container_t>
+      inline static auto as_enumerable(std::queue<source_t, container_t> source) noexcept {
+        struct std_queue : public std::queue<source_t> {
+          std_queue(const std::queue<source_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
+          auto begin() const {return ptr->c.begin();}
+          auto end() const {return ptr->c.end();}
+          const std_queue* ptr;
+        };
+        auto items = std_queue {source};
+        return as_enumerable(items.begin(), items.end());
+      }
+      template<class source_t, class container_t>
+      inline static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
+        struct std_stack : public std::stack<source_t> {
+          std_stack(const std::stack<source_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
+          auto begin() const {return ptr->c.begin();}
+          auto end() const {return ptr->c.end();}
+          const std_stack* ptr;
+        };
+        auto items = std_stack {source};
+        return as_enumerable(items.begin(), items.end());
+      }
+      /// @endcond
       
       /// @brief Computes the average of a sequence of xtd::decimal values.
       /// @param source A sequence of xtd::decimal values to calculate the average of.
@@ -718,6 +743,17 @@ namespace xtd {
       inline static auto from(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
+      
+      ///@cond
+      template<class source_t, class container_t>
+      inline static auto from(std::queue<source_t, container_t> source) noexcept {
+        return as_enumerable(source);
+      }
+      template<class source_t, class container_t>
+      inline static auto from(std::stack<source_t, container_t> source) noexcept {
+        return as_enumerable(source);
+      }
+      ///@endcond
       
       /// @brief Sorts the elements of a sequence in ascending order.
       /// @param source A sequence of values to order.
