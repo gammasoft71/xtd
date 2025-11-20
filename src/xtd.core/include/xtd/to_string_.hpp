@@ -272,6 +272,18 @@ inline xtd::string xtd::to_string(const std::queue<type_t, container_t>& values,
 }
 
 template<class type_t, class container_t>
+inline xtd::string xtd::to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
+  struct std_priority_queue : public std::queue<type_t> {
+    std_priority_queue(const std::priority_queue<type_t>& queue) : ptr {reinterpret_cast<const std_priority_queue*>(&queue)} {}
+    auto begin() const {return ptr->c.begin();}
+    auto end() const {return ptr->c.end();}
+    const std_priority_queue* ptr;
+  };
+  auto items = std_priority_queue {values};
+  return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
+}
+
+template<class type_t, class container_t>
 inline xtd::string xtd::to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
   struct std_stack : public std::stack<type_t> {
     std_stack(const std::stack<type_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
