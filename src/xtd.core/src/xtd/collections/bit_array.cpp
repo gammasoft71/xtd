@@ -104,14 +104,6 @@ const bit_array& bit_array::and_(const bit_array& value) {
   return *this;
 }
 
-bool bit_array::at(xtd::size index) const {
-  return operator [](index);
-}
-
-bool& bit_array::at(xtd::size index) {
-  return operator [](index);
-}
-
 uptr<object> bit_array::clone() const {
   flush(); // Must be call first
   return new_uptr<bit_array>(*this);
@@ -258,12 +250,55 @@ bool& bit_array::operator [](xtd::size index) {
   return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
 }
 
+bit_array bit_array::operator &(const bit_array& value) const {
+  flush(); // Must be call first
+  auto result = self_;
+  result &= value;
+  return result;
+}
+
+bit_array& bit_array::operator &=(const bit_array& value) {
+  and_(value);
+  return self_;
+}
+
+bit_array bit_array::operator |(const bit_array& value) const {
+  flush(); // Must be call first
+  auto result = self_;
+  result |= value;
+  return result;
+}
+
+bit_array& bit_array::operator |=(const bit_array& value) {
+  or_(value);
+  return self_;
+}
+
+bit_array bit_array::operator ^(const bit_array& value) const {
+  flush(); // Must be call first
+  auto result = self_;
+  result ^= value;
+  return result;
+}
+
+bit_array& bit_array::operator ^=(const bit_array& value) {
+  xor_(value);
+  return self_;
+}
+
+bit_array bit_array::operator ~() const {
+  flush(); // Must be call first
+  auto result = self_;
+  result.not_();
+  return result;
+}
+
 bit_array bit_array::operator >>(xtd::size pos) const noexcept {
   flush(); // Must be call first
   auto result = bit_array(count());
   for (auto index = count() - 1; index > 0; --index)
-    result[index] = index >= pos ? at(index - pos) : false;
-  result.flush(); // Must be call first
+    result[index] = index >= pos ? self_[index - pos] : false;
+  result.flush();
   return result;
 }
 
@@ -276,8 +311,8 @@ bit_array bit_array::operator <<(xtd::size pos) const noexcept {
   flush(); // Must be call first
   auto result = bit_array(count());
   for (auto index = xtd::size {0}; index < count(); ++index)
-    result[index] = index + pos < count() ? at(index + pos) : false;
-  result.flush(); // Must be call first
+    result[index] = index + pos < count() ? self_[index + pos] : false;
+  result.flush();
   return result;
 }
 

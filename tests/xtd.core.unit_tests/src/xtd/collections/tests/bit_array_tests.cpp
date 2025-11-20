@@ -208,30 +208,6 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {bits.and_({true, false, true, false, true});});
     }
     
-    void test_method_(at) {
-      auto bits = bit_array {true, true, false, false};
-      assert::is_true(bits.at(0));
-      assert::is_true(bits.at(1));
-      assert::is_false(bits.at(2));
-      assert::is_false(bits.at(3));
-      assert::throws<argument_out_of_range_exception>([&] {bits.at(4);});
-      
-      bits.at(0) = false;
-      assert::is_false(bits.at(0));
-      
-      bits.at(2) = true;
-      assert::is_true(bits.at(2));
-    }
-    
-    void test_method_(const_at) {
-      auto bits = bit_array {true, true, false, false};
-      assert::is_true(bits.at(0));
-      assert::is_true(bits.at(1));
-      assert::is_false(bits.at(2));
-      assert::is_false(bits.at(3));
-      assert::throws<argument_out_of_range_exception>([&] {bits.at(4);});
-    }
-    
     void test_method_(clone) {
       auto bits1 = bit_array {true, true, false, false};
       auto bits2 = as<bit_array>(bits1.clone());
@@ -381,6 +357,60 @@ namespace xtd::collections::tests {
       assert::is_false(bits[2]);
       assert::is_false(bits[3]);
       assert::throws<argument_out_of_range_exception>([&] {bits[4];});
+    }
+    
+    void test_method_(and_operator) {
+      auto bits = bit_array {true, true, false, false};
+      collection_assert::are_equal({true, false, false, false}, bits & bit_array {true, false, true, false});
+      collection_assert::are_equal({true, true, false, false}, bits);
+      assert::throws<argument_exception>([&] {bits & bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits & bit_array {true, false, true, false, true};});
+    }
+    
+    void test_method_(and_equal_operator) {
+      auto bits = bit_array {true, true, false, false};
+      bits &= {true, false, true, false};
+      collection_assert::are_equal({true, false, false, false}, bits);
+      assert::throws<argument_exception>([&] {bits & bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits & bit_array {true, false, true, false, true};});
+    }
+    
+    void test_method_(or_operator) {
+      auto bits = bit_array {true, true, false, false};
+      collection_assert::are_equal({true, true, true, false}, bits | bit_array {true, false, true, false});
+      collection_assert::are_equal({true, true, false, false}, bits);
+      assert::throws<argument_exception>([&] {bits | bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits | bit_array {true, false, true, false, true};});
+    }
+    
+    void test_method_(or_equal_operator) {
+      auto bits = bit_array {true, true, false, false};
+      bits |= {true, false, true, false};
+      collection_assert::are_equal({true, true, true, false}, bits);
+      assert::throws<argument_exception>([&] {bits | bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits | bit_array {true, false, true, false, true};});
+    }
+
+    void test_method_(xor_operator) {
+      auto bits = bit_array {true, true, false, false};
+      collection_assert::are_equal({false, true, true, false}, bits ^ bit_array {true, false, true, false});
+      collection_assert::are_equal({true, true, false, false}, bits);
+      assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true, false, true};});
+    }
+
+    void test_method_(xor_equal_operator) {
+      auto bits = bit_array {true, true, false, false};
+      bits ^= {true, false, true, false};
+      collection_assert::are_equal({false, true, true, false}, bits);
+      assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true};});
+      assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true, false, true};});
+    }
+
+    void test_method_(not_operator) {
+      auto bits = bit_array {true, true, false, false};
+      collection_assert::are_equal({false, false, true, true}, ~bits);
+      collection_assert::are_equal({true, true, false, false}, bits);
     }
   };
 }

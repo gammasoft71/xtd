@@ -25,6 +25,7 @@
 #include "../size.hpp"
 #include "../static.hpp"
 #include <algorithm>
+#include <bitset>
 #include <functional>
 
 /// @cond
@@ -363,6 +364,8 @@ namespace xtd {
       }
 
       /// @cond
+      template<xtd::size size_>
+      inline static auto as_enumerable(std::bitset<size_> source); // defined in xtd/collections/bit_array.hpp
       template<class source_t, class container_t>
       inline static auto as_enumerable(std::queue<source_t, container_t> source) noexcept {
         struct std_queue : public std::queue<source_t> {
