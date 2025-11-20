@@ -126,16 +126,16 @@ class xtd::collections::generic::queue&lt; type_t, allocator_t &gt;</div><p>Repr
 <dl class="section remark"><dt>Remarks</dt><dd>This class implements a generic queue as a circular array. Objects stored in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; are inserted at one end and removed from the other. Queues and stacks are useful when you need temporary storage for information; that is, when you might want to discard an element after retrieving its value. Use <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; if you need to access the information in the same order that it is stored in the collection. Use <a class="el" href="group__generic__collections.html#ga15c6c38c7dfc0bc64f13d733505aa616" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; if you need to access the information in reverse order. Use xtd::collections::generic::concurrent_queue &lt;type_t&gt; or xtd::collections::generic::concurrent_stack &lt;type_t&gt; if you need to access the collection from multiple threads concurrently. </dd>
 <dd>
 Three main operations can be performed on a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; and its elements:<ul>
-<li><a class="el" href="#a2e475791d7a03afa5ac2fabb58625c7c" title="Adds an object to the end of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::enqueue</a> adds an element to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.</li>
-<li><a class="el" href="#a6a440cb626b758edb09fdc4015f47369" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> removes the oldest element from the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.</li>
-<li><a class="el" href="#a21776ccd58ee060b9d5967c08eb398c6" title="Returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt; without removing...">xtd::collections::generic::queue::peek</a> peek returns the oldest element that is at the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; but does not remove it from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;. </li>
+<li><a class="el" href="#aa832ec234b7826fd23c6afe9bf7924c1" title="Adds an object to the end of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::enqueue</a> adds an element to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.</li>
+<li><a class="el" href="#a44260f4ae294afb6f0ad246805277dd4" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> removes the oldest element from the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.</li>
+<li><a class="el" href="#a0d371793908aaf0bf1a9fb84645bf74a" title="Returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt; without removing...">xtd::collections::generic::queue::peek</a> peek returns the oldest element that is at the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; but does not remove it from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;. </li>
 </ul>
 </dd>
 <dd>
-The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling <a class="el" href="#a6130b5b497c01b6433da980b2e0e085e" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a>. </dd>
+The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling <a class="el" href="#a0223cef5944028682c8807601713fe8d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a>. </dd>
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; allows duplicate elements. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates several methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; generic class. The code example creates a queue of strings with default capacity and uses the <a class="el" href="#a2e475791d7a03afa5ac2fabb58625c7c" title="Adds an object to the end of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::enqueue</a> method to queue five strings. The elements of the queue are enumerated, which does not change the state of the queue. The <a class="el" href="#a6a440cb626b758edb09fdc4015f47369" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> method is used to dequeue the first string. The <a class="el" href="#a21776ccd58ee060b9d5967c08eb398c6" title="Returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt; without removing...">xtd::collections::generic::queue::peek</a> method is used to look at the next item in the queue, and then the <a class="el" href="#a6a440cb626b758edb09fdc4015f47369" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> method is used to dequeue it. The <a class="el" href="#a3dd797caeddf9136aac0607ee7abefaa" title="Copies the xtd::collections::generic::queue &lt;type_t&gt; elements to a new array.">xtd::collections::generic::queue::to_array</a> method is used to create an array and copy the queue elements to it, then the array is passed to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; constructor that takes <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;, creating a copy of the queue. The elements of the copy are displayed. An array twice the size of the queue is created, and the <a class="el" href="#a4d199b9a320cc2eec3ddbedce17c14c9" title="Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional ar...">xtd::collections::generic::queue::copy_to</a> method is used to copy the array elements beginning at the middle of the array. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; constructor is used again to create a second copy of the queue containing three null elements at the beginning. The <a class="el" href="#a19b75b9e5c788df5f226c257b01f51a3" title="Determines whether an element is in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::contains</a> method is used to show that the string "four" is in the first copy of the queue, after which the Clear method clears the copy and the <a class="el" href="#a984a2fa627acaf1424e15b2c977fd4d5" title="Gets the number of nodes actually contained in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::count</a> property shows that the queue is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates several methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; generic class. The code example creates a queue of strings with default capacity and uses the <a class="el" href="#aa832ec234b7826fd23c6afe9bf7924c1" title="Adds an object to the end of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::enqueue</a> method to queue five strings. The elements of the queue are enumerated, which does not change the state of the queue. The <a class="el" href="#a44260f4ae294afb6f0ad246805277dd4" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> method is used to dequeue the first string. The <a class="el" href="#a0d371793908aaf0bf1a9fb84645bf74a" title="Returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt; without removing...">xtd::collections::generic::queue::peek</a> method is used to look at the next item in the queue, and then the <a class="el" href="#a44260f4ae294afb6f0ad246805277dd4" title="Removes and returns the object at the beginning of the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::dequeue</a> method is used to dequeue it. The <a class="el" href="#af2959f9cd9b1965227fdc7b7731460d4" title="Copies the xtd::collections::generic::queue &lt;type_t&gt; elements to a new array.">xtd::collections::generic::queue::to_array</a> method is used to create an array and copy the queue elements to it, then the array is passed to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; constructor that takes <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;, creating a copy of the queue. The elements of the copy are displayed. An array twice the size of the queue is created, and the <a class="el" href="#ab09518843b83ed36e95978751848e3a6" title="Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional ar...">xtd::collections::generic::queue::copy_to</a> method is used to copy the array elements beginning at the middle of the array. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; constructor is used again to create a second copy of the queue containing three null elements at the beginning. The <a class="el" href="#aa2e5aa02d809b08bbb8a102db9d3b27a" title="Determines whether an element is in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::contains</a> method is used to show that the string "four" is in the first copy of the queue, after which the Clear method clears the copy and the <a class="el" href="#af72245104a701a57e585c96dae5f7acd" title="Gets the number of nodes actually contained in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::count</a> property shows that the queue is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -252,7 +252,7 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queu
 <tr class="memitem:ab43755ee1409608e8caa301e6239f93d" id="r_ab43755ee1409608e8caa301e6239f93d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab43755ee1409608e8caa301e6239f93d">queue</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt; &amp;collection)</td></tr>
 <tr class="memdesc:ab43755ee1409608e8caa301e6239f93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:ab43755ee1409608e8caa301e6239f93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73e3392a73c805caa1ba3e677a538ad0" id="r_a73e3392a73c805caa1ba3e677a538ad0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e3392a73c805caa1ba3e677a538ad0">queue</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#ab2370594c180a30fecbc896bf47a2797">capacity</a>)</td></tr>
+<tr class="memitem:a73e3392a73c805caa1ba3e677a538ad0" id="r_a73e3392a73c805caa1ba3e677a538ad0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e3392a73c805caa1ba3e677a538ad0">queue</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#a63eb5d0f9f0db7b718ba06df338ba739">capacity</a>)</td></tr>
 <tr class="memdesc:a73e3392a73c805caa1ba3e677a538ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; class that is empty and has the specified initial capacity.  <br /></td></tr>
 <tr class="separator:a73e3392a73c805caa1ba3e677a538ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5503c636b2944f9407ff43b3dae05ac" id="r_ab5503c636b2944f9407ff43b3dae05ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5503c636b2944f9407ff43b3dae05ac">queue</a> (std::initializer_list&lt; type_t &gt; il)</td></tr>
@@ -264,56 +264,56 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queu
 <tr class="separator:a9ca4357742cb127bf20caa28216aa2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ab2370594c180a30fecbc896bf47a2797" id="r_ab2370594c180a30fecbc896bf47a2797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2370594c180a30fecbc896bf47a2797">capacity</a> () const noexcept</td></tr>
-<tr class="memdesc:ab2370594c180a30fecbc896bf47a2797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total numbers of elements the internal data structure can hold without resizing.  <br /></td></tr>
-<tr class="separator:ab2370594c180a30fecbc896bf47a2797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a984a2fa627acaf1424e15b2c977fd4d5" id="r_a984a2fa627acaf1424e15b2c977fd4d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a984a2fa627acaf1424e15b2c977fd4d5">count</a> () const noexcept override</td></tr>
-<tr class="memdesc:a984a2fa627acaf1424e15b2c977fd4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a984a2fa627acaf1424e15b2c977fd4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63eb5d0f9f0db7b718ba06df338ba739" id="r_a63eb5d0f9f0db7b718ba06df338ba739"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63eb5d0f9f0db7b718ba06df338ba739">capacity</a> () const noexcept -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td></tr>
+<tr class="memdesc:a63eb5d0f9f0db7b718ba06df338ba739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total numbers of elements the internal data structure can hold without resizing.  <br /></td></tr>
+<tr class="separator:a63eb5d0f9f0db7b718ba06df338ba739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72245104a701a57e585c96dae5f7acd" id="r_af72245104a701a57e585c96dae5f7acd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af72245104a701a57e585c96dae5f7acd">count</a> () const noexcept -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> override</td></tr>
+<tr class="memdesc:af72245104a701a57e585c96dae5f7acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:af72245104a701a57e585c96dae5f7acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a39ebb52fdf4a0490fb5095cf7fb19d75" id="r_a39ebb52fdf4a0490fb5095cf7fb19d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39ebb52fdf4a0490fb5095cf7fb19d75">clear</a> () override</td></tr>
-<tr class="memdesc:a39ebb52fdf4a0490fb5095cf7fb19d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a39ebb52fdf4a0490fb5095cf7fb19d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19b75b9e5c788df5f226c257b01f51a3" id="r_a19b75b9e5c788df5f226c257b01f51a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19b75b9e5c788df5f226c257b01f51a3">contains</a> (<a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a> value) const noexcept override</td></tr>
-<tr class="memdesc:a19b75b9e5c788df5f226c257b01f51a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a19b75b9e5c788df5f226c257b01f51a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d199b9a320cc2eec3ddbedce17c14c9" id="r_a4d199b9a320cc2eec3ddbedce17c14c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d199b9a320cc2eec3ddbedce17c14c9">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> array_index) const override</td></tr>
-<tr class="memdesc:a4d199b9a320cc2eec3ddbedce17c14c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
-<tr class="separator:a4d199b9a320cc2eec3ddbedce17c14c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a440cb626b758edb09fdc4015f47369" id="r_a6a440cb626b758edb09fdc4015f47369"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a440cb626b758edb09fdc4015f47369">dequeue</a> ()</td></tr>
-<tr class="memdesc:a6a440cb626b758edb09fdc4015f47369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a6a440cb626b758edb09fdc4015f47369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e475791d7a03afa5ac2fabb58625c7c" id="r_a2e475791d7a03afa5ac2fabb58625c7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e475791d7a03afa5ac2fabb58625c7c">enqueue</a> (<a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a> value)</td></tr>
-<tr class="memdesc:a2e475791d7a03afa5ac2fabb58625c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a2e475791d7a03afa5ac2fabb58625c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c4a921e25c4d57dfa0bc505af007643" id="r_a5c4a921e25c4d57dfa0bc505af007643"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c4a921e25c4d57dfa0bc505af007643">ensure_capacity</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#ab2370594c180a30fecbc896bf47a2797">capacity</a>)</td></tr>
-<tr class="memdesc:a5c4a921e25c4d57dfa0bc505af007643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the capacity of this queue is at least the specified <code>capacity</code>. If the current capacity is less than <code>capacity</code>, it is increased to at least the specified <code>capacity</code>.  <br /></td></tr>
-<tr class="separator:a5c4a921e25c4d57dfa0bc505af007643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af63b286a781c3bd5ffcd011659961a88" id="r_af63b286a781c3bd5ffcd011659961a88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af63b286a781c3bd5ffcd011659961a88">get_enumerator</a> () const noexcept override</td></tr>
-<tr class="memdesc:af63b286a781c3bd5ffcd011659961a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:af63b286a781c3bd5ffcd011659961a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21776ccd58ee060b9d5967c08eb398c6" id="r_a21776ccd58ee060b9d5967c08eb398c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21776ccd58ee060b9d5967c08eb398c6">peek</a> () const</td></tr>
-<tr class="memdesc:a21776ccd58ee060b9d5967c08eb398c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
-<tr class="separator:a21776ccd58ee060b9d5967c08eb398c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dd797caeddf9136aac0607ee7abefaa" id="r_a3dd797caeddf9136aac0607ee7abefaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dd797caeddf9136aac0607ee7abefaa">to_array</a> () const</td></tr>
-<tr class="memdesc:a3dd797caeddf9136aac0607ee7abefaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; elements to a new array.  <br /></td></tr>
-<tr class="separator:a3dd797caeddf9136aac0607ee7abefaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44d657d13d6c817847b7f1cc47deb6ee" id="r_a44d657d13d6c817847b7f1cc47deb6ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44d657d13d6c817847b7f1cc47deb6ee">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a44d657d13d6c817847b7f1cc47deb6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="separator:a44d657d13d6c817847b7f1cc47deb6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6130b5b497c01b6433da980b2e0e085e" id="r_a6130b5b497c01b6433da980b2e0e085e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6130b5b497c01b6433da980b2e0e085e">trim_excess</a> ()</td></tr>
-<tr class="memdesc:a6130b5b497c01b6433da980b2e0e085e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity.  <br /></td></tr>
-<tr class="separator:a6130b5b497c01b6433da980b2e0e085e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a80f5ec92fe31fe0174f705919a27f4" id="r_a0a80f5ec92fe31fe0174f705919a27f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a80f5ec92fe31fe0174f705919a27f4">trim_excess</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#ab2370594c180a30fecbc896bf47a2797">capacity</a>)</td></tr>
-<tr class="memdesc:a0a80f5ec92fe31fe0174f705919a27f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; object to the specified number of entries.  <br /></td></tr>
-<tr class="separator:a0a80f5ec92fe31fe0174f705919a27f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279c67e1322bab1db3edbffa71d22a11" id="r_a279c67e1322bab1db3edbffa71d22a11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a279c67e1322bab1db3edbffa71d22a11">try_dequeue</a> (<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;result) noexcept</td></tr>
-<tr class="memdesc:a279c67e1322bab1db3edbffa71d22a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, and copies it to the result parameter.  <br /></td></tr>
-<tr class="separator:a279c67e1322bab1db3edbffa71d22a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31b0abbcc000cbc48361aed8b7c80c8a" id="r_a31b0abbcc000cbc48361aed8b7c80c8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31b0abbcc000cbc48361aed8b7c80c8a">try_peek</a> (<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;result) const noexcept</td></tr>
-<tr class="memdesc:a31b0abbcc000cbc48361aed8b7c80c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a31b0abbcc000cbc48361aed8b7c80c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa914f7e4839ba8d5dfac66f2530946" id="r_aaaa914f7e4839ba8d5dfac66f2530946"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaa914f7e4839ba8d5dfac66f2530946">clear</a> () -&gt; void override</td></tr>
+<tr class="memdesc:aaaa914f7e4839ba8d5dfac66f2530946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:aaaa914f7e4839ba8d5dfac66f2530946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e5aa02d809b08bbb8a102db9d3b27a" id="r_aa2e5aa02d809b08bbb8a102db9d3b27a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2e5aa02d809b08bbb8a102db9d3b27a">contains</a> (<a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a> value) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:aa2e5aa02d809b08bbb8a102db9d3b27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:aa2e5aa02d809b08bbb8a102db9d3b27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09518843b83ed36e95978751848e3a6" id="r_ab09518843b83ed36e95978751848e3a6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab09518843b83ed36e95978751848e3a6">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> array_index) const -&gt; void override</td></tr>
+<tr class="memdesc:ab09518843b83ed36e95978751848e3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
+<tr class="separator:ab09518843b83ed36e95978751848e3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44260f4ae294afb6f0ad246805277dd4" id="r_a44260f4ae294afb6f0ad246805277dd4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44260f4ae294afb6f0ad246805277dd4">dequeue</a> () -&gt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a></td></tr>
+<tr class="memdesc:a44260f4ae294afb6f0ad246805277dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a44260f4ae294afb6f0ad246805277dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa832ec234b7826fd23c6afe9bf7924c1" id="r_aa832ec234b7826fd23c6afe9bf7924c1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa832ec234b7826fd23c6afe9bf7924c1">enqueue</a> (<a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a> value) -&gt; void</td></tr>
+<tr class="memdesc:aa832ec234b7826fd23c6afe9bf7924c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:aa832ec234b7826fd23c6afe9bf7924c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d1937652cf5be8ebc334d5cb6b04cf" id="r_a89d1937652cf5be8ebc334d5cb6b04cf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d1937652cf5be8ebc334d5cb6b04cf">ensure_capacity</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#a63eb5d0f9f0db7b718ba06df338ba739">capacity</a>) -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td></tr>
+<tr class="memdesc:a89d1937652cf5be8ebc334d5cb6b04cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the capacity of this queue is at least the specified <code>capacity</code>. If the current capacity is less than <code>capacity</code>, it is increased to at least the specified <code>capacity</code>.  <br /></td></tr>
+<tr class="separator:a89d1937652cf5be8ebc334d5cb6b04cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07453a9fa398e4ed3fec4b8247bfe8ca" id="r_a07453a9fa398e4ed3fec4b8247bfe8ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07453a9fa398e4ed3fec4b8247bfe8ca">get_enumerator</a> () const noexcept -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt; override</td></tr>
+<tr class="memdesc:a07453a9fa398e4ed3fec4b8247bfe8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a07453a9fa398e4ed3fec4b8247bfe8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d371793908aaf0bf1a9fb84645bf74a" id="r_a0d371793908aaf0bf1a9fb84645bf74a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d371793908aaf0bf1a9fb84645bf74a">peek</a> () const -&gt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a></td></tr>
+<tr class="memdesc:a0d371793908aaf0bf1a9fb84645bf74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
+<tr class="separator:a0d371793908aaf0bf1a9fb84645bf74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2959f9cd9b1965227fdc7b7731460d4" id="r_af2959f9cd9b1965227fdc7b7731460d4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2959f9cd9b1965227fdc7b7731460d4">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt;</td></tr>
+<tr class="memdesc:af2959f9cd9b1965227fdc7b7731460d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; elements to a new array.  <br /></td></tr>
+<tr class="separator:af2959f9cd9b1965227fdc7b7731460d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9444a4c991c6c1df875c3a021203e5ed" id="r_a9444a4c991c6c1df875c3a021203e5ed"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9444a4c991c6c1df875c3a021203e5ed">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> override</td></tr>
+<tr class="memdesc:a9444a4c991c6c1df875c3a021203e5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="separator:a9444a4c991c6c1df875c3a021203e5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0223cef5944028682c8807601713fe8d" id="r_a0223cef5944028682c8807601713fe8d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0223cef5944028682c8807601713fe8d">trim_excess</a> () -&gt; void</td></tr>
+<tr class="memdesc:a0223cef5944028682c8807601713fe8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity.  <br /></td></tr>
+<tr class="separator:a0223cef5944028682c8807601713fe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109c50f41120fb6de5599fa673b004e3" id="r_a109c50f41120fb6de5599fa673b004e3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a109c50f41120fb6de5599fa673b004e3">trim_excess</a> (<a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="#a63eb5d0f9f0db7b718ba06df338ba739">capacity</a>) -&gt; void</td></tr>
+<tr class="memdesc:a109c50f41120fb6de5599fa673b004e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; object to the specified number of entries.  <br /></td></tr>
+<tr class="separator:a109c50f41120fb6de5599fa673b004e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d95400b23f60a36bfc32d993035788" id="r_a31d95400b23f60a36bfc32d993035788"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31d95400b23f60a36bfc32d993035788">try_dequeue</a> (<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a31d95400b23f60a36bfc32d993035788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, and copies it to the result parameter.  <br /></td></tr>
+<tr class="separator:a31d95400b23f60a36bfc32d993035788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e2e4008c21408d9da8aa2e0ac6b0dd" id="r_a80e2e4008c21408d9da8aa2e0ac6b0dd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80e2e4008c21408d9da8aa2e0ac6b0dd">try_peek</a> (<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;result) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a80e2e4008c21408d9da8aa2e0ac6b0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a80e2e4008c21408d9da8aa2e0ac6b0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -681,8 +681,8 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab2370594c180a30fecbc896bf47a2797" name="ab2370594c180a30fecbc896bf47a2797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2370594c180a30fecbc896bf47a2797">&#9670;&#160;</a></span>capacity()</h2>
+<a id="a63eb5d0f9f0db7b718ba06df338ba739" name="a63eb5d0f9f0db7b718ba06df338ba739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63eb5d0f9f0db7b718ba06df338ba739">&#9670;&#160;</a></span>capacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -693,10 +693,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::capacity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::capacity </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> </td>
         </tr>
       </table>
   </td>
@@ -711,8 +711,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a984a2fa627acaf1424e15b2c977fd4d5" name="a984a2fa627acaf1424e15b2c977fd4d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a984a2fa627acaf1424e15b2c977fd4d5">&#9670;&#160;</a></span>count()</h2>
+<a id="af72245104a701a57e585c96dae5f7acd" name="af72245104a701a57e585c96dae5f7acd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72245104a701a57e585c96dae5f7acd">&#9670;&#160;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -723,15 +723,15 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::count </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -742,8 +742,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a39ebb52fdf4a0490fb5095cf7fb19d75" name="a39ebb52fdf4a0490fb5095cf7fb19d75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39ebb52fdf4a0490fb5095cf7fb19d75">&#9670;&#160;</a></span>clear()</h2>
+<a id="aaaa914f7e4839ba8d5dfac66f2530946" name="aaaa914f7e4839ba8d5dfac66f2530946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa914f7e4839ba8d5dfac66f2530946">&#9670;&#160;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -754,10 +754,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::clear </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::clear </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -770,14 +770,14 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <p>Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Count is set to zero, and references to other objects from elements of the collection are also released. </dd>
 <dd>
-The capacity remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, call <a class="el" href="#a6130b5b497c01b6433da980b2e0e085e" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a>. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to the default capacity. </dd>
+The capacity remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, call <a class="el" href="#a0223cef5944028682c8807601713fe8d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a>. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to the default capacity. </dd>
 <dd>
 This method is an O(n) operation, where n is Count. </dd></dl>
 
 </div>
 </div>
-<a id="a19b75b9e5c788df5f226c257b01f51a3" name="a19b75b9e5c788df5f226c257b01f51a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19b75b9e5c788df5f226c257b01f51a3">&#9670;&#160;</a></span>contains()</h2>
+<a id="aa2e5aa02d809b08bbb8a102db9d3b27a" name="aa2e5aa02d809b08bbb8a102db9d3b27a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e5aa02d809b08bbb8a102db9d3b27a">&#9670;&#160;</a></span>contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -788,10 +788,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::contains </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::contains </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -812,8 +812,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a4d199b9a320cc2eec3ddbedce17c14c9" name="a4d199b9a320cc2eec3ddbedce17c14c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d199b9a320cc2eec3ddbedce17c14c9">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="ab09518843b83ed36e95978751848e3a6" name="ab09518843b83ed36e95978751848e3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09518843b83ed36e95978751848e3a6">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,14 +824,14 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::copy_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::copy_to </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td>          <td class="paramname"><span class="paramname"><em>array_index</em></span>&#160;) const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -863,8 +863,8 @@ This method is an O(n) operation, where n is xtd::colllections::generic::linked_
 
 </div>
 </div>
-<a id="a6a440cb626b758edb09fdc4015f47369" name="a6a440cb626b758edb09fdc4015f47369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a440cb626b758edb09fdc4015f47369">&#9670;&#160;</a></span>dequeue()</h2>
+<a id="a44260f4ae294afb6f0ad246805277dd4" name="a44260f4ae294afb6f0ad246805277dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44260f4ae294afb6f0ad246805277dd4">&#9670;&#160;</a></span>dequeue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -875,10 +875,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::dequeue </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::dequeue </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> </td>
         </tr>
       </table>
   </td>
@@ -899,8 +899,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a2e475791d7a03afa5ac2fabb58625c7c" name="a2e475791d7a03afa5ac2fabb58625c7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e475791d7a03afa5ac2fabb58625c7c">&#9670;&#160;</a></span>enqueue()</h2>
+<a id="aa832ec234b7826fd23c6afe9bf7924c1" name="aa832ec234b7826fd23c6afe9bf7924c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa832ec234b7826fd23c6afe9bf7924c1">&#9670;&#160;</a></span>enqueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,10 +911,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::enqueue </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::enqueue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a64382f4ca13442437a96ef8601c8e267">const_reference</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -934,8 +934,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a5c4a921e25c4d57dfa0bc505af007643" name="a5c4a921e25c4d57dfa0bc505af007643"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c4a921e25c4d57dfa0bc505af007643">&#9670;&#160;</a></span>ensure_capacity()</h2>
+<a id="a89d1937652cf5be8ebc334d5cb6b04cf" name="a89d1937652cf5be8ebc334d5cb6b04cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d1937652cf5be8ebc334d5cb6b04cf">&#9670;&#160;</a></span>ensure_capacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -946,10 +946,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::ensure_capacity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::ensure_capacity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a> </td>
         </tr>
       </table>
   </td>
@@ -970,8 +970,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="af63b286a781c3bd5ffcd011659961a88" name="af63b286a781c3bd5ffcd011659961a88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af63b286a781c3bd5ffcd011659961a88">&#9670;&#160;</a></span>get_enumerator()</h2>
+<a id="a07453a9fa398e4ed3fec4b8247bfe8ca" name="a07453a9fa398e4ed3fec4b8247bfe8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07453a9fa398e4ed3fec4b8247bfe8ca">&#9670;&#160;</a></span>get_enumerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -982,10 +982,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::get_enumerator </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::get_enumerator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt;<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a>&gt;</td>
         </tr>
       </table>
   </td>
@@ -1000,8 +1000,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a21776ccd58ee060b9d5967c08eb398c6" name="a21776ccd58ee060b9d5967c08eb398c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21776ccd58ee060b9d5967c08eb398c6">&#9670;&#160;</a></span>peek()</h2>
+<a id="a0d371793908aaf0bf1a9fb84645bf74a" name="a0d371793908aaf0bf1a9fb84645bf74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d371793908aaf0bf1a9fb84645bf74a">&#9670;&#160;</a></span>peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1012,15 +1012,15 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::peek </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::peek </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1036,8 +1036,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a3dd797caeddf9136aac0607ee7abefaa" name="a3dd797caeddf9136aac0607ee7abefaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dd797caeddf9136aac0607ee7abefaa">&#9670;&#160;</a></span>to_array()</h2>
+<a id="af2959f9cd9b1965227fdc7b7731460d4" name="af2959f9cd9b1965227fdc7b7731460d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2959f9cd9b1965227fdc7b7731460d4">&#9670;&#160;</a></span>to_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1048,10 +1048,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::to_array </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::to_array </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;<a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a>&gt; </td>
         </tr>
       </table>
   </td>
@@ -1066,8 +1066,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a44d657d13d6c817847b7f1cc47deb6ee" name="a44d657d13d6c817847b7f1cc47deb6ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44d657d13d6c817847b7f1cc47deb6ee">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a9444a4c991c6c1df875c3a021203e5ed" name="a9444a4c991c6c1df875c3a021203e5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9444a4c991c6c1df875c3a021203e5ed">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1078,10 +1078,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a></td>
         </tr>
       </table>
   </td>
@@ -1098,8 +1098,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a6130b5b497c01b6433da980b2e0e085e" name="a6130b5b497c01b6433da980b2e0e085e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6130b5b497c01b6433da980b2e0e085e">&#9670;&#160;</a></span>trim_excess() <span class="overload">[1/2]</span></h2>
+<a id="a0223cef5944028682c8807601713fe8d" name="a0223cef5944028682c8807601713fe8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0223cef5944028682c8807601713fe8d">&#9670;&#160;</a></span>trim_excess() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1110,10 +1110,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::trim_excess </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::trim_excess </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -1124,16 +1124,16 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 </div><div class="memdoc">
 
 <p>Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; can be considerable, however, so the <a class="el" href="#a6130b5b497c01b6433da980b2e0e085e" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a> method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; can be considerable, however, so the <a class="el" href="#a0223cef5944028682c8807601713fe8d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a> method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain. </dd>
 <dd>
-This method is an O(n) operation, where n is <a class="el" href="#a984a2fa627acaf1424e15b2c977fd4d5" title="Gets the number of nodes actually contained in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::count</a>. </dd>
+This method is an O(n) operation, where n is <a class="el" href="#af72245104a701a57e585c96dae5f7acd" title="Gets the number of nodes actually contained in the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::count</a>. </dd>
 <dd>
-To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="#a39ebb52fdf4a0490fb5095cf7fb19d75" title="Removes all elements from the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::clear</a> method before calling <a class="el" href="#a6130b5b497c01b6433da980b2e0e085e" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to the default capacity. </dd></dl>
+To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="#aaaa914f7e4839ba8d5dfac66f2530946" title="Removes all elements from the xtd::collections::generic::queue &lt;type_t&gt;.">xtd::collections::generic::queue::clear</a> method before calling <a class="el" href="#a0223cef5944028682c8807601713fe8d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::queue &lt;type_t&gt;,...">xtd::collections::generic::queue::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html" title="Represents a first-in, first-out collection of objects.">xtd::collections::generic::queue</a> &lt;type_t&gt; to the default capacity. </dd></dl>
 
 </div>
 </div>
-<a id="a0a80f5ec92fe31fe0174f705919a27f4" name="a0a80f5ec92fe31fe0174f705919a27f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a80f5ec92fe31fe0174f705919a27f4">&#9670;&#160;</a></span>trim_excess() <span class="overload">[2/2]</span></h2>
+<a id="a109c50f41120fb6de5599fa673b004e3" name="a109c50f41120fb6de5599fa673b004e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109c50f41120fb6de5599fa673b004e3">&#9670;&#160;</a></span>trim_excess() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1144,10 +1144,10 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::trim_excess </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::trim_excess </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#afcc5a3d14dc3eb152a8fe6c823cfef0d">size_type</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -1173,8 +1173,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a279c67e1322bab1db3edbffa71d22a11" name="a279c67e1322bab1db3edbffa71d22a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a279c67e1322bab1db3edbffa71d22a11">&#9670;&#160;</a></span>try_dequeue()</h2>
+<a id="a31d95400b23f60a36bfc32d993035788" name="a31d95400b23f60a36bfc32d993035788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d95400b23f60a36bfc32d993035788">&#9670;&#160;</a></span>try_dequeue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1185,15 +1185,15 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::try_dequeue </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::try_dequeue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1209,8 +1209,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<a id="a31b0abbcc000cbc48361aed8b7c80c8a" name="a31b0abbcc000cbc48361aed8b7c80c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31b0abbcc000cbc48361aed8b7c80c8a">&#9670;&#160;</a></span>try_peek()</h2>
+<a id="a80e2e4008c21408d9da8aa2e0ac6b0dd" name="a80e2e4008c21408d9da8aa2e0ac6b0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e2e4008c21408d9da8aa2e0ac6b0dd">&#9670;&#160;</a></span>try_peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1221,15 +1221,15 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::try_peek </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue</a>&lt; type_t, allocator_t &gt;::try_peek </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#af2e1396591b56db55ad5751df9616945">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1252,7 +1252,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 20 2025 19:16:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 22:14:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

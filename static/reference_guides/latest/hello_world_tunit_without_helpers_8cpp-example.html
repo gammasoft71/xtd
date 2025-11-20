@@ -108,14 +108,14 @@ $(function(){ initResizable(false); });
 <div class="line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class__attribute.html">test_class_attribute&lt;hello_world_test&gt;</a> hello_world_test_class_attr {<span class="stringliteral">&quot;unit_tests::hello_world_test&quot;</span>};</div>
 <div class="line">  <span class="keyword">class </span>hello_world_test : <span class="keyword">public</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__class.html">test_class</a> {</div>
 <div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1test__method__attribute.html">test_method_attribute</a> create_string_from_literal_attr {<span class="stringliteral">&quot;create_string_from_literal&quot;</span>, *<span class="keyword">this</span>, &amp;hello_world_test::create_string_from_literal};</div>
-<div class="line">    <span class="keywordtype">void</span> create_string_from_literal() {</div>
+<div class="line">    <span class="keyword">auto</span> create_string_from_literal() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello, World!&quot;</span>};</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a2f604329bd280704a1c554bd0e5e7dd4">valid::are_equal</a>(13, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length());</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1assert.html#a8c63096161c26e67cc8fe7dd0b1889ec">assert::are_equal</a>(<span class="stringliteral">&quot;Hello, World!&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1tunit_1_1test__method__attribute.html">test_method_attribute</a> create_string_from_chars_attr {<span class="stringliteral">&quot;create_string_from_chars&quot;</span>, *<span class="keyword">this</span>, &amp;hello_world_test::create_string_from_chars};</div>
-<div class="line">    <span class="keywordtype">void</span> create_string_from_chars() {</div>
+<div class="line">    <span class="keyword">auto</span> create_string_from_chars() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="keywordtype">string</span> {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a2f604329bd280704a1c554bd0e5e7dd4">valid::are_equal</a>(13, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length());</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1string__assert.html#a58653b393b2c80bb2cb5b23f54af387a">string_assert::starts_with</a>(<span class="stringliteral">&quot;Hello,&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
@@ -154,7 +154,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 20 2025 19:16:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 22:14:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

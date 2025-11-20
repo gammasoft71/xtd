@@ -133,7 +133,7 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_set">std::unordered_set</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; objects and populates them with even and odd numbers, respectively. A third <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is created from the set that contains the even numbers. The example then calls the <a class="el" href="#aad2ab6b19b231e7ed237431eeaa7a03e" title="Modifies the current set so that it contains all elements that are present in the current set,...">xtd::collections::generic::hash_set::union_with</a> method, which adds the odd number set to the third set. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; objects and populates them with even and odd numbers, respectively. A third <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; object is created from the set that contains the even numbers. The example then calls the <a class="el" href="#a95a127693079db9c977acab3a295ef80" title="Modifies the current set so that it contains all elements that are present in the current set,...">xtd::collections::generic::hash_set::union_with</a> method, which adds the odd number set to the third set. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -216,7 +216,7 @@ class xtd::collections::generic::hash_set&lt; type_t, hasher_t, equator_t, alloc
 <tr class="memitem:afcb894324ebc9759fcd015dfee3b3df9" id="r_afcb894324ebc9759fcd015dfee3b3df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcb894324ebc9759fcd015dfee3b3df9">hash_set</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; &amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) noexcept</td></tr>
 <tr class="memdesc:afcb894324ebc9759fcd015dfee3b3df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that uses the specified equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:afcb894324ebc9759fcd015dfee3b3df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4da52366f299e4fa338454f33ce21af" id="r_ab4da52366f299e4fa338454f33ce21af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4da52366f299e4fa338454f33ce21af">hash_set</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
+<tr class="memitem:ab4da52366f299e4fa338454f33ce21af" id="r_ab4da52366f299e4fa338454f33ce21af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4da52366f299e4fa338454f33ce21af">hash_set</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#a3942b9edf371938017cba7a478edcb6e">capacity</a>) noexcept</td></tr>
 <tr class="memdesc:ab4da52366f299e4fa338454f33ce21af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty, but has reserved space for capacity items and uses the default equality comparer for the set type.  <br /></td></tr>
 <tr class="separator:ab4da52366f299e4fa338454f33ce21af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41cd1b23d1ed5f2fe5c9f2e178b1de14" id="r_a41cd1b23d1ed5f2fe5c9f2e178b1de14"><td class="memItemLeft" align="right" valign="top"><a id="a41cd1b23d1ed5f2fe5c9f2e178b1de14" name="a41cd1b23d1ed5f2fe5c9f2e178b1de14"></a>
@@ -240,87 +240,87 @@ template&lt;class input_iterator_t&gt; </td></tr>
 <tr class="separator:afe749c802485629a47204f7a0ab2b4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a774824b743c6508a538607877fa46356" id="r_a774824b743c6508a538607877fa46356"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a> () const noexcept</td></tr>
-<tr class="memdesc:a774824b743c6508a538607877fa46356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total numbers of elements the internal data structure can hold without resizing.  <br /></td></tr>
-<tr class="separator:a774824b743c6508a538607877fa46356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8bc9cb78debb7bf93132621ea4f13a3" id="r_af8bc9cb78debb7bf93132621ea4f13a3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8bc9cb78debb7bf93132621ea4f13a3">comparer</a> () const noexcept</td></tr>
-<tr class="memdesc:af8bc9cb78debb7bf93132621ea4f13a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; that is used to determine equality of keys for the set.  <br /></td></tr>
-<tr class="separator:af8bc9cb78debb7bf93132621ea4f13a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d6849a21b62a94d9db096e134d5b29" id="r_ad9d6849a21b62a94d9db096e134d5b29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d6849a21b62a94d9db096e134d5b29">count</a> () const noexcept override</td></tr>
-<tr class="memdesc:ad9d6849a21b62a94d9db096e134d5b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="separator:ad9d6849a21b62a94d9db096e134d5b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4528f50e541aa3f3c8fa6508629b5b28" id="r_a4528f50e541aa3f3c8fa6508629b5b28"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4528f50e541aa3f3c8fa6508629b5b28">items</a> () const noexcept</td></tr>
-<tr class="memdesc:a4528f50e541aa3f3c8fa6508629b5b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
-<tr class="separator:a4528f50e541aa3f3c8fa6508629b5b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b0baff52fab2e852ea6282789645715" id="r_a7b0baff52fab2e852ea6282789645715"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b0baff52fab2e852ea6282789645715">items</a> () noexcept</td></tr>
-<tr class="memdesc:a7b0baff52fab2e852ea6282789645715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
-<tr class="separator:a7b0baff52fab2e852ea6282789645715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3942b9edf371938017cba7a478edcb6e" id="r_a3942b9edf371938017cba7a478edcb6e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3942b9edf371938017cba7a478edcb6e">capacity</a> () const noexcept -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td></tr>
+<tr class="memdesc:a3942b9edf371938017cba7a478edcb6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total numbers of elements the internal data structure can hold without resizing.  <br /></td></tr>
+<tr class="separator:a3942b9edf371938017cba7a478edcb6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7e1fe33982173d3a71686fa563a3d1" id="r_aec7e1fe33982173d3a71686fa563a3d1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec7e1fe33982173d3a71686fa563a3d1">comparer</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &gt; &amp;</td></tr>
+<tr class="memdesc:aec7e1fe33982173d3a71686fa563a3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; that is used to determine equality of keys for the set.  <br /></td></tr>
+<tr class="separator:aec7e1fe33982173d3a71686fa563a3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc1340f85261e0b22d8044aa77de634" id="r_aecc1340f85261e0b22d8044aa77de634"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecc1340f85261e0b22d8044aa77de634">count</a> () const noexcept -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> override</td></tr>
+<tr class="memdesc:aecc1340f85261e0b22d8044aa77de634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="separator:aecc1340f85261e0b22d8044aa77de634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8992ce3e97fddfcb2cdc5e582846eb0b" id="r_a8992ce3e97fddfcb2cdc5e582846eb0b"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8992ce3e97fddfcb2cdc5e582846eb0b">items</a> () const noexcept -&gt; const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;</td></tr>
+<tr class="memdesc:a8992ce3e97fddfcb2cdc5e582846eb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
+<tr class="separator:a8992ce3e97fddfcb2cdc5e582846eb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf5c048b0790401321af297d8ccd010" id="r_a9bf5c048b0790401321af297d8ccd010"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bf5c048b0790401321af297d8ccd010">items</a> () noexcept -&gt; <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp;</td></tr>
+<tr class="memdesc:a9bf5c048b0790401321af297d8ccd010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
+<tr class="separator:a9bf5c048b0790401321af297d8ccd010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:aa24152ccb0c559f8dd1234221541f284" id="r_aa24152ccb0c559f8dd1234221541f284"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa24152ccb0c559f8dd1234221541f284">add</a> (const <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &amp;item) noexcept override</td></tr>
-<tr class="memdesc:aa24152ccb0c559f8dd1234221541f284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:aa24152ccb0c559f8dd1234221541f284"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cbb204a6efaf9fc69daf84d86cd859a" id="r_a8cbb204a6efaf9fc69daf84d86cd859a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cbb204a6efaf9fc69daf84d86cd859a">clear</a> () noexcept override</td></tr>
-<tr class="memdesc:a8cbb204a6efaf9fc69daf84d86cd859a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="separator:a8cbb204a6efaf9fc69daf84d86cd859a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa007a1874b5087bf999531c92e9b8db1" id="r_aa007a1874b5087bf999531c92e9b8db1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa007a1874b5087bf999531c92e9b8db1">contains</a> (const <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &amp;item) const noexcept override</td></tr>
-<tr class="memdesc:aa007a1874b5087bf999531c92e9b8db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="separator:aa007a1874b5087bf999531c92e9b8db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae91430e3f6139a7d5f2754fa54c0c10b" id="r_ae91430e3f6139a7d5f2754fa54c0c10b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae91430e3f6139a7d5f2754fa54c0c10b">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const</td></tr>
-<tr class="memdesc:ae91430e3f6139a7d5f2754fa54c0c10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the complete <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the beginning of the target array.  <br /></td></tr>
-<tr class="separator:ae91430e3f6139a7d5f2754fa54c0c10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5a9dc4012520670818f924a8dc9c634" id="r_af5a9dc4012520670818f924a8dc9c634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5a9dc4012520670818f924a8dc9c634">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> index) const override</td></tr>
-<tr class="memdesc:af5a9dc4012520670818f924a8dc9c634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the complete <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified array index.  <br /></td></tr>
-<tr class="separator:af5a9dc4012520670818f924a8dc9c634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9351076ed354cc82df0074697bef89af" id="r_a9351076ed354cc82df0074697bef89af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9351076ed354cc82df0074697bef89af">copy_to</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> array_index, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#ad9d6849a21b62a94d9db096e134d5b29">count</a>) const</td></tr>
-<tr class="memdesc:a9351076ed354cc82df0074697bef89af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a specified number of elements from <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified array index.  <br /></td></tr>
-<tr class="separator:a9351076ed354cc82df0074697bef89af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a9f94287fc0d6c319c1b838260ff9d1" id="r_a6a9f94287fc0d6c319c1b838260ff9d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a9f94287fc0d6c319c1b838260ff9d1">ensure_capacity</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a774824b743c6508a538607877fa46356">capacity</a>) noexcept</td></tr>
-<tr class="memdesc:a6a9f94287fc0d6c319c1b838260ff9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.  <br /></td></tr>
-<tr class="separator:a6a9f94287fc0d6c319c1b838260ff9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e5c832c07fe13bb53b0b7db12ac83af" id="r_a8e5c832c07fe13bb53b0b7db12ac83af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5c832c07fe13bb53b0b7db12ac83af">except_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept override</td></tr>
-<tr class="memdesc:a8e5c832c07fe13bb53b0b7db12ac83af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements in the specified collection from the current set.  <br /></td></tr>
-<tr class="separator:a8e5c832c07fe13bb53b0b7db12ac83af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3408ddb9c7a5541b0897ad3dedf4249" id="r_ac3408ddb9c7a5541b0897ad3dedf4249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3408ddb9c7a5541b0897ad3dedf4249">get_enumerator</a> () const noexcept override</td></tr>
-<tr class="memdesc:ac3408ddb9c7a5541b0897ad3dedf4249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ac3408ddb9c7a5541b0897ad3dedf4249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef768a9a0b22c492c7d60aa05be7b93c" id="r_aef768a9a0b22c492c7d60aa05be7b93c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef768a9a0b22c492c7d60aa05be7b93c">intersect_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept override</td></tr>
-<tr class="memdesc:aef768a9a0b22c492c7d60aa05be7b93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are also in a specified collection.  <br /></td></tr>
-<tr class="separator:aef768a9a0b22c492c7d60aa05be7b93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474a6c8a07f16673f603899ae3dcfd03" id="r_a474a6c8a07f16673f603899ae3dcfd03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a474a6c8a07f16673f603899ae3dcfd03">is_proper_subset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a474a6c8a07f16673f603899ae3dcfd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set is a proper (strict) superset of a specified collection.  <br /></td></tr>
-<tr class="separator:a474a6c8a07f16673f603899ae3dcfd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78f535d76760c4d632374b50ef56ff42" id="r_a78f535d76760c4d632374b50ef56ff42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f535d76760c4d632374b50ef56ff42">is_proper_superset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a78f535d76760c4d632374b50ef56ff42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set is a proper (strict) superset of a specified collection.  <br /></td></tr>
-<tr class="separator:a78f535d76760c4d632374b50ef56ff42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa33255bdfd7b12c104aa55639c84f4cb" id="r_aa33255bdfd7b12c104aa55639c84f4cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa33255bdfd7b12c104aa55639c84f4cb">is_subset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:aa33255bdfd7b12c104aa55639c84f4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a set is a subset of a specified collection.  <br /></td></tr>
-<tr class="separator:aa33255bdfd7b12c104aa55639c84f4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a668d36e7e067ed18bbc4755b2e4ac480" id="r_a668d36e7e067ed18bbc4755b2e4ac480"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a668d36e7e067ed18bbc4755b2e4ac480">is_superset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a668d36e7e067ed18bbc4755b2e4ac480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a set is a superset of a specified collection.  <br /></td></tr>
-<tr class="separator:a668d36e7e067ed18bbc4755b2e4ac480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad12fff06cade9baec9a475bfc8912bde" id="r_ad12fff06cade9baec9a475bfc8912bde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad12fff06cade9baec9a475bfc8912bde">overlaps</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:ad12fff06cade9baec9a475bfc8912bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set overlaps with the specified collection.  <br /></td></tr>
-<tr class="separator:ad12fff06cade9baec9a475bfc8912bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbdd6e9a2063db4fca35d62421a1d8a" id="r_a1dbdd6e9a2063db4fca35d62421a1d8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dbdd6e9a2063db4fca35d62421a1d8a">remove</a> (const type_t &amp;item) noexcept override</td></tr>
-<tr class="memdesc:a1dbdd6e9a2063db4fca35d62421a1d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a specified item from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a1dbdd6e9a2063db4fca35d62421a1d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac842e95f4ae60e3a93748a3f9b8031dd" id="r_ac842e95f4ae60e3a93748a3f9b8031dd"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
-<tr class="memitem:ac842e95f4ae60e3a93748a3f9b8031dd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac842e95f4ae60e3a93748a3f9b8031dd">remove_where</a> (predicate_t match) noexcept</td></tr>
-<tr class="memdesc:ac842e95f4ae60e3a93748a3f9b8031dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements that match the conditions defined by the specified predicate from a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; collection.  <br /></td></tr>
-<tr class="separator:ac842e95f4ae60e3a93748a3f9b8031dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cdf148f9a5b46ff2e023aa7c618f596" id="r_a9cdf148f9a5b46ff2e023aa7c618f596"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cdf148f9a5b46ff2e023aa7c618f596">set_equals</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a9cdf148f9a5b46ff2e023aa7c618f596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set and the specified collection contain the same elements.  <br /></td></tr>
-<tr class="separator:a9cdf148f9a5b46ff2e023aa7c618f596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dd21ad11bdf76683434813f32b14fd1" id="r_a3dd21ad11bdf76683434813f32b14fd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dd21ad11bdf76683434813f32b14fd1">symetric_excep_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept override</td></tr>
-<tr class="memdesc:a3dd21ad11bdf76683434813f32b14fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.  <br /></td></tr>
-<tr class="separator:a3dd21ad11bdf76683434813f32b14fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89af3af257b1da07491ee07c03f5becf" id="r_a89af3af257b1da07491ee07c03f5becf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89af3af257b1da07491ee07c03f5becf">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a89af3af257b1da07491ee07c03f5becf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
-<tr class="separator:a89af3af257b1da07491ee07c03f5becf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad2ab6b19b231e7ed237431eeaa7a03e" id="r_aad2ab6b19b231e7ed237431eeaa7a03e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad2ab6b19b231e7ed237431eeaa7a03e">union_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept override</td></tr>
-<tr class="memdesc:aad2ab6b19b231e7ed237431eeaa7a03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.  <br /></td></tr>
-<tr class="separator:aad2ab6b19b231e7ed237431eeaa7a03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b7535fd26617d1fa226e5f8934df91" id="r_ae7b7535fd26617d1fa226e5f8934df91"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b7535fd26617d1fa226e5f8934df91">add</a> (const <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &amp;item) noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ae7b7535fd26617d1fa226e5f8934df91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:ae7b7535fd26617d1fa226e5f8934df91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a924a426f2ff6798709a38c28fc57fd88" id="r_a924a426f2ff6798709a38c28fc57fd88"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a924a426f2ff6798709a38c28fc57fd88">clear</a> () noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a924a426f2ff6798709a38c28fc57fd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="separator:a924a426f2ff6798709a38c28fc57fd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073a82cf396ffa9206e34cf33522489e" id="r_a073a82cf396ffa9206e34cf33522489e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073a82cf396ffa9206e34cf33522489e">contains</a> (const <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &amp;item) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a073a82cf396ffa9206e34cf33522489e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="separator:a073a82cf396ffa9206e34cf33522489e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9478cd4c4928e8457ff1cf721533028a" id="r_a9478cd4c4928e8457ff1cf721533028a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9478cd4c4928e8457ff1cf721533028a">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const -&gt; void</td></tr>
+<tr class="memdesc:a9478cd4c4928e8457ff1cf721533028a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the complete <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the beginning of the target array.  <br /></td></tr>
+<tr class="separator:a9478cd4c4928e8457ff1cf721533028a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9319473479021643c12e771337b6849b" id="r_a9319473479021643c12e771337b6849b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9319473479021643c12e771337b6849b">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> index) const -&gt; void override</td></tr>
+<tr class="memdesc:a9319473479021643c12e771337b6849b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the complete <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified array index.  <br /></td></tr>
+<tr class="separator:a9319473479021643c12e771337b6849b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ded06455eaf5d222e1af1bbd9813ad3" id="r_a5ded06455eaf5d222e1af1bbd9813ad3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ded06455eaf5d222e1af1bbd9813ad3">copy_to</a> (<a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> array_index, <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="#aecc1340f85261e0b22d8044aa77de634">count</a>) const -&gt; void</td></tr>
+<tr class="memdesc:a5ded06455eaf5d222e1af1bbd9813ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a specified number of elements from <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified array index.  <br /></td></tr>
+<tr class="separator:a5ded06455eaf5d222e1af1bbd9813ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b873a5a89ee60d55d400e13697b4686" id="r_a9b873a5a89ee60d55d400e13697b4686"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b873a5a89ee60d55d400e13697b4686">ensure_capacity</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a3942b9edf371938017cba7a478edcb6e">capacity</a>) noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a9b873a5a89ee60d55d400e13697b4686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.  <br /></td></tr>
+<tr class="separator:a9b873a5a89ee60d55d400e13697b4686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b63c883ffbf87659e2d5767c1ab508d" id="r_a3b63c883ffbf87659e2d5767c1ab508d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b63c883ffbf87659e2d5767c1ab508d">except_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a3b63c883ffbf87659e2d5767c1ab508d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements in the specified collection from the current set.  <br /></td></tr>
+<tr class="separator:a3b63c883ffbf87659e2d5767c1ab508d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac77b114323e1ed2e4d7c2931de918f0a" id="r_ac77b114323e1ed2e4d7c2931de918f0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77b114323e1ed2e4d7c2931de918f0a">get_enumerator</a> () const noexcept -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; override</td></tr>
+<tr class="memdesc:ac77b114323e1ed2e4d7c2931de918f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:ac77b114323e1ed2e4d7c2931de918f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a5c36b4a686d3e6aa0c3e7e7458f78" id="r_a29a5c36b4a686d3e6aa0c3e7e7458f78"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29a5c36b4a686d3e6aa0c3e7e7458f78">intersect_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a29a5c36b4a686d3e6aa0c3e7e7458f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are also in a specified collection.  <br /></td></tr>
+<tr class="separator:a29a5c36b4a686d3e6aa0c3e7e7458f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea01495842199bfa6bb7d84849bf8974" id="r_aea01495842199bfa6bb7d84849bf8974"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea01495842199bfa6bb7d84849bf8974">is_proper_subset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:aea01495842199bfa6bb7d84849bf8974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set is a proper (strict) superset of a specified collection.  <br /></td></tr>
+<tr class="separator:aea01495842199bfa6bb7d84849bf8974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d304a8055e813c552d05a2f8db21c3" id="r_a63d304a8055e813c552d05a2f8db21c3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63d304a8055e813c552d05a2f8db21c3">is_proper_superset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a63d304a8055e813c552d05a2f8db21c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set is a proper (strict) superset of a specified collection.  <br /></td></tr>
+<tr class="separator:a63d304a8055e813c552d05a2f8db21c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76248894a12d495d10e1ce4de9eb439a" id="r_a76248894a12d495d10e1ce4de9eb439a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76248894a12d495d10e1ce4de9eb439a">is_subset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a76248894a12d495d10e1ce4de9eb439a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a set is a subset of a specified collection.  <br /></td></tr>
+<tr class="separator:a76248894a12d495d10e1ce4de9eb439a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6adf3c1756e4dd507eff4d9bc9c5d084" id="r_a6adf3c1756e4dd507eff4d9bc9c5d084"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6adf3c1756e4dd507eff4d9bc9c5d084">is_superset_of</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a6adf3c1756e4dd507eff4d9bc9c5d084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a set is a superset of a specified collection.  <br /></td></tr>
+<tr class="separator:a6adf3c1756e4dd507eff4d9bc9c5d084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3c3fb512cd43151d4c698114e90983" id="r_a4a3c3fb512cd43151d4c698114e90983"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a3c3fb512cd43151d4c698114e90983">overlaps</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a4a3c3fb512cd43151d4c698114e90983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set overlaps with the specified collection.  <br /></td></tr>
+<tr class="separator:a4a3c3fb512cd43151d4c698114e90983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ab84a55e47b07f30e887898ba7a039d" id="r_a9ab84a55e47b07f30e887898ba7a039d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ab84a55e47b07f30e887898ba7a039d">remove</a> (const type_t &amp;item) noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a9ab84a55e47b07f30e887898ba7a039d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a specified item from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a9ab84a55e47b07f30e887898ba7a039d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd250d2d2390ff46143641d1b5d4d674" id="r_abd250d2d2390ff46143641d1b5d4d674"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:abd250d2d2390ff46143641d1b5d4d674"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abd250d2d2390ff46143641d1b5d4d674">remove_where</a> (predicate_t match) noexcept -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td></tr>
+<tr class="memdesc:abd250d2d2390ff46143641d1b5d4d674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements that match the conditions defined by the specified predicate from a <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">hash_set</a> &lt;type_t&gt; collection.  <br /></td></tr>
+<tr class="separator:abd250d2d2390ff46143641d1b5d4d674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5541c7fcff263c15ce40717a69b99827" id="r_a5541c7fcff263c15ce40717a69b99827"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5541c7fcff263c15ce40717a69b99827">set_equals</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a5541c7fcff263c15ce40717a69b99827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current set and the specified collection contain the same elements.  <br /></td></tr>
+<tr class="separator:a5541c7fcff263c15ce40717a69b99827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee0ff5b21d1c63277fb7053b3f8cefc" id="r_a2ee0ff5b21d1c63277fb7053b3f8cefc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ee0ff5b21d1c63277fb7053b3f8cefc">symetric_excep_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a2ee0ff5b21d1c63277fb7053b3f8cefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.  <br /></td></tr>
+<tr class="separator:a2ee0ff5b21d1c63277fb7053b3f8cefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e164aee060825e8f5af77e710ffc149" id="r_a7e164aee060825e8f5af77e710ffc149"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e164aee060825e8f5af77e710ffc149">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a7e164aee060825e8f5af77e710ffc149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
+<tr class="separator:a7e164aee060825e8f5af77e710ffc149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a127693079db9c977acab3a295ef80" id="r_a95a127693079db9c977acab3a295ef80"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95a127693079db9c977acab3a295ef80">union_with</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept -&gt; void override</td></tr>
+<tr class="memdesc:a95a127693079db9c977acab3a295ef80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.  <br /></td></tr>
+<tr class="separator:a95a127693079db9c977acab3a295ef80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -379,48 +379,48 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplItemLeft" align="right" valign="top">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a436d1607f6b62c831e84221b6c196b37" id="r_a436d1607f6b62c831e84221b6c196b37"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a436d1607f6b62c831e84221b6c196b37">begin</a> () const</td></tr>
-<tr class="memdesc:a436d1607f6b62c831e84221b6c196b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
-<tr class="separator:a436d1607f6b62c831e84221b6c196b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8fbecfad24d9e7a1bc54529c86e2c7f" id="r_ac8fbecfad24d9e7a1bc54529c86e2c7f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6ff72a2ec99d0023552f723de3705c4d">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ac8fbecfad24d9e7a1bc54529c86e2c7f">begin</a> ()</td></tr>
-<tr class="memdesc:ac8fbecfad24d9e7a1bc54529c86e2c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
-<tr class="separator:ac8fbecfad24d9e7a1bc54529c86e2c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3244c6835d9103844098ceee00dd929c" id="r_a3244c6835d9103844098ceee00dd929c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a3244c6835d9103844098ceee00dd929c">cbegin</a> () const</td></tr>
-<tr class="memdesc:a3244c6835d9103844098ceee00dd929c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
-<tr class="separator:a3244c6835d9103844098ceee00dd929c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a549d04adc2cad4650f5f81273cf94eb1" id="r_a549d04adc2cad4650f5f81273cf94eb1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a549d04adc2cad4650f5f81273cf94eb1">cend</a> () const</td></tr>
-<tr class="memdesc:a549d04adc2cad4650f5f81273cf94eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
-<tr class="separator:a549d04adc2cad4650f5f81273cf94eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6170ebbcc1ed30723db0d8f695a88477" id="r_a6170ebbcc1ed30723db0d8f695a88477"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6170ebbcc1ed30723db0d8f695a88477">end</a> () const</td></tr>
-<tr class="memdesc:a6170ebbcc1ed30723db0d8f695a88477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
-<tr class="separator:a6170ebbcc1ed30723db0d8f695a88477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7158d69d20933e2f4216cbbdb82c6591" id="r_a7158d69d20933e2f4216cbbdb82c6591"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6ff72a2ec99d0023552f723de3705c4d">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a7158d69d20933e2f4216cbbdb82c6591">end</a> ()</td></tr>
-<tr class="memdesc:a7158d69d20933e2f4216cbbdb82c6591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
-<tr class="separator:a7158d69d20933e2f4216cbbdb82c6591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22f3540f62b3b6140ecf188faf509842" id="r_a22f3540f62b3b6140ecf188faf509842"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a22f3540f62b3b6140ecf188faf509842">aggregate</a> (const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const</td></tr>
-<tr class="memdesc:a22f3540f62b3b6140ecf188faf509842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
-<tr class="separator:a22f3540f62b3b6140ecf188faf509842"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8bbfa7cff2e26dcf33e973a97d42316" id="r_af8bbfa7cff2e26dcf33e973a97d42316"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#af8bbfa7cff2e26dcf33e973a97d42316">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const</td></tr>
-<tr class="memdesc:af8bbfa7cff2e26dcf33e973a97d42316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="separator:af8bbfa7cff2e26dcf33e973a97d42316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359f0f326affdbf94b54eb5933bf747e" id="r_a359f0f326affdbf94b54eb5933bf747e"><td class="memItemLeft" align="right" valign="top">accumulate_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a359f0f326affdbf94b54eb5933bf747e">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const</td></tr>
-<tr class="memdesc:a359f0f326affdbf94b54eb5933bf747e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
-<tr class="separator:a359f0f326affdbf94b54eb5933bf747e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a487db86dcfc03a261804db9288b917df" id="r_a487db86dcfc03a261804db9288b917df"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a487db86dcfc03a261804db9288b917df">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; type_t(const type_t &amp;)&gt; &amp;result_selector) const</td></tr>
-<tr class="memdesc:a487db86dcfc03a261804db9288b917df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
-<tr class="separator:a487db86dcfc03a261804db9288b917df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a25236539c411682f728129aaeba9a2" id="r_a7a25236539c411682f728129aaeba9a2"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7a25236539c411682f728129aaeba9a2">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) const</td></tr>
-<tr class="memdesc:a7a25236539c411682f728129aaeba9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
-<tr class="separator:a7a25236539c411682f728129aaeba9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c344a4319826da54bae2611d78f7e41" id="r_a8c344a4319826da54bae2611d78f7e41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8c344a4319826da54bae2611d78f7e41">all</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const</td></tr>
-<tr class="memdesc:a8c344a4319826da54bae2611d78f7e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
-<tr class="separator:a8c344a4319826da54bae2611d78f7e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e647f592add925edc5682334fa2b29" id="r_a25e647f592add925edc5682334fa2b29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a25e647f592add925edc5682334fa2b29">any</a> () const noexcept</td></tr>
-<tr class="memdesc:a25e647f592add925edc5682334fa2b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains any elements.  <br /></td></tr>
-<tr class="separator:a25e647f592add925edc5682334fa2b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ddaea79f05f3a1d7c83bdc64883ec44" id="r_a7ddaea79f05f3a1d7c83bdc64883ec44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ddaea79f05f3a1d7c83bdc64883ec44">any</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const</td></tr>
-<tr class="memdesc:a7ddaea79f05f3a1d7c83bdc64883ec44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any element of a sequence satisfies a condition.  <br /></td></tr>
-<tr class="separator:a7ddaea79f05f3a1d7c83bdc64883ec44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2fbc3e59bb8d3c04f670a5d8ba4f12" id="r_a4d2fbc3e59bb8d3c04f670a5d8ba4f12"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a4d2fbc3e59bb8d3c04f670a5d8ba4f12">begin</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a></td></tr>
+<tr class="memdesc:a4d2fbc3e59bb8d3c04f670a5d8ba4f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
+<tr class="separator:a4d2fbc3e59bb8d3c04f670a5d8ba4f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cdbd73b0ed69113e2515de4567df3e" id="r_a08cdbd73b0ed69113e2515de4567df3e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a08cdbd73b0ed69113e2515de4567df3e">begin</a> () -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6ff72a2ec99d0023552f723de3705c4d">iterator</a></td></tr>
+<tr class="memdesc:a08cdbd73b0ed69113e2515de4567df3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
+<tr class="separator:a08cdbd73b0ed69113e2515de4567df3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78cdd8f12c81d860079f714dc3e663de" id="r_a78cdd8f12c81d860079f714dc3e663de"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a78cdd8f12c81d860079f714dc3e663de">cbegin</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a></td></tr>
+<tr class="memdesc:a78cdd8f12c81d860079f714dc3e663de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
+<tr class="separator:a78cdd8f12c81d860079f714dc3e663de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda895757dc05aef6aeb09189eccc005" id="r_afda895757dc05aef6aeb09189eccc005"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#afda895757dc05aef6aeb09189eccc005">cend</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a></td></tr>
+<tr class="memdesc:afda895757dc05aef6aeb09189eccc005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
+<tr class="separator:afda895757dc05aef6aeb09189eccc005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2560fb4c67389819997f5e5c71bee9e" id="r_af2560fb4c67389819997f5e5c71bee9e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#af2560fb4c67389819997f5e5c71bee9e">end</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a></td></tr>
+<tr class="memdesc:af2560fb4c67389819997f5e5c71bee9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
+<tr class="separator:af2560fb4c67389819997f5e5c71bee9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f0592bfc492405a455afc0578af42c" id="r_a65f0592bfc492405a455afc0578af42c"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a65f0592bfc492405a455afc0578af42c">end</a> () -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6ff72a2ec99d0023552f723de3705c4d">iterator</a></td></tr>
+<tr class="memdesc:a65f0592bfc492405a455afc0578af42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
+<tr class="separator:a65f0592bfc492405a455afc0578af42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebcce5da7a657d84c60f5c1628537f7" id="r_a7ebcce5da7a657d84c60f5c1628537f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7ebcce5da7a657d84c60f5c1628537f7">aggregate</a> (const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const -&gt; type_t</td></tr>
+<tr class="memdesc:a7ebcce5da7a657d84c60f5c1628537f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
+<tr class="separator:a7ebcce5da7a657d84c60f5c1628537f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6335443a047f8bd7d4b73b7f3e3e6869" id="r_a6335443a047f8bd7d4b73b7f3e3e6869"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a6335443a047f8bd7d4b73b7f3e3e6869">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const -&gt; type_t</td></tr>
+<tr class="memdesc:a6335443a047f8bd7d4b73b7f3e3e6869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
+<tr class="separator:a6335443a047f8bd7d4b73b7f3e3e6869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8292c09b6991a75de60a694a1f5c55bf" id="r_a8292c09b6991a75de60a694a1f5c55bf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8292c09b6991a75de60a694a1f5c55bf">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) const -&gt; accumulate_t</td></tr>
+<tr class="memdesc:a8292c09b6991a75de60a694a1f5c55bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
+<tr class="separator:a8292c09b6991a75de60a694a1f5c55bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf26a2790528a7818e883710ea67124" id="r_acbf26a2790528a7818e883710ea67124"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#acbf26a2790528a7818e883710ea67124">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; type_t(const type_t &amp;)&gt; &amp;result_selector) const -&gt; type_t</td></tr>
+<tr class="memdesc:acbf26a2790528a7818e883710ea67124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
+<tr class="separator:acbf26a2790528a7818e883710ea67124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb5b20fc42ee48616d092ce43cad771b" id="r_acb5b20fc42ee48616d092ce43cad771b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#acb5b20fc42ee48616d092ce43cad771b">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const accumulate_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) const -&gt; result_t</td></tr>
+<tr class="memdesc:acb5b20fc42ee48616d092ce43cad771b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
+<tr class="separator:acb5b20fc42ee48616d092ce43cad771b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c87271020284f4837a1c2bca5ba7b1a" id="r_a2c87271020284f4837a1c2bca5ba7b1a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2c87271020284f4837a1c2bca5ba7b1a">all</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const -&gt; bool</td></tr>
+<tr class="memdesc:a2c87271020284f4837a1c2bca5ba7b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all elements of a sequence satisfy a condition.  <br /></td></tr>
+<tr class="separator:a2c87271020284f4837a1c2bca5ba7b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a750d71902c133ab1140a4f3bc41c3129" id="r_a750d71902c133ab1140a4f3bc41c3129"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a750d71902c133ab1140a4f3bc41c3129">any</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a750d71902c133ab1140a4f3bc41c3129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains any elements.  <br /></td></tr>
+<tr class="separator:a750d71902c133ab1140a4f3bc41c3129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0322f65a9d7574e8df67afe1e47dc7cb" id="r_a0322f65a9d7574e8df67afe1e47dc7cb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0322f65a9d7574e8df67afe1e47dc7cb">any</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const -&gt; bool</td></tr>
+<tr class="memdesc:a0322f65a9d7574e8df67afe1e47dc7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any element of a sequence satisfies a condition.  <br /></td></tr>
+<tr class="separator:a0322f65a9d7574e8df67afe1e47dc7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34c33a40d0180b2be5a5bfae2bda31e" id="r_ae34c33a40d0180b2be5a5bfae2bda31e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ae34c33a40d0180b2be5a5bfae2bda31e">append</a> (const type_t &amp;element) const noexcept</td></tr>
 <tr class="memdesc:ae34c33a40d0180b2be5a5bfae2bda31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a value to the end of the sequence.  <br /></td></tr>
 <tr class="separator:ae34c33a40d0180b2be5a5bfae2bda31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -439,21 +439,21 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:afc904cd780ff73da92d5d8f4e6c81468" id="r_afc904cd780ff73da92d5d8f4e6c81468"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afc904cd780ff73da92d5d8f4e6c81468">concat</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; type_t &gt; &amp;second) const noexcept</td></tr>
 <tr class="memdesc:afc904cd780ff73da92d5d8f4e6c81468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two sequences.  <br /></td></tr>
 <tr class="separator:afc904cd780ff73da92d5d8f4e6c81468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77e29837254bb373971404eb103ba26" id="r_ad77e29837254bb373971404eb103ba26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ad77e29837254bb373971404eb103ba26">contains</a> (const type_t &amp;value) const noexcept</td></tr>
-<tr class="memdesc:ad77e29837254bb373971404eb103ba26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using the default equality comparer.  <br /></td></tr>
-<tr class="separator:ad77e29837254bb373971404eb103ba26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87d4be2e1cde9d4316519230b03e0496" id="r_a87d4be2e1cde9d4316519230b03e0496"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a87d4be2e1cde9d4316519230b03e0496">contains</a> (const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) const noexcept</td></tr>
-<tr class="memdesc:a87d4be2e1cde9d4316519230b03e0496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using a specified equality comparer.  <br /></td></tr>
-<tr class="separator:a87d4be2e1cde9d4316519230b03e0496"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0560a5c54fcf0e9786018f00e136c7fb" id="r_a0560a5c54fcf0e9786018f00e136c7fb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0560a5c54fcf0e9786018f00e136c7fb">count</a> () const noexcept</td></tr>
-<tr class="memdesc:a0560a5c54fcf0e9786018f00e136c7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in current sequence.  <br /></td></tr>
-<tr class="separator:a0560a5c54fcf0e9786018f00e136c7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef0abd344f629aef3c96e49d272b50c" id="r_aeef0abd344f629aef3c96e49d272b50c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aeef0abd344f629aef3c96e49d272b50c">count</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const noexcept</td></tr>
-<tr class="memdesc:aeef0abd344f629aef3c96e49d272b50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
-<tr class="separator:aeef0abd344f629aef3c96e49d272b50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b65916d2ccf5f2e4d1eb3f4ef4850d" id="r_a45b65916d2ccf5f2e4d1eb3f4ef4850d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a45b65916d2ccf5f2e4d1eb3f4ef4850d">count</a> (const type_t &amp;value) const noexcept</td></tr>
-<tr class="memdesc:a45b65916d2ccf5f2e4d1eb3f4ef4850d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements with the specified value.  <br /></td></tr>
-<tr class="separator:a45b65916d2ccf5f2e4d1eb3f4ef4850d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb2e699be37d1850eed1d1df1e0f78e" id="r_a0eb2e699be37d1850eed1d1df1e0f78e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0eb2e699be37d1850eed1d1df1e0f78e">contains</a> (const type_t &amp;value) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a0eb2e699be37d1850eed1d1df1e0f78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using the default equality comparer.  <br /></td></tr>
+<tr class="separator:a0eb2e699be37d1850eed1d1df1e0f78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88904921d746c25c99d7935d1fb8f20d" id="r_a88904921d746c25c99d7935d1fb8f20d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a88904921d746c25c99d7935d1fb8f20d">contains</a> (const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a88904921d746c25c99d7935d1fb8f20d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a sequence contains a specified element by using a specified equality comparer.  <br /></td></tr>
+<tr class="separator:a88904921d746c25c99d7935d1fb8f20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05eea430b375cd6362b5cc42416e1fd2" id="r_a05eea430b375cd6362b5cc42416e1fd2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a05eea430b375cd6362b5cc42416e1fd2">count</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a05eea430b375cd6362b5cc42416e1fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in current sequence.  <br /></td></tr>
+<tr class="separator:a05eea430b375cd6362b5cc42416e1fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43314c0991ac465709e1c3f4aa4c1fad" id="r_a43314c0991ac465709e1c3f4aa4c1fad"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a43314c0991ac465709e1c3f4aa4c1fad">count</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a43314c0991ac465709e1c3f4aa4c1fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
+<tr class="separator:a43314c0991ac465709e1c3f4aa4c1fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8409fc334c32734d57eeb058ac6dac12" id="r_a8409fc334c32734d57eeb058ac6dac12"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8409fc334c32734d57eeb058ac6dac12">count</a> (const type_t &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a8409fc334c32734d57eeb058ac6dac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements with the specified value.  <br /></td></tr>
+<tr class="separator:a8409fc334c32734d57eeb058ac6dac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e4457cca131d9c0a6ffe086e8eb0f94" id="r_a4e4457cca131d9c0a6ffe086e8eb0f94"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a4e4457cca131d9c0a6ffe086e8eb0f94">count_by</a> (const std::function&lt; key_t(const type_t &amp;)&gt; &amp;key_selector) const noexcept</td></tr>
 <tr class="memdesc:a4e4457cca131d9c0a6ffe086e8eb0f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="separator:a4e4457cca131d9c0a6ffe086e8eb0f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -472,18 +472,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abb4e42accb00e5e59a3262c6624dfc7c" id="r_abb4e42accb00e5e59a3262c6624dfc7c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#abb4e42accb00e5e59a3262c6624dfc7c">distinct</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) const noexcept</td></tr>
 <tr class="memdesc:abb4e42accb00e5e59a3262c6624dfc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
 <tr class="separator:abb4e42accb00e5e59a3262c6624dfc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcddc251cf8f945686a5f77807e62dcd" id="r_afcddc251cf8f945686a5f77807e62dcd"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afcddc251cf8f945686a5f77807e62dcd">first_or_default</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, const type_t &amp;default_value) const noexcept</td></tr>
-<tr class="memdesc:afcddc251cf8f945686a5f77807e62dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
-<tr class="separator:afcddc251cf8f945686a5f77807e62dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e52658d4876a5f7642288ef7cfd0be8" id="r_a2e52658d4876a5f7642288ef7cfd0be8"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2e52658d4876a5f7642288ef7cfd0be8">first_or_default</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const noexcept</td></tr>
-<tr class="memdesc:a2e52658d4876a5f7642288ef7cfd0be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="separator:a2e52658d4876a5f7642288ef7cfd0be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ba0a757b76c036ef644cec12662f887" id="r_a2ba0a757b76c036ef644cec12662f887"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2ba0a757b76c036ef644cec12662f887">first_or_default</a> (const type_t default_value) const noexcept</td></tr>
-<tr class="memdesc:a2ba0a757b76c036ef644cec12662f887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="separator:a2ba0a757b76c036ef644cec12662f887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964948d137047014d18a7cc5db15f46f" id="r_a964948d137047014d18a7cc5db15f46f"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
-<tr class="memdesc:a964948d137047014d18a7cc5db15f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
-<tr class="separator:a964948d137047014d18a7cc5db15f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e759b2fa491a2006eb244ce931ea4ee" id="r_a7e759b2fa491a2006eb244ce931ea4ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a7e759b2fa491a2006eb244ce931ea4ee">first_or_default</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, const type_t &amp;default_value) const noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a7e759b2fa491a2006eb244ce931ea4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
+<tr class="separator:a7e759b2fa491a2006eb244ce931ea4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19dce81ad7c370279a7c87f5947904d8" id="r_a19dce81ad7c370279a7c87f5947904d8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a19dce81ad7c370279a7c87f5947904d8">first_or_default</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a19dce81ad7c370279a7c87f5947904d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="separator:a19dce81ad7c370279a7c87f5947904d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8433958437ae23f4272db71f201ddfee" id="r_a8433958437ae23f4272db71f201ddfee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8433958437ae23f4272db71f201ddfee">first_or_default</a> (const type_t default_value) const noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a8433958437ae23f4272db71f201ddfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="separator:a8433958437ae23f4272db71f201ddfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15bac736758f4963624d6682a5c6d92" id="r_af15bac736758f4963624d6682a5c6d92"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#af15bac736758f4963624d6682a5c6d92">first_or_default</a> () const noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:af15bac736758f4963624d6682a5c6d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
+<tr class="separator:af15bac736758f4963624d6682a5c6d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaaa233780cb312bb8702850041eb5b0" id="r_afaaa233780cb312bb8702850041eb5b0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afaaa233780cb312bb8702850041eb5b0">order</a> ()</td></tr>
 <tr class="memdesc:afaaa233780cb312bb8702850041eb5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
 <tr class="separator:afaaa233780cb312bb8702850041eb5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -514,12 +514,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a057c689f8c51e80cbf49b14e8cad1b00" id="r_a057c689f8c51e80cbf49b14e8cad1b00"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a057c689f8c51e80cbf49b14e8cad1b00">select</a> (const std::function&lt; type_t(const type_t &amp;, size_t index)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:a057c689f8c51e80cbf49b14e8cad1b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="separator:a057c689f8c51e80cbf49b14e8cad1b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f2a0936730aa6dcaf0c0545ecdfd269" id="r_a5f2a0936730aa6dcaf0c0545ecdfd269"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5f2a0936730aa6dcaf0c0545ecdfd269">to_array</a> () const noexcept</td></tr>
-<tr class="memdesc:a5f2a0936730aa6dcaf0c0545ecdfd269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a5f2a0936730aa6dcaf0c0545ecdfd269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9186b87e4e781e16cfeca4d3e83ca6ba" id="r_a9186b87e4e781e16cfeca4d3e83ca6ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2">list</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a9186b87e4e781e16cfeca4d3e83ca6ba">to_list</a> () const noexcept</td></tr>
-<tr class="memdesc:a9186b87e4e781e16cfeca4d3e83ca6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a9186b87e4e781e16cfeca4d3e83ca6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511949731079734f2aca9d08c3c69c27" id="r_a511949731079734f2aca9d08c3c69c27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a511949731079734f2aca9d08c3c69c27">to_array</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a511949731079734f2aca9d08c3c69c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a511949731079734f2aca9d08c3c69c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e00076ef778b67cf357e35560298ad" id="r_a32e00076ef778b67cf357e35560298ad"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a32e00076ef778b67cf357e35560298ad">to_list</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2">list</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:a32e00076ef778b67cf357e35560298ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; from an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a32e00076ef778b67cf357e35560298ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accb58e81e7cbc4401a227fa23918fd3c" id="r_accb58e81e7cbc4401a227fa23918fd3c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#accb58e81e7cbc4401a227fa23918fd3c">where</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>) const</td></tr>
 <tr class="memdesc:accb58e81e7cbc4401a227fa23918fd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a sequence of values based on a predicate.  <br /></td></tr>
 <tr class="separator:accb58e81e7cbc4401a227fa23918fd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -534,24 +534,24 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bebb497fb8cc571f2064b1385bc07a" id="r_a39bebb497fb8cc571f2064b1385bc07a"><td class="memItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a39bebb497fb8cc571f2064b1385bc07a">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:a39bebb497fb8cc571f2064b1385bc07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:a39bebb497fb8cc571f2064b1385bc07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38ddb6fd4017aa9c75838c0be754887c" id="r_a38ddb6fd4017aa9c75838c0be754887c"><td class="memItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a38ddb6fd4017aa9c75838c0be754887c">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:a38ddb6fd4017aa9c75838c0be754887c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:a38ddb6fd4017aa9c75838c0be754887c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75ae170d894810f9884bf9bf994e8ebb" id="r_a75ae170d894810f9884bf9bf994e8ebb"><td class="memItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a75ae170d894810f9884bf9bf994e8ebb">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:a75ae170d894810f9884bf9bf994e8ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:a75ae170d894810f9884bf9bf994e8ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28a98d9b9cccd57f0512de8d49b3af99" id="r_a28a98d9b9cccd57f0512de8d49b3af99"><td class="memItemLeft" align="right" valign="top">static target_collection_t::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a28a98d9b9cccd57f0512de8d49b3af99">to_iterator</a> (typename source_collection_t::iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:a28a98d9b9cccd57f0512de8d49b3af99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:a28a98d9b9cccd57f0512de8d49b3af99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ef637a1485bdd83b5008e007f42000" id="r_ad5ef637a1485bdd83b5008e007f42000"><td class="memItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ad5ef637a1485bdd83b5008e007f42000">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:ad5ef637a1485bdd83b5008e007f42000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:ad5ef637a1485bdd83b5008e007f42000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385ff7eb8493f644dbfa729c4a815fbd" id="r_a385ff7eb8493f644dbfa729c4a815fbd"><td class="memItemLeft" align="right" valign="top">static target_collection_t::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a385ff7eb8493f644dbfa729c4a815fbd">to_iterator</a> (typename source_collection_t::iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
-<tr class="memdesc:a385ff7eb8493f644dbfa729c4a815fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
-<tr class="separator:a385ff7eb8493f644dbfa729c4a815fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90e33edbf92dc99e369674abb843d63" id="r_aa90e33edbf92dc99e369674abb843d63"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#aa90e33edbf92dc99e369674abb843d63">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::const_iterator</td></tr>
+<tr class="memdesc:aa90e33edbf92dc99e369674abb843d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:aa90e33edbf92dc99e369674abb843d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68a5a25a0dc79b770d2cb5b6272b52a" id="r_ad68a5a25a0dc79b770d2cb5b6272b52a"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ad68a5a25a0dc79b770d2cb5b6272b52a">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::const_iterator</td></tr>
+<tr class="memdesc:ad68a5a25a0dc79b770d2cb5b6272b52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:ad68a5a25a0dc79b770d2cb5b6272b52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647b6797f4d1a429c43db4d4125895ec" id="r_a647b6797f4d1a429c43db4d4125895ec"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a647b6797f4d1a429c43db4d4125895ec">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::const_iterator</td></tr>
+<tr class="memdesc:a647b6797f4d1a429c43db4d4125895ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a647b6797f4d1a429c43db4d4125895ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4514f633426578cc3e17a1c67517c5" id="r_acd4514f633426578cc3e17a1c67517c5"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#acd4514f633426578cc3e17a1c67517c5">to_iterator</a> (typename source_collection_t::iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::iterator</td></tr>
+<tr class="memdesc:acd4514f633426578cc3e17a1c67517c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:acd4514f633426578cc3e17a1c67517c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212ad047a8b8fa9461bb583add74a5e3" id="r_a212ad047a8b8fa9461bb583add74a5e3"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a212ad047a8b8fa9461bb583add74a5e3">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::const_iterator</td></tr>
+<tr class="memdesc:a212ad047a8b8fa9461bb583add74a5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a212ad047a8b8fa9461bb583add74a5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add35fbf6a927d9328f634c79bd2e5d67" id="r_add35fbf6a927d9328f634c79bd2e5d67"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#add35fbf6a927d9328f634c79bd2e5d67">to_iterator</a> (typename source_collection_t::iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::iterator</td></tr>
+<tr class="memdesc:add35fbf6a927d9328f634c79bd2e5d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:add35fbf6a927d9328f634c79bd2e5d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="afe06b0fdb4083dc3332247a8a2cd05b2" name="afe06b0fdb4083dc3332247a8a2cd05b2"></a>
@@ -653,7 +653,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; class that is empty and uses the default equality comparer for the set type. </p>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to create and populate two <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; objects. This example is part of a larger example provided for the <a class="el" href="#aad2ab6b19b231e7ed237431eeaa7a03e" title="Modifies the current set so that it contains all elements that are present in the current set,...">xtd::collections::generic::hash_set::union_with</a> method. <div class="fragment"><div class="line"><span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to create and populate two <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt; objects. This example is part of a larger example provided for the <a class="el" href="#a95a127693079db9c977acab3a295ef80" title="Modifies the current set so that it contains all elements that are present in the current set,...">xtd::collections::generic::hash_set::union_with</a> method. <div class="fragment"><div class="line"><span class="keyword">auto</span> even_numbers = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;int&gt;</a> {};</div>
 <div class="line"><span class="keyword">auto</span> odd_numbers = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">hash_set&lt;int&gt;</a> {};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
@@ -843,7 +843,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <div class="line">    <span class="keyword">auto</span> all_vehicles = <a class="code hl_function" href="#a8c367ef02978617714598cb0c6636b9c">hash_set&lt;string&gt;</a>(<a class="code hl_function" href="classxtd_1_1basic__string__comparer.html#a455d50963d3e18ce3a590d77e4e3a8fb">string_comparer::ordinal_ignore_case</a>());</div>
 <div class="line">    <span class="keyword">auto</span> some_vehicles = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
 <div class="line">    </div>
-<div class="line">    some_vehicles.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<span class="stringliteral">&quot;Planes&quot;</span>);</div>
+<div class="line">    some_vehicles.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a4ec4879f1070dc3da9a8413585d1ce2c">add</a>(<span class="stringliteral">&quot;Planes&quot;</span>);</div>
 <div class="line">    some_vehicles.add(<span class="stringliteral">&quot;Trains&quot;</span>);</div>
 <div class="line">    some_vehicles.add(<span class="stringliteral">&quot;Automobiles&quot;</span>);</div>
 <div class="line">    </div>
@@ -935,7 +935,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <div class="line"><span class="comment">// Motorcycles</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string__comparer_html_a455d50963d3e18ce3a590d77e4e3a8fb"><div class="ttname"><a href="classxtd_1_1basic__string__comparer.html#a455d50963d3e18ce3a590d77e4e3a8fb">xtd::basic_string_comparer&lt; char &gt;::ordinal_ignore_case</a></div><div class="ttdeci">static const basic_string_comparer &amp; ordinal_ignore_case()</div><div class="ttdef"><b>Definition</b> basic_string_comparer.hpp:104</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:273</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a4ec4879f1070dc3da9a8413585d1ce2c"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a4ec4879f1070dc3da9a8413585d1ce2c">xtd::collections::generic::list::add</a></div><div class="ttdeci">auto add(const type_t &amp;item) -&gt; void override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:273</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -977,8 +977,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a774824b743c6508a538607877fa46356" name="a774824b743c6508a538607877fa46356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a774824b743c6508a538607877fa46356">&#9670;&#160;</a></span>capacity()</h2>
+<a id="a3942b9edf371938017cba7a478edcb6e" name="a3942b9edf371938017cba7a478edcb6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3942b9edf371938017cba7a478edcb6e">&#9670;&#160;</a></span>capacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -989,10 +989,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::capacity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::capacity </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> </td>
         </tr>
       </table>
   </td>
@@ -1007,8 +1007,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="af8bc9cb78debb7bf93132621ea4f13a3" name="af8bc9cb78debb7bf93132621ea4f13a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8bc9cb78debb7bf93132621ea4f13a3">&#9670;&#160;</a></span>comparer()</h2>
+<a id="aec7e1fe33982173d3a71686fa563a3d1" name="aec7e1fe33982173d3a71686fa563a3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7e1fe33982173d3a71686fa563a3d1">&#9670;&#160;</a></span>comparer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1019,10 +1019,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &gt; &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::comparer </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::comparer </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt;<a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a>&gt;&amp; </td>
         </tr>
       </table>
   </td>
@@ -1038,8 +1038,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="ad9d6849a21b62a94d9db096e134d5b29" name="ad9d6849a21b62a94d9db096e134d5b29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9d6849a21b62a94d9db096e134d5b29">&#9670;&#160;</a></span>count()</h2>
+<a id="aecc1340f85261e0b22d8044aa77de634" name="aecc1340f85261e0b22d8044aa77de634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecc1340f85261e0b22d8044aa77de634">&#9670;&#160;</a></span>count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,10 +1050,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::count </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>
         </tr>
       </table>
   </td>
@@ -1065,18 +1065,18 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 <p>Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </p>
 <dl class="section return"><dt>Returns</dt><dd>the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is the number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; can store. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is the number of elements that are actually in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is the number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; can store. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#abac0556eec861542dcc6b52961e963d7" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is the number of elements that are actually in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd>
 <dd>
-The capacity is always greater than or equal to <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a>. If <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements. </dd>
+The capacity is always greater than or equal to <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#abac0556eec861542dcc6b52961e963d7" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a>. If <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#abac0556eec861542dcc6b52961e963d7" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements. </dd>
 <dd>
 Getting the value of this property is an O(1) operation. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#af934990c5b9794a99ed287def25e7750">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a6ee0c167056e9dc8f2bdd1f887bff2a7">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a4528f50e541aa3f3c8fa6508629b5b28" name="a4528f50e541aa3f3c8fa6508629b5b28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4528f50e541aa3f3c8fa6508629b5b28">&#9670;&#160;</a></span>items() <span class="overload">[1/2]</span></h2>
+<a id="a8992ce3e97fddfcb2cdc5e582846eb0b" name="a8992ce3e97fddfcb2cdc5e582846eb0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8992ce3e97fddfcb2cdc5e582846eb0b">&#9670;&#160;</a></span>items() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1087,10 +1087,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -1105,8 +1105,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="a7b0baff52fab2e852ea6282789645715" name="a7b0baff52fab2e852ea6282789645715"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b0baff52fab2e852ea6282789645715">&#9670;&#160;</a></span>items() <span class="overload">[2/2]</span></h2>
+<a id="a9bf5c048b0790401321af297d8ccd010" name="a9bf5c048b0790401321af297d8ccd010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf5c048b0790401321af297d8ccd010">&#9670;&#160;</a></span>items() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1117,10 +1117,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#aa05a7903d0092a7f095691aa20376335">base_type</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -1135,8 +1135,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="aa24152ccb0c559f8dd1234221541f284" name="aa24152ccb0c559f8dd1234221541f284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa24152ccb0c559f8dd1234221541f284">&#9670;&#160;</a></span>add()</h2>
+<a id="ae7b7535fd26617d1fa226e5f8934df91" name="ae7b7535fd26617d1fa226e5f8934df91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b7535fd26617d1fa226e5f8934df91">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1147,10 +1147,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::add </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::add </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#afe06b0fdb4083dc3332247a8a2cd05b2">key_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1174,12 +1174,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#acefcde9027a07fe7e5c3d732a5b47314">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#abe5b45e430acb8420d8ff5393c9dbdc1">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a8cbb204a6efaf9fc69daf84d86cd859a" name="a8cbb204a6efaf9fc69daf84d86cd859a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cbb204a6efaf9fc69daf84d86cd859a">&#9670;&#160;</a></span>clear()</h2>
+<a id="a924a426f2ff6798709a38c28fc57fd88" name="a924a426f2ff6798709a38c28fc57fd88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924a426f2ff6798709a38c28fc57fd88">&#9670;&#160;</a></span>clear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1190,10 +1190,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::clear </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::clear </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1204,14 +1204,14 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </div><div class="memdoc">
 
 <p>Removes all keys and values from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#abac0556eec861542dcc6b52961e963d7" title="Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::count</a> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a152df384045335f981d8f480d7716f3d">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#abdd6dee51db97f019442471dfa142340">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="aa007a1874b5087bf999531c92e9b8db1" name="aa007a1874b5087bf999531c92e9b8db1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa007a1874b5087bf999531c92e9b8db1">&#9670;&#160;</a></span>contains()</h2>
+<a id="a073a82cf396ffa9206e34cf33522489e" name="a073a82cf396ffa9206e34cf33522489e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073a82cf396ffa9206e34cf33522489e">&#9670;&#160;</a></span>contains()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1222,10 +1222,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::contains </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::contains </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1244,12 +1244,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; contains an element with the specified <code>item</code> ; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a0caa180322645a82b9b36983c896506e">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a4a648bb8b834c4601c0b66c6d8409ca6">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ae91430e3f6139a7d5f2754fa54c0c10b" name="ae91430e3f6139a7d5f2754fa54c0c10b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae91430e3f6139a7d5f2754fa54c0c10b">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/3]</span></h2>
+<a id="a9478cd4c4928e8457ff1cf721533028a" name="a9478cd4c4928e8457ff1cf721533028a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9478cd4c4928e8457ff1cf721533028a">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1260,10 +1260,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -1290,8 +1290,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="af5a9dc4012520670818f924a8dc9c634" name="af5a9dc4012520670818f924a8dc9c634"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5a9dc4012520670818f924a8dc9c634">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/3]</span></h2>
+<a id="a9319473479021643c12e771337b6849b" name="a9319473479021643c12e771337b6849b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9319473479021643c12e771337b6849b">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1302,14 +1302,14 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;) const -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1336,12 +1336,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#aed30f23b7f62a57d42a028bc82dbec45">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a3011fc7ce2ab44ee3205fe72b96ccfe1">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a9351076ed354cc82df0074697bef89af" name="a9351076ed354cc82df0074697bef89af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9351076ed354cc82df0074697bef89af">&#9670;&#160;</a></span>copy_to() <span class="overload">[3/3]</span></h2>
+<a id="a5ded06455eaf5d222e1af1bbd9813ad3" name="a5ded06455eaf5d222e1af1bbd9813ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ded06455eaf5d222e1af1bbd9813ad3">&#9670;&#160;</a></span>copy_to() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1352,7 +1352,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::copy_to </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
@@ -1369,7 +1369,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) const -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -1399,8 +1399,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="a6a9f94287fc0d6c319c1b838260ff9d1" name="a6a9f94287fc0d6c319c1b838260ff9d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a9f94287fc0d6c319c1b838260ff9d1">&#9670;&#160;</a></span>ensure_capacity()</h2>
+<a id="a9b873a5a89ee60d55d400e13697b4686" name="a9b873a5a89ee60d55d400e13697b4686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b873a5a89ee60d55d400e13697b4686">&#9670;&#160;</a></span>ensure_capacity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1411,10 +1411,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::ensure_capacity </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::ensure_capacity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> </td>
         </tr>
       </table>
   </td>
@@ -1435,8 +1435,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="a8e5c832c07fe13bb53b0b7db12ac83af" name="a8e5c832c07fe13bb53b0b7db12ac83af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e5c832c07fe13bb53b0b7db12ac83af">&#9670;&#160;</a></span>except_with()</h2>
+<a id="a3b63c883ffbf87659e2d5767c1ab508d" name="a3b63c883ffbf87659e2d5767c1ab508d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b63c883ffbf87659e2d5767c1ab508d">&#9670;&#160;</a></span>except_with()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1447,10 +1447,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::except_with </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::except_with </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1469,12 +1469,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method is an O(<code>n</code>) operation, where <code>n</code> is the number of elements in the other parameter. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a700097182833551442845d2b4a229fca">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a777d566a1ccb2e358ef73fdd8d7a375e">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ac3408ddb9c7a5541b0897ad3dedf4249" name="ac3408ddb9c7a5541b0897ad3dedf4249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3408ddb9c7a5541b0897ad3dedf4249">&#9670;&#160;</a></span>get_enumerator()</h2>
+<a id="ac77b114323e1ed2e4d7c2931de918f0a" name="ac77b114323e1ed2e4d7c2931de918f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77b114323e1ed2e4d7c2931de918f0a">&#9670;&#160;</a></span>get_enumerator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1485,10 +1485,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::get_enumerator </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::get_enumerator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt;<a class="el" href="#a0d07d66b9f0fb844a1c0dcb369058d6e">value_type</a>&gt;</td>
         </tr>
       </table>
   </td>
@@ -1501,12 +1501,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__collections.html#ga2633655cae697fc737d19f6a541167d7" title="Supports a simple iteration over a non-generic collection.">xtd::collections::enumerator</a> structure for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#aaa7f31bc15aecee93e381b36c71c3058">xtd::collections::generic::ienumerable&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a3247cf34dfb04a70d3efae2dce7ac8a7">xtd::collections::generic::ienumerable&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="aef768a9a0b22c492c7d60aa05be7b93c" name="aef768a9a0b22c492c7d60aa05be7b93c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef768a9a0b22c492c7d60aa05be7b93c">&#9670;&#160;</a></span>intersect_with()</h2>
+<a id="a29a5c36b4a686d3e6aa0c3e7e7458f78" name="a29a5c36b4a686d3e6aa0c3e7e7458f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a5c36b4a686d3e6aa0c3e7e7458f78">&#9670;&#160;</a></span>intersect_with()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1517,10 +1517,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::intersect_with </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::intersect_with </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1539,12 +1539,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method ignores any duplicate elements in <code>other</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a64f0d3d0295ecf3ac69c2f013537a1cb">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a81aee62eb48c3888ed7d468c3140d42f">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a474a6c8a07f16673f603899ae3dcfd03" name="a474a6c8a07f16673f603899ae3dcfd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a474a6c8a07f16673f603899ae3dcfd03">&#9670;&#160;</a></span>is_proper_subset_of()</h2>
+<a id="aea01495842199bfa6bb7d84849bf8974" name="aea01495842199bfa6bb7d84849bf8974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea01495842199bfa6bb7d84849bf8974">&#9670;&#160;</a></span>is_proper_subset_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1555,10 +1555,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_proper_subset_of </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_proper_subset_of </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1577,12 +1577,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a proper superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a12501ce920c0774f10aaec0b7a5bdc55">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a82aae48b5431312d35c7e51c5390863e">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a78f535d76760c4d632374b50ef56ff42" name="a78f535d76760c4d632374b50ef56ff42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78f535d76760c4d632374b50ef56ff42">&#9670;&#160;</a></span>is_proper_superset_of()</h2>
+<a id="a63d304a8055e813c552d05a2f8db21c3" name="a63d304a8055e813c552d05a2f8db21c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d304a8055e813c552d05a2f8db21c3">&#9670;&#160;</a></span>is_proper_superset_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1593,10 +1593,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_proper_superset_of </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_proper_superset_of </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1615,12 +1615,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a proper superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a03d14373d9853c6f0334994a47924b4a">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a2f47b745104c6323efaf99bb9f294009">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="aa33255bdfd7b12c104aa55639c84f4cb" name="aa33255bdfd7b12c104aa55639c84f4cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa33255bdfd7b12c104aa55639c84f4cb">&#9670;&#160;</a></span>is_subset_of()</h2>
+<a id="a76248894a12d495d10e1ce4de9eb439a" name="a76248894a12d495d10e1ce4de9eb439a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76248894a12d495d10e1ce4de9eb439a">&#9670;&#160;</a></span>is_subset_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1631,10 +1631,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_subset_of </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_subset_of </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1653,12 +1653,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a subset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a1d618708b40af9f76d2827ee00a5efdd">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a6953b622c0e2f91711d9219fe4b62c9c">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a668d36e7e067ed18bbc4755b2e4ac480" name="a668d36e7e067ed18bbc4755b2e4ac480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a668d36e7e067ed18bbc4755b2e4ac480">&#9670;&#160;</a></span>is_superset_of()</h2>
+<a id="a6adf3c1756e4dd507eff4d9bc9c5d084" name="a6adf3c1756e4dd507eff4d9bc9c5d084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6adf3c1756e4dd507eff4d9bc9c5d084">&#9670;&#160;</a></span>is_superset_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1669,10 +1669,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_superset_of </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::is_superset_of </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1691,12 +1691,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is a superset of <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a6788e027767aba1738c3119a03e3b8eb">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#aad290c62f3bce48cf974ae90b849eb5a">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ad12fff06cade9baec9a475bfc8912bde" name="ad12fff06cade9baec9a475bfc8912bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad12fff06cade9baec9a475bfc8912bde">&#9670;&#160;</a></span>overlaps()</h2>
+<a id="a4a3c3fb512cd43151d4c698114e90983" name="a4a3c3fb512cd43151d4c698114e90983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3c3fb512cd43151d4c698114e90983">&#9670;&#160;</a></span>overlaps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1707,10 +1707,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::overlaps </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::overlaps </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1729,12 +1729,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set and <code>other</code> share at least one common element; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a38e6b3963a34832d59aa0a5b0844ca0e">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a38d00721eb55c820f403836ae23f8e36">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a1dbdd6e9a2063db4fca35d62421a1d8a" name="a1dbdd6e9a2063db4fca35d62421a1d8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dbdd6e9a2063db4fca35d62421a1d8a">&#9670;&#160;</a></span>remove()</h2>
+<a id="a9ab84a55e47b07f30e887898ba7a039d" name="a9ab84a55e47b07f30e887898ba7a039d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab84a55e47b07f30e887898ba7a039d">&#9670;&#160;</a></span>remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1745,10 +1745,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::remove </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::remove </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1767,12 +1767,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the element was removed, false otherwise. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a8764ec75de1bbac04e697a71eeb45a5a">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a838be3f0b33f507795372704ba08901c">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ac842e95f4ae60e3a93748a3f9b8031dd" name="ac842e95f4ae60e3a93748a3f9b8031dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac842e95f4ae60e3a93748a3f9b8031dd">&#9670;&#160;</a></span>remove_where()</h2>
+<a id="abd250d2d2390ff46143641d1b5d4d674" name="abd250d2d2390ff46143641d1b5d4d674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd250d2d2390ff46143641d1b5d4d674">&#9670;&#160;</a></span>remove_where()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1785,10 +1785,10 @@ template&lt;class predicate_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::remove_where </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::remove_where </td>
           <td>(</td>
           <td class="paramtype">predicate_t</td>          <td class="paramname"><span class="paramname"><em>match</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="#a7d8abafe1d9225d958ee756844140a55">size_type</a> </td>
         </tr>
       </table>
   </td>
@@ -1809,8 +1809,8 @@ template&lt;class predicate_t&gt; </div>
 
 </div>
 </div>
-<a id="a9cdf148f9a5b46ff2e023aa7c618f596" name="a9cdf148f9a5b46ff2e023aa7c618f596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cdf148f9a5b46ff2e023aa7c618f596">&#9670;&#160;</a></span>set_equals()</h2>
+<a id="a5541c7fcff263c15ce40717a69b99827" name="a5541c7fcff263c15ce40717a69b99827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5541c7fcff263c15ce40717a69b99827">&#9670;&#160;</a></span>set_equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1821,10 +1821,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::set_equals </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::set_equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1843,12 +1843,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current set is equal to <code>other</code>; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a1c029866fa48a778edb16c24f80e9603">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a4a7e6ba48945a7809c745d4ee249317e">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a3dd21ad11bdf76683434813f32b14fd1" name="a3dd21ad11bdf76683434813f32b14fd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dd21ad11bdf76683434813f32b14fd1">&#9670;&#160;</a></span>symetric_excep_with()</h2>
+<a id="a2ee0ff5b21d1c63277fb7053b3f8cefc" name="a2ee0ff5b21d1c63277fb7053b3f8cefc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee0ff5b21d1c63277fb7053b3f8cefc">&#9670;&#160;</a></span>symetric_excep_with()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1859,10 +1859,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::symetric_excep_with </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::symetric_excep_with </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1881,12 +1881,12 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Any duplicate elements in <code>other</code> are ignored. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a6581811b2caec6972c39170574a97fdb">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#af5a3fa0bacb983cf89f390251027004a">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a89af3af257b1da07491ee07c03f5becf" name="a89af3af257b1da07491ee07c03f5becf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89af3af257b1da07491ee07c03f5becf">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a7e164aee060825e8f5af77e710ffc149" name="a7e164aee060825e8f5af77e710ffc149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e164aee060825e8f5af77e710ffc149">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1897,10 +1897,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
@@ -1917,8 +1917,8 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 
 </div>
 </div>
-<a id="aad2ab6b19b231e7ed237431eeaa7a03e" name="aad2ab6b19b231e7ed237431eeaa7a03e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad2ab6b19b231e7ed237431eeaa7a03e">&#9670;&#160;</a></span>union_with()</h2>
+<a id="a95a127693079db9c977acab3a295ef80" name="a95a127693079db9c977acab3a295ef80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a127693079db9c977acab3a295ef80">&#9670;&#160;</a></span>union_with()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1929,10 +1929,10 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::union_with </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1hash__set.html">xtd::collections::generic::hash_set</a>&lt; type_t, hasher_t, equator_t, allocator_t &gt;::union_with </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1951,7 +1951,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Any duplicate elements in <code>other</code> are ignored. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#aaed950b09a454e52fb3c46c81004fd44">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html#a8715b25c067b2e381ed9d1561e7663fe">xtd::collections::generic::iset&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -1962,7 +1962,7 @@ template&lt;class type_t, class hasher_t = xtd::collections::generic::helpers::h
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 20 2025 19:16:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 22:14:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
