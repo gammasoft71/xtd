@@ -390,7 +390,7 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {bits | bit_array {true, false, true};});
       assert::throws<argument_exception>([&] {bits | bit_array {true, false, true, false, true};});
     }
-
+    
     void test_method_(xor_operator) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({false, true, true, false}, bits ^ bit_array {true, false, true, false});
@@ -398,7 +398,7 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true};});
       assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true, false, true};});
     }
-
+    
     void test_method_(xor_equal_operator) {
       auto bits = bit_array {true, true, false, false};
       bits ^= {true, false, true, false};
@@ -406,7 +406,7 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true};});
       assert::throws<argument_exception>([&] {bits ^ bit_array {true, false, true, false, true};});
     }
-
+    
     void test_method_(not_operator) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({false, false, true, true}, ~bits);

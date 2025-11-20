@@ -165,7 +165,7 @@ namespace xtd {
         auto get_enumerator() const noexcept -> enumerator<value_type> override {
           return data_->items.get_enumerator();
         }
-
+        
         /// @brief Returns the object at the beginning of the xtd::collections::generic::queue <type_t>
         /// without removing it.
         /// @return The object at the beginning of the xtd::collections::generic::queue <type_t>.
@@ -212,7 +212,7 @@ namespace xtd {
           data_->items.remove_first();
           return true;
         }
-
+        
         /// @brief Returns a value that indicates whether there is an object at the beginning of the xtd::collections::generic::queue <type_t>, and if one is present, copies it to the result parameter. The object is not removed from the xtd::collections::generic::queue <type_t>.
         /// @param If present, the object at the beginning of the xtd::collections::generic::queue <type_t>; otherwise, the default value of `type_t`.
         /// @return `true` if there is an object at the beginning of the xtd::collections::generic::queue <type_t>; `false` if the xtd::collections::generic::queue <type_t> is empty.

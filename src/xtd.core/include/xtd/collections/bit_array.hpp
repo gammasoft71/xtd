@@ -324,7 +324,7 @@ namespace xtd {
       /// @remarks The bitwise OR operation returns `true` if one or both operands are `true`, and returns `false` if both operands are `false`.
       /// @remarks This method is an O(n) operation, where n is count.
       bit_array& operator |=(const bit_array& value);
-
+      
       /// @brief Performs the bitwise exclusive OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @param value The xtd::collections::bit_array with which to perform the bitwise exclusive OR operation.
       /// @return The new instance containing the result of the bitwise exclusive OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
@@ -339,12 +339,12 @@ namespace xtd {
       /// @remarks The bitwise exclusive OR operation returns `true` if exactly one operand is `true`, and returns `false` if both operands have the same bool value.
       /// @remarks This method is an O(n) operation, where n is count.
       bit_array& operator ^=(const bit_array& value);
-
+      
       /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to `true`.
       /// @return The new instance with inverted bit values.
       /// @remarks This method is an O(n) operation, where n is count.
       bit_array operator ~() const;
-
+      
       using xtd::collections::generic::icollection<bool>::operator >>;
       /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
       /// @param count The number of shifts to make for each bit.

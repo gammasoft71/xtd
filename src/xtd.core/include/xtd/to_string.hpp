@@ -409,7 +409,7 @@ namespace xtd {
   
   template<size_t size>
   inline xtd::string to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc);
-
+  
   template<class type_t, class allocator_t>
   inline xtd::string to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   
@@ -427,10 +427,10 @@ namespace xtd {
   
   template<class type_t, class container_t>
   inline xtd::string to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
-
+  
   template<class type_t, class container_t>
   inline xtd::string to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
-
+  
   template<class type_t>
   inline xtd::string to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   
