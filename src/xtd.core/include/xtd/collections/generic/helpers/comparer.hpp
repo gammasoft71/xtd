@@ -64,7 +64,7 @@ namespace xtd {
           /// | Less than zero    | x is less than y.    |
           /// | Zero              | x equals y.          |
           /// | Greater than zero | x is greater than y. |
-          constexpr result_type operator()(const first_argument_type& x, const second_argument_type& y) const {
+          constexpr auto operator()(const first_argument_type& x, const second_argument_type& y) const -> result_type {
             if (comparer_) return comparer_->compare(x, y);
             return __polymorphic_comparer__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(x, y);
           }
