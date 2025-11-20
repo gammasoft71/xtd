@@ -270,13 +270,13 @@ xtdc run
 
 namespace unit_tests {
   class test_class_(hello_world_test) {
-    void test_method_(create_string_from_literal) {
+    auto test_method_(create_string_from_literal) {
       auto s = string {"Hello, World!"};
       valid::are_equal(13, s.size());
       assert::are_equal("Hello, World!", s);
     }
     
-    void test_method_(create_string_from_chars) {
+    auto test_method_(create_string_from_chars) {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.size());
       string_assert::starts_with("Hello,", s);
@@ -301,14 +301,14 @@ namespace unit_tests {
   auto hello_world_test_class_attr = test_class_attribute<hello_world_test> {"unit_tests::hello_world_test"};
   class hello_world_test : public test_class {
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
-    void create_string_from_literal() {
+    auto create_string_from_literal() -> void {
       auto s = string {"Hello, World!"};
       valid::are_equal(13, s.size());
       assert::are_equal("Hello, World!", s);
     }
     
     test_method_attribute create_string_from_chars_attr {"create_string_from_chars", *this, &hello_world_test::create_string_from_chars};
-    void create_string_from_chars() {
+    auto create_string_from_chars() -> void {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.size());
       string_assert::starts_with("Hello,", s);
