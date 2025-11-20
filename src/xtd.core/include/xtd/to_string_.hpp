@@ -259,6 +259,30 @@ inline xtd::string xtd::to_string(const std::list<type_t, allocator_t>& values, 
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 
+template<class type_t, class container_t>
+inline xtd::string xtd::to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
+  struct std_queue : public std::queue<type_t> {
+    std_queue(const std::queue<type_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
+    auto begin() const {return ptr->c.begin();}
+    auto end() const {return ptr->c.end();}
+    const std_queue* ptr;
+  };
+  auto items = std_queue {values};
+  return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
+}
+
+template<class type_t, class container_t>
+inline xtd::string xtd::to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc) {
+  struct std_stack : public std::stack<type_t> {
+    std_stack(const std::stack<type_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
+    auto begin() const {return ptr->c.begin();}
+    auto end() const {return ptr->c.end();}
+    const std_stack* ptr;
+  };
+  auto items = std_stack {values};
+  return __xtd_sequence_container_to_string(items.begin(), items.end(), fmt, loc);
+}
+
 template<class type_t>
 inline xtd::string xtd::to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(std::begin(values), std::end(values), fmt, loc);
