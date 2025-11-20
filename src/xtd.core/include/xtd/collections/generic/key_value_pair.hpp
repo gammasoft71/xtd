@@ -94,11 +94,11 @@ namespace xtd {
         
         /// @brief Gets the key in the key/value pair.
         /// @return key_t A key_t that is the key of the key_value_pair<key_t, value_t>.
-        const key_t& key() const noexcept {return first;}
+        auto key() const noexcept -> const key_t& {return first;}
         
         /// @brief Gets the value in the key/value pair.
         /// @return value_t A value_t that is the value of the key_value_pair<key_t, value_t>.
-        const value_t& value() const noexcept {return second;}
+        auto value() const noexcept -> const value_t& {return second;}
         /// @}
         
         /// @name Public Methods
@@ -107,17 +107,17 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object; otherwise, `false`
-        bool equals(const object& obj) const noexcept override {return is<key_value_pair>(obj) && equals(static_cast<const key_value_pair&>(obj));}
+        auto equals(const object& obj) const noexcept -> bool override {return is<key_value_pair>(obj) && equals(static_cast<const key_value_pair&>(obj));}
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param value The key_value_pair to compare with the current object.
         /// @return `true` if the specified object is equal to the current object; otherwise, `false`.
-        bool equals(const key_value_pair& value) const noexcept override {return first == value.first && second == value.second;}
+        auto equals(const key_value_pair& value) const noexcept -> bool override {return first == value.first && second == value.second;}
         
         /// @brief Returns a String representation of the key_value_pair<key_t, value_t>, using the String representations of the key and value.
         /// @return const String A String representation of the key_value_pair<key_t, value_t>, which includes the String representations of the key and value.
         /// @return String
-        xtd::string to_string() const noexcept override; // defined in "../../string.hpp"
+        auto to_string() const noexcept -> xtd::string override; // defined in "../../string.hpp"
         /// @}
         
         /// @name Public Operators
@@ -156,7 +156,7 @@ namespace xtd {
         /// @param value The value of the key_value_pair.
         /// @return The key_value_pair value type.
         template < class key_t, class value_t >
-        inline static key_value_pair < key_t, value_t > create(key_t key, value_t value) {return key_value_pair < key_t, value_t > (key, value);}
+        inline static auto create(key_t key, value_t value) -> key_value_pair<key_t, value_t> {return key_value_pair < key_t, value_t > (key, value);}
         /// @}
       };
       
