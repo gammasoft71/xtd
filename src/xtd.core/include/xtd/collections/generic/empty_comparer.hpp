@@ -43,7 +43,7 @@ namespace xtd {
         /// @param x The first entity to compare.
         /// @param y The second entity to compare.
         /// @return Always 0.
-        int32 compare(const type_t& x, const type_t& y) const override {return 0;}
+        auto compare(const type_t& x, const type_t& y) const -> int32 override {return 0;}
         /// @}
       };
     }
