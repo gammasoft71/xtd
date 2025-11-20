@@ -10,11 +10,11 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @brief Represents a collection of objects that is maintained in sorted order.
+      /// @brief Represents a first-in, first-out collection of objects.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t, class container_t = std::deque<type_t>>
-      /// using queue = std::stack<type_t, container_t>;
+      /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      /// class queue : public xtd::object, public xtd::collections::generic::icollection<type_t>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -25,11 +25,19 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks The xtd::collections::generic::sorted_set class is same as [std::set](https://en.cppreference.com/w/cpp/container/set).
-      /// @remarks A xtd::collections::generic::sorted_set object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior.
+      /// @remarks This class implements a generic queue as a circular array. Objects stored in a xtd::collections::generic::queue <type_t> are inserted at one end and removed from the other. Queues and stacks are useful when you need temporary storage for information; that is, when you might want to discard an element after retrieving its value. Use xtd::collections::generic::queue <type_t> if you need to access the information in the same order that it is stored in the collection. Use xtd::collections::generic::stack <type_t> if you need to access the information in reverse order. Use xtd::collections::generic::concurrent_queue <type_t> or xtd::collections::generic::concurrent_stack <type_t> if you need to access the collection from multiple threads concurrently.
+      /// @remarks Three main operations can be performed on a xtd::collections::generic::queue <type_t> and its elements:
+      ///   * xtd::collections::generic::queue::enqueue adds an element to the end of the xtd::collections::generic::queue <type_t>.
+      ///   * xtd::collections::generic::queue::dequeue removes the oldest element from the start of the xtd::collections::generic::queue <type_t>.
+      ///   * xtd::collections::generic::queue::peek peek returns the oldest element that is at the start of the xtd::collections::generic::queue <type_t> but does not remove it from the xtd::collections::generic::queue <type_t>.
+      /// @remarks The capacity of a xtd::collections::generic::queue <type_t> is the number of elements the xtd::collections::generic::queue <type_t> can hold. As elements are added to a xtd::collections::generic::queue <type_t>, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling xtd::collections::generic::queue::trim_excess.
+      /// @remarks xtd::collections::generic::queue <type_t> allows duplicate elements.
       /// @par Examples
-      /// The following example demonstrates how to merge two disparate sets. This example creates two xtd::collections::generic::sorted_set objects, and populates them with even and odd numbers, respectively. A third xtd::collections::generic::sorted_set object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set.
-      /// @include sorted_set.cpp
+      /// The following code example demonstrates several methods of the xtd::collections::generic::queue <type_t> generic class. The code example creates a queue of strings with default capacity and uses the xtd::collections::generic::queue::enqueue method to queue five strings. The elements of the queue are enumerated, which does not change the state of the queue. The xtd::collections::generic::queue::dequeue method is used to dequeue the first string. The xtd::collections::generic::queue::peek method is used to look at the next item in the queue, and then the xtd::collections::generic::queue::dequeue method is used to dequeue it.
+      /// The xtd::collections::generic::queue::to_array method is used to create an array and copy the queue elements to it, then the array is passed to the xtd::collections::generic::queue <type_t> constructor that takes xtd::collections::generic::ienumerable <type_t>, creating a copy of the queue. The elements of the copy are displayed.
+      /// An array twice the size of the queue is created, and the xtd::collections::generic::queue::copy_to method is used to copy the array elements beginning at the middle of the array. The xtd::collections::generic::queue <type_t> constructor is used again to create a second copy of the queue containing three null elements at the beginning.
+      /// The xtd::collections::generic::queue::contains method is used to show that the string "four" is in the first copy of the queue, after which the Clear method clears the copy and the xtd::collections::generic::queue::count property shows that the queue is empty.
+      /// @include generic_queue.cpp
       template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
       class queue : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
@@ -102,14 +110,17 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        /// @brief Removes all elements from the Queue<T>.
+        /// @brief Removes all elements from the xtd::collections::generic::queue <type_t>.
+        /// @remarks Count is set to zero, and references to other objects from elements of the collection are also released.
+        /// @remarks The capacity remains unchanged. To reset the capacity of the xtd::collections::generic::queue <type_t>, call xtd::collections::generic::queue::trim_excess. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
+        /// @remarks This method is an O(n) operation, where n is Count.
         void clear() override {
           data_->items.clear();
         }
         
         /// @brief Determines whether an element is in the xtd::collections::generic::queue <type_t>.
         /// @param item The object to locate in the xtd::collections::generic::queue <type_t>.
-        /// @return `true` if item is found in the xtd::collections::generic::queue <type_t>; otherwise, `false`.
+        /// @return `true` if `item` is found in the xtd::collections::generic::queue <type_t>; otherwise, `false`.
         bool contains(const_reference value) const noexcept override {
           return data_->items.contains(value);
         }
@@ -129,9 +140,9 @@ namespace xtd {
         /// @return The object that is removed from the beginning of the xtd::collections::generic::queue <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
         value_type dequeue() {
-          value_type copy = peek();
-          data_->items.remove_first();
-          return copy;
+          auto result = value_type {};
+          if (try_dequeue(result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          return result;
         }
         
         /// @brief Adds an object to the end of the xtd::collections::generic::queue <type_t>.
@@ -141,6 +152,9 @@ namespace xtd {
           ensure_capacity(count());
         }
         
+        /// @brief Ensures that the capacity of this queue is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
+        /// @param capacity The minimum capacity to ensure.
+        /// @return The new capacity of this queue.
         size_type ensure_capacity(size_type capacity) {
           if (data_->capacity < capacity) data_->capacity = capacity;
           return data_->capacity;
@@ -151,21 +165,15 @@ namespace xtd {
         enumerator < value_type > get_enumerator() const noexcept override {
           return data_->items.get_enumerator();
         }
+
         /// @brief Returns the object at the beginning of the xtd::collections::generic::queue <type_t>
         /// without removing it.
         /// @return The object at the beginning of the xtd::collections::generic::queue <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
-        const_reference peek() const {
-          if (count() == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          return data_->items.first()->value();
-        }
-        /// @brief Returns the object at the beginning of the xtd::collections::generic::queue <type_t>
-        /// without removing it.
-        /// @return The object at the beginning of the xtd::collections::generic::queue <type_t>.
-        /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
-        reference& peek() {
-          if (count() == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          return data_->items.first()->value();
+        value_type peek() const {
+          auto result = value_type {};
+          if (try_peek(result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          return result;
         }
         
         /// @brief Copies the xtd::collections::generic::queue <type_t> elements to a new array.
@@ -180,10 +188,37 @@ namespace xtd {
         /// @return A string that represents the current object.
         string to_string() const noexcept override {return data_->items.to_string();}
         
-        /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::queue <type_t>,
-        /// if that number is less than 90 percent of current capacity.
+        /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::queue <type_t>, if that number is less than 90 percent of current capacity.
+        /// @remarks This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large xtd::collections::generic::queue <type_t> can be considerable, however, so the xtd::collections::generic::queue::trim_excess method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::queue::count.
+        /// @remarks To reset a xtd::collections::generic::queue <type_t> to its initial state, call the xtd::collections::generic::queue::clear method before calling xtd::collections::generic::queue::trim_excess method. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
         void trim_excess() {
-          data_->capacity = count();
+          if (count() * 1. < capacity() * 0.9) trim_excess(count());
+        }
+        
+        /// @brief Sets the capacity of a xtd::collections::generic::queue <type_t> object to the specified number of entries.
+        /// @param capacity The new capacity.
+        /// @exception xtd::argument_out_of_range_exception Passed capacity is lower than entries count.
+        void trim_excess(size_type capacity) {
+          if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          data_->capacity = capacity;
+        }
+        
+        /// @brief Removes the object at the beginning of the xtd::collections::generic::queue <type_t>, and copies it to the result parameter.
+        /// @param The removed object.
+        /// @return `true` if the object is successfully removed; `false` if the xtd::collections::generic::queue <type_t> is empty.
+        bool try_dequeue(value_type& result) noexcept {
+          if (try_peek(result) == false) return false;
+          data_->items.remove_first();
+          return true;
+        }
+
+        /// @brief Returns a value that indicates whether there is an object at the beginning of the xtd::collections::generic::queue <type_t>, and if one is present, copies it to the result parameter. The object is not removed from the xtd::collections::generic::queue <type_t>.
+        /// @param If present, the object at the beginning of the xtd::collections::generic::queue <type_t>; otherwise, the default value of `type_t`.
+        /// @return `true` if there is an object at the beginning of the xtd::collections::generic::queue <type_t>; `false` if the xtd::collections::generic::queue <type_t> is empty.
+        bool try_peek(value_type& result) const noexcept {
+          result = count() ? data_->items.first()->value() : type_t {};
+          return count();
         }
         /// @}
         
