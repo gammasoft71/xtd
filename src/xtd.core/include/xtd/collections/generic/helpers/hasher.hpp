@@ -64,7 +64,7 @@ namespace xtd {
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          result_type operator()(const argument_type& key) const {
+          auto operator()(const argument_type& key) const -> result_type {
             if (comparer) return comparer->get_hash_code(key);
             return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);
           }
