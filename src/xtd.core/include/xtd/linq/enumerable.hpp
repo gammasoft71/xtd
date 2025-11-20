@@ -375,6 +375,17 @@ namespace xtd {
         return as_enumerable(items.begin(), items.end());
       }
       template<class source_t, class container_t>
+      inline static auto as_enumerable(std::priority_queue<source_t, container_t> source) noexcept {
+        struct std_priority_queue : public std::priority_queue<source_t> {
+          std_priority_queue(const std::priority_queue<source_t>& queue) : ptr {reinterpret_cast<const std_priority_queue*>(&queue)} {}
+          auto begin() const {return ptr->c.begin();}
+          auto end() const {return ptr->c.end();}
+          const std_priority_queue* ptr;
+        };
+        auto items = std_priority_queue {source};
+        return as_enumerable(items.begin(), items.end());
+      }
+      template<class source_t, class container_t>
       inline static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
         struct std_stack : public std::stack<source_t> {
           std_stack(const std::stack<source_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}

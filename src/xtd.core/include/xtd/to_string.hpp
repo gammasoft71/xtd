@@ -423,6 +423,9 @@ namespace xtd {
   inline xtd::string to_string(const std::queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
   
   template<class type_t, class container_t>
+  inline xtd::string to_string(const std::priority_queue<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
+
+  template<class type_t, class container_t>
   inline xtd::string to_string(const std::stack<type_t, container_t>& values, const xtd::string& fmt, const std::locale& loc);
 
   template<class type_t>
