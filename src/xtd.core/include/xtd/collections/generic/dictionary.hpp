@@ -271,12 +271,12 @@ namespace xtd {
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
-        size_type capacity() const noexcept {return items().bucket_count();}
+        auto capacity() const noexcept -> size_type {return items().bucket_count();}
         
         /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        const iequality_comparer < key_t >& comparer() const noexcept {
+        auto comparer() const noexcept -> const iequality_comparer < key_t >& {
           if (!data_->comparer) return equality_comparer <key_type>::default_equality_comparer();
           return *data_->comparer;
         }
@@ -286,20 +286,20 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        size_type count() const noexcept override {return data_->items.size();}
+        auto count() const noexcept -> size_type override {return data_->items.size();}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type& items() const noexcept {return data_->items;}
+        virtual auto items() const noexcept -> const base_type& {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type& items() noexcept {return data_->items;}
+        virtual auto items() noexcept -> base_type& {return data_->items;}
         
         /// @brief Gets a collection containing the keys in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::generic::dictionary::key_collection containing the keys in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The order of the keys in the xtd::collections::generic::dictionary::key_collection is unspecified, but it is the same order as the associated values in the xtd::collections::generic::dictionary::value_collection returned by the xtd::collections::generic::dictionary::values property.
         /// @remarks Getting the value of this property is an O(1) operation.
-        key_collection keys() const noexcept override {
+        auto keys() const noexcept -> key_collection override {
           auto keys = key_collection {};
           for (const auto& [key, value] : data_->items)
             keys.add(key);
@@ -310,7 +310,7 @@ namespace xtd {
         /// @return A xtd::collections::generic::dictionary::value_collection containing the values in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The order of the values in the xtd::collections::generic::dictionary::value_collection is unspecified, but it is the same order as the associated keys in the xtd::collections::generic::dictionary::key_collection returned by the xtd::collections::generic::dictionary::keys property.
         /// @remarks Getting the value of this property is an O(1) operation.
-        value_collection values() const noexcept override {
+        auto values() const noexcept -> value_collection override {
           auto values = value_collection {};
           for (const auto& [key, value] : data_->items)
             values.add(value);
@@ -327,20 +327,20 @@ namespace xtd {
         /// @exception xtd::argument_exception An element with the same key already exists in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        void add(const key_t & key, const value_t& value) override {
+        auto add(const key_t & key, const value_t& value) -> void override {
           if (!try_add(key, value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         }
         
         /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
         /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
-        void add(const value_type & item) override {
+        auto add(const value_type & item) -> void override {
           add(item.key(), item.value());
         }
         
         /// @brief Removes all keys and values from the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The xtd::collections::generic::dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
-        void clear() noexcept override {
+        auto clear() noexcept -> void override {
           data_->items.clear();
           ++data_->version;
         }
@@ -348,7 +348,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
-        bool contains(const value_type & item) const noexcept override {
+        auto contains(const value_type & item) const noexcept -> bool override {
           auto iterator = items().find(item.key());
           if (iterator == items().end()) return false;
           return iterator->second == item.value();
@@ -358,7 +358,7 @@ namespace xtd {
         /// @param The key to locate in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method approaches an O(1) operation.
-        bool contains_key(const key_t & key) const noexcept override {
+        auto contains_key(const key_t & key) const noexcept -> bool override {
           return data_->items.find(key) != data_->items.end();
         }
         
@@ -366,7 +366,7 @@ namespace xtd {
         /// @param The value to locate in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method performs a linear search; therefore, the average execution time is proportional to xtd::collections::generic::dictionary::count. That is, this method is an O(n) operation, where n is xtd::collections::generic::dictionary::count.
-        bool contains_value(const value_t& value) const noexcept {
+        auto contains_value(const value_t& value) const noexcept -> bool {
           for (const auto& [item_key, item_value] : self_)
             if (item_value == value) return true;
           return false;
@@ -376,7 +376,7 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        void copy_to(xtd::array < value_type >& array, xtd::size array_index) const override {
+        auto copy_to(xtd::array < value_type >& array, xtd::size array_index) const -> void override {
           if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           for (const auto& item : self_)
             array[array_index++] = item;
@@ -385,31 +385,31 @@ namespace xtd {
         /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The number of entries.
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
-        xtd::size ensure_capacity(xtd::size capacity) noexcept {
+        auto ensure_capacity(xtd::size capacity) noexcept -> size_type {
           data_->items.reserve(capacity);
           return self_.capacity();
         }
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::dictionary <key_t, value_t>.
-        enumerator < value_type > get_enumerator() const noexcept override {
+        auto get_enumerator() const noexcept -> enumerator<value_type> override {
           struct dictionary_enumerator : public ienumerator < value_type > {
             explicit dictionary_enumerator(const dictionary & items, size_type version) : items_(items), version_(version) {}
             
-            const value_type& current() const override {
+            auto current() const -> const value_type& override {
               if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return (value_ = value_type {*iterator_});
             }
             
-            bool move_next() override {
+            auto move_next() -> bool override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
               else iterator_ = items_.items().cbegin();
               return  iterator_ != items_.data_->items.cend();
             }
             
-            void reset() override {
+            auto reset() -> void override {
               index_ = 0;
               version_ = items_.data_->version;
               iterator_ = items_.items().cend();
@@ -429,14 +429,14 @@ namespace xtd {
         /// @param key The key of the element to remove.
         /// @return `true` if the element is successfully found and removed; otherwise, `false`. This method returns `false` if key is not found in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks If the xtd::collections::generic::dictionary <key_t, value_t> does not contain an element with the specified key, the xtd::collections::generic::dictionary <key_t, value_t> remains unchanged. No exception is thrown.
-        bool remove(const key_t & key) noexcept override {
+        auto remove(const key_t & key) noexcept -> bool override {
           return items().erase(key) == 1;
         }
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param item The object to remove from the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item value was not found in the xtd::collections::generic::dictionary <key_t, value_t>.
-        bool remove(const value_type & item) noexcept override {
+        auto remove(const value_type & item) noexcept -> bool override {
           if (!contains_value(item.value())) return false;
           return items().erase(item.key()) == 1;
         }
@@ -444,7 +444,7 @@ namespace xtd {
         /// @brief Removes the value with the specified key from the xtd::collections::generic::dictionary <key_t, value_t>, and copies the element to the `value` parameter.
         /// @param key The key of the element to remove.
         /// @param value The removed element.
-        bool remove(const key_t & key, value_t& value) noexcept {
+        auto remove(const key_t & key, value_t& value) noexcept -> bool {
           auto iterator = items().find(key);
           if (iterator == items().end()) return false;
           value = iterator->value();
@@ -453,13 +453,13 @@ namespace xtd {
         
         /// @brief Gets a string that represents the current object.
         /// @return A string that represents the current object.
-        xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
+        auto to_string() const noexcept -> xtd::string override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
         
         /// @brief Sets the capacity of this dictionary to hold up a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The new capacity.
         /// @exception xtd::argument_out_of_range_exception `capacity` is less than xtd::collections::generic::dictionary::count.
         /// @remarks This method can be used to minimize the memory overhead once it is known that no new elements will be added.
-        void trim_excess(size_type capacity) {
+        auto trim_excess(size_type capacity) -> void {
           if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           items().rehash(capacity);
         }
@@ -470,7 +470,7 @@ namespace xtd {
         /// dictionary.clear();
         /// dictionary.trim_excess();
         /// ```
-        void trim_excess() {
+        auto trim_excess() -> void {
           rehash(count());
         }
         
@@ -479,7 +479,7 @@ namespace xtd {
         /// @param value The value of the element to add.
         /// @return `true` if the key/value pair was added to the dictionary successfully; otherwise, `false`.
         /// @remarks Unlike the xtd::collections::generic::dictionary::add method, this method doesn't throw an exception if the element with the given key exists in the dictionary. Unlike the xtd::collections::generic::dictionary indexer (operator []), xtd::collections::generic::dictionary::try_add doesn't override the element if the element with the given key exists in the dictionary. If the key already exists, xtd::collections::generic::dictionary::try_add does nothing and returns `false`.
-        bool try_add(const key_t & key, const value_t value) noexcept {
+        auto try_add(const key_t & key, const value_t value) noexcept -> bool {
           const auto& [iterator, succeeded] = data_->items.insert(std::forward < base_value_type > ({key, value}));
           if (succeeded) ++data_->version;
           return succeeded;
@@ -489,7 +489,7 @@ namespace xtd {
         /// @param key The key of the value to get.
         /// @param value When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
-        bool try_get_value(const key_t & key, value_t& value) const override {
+        auto try_get_value(const key_t & key, value_t& value) const -> bool override {
           auto iterator = items().find(key);
           if (iterator != items().end()) {
             value = iterator->second;
@@ -506,7 +506,7 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        dictionary& operator =(dictionary&& other) noexcept {
+        auto operator =(dictionary&& other) noexcept -> dictionary& {
           data_->comparer = std::move(other.data_->comparer);
           data_->items = std::move(other.data_->items);
           data_->version = std::move(other.data_->version);
@@ -515,7 +515,7 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        dictionary& operator =(std::unordered_map < key_t, value_t > && other) noexcept {
+        auto operator =(std::unordered_map < key_t, value_t > && other) noexcept -> dictionary& {
           data_->items = std::move(other);
           ++data_->version;
           return self_;
@@ -523,11 +523,11 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        dictionary& operator =(const dictionary & other) noexcept = default;
+        auto operator =(const dictionary & other) noexcept -> dictionary& = default;
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        dictionary& operator =(const std::unordered_map < key_t, value_t >& other) noexcept {
+        auto operator =(const std::unordered_map < key_t, value_t >& other) noexcept -> dictionary& {
           data_->items.clear();
           for (const auto& [key, value] : other)
             add(key, value);
@@ -535,7 +535,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
-        dictionary& operator =(std::initializer_list < base_value_type > ilist) {
+        auto operator =(std::initializer_list < base_value_type > ilist) -> dictionary& {
           data_->items.clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
@@ -544,7 +544,7 @@ namespace xtd {
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
         template < class init_key_t, class init_value_t >
-        dictionary& operator =(std::initializer_list < key_value_pair < init_key_t, init_value_t>> ilist) {
+        auto operator =(std::initializer_list < key_value_pair < init_key_t, init_value_t>> ilist) -> dictionary& {
           data_->items.clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
@@ -557,7 +557,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        const value_t& operator [](const key_t & key) const override {
+        auto operator [](const key_t & key) const -> const value_t& override {
           auto iterator = data_->items.find(key);
           if (iterator == data_->items.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::key_not_found);
           return iterator->second;
@@ -568,7 +568,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        value_t& operator [](const key_t & key) override {
+        auto operator [](const key_t & key) -> value_t& override {
           ++data_->version;
           return data_->items[key];
         }
@@ -582,9 +582,9 @@ namespace xtd {
         /// @}
         
       private:
-        bool is_read_only() const noexcept override {return false;}
-        bool is_synchronized() const noexcept override {return false;}
-        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+        auto is_read_only() const noexcept -> bool override {return false;}
+        auto is_synchronized() const noexcept -> bool override {return false;}
+        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
         
         struct dictionary_data {
           dictionary_data() = default;
