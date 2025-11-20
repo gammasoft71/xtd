@@ -115,7 +115,7 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:38</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:39</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/dictionary&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -251,7 +251,7 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <div class="line"><span class="comment">// Remove(&quot;doc&quot;)</span></div>
 <div class="line"><span class="comment">// key &quot;doc&quot; is not found.</span></div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_ace9a2200f3aa31e64bde849e25c6eee9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ace9a2200f3aa31e64bde849e25c6eee9">xtd::collections::generic::dictionary::add</a></div><div class="ttdeci">void add(const key_t &amp;key, const value_t &amp;value) override</div><div class="ttdoc">Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:400</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_ace9a2200f3aa31e64bde849e25c6eee9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ace9a2200f3aa31e64bde849e25c6eee9">xtd::collections::generic::dictionary::add</a></div><div class="ttdeci">void add(const key_t &amp;key, const value_t &amp;value) override</div><div class="ttdoc">Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:330</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ga2f00c1ad108efaddc951106e768970de"><div class="ttname"><a href="group__xtd__forms.html#ga2f00c1ad108efaddc951106e768970de">xtd::forms::keys</a></div><div class="ttdeci">keys</div><div class="ttdoc">Specifies key codes and modifiers.</div><div class="ttdef"><b>Definition</b> keys.hpp:77</div></div>
@@ -275,15 +275,6 @@ Or with <code>auto</code> key type and the value type. For example: <div class="
 <div class="line">  <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<span class="stringliteral">&quot;key = {}, value = {}&quot;</span>, key, value);</div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1equator.html">equator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary equator type.  <a href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1equator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html">hasher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary hasher type.  <a href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a01385837c5b1f6254a863510f5e490f1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::key_type</td></tr>
 <tr class="memdesc:a01385837c5b1f6254a863510f5e490f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary key type.  <br /></td></tr>
@@ -300,15 +291,21 @@ Classes</h2></td></tr>
 <tr class="memitem:aa57e3de24c35cf6d309f983e5f907a3e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa57e3de24c35cf6d309f983e5f907a3e">base_value_type</a> = std::pair&lt; const key_t, value_t &gt;</td></tr>
 <tr class="memdesc:aa57e3de24c35cf6d309f983e5f907a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary base value type.  <br /></td></tr>
 <tr class="separator:aa57e3de24c35cf6d309f983e5f907a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad74c67084ad47d1dc2af5e7e7da49eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> = std::unordered_map&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a>, <a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html">hasher</a>, <a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1equator.html">equator</a>, allocator_t &gt;</td></tr>
-<tr class="memdesc:aad74c67084ad47d1dc2af5e7e7da49eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary base type.  <br /></td></tr>
-<tr class="separator:aad74c67084ad47d1dc2af5e7e7da49eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f2fdcb29bfefa7bcd535807b49182d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> = std::unordered_map&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a>, hasher_t, equator_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:a73f2fdcb29bfefa7bcd535807b49182d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary base type.  <br /></td></tr>
+<tr class="separator:a73f2fdcb29bfefa7bcd535807b49182d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1c53bc1eb8f0a9125e21fbcd592052a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1c53bc1eb8f0a9125e21fbcd592052a">key_collection</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a> &gt;::key_collection</td></tr>
 <tr class="memdesc:ad1c53bc1eb8f0a9125e21fbcd592052a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the idictionary key collection type.  <br /></td></tr>
 <tr class="separator:ad1c53bc1eb8f0a9125e21fbcd592052a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c1d9778d3ed181b8295027c6ce4e1d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a0c1d9778d3ed181b8295027c6ce4e1d3">value_collection</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a> &gt;::value_collection</td></tr>
 <tr class="memdesc:a0c1d9778d3ed181b8295027c6ce4e1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the idictionary value collection type.  <br /></td></tr>
 <tr class="separator:a0c1d9778d3ed181b8295027c6ce4e1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3117536e7eb45cdf75f69073e37126b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> = equator_t</td></tr>
+<tr class="memdesc:a3117536e7eb45cdf75f69073e37126b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary equator type.  <br /></td></tr>
+<tr class="separator:a3117536e7eb45cdf75f69073e37126b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a23e2ca9e1ae6169e1e66a617bafad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> = hasher_t</td></tr>
+<tr class="memdesc:a55a23e2ca9e1ae6169e1e66a617bafad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary hasher type.  <br /></td></tr>
+<tr class="separator:a55a23e2ca9e1ae6169e1e66a617bafad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a50b15016f1b91a266a8beec12ab89584"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a> () noexcept=default</td></tr>
@@ -320,25 +317,21 @@ Classes</h2></td></tr>
 <tr class="memitem:ae7ddf7990763fbea30e0c6e38b5ae659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae7ddf7990763fbea30e0c6e38b5ae659">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &gt; &amp;collection)</td></tr>
 <tr class="memdesc:ae7ddf7990763fbea30e0c6e38b5ae659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ae7ddf7990763fbea30e0c6e38b5ae659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t &gt; </td></tr>
-<tr class="memitem:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#acd1d7beda0f8576d701cd22e9e3a12d8">dictionary</a> (const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer&lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:acd1d7beda0f8576d701cd22e9e3a12d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af628a8b1b1b70ff41aef91907e5e9115"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af628a8b1b1b70ff41aef91907e5e9115">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:af628a8b1b1b70ff41aef91907e5e9115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer&lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:af628a8b1b1b70ff41aef91907e5e9115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6774979878cb116ae4c205f9ada90d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a8d6774979878cb116ae4c205f9ada90d">dictionary</a> (size_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>)</td></tr>
 <tr class="memdesc:a8d6774979878cb116ae4c205f9ada90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacit.  <br /></td></tr>
 <tr class="separator:a8d6774979878cb116ae4c205f9ada90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349de516d0b938124c175ce956b3ac28"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t &gt; </td></tr>
-<tr class="memitem:a349de516d0b938124c175ce956b3ac28"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a349de516d0b938124c175ce956b3ac28">dictionary</a> (size_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:a349de516d0b938124c175ce956b3ac28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a349de516d0b938124c175ce956b3ac28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab609bca970bff889772b49d51f204487"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t &gt; </td></tr>
-<tr class="memitem:ab609bca970bff889772b49d51f204487"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ab609bca970bff889772b49d51f204487">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:ab609bca970bff889772b49d51f204487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ab609bca970bff889772b49d51f204487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e18164c1d61bd817872588bd77c6789"><td class="memTemplParams" colspan="2">template&lt;class equality_comparer_t &gt; </td></tr>
-<tr class="memitem:a2e18164c1d61bd817872588bd77c6789"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a2e18164c1d61bd817872588bd77c6789">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &gt; &amp;collection, const equality_comparer_t &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:a2e18164c1d61bd817872588bd77c6789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:a2e18164c1d61bd817872588bd77c6789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ffbac856b35a3927280c3024a4cd28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a34ffbac856b35a3927280c3024a4cd28">dictionary</a> (size_t <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a24ebcb226f6bc8869c35bf9e1d634ff3">capacity</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a34ffbac856b35a3927280c3024a4cd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the specified initial capacity, and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a34ffbac856b35a3927280c3024a4cd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0ebcc019dd9dd3eb78d21efb6e664b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad0ebcc019dd9dd3eb78d21efb6e664b">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">idictionary</a>&lt; key_t, value_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:aad0ebcc019dd9dd3eb78d21efb6e664b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:aad0ebcc019dd9dd3eb78d21efb6e664b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4762e058acc7b81fde796e0cfad2410e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a4762e058acc7b81fde796e0cfad2410e">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &gt; &amp;collection, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a4762e058acc7b81fde796e0cfad2410e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that contains elements copied from the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; and uses the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a4762e058acc7b81fde796e0cfad2410e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b758a73f04808f26eee3fa8ce363ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a07b758a73f04808f26eee3fa8ce363ef">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
 <tr class="memdesc:a07b758a73f04808f26eee3fa8ce363ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:a07b758a73f04808f26eee3fa8ce363ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,10 +366,10 @@ Classes</h2></td></tr>
 <tr class="memitem:af92f9b1f02bf864a69a46230f9b53c62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af92f9b1f02bf864a69a46230f9b53c62">count</a> () const noexcept override</td></tr>
 <tr class="memdesc:af92f9b1f02bf864a69a46230f9b53c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of key/value pairs contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:af92f9b1f02bf864a69a46230f9b53c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f9fa62ba008a290c60f795e768d74f"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac5f9fa62ba008a290c60f795e768d74f">items</a> () const noexcept</td></tr>
+<tr class="memitem:ac5f9fa62ba008a290c60f795e768d74f"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac5f9fa62ba008a290c60f795e768d74f">items</a> () const noexcept</td></tr>
 <tr class="memdesc:ac5f9fa62ba008a290c60f795e768d74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:ac5f9fa62ba008a290c60f795e768d74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb58202461ac49407519756acca9ed12"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aeb58202461ac49407519756acca9ed12">items</a> () noexcept</td></tr>
+<tr class="memitem:aeb58202461ac49407519756acca9ed12"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aeb58202461ac49407519756acca9ed12">items</a> () noexcept</td></tr>
 <tr class="memdesc:aeb58202461ac49407519756acca9ed12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
 <tr class="separator:aeb58202461ac49407519756acca9ed12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a9b4d312798abd41548c6c97ee3312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1c53bc1eb8f0a9125e21fbcd592052a">key_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac2a9b4d312798abd41548c6c97ee3312">keys</a> () const noexcept override</td></tr>
@@ -669,6 +662,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a964948d137047014d18a7cc5db15f46f inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
 <tr class="memdesc:a964948d137047014d18a7cc5db15f46f inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="separator:a964948d137047014d18a7cc5db15f46f inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaaa233780cb312bb8702850041eb5b0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afaaa233780cb312bb8702850041eb5b0">order</a> ()</td></tr>
+<tr class="memdesc:afaaa233780cb312bb8702850041eb5b0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="separator:afaaa233780cb312bb8702850041eb5b0 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa298ffb7d50220c493a477064885743a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aa298ffb7d50220c493a477064885743a">order</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:aa298ffb7d50220c493a477064885743a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="separator:aa298ffb7d50220c493a477064885743a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9472d2fb32abc451658a9a49b1850a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#abd9472d2fb32abc451658a9a49b1850a">order_by</a> (const std::function&lt; type_t(const type_t &amp;)&gt; &amp;key_selector) const</td></tr>
 <tr class="memdesc:abd9472d2fb32abc451658a9a49b1850a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
 <tr class="separator:abd9472d2fb32abc451658a9a49b1850a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -841,8 +840,8 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 
 </div>
 </div>
-<a id="aad74c67084ad47d1dc2af5e7e7da49eb" name="aad74c67084ad47d1dc2af5e7e7da49eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad74c67084ad47d1dc2af5e7e7da49eb">&#9670;&#160;</a></span>base_type</h2>
+<a id="a73f2fdcb29bfefa7bcd535807b49182d" name="a73f2fdcb29bfefa7bcd535807b49182d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f2fdcb29bfefa7bcd535807b49182d">&#9670;&#160;</a></span>base_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -850,7 +849,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::base_type =  std::unordered_map &lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a>, <a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html">hasher</a>, <a class="el" href="structxtd_1_1collections_1_1generic_1_1dictionary_1_1equator.html">equator</a>, allocator_t &gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::base_type =  std::unordered_map &lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#adef5542e936e56a3a8fd89f05f83c80f">mapped_type</a>, hasher_t, equator_t, allocator_t &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -892,6 +891,42 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 </div><div class="memdoc">
 
 <p>Represents the idictionary value collection type. </p>
+
+</div>
+</div>
+<a id="a3117536e7eb45cdf75f69073e37126b8" name="a3117536e7eb45cdf75f69073e37126b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3117536e7eb45cdf75f69073e37126b8">&#9670;&#160;</a></span>equator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::equator =  equator_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the dictionary equator type. </p>
+
+</div>
+</div>
+<a id="a55a23e2ca9e1ae6169e1e66a617bafad" name="a55a23e2ca9e1ae6169e1e66a617bafad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a23e2ca9e1ae6169e1e66a617bafad">&#9670;&#160;</a></span>hasher</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::hasher =  hasher_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the dictionary hasher type. </p>
 
 </div>
 </div>
@@ -1078,15 +1113,13 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 
 </div>
 </div>
-<a id="acd1d7beda0f8576d701cd22e9e3a12d8" name="acd1d7beda0f8576d701cd22e9e3a12d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd1d7beda0f8576d701cd22e9e3a12d8">&#9670;&#160;</a></span>dictionary() <span class="overload">[4/15]</span></h2>
+<a id="af628a8b1b1b70ff41aef91907e5e9115" name="af628a8b1b1b70ff41aef91907e5e9115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af628a8b1b1b70ff41aef91907e5e9115">&#9670;&#160;</a></span>dictionary() <span class="overload">[4/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;class equality_comparer_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1094,7 +1127,7 @@ template&lt;class equality_comparer_t &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
           <td>(</td>
-          <td class="paramtype">const equality_comparer_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>comparer</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1168,15 +1201,13 @@ This constructor is an O(1) operation. </dd>
 
 </div>
 </div>
-<a id="a349de516d0b938124c175ce956b3ac28" name="a349de516d0b938124c175ce956b3ac28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a349de516d0b938124c175ce956b3ac28">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/15]</span></h2>
+<a id="a34ffbac856b35a3927280c3024a4cd28" name="a34ffbac856b35a3927280c3024a4cd28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ffbac856b35a3927280c3024a4cd28">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;class equality_comparer_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1190,7 +1221,7 @@ template&lt;class equality_comparer_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const equality_comparer_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>comparer</em>&#160;</td>
         </tr>
         <tr>
@@ -1230,15 +1261,13 @@ This constructor is an O(1) operation. </dd>
 
 </div>
 </div>
-<a id="ab609bca970bff889772b49d51f204487" name="ab609bca970bff889772b49d51f204487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab609bca970bff889772b49d51f204487">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/15]</span></h2>
+<a id="aad0ebcc019dd9dd3eb78d21efb6e664b" name="aad0ebcc019dd9dd3eb78d21efb6e664b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0ebcc019dd9dd3eb78d21efb6e664b">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;class equality_comparer_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1252,7 +1281,7 @@ template&lt;class equality_comparer_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const equality_comparer_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>comparer</em>&#160;</td>
         </tr>
         <tr>
@@ -1294,15 +1323,13 @@ This constructor is an O(<code>n</code>) operation, where <code>n</code> is the 
 
 </div>
 </div>
-<a id="a2e18164c1d61bd817872588bd77c6789" name="a2e18164c1d61bd817872588bd77c6789"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e18164c1d61bd817872588bd77c6789">&#9670;&#160;</a></span>dictionary() <span class="overload">[8/15]</span></h2>
+<a id="a4762e058acc7b81fde796e0cfad2410e" name="a4762e058acc7b81fde796e0cfad2410e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4762e058acc7b81fde796e0cfad2410e">&#9670;&#160;</a></span>dictionary() <span class="overload">[8/15]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;key_t&gt;, class equator_t  = helpers::equator&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;class equality_comparer_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1316,7 +1343,7 @@ template&lt;class equality_comparer_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const equality_comparer_t &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a01385837c5b1f6254a863510f5e490f1">key_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>comparer</em>&#160;</td>
         </tr>
         <tr>
@@ -1766,7 +1793,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1796,7 +1823,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::items </td>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::items </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2479,8 +2506,8 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 <p>Sets the capacity of this dictionary to what it would be if it had been originally initialized with all its entries. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>This method can be used to minimize memory overhead once it is known that no new elements will be added to the dictionary. To allocate a minimum size storage array, execute the following statements: <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50385c2da2442292164bc4f65c84ee76">clear</a>();</div>
 <div class="line"><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a039c4cc5a88a74481047772f8dc30980">trim_excess</a>();</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a039c4cc5a88a74481047772f8dc30980"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a039c4cc5a88a74481047772f8dc30980">xtd::collections::generic::dictionary::trim_excess</a></div><div class="ttdeci">void trim_excess(size_type capacity)</div><div class="ttdoc">Sets the capacity of this dictionary to hold up a specified number of entries without any further exp...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:532</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a50385c2da2442292164bc4f65c84ee76"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50385c2da2442292164bc4f65c84ee76">xtd::collections::generic::dictionary::clear</a></div><div class="ttdeci">void clear() noexcept override</div><div class="ttdoc">Removes all keys and values from the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:413</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a039c4cc5a88a74481047772f8dc30980"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a039c4cc5a88a74481047772f8dc30980">xtd::collections::generic::dictionary::trim_excess</a></div><div class="ttdeci">void trim_excess(size_type capacity)</div><div class="ttdoc">Sets the capacity of this dictionary to hold up a specified number of entries without any further exp...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:462</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a50385c2da2442292164bc4f65c84ee76"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50385c2da2442292164bc4f65c84ee76">xtd::collections::generic::dictionary::clear</a></div><div class="ttdeci">void clear() noexcept override</div><div class="ttdoc">Removes all keys and values from the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:343</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2917,7 +2944,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::operator const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp; </td>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::operator const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2947,7 +2974,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::operator <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aad74c67084ad47d1dc2af5e7e7da49eb">base_type</a> &amp; </td>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::operator <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a73f2fdcb29bfefa7bcd535807b49182d">base_type</a> &amp; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2972,7 +2999,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:14:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 20:24:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

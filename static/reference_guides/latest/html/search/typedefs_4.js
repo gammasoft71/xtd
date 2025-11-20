@@ -8,7 +8,8 @@ var searchData=
   ['enumerator_5',['enumerator',['../classxtd_1_1linq_1_1enumerable.html#a2ddf87538e12a66991705171183f8d5b',1,'xtd::linq::enumerable::enumerator'],['../group__collections.html#ga46ca5358d7207b976828dddad86adcf8',1,'xtd::collections::enumerator']]],
   ['enumerator_5ftype_6',['enumerator_type',['../classxtd_1_1basic__string.html#a2b5493bd9034616dded9fb810d65fd6c',1,'xtd::basic_string']]],
   ['environment_5fvariable_5fcollection_7',['environment_variable_collection',['../classxtd_1_1system__report.html#a1774f8bc8b162353da33d77ab2369d17',1,'xtd::system_report']]],
-  ['event_5fhandler_8',['event_handler',['../group__events.html#ga226db3bbc8ae6fdf2afaa94a5c947c54',1,'xtd']]],
-  ['exception_5fref_9',['exception_ref',['../classxtd_1_1exception.html#a8e73c9041a1be246a4767aa3579fbb7a',1,'xtd::exception']]],
-  ['extended_5fcolors_10',['extended_colors',['../group__colors.html#gab61979abd08f9b1a4a9b528f54879237',1,'xtd::drawing']]]
+  ['equator_8',['equator',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8',1,'xtd::collections::generic::dictionary']]],
+  ['event_5fhandler_9',['event_handler',['../group__events.html#ga226db3bbc8ae6fdf2afaa94a5c947c54',1,'xtd']]],
+  ['exception_5fref_10',['exception_ref',['../classxtd_1_1exception.html#a8e73c9041a1be246a4767aa3579fbb7a',1,'xtd::exception']]],
+  ['extended_5fcolors_11',['extended_colors',['../group__colors.html#gab61979abd08f9b1a4a9b528f54879237',1,'xtd::drawing']]]
 ];

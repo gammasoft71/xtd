@@ -93,7 +93,7 @@ $(function() {
 struct xtd::collections::generic::helpers::equator&lt; key_t &gt;</div><p>Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a>. </p>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t&gt;</div>
 <div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">equator</a>;</div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:39</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/helpers/equator&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic_1_1helpers.html" title="The xtd::collections::generic::helpers namespace contains helpers for generic collections,...">xtd::collections::generic::helpers</a> </dd></dl>
@@ -113,6 +113,14 @@ struct xtd::collections::generic::helpers::equator&lt; key_t &gt;</div><p>Implem
 <tr class="memitem:a53390a3a1ff692d7b4ec09cec8f47dde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#a53390a3a1ff692d7b4ec09cec8f47dde">result_type</a> = bool</td></tr>
 <tr class="memdesc:a53390a3a1ff692d7b4ec09cec8f47dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
 <tr class="separator:a53390a3a1ff692d7b4ec09cec8f47dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
+<tr class="memitem:a463a179d4e3596950f9dda908dda3952"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#a463a179d4e3596950f9dda908dda3952">equator</a> ()=default</td></tr>
+<tr class="memdesc:a463a179d4e3596950f9dda908dda3952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the hasher.  <br /></td></tr>
+<tr class="separator:a463a179d4e3596950f9dda908dda3952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c646c3790479f7fc35bd2999ebc409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#a23c646c3790479f7fc35bd2999ebc409">equator</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; key_t &gt; &amp;<a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a23c646c3790479f7fc35bd2999ebc409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the hasher with specified comparer.  <br /></td></tr>
+<tr class="separator:a23c646c3790479f7fc35bd2999ebc409"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:ad4e8741f309e1f6a06871a981daf3909"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#a53390a3a1ff692d7b4ec09cec8f47dde">result_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#ad4e8741f309e1f6a06871a981daf3909">operator()</a> (const <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#aa33e3da5087497d4e1180827c2b8036d">first_argument_type</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, const <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html#ade6513f4707665114d11496d4141cc41">second_argument_type</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) const</td></tr>
@@ -174,6 +182,72 @@ template&lt;class key_t &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a463a179d4e3596950f9dda908dda3952" name="a463a179d4e3596950f9dda908dda3952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463a179d4e3596950f9dda908dda3952">&#9670;&#160;</a></span>equator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a>&lt; key_t &gt;::equator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the hasher. </p>
+
+</div>
+</div>
+<a id="a23c646c3790479f7fc35bd2999ebc409" name="a23c646c3790479f7fc35bd2999ebc409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c646c3790479f7fc35bd2999ebc409">&#9670;&#160;</a></span>equator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a>&lt; key_t &gt;::equator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; key_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the hasher with specified comparer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>A comparer used to hash the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad4e8741f309e1f6a06871a981daf3909" name="ad4e8741f309e1f6a06871a981daf3909"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad4e8741f309e1f6a06871a981daf3909">&#9670;&#160;</a></span>operator()()</h2>
@@ -231,7 +305,7 @@ template&lt;class key_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:14:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 20:24:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

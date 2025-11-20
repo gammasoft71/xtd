@@ -92,7 +92,7 @@ $(function() {
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t = void&gt;<br />
 struct xtd::collections::generic::helpers::lesser&lt; type_t &gt;</div><p>Implements a function object for compare data. </p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">lesser</a>;</div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1lesser_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a></div><div class="ttdoc">Implements a function object for compare data.</div><div class="ttdef"><b>Definition</b> lesser.hpp:38</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1lesser_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a></div><div class="ttdoc">Implements a function object for compare data.</div><div class="ttdef"><b>Definition</b> lesser.hpp:39</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/helpers/lesser&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic_1_1helpers.html" title="The xtd::collections::generic::helpers namespace contains helpers for generic collections,...">xtd::collections::generic::helpers</a> </dd></dl>
@@ -113,6 +113,14 @@ struct xtd::collections::generic::helpers::lesser&lt; type_t &gt;</div><p>Implem
 <tr class="memitem:a20a76033d1aac6f86a78d6014e73c4a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a20a76033d1aac6f86a78d6014e73c4a9">result_type</a> = bool</td></tr>
 <tr class="memdesc:a20a76033d1aac6f86a78d6014e73c4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
 <tr class="separator:a20a76033d1aac6f86a78d6014e73c4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
+<tr class="memitem:a99e1d49ed0d7090f9307faf10e382dab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a99e1d49ed0d7090f9307faf10e382dab">lesser</a> ()=default</td></tr>
+<tr class="memdesc:a99e1d49ed0d7090f9307faf10e382dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer.  <br /></td></tr>
+<tr class="separator:a99e1d49ed0d7090f9307faf10e382dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae14ada3d664f085e4dfd0fc5952d7335"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#ae14ada3d664f085e4dfd0fc5952d7335">lesser</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:ae14ada3d664f085e4dfd0fc5952d7335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer with specified comparer.  <br /></td></tr>
+<tr class="separator:ae14ada3d664f085e4dfd0fc5952d7335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:a5cf841a94a11e4ed356e1c48b91ec53e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a20a76033d1aac6f86a78d6014e73c4a9">result_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a5cf841a94a11e4ed356e1c48b91ec53e">operator()</a> (const <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a165de4db3374f7ac7ad7550bde518467">first_argument_type</a> &amp;lhs, const <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a1f73db651ab5df554b8fd7cc23a71a31">second_argument_type</a> &amp;rhs) const</td></tr>
@@ -174,6 +182,72 @@ template&lt;class type_t  = void&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a99e1d49ed0d7090f9307faf10e382dab" name="a99e1d49ed0d7090f9307faf10e382dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e1d49ed0d7090f9307faf10e382dab">&#9670;&#160;</a></span>lesser() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t  = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::lesser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the comparer. </p>
+
+</div>
+</div>
+<a id="ae14ada3d664f085e4dfd0fc5952d7335" name="ae14ada3d664f085e4dfd0fc5952d7335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae14ada3d664f085e4dfd0fc5952d7335">&#9670;&#160;</a></span>lesser() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t  = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::lesser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the comparer with specified comparer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>A comparer used to hash the key. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5cf841a94a11e4ed356e1c48b91ec53e" name="a5cf841a94a11e4ed356e1c48b91ec53e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cf841a94a11e4ed356e1c48b91ec53e">&#9670;&#160;</a></span>operator()()</h2>
@@ -230,7 +304,7 @@ template&lt;class type_t  = void&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:14:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 20:24:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

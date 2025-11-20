@@ -166,13 +166,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are accessible by the key or index.  <a href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue&lt; type_t, allocator_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a first-in, first-out collection of objects.  <a href="classxtd_1_1collections_1_1generic_1_1queue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
-<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
-<tr class="memdesc:gafe25926b152d27ca34bd3c297b77beb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
-<tr class="separator:gafe25926b152d27ca34bd3c297b77beb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class lesser_t  = helpers::lesser&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga42271a61e65b2ba58cdbbe92352b4ea6">xtd::collections::generic::sorted_dictionary</a> = std::map&lt; key_t, value_t, lesser_t, allocator_t &gt;</td></tr>
 <tr class="memdesc:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
@@ -191,38 +190,6 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga342a811c6871f2b7e44168e039adde1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="gafe25926b152d27ca34bd3c297b77beb6" name="gafe25926b152d27ca34bd3c297b77beb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe25926b152d27ca34bd3c297b77beb6">&#9670;&#160;</a></span>queue</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a> = typedef std::stack&lt;type_t, container_t&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="generic_2queue_8hpp.html">xtd.core/include/xtd/collections/generic/queue.hpp</a>&gt;</code></p>
-
-<p>Represents a collection of objects that is maintained in sorted order. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> container_t = std::deque&lt;type_t&gt;&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">queue</a> = std::stack&lt;type_t, container_t&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_gafe25926b152d27ca34bd3c297b77beb6"><div class="ttname"><a href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a></div><div class="ttdeci">std::stack&lt; type_t, container_t &gt; queue</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> queue.hpp:39</div></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/queue&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
-<dd>
-A <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <a id="ga42271a61e65b2ba58cdbbe92352b4ea6" name="ga42271a61e65b2ba58cdbbe92352b4ea6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga42271a61e65b2ba58cdbbe92352b4ea6">&#9670;&#160;</a></span>sorted_dictionary</h2>
 
@@ -354,7 +321,7 @@ template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:14:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 20:24:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

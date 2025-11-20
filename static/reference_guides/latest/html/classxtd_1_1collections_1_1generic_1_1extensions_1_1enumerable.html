@@ -247,6 +247,12 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a964948d137047014d18a7cc5db15f46f"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
 <tr class="memdesc:a964948d137047014d18a7cc5db15f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="separator:a964948d137047014d18a7cc5db15f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaaa233780cb312bb8702850041eb5b0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afaaa233780cb312bb8702850041eb5b0">order</a> ()</td></tr>
+<tr class="memdesc:afaaa233780cb312bb8702850041eb5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="separator:afaaa233780cb312bb8702850041eb5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa298ffb7d50220c493a477064885743a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aa298ffb7d50220c493a477064885743a">order</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; source_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:aa298ffb7d50220c493a477064885743a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order.  <br /></td></tr>
+<tr class="separator:aa298ffb7d50220c493a477064885743a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9472d2fb32abc451658a9a49b1850a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#abd9472d2fb32abc451658a9a49b1850a">order_by</a> (const std::function&lt; source_t(const source_t &amp;)&gt; &amp;key_selector) const</td></tr>
 <tr class="memdesc:abd9472d2fb32abc451658a9a49b1850a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
 <tr class="separator:abd9472d2fb32abc451658a9a49b1850a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,7 +491,7 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The number of even integers is: 6</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a22f3540f62b3b6140ecf188faf509842"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a22f3540f62b3b6140ecf188faf509842">xtd::collections::generic::extensions::enumerable::aggregate</a></div><div class="ttdeci">source_t aggregate(const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;func) const</div><div class="ttdoc">Applies an accumulator function over a sequence.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:59</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1329,7 +1335,7 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:105</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:74</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1833,6 +1839,80 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 
 </div>
 </div>
+<a id="afaaa233780cb312bb8702850041eb5b0" name="afaaa233780cb312bb8702850041eb5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaaa233780cb312bb8702850041eb5b0">&#9670;&#160;</a></span>order() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class enumerable_t , class source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::order </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements of a sequence in ascending order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;source_t&gt; whose elements are sorted. </dd></dl>
+
+</div>
+</div>
+<a id="aa298ffb7d50220c493a477064885743a" name="aa298ffb7d50220c493a477064885743a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa298ffb7d50220c493a477064885743a">&#9670;&#160;</a></span>order() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class enumerable_t , class source_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::order </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; source_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements of a sequence in ascending order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A sequence of values to order. </td></tr>
+    <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;source_t&gt; to compare keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;source_t&gt; whose elements are sorted. </dd></dl>
+
+</div>
+</div>
 <a id="abd9472d2fb32abc451658a9a49b1850a" name="abd9472d2fb32abc451658a9a49b1850a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd9472d2fb32abc451658a9a49b1850a">&#9670;&#160;</a></span>order_by() <span class="overload">[1/2]</span></h2>
 
@@ -2322,8 +2402,8 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="line"><span class="comment">// 5</span></div>
 <div class="line"><span class="comment">// 10</span></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_a9186b87e4e781e16cfeca4d3e83ca6ba"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a9186b87e4e781e16cfeca4d3e83ca6ba">xtd::collections::generic::extensions::enumerable::to_list</a></div><div class="ttdeci">list&lt; source_t &gt; to_list() const noexcept</div><div class="ttdoc">Creates a xtd::collections::generic::list &lt;type_t&gt; from an xtd::collections::generic::ienumerable &lt;ty...</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_adf27a2adb67c1144bc20c98151c45639"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#adf27a2adb67c1144bc20c98151c45639">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:356</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_adf27a2adb67c1144bc20c98151c45639"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#adf27a2adb67c1144bc20c98151c45639">xtd::collections::generic::extensions::enumerable::select</a></div><div class="ttdeci">auto select(const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector) const</div><div class="ttdoc">Projects each element of a sequence into a new form.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:370</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2448,7 +2528,7 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 16 2025 12:14:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 20:24:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
