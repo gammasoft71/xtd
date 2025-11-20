@@ -100,11 +100,11 @@ namespace xtd {
         /// @{
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
-        size_type capacity() const noexcept {return data_->capacity;}
+        auto capacity() const noexcept -> size_type {return data_->capacity;}
         /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::queue <type_t>.
         /// @return The number of nodes actually contained in the xtd::collections::generic::queue <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        size_type count() const noexcept override {return data_->items.count();}
+        [[nodiscard]] auto count() const noexcept -> size_type override {return data_->items.count();}
         /// @}
         
         /// @name Public Methods
@@ -114,14 +114,14 @@ namespace xtd {
         /// @remarks Count is set to zero, and references to other objects from elements of the collection are also released.
         /// @remarks The capacity remains unchanged. To reset the capacity of the xtd::collections::generic::queue <type_t>, call xtd::collections::generic::queue::trim_excess. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
         /// @remarks This method is an O(n) operation, where n is Count.
-        void clear() override {
+        auto clear() -> void override {
           data_->items.clear();
         }
         
         /// @brief Determines whether an element is in the xtd::collections::generic::queue <type_t>.
         /// @param item The object to locate in the xtd::collections::generic::queue <type_t>.
         /// @return `true` if `item` is found in the xtd::collections::generic::queue <type_t>; otherwise, `false`.
-        bool contains(const_reference value) const noexcept override {
+        auto contains(const_reference value) const noexcept -> bool override {
           return data_->items.contains(value);
         }
         
@@ -132,22 +132,22 @@ namespace xtd {
         /// @remarks This method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::colllections::generic::linked_list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::linked_list::count.
-        void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
+        auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
           data_->items.copy_to(array, array_index);
         }
         
         /// @brief Removes and returns the object at the beginning of the xtd::collections::generic::queue <type_t>.
         /// @return The object that is removed from the beginning of the xtd::collections::generic::queue <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
-        value_type dequeue() {
+        auto dequeue() -> value_type {
           auto result = value_type {};
-          if (try_dequeue(result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (!try_dequeue(result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           return result;
         }
         
         /// @brief Adds an object to the end of the xtd::collections::generic::queue <type_t>.
         /// @param item The object to add to the xtd::collections::generic::queue <type_t>. The value can be null for reference types.
-        void enqueue(const_reference value) {
+        auto enqueue(const_reference value) -> void {
           data_->items.add_last(value);
           ensure_capacity(count());
         }
@@ -155,14 +155,14 @@ namespace xtd {
         /// @brief Ensures that the capacity of this queue is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
         /// @param capacity The minimum capacity to ensure.
         /// @return The new capacity of this queue.
-        size_type ensure_capacity(size_type capacity) {
+        auto ensure_capacity(size_type capacity) -> size_type {
           if (data_->capacity < capacity) data_->capacity = capacity;
           return data_->capacity;
         }
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::queue <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::queue <type_t>.
-        enumerator < value_type > get_enumerator() const noexcept override {
+        auto get_enumerator() const noexcept -> enumerator<value_type> override {
           return data_->items.get_enumerator();
         }
 
@@ -170,15 +170,15 @@ namespace xtd {
         /// without removing it.
         /// @return The object at the beginning of the xtd::collections::generic::queue <type_t>.
         /// @exception xtd::invalid_operation_exception The xtd::collections::generic::queue <type_t> is empty.
-        value_type peek() const {
+        [[nodiscard]] auto peek() const -> value_type {
           auto result = value_type {};
-          if (try_peek(result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (!try_peek(result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           return result;
         }
         
         /// @brief Copies the xtd::collections::generic::queue <type_t> elements to a new array.
         /// @return A new array containing elements copied from the xtd::collections::generic::queue <type_t>.
-        xtd::array<value_type> to_array() const {
+        auto to_array() const -> xtd::array<value_type> {
           auto array = xtd::array<value_type>(count());
           copy_to(array, 0);
           return array;
@@ -186,20 +186,20 @@ namespace xtd {
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
-        string to_string() const noexcept override {return data_->items.to_string();}
+        auto to_string() const noexcept -> string override {return data_->items.to_string();}
         
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::queue <type_t>, if that number is less than 90 percent of current capacity.
         /// @remarks This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large xtd::collections::generic::queue <type_t> can be considerable, however, so the xtd::collections::generic::queue::trim_excess method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::queue::count.
         /// @remarks To reset a xtd::collections::generic::queue <type_t> to its initial state, call the xtd::collections::generic::queue::clear method before calling xtd::collections::generic::queue::trim_excess method. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
-        void trim_excess() {
+        auto trim_excess() -> void {
           if (count() * 1. < capacity() * 0.9) trim_excess(count());
         }
         
         /// @brief Sets the capacity of a xtd::collections::generic::queue <type_t> object to the specified number of entries.
         /// @param capacity The new capacity.
         /// @exception xtd::argument_out_of_range_exception Passed capacity is lower than entries count.
-        void trim_excess(size_type capacity) {
+        auto trim_excess(size_type capacity) -> void {
           if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->capacity = capacity;
         }
@@ -207,8 +207,8 @@ namespace xtd {
         /// @brief Removes the object at the beginning of the xtd::collections::generic::queue <type_t>, and copies it to the result parameter.
         /// @param The removed object.
         /// @return `true` if the object is successfully removed; `false` if the xtd::collections::generic::queue <type_t> is empty.
-        bool try_dequeue(value_type& result) noexcept {
-          if (try_peek(result) == false) return false;
+        [[nodiscard]] auto try_dequeue(value_type& result) noexcept -> bool {
+          if (!try_peek(result)) return false;
           data_->items.remove_first();
           return true;
         }
@@ -216,18 +216,18 @@ namespace xtd {
         /// @brief Returns a value that indicates whether there is an object at the beginning of the xtd::collections::generic::queue <type_t>, and if one is present, copies it to the result parameter. The object is not removed from the xtd::collections::generic::queue <type_t>.
         /// @param If present, the object at the beginning of the xtd::collections::generic::queue <type_t>; otherwise, the default value of `type_t`.
         /// @return `true` if there is an object at the beginning of the xtd::collections::generic::queue <type_t>; `false` if the xtd::collections::generic::queue <type_t> is empty.
-        bool try_peek(value_type& result) const noexcept {
+        [[nodiscard]] auto try_peek(value_type& result) const noexcept -> bool {
           result = count() ? data_->items.first()->value() : type_t {};
           return count();
         }
         /// @}
         
       private:
-        bool is_read_only() const noexcept override {return false;}
-        bool is_synchronized() const noexcept override {return false;}
-        const xtd::object& sync_root() const noexcept override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
-        void add(const type_t& value) override {enqueue(value);}
-        bool remove(const type_t&) override {return false;}
+        auto is_read_only() const noexcept -> bool override {return false;}
+        auto is_synchronized() const noexcept -> bool override {return false;}
+        auto sync_root() const noexcept -> const xtd::object& override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
+        auto add(const type_t& value) -> void override {enqueue(value);}
+        auto remove(const type_t&) -> bool override {return false;}
         
         struct queue_data {
           base_type items;
