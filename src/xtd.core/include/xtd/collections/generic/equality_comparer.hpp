@@ -39,7 +39,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the default equality comparer for the type specified by the generic argument.
         /// @return The default instance of the xtd::collections::generic::equality_comparer <type_t> class.
-        static const equality_comparer& default_equality_comparer() {
+        static auto default_equality_comparer() -> const equality_comparer& {
           static auto result = equality_comparer {};
           return result;
         }
@@ -56,7 +56,7 @@ namespace xtd {
         /// @par Notes to Implementers
         /// Implementations are required to ensure that if the xtd::collections::generic::iequality_comparer::equals method returns `true` for two objects `x` and `y`, then the value returned by the xtd::collections::generic::iequality_comparer::get_hash_code method for `x` must equal the value returned for `y`.
         /// The xtd::collections::generic::iequality_comparer::equals method is reflexive, symmetric, and transitive. That is, it returns `true` if used to compare an object with itself; `true` for two objects `x` and `y` if it is `true` for `y` and `x;` and `true` for two objects `x` and `z` if it is `true` for `x` and `y` and also `true` for `y` and `z`.
-        bool equals(const type_t& x, const type_t& y) const noexcept override {return xtd::collections::generic::helpers::equator<type_t> {}(x, y);}
+        auto equals(const type_t& x, const type_t& y) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<type_t> {}(x, y);}
         
         /// @brief Returns a hash code for the specified object.
         /// @param obj The xtd::object for which a hash code is to be returned.
@@ -64,7 +64,7 @@ namespace xtd {
         /// @remarks Implement this method to provide a customized hash code for type `type_t`, corresponding to the customized equality comparison provided by the xtd::collections::generic::iequality_comparer::equals method.
         /// @par Notes to Implementers
         /// Implementations are required to ensure that if the xtd::collections::generic::iequality_comparer::equals method returns `true` for two objects `x` and `y`, then the value returned by the xtd::collections::generic::iequality_comparer::get_hash_code method for `x` must equal the value returned for `y`.
-        xtd::size get_hash_code(const type_t& obj) const noexcept override {return xtd::collections::generic::helpers::hasher<type_t> {}(obj);}
+        auto get_hash_code(const type_t& obj) const noexcept -> xtd::size override {return xtd::collections::generic::helpers::hasher<type_t> {}(obj);}
         /// @}
         
       private:
