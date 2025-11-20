@@ -38,7 +38,7 @@ namespace xtd {
         /// | Less than zero    | x is less than y.    |
         /// | Zero              | x equals y.          |
         /// | Greater than zero | x is greater than y. |
-        virtual int32 compare(const type_t& x, const type_t& y) const = 0;
+        virtual auto compare(const type_t& x, const type_t& y) const -> int32 = 0;
       };
     }
   }
