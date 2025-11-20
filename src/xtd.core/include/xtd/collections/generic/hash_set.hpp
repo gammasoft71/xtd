@@ -127,12 +127,12 @@ namespace xtd {
         /// @{
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
-        size_type capacity() const noexcept {return items().bucket_count();}
+        auto capacity() const noexcept -> size_type {return items().bucket_count();}
         
         /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the set.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::hash_set <type_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::hash_set <type_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        const iequality_comparer<key_type>& comparer() const noexcept {
+        auto comparer() const noexcept -> const iequality_comparer<key_type>& {
           if (!data_->comparer) return equality_comparer <key_type>::default_equality_comparer();
           return *data_->comparer;
         }
@@ -142,14 +142,14 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        size_type count() const noexcept override {return items().size();}
+        auto count() const noexcept -> size_type override {return items().size();}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type& items() const noexcept {return data_->items;}
+        virtual auto items() const noexcept -> const base_type& {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type& items() noexcept {return data_->items;}
+        virtual auto items() noexcept -> base_type& {return data_->items;}
         /// @}
         
         /// @name Public Methods
@@ -158,7 +158,7 @@ namespace xtd {
         /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
         /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
-        bool add(const key_type& item) noexcept override {
+        auto add(const key_type& item) noexcept -> bool override {
           if (contains(item)) return false;
           items().insert(item);
           ++data_->version;
@@ -167,7 +167,7 @@ namespace xtd {
         
         /// @brief Removes all keys and values from the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The xtd::collections::generic::dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
-        void clear() noexcept override {
+        auto clear() noexcept -> void override {
           items().clear();
           ++data_->version;
         }
@@ -175,7 +175,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
-        bool contains(const value_type & item) const noexcept override {
+        auto contains(const value_type & item) const noexcept -> bool override {
           return items().find(item) != items().end();
         }
         
@@ -183,7 +183,7 @@ namespace xtd {
         /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>.
         /// @exception ArgumentException The number of elements in the source hash_set <type_t> exceeds the number of elements that the destination array can contain.
         /// @exception ArgumentNullException array is null.
-        void copy_to(xtd::array<type_t>& array) const {
+        auto copy_to(xtd::array<type_t>& array) const -> void {
           copy_to(0, array, 0, count());
         }
         
@@ -193,7 +193,7 @@ namespace xtd {
         /// @exception ArgumentException The number of elements in the source array is greater than the available space from index to the end of the destination array.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentOutOfRangeException index is less than zero.
-        void copy_to(xtd::array<type_t>& array, size_type index) const override {
+        auto copy_to(xtd::array<type_t>& array, size_type index) const -> void override {
           copy_to(0, array, index, count());
         }
         
@@ -204,7 +204,7 @@ namespace xtd {
         /// @exception ArgumentException The number of elements in the source (count) array is greater than the available space from index to the end of the destination array.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentOutOfRangeException index is less than zero or count is less than zero.
-        void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
+        auto copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
           if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto increment = size_type {};
           for (const auto& item : self_) {
@@ -216,7 +216,7 @@ namespace xtd {
         /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The number of entries.
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
-        xtd::size ensure_capacity(xtd::size capacity) noexcept {
+        auto ensure_capacity(xtd::size capacity) noexcept -> xtd::size {
           data_->items.reserve(capacity);
           return self_.capacity();
         }
@@ -224,7 +224,7 @@ namespace xtd {
         /// @brief Removes all elements in the specified collection from the current set.
         /// @param other The collection of items to remove from the set.
         /// @remarks This method is an O(`n`) operation, where `n` is the number of elements in the other parameter.
-        void except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+        auto except_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept -> void override {
           if (&other == this) {
             clear();
             return;
@@ -235,25 +235,25 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::hash_set <type_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::hash_set <type_t>.
-        enumerator<value_type> get_enumerator() const noexcept override {
+        auto get_enumerator() const noexcept -> enumerator<value_type> override {
           struct hash_set_enumerator : public ienumerator < value_type > {
             explicit hash_set_enumerator(const hash_set & items, size_type version) : items_(items), version_(version) {}
             
-            const value_type& current() const override {
+            auto current() const -> const value_type& override {
               if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               value_ = value_type {*iterator_};
               return value_;
             }
             
-            bool move_next() override {
+            auto move_next() -> bool override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
               else iterator_ = items_.items().cbegin();
               return  iterator_ != items_.data_->items.cend();
             }
             
-            void reset() override {
+            auto reset() -> void override {
               index_ = 0;
               version_ = items_.data_->version;
               iterator_ = items_.items().cend();
@@ -272,7 +272,7 @@ namespace xtd {
         /// @brief Modifies the current set so that it contains only elements that are also in a specified collection.
         /// @param other The collection to compare to the current set.
         /// @remarks This method ignores any duplicate elements in `other`.
-        void intersect_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+        auto intersect_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept -> void override {
           auto to_keep = hash_set {other};
           auto to_remove = hash_set {};
           for (const type_t& item : self_)
@@ -284,7 +284,7 @@ namespace xtd {
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        bool is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (count() == 0) return set.count() > 0;
           if (count() >= set.count()) return false;
@@ -294,7 +294,7 @@ namespace xtd {
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        bool is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (set.count() == 0) return count() > 0;
           if (set.count() >= count()) return false;
@@ -304,21 +304,21 @@ namespace xtd {
         /// @brief Determines whether a set is a subset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a subset of `other`; otherwise, `false`.
-        bool is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           return sub_set(hash_set {other});
         }
         
         /// @brief Determines whether a set is a superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a superset of `other`; otherwise, `false`.
-        bool is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           return super_set(hash_set {other});
         }
         
         /// @brief Determines whether the current set overlaps with the specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set and `other` share at least one common element; otherwise, `false`.
-        bool overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           if (count() == 0) return false;
           for (const auto& item : other)
             if (contains(item)) return true;
@@ -328,7 +328,7 @@ namespace xtd {
         /// @brief Removes a specified item from the hash_set <type_t>.
         /// @param item The element to remove.
         /// @return true if the element was removed, false otherwise.
-        bool remove(const type_t& item) noexcept override {
+        auto remove(const type_t& item) noexcept -> bool override {
           auto result = items().erase(item) == 1;
           ++data_->version;
           return result;
@@ -338,7 +338,7 @@ namespace xtd {
         /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to remove.
         /// @return The number of elements that were removed from the hash_set <type_t> collection.
         template<class predicate_t>
-        size_type remove_where(predicate_t match) noexcept {
+        auto remove_where(predicate_t match) noexcept -> size_type {
           auto to_remove = hash_set {};
           for (const auto& item : self_)
             if (match(item)) to_remove.add(item);
@@ -350,7 +350,7 @@ namespace xtd {
         /// @brief Determines whether the current set and the specified collection contain the same elements.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is equal to `other`; otherwise, `false`.
-        bool set_equals(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept override {
+        auto set_equals(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (count() != set.count()) return false;
           for (const auto& item : other)
@@ -361,7 +361,7 @@ namespace xtd {
         /// @brief Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both.
         /// @param other The collection to compare to the current set.
         /// @remarks Any duplicate elements in `other` are ignored.
-        void symetric_excep_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+        auto symetric_excep_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept -> void override {
           for (const auto& item : other)
             if (contains(item)) remove(item);
             else add(item);
@@ -369,12 +369,12 @@ namespace xtd {
         
         /// @brief Gets a string that represents the current object.
         /// @return A string that represents the current object.
-        xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
+        auto to_string() const noexcept -> xtd::string override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
         
         /// @brief Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
         /// @param other The collection to compare to the current set.
         /// @remarks Any duplicate elements in `other` are ignored.
-        void union_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept override {
+        auto union_with(const xtd::collections::generic::ienumerable<type_t>& other) noexcept -> void override {
           for (const auto& item : other)
             if (!contains(item)) add(item);
         }
@@ -387,10 +387,10 @@ namespace xtd {
         /// @}
         
       private:
-        bool is_read_only() const noexcept override {return false;}
-        bool is_synchronized() const noexcept override {return false;}
-        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
-        bool sub_set(const hash_set& set) const noexcept {
+        auto is_read_only() const noexcept -> bool override {return false;}
+        auto is_synchronized() const noexcept -> bool override {return false;}
+        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
+        auto sub_set(const hash_set& set) const noexcept -> bool {
           if (count() == 0) return true;
           if (count() > set.count()) return false;
           for (const auto& item : self_)
@@ -398,7 +398,7 @@ namespace xtd {
           return true;
         }
         
-        bool super_set(const hash_set& set) const noexcept {
+        auto super_set(const hash_set& set) const noexcept -> bool {
           if (set.count() == 0) return true;
           if (set.count() > count()) return false;
           for (const auto& item : set)
