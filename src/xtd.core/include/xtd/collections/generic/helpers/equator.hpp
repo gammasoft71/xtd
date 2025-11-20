@@ -66,7 +66,7 @@ namespace xtd {
           /// @param b The second key to check.
           /// @return `true` if keys are equals; otherwise `false`.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
-          result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
+          auto operator()(const first_argument_type& a, const second_argument_type& b) const -> result_type {
             if (&a == &b) return true;
             if (comparer) return comparer->equals(a, b);
             return __polymorphic_equator__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(a, b);
