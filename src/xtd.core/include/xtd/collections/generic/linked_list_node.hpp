@@ -81,14 +81,14 @@ namespace xtd {
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
+        auto list() const noexcept -> xtd::ref<const linked_list<type_t>> {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
         
         /// @brief Gets the next node in the LinkedList<T>.
         /// @return A reference to the next node in the xtd::collections::generic::linked_list <type_t>, or null if the current node is the last element (Last) of the xtd::collections::generic::linked_list <type_t>.
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        xtd::optional<linked_list_node> next() const {
+        auto next() const -> xtd::optional<linked_list_node> {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == end()) return xtd::nullopt;
           auto tmp = data_->iterator;
@@ -101,7 +101,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        xtd::optional<linked_list_node> previous() const {
+        auto previous() const -> xtd::optional<linked_list_node> {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
           auto tmp = data_->iterator;
@@ -114,7 +114,7 @@ namespace xtd {
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
         /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
-        const value_type& value() const {
+        auto value() const -> const value_type& {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
         }
@@ -124,15 +124,15 @@ namespace xtd {
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
         /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
-        value_type& value() {
+        auto value() -> value_type& {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
         }
         /// @}
         
         /// @cond
-        linked_list_node& operator =(linked_list_node&&) = default;
-        linked_list_node& operator =(const linked_list_node&) = default;
+        auto operator =(linked_list_node&&) -> linked_list_node& = default;
+        auto operator =(const linked_list_node&) -> linked_list_node& = default;
         /// @endcond
         
       private:
@@ -145,9 +145,9 @@ namespace xtd {
           data_->version = version;
         }
         
-        iterator_type begin() const {return data_->list->data_->items.begin();}
-        void check_stale() const {if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");}
-        iterator_type end() const {return data_->list->data_->items.end();}
+        auto begin() const -> iterator_type {return data_->list->data_->items.begin();}
+        auto check_stale() const -> void {if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");}
+        auto end() const -> iterator_type {return data_->list->data_->items.end();}
         
         struct node_data {
           linked_list<type_t>* list = null;
