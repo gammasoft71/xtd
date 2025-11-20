@@ -58,14 +58,14 @@ namespace xtd {
             using pointer = value_type*;
             using reference = value_type&;
             
-            static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
+            static constexpr auto npos() -> xtd::size {return std::numeric_limits<xtd::size>::max();}
             
             enumerable_iterator() = default;
             enumerable_iterator(iterator_enumerable_t& enumerable, xtd::size pos) : enumerable_ {&enumerable}, enumerator_ {enumerable.get_enumerator()}, pos_ {pos} {reset();}
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
-            enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
-            enumerable_iterator& operator =(const enumerable_iterator& value) noexcept {
+            auto operator =(enumerable_iterator&& value) noexcept -> enumerable_iterator& = default;
+            auto operator =(const enumerable_iterator& value) noexcept -> enumerable_iterator& {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
               pos_ = value.pos_;
@@ -73,32 +73,32 @@ namespace xtd {
               return const_cast<enumerable_iterator&>(*this);
             }
             
-            int32 compare_to(const enumerable_iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
-            bool equals(const enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
+            auto compare_to(const enumerable_iterator& rhs) const noexcept -> int32 override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
+            auto equals(const enumerable_iterator& rhs) const noexcept -> bool override {return pos_ == rhs.pos_;}
             
-            reference operator *() const {return const_cast<value_type&>(enumerator_.current());}
-            pointer operator ->() const {return &operator*();}
+            auto operator *() const -> reference {return const_cast<value_type&>(enumerator_.current());}
+            auto operator ->() const -> pointer {return &operator*();}
             
-            enumerable_iterator& operator ++() {
+            auto operator ++() -> enumerable_iterator& {
               if (pos_ != npos()) pos_ = enumerator_.move_next() ? pos_ + 1 : npos();
               return const_cast<enumerable_iterator&>(*this);
             }
-            enumerable_iterator operator ++(int) {
+            auto operator ++(int) -> enumerable_iterator {
               auto current = *this;
               operator ++();
               return current;
             }
             
             template<class value_t>
-            const enumerable_iterator operator +(value_t value) const noexcept {return enumerable_iterator {*enumerable_, pos_ + value};}
+            auto operator +(value_t value) const noexcept -> const enumerable_iterator {return enumerable_iterator {*enumerable_, pos_ + value};}
             template<class value_t>
-            enumerable_iterator operator +(value_t value) noexcept {return enumerable_iterator {*enumerable_, pos_ + value};}
+            auto operator +(value_t value) noexcept -> enumerable_iterator {return enumerable_iterator {*enumerable_, pos_ + value};}
             template<class value_t>
-            enumerable_iterator& operator +=(value_t value) noexcept {
+            auto operator +=(value_t value) noexcept -> enumerable_iterator& {
               *this = *this + value;
               return *this;
             }
-            difference_type operator -(enumerable_iterator value) const noexcept {
+            auto operator -(enumerable_iterator value) const noexcept -> difference_type {
               if (pos_ == npos()) return npos();
               return static_cast<difference_type>(pos_ - value.pos_);
             }
@@ -106,7 +106,7 @@ namespace xtd {
             operator enumerable_iterator<const iterator_enumerable_t>() const noexcept {return enumerable_iterator<const iterator_enumerable_t>(*enumerable_, pos_);}
             
           private:
-            void reset() {
+            auto reset() -> void {
               if (pos_ == npos()) return;
               enumerator_.reset();
               for (auto index = xtd::size {}; index <= pos_; ++index)
@@ -137,25 +137,25 @@ namespace xtd {
           /// @{
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual const_iterator begin() const {return cbegin();}
+          virtual auto begin() const -> const_iterator {return cbegin();}
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual iterator begin() {return iterator {self(), 0};}
+          virtual auto begin() -> iterator {return iterator {self(), 0};}
           
           /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
-          virtual const_iterator cbegin() const {return const_iterator {self(), 0};}
+          virtual auto cbegin() const -> const_iterator {return const_iterator {self(), 0};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual const_iterator cend() const {return const_iterator {self(), const_iterator::npos()};}
+          virtual auto cend() const -> const_iterator {return const_iterator {self(), const_iterator::npos()};}
           
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual const_iterator end() const {return cend();}
+          virtual auto end() const -> const_iterator {return cend();}
           /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
-          virtual iterator end() {return iterator {self(), iterator::npos()};}
+          virtual auto end() -> iterator {return iterator {self(), iterator::npos()};}
           /// @}
           
           /// @name Public Static Methods
@@ -170,7 +170,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+          inline static auto to_const_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -188,7 +188,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+          inline static auto to_const_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -206,7 +206,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+          inline static auto to_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -224,7 +224,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+          inline static auto to_iterator(typename source_collection_t::iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept -> typename target_collection_t::iterator {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();
             
@@ -242,7 +242,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+          inline static auto to_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::const_iterator {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -260,7 +260,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          inline static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+          inline static auto to_iterator(typename source_collection_t::iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept -> typename target_collection_t::iterator {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();
             
@@ -271,8 +271,8 @@ namespace xtd {
           /// @}
           
         private:
-          const enumerable_t& self() const noexcept {return static_cast<const enumerable_t&>(self_);}
-          enumerable_t& self() noexcept {return static_cast<enumerable_t&>(self_);}
+          auto self() const noexcept -> const enumerable_t& {return static_cast<const enumerable_t&>(self_);}
+          auto self() noexcept -> enumerable_t& {return static_cast<enumerable_t&>(self_);}
         };
       }
     }
