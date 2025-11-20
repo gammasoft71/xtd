@@ -36,11 +36,11 @@ namespace xtd {
           /// @{
           /// @brief Checks whether the container is empty.
           /// @return `true` if container is empty; otherwise `false`.
-          virtual bool empty() const noexcept {return self().count() == 0;}
+          virtual auto empty() const noexcept -> bool {return self().count() == 0;}
           
           /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
           /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-          virtual xtd::size size() const noexcept {return self().count();}
+          virtual auto size() const noexcept -> xtd::size {return self().count();}
           /// @}
           
           /// @name Public Operators
@@ -49,7 +49,7 @@ namespace xtd {
           /// @brief The shift left operator adds an item to the xtd::collections::generic::icollection <type_t>.
           /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
           /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
-          virtual collection_t& operator <<(const type_t& item) {
+          virtual auto operator <<(const type_t& item) -> collection_t& {
             self().add(item);
             return self();
           }
@@ -57,7 +57,7 @@ namespace xtd {
           /// @brief The shift left operator adds an item to the xtd::collections::generic::icollection <type_t>.
           /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
           /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
-          virtual collection_t& operator <<(type_t&& item) {
+          virtual auto operator <<(type_t&& item) -> collection_t& {
             self().add(std::move(item));
             return self();
           }
@@ -67,15 +67,15 @@ namespace xtd {
           /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
           /// @remarks Implementations can vary in how they determine equality of objects; for example, xtd::collections::generic::list <type_t> uses xtd::collections::generic::compoarer <type_t>::default_comparer, whereas, xtd::collections::generic::dictionary <key_t, value_t> allows the user to specify the xtd::collections::generic::icompoarer <type_t> implementation to use for comparing keys.
           /// @remarks In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
-          virtual collection_t& operator >>(const type_t& item) {
+          virtual auto operator >>(const type_t& item) -> collection_t& {
             self().remove(item);
             return self();
           }
           /// @}
           
         private:
-          const collection_t& self() const noexcept {return static_cast<const collection_t&>(self_);}
-          collection_t& self() noexcept {return static_cast<collection_t&>(self_);}
+          auto self() const noexcept -> const collection_t& {return static_cast<const collection_t&>(self_);}
+          auto self() noexcept -> collection_t& {return static_cast<collection_t&>(self_);}
           
           friend collection_t;
           collection_common() = default;
