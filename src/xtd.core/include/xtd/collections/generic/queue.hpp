@@ -70,7 +70,7 @@ namespace xtd {
         /// @brief Move constructor with specified queue.
         /// @param queue The std::queue <type_t> which elements will be moved from.
         queue(std::queue<type_t>&& queue) {
-          while(queue.size())
+          while (queue.size())
             data_->items.add(queue.pop());
           ensure_capacity(count());
         }
@@ -125,7 +125,7 @@ namespace xtd {
         /// @return The number of nodes actually contained in the xtd::collections::generic::queue <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
         [[nodiscard]] auto count() const noexcept -> size_type override {return data_->items.count();}
-
+        
         /// @brief Gets a std::queue<type_t>.
         /// @return A std::queue<type_t>.
         std::queue<type_t> items() const {return std::queue<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
@@ -253,7 +253,7 @@ namespace xtd {
         /// @return A std::queue<type_t>.
         operator std::queue<type_t>() const {return items();}
         /// @}
-
+        
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
