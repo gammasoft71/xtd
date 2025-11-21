@@ -27,6 +27,8 @@
 #include <algorithm>
 #include <bitset>
 #include <functional>
+#include <queue>
+#include <stack>
 
 /// @cond
 template<class type_t>
@@ -391,7 +393,7 @@ namespace xtd {
       template<class source_t, class container_t>
       inline static auto as_enumerable(std::stack<source_t, container_t> source) noexcept {
         struct std_stack : public std::stack<source_t> {
-          std_stack(const std::stack<source_t>& queue) : ptr {reinterpret_cast<const std_stack*>(&queue)} {}
+          std_stack(const std::stack<source_t>& stack) : ptr {reinterpret_cast<const std_stack*>(&stack)} {}
           auto begin() const {return ptr->c.begin();}
           auto end() const {return ptr->c.end();}
           const std_stack* ptr;
