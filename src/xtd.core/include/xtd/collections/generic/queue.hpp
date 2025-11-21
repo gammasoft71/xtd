@@ -61,12 +61,32 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::collections::generic::queue <type_t> class that is empty and has the default initial capacity.
         queue() = default;
-        /// @brief Move constructor with specified list.
+        /// @brief Move constructor with specified queue.
         /// @param queue The xtd::collections::generic::queue <type_t> which elements will be moved from.
         queue(queue&& queue) = default;
-        /// @brief Default copy constructor with specified list.
-        /// @param linked_list The xtd::collections::generic::linked_list <type_t> which elements will be inserted from.
+        /// @brief Default copy constructor with specified queue.
+        /// @param queue The xtd::collections::generic::queue <type_t> which elements will be inserted from.
         queue(const queue& queue) = default;
+        /// @brief Move constructor with specified queue.
+        /// @param queue The std::queue <type_t> which elements will be moved from.
+        queue(std::queue<type_t>&& queue) {
+          while(queue.size())
+            data_->items.add(queue.pop());
+          ensure_capacity(count());
+        }
+        /// @brief Default copy constructor with specified queue.
+        /// @param queue The std::queue <type_t> which elements will be inserted from.
+        queue(const std::queue<type_t>& queue) {
+          struct std_queue : public std::queue<type_t> {
+            std_queue(const std::queue<type_t>& queue) : ptr {reinterpret_cast<const std_queue*>(&queue)} {}
+            auto begin() const {return ptr->c.begin();}
+            auto end() const {return ptr->c.end();}
+            const std_queue* ptr;
+          };
+          auto items = std_queue {queue};
+          data_->items = base_type(items.begin(), items.end());
+          ensure_capacity(count());
+        }
         /// @brief Initializes a new instance of the xtd::collections::generic::queue <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new xtd::collections::generic::queue <type_t>.
         queue(const ienumerable<value_type>& collection) {
@@ -105,6 +125,10 @@ namespace xtd {
         /// @return The number of nodes actually contained in the xtd::collections::generic::queue <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
         [[nodiscard]] auto count() const noexcept -> size_type override {return data_->items.count();}
+
+        /// @brief Gets a std::queue<type_t>.
+        /// @return A std::queue<type_t>.
+        std::queue<type_t> items() const {return std::queue<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
         /// @}
         
         /// @name Public Methods
@@ -222,6 +246,14 @@ namespace xtd {
         }
         /// @}
         
+        /// @name Public Operators
+        
+        /// @{
+        /// @brief Gets a std::queue<type_t>.
+        /// @return A std::queue<type_t>.
+        operator std::queue<type_t>() const {return items();}
+        /// @}
+
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
