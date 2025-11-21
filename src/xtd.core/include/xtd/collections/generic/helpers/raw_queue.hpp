@@ -19,8 +19,12 @@ namespace xtd {
           
           /// @{
           using base_type = std::queue<type_t, container_t>;
+          using container_type = typename base_type::container_type;
           using value_type = typename base_type::value_type;
           using size_type = typename base_type::size_type;
+          using reference = typename base_type::reference;
+          using const_reference = typename base_type::const_reference;
+          using const_iterator = typename container_type::const_iterator;
           /// @}
           
           /// @name Public Constructors
@@ -54,45 +58,43 @@ namespace xtd {
           /// @name Public Properties
           
           /// @{
-          const base_type& items() const noexcept {return *this;}
-          base_type& items() noexcept {return *this;}
+          auto items() const noexcept -> const base_type& {return *this;}
+          auto items() noexcept -> base_type& {return *this;}
           /// @}
           
           /// @name Public Mathods
           
           /// @{
-          auto begin() const {return base_type::c.cbegin();}
-          auto cbegin() const {return base_type::c.cbegin();}
+          auto begin() const -> const_iterator {return base_type::c.cbegin();}
           
-          auto end() const {return base_type::c.cend();}
-          auto cend() const {return base_type::c.cend();}
+          auto capacity() const noexcept -> size_type {return capacity_;}
+
+          auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
+
+          auto cend() const -> const_iterator {return base_type::c.cend();}
+
+          auto end() const -> const_iterator {return base_type::c.cend();}
           
-          size_type capacity() const noexcept {return capacity_;}
-          
-          void push(value_type&& value) {
+          auto push(value_type&& value) -> void {
             base_type::push(std::move(value));
             ensure_capacity(base_type::c.size());
           }
           
-          void pop() {
-            base_type::pop();
-          }
+          auto pop() -> void {base_type::pop();}
           
-          void push(const value_type& value) {
+          auto push(const value_type& value) -> void {
             base_type::push(value);
             ensure_capacity(base_type::c.size());
           }
           
-          void shrink_to_fit() {
+          auto shrink_to_fit() -> void {
             base_type::c.shrink_to_fit();
             ensure_capacity(base_type::c.size());
           }
           
-          size_type size() const noexcept {
-            return base_type::c.size();
-          }
+          auto size() const noexcept -> size_type {return base_type::c.size();}
           
-          void reserve(size_type count) {
+          auto reserve(size_type count) -> void {
             if (capacity_ >= count) return;
             ensure_capacity(count);
           }
@@ -101,12 +103,15 @@ namespace xtd {
           /// @name Public Operators
           
           /// @{
+          raw_queue& operator =(const raw_queue& other) = default;
+          raw_queue& operator =(raw_queue&& other) = default;
+
           operator const base_type&() const noexcept {return *this;}
           operator base_type&() noexcept {return *this;}
           /// @}
           
         private:
-          void ensure_capacity(size_type capacity) {
+          auto ensure_capacity(size_type capacity) -> void {
             if (capacity <= capacity_) return;
             capacity_ = capacity;
             auto original_size = base_type::size();
