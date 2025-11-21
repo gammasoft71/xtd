@@ -4,13 +4,11 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
-#include <xtd/diagnostics/debug>
-
 using namespace xtd::collections::generic::helpers;
 using namespace xtd::tunit;
 
 namespace xtd::collections::generic::helpers::tests {
-  class test_class_(raw_array_data_tests) {
+  class test_class_(raw_array_tests) {
     void test_method_(value_type) {
       assert::are_equal(typeof_<int>(), typeof_<raw_array<int>::value_type>());
     }
