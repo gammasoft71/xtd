@@ -1653,7 +1653,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="comment">// Iterate through the matches that were found and display each color that</span></div>
 <div class="line">  <span class="comment">// corresponds with the enum value in the array. also display the name of</span></div>
 <div class="line">  <span class="comment">// the known_color and the ARGB components.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; color_matches.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a553ecd2072a2b7e879ac952bdc4fa906">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; color_matches.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a91f1142d1b338467766e31acfd34287b">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">    <span class="comment">// Display the color.</span></div>
 <div class="line">    some_color = <a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c">color::from_known_color</a>(color_matches[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
 <div class="line">    my_brush1.color(some_color);</div>
@@ -1670,7 +1670,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> += 40;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common_html_a553ecd2072a2b7e879ac952bdc4fa906"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a553ecd2072a2b7e879ac952bdc4fa906">xtd::collections::generic::extensions::collection_common::size</a></div><div class="ttdeci">virtual xtd::size size() const noexcept</div><div class="ttdoc">Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> collection_common.hpp:43</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common_html_a91f1142d1b338467766e31acfd34287b"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html#a91f1142d1b338467766e31acfd34287b">xtd::collections::generic::extensions::collection_common::size</a></div><div class="ttdeci">virtual auto size() const noexcept -&gt; xtd::size</div><div class="ttdoc">Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> collection_common.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a1842c31fd793563740ed1a6c7e09e775"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a1842c31fd793563740ed1a6c7e09e775">xtd::drawing::color::to_argb</a></div><div class="ttdeci">uint32 to_argb() const noexcept</div><div class="ttdoc">Gets the 32-bit ARGB value of this xtd::drawing::color class.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_adda07c45844cc2af1b9875f953ce3c0b"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#adda07c45844cc2af1b9875f953ce3c0b">xtd::drawing::color::is_system_color</a></div><div class="ttdeci">bool is_system_color() const noexcept</div><div class="ttdoc">Gets a value indicating whether this xtd::drawing::color structure is a system color....</div></div>
 </div><!-- fragment --> </li>
@@ -6281,7 +6281,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 20 2025 20:24:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 22:53:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

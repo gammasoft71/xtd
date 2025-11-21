@@ -112,23 +112,23 @@ class xtd::collections::generic::iequality_comparer&lt; type_t &gt;</div><p>Defi
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This interface allows the implementation of customized equality comparison for collections. That is, you can create your own definition of equality for type <code>type_t</code>, and specify that this definition be used with a collection type that accepts the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface. In the xtd framework, constructors of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; generic collection type accept this interface. </dd>
 <dd>
-A default implementation of this interface is provided by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a> property of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html" title="Provides a base class for implementations of the xtd::collections::generic::iequality_comparer &lt;type_...">xtd::collections::generic::equality_comparer</a> &lt;type_t&gt; generic class. The <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; of type <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>. </dd>
+A default implementation of this interface is provided by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a261204ebf69e1698aefa68d22a0755a4" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a> property of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html" title="Provides a base class for implementations of the xtd::collections::generic::iequality_comparer &lt;type_...">xtd::collections::generic::equality_comparer</a> &lt;type_t&gt; generic class. The <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; of type <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>. </dd>
 <dd>
 This interface supports only equality comparisons. Customization of comparisons for sorting and ordering is provided by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; generic interface. </dd>
 <dd>
 We recommend that you derive from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html" title="Provides a base class for implementations of the xtd::collections::generic::iequality_comparer &lt;type_...">xtd::collections::generic::equality_comparer</a> &lt;type_t&gt; class instead of implementing the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; interface, because the <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html" title="Provides a base class for implementations of the xtd::collections::generic::iequality_comparer &lt;type_...">xtd::collections::generic::equality_comparer</a> &lt;type_t&gt; class tests for equality using the <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method instead of the <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a> method. This is consistent with the <code>contains</code>, <code>index_of</code>, <code>last_index_of</code>, and <code>remove</code> methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class and other generic collections. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a7c29799db6f25ad42078e7281a9828ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a7c29799db6f25ad42078e7281a9828ea">equals</a> (const type_t &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, const type_t &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>) const noexcept=0</td></tr>
-<tr class="memdesc:a7c29799db6f25ad42078e7281a9828ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified objects are equal.  <br /></td></tr>
-<tr class="separator:a7c29799db6f25ad42078e7281a9828ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a1a48a6f69dd2eb1e59904213cb461"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a06a1a48a6f69dd2eb1e59904213cb461">get_hash_code</a> (const type_t &amp;obj) const noexcept=0</td></tr>
-<tr class="memdesc:a06a1a48a6f69dd2eb1e59904213cb461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a hash code for the specified object.  <br /></td></tr>
-<tr class="separator:a06a1a48a6f69dd2eb1e59904213cb461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3941eec0a462433ad7f747421216bd2b"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a3941eec0a462433ad7f747421216bd2b">equals</a> (const type_t &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, const type_t &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>) const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a3941eec0a462433ad7f747421216bd2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified objects are equal.  <br /></td></tr>
+<tr class="separator:a3941eec0a462433ad7f747421216bd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade9194278220b2ff5fbf6f656ee672c4"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#ade9194278220b2ff5fbf6f656ee672c4">get_hash_code</a> (const type_t &amp;obj) const noexcept -&gt; <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>=0</td></tr>
+<tr class="memdesc:ade9194278220b2ff5fbf6f656ee672c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a hash code for the specified object.  <br /></td></tr>
+<tr class="separator:ade9194278220b2ff5fbf6f656ee672c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7c29799db6f25ad42078e7281a9828ea" name="a7c29799db6f25ad42078e7281a9828ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c29799db6f25ad42078e7281a9828ea">&#9670;&#160;</a></span>equals()</h2>
+<a id="a3941eec0a462433ad7f747421216bd2b" name="a3941eec0a462433ad7f747421216bd2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3941eec0a462433ad7f747421216bd2b">&#9670;&#160;</a></span>equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +139,7 @@ template&lt;class type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt;::equals </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt;::equals </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -153,7 +153,7 @@ template&lt;class type_t &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -173,14 +173,14 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified objects are equal; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Implement this method to provide a customized equality comparison for type <code>type_t</code>. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers</dt><dd>Implementations are required to ensure that if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a7c29799db6f25ad42078e7281a9828ea" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method returns <code>true</code> for two objects <code>x</code> and <code>y</code>, then the value returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a06a1a48a6f69dd2eb1e59904213cb461" title="Returns a hash code for the specified object.">xtd::collections::generic::iequality_comparer::get_hash_code</a> method for <code>x</code> must equal the value returned for <code>y</code>. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a7c29799db6f25ad42078e7281a9828ea" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method is reflexive, symmetric, and transitive. That is, it returns <code>true</code> if used to compare an object with itself; <code>true</code> for two objects <code>x</code> and <code>y</code> if it is <code>true</code> for <code>y</code> and <code>x;</code> and <code>true</code> for two objects <code>x</code> and <code>z</code> if it is <code>true</code> for <code>x</code> and <code>y</code> and also <code>true</code> for <code>y</code> and <code>z</code>. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>Implementations are required to ensure that if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a3941eec0a462433ad7f747421216bd2b" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method returns <code>true</code> for two objects <code>x</code> and <code>y</code>, then the value returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#ade9194278220b2ff5fbf6f656ee672c4" title="Returns a hash code for the specified object.">xtd::collections::generic::iequality_comparer::get_hash_code</a> method for <code>x</code> must equal the value returned for <code>y</code>. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a3941eec0a462433ad7f747421216bd2b" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method is reflexive, symmetric, and transitive. That is, it returns <code>true</code> if used to compare an object with itself; <code>true</code> for two objects <code>x</code> and <code>y</code> if it is <code>true</code> for <code>y</code> and <code>x;</code> and <code>true</code> for two objects <code>x</code> and <code>z</code> if it is <code>true</code> for <code>x</code> and <code>y</code> and also <code>true</code> for <code>y</code> and <code>z</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a85b1ec8765fb1031fa9e28f85075423a">xtd::collections::generic::equality_comparer&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1basic__string__comparer.html#a5b67238a255bc68e11f6edbc1001abb0">xtd::basic_string_comparer&lt; char_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#aa02074c054ce0d98887120ad53d858a5">xtd::collections::generic::equality_comparer&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1basic__string__comparer.html#a5b67238a255bc68e11f6edbc1001abb0">xtd::basic_string_comparer&lt; char_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a06a1a48a6f69dd2eb1e59904213cb461" name="a06a1a48a6f69dd2eb1e59904213cb461"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06a1a48a6f69dd2eb1e59904213cb461">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ade9194278220b2ff5fbf6f656ee672c4" name="ade9194278220b2ff5fbf6f656ee672c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade9194278220b2ff5fbf6f656ee672c4">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,11 +191,11 @@ template&lt;class type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt;::get_hash_code </td>
+          <td class="memname">virtual auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; type_t &gt;::get_hash_code </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -213,10 +213,10 @@ template&lt;class type_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A hash code for the specified object. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Implement this method to provide a customized hash code for type <code>type_t</code>, corresponding to the customized equality comparison provided by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a7c29799db6f25ad42078e7281a9828ea" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method. </dd></dl>
-<dl class="section user"><dt>Notes to Implementers</dt><dd>Implementations are required to ensure that if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a7c29799db6f25ad42078e7281a9828ea" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method returns <code>true</code> for two objects <code>x</code> and <code>y</code>, then the value returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a06a1a48a6f69dd2eb1e59904213cb461" title="Returns a hash code for the specified object.">xtd::collections::generic::iequality_comparer::get_hash_code</a> method for <code>x</code> must equal the value returned for <code>y</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Implement this method to provide a customized hash code for type <code>type_t</code>, corresponding to the customized equality comparison provided by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a3941eec0a462433ad7f747421216bd2b" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method. </dd></dl>
+<dl class="section user"><dt>Notes to Implementers</dt><dd>Implementations are required to ensure that if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#a3941eec0a462433ad7f747421216bd2b" title="Determines whether the specified objects are equal.">xtd::collections::generic::iequality_comparer::equals</a> method returns <code>true</code> for two objects <code>x</code> and <code>y</code>, then the value returned by the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html#ade9194278220b2ff5fbf6f656ee672c4" title="Returns a hash code for the specified object.">xtd::collections::generic::iequality_comparer::get_hash_code</a> method for <code>x</code> must equal the value returned for <code>y</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a402846f7960e5052f33890d0b36ea6e3">xtd::collections::generic::equality_comparer&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1basic__string__comparer.html#af5c86660f58b89054cb2738307759a06">xtd::basic_string_comparer&lt; char_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#af9ab876ac2d8c03c75c6eb52dd4fd048">xtd::collections::generic::equality_comparer&lt; type_t &gt;</a>, and <a class="el" href="classxtd_1_1basic__string__comparer.html#af5c86660f58b89054cb2738307759a06">xtd::basic_string_comparer&lt; char_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -227,7 +227,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 20 2025 20:24:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 20 2025 22:53:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
