@@ -68,12 +68,12 @@ namespace xtd {
         /// @brief Advances the enumerator to the next element of the collection.
         /// @return `true` if the enumerator was successfully advanced to the next element; `false` if the enumerator has passed the end of the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
-        auto move_next() -> bool override {return enumerator_->move_next();}
+        bool move_next() override {return enumerator_->move_next();}
         
         /// @brief Sets the enumerator to its initial position, which is before the first element in the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
         /// @exception xtd::not_supported_exception The enumerator does not support being reset.
-        auto reset() -> void override {enumerator_->reset();}
+        void reset() override {enumerator_->reset();}
         /// @}
         
       private:
@@ -124,14 +124,14 @@ namespace xtd {
               return *iterator_;
             }
             
-            auto move_next() -> bool override {
+            bool move_next() override {
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.cend()) ++iterator_;
               else iterator_ = items_.cbegin();
               return iterator_ != items_.cend();
             }
             
-            auto reset() -> void override {
+            void reset() override {
               index_ = 0;
               version_ = current_version_ ? *current_version_ : version_t {};
               iterator_ = items_.cend();

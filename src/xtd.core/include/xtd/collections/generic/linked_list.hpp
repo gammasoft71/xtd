@@ -322,14 +322,14 @@ namespace xtd {
               return *iterator_;
             }
             
-            auto move_next() -> bool override {
+            bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
               else iterator_ = items_.data_->items.cbegin();
               return iterator_ != items_.data_->items.cend();
             }
             
-            auto reset() -> void override {
+            void reset() override {
               index_ = 0;
               version_ = items_.data_->version;
               iterator_ = items_.data_->items.cend();

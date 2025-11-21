@@ -312,12 +312,12 @@ namespace xtd {
               return (value_ = value_type {key_t {items_.data_->keys[index_]}, value_t {items_.data_->items[items_.data_->keys[index_]]}});
             }
             
-            auto move_next() -> bool override {
+            bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return ++index_ < items_.data_->keys.count();
             }
             
-            auto reset() -> void override {
+            void reset() override {
               version_ = items_.data_->version;
               index_ = xtd::npos;
             }

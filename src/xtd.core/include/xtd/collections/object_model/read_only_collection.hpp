@@ -47,8 +47,8 @@ namespace xtd {
           generic::enumerator<list_type_t> get_enumerator() const noexcept override {
             struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
               const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
-              auto move_next() -> bool override {return false;}
-              auto reset() -> void override {}
+              bool move_next() override {return false;}
+              void reset() override {}
             };
             return {new_ptr<empty_list_enumerator>()};
           }

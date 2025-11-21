@@ -632,12 +632,12 @@ namespace xtd {
               return items_[index_];
             }
             
-            auto move_next() -> bool override {
+            bool move_next() override {
               if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return ++index_ < items_.count();
             }
             
-            auto reset() -> void override {
+            void reset() override {
               version_ = items_.data_->items.version();
               index_ = list::npos;
             }
