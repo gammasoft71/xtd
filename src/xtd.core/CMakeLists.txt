@@ -719,6 +719,8 @@ add_sources(
   "include/xtd/collections/generic/helpers/lesser"
   "include/xtd/collections/generic/helpers/raw_array.hpp"
   "include/xtd/collections/generic/helpers/raw_array"
+  "include/xtd/collections/generic/helpers/raw_queue.hpp"
+  "include/xtd/collections/generic/helpers/raw_queue"
   "include/xtd/collections/generic/helpers/wrap_pointer_iterator.hpp"
   "include/xtd/collections/generic/helpers/wrap_pointer_iterator"
   "include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"

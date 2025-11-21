@@ -2,6 +2,7 @@
 /// @brief Contains xtd::collections::generic::queue <value_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "helpers/raw_queue.hpp"
 #include "linked_list.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -270,7 +271,7 @@ namespace xtd {
       };
       
       /// @cond
-      // Deduction guides for xtd::collections::generic::linked_list
+      // Deduction guides for xtd::collections::generic::queue
       // {
       template < class type_t, class allocator_t = xtd::collections::generic::helpers::allocator < type_t>>
       queue(queue < type_t, allocator_t >&&) -> queue < type_t, allocator_t >;
