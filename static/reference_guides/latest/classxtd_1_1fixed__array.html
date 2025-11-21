@@ -258,6 +258,12 @@ class xtd::fixed_array&lt; type_t, len &gt;</div><p>Represents a fixed array cla
 <tr class="memitem:a08d774aa173584ffa80660977fa38775" id="r_a08d774aa173584ffa80660977fa38775"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ae44e3fecddf1214edf2e039b0b2f3730">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08d774aa173584ffa80660977fa38775">operator[]</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)</td></tr>
 <tr class="memdesc:a08d774aa173584ffa80660977fa38775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at specified location index.  <br /></td></tr>
 <tr class="separator:a08d774aa173584ffa80660977fa38775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8ea3f366c446938fef8f11216bcb80" id="r_abc8ea3f366c446938fef8f11216bcb80"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc8ea3f366c446938fef8f11216bcb80">operator const_base_type</a> () const noexcept</td></tr>
+<tr class="memdesc:abc8ea3f366c446938fef8f11216bcb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
+<tr class="separator:abc8ea3f366c446938fef8f11216bcb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e51b617a6260643ca71bcb07d4f4a47" id="r_a4e51b617a6260643ca71bcb07d4f4a47"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e51b617a6260643ca71bcb07d4f4a47">operator base_type</a> () noexcept</td></tr>
+<tr class="memdesc:a4e51b617a6260643ca71bcb07d4f4a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
+<tr class="separator:a4e51b617a6260643ca71bcb07d4f4a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1358,6 +1364,66 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 
 </div>
 </div>
+<a id="abc8ea3f366c446938fef8f11216bcb80" name="abc8ea3f366c446938fef8f11216bcb80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8ea3f366c446938fef8f11216bcb80">&#9670;&#160;</a></span>operator const_base_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1fixed__array.html">xtd::fixed_array</a>&lt; type_t, len &gt;::operator <a class="el" href="#ab57ce19a9722e2f2989384831406324e">const_base_type</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying base type items. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base type items. </dd></dl>
+
+</div>
+</div>
+<a id="a4e51b617a6260643ca71bcb07d4f4a47" name="a4e51b617a6260643ca71bcb07d4f4a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e51b617a6260643ca71bcb07d4f4a47">&#9670;&#160;</a></span>operator base_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1fixed__array.html">xtd::fixed_array</a>&lt; type_t, len &gt;::operator <a class="el" href="#ae6de9f61e9ad30aaecbf81abfc101880">base_type</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying base type items. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base type items. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="fixed__array_8hpp_source.html">fixed_array.hpp</a></li>
 </ul>
@@ -1365,7 +1431,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 21 2025 09:10:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 14:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

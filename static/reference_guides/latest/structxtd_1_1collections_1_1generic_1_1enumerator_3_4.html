@@ -141,9 +141,9 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt;&gt;:</div>
 <tr class="separator:a8bc5274c723ed049cb81da8548a4d1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a0e4d6445228f3c98759f4a61af8a55b6" id="r_a0e4d6445228f3c98759f4a61af8a55b6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a0e4d6445228f3c98759f4a61af8a55b6">current</a> () const -&gt; const type_t &amp;override</td></tr>
-<tr class="memdesc:a0e4d6445228f3c98759f4a61af8a55b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element in the collection at the current position of the enumerator.  <br /></td></tr>
-<tr class="separator:a0e4d6445228f3c98759f4a61af8a55b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ef2e4d105ed3260d33bd1989b43f3b" id="r_a56ef2e4d105ed3260d33bd1989b43f3b"><td class="memItemLeft" align="right" valign="top">const type_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a> () const override</td></tr>
+<tr class="memdesc:a56ef2e4d105ed3260d33bd1989b43f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element in the collection at the current position of the enumerator.  <br /></td></tr>
+<tr class="separator:a56ef2e4d105ed3260d33bd1989b43f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a85613e1154ed0b87c5459acdbf3abf5b" id="r_a85613e1154ed0b87c5459acdbf3abf5b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">move_next</a> () -&gt; bool override</td></tr>
@@ -272,7 +272,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> enumerator = boxes.get_enumerator();</div>
 <div class="line">    <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">move_next</a>())</div>
-<div class="line">      console::write_line(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a0e4d6445228f3c98759f4a61af8a55b6">current</a>().to_string());</div>
+<div class="line">      console::write_line(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>().<a class="code hl_function" href="classxtd_1_1any__object.html#a18d9fee9685c5c890f11d1af3c6c9cc0">to_string</a>());</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> box : boxes)</div>
@@ -323,6 +323,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <div class="line"><span class="comment">// box [length=10, width=20, height=30]</span></div>
 <div class="line"><span class="comment">// box [length=20, width=5, height=10]</span></div>
 <div class="line"><span class="comment">// box [length=12, width=3, height=7]</span></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html_a18d9fee9685c5c890f11d1af3c6c9cc0"><div class="ttname"><a href="classxtd_1_1any__object.html#a18d9fee9685c5c890f11d1af3c6c9cc0">xtd::any_object::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div><div class="ttdef"><b>Definition</b> any_object.hpp:110</div></div>
 <div class="ttc" id="agroup__collections_html_gaf8650b6defaa46086307019cf98a5248"><div class="ttname"><a href="group__collections.html#gaf8650b6defaa46086307019cf98a5248">xtd::collections::ienumerable</a></div><div class="ttdeci">generic::ienumerable&lt; xtd::any_object &gt; ienumerable</div><div class="ttdoc">Exposes an enumerator, which supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:32</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">xtd::console_key::h</a></div><div class="ttdeci">@ h</div><div class="ttdoc">The H key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:102</div></div>
@@ -334,14 +335,14 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a0e4d6445228f3c98759f4a61af8a55b6"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a0e4d6445228f3c98759f4a61af8a55b6">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">auto current() const -&gt; const type_t &amp;override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:62</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:62</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a85613e1154ed0b87c5459acdbf3abf5b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">auto move_next() -&gt; bool override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:71</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a0e4d6445228f3c98759f4a61af8a55b6" name="a0e4d6445228f3c98759f4a61af8a55b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e4d6445228f3c98759f4a61af8a55b6">&#9670;&#160;</a></span>current()</h2>
+<a id="a56ef2e4d105ed3260d33bd1989b43f3b" name="a56ef2e4d105ed3260d33bd1989b43f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56ef2e4d105ed3260d33bd1989b43f3b">&#9670;&#160;</a></span>current()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,10 +351,10 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::current </td>
+          <td class="memname">const type_t &amp; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::current </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; const type_t&amp;</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -449,7 +450,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 21 2025 09:10:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 14:34:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
