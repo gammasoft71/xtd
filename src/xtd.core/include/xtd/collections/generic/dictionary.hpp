@@ -579,6 +579,14 @@ namespace xtd {
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         operator base_type& () noexcept {return data_->items;}
+        /// @brief Gets a std::unordered_map<key_t, value_t>.
+        /// @return A std::unordered_map<key_t, value_t>.
+        operator std::unordered_map<key_t, value_t>() const noexcept {
+          std::unordered_map<key_t, value_t> result;
+          for (auto& [key, value] : data_->items)
+            result[key] = value;
+          return result;
+        }
         /// @}
         
       private:
