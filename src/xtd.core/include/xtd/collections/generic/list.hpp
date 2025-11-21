@@ -85,7 +85,7 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = typename ilist<type_t>::value_type;
         /// @brief Represents the list base type.
-        using base_type = typename __xtd_raw_array_data__<value_type>::base_type;
+        using base_type = typename xtd::collections::generic::helpers::raw_array<value_type>::base_type;
         /// @brief Represents the list base type.
         using const_base_type = const base_type;
         /// @brief Represents the list size type (usually xtd::size).
@@ -1047,7 +1047,7 @@ namespace xtd {
         auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
         
         struct list_data {
-          __xtd_raw_array_data__<value_type, allocator_t> items;
+          xtd::collections::generic::helpers::raw_array<value_type, allocator_t> items;
           xtd::object sync_root;
         };
         

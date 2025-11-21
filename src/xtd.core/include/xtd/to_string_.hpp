@@ -395,7 +395,7 @@ inline xtd::string xtd::to_string(const xtd::collections::generic::ienumerable<t
 }
 
 template<class type_t>
-inline xtd::string xtd::to_string(const __xtd_raw_array_data__<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
+inline xtd::string xtd::to_string(const xtd::collections::generic::helpers::raw_array<type_t>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 }
 

@@ -785,7 +785,7 @@ namespace xtd {
       template<class source_t>
       inline static auto order(const ienumerable<source_t>& source, const xtd::collections::generic::icomparer<source_t>& comparer) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = __xtd_raw_array_data__<source_t> {source.begin(), source.end()};
+        result.items = xtd::collections::generic::helpers::raw_array<source_t> {source.begin(), source.end()};
         std::sort(result.items.begin(), result.items.end(), xtd::collections::generic::helpers::lesser<source_t>(comparer));
         return result;
       }

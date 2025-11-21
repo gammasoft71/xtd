@@ -476,7 +476,7 @@ namespace xtd {
   inline xtd::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   
   template<class type_t>
-  inline xtd::string to_string(const __xtd_raw_array_data__<type_t>& values, const xtd::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::collections::generic::helpers::raw_array<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   
   template<class type_t, class string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values);

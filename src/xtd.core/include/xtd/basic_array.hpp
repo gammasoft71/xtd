@@ -34,7 +34,7 @@ namespace xtd {
     /// @brief Represents the array allocator type.
     using allocator_type = xtd::collections::generic::helpers::allocator<value_type>;
     /// @brief Represents the array base type.
-    using base_type = typename __xtd_raw_array_data__<value_type, allocator_type>::base_type;
+    using base_type = typename xtd::collections::generic::helpers::raw_array<value_type, allocator_type>::base_type;
     /// @brief Represents the array size type (usually xtd::size).
     using size_type = xtd::size;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
@@ -52,9 +52,9 @@ namespace xtd {
     /// @brief Represents the const iterator of array value type.
     using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
     /// @brief Represents the reverse iterator of array value type.
-    using reverse_iterator = typename __xtd_raw_array_data__<value_type>::reverse_iterator;
+    using reverse_iterator = typename xtd::collections::generic::helpers::raw_array<value_type>::reverse_iterator;
     /// @brief Represents the const reverse iterator of array value type.
-    using const_reverse_iterator = typename __xtd_raw_array_data__<value_type>::const_reverse_iterator;
+    using const_reverse_iterator = typename xtd::collections::generic::helpers::raw_array<value_type>::const_reverse_iterator;
     /// @}
     
     /// @name Public Fields
@@ -543,7 +543,7 @@ namespace xtd {
     static xtd::string to_string(const xtd::basic_array<value_t>& items, xtd::size rank, xtd::size base_index);
     
     struct array_data {
-      __xtd_raw_array_data__ < value_type > items;
+      xtd::collections::generic::helpers::raw_array < value_type > items;
       std::vector < size_type > lower_bound {0};
       std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
       object sync_root;
