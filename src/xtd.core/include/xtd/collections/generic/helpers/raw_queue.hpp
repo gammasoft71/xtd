@@ -24,6 +24,7 @@ namespace xtd {
           using size_type = typename base_type::size_type;
           using reference = typename base_type::reference;
           using const_reference = typename base_type::const_reference;
+          using iterator = typename container_type::const_iterator;
           using const_iterator = typename container_type::const_iterator;
           /// @}
           
@@ -35,8 +36,6 @@ namespace xtd {
             shrink_to_fit();
             ensure_capacity(capacity);
           }
-          explicit raw_queue(const container_t& cont) : base_type(cont) {shrink_to_fit();}
-          explicit raw_queue(container_t&& cont) : base_type(std::move(cont)) {shrink_to_fit();}
           raw_queue(const raw_queue& other) : base_type(other) {shrink_to_fit();}
           raw_queue(raw_queue&& other) : base_type(std::move(other)) {shrink_to_fit();}
           template<class input_iterator_t>
