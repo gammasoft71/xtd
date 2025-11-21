@@ -186,7 +186,7 @@ namespace xtd {
       
       /// @brief Creates a new object that is a copy of the current instance.
       /// @return A new object that is a copy of this instance.
-      auto clone() const -> xtd::uptr<xtd::object> override;
+      xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Copies the elements of the xtd::collections::bit_array to an xtd::array, starting at a particular xtd::array index.
       /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::bit_array. The xtd::array must have zero-based indexing.
@@ -220,7 +220,7 @@ namespace xtd {
       
       /// @brief Returns an enumerator that iterates through a collection.
       /// @return An xtd::collections::generic::ienumerator object that can be used to iterate through the collection.
-      auto get_enumerator() const -> xtd::collections::generic::enumerator<bool> override;
+      xtd::collections::generic::enumerator<bool> get_enumerator() const override;
       
       /// @brief Determines whether all bits in the xtd::collections::bit_array are set to `true`.
       /// @return `true` if every bit in the xtd::collections::bit_array is set to true, or if xtd::collections::bit_array is empty; otherwise, `false`.
@@ -375,7 +375,7 @@ namespace xtd {
     private:
       auto is_read_only() const noexcept -> bool override;
       auto is_synchronized() const noexcept -> bool override;
-      auto sync_root() const noexcept -> const object& override;
+      const object& sync_root() const noexcept override;
       
       auto add(const bool&) -> void override;
       auto clear() -> void override;

@@ -44,9 +44,9 @@ namespace xtd {
           
           auto contains(const list_type_t& item) const noexcept -> bool override {return false;}
           auto copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const -> void override {}
-          auto get_enumerator() const noexcept -> generic::enumerator<list_type_t> override {
+          generic::enumerator<list_type_t> get_enumerator() const noexcept override {
             struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
-              auto current() const -> const list_type_t& override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+              const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
               auto move_next() -> bool override {return false;}
               auto reset() -> void override {}
             };
@@ -54,8 +54,8 @@ namespace xtd {
           }
           auto index_of(const list_type_t& item) const noexcept -> xtd::size override {return npos;}
           
-          auto operator [](xtd::size index) const -> const list_type_t& override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
-          auto operator [](xtd::size index) -> list_type_t& override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+          const list_type_t& operator [](xtd::size index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+          list_type_t& operator [](xtd::size index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           
         private:
           auto is_fixed_size() const noexcept -> bool override {return false;}
@@ -134,7 +134,7 @@ namespace xtd {
           return roc_el;
         }
         
-        auto sync_root() const noexcept -> const xtd::object& override {return items_.sync_root();}
+        const xtd::object& sync_root() const noexcept override {return items_.sync_root();}
         /// @}
         
         /// @name Public Methods
@@ -188,7 +188,7 @@ namespace xtd {
         /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
         /// @remarks Default implementations of collections in xtd::collections::generic are not synchronized.
         /// @remarks This method is an O(1) operation
-        auto get_enumerator() const noexcept -> generic::enumerator<value_type> override {return items_.get_enumerator();}
+        generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
         
         /// @brief Searches for the specified object and returns the zero-based index of the first occurrence within the entire xtd::collections::object_model::read_only_collection <type_t>.
         /// @param item The object to locate in the xtd::collections::object_model::read_only_collection <type_t>.

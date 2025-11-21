@@ -186,7 +186,7 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::queue <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::queue <type_t>.
-        auto get_enumerator() const noexcept -> enumerator<value_type> override {
+        enumerator<value_type> get_enumerator() const noexcept override {
           return data_->items.get_enumerator();
         }
         
@@ -257,7 +257,7 @@ namespace xtd {
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        auto sync_root() const noexcept -> const xtd::object& override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
+        const xtd::object& sync_root() const noexcept override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
         auto add(const type_t& value) -> void override {enqueue(value);}
         auto remove(const type_t&) -> bool override {return false;}
         

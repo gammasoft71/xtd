@@ -392,11 +392,11 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::dictionary <key_t, value_t>.
-        auto get_enumerator() const noexcept -> enumerator<value_type> override {
+        enumerator<value_type> get_enumerator() const noexcept override {
           struct dictionary_enumerator : public ienumerator < value_type > {
             explicit dictionary_enumerator(const dictionary & items, size_type version) : items_(items), version_(version) {}
             
-            auto current() const -> const value_type& override {
+            const value_type& current() const override {
               if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return (value_ = value_type {*iterator_});
@@ -557,7 +557,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        auto operator [](const key_t & key) const -> const value_t& override {
+        const value_t& operator [](const key_t & key) const override {
           auto iterator = data_->items.find(key);
           if (iterator == data_->items.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::key_not_found);
           return iterator->second;
@@ -568,7 +568,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        auto operator [](const key_t & key) -> value_t& override {
+        value_t& operator [](const key_t & key) override {
           ++data_->version;
           return data_->items[key];
         }
@@ -592,7 +592,7 @@ namespace xtd {
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct dictionary_data {
           dictionary_data() = default;

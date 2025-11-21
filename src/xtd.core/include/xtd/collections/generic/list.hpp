@@ -622,11 +622,11 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
-        auto get_enumerator() const noexcept -> enumerator<value_type> override {
+        enumerator<value_type> get_enumerator() const noexcept override {
           struct list_enumerator : public ienumerator<value_type> {
             explicit list_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
             
-            auto current() const -> const value_type& override {
+            const value_type& current() const override {
               if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return items_[index_];
@@ -1044,7 +1044,7 @@ namespace xtd {
         auto is_fixed_size() const noexcept -> bool override {return false;}
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct list_data {
           xtd::collections::generic::helpers::raw_array<value_type, allocator_t> items;

@@ -59,7 +59,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the element in the collection at the current position of the enumerator.
         /// @return The element in the collection at the current position of the enumerator.
-        auto current() const -> const type_t& override {return enumerator_->current();}
+        const type_t& current() const override {return enumerator_->current();}
         /// @}
         
         /// @name Public Methods
@@ -118,7 +118,7 @@ namespace xtd {
           public:
             explicit internal_enumerator(const collection_t& items, const version_t* current_version) : items_(items), version_(current_version ? * current_version : version_t {}), current_version_(current_version) {}
             
-            auto current() const -> const value_type& override {
+            const value_type& current() const override {
               if (iterator_ == items_.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return *iterator_;

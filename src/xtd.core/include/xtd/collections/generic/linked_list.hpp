@@ -312,11 +312,11 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::linked_list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::linked_list <type_t>.
-        auto get_enumerator() const noexcept -> enumerator < value_type > override {
+        enumerator<value_type> get_enumerator() const noexcept override {
           struct linked_list_enumerator : public ienumerator < value_type > {
             explicit linked_list_enumerator(const linked_list & items, xtd::size version) : items_(items), version_(version) {}
             
-            auto current() const -> const value_type& override {
+            const value_type& current() const override {
               if (iterator_ == items_.data_->items.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return *iterator_;
@@ -427,7 +427,7 @@ namespace xtd {
         auto add(const type_t& item) -> void override {add_last(item);}
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct linked_list_data {
           base_type items;

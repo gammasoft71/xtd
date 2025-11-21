@@ -235,11 +235,11 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::hash_set <type_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::hash_set <type_t>.
-        auto get_enumerator() const noexcept -> enumerator<value_type> override {
+        enumerator<value_type> get_enumerator() const noexcept override {
           struct hash_set_enumerator : public ienumerator < value_type > {
             explicit hash_set_enumerator(const hash_set & items, size_type version) : items_(items), version_(version) {}
             
-            auto current() const -> const value_type& override {
+            const value_type& current() const override {
               if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               value_ = value_type {*iterator_};
@@ -389,7 +389,7 @@ namespace xtd {
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        auto sync_root() const noexcept -> const xtd::object& override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         auto sub_set(const hash_set& set) const noexcept -> bool {
           if (count() == 0) return true;
           if (count() > set.count()) return false;
