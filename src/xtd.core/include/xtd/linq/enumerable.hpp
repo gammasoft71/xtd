@@ -4,6 +4,7 @@
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
 #include "../collections/generic/helpers/lesser.hpp"
+#include "../collections/generic/helpers/raw_array.hpp"
 //#include "../collections/generic/iequality_comparer.hpp"
 #include "../collections/generic/comparer.hpp"
 #include "../collections/generic/equality_comparer.hpp"
@@ -15,7 +16,6 @@
 #include "../internal/__array_definition.hpp"
 #include "../internal/__key_value_pair_definition.hpp"
 #include "../internal/__list_definition.hpp"
-#include "../internal/__xtd_raw_array_data.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../decimal.hpp"
 #include "../iequatable.hpp"

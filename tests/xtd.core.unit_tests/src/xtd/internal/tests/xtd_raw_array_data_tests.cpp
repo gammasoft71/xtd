@@ -1,6 +1,4 @@
-#define __XTD_CORE_INTERNAL__
-#include <xtd/internal/__xtd_raw_array_data.hpp>
-#undef  __XTD_CORE_INTERNAL__
+#include <xtd/collections/generic/helpers/raw_array.hpp>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

@@ -5,11 +5,11 @@
 #include "helpers/allocator.hpp"
 #include "helpers/equator.hpp"
 #include "helpers/lesser.hpp"
+#include "helpers/raw_array.hpp"
 #include "comparer.hpp"
 #include "ilist.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__list_definition.hpp"
-#include "../../internal/__xtd_raw_array_data.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../object_model/read_only_collection.hpp"
 #include "../../action.hpp"

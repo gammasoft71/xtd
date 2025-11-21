@@ -4,10 +4,10 @@
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.hpp"
-#include "internal/__xtd_raw_array_data.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/equator.hpp"
 #include "collections/generic/helpers/lesser.hpp"
+#include "collections/generic/helpers/raw_array.hpp"
 #include "collections/generic/comparer.hpp"
 #include "collections/generic/enumerator.hpp"
 #include "collections/generic/icomparer.hpp"
