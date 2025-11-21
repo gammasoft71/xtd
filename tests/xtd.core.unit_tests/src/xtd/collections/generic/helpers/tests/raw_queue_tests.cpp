@@ -20,7 +20,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<raw_queue<int>::size_type>());
     }
-
+    
     void test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<raw_queue<int>::reference>());
     }
@@ -28,7 +28,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<raw_queue<int>::const_reference>());
     }
-
+    
     void test_method_(iterator) {
       assert::are_equal(typeof_<raw_queue<int>::container_type::const_iterator>(), typeof_<raw_queue<int>::iterator> ());
     }
@@ -36,7 +36,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(const_iterator) {
       assert::are_equal(typeof_<raw_queue<int>::container_type::const_iterator>(), typeof_<raw_queue<int>::const_iterator> ());
     }
-
+    
     void test_method_(default_constructor) {
       auto items = raw_queue<int> {};
       assert::is_zero(items.capacity());
