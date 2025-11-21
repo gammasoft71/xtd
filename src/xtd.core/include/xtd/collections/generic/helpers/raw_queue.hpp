@@ -67,11 +67,11 @@ namespace xtd {
           auto begin() const -> const_iterator {return base_type::c.cbegin();}
           
           auto capacity() const noexcept -> size_type {return capacity_;}
-
+          
           auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
-
+          
           auto cend() const -> const_iterator {return base_type::c.cend();}
-
+          
           auto end() const -> const_iterator {return base_type::c.cend();}
           
           auto push(value_type&& value) -> void {
@@ -104,9 +104,9 @@ namespace xtd {
           /// @{
           raw_queue& operator =(const raw_queue& other) = default;
           raw_queue& operator =(raw_queue&& other) = default;
-
-          operator const base_type&() const noexcept {return *this;}
-          operator base_type&() noexcept {return *this;}
+          
+          operator const base_type& () const noexcept {return *this;}
+          operator base_type& () noexcept {return *this;}
           /// @}
           
         private:
