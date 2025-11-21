@@ -200,13 +200,6 @@ namespace xtd {
     /// @param index The position of the element to return.
     /// @return Reference to the requested element.
     reference operator [](xtd::size index) {return at(index);}
-    
-    /// @brief Returns the underlying base type items.
-    /// @return The underlying base type items.
-    virtual operator const_base_type() const noexcept {return items_;}
-    /// @brief Returns the underlying base type items.
-    /// @return The underlying base type items.
-    virtual operator base_type() noexcept {return items_;}
     /// @}
     
   private:
