@@ -6,6 +6,7 @@ include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
 add_sources(
   "src/main.cpp"
+  "src/xtd/collections/generic/helpers/tests/raw_array_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/wrap_pointer_iterator_tests.cpp"
   "src/xtd/collections/generic/tests/comparer_tests.cpp"
   "src/xtd/collections/generic/tests/dictionary_tests.cpp"
@@ -33,7 +34,6 @@ add_sources(
   "src/xtd/globalization/tests/culture_not_found_exception_tests.cpp"
   "src/xtd/globalization/tests/culture_types_tests.cpp"
   "src/xtd/globalization/tests/translator_tests.cpp"
-  "src/xtd/internal/tests/xtd_raw_array_data_tests.cpp"
   "src/xtd/io/tests/binary_reader_tests.cpp"
   "src/xtd/io/tests/directory_tests.cpp"
   "src/xtd/io/tests/directory_info_tests.cpp"
