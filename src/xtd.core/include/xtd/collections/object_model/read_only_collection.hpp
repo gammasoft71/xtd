@@ -66,7 +66,7 @@ namespace xtd {
           auto remove(const list_type_t& item) -> bool override {return false;}
           auto remove_at(xtd::size index) -> void override {}
         };
-
+        
       public:
         /// @name Public Aliases
         
