@@ -292,14 +292,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>              <span class="keywordflow">return</span> *iterator_;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            }</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>              <span class="keywordflow">if</span> (version_ != items_.data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>              <span class="keywordflow">if</span> (index_++ &amp;&amp; iterator_ != items_.data_-&gt;items.cend()) ++iterator_;</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>              <span class="keywordflow">else</span> iterator_ = items_.data_-&gt;items.cbegin();</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>              <span class="keywordflow">return</span> iterator_ != items_.data_-&gt;items.cend();</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            }</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>              index_ = 0;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>              version_ = items_.data_-&gt;version;</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>              iterator_ = items_.data_-&gt;items.cend();</div>
@@ -492,7 +492,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 21 2025 14:34:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 14:57:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

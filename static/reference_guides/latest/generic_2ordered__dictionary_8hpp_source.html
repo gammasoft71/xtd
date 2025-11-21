@@ -295,12 +295,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>              <span class="keywordflow">return</span> (value_ = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a6baf6beb429bff712da86ee3c3f71a61">value_type</a> {key_t {items_.data_-&gt;keys[index_]}, value_t {items_.data_-&gt;items[items_.data_-&gt;keys[index_]]}});</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            }</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>              <span class="keywordflow">if</span> (version_ != items_.data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>              <span class="keywordflow">return</span> ++index_ &lt; items_.data_-&gt;keys.count();</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            }</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>              version_ = items_.data_-&gt;version;</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>              index_ = <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">xtd::npos</a>;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            }</div>
@@ -562,7 +562,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 21 2025 14:34:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 14:57:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

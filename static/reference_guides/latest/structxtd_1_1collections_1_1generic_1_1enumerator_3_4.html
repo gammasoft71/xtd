@@ -146,12 +146,12 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt;&gt;:</div>
 <tr class="separator:a56ef2e4d105ed3260d33bd1989b43f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a85613e1154ed0b87c5459acdbf3abf5b" id="r_a85613e1154ed0b87c5459acdbf3abf5b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">move_next</a> () -&gt; bool override</td></tr>
-<tr class="memdesc:a85613e1154ed0b87c5459acdbf3abf5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the enumerator to the next element of the collection.  <br /></td></tr>
-<tr class="separator:a85613e1154ed0b87c5459acdbf3abf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab10ad6d95d136651f5c00fa67d6ae06" id="r_aab10ad6d95d136651f5c00fa67d6ae06"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#aab10ad6d95d136651f5c00fa67d6ae06">reset</a> () -&gt; void override</td></tr>
-<tr class="memdesc:aab10ad6d95d136651f5c00fa67d6ae06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the enumerator to its initial position, which is before the first element in the collection.  <br /></td></tr>
-<tr class="separator:aab10ad6d95d136651f5c00fa67d6ae06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad461ec52e959712ab699f6ca3aa5ec3d" id="r_ad461ec52e959712ab699f6ca3aa5ec3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a> () override</td></tr>
+<tr class="memdesc:ad461ec52e959712ab699f6ca3aa5ec3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the enumerator to the next element of the collection.  <br /></td></tr>
+<tr class="separator:ad461ec52e959712ab699f6ca3aa5ec3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a22fc81f786bded348a111b4ea5ba9" id="r_af1a22fc81f786bded348a111b4ea5ba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#af1a22fc81f786bded348a111b4ea5ba9">reset</a> () override</td></tr>
+<tr class="memdesc:af1a22fc81f786bded348a111b4ea5ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the enumerator to its initial position, which is before the first element in the collection.  <br /></td></tr>
+<tr class="separator:af1a22fc81f786bded348a111b4ea5ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -271,7 +271,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <div class="line">    <span class="keyword">auto</span> boxes = box_collection {{10, 20, 30}, {20, 5, 10}, {12, 3, 7}};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> enumerator = boxes.get_enumerator();</div>
-<div class="line">    <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">move_next</a>())</div>
+<div class="line">    <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
 <div class="line">      console::write_line(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>().<a class="code hl_function" href="classxtd_1_1any__object.html#a18d9fee9685c5c890f11d1af3c6c9cc0">to_string</a>());</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
@@ -336,7 +336,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:62</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a85613e1154ed0b87c5459acdbf3abf5b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a85613e1154ed0b87c5459acdbf3abf5b">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">auto move_next() -&gt; bool override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:71</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:71</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -371,8 +371,8 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="a85613e1154ed0b87c5459acdbf3abf5b" name="a85613e1154ed0b87c5459acdbf3abf5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85613e1154ed0b87c5459acdbf3abf5b">&#9670;&#160;</a></span>move_next()</h2>
+<a id="ad461ec52e959712ab699f6ca3aa5ec3d" name="ad461ec52e959712ab699f6ca3aa5ec3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad461ec52e959712ab699f6ca3aa5ec3d">&#9670;&#160;</a></span>move_next()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,10 +381,10 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::move_next </td>
+          <td class="memname">bool <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::move_next </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -407,8 +407,8 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 
 </div>
 </div>
-<a id="aab10ad6d95d136651f5c00fa67d6ae06" name="aab10ad6d95d136651f5c00fa67d6ae06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab10ad6d95d136651f5c00fa67d6ae06">&#9670;&#160;</a></span>reset()</h2>
+<a id="af1a22fc81f786bded348a111b4ea5ba9" name="af1a22fc81f786bded348a111b4ea5ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a22fc81f786bded348a111b4ea5ba9">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,10 +417,10 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::reset </td>
+          <td class="memname">void <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; void</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -450,7 +450,7 @@ template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 21 2025 14:34:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 14:57:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
