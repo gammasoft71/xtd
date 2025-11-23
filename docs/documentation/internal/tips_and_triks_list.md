@@ -35,8 +35,8 @@
 | 🔴  | #15    | January 19, 2026   | Using self_ to simplify code instead of raw this                        | C++ modern                                  |
 | 🔴  | #14    | January 5, 2026    | Displaying an open/save file dialog in one line                         | Qt QFileDialog / Win32 API                  |
 | 🔴  | #13    | December 22, 2025  | Drawing text and shapes in a form with xtd::drawing::graphics           | Qt painting / GDI+                          |
-| 🔴  | #12    | December 8, 2025   | Using timers (interval, elapsed event)                                  | std::thread + sleep, Qt Timer               |
-| 🔴  | #11    | November 24, 2025  | Formatting strings with xtd::string::format                             | C++20 std::format / Qt QString::arg         |
+| 🔴  | #12    | December 8, 2025   | Formatting strings with xtd::string::format                             | C++20 std::format / Qt QString::arg         |
+| 🔴  | #11    | November 24, 2025  | Using timers (interval, elapsed event)                                  | std::thread + sleep, Qt Timer               |
 | 🟢  | #10    | November 10, 2025  | Unit testing with xtd::tunit                                            | Catch2 / gtest                              |
 | 🟢  | #9     | October 27, 2025   | Adding color to console output (text + background)                      | ANSI escape codes                           |
 | 🟢  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types          | C++ modern / Boost / Qt                     |
