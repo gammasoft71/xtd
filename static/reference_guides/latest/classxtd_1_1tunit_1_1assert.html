@@ -1466,7 +1466,7 @@ template&lt;class item_t, class collection_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="#aec7a8f3ecd3da75d62f949ef77a81410">xtd::tunit::assert::contains</a>(2, v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="#aec7a8f3ecd3da75d62f949ef77a81410">xtd::tunit::assert::contains</a>(4, v1); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_aec7a8f3ecd3da75d62f949ef77a81410"><div class="ttname"><a href="#aec7a8f3ecd3da75d62f949ef77a81410">xtd::tunit::assert::contains</a></div><div class="ttdeci">static void contains(const item_t &amp;item, const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that collection contains an item.</div><div class="ttdef"><b>Definition</b> assert.hpp:279</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1576,9 +1576,8 @@ template&lt;class item_t, class collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test throws an assert_error exception.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a34472044617550faf939f05c223b6227"><div class="ttname"><a href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">xtd::basic_array::at</a></div><div class="ttdeci">virtual reference at(size_type index)</div><div class="ttdoc">Returns a reference to the element at specified location pos, with bounds checking.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:228</div></div>
+<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.at(2);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.at(5);}); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_ab6a60ab66cf2755d6fd6e87bf50f6e80"><div class="ttname"><a href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a></div><div class="ttdeci">static void does_not_throw(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that the staement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1632,8 +1631,8 @@ template&lt;class item_t, class collection_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#ab6a60ab66cf2755d6fd6e87bf50f6e80">xtd::tunit::assert::does_not_throw</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4823,8 +4822,8 @@ template&lt;class exception_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.at(2);}); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_a70899575f80a440f1b17c6804a011bc0"><div class="ttname"><a href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws</a></div><div class="ttdeci">static void throws(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that the statement throws a particular exception when called.</div><div class="ttdef"><b>Definition</b> assert.hpp:1257</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -4886,8 +4885,8 @@ template&lt;class exception_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a70899575f80a440f1b17c6804a011bc0">xtd::tunit::assert::throws&lt;std::out_of_range&gt;</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4934,8 +4933,8 @@ template&lt;class exception_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.at(2);}); <span class="comment">// test throws an assert_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_a6b6f275292870d50de2418b4eb7d9eb5"><div class="ttname"><a href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a></div><div class="ttdeci">static void throws_any(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that the staement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -4989,8 +4988,8 @@ template&lt;class exception_t&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
+<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="#a6b6f275292870d50de2418b4eb7d9eb5">xtd::tunit::assert::throws_any</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an assert_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5002,7 +5001,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2025 14:27:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 22:00:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

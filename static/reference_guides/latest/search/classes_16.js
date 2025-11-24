@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['xml_5fsyntax_5fexception_0',['xml_syntax_exception',['../classxtd_1_1xml__syntax__exception.html',1,'xtd']]],
-  ['xtd_5fabout_5fbox_1',['xtd_about_box',['../classxtd_1_1forms_1_1xtd__about__box.html',1,'xtd::forms']]],
-  ['xtd_5fabout_5fdialog_2',['xtd_about_dialog',['../classxtd_1_1forms_1_1xtd__about__dialog.html',1,'xtd::forms']]],
-  ['xtd_5flibrary_3',['xtd_library',['../classxtd_1_1environment_1_1xtd__library.html',1,'xtd::environment']]],
-  ['xtd_5fsystem_5fimages_4',['xtd_system_images',['../classxtd_1_1drawing_1_1xtd__system__images.html',1,'xtd::drawing']]]
+  ['wait_5fhandle_0',['wait_handle',['../classxtd_1_1threading_1_1wait__handle.html',1,'xtd::threading']]],
+  ['wait_5fhandle_5fcannot_5fbe_5fopened_5fexception_1',['wait_handle_cannot_be_opened_exception',['../classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html',1,'xtd::threading']]],
+  ['web_5fexception_2',['web_exception',['../classxtd_1_1net_1_1web__exception.html',1,'xtd::net']]],
+  ['where_5fview_3',['where_view',['../classxtd_1_1ranges_1_1views_1_1where__view.html',1,'xtd::ranges::views']]],
+  ['white_5fcolors_4',['white_colors',['../classxtd_1_1drawing_1_1white__colors.html',1,'xtd::drawing']]],
+  ['wrap_5fpointer_5fiterator_5',['wrap_pointer_iterator',['../classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html',1,'xtd::collections::generic::helpers']]],
+  ['wrap_5fpointer_5fiterator_3c_20pointer_20_3e_6',['wrap_pointer_iterator&lt; pointer &gt;',['../classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html',1,'xtd::collections::generic::helpers']]]
 ];

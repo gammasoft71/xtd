@@ -224,7 +224,7 @@ class xtd::fixed_array&lt; type_t, len &gt;</div><p>Represents a fixed array cla
 <tr class="memdesc:a39f96204b1174ec10cfd5838798694da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="separator:a39f96204b1174ec10cfd5838798694da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a45bc58995de04158e892af1f8dc94" id="r_a90a45bc58995de04158e892af1f8dc94"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90a45bc58995de04158e892af1f8dc94">empty</a> () const noexcept</td></tr>
-<tr class="memdesc:a90a45bc58995de04158e892af1f8dc94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the container has no elements, i.e. whether <a class="el" href="classxtd_1_1basic__array.html#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a> == <a class="el" href="classxtd_1_1basic__array.html#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>.  <br /></td></tr>
+<tr class="memdesc:a90a45bc58995de04158e892af1f8dc94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().  <br /></td></tr>
 <tr class="separator:a90a45bc58995de04158e892af1f8dc94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b5d065d644852056c2865c83bceb9f" id="r_a11b5d065d644852056c2865c83bceb9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa2839d7c4b854e9629eae31192d1081a">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b5d065d644852056c2865c83bceb9f">end</a> () const noexcept</td></tr>
 <tr class="memdesc:a11b5d065d644852056c2865c83bceb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
@@ -248,7 +248,7 @@ class xtd::fixed_array&lt; type_t, len &gt;</div><p>Represents a fixed array cla
 <tr class="memdesc:ad04e9421788b98ccc11e8d60f2f8a2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a size that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
 <tr class="separator:ad04e9421788b98ccc11e8d60f2f8a2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8dd73ae80723f74228e32e7031e7cea" id="r_ad8dd73ae80723f74228e32e7031e7cea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8dd73ae80723f74228e32e7031e7cea">size</a> () const noexcept</td></tr>
-<tr class="memdesc:ad8dd73ae80723f74228e32e7031e7cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the container, i.e. std::distance(<a class="el" href="classxtd_1_1basic__array.html#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a>, <a class="el" href="classxtd_1_1basic__array.html#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>).  <br /></td></tr>
+<tr class="memdesc:ad8dd73ae80723f74228e32e7031e7cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).  <br /></td></tr>
 <tr class="separator:ad8dd73ae80723f74228e32e7031e7cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
@@ -821,7 +821,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 </table>
 </div><div class="memdoc">
 
-<p>Checks if the container has no elements, i.e. whether <a class="el" href="classxtd_1_1basic__array.html#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a> == <a class="el" href="classxtd_1_1basic__array.html#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>. </p>
+<p>Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end(). </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, <code>false</code> otherwise. </dd></dl>
 
 </div>
@@ -1064,7 +1064,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 </table>
 </div><div class="memdoc">
 
-<p>Returns the number of elements in the container, i.e. std::distance(<a class="el" href="classxtd_1_1basic__array.html#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a>, <a class="el" href="classxtd_1_1basic__array.html#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>). </p>
+<p>Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()). </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements in the container. </dd></dl>
 
 </div>
@@ -1365,7 +1365,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2025 14:26:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 21 2025 22:00:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
