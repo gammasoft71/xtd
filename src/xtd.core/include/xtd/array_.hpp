@@ -17,21 +17,15 @@ namespace xtd {
   // {
   template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(array<type_t, rank, allocator_t>&&) -> array<type_t, rank, allocator_t>;
-
+  
   template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(const array<type_t, rank, allocator_t>&) -> array<type_t, rank, allocator_t>;
   
   template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   array(std::vector<type_t, allocator_t>&&) -> array<type_t, 1>;
   
-  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-  array(const std::vector<type_t, allocator_t>&) -> array<type_t, 1>;
-
-  template<class type_t>
-  array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t>;
-  
-  template<class type_t>
-  array(const xtd::collections::generic::ilist<type_t>&) -> array<type_t>;
+  template<class type_t, xtd::size rank = 1>
+  array(const std::vector<type_t>&) -> array<type_t, rank>;
 
   template <class input_iterator_t>
   array(input_iterator_t, input_iterator_t) -> array<std::iter_value_t<input_iterator_t>>;

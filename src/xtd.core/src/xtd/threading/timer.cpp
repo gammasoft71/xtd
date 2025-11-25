@@ -18,18 +18,18 @@ struct timer::data {
   int32 period {-1};
   any_object state{object()};
   wait_callback timer_proc = wait_callback {[self = this] {
-    while (!self->closed) {
-      if (self->restart_requested) {
-        self->restart_requested = false;
-        self->sleep.wait_one(self->due_time);
-        if (self->closed) break;
+      while (!self->closed) {
+        if (self->restart_requested) {
+          self->restart_requested = false;
+          self->sleep.wait_one(self->due_time);
+          if (self->closed) break;
+        }
+        thread_pool::queue_user_work_item(self->callback, self->state);
+        if (self->period == 0) break;
+        self->sleep.wait_one(self->period);
       }
-      thread_pool::queue_user_work_item(self->callback, self->state);
-      if (self->period == 0) break;
-      self->sleep.wait_one(self->period);
-    }
-    self->event.set();
-  }};
+      self->event.set();
+    }};
 };
 
 timer::timer(const timer_callback& callback) : timer(callback, object {}, -1, -1) {

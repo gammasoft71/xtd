@@ -146,7 +146,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(capaciy) {
       auto items = raw_queue {84, 42, 21};
       assert::are_equal(3_z, items.size());
-      
+    
       items.reserve(42);
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.size());
@@ -155,7 +155,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(capaciy_with_bool) {
       auto items = raw_queue {true, false, true};
       assert::are_equal(3_z, items.size());
-      
+    
       items.reserve(42);
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.size());
@@ -217,50 +217,50 @@ namespace xtd::collections::generic::helpers::tests {
     
     void test_method_(data) {
       auto items = raw_queue {84, 42, 21};
-      
+    
       auto ptr = items.data();
       assert::are_equal(84, *ptr);
       assert::are_equal(42, *(ptr + 1));
       assert::are_equal(21, *(ptr + 2));
-      
+    
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
       //assert::are_equal(0, *(ptr + 3));
-      
+    
       *(ptr) = 63;
       *(ptr + 1) = 31;
       *(ptr + 2) = 10;
-      
+    
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
       // *(ptr + 3) = 6;
-      
+    
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
     void test_method_(data_with_bool) {
       auto items = raw_queue {true, false, true};
-      
+    
       auto ptr = items.data();
       assert::are_equal(true, *ptr);
       assert::are_equal(false, *(ptr + 1));
       assert::are_equal(true, *(ptr + 2));
-      
+    
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
       //assert::are_equal(false, *(ptr + 3));
-      
+    
       *(ptr) = false;
       *(ptr + 1) = true;
       *(ptr + 2) = false;
-      
+    
       // Attempting to access a pointer that exceeds size() results in undefined behaviour.
       // *(ptr + 3) = true;
-      
+    
       collection_assert::are_equal({false, true, false}, items);
     }
     
     void test_method_(empty) {
       assert::is_true(raw_queue<int> {}.empty());
       assert::is_false(raw_queue<int> {42}.empty());
-      
+    
       auto items = raw_queue<int> {};
       assert::is_true(items.empty());
       items.reserve(42);
@@ -276,7 +276,7 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(empty_with_bool) {
       assert::is_true(raw_queue<bool> {}.empty());
       assert::is_false(raw_queue<bool> {true}.empty());
-      
+    
       auto items = raw_queue<int> {};
       assert::is_true(items.empty());
       items.reserve(42);
@@ -346,44 +346,44 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(items) {
       auto items = raw_queue {84, 42, 21};
       assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(items.items()));
-      
+    
       auto& inners = items.items();
       assert::are_equal(84, inners[0]);
       assert::are_equal(42, inners[1]);
       assert::are_equal(21, inners[2]);
-      
+    
       // Attempting to access index that exceeds size() results in undefined behaviour.
       //assert::are_equal(0, inners[3]);
-      
+    
       inners[0] = 63;
       inners[1] = 31;
       inners[2] = 10;
-      
+    
       // Attempting to access index that exceeds size() results in undefined behaviour.
       //inners[3] = 6;
-      
+    
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
     void test_method_(items_with_bool) {
       auto items = raw_queue {true, false, true};
       assert::are_equal(typeof_<raw_queue<bool>::base_type>(), typeof_(items.items()));
-      
+    
       auto& inners = items.items();
       assert::are_equal(1u, inners[0]);
       assert::are_equal(0u, inners[1]);
       assert::are_equal(1u, inners[2]);
-      
+    
       // Attempting to access index that exceeds size() results in undefined behaviour.
       //assert::are_equal(false, inners[3]);
-      
+    
       inners[0] = false;
       inners[1] = true;
       inners[2] = false;
-      
+    
       // Attempting to access index that exceeds size() results in undefined behaviour.
       //inners[3] = true;
-      
+    
       collection_assert::are_equal({false, true, false}, items);
     }
     
@@ -485,33 +485,33 @@ namespace xtd::collections::generic::helpers::tests {
     
     void test_method_(at) {
       auto items = raw_queue {84, 42, 21};
-      
+    
       assert::are_equal(84, items.at(0));
       assert::are_equal(42, items.at(1));
       assert::are_equal(21, items.at(2));
       assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items.at(3);});
-      
+    
       items.at(0) = 63;
       items.at(1) = 31;
       items.at(2) = 10;
       assert::throws<std::out_of_range>([&] {items.at(3) = 5;});
-      
+    
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
     void test_method_(at_with_bool) {
       auto items = raw_queue {true, false, true};
-      
+    
       assert::are_equal(true, items.at(0));
       assert::are_equal(false, items.at(1));
       assert::are_equal(true, items.at(2));
       assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items.at(3);});
-      
+    
       items.at(0) = false;
       items.at(1) = true;
       items.at(2) = false;
       assert::throws<std::out_of_range>([&] {items.at(3) = true;});
-      
+    
       collection_assert::are_equal({false, true, false}, items);
     }
     
@@ -805,32 +805,32 @@ namespace xtd::collections::generic::helpers::tests {
     
     void test_method_(operator_index) {
       auto items = raw_queue {84, 42, 21};
-      
+    
       assert::are_equal(84, items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(21, items[2]);
       //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items[3];});
-      
+    
       items[0] = 63;
       items[1] = 31;
       items[2] = 10;
       //assert::throws<std::out_of_range>([&] {items[3] = 5;});
-      
+    
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
     void test_method_(operator_index_with_epos) {
       auto items = raw_queue {1, 2, 3, 4, 5};
-      
+    
       assert::are_equal(5, items[items.size() - 1]);
       assert::are_equal(5, items[items.epos]);
       assert::are_equal(5, items[xtd::epos]);
-      
+    
       items[items.epos] = 6;
       assert::are_equal(6, items[items.size() - 1]);
       assert::are_equal(6, items[items.epos]);
       assert::are_equal(6, items[xtd::epos]);
-      
+    
       items[xtd::epos] = 7;
       assert::are_equal(7, items[items.size() - 1]);
       assert::are_equal(7, items[items.epos]);
@@ -839,17 +839,17 @@ namespace xtd::collections::generic::helpers::tests {
     
     void test_method_(operator_index_with_bool) {
       auto items = raw_queue {true, false, true};
-      
+    
       assert::are_equal(true, items[0]);
       assert::are_equal(false, items[1]);
       assert::are_equal(true, items[2]);
       //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items[3];});
-      
+    
       items[0] = false;
       items[1] = true;
       items[2] = false;
       //assert::throws<std::out_of_range>([&] {items[3] = true;});
-      
+    
       collection_assert::are_equal({false, true, false}, items);
     }
     
