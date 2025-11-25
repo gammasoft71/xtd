@@ -117,9 +117,6 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     array(const array<xtd::size, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
-    /// @brief Constructs the container with the contents of the specified initializer list.
-    /// @param items The initializer list to initialize the elements of the container with.
-    array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
@@ -139,6 +136,9 @@ namespace xtd {
     /// @param last The last iterator the range to copy the elements from.
     template<class input_iterator_t>
     array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    /// @brief Constructs the container with the contents of the specified initializer list.
+    /// @param items The initializer list to initialize the elements of the container with.
+    array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
     /// @}
     
     /// @name Public Properties
