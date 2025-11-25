@@ -1079,7 +1079,7 @@ namespace xtd {
       list(list<type_t, allocator_t>&&) -> list<type_t, allocator_t>;
       
       template <class input_iterator_t>
-      list(input_iterator_t, input_iterator_t) -> list<typename input_iterator_t::value_type>;
+      list(input_iterator_t, input_iterator_t) -> list<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond
     }
