@@ -286,7 +286,7 @@ namespace xtd {
       queue(std::initializer_list < type_t >) -> queue < type_t >;
       
       template <class input_iterator_t>
-      queue(input_iterator_t, input_iterator_t) -> queue<typename input_iterator_t::value_type>;
+      queue(input_iterator_t, input_iterator_t) -> queue<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond
     }
