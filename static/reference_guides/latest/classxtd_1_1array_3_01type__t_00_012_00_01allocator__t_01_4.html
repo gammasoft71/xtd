@@ -325,9 +325,6 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <tr class="memitem:a8c3e44049b02eb9aaf6db4a1c6582850" id="r_a8c3e44049b02eb9aaf6db4a1c6582850"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c3e44049b02eb9aaf6db4a1c6582850">array</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>, 1 &gt; &amp;lengths, const <a class="el" href="#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;value)</td></tr>
 <tr class="memdesc:a8c3e44049b02eb9aaf6db4a1c6582850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the array class with lengths for each rank specified.  <br /></td></tr>
 <tr class="separator:a8c3e44049b02eb9aaf6db4a1c6582850"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a956492be47f181fa4a24b1e4557fe224" id="r_a956492be47f181fa4a24b1e4557fe224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a956492be47f181fa4a24b1e4557fe224">array</a> (std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>)</td></tr>
-<tr class="memdesc:a956492be47f181fa4a24b1e4557fe224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list.  <br /></td></tr>
-<tr class="separator:a956492be47f181fa4a24b1e4557fe224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b417c87d1548cd34d44eaec8d0a780a" id="r_a1b417c87d1548cd34d44eaec8d0a780a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b417c87d1548cd34d44eaec8d0a780a">array</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;enumerable)</td></tr>
 <tr class="memdesc:a1b417c87d1548cd34d44eaec8d0a780a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the array and copy array array specified.  <br /></td></tr>
 <tr class="separator:a1b417c87d1548cd34d44eaec8d0a780a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -338,6 +335,9 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <tr class="memitem:abec2d3d1c17c224df8faa474991bf39c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abec2d3d1c17c224df8faa474991bf39c">array</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
 <tr class="memdesc:abec2d3d1c17c224df8faa474991bf39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
 <tr class="separator:abec2d3d1c17c224df8faa474991bf39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956492be47f181fa4a24b1e4557fe224" id="r_a956492be47f181fa4a24b1e4557fe224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a956492be47f181fa4a24b1e4557fe224">array</a> (std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>)</td></tr>
+<tr class="memdesc:a956492be47f181fa4a24b1e4557fe224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list.  <br /></td></tr>
+<tr class="separator:a956492be47f181fa4a24b1e4557fe224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a5cfd24ddc397b46a08ea0cc1044bf390" id="r_a5cfd24ddc397b46a08ea0cc1044bf390"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cfd24ddc397b46a08ea0cc1044bf390">rank</a> () const noexcept override</td></tr>
@@ -1378,43 +1378,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a956492be47f181fa4a24b1e4557fe224" name="a956492be47f181fa4a24b1e4557fe224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a956492be47f181fa4a24b1e4557fe224">&#9670;&#160;</a></span>array() <span class="overload">[9/22]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;::array </td>
-          <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs the container with the contents of the specified initializer list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">items</td><td>The initializer list to initialize the elements of the container with. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a1b417c87d1548cd34d44eaec8d0a780a" name="a1b417c87d1548cd34d44eaec8d0a780a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b417c87d1548cd34d44eaec8d0a780a">&#9670;&#160;</a></span>array() <span class="overload">[10/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b417c87d1548cd34d44eaec8d0a780a">&#9670;&#160;</a></span>array() <span class="overload">[9/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1451,7 +1416,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div>
 </div>
 <a id="adcfbdae81d2902fbd85b56d00b64b46e" name="adcfbdae81d2902fbd85b56d00b64b46e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcfbdae81d2902fbd85b56d00b64b46e">&#9670;&#160;</a></span>array() <span class="overload">[11/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfbdae81d2902fbd85b56d00b64b46e">&#9670;&#160;</a></span>array() <span class="overload">[10/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1488,7 +1453,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div>
 </div>
 <a id="abec2d3d1c17c224df8faa474991bf39c" name="abec2d3d1c17c224df8faa474991bf39c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abec2d3d1c17c224df8faa474991bf39c">&#9670;&#160;</a></span>array() <span class="overload">[12/22]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abec2d3d1c17c224df8faa474991bf39c">&#9670;&#160;</a></span>array() <span class="overload">[11/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1523,6 +1488,41 @@ template&lt;class input_iterator_t&gt; </div>
   <table class="params">
     <tr><td class="paramname">first</td><td>The first iterator the range to copy the elements from. </td></tr>
     <tr><td class="paramname">last</td><td>The last iterator the range to copy the elements from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a956492be47f181fa4a24b1e4557fe224" name="a956492be47f181fa4a24b1e4557fe224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a956492be47f181fa4a24b1e4557fe224">&#9670;&#160;</a></span>array() <span class="overload">[12/22]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;::array </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the container with the contents of the specified initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The initializer list to initialize the elements of the container with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2345,7 +2345,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 20:59:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 25 2025 21:15:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

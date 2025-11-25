@@ -309,7 +309,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      <a class="code hl_typedef" href="group__collections.html#ga9e459bf8ab8fe94d3cc3f2a869de02c1">queue</a>(std::initializer_list &lt; type_t &gt;) -&gt; queue &lt; type_t &gt;;</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      </div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      <span class="keyword">template</span> &lt;<span class="keyword">class</span> input_iterator_t&gt;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      <a class="code hl_typedef" href="group__collections.html#ga9e459bf8ab8fe94d3cc3f2a869de02c1">queue</a>(input_iterator_t, input_iterator_t) -&gt; <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1queue.html">queue&lt;typename input_iterator_t::value_type&gt;</a>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      <a class="code hl_typedef" href="group__collections.html#ga9e459bf8ab8fe94d3cc3f2a869de02c1">queue</a>(input_iterator_t, input_iterator_t) -&gt; <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1queue.html">queue&lt;std::iter_value_t&lt;input_iterator_t&gt;</a>&gt;;</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <span class="comment">// }</span></div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    }</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  }</div>
@@ -374,7 +374,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 20:59:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 25 2025 21:14:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
