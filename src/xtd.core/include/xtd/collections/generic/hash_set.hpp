@@ -439,7 +439,7 @@ namespace xtd {
       hash_set(std::initializer_list<type_t>) -> hash_set<type_t>;
       
       template <class input_iterator_t >
-      hash_set(input_iterator_t, input_iterator_t) -> hash_set<typename input_iterator_t::value_type>;
+      hash_set(input_iterator_t, input_iterator_t) -> hash_set<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond
     }
