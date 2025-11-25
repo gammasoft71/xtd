@@ -14,14 +14,19 @@ struct timer::data {
   int32 due_time{-1};
   auto_reset_event event {true};
   auto_reset_event sleep {false};
+  bool restart_requested {false};
   int32 period {-1};
   any_object state{object()};
   wait_callback timer_proc = wait_callback {[self = this] {
-    if (self->due_time > 0) self->sleep.wait_one(self->due_time);
     while (!self->closed) {
+      if (self->restart_requested) {
+        self->restart_requested = false;
+        self->sleep.wait_one(self->due_time);
+        if (self->closed) break;
+      }
       thread_pool::queue_user_work_item(self->callback, self->state);
-      self->sleep.wait_one(self->period);
       if (self->period == 0) break;
+      self->sleep.wait_one(self->period);
     }
     self->event.set();
   }};
@@ -47,7 +52,8 @@ timer::timer(const timer_callback& callback, const any_object& state, int32 due_
   data_->state = state;
   data_->due_time = due_time;
   data_->period = period;
-  change(due_time, period);
+  data_->restart_requested = true;
+  thread_pool::queue_user_work_item(data_->timer_proc);
 }
 
 timer::timer(const timer_callback& callback, const any_object& state, int64 due_time, int64 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
@@ -78,10 +84,8 @@ void timer::change(int32 due_time, int32 period) {
   
   data_->due_time = due_time;
   data_->period = period;
-  close();
-  data_->closed = false;
-  data_->sleep.reset();
-  thread_pool::queue_user_work_item(data_->timer_proc);
+  data_->restart_requested = true;
+  data_->sleep.set();
 }
 
 void timer::change(int64 due_time, int64 period) {
