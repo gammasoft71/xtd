@@ -26,7 +26,7 @@ namespace xtd {
   
   template<class type_t, xtd::size rank = 1>
   array(const std::vector<type_t>&) -> array<type_t, rank>;
-
+  
   template <class input_iterator_t>
   array(input_iterator_t, input_iterator_t) -> array<std::iter_value_t<input_iterator_t>>;
   
