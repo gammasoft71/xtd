@@ -126,11 +126,11 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_array) {
-      collection_assert::are_equal({1, 2, 3, 4, 5}, array(array {1, 2, 3, 4, 5}));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int> {array {1, 2, 3, 4, 5}});
     }
     
     void test_method_(constructor_with_array_of_booleans) {
-      collection_assert::are_equal({true, false, false, true, false}, array(array {true, false, false, true, false}));
+      collection_assert::are_equal({true, false, false, true, false}, array<bool> {array {true, false, false, true, false}});
     }
     
     void test_method_(constructor_with_size) {
