@@ -477,12 +477,12 @@ namespace xtd {
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector < type_t >& array) {
+    basic_array(const base_type& array) {
       data_->items = array;
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::vector < type_t > && array) {
+    basic_array(base_type&& array) {
       data_->items = std::move(array);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
