@@ -179,36 +179,36 @@ namespace xtd::collections::generic::helpers::tests {
       collection_assert::are_equal({true, false, true}, items);
     }
     
-    void test_method_(constructor_with_xtd_vector) {
-      auto v = raw_array {84, 42, 21};
-      auto items = raw_array(v);
-      v.push_back(10);
+    void test_method_(constructor_with_raw_array) {
+      auto a = raw_array {84, 42, 21};
+      auto items = raw_array(a);
+      a.push_back(10);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({84, 42, 21}, items);
     }
     
-    void test_method_(constructor_with_xtd_vector_of_bool) {
-      auto v = raw_array {true, false, true};
-      auto items = raw_array(v);
-      v.push_back(false);
+    void test_method_(constructor_with_raw_array_of_bool) {
+      auto a = raw_array {true, false, true};
+      auto items = raw_array(a);
+      a.push_back(false);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
     }
     
-    void test_method_(constructor_with_move_xtd_vector) {
-      auto v = raw_array {84, 42, 21};
-      auto items = raw_array(std::move(v));
+    void test_method_(constructor_with_move_raw_array) {
+      auto a = raw_array {84, 42, 21};
+      auto items = raw_array(std::move(a));
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({84, 42, 21}, items);
-      collection_assert::is_empty(v);
+      collection_assert::is_empty(a);
     }
     
-    void test_method_(constructor_with_move_xtd_vector_of_bool) {
-      auto v = raw_array {true, false, true};
-      auto items = raw_array(std::move(v));
+    void test_method_(constructor_with_move_raw_array_of_bool) {
+      auto a = raw_array {true, false, true};
+      auto items = raw_array(std::move(a));
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
-      collection_assert::is_empty(v);
+      collection_assert::is_empty(a);
     }
     
     void test_method_(constructor_with_move_base_type) {
