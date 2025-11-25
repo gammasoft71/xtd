@@ -460,7 +460,7 @@ namespace xtd {
       linked_list(std::initializer_list < type_t >) -> linked_list < type_t >;
       
       template <class input_iterator_t>
-      linked_list(input_iterator_t, input_iterator_t) -> linked_list<typename input_iterator_t::value_type>;
+      linked_list(input_iterator_t, input_iterator_t) -> linked_list<std::iter_value_t<input_iterator_t>>;
       // }
       /// @endcond
     }
