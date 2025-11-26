@@ -64,24 +64,24 @@ month_calendar::month_calendar() : data_(xtd::new_sptr<data>()) {
 }
 
 array<xtd::date_time> month_calendar::annually_bolded_dates() const noexcept {
-  return data_->annually_bolded_dates;
+  return array<xtd::date_time>(data_->annually_bolded_dates);
 }
 
 month_calendar& month_calendar::annually_bolded_dates(const array<xtd::date_time>& value) {
   if (data_->annually_bolded_dates.items() == value.items()) return *this;
   data_->annually_bolded_dates = value;
-  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
+  native::month_calendar::annually_bolded_dates(handle(), array<xtd::date_time>(data_->annually_bolded_dates));
   return *this;
 }
 
 array<xtd::date_time> month_calendar::bolded_dates() const noexcept {
-  return data_->bolded_dates;
+  return array<xtd::date_time>(data_->bolded_dates);
 }
 
 month_calendar& month_calendar::bolded_dates(const array<xtd::date_time>& value) {
   if (data_->bolded_dates.items() == value.items()) return *this;
   data_->bolded_dates = value;
-  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  native::month_calendar::bolded_dates(handle(), array<xtd::date_time>(data_->bolded_dates));
   return *this;
 }
 
@@ -92,7 +92,7 @@ const xtd::drawing::size& month_calendar::calendar_dimensions() const noexcept {
 month_calendar& month_calendar::calendar_dimensions(const xtd::drawing::size& value) {
   if (data_->calendar_dimensions == value) return *this;
   data_->calendar_dimensions = value;
-  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
+  native::month_calendar::bolded_dates(handle(), array<xtd::date_time>(data_->bolded_dates));
   return *this;
 }
 
@@ -146,13 +146,13 @@ month_calendar& month_calendar::month_calendar::min_date(date_time value) {
 }
 
 array<xtd::date_time> month_calendar::monthly_bolded_dates() const noexcept {
-  return data_->monthly_bolded_dates;
+  return array<xtd::date_time>(data_->monthly_bolded_dates);
 }
 
 month_calendar& month_calendar::monthly_bolded_dates(const array<xtd::date_time>& value) {
   if (data_->monthly_bolded_dates.items() == value.items()) return *this;
   data_->monthly_bolded_dates = value;
-  native::month_calendar::monthly_bolded_dates(handle(), data_->monthly_bolded_dates);
+  native::month_calendar::monthly_bolded_dates(handle(), array<xtd::date_time>(data_->monthly_bolded_dates));
   return *this;
 }
 
@@ -615,9 +615,9 @@ xtd::string month_calendar::to_string() const noexcept {
 }
 
 void month_calendar::update_bolded_dates() {
-  native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
-  native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
-  native::month_calendar::monthly_bolded_dates(handle(), data_->bolded_dates);
+  native::month_calendar::annually_bolded_dates(handle(), array<xtd::date_time>(data_->annually_bolded_dates));
+  native::month_calendar::bolded_dates(handle(), array<xtd::date_time>(data_->bolded_dates));
+  native::month_calendar::monthly_bolded_dates(handle(), array<xtd::date_time>(data_->bolded_dates));
 }
 
 xtd::drawing::color month_calendar::default_back_color() const noexcept {
