@@ -395,7 +395,7 @@ namespace xtd {
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         xtd::array<type_t> to_array() const noexcept {
-          return data_->items.count() ? xtd::array<type_t>(data_->items.data(), data_->items.count()) : xtd::array<type_t> {};
+          return data_->items.count() ? xtd::array<type_t>(data_->items.begin(), data_->items.end()) : xtd::array<type_t> {};
         }
         /// @}
         
