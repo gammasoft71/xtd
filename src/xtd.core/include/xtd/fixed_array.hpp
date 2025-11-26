@@ -180,7 +180,7 @@ namespace xtd {
     
     /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
     /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::size>.
-    virtual xtd::array<value_type> to_array() const noexcept {return size() ? xtd::array<value_type>(data(), size()) : xtd::array<value_type> {};}
+    virtual xtd::array<value_type> to_array() const noexcept {return size() ? xtd::array<value_type>(items_, items_ + len) : xtd::array<value_type> {};}
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
