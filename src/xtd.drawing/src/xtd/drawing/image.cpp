@@ -135,7 +135,7 @@ namespace {
     auto height = int32_object::parse(lines[1].trim());
     auto bits = list<xtd::byte> {};
     for (auto index = offset; index < lines.size(); ++index)
-      for (auto b : lines[index].split({','}))
+      for (auto b : lines[index].split(','))
         bits.add(byte_object::parse(b.trim(), xtd::number_styles::hex_number));
     return std::make_tuple(bits.to_array(), width, height);
   }
