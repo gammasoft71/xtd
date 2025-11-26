@@ -1326,7 +1326,7 @@ const emoticon forms::emoticons::banjo = {"banjo", 0x0001FA95};
 const array<forms::emoticon>& forms::emoticons::get_emoticons() noexcept {
   static auto emoticons = array<forms::emoticon> {};
   call_once_ {
-    auto items = list {
+    auto items = array {
       copyright_sign, registered_sign,
       double_exclamation_mark, exclamation_question_mark,
       trade_mark_sign, information_source,
