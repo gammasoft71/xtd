@@ -25,10 +25,10 @@ public:
   void thickness_digit(xtd::int32 value) override {xtd::forms::dot_matrix_display::thickness(value);}
   xtd::array<xtd::char32> valid_characters() const noexcept override {
     static auto vc = xtd::collections::generic::list<xtd::char32> {};
-    if (vc.count()) return vc;
+    if (vc.count()) return xtd::array<xtd::char32>(vc);
     vc = characters_.keys();
     vc.sort();
-    return vc;
+    return xtd::array<xtd::char32>(vc);
   }
   
 private:
