@@ -804,6 +804,10 @@ namespace xtdc_command {
       return EXIT_SUCCESS;
     }
     
+  static int new_(const list<string>& args) {
+    return new_project::execute(array<string>(args));
+  }
+  
     static int web(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
       return EXIT_SUCCESS;
@@ -1058,7 +1062,7 @@ namespace xtdc_command {
         else if (show_help) console::write_line(string::join("\n", get_help()));
         return EXIT_SUCCESS;
       }
-      static auto commands = dictionary<string, delegate<int(const list<string>&) >> {{"add", {add}}, {"build", {build}}, {"clean", {clean}}, {"documentation", {documentation}}, {"examples", {examples}}, {"generate", {generate}}, {"guide", {guide}}, {"help", {help}}, {"install", {install}}, {"new", {new_project::execute}}, {"open", {open}}, {"update", {update}}, {"run", {run}}, {"targets", {targets}}, {"test", {test}}, {"uninstall", {uninstall}}, {"web", {web}}};
+      static auto commands = dictionary<string, delegate<int(const list<string>&) >> {{"add", {add}}, {"build", {build}}, {"clean", {clean}}, {"documentation", {documentation}}, {"examples", {examples}}, {"generate", {generate}}, {"guide", {guide}}, {"help", {help}}, {"install", {install}}, {"new", {new_}}, {"open", {open}}, {"update", {update}}, {"run", {run}}, {"targets", {targets}}, {"test", {test}}, {"uninstall", {uninstall}}, {"web", {web}}};
       if (command_args.empty() || !commands.contains_key(command_args[0])) return invalid_command(command_args);
       return commands[command_args[0]](command_args);
       //auto iterator = commands.find(command_args[0]);
