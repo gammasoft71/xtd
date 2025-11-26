@@ -1174,7 +1174,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
       colors.add(gradient_color);
   }
   if (colors.count() < 2) return false;
-  result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1 ? 180 : angle);
+  result = background_image(style_sheets::image_type::linear_gradient, array<color>(colors), angle == -1 ? 180 : angle);
   return true;
 }
 
