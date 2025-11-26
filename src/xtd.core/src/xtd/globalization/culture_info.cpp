@@ -221,7 +221,7 @@ array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture.clone());
   result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
-  return result;
+  return array<culture_info>(result);
 }
 
 array<std::locale> culture_info::get_system_locales() noexcept {
@@ -231,7 +231,7 @@ array<std::locale> culture_info::get_system_locales() noexcept {
       result.add(std::locale {system_locale_name});
     result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   };
-  return result;
+  return array<std::locale>(result);
 }
 
 void culture_info::initialize_all_cultures() noexcept {
