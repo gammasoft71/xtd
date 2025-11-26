@@ -6,7 +6,6 @@
 #include "../../../include/xtd/drawing/bitmap.hpp"
 #include "../../../include/xtd/drawing/graphics.hpp"
 #define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/argument_exception>
 #include <xtd/drawing/native/image>
 #include <xtd/drawing/native/image_formats>
 #include <xtd/drawing/native/frame_dimension>
@@ -15,6 +14,8 @@
 #include <xtd/io/file>
 #include <xtd/io/path>
 #include <xtd/helpers/throw_helper>
+#include <xtd/argument_exception>
+#include <xtd/array>
 #include <xtd/as>
 #include <algorithm>
 #include <iostream>
@@ -134,7 +135,7 @@ namespace {
     auto height = int32_object::parse(lines[1].trim());
     auto bits = list<xtd::byte> {};
     for (auto index = offset; index < lines.size(); ++index)
-      for (auto b : lines[index].split(","))
+      for (auto b : lines[index].split({','}))
         bits.add(byte_object::parse(b.trim(), xtd::number_styles::hex_number));
     return std::make_tuple(bits.to_array(), width, height);
   }
