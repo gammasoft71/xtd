@@ -263,7 +263,7 @@ xtd::array<xtd::string> directory::get_files(const xtd::string& path, const xtd:
   auto files = list<xtd::string> {};
   for (auto directory : get_directories(path, search_pattern, io::search_option::all_directories))
     files.add_range(get_files(directory, search_pattern, io::search_option::top_directory_only));
-  return files;
+  return array<string>(files);
 }
 
 xtd::array<string> directory::get_file_system_entries(const string& path) {
