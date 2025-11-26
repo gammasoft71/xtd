@@ -56,7 +56,7 @@ array<string> unit_test::aborted_test_names() const noexcept {
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.add(test_class.test()->name() + "." + test.name());
-  return {names};
+  return array<string>(names);
 }
 
 time_span unit_test::elapsed_time() const noexcept {
@@ -77,7 +77,7 @@ array<string> unit_test::ignored_test_names() const noexcept {
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.add(test_class.test()->name() + "." + test.name());
-  return {names};
+  return array<string>(names);
 }
 
 size_t unit_test::failed_test_count() const noexcept {
@@ -93,7 +93,7 @@ array<string> unit_test::failed_test_names() const noexcept {
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.add(test_class.test()->name() + "." + test.name());
-  return {names};
+  return array<string>(names);
 }
 
 size_t unit_test::succeed_test_count() const noexcept {
@@ -109,7 +109,7 @@ array<string> unit_test::succeed_test_names() const noexcept {
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.add(test_class.test()->name() + "." + test.name());
-  return {names};
+  return array<string>(names);
 }
 
 int32 unit_test::run() noexcept {
