@@ -418,7 +418,7 @@ namespace xtd {
     /// @brief Copies the contents of this span into a new array.
     /// @return An array containing the data in the current span.
     xtd::array<value_type> to_array() const noexcept {
-      return data_ && length_ ? xtd::array<value_type>(data_, length_) : xtd::array<value_type> {};
+      return data_ && length_ ? xtd::array<value_type>(data_, data_+ length_) : xtd::array<value_type> {};
     }
     
     /// @brief Returns the string representation of this xtd::span <type_t> object.
