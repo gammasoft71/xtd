@@ -153,12 +153,12 @@ namespace xtd {
       
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
-      /// @return `true` if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
+      /// @return `true` if the method is successfully queued; xtd::not_supported_exception is thrown if the work item could not be queued
       static bool queue_user_work_item(const wait_callback& callback);
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
       /// @param state An object containing data to be used by the method.
-      /// @return `true` if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
+      /// @return `true` if the method is successfully queued; xtd::not_supported_exception is thrown if the work item could not be queued
       static bool queue_user_work_item(const wait_callback& callback, const xtd::any_object& state);
       
       /// @cond
