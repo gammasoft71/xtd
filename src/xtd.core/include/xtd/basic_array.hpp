@@ -173,6 +173,9 @@ namespace xtd {
       return false;
     }
     
+    /// @brief Copies the entire xtd::array <type_t> to a compatible one-dimensional array.
+    /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
+    /// @exception xtd::argument_exception  The number of elements in the source xtd::array <type_t> is greater than the number of elements that the destination array can contain.
     void copy_to(xtd::array<type_t>& array) const {
       copy_to(0, array, 0);
     }
@@ -180,7 +183,7 @@ namespace xtd {
     /// @brief Copies the elements of the xtd::array <type_t> to an xtd::array, starting at a particular xtd::array index.
     /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
     /// @param array_index The zero-based index in `array` at which copying begins.
-    /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+    /// @exception xtd::argument_exception The number of elements in the source xtd::array <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
     void copy_to(xtd::array<type_t>& array, size_type array_index) const override {
       return copy_to(0, array, array_index);
     }
