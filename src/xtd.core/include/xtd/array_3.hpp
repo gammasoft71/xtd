@@ -116,6 +116,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
+    explicit array(const array<xtd::size, 1>& lengths) : xtd::basic_array<type_t, allocator_t>(lengths) {}
+    /// @brief Initializes a new instance of the array class with lengths for each rank specified.
+    /// @param lengths the lengths for each rank.
+    /// @remarks The array class is not thread safe.
+    /// @par Examples
+    /// The following code example demonstrates different methods to create an array.
+    /// @include array_constructor.cpp
     array(const array<xtd::size, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
@@ -123,19 +130,22 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
+    explicit array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
     /// @brief Constructs the container with the contents of the range [first, last).
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
     template<class input_iterator_t>
     array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
+    /// @brief Constructs the container with the contents of the specified initializer list.
+    /// @param items The std::vector to initialize the elements of the container with.
+    array(std::vector<std::vector<std::vector<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
     /// @brief Constructs the container with the contents of the specified initializer list.
     /// @param items The initializer list to initialize the elements of the container with.
     array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
