@@ -97,7 +97,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(size_type length) : basic_array<type_t, allocator_t>(array<xtd::size> {length}) {}
+    explicit array(size_type length) : basic_array<type_t, allocator_t>(array<xtd::size> {length}) {}
     /// @brief Initializes a new instance of the array class with lengths for each rank specified and default value.
     /// @param length the length for the first rank.
     /// @param value The default value.
@@ -113,36 +113,20 @@ namespace xtd {
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
     array(const array<xtd::size, 1>& lengths, const value_type& value) : basic_array<type_t, allocator_t>(lengths, value) {}
-    /// @brief Initializes a new instance of the array and copy array[] type_t.
-    /// @param array the array to copy.
-    /// @remarks The array class is not thread safe.
-    /// @par Examples
-    /// The following code example demonstrates different methods to create an array.
-    /// @include array_constructor.cpp
-    template<xtd::size length>
-    array(const type_t(&array)[length]) : basic_array<type_t, allocator_t>(array, length) {}
-    /// @brief Initializes a new instance of the array and copy array[] type_t with length specified.
-    /// @param array the array to copy.
-    /// @param length length of the array.
-    /// @remarks The array class is not thread safe.
-    /// @par Examples
-    /// The following code example demonstrates different methods to create an array.
-    /// @include array_constructor.cpp
-    array(const type_t* array, size_type length) : basic_array<type_t, allocator_t>(array, length) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
+    explicit array(const xtd::collections::generic::ienumerable<type_t>& enumerable) : basic_array<type_t, allocator_t>(enumerable) {}
     /// @brief Initializes a new instance of the array and copy array array specified.
     /// @param array the array to copy.
     /// @remarks The array class is not thread safe.
     /// @par Examples
     /// The following code example demonstrates different methods to create an array.
     /// @include array_constructor.cpp
-    array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
+    explicit array(const xtd::collections::generic::ilist<type_t>& list) : basic_array<type_t, allocator_t>(list) {}
     /// @brief Constructs the container with the contents of the range [first, last).
     /// @param first The first iterator the range to copy the elements from.
     /// @param last The last iterator the range to copy the elements from.
