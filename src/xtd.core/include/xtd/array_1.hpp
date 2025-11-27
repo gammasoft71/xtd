@@ -158,7 +158,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception index is less than the lower bound of array.
     /// @exception xtd::argument_exception array is multidimensional.  -or-  The number of elements in the source array is greater than the available number of elements from index to the end of the destination array.
     /// @exception xtd::rank_exception The source array is multidimensional.
-    /// @exception InvalidCastException At least one element in the source Array cannot be cast to the type of destination array.
+    /// @exception xtd::invalid_cast_exception At least one element in the source Array cannot be cast to the type of destination array.
     /// @remarks This method copies all the elements of the current array instance to the array destination array, starting at index index. The array destination array must already have been dimensioned and must have a sufficient number of elements to accommodate the copied elements. Otherwise, the method throws an exception.
     /// @remarks This method supports the System.Collections.ICollection interface. If implementing System.Collections.ICollection is not explicitly required, use Copy to avoid an extra indirection.
     /// @remarks If this method throws an exception while copying, the state of array is undefined.
