@@ -380,7 +380,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        </div>
 <div class="foldopen" id="foldopen00397" data-start="{" data-end="}">
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8d7e3cde1a97b03e109a4851b770b19a">  397</a></span>        <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8d7e3cde1a97b03e109a4851b770b19a">to_array</a>() const noexcept {</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>          <span class="keywordflow">return</span> data_-&gt;<a class="code hl_function" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>.count() ? <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a>(data_-&gt;items.data(), data_-&gt;items.count()) : <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> {};</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>          <span class="keywordflow">return</span> data_-&gt;<a class="code hl_function" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>.count() ? <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a>(data_-&gt;items.begin(), data_-&gt;items.end()) : <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> {};</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        }</div>
 </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span></div>
@@ -832,7 +832,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 21:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 13:05:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
