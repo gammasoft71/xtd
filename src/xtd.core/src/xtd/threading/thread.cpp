@@ -201,7 +201,7 @@ thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
   
   if (data_->processor_affinity == value) return self_;
   if (!value.all([](size value) {return value < as<size>(environment::processor_count());})) throw_helper::throws(exception_case::argument);
-  data_->processor_affinity = list<xtd::size> {value}.sort().distinct();
+  data_->processor_affinity = list<size> {value}.sort().distinct().to_array();
   if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
   return self_;
 }
@@ -297,7 +297,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   
   if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) milliseconds_timeout = 0;
   else if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() < milliseconds_timeout) milliseconds_timeout -= as<int32>(sw.elapsed_milliseconds());
-  if (join_all_ptr(thread_pointers, milliseconds_timeout) == false) return false;
+  if (join_all_ptr(thread_pointers.to_array(), milliseconds_timeout) == false) return false;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   get_static_data().threads.clear();
   return true;
@@ -394,7 +394,7 @@ bool thread::join_all(const std::initializer_list<sptr<thread>>& threads, int32 
   auto thread_pointers = list<thread*> {};
   for (auto& thread : threads)
     thread_pointers.add(thread.get());
-  return join_all_ptr(thread_pointers, milliseconds_timeout);
+  return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
 bool thread::join_all(const std::initializer_list<sptr<thread>>& threads, const time_span& timeout) {
@@ -409,7 +409,7 @@ bool thread::join_all(const std::initializer_list<uptr<thread>>& threads, int32 
   auto thread_pointers = list<thread*> {};
   for (auto& thread : threads)
     thread_pointers.add(thread.get());
-  return join_all_ptr(thread_pointers, milliseconds_timeout);
+  return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
 bool thread::join_all(const std::initializer_list<uptr<thread>>& threads, const time_span& timeout) {
