@@ -769,7 +769,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
-      ///     // or the sample will throw a DirectoryNotFoundException.
+      ///     // or the sample will throw a xtd::directory_not_found_exception.
       ///     string dir = R"(C:\test)";
       ///     try {
       ///       //Set the current directory.
@@ -1562,7 +1562,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:\public, and c:\public already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir".
+      /// @remarks This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an xtd::io_exception will occur. For example, an exception will occur if you try to move c:\mydir to c:\public, and c:\public already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir".
       /// @remarks The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameters before moving the directory.
       /// @note xtd::io::directory::move method throws an xtd::io::io_exception in all platforms when the dest_dir_name already exists.
@@ -1608,7 +1608,7 @@ namespace xtd {
       /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::string&, bool) with `false` specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
-      /// @remarks This method throws an IOException if the directory specified in the path parameter contains files or subdirectories.
+      /// @remarks This method throws an xtd::io_exception if the directory specified in the path parameter contains files or subdirectories.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks In some cases, if you have the specified directory open in File Explorer, the Delete method may not be able to delete it.
       static void remove(const xtd::string& path);
@@ -1794,7 +1794,7 @@ namespace xtd {
       /// public:
       ///   static auto main() {
       ///     // Create string for a directory. This value should be an existing directory
-      ///     // or the sample will throw a DirectoryNotFoundException.
+      ///     // or the sample will throw a xtd::directory_not_found_exception.
       ///     string dir = R"(C:\test)";
       ///     try {
       ///       //Set the current directory.
