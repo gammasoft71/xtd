@@ -126,11 +126,11 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_array) {
-      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int> {array {1, 2, 3, 4, 5}});
+      collection_assert::are_equal({1, 2, 3, 4, 5}, array {array {1, 2, 3, 4, 5}});
     }
     
     void test_method_(constructor_with_array_of_booleans) {
-      collection_assert::are_equal({true, false, false, true, false}, array<bool> {array {true, false, false, true, false}});
+      collection_assert::are_equal({true, false, false, true, false}, array {array {true, false, false, true, false}});
     }
     
     void test_method_(constructor_with_size) {
@@ -143,22 +143,22 @@ namespace xtd::tests {
     
     void test_method_(constructor_with_native_array) {
       int a[] = {1, 2, 3, 4, 5};
-      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a, a + 5));
     }
     
     void test_method_(constructor_with_native_array_of_booleans) {
       bool a[] = {true, false, false, true, false};
-      collection_assert::are_equal({true, false, false, true, false}, array<bool>(a));
+      collection_assert::are_equal({true, false, false, true, false}, array<bool>(a, a + 5));
     }
     
     void test_method_(constructor_with_const_pointer_and_length) {
       int a[] = {1, 2, 3, 4, 5};
-      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a, 5));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a, a + 5));
     }
     
     void test_method_(constructor_with_const_pointer_and_length_of_booleans) {
       bool a[] = {true, false, false, true, false};
-      collection_assert::are_equal({true, false, false, true, false}, array<bool>(a, 5));
+      collection_assert::are_equal({true, false, false, true, false}, array<bool>(a, a + 5));
     }
     
     void test_method_(constructor_with_ienumerable) {
