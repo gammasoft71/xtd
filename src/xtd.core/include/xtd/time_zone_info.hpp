@@ -376,7 +376,6 @@ namespace xtd {
     /// @brief Converts the specified date and time to Coordinated Universal Time (UTC).
     /// @param dateTime The date and time to convert.
     /// @return date_time The Coordinated Universal Time (UTC) that corresponds to the dateTime parameter. The xtd::date_time value's Kind property is always set to xtd::date_timeKind.Utc.
-    /// @exception ArgumentNullException dateTime is null.
     /// @exception xtd::argument_exception time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`.
     static xtd::date_time convert_time_to_utc(const xtd::date_time& date_time);
     
@@ -429,8 +428,7 @@ namespace xtd {
     /// @brief Retrieves a time_zone_info object from the registry based on its identifier.
     /// @param id The time zone identifier, which corresponds to the Id property.
     /// @return An object whose identifier is the value of the id parameter.
-    /// @exception ArgumentNullException The id parameter is null.
-    /// @exception TimeZoneNotFoundException The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
+    /// @exception xtd::time_zone_not_found_exception The time zone identifier specified by id was not found. This means that a registry key whose name matches id does not exist, or that the key exists but does not contain any time zone data.
     static time_zone_info time_find_system_time_zone_by_id(const string& id);
     /// @}
     
