@@ -30,14 +30,12 @@ namespace xtd {
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version);
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
     /// @param platform One of the xtd::platform_id values that indicates the operating system platform.
     /// @param version A Version object that indicates the version of the operating system.
     /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::string& service_pack);
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
@@ -45,7 +43,6 @@ namespace xtd {
     /// @param version A Version object that indicates the version of the operating system.
     /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::string& service_pack, const xtd::string& desktop_environment);
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
@@ -54,7 +51,6 @@ namespace xtd {
     /// @param service_pack A string, such as "Service Pack 3", that represent the service pack. If no Service Pack has been installed, the string must be empty.
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
     /// @param desktop_theme A string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::string& service_pack, const xtd::string& desktop_environment, const xtd::string& desktop_theme);
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
@@ -64,7 +60,6 @@ namespace xtd {
     /// @param desktop_environment A string, such as "gnome", "kde", "windows", "macos".
     /// @param desktop_theme A string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
     /// @param is_64_bit True if Operating System is 64 bits; otherwise `false`.
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::string& service_pack, const xtd::string& desktop_environment, const xtd::string& desktop_theme, bool is_64_bit);
     /// @brief Initializes a new instance of the operating_system class, using the specified platform identifier value and version object.
@@ -75,7 +70,6 @@ namespace xtd {
     /// @param desktop_theme A string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
     /// @param is_64_bit True if Operating System is 64 bits; otherwise `false`.
     /// @param distribution An xtd::distribution that contains the operating system distribution informations.
-    /// @exception ArgumentNullException version is null.
     /// @exception xtd::argument_exception platform is not a xtd::platform_id enumeration value.
     operating_system(xtd::platform_id platform, const xtd::version& version, const xtd::string& service_pack, const xtd::string& desktop_environment, const xtd::string& desktop_theme, bool is_64_bit, const xtd::distribution& distribution);
     /// @}
