@@ -122,7 +122,7 @@ array<byte> ip_address::get_address_bytes() const {
     bytes.add((number >> 8) & 0xFF);
     bytes.add(number & 0xFF);
   }
-  return bytes;
+  return bytes.to_array();
 }
 
 size ip_address::get_hash_code() const noexcept {
