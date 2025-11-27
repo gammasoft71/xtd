@@ -540,8 +540,7 @@ namespace xtd {
     /// @brief Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.
     /// @param uri The specified xtd::uri instance to test.
     /// @return bool `true` if the current xtd::uri instance is a base of uri; otherwise, `false`.
-    /// @exception ArgumentNullException uri is null.
-    /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
+    /// @remarks xtd::uri::is_base_of is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
     /// | URI                                   | http://host/path/path/file?query is base of |
     /// | ------------------------------------- | ------------------------------------------- |
     /// | http://host/path/path/file/           | yes                                         |
@@ -607,8 +606,7 @@ namespace xtd {
     /// @brief Converts a string to its escaped representation.
     /// @param value The string to escape.
     /// @return string A string that contains the escaped representation of stringToEscape.
-    /// @exception ArgumentNullException value is null.
-    /// @exception UriFormatException The length of value exceeds 32766 characters.
+    /// @exception xtd::uri_format_exception The length of value exceeds 32766 characters.
     /// @remarks By default, the escape_data_string method converts all characters except for RFC 2396 unreserved characters to their hexadecimal representation. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the escape_data_string method converts all characters, except for RFC 3986 unreserved characters, to their hexadecimal representation. All Unicode characters are converted to UTF-8 format before being escaped.
     /// @remarks This method assumes that stringToEscape has no escape sequences in it.
     /// @remarks By default, the string is escaped according to RFC 2396. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is escaped according to RFC 3986 and RFC 3987. See these RFCs for a definition of reserved and unreserved characters.
@@ -618,8 +616,7 @@ namespace xtd {
     /// @brief Converts a URI string to its escaped representation.
     /// @param value The string to escape.
     /// @return string A string that contains the escaped representation of stringToEscape.
-    /// @exception ArgumentNullException value is null.
-    /// @exception UriFormatException The length of value exceeds 32766 characters.
+    /// @exception xtd::uri_format_exception The length of value exceeds 32766 characters.
     /// @remarks Use the escape_uri_string method to prepare an unescaped URI string to be a parameter to the xtd::uri constructor.
     /// @remarks By default, the escape_uri_string method converts all characters, except RFC 2396 unreserved characters, to their hexadecimal representation. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the escape_uri_string method converts all characters, except for RFC 3986 unreserved characters, to their hexadecimal representation. All Unicode characters are converted to UTF-8 format before being escaped.
     /// @remarks This method assumes that stringToEscape has no escape sequences in it.
@@ -680,7 +677,6 @@ namespace xtd {
     /// @brief Converts a string to its unescaped representation.
     /// @param value The string to unescape.
     /// @return string A string that contains the unescaped representation of stringToUnescape.
-    /// @exception ArgumentNullException value is null.
     /// @remarks You should use this method with care. Unescaping a string that has been previously unescaped can lead to ambiguities and errors.
     /// @remarks Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does not convert plus characters into spaces because this behavior is not standard across all URI schemes.
     static xtd::string unescape_data_string(const xtd::string& value);
