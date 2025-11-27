@@ -33,7 +33,7 @@ void translator::language(xtd::null_ptr) {
 
 array<string> translator::languages() {
   static auto languages = list<string> {};
-  if (languages.count() != 0) return languages;
+  if (languages.count() != 0) return languages.to_array();
   std::for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.add(language_value.first);});
   return languages.to_array();
 }
