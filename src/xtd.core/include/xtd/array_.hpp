@@ -29,16 +29,16 @@ namespace xtd {
   
   template<class type_t>
   array(std::vector<type_t>&&) -> array<type_t, 1>;
-
+  
   template<class type_t>
   array(std::vector<std::vector<type_t>>) -> array<type_t, 2>;
   
   template<class type_t>
   array(std::vector<std::vector<std::vector<type_t>>>) -> array<type_t, 3>;
-
+  
   template<class type_t>
   array(std::initializer_list<type_t>) -> array<type_t, 1>;
-
+  
   template<class type_t>
   array(std::initializer_list<std::initializer_list<type_t>>) -> array<type_t, 2>;
   

@@ -804,10 +804,10 @@ namespace xtdc_command {
       return EXIT_SUCCESS;
     }
     
-  static int new_(const list<string>& args) {
-    return new_project::execute(array<string>(args));
-  }
-  
+    static int new_(const list<string>& args) {
+      return new_project::execute(array<string>(args));
+    }
+    
     static int web(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
       return EXIT_SUCCESS;

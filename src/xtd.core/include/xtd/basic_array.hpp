@@ -481,7 +481,7 @@ namespace xtd {
       data_->items.assign(first, last);
       data_->upper_bound.push_back(data_->items.size() - 1);
     }
-
+    
     basic_array(const std::vector < type_t >& items) {
       data_->items.assign(items.begin(), items.end());
       data_->upper_bound[0] = data_->items.size() - 1;
@@ -505,7 +505,7 @@ namespace xtd {
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*(*items.begin()).begin()).size() - 1);
     }
-
+    
     basic_array(std::initializer_list < type_t > il) {
       data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
