@@ -181,8 +181,7 @@ namespace xtd {
         
         /// @brief Copies the complete hash_set <type_t> to a compatible one-dimensional array, starting at the beginning of the target array.
         /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>.
-        /// @exception ArgumentException The number of elements in the source hash_set <type_t> exceeds the number of elements that the destination array can contain.
-        /// @exception ArgumentNullException array is null.
+        /// @exception xtd::argument_exception The number of elements in the source hash_set <type_t> exceeds the number of elements that the destination array can contain.
         auto copy_to(xtd::array<type_t>& array) const -> void {
           copy_to(0, array, 0, count());
         }
@@ -190,9 +189,8 @@ namespace xtd {
         /// @brief Copies the complete hash_set <type_t> to a compatible one-dimensional array, starting at the specified array index.
         /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>. The array must have zero-based indexing.
         /// @param index The zero-based index in array at which copying begins.
-        /// @exception ArgumentException The number of elements in the source array is greater than the available space from index to the end of the destination array.
-        /// @exception ArgumentNullException array is null.
-        /// @exception ArgumentOutOfRangeException index is less than zero.
+        /// @exception xtd::argument_exception The number of elements in the source array is greater than the available space from index to the end of the destination array.
+        /// @exception xtd::argument_out_of_range_exception index is less than zero.
         auto copy_to(xtd::array<type_t>& array, size_type index) const -> void override {
           copy_to(0, array, index, count());
         }
@@ -201,9 +199,8 @@ namespace xtd {
         /// @param array A one-dimensional array that is the destination of the elements copied from the hash_set <type_t>. The array must have zero-based indexing.
         /// @param index The zero-based index in array at which copying begins.
         /// @param count The number of elements to copy.
-        /// @exception ArgumentException The number of elements in the source (count) array is greater than the available space from index to the end of the destination array.
-        /// @exception ArgumentNullException array is null.
-        /// @exception ArgumentOutOfRangeException index is less than zero or count is less than zero.
+        /// @exception xtd::argument_exception The number of elements in the source (count) array is greater than the available space from index to the end of the destination array.
+        /// @exception xtd::argument_out_of_range_exception index is less than zero or count is less than zero.
         auto copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const -> void {
           if (index + count > self_.count() || array_index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto increment = size_type {};
