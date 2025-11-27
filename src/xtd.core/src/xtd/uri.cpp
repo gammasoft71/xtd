@@ -173,7 +173,7 @@ array<string> uri::segments() const {
     segments.add(path.substring(start_index, length));
     start_index += length;
   }
-  return segments;
+  return array<string>(segments);
 }
 
 string uri::user_info() const {
