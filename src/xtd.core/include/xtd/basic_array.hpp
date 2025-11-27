@@ -60,8 +60,8 @@ namespace xtd {
     /// @name Public Fields
     
     /// @cond
-    basic_array(const basic_array & array) { if (array.data_) *data_ = *array.data_;}
     basic_array(basic_array&& array) = default;
+    basic_array(const basic_array & array) { if (array.data_) *data_ = *array.data_;}
     /// @endcond
     
     /// @name Public Properties
@@ -462,31 +462,50 @@ namespace xtd {
     friend class array;
     
     basic_array() = default;
-    basic_array(const array < size_type, 1 >& lengths);
+    explicit basic_array(const array < size_type, 1 >& lengths);
     basic_array(const array < size_type, 1 >& lengths, const value_type & value);
-    
-    basic_array(const_pointer array, size_type length) {
-      if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-      data_->items = base_type {array, array + length};
-      data_->upper_bound[0] = data_->items.size() - 1;
-    }
-    
-    basic_array(const xtd::collections::generic::ienumerable < type_t >& enumerable) {
+    explicit basic_array(const xtd::collections::generic::ienumerable < type_t >& enumerable) {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
-    
-    basic_array(const base_type& array) {
-      data_->items = array;
+    explicit basic_array(const xtd::collections::generic::ilist < type_t >& items) {
+      data_->items.reserve(items.count());
+      for (const auto& value : items)
+        data_->items.push_back(value);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(base_type&& array) {
-      data_->items = std::move(array);
+    template < class input_iterator_t >
+    basic_array(input_iterator_t first, input_iterator_t last) {
+      data_->items.assign(first, last);
+      data_->upper_bound.push_back(data_->items.size() - 1);
+    }
+
+    basic_array(const std::vector < type_t >& items) {
+      data_->items.assign(items.begin(), items.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
+    basic_array(const std::vector < std::vector < type_t>>& items)  {
+      for (const std::vector < type_t >& items1 : items)
+        data_->items.insert(data_->items.end(), items1.begin(), items1.end());
+      data_->upper_bound[0] = items.size() - 1;
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*items.begin()).size() - 1);
+    }
+    
+    basic_array(const std::vector < std::vector < std::vector<type_t>>>& items)  {
+      for (const std::vector < std::vector < type_t>>& items1 : items)
+        for (const std::vector < type_t >& items2 : items1)
+          data_->items.insert(data_->items.end(), items2.begin(), items2.end());
+      data_->upper_bound[0] = items.size() - 1;
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*items.begin()).size() - 1);
+      data_->lower_bound.push_back(0);
+      data_->upper_bound.push_back((*(*items.begin()).begin()).size() - 1);
+    }
+
     basic_array(std::initializer_list < type_t > il) {
       data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
@@ -509,12 +528,6 @@ namespace xtd {
       data_->upper_bound.push_back((*il.begin()).size() - 1);
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*(*il.begin()).begin()).size() - 1);
-    }
-    
-    template < class input_iterator_t >
-    basic_array(input_iterator_t first, input_iterator_t last) {
-      data_->items.assign(first, last);
-      data_->upper_bound.push_back(data_->items.size() - 1);
     }
     
     void add(const type_t& item) override {}
