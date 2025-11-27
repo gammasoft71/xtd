@@ -1606,7 +1606,7 @@ namespace xtd {
       return result;
     }
     
-    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first substring equal to `str`.
     size_type rfind(const basic_string & str) const {return chars_.rfind(str);}
@@ -1624,7 +1624,7 @@ namespace xtd {
     /// @remarks Finds the first substring equal to the range [s, s + count).
     /// @remarks This range may contain null characters. If [`s`, `s + count`) is not a valid range, the behavior is undefined.
     size_type rfind(const_pointer s, size_type pos, size_type count) const {return chars_.rfind(s, pos, count);}
-    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
     /// @param s The pointer to a character string to search for.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
@@ -1637,7 +1637,7 @@ namespace xtd {
     /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
     /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
     size_type rfind(const_pointer s, size_type pos) const {return chars_.rfind(s, pos);}
-    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
+    /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `xtd::basic_string::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::basic_string::npos). If xtd::basic_string::npos or any value not smaller than xtd::basic_string::size() - 1 is passed as xtd::basic_string::npos, the whole string will be searched.
     /// @param ch The character to search for.
     /// @return Position of the first character of the found substring or xtd::basic_string::npos if no such substring is found.
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
