@@ -235,8 +235,8 @@ namespace xtd {
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
-      /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
-      /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
+      /// @remarks The GetTempFileName method will raise an xtd::io_exception if it is used to create more than 65535 files without deleting previous temporary files.
+      /// @remarks The GetTempFileName method will raise an xtd::io_exception if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
       static xtd::string get_temp_file_name();
       
       /// @brief Returns the path of the current user's temporary folder.
