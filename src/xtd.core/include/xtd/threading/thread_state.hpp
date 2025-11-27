@@ -27,7 +27,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core threading
     enum class thread_state {
-      /// @brief The thread_state has been started, it is not blocked, and there is no pending System::Threading::ThreadAbortException.
+      /// @brief The thread_state has been started, it is not blocked, and there is no pending xtd::threading::thread_abort_exception.
       running = 0x0000,
       /// @brief The thread_state is being requested to stop. This is for internal use only.
       stop_requested = 0x0001,
@@ -43,7 +43,7 @@ namespace xtd {
       wait_sleep_join = 0x0020,
       /// @brief The thread_state has been suspended.
       suspended = 0x0040,
-      /// @brief The System::Threading::Thread.Abort(System::object) method has been invoked on the thread_state, but the thread_state has not yet received the pending System::Threading::ThreadAbortException that will attempt to terminate it.
+      /// @brief The System::Threading::Thread.Abort(System::object) method has been invoked on the thread_state, but the thread_state has not yet received the pending xtd::threading::thread_abort_exception that will attempt to terminate it.
       abort_requested = 0x0080,
       /// @brief The thread_state state includes System::Threading::ThreadState.abort_requested and the thread_state is now dead, but its state has not yet changed to System::Threading::ThreadState.stopped.
       aborted = 0x0100
