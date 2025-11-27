@@ -164,7 +164,7 @@ Inheritance diagram for xtd::forms::save_file_dialog:</div>
 <div class="line">      dialog.file_name(<span class="stringliteral">&quot;MyFile.txt&quot;</span>);</div>
 <div class="line">      dialog.filter(<span class="stringliteral">&quot;Text Files (*.txt)|*.txt;*.md|All Files (*.*)|*.*&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (dialog.show_sheet_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
-<div class="line">        label1.text(string::format(<span class="stringliteral">&quot;File = {0}&quot;</span>, dialog.file_name()));</div>
+<div class="line">        label1.text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;File = {0}&quot;</span>, dialog.file_name()));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    label1.parent(*<span class="keyword">this</span>);</div>
@@ -188,6 +188,7 @@ Inheritance diagram for xtd::forms::save_file_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1save__file__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1save__file__dialog.html">xtd::forms::save_file_dialog</a></div><div class="ttdoc">Prompts the user to select a location for saving a file. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> save_file_dialog.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1scrollable__control_html_a431f226dbf2ccd7608d1a8a393899b60"><div class="ttname"><a href="classxtd_1_1forms_1_1scrollable__control.html#a431f226dbf2ccd7608d1a8a393899b60">xtd::forms::scrollable_control::auto_scroll</a></div><div class="ttdeci">virtual bool auto_scroll() const noexcept</div><div class="ttdoc">Gets a value indicating whether the container enables the user to scroll to any controls placed outsi...</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -467,7 +468,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

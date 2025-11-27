@@ -470,7 +470,7 @@ Use the <a class="el" href="#a711a2e1fbe1eb3d439d225b9fa50eddf" title="Starts, o
 <div class="line">  <span class="keyword">auto</span> ts = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a>.<a class="code hl_function" href="#a43474e70916445d06eefc071ff1081e9">elapsed</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
-<div class="line">  <span class="keyword">auto</span> elapsed_time = string::format(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
+<div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -480,6 +480,7 @@ Use the <a class="el" href="#a711a2e1fbe1eb3d439d225b9fa50eddf" title="Starts, o
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a0d12ad4c46ff408b011aa8eb6a3510bc"><div class="ttname"><a href="#a0d12ad4c46ff408b011aa8eb6a3510bc">xtd::diagnostics::stopwatch::stop</a></div><div class="ttdeci">void stop() noexcept</div><div class="ttdoc">Stops measuring elapsed time for an interval.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a43474e70916445d06eefc071ff1081e9"><div class="ttname"><a href="#a43474e70916445d06eefc071ff1081e9">xtd::diagnostics::stopwatch::elapsed</a></div><div class="ttdeci">time_span elapsed() const noexcept</div><div class="ttdoc">Gets the total elapsed time measured by the current instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stopwatch_html_a711a2e1fbe1eb3d439d225b9fa50eddf"><div class="ttname"><a href="#a711a2e1fbe1eb3d439d225b9fa50eddf">xtd::diagnostics::stopwatch::start</a></div><div class="ttdeci">void start() noexcept</div><div class="ttdoc">Starts, or resumes, measuring elapsed time for an interval.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -530,7 +531,7 @@ By default, the elapsed time value of a <a class="el" href="classxtd_1_1diagnost
 <div class="line">  <span class="keyword">auto</span> ts = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a>.<a class="code hl_function" href="#a43474e70916445d06eefc071ff1081e9">elapsed</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
-<div class="line">  <span class="keyword">auto</span> elapsed_time = string::format(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
+<div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1218,7 +1219,7 @@ When a stopwatch instance measures more than one interval, the start method resu
 <div class="line">  <span class="keyword">auto</span> ts = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a>.<a class="code hl_function" href="#a43474e70916445d06eefc071ff1081e9">elapsed</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
-<div class="line">  <span class="keyword">auto</span> elapsed_time = string::format(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
+<div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1494,7 +1495,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <div class="line">  <span class="keyword">auto</span> ts = <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stopwatch.html">stopwatch</a>.<a class="code hl_function" href="#a43474e70916445d06eefc071ff1081e9">elapsed</a>();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Format and display the duration value.</span></div>
-<div class="line">  <span class="keyword">auto</span> elapsed_time = string::format(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
+<div class="line">  <span class="keyword">auto</span> elapsed_time = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{0:H}:{0:M}:{0:S}.{1:D2}&quot;</span>, ts, ts.milliseconds() / 10);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;RunTime &quot;</span> + elapsed_time);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1624,7 +1625,7 @@ When a <a class="el" href="classxtd_1_1diagnostics_1_1stopwatch.html" title="Pro
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

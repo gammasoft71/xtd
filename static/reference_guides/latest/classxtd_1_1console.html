@@ -1468,7 +1468,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line">    <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, ((<a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
 <div class="line">        <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
@@ -1514,7 +1514,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Type any text then press Enter. Type &#39;+&#39; in the first column to show</span></div>
 <div class="line"><span class="comment">// the cursor, &#39;-&#39; to hide the cursor, or lowercase &#39;x&#39; to quit:</span></div>
 <div class="line"><span class="comment">// x</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:3533</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_ab4bdd160233334a9b7d36af486906d4b"><div class="ttname"><a href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">static bool is_empty(const xtd::basic_string&lt; value_type, traits_type, allocator_type &gt; &amp;string) noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:2191</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae45a442bc3942b2270998ae8c574abe9"><div class="ttname"><a href="#ae45a442bc3942b2270998ae8c574abe9">xtd::console::cursor_visible</a></div><div class="ttdeci">static bool cursor_visible()</div><div class="ttdoc">Gets a value indicating whether the cursor is visible.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1567,7 +1567,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line">    <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, ((<a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
 <div class="line">        <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
@@ -4053,7 +4053,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

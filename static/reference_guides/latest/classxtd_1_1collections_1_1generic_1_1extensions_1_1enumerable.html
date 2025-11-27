@@ -882,16 +882,16 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <div class="line">  numbers.append(5);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It doesn&#39;t work because the original list has not been changed</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(string::join(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers));</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// It works now because we are using a changed copy of the original list</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(string::join(<span class="stringliteral">&quot;, &quot;</span>, numbers.append(5)));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, numbers.append(5)));</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// If you prefer, you can create a new list explicitly</span></div>
 <div class="line">  <span class="keyword">auto</span> new_numbers = numbers.append(5).to_list();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// And then write to the console output</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(string::join(<span class="stringliteral">&quot;, &quot;</span>, new_numbers));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, new_numbers));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -899,6 +899,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <div class="line"><span class="comment">// 1, 2, 3, 4</span></div>
 <div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
 <div class="line"><span class="comment">// 1, 2, 3, 4, 5</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a43fec4215eab2492f3bc1bf81117dd09"><div class="ttname"><a href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">xtd::basic_string&lt; char &gt;::join</a></div><div class="ttdeci">static basic_string join(const basic_string &amp;separator, const collection_t &amp;values) noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:2200</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2431,7 +2432,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

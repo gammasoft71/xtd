@@ -156,7 +156,7 @@ Inheritance diagram for xtd::uri:</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;port: {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#ae0573a91ba65157a2cfc2211bc320770">port</a>());</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;query: {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#a70806486ef573fa46810b8deca286c50">query</a>());</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;scheme: {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#ad9251943cbc5b5c9e72e8688aa2e9f21">scheme</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;segments: {}&quot;</span>, xtd::string::join(<span class="stringliteral">&quot;, &quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#aa91d8473d60575f2da7e5d8df3c5c906">segments</a>()));</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;segments: {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">xtd::string::join</a>(<span class="stringliteral">&quot;, &quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#aa91d8473d60575f2da7e5d8df3c5c906">segments</a>()));</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;user_info: {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>.<a class="code hl_function" href="#a2edb10025af45cd7197713f55b3eb44d">user_info</a>());</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -186,6 +186,7 @@ Inheritance diagram for xtd::uri:</div>
 <div class="line"><span class="comment">// scheme: https</span></div>
 <div class="line"><span class="comment">// segments: /, Home/, Index.htm</span></div>
 <div class="line"><span class="comment">// user_info: user:password</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a43fec4215eab2492f3bc1bf81117dd09"><div class="ttname"><a href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">xtd::basic_string&lt; char &gt;::join</a></div><div class="ttdeci">static basic_string join(const basic_string &amp;separator, const collection_t &amp;values) noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:2200</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html"><div class="ttname"><a href="classxtd_1_1uri.html">xtd::uri</a></div><div class="ttdoc">Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...</div><div class="ttdef"><b>Definition</b> uri.hpp:103</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html_a0eccdc49d2cac706c5be4bf1bf813401"><div class="ttname"><a href="#a0eccdc49d2cac706c5be4bf1bf813401">xtd::uri::local_path</a></div><div class="ttdeci">xtd::string local_path() const</div><div class="ttdoc">Gets the original URI string that was passed to the xtd::uri constructor.</div></div>
@@ -1592,13 +1593,7 @@ The following examples show a URI and the results of calling get_left_part with 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a base of uri; otherwise, <code>false</code>. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td>uri is null. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>IsBaseOf is used to compare the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance to a specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> to determine whether this URI is a base for the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a>. When comparing two <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using <a href="http://host/path/path/file?query">http://host/path/path/file?query</a> as the base URI, the following table shows whether it is a base for other URIs. <table class="markdownTable">
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ac0ed14ca39dde9282d19b445ad1aa274" title="Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.">xtd::uri::is_base_of</a> is used to compare the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance to a specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> to determine whether this URI is a base for the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a>. When comparing two <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using <a href="http://host/path/path/file?query">http://host/path/path/file?query</a> as the base URI, the following table shows whether it is a base for other URIs. <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">URI   </th><th class="markdownTableHeadNone"><a href="http://host/path/path/file?query">http://host/path/path/file?query</a> is base of    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -1878,8 +1873,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="section return"><dt>Returns</dt><dd>string A string that contains the escaped representation of stringToEscape. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td>value is null. </td></tr>
-    <tr><td class="paramname">UriFormatException</td><td>The length of value exceeds 32766 characters. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1uri__format__exception.html" title="The exception that is thrown when an invalid Uniform Resource Identifier (URI) is detected.">xtd::uri_format_exception</a></td><td>The length of value exceeds 32766 characters. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1926,8 +1920,7 @@ For more information on URI support, see the Remarks section for the <a class="e
 <dl class="section return"><dt>Returns</dt><dd>string A string that contains the escaped representation of stringToEscape. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td>value is null. </td></tr>
-    <tr><td class="paramname">UriFormatException</td><td>The length of value exceeds 32766 characters. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1uri__format__exception.html" title="The exception that is thrown when an invalid Uniform Resource Identifier (URI) is detected.">xtd::uri_format_exception</a></td><td>The length of value exceeds 32766 characters. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2235,12 +2228,6 @@ For more information on URI support, see the Remarks section for the <a class="e
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string A string that contains the unescaped representation of stringToUnescape. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td>value is null. </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You should use this method with care. Unescaping a string that has been previously unescaped can lead to ambiguities and errors. </dd>
 <dd>
 Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does not convert plus characters into spaces because this behavior is not standard across all URI schemes. </dd></dl>
@@ -2270,7 +2257,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 
 <p>Specifies the characters that separate the communication protocol scheme from the address portion of the URI. This field is read-only. </p>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates a string from <a class="el" href="#aebd46fed2b09b0e2557e060f8c71f518" title="Specifies that the URI is accessed through the Hypertext Transfer Protocol (HTTP)....">xtd::uri::uri_scheme_http</a>, <a class="el" href="#a631a51c6d0fc38bf8cd76b25b728429a" title="Specifies the characters that separate the communication protocol scheme from the address portion of ...">xtd::uri::scheme_delimiter</a>, and an address. A <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is then created from the string. <div class="fragment"><div class="line"><span class="keywordtype">string</span> address = <span class="stringliteral">&quot;www.contoso.com&quot;</span>;</div>
-<div class="line"><span class="keywordtype">string</span> uri_string = string::format(<span class="stringliteral">&quot;{0}{1}{2}/&quot;</span>, <a class="code hl_variable" href="#aebd46fed2b09b0e2557e060f8c71f518">uri::uri_scheme_http</a>, <a class="code hl_variable" href="#a631a51c6d0fc38bf8cd76b25b728429a">uri::scheme_delimiter</a>, address);</div>
+<div class="line"><span class="keywordtype">string</span> uri_string = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{0}{1}{2}/&quot;</span>, <a class="code hl_variable" href="#aebd46fed2b09b0e2557e060f8c71f518">uri::uri_scheme_http</a>, <a class="code hl_variable" href="#a631a51c6d0fc38bf8cd76b25b728429a">uri::scheme_delimiter</a>, address);</div>
 <div class="line"><a class="code hl_function" href="#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a> result(uri_string);</div>
 <div class="line"><span class="keywordflow">if</span> (result.is_well_formed_original_string())</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is a well formed uri&quot;</span>, uri_string);</div>
@@ -2278,6 +2265,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is not a well formed uri&quot;</span>, uri_string);</div>
 <div class="ttc" id="aclassxtd_1_1uri_html_a631a51c6d0fc38bf8cd76b25b728429a"><div class="ttname"><a href="#a631a51c6d0fc38bf8cd76b25b728429a">xtd::uri::scheme_delimiter</a></div><div class="ttdeci">static const xtd::string scheme_delimiter</div><div class="ttdoc">Specifies the characters that separate the communication protocol scheme from the address portion of ...</div><div class="ttdef"><b>Definition</b> uri.hpp:120</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html_aebd46fed2b09b0e2557e060f8c71f518"><div class="ttname"><a href="#aebd46fed2b09b0e2557e060f8c71f518">xtd::uri::uri_scheme_http</a></div><div class="ttdeci">static const xtd::string uri_scheme_http</div><div class="ttdoc">Specifies that the URI is accessed through the Hypertext Transfer Protocol (HTTP)....</div><div class="ttdef"><b>Definition</b> uri.hpp:165</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2574,7 +2562,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

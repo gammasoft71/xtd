@@ -165,7 +165,7 @@ Inheritance diagram for xtd::forms::open_file_dialog:</div>
 <div class="line">      dialog.filter(<span class="stringliteral">&quot;Text Files (*.txt)|*.txt|All Files (*.*)|*.*&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (dialog.show_sheet_dialog(*<span class="keyword">this</span>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>) {</div>
 <div class="line">        file_name = dialog.file_name();</div>
-<div class="line">        label1.text(string::format(<span class="stringliteral">&quot;File = {}&quot;</span>, file_name));</div>
+<div class="line">        label1.text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;File = {}&quot;</span>, file_name));</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -193,6 +193,7 @@ Inheritance diagram for xtd::forms::open_file_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1scrollable__control_html_a431f226dbf2ccd7608d1a8a393899b60"><div class="ttname"><a href="classxtd_1_1forms_1_1scrollable__control.html#a431f226dbf2ccd7608d1a8a393899b60">xtd::forms::scrollable_control::auto_scroll</a></div><div class="ttdeci">virtual bool auto_scroll() const noexcept</div><div class="ttdoc">Gets a value indicating whether the container enables the user to scroll to any controls placed outsi...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_a62e9eaf034dd27af981240d354d599d7"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a62e9eaf034dd27af981240d354d599d7">xtd::io::path::get_directory_name</a></div><div class="ttdeci">static xtd::string get_directory_name(const xtd::string &amp;path)</div><div class="ttdoc">Returns the directory information for the specified path string.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_a6ddab77d737d830c81582cb358ed8e97"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a6ddab77d737d830c81582cb358ed8e97">xtd::io::path::get_file_name</a></div><div class="ttdeci">static xtd::string get_file_name(const xtd::string &amp;path)</div><div class="ttdoc">Returns the file name and extension of the specified path string.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
@@ -543,7 +544,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

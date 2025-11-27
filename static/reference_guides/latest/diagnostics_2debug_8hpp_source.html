@@ -186,7 +186,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#ac38ce207e4352c2ee160537c7cd5f36b">  183</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#ac38ce207e4352c2ee160537c7cd5f36b">print</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        write_line_(xtd::string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      }</div>
 </div>
@@ -194,7 +194,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        write_line_(xtd::string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      </div>
@@ -210,7 +210,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a69dd203b0e53b8eca75c01ee1ed951f7">  210</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a69dd203b0e53b8eca75c01ee1ed951f7">trace_error</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; message, <span class="keyword">const</span> objects_t&amp; ... args) {</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9acb5e100e5a9a3e7f6d1fd97512215282">trace_event_type::error</a>, xtd::string::format(message, args...));</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9acb5e100e5a9a3e7f6d1fd97512215282">trace_event_type::error</a>, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(message, args...));</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      }</div>
 </div>
@@ -227,7 +227,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00229" data-start="{" data-end="}">
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a15228aad728e64c5d84792b9bc7388e4">  229</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a15228aad728e64c5d84792b9bc7388e4">trace_information</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; message, <span class="keyword">const</span> objects_t&amp; ... args) {</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9abb3ccd5881d651448ded1dac904054ac">trace_event_type::information</a>, xtd::string::format(message, args...));</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9abb3ccd5881d651448ded1dac904054ac">trace_event_type::information</a>, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(message, args...));</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      }</div>
 </div>
@@ -244,7 +244,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#af798654eb2a40c46158aa927ea9259ec">  248</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#af798654eb2a40c46158aa927ea9259ec">trace_warning</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; message, <span class="keyword">const</span> objects_t&amp; ... args) {</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9a7b83d3f08fa392b79e3f553b585971cd">trace_event_type::warning</a>, xtd::string::format(message, args...));</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        trace_event_(<a class="code hl_enumvalue" href="group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9a7b83d3f08fa392b79e3f553b585971cd">trace_event_type::warning</a>, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(message, args...));</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      }</div>
 </div>
@@ -263,7 +263,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#ace1d957d84303a55523fbcb4990fc911">  271</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#ace1d957d84303a55523fbcb4990fc911">write</a>(<span class="keyword">const</span> object_t&amp; message) {</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        write_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      }</div>
 </div>
@@ -272,7 +272,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a2fc8d69797ffc0a71652229654f30d56">  283</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2fc8d69797ffc0a71652229654f30d56">write</a>(<span class="keyword">const</span> object_t&amp; message, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; category) {</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        write_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      }</div>
 </div>
@@ -281,7 +281,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a4c3161cc673e72c7df6d98cced815782">  294</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a4c3161cc673e72c7df6d98cced815782">write</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        write_(string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      }</div>
 </div>
@@ -289,7 +289,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> write(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        write_(string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      }</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      </div>
@@ -304,7 +304,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00324" data-start="{" data-end="}">
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a9fc2490a8e12890c1e9930e239d62ea1">  324</a></span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a9fc2490a8e12890c1e9930e239d62ea1">write_if</a>(<span class="keywordtype">bool</span> condition, <span class="keyword">const</span> object_t&amp; message) {</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="keywordflow">if</span> (condition) write_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="keywordflow">if</span> (condition) write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      }</div>
 </div>
@@ -313,7 +313,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00336" data-start="{" data-end="}">
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a0fe8f8b87ad0b6f57dd57fc58319d16c">  336</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a0fe8f8b87ad0b6f57dd57fc58319d16c">write_if</a>(<span class="keywordtype">bool</span> condition, <span class="keyword">const</span> object_t&amp; message, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; category) {</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">if</span> (condition) write_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">if</span> (condition) write_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      }</div>
 </div>
@@ -338,7 +338,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00365" data-start="{" data-end="}">
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#a3e4a4aca9d56c4680f3a2cfe0b004f7b">  365</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a3e4a4aca9d56c4680f3a2cfe0b004f7b">write_line</a>(<span class="keyword">const</span> object_t&amp; message) {</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        write_line_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message));</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      }</div>
 </div>
@@ -347,7 +347,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00377" data-start="{" data-end="}">
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#ae8c1b79ef479a37737ce3d17b38018f5">  377</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#ae8c1b79ef479a37737ce3d17b38018f5">write_line</a>(<span class="keyword">const</span> object_t&amp; message, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; category) {</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        write_line_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, message), category);</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>      }</div>
 </div>
@@ -356,7 +356,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00387" data-start="{" data-end="}">
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1debug.html#ad878aa489cf141ba29d7b478e0d448ac">  387</a></span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#ad878aa489cf141ba29d7b478e0d448ac">write_line</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        write_line_(string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      }</div>
 </div>
@@ -364,7 +364,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>      <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> write_line(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="preprocessor">        #if DEBUG</span></div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        write_line_(string::format(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...));</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>      }</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>      </div>
@@ -483,6 +483,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="acore__export_8hpp_html"><div class="ttname"><a href="core__export_8hpp.html">core_export.hpp</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
 <div class="ttc" id="adebugger_8hpp_html"><div class="ttname"><a href="debugger_8hpp.html">debugger.hpp</a></div><div class="ttdoc">Contains xtd::diagnostics::debugger class.</div></div>
 <div class="ttc" id="aenvironment_8hpp_html"><div class="ttname"><a href="environment_8hpp.html">environment.hpp</a></div><div class="ttdoc">Contains xtd::environment class.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:21</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
@@ -507,7 +508,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:05:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

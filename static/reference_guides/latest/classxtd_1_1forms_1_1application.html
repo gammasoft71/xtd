@@ -619,9 +619,10 @@ The path will be different depending on whether the Windows Forms application is
 <p>Gets the company name associated with the application. </p>
 <dl class="section return"><dt>Returns</dt><dd>The company name. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form. <div class="fragment"><div class="line"><span class="keywordtype">void</span> PrintCompanyName() {</div>
-<div class="line">  textBox1.Text(xtd::string::format(<span class="stringliteral">&quot;The company name is: {0}&quot;</span>, <a class="code hl_function" href="#a6bd43556877f4da9126d8670ccf1fcf9">application::company_name</a>);</div>
+<div class="line">  textBox1.Text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;The company name is: {0}&quot;</span>, <a class="code hl_function" href="#a6bd43556877f4da9126d8670ccf1fcf9">application::company_name</a>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a6bd43556877f4da9126d8670ccf1fcf9"><div class="ttname"><a href="#a6bd43556877f4da9126d8670ccf1fcf9">xtd::forms::application::company_name</a></div><div class="ttdeci">static xtd::string company_name() noexcept</div><div class="ttdoc">Gets the company name associated with the application.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2130,7 +2131,7 @@ If your application was originally supplied command-line options when it first e
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> restart_count = <a class="code hl_function" href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>).empty() ? 0 : <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;int&gt;</a>(<a class="code hl_function" href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>));</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(string::format(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;Restart {} times&quot;</span>, restart_count));</div>
 <div class="line">  <span class="keyword">auto</span> restart_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(<a class="code hl_function" href="#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>, <span class="stringliteral">&quot;Restart&quot;</span>, {10, 10});</div>
 <div class="line">  restart_button.click += <a class="code hl_function" href="#a9d1de5b2f5e8ee4b46a24aa8f556a5c2">application::restart</a>;</div>
 <div class="line">  </div>
@@ -2605,7 +2606,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_application_idle(<span class="keywordtype">object</span> sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(string::format(<span class="stringliteral">&quot;{}&quot;</span>, ++counter));</div>
+<div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, ++counter));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">int</span> counter = 0;</div>
@@ -2749,7 +2750,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

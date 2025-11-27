@@ -222,8 +222,8 @@ class xtd::basic_array&lt; type_t, allocator_t &gt;</div><p>Base object that rep
 <tr class="memitem:a564a11cba948c390dcce1e3d4002fde5" id="r_a564a11cba948c390dcce1e3d4002fde5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564a11cba948c390dcce1e3d4002fde5">contains</a> (const type_t &amp;value) const noexcept override</td></tr>
 <tr class="memdesc:a564a11cba948c390dcce1e3d4002fde5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the array.  <br /></td></tr>
 <tr class="separator:a564a11cba948c390dcce1e3d4002fde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4849a87889688d2fd26302e51a9519cc" id="r_a4849a87889688d2fd26302e51a9519cc"><td class="memItemLeft" align="right" valign="top"><a id="a4849a87889688d2fd26302e51a9519cc" name="a4849a87889688d2fd26302e51a9519cc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>copy_to</b> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const</td></tr>
+<tr class="memitem:a4849a87889688d2fd26302e51a9519cc" id="r_a4849a87889688d2fd26302e51a9519cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4849a87889688d2fd26302e51a9519cc">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const</td></tr>
+<tr class="memdesc:a4849a87889688d2fd26302e51a9519cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
 <tr class="separator:a4849a87889688d2fd26302e51a9519cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea6a2d0839f3fa39259425f9ad93e3b6" id="r_aea6a2d0839f3fa39259425f9ad93e3b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea6a2d0839f3fa39259425f9ad93e3b6">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> array_index) const override</td></tr>
 <tr class="memdesc:aea6a2d0839f3fa39259425f9ad93e3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
@@ -1070,8 +1070,49 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
+<a id="a4849a87889688d2fd26302e51a9519cc" name="a4849a87889688d2fd26302e51a9519cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4849a87889688d2fd26302e51a9519cc">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::copy_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the entire <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to a compatible one-dimensional array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The one-dimensional <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> that is the destination of the elements copied from ICollection. The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> must have zero-based indexing. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; is greater than the number of elements that the destination array can contain. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aea6a2d0839f3fa39259425f9ad93e3b6" name="aea6a2d0839f3fa39259425f9ad93e3b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea6a2d0839f3fa39259425f9ad93e3b6">&#9670;&#160;</a></span>copy_to()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea6a2d0839f3fa39259425f9ad93e3b6">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1109,7 +1150,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source xtd::collections::generic::icollection &lt;type_t&gt; is greater than the available space from `array_index` to the end of the destination `array`. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The number of elements in the source <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; is greater than the available space from `array_index` to the end of the destination `array`. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2180,7 +2221,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

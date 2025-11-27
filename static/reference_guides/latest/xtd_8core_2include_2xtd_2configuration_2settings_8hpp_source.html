@@ -125,7 +125,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      template&lt;class type_t&gt;</div>
 <div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1settings.html#a26d06e49bd28082128bd8192e5197cb5">  222</a></span>      type_t <a class="code hl_function" href="classxtd_1_1configuration_1_1settings.html#a68beee56bdd9b761deb7c600acc373f6">read</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; key, const type_t&amp; default_value) {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      }</div>
 </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      </div>
@@ -137,7 +137,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1settings.html#ae4719f4dfdfa3fc84541b31967f7f827">  246</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1configuration_1_1settings.html#ae4719f4dfdfa3fc84541b31967f7f827">write</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; key, type_t&amp;&amp; value) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        write_string(key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        write_string(key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      }</div>
 </div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span></div>
@@ -160,6 +160,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1configuration_1_1settings_html_ae70597323a20259508bcfce797ed4997"><div class="ttname"><a href="classxtd_1_1configuration_1_1settings.html#ae70597323a20259508bcfce797ed4997">xtd::configuration::settings::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset application settings.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
 <div class="ttc" id="acore__export_8hpp_html"><div class="ttname"><a href="core__export_8hpp.html">core_export.hpp</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 <div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 <div class="ttc" id="agroup__types_html_ga25ad7ded61d1d55ea98a57f5316b786b"><div class="ttname"><a href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a></div><div class="ttdeci">xtd::shared_ptr_object&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
@@ -173,7 +174,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:05:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

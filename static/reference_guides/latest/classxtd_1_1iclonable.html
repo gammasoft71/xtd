@@ -155,7 +155,7 @@ Inheritance diagram for xtd::iclonable:</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr&lt;object&gt;</a> <a class="code hl_function" href="#a029de477e1de681e2cacc95f92ab9c53">clone</a>()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">new_uptr&lt;foo&gt;</a>(value_);}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -182,6 +182,7 @@ Inheritance diagram for xtd::iclonable:</div>
 <div class="ttc" id="aclassxtd_1_1iclonable_html_a029de477e1de681e2cacc95f92ab9c53"><div class="ttname"><a href="#a029de477e1de681e2cacc95f92ab9c53">xtd::iclonable::clone</a></div><div class="ttdeci">virtual xtd::uptr&lt; xtd::object &gt; clone() const =0</div><div class="ttdoc">Creates a new object that is a copy of the current instance.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_af2d19ef177db62351b58a42f22138dbe"><div class="ttname"><a href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const noexcept</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 <div class="ttc" id="agroup__types_html_ga6c0a708a117d3b2967d6767f96b82baf"><div class="ttname"><a href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga6380fbc5438993d147b093cfa5718caf"><div class="ttname"><a href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr</a></div><div class="ttdeci">uptr&lt; type_t &gt; new_uptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_uptr operator. This operator creates a xtd::uptr object.</div><div class="ttdef"><b>Definition</b> new_uptr.hpp:24</div></div>
@@ -238,7 +239,7 @@ See <a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a3
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

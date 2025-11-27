@@ -1127,9 +1127,9 @@ The default extension length is 0. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The full path of the temporary file. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method. </dd>
 <dd>
-The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files. </dd>
+The GetTempFileName method will raise an xtd::io_exception if it is used to create more than 65535 files without deleting previous temporary files. </dd>
 <dd>
-The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files. </dd></dl>
+The GetTempFileName method will raise an xtd::io_exception if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files. </dd></dl>
 
 </div>
 </div>
@@ -1250,7 +1250,7 @@ If the caller does not have sufficient permissions to read the specified file, n
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

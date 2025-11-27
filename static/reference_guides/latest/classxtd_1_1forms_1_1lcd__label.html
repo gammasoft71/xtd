@@ -177,7 +177,7 @@ Inheritance diagram for xtd::forms::lcd_label:</div>
 <div class="line">    numeric_up_down1.decimal_place(2);</div>
 <div class="line">    numeric_up_down1.width(180);</div>
 <div class="line">    numeric_up_down1.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      lcd_label1.text(string::format(<span class="stringliteral">&quot;{,11:F2}&quot;</span>, numeric_up_down1.value()));</div>
+<div class="line">      lcd_label1.text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{,11:F2}&quot;</span>, numeric_up_down1.value()));</div>
 <div class="line">    };</div>
 <div class="line">    numeric_up_down1.value(12345678.90);</div>
 <div class="line">  }</div>
@@ -191,6 +191,7 @@ Inheritance diagram for xtd::forms::lcd_label:</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga8f1afbe5a615fe070461803db7af235baae74ea4e2e865ed3fd60c18a06e69c65"><div class="ttname"><a href="group__xtd__forms.html#gga8f1afbe5a615fe070461803db7af235baae74ea4e2e865ed3fd60c18a06e69c65">xtd::forms::segment_style::modern</a></div><div class="ttdeci">@ modern</div><div class="ttdoc">Modern segment style.</div><div class="ttdef"><b>Definition</b> segment_style.hpp:25</div></div>
@@ -213,7 +214,7 @@ Inheritance diagram for xtd::forms::lcd_label:</div>
 <div class="line">  label.back_color(color_converter::average(color::black, label.fore_color(), 0.05));</div>
 <div class="line">  </div>
 <div class="line">  timer.tick += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">    label.text(string::format(<span class="stringliteral">&quot;{,5:F1}&quot;</span>, chrono.elapsed_milliseconds() / 1000.0));</div>
+<div class="line">    label.text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{,5:F1}&quot;</span>, chrono.elapsed_milliseconds() / 1000.0));</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">diagnostics::debug::write_line</a>(label.text());</div>
 <div class="line">  };</div>
 <div class="line">  </div>
@@ -2823,7 +2824,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

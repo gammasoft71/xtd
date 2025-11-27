@@ -380,7 +380,7 @@ Enumerations</h2></td></tr>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" name="ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689"></a>running&#160;</td><td class="fielddoc"><p>The <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> has been started, it is not blocked, and there is no pending System::Threading::ThreadAbortException. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" name="ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689"></a>running&#160;</td><td class="fielddoc"><p>The <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> has been started, it is not blocked, and there is no pending <a class="el" href="classxtd_1_1threading_1_1thread__abort__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::threading::thread_abort_exception</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04accb6f701c7581522cb24c0648d9576b1" name="ggad404f38f7d4e370680b792bc0f397d04accb6f701c7581522cb24c0648d9576b1"></a>stop_requested&#160;</td><td class="fielddoc"><p>The <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> is being requested to stop. This is for internal use only. </p>
 </td></tr>
@@ -396,7 +396,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04a735fda5d72b5c650f3f0435195a211bd" name="ggad404f38f7d4e370680b792bc0f397d04a735fda5d72b5c650f3f0435195a211bd"></a>suspended&#160;</td><td class="fielddoc"><p>The <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> has been suspended. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055" name="ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055"></a>abort_requested&#160;</td><td class="fielddoc"><p>The System::Threading::Thread.Abort(System::object) method has been invoked on the <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a>, but the <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> has not yet received the pending System::Threading::ThreadAbortException that will attempt to terminate it. </p>
+<tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055" name="ggad404f38f7d4e370680b792bc0f397d04af2489d665653e9c13d5f7370cfff1055"></a>abort_requested&#160;</td><td class="fielddoc"><p>The System::Threading::Thread.Abort(System::object) method has been invoked on the <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a>, but the <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> has not yet received the pending <a class="el" href="classxtd_1_1threading_1_1thread__abort__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::threading::thread_abort_exception</a> that will attempt to terminate it. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggad404f38f7d4e370680b792bc0f397d04adfb7069bfc6e0064a6c667626eca07b4" name="ggad404f38f7d4e370680b792bc0f397d04adfb7069bfc6e0064a6c667626eca07b4"></a>aborted&#160;</td><td class="fielddoc"><p>The <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> state includes System::Threading::ThreadState.abort_requested and the <a class="el" href="#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">thread_state</a> is now dead, but its state has not yet changed to System::Threading::ThreadState.stopped. </p>
 </td></tr>
@@ -773,7 +773,7 @@ Enumerations</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:05:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

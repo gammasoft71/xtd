@@ -136,7 +136,7 @@ $(function(){ initResizable(false); });
 <div class="line">      progress_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Downloading&quot;</span>, <span class="stringliteral">&quot;Please wait...&quot;</span>, 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = progress_box::minimum(); index &lt;= progress_box::maximum(); ++index) {</div>
 <div class="line">        threading::thread::sleep(100_ms); <span class="comment">// Do some work...</span></div>
-<div class="line">        progress_box::update(index, <span class="stringliteral">&quot;Downloading&quot;</span>, xtd::string::format(<span class="stringliteral">&quot;{}/{}&quot;</span>, index, progress_box::maximum()));</div>
+<div class="line">        progress_box::update(index, <span class="stringliteral">&quot;Downloading&quot;</span>, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}/{}&quot;</span>, index, progress_box::maximum()));</div>
 <div class="line">        <span class="keywordflow">if</span> (progress_box::skipped()) index++;</div>
 <div class="line">        <span class="keywordflow">if</span> (progress_box::cancelled()) <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
@@ -151,12 +151,13 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:05:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

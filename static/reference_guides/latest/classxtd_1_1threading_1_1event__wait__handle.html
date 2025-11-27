@@ -769,7 +769,7 @@ There was some other error. The HResult property may provide more information. <
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The name may be prefixed with Global\ or Local\ to specify a namespace. When the Global namespace is specified, the synchronization object may be shared with any processes on the system. When the Local namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session </dd>
 <dd>
-If a name is provided and a synchronization object of the requested type already exists in the namespace, the existing synchronization object is opened. If a synchronization object of a different type already exists in the namespace, a WaitHandleCannotBeOpenedException is thrown. Otherwise, a new synchronization object is created. </dd>
+If a name is provided and a synchronization object of the requested type already exists in the namespace, the existing synchronization object is opened. If a synchronization object of a different type already exists in the namespace, a xtd::wait_handle_cannot_be_opened_exception is thrown. Otherwise, a new synchronization object is created. </dd>
 <dd>
 If a system event with the name specified for the name parameter already exists, the initialState parameter is ignored. After calling this constructor, use the value in the variable specified for the ref parameter (ByRef parameter in Visual Basic)createdNew to determine whether the named system event already existed or was created. </dd>
 <dd>
@@ -1186,7 +1186,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

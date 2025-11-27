@@ -181,10 +181,10 @@ When the up_button or down_button methods are called, either in code or by the c
 <div class="line">      numeric_up_down1.location({80, 50});</div>
 <div class="line">      numeric_up_down1.wrapped(<span class="keyword">true</span>);</div>
 <div class="line">      numeric_up_down1.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        label1.text(string::format(<span class="stringliteral">&quot;value = {}&quot;</span>, numeric_up_down1.value()));</div>
+<div class="line">        label1.text(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, numeric_up_down1.value()));</div>
 <div class="line">      };</div>
 <div class="line">      numeric_up_down1.text_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="group__debug.html#ga60e3c3312fc571759071242ae0f4b49e">cdebug</a> &lt;&lt; string::format(<span class="stringliteral">&quot;text = {}&quot;</span>, numeric_up_down1.text()) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a> &lt;&lt; std::flush;</div>
+<div class="line">        <a class="code hl_function" href="group__debug.html#ga60e3c3312fc571759071242ae0f4b49e">cdebug</a> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;text = {}&quot;</span>, numeric_up_down1.text()) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a> &lt;&lt; std::flush;</div>
 <div class="line">      };</div>
 <div class="line">      numeric_up_down1.value(50);</div>
 <div class="line">      </div>
@@ -213,6 +213,7 @@ When the up_button or down_button methods are called, either in code or by the c
 <div class="ttc" id="aclassxtd_1_1forms_1_1container__control_html_ab4f12fc531be1fc0bdcba2e24dfbc516"><div class="ttname"><a href="classxtd_1_1forms_1_1container__control.html#ab4f12fc531be1fc0bdcba2e24dfbc516">xtd::forms::container_control::active_control</a></div><div class="ttdeci">std::optional&lt; control_ref &gt; active_control() const noexcept</div><div class="ttdoc">Gets the active control on the container control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__debug_html_ga60e3c3312fc571759071242ae0f4b49e"><div class="ttname"><a href="group__debug.html#ga60e3c3312fc571759071242ae0f4b49e">xtd::cdebug</a></div><div class="ttdeci">std::ostream cdebug(nullptr)</div><div class="ttdoc">Provides an std::ostream for xtd::diagnostics::debug.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:924</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
@@ -3681,7 +3682,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

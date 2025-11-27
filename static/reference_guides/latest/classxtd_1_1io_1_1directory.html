@@ -1396,7 +1396,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
           public:
             static auto main() {
               // Create string for a directory. This value should be an existing directory
-              // or the sample will throw a DirectoryNotFoundException.
+              // or the sample will throw a xtd::directory_not_found_exception.
               string dir = R"(C:\test)";
               try {
                 //Set the current directory.
@@ -2604,7 +2604,7 @@ The directory or a file within it is being used by another process. </td></tr>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an IOException will occur. For example, an exception will occur if you try to move c:\mydir to c:, and c:already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir". </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method creates a new directory with the name specified by destDirName and moves the contents of sourceDirName to the newly created destination directory. If you try to move a directory to a directory that already exists, an xtd::io_exception will occur. For example, an exception will occur if you try to move c:\mydir to c:, and c:already exists. Alternatively, you could specify "c:\\public\\mydir" as the destDirName parameter, provided that "mydir" does not exist under "c:\\public", or specify a new directory name such as "c:\\newdir". </dd>
 <dd>
 The sourceDirName and destDirName arguments are permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory. </dd>
 <dd>
@@ -2691,7 +2691,7 @@ The path parameter may specify relative or absolute path information. Relative p
 <dd>
 Trailing spaces are removed from the end of the path parameter before deleting the directory. </dd>
 <dd>
-This method throws an IOException if the directory specified in the path parameter contains files or subdirectories. </dd>
+This method throws an xtd::io_exception if the directory specified in the path parameter contains files or subdirectories. </dd>
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
@@ -3012,7 +3012,7 @@ The path parameter is not case-sensitive. </dd></dl>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">// Create string for a directory. This value should be an existing directory</span></div>
-<div class="line">    <span class="comment">// or the sample will throw a DirectoryNotFoundException.</span></div>
+<div class="line">    <span class="comment">// or the sample will throw a xtd::directory_not_found_exception.</span></div>
 <div class="line">    <span class="keywordtype">string</span> dir = R<span class="stringliteral">&quot;(C:\test)&quot;;</span></div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">//Set the current directory.</span></div>
@@ -3284,7 +3284,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:06:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:27:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

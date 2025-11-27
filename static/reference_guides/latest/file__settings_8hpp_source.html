@@ -167,7 +167,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      template&lt;class type_t&gt;</div>
 <div class="foldopen" id="foldopen00290" data-start="{" data-end="}">
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1file__settings.html#a76b7043442a378332522c1b4f6490a1c">  290</a></span>      type_t <a class="code hl_function" href="classxtd_1_1configuration_1_1file__settings.html#aa7dc7815cccea34878d9d3909235aa97">read</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; key, const type_t&amp; default_value) {</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(xtd::string::empty_string, key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(xtd::string::empty_string, key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      }</div>
 </div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span></div>
@@ -175,7 +175,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="foldopen" id="foldopen00307" data-start="{" data-end="}">
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1file__settings.html#af0c2a7dde4fcea7cb5925a6626ea9d1d">  307</a></span>      type_t <a class="code hl_function" href="classxtd_1_1configuration_1_1file__settings.html#af0c2a7dde4fcea7cb5925a6626ea9d1d">read</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; section, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; key, <span class="keyword">const</span> type_t&amp; default_value) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(section, key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse&lt;type_t&gt;</a>(read_string(section, key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, default_value)));</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      }</div>
 </div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      </div>
@@ -198,7 +198,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>      template&lt;class type_t&gt;</div>
 <div class="foldopen" id="foldopen00528" data-start="{" data-end="}">
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1file__settings.html#aec22502d46671a1e3767e496a3f0b746">  528</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1configuration_1_1file__settings.html#abc75270c1a93d09338683ecdc669312d">write</a>(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; key, type_t&amp;&amp; value) {</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>        write_string(xtd::string::empty_string, key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>        write_string(xtd::string::empty_string, key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
 <div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>      }</div>
 </div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span></div>
@@ -206,7 +206,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="foldopen" id="foldopen00580" data-start="{" data-end="}">
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno"><a class="line" href="classxtd_1_1configuration_1_1file__settings.html#a8f5dff3f531f9f24e81f7525610510d3">  580</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1configuration_1_1file__settings.html#a8f5dff3f531f9f24e81f7525610510d3">write</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; section, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; key, type_t&amp;&amp; value) {</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        write_string(section, key, xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        write_string(section, key, <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value));</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>      }</div>
 </div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span></div>
@@ -272,6 +272,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="acore__export_8hpp_html"><div class="ttname"><a href="core__export_8hpp.html">core_export.hpp</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
 <div class="ttc" id="adirectory_8hpp_html"><div class="ttname"><a href="directory_8hpp.html">directory.hpp</a></div><div class="ttdoc">Contains xtd::io::directory class.</div></div>
 <div class="ttc" id="afile_8hpp_html"><div class="ttname"><a href="file_8hpp.html">file.hpp</a></div><div class="ttdoc">Contains xtd::io::file class.</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 <div class="ttc" id="agroup__specialized__collections_html_gafd07700289a9f9e4a37a565f57a21110"><div class="ttname"><a href="group__specialized__collections.html#gafd07700289a9f9e4a37a565f57a21110">xtd::collections::specialized::string_collection</a></div><div class="ttdeci">xtd::collections::generic::list&lt; xtd::string &gt; string_collection</div><div class="ttdoc">Represents a collection of strings.</div><div class="ttdef"><b>Definition</b> string_collection.hpp:27</div></div>
 <div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
@@ -290,7 +291,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 13:05:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 27 2025 20:26:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
