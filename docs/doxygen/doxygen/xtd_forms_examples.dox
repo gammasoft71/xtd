@@ -76,6 +76,21 @@
 /// <br>
 /// @image html application_restart_gd.png
 ///
+/// @example application_thread_exception.cpp
+/// Shows how to use xtd::forms::application::thread_exception event.
+/// @par Windows
+/// @image html application_thread_exception_w.png
+/// <br>
+/// @image html application_thread_exception_wd.png
+/// @par macOS
+/// @image html application_thread_exception_m.png
+/// <br>
+/// @image html application_thread_exception_md.png
+/// @par Gnome
+/// @image html application_thread_exception_g.png
+/// <br>
+/// @image html application_thread_exception_gd.png
+///
 /// @example application_use_wait_cursor.cpp
 /// Shows how to create an application_use_wait_cursor with xtd::forms::application::use_wait_cursor method.
 /// @par Windows
@@ -1876,20 +1891,20 @@
 /// <br>
 /// @image html fill_rounded_rectangle_gd.png
 ///
-/// @example image_converter.cpp
-/// shows how to use xtd::drawing::graphics::image_converter class.
+/// @example image_effects.cpp
+/// shows how to use xtd::drawing::graphics::imaging::image_effector class.
 /// @par Windows
-/// @image html image_converter_w.png
+/// @image html image_effects_w.png
 /// <br>
-/// @image html image_converter_wd.png
+/// @image html image_effects_wd.png
 /// @par macOS
-/// @image html image_converter_m.png
+/// @image html image_effects_m.png
 /// <br>
-/// @image html image_converter_md.png
+/// @image html image_effects_md.png
 /// @par Gnome
-/// @image html image_converter_g.png
+/// @image html image_effects_g.png
 /// <br>
-/// @image html image_converter_gd.png
+/// @image html image_effects_gd.png
 ///
 /// @example screenshot.cpp
 /// shows how to fill ellipse in paint event using xtd::drawing::graphics::copy_from_screen.
@@ -2130,21 +2145,6 @@
 /// @image html wnd_proc_g.png
 /// <br>
 /// @image html wnd_proc_gd.png
-///
-/// @example circular_form.cpp
-/// demonstrates the use of xtd::forms::control::region property for create a circular form.
-/// @par Windows
-/// @image html circular_form_w.png
-/// <br>
-/// @image html circular_form_wd.png
-/// @par macOS
-/// @image html circular_form_m.png
-/// <br>
-/// @image html circular_form_md.png
-/// @par Gnome
-/// @image html circular_form_g.png
-/// <br>
-/// @image html circular_form_gd.png
 ///
 /// @example debug_form.cpp
 /// demonstrates the use of xtd::debug_forms::debug_form container.
@@ -3705,4 +3705,19 @@
 /// @image html user_dialog_show_sheet_g.png
 /// <br>
 /// @image html user_dialog_show_sheet_gd.png
+///
+/// @example ball.cpp
+/// demonstrates the use of xtd::forms::control::region property for create a circular form.
+/// @par Windows
+/// @image html ball_w.png
+/// <br>
+/// @image html ball_wd.png
+/// @par macOS
+/// @image html ball_m.png
+/// <br>
+/// @image html ball_md.png
+/// @par Gnome
+/// @image html ball_g.png
+/// <br>
+/// @image html ball_gd.png
 ///
