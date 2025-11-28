@@ -17,10 +17,10 @@ namespace xtd {
   // {
   template<class type_t, xtd::size length>
   array(const type_t(&)[length]) -> array<type_t, 1>;
-
+  
   template<class type_t>
   array(const type_t*, xtd::size) -> array<type_t, 1>;
-
+  
   template<class type_t>
   array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t, 1>;
   
