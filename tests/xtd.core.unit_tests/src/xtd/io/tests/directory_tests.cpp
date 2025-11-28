@@ -66,7 +66,7 @@ namespace xtd::io::tests {
       // Linux :
       //   #define PATH_MAX 4096 /* # chars in a path name including nul */
       //   #define NAME_MAX  255 /* max bytes in a file name */
-      assert::throws<path_too_long_exception>([] {directory::create_directory("directory"_s + string(260, '1'));});
+      assert::throws<path_too_long_exception>([] {directory::create_directory("directory"_s + string('1', 260));});
     }
   };
 }

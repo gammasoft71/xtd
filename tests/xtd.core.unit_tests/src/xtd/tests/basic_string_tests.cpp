@@ -227,41 +227,6 @@ namespace xtd::tests {
       assert::is_empty(s);
     }
     
-    void test_method_(constructor_with_count_and_char_character) {
-      auto s = basic_string<char_t>(10, char {'*'});
-      assert::are_equal(10_z, s.length());
-      for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal(char_t {'*'}, s[index]);
-    }
-    
-    void test_method_(constructor_with_count_and_char16_character) {
-      auto s = basic_string<char_t>(10, char16 {'*'});
-      assert::are_equal(10_z, s.length());
-      for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal(char_t {'*'}, s[index]);
-    }
-    
-    void test_method_(constructor_with_count_and_char32_character) {
-      auto s = basic_string<char_t>(10, char32 {'*'});
-      assert::are_equal(10_z, s.length());
-      for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal(char_t {'*'}, s[index]);
-    }
-    
-    void test_method_(constructor_with_count_and_char8_character) {
-      auto s = basic_string<char_t>(10, char8 {'*'});
-      assert::are_equal(10_z, s.length());
-      for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal(char_t {'*'}, s[index]);
-    }
-    
-    void test_method_(constructor_with_count_and_wchar_character) {
-      auto s = basic_string<char_t>(10, wchar {'*'});
-      assert::are_equal(10_z, s.length());
-      for (auto index = 0_z; index < s.length(); ++index)
-        assert::are_equal(char_t {'*'}, s[index]);
-    }
-    
     void test_method_(constructor_with_char_character_and_count) {
       auto s = basic_string<char_t>(char {'*'}, 10);
       assert::are_equal(10_z, s.length());

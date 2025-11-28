@@ -155,17 +155,12 @@ namespace xtd {
     /// @{
     /// @brief Initializes a new instance of xtd::basic_string.
     basic_string() = default;
-    /// @brief Initializes a new instance of xtd::basic_string with specified allocator.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    explicit basic_string(const allocator_type & allocator) noexcept;
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<char>& str) noexcept {
       if constexpr(std::is_same_v<char, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::char16>& str) noexcept {
@@ -189,42 +184,6 @@ namespace xtd {
     basic_string(const basic_string<xtd::wchar>& str) noexcept {
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
-    }
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string<char>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string<xtd::char16>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string<xtd::char32>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string<xtd::char8>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const basic_string<xtd::wchar>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
     }
     
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
@@ -272,58 +231,6 @@ namespace xtd {
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index)));
     }
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
-    basic_string(const basic_string<char>& str, xtd::size index, const allocator_type & allocator) {
-      if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char16>& str, xtd::size index, const allocator_type & allocator) {
-      if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char32>& str, xtd::size index, const allocator_type & allocator) {
-      if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char8>& str, xtd::size index, const allocator_type & allocator) {
-      if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::wchar>& str, xtd::size index, const allocator_type & allocator) {
-      if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index)), allocator);
-    }
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -375,164 +282,30 @@ namespace xtd {
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index, count)));
     }
     
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-    basic_string(const basic_string<char>& str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-      if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index, count)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char16>& str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-      if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index, count)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char32>& str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-      if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index, count)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::char8>& str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-      if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index, count)), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
-    basic_string(const basic_string<xtd::wchar>& str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-      if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index, count)), allocator);
-    }
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to move.
     /// @param str The basic_string to move.
     basic_string(basic_string&&) = default;
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to move and allocator.
-    /// @param str The basic_string to move.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(basic_string&& str, const allocator_type & allocator) noexcept : chars_(std::move(str.chars_)) {}
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
-    /// @param str The string to copy.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    basic_string(xtd::size count, char character) : basic_string(std::basic_string<char>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::size count, char character, const allocator_type & allocator) : basic_string(std::basic_string<char>(count, character), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    basic_string(xtd::size count, xtd::char16 character) : basic_string(std::basic_string<xtd::char16>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::size count, xtd::char16 character, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char16>(count, character), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    basic_string(xtd::size count, xtd::char32 character) : basic_string(std::basic_string<xtd::char32>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::size count, xtd::char32 character, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char32>(count, character), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    basic_string(xtd::size count, xtd::char8 character) : basic_string(std::basic_string<xtd::char8>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::size count, xtd::char8 character, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char8>(count, character), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    basic_string(xtd::size count, xtd::wchar character) : basic_string(std::basic_string<xtd::wchar>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param str The string to copy.
-    /// @param count The number of copies of character.
-    /// @param character The character copied.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::size count, xtd::wchar character, const allocator_type & allocator) : basic_string(std::basic_string<xtd::wchar>(count, character), allocator) {}
     
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
     basic_string(char character, xtd::size count) : basic_string(std::basic_string<char>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param character The character copied.
-    /// @param count The number of copies of character.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(char character, xtd::size count, const allocator_type & allocator) : basic_string(std::basic_string<char>(count, character), allocator) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
     basic_string(xtd::char16 character, xtd::size count) : basic_string(std::basic_string<xtd::char16>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param character The character copied.
-    /// @param count The number of copies of character.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::char16 character, xtd::size count, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char16>(count, character), allocator) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
     basic_string(xtd::char32 character, xtd::size count) : basic_string(std::basic_string<xtd::char32>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param character The character copied.
-    /// @param count The number of copies of character.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::char32 character, xtd::size count, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char32>(count, character), allocator) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
     basic_string(xtd::char8 character, xtd::size count) : basic_string(std::basic_string<xtd::char8>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param character The character copied.
-    /// @param count The number of copies of character.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::char8 character, xtd::size count, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char8>(count, character), allocator) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
     basic_string(xtd::wchar character, xtd::size count) : basic_string(std::basic_string<xtd::wchar>(count, character)) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character and specified allocator.
-    /// @param character The character copied.
-    /// @param count The number of copies of character.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(xtd::wchar character, xtd::size count, const allocator_type & allocator) : basic_string(std::basic_string<xtd::wchar>(count, character), allocator) {}
     
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
@@ -565,47 +338,6 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::wchar * str) { // Can't be explicit by design.
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
-    }
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const char* str, const allocator_type & allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char16 * str, const allocator_type & allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char32 * str, const allocator_type & allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char8 * str, const allocator_type & allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::wchar * str, const allocator_type & allocator) : chars_(allocator) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
@@ -647,52 +379,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
     }
     
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const char* str, xtd::size count, const allocator_type & allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str, count), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char16 * str, xtd::size count, const allocator_type & allocator) : chars_(allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str, count), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char32 * str, xtd::size count, const allocator_type & allocator) : chars_(allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::char8 * str, xtd::size count, const allocator_type & allocator) : chars_(allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
-    /// @param str The string to copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const xtd::wchar * str, xtd::size count, const allocator_type & allocator) : chars_(allocator) {
-      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count, allocator);
-      else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count), allocator);
-    }
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<char>& str) noexcept { // Can't be explicit by design.
@@ -724,53 +410,11 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const std::basic_string<char>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<char, char_t>) chars_ = base_type(str, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const std::basic_string<xtd::char16>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const std::basic_string<xtd::char32>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const std::basic_string<xtd::char8>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
-    }
-    /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
-    /// @param str The string to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(const std::basic_string<xtd::wchar>& str, const allocator_type & allocator) noexcept {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str, allocator);
-      else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
-    }
-    
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
     template<class input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last) : chars_(first, last) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring and allocator.
-    /// @param first The first iterator of substring.
-    /// @param last The first iterator of substring.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<class input_iterator_t>
-    basic_string(input_iterator_t first, input_iterator_t last, const allocator_type & allocator) : chars_(first, last, allocator) {}
     
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
@@ -779,23 +423,11 @@ namespace xtd {
     explicit constexpr basic_string(const string_view_like_t& string_view) : chars_(string_view) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<class string_view_like_t>
-    explicit constexpr basic_string(const string_view_like_t& string_view, const allocator_type & allocator) : chars_(string_view, allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
-    /// @param string_view The basic_string view.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     template<class string_view_like_t>
     constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count) : chars_(string_view, index, count) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
-    /// @param string_view The basic_string view.
-    /// @param index The index of the first substring character where start copy.
-    /// @param count The number of substring characters to copy.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<class string_view_like_t>
-    constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type & allocator) : chars_(string_view, index, count, allocator) {}
     
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
@@ -812,27 +444,6 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::wchar> il) : basic_string(std::basic_string<xtd::wchar>(il)) {}
-    
-    /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
-    /// @param il The initializer list to fill.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(std::initializer_list<char> il, const allocator_type & allocator) : basic_string(std::basic_string<char>(il), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
-    /// @param il The initializer list to fill.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(std::initializer_list<xtd::char16> il, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char16>(il), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
-    /// @param il The initializer list to fill.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(std::initializer_list<xtd::char32> il, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char32>(il), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
-    /// @param il The initializer list to fill.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(std::initializer_list<xtd::char8> il, const allocator_type & allocator) : basic_string(std::basic_string<xtd::char8>(il), allocator) {}
-    /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
-    /// @param il The initializer list to fill.
-    /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    basic_string(std::initializer_list<xtd::wchar> il, const allocator_type & allocator) : basic_string(std::basic_string<xtd::wchar>(il), allocator) {}
     /// @}
     
     /// @name Public Properties
@@ -1525,7 +1136,7 @@ namespace xtd {
     /// @return A new basic_string that is equivalent to the specified basic_string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified basic_string, a new basic_string object that is identical the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The pad_left(const std::basic_string<char_t>&, int) method pads the beginning of the returned basic_string. This means that, when used with right-to-left languages, it pads the right portion of the basic_string..
-    basic_string pad_left(xtd::size total_width, char32 padding_char) const noexcept {return total_width < length() ? self_ : basic_string(total_width - length(), padding_char) + self_;}
+    basic_string pad_left(xtd::size total_width, char32 padding_char) const noexcept {return total_width < length() ? self_ : basic_string(padding_char, total_width - length()) + self_;}
     
     /// @brief Left-aligns the characters in this basic_string, padding with spaces on the right for a specified total length.
     /// @param totalWidth The number of characters in the resulting basic_string, equal to the number of original characters plus any additional padding characters.
@@ -1539,7 +1150,7 @@ namespace xtd {
     /// @return A new basic_string that is equivalent to the specified basic_string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified basic_string, a new basic_string object that is identical to the specified basic_string.
     /// @remarks An unicode space is defined as hexadecimal 0x20.
     /// @remarks The xtd::basic_string::pad_right method pads the end of the returned basic_string. This means that, when used with right-to-left languages, it pads the left portion of the basic_string..
-    basic_string pad_right(xtd::size total_width, char32 padding_char) const noexcept {return total_width < length() ? self_ : self_ + basic_string(total_width - length(), padding_char);}
+    basic_string pad_right(xtd::size total_width, char32 padding_char) const noexcept {return total_width < length() ? self_ : self_ + basic_string(padding_char, total_width - length());}
     
     /// @brief Allows insertion and extraction of quoted strings, such as the ones found in [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) or [XML](https://en.wikipedia.org/wiki/XML).
     /// @return A new quoted basic_string.
@@ -1582,7 +1193,7 @@ namespace xtd {
     /// @param old_char A char_t to be replaced.
     /// @param new_char A char_t to replace all occurrences of old_char.
     /// @return A new basic_string equivalent to the specified basic_string but with all instances of old_char replaced with new_char.
-    basic_string replace(value_type old_char, value_type new_char) const noexcept {return replace(string(1, old_char), string(1, new_char));}
+    basic_string replace(value_type old_char, value_type new_char) const noexcept {return replace(string(old_char, 1), string(new_char, 1));}
     /// @brief Replaces all occurrences of a specified basic_string in this basic_string with another specified basic_string.
     /// @param old_string A basic_string to be replaced.
     /// @param new_string A basic_string to replace all occurrences of old_string.
@@ -2563,35 +2174,35 @@ namespace xtd {
     /// @param character The character to use as data source.
     /// @return This current instance.
     basic_string& operator =(char character) {
-      self_ = basic_string(1, character);
+      self_ = basic_string(character, 1);
       return  self_;
     }
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
     basic_string& operator =(xtd::char16 character) {
-      self_ = basic_string(1, character);
+      self_ = basic_string(character, 1);
       return  self_;
     }
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
     basic_string& operator =(xtd::char32 character) {
-      self_ = basic_string(1, character);
+      self_ = basic_string(character, 1);
       return  self_;
     }
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
     basic_string& operator =(xtd::char8 character) {
-      self_ = basic_string(1, character);
+      self_ = basic_string(character, 1);
       return  self_;
     }
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
     basic_string& operator =(xtd::wchar character) {
-      self_ = basic_string(1, character);
+      self_ = basic_string(character, 1);
       return  self_;
     }
     
@@ -2792,35 +2403,35 @@ namespace xtd {
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(char ch) {
-      chars_ += basic_string(1, ch).chars_;
+      chars_ += basic_string(ch, 1).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(xtd::char16 ch) {
-      chars_ += basic_string(1, ch).chars_;
+      chars_ += basic_string(ch, 1).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(xtd::char32 ch) {
-      chars_ += basic_string(1, ch).chars_;
+      chars_ += basic_string(ch, 1).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(xtd::char8 ch) {
-      chars_ += basic_string(1, ch).chars_;
+      chars_ += basic_string(ch, 1).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(xtd::wchar ch) {
-      chars_ += basic_string(1, ch).chars_;
+      chars_ += basic_string(ch, 1).chars_;
       return self_;
     }
     
@@ -3386,7 +2997,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(char lhs, const basic_string & rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += rhs;
       return result;
     }
@@ -3395,7 +3006,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char16 lhs, const basic_string & rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += rhs;
       return result;
     }
@@ -3404,7 +3015,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char32 lhs, const basic_string & rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += rhs;
       return result;
     }
@@ -3413,7 +3024,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char8 lhs, const basic_string & rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += rhs;
       return result;
     }
@@ -3422,7 +3033,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::wchar lhs, const basic_string & rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += rhs;
       return result;
     }
@@ -3432,7 +3043,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(char lhs, basic_string&& rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += std::move(rhs);
       return result;
     }
@@ -3441,7 +3052,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char16 lhs, basic_string&& rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += std::move(rhs);
       return result;
     }
@@ -3450,7 +3061,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char32 lhs, basic_string&& rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += std::move(rhs);
       return result;
     }
@@ -3459,7 +3070,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::char8 lhs, basic_string&& rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += std::move(rhs);
       return result;
     }
@@ -3468,7 +3079,7 @@ namespace xtd {
     /// @param rhs The string characters who will follow the `lhs`.
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(xtd::wchar lhs, basic_string&& rhs) {
-      auto result = basic_string(1, lhs);
+      auto result = basic_string(lhs, 1);
       result += std::move(rhs);
       return result;
     }

@@ -343,7 +343,7 @@ namespace xtd {
         #if DEBUG || TRACE
         need_indent_ = false;
         for (uint32 i = 0; i < indent_level_; ++i)
-          write(xtd::string(indent_size_, ' '));
+          write(xtd::string(' ', indent_size_));
         #endif
       }
       /// @}

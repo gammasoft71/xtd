@@ -29,15 +29,15 @@ std::ostream& operator <<(std::ostream& os, const wchar* str) {
 }
 
 std::string __format_stringer_to_std_string(const char& c) {
-  return string(1, c);
+  return string(c, 1);
 }
 
 std::string __format_stringer_to_std_string(const char8& c) {
-  return string(std::u8string(1, c));
+  return string(std::u8string(c, 1));
 }
 
 std::string __format_stringer_to_std_string(const char16& c) {
-  return string(std::u16string(1, c));
+  return string(std::u16string(c, 1));
 }
 
 std::string __format_stringer_to_std_string(const char32& c) {
@@ -45,7 +45,7 @@ std::string __format_stringer_to_std_string(const char32& c) {
 }
 
 std::string __format_stringer_to_std_string(const wchar& c) {
-  return string(std::wstring(1, c));
+  return string(std::wstring(c, 1));
 }
 
 std::string __format_stringer_to_std_string(const char* str) {

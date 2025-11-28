@@ -15,7 +15,7 @@ auto main() -> int {
   graphics.fill_rectangle(brushes::black(), drawing_bitmap.width() / 2 - 30, drawing_bitmap.height() - 140, 60, 110);
   graphics.fill_rectangle(brushes::white(), drawing_bitmap.width() / 2 - 120, drawing_bitmap.height() - 140, 70, 60);
   graphics.fill_rectangle(brushes::white(), drawing_bitmap.width() / 2 + 50, drawing_bitmap.height() - 140, 70, 60);
-  graphics.fill_polygon(linear_gradient_brush {rectangle {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 300, 320, 120}, color::brown, color::sandy_brown, linear_gradient_mode::backward_diagonal}, list<point> {{drawing_bitmap.width() / 2, drawing_bitmap.height() - 300}, {drawing_bitmap.width() / 2 + 160, drawing_bitmap.height() - 180}, {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 180},});
+  graphics.fill_polygon(linear_gradient_brush {rectangle {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 300, 320, 120}, color::brown, color::sandy_brown, linear_gradient_mode::backward_diagonal}, array<point> {{drawing_bitmap.width() / 2, drawing_bitmap.height() - 300}, {drawing_bitmap.width() / 2 + 160, drawing_bitmap.height() - 180}, {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 180}});
   drawing_bitmap.save(path::combine(path::get_temp_path(), "graphics.png"));
   diagnostics::process::start(diagnostics::process_start_info {path::combine(path::get_temp_path(), "graphics.png")}.use_shell_execute(true));
 }

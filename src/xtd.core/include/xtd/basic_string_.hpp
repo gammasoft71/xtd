@@ -13,9 +13,6 @@
 
 /// @cond
 template<class char_t, class traits_t, class allocator_t>
-inline xtd::basic_string<char_t, traits_t, allocator_t>::basic_string(const allocator_type& allocator) noexcept : chars_(allocator) {}
-
-template<class char_t, class traits_t, class allocator_t>
 inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values) const noexcept {
   return index_of_any(values, 0, length());
 }
@@ -139,7 +136,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   auto split_char_separators = separators.length() == 0 ? default_split_separators : separators;
   for (auto it = chars().begin(); it != chars().end(); ++it) {
     auto is_separator = std::find(split_char_separators.items().begin(), split_char_separators.items().end(), *it) != split_char_separators.items().end();
-    if (!is_separator) sub_string.chars_.append(basic_string(1, *it));
+    if (!is_separator) sub_string.chars_.append(basic_string(*it, 1));
     auto is_last = (it + 1 == chars().end());
     auto should_add = is_last || is_separator;
     auto keep_empty = sub_string.length() > 0 || (options != xtd::string_split_options::remove_empty_entries);

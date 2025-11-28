@@ -3,7 +3,7 @@
 using namespace xtd::drawing::drawing_2d;
 
 namespace form_paint_example {
-  class form1 : public form {
+  class form1 : public form { 
   public:
     form1() {
       text("Paint example");
@@ -20,7 +20,7 @@ namespace form_paint_example {
         e.graphics().fill_rectangle(brushes::black(), e.clip_rectangle().width / 2 - 30, e.clip_rectangle().height - 140, 60, 110);
         e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle().width / 2 - 120, e.clip_rectangle().height - 140, 70, 60);
         e.graphics().fill_rectangle(brushes::white(), e.clip_rectangle().width / 2 + 50, e.clip_rectangle().height - 140, 70, 60);
-        e.graphics().fill_polygon(linear_gradient_brush(rectangle {e.clip_rectangle().width / 2 - 160, e.clip_rectangle().height - 300, 320, 120}, color::brown, color::sandy_brown, linear_gradient_mode::backward_diagonal), list<point> {{e.clip_rectangle().width / 2, e.clip_rectangle().height - 300}, {e.clip_rectangle().width / 2 + 160, e.clip_rectangle().height - 180}, {e.clip_rectangle().width / 2 - 160, e.clip_rectangle().height - 180},});
+        e.graphics().fill_polygon(linear_gradient_brush(rectangle {e.clip_rectangle().width / 2 - 160, e.clip_rectangle().height - 300, 320, 120}, color::brown, color::sandy_brown, linear_gradient_mode::backward_diagonal), array<point> {{e.clip_rectangle().width / 2, e.clip_rectangle().height - 300}, {e.clip_rectangle().width / 2 + 160, e.clip_rectangle().height - 180}, {e.clip_rectangle().width / 2 - 160, e.clip_rectangle().height - 180},});
       };
     }
   };

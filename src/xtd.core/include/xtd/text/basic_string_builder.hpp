@@ -932,7 +932,7 @@ namespace xtd {
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       template<class collection_t>
-      basic_string_builder& append_join(value_type separator, const collection_t& values) {return append(xtd::basic_string<char_t>::join(xtd::basic_string<char_t>(1, separator), values));}
+      basic_string_builder& append_join(value_type separator, const collection_t& values) {return append(xtd::basic_string<char_t>::join(xtd::basic_string<char_t>(separator, 1), values));}
       
       /// @cond
       template<class value_t>
@@ -1767,7 +1767,7 @@ namespace xtd {
       /// @param count The length of the substring.
       /// @return A reference to this instance with `old_char` replaced by `new_char` in the range from `start_ index` to `start_index` + `count` - 1.
       /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_char` in the current instance. The size of the current xtd::text::basic_string_builder object is unchanged after the replacement.
-      basic_string_builder& replace(value_type old_char, value_type new_char, size_type start_index, size_type count) {return replace(xtd::basic_string<char_t>(1, old_char), xtd::basic_string<char_t>(1, new_char), start_index, count);}
+      basic_string_builder& replace(value_type old_char, value_type new_char, size_type start_index, size_type count) {return replace(xtd::basic_string<char_t>(old_char, 1), xtd::basic_string<char_t>(new_char, 1), start_index, count);}
       /// @brief Replaces all occurrences of a specified string in this instance with another specified string.
       /// @param old_value The string to replace.
       /// @param new_value The string that replaces 'old_value`.

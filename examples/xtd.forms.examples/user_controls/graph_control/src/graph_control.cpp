@@ -237,7 +237,7 @@ protected:
       points.add(point_f(x, y - value * height));
       x += step;
     }
-    if (points.count() >= 2) e.graphics().draw_curve(pen {signal_trace_color_, signal_trace_width_}, points);
+    if (points.count() >= 2) e.graphics().draw_curve(pen {signal_trace_color_, signal_trace_width_}, points.to_array());
   }
   
 private:

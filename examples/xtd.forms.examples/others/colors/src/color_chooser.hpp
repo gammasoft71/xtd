@@ -103,7 +103,7 @@ namespace colors_example {
       selected_index(npos);
       colors_.clear();
       auto colors = as<const array<drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
-      for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
+      for (auto iterator = colors().items().rbegin(); iterator != colors().items().rend(); ++iterator)
         add_color_panel(*iterator);
       if (index == npos || colors_.count() == 0) return;
       if (index < colors_.count()) selected_index(index);

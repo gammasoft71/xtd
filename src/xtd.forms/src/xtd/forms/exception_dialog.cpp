@@ -117,7 +117,7 @@ namespace {
     }
     
     string generate_exception_report() const {
-      auto report = string::format("{0} Exception text {0}{1}"_t, string(14, '*'), environment::new_line());
+      auto report = string::format("{0} Exception text {0}{1}"_t, string('*', 14), environment::new_line());
       if (exception_ && dynamic_cast<const xtd::exception*>(exception_))
         report += string::format("{}{}", static_cast<const xtd::exception*>(exception_)->to_string(), environment::new_line());
       else if (exception_ && dynamic_cast<const std::exception*>(exception_))
@@ -130,9 +130,9 @@ namespace {
     
     string generate_libraries_report() const {
       auto first = true;
-      auto report = string::format("{0} Libraries {0}{1}"_t, string(14, '*'), environment::new_line());
+      auto report = string::format("{0} Libraries {0}{1}"_t, string('*', 14), environment::new_line());
       for (auto library : {"xtd.core", "xtd.drawing", "xtd.forms"}) {
-        if (!first) report += string::format("{}{}", string(40, '-'), environment::new_line());
+        if (!first) report += string::format("{}{}", string('-', 40), environment::new_line());
         report += string::format("{}{}", library, environment::new_line());
         report += string::format("    Name: {}.{}{}"_t, library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
         report += string::format("    Version: {}{}"_t, environment::version(), environment::new_line());
@@ -146,7 +146,7 @@ namespace {
     }
     
     string generate_operating_system_report() const {
-      auto report = string::format("{0} Operating System {0}{1}"_t, string(14, '*'), environment::new_line());
+      auto report = string::format("{0} Operating System {0}{1}"_t, string('*', 14), environment::new_line());
       report += string::format("{}{}", environment::os_version().name(), environment::new_line());
       report += string::format("    Version : {}{}"_t, environment::os_version().version(), environment::new_line());
       report += string::format("    Desktop environment : {}{}"_t, environment::os_version().desktop_environment(), environment::new_line());
@@ -157,7 +157,7 @@ namespace {
     }
     
     string generate_language_report() const {
-      auto report = string::format("{0} Language {0}{1}"_t, string(14, '*'), environment::new_line());
+      auto report = string::format("{0} Language {0}{1}"_t, string('*', 14), environment::new_line());
       report += string::format("{}{}", environment::cpp_version().name(), environment::new_line());
       report += string::format("    Version : {}{}"_t, environment::cpp_version().version(), environment::new_line());
       report += string::format("    Experimental : {}{}"_t, environment::cpp_version().is_experimental_language(), environment::new_line());
@@ -167,7 +167,7 @@ namespace {
     }
     
     string generate_compiler_report() const {
-      auto report = string::format("{0} Compiler {0}{1}"_t, string(14, '*'), environment::new_line());
+      auto report = string::format("{0} Compiler {0}{1}"_t, string('*', 14), environment::new_line());
       report += string::format("{0}{1}", environment::compiler_version().name(), environment::new_line());
       report += string::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
       report += string::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());

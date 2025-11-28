@@ -12,7 +12,7 @@ namespace {
   static constexpr int32 default_size_indent = 3;
   
   string indent_string(int32 indent, int32 size_indent) {
-    return string(indent * size_indent, ' ');
+    return string(' ', indent * size_indent);
   }
   
   string indent_string(int32 indent) {

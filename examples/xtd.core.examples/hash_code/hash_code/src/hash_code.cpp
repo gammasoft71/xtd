@@ -2,6 +2,7 @@
 
 struct order_order_line : public object, public iequatable<order_order_line> {
 public:
+  order_order_line() = default;
   order_order_line(int order_id, int order_line_id) : order_id_ {order_id}, order_line_id_ {order_line_id} {}
   
   int order_id() const noexcept {return order_id_;}
@@ -24,7 +25,7 @@ auto main() -> int {
     order_order_line {1, 2}
   };
   
-  console::write_line("Item count: {}.", set.size());
+  console::write_line("Item count: {}.", set.count());
 }
 
 // This code produces the following output :
