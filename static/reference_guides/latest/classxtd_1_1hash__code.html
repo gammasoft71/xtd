@@ -122,6 +122,7 @@ Inheritance diagram for xtd::hash_code:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>order_order_line : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;order_order_line&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  order_order_line() = <span class="keywordflow">default</span>;</div>
 <div class="line">  order_order_line(<span class="keywordtype">int</span> order_id, <span class="keywordtype">int</span> order_line_id) : order_id_ {order_id}, order_line_id_ {order_line_id} {}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">int</span> order_id() const noexcept {<span class="keywordflow">return</span> order_id_;}</div>
@@ -144,7 +145,7 @@ Inheritance diagram for xtd::hash_code:</div>
 <div class="line">    order_order_line {1, 2}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;Item count: {}.&quot;</span>, set.size());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Item count: {}.&quot;</span>, set.count());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -426,7 +427,7 @@ template&lt;class ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 20:27:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 28 2025 20:08:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

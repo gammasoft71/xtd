@@ -166,7 +166,7 @@ Inheritance diagram for xtd::forms::animation:</div>
 <div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_ellipse(solid_brush(fish_animation.fore_color()), <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a>.x - as&lt;float&gt;(i), <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a>.y - as&lt;float&gt;(i), 2.0f + 2.0f * as&lt;float&gt;(i), 2.0f + 2.0f * as&lt;float&gt;(i));</div>
 <div class="line">        <a class="code hl_enumvalue" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aa0aab81de5c4c87021772015efc184d67">points</a>.add(point);</div>
 <div class="line">      }</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_lines(pen(fish_animation.fore_color(), 4), points);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_lines(pen(fish_animation.fore_color(), 4), <a class="code hl_enumvalue" href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aa0aab81de5c4c87021772015efc184d67">points</a>.to_array());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_fish_animation_updated(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> animation_updated_event_args&amp; e) {</div>
@@ -2372,7 +2372,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 27 2025 20:27:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 28 2025 20:08:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
