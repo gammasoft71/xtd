@@ -33,7 +33,7 @@ namespace animation_example {
         e.graphics().fill_ellipse(solid_brush(fish_animation.fore_color()), point.x - as<float>(i), point.y - as<float>(i), 2.0f + 2.0f * as<float>(i), 2.0f + 2.0f * as<float>(i));
         points.add(point);
       }
-      e.graphics().draw_lines(pen(fish_animation.fore_color(), 4), points);
+      e.graphics().draw_lines(pen(fish_animation.fore_color(), 4), points.to_array());
     }
     
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
