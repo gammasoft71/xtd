@@ -63,7 +63,7 @@ namespace example {
       button_next.image_align(content_alignment::middle_right);
       button_next.text(texts::next());
       button_next.click += delegate_ {
-        if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
+        if (current_image_index < images::names(choice_context.selected_item().value()).length()) ++current_image_index;
         update_form();
       };
       
@@ -75,7 +75,7 @@ namespace example {
       picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as<drawing::size>(choice_size.selected_item().tag())) : images::from_name("image-missing",  as<drawing::size>(choice_size.selected_item().tag())));
       label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).size() - 1);
+      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).length() - 1);
     }
     
     size_t current_image_index = 0;
