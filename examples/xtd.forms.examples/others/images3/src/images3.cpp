@@ -70,7 +70,7 @@ namespace example {
       button_next.text(texts::next());
       button_next.bounds({165, 300, 125, 40});
       button_next.click += delegate_ {
-        if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
+        if (current_image_index < images::names(choice_context.selected_item().value()).length()) ++current_image_index;
         update_form();
       };
       
@@ -88,7 +88,7 @@ namespace example {
       
       label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).size() - 1);
+      button_next.enabled(current_image_index < images::names(choice_context.selected_item().value()).length() - 1);
     }
     
     size_t current_image_index = 0;
