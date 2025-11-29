@@ -143,7 +143,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
     
     if (should_add && keep_empty) {
       if (result.size() == count - 1) {
-        result.push_back(sub_string + basic_string(chars().c_str(), it - chars().begin() + (is_separator ? 0 : 1), length() - (it - chars().begin()) + (is_separator ? 0 : 1)));
+        result.push_back(sub_string + basic_string(chars().c_str() + (it - chars().begin() + (is_separator ? 0 : 1)), length() - (it - chars().begin()) + (is_separator ? 0 : 1)));
         return result;
       }
       result.push_back(sub_string);
