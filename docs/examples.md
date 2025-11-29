@@ -182,7 +182,7 @@ End 2 tests from 1 test case ran. (0 ms total)
 
 ## More examples
 
-[Example](../examples/README.md) provides over 850 examples to help you use xtd, grouped by libraries and topics.
+[Example](../examples/README.md) provides over 900 examples to help you use xtd, grouped by libraries and topics.
 
 # Support
 

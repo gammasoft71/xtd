@@ -8,7 +8,7 @@ This Section provides a getting started documentation.
 
 * [Installation](downloads.md) provides download, install and uninstall documentation.
 * [Guides](guides.md) provides xtd guides and tutorials.
-* [Examples](../examples/README.md) provides over 850 examples to help you use xtd, grouped by libraries and topics.
+* [Examples](../examples/README.md) provides over 900 examples to help you use xtd, grouped by libraries and topics.
 
 ## See also
 
