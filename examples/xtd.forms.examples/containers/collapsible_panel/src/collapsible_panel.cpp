@@ -29,16 +29,16 @@ public:
       item->parent(collapsible_panel2);
       item->text(string::format("item{}", ++count));
       item->dock(dock_style::top);
-      control_items.push_back(item);
+      control_items.add_last(item);
     };
     
     button_remove.parent(collapsible_panel1);
     button_remove.location({10, 30});
     button_remove.text("Remove");
     button_remove.click += delegate_ {
-      if (control_items.size()) {
-        control_items.front()->parent(nullptr);
-        control_items.pop_front();
+      if (control_items.count()) {
+        control_items.first()->value()->parent(nullptr);
+        control_items.remove_first();
       }
     };
     
@@ -58,7 +58,7 @@ private:
   button button_add;
   button button_remove;
   toggle_button button_expand;
-  std::list<ptr<control>> control_items;
+  linked_list<ptr<control>> control_items;
 };
 
 auto main() -> int {
