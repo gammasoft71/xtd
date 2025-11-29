@@ -178,11 +178,11 @@ namespace example {
       label_picture_name.text(images::names(images::contexts()[current_context_index])[current_name_index]);
       label_picture_size.text(string::format("{}x{} pixels", images::sizes()[current_size_index].width, images::sizes()[current_size_index].height));
       button_context_previous.enabled(current_context_index > 0);
-      button_context_next.enabled(current_context_index < images::contexts().size() - 1);
+      button_context_next.enabled(current_context_index < images::contexts().length() - 1);
       button_name_previous.enabled(current_name_index > 0);
-      button_name_next.enabled(current_name_index < images::names(images::contexts()[current_context_index]).size() - 1);
+      button_name_next.enabled(current_name_index < images::names(images::contexts()[current_context_index]).length() - 1);
       button_decrease.enabled(current_size_index > 0);
-      button_increase.enabled(current_size_index < images::sizes().size() - 1);
+      button_increase.enabled(current_size_index < images::sizes().length() - 1);
     }
     
     size_t current_context_index = 0;
