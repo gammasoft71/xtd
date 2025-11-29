@@ -349,7 +349,7 @@ namespace xtd {
     /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
     /// @remarks c_str() and data() perform the same function.
     const_pointer c_str() const noexcept {return chars_.c_str();}
-
+    
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     const base_type& chars() const noexcept {return chars_;}
