@@ -139,8 +139,8 @@ $(function(){ initResizable(false); });
 <div class="line">      <span class="keyword">auto</span> pos = point {(e.clip_rectangle().size().width - as&lt;int&gt;(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as&lt;int&gt;(e.graphics().measure_string(text(), font()).height)) / 2};</div>
 <div class="line">      <span class="keyword">auto</span> wiggly_text = text().to_u32string();</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; wiggly_text.length(); i++) {</div>
-<div class="line">        <span class="keyword">auto</span> index = (step + i) % sins.size();</div>
-<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));</div>
+<div class="line">        <span class="keyword">auto</span> index = (step + i) % sins.length();</div>
+<div class="line">        e.graphics().draw_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.length() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));</div>
 <div class="line">        pos.x = pos.x + as&lt;int&gt;(e.graphics().measure_string(string::format(<span class="stringliteral">&quot;{}&quot;</span>, wiggly_text[i]), font()).width);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
@@ -190,7 +190,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:06:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 29 2025 23:33:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

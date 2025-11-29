@@ -185,7 +185,7 @@ $(function(){ initResizable(false); });
 <div class="line">      button_next.image_align(content_alignment::middle_right);</div>
 <div class="line">      button_next.text(texts::next());</div>
 <div class="line">      button_next.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; images::names(choice_context.selected_item().value()).size()) ++current_image_index;</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; images::names(choice_context.selected_item().value()).length()) ++current_image_index;</div>
 <div class="line">        update_form();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -197,7 +197,7 @@ $(function(){ initResizable(false); });
 <div class="line">      picture.image(images::from_name(choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) != drawing::image::empty ? images::from_name(choice_theme.selected_index() == 0 ? application::style_sheet().theme().name() : choice_theme.selected_item().value(), images::names(choice_context.selected_item().value())[current_image_index], as&lt;drawing::size&gt;(choice_size.selected_item().tag())) : images::from_name(<span class="stringliteral">&quot;image-missing&quot;</span>,  as&lt;drawing::size&gt;(choice_size.selected_item().tag())));</div>
 <div class="line">      label_picture_name.text(images::names(choice_context.selected_item().value())[current_image_index]);</div>
 <div class="line">      button_previous.enabled(current_image_index &gt; 0);</div>
-<div class="line">      button_next.enabled(current_image_index &lt; images::names(choice_context.selected_item().value()).size() - 1);</div>
+<div class="line">      button_next.enabled(current_image_index &lt; images::names(choice_context.selected_item().value()).length() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">size_t</span> current_image_index = 0;</div>
@@ -219,7 +219,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:06:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 29 2025 23:33:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

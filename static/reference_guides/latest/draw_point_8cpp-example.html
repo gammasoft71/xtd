@@ -164,7 +164,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keywordtype">void</span> generate_particles() {</div>
 <div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> rnd = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> colors = basic_colors::get_colors();</div>
-<div class="line">      <span class="keywordflow">if</span> (particles.size() &lt; 200)</div>
+<div class="line">      <span class="keywordflow">if</span> (particles.count() &lt; 200)</div>
 <div class="line">        particles.add({{rnd.next(client_size().width), rnd.next(client_size().height)}, {rnd.next(-5, 6), rnd.next(-5, 6)}, colors[rnd.next(colors.count())], rnd.next(2, 8)});</div>
 <div class="line">      invalidate();</div>
 <div class="line">    }</div>
@@ -182,7 +182,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:06:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 29 2025 23:33:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

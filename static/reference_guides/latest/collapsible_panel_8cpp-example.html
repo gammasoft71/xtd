@@ -151,16 +151,16 @@ $(function(){ initResizable(false); });
 <div class="line">      item-&gt;parent(collapsible_panel2);</div>
 <div class="line">      item-&gt;text(string::format(<span class="stringliteral">&quot;item{}&quot;</span>, ++count));</div>
 <div class="line">      item-&gt;dock(dock_style::top);</div>
-<div class="line">      control_items.push_back(item);</div>
+<div class="line">      control_items.add_last(item);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    button_remove.parent(collapsible_panel1);</div>
 <div class="line">    button_remove.location({10, 30});</div>
 <div class="line">    button_remove.text(<span class="stringliteral">&quot;Remove&quot;</span>);</div>
 <div class="line">    button_remove.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <span class="keywordflow">if</span> (control_items.size()) {</div>
-<div class="line">        control_items.front()-&gt;parent(<span class="keyword">nullptr</span>);</div>
-<div class="line">        control_items.pop_front();</div>
+<div class="line">      <span class="keywordflow">if</span> (control_items.count()) {</div>
+<div class="line">        control_items.first()-&gt;value()-&gt;parent(<span class="keyword">nullptr</span>);</div>
+<div class="line">        control_items.remove_first();</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -180,7 +180,7 @@ $(function(){ initResizable(false); });
 <div class="line">  button button_add;</div>
 <div class="line">  button button_remove;</div>
 <div class="line">  toggle_button button_expand;</div>
-<div class="line">  std::list&lt;ptr&lt;control&gt;&gt; control_items;</div>
+<div class="line">  linked_list&lt;ptr&lt;control&gt;&gt; control_items;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -191,7 +191,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:06:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 29 2025 23:33:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
