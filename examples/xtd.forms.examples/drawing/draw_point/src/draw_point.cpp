@@ -42,7 +42,7 @@ namespace particle_system_example {
     void generate_particles() {
       static auto rnd = xtd::random {};
       static auto colors = basic_colors::get_colors();
-      if (particles.size() < 200)
+      if (particles.count() < 200)
         particles.add({{rnd.next(client_size().width), rnd.next(client_size().height)}, {rnd.next(-5, 6), rnd.next(-5, 6)}, colors[rnd.next(colors.count())], rnd.next(2, 8)});
       invalidate();
     }
