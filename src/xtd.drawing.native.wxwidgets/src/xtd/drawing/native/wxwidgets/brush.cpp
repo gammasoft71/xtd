@@ -23,11 +23,11 @@ void brush::solid(intptr brush, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte
 }
 
 void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
-  if (colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (colors.length() < 2) throw_helper::throws(exception_case::argument);
   
   auto center_point = wxPoint(center_x, center_y);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
-  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.length() - 1];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
   for (auto color : colors) {
     auto [r, g, b, a, pos] = color;
@@ -38,7 +38,7 @@ void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const
 }
 
 void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
-  if (colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (colors.length() < 2) throw_helper::throws(exception_case::argument);
   
   if (angle <= 22) angle = 0;
   else if (angle <= 67) angle = 45;
@@ -53,7 +53,7 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
   auto p1 = wxPoint(x1, y1);
   auto p2 = wxPoint(x2, y2);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
-  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
   for (auto color : colors) {
     auto [r, g, b, a, pos] = color;
@@ -69,12 +69,12 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
 }
 
 void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 focal_x, int32 focal_y, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius) {
-  if (colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (colors.length() < 2) throw_helper::throws(exception_case::argument);
   
   auto center_point = wxPoint(center_x, center_y);
   auto focal_point = wxPoint(focal_x, focal_y);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
-  auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.size() - 1];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
   for (auto color : colors) {
     auto [r, g, b, a, pos] = color;
