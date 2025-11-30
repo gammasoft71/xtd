@@ -246,8 +246,8 @@ namespace xtd {
       binary_writer& operator <<(const xtd::fixed_array<xtd::byte, size>& value) {write(value); return *this;}
       template<size_t size>
       binary_writer& operator <<(const xtd::fixed_array<char, size>& value) {write(value); return *this;}
-      binary_writer& operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
-      binary_writer& operator <<(const xtd::array<char>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.length()); return *this;}
+      binary_writer& operator <<(const xtd::array<char>& value) {write(value, 0, value.length()); return *this;}
       binary_writer& operator <<(double value) {write(value); return *this;}
       binary_writer& operator <<(int16 value) {write(value); return *this;}
       binary_writer& operator <<(int32 value) {write(value); return *this;}
