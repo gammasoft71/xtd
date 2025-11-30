@@ -108,7 +108,7 @@ namespace xtd {
       /// ```cpp
       /// xtd::array<char> open_data_file(const string& file_name) {
       ///   // Check the FileName argument.
-      ///   if (file_name.size() == 0)
+      ///   if (file_name.length() == 0)
       ///     throw argument_exception("file_name");
       ///
       ///   // Check to see if the file exists.
@@ -123,10 +123,10 @@ namespace xtd {
       ///   std::ifstream f_stream(file_name, std::ios::binary);
       ///
       ///   // Create a buffer.
-      ///   xtd::array<char> buffer(f_info.size());
+      ///   xtd::array<char> buffer(f_info.length());
       ///
       ///   // Read the file contents to the buffer.
-      ///   f_stream.read(&buffer[0], f_info.size());
+      ///   f_stream.read(&buffer[0], f_info.length());
       ///
       ///   // return the buffer.
       ///   return buffer;
