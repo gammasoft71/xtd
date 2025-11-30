@@ -159,7 +159,7 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#a22ca985c4bb87949751e62d55d2bf192">  102</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1random.html#a22ca985c4bb87949751e62d55d2bf192">get_items</a>(<span class="keyword">const</span> <a class="code hl_function" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span&lt;value_t&gt;</a>&amp; choices, <a class="code hl_class" href="classxtd_1_1span.html">xtd::span&lt;value_t&gt;</a>&amp; destination) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; item : destination)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        item = choices[<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(choices.size())];</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        item = choices[<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(choices.length())];</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    </div>
@@ -208,7 +208,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#ada66aa49deda40731ffdb43f29bf7e16">  186</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1random.html#ada66aa49deda40731ffdb43f29bf7e16">next_values</a>(<a class="code hl_class" href="classxtd_1_1span.html">xtd::span&lt;value_t&gt;</a>&amp; buffer)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; buffer.<a class="code hl_function" href="classxtd_1_1span.html#af6f98a51149f6eb2722259dd1de148ec">size</a>(); ++index)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; buffer.<a class="code hl_function" href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">length</a>(); ++index)</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        buffer[index] = <a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next&lt;value_t&gt;</a>();</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
 </div>
@@ -290,7 +290,6 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1random_html_af8dee61c03a83ef71bf478f603094111"><div class="ttname"><a href="classxtd_1_1random.html#af8dee61c03a83ef71bf478f603094111">xtd::random::next_bytes</a></div><div class="ttdeci">virtual void next_bytes(xtd::span&lt; xtd::byte &gt; &amp;buffer) const</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
 <div class="ttc" id="aclassxtd_1_1span_html"><div class="ttname"><a href="classxtd_1_1span.html">xtd::span</a></div><div class="ttdoc">Represents a non-owning view over a contiguous sequence of objects.</div><div class="ttdef"><b>Definition</b> span.hpp:58</div></div>
 <div class="ttc" id="aclassxtd_1_1span_html_a385c8ab57f856aef24866794bf96f8d5"><div class="ttname"><a href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">xtd::span::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current span.</div><div class="ttdef"><b>Definition</b> span.hpp:253</div></div>
-<div class="ttc" id="aclassxtd_1_1span_html_af6f98a51149f6eb2722259dd1de148ec"><div class="ttname"><a href="classxtd_1_1span.html#af6f98a51149f6eb2722259dd1de148ec">xtd::span::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements.</div><div class="ttdef"><b>Definition</b> span.hpp:271</div></div>
 <div class="ttc" id="acore__export_8hpp_html"><div class="ttname"><a href="core__export_8hpp.html">core_export.hpp</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
 <div class="ttc" id="aenvironment_8hpp_html"><div class="ttname"><a href="environment_8hpp.html">environment.hpp</a></div><div class="ttdoc">Contains xtd::environment class.</div></div>
 <div class="ttc" id="agroup__helpers_html_gga9449ffb8e13ad8c25c987085078568dcae5f5e66ade5891a696d6a4bf6e812173"><div class="ttname"><a href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcae5f5e66ade5891a696d6a4bf6e812173">xtd::helpers::exception_case::argument_out_of_range</a></div><div class="ttdeci">@ argument_out_of_range</div><div class="ttdoc">The argument is out of range.</div><div class="ttdef"><b>Definition</b> exception_case.hpp:35</div></div>
@@ -313,7 +312,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:33:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 30 2025 21:53:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

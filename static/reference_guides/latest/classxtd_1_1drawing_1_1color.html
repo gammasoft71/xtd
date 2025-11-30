@@ -1665,7 +1665,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="comment">// Iterate through the matches that were found and display each color that</span></div>
 <div class="line">  <span class="comment">// corresponds with the enum value in the array. also display the name of</span></div>
 <div class="line">  <span class="comment">// the known_color and the ARGB components.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; color_matches.size(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; color_matches.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">    <span class="comment">// Display the color.</span></div>
 <div class="line">    some_color = <a class="code hl_function" href="#a0c1755c633fc5e3a25ddf310b7645e8c">color::from_known_color</a>(color_matches[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
 <div class="line">    my_brush1.color(some_color);</div>
@@ -1682,6 +1682,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> += 40;</div>
 <div class="line">  }</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:124</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a1842c31fd793563740ed1a6c7e09e775"><div class="ttname"><a href="#a1842c31fd793563740ed1a6c7e09e775">xtd::drawing::color::to_argb</a></div><div class="ttdeci">uint32 to_argb() const noexcept</div><div class="ttdoc">Gets the 32-bit ARGB value of this xtd::drawing::color class.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_adda07c45844cc2af1b9875f953ce3c0b"><div class="ttname"><a href="#adda07c45844cc2af1b9875f953ce3c0b">xtd::drawing::color::is_system_color</a></div><div class="ttdeci">bool is_system_color() const noexcept</div><div class="ttdoc">Gets a value indicating whether this xtd::drawing::color structure is a system color....</div></div>
 </div><!-- fragment --> </li>
@@ -6202,7 +6203,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:33:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 30 2025 21:54:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

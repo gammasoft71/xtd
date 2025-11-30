@@ -4730,7 +4730,7 @@ When the use_text_for_accessibility bit is set and there is a value in the contr
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1button.html#a8da10d70ab4c81922404cfa6feb674cd" title="Gets the value returned to the parent form when the button is clicked.">xtd::forms::button::dialog_result</a> property and the <a class="el" href="classxtd_1_1forms_1_1form.html#a0bf6f24235128b10a5428f55295c0a4b" title="Shows the form as a modal dialog box.">xtd::forms::form::show_dialog</a> method use this enumeration. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to display a <a class="el" href="classxtd_1_1forms_1_1message__box.html" title="Displays a message window, also known as a dialog box, which presents a message to the user....">xtd::forms::message_box</a> with the options supported by this overload of <a class="el" href="classxtd_1_1forms_1_1message__box.html#a265c0deaf6d4fef2014f9b27a2631eec" title="Displays a message box in front of the specified window.">xtd::forms::message_box::show</a>. After verifying that a string variable, ServerName, is empty, the example displays a MessageBox, offering the user the option to cancel the operation. If the Show method's return value evaluates to Yes, the form that displayed the MessageBox is closed. <div class="fragment"><div class="line"><span class="keywordtype">void</span> validate_user_entry() {</div>
 <div class="line">  <span class="comment">// Checks the value of the text.</span></div>
-<div class="line">  <span class="keywordflow">if</span> (server_name.text().size() == 0) {</div>
+<div class="line">  <span class="keywordflow">if</span> (server_name.text().length() == 0) {</div>
 <div class="line">    <span class="comment">// Initializes the variables to pass to the xtd::forms::message_box::show method.</span></div>
 <div class="line">    <span class="keywordtype">string</span> <a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a> = <span class="stringliteral">&quot;You did not enter a server name. Cancel this operation?&quot;</span>;</div>
 <div class="line">    <span class="keywordtype">string</span> caption = <span class="stringliteral">&quot;No Server Name Specified&quot;</span>;</div>
@@ -8313,7 +8313,7 @@ Room is reserved for an image to be displayed on toolbar buttons. The alignment 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 29 2025 23:33:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 30 2025 21:54:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
