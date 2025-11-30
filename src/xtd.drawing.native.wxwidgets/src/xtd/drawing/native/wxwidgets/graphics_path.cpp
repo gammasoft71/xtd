@@ -94,7 +94,7 @@ void graphics_path::add_beziers(intptr handle, array<key_value_pair<float, float
   if (!handle) return;
   figures::start(reinterpret_cast<wxGraphicsPath*>(handle), points[0].first, points[0].second);
   reinterpret_cast<wxGraphicsPath*>(handle)->AddLineToPoint(points[0].first, points[0].second);
-  for (auto index = 1_z; points.size(); index += 3)
+  for (auto index = 1_z; points.length(); index += 3)
     reinterpret_cast<wxGraphicsPath*>(handle)->AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
 }
 
