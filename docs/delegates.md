@@ -142,7 +142,7 @@ Because [xtd::delegate](../src/xtd.core/include/xtd/delegate.h) types is a class
 For example, to find the number of methods in a delegate's invocation list, you may write:
 
 ```cpp
-size_t invocation_count = d1.size();
+size_t invocation_count = d1.count();
 ```
 
 Multicast delegates are used extensively in event handling. [xtd::event](../src/xtd.core/include/xtd/event.h) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](events_tutorial.md).
