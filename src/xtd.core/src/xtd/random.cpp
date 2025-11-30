@@ -76,7 +76,7 @@ float random::next(float min_value, float max_value) const {
 }
 
 void random::next_bytes(span<byte>& buffer) const {
-  for (auto index = 0_z; index < buffer.size(); index++)
+  for (auto index = 0_z; index < buffer.length(); index++)
     buffer[index] = next<byte>(0, byte_object::max_value);
 }
 
