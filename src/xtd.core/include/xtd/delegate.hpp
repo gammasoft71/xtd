@@ -114,17 +114,21 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Return the size of invocation list.
+    /// @return Return the size of invocation list.
+    size_t count() const noexcept {return data_->functions.size();}
+
     /// @brief Gets the delegates array
     /// @return The delegates array.
     const function_collection& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
-    bool is_empty() const noexcept {return data_->functions.size() == 0;}
+    bool is_empty() const noexcept {return count() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept {return data_->functions.size();}
+    size_t size() const noexcept {return count();}
     /// @}
     
     /// @name Public Methods
@@ -561,6 +565,10 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Return the size of invocation list.
+    /// @return Return the size of invocation list.
+    size_t count() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
+
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
     const no_arguments_function_collection& no_arguments_functions() const {return data_->no_arguments_functions;}
@@ -571,11 +579,11 @@ namespace xtd {
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
-    bool is_empty() const noexcept {return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0;}
+    bool is_empty() const noexcept {return count() == 0;}
     
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
-    size_t size() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
+    size_t size() const noexcept {return count();}
     /// @}
     
     /// @name Public Methods
