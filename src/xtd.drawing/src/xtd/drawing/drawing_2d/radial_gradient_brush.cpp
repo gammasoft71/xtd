@@ -45,13 +45,13 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, 
 }
 
 radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const array<xtd::drawing::color>& radial_colors, float radius) : data_(xtd::new_sptr<data>()) {
-  if (radial_colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (radial_colors.length() < 2) throw_helper::throws(exception_case::argument);
   
   data_->center_point = center;
   data_->focal_point = center;
   data_->radius = radius;
   auto pos = .0f;
-  auto increment = 1.0f / (radial_colors.size() - 1);
+  auto increment = 1.0f / (radial_colors.length() - 1);
   for (auto color : radial_colors) {
     data_->radial_colors.add({color, pos});
     pos += increment;
