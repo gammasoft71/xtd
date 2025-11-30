@@ -197,7 +197,7 @@ string bit_converter::to_string(const array<byte>& value) {
 }
 
 string bit_converter::to_string(const read_only_span<byte>& value) {
-  return to_string(value, 0, value.size());
+  return to_string(value, 0, value.length());
 }
 
 string bit_converter::to_string(const array<byte>& value, size start_index) {
@@ -205,7 +205,7 @@ string bit_converter::to_string(const array<byte>& value, size start_index) {
 }
 
 string bit_converter::to_string(const read_only_span<byte>& value, size start_index) {
-  return to_string(value, start_index, value.size() - start_index);
+  return to_string(value, start_index, value.length() - start_index);
 }
 
 string bit_converter::to_string(const array<byte>& value, size start_index, size length) {
@@ -213,9 +213,9 @@ string bit_converter::to_string(const array<byte>& value, size start_index, size
 }
 
 string bit_converter::to_string(const read_only_span<byte>& value, size start_index, size length) {
-  if (value.size() == 0 && start_index == 0 && length == 0) return "";
-  if (start_index >= value.size()) throw_helper::throws(exception_case::argument_out_of_range);
-  if (start_index + length > value.size()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (value.length() == 0 && start_index == 0 && length == 0) return "";
+  if (start_index >= value.length()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (start_index + length > value.length()) throw_helper::throws(exception_case::argument_out_of_range);
   
   string str;
   for (auto index = start_index; index < start_index + length; ++index) {
