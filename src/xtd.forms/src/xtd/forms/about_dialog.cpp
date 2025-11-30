@@ -149,7 +149,7 @@ namespace {
         picture_box_icon_.image(bitmap {icon, {64, 64}});
       else
         picture_box_icon_.image(system_images::from_name("xtd-forms", drawing::size {64, 64}));
-      label_name_.height(static_cast<int32>(30 * name.split('\n').size()));
+      label_name_.height(static_cast<int32>(30 * name.split('\n').length()));
       label_name_.text(name);
       if (has_credit || has_license || user_pages.count()) {
         controls().add_range({tab_control_about_, label_name_, picture_box_icon_});
@@ -171,17 +171,17 @@ namespace {
       else if (!xtd::string::is_empty(version))
         label_version_.text(string::format("({})", version));
         
-      label_description_.height(static_cast<int32>(23 * description.split('\n').size()));
+      label_description_.height(static_cast<int32>(23 * description.split('\n').length()));
       label_description_.text(string::format("{}", description));
       
-      link_label_website_.height(static_cast<int32>(23 * (!xtd::string::is_empty(website_label) ? website_label : website).split('\n').size()));
+      link_label_website_.height(static_cast<int32>(23 * (!xtd::string::is_empty(website_label) ? website_label : website).split('\n').length()));
       link_label_website_.text(!xtd::string::is_empty(website_label) ? website_label : website);
       link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(diagnostics::process_start_info {website}.use_shell_execute(true));
       };
       
-      label_copyright_.height(static_cast<int32>(23 * copyright.split('\n').size()));
+      label_copyright_.height(static_cast<int32>(23 * copyright.split('\n').length()));
       label_copyright_.text(string::format("{}", string(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
