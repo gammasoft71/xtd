@@ -48,7 +48,7 @@ namespace xtd {
     ///       auto txt_files = directory::enumerate_files(source_directory, "*.txt");
     ///
     ///       for (string current_file : txt_files) {
-    ///         string file_name = current_file.substring(source_directory.size() + 1);
+    ///         string file_name = current_file.substring(source_directory.length() + 1);
     ///         directory::move(current_file, path::combine(archive_directory, file_name));
     ///       }
     ///     } catch (exception& e) {
@@ -281,12 +281,12 @@ namespace xtd {
       ///       // Set a variable to the My Documents path.
       ///       string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       ///
-      ///       list<string> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
+      ///       array<string> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
       ///
       ///       for (auto dir : dirs) {
       ///         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
       ///       }
-      ///       console::write_line("{} directories found.", dirs.size());
+      ///       console::write_line("{} directories found.", dirs.length());
       ///     } catch (const unauthorized_access_exception& ex) {
       ///       console::write_line(ex.message());
       ///     } catch (const path_too_long_exception& ex) {
@@ -325,14 +325,14 @@ namespace xtd {
       ///       string dir_path = R"(\\archives\2009\reports)";
       ///
       ///       // Create a List collection.
-      ///       auto dirs = list<string>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
+      ///       auto dirs = array<string>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
       ///
       ///       // Show results.
       ///       for (auto dir : dirs) {
       ///         // Remove path information from string.
       ///         console::write_line("{0}", dir.substring(dir.last_index_of("\\") + 1));
       ///       }
-      ///       console::write_line("{0} directories found.", dirs.size());
+      ///       console::write_line("{0} directories found.", dirs.length());
       ///     } catch (const unauthorized_access_exception& ex) {
       ///       console::write_line(ex.message());
       ///     } catch (const path_too_long_exception& ex) {
@@ -380,7 +380,7 @@ namespace xtd {
       ///       auto txt_files = directory::enumerate_files(source_directory);
       ///
       ///       for (string current_file : txt_files) {
-      ///         string file_name = current_file.substring(source_directory.size() + 1);
+      ///         string file_name = current_file.substring(source_directory.length() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
       ///     } catch (exception& e) {
@@ -421,7 +421,7 @@ namespace xtd {
       ///       auto txt_files = directory::enumerate_files(source_directory, "*.txt");
       ///
       ///       for (string current_file : txt_files) {
-      ///         string file_name = current_file.substring(source_directory.size() + 1);
+      ///         string file_name = current_file.substring(source_directory.length() + 1);
       ///         directory::move(current_file, path::combine(archive_directory, file_name));
       ///       }
       ///     } catch (exception& e) {
@@ -702,8 +702,8 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get subdirectories that begin with the letter "p."
-      ///       list<string> dirs = directory::get_directories(R"(c:\)", "p*");
-      ///       console::write_line("The number of directories starting with p is {0}.", dirs.size());
+      ///       array<string> dirs = directory::get_directories(R"(c:\)", "p*");
+      ///       console::write_line("The number of directories starting with p is {0}.", dirs.length());
       ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
@@ -877,8 +877,8 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get files that begin with the letter "c".
-      ///       list<string> dirs = directory::get_files(R"(c:\", "c*)");
-      ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
+      ///       array<string> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       console::write_line("The number of files starting with c is {0}.", dirs.length());
       ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
@@ -932,8 +932,8 @@ namespace xtd {
       ///   static auto main() {
       ///     try {
       ///       // Only get files that begin with the letter "c".
-      ///       list<string> dirs = directory::get_files(R"(c:\", "c*)");
-      ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
+      ///       array<string> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       console::write_line("The number of files starting with c is {0}.", dirs.length());
       ///       for (string dir : dirs) {
       ///         console::write_line(dir);
       ///       }
