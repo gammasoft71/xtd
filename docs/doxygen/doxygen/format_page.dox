@@ -145,7 +145,7 @@
 ///   xtd::array hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
 ///
 ///   xtd::console::out << xtd::string::format("{0,-20} {1,5}\n", "Name", "Hours") << xtd::environment::new_line;
-///   for (xtd::size ctr = 0; ctr < names.size(); ctr++)
+///   for (xtd::size ctr = 0; ctr < names.length(); ctr++)
 ///     xtd::console::out << xtd::string::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << xtd::environment::new_line;
 /// }
 ///
