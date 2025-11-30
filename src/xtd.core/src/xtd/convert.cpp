@@ -15,7 +15,7 @@ namespace {
 
 // https://stackoverflow.com/questions/180947/base64-decode-snippet-in-c
 array<byte> convert::from_base64_string(const string& s) {
-  //if (s.size() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::format);
+  //if (s.length() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::format);
   auto in_len = s.length();
   auto i = 0_z;
   auto j = 0_z;
@@ -216,7 +216,7 @@ string convert::to_base64_string(const xtd::read_only_span<xtd::byte>& bytes) {
   byte char_array_3[3];
   byte char_array_4[4];
   auto buf = bytes.data();
-  auto bufLen = bytes.size();
+  auto bufLen = bytes.length();
   
   while (bufLen--) {
     char_array_3[i++] = *(buf++);
