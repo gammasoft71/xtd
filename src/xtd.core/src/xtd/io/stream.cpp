@@ -114,7 +114,7 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   if (count == 0_z) return;
-  if (offset >= buffer.size() || offset + count > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (offset >= buffer.length() || offset + count > buffer.length()) throw_helper::throws(exception_case::argument_out_of_range);
   
   auto total_read_count = 0_z;
   
