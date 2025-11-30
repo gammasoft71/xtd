@@ -123,7 +123,7 @@ namespace xtd {
         lock_guard_mutex lock {data_->mutex};
         auto values = xtd::array<value_t> {};
         for (const auto& entry : data_->values)
-          values.resize(values.size() + 1, entry.second);
+          values.resize(values.length() + 1, entry.second);
         return values;
       }
       /// @}
