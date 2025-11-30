@@ -304,7 +304,7 @@ namespace xtd {
       /// public:
       ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
-      ///     if (args.size() > 0) {
+      ///     if (args.length() > 0) {
       ///       // Verify that the provided filename exists.
       ///       if (file::exists(args[0])) {
       ///         file_info fi(args[0]);
@@ -359,7 +359,7 @@ namespace xtd {
       /// public:
       ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
-      ///     if (args.size() > 0) {
+      ///     if (args.length() > 0) {
       ///       // Verify that the provided filename exists.
       ///       if (file::exists(args[0])) {
       ///         file_info fi(args[0]);
@@ -446,7 +446,7 @@ namespace xtd {
       /// public:
       ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
-      ///     if (args.size() > 0) {
+      ///     if (args.length() > 0) {
       ///       // Verify that the provided filename exists.
       ///       if (file::exists(args[0])) {
       ///         file_info fi(args[0]);
@@ -501,7 +501,7 @@ namespace xtd {
       /// public:
       ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
-      ///     if (args.size() > 0) {
+      ///     if (args.length() > 0) {
       ///       // Verify that the provided filename exists.
       ///       if (file::exists(args[0])) {
       ///         file_info fi(args[0]);
