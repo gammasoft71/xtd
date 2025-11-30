@@ -40,33 +40,33 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, byte value
   add_bytes(value_, value);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte> value) : encoder_(encoder), number_of_values_(value.length()), type_(encoder_parameter_value_type::value_type_byte) {
   for (auto v : value)
     add_bytes(value_, v);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int16> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_short) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int16> value) : encoder_(encoder), number_of_values_(value.length()), type_(encoder_parameter_value_type::value_type_short) {
   for (auto v : value) {
     if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, v);
   }
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_long) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> value) : encoder_(encoder), number_of_values_(value.length()), type_(encoder_parameter_value_type::value_type_long) {
   for (auto v : value) {
     if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, v);
   }
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_long) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> value) : encoder_(encoder), number_of_values_(value.length()), type_(encoder_parameter_value_type::value_type_long) {
   for (auto v : value) {
     if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, as<int32>(v));
   }
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte> value, bool undefined) : encoder_(encoder), number_of_values_(value.size()), type_(undefined ? encoder_parameter_value_type::value_type_undefined :  encoder_parameter_value_type::value_type_byte) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte> value, bool undefined) : encoder_(encoder), number_of_values_(value.length()), type_(undefined ? encoder_parameter_value_type::value_type_undefined :  encoder_parameter_value_type::value_type_byte) {
   for (auto v : value)
     add_bytes(value_, v);
 }
@@ -85,18 +85,18 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int32 nume
   add_bytes(value_, denominator2);
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> numerator, array<int32> denominator) : encoder_(encoder), number_of_values_(numerator.size()), type_(encoder_parameter_value_type::value_type_rational_range) {
-  if (numerator.size() != denominator.size()) throw_helper::throws(exception_case::argument_out_of_range);
-  for (auto index = 0_z; index < numerator.size(); ++index) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> numerator, array<int32> denominator) : encoder_(encoder), number_of_values_(numerator.length()), type_(encoder_parameter_value_type::value_type_rational_range) {
+  if (numerator.length() != denominator.length()) throw_helper::throws(exception_case::argument_out_of_range);
+  for (auto index = 0_z; index < numerator.length(); ++index) {
     if (numerator[index] < 0 || denominator[index] < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, numerator[index]);
     add_bytes(value_, denominator[index]);
   }
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> rangebegin, array<int64> rangeend) : encoder_(encoder), number_of_values_(rangebegin.size()), type_(encoder_parameter_value_type::value_type_long_range) {
-  if (rangebegin.size() != rangeend.size()) throw_helper::throws(exception_case::argument_out_of_range);
-  for (auto index = 0_z; index < rangebegin.size(); ++index) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> rangebegin, array<int64> rangeend) : encoder_(encoder), number_of_values_(rangebegin.length()), type_(encoder_parameter_value_type::value_type_long_range) {
+  if (rangebegin.length() != rangeend.length()) throw_helper::throws(exception_case::argument_out_of_range);
+  for (auto index = 0_z; index < rangebegin.length(); ++index) {
     if (rangebegin[index] < 0 || rangeend[index] < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, as<int32>(rangebegin[index]));
     add_bytes(value_, as<int32>(rangeend[index]));
