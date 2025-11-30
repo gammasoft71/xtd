@@ -31,7 +31,7 @@ secure_string::secure_string(const char value[], size_t length) {
 }
 
 bool secure_string::empty() const noexcept {
-  return data_.size() == 0;
+  return data_.length() == 0;
 }
 
 intptr secure_string::data() const noexcept {
@@ -39,10 +39,10 @@ intptr secure_string::data() const noexcept {
 }
 
 size_t secure_string::size() const noexcept {
-  return data_.size();
+  return data_.length();
 }
 
 std::string secure_string::to_unsecure_string() const noexcept {
   if (empty()) return "";
-  return decrypt(guid(native::cryptography::machine_guid()), data_.data(), data_.size());
+  return decrypt(guid(native::cryptography::machine_guid()), data_.data(), data_.length());
 }
