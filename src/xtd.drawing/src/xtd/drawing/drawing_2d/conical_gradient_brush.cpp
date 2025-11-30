@@ -44,12 +44,12 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center
 }
 
 conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const array<xtd::drawing::color>& conical_colors, float angle) : data_(xtd::new_sptr<data>()) {
-  if (conical_colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (conical_colors.length() < 2) throw_helper::throws(exception_case::argument);
   
   data_->center_point = center;
   data_->angle = angle;
   auto pos = .0f;
-  auto increment = 1.0f / (conical_colors.size() - 1);
+  auto increment = 1.0f / (conical_colors.length() - 1);
   for (auto color : conical_colors) {
     data_->conical_colors.add({color, pos});
     pos += increment;
