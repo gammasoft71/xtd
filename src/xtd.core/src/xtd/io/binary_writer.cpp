@@ -74,7 +74,7 @@ void binary_writer::write(const read_only_span<xtd::byte>& buffer) {
 
 void binary_writer::write(const array<xtd::byte>& buffer, size_t index, size_t count) {
   if (!stream_) throw_helper::throws(exception_case::io);
-  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
+  if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
@@ -86,7 +86,7 @@ void binary_writer::write(const read_only_span<char>& buffer) {
 
 void binary_writer::write(const array<char>& buffer, size_t index, size_t count) {
   if (!stream_) throw_helper::throws(exception_case::io);
-  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
+  if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
