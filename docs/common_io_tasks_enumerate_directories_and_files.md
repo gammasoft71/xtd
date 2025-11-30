@@ -44,7 +44,7 @@ public:
       for (auto dir : dirs) {
         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
       }
-      console::write_line("{} directories found.", dirs.size());
+      console::write_line("{} directories found.", dirs.count());
     } catch (const unauthorized_access_exception& ex) {
       console::write_line(ex.message());
     } catch (const path_too_long_exception& ex) {
