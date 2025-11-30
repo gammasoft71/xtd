@@ -345,7 +345,7 @@ namespace xtd {
       inline static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
-          thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
+          thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
@@ -388,7 +388,7 @@ namespace xtd {
       inline static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
-          thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
+          thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       template<class item_t>
