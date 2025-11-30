@@ -56,13 +56,13 @@ stack_trace::stack_trace(const std::exception& exception, size_t skip_frames, bo
 }
 
 size_t stack_trace::frame_count() const noexcept {
-  return data_->frames.size();
+  return data_->frames.length();
 }
 
 const xtd::diagnostics::stack_frame& stack_trace::get_frame(size_t index) noexcept {
   static auto empty_stack_frame = stack_frame {null};
-  if (data_->frames.size() == 0) return empty_stack_frame;
-  if (index > data_->frames.size() - 1) index = data_->frames.size() - 1;
+  if (data_->frames.length() == 0) return empty_stack_frame;
+  if (index > data_->frames.length() - 1) index = data_->frames.length() - 1;
   return data_->frames[index];
 }
 
@@ -84,7 +84,7 @@ stack_trace::stack_trace(const xtd::diagnostics::stack_frame& frame, bool empty)
 
 string stack_trace::to_string(size_t skip_frames) const noexcept {
   auto str = string::empty_string;
-  for (auto index = skip_frames; index < data_->frames.size(); ++index) {
+  for (auto index = skip_frames; index < data_->frames.length(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + data_->frames[index].get_method();
     if (data_->need_file_info && !xtd::string::is_empty(data_->frames[index].get_file_name())) str += string::format(" in {}:line {}", data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
