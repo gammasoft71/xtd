@@ -318,13 +318,13 @@ namespace xtd {
       ///       target.create();
       ///
       ///     //Copy files.
-      ///     list<file_info> source_files = source.get_files();
-      ///     for(size_t i = 0; i < source_files.size(); ++i)
+      ///     array<file_info> source_files = source.get_files();
+      ///     for(size_t i = 0; i < source_files.length(); ++i)
       ///       file::copy(source_files[i].full_name(), target.full_name() +"\\" + source_files[i].name(), true);
       ///
       ///     //Copy directories.
-      ///     list<directory_info> source_directories = source.get_directories();
-      ///     for(size_t j = 0; j < source_directories.size(); ++j)
+      ///     array<directory_info> source_directories = source.get_directories();
+      ///     for(size_t j = 0; j < source_directories.length(); ++j)
       ///       copy_directory(source_directories[j].full_name(), target.full_name() + "\\" + source_directories[j].name());
       ///   }
       ///
@@ -873,11 +873,11 @@ namespace xtd {
       ///       directory_info di(R"(c:\)");
       ///
       ///       // Get only subdirectories that contain the letter "p."
-      ///       list<directory_info> dirs = di.get_directories("*p*");
-      ///       console::write_line("The number of directories containing the letter p is {0}.", dirs.size());
+      ///       array<directory_info> dirs = di.get_directories("*p*");
+      ///       console::write_line("The number of directories containing the letter p is {0}.", dirs.length());
       ///
       ///       for (directory_info di_next : dirs) {
-      ///         console::write_line("The number of files in {0} is {1}", di_next, di_next.get_files().size());
+      ///         console::write_line("The number of files in {0} is {1}", di_next, di_next.get_files().length());
       ///       }
       ///     } catch (const exception& e) {
       ///       console::write_line("The process failed: {0}", e.to_string());
