@@ -62,7 +62,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const array<xtd::drawing::color>& linear_colors, float angle) : data_(xtd::new_sptr<data>()) {
-  if (linear_colors.size() < 2) throw_helper::throws(exception_case::argument);
+  if (linear_colors.length() < 2) throw_helper::throws(exception_case::argument);
   while (angle < 0)
     angle = 360 - angle;
   while (angle >= 360)
@@ -72,7 +72,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
   data_->angle = angle;
   
   auto pos = .0f;
-  auto increment = 1.0f / (linear_colors.size() - 1);
+  auto increment = 1.0f / (linear_colors.length() - 1);
   for (auto color : linear_colors) {
     data_->linear_colors.add({color, pos});
     pos += increment;
