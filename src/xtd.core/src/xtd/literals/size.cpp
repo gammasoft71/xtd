@@ -3,14 +3,6 @@
 
 using namespace xtd;
 
-xtd::size xtd::literals::operator""_uz(long double n) {
-  return as<xtd::size>(n);
-}
-
-xtd::size xtd::literals::operator""_uz(unsigned long long n) {
-  return as<xtd::size>(n);
-}
-
 xtd::size xtd::literals::operator""_uz(const char* s, xtd::size n) {
   return as<xtd::size>(string(s, s + n));
 }
@@ -29,14 +21,6 @@ xtd::size xtd::literals::operator""_uz(const char32* s, xtd::size n) {
 
 xtd::size xtd::literals::operator""_uz(const wchar* s, xtd::size n) {
   return as<xtd::size>(std::wstring(s, s + n));
-}
-
-xtd::size xtd::literals::operator""_z(long double n) {
-  return as<xtd::size>(n);
-}
-
-xtd::size xtd::literals::operator""_z(unsigned long long n) {
-  return as<xtd::size>(n);
 }
 
 xtd::size xtd::literals::operator""_z(const char* s, xtd::size n) {

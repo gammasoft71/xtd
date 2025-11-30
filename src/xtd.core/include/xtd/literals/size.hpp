@@ -24,7 +24,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 1.6_z << xtd::environment::new_line;
     /// ```
-    xtd::size operator""_uz(long double n);
+    constexpr xtd::size operator""_uz(long double n) {return static_cast<xtd::size>(n);}
     
     /// @brief Used to convert specified value into xtd::size.
     /// @par Namespace
@@ -36,7 +36,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 54_z << xtd::environment::new_line;
     /// ```
-    xtd::size operator""_uz(unsigned long long n);
+    constexpr xtd::size operator""_uz(unsigned long long n) {return static_cast<xtd::size>(n);}
     
     /// @brief Used to convert specified value into xtd::size.
     /// @par Namespace
@@ -108,7 +108,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 1.6_z << xtd::environment::new_line;
     /// ```
-    xtd::size operator""_z(long double n);
+    constexpr xtd::size operator""_z(long double n) {return static_cast<xtd::size>(n);}
     
     /// @brief Used to convert specified value into signed xtd::size.
     /// @par Namespace
@@ -120,7 +120,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 54_z << xtd::environment::new_line;
     /// ```
-    xtd::size operator""_z(unsigned long long n);
+    constexpr xtd::size operator""_z(unsigned long long n) {return static_cast<xtd::size>(n);}
     
     /// @brief Used to convert specified value into signed xtd::size.
     /// @par Namespace
