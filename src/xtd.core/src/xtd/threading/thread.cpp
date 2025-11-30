@@ -569,7 +569,7 @@ void thread::thread_proc() {
   if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
   if (!xtd::string::is_empty(data_->name)) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
-  if (data_->processor_affinity.size() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
+  if (data_->processor_affinity.length() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
   
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
