@@ -286,7 +286,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const array<key_value_pai
   if (!handle) throw_helper::throws(exception_case::argument);
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
-  for (auto index = 1_z; index < points.size(); index += 3) {
+  for (auto index = 1_z; index < points.length(); index += 3) {
     path.AddCurveToPoint(points[index].first, points[index].second, points[index + 1].first, points[index + 1].second, points[index + 2].first, points[index + 2].second);
     path.MoveToPoint(points[index + 2].first, points[index + 2].second);
   }
