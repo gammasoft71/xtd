@@ -23,12 +23,12 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) :
 }
 
 matrix::matrix(const rectangle& rect, const array<point>& plgpts) : data_(xtd::new_sptr<data>()) {
-  if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
+  if (plgpts.length() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
 matrix::matrix(const rectangle_f& rect, const array<point_f>& plgpts) : data_(xtd::new_sptr<data>()) {
-  if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
+  if (plgpts.length() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 
@@ -146,22 +146,22 @@ void matrix::transform_points(array<xtd::drawing::point_f>& points) {
 }
 
 void matrix::transform_vectors(array<xtd::drawing::point>& points) {
-  auto tr_points = array<key_value_pair<int32, int32>>(points.size());
-  for (auto index = 0_z; index < points.size(); ++index)
+  auto tr_points = array<key_value_pair<int32, int32>>(points.length());
+  for (auto index = 0_z; index < points.length(); ++index)
     tr_points[index] = key_value_pair<int32, int32>(points[index].x, points[index].y);
   native::matrix::transform_vectors(handle(), tr_points);
-  points = array<xtd::drawing::point>(tr_points.size());
-  for (auto index = 0_z; index < tr_points.size(); ++index)
+  points = array<xtd::drawing::point>(tr_points.length());
+  for (auto index = 0_z; index < tr_points.length(); ++index)
     points[index] = xtd::drawing::point(tr_points[index].first, tr_points[index].second);
 }
 
 void matrix::transform_vectors(array<xtd::drawing::point_f>& points) {
-  auto tr_points = array<key_value_pair<float, float>>(points.size());
-  for (auto index = 0_z; index < points.size(); ++index)
+  auto tr_points = array<key_value_pair<float, float>>(points.length());
+  for (auto index = 0_z; index < points.length(); ++index)
     tr_points[index] = key_value_pair<float, float>(points[index].x, points[index].y);
   native::matrix::transform_vectors(handle(), tr_points);
-  points = array<xtd::drawing::point_f>(tr_points.size());
-  for (auto index = 0_z; index < tr_points.size(); ++index)
+  points = array<xtd::drawing::point_f>(tr_points.length());
+  for (auto index = 0_z; index < tr_points.length(); ++index)
     points[index] = xtd::drawing::point_f(tr_points[index].first, tr_points[index].second);
 }
 
@@ -174,12 +174,12 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing_2d:
 }
 
 void matrix::vector_transform_points(array<xtd::drawing::point>& points) {
-  auto tr_points = array<key_value_pair<int32, int32>>(points.size());
-  for (auto index = 0_z; index < points.size(); ++index)
+  auto tr_points = array<key_value_pair<int32, int32>>(points.length());
+  for (auto index = 0_z; index < points.length(); ++index)
     tr_points[index] = key_value_pair<int32, int32>(points[index].x, points[index].y);
   native::matrix::vector_transform_points(handle(), tr_points);
-  points = array<xtd::drawing::point>(tr_points.size());
-  for (auto index = 0_z; index < tr_points.size(); ++index)
+  points = array<xtd::drawing::point>(tr_points.length());
+  for (auto index = 0_z; index < tr_points.length(); ++index)
     points[index] = xtd::drawing::point(tr_points[index].first, tr_points[index].second);
 }
 
