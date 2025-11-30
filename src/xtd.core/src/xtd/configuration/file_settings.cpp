@@ -140,7 +140,7 @@ void file_settings::from_string(const xtd::string& text) {
         //if (!string::is_empty(comment)) after_section_comment_[section] = comment;
         //comment = string::empty_string;
         auto key_value = line.split(key_value_separator);
-        if (key_value.size() == 1) {
+        if (key_value.length() == 1) {
           if (!string::is_empty(comment)) before_key_value_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
           section_key_values_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = "";
         } else {
