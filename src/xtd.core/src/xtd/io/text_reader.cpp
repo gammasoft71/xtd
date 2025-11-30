@@ -25,16 +25,16 @@ int32 text_reader::read() {
 }
 
 size_t text_reader::read(span<char>& buffer) {
-  for (auto i = 0_z; i < buffer.size(); i++) {
+  for (auto i = 0_z; i < buffer.length(); i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[i] = static_cast<char>(current);
   }
-  return buffer.size();
+  return buffer.length();
 }
 
 size_t text_reader::read(array<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
+  if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
