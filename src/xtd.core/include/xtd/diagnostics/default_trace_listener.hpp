@@ -47,7 +47,7 @@ namespace xtd {
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.
-      /// if (args.size() >= 2)
+      /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
       default_trace_listener();
@@ -107,7 +107,7 @@ namespace xtd {
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.
-      /// if (args.size() >= 2)
+      /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
       xtd::string log_file_name() const noexcept;
@@ -121,7 +121,7 @@ namespace xtd {
       /// trace::listeners().push_back(default_listener);
       ///
       /// // Assign the log file specification from the command line, if entered.
-      /// if (args.size() >= 2)
+      /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
       void log_file_name(const xtd::string log_file_name) noexcept;
