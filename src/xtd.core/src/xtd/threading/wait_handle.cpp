@@ -40,7 +40,7 @@ bool wait_handle::wait_all(const std::initializer_list<sptr<wait_handle>>& wait_
 bool wait_handle::wait_all(const std::initializer_list<sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -55,7 +55,7 @@ bool wait_handle::wait_all(const std::initializer_list<uptr<wait_handle>>& wait_
 bool wait_handle::wait_all(const std::initializer_list<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -70,7 +70,7 @@ bool wait_handle::wait_all(const array<sptr<wait_handle>>& wait_handles) {
 bool wait_handle::wait_all(const array<sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -85,7 +85,7 @@ bool wait_handle::wait_all(const array<uptr<wait_handle>>& wait_handles) {
 bool wait_handle::wait_all(const array<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -100,7 +100,7 @@ size_t wait_handle::wait_any(const std::initializer_list<sptr<wait_handle>>& wai
 size_t wait_handle::wait_any(const std::initializer_list<sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -114,7 +114,7 @@ size_t wait_handle::wait_any(const std::initializer_list<uptr<wait_handle>>& wai
 size_t wait_handle::wait_any(const std::initializer_list<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -129,7 +129,7 @@ size_t wait_handle::wait_any(const array<sptr<wait_handle>>& wait_handles) {
 size_t wait_handle::wait_any(const array<sptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -144,7 +144,7 @@ size_t wait_handle::wait_any(const array<uptr<wait_handle>>& wait_handles) {
 size_t wait_handle::wait_any(const array<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
-    wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
+    wait_handle_pointers.resize(wait_handle_pointers.length() + 1, wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
@@ -185,7 +185,7 @@ size_t wait_handle::wait_any(const array<wait_handle*>& wait_handles, int32 mill
   
   if (milliseconds_timeout == timeout::infinite) {
     while (true) {
-      for (auto index = 0_z; index < wait_handles.size(); ++index) {
+      for (auto index = 0_z; index < wait_handles.length(); ++index) {
         if (wait_handles[index]->wait_one(0) == true) return index;
         thread::sleep(1);
       }
@@ -194,7 +194,7 @@ size_t wait_handle::wait_any(const array<wait_handle*>& wait_handles, int32 mill
   
   auto sw = stopwatch::start_new();
   while (sw.elapsed_milliseconds() <= milliseconds_timeout) {
-    for (auto index = 0_z; index < wait_handles.size(); index++) {
+    for (auto index = 0_z; index < wait_handles.length(); index++) {
       if (wait_handles[index]->wait_one(0) == true) return index;
       thread::sleep(1);
     }
