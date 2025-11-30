@@ -188,9 +188,9 @@ bool directory_info::exists() const {
 
 string directory_info::name() const {
   auto items = full_path_.split(path::directory_separator_char());
-  if (items.size() == 0)
+  if (items.length() == 0)
     return full_path_;
-  return items[items.size() - 1];
+  return items[~1];
 }
 
 directory_info directory_info::parent() const {
