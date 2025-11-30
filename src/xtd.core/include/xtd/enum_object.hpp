@@ -256,7 +256,7 @@ namespace xtd {
       for (xtd::string& str : values)
         str = str.trim(' ');
         
-      if (values.size() == 1) {
+      if (values.length() == 1) {
         for (auto item : enum_object<enum_type>().entries()) {
           if (xtd::string::compare(value, item.second, ignore_case) == 0)
             return to_enum(item.first);
