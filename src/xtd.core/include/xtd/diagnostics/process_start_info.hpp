@@ -435,11 +435,11 @@ namespace xtd {
       ///       console::write_line("Enter a line of text (or press the Enter key to stop):");
       ///
       ///       input_text = console::read_line();
-      ///       if (input_text.size() > 0) {
+      ///       if (input_text.length() > 0) {
       ///         num_lines++;
       ///         my_stream_writer.write_line(input_text);
       ///       }
-      ///     } while (input_text.size() > 0);
+      ///     } while (input_text.length() > 0);
       ///
       ///     // Write a report header to the console.
       ///     if (num_lines > 0) {
@@ -498,11 +498,11 @@ namespace xtd {
       ///       console::write_line("Enter a line of text (or press the Enter key to stop):");
       ///
       ///       input_text = console::read_line();
-      ///       if (input_text.size() > 0) {
+      ///       if (input_text.length() > 0) {
       ///         num_lines++;
       ///         my_stream_writer.write_line(input_text);
       ///       }
-      ///     } while (input_text.size() > 0);
+      ///     } while (input_text.length() > 0);
       ///
       ///     // Write a report header to the console.
       ///     if (num_lines > 0) {
