@@ -38,7 +38,7 @@ const string& switch_object::value() const noexcept {
 void switch_object::value(const string& value) {
   auto new_value = value;
   call_once_ {
-    if (switches_.size()) return;
+    if (switches_.count()) return;
     const auto& [listeners, switches] = __xtd___read_diagnostics_config__();
     switches_ = switches;
   };
