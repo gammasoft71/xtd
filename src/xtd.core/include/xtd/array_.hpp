@@ -74,10 +74,10 @@ inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noex
 template<class type_t, class allocator_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) {
   auto position = xtd::size {0};
-  for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
+  for (auto index1 = xtd::size {0}; index1 < indexes.length(); ++index1) {
     if (indexes[index1] >= get_length(index1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
     auto multiplicand = xtd::size {1};
-    for (auto index2 = index1 + 1; index2 < indexes.size(); ++index2)
+    for (auto index2 = index1 + 1; index2 < indexes.length(); ++index2)
       multiplicand *= get_length(index2);
     position += indexes[index1] * multiplicand;
   }
