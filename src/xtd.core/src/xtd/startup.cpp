@@ -120,10 +120,10 @@ int startup::run(xtd::delegate<void(int, char* [])> main_function, int argc, cha
 
 int startup::run(xtd::delegate<void(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
-  auto argv = array<char*>(args.size());
-  for (auto index = 0_z; index < args.size(); ++index)
+  auto argv = array<char*>(args.length());
+  for (auto index = 0_z; index < args.length(); ++index)
     argv[index] = const_cast<char*>(args[index].data());
-  main_function(as<int32>(args.size()), argv.data());
+  main_function(as<int32>(args.length()), argv.data());
   return environment::exit_code();
 }
 
@@ -134,10 +134,10 @@ int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
 
 int startup::run(void (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
-  auto argv = array<char*>(args.size());
-  for (auto index = 0_z; index < args.size(); ++index)
+  auto argv = array<char*>(args.length());
+  for (auto index = 0_z; index < args.length(); ++index)
     argv[index] = const_cast<char*>(args[index].data());
-  main_function(as<int32>(args.size()), argv.data());
+  main_function(as<int32>(args.length()), argv.data());
   return environment::exit_code();
 }
 
@@ -185,10 +185,10 @@ int startup::run(xtd::delegate<int(int, char* [])> main_function, int argc, char
 
 int startup::run(xtd::delegate<int(int, char* [])> main_function) {
   auto args = environment::get_command_line_args();
-  auto argv = array<char*>(args.size());
-  for (auto index = 0_z; index < args.size(); ++index)
+  auto argv = array<char*>(args.length());
+  for (auto index = 0_z; index < args.length(); ++index)
     argv[index] = const_cast<char*>(args[index].data());
-  auto exit_code = main_function(as<int32>(args.size()), argv.data());
+  auto exit_code = main_function(as<int32>(args.length()), argv.data());
   return exit_code;
 }
 
@@ -198,10 +198,10 @@ int startup::run(int (*main_function)(int, char* []), int argc, char* argv[]) {
 
 int startup::run(int (*main_function)(int, char* [])) {
   auto args = environment::get_command_line_args();
-  auto argv = array<char*>(args.size());
-  for (auto index = 0_z; index < args.size(); ++index)
+  auto argv = array<char*>(args.length());
+  for (auto index = 0_z; index < args.length(); ++index)
     argv[index] = const_cast<char*>(args[index].data());
-  auto exit_code = main_function(as<int32>(args.size()), argv.data());
+  auto exit_code = main_function(as<int32>(args.length()), argv.data());
   return exit_code;
 }
 
