@@ -13,7 +13,7 @@ using namespace xtd::helpers;
 const guid guid::empty;
 
 guid::guid(const array<byte>& data) : data_(data) {
-  if (data.size() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).chars().c_str());
+  if (data.length() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).chars().c_str());
 }
 
 guid::guid(const std::initializer_list<byte>& data) : data_(data) {
@@ -24,7 +24,7 @@ guid::guid(int32 a, int16 b, int16 c, const array<byte>& d) : guid(as<uint32>(a)
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, const array<byte>& d) {
-  if (d.size() != data_.size() - 8) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size() - 8).chars().c_str());
+  if (d.length() != data_.size() - 8) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size() - 8).chars().c_str());
   
   auto index = 0_z;
   data_[index++] = as<byte>((a & 0xFF000000) >> 24);
