@@ -130,11 +130,11 @@ namespace {
     lines[offset] = lines[offset].substring(lines[offset].last_index_of("height") + 6);
     offset += 1 + (lines[offset].contains("x_hot") ? 1 : 0) + (lines[offset].contains("y_hot") ? 1 : 0);
     lines[offset] = lines[offset].substring(lines[offset].last_index_of("{") + 1);
-    lines[lines.size() - 1] = lines[lines.size() - 1].replace("};", "");
+    lines[lines.length() - 1] = lines[lines.length() - 1].replace("};", "");
     auto width = int32_object::parse(lines[0].trim());
     auto height = int32_object::parse(lines[1].trim());
     auto bits = list<xtd::byte> {};
-    for (auto index = offset; index < lines.size(); ++index)
+    for (auto index = offset; index < lines.length(); ++index)
       for (auto b : lines[index].split(','))
         bits.add(byte_object::parse(b.trim(), xtd::number_styles::hex_number));
     return std::make_tuple(bits.to_array(), width, height);
