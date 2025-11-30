@@ -279,7 +279,7 @@ void graphics::draw_bezier(const pen& pen, float x1, float y1, float x2, float y
 }
 
 void graphics::draw_beziers(const pen& pen, const array<xtd::drawing::point>& points) {
-  if (points.size() < 4 || points.size() % 3 != 1) throw_helper::throws(exception_case::argument);
+  if (points.length() < 4 || points.length() % 3 != 1) throw_helper::throws(exception_case::argument);
   auto beziers_points = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](auto pt) {beziers_points.add(point_f(pt));});
   draw_beziers(pen, beziers_points.to_array());
@@ -312,19 +312,19 @@ void graphics::draw_closed_curve(const pen& pen, const array<xtd::drawing::point
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points) {
-  draw_curve(pen, points, 0, points.size(), 0.0f);
+  draw_curve(pen, points, 0, points.length(), 0.0f);
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points) {
-  draw_curve(pen, points, 0, points.size(), 0.0f);
+  draw_curve(pen, points, 0, points.length(), 0.0f);
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, float tension) {
-  draw_curve(pen, points, 0, points.size(), tension);
+  draw_curve(pen, points, 0, points.length(), tension);
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, float tension) {
-  draw_curve(pen, points, 0, points.size(), tension);
+  draw_curve(pen, points, 0, points.length(), tension);
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments) {
@@ -342,7 +342,7 @@ void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point>& poin
 }
 
 void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  if (offset + number_of_segments > points.size() || number_of_segments == 0) throw_helper::throws(exception_case::argument);
+  if (offset + number_of_segments > points.length() || number_of_segments == 0) throw_helper::throws(exception_case::argument);
   auto curve_points = list<key_value_pair<float, float>> {};
   for (auto index = 0_z; index < number_of_segments; ++index)
     curve_points.add({to_pixels(points[offset + index].x), to_pixels(points[offset + index].y)});
