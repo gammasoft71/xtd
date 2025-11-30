@@ -112,19 +112,19 @@ void graphics_path::add_closed_curve(const array<xtd::drawing::point_f>& points,
 }
 
 void graphics_path::add_curve(const array<xtd::drawing::point>& points) {
-  add_curve(points, 0, points.size(), 0.5f);
+  add_curve(points, 0, points.length(), 0.5f);
 }
 
 void graphics_path::add_curve(const array<xtd::drawing::point_f>& points) {
-  add_curve(points, 0, points.size(), 0.5f);
+  add_curve(points, 0, points.length(), 0.5f);
 }
 
 void graphics_path::add_curve(const array<xtd::drawing::point>& points, float tension) {
-  add_curve(points, 0, points.size(), tension);
+  add_curve(points, 0, points.length(), tension);
 }
 
 void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, float tension) {
-  add_curve(points, 0, points.size(), tension);
+  add_curve(points, 0, points.length(), tension);
 }
 
 void graphics_path::add_curve(const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
@@ -172,14 +172,14 @@ void graphics_path::add_line(float x1, float y1, float x2, float y2) {
 }
 
 void graphics_path::add_lines(const array<xtd::drawing::point>& points) {
-  if (points.size() < 2) throw_helper::throws(exception_case::argument);
-  for (auto index = 0_z; index < points.size() - 1; ++index)
+  if (points.length() < 2) throw_helper::throws(exception_case::argument);
+  for (auto index = 0_z; index < points.length() - 1; ++index)
     add_line(points[index], points[index + 1]);
 }
 
 void graphics_path::add_lines(const array<xtd::drawing::point_f>& points) {
-  if (points.size() < 2) throw_helper::throws(exception_case::argument);
-  for (auto index = 0_z; index < points.size() - 1; ++index)
+  if (points.length() < 2) throw_helper::throws(exception_case::argument);
+  for (auto index = 0_z; index < points.length() - 1; ++index)
     add_line(points[index], points[index + 1]);
 }
 
@@ -204,17 +204,17 @@ void graphics_path::add_pie(float x, float y, float width, float height, float s
 }
 
 void graphics_path::add_polygon(const array<xtd::drawing::point>& points) {
-  if (points.size() < 2) throw_helper::throws(exception_case::argument);
-  for (auto index = 0_z; index < points.size() - 1; ++index)
+  if (points.length() < 2) throw_helper::throws(exception_case::argument);
+  for (auto index = 0_z; index < points.length() - 1; ++index)
     add_line(points[index], points[index + 1]);
-  if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
+  if (points[points.length() - 1] != points[0]) add_line(points[points.length() - 1], points[0]);
 }
 
 void graphics_path::add_polygon(const array<xtd::drawing::point_f>& points) {
-  if (points.size() < 2) throw_helper::throws(exception_case::argument);
-  for (auto index = 0_z; index < points.size() - 1; ++index)
+  if (points.length() < 2) throw_helper::throws(exception_case::argument);
+  for (auto index = 0_z; index < points.length() - 1; ++index)
     add_line(points[index], points[index + 1]);
-  if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
+  if (points[points.length() - 1] != points[0]) add_line(points[points.length() - 1], points[0]);
 }
 
 void graphics_path::add_rectangle(const rectangle& rect) {
