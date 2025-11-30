@@ -512,36 +512,36 @@ background_image style_sheet::background_image_from_css(const string& css_text, 
 
 border_color style_sheet::border_color_from_css(const string& css_text, const border_color& default_value) const noexcept {
   auto values = split_values_from_text(css_text.to_lower());
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   auto result = border_color {};
   result.all(color_from_css(values[0], default_value.top()));
-  if (values.size() >= 2) result.right(color_from_css(values[0], default_value.right()));
-  if (values.size() >= 3) result.bottom(color_from_css(values[0], default_value.right()));
-  if (values.size() == 4) result.left(color_from_css(values[0], default_value.right()));
+  if (values.length() >= 2) result.right(color_from_css(values[0], default_value.right()));
+  if (values.length() >= 3) result.bottom(color_from_css(values[0], default_value.right()));
+  if (values.length() == 4) result.left(color_from_css(values[0], default_value.right()));
   return result;
 }
 
 style_sheets::border_style style_sheet::border_style_from_css(const string& css_text, const border_style& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   static auto border_types = std::map<string, xtd::forms::style_sheets::border_type> {{"none", border_type::none}, {"hidden", border_type::hidden}, {"dashed", border_type::dashed}, {"dot-dash", border_type::dot_dash},  {"dot-dot-dash", border_type::dot_dot_dash}, {"dotted", border_type::dotted}, {"double", border_type::double_border}, {"groove", border_type::groove}, {"inset", border_type::inset}, {"outset", border_type::outset}, {"ridge", border_type::ridge}, {"solid", border_type::solid}, {"theme", border_type::theme}};
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   
   auto result = border_style {};
   auto it = border_types.find(values[0]);
   if (it == border_types.end()) return default_value;
   result.all(it->second);
   
-  if (values.size() >= 2) {
+  if (values.length() >= 2) {
     it = border_types.find(values[1]);
     if (it == border_types.end()) return default_value;
     result.right(it->second);
   }
-  if (values.size() >= 3) {
+  if (values.length() >= 3) {
     it = border_types.find(values[2]);
     if (it == border_types.end()) return default_value;
     result.bottom(it->second);
   }
-  if (values.size() == 4) {
+  if (values.length() == 4) {
     it = border_types.find(values[3]);
     if (it == border_types.end()) return default_value;
     result.left(it->second);
@@ -552,28 +552,28 @@ style_sheets::border_style style_sheet::border_style_from_css(const string& css_
 
 border_radius style_sheet::border_radius_from_css(const string& css_text, const border_radius& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   
   auto result = border_radius {};
   result.all(length_from_css(values[0], default_value.all()));
   
-  if (values.size() >= 2) result.top_right(length_from_css(values[1], default_value.top_right()));
-  if (values.size() >= 3) result.bottom_right(length_from_css(values[2], default_value.bottom_right()));
-  if (values.size() == 4) result.bottom_left(length_from_css(values[3], default_value.bottom_left()));
+  if (values.length() >= 2) result.top_right(length_from_css(values[1], default_value.top_right()));
+  if (values.length() >= 3) result.bottom_right(length_from_css(values[2], default_value.bottom_right()));
+  if (values.length() == 4) result.bottom_left(length_from_css(values[3], default_value.bottom_left()));
   
   return result;
 }
 
 border_width style_sheet::border_width_from_css(const string& css_text, const border_width& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   
   auto result = border_width {};
   result.all(length_from_css(values[0], default_value.all()));
   
-  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
-  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
-  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  if (values.length() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.length() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.length() == 4) result.left(length_from_css(values[3], default_value.right()));
   
   return result;
 }
@@ -608,14 +608,14 @@ length style_sheet::length_from_css(const string& css_text, const length& defaul
 
 margin style_sheet::margin_from_css(const string& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   
   auto result = margin {};
   result.all(length_from_css(values[0], default_value.all()));
   
-  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
-  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
-  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  if (values.length() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.length() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.length() == 4) result.left(length_from_css(values[3], default_value.right()));
   
   return result;
 }
@@ -623,7 +623,7 @@ margin style_sheet::margin_from_css(const string& css_text, const margin& defaul
 margin style_sheet::margin_bottom_from_css(const string& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.bottom(length_from_css(values[0], default_value.bottom()));
   return result;
 }
@@ -632,7 +632,7 @@ margin style_sheet::margin_left_from_css(const string& css_text, const margin& d
   auto values = css_text.to_lower().split();
   
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   
   result.left(length_from_css(values[0], default_value.left()));
   
@@ -642,7 +642,7 @@ margin style_sheet::margin_left_from_css(const string& css_text, const margin& d
 margin style_sheet::margin_right_from_css(const string& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.right(length_from_css(values[0], default_value.right()));
   return result;
 }
@@ -650,21 +650,21 @@ margin style_sheet::margin_right_from_css(const string& css_text, const margin& 
 margin style_sheet::margin_top_from_css(const string& css_text, const margin& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.top(length_from_css(values[0], default_value.top()));
   return result;
 }
 
 style_sheets::padding style_sheet::padding_from_css(const string& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  if (values.size() < 1 || values.size() > 4) return default_value;
+  if (values.length() < 1 || values.length() > 4) return default_value;
   
   auto result = style_sheets::padding {};
   result.all(length_from_css(values[0], default_value.all()));
   
-  if (values.size() >= 2) result.right(length_from_css(values[1], default_value.left()));
-  if (values.size() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
-  if (values.size() == 4) result.left(length_from_css(values[3], default_value.right()));
+  if (values.length() >= 2) result.right(length_from_css(values[1], default_value.left()));
+  if (values.length() >= 3) result.bottom(length_from_css(values[2], default_value.bottom()));
+  if (values.length() == 4) result.left(length_from_css(values[3], default_value.right()));
   
   return result;
 }
@@ -672,7 +672,7 @@ style_sheets::padding style_sheet::padding_from_css(const string& css_text, cons
 style_sheets::padding style_sheet::padding_bottom_from_css(const string& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.bottom(length_from_css(values[0], default_value.bottom()));
   return result;
 }
@@ -680,7 +680,7 @@ style_sheets::padding style_sheet::padding_bottom_from_css(const string& css_tex
 style_sheets::padding style_sheet::padding_left_from_css(const string& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.left(length_from_css(values[0], default_value.left()));
   return result;
 }
@@ -689,7 +689,7 @@ style_sheets::padding style_sheet::padding_right_from_css(const string& css_text
   auto values = css_text.to_lower().split();
   auto result = default_value;
   
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.right(length_from_css(values[0], default_value.right()));
   return result;
 }
@@ -697,7 +697,7 @@ style_sheets::padding style_sheet::padding_right_from_css(const string& css_text
 style_sheets::padding style_sheet::padding_top_from_css(const string& css_text, const style_sheets::padding& default_value) const noexcept {
   auto values = css_text.to_lower().split();
   auto result = default_value;
-  if (values.size() < 1 || values.size() > 1) return result;
+  if (values.length() < 1 || values.length() > 1) return result;
   result.top(length_from_css(values[0], default_value.top()));
   return result;
 }
@@ -710,14 +710,14 @@ string style_sheet::string_from_css(const string& css_text, const string& defaul
 
 content_alignment style_sheet::text_align_from_css(const string& css_text, const content_alignment& default_value) const noexcept {
   auto values = css_text.to_lower().split();
-  if (values.size() == 1) {
+  if (values.length() == 1) {
     if (values[0] == "top") return content_alignment::top_center;
     if (values[0] == "middle") return content_alignment::middle_center;
     if (values[0] == "bottom") return content_alignment::bottom_center;
     if (values[0] == "left") return content_alignment::middle_left;
     if (values[0] == "center") return content_alignment::middle_center;
     if (values[0] == "right") return content_alignment::middle_right;
-  } else if (values.size() == 2) {
+  } else if (values.length() == 2) {
     if ((values[0] == "top" && values[1] == "left") || (values[1] == "top" && values[0] == "left")) return content_alignment::top_left;
     if ((values[0] == "top" && values[1] == "center") || (values[1] == "top" && values[0] == "center")) return content_alignment::top_center;
     if ((values[0] == "top" && values[1] == "right") || (values[1] == "top" && values[0] == "right")) return content_alignment::top_right;
@@ -1181,7 +1181,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
 bool style_sheet::try_parse_rgb_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("rgb(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 3) return false;
+  if (color_parts.length() != 3) return false;
   xtd::byte r = 0;
   if (string::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
   xtd::byte g = 0;
@@ -1195,7 +1195,7 @@ bool style_sheet::try_parse_rgb_color(const string& text, color& result) const n
 bool style_sheet::try_parse_rgba_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("rgba(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 4) return false;
+  if (color_parts.length() != 4) return false;
   xtd::byte r = 0;
   if (string::try_parse<xtd::byte>(color_parts[0], r) == false) return false;
   xtd::byte g = 0;
@@ -1211,7 +1211,7 @@ bool style_sheet::try_parse_rgba_color(const string& text, color& result) const 
 bool style_sheet::try_parse_hsv_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("hsv(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 3) return false;
+  if (color_parts.length() != 3) return false;
   float h = 0;
   if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
@@ -1225,7 +1225,7 @@ bool style_sheet::try_parse_hsv_color(const string& text, color& result) const n
 bool style_sheet::try_parse_hsva_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("hsva(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 4) return false;
+  if (color_parts.length() != 4) return false;
   float h = 0;
   if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
@@ -1241,7 +1241,7 @@ bool style_sheet::try_parse_hsva_color(const string& text, color& result) const 
 bool style_sheet::try_parse_hsl_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("hsl(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 3) return false;
+  if (color_parts.length() != 3) return false;
   float h = 0;
   if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
@@ -1255,7 +1255,7 @@ bool style_sheet::try_parse_hsl_color(const string& text, color& result) const n
 bool style_sheet::try_parse_hsla_color(const string& text, color& result) const noexcept {
   auto value = text.remove(text.length() - 1).replace("hsla(", string::empty_string);
   auto color_parts = value.split(',');
-  if (color_parts.size() != 4) return false;
+  if (color_parts.length() != 4) return false;
   float h = 0;
   if (string::try_parse<float>(color_parts[0], h) == false) return false;
   float s = 0;
