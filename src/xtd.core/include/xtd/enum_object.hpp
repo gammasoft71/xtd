@@ -462,7 +462,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < xtd::string > get_names() noexcept {
       auto names = xtd::array < xtd::string > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {names.resize(names.size() + 1, entry.second);});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {names.resize(names.length() + 1, entry.second);});
       return names;
     }
     
@@ -472,7 +472,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < enum_t > get_values() noexcept {
       auto values = xtd::array < enum_t > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, entry.first);});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, entry.first);});
       return values;
     }
     
@@ -482,7 +482,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < xtd::byte > get_values_as_byte() noexcept {
       auto values = xtd::array < xtd::byte > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_byte());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_byte());});
       return values;
     }
     
@@ -492,7 +492,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < int16 > get_values_as_int16() noexcept {
       auto values = xtd::array < xtd::int16 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_int16());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_int16());});
       return values;
     }
     
@@ -502,7 +502,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < int32 > get_values_as_int32() noexcept {
       auto values = xtd::array < xtd::int32 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_int32());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_int32());});
       return values;
     }
     
@@ -512,7 +512,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < int64 > get_values_as_int64() noexcept {
       auto values = xtd::array < xtd::int64 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_int64());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_int64());});
       return values;
     }
     
@@ -522,7 +522,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < sbyte > get_values_as_sbyte() noexcept {
       auto values = xtd::array < xtd::sbyte > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_sbyte());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_sbyte());});
       return values;
     }
     
@@ -532,7 +532,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < uint16 > get_values_as_uint16() noexcept {
       auto values = xtd::array < xtd::uint16 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_uint16());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_uint16());});
       return values;
     }
     
@@ -542,7 +542,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < uint32 > get_values_as_uint32() noexcept {
       auto values = xtd::array < xtd::uint32 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_uint32());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_uint32());});
       return values;
     }
     
@@ -552,7 +552,7 @@ namespace xtd {
     template < class enum_t >
     inline static xtd::array < uint64 > get_values_as_uint64() noexcept {
       auto values = xtd::array < xtd::uint64 > {};
-      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object < enum_t > (entry.first).to_uint64());});
+      std::for_each(enum_object < enum_t > ().entries().begin(), enum_object < enum_t > ().entries().end(), [&](auto entry) {values.resize(values.length() + 1, enum_object < enum_t > (entry.first).to_uint64());});
       return values;
     }
     
