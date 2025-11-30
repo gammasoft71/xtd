@@ -24,7 +24,7 @@ namespace xtd {
     /// ```cpp
     /// void validate_user_entry() {
     ///   // Checks the value of the text.
-    ///   if (server_name.text().size() == 0) {
+    ///   if (server_name.text().length() == 0) {
     ///     // Initializes the variables to pass to the xtd::forms::message_box::show method.
     ///     string message = "You did not enter a server name. Cancel this operation?";
     ///     string caption = "No Server Name Specified";
