@@ -242,7 +242,7 @@ inline xtd::string xtd::to_string(const std::array<type_t, size>& values, const 
 template<size_t size>
 inline xtd::string xtd::to_string(const std::bitset<size>& values, const xtd::string& fmt, const std::locale& loc) {
   auto result = xtd::string {"["};
-  for (auto index = size_t {0}; index < values.size(); ++index)
+  for (auto index = size_t {0}; index < values.length(); ++index)
     result += (index ? ", " : "") + to_string(static_cast<bool>(values[index]), fmt, loc);
   return result + "]";
 }
