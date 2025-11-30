@@ -59,15 +59,15 @@ image image_converter::to_image(const array<byte>& value) {
 }
 
 image image_converter::to_image(const xtd::read_only_span<xtd::byte>& value) {
-  if (value.size() == 0) return image::empty;
-  if (value.size() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (value.size() < 8) throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (value.length() == 0) return image::empty;
+  if (value.length() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (value.length() < 8) throw_helper::throws(xtd::helpers::exception_case::argument);
   auto index = 0_z;
   auto width = bit_converter::to_int32(value, index);
   index += 4;
   auto height = bit_converter::to_int32(value, index);
   index += 4;
-  if (value.size() < static_cast<xtd::size>(8 + width * height * 4)) throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (value.length() < static_cast<xtd::size>(8 + width * height * 4)) throw_helper::throws(xtd::helpers::exception_case::argument);
   if (width < 1 || height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
   
   auto result = bitmap {width, height};
