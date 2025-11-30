@@ -29,14 +29,14 @@ ip_address::ip_address(uint32 address) {
 }
 
 ip_address::ip_address(const array<byte>& address) {
-  if (address.size() != 4 && address.size() != 16) throw_helper::throws(exception_case::argument);
+  if (address.length() != 4 && address.length() != 16) throw_helper::throws(exception_case::argument);
   
-  if (address.size() == 4) {
+  if (address.length() == 4) {
     address_family_ = sockets::address_family::inter_network;
     address_or_scope_id_ = ((address[3] << 24 | address[2] << 16 | address[1] << 8 | address[0]) & 0x0FFFFFFFF);
   }
   
-  if (address.size() == 16) {
+  if (address.length() == 16) {
     address_family_ = sockets::address_family::inter_network_v6;
     for (auto index = 0_z; index < number_of_numbers_; index++)
       numbers_[index] = (static_cast<int16>(address[index * 2]) << 8) + static_cast<int16>(address[(index * 2) + 1]);
@@ -44,7 +44,7 @@ ip_address::ip_address(const array<byte>& address) {
 }
 
 ip_address::ip_address(const array<byte>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
-  if (address.size() != 16) throw_helper::throws(exception_case::argument);
+  if (address.length() != 16) throw_helper::throws(exception_case::argument);
   
   address_or_scope_id_ = scope_id;
   for (auto index = 0_z; index < number_of_numbers_; index++)
@@ -229,9 +229,9 @@ uint64 ip_address::network_to_host_order(uint64 network) {
 
 ip_address ip_address::parse(const string& str) {
   block_scope_(auto address_parts = str.split('.')) {
-    if (address_parts.size() == 4) {
+    if (address_parts.length() == 4) {
       auto addresses = array<byte>(4);
-      for (auto index = 0_z; index < address_parts.size(); ++index)
+      for (auto index = 0_z; index < address_parts.length(); ++index)
         addresses[index] = xtd::parse<byte>(address_parts[index]);
       return ip_address(addresses);
     }
