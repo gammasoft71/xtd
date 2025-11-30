@@ -64,7 +64,7 @@ int32 binary_reader::read() {
 }
 
 size_t binary_reader::read(array<xtd::byte>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
+  if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -74,7 +74,7 @@ size_t binary_reader::read(array<xtd::byte>& buffer, size_t index, size_t count)
 }
 
 size_t binary_reader::read(array<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
+  if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
