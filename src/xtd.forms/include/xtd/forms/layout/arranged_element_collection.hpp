@@ -307,7 +307,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::forms::layout::arranged_element_collection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {
-          if (array_index + count() > array.size()) helpers::throw_helper::throws(helpers::exception_case::argument_out_of_range);
+          if (array_index + count() > array.length()) helpers::throw_helper::throws(helpers::exception_case::argument_out_of_range);
           auto i = size_type {0};
           for (const type_t& item : self_) {
             if (i >= count()) return;
@@ -578,7 +578,7 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         void emplace_back(args_t&& ... args) {
           data_->items.emplace_back(args...);
-          size_t index = data_->items.size() - 1;
+          size_t index = data_->items.count() - 1;
           self_[index].owner = this;
           self_[index].pos = index;
           on_item_added(index, data_->items[index]);
