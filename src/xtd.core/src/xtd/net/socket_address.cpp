@@ -30,16 +30,16 @@ sockets::address_family socket_address::address_family() const {
 }
 
 size_t socket_address::size() const {
-  return bytes_.size();
+  return bytes_.length();
 }
 
 xtd::byte& socket_address::operator [](size_t index) {
-  if (index >= bytes_.size()) throw_helper::throws(exception_case::index_out_of_range);
+  if (index >= bytes_.length()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
 
 const xtd::byte& socket_address::operator [](size_t index) const {
-  if (index >= bytes_.size()) throw_helper::throws(exception_case::index_out_of_range);
+  if (index >= bytes_.length()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
 
