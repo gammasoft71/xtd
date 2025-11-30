@@ -101,7 +101,7 @@ namespace xtd {
     template<class value_t>
     void get_items(const xtd::read_only_span<value_t>& choices, xtd::span<value_t>& destination) {
       for (auto& item : destination)
-        item = choices[next(choices.size())];
+        item = choices[next(choices.length())];
     }
     
     /// @brief Returns a nonnegative random number.
@@ -184,7 +184,7 @@ namespace xtd {
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<class value_t>
     void next_values(xtd::span<value_t>& buffer) const {
-      for (auto index = 0_z; index < buffer.size(); ++index)
+      for (auto index = 0_z; index < buffer.length(); ++index)
         buffer[index] = next<value_t>();
     }
     
