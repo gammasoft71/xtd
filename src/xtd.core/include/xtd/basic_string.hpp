@@ -440,8 +440,8 @@ namespace xtd {
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
     /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-    /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
-    /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+    /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
+    /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
     /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
     /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
     /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
@@ -465,8 +465,8 @@ namespace xtd {
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
     /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-    /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
-    /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+    /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
+    /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
     /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
     /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
     /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
@@ -2979,7 +2979,7 @@ namespace xtd {
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
     /// @param str The string to be inserted.
-    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
     /// @todo uncomment following line and remove the next.
@@ -2991,7 +2991,7 @@ namespace xtd {
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
     /// @param os The character output stream.
     /// @param str The string to be inserted.
-    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+    /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
     /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
     /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
     friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string & str) {return stream << str.to_wstring().chars();}
