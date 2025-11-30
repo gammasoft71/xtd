@@ -206,7 +206,7 @@ namespace xtd {
       /// @param index The index of the first substring character where start copy.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder & str, xtd::size index) {
-        if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring at index and allocator.
@@ -215,7 +215,7 @@ namespace xtd {
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder & str, xtd::size index, const allocator_type & allocator) {
-        if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (index > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, allocator);
       }
       
@@ -225,7 +225,7 @@ namespace xtd {
       /// @param count The number of substring characters to copy.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder & str, xtd::size index, xtd::size count) {
-        if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, count);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring at index, count characters and allocator.
@@ -235,7 +235,7 @@ namespace xtd {
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder & str, xtd::size index, xtd::size count, const allocator_type & allocator) {
-        if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_ = base_type(str.chars_, index, count, allocator);
       }
       
@@ -450,7 +450,7 @@ namespace xtd {
       
       /// @brief Returns the number of `char_t` elements in the string, i.e. `std::distance(begin(), end())`.
       /// @return The number of `char_t` elements in the string.
-      size_type size() const noexcept {return chars_.size();}
+      size_type size() const noexcept {return length();}
       /// @}
       
       /// @name Public Methods
@@ -825,7 +825,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Appends a substring [`pos`, `pos` + `count`) of `str`.
       /// @remarks If the requested substring lasts past the end of the string, or if `count == npos`, the appended substring is [`pos`, size()).
-      /// @remarks If `pos > str.size()`, `std::out_of_range` is thrown.
+      /// @remarks If `pos > str.length()`, `std::out_of_range` is thrown.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
@@ -838,13 +838,13 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Appends a substring [`pos`, `pos` + `count`) of `str`.
       /// @remarks If the requested substring lasts past the end of the string, or if `count == npos`, the appended substring is [`pos`, size()).
-      /// @remarks If `pos > str.size()`, `std::out_of_range` is thrown.
+      /// @remarks If `pos > str.length()`, `std::out_of_range` is thrown.
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(const basic_string_builder & str, size_type pos, size_type count) {
         if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (pos > str.size() || pos + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (pos > str.length() || pos + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.append(str.chars_, pos, count);
         return *this;
       }
@@ -1026,8 +1026,8 @@ namespace xtd {
       /// * Zero if both character sequences compare equivalent.
       /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
       /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-      /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
-      /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+      /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
+      /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
       /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
       /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
       /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
@@ -1051,8 +1051,8 @@ namespace xtd {
       /// * Zero if both character sequences compare equivalent.
       /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
       /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-      /// * If `count1 > size() - pos1`, the first substring is [`pos1`, size()).
-      /// * If `count2 > str.size() - pos2`, the second substring is [`pos2`, `str.size()`).
+      /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
+      /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
       /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
       /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
       /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
@@ -1160,7 +1160,7 @@ namespace xtd {
       /// @remarks For example, your code could populate a xtd::text::basic_string_builder object with a large number of characters then use the xtd::text::basic_string_builder::copy_to method to copy small, successive pieces of the xtd::text::basic_string_builder object to an array where the pieces are processed. When all the data in the xtd::text::basic_string_builder object is processed, the size of the xtd::text::basic_string_builder object is set to zero and the cycle is repeated.
       void copy_to(xtd::size source_index, xtd::array<value_type>& destination, xtd::size destination_index, xtd::size destination_count) const {
         if (source_index > length() || source_index + destination_count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (destination_index >= destination.size() || destination_index + destination_count > destination.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (destination_index >= destination.length() || destination_index + destination_count > destination.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         copy(destination.data() + destination_index, destination_count, source_index);
       }
       
@@ -1681,7 +1681,7 @@ namespace xtd {
       basic_string_builder& insert(size_type index, const basic_string_builder & str, size_type s_index, size_type count) {
         if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (s_index > str.size() || s_index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (s_index > str.length() || s_index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.insert(index, str.chars_, s_index, count);
         return *this;
       }
@@ -1696,7 +1696,7 @@ namespace xtd {
       /// @brief Inserts characters into the string.
       /// @param pos The iterator before which the characters will be inserted.
       /// @param ch The character to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
+      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts character `ch` before the character pointed by `pos`.
       iterator insert(const_iterator pos, value_type ch) {return insert(pos, 1, ch);}
@@ -1704,7 +1704,7 @@ namespace xtd {
       /// @param pos The iterator before which the characters will be inserted.
       /// @param count The number of characters to insert.
       /// @param ch The character to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
+      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts `count` copies of character `ch` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, size_type count, value_type ch) {
@@ -1716,7 +1716,7 @@ namespace xtd {
       /// @param pos The iterator before which the characters will be inserted.
       /// @param first The firs position of range defining characters to insert.
       /// @param last The last position of range defining characters to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
+      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts characters from the range [`first`, `last`) before the element (if any) pointed by `pos`, as if by `insert(pos - begin(), basic_string(first, last, get_allocator()))`.
       /// @remarks This overload does not participate in overload resolution if input_iterator_t does not satisfy [LegacyInputIterator](https://en.cppreference.com/w/cpp/named_req/InputIterator).
@@ -1729,7 +1729,7 @@ namespace xtd {
       /// @brief Inserts characters into the string.
       /// @param pos The iterator before which the characters will be inserted.
       /// @param ilist The [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) to insert the characters from
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.size() == 0`)
+      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {
@@ -1831,10 +1831,10 @@ namespace xtd {
       /// @param str The string to use for replacement.
       /// @param pos2 The start of the substring to replace with.
       /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.size())`) of `str`.
+      /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.length())`) of `str`.
       basic_string_builder& replace(size_type pos, size_type count, const basic_string_builder & str, size_type pos2) {
         if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (pos2 > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (pos2 > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, str, pos2);
         return *this;
       }
@@ -1845,10 +1845,10 @@ namespace xtd {
       /// @param pos2 The start of the substring to replace with.
       /// @param count2 The number of characters to replace with.
       /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.size())`) of `str`.
+      /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.length())`) of `str`.
       basic_string_builder& replace(size_type pos, size_type count, const basic_string_builder & str, size_type pos2, size_type count2) {
         if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (pos2 > str.size() || pos2 + count2 > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (pos2 > str.length() || pos2 + count2 > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, str, pos2, count2);
         return *this;
       }
@@ -2312,7 +2312,7 @@ namespace xtd {
       /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
       /// @param os The character output stream.
       /// @param str The string to be inserted.
-      /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+      /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
       /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
       /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
       /// @todo uncomment following line and remove the next.
@@ -2321,7 +2321,7 @@ namespace xtd {
       /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
       /// @param os The character output stream.
       /// @param str The string to be inserted.
-      /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.size())`.
+      /// @remarks Then inserts each character from the resulting sequence `seq` (the contents of `str` plus padding) to the output stream `os` as if by calling `os.rdbuf()->sputn(seq, n)`, where n is `std::max(os.width(), str.length())`.
       /// @remarks Finally, calls `os.width(0)` to cancel the effects of std::setw, if any.
       /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
       friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string_builder & str) {return stream << xtd::basic_string<xtd::wchar>(str.chars()).chars();}
