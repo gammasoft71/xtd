@@ -386,7 +386,7 @@ status_bar& status_bar::is_system_status_bar(bool value) {
 
 void status_bar::fill() {
   /*
-  if (data_->panels.size() == 0) return;
+  if (data_->panels.count() == 0) return;
   suspend_layout();
   controls().clear();
   data_->spring_panels.clear();
@@ -395,7 +395,7 @@ void status_bar::fill() {
   if (!is_system_status_bar()) std::reverse(reversed_panels.begin(), reversed_panels.end());
   if (!is_system_status_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
-  for (size_t index = 0; index < reversed_panels.size(); ++index) {
+  for (size_t index = 0; index < reversed_panels.count(); ++index) {
     auto& button_item = reversed_panels[index].get();
     intptr control_handle = 0;
     if (is_system_status_bar()) {
@@ -499,14 +499,14 @@ void status_bar::wnd_proc(message& message) {
 
 void status_bar::resize_spring_panels() {
   /*
-  if (data_->spring_panels.size()) {
+  if (data_->spring_panels.count()) {
     auto remaining_size = is_horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
     for (auto status_bar_panel : data_->status_bar_panels) {
       if (status_bar_panel->style() != status_bar_panel_style::stretchable_separator && status_bar_panel->visible())
         remaining_size -= is_horizontal() ? status_bar_panel->size().width : status_bar_panel->size().height;
     }
   
-    auto stretchable_size = remaining_size / as<int32>(data_->spring_panels.size());
+    auto stretchable_size = remaining_size / as<int32>(data_->spring_panels.count());
     for (auto stretchable_separator : data_->spring_panels) {
       auto default_stretchable_size = (is_horizontal() ? image_size().width : image_size().height) / 2;
       if (stretchable_size > default_stretchable_size) {
