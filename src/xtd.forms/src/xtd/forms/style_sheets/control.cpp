@@ -262,7 +262,7 @@ xtd::size style_sheets::control::get_hash_code() const noexcept {
 
 xtd::drawing::color style_sheets::control::get_solid_background_color() const noexcept {
   auto back_color = background_color();
-  if (back_color == drawing::color::empty && background_image().colors().size() >= 1) back_color = background_image().colors()[0];
+  if (back_color == drawing::color::empty && background_image().colors().length() >= 1) back_color = background_image().colors()[0];
   if (back_color == drawing::color::empty) back_color = style_sheets::style_sheet::current_style_sheet().system_colors().button_face();
   if (back_color.a() != 255) back_color = style_sheets::style_sheet::current_style_sheet().system_colors().control();
   if (back_color.a() != 255) back_color = style_sheets::style_sheet::current_style_sheet().system_colors().window();
