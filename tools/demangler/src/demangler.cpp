@@ -67,10 +67,10 @@ namespace demangler {
     
     static auto process_arguments(const array<string>& args, string& input_file, string& output_file, bool& quiet, bool& show_version, bool& show_help) noexcept -> bool {
       try {
-        for (auto index = 0_z; index < args.size(); index += 1)
+        for (auto index = 0_z; index < args.length(); index += 1)
           if (args[index] == "-v" || args[index] == "--version") show_version = true;
           else if (args[index] == "-h" || args[index] == "--help") show_help = true;
-          else if ((args[index] == "-o" || args[index] == "--output") && index < args.size()) output_file = args[++index];
+          else if ((args[index] == "-o" || args[index] == "--output") && index < args.length()) output_file = args[++index];
           else if ((args[index] == "-q" || args[index] == "--quiet")) quiet = true;
           else input_file = args[index];
           
