@@ -37,7 +37,7 @@ protected:
   
   void on_mouse_move(const mouse_event_args& e) override {
     if (mouse_location != xtd::drawing::point::empty && top_level_control().has_value())
-      top_level_control().value().get().size(top_level_control().value().get().size() + xtd::drawing::size(e.location() - mouse_location));
+      top_level_control().value().get().size(top_level_control()->get().size() + xtd::drawing::size(e.location() - mouse_location));
   };
   
   
