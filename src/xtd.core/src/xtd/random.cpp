@@ -6,7 +6,7 @@
 using namespace xtd;
 using namespace xtd::helpers;
 
-random::random() : generator_(static_cast<uint32>(environment::tick_count().count())) {
+random::random() : generator_(static_cast<uint32>(environment::tick_count().ticks())) {
 }
 
 random::random(uint32 seed) : generator_(seed + 1) {
