@@ -580,8 +580,8 @@ namespace xtdc_command {
     
     bool is_path_already_exist_and_not_empty(const xtd::string& path) const {
       if (!xtd::io::directory::exists(path_)) return false;
-      if (xtd::io::directory::get_file_system_entries(path_).size() == 0) return false;
-      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::get_file_system_entries(path_).size() == 1 && xtd::io::directory::get_file_system_entries(path_, ".DS_Store").size() == 1) return false;
+      if (xtd::io::directory::get_file_system_entries(path_).length() == 0) return false;
+      if (xtd::environment::os_version().is_macos_platform() && xtd::io::directory::get_file_system_entries(path_).length() == 1 && xtd::io::directory::get_file_system_entries(path_, ".DS_Store").length() == 1) return false;
       return true;
     }
     
