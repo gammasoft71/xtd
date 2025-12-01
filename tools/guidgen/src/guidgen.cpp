@@ -60,10 +60,10 @@ namespace guidgen {
     
     static auto process_arguments(const array<string>& args, string& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
       try {
-        for (auto index = 0_z; index < args.size(); index += 1) {
+        for (auto index = 0_z; index < args.length(); index += 1) {
           static constexpr auto format_types = {"N", "D", "B", "P", "X"};
-          if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.size() && std::count(format_types.begin(), format_types.end(), args[index + 1])) format = args[index++ + 1];
-          else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.size() && string::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done
+          if ((args[index] == "-f" || args[index] == "--format") && index + 1 < args.length() && std::count(format_types.begin(), format_types.end(), args[index + 1])) format = args[index++ + 1];
+          else if ((args[index] == "-c" || args[index] == "--count") && index + 1 < args.length() && string::try_parse(args[index++ + 1], count) && count >= 1) ; // nothing to do all is done
           else if (args[index] == "-v" || args[index] == "--version") show_version = true;
           else if (args[index] == "-h" || args[index] == "--help") show_help = true;
           else return false;
