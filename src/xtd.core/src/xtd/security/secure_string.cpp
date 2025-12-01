@@ -38,8 +38,12 @@ intptr secure_string::data() const noexcept {
   return reinterpret_cast<intptr>(data_.data());
 }
 
-size_t secure_string::size() const noexcept {
+size_t secure_string::length() const noexcept {
   return data_.length();
+}
+
+size_t secure_string::size() const noexcept {
+  return length();
 }
 
 std::string secure_string::to_unsecure_string() const noexcept {

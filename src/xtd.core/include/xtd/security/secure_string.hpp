@@ -50,6 +50,10 @@ namespace xtd {
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
+      size_t length() const noexcept;
+      
+      /// @brief Gets underlying encrypted data size.
+      /// @return The underlying encrypted data size.
       size_t size() const noexcept;
       /// @}
       
