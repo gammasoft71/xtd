@@ -51,10 +51,7 @@ namespace {
   
   string generate_operating_system_string_report(int32 indent) {
     auto to_time_since_boot_string = [](auto time_since_boot) {
-      auto days = std::chrono::duration_cast<std::chrono::days>(time_since_boot);
-      auto hours = std::chrono::duration_cast<std::chrono::hours>(time_since_boot);
-      auto minutes = std::chrono::duration_cast<std::chrono::minutes>(time_since_boot);
-      return string::format("{}{}{}", days.count() ? string::format("{} days, ", days.count()) : string::empty_string, days.count() || hours.count()  % 24 ? string::format("{} hours, ", hours.count() % 24) : string::empty_string, string::format("{} minutes", minutes.count() % 60));
+      return string::format("{}{}{}", time_since_boot.days() ? string::format("{} days, ", time_since_boot.days()) : string::empty_string, time_since_boot.days() || time_since_boot.hours()  % 24 ? string::format("{} hours, ", time_since_boot.hours() % 24) : string::empty_string, string::format("{} minutes", time_since_boot.minutes() % 60));
     };
     string report = string::format("{}Operating System{}", indent_string(indent), environment::new_line());
     auto operating_system = system_report::operating_system();
