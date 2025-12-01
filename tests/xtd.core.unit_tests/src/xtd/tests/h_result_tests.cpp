@@ -1901,7 +1901,7 @@ namespace xtd::tests {
     }
     
     void test_method_(get_h_results) {
-      assert::are_equal(117_z, h_result::get_h_results().size());
+      assert::are_equal(117_z, h_result::get_h_results().length());
       collection_assert::contains({h_result::ERROR_FILE_INVALID}, h_result::get_h_results());
       collection_assert::contains({h_result::MSEE_E_ASSEMBLYLOADINPROGRESS}, h_result::get_h_results());
       collection_assert::contains({h_result::ERROR_UNRECOGNIZED_VOLUME}, h_result::get_h_results());
