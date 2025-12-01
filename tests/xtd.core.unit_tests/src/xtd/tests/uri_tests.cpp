@@ -263,35 +263,35 @@ namespace xtd::tests {
     
     void test_method_(segments) {
       auto segments = uri("  Http://yfi:MyPass@www.Contoso.com:8080/C:a ta%20log/ShowNew.htm?Date=ToDay#bOdy  ").segments();
-      assert::are_equal(3_z, segments.size());
+      assert::are_equal(3_z, segments.length());
       assert::are_equal("/", segments[0]);
       assert::are_equal("C:a%20ta%20log/", segments[1]);
       assert::are_equal("ShowNew.htm", segments[2]);
       
       segments = uri("http://www.contoso.com/index.htm?date=today").segments();
-      assert::are_equal(2_z, segments.size());
+      assert::are_equal(2_z, segments.length());
       assert::are_equal("/", segments[0]);
       assert::are_equal("index.htm", segments[1]);
       
       segments = uri("http://www.contoso.com/index.htm#main").segments();
-      assert::are_equal(2_z, segments.size());
+      assert::are_equal(2_z, segments.length());
       assert::are_equal("/", segments[0]);
       assert::are_equal("index.htm", segments[1]);
       
       segments = uri("mailto:user@contoso.com?subject=uri").segments();
-      assert::are_equal(0ul, segments.size());
+      assert::are_equal(0ul, segments.length());
       
       segments = uri("nntp://news.contoso.com/123456@contoso.com").segments();
-      assert::are_equal(2_z, segments.size());
+      assert::are_equal(2_z, segments.length());
       assert::are_equal("/", segments[0]);
       assert::are_equal("123456@contoso.com", segments[1]);
       
       segments = uri("news:123456@contoso.com").segments();
-      assert::are_equal(1_z, segments.size());
+      assert::are_equal(1_z, segments.length());
       assert::are_equal("123456@contoso.com", segments[0]);
       
       segments = uri("file://server/filename.ext").segments();
-      assert::are_equal(2_z, segments.size());
+      assert::are_equal(2_z, segments.length());
       assert::are_equal("/", segments[0]);
       assert::are_equal("filename.ext", segments[1]);
     }
