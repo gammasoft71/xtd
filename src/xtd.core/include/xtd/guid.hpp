@@ -8,7 +8,6 @@
 #include "iformatable.hpp"
 #include "object.hpp"
 #include "string.hpp"
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -216,7 +215,7 @@ namespace xtd {
     /// @}
     
   private:
-    std::vector<xtd::byte> data_ = std::vector<xtd::byte>(16);
+    xtd::array<xtd::byte> data_ = xtd::array<xtd::byte>(16);
   };
 }
 
