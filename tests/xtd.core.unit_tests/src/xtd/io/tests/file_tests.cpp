@@ -231,12 +231,12 @@ namespace xtd::io::tests {
     
     void test_method_(read_all_bytes) {
       std::ofstream existing_file(test_file_name, std::ios::binary | std::ios::out);
-      std::array<unsigned char, 4> b = {0x42, 0x24, 0x12, 0x84};
-      existing_file.write(reinterpret_cast<char*>(b.data()), b.size());
+      array<byte> b = {0x42, 0x24, 0x12, 0x84};
+      existing_file.write(reinterpret_cast<char*>(b.data()), b.length());
       existing_file.close();
       auto bytes = file::read_all_bytes(test_file_name);
       
-      assert::are_equal(4_z, bytes.size());
+      assert::are_equal(4_z, bytes.length());
       assert::are_equal(0x42, bytes[0]);
       assert::are_equal(0x24, bytes[1]);
       assert::are_equal(0x12, bytes[2]);
@@ -252,7 +252,7 @@ namespace xtd::io::tests {
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
       auto lines = file::read_all_lines(test_file_name);
-      assert::are_equal(3_z, lines.size());
+      assert::are_equal(3_z, lines.length());
       assert::are_equal("Line 1", lines[0]);
       assert::are_equal("Line 2", lines[1]);
       assert::are_equal("Line 3", lines[2]);
