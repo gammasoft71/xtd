@@ -117,7 +117,7 @@ namespace xtd {
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
     size_t count() const noexcept {return data_->functions.size();}
-
+    
     /// @brief Gets the delegates array
     /// @return The delegates array.
     const function_collection& functions() const {return data_->functions;}
@@ -568,7 +568,7 @@ namespace xtd {
     /// @brief Return the size of invocation list.
     /// @return Return the size of invocation list.
     size_t count() const noexcept {return data_->functions.size() + data_->no_arguments_functions.size();}
-
+    
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
     const no_arguments_function_collection& no_arguments_functions() const {return data_->no_arguments_functions;}
