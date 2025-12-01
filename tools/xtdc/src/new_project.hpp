@@ -102,14 +102,14 @@ namespace xtdc_command {
     }
     
     static bool process_arguments(const xtd::array<xtd::string>& args, bool& show_help, xtd::string& type, xtd::string& name, xtd::string& path, xtd::string& sdk, xtd::string& invalid_option) {
-      for (size_t i = 1; i < args.size(); i += 1) {
+      for (size_t i = 1; i < args.length(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-n" || args[i] == "--name") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.length()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.length()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
