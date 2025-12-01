@@ -75,10 +75,10 @@ std::optional<drawing::image> picture_box::image() const noexcept {
 }
 
 picture_box& picture_box::image(const drawing::image& image) {
-  if (data_->image.has_value() && data_->image.value().handle() == image.handle()) return *this;
+  if (data_->image.has_value() && data_->image->handle() == image.handle()) return *this;
   if (image == drawing::image::empty) return this->image(nullptr);
   data_->image = image;
-  if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), data_->image.value());
+  if (is_handle_created() && control_appearance() == forms::control_appearance::system) native::picture_box::image(handle(), *data_->image);
   refresh();
   return *this;
 }
@@ -253,15 +253,15 @@ xtd::uptr<xtd::object> picture_box::clone() const {
 }
 
 drawing::size picture_box::measure_control() const noexcept {
-  auto size = data_->image.has_value() ? data_->image.value().size() : drawing::size(0, 0);
+  auto size = data_->image.has_value() ? data_->image->size() : drawing::size(0, 0);
   /// @todo add location
   return size;
 }
 
 void picture_box::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  if (data_->image.has_value() && data_->image.value() != drawing::image::empty && control_appearance() == forms::control_appearance::system)
-    native::picture_box::image(handle(), data_->image.value());
+  if (data_->image.has_value() && *data_->image != drawing::image::empty && control_appearance() == forms::control_appearance::system)
+    native::picture_box::image(handle(), *data_->image);
 }
 
 void picture_box::on_paint(paint_event_args& e) {
