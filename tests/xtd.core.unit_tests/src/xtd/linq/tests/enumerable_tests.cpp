@@ -71,8 +71,8 @@ namespace xtd::linq::tests {
     
     void test_method_(as_enumerable_with_iterator_and_length) {
       auto s = array {1, 2, 3};
-      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.data(), s.size()));
-      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.data(), s.size()));
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.data(), s.length()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.data(), s.length()));
     }
     
     void test_method_(as_enumerable_with_native_array) {
