@@ -22,8 +22,8 @@ namespace xtdc_command {
     
     static xtd::string get_project_name_from_path(const xtd::string& path) noexcept {
       auto directories = get_project_full_path_from_path(path).split(xtd::io::path::directory_separator_char());
-      if (directories.size() == 0) return "";
-      return directories[directories.size() - 1];
+      if (directories.length() == 0) return "";
+      return directories[directories.length() - 1];
     }
     
     static void write_error(const string& message) {
