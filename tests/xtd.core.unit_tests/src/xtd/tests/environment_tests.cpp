@@ -139,7 +139,7 @@ namespace xtd::tests {
     
     void test_method_(tick_count) {
       // There is no unit test possible.
-      assert::is_not_zero(environment::tick_count().count());
+      assert::is_not_zero(environment::tick_count().ticks());
     }
     
     void test_method_(toolkit) {
@@ -196,7 +196,7 @@ namespace xtd::tests {
     
     void test_method_(get_command_line_args) {
       auto args = environment::get_command_line_args();
-      assert::is_greater_or_equal(args.size(), 1_z);
+      assert::is_greater_or_equal(args.length(), 1_z);
       string_assert::contains("xtd.core.unit_tests", args[0]);
     }
     

@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_collection.hpp"
+#include "collections/specialized/string_dictionary.hpp"
 #include "collections/generic/list.hpp"
 #include "diagnostics/stack_trace.hpp"
 #include "io/directory.hpp"
@@ -29,6 +30,7 @@
 #include "static.hpp"
 #include "target_id.hpp"
 #include "target_type.hpp"
+#include "time_span.hpp"
 #include "toolkit.hpp"
 #include "string.hpp"
 #include "version.hpp"
@@ -38,9 +40,6 @@
 #include "internal/__compiler_version.hpp"
 #include "internal/__cpp_language.hpp"
 #undef __XTD_CORE_INTERNAL__
-#include <map>
-#include <cstdlib>
-#include <vector>
 
 /// @cond
 // The following constant is defined in the file xtd_command.cmake.
@@ -477,12 +476,14 @@ namespace xtd {
     
     /// @brief Gets the number of milliseconds elapsed since the system started.
     /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
-    static std::chrono::milliseconds tick_count();
+    static xtd::time_span tick_count();
+    /// @brief Gets the number of milliseconds elapsed since the system started.
+    /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
+    static xtd::int32 tick_count_milliseconds();
     
     /// @brief Gets the current toolkit version.
     /// @return The current toolkit version.
     static xtd::toolkit toolkit_version();
-    
     
     /// @brief Gets a value indicating whether the current user is an administrator.
     /// @return bool `true` if the current user is an administrator; otherwise, `false`.
@@ -595,16 +596,16 @@ namespace xtd {
     
     /// @brief Retrieves all environment variable names and their values from the current process.
     /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
-    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
-    static std::map<std::string, std::string>& get_environment_variables();
+    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
+    static xtd::collections::specialized::string_dictionary get_environment_variables();
     
     /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
     /// @param target One of the environment_variable_target values.
     /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
     /// @exception std::invalid_argument target is not a valid environment_variable_target value.
-    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
+    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned xtd::collections::specialized::string_dictionary.
     /// @todo Add xtd::registry and uncomment lines.
-    static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target);
+    static xtd::collections::specialized::string_dictionary get_environment_variables(environment_variable_target target);
     
     /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
     /// @param folder One of enumeration values that identifies a system special folder.

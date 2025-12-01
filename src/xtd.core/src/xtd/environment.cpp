@@ -34,6 +34,7 @@ struct __update__macos_path__ {
 } __updmacpath__;
 
 using namespace xtd;
+using namespace xtd::collections::specialized;
 using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::threading;
@@ -267,8 +268,12 @@ size_t environment::system_page_size() {
   return native::environment::get_system_page_size();
 }
 
-std::chrono::milliseconds environment::tick_count() {
-  return std::chrono::milliseconds(native::environment::get_tick_count());
+time_span environment::tick_count() {
+  return time_span::from_milliseconds(native::environment::get_tick_count());
+}
+
+int32 environment::tick_count_milliseconds() {
+  return native::environment::get_tick_count();
 }
 
 toolkit environment::toolkit_version() {
@@ -349,13 +354,16 @@ string environment::get_environment_variable(const string& variable, environment
   return native::environment::get_environment_variable(variable, as<int32>(target));
 }
 
-std::map<std::string, std::string>& environment::get_environment_variables() {
+string_dictionary environment::get_environment_variables() {
   return get_environment_variables(environment_variable_target::process);
 }
 
-std::map<std::string, std::string>& environment::get_environment_variables(environment_variable_target target) {
+string_dictionary environment::get_environment_variables(environment_variable_target target) {
   if (!enum_object<>::is_defined<environment_variable_target>(target)) throw_helper::throws(exception_case::argument, "Invalid environment variable target value");
-  return native::environment::get_environment_variables(as<int32>(target));
+  auto result = string_dictionary {};
+  for (auto [key, value] : native::environment::get_environment_variables(as<int32>(target)))
+    result[key] = value;
+  return result;
 }
 
 xtd::collections::specialized::string_collection environment::get_logical_drives() {
