@@ -25,7 +25,7 @@ namespace xtd {
   template<>
   xtd::string to_string(const point& p, const xtd::string& fmt, const std::locale& loc) {
     if (fmt.empty()) return format("({}, {})", p.x, p.y);
-    if (fmt.size() > 1) throw_helper::throws(exception_case::format, "Format can contains only one character.");
+    if (fmt.length() > 1) throw_helper::throws(exception_case::format, "Format can contains only one character.");
     
     switch (fmt[0]) {
       case 'l': return format("(x={}, y={})", p.x, p.y);
