@@ -122,7 +122,7 @@ Inheritance diagram for xtd::security::secure_string:</div>
 <tr class="memitem:af4743aacabc28a32af082daf78162f74" id="r_af4743aacabc28a32af082daf78162f74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4743aacabc28a32af082daf78162f74">secure_string</a> ()=default</td></tr>
 <tr class="memdesc:af4743aacabc28a32af082daf78162f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1security_1_1secure__string.html" title="Represents text that should be kept confidential, such as by deleting it from computer memory when no...">xtd::security::secure_string</a> class.  <br /></td></tr>
 <tr class="separator:af4743aacabc28a32af082daf78162f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13d6f5c254c83deef71114bd247b0b0b" id="r_a13d6f5c254c83deef71114bd247b0b0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13d6f5c254c83deef71114bd247b0b0b">secure_string</a> (const char value[], size_t <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>)</td></tr>
+<tr class="memitem:a13d6f5c254c83deef71114bd247b0b0b" id="r_a13d6f5c254c83deef71114bd247b0b0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13d6f5c254c83deef71114bd247b0b0b">secure_string</a> (const char value[], size_t <a class="el" href="#a8e5ac76934a352a3a8bb37197a648573">length</a>)</td></tr>
 <tr class="memdesc:a13d6f5c254c83deef71114bd247b0b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This API supports the product infrastructure and is not intended to be used directly from your code. Initializes a new instance of the <a class="el" href="classxtd_1_1security_1_1secure__string.html" title="Represents text that should be kept confidential, such as by deleting it from computer memory when no...">xtd::security::secure_string</a> class from a subarray of System.Char objects.  <br /></td></tr>
 <tr class="separator:a13d6f5c254c83deef71114bd247b0b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -130,6 +130,9 @@ Inheritance diagram for xtd::security::secure_string:</div>
 <tr class="memitem:a7191b1593b0fa32cfdb70f87a0957b80" id="r_a7191b1593b0fa32cfdb70f87a0957b80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7191b1593b0fa32cfdb70f87a0957b80">data</a> () const noexcept</td></tr>
 <tr class="memdesc:a7191b1593b0fa32cfdb70f87a0957b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets underlying encrypted data.  <br /></td></tr>
 <tr class="separator:a7191b1593b0fa32cfdb70f87a0957b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5ac76934a352a3a8bb37197a648573" id="r_a8e5ac76934a352a3a8bb37197a648573"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5ac76934a352a3a8bb37197a648573">length</a> () const noexcept</td></tr>
+<tr class="memdesc:a8e5ac76934a352a3a8bb37197a648573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets underlying encrypted data size.  <br /></td></tr>
+<tr class="separator:a8e5ac76934a352a3a8bb37197a648573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79dacaa6c5246779d3f9d0f8362ec9a7" id="r_a79dacaa6c5246779d3f9d0f8362ec9a7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79dacaa6c5246779d3f9d0f8362ec9a7">size</a> () const noexcept</td></tr>
 <tr class="memdesc:a79dacaa6c5246779d3f9d0f8362ec9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets underlying encrypted data size.  <br /></td></tr>
 <tr class="separator:a79dacaa6c5246779d3f9d0f8362ec9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,6 +260,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a8e5ac76934a352a3a8bb37197a648573" name="a8e5ac76934a352a3a8bb37197a648573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5ac76934a352a3a8bb37197a648573">&#9670;&#160;</a></span>length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t xtd::security::secure_string::length </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets underlying encrypted data size. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying encrypted data size. </dd></dl>
+
+</div>
+</div>
 <a id="a79dacaa6c5246779d3f9d0f8362ec9a7" name="a79dacaa6c5246779d3f9d0f8362ec9a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79dacaa6c5246779d3f9d0f8362ec9a7">&#9670;&#160;</a></span>size()</h2>
 
@@ -320,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2025 21:54:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 1 2025 15:52:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

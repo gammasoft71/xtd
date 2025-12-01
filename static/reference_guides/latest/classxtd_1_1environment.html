@@ -155,7 +155,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line">      <span class="comment">//  &lt;-- Keep this information secure! --&gt;</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;system_directory: {}&quot;</span>, <a class="code hl_function" href="#af82b8fefb32163815705541690241316">environment::system_directory</a>());</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;tick_count: {}&quot;</span>, <a class="code hl_function" href="#a07572149363f8941095c1d6f6e40e6c5">environment::tick_count</a>());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;tick_count: {}&quot;</span>, <a class="code hl_function" href="#a7d32a8c5fc1d896456fa36dc0f69778a">environment::tick_count</a>());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">//  &lt;-- Keep this information secure! --&gt;</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;user_domain_name: {}&quot;</span>, <a class="code hl_function" href="#ab1f4d86e50fec7536b42c2d6745c1234">environment::user_domain_name</a>());</div>
@@ -179,7 +179,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;get_environment_variable: {}  My temporary directory is {}.&quot;</span>, nl,  <a class="code hl_function" href="#ad648ff7c477babf9f30a3058048c8e7d">environment::get_environment_variable</a>(<a class="code hl_function" href="#a7eb460253deb58efb3bfdfbb71904119">environment::os_version</a>().is_windows_platform() ? <span class="stringliteral">&quot;TEMP&quot;</span> : <span class="stringliteral">&quot;TMPDIR&quot;</span>));</div>
 <div class="line">      </div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;get_environment_variables: &quot;</span>);</div>
-<div class="line">      <span class="keyword">auto</span> environment_variables = <a class="code hl_function" href="#a5c67466099588c734c8fcf782dd69fb3">environment::get_environment_variables</a>();</div>
+<div class="line">      <span class="keyword">auto</span> environment_variables = <a class="code hl_function" href="#a592bd3fe2776e01f0329296951f222c1">environment::get_environment_variables</a>();</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> de : environment_variables)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot; {} = {1}&quot;</span>, de.first, de.second);</div>
 <div class="line">        </div>
@@ -229,16 +229,16 @@ Inheritance diagram for xtd::environment:</div>
 <div class="line"><span class="comment">// GetLogicalDrives: /, /dev, /System/Volumes/Hardware, /System/Volumes/Update, /System/Volumes/Preboot, /System/Volumes/xarts, /System/Volumes/VM, /System/Volumes/Data, /System/Volumes/iSCPreboot, /System/Volumes/Data/home, /Volumes/Data</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_a43fec4215eab2492f3bc1bf81117dd09"><div class="ttname"><a href="classxtd_1_1basic__string.html#a43fec4215eab2492f3bc1bf81117dd09">xtd::basic_string&lt; char &gt;::join</a></div><div class="ttdeci">static basic_string join(const basic_string &amp;separator, const collection_t &amp;values) noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1702</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a07572149363f8941095c1d6f6e40e6c5"><div class="ttname"><a href="#a07572149363f8941095c1d6f6e40e6c5">xtd::environment::tick_count</a></div><div class="ttdeci">static std::chrono::milliseconds tick_count()</div><div class="ttdoc">Gets the number of milliseconds elapsed since the system started.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a28abf9d82f89b2204989edd55ebcdefd"><div class="ttname"><a href="#a28abf9d82f89b2204989edd55ebcdefd">xtd::environment::working_set</a></div><div class="ttdeci">static int64 working_set()</div><div class="ttdoc">Gets the amount of physical memory mapped to the process context.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a28d302ff14e862d79bb3afe199a63154"><div class="ttname"><a href="#a28d302ff14e862d79bb3afe199a63154">xtd::environment::has_shutdown_started</a></div><div class="ttdeci">static bool has_shutdown_started()</div><div class="ttdoc">Gets a value that indicates whether the current application domain is shutting down.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a2c205815fdf41c2df70f767b024e29b2"><div class="ttname"><a href="#a2c205815fdf41c2df70f767b024e29b2">xtd::environment::expand_environment_variables</a></div><div class="ttdeci">static xtd::string expand_environment_variables(const xtd::string &amp;name)</div><div class="ttdoc">Replaces the name of each environment variable embedded in the specified string with the string equiv...</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a2f1d16b679af00c6022ab3240abf0d9f"><div class="ttname"><a href="#a2f1d16b679af00c6022ab3240abf0d9f">xtd::environment::get_command_line_args</a></div><div class="ttdeci">static xtd::argument_collection get_command_line_args()</div><div class="ttdoc">Returns a string array containing the command-line arguments for the current process.</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a2fb2b59eded52f8745b88b44ae9e7057a54b53072540eeeb8f8e9343e71f28176"><div class="ttname"><a href="#a2fb2b59eded52f8745b88b44ae9e7057a54b53072540eeeb8f8e9343e71f28176">xtd::environment::special_folder::system</a></div><div class="ttdeci">@ system</div><div class="ttdoc">The System directory.</div><div class="ttdef"><b>Definition</b> environment.hpp:205</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a2fb2b59eded52f8745b88b44ae9e7057a54b53072540eeeb8f8e9343e71f28176"><div class="ttname"><a href="#a2fb2b59eded52f8745b88b44ae9e7057a54b53072540eeeb8f8e9343e71f28176">xtd::environment::special_folder::system</a></div><div class="ttdeci">@ system</div><div class="ttdoc">The System directory.</div><div class="ttdef"><b>Definition</b> environment.hpp:204</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a39afeb06cb3718feac7140072d766adf"><div class="ttname"><a href="#a39afeb06cb3718feac7140072d766adf">xtd::environment::command_line</a></div><div class="ttdeci">static xtd::string command_line() noexcept</div><div class="ttdoc">Gets the command line for this process.</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a465e71972e122d4bbdaa943ae02d4cd8"><div class="ttname"><a href="#a465e71972e122d4bbdaa943ae02d4cd8">xtd::environment::get_folder_path</a></div><div class="ttdeci">static xtd::string get_folder_path(environment::special_folder folder)</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:613</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a5c67466099588c734c8fcf782dd69fb3"><div class="ttname"><a href="#a5c67466099588c734c8fcf782dd69fb3">xtd::environment::get_environment_variables</a></div><div class="ttdeci">static std::map&lt; std::string, std::string &gt; &amp; get_environment_variables()</div><div class="ttdoc">Retrieves all environment variable names and their values from the current process.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a465e71972e122d4bbdaa943ae02d4cd8"><div class="ttname"><a href="#a465e71972e122d4bbdaa943ae02d4cd8">xtd::environment::get_folder_path</a></div><div class="ttdeci">static xtd::string get_folder_path(environment::special_folder folder)</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:614</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a592bd3fe2776e01f0329296951f222c1"><div class="ttname"><a href="#a592bd3fe2776e01f0329296951f222c1">xtd::environment::get_environment_variables</a></div><div class="ttdeci">static xtd::collections::specialized::string_dictionary get_environment_variables()</div><div class="ttdoc">Retrieves all environment variable names and their values from the current process.</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a7d32a8c5fc1d896456fa36dc0f69778a"><div class="ttname"><a href="#a7d32a8c5fc1d896456fa36dc0f69778a">xtd::environment::tick_count</a></div><div class="ttdeci">static xtd::time_span tick_count()</div><div class="ttdoc">Gets the number of milliseconds elapsed since the system started.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a7eb460253deb58efb3bfdfbb71904119"><div class="ttname"><a href="#a7eb460253deb58efb3bfdfbb71904119">xtd::environment::os_version</a></div><div class="ttdeci">static xtd::operating_system os_version() noexcept</div><div class="ttdoc">Gets an xtd::operating_system object that contains the current platform identifier and version number...</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a95710298a3355ab9a82ec5b8ced853ca"><div class="ttname"><a href="#a95710298a3355ab9a82ec5b8ced853ca">xtd::environment::stack_trace</a></div><div class="ttdeci">static xtd::string stack_trace()</div><div class="ttdoc">Gets current stack trace information.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a9a22d1d7f5d11c5779496ed1fc2a2feb"><div class="ttname"><a href="#a9a22d1d7f5d11c5779496ed1fc2a2feb">xtd::environment::user_name</a></div><div class="ttdeci">static xtd::string user_name()</div><div class="ttdoc">Gets the user name of the person who is currently logged on to the operating system.</div></div>
@@ -494,9 +494,12 @@ Public Types</h2></td></tr>
 <tr class="memitem:a48fc0632092489172357d69eb5bbccd4" id="r_a48fc0632092489172357d69eb5bbccd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1target__type.html">xtd::target_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48fc0632092489172357d69eb5bbccd4">target_type</a> () noexcept</td></tr>
 <tr class="memdesc:a48fc0632092489172357d69eb5bbccd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1target__type.html" title="Represents information about target type, such as the target identifier. This class cannot be inherit...">xtd::target_type</a> object that contains the current target identifier.  <br /></td></tr>
 <tr class="separator:a48fc0632092489172357d69eb5bbccd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07572149363f8941095c1d6f6e40e6c5" id="r_a07572149363f8941095c1d6f6e40e6c5"><td class="memItemLeft" align="right" valign="top">static std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07572149363f8941095c1d6f6e40e6c5">tick_count</a> ()</td></tr>
-<tr class="memdesc:a07572149363f8941095c1d6f6e40e6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of milliseconds elapsed since the system started.  <br /></td></tr>
-<tr class="separator:a07572149363f8941095c1d6f6e40e6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d32a8c5fc1d896456fa36dc0f69778a" id="r_a7d32a8c5fc1d896456fa36dc0f69778a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d32a8c5fc1d896456fa36dc0f69778a">tick_count</a> ()</td></tr>
+<tr class="memdesc:a7d32a8c5fc1d896456fa36dc0f69778a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of milliseconds elapsed since the system started.  <br /></td></tr>
+<tr class="separator:a7d32a8c5fc1d896456fa36dc0f69778a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9445aacf4e9979cf207ee232dd89e55e" id="r_a9445aacf4e9979cf207ee232dd89e55e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9445aacf4e9979cf207ee232dd89e55e">tick_count_milliseconds</a> ()</td></tr>
+<tr class="memdesc:a9445aacf4e9979cf207ee232dd89e55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of milliseconds elapsed since the system started.  <br /></td></tr>
+<tr class="separator:a9445aacf4e9979cf207ee232dd89e55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1b3782de0cd7c310f06d141efcdb57d" id="r_af1b3782de0cd7c310f06d141efcdb57d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1toolkit.html">xtd::toolkit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1b3782de0cd7c310f06d141efcdb57d">toolkit_version</a> ()</td></tr>
 <tr class="memdesc:af1b3782de0cd7c310f06d141efcdb57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current toolkit version.  <br /></td></tr>
 <tr class="separator:af1b3782de0cd7c310f06d141efcdb57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -547,12 +550,12 @@ Public Types</h2></td></tr>
 <tr class="memitem:ac97e8ed400b4ec2d4cdf75b23bcb55a6" id="r_ac97e8ed400b4ec2d4cdf75b23bcb55a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97e8ed400b4ec2d4cdf75b23bcb55a6">get_environment_variable</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;variable, <a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">environment_variable_target</a> target)</td></tr>
 <tr class="memdesc:ac97e8ed400b4ec2d4cdf75b23bcb55a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
 <tr class="separator:ac97e8ed400b4ec2d4cdf75b23bcb55a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c67466099588c734c8fcf782dd69fb3" id="r_a5c67466099588c734c8fcf782dd69fb3"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c67466099588c734c8fcf782dd69fb3">get_environment_variables</a> ()</td></tr>
-<tr class="memdesc:a5c67466099588c734c8fcf782dd69fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process.  <br /></td></tr>
-<tr class="separator:a5c67466099588c734c8fcf782dd69fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cf49cf7414cbbf14805c54118ebc531" id="r_a9cf49cf7414cbbf14805c54118ebc531"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cf49cf7414cbbf14805c54118ebc531">get_environment_variables</a> (<a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">environment_variable_target</a> target)</td></tr>
-<tr class="memdesc:a9cf49cf7414cbbf14805c54118ebc531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
-<tr class="separator:a9cf49cf7414cbbf14805c54118ebc531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592bd3fe2776e01f0329296951f222c1" id="r_a592bd3fe2776e01f0329296951f222c1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a592bd3fe2776e01f0329296951f222c1">get_environment_variables</a> ()</td></tr>
+<tr class="memdesc:a592bd3fe2776e01f0329296951f222c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process.  <br /></td></tr>
+<tr class="separator:a592bd3fe2776e01f0329296951f222c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7202abfe166dff112f4c7b09708eaeb" id="r_ae7202abfe166dff112f4c7b09708eaeb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7202abfe166dff112f4c7b09708eaeb">get_environment_variables</a> (<a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">environment_variable_target</a> target)</td></tr>
+<tr class="memdesc:ae7202abfe166dff112f4c7b09708eaeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.  <br /></td></tr>
+<tr class="separator:ae7202abfe166dff112f4c7b09708eaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a465e71972e122d4bbdaa943ae02d4cd8" id="r_a465e71972e122d4bbdaa943ae02d4cd8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a465e71972e122d4bbdaa943ae02d4cd8">get_folder_path</a> (<a class="el" href="#a2fb2b59eded52f8745b88b44ae9e7057">environment::special_folder</a> folder)</td></tr>
 <tr class="memdesc:a465e71972e122d4bbdaa943ae02d4cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the system special folder that is identified by the specified enumeration.  <br /></td></tr>
 <tr class="separator:a465e71972e122d4bbdaa943ae02d4cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1629,8 +1632,8 @@ template&lt;class char_t, class traits_t&gt; </div>
 
 </div>
 </div>
-<a id="a07572149363f8941095c1d6f6e40e6c5" name="a07572149363f8941095c1d6f6e40e6c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07572149363f8941095c1d6f6e40e6c5">&#9670;&#160;</a></span>tick_count()</h2>
+<a id="a7d32a8c5fc1d896456fa36dc0f69778a" name="a7d32a8c5fc1d896456fa36dc0f69778a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d32a8c5fc1d896456fa36dc0f69778a">&#9670;&#160;</a></span>tick_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1639,7 +1642,35 @@ template&lt;class char_t, class traits_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::chrono::milliseconds xtd::environment::tick_count </td>
+          <td class="memname">static <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> xtd::environment::tick_count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of milliseconds elapsed since the system started. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started. </dd></dl>
+
+</div>
+</div>
+<a id="a9445aacf4e9979cf207ee232dd89e55e" name="a9445aacf4e9979cf207ee232dd89e55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9445aacf4e9979cf207ee232dd89e55e">&#9670;&#160;</a></span>tick_count_milliseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> xtd::environment::tick_count_milliseconds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -2126,7 +2157,7 @@ Command line arguments are delimited by spaces. You can use double quotation mar
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> The value of the environment variable specified by variable, or empty "" if the environment variable is not found. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The get_environment_variable(xtd::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the xtd::environment::get_environment_variable(xtd::string, xtd::environment_variable_target) method with a target value of <a class="el" href="group__xtd__core.html#gga83c52fe4c5b8fa21b9bf0bba21b0634da5075140835d0bc504791c76b04c33d2b" title="The environment variable is stored or retrieved from the environment block associated with the curren...">xtd::environment_variable_target::process</a>. </dd>
 <dd>
-To retrieve all environment variables along with their values, call the <a class="el" href="#a5c67466099588c734c8fcf782dd69fb3" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
+To retrieve all environment variables along with their values, call the <a class="el" href="#a592bd3fe2776e01f0329296951f222c1" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
 <dd>
 Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows. </dd></dl>
 
@@ -2174,15 +2205,15 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To retrieve all environment variables along with their values, call the <a class="el" href="#a5c67466099588c734c8fcf782dd69fb3" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>To retrieve all environment variables along with their values, call the <a class="el" href="#a592bd3fe2776e01f0329296951f222c1" title="Retrieves all environment variable names and their values from the current process.">xtd::environment::get_environment_variables</a> method. </dd>
 <dd>
 Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Todo</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
 </div>
-<a id="a5c67466099588c734c8fcf782dd69fb3" name="a5c67466099588c734c8fcf782dd69fb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c67466099588c734c8fcf782dd69fb3">&#9670;&#160;</a></span>get_environment_variables() <span class="overload">[1/2]</span></h2>
+<a id="a592bd3fe2776e01f0329296951f222c1" name="a592bd3fe2776e01f0329296951f222c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592bd3fe2776e01f0329296951f222c1">&#9670;&#160;</a></span>get_environment_variables() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2191,7 +2222,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::map&lt; std::string, std::string &gt; &amp; xtd::environment::get_environment_variables </td>
+          <td class="memname">static <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a> xtd::environment::get_environment_variables </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -2206,12 +2237,12 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 
 <p>Retrieves all environment variable names and their values from the current process. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned std::map. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7" title="Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be st...">xtd::collections::specialized::string_dictionary</a>. </dd></dl>
 
 </div>
 </div>
-<a id="a9cf49cf7414cbbf14805c54118ebc531" name="a9cf49cf7414cbbf14805c54118ebc531"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cf49cf7414cbbf14805c54118ebc531">&#9670;&#160;</a></span>get_environment_variables() <span class="overload">[2/2]</span></h2>
+<a id="ae7202abfe166dff112f4c7b09708eaeb" name="ae7202abfe166dff112f4c7b09708eaeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7202abfe166dff112f4c7b09708eaeb">&#9670;&#160;</a></span>get_environment_variables() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2220,7 +2251,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::map&lt; std::string, std::string &gt; &amp; xtd::environment::get_environment_variables </td>
+          <td class="memname">static <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7">xtd::collections::specialized::string_dictionary</a> xtd::environment::get_environment_variables </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#ga83c52fe4c5b8fa21b9bf0bba21b0634d">environment_variable_target</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
           <td></td>
@@ -2247,7 +2278,7 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned std::map. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The names and values for the environment variables are stored as key-value pairs in the returned <a class="el" href="group__specialized__collections.html#ga5b478839a9ae14f854103b14c7951dc7" title="Represents a xtd::collections::generic::dictionary with the key and the value strongly typed to be st...">xtd::collections::specialized::string_dictionary</a>. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo</a></b></dt><dd>Add xtd::registry and uncomment lines. </dd></dl>
 
 </div>
@@ -2640,7 +2671,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2025 21:54:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 1 2025 15:52:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
