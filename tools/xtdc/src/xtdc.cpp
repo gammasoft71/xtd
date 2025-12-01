@@ -18,7 +18,7 @@ namespace xtdc_command {
     static auto main() {
       console::output_code_page(65001);
       
-      if (environment::get_command_line_args().size() == 0) {
+      if (environment::get_command_line_args().length() == 0) {
         write_line_error("No parameters.");
         console::write_line(string::join("\n", get_help()));
         return EXIT_FAILURE;
@@ -815,7 +815,7 @@ namespace xtdc_command {
     
     static bool process_xtdc_arguments(bool& show_floppy, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
       auto args = environment::get_command_line_args();
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.length(); i += 1) {
         if (args[i] == "-f" || args[i] == "--floppy")
           show_floppy = true;
         else if (args[i] == "-h" || args[i] == "--help")
@@ -826,7 +826,7 @@ namespace xtdc_command {
           show_version = true;
         else if (!args[i].starts_with('-')) {
           command_args = {args.begin() + i, args.end()};
-          i = args.size();
+          i = args.length();
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
           return false;
