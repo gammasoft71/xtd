@@ -80,7 +80,7 @@ namespace xtdc_gui {
     static xtd::string get_description(const xtd::string& readme_md) {
       if (!xtd::io::file::exists(readme_md)) return "";
       auto content = xtd::io::file::read_all_lines(readme_md);
-      if (content.size() < 2) return "";
+      if (content.length() < 2) return "";
       return content[2];
     }
     
