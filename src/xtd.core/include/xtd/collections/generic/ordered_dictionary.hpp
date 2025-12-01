@@ -295,7 +295,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         auto copy_to(xtd::array<value_type>& array, xtd::size array_index) const -> void override {
-          if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           for (const auto& item : self_)
             array[array_index++] = item;
         }
