@@ -13,7 +13,7 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(random_tests) {
     void test_method_(default_constructor) {
-      assert::are_equal(std::default_random_engine {static_cast<uint32>(environment::tick_count().count())}, xtd::random {}.generator());
+      assert::are_equal(std::default_random_engine {static_cast<uint32>(environment::tick_count().ticks())}, xtd::random {}.generator());
     }
     
     void test_method_(constructor_with_seed) {
