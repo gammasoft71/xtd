@@ -288,11 +288,11 @@ namespace xtd::tests {
     
     void test_method_(size) {
       auto items = array<int> {};
-      assert::is_zero(items.size());
+      assert::is_zero(items.length());
       items.resize(3);
-      assert::are_equal(3_z, items.size());
+      assert::are_equal(3_z, items.length());
       items.resize(50);
-      assert::are_equal(50_z, items.size());
+      assert::are_equal(50_z, items.length());
     }
     
     void test_method_(contains) {
