@@ -13,7 +13,7 @@ namespace xtd::net::tests {
       network_credential nc;
       assert::is_empty(nc.user_name());
       assert::is_empty(nc.password());
-      assert::is_zero(nc.secure_password().size());
+      assert::is_zero(nc.secure_password().length());
       assert::is_empty(nc.domain());
     }
     
