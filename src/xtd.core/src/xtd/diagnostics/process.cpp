@@ -292,11 +292,11 @@ bool process::start() {
       }
       if (process.data_->handle == 0) throw_helper::throws(exception_case::invalid_operation, "The system cannot find the file specified");
       process.data_->allow_to_continue = true;
-      debug::write_line_if(show_debug_process().enabled(), string::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle, string::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : string::format(" {}", process.start_info().arguments())), process.data_->start_time, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time.ticks_duration())).count() % 1000000));
+      debug::write_line_if(show_debug_process().enabled(), string::format("process::start [handle={}, command_line={}, start_time={:o}, started]", process.data_->handle, string::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : string::format(" {}", process.start_info().arguments())), process.data_->start_time));
       auto exit_code = 0;
       process.data_->exit_code = native::process::wait(process.data_->handle.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time = date_time::now();
-      debug::write_line_if(show_debug_process().enabled(), string::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle, process.data_->exit_time, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time.ticks_duration()).count() % 1000000, process.data_->exit_code));
+      debug::write_line_if(show_debug_process().enabled(), string::format("process::start [handle={}, exit_time={:o}, exit_code={}, exited]", process.data_->handle, process.data_->exit_time, process.data_->exit_code));
       if (!process.data_->exit_code.has_value() || process.data_->exit_code == -1 || process.data_->exit_code == 0x00ffffff) throw_helper::throws(exception_case::invalid_operation, "The system cannot find the file specified");
       process.on_exited();
     } catch (...) {
