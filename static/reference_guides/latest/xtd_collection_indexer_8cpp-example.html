@@ -100,54 +100,202 @@ $(function(){ initResizable(false); });
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> items = array {10, 20, 30};</div>
+<div class="line">  <span class="keyword">auto</span> a = array {1, 2, 3, 4, 5};</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-1] = {}&quot;</span>, a[-1]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-1] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[0] = {}&quot;</span>, a[0]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[1] = {}&quot;</span>, a[1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[2] = {}&quot;</span>, a[2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[3] = {}&quot;</span>, a[3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[4] = {}&quot;</span>, a[4]);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[5] = {}&quot;</span>, a[5]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[5] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println();</div>
 <div class="line">  </div>
-<div class="line">  println(items[0]);          <span class="comment">// print 10</span></div>
-<div class="line">  println(items[1]);          <span class="comment">// print 20</span></div>
-<div class="line">  println(items[2]);          <span class="comment">// print 30</span></div>
-<div class="line">  <span class="comment">//println(items[3]);        // exception index_out_of_range_exception</span></div>
-<div class="line">  <span class="comment">//println(items[0 - 1]);    // exception index_out_of_range_exception</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[bpos-1] = {}&quot;</span>, a[bpos-1]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[bpos-1] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[bpos]   = {}&quot;</span>, a[bpos]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[bpos+1] = {}&quot;</span>, a[bpos+1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[bpos+2] = {}&quot;</span>, a[bpos+2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[bpos+3] = {}&quot;</span>, a[bpos+3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[bpos+4] = {}&quot;</span>, a[bpos+4]);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[bpos+5] = {}&quot;</span>, a[bpos+5]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[bpos+5] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println();</div>
 <div class="line">  </div>
-<div class="line">  println(items[~1_z]);       <span class="comment">// print 30</span></div>
-<div class="line">  println(items[~2_z]);       <span class="comment">// print 20</span></div>
-<div class="line">  println(items[~3_z]);       <span class="comment">// print 10</span></div>
-<div class="line">  <span class="comment">//println(items[~4_z]);     // exception index_out_of_range_exception</span></div>
-<div class="line">  <span class="comment">//println(items[~0_z]);     // exception index_out_of_range_exception</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[~0] = {}&quot;</span>, a[~0]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[~0] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[~1] = {}&quot;</span>, a[~1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[~2] = {}&quot;</span>, a[~2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[~3] = {}&quot;</span>, a[~3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[~4] = {}&quot;</span>, a[~4]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[~5] = {}&quot;</span>, a[~5]);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[~6] = {}&quot;</span>, a[~6]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[~6] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println();</div>
 <div class="line">  </div>
-<div class="line">  println(items[bpos]);       <span class="comment">// print 10</span></div>
-<div class="line">  println(items[bpos + 1]);   <span class="comment">// print 20</span></div>
-<div class="line">  println(items[bpos + 2]);   <span class="comment">// print 30</span></div>
-<div class="line">  <span class="comment">//println(items[bpos + 3]); // exception index_out_of_range_exception</span></div>
-<div class="line">  <span class="comment">//println(items[bpos - 1]); // exception index_out_of_range_exception</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-1] = {}&quot;</span>, a[-1]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-1] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[-2] = {}&quot;</span>, a[-2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[-3] = {}&quot;</span>, a[-3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[-4] = {}&quot;</span>, a[-4]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[-5] = {}&quot;</span>, a[-5]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[-6] = {}&quot;</span>, a[-6]);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-7] = {}&quot;</span>, a[-7]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[-7] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println();</div>
 <div class="line">  </div>
-<div class="line">  println(items[epos]);       <span class="comment">// print 30</span></div>
-<div class="line">  println(items[epos - 1]);   <span class="comment">// print 20</span></div>
-<div class="line">  println(items[epos - 2]);   <span class="comment">// print 10</span></div>
-<div class="line">  <span class="comment">//println(items[epos - 3]); // exception index_out_of_range_exception</span></div>
-<div class="line">  <span class="comment">//println(items[epos + 1]); // exception index_out_of_range_exception</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[epos+1] = {}&quot;</span>, a[epos+1]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[epos+1] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[epos]   = {}&quot;</span>, a[epos]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[epos-1] = {}&quot;</span>, a[epos-1]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[epos-2] = {}&quot;</span>, a[epos-2]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[epos-3] = {}&quot;</span>, a[epos-3]);</div>
+<div class="line">  println(<span class="stringliteral">&quot;a[epos-4] = {}&quot;</span>, a[epos-4]);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[epos-5] = {}&quot;</span>, a[epos-5]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[epos-5] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
+<div class="line">  println();</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">//println(items[npos]);     // exception index_out_of_range_exception</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[npos] = {}&quot;</span>, a[npos]);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> index_out_of_range_exception&amp; e) {</div>
+<div class="line">    println(<span class="stringliteral">&quot;a[npos] Throws {}&quot;</span>, e);</div>
+<div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 10</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 30</span></div>
-<div class="line"><span class="comment">// 30</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 10</span></div>
-<div class="line"><span class="comment">// 10</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 30</span></div>
-<div class="line"><span class="comment">// 30</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 10</span></div>
+<div class="line"><span class="comment">// a[-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 8</span></div>
+<div class="line"><span class="comment">// a[0] = 1</span></div>
+<div class="line"><span class="comment">// a[1] = 2</span></div>
+<div class="line"><span class="comment">// a[2] = 3</span></div>
+<div class="line"><span class="comment">// a[3] = 4</span></div>
+<div class="line"><span class="comment">// a[4] = 5</span></div>
+<div class="line"><span class="comment">// a[5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 18</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// a[bpos-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 25</span></div>
+<div class="line"><span class="comment">// a[bpos]   = 1</span></div>
+<div class="line"><span class="comment">// a[bpos+1] = 2</span></div>
+<div class="line"><span class="comment">// a[bpos+2] = 3</span></div>
+<div class="line"><span class="comment">// a[bpos+3] = 4</span></div>
+<div class="line"><span class="comment">// a[bpos+4] = 5</span></div>
+<div class="line"><span class="comment">// a[bpos+5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 35</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// a[~0] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 42</span></div>
+<div class="line"><span class="comment">// a[~1] = 5</span></div>
+<div class="line"><span class="comment">// a[~2] = 4</span></div>
+<div class="line"><span class="comment">// a[~3] = 3</span></div>
+<div class="line"><span class="comment">// a[~4] = 2</span></div>
+<div class="line"><span class="comment">// a[~5] = 1</span></div>
+<div class="line"><span class="comment">// a[~6] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 52</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// a[-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 59</span></div>
+<div class="line"><span class="comment">// a[-2] = 5</span></div>
+<div class="line"><span class="comment">// a[-3] = 4</span></div>
+<div class="line"><span class="comment">// a[-4] = 3</span></div>
+<div class="line"><span class="comment">// a[-5] = 2</span></div>
+<div class="line"><span class="comment">// a[-6] = 1</span></div>
+<div class="line"><span class="comment">// a[-7] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 69</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// a[epos+1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 76</span></div>
+<div class="line"><span class="comment">// a[epos]   = 5</span></div>
+<div class="line"><span class="comment">// a[epos-1] = 4</span></div>
+<div class="line"><span class="comment">// a[epos-2] = 3</span></div>
+<div class="line"><span class="comment">// a[epos-3] = 2</span></div>
+<div class="line"><span class="comment">// a[epos-4] = 1</span></div>
+<div class="line"><span class="comment">// a[epos-5] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 86</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// a[npos] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.</span></div>
+<div class="line"><span class="comment">//    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&amp;) in index_out_of_range_exception.hpp:line 26</span></div>
+<div class="line"><span class="comment">//    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&amp;) in throw_helper.cpp:line 80</span></div>
+<div class="line"><span class="comment">//    at xtd::basic_array&lt;int, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in basic_array.hpp:line 0</span></div>
+<div class="line"><span class="comment">//    at xtd::array&lt;int, 1ul, std::allocator&lt;int&gt;&gt;::operator[](unsigned long) in array_1.hpp:line 249</span></div>
+<div class="line"><span class="comment">//    at main in xtd_collection_indexer.cpp:line 93</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 1 2025 20:27:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Dec 2 2025 21:22:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
