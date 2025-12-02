@@ -96,12 +96,30 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(21, inners.back());
     }
     
+    void test_method_(items_const) {
+      const auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(items.items()));
+      
+      const auto& inners = items.items();
+      assert::are_equal(84, inners.front());
+      assert::are_equal(21, inners.back());
+    }
+
     void test_method_(begin) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
       assert::are_equal(84, *items.begin());
     }
     
+    void test_method_(capaciy) {
+      auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(3_z, items.size());
+      
+      items.reserve(42);
+      assert::is_greater_or_equal(items.capacity(), 42_z);
+      assert::are_equal(3_z, items.size());
+    }
+
     void test_method_(cbegin) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
@@ -125,206 +143,6 @@ namespace xtd::collections::generic::helpers::tests {
     }
 
     /*
-    void test_method_(const_back) {
-      assert::are_equal(21, raw_queue {84, 42, 21}.back());
-      assert::throws<std::out_of_range>([] {raw_queue<int> {}.back();});
-    }
-    
-    void test_method_(const_back_with_bool) {
-      assert::are_equal(true, raw_queue {true, false, true}.back());
-      assert::throws<std::out_of_range>([] {raw_queue<bool> {}.back();});
-    }
-    
-    void test_method_(back) {
-      auto items = raw_queue {84, 42, 21};
-      items.back() = 5;
-      assert::are_equal(5, items.back());
-      auto empty_items = raw_queue<int> {};
-      assert::throws<std::out_of_range>([&] {empty_items.back() = 5;});
-    }
-    
-    void test_method_(back_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.back() = false;
-      assert::are_equal(false, items.back());
-      auto empty_items = raw_queue<bool> {};
-      assert::throws<std::out_of_range>([&] {empty_items.back() = false;});
-    }
-    
-    void test_method_(begin_with_bool) {
-      auto items = raw_queue {true, false, true, false};
-      assert::are_equal(typeof_<bool>(), typeof_(*items.begin()));
-      assert::are_equal(true, *items.begin());
-    }
-    
-    void test_method_(capaciy) {
-      auto items = raw_queue {84, 42, 21};
-      assert::are_equal(3_z, items.size());
-    
-      items.reserve(42);
-      assert::is_greater_or_equal(items.capacity(), 42_z);
-      assert::are_equal(3_z, items.size());
-    }
-    
-    void test_method_(capaciy_with_bool) {
-      auto items = raw_queue {true, false, true};
-      assert::are_equal(3_z, items.size());
-    
-      items.reserve(42);
-      assert::is_greater_or_equal(items.capacity(), 42_z);
-      assert::are_equal(3_z, items.size());
-    }
-    
-    void test_method_(crbegin) {
-      auto items = raw_queue {84, 42, 21};
-      assert::are_equal(typeof_<int>(), typeof_(*items.crbegin()));
-      assert::are_equal(21, *items.crbegin());
-    }
-    
-    void test_method_(crbegin_with_bool) {
-      auto items = raw_queue {true, false, true, false};
-      assert::are_equal(typeof_<bool>(), typeof_(*items.crbegin()));
-      assert::are_equal(false, *items.crbegin());
-    }
-    
-    void test_method_(crend) {
-      auto items = raw_queue {84, 42, 21};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<std::out_of_range>([&] {*items.crend();});
-      assert::is_true(items.crend() == items.crbegin() + items.size());
-    }
-    
-    void test_method_(crend_with_bool) {
-      auto items = raw_queue {true, false, true, false};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<std::out_of_range>([&] {*items.crend();});
-      assert::is_true(items.crend() == items.crbegin() + items.size());
-    }
-    
-    void test_method_(data) {
-      auto items = raw_queue {84, 42, 21};
-    
-      auto ptr = items.data();
-      assert::are_equal(84, *ptr);
-      assert::are_equal(42, *(ptr + 1));
-      assert::are_equal(21, *(ptr + 2));
-    
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::are_equal(0, *(ptr + 3));
-    
-      *(ptr) = 63;
-      *(ptr + 1) = 31;
-      *(ptr + 2) = 10;
-    
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      // *(ptr + 3) = 6;
-    
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
-    void test_method_(data_with_bool) {
-      auto items = raw_queue {true, false, true};
-    
-      auto ptr = items.data();
-      assert::are_equal(true, *ptr);
-      assert::are_equal(false, *(ptr + 1));
-      assert::are_equal(true, *(ptr + 2));
-    
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::are_equal(false, *(ptr + 3));
-    
-      *(ptr) = false;
-      *(ptr + 1) = true;
-      *(ptr + 2) = false;
-    
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      // *(ptr + 3) = true;
-    
-      collection_assert::are_equal({false, true, false}, items);
-    }
-    
-    void test_method_(empty) {
-      assert::is_true(raw_queue<int> {}.empty());
-      assert::is_false(raw_queue<int> {42}.empty());
-    
-      auto items = raw_queue<int> {};
-      assert::is_true(items.empty());
-      items.reserve(42);
-      assert::is_true(items.empty());
-      items.resize(1);
-      assert::is_false(items.empty());
-      items.resize(0);
-      assert::is_true(items.empty());
-      items.push_back(42);
-      assert::is_false(items.empty());
-    }
-    
-    void test_method_(empty_with_bool) {
-      assert::is_true(raw_queue<bool> {}.empty());
-      assert::is_false(raw_queue<bool> {true}.empty());
-    
-      auto items = raw_queue<int> {};
-      assert::is_true(items.empty());
-      items.reserve(42);
-      assert::is_true(items.empty());
-      items.resize(1);
-      assert::is_false(items.empty());
-      items.resize(0);
-      assert::is_true(items.empty());
-      items.push_back(true);
-      assert::is_false(items.empty());
-    }
-    
-    void test_method_(end) {
-      auto items = raw_queue {84, 42, 21};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<std::out_of_range>([&] {*items.end();});
-      assert::is_true(items.end() == items.begin() + items.size());
-    }
-    
-    void test_method_(end_with_bool) {
-      auto items = raw_queue {true, false, true};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<std::out_of_range>([&] {*items.end();});
-      assert::is_true(items.end() == items.begin() + items.size());
-    }
-    
-    void test_method_(front_const) {
-      auto items = raw_queue {84, 42, 21};
-      assert::are_equal(84, items.front());
-      assert::throws<std::out_of_range>([&] {raw_queue<int> {}.front();});
-    }
-    
-    void test_method_(front_const_with_bool) {
-      auto items = raw_queue {true, false, true};
-      assert::are_equal(true, items.front());
-      assert::throws<std::out_of_range>([&] {raw_queue<bool> {}.front();});
-    }
-    
-    void test_method_(front) {
-      auto items = raw_queue {84, 42, 21};
-      items.front() = 10;
-      assert::are_equal(10, items.front());
-      auto empty_items = raw_queue<int> {};
-      assert::throws<std::out_of_range>([&] {empty_items.front() = 10;});
-    }
-    
-    void test_method_(front_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.front() = false;
-      assert::are_equal(false, items.front());
-      auto empty_items = raw_queue<bool> {};
-      assert::throws<std::out_of_range>([&] {empty_items.front() = true;});
-    }
-    
-    void test_method_(items_const) {
-      assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(raw_queue {1, 2, 3, 4, 5}.items()));
-      collection_assert::are_equal({1, 2, 3, 4, 5}, raw_queue {1, 2, 3, 4, 5}.items());
-    }
     
     void test_method_(items_const_with_bool) {
       assert::are_equal(typeof_<raw_queue<bool>::base_type>(), typeof_(raw_queue {true, false, true, false}.items()));
