@@ -577,7 +577,7 @@ void thread::thread_proc() {
   
   if (is_aborted()) throw_helper::throws(exception_case::thread_abort);
   if (is_aborted()) throw_helper::throws(exception_case::thread_interrupted);
-
+  
   if (!data_) return; // Only if thread destroyed before joined
   data_->state |= threading::thread_state::stopped;
   data_->end_thread_event.set();

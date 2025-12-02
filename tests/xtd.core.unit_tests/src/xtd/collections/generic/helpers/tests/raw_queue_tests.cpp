@@ -104,7 +104,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(84, inners.front());
       assert::are_equal(21, inners.back());
     }
-
+    
     void test_method_(begin) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
@@ -119,7 +119,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(cbegin) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
@@ -141,7 +141,7 @@ namespace xtd::collections::generic::helpers::tests {
       //assert::throws<std::out_of_range>([&] {*items.end();});
       assert::is_true(items.end() == items.begin() + items.size());
     }
-
+    
     /*
     
     void test_method_(items_const_with_bool) {
