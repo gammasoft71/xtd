@@ -91,16 +91,16 @@ namespace xtd::collections::generic::helpers::tests {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.size());
       assert::are_equal(3_z, items.capacity());
-
+      
       items.reserve(42);
       assert::are_equal(42_z, items.capacity());
       assert::are_equal(3_z, items.size());
-
+      
       items.shrink_to_fit();
       assert::are_equal(3_z, items.capacity());
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(items) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(items.items()));
@@ -127,7 +127,7 @@ namespace xtd::collections::generic::helpers::tests {
       items.push(21);
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(begin) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
@@ -184,7 +184,7 @@ namespace xtd::collections::generic::helpers::tests {
     }
     
     void test_method_(push_move_value) {
-      auto q = raw_queue<string>{};
+      auto q = raw_queue<string> {};
       auto s = "hello"_s;
       q.push(std::move(s));
       assert::are_equal("hello", q.back());
@@ -205,7 +205,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(42_z, items.capacity());
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(shrink_to_fit) {
       auto items = raw_queue<int> {};
       items.reserve(42);
@@ -214,7 +214,7 @@ namespace xtd::collections::generic::helpers::tests {
       items.push(21);
       assert::are_equal(42_z, items.capacity());
       assert::are_equal(3_z, items.size());
-
+      
       items.shrink_to_fit();
       assert::are_equal(3_z, items.capacity());
       assert::are_equal(3_z, items.size());
@@ -238,7 +238,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(3_z, q2.size());
       collection_assert::are_equal({84, 42, 21}, q2);
     }
-
+    
     void test_method_(base_type_cast_operator) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(static_cast<raw_queue<int>::base_type&>(items)));
@@ -256,14 +256,14 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(84, inners.front());
       assert::are_equal(21, inners.back());
     }
-
+    
     void test_method_(begin_end_on_empty_queue) {
-      auto q = raw_queue<int>{};
+      auto q = raw_queue<int> {};
       assert::are_equal(q.begin(), q.end());
     }
-
+    
     void test_method_(cbegin_cend_on_empty_queue) {
-      auto q = raw_queue<int>{};
+      auto q = raw_queue<int> {};
       assert::are_equal(q.cbegin(), q.cend());
     }
   };
