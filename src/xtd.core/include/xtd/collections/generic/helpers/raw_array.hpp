@@ -15,21 +15,16 @@ namespace xtd {
     namespace generic {
       /// @brief The xtd::collections::generic::helpers namespace contains helpers for generic collections, sush as comparer, equator an hasher structs.
       namespace helpers {
-        /// @internal
         /// @brief Internal vector-like container used as a storage backend for xtd collections.
-        ///
-        /// This class exists as a replacement for `std::vector` in xtd internals for the following reasons:
-        /// - Avoids the specialization and proxy reference issues of `std::vector<bool>`.
-        /// - Provides a unified and consistent storage type across all xtd containers (`list<type_t>`, `array<type_t>`, etc.).
-        /// - Ensures predictable behavior and simplifies LINQ integration when non-lazy enumerables need regeneration.
-        ///
-        /// Notes:
-        /// - This type is *not* intended to be part of the public xtd API.
-        /// - Do not expose `raw_array` directly in public headers.
-        /// - Safe to use without moderation inside `xtd::collections::generic::helpers` namespace.
-        ///
-        /// @tparam type_t The element type stored in the container.
-        /// @remarks Semantics are intentionally aligned with `std::vector` where possible for familiarity.
+        /// @par Header
+        /// ```cpp
+        /// #include <xtd/collections/generic/helpers/raw_queue>
+        /// ```
+        /// @par Namespace
+        /// xtd::collections::generic::helpers
+        /// @par Library
+        /// xtd.core
+        /// @ingroup xtd_core helpers_generic_collections
         template<class type_t, class allocator_t = std::allocator<type_t>>
         class raw_array {
         public:
