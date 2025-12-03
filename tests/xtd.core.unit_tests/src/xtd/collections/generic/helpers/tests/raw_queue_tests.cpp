@@ -183,6 +183,14 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(84, items.front());
     }
     
+    void test_method_(push_move_value) {
+      auto q = raw_queue<string>{};
+      auto s = "hello"_s;
+      q.push(std::move(s));
+      assert::are_equal("hello", q.back());
+      assert::is_true(s.empty() || s == "hello");
+    }
+    
     void test_method_(reserve) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.capacity());
@@ -211,212 +219,52 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(3_z, items.capacity());
       assert::are_equal(3_z, items.size());
     }
+    
+    void test_method_(equality_operator) {
+      auto q1 = raw_queue<int>(std::deque<int> {84, 42, 21});
+      auto q2 = raw_queue<int> {};
+      q2 = q1;
+      assert::are_equal(3_z, q1.size());
+      collection_assert::are_equal({84, 42, 21}, q1);
+      assert::are_equal(3_z, q2.size());
+      collection_assert::are_equal({84, 42, 21}, q2);
+    }
+    
+    void test_method_(move_equality_operator) {
+      auto q1 = raw_queue<int>(std::deque<int> {84, 42, 21});
+      auto q2 = raw_queue<int> {};
+      q2 = std::move(q1);
+      assert::is_zero(q1.size());
+      assert::are_equal(3_z, q2.size());
+      collection_assert::are_equal({84, 42, 21}, q2);
+    }
 
-    /*
-    
-    void test_method_(pop_back) {
-      auto items = raw_queue {84, 42, 21};
-      items.pop_back();
-      collection_assert::are_equal({84, 42}, items);
+    void test_method_(base_type_cast_operator) {
+      auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(static_cast<raw_queue<int>::base_type&>(items)));
+      
+      auto& inners = static_cast<raw_queue<int>::base_type&>(items);
+      assert::are_equal(84, inners.front());
+      assert::are_equal(21, inners.back());
     }
     
-    void test_method_(pop_back_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.pop_back();
-      collection_assert::are_equal({true, false}, items);
+    void test_method_(base_type_cast_operator_const) {
+      const auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(static_cast<const raw_queue<int>::base_type&>(items)));
+      
+      const auto& inners = static_cast<const raw_queue<int>::base_type&>(items);
+      assert::are_equal(84, inners.front());
+      assert::are_equal(21, inners.back());
     }
-    
-    void test_method_(push_back) {
-      auto items = raw_queue {84, 42, 21};
-      items.push_back(63);
-      collection_assert::are_equal({84, 42, 21, 63}, items);
+
+    void test_method_(begin_end_on_empty_queue) {
+      auto q = raw_queue<int>{};
+      assert::are_equal(q.begin(), q.end());
     }
-    
-    void test_method_(push_back_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.push_back(false);
-      collection_assert::are_equal({true, false, true, false}, items);
+
+    void test_method_(cbegin_cend_on_empty_queue) {
+      auto q = raw_queue<int>{};
+      assert::are_equal(q.cbegin(), q.cend());
     }
-    
-    void test_method_(push_back_with_move) {
-      auto items = raw_queue {84, 42, 21};
-      auto v = 63;
-      items.push_back(std::move(v));
-      collection_assert::are_equal({84, 42, 21, 63}, items);
-    }
-    
-    void test_method_(push_back_with_move_and_bool) {
-      auto items = raw_queue {true, false, true};
-      auto v = false;
-      items.push_back(std::move(v));
-      collection_assert::are_equal({true, false, true, false}, items);
-    }
-    
-    void test_method_(reserve) {
-      auto items = raw_queue {84, 42, 21};
-      items.reserve(42);
-      assert::is_greater_or_equal(items.capacity(), 42_z);
-    }
-    
-    void test_method_(reserve_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.reserve(42);
-      assert::is_greater_or_equal(items.capacity(), 42_z);
-    }
-    
-    void test_method_(resize) {
-      auto items = raw_queue {84, 42, 21};
-      items.resize(4);
-      collection_assert::are_equal({84, 42, 21, 0}, items);
-      items.resize(2);
-      collection_assert::are_equal({84, 42}, items);
-    }
-    
-    void test_method_(resize_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.resize(4);
-      collection_assert::are_equal({true, false, true, false}, items);
-      items.resize(2);
-      collection_assert::are_equal({true, false}, items);
-    }
-    
-    void test_method_(shrink_to_fit) {
-      auto items = raw_queue {84, 42, 21};
-      items.reserve(42);
-      items.shrink_to_fit();
-      assert::is_less(items.capacity(), 42_z);
-    }
-    
-    void test_method_(shrink_to_fit_with_bool) {
-      auto items = raw_queue {true, false, true};
-      items.reserve(42);
-      items.shrink_to_fit();
-      assert::is_less(items.capacity(), 42_z);
-    }
-    
-    void test_method_(swap) {
-      auto items1 = raw_queue {84, 42, 21};
-      auto items2 = raw_queue {63, 75, 96};
-      items1.swap(items2);
-      collection_assert::are_equal({63, 75, 96}, items1);
-      collection_assert::are_equal({84, 42, 21}, items2);
-    }
-    
-    void test_method_(swap_with_bool) {
-      auto items1 = raw_queue {true, false, true};
-      auto items2 = raw_queue {false, true, false};
-      items1.swap(items2);
-      collection_assert::are_equal({false, true, false}, items1);
-      collection_assert::are_equal({true, false, true}, items2);
-    }
-    
-    void test_method_(operator_equal) {
-      auto items1 = raw_queue {84, 42, 21};
-      auto items2 = raw_queue {63, 75, 96};
-      items1 = items2;
-      collection_assert::are_equal({63, 75, 96}, items1);
-    }
-    
-    void test_method_(operator_equal_with_bool) {
-      auto items1 = raw_queue {true, false, true};
-      auto items2 = raw_queue {false, true, false};
-      items1 = items2;
-      collection_assert::are_equal({false, true, false}, items1);
-    }
-    
-    void test_method_(operator_equal_wtih_move) {
-      auto items1 = raw_queue {84, 42, 21};
-      auto items2 = raw_queue {63, 75, 96};
-      items1 = std::move(items2);
-      collection_assert::are_equal({63, 75, 96}, items1);
-    }
-    
-    void test_method_(operator_equal_with_move_and_bool) {
-      auto items1 = raw_queue {true, false, true};
-      auto items2 = raw_queue {false, true, false};
-      items1 = std::move(items2);
-      collection_assert::are_equal({false, true, false}, items1);
-    }
-    
-    void test_method_(operator_equal_with_initializer_list) {
-      auto items1 = raw_queue {84, 42, 21};
-      auto items2 = {63, 75, 96};
-      items1 = items2;
-      collection_assert::are_equal({63, 75, 96}, items1);
-    }
-    
-    void test_method_(operator_equal_with_initializer_list_and_bool) {
-      auto items1 = raw_queue {true, false, true};
-      auto items2 = {false, true, false};
-      items1 = items2;
-      collection_assert::are_equal({false, true, false}, items1);
-    }
-    
-    void test_method_(operator_index) {
-      auto items = raw_queue {84, 42, 21};
-    
-      assert::are_equal(84, items[0]);
-      assert::are_equal(42, items[1]);
-      assert::are_equal(21, items[2]);
-      //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items[3];});
-    
-      items[0] = 63;
-      items[1] = 31;
-      items[2] = 10;
-      //assert::throws<std::out_of_range>([&] {items[3] = 5;});
-    
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
-    void test_method_(operator_index_with_epos) {
-      auto items = raw_queue {1, 2, 3, 4, 5};
-    
-      assert::are_equal(5, items[items.size() - 1]);
-      assert::are_equal(5, items[items.epos]);
-      assert::are_equal(5, items[xtd::epos]);
-    
-      items[items.epos] = 6;
-      assert::are_equal(6, items[items.size() - 1]);
-      assert::are_equal(6, items[items.epos]);
-      assert::are_equal(6, items[xtd::epos]);
-    
-      items[xtd::epos] = 7;
-      assert::are_equal(7, items[items.size() - 1]);
-      assert::are_equal(7, items[items.epos]);
-      assert::are_equal(7, items[xtd::epos]);
-    }
-    
-    void test_method_(operator_index_with_bool) {
-      auto items = raw_queue {true, false, true};
-    
-      assert::are_equal(true, items[0]);
-      assert::are_equal(false, items[1]);
-      assert::are_equal(true, items[2]);
-      //assert::throws<std::out_of_range>([&] {[[maybe_unused]] auto i = items[3];});
-    
-      items[0] = false;
-      items[1] = true;
-      items[2] = false;
-      //assert::throws<std::out_of_range>([&] {items[3] = true;});
-    
-      collection_assert::are_equal({false, true, false}, items);
-    }
-    
-    void test_method_(operator_base_type) {
-      auto items = raw_queue {84, 42, 21};
-      auto bt = raw_queue<int>::base_type {};
-      bt = items;
-      assert::are_equal(typeof_<raw_queue<int>::base_type>(), typeof_(bt));
-      collection_assert::are_equal({84, 42, 21}, bt);
-    }
-    
-    void test_method_(operator_base_type_with_bool) {
-      auto items = raw_queue {true, false, true};
-      auto bt = raw_queue<bool>::base_type {};
-      bt = items;
-      assert::are_equal(typeof_<raw_queue<bool>::base_type>(), typeof_(bt));
-      collection_assert::are_equal({1u, 0u, 1u}, bt);
-    }
-     */
   };
 }
