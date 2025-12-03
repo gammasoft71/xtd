@@ -103,7 +103,7 @@ namespace xtd {
           /// @brief Access to the underlying base queue.
           /// @return The underlying base queue.
           auto items() const noexcept -> const base_type& {return self_;}
-
+          
           /// @brief Gets the number of elements in the queue.
           /// @return The number of elements in the queue.
           auto size() const noexcept -> size_type {return base_type::c.size();}
@@ -115,15 +115,15 @@ namespace xtd {
           /// @brief Gets a const iterator to the beginning of the queue.
           /// @return Iterator to the beginning of the queue.
           auto begin() const -> const_iterator {return base_type::c.cbegin();}
-
+          
           /// @brief Gets a const iterator to the beginning of the queue.
           /// @return Iterator to the beginning of the queue.
           auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
-
+          
           /// @brief Gets a const iterator to the end of the queue.
           /// @return Iterator to the end of the queue.
           auto cend() const -> const_iterator {return base_type::c.cend();}
-
+          
           /// @brief Gets a const iterator to the end of the queue.
           /// @return Iterator to the end of the queue.
           auto end() const -> const_iterator {return base_type::c.cend();}
@@ -169,8 +169,8 @@ namespace xtd {
           /// @{
           raw_queue& operator=(const raw_queue& other) = default; ///< Copy assignment
           raw_queue& operator=(raw_queue&& other) = default; ///< Move assignment
-          operator const base_type&() const noexcept {return self_;} ///< Cast to const base_type
-          operator base_type&() noexcept {return self_;} ///< Cast to base_type
+          operator const base_type& () const noexcept {return self_;} ///< Cast to const base_type
+          operator base_type& () noexcept {return self_;} ///< Cast to base_type
           /// @}
           
         private:
