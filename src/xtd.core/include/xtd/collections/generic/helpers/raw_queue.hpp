@@ -56,9 +56,9 @@ namespace xtd {
           
           /// @name Public Properties
           
-          /// @{          
+          /// @{
           auto capacity() const noexcept -> size_type {return capacity_;}
-
+          
           auto items() const noexcept -> const base_type& {return *this;}
           auto items() noexcept -> base_type& {return *this;}
           
@@ -92,7 +92,7 @@ namespace xtd {
             if (capacity_ >= count) return;
             ensure_capacity(count);
           }
-
+          
           auto shrink_to_fit() -> void {
             base_type::c.shrink_to_fit();
             capacity_ = base_type::c.size();
