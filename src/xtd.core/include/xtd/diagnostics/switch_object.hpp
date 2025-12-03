@@ -40,13 +40,14 @@ namespace xtd {
       switch_object& operator =(const switch_object& value) = default;
       /// @endcond
       
-      /// @name Public Alias
+      /// @name Public Aliases
       
       /// @{
       /// @brief Represents the attributes collection.
       using attribute_collection = xtd::collections::specialized::string_dictionary;
       
       /// @}
+      
       /// @name Public Properties
       
       /// @{
