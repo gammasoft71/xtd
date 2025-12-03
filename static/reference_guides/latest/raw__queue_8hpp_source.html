@@ -146,42 +146,42 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          raw_queue(input_iterator_t <a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, <span class="keyword">const</span> allocator_t&amp; alloc) : base_type(<a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, alloc) {shrink_to_fit();}</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          <span class="keyword">auto</span> items() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> base_type&amp; {<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          <span class="keyword">auto</span> items() <span class="keyword">noexcept</span> -&gt; base_type&amp; {<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          <span class="keyword">auto</span> begin() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cbegin();}</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          <span class="keyword">auto</span> capacity() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; size_type {<span class="keywordflow">return</span> capacity_;}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          <span class="keyword">auto</span> cbegin() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cbegin();}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          <span class="keyword">auto</span> capacity() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; size_type {<span class="keywordflow">return</span> capacity_;}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          <span class="keyword">auto</span> items() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keyword">const</span> base_type&amp; {<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          <span class="keyword">auto</span> items() <span class="keyword">noexcept</span> -&gt; base_type&amp; {<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          <span class="keyword">auto</span> size() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; size_type {<span class="keywordflow">return</span> base_type::c.size();}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          <span class="keyword">auto</span> begin() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cbegin();}</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>          </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          <span class="keyword">auto</span> cend() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cend();}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          <span class="keyword">auto</span> cbegin() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cbegin();}</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>          </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          <span class="keyword">auto</span> end() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cend();}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          <span class="keyword">auto</span> cend() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cend();}</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>          <span class="keyword">auto</span> push(value_type&amp;&amp; value) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            base_type::push(std::move(value));</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            ensure_capacity(base_type::c.size());</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          <span class="keyword">auto</span> pop() -&gt; <span class="keywordtype">void</span> {base_type::pop();}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>          <span class="keyword">auto</span> end() <span class="keyword">const</span> -&gt; const_iterator {<span class="keywordflow">return</span> base_type::c.cend();}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>          </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          <span class="keyword">auto</span> push(value_type&amp;&amp; value) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            base_type::push(std::move(value));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            ensure_capacity(base_type::c.size());</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          <span class="keyword">auto</span> push(<span class="keyword">const</span> value_type&amp; value) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            base_type::push(value);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            ensure_capacity(base_type::c.size());</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>          }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>          <span class="keyword">auto</span> shrink_to_fit() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            base_type::c.shrink_to_fit();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            ensure_capacity(base_type::c.size());</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          <span class="keyword">auto</span> size() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; size_type {<span class="keywordflow">return</span> base_type::c.size();}</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">auto</span> reserve(size_type count) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (capacity_ &gt;= count) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            ensure_capacity(count);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          <span class="keyword">auto</span> pop() -&gt; <span class="keywordtype">void</span> {base_type::pop();}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>          </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>          <span class="keyword">auto</span> push(<span class="keyword">const</span> value_type&amp; value) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            base_type::push(value);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            ensure_capacity(base_type::c.size());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>          }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>          </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>          <span class="keyword">auto</span> reserve(size_type count) -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> (capacity_ &gt;= count) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            ensure_capacity(count);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          <span class="keyword">auto</span> shrink_to_fit() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            base_type::c.shrink_to_fit();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            capacity_ = base_type::c.size();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>          }</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>          </div>
@@ -234,7 +234,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2025 21:22:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 3 2025 19:06:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

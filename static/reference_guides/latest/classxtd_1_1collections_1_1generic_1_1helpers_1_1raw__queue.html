@@ -175,20 +175,23 @@ template&lt;class input_iterator_t, class allocator_t&gt; </td></tr>
 <tr class="separator:abedeaf847f1c6c96656eaad0bf4820f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a1ec43aea6300c975b7367ddb667ff347" id="r_a1ec43aea6300c975b7367ddb667ff347"><td class="memItemLeft" align="right" valign="top"><a id="a1ec43aea6300c975b7367ddb667ff347" name="a1ec43aea6300c975b7367ddb667ff347"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b> () const noexcept -&gt; size_type</td></tr>
+<tr class="separator:a1ec43aea6300c975b7367ddb667ff347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641760af366aa2b4fa764a1913075c6a" id="r_a641760af366aa2b4fa764a1913075c6a"><td class="memItemLeft" align="right" valign="top"><a id="a641760af366aa2b4fa764a1913075c6a" name="a641760af366aa2b4fa764a1913075c6a"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () const noexcept -&gt; const base_type &amp;</td></tr>
 <tr class="separator:a641760af366aa2b4fa764a1913075c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6551007ac22a328f275dfbd762449c" id="r_a9e6551007ac22a328f275dfbd762449c"><td class="memItemLeft" align="right" valign="top"><a id="a9e6551007ac22a328f275dfbd762449c" name="a9e6551007ac22a328f275dfbd762449c"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () noexcept -&gt; base_type &amp;</td></tr>
 <tr class="separator:a9e6551007ac22a328f275dfbd762449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a544f726df2384ca58a231b0008ed93ec" id="r_a544f726df2384ca58a231b0008ed93ec"><td class="memItemLeft" align="right" valign="top"><a id="a544f726df2384ca58a231b0008ed93ec" name="a544f726df2384ca58a231b0008ed93ec"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const noexcept -&gt; size_type</td></tr>
+<tr class="separator:a544f726df2384ca58a231b0008ed93ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Mathods</h2></td></tr>
 <tr class="memitem:af1380f94f1c599efce16c521a956bc42" id="r_af1380f94f1c599efce16c521a956bc42"><td class="memItemLeft" align="right" valign="top"><a id="af1380f94f1c599efce16c521a956bc42" name="af1380f94f1c599efce16c521a956bc42"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const -&gt; const_iterator</td></tr>
 <tr class="separator:af1380f94f1c599efce16c521a956bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ec43aea6300c975b7367ddb667ff347" id="r_a1ec43aea6300c975b7367ddb667ff347"><td class="memItemLeft" align="right" valign="top"><a id="a1ec43aea6300c975b7367ddb667ff347" name="a1ec43aea6300c975b7367ddb667ff347"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>capacity</b> () const noexcept -&gt; size_type</td></tr>
-<tr class="separator:a1ec43aea6300c975b7367ddb667ff347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8299e808bebeea195278a915dca4bda" id="r_aa8299e808bebeea195278a915dca4bda"><td class="memItemLeft" align="right" valign="top"><a id="aa8299e808bebeea195278a915dca4bda" name="aa8299e808bebeea195278a915dca4bda"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const -&gt; const_iterator</td></tr>
 <tr class="separator:aa8299e808bebeea195278a915dca4bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,15 +210,12 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> () -&gt; void
 <tr class="memitem:a5386c574baf921122efe433ee3deb905" id="r_a5386c574baf921122efe433ee3deb905"><td class="memItemLeft" align="right" valign="top"><a id="a5386c574baf921122efe433ee3deb905" name="a5386c574baf921122efe433ee3deb905"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>push</b> (const value_type &amp;value) -&gt; void</td></tr>
 <tr class="separator:a5386c574baf921122efe433ee3deb905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b471d379449be045b92b7f29141d938" id="r_a4b471d379449be045b92b7f29141d938"><td class="memItemLeft" align="right" valign="top"><a id="a4b471d379449be045b92b7f29141d938" name="a4b471d379449be045b92b7f29141d938"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>shrink_to_fit</b> () -&gt; void</td></tr>
-<tr class="separator:a4b471d379449be045b92b7f29141d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a544f726df2384ca58a231b0008ed93ec" id="r_a544f726df2384ca58a231b0008ed93ec"><td class="memItemLeft" align="right" valign="top"><a id="a544f726df2384ca58a231b0008ed93ec" name="a544f726df2384ca58a231b0008ed93ec"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const noexcept -&gt; size_type</td></tr>
-<tr class="separator:a544f726df2384ca58a231b0008ed93ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabef0443f65c366e496a2fd328b1564a" id="r_aabef0443f65c366e496a2fd328b1564a"><td class="memItemLeft" align="right" valign="top"><a id="aabef0443f65c366e496a2fd328b1564a" name="aabef0443f65c366e496a2fd328b1564a"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>reserve</b> (size_type count) -&gt; void</td></tr>
 <tr class="separator:aabef0443f65c366e496a2fd328b1564a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b471d379449be045b92b7f29141d938" id="r_a4b471d379449be045b92b7f29141d938"><td class="memItemLeft" align="right" valign="top"><a id="a4b471d379449be045b92b7f29141d938" name="a4b471d379449be045b92b7f29141d938"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>shrink_to_fit</b> () -&gt; void</td></tr>
+<tr class="separator:a4b471d379449be045b92b7f29141d938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:a4d83cdb4fc8246ee374e57afa596917d" id="r_a4d83cdb4fc8246ee374e57afa596917d"><td class="memItemLeft" align="right" valign="top"><a id="a4d83cdb4fc8246ee374e57afa596917d" name="a4d83cdb4fc8246ee374e57afa596917d"></a>
@@ -238,7 +238,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>reserve</b> (size_typ
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 2 2025 21:22:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 3 2025 19:06:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
