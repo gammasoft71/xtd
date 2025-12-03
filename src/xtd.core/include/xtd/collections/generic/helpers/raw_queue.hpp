@@ -56,17 +56,19 @@ namespace xtd {
           
           /// @name Public Properties
           
-          /// @{
+          /// @{          
+          auto capacity() const noexcept -> size_type {return capacity_;}
+
           auto items() const noexcept -> const base_type& {return *this;}
           auto items() noexcept -> base_type& {return *this;}
+          
+          auto size() const noexcept -> size_type {return base_type::c.size();}
           /// @}
           
           /// @name Public Mathods
           
           /// @{
           auto begin() const -> const_iterator {return base_type::c.cbegin();}
-          
-          auto capacity() const noexcept -> size_type {return capacity_;}
           
           auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
           
@@ -86,16 +88,14 @@ namespace xtd {
             ensure_capacity(base_type::c.size());
           }
           
-          auto shrink_to_fit() -> void {
-            base_type::c.shrink_to_fit();
-            ensure_capacity(base_type::c.size());
-          }
-          
-          auto size() const noexcept -> size_type {return base_type::c.size();}
-          
           auto reserve(size_type count) -> void {
             if (capacity_ >= count) return;
             ensure_capacity(count);
+          }
+
+          auto shrink_to_fit() -> void {
+            base_type::c.shrink_to_fit();
+            capacity_ = base_type::c.size();
           }
           /// @}
           
