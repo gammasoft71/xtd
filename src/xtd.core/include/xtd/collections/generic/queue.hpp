@@ -64,15 +64,20 @@ namespace xtd {
         queue() = default;
         /// @brief Move constructor with specified queue.
         /// @param queue The xtd::collections::generic::queue <type_t> which elements will be moved from.
-        queue(queue&& queue) = default;
+        queue(queue&& queue) {
+          data_ = std::move(queue.data_);
+          queue.data_ = new_ptr<queue_data>();
+        }
         /// @brief Default copy constructor with specified queue.
         /// @param queue The xtd::collections::generic::queue <type_t> which elements will be inserted from.
         queue(const queue& queue) = default;
         /// @brief Move constructor with specified queue.
         /// @param queue The std::queue <type_t> which elements will be moved from.
         queue(std::queue<type_t>&& queue) {
-          while (queue.size())
-            data_->items.add(queue.pop());
+          while (queue.size()) {
+            data_->items.add_last(queue.front());
+            queue.pop();
+          }
           ensure_capacity(count());
         }
         /// @brief Default copy constructor with specified queue.
@@ -218,7 +223,7 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::queue::count.
         /// @remarks To reset a xtd::collections::generic::queue <type_t> to its initial state, call the xtd::collections::generic::queue::clear method before calling xtd::collections::generic::queue::trim_excess method. Trimming an empty xtd::collections::generic::queue <type_t> sets the capacity of the xtd::collections::generic::queue <type_t> to the default capacity.
         auto trim_excess() -> void {
-          if (count() * 1. < capacity() * 0.9) trim_excess(count());
+          if (count() < static_cast<xtd::size>(capacity() * 0.9)) trim_excess(count());
         }
         
         /// @brief Sets the capacity of a xtd::collections::generic::queue <type_t> object to the specified number of entries.
@@ -258,13 +263,14 @@ namespace xtd {
       private:
         auto is_read_only() const noexcept -> bool override {return false;}
         auto is_synchronized() const noexcept -> bool override {return false;}
-        const xtd::object& sync_root() const noexcept override {return xtd::as<icollection<value_type>>(data_->items).sync_root();}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         auto add(const type_t& value) -> void override {enqueue(value);}
         auto remove(const type_t&) -> bool override {return false;}
         
         struct queue_data {
           base_type items;
           xtd::size capacity = 0;
+          xtd::object sync_root;
         };
         
         xtd::ptr<queue_data> data_ = xtd::new_ptr<queue_data>();
