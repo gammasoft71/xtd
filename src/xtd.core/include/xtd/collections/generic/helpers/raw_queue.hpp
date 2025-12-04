@@ -93,9 +93,25 @@ namespace xtd {
           /// @name Public Properties
           
           /// @{
+          /// @brief Gets a const iterator to the beginning of the queue.
+          /// @return Iterator to the beginning of the queue.
+          auto begin() const -> const_iterator {return base_type::c.cbegin();}
+          
           /// @brief Gets the reserved capacity of the queue.
           /// @return The reserved capacity of the queue.
           auto capacity() const noexcept -> size_type {return capacity_;}
+
+          /// @brief Gets a const iterator to the beginning of the queue.
+          /// @return Iterator to the beginning of the queue.
+          auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
+          
+          /// @brief Gets a const iterator to the end of the queue.
+          /// @return Iterator to the end of the queue.
+          auto cend() const -> const_iterator {return base_type::c.cend();}
+          
+          /// @brief Gets a const iterator to the end of the queue.
+          /// @return Iterator to the end of the queue.
+          auto end() const -> const_iterator {return base_type::c.cend();}
           
           /// @brief Access to the underlying base queue.
           /// @return The underlying base queue.
@@ -112,22 +128,6 @@ namespace xtd {
           /// @name Public Methods
           
           /// @{
-          /// @brief Gets a const iterator to the beginning of the queue.
-          /// @return Iterator to the beginning of the queue.
-          auto begin() const -> const_iterator {return base_type::c.cbegin();}
-          
-          /// @brief Gets a const iterator to the beginning of the queue.
-          /// @return Iterator to the beginning of the queue.
-          auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
-          
-          /// @brief Gets a const iterator to the end of the queue.
-          /// @return Iterator to the end of the queue.
-          auto cend() const -> const_iterator {return base_type::c.cend();}
-          
-          /// @brief Gets a const iterator to the end of the queue.
-          /// @return Iterator to the end of the queue.
-          auto end() const -> const_iterator {return base_type::c.cend();}
-          
           /// @brief Adds a copy of the element at the back of the queue.
           /// @param value The value to push.
           /// @remarks Capacity is automatically increased if needed.
