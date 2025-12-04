@@ -15,6 +15,7 @@ add_sources(
   "src/xtd/collections/generic/tests/linked_list_node_tests.cpp"
   "src/xtd/collections/generic/tests/linked_list_tests.cpp"
   "src/xtd/collections/generic/tests/list_tests.cpp"
+  "src/xtd/collections/generic/tests/queue_tests.cpp"
   "src/xtd/collections/tests/array_list_tests.cpp"
   "src/xtd/collections/tests/bit_array_tests.cpp"
   "src/xtd/configuration/tests/file_settings_tests.cpp"
