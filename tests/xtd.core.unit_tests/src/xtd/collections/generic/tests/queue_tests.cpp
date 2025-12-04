@@ -15,7 +15,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(value_type) {
       assert::are_equal(typeof_<int>(), typeof_<queue<int>::value_type>());
     }
-
+    
     void test_method_(base_type) {
       assert::are_equal(typeof_<linked_list<int>>(), typeof_<queue<int>::base_type > ());
     }
@@ -100,7 +100,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(begin) {
       auto items = queue {84, 42, 21};
       assert::are_equal(84, *items.begin());
@@ -148,7 +148,7 @@ namespace xtd::collections::generic::tests {
       // Is always false;
       assert::is_false(as<icollection<int>>(queue<int> {}).is_synchronized());
     }
-
+    
     void test_method_(items_const) {
       auto q = queue {1, 2, 3, 4, 5}.items();
       assert::are_equal(1, q.front());
@@ -195,7 +195,7 @@ namespace xtd::collections::generic::tests {
       dest = array<int>(3);
       assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(dest, 1);});
     }
-
+    
     void test_method_(dequeue) {
       auto items = queue {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, items);
@@ -302,7 +302,7 @@ namespace xtd::collections::generic::tests {
       items.trim_excess(10);
       assert::are_equal(10_z, items.capacity());
     }
-
+    
     void test_method_(try_dequeue) {
       auto items = queue {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, items);
@@ -341,7 +341,7 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.try_peek(item));
       assert::are_equal(0, item);
     }
-
+    
     void test_method_(cast_as_std_queue) {
       auto q = static_cast<const std::queue<int>&>(queue {1, 2, 3, 4, 5});
       assert::are_equal(1, q.front());

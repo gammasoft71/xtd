@@ -100,7 +100,7 @@ namespace xtd {
           /// @brief Gets the reserved capacity of the queue.
           /// @return The reserved capacity of the queue.
           auto capacity() const noexcept -> size_type {return capacity_;}
-
+          
           /// @brief Gets a const iterator to the beginning of the queue.
           /// @return Iterator to the beginning of the queue.
           auto cbegin() const -> const_iterator {return base_type::c.cbegin();}

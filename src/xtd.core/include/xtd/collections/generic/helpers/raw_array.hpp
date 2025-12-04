@@ -30,7 +30,7 @@ namespace xtd {
           using internal_storage_value_type = std::conditional_t<std::is_same_v<type_t, bool>, std::uint8_t, type_t>;
           using internal_storage_allocator_type = typename std::allocator_traits<allocator_t>::template rebind_alloc<internal_storage_value_type>;
           using internal_base_type = std::vector<internal_storage_value_type, internal_storage_allocator_type>;
-
+          
           class internal_iterator {
           public:
             using iterator_base_type = typename internal_base_type::iterator;
