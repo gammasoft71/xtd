@@ -182,9 +182,21 @@ class xtd::collections::generic::helpers::raw_queue&lt; type_t, container_t &gt;
 <tr class="separator:ab7a1f160d2cc4c58f0a2a7945b88381e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:af1380f94f1c599efce16c521a956bc42" id="r_af1380f94f1c599efce16c521a956bc42"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1380f94f1c599efce16c521a956bc42">begin</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
+<tr class="memdesc:af1380f94f1c599efce16c521a956bc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the beginning of the queue.  <br /></td></tr>
+<tr class="separator:af1380f94f1c599efce16c521a956bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec43aea6300c975b7367ddb667ff347" id="r_a1ec43aea6300c975b7367ddb667ff347"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec43aea6300c975b7367ddb667ff347">capacity</a> () const noexcept -&gt; <a class="el" href="#a208cd368c114e6ec3a661ac3697051fa">size_type</a></td></tr>
 <tr class="memdesc:a1ec43aea6300c975b7367ddb667ff347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reserved capacity of the queue.  <br /></td></tr>
 <tr class="separator:a1ec43aea6300c975b7367ddb667ff347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8299e808bebeea195278a915dca4bda" id="r_aa8299e808bebeea195278a915dca4bda"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8299e808bebeea195278a915dca4bda">cbegin</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
+<tr class="memdesc:aa8299e808bebeea195278a915dca4bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the beginning of the queue.  <br /></td></tr>
+<tr class="separator:aa8299e808bebeea195278a915dca4bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a210d77f72e80ddf4a9c9f4fdb7ed2e" id="r_a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a210d77f72e80ddf4a9c9f4fdb7ed2e">cend</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
+<tr class="memdesc:a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the end of the queue.  <br /></td></tr>
+<tr class="separator:a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3be9bd818f30e952f404a042648468" id="r_a7c3be9bd818f30e952f404a042648468"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3be9bd818f30e952f404a042648468">end</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
+<tr class="memdesc:a7c3be9bd818f30e952f404a042648468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the end of the queue.  <br /></td></tr>
+<tr class="separator:a7c3be9bd818f30e952f404a042648468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6551007ac22a328f275dfbd762449c" id="r_a9e6551007ac22a328f275dfbd762449c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e6551007ac22a328f275dfbd762449c">items</a> () noexcept -&gt; <a class="el" href="#a6734e22905e200e4216ca1eb85f5e171">base_type</a> &amp;</td></tr>
 <tr class="memdesc:a9e6551007ac22a328f275dfbd762449c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the underlying base queue.  <br /></td></tr>
 <tr class="separator:a9e6551007ac22a328f275dfbd762449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,18 +208,6 @@ class xtd::collections::generic::helpers::raw_queue&lt; type_t, container_t &gt;
 <tr class="separator:a544f726df2384ca58a231b0008ed93ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:af1380f94f1c599efce16c521a956bc42" id="r_af1380f94f1c599efce16c521a956bc42"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1380f94f1c599efce16c521a956bc42">begin</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
-<tr class="memdesc:af1380f94f1c599efce16c521a956bc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the beginning of the queue.  <br /></td></tr>
-<tr class="separator:af1380f94f1c599efce16c521a956bc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8299e808bebeea195278a915dca4bda" id="r_aa8299e808bebeea195278a915dca4bda"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8299e808bebeea195278a915dca4bda">cbegin</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
-<tr class="memdesc:aa8299e808bebeea195278a915dca4bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the beginning of the queue.  <br /></td></tr>
-<tr class="separator:aa8299e808bebeea195278a915dca4bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a210d77f72e80ddf4a9c9f4fdb7ed2e" id="r_a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a210d77f72e80ddf4a9c9f4fdb7ed2e">cend</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
-<tr class="memdesc:a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the end of the queue.  <br /></td></tr>
-<tr class="separator:a4a210d77f72e80ddf4a9c9f4fdb7ed2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c3be9bd818f30e952f404a042648468" id="r_a7c3be9bd818f30e952f404a042648468"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3be9bd818f30e952f404a042648468">end</a> () const -&gt; <a class="el" href="#acdee338c7431f7f1f48fd878973fcac7">const_iterator</a></td></tr>
-<tr class="memdesc:a7c3be9bd818f30e952f404a042648468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const iterator to the end of the queue.  <br /></td></tr>
-<tr class="separator:a7c3be9bd818f30e952f404a042648468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5386c574baf921122efe433ee3deb905" id="r_a5386c574baf921122efe433ee3deb905"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5386c574baf921122efe433ee3deb905">push</a> (const <a class="el" href="#ada9d2aa7885f2468f3b6020bb698eac0">value_type</a> &amp;value) -&gt; void</td></tr>
 <tr class="memdesc:a5386c574baf921122efe433ee3deb905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a copy of the element at the back of the queue.  <br /></td></tr>
 <tr class="separator:a5386c574baf921122efe433ee3deb905"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -595,126 +595,6 @@ template&lt;class allocator_t&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1ec43aea6300c975b7367ddb667ff347" name="a1ec43aea6300c975b7367ddb667ff347"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ec43aea6300c975b7367ddb667ff347">&#9670;&#160;</a></span>capacity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::capacity </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#a208cd368c114e6ec3a661ac3697051fa">size_type</a> </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the reserved capacity of the queue. </p>
-<dl class="section return"><dt>Returns</dt><dd>The reserved capacity of the queue. </dd></dl>
-
-</div>
-</div>
-<a id="a9e6551007ac22a328f275dfbd762449c" name="a9e6551007ac22a328f275dfbd762449c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e6551007ac22a328f275dfbd762449c">&#9670;&#160;</a></span>items() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::items </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="#a6734e22905e200e4216ca1eb85f5e171">base_type</a>&amp; </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Access to the underlying base queue. </p>
-<dl class="section return"><dt>Returns</dt><dd>The underlying base queue. </dd></dl>
-
-</div>
-</div>
-<a id="a641760af366aa2b4fa764a1913075c6a" name="a641760af366aa2b4fa764a1913075c6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a641760af366aa2b4fa764a1913075c6a">&#9670;&#160;</a></span>items() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::items </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; const <a class="el" href="#a6734e22905e200e4216ca1eb85f5e171">base_type</a>&amp; </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Access to the underlying base queue. </p>
-<dl class="section return"><dt>Returns</dt><dd>The underlying base queue. </dd></dl>
-
-</div>
-</div>
-<a id="a544f726df2384ca58a231b0008ed93ec" name="a544f726df2384ca58a231b0008ed93ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a544f726df2384ca58a231b0008ed93ec">&#9670;&#160;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="#a208cd368c114e6ec3a661ac3697051fa">size_type</a> </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the number of elements in the queue. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of elements in the queue. </dd></dl>
-
-</div>
-</div>
 <a id="af1380f94f1c599efce16c521a956bc42" name="af1380f94f1c599efce16c521a956bc42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1380f94f1c599efce16c521a956bc42">&#9670;&#160;</a></span>begin()</h2>
 
@@ -742,6 +622,36 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 
 <p>Gets a const iterator to the beginning of the queue. </p>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the beginning of the queue. </dd></dl>
+
+</div>
+</div>
+<a id="a1ec43aea6300c975b7367ddb667ff347" name="a1ec43aea6300c975b7367ddb667ff347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec43aea6300c975b7367ddb667ff347">&#9670;&#160;</a></span>capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a208cd368c114e6ec3a661ac3697051fa">size_type</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the reserved capacity of the queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The reserved capacity of the queue. </dd></dl>
 
 </div>
 </div>
@@ -832,6 +742,96 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 
 <p>Gets a const iterator to the end of the queue. </p>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the end of the queue. </dd></dl>
+
+</div>
+</div>
+<a id="a9e6551007ac22a328f275dfbd762449c" name="a9e6551007ac22a328f275dfbd762449c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6551007ac22a328f275dfbd762449c">&#9670;&#160;</a></span>items() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::items </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="#a6734e22905e200e4216ca1eb85f5e171">base_type</a>&amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access to the underlying base queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base queue. </dd></dl>
+
+</div>
+</div>
+<a id="a641760af366aa2b4fa764a1913075c6a" name="a641760af366aa2b4fa764a1913075c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641760af366aa2b4fa764a1913075c6a">&#9670;&#160;</a></span>items() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::items </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="#a6734e22905e200e4216ca1eb85f5e171">base_type</a>&amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access to the underlying base queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying base queue. </dd></dl>
+
+</div>
+</div>
+<a id="a544f726df2384ca58a231b0008ed93ec" name="a544f726df2384ca58a231b0008ed93ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544f726df2384ca58a231b0008ed93ec">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__queue.html">xtd::collections::generic::helpers::raw_queue</a>&lt; type_t, container_t &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="#a208cd368c114e6ec3a661ac3697051fa">size_type</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the number of elements in the queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements in the queue. </dd></dl>
 
 </div>
 </div>
@@ -1126,7 +1126,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 3 2025 20:10:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Dec 4 2025 16:10:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

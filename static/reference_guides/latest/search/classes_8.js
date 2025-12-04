@@ -227,7 +227,6 @@ var searchData=
   ['item_224',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
   ['item_5fcheck_5fevent_5fargs_225',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
   ['items_5fadded_5fevent_5fargs_226',['items_added_event_args',['../classxtd_1_1forms_1_1layout_1_1items__added__event__args.html',1,'xtd::forms::layout']]],
-  ['iterator_227',['iterator',['../classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array_1_1iterator.html',1,'xtd::collections::generic::helpers::raw_array']]],
-  ['itext_5fmodel_228',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
-  ['iwin32_5fwindow_229',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
+  ['itext_5fmodel_227',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
+  ['iwin32_5fwindow_228',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
 ];
