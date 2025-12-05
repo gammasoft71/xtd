@@ -35,13 +35,15 @@ namespace xtd {
       ///   * xtd::collections::generic::queue::peek peek returns the oldest element that is at the start of the xtd::collections::generic::queue <type_t> but does not remove it from the xtd::collections::generic::queue <type_t>.
       /// @remarks The capacity of a xtd::collections::generic::queue <type_t> is the number of elements the xtd::collections::generic::queue <type_t> can hold. As elements are added to a xtd::collections::generic::queue <type_t>, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling xtd::collections::generic::queue::trim_excess.
       /// @remarks xtd::collections::generic::queue <type_t> allows duplicate elements.
+      /// @tparam type_t The value type of the generic container.
+      /// @tparam container_t The underlying container type used by xtd::collections::generic::helpers::raw_queue. The default container type is [std::deque](https://en.cppreference.com/w/cpp/container/deque.html).
       /// @par Examples
       /// The following code example demonstrates several methods of the xtd::collections::generic::queue <type_t> generic class. The code example creates a queue of strings with default capacity and uses the xtd::collections::generic::queue::enqueue method to queue five strings. The elements of the queue are enumerated, which does not change the state of the queue. The xtd::collections::generic::queue::dequeue method is used to dequeue the first string. The xtd::collections::generic::queue::peek method is used to look at the next item in the queue, and then the xtd::collections::generic::queue::dequeue method is used to dequeue it.
       /// The xtd::collections::generic::queue::to_array method is used to create an array and copy the queue elements to it, then the array is passed to the xtd::collections::generic::queue <type_t> constructor that takes xtd::collections::generic::ienumerable <type_t>, creating a copy of the queue. The elements of the copy are displayed.
       /// An array twice the size of the queue is created, and the xtd::collections::generic::queue::copy_to method is used to copy the array elements beginning at the middle of the array. The xtd::collections::generic::queue <type_t> constructor is used again to create a second copy of the queue containing three null elements at the beginning.
       /// The xtd::collections::generic::queue::contains method is used to show that the string "four" is in the first copy of the queue, after which the Clear method clears the copy and the xtd::collections::generic::queue::count property shows that the queue is empty.
       /// @include generic_queue.cpp
-      template<class type_t>
+      template<class type_t, class container_t = std::deque<type_t>>
       class queue : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
         /// @name Public Aliases
@@ -50,7 +52,7 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = typename icollection<type_t>::value_type;
         /// @brief Represents the list base type.
-        using base_type = xtd::collections::generic::helpers::raw_queue<value_type>;
+        using base_type = xtd::collections::generic::helpers::raw_queue<value_type, container_t>;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the reference of list value type.
@@ -350,17 +352,17 @@ namespace xtd {
       /// @cond
       // Deduction guides for xtd::collections::generic::queue
       // {
-      template < class type_t>
-      queue(queue < type_t>&&) -> queue < type_t>;
+      template < class type_t, class container_t>
+      queue(queue< type_t, container_t>&&) -> queue<type_t, container_t>;
+      
+      template < class type_t, class container_t>
+      queue(const queue<type_t, container_t>&) -> queue<type_t, container_t>;
       
       template < class type_t>
-      queue(const queue < type_t>&) -> queue < type_t>;
+      queue(const ienumerable<type_t>&) -> queue<type_t>;
       
       template < class type_t>
-      queue(const ienumerable < type_t >&) -> queue < type_t >;
-      
-      template < class type_t>
-      queue(std::initializer_list < type_t >) -> queue < type_t >;
+      queue(std::initializer_list<type_t>) -> queue<type_t>;
       
       template <class input_iterator_t>
       queue(input_iterator_t, input_iterator_t) -> queue<std::iter_value_t<input_iterator_t>>;
