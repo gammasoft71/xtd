@@ -8,6 +8,7 @@ add_sources(
   "src/main.cpp"
   "src/xtd/collections/generic/helpers/tests/raw_array_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/raw_queue_tests.cpp"
+  "src/xtd/collections/generic/helpers/tests/raw_stack_tests.cpp"
   "src/xtd/collections/generic/helpers/tests/wrap_pointer_iterator_tests.cpp"
   "src/xtd/collections/generic/tests/comparer_tests.cpp"
   "src/xtd/collections/generic/tests/dictionary_tests.cpp"
