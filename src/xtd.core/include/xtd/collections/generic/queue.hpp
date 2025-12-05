@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Represents a first-in, first-out collection of objects.
       /// @par Definition
       /// ```cpp
-      /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      /// template<class type_t, class container_t = std::deque<type_t>>
       /// class queue : public xtd::object, public xtd::collections::generic::icollection<type_t>;
       /// ```
       /// @par Header
