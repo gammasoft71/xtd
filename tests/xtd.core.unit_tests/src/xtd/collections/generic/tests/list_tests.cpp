@@ -117,7 +117,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, *items.begin());
     }
     
-    void test_method_(capaciy) {
+    void test_method_(capacity) {
       auto items = list {84, 42, 21};
       assert::are_equal(3_z, items.count());
       
