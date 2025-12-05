@@ -276,9 +276,11 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception Passed capacity is lower than entries count.
         auto trim_excess(size_type capacity) -> void {
           if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          if (capacity < data_->items.capacity()) data_->items.shrink_to_fit();
-          data_->items.reserve(capacity);
-        }
+          auto temp = base_type {};
+          temp.reserve(capacity);
+          for (auto& i : data_->items)
+            temp.push(i);
+          data_->items = std::move(temp);        }
         
         /// @brief Removes the object at the beginning of the xtd::collections::generic::queue <type_t>, and copies it to the result parameter.
         /// @param The removed object.
