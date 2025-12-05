@@ -83,7 +83,7 @@ namespace xtd::collections::generic::helpers::tests {
       collection_assert::are_equal({84, 42, 21}, items);
     }
     
-    void test_method_(capaciy) {
+    void test_method_(capacity) {
       auto items = raw_queue<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.size());
       assert::are_equal(3_z, items.capacity());
