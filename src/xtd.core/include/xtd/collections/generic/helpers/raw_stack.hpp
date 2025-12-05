@@ -35,9 +35,9 @@ namespace xtd {
         /// auto q = xtd::collections::generic::helpers::raw_stack<int> {};
         /// q.push(1);
         /// q.push(2);
-        /// println(q.front()); // 1
+        /// println(q.front()); // 2
         /// q.pop();
-        /// println(q.front();) // 2
+        /// println(q.front();) // 1
         /// @endcode
         template<class type_t, class container_t = std::deque<type_t>>
         class raw_stack final : public std::stack<type_t, container_t> {
@@ -51,7 +51,6 @@ namespace xtd {
           using size_type = typename base_type::size_type; ///< Unsigned integer type used for size and capacity.
           using reference = typename base_type::reference; ///< Reference to element type.
           using const_reference = typename base_type::const_reference; ///< Const reference to element type.
-          using iterator = typename container_type::const_iterator; ///< Const iterator type.
           using const_iterator = typename container_type::const_iterator; ///< Const iterator type.
           /// @}
           
@@ -149,7 +148,10 @@ namespace xtd {
           
           /// @brief Removes the element at the front of the stack.
           /// @warning Calling pop() on an empty stack is undefined behavior.
-          auto pop() -> void {base_type::pop();}
+          auto pop() -> void {
+            base_type::pop();
+            ensure_capacity(size());
+          }
           
           /// @brief Reserves storage to hold at least `count` elements.
           /// @param count Number of elements to reserve space for.
