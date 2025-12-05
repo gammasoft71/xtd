@@ -381,7 +381,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(q.size());
     }
 
-    void test_method_(cast_as_std_queue) {
+    void test_method_(operator_cast_as_std_queue) {
       auto q = static_cast<const std::queue<int>&>(queue {1, 2, 3, 4, 5});
       assert::are_equal(1, q.front());
       q.pop();
