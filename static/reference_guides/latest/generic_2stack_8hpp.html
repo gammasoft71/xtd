@@ -98,23 +98,27 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">stack.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="allocator_8hpp_source.html">helpers/allocator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="generic_2helpers_2comparer_8hpp_source.html">helpers/comparer.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="raw__stack_8hpp_source.html">helpers/raw_stack.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2icollection_8hpp_source.html">icollection.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="list_8hpp_source.html">list.hpp</a>&quot;</code><br />
-<code>#include &lt;deque&gt;</code><br />
-<code>#include &lt;stack&gt;</code><br />
+<code>#include &quot;<a class="el" href="xtd_8core_2include_2xtd_2size_8hpp_source.html">../../size.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="string_8hpp_source.html">../../string.hpp</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__generic__collections.html#ga15c6c38c7dfc0bc64f13d733505aa616" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;value_t&gt; class. </p>
+<div class="textblock"><p>Contains <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;value_t&gt; class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="generic_2stack_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html">xtd::collections::generic::stack&lt; type_t, container_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a last-in, first-out collection of objects.  <a href="classxtd_1_1collections_1_1generic_1_1stack.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html">xtd</a></td></tr>
@@ -126,19 +130,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></td></tr>
 <tr class="memdesc:namespacextd_1_1collections_1_1generic"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga15c6c38c7dfc0bc64f13d733505aa616" id="r_ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memTemplParams" colspan="2">template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </td></tr>
-<tr class="memitem:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga15c6c38c7dfc0bc64f13d733505aa616">xtd::collections::generic::stack</a></td></tr>
-<tr class="memdesc:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.  <br /></td></tr>
-<tr class="separator:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 5 2025 12:44:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 5 2025 21:26:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

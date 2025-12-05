@@ -174,8 +174,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are accessible by the key or index.  <a href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue&lt; type_t &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1queue.html">xtd::collections::generic::queue&lt; type_t, container_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a first-in, first-out collection of objects.  <a href="classxtd_1_1collections_1_1generic_1_1queue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html">xtd::collections::generic::stack&lt; type_t, container_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a last-in, first-out collection of objects.  <a href="classxtd_1_1collections_1_1generic_1_1stack.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -192,10 +195,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaec2bb22f4e33469ef19e4ad307c1ec4e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaec2bb22f4e33469ef19e4ad307c1ec4e">xtd::collections::generic::sorted_set</a></td></tr>
 <tr class="memdesc:gaec2bb22f4e33469ef19e4ad307c1ec4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
 <tr class="separator:gaec2bb22f4e33469ef19e4ad307c1ec4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15c6c38c7dfc0bc64f13d733505aa616" id="r_ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memTemplParams" colspan="2">template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </td></tr>
-<tr class="memitem:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga15c6c38c7dfc0bc64f13d733505aa616">xtd::collections::generic::stack</a></td></tr>
-<tr class="memdesc:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.  <br /></td></tr>
-<tr class="separator:ga15c6c38c7dfc0bc64f13d733505aa616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga49fc8f84e06c44f96cbc96b8d7705a5b" name="ga49fc8f84e06c44f96cbc96b8d7705a5b"></a>
@@ -297,39 +296,11 @@ A <a class="el" href="#gaec2bb22f4e33469ef19e4ad307c1ec4e" title="Represents a c
 
 </div>
 </div>
-<a id="ga15c6c38c7dfc0bc64f13d733505aa616" name="ga15c6c38c7dfc0bc64f13d733505aa616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga15c6c38c7dfc0bc64f13d733505aa616">&#9670;&#160;</a></span>stack</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#ga15c6c38c7dfc0bc64f13d733505aa616">xtd::collections::generic::stack</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="generic_2stack_8hpp.html">xtd.core/include/xtd/collections/generic/stack.hpp</a>&gt;</code></p>
-
-<p>Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> container_t = std::deque&lt;type_t&gt;&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="#ga15c6c38c7dfc0bc64f13d733505aa616">stack</a> = std::stack&lt;type_t, container_t&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_ga15c6c38c7dfc0bc64f13d733505aa616"><div class="ttname"><a href="#ga15c6c38c7dfc0bc64f13d733505aa616">xtd::collections::generic::stack</a></div><div class="ttdeci">std::stack&lt; type_t, container_t &gt; stack</div><div class="ttdoc">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...</div><div class="ttdef"><b>Definition</b> stack.hpp:34</div></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/stack&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 5 2025 12:44:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 5 2025 21:27:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
