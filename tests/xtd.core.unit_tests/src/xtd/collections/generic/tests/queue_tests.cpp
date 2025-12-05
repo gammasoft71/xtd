@@ -8,6 +8,7 @@
 using namespace xtd;
 using namespace xtd::collections::object_model;
 using namespace xtd::collections::generic;
+using namespace xtd::collections::generic::helpers;
 using namespace xtd::tunit;
 
 namespace xtd::collections::generic::tests {
@@ -17,7 +18,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(base_type) {
-      assert::are_equal(typeof_<linked_list<int>>(), typeof_<queue<int>::base_type > ());
+      assert::are_equal(typeof_<raw_queue<int>>(), typeof_<queue<int>::base_type > ());
     }
     
     void test_method_(size_type) {
