@@ -128,6 +128,9 @@ namespace xtd {
           /// @name Public Methods
           
           /// @{
+          /// @brief Removes all elements from the queue.
+          auto clear() -> void {base_type::c.clear();}
+          
           /// @brief Adds a copy of the element at the back of the queue.
           /// @param value The value to push.
           /// @remarks Capacity is automatically increased if needed.
