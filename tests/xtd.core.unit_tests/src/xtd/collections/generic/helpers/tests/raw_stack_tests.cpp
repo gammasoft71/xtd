@@ -155,7 +155,7 @@ namespace xtd::collections::generic::helpers::tests {
       //assert::throws<std::out_of_range>([&] {*items.crend();});
       assert::is_true(items.crend() == items.crbegin() + items.size());
     }
-
+    
     void test_method_(end) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
@@ -198,7 +198,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(typeof_<int>(), typeof_(*items.rbegin()));
       assert::are_equal(21, *items.rbegin());
     }
-
+    
     void test_method_(rend) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
@@ -206,7 +206,7 @@ namespace xtd::collections::generic::helpers::tests {
       //assert::throws<std::out_of_range>([&] {*items.rend();});
       assert::is_true(items.rend() == items.rbegin() + items.size());
     }
-
+    
     void test_method_(reserve) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.capacity());
