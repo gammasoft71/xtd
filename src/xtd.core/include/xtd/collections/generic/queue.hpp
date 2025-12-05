@@ -283,6 +283,7 @@ namespace xtd {
           for (auto& i : data_->items)
             temp.push(i);
           data_->items = std::move(temp);
+          ++data_->version;
         }
         
         /// @brief Removes the object at the beginning of the xtd::collections::generic::queue <type_t>, and copies it to the result parameter.
