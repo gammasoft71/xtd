@@ -265,7 +265,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(true, *items.begin());
     }
     
-    void test_method_(capaciy) {
+    void test_method_(capacity) {
       auto items = raw_array {84, 42, 21};
       assert::are_equal(3_z, items.size());
       
@@ -274,7 +274,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(3_z, items.size());
     }
     
-    void test_method_(capaciy_with_bool) {
+    void test_method_(capacity_with_bool) {
       auto items = raw_array {true, false, true};
       assert::are_equal(3_z, items.size());
       
