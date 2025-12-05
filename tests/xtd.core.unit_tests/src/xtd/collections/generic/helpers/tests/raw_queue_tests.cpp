@@ -29,10 +29,6 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(typeof_<const int&>(), typeof_<raw_queue<int>::const_reference>());
     }
     
-    void test_method_(iterator) {
-      assert::are_equal(typeof_<raw_queue<int>::container_type::const_iterator>(), typeof_<raw_queue<int>::iterator> ());
-    }
-    
     void test_method_(const_iterator) {
       assert::are_equal(typeof_<raw_queue<int>::container_type::const_iterator>(), typeof_<raw_queue<int>::const_iterator> ());
     }

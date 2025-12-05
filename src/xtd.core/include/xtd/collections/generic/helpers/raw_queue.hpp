@@ -51,7 +51,6 @@ namespace xtd {
           using size_type = typename base_type::size_type; ///< Unsigned integer type used for size and capacity.
           using reference = typename base_type::reference; ///< Reference to element type.
           using const_reference = typename base_type::const_reference; ///< Const reference to element type.
-          using iterator = typename container_type::const_iterator; ///< Const iterator type.
           using const_iterator = typename container_type::const_iterator; ///< Const iterator type.
           /// @}
           
@@ -149,7 +148,10 @@ namespace xtd {
           
           /// @brief Removes the element at the front of the queue.
           /// @warning Calling pop() on an empty queue is undefined behavior.
-          auto pop() -> void {base_type::pop();}
+          auto pop() -> void {
+            base_type::pop();
+            ensure_capacity(size());
+          }
           
           /// @brief Reserves storage to hold at least `count` elements.
           /// @param count Number of elements to reserve space for.
