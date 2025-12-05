@@ -117,7 +117,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>          <span class="keyword">using </span>internal_storage_value_type = std::conditional_t&lt;std::is_same_v&lt;type_t, bool&gt;, std::uint8_t, type_t&gt;;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>          <span class="keyword">using </span>internal_storage_allocator_type = <span class="keyword">typename</span> std::allocator_traits&lt;allocator_t&gt;::template rebind_alloc&lt;internal_storage_value_type&gt;;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="keyword">using </span>internal_base_type = std::vector&lt;internal_storage_value_type, internal_storage_allocator_type&gt;;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>          <span class="keyword">class </span>internal_iterator {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>          <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keyword">using </span>iterator_base_type = <span class="keyword">typename</span> internal_base_type::iterator;</div>
@@ -500,7 +500,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 4 2025 16:10:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 5 2025 09:59:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
