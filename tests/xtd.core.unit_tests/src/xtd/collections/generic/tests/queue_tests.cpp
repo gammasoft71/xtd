@@ -342,6 +342,45 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(0, item);
     }
     
+    void test_method_(operator_copy_queue) {
+      auto q = queue {84, 42, 21};
+      auto items = queue<int> {};
+      items = q;
+      assert::are_equal(3_z, items.count());
+      collection_assert::are_equal({84, 42, 21}, items);
+      assert::are_equal(3_z, q.count());
+      collection_assert::are_equal({84, 42, 21}, q);
+    }
+    
+    void test_method_(operator_move_queue) {
+      auto q = queue {84, 42, 21};
+      auto items = queue<int> {};
+      items = std::move(q);
+      assert::are_equal(3_z, items.count());
+      collection_assert::are_equal({84, 42, 21}, items);
+      assert::is_zero(q.count());
+    }
+    
+    void test_method_(operator_copy_std_queue) {
+      auto q = std::queue(std::deque {84, 42, 21});
+      auto items = queue<int> {};
+      items = q;
+      assert::are_equal(3_z, items.count());
+      collection_assert::are_equal({84, 42, 21}, items);
+      assert::are_equal(3_z, q.size());
+      assert::are_equal(21, q.back());
+      assert::are_equal(84, q.front());
+    }
+    
+    void test_method_(operator_move_std_queue) {
+      auto q = std::queue(std::deque {84, 42, 21});
+      auto items = queue<int> {};
+      items = std::move(q);
+      assert::are_equal(3_z, items.count());
+      collection_assert::are_equal({84, 42, 21}, items);
+      assert::is_zero(q.size());
+    }
+
     void test_method_(cast_as_std_queue) {
       auto q = static_cast<const std::queue<int>&>(queue {1, 2, 3, 4, 5});
       assert::are_equal(1, q.front());
