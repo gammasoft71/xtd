@@ -52,6 +52,7 @@ namespace xtd {
           using reference = typename base_type::reference; ///< Reference to element type.
           using const_reference = typename base_type::const_reference; ///< Const reference to element type.
           using const_iterator = typename container_type::const_iterator; ///< Const iterator type.
+          using const_reverse_iterator = typename container_type::const_reverse_iterator; ///< Const reverse iterator type.
           /// @}
           
           /// @name Public Constructors
@@ -108,6 +109,14 @@ namespace xtd {
           /// @return Iterator to the end of the stack.
           auto cend() const -> const_iterator {return base_type::c.cend();}
           
+          /// @brief Gets a const reverse iterator to the beginning of the stack.
+          /// @return Iterator to the beginning of the stack.
+          auto crbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
+          
+          /// @brief Gets a const reverse iterator to the end of the stack.
+          /// @return Iterator to the end of the stack.
+          auto crend() const -> const_reverse_iterator {return base_type::c.crend();}
+
           /// @brief Gets a const iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
           auto end() const -> const_iterator {return base_type::c.cend();}
@@ -119,6 +128,14 @@ namespace xtd {
           /// @return The underlying base stack.
           auto items() const noexcept -> const base_type& {return self_;}
           
+          /// @brief Gets a const reverse iterator to the beginning of the stack.
+          /// @return Iterator to the beginning of the stack.
+          auto rbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
+          
+          /// @brief Gets a const reverse iterator to the end of the stack.
+          /// @return Iterator to the end of the stack.
+          auto rend() const -> const_reverse_iterator {return base_type::c.crend();}
+
           /// @brief Gets the number of elements in the stack.
           /// @return The number of elements in the stack.
           auto size() const noexcept -> size_type {return base_type::c.size();}
