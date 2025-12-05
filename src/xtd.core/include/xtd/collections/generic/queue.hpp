@@ -134,7 +134,7 @@ namespace xtd {
         
         /// @brief Gets a std::queue<type_t>.
         /// @return A std::queue<type_t>.
-        std::queue<type_t> items() const {return std::queue<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
+        auto items() const {return std::queue<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
         /// @}
         
         /// @name Public Methods
@@ -255,6 +255,25 @@ namespace xtd {
         /// @name Public Operators
         
         /// @{
+        /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
+        /// @param other Another container to use as data source.
+        /// @return This current instance.
+        auto operator =(const queue& other) -> queue& = default;
+        /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
+        /// @param other Another base type container to use as data source.
+        /// @return This current instance.
+        auto operator =(queue&& other) noexcept -> queue& {
+          data_->items = std::move(other.data_->items);
+          return self_;
+        }
+        /// @brief Replaces the contents with those identified by initializer list ilist.
+        /// @param items Initializer list to use as data source
+        /// @return This current instance.
+        auto operator =(const std::initializer_list<type_t>& items) -> queue& {
+          data_->items = items;
+          return self_;
+        }
+        
         /// @brief Gets a std::queue<type_t>.
         /// @return A std::queue<type_t>.
         operator std::queue<type_t>() const {return items();}
