@@ -83,7 +83,7 @@ namespace xtd::collections::generic::helpers::tests {
       collection_assert::are_equal({84, 42, 21}, items);
     }
     
-    void test_method_(capaciy) {
+    void test_method_(capacity) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.size());
       assert::are_equal(3_z, items.capacity());
@@ -130,8 +130,8 @@ namespace xtd::collections::generic::helpers::tests {
     
     void test_method_(cbegin) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
-      assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
-      assert::are_equal(84, *items.begin());
+      assert::are_equal(typeof_<int>(), typeof_(*items.cbegin()));
+      assert::are_equal(84, *items.cbegin());
     }
     
     void test_method_(cend) {
@@ -142,6 +142,20 @@ namespace xtd::collections::generic::helpers::tests {
       assert::is_true(items.cend() == items.cbegin() + items.size());
     }
     
+    void test_method_(crbegin) {
+      auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(typeof_<int>(), typeof_(*items.crbegin()));
+      assert::are_equal(21, *items.crbegin());
+    }
+    
+    void test_method_(crend) {
+      auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
+      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/stack/rend documentation
+      //assert::throws<std::out_of_range>([&] {*items.crend();});
+      assert::is_true(items.crend() == items.crbegin() + items.size());
+    }
+
     void test_method_(end) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
@@ -179,6 +193,20 @@ namespace xtd::collections::generic::helpers::tests {
       assert::is_true(str.empty() || str == "hello");
     }
     
+    void test_method_(rbegin) {
+      auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
+      assert::are_equal(typeof_<int>(), typeof_(*items.rbegin()));
+      assert::are_equal(21, *items.rbegin());
+    }
+
+    void test_method_(rend) {
+      auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
+      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/stack/rend documentation
+      //assert::throws<std::out_of_range>([&] {*items.rend();});
+      assert::is_true(items.rend() == items.rbegin() + items.size());
+    }
+
     void test_method_(reserve) {
       auto items = raw_stack<int>(std::deque<int> {84, 42, 21});
       assert::are_equal(3_z, items.capacity());
