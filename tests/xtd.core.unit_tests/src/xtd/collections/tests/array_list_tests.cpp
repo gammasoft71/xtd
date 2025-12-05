@@ -103,7 +103,7 @@ namespace xtd::collections::tests {
       assert::are_equal("Tyrannosaurus", *items.begin());
     }
     
-    void test_method_(capaciy) {
+    void test_method_(capacity) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal(3_z, items.count());
       
