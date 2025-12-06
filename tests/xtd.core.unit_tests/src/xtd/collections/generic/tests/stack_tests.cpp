@@ -186,11 +186,11 @@ namespace xtd::collections::generic::tests {
       auto items = stack {84, 42, 21};
       auto dest = array<int>(5);
       items.copy_to(dest, 2);
-      collection_assert::are_equal({0, 0, 84, 42, 21}, dest);
+      collection_assert::are_equal({0, 0, 21, 42, 84}, dest);
       
       dest = array<int>(7);
       items.copy_to(dest, 2);
-      collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest);
+      collection_assert::are_equal({0, 0, 21, 42, 84, 0, 0}, dest);
       
       dest = array<int>(3);
       assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(dest, 1);});
@@ -265,7 +265,7 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(to_array) {
       assert::is_instance_of<array<int>>(stack {84, 42, 21}.to_array());
-      collection_assert::are_equal({84, 42, 21}, stack {84, 42, 21}.to_array());
+      collection_assert::are_equal({21, 42, 84}, stack {84, 42, 21}.to_array());
       collection_assert::is_empty(stack<int> {}.to_array());
     }
     

@@ -13,7 +13,7 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @brief Represents a last-in, first-out collection of objects.
+      /// @brief Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.
       /// @par Definition
       /// ```cpp
       /// template<class type_t, class container_t = std::deque<type_t>>
@@ -179,8 +179,9 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::linked_list::count.
         auto copy_to(xtd::array<type_t>& array, size_type array_index) const -> void override {
           if (array_index + count() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          array_index += count() - 1;
           for (const auto& item : data_->items)
-            array[array_index++] = item;
+            array[array_index--] = item;
         }
         
         /// @brief Removes and returns the object at the beginning of the xtd::collections::generic::stack <type_t>.
