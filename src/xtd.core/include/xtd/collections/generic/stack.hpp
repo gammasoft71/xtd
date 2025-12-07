@@ -88,7 +88,7 @@ namespace xtd {
           
           for (auto iterator = tmp.rbegin(); iterator != tmp.rend(); ++iterator)
             data_->items.push(*iterator);
-          
+            
           ensure_capacity(count());
         }
         /// @brief Default copy constructor with specified stack.

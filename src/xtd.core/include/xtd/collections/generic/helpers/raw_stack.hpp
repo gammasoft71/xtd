@@ -116,7 +116,7 @@ namespace xtd {
           /// @brief Gets a const reverse iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
           auto crend() const -> const_reverse_iterator {return base_type::c.crend();}
-
+          
           /// @brief Gets a const iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
           auto end() const -> const_iterator {return base_type::c.cend();}
@@ -135,7 +135,7 @@ namespace xtd {
           /// @brief Gets a const reverse iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
           auto rend() const -> const_reverse_iterator {return base_type::c.crend();}
-
+          
           /// @brief Gets the number of elements in the stack.
           /// @return The number of elements in the stack.
           auto size() const noexcept -> size_type {return base_type::c.size();}
