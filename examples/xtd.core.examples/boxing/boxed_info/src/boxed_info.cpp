@@ -46,5 +46,5 @@ auto main() -> int {
 // [type = char [9], boxed type = xtd::string, value = A string]
 // [type = char32_t [13], boxed type = xtd::string, value = A u32 string]
 // [type = xtd::date_time, boxed type = xtd::date_time, value = Thu Dec  1 20:00:57 2022]
-// [type = foo, boxed type = xtd::box<foo>, value = (unregistered)]
+// [type = foo, boxed type = xtd::box<foo>, value = 42]
 
