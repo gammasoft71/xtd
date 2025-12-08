@@ -106,21 +106,20 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">int</span> value = 0;</div>
 <div class="line">  </div>
-<div class="line">  int32 compare_to(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value - other.value;}</div>
-<div class="line">  size get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(value);}</div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value == other.value;}</div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
+<div class="line">  <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; int32 <span class="keyword">override</span> {<span class="keywordflow">return</span> value - other.value;}</div>
+<div class="line">  <span class="keyword">auto</span> get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; size <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(value);}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value == other.value;}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>std {</div>
-<div class="line">  <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line">  <span class="keyword">struct </span>hash&lt;foo&gt; {</div>
-<div class="line">    <span class="keywordtype">size_t</span> operator()(<span class="keyword">const</span> foo&amp;) {<span class="keywordflow">return</span> 0;}</div>
-<div class="line">  };</div>
-<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><span class="keyword">struct </span>std::hash&lt;foo&gt; {</div>
+<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo&amp;) -&gt; <span class="keywordtype">size_t</span> {<span class="keywordflow">return</span> 0;}</div>
+<div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><span class="keywordtype">string</span> get_boxed_info(<span class="keyword">const</span> type_t&amp; value) {</div>
+<div class="line"><span class="keyword">auto</span> get_boxed_info(<span class="keyword">const</span> type_t&amp; value) -&gt; <span class="keywordtype">string</span> {</div>
 <div class="line">  <span class="keyword">auto</span> boxed_value = <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(value);</div>
 <div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[type = {}, boxed type = {}, value = {}]&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(boxed_value), boxed_value.to_string());</div>
 <div class="line">}</div>
@@ -153,7 +152,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 21:17:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 22:04:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
