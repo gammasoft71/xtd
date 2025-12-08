@@ -7,21 +7,20 @@ struct foo : icomparable<foo>, iequatable<foo>, ihashable, istringable {
   
   int value = 0;
   
-  int32 compare_to(const foo& other) const noexcept override {return value - other.value;}
-  size get_hash_code() const noexcept override {return hash_code::combine(value);}
-  bool equals(const foo& other) const noexcept override {return value == other.value;}
-  string to_string() const noexcept override {return string::format("{}", value);}
+  auto compare_to(const foo& other) const noexcept -> int32 override {return value - other.value;}
+  auto get_hash_code() const noexcept -> size override {return hash_code::combine(value);}
+  auto equals(const foo& other) const noexcept -> bool override {return value == other.value;}
+  auto to_string() const noexcept -> string override {return string::format("{}", value);}
 };
 
-namespace std {
-  template<>
-  struct hash<foo> {
-    size_t operator()(const foo&) {return 0;}
-  };
-}
+
+template<>
+struct std::hash<foo> {
+  auto operator()(const foo&) -> size_t {return 0;}
+};
 
 template<typename type_t>
-string get_boxed_info(const type_t& value) {
+auto get_boxed_info(const type_t& value) -> string {
   auto boxed_value = boxing(value);
   return string::format("[type = {}, boxed type = {}, value = {}]", typeof_(value), typeof_(boxed_value), boxed_value.to_string());
 }
