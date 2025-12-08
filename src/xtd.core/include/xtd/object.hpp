@@ -12,6 +12,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "helpers/throw_helper.hpp"
 #include "core_export.hpp"
+#include "generic_stream_output.hpp"
 #include "iequatable.hpp"
 #include "size.hpp"
 #if defined(__xtd__cpp_lib_format)
