@@ -1,12 +1,12 @@
 #include <xtd/xtd>
 
-auto print_index_and_values(const array<string>& my_arr)  {
+auto print_index_and_values(const array<string>& my_arr) -> void  {
   for (auto i = 0_z; i < my_arr.length(); ++i)
     console::write_line("   [{0}] : {1}", i, my_arr[i]);
   console::write_line();
 }
 
-auto print_index_and_values(const ilist<string>& my_list)  {
+auto print_index_and_values(const ilist<string>& my_list) -> void  {
   for (auto i = 0_z; i < my_list.count(); ++i)
     console::write_line( "   [{0}] : {1}", i, my_list[i]);
   console::write_line();
