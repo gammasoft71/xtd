@@ -1,12 +1,12 @@
 #include <xtd/xtd>
 
-auto print_values(const array<int>& my_arr) {
+auto print_values(const array<int>& my_arr) -> void {
   for (auto i : my_arr)
     console::write("\t{}", i);
   console::write_line();
 }
 
-auto print_values(const array<any_object>& my_arr) {
+auto print_values(const array<any_object>& my_arr) -> void {
   for (auto o : my_arr)
     console::write("\t{}", o);
   console::write_line();
