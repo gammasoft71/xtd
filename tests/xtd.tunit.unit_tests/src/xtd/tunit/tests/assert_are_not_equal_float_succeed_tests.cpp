@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_are_not_equal_float_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       float f = 0.4f;
       xtd::tunit::assert::are_not_equal(0.2f, f);
     }

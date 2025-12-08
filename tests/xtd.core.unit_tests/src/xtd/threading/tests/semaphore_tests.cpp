@@ -16,7 +16,7 @@ namespace xtd::threading::tests {
   class test_class_(semaphore_tests) {
     // unnamed
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       auto s1 = semaphore {};
       auto s2 = semaphore {};
       assert::are_not_equal(semaphore::invalid_handle, s1.handle());
@@ -24,20 +24,20 @@ namespace xtd::threading::tests {
       assert::are_not_equal(s2, s1);
     }
     
-    void test_method_(copy_constructor) {
+    auto test_method_(copy_constructor) {
       auto s1 = semaphore {};
       auto s2 = s1;
       assert::are_equal(s2, s1);
     }
     
-    void test_method_(copy_operator) {
+    auto test_method_(copy_operator) {
       auto s1 = semaphore {};
       auto s2 = semaphore {};
       s2 = s1;
       assert::are_equal(s2, s1);
     }
     
-    void test_method_(constructor_with_initial_count_to_0) {
+    auto test_method_(constructor_with_initial_count_to_0) {
       auto s = semaphore {0};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -50,7 +50,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_initial_count_to_1) {
+    auto test_method_(constructor_with_initial_count_to_1) {
       auto s = semaphore {1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -64,7 +64,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_initial_count_to_5) {
+    auto test_method_(constructor_with_initial_count_to_5) {
       auto s = semaphore {5};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -82,7 +82,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_initial_count_to_0_and_maximum_count_to_1) {
+    auto test_method_(constructor_with_initial_count_to_0_and_maximum_count_to_1) {
       auto s = semaphore {0, 1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -99,7 +99,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_initial_count_to_1_and_maximum_count_to_1) {
+    auto test_method_(constructor_with_initial_count_to_1_and_maximum_count_to_1) {
       auto s = semaphore {1, 1};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -114,7 +114,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_initial_count_to_1_and_maximum_count_to_5) {
+    auto test_method_(constructor_with_initial_count_to_1_and_maximum_count_to_5) {
       auto s = semaphore {1, 5};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       assert::is_true(s.wait_one(0));
@@ -141,7 +141,7 @@ namespace xtd::threading::tests {
     
     // named
     
-    void test_method_(constructor_with_name) {
+    auto test_method_(constructor_with_name) {
       auto s1 = semaphore {"xtd_semaphore_test"};
       auto s2 = semaphore {"xtd_semaphore_test_2"};
       assert::are_not_equal(semaphore::invalid_handle, s1.handle());
@@ -149,12 +149,12 @@ namespace xtd::threading::tests {
       assert::are_not_equal(s2, s1);
     }
     
-    void test_method_(copy_constructor_with_name) {
+    auto test_method_(copy_constructor_with_name) {
       auto s1 = semaphore {"xtd_semaphore_test"};
       auto s2 = s1;
       assert::are_equal(s2, s1);
     }
-    void test_method_(constructor_with_name_and_initial_count_to_0) {
+    auto test_method_(constructor_with_name_and_initial_count_to_0) {
       auto s = semaphore {0, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -167,7 +167,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_name_and_initial_count_to_1) {
+    auto test_method_(constructor_with_name_and_initial_count_to_1) {
       auto s = semaphore {1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -181,7 +181,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_name_and_initial_count_to_5) {
+    auto test_method_(constructor_with_name_and_initial_count_to_5) {
       auto s = semaphore {5, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -199,7 +199,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_name_and_initial_count_to_0_and_maximum_count_to_1) {
+    auto test_method_(constructor_with_name_and_initial_count_to_0_and_maximum_count_to_1) {
       auto s = semaphore {0, 1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -216,7 +216,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_name_and_initial_count_to_1_and_maximum_count_to_1) {
+    auto test_method_(constructor_with_name_and_initial_count_to_1_and_maximum_count_to_1) {
       auto s = semaphore {1, 1, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -231,7 +231,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(constructor_with_name_and_initial_count_to_1_and_maximum_count_to_5) {
+    auto test_method_(constructor_with_name_and_initial_count_to_1_and_maximum_count_to_5) {
       auto s = semaphore {1, 5, "xtd_semaphore_test"};
       assert::are_not_equal(semaphore::invalid_handle, s.handle());
       assert::is_true(s.wait_one(0));
@@ -254,7 +254,7 @@ namespace xtd::threading::tests {
       assert::are_equal(5, thread_ran);
     }
     
-    void test_method_(create_semaphore_and_close) {
+    auto test_method_(create_semaphore_and_close) {
       auto s = semaphore {};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -270,7 +270,7 @@ namespace xtd::threading::tests {
       assert::are_equal(wait_handle::invalid_handle, s.handle());
     }
     
-    void test_method_(create_semaphore_with_name_and_close) {
+    auto test_method_(create_semaphore_with_name_and_close) {
       auto s = semaphore {"xtd_semaphore_test"};
       assert::are_not_equal(wait_handle::invalid_handle, s.handle());
       auto thread_ran = false;
@@ -286,7 +286,7 @@ namespace xtd::threading::tests {
       assert::are_equal(wait_handle::invalid_handle, s.handle());
     }
     
-    void test_method_(open_existing_with_same_name) {
+    auto test_method_(open_existing_with_same_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};
@@ -302,7 +302,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(open_existing_with_different_name) {
+    auto test_method_(open_existing_with_different_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};
@@ -317,7 +317,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(open_existing_with_empty_name) {
+    auto test_method_(open_existing_with_empty_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};
@@ -332,7 +332,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(try_open_existing_with_same_name) {
+    auto test_method_(try_open_existing_with_same_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};
@@ -350,7 +350,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(try_open_existing_with_different_name) {
+    auto test_method_(try_open_existing_with_different_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};
@@ -368,7 +368,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(try_open_existing_with_empty_name) {
+    auto test_method_(try_open_existing_with_empty_name) {
       if (environment::os_version().is_windows() && !environment::is_64_bit_process()) assert::ignore();
       auto created_new = false;
       auto s = semaphore {"xtd_semaphore_test", created_new};

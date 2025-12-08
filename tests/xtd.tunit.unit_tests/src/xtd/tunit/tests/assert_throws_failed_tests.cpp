@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_throws_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto a = array {1, 2, 3, 4};
       xtd::tunit::assert::throws<xtd::index_out_of_range_exception>([&] {a[2];});
     }

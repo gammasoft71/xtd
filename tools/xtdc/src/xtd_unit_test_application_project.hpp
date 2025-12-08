@@ -103,7 +103,7 @@ namespace xtdc_command {
         xtd::string::format("namespace {} {{", name),
         "  class test_class_(unit_test1) {",
         "  public:",
-        "    void test_method_(test_method1) {",
+        "    auto test_method_(test_method1) {",
         "      assert::ignore(\"Hello, World!\");",
         "    }",
         "  };",

@@ -11,7 +11,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_macos_light_tests) {
-    void test_method_(theme) {
+    auto test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (light)")->second;
       assert::are_equal("macOS (light)", style.theme().name());
@@ -20,7 +20,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal("https://gammasoft71.github.io/", style.theme().website().to_string());
     }
     
-    void test_method_(system_colors) {
+    auto test_method_(system_colors) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("macOS (light)")->second;
       assert::are_equal(color::from_argb(0xFF007AFF), style.system_colors().accent());

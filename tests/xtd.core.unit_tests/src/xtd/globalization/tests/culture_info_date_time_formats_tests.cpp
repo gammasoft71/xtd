@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::globalization::tests {
   class test_class_(culture_info_date_time_formats_tests) {
-    void test_method_(invariant) {
+    auto test_method_(invariant) {
       auto date_time_format = culture_info {""}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -36,7 +36,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(af) {
+    auto test_method_(af) {
       auto date_time_format = culture_info {"af"}.date_time_format();
       collection_assert::are_equal({"So.", "Ma.", "Di.", "Wo.", "Do.", "Vr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "Mrt.", "Apr.", "Mei", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -63,7 +63,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(af_NA) {
+    auto test_method_(af_NA) {
       auto date_time_format = culture_info {"af-NA"}.date_time_format();
       collection_assert::are_equal({"So.", "Ma.", "Di.", "Wo.", "Do.", "Vr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "Mrt.", "Apr.", "Mei", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -90,7 +90,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(af_ZA) {
+    auto test_method_(af_ZA) {
       auto date_time_format = culture_info {"af-ZA"}.date_time_format();
       collection_assert::are_equal({"So.", "Ma.", "Di.", "Wo.", "Do.", "Vr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "Mrt.", "Apr.", "Mei", "Jun.", "Jul.", "Aug.", "Sep.", "Okt.", "Nov.", "Des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -117,7 +117,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(agq) {
+    auto test_method_(agq) {
       auto date_time_format = culture_info {"agq"}.date_time_format();
       collection_assert::are_equal({"nts", "kpa", "ghɔ", "tɔm", "ume", "ghɨ", "dzk"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"nùm", "kɨz", "tɨd", "taa", "see", "nzu", "dum", "fɔe", "dzu", "lɔm", "kaa", "fwo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -144,7 +144,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(agq_CM) {
+    auto test_method_(agq_CM) {
       auto date_time_format = culture_info {"agq-CM"}.date_time_format();
       collection_assert::are_equal({"nts", "kpa", "ghɔ", "tɔm", "ume", "ghɨ", "dzk"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"nùm", "kɨz", "tɨd", "taa", "see", "nzu", "dum", "fɔe", "dzu", "lɔm", "kaa", "fwo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -171,7 +171,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ain) {
+    auto test_method_(ain) {
       auto date_time_format = culture_info {"ain"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -198,7 +198,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ain_JP) {
+    auto test_method_(ain_JP) {
       auto date_time_format = culture_info {"ain-JP"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -225,7 +225,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ak) {
+    auto test_method_(ak) {
       auto date_time_format = culture_info {"ak"}.date_time_format();
       collection_assert::are_equal({"Kwe", "Dwo", "Ben", "Wuk", "Yaw", "Fia", "Mem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ɔpɛpɔn", "Ɔgyefoɔ", "Ɔbɛnem", "Oforisuo", "Kɔtɔnimma", "Ayɛwohomumu", "Kutawonsa", "Ɔsanaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpɛnimma", ""}, date_time_format.abreviated_month_genitive_names());
@@ -252,7 +252,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ak_GH) {
+    auto test_method_(ak_GH) {
       auto date_time_format = culture_info {"ak-GH"}.date_time_format();
       collection_assert::are_equal({"Kwe", "Dwo", "Ben", "Wuk", "Yaw", "Fia", "Mem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ɔpɛpɔn", "Ɔgyefoɔ", "Ɔbɛnem", "Oforisuo", "Kɔtɔnimma", "Ayɛwohomumu", "Kutawonsa", "Ɔsanaa", "Ɛbɔ", "Ahinime", "Obubuo", "Ɔpɛnimma", ""}, date_time_format.abreviated_month_genitive_names());
@@ -279,7 +279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(am) {
+    auto test_method_(am) {
       auto date_time_format = culture_info {"am"}.date_time_format();
       collection_assert::are_equal({"እሑድ", "ሰኞ", "ማክሰ", "ረቡዕ", "ሐሙስ", "ዓርብ", "ቅዳሜ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃን", "ፌብ", "ማርች", "ኤፕሪ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክቶ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -306,7 +306,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(am_ET) {
+    auto test_method_(am_ET) {
       auto date_time_format = culture_info {"am-ET"}.date_time_format();
       collection_assert::are_equal({"እሑድ", "ሰኞ", "ማክሰ", "ረቡዕ", "ሐሙስ", "ዓርብ", "ቅዳሜ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃን", "ፌብ", "ማርች", "ኤፕሪ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክቶ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -333,7 +333,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(apw) {
+    auto test_method_(apw) {
       auto date_time_format = culture_info {"apw"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -360,7 +360,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(apw_US) {
+    auto test_method_(apw_US) {
       auto date_time_format = culture_info {"apw-US"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -387,7 +387,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar) {
+    auto test_method_(ar) {
       auto date_time_format = culture_info {"ar"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -414,7 +414,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_001) {
+    auto test_method_(ar_001) {
       auto date_time_format = culture_info {"ar-001"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -441,7 +441,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_AE) {
+    auto test_method_(ar_AE) {
       auto date_time_format = culture_info {"ar-AE"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -468,7 +468,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_BH) {
+    auto test_method_(ar_BH) {
       auto date_time_format = culture_info {"ar-BH"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -495,7 +495,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_DJ) {
+    auto test_method_(ar_DJ) {
       auto date_time_format = culture_info {"ar-DJ"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -522,7 +522,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_DZ) {
+    auto test_method_(ar_DZ) {
       auto date_time_format = culture_info {"ar-DZ"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانفي", "فيفري", "مارس", "أفريل", "ماي", "جوان", "جويلية", "أوت", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -549,7 +549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_EG) {
+    auto test_method_(ar_EG) {
       auto date_time_format = culture_info {"ar-EG"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -576,7 +576,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_EH) {
+    auto test_method_(ar_EH) {
       auto date_time_format = culture_info {"ar-EH"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -603,7 +603,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_ER) {
+    auto test_method_(ar_ER) {
       auto date_time_format = culture_info {"ar-ER"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -630,7 +630,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_IL) {
+    auto test_method_(ar_IL) {
       auto date_time_format = culture_info {"ar-IL"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -657,7 +657,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_IQ) {
+    auto test_method_(ar_IQ) {
       auto date_time_format = culture_info {"ar-IQ"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول", ""}, date_time_format.abreviated_month_genitive_names());
@@ -684,7 +684,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_JO) {
+    auto test_method_(ar_JO) {
       auto date_time_format = culture_info {"ar-JO"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"كانون ٢", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين ١", "تشرين ٢", "كانون ١", ""}, date_time_format.abreviated_month_genitive_names());
@@ -711,7 +711,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_KM) {
+    auto test_method_(ar_KM) {
       auto date_time_format = culture_info {"ar-KM"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -738,7 +738,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_KW) {
+    auto test_method_(ar_KW) {
       auto date_time_format = culture_info {"ar-KW"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -765,7 +765,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_LB) {
+    auto test_method_(ar_LB) {
       auto date_time_format = culture_info {"ar-LB"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"كانون ٢", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين ١", "تشرين ٢", "كانون ١", ""}, date_time_format.abreviated_month_genitive_names());
@@ -792,7 +792,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_LY) {
+    auto test_method_(ar_LY) {
       auto date_time_format = culture_info {"ar-LY"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -819,7 +819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_MA) {
+    auto test_method_(ar_MA) {
       auto date_time_format = culture_info {"ar-MA"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "ماي", "يونيو", "يوليوز", "غشت", "شتنبر", "أكتوبر", "نونبر", "دجنبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -846,7 +846,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_MR) {
+    auto test_method_(ar_MR) {
       auto date_time_format = culture_info {"ar-MR"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو", "يوليو", "أغشت", "شتمبر", "أكتوبر", "نوفمبر", "دجمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -873,7 +873,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_OM) {
+    auto test_method_(ar_OM) {
       auto date_time_format = culture_info {"ar-OM"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -900,7 +900,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_PS) {
+    auto test_method_(ar_PS) {
       auto date_time_format = culture_info {"ar-PS"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول", ""}, date_time_format.abreviated_month_genitive_names());
@@ -927,7 +927,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_QA) {
+    auto test_method_(ar_QA) {
       auto date_time_format = culture_info {"ar-QA"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -954,7 +954,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_SA) {
+    auto test_method_(ar_SA) {
       auto date_time_format = culture_info {"ar-SA"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"محرم", "صفر", "ربيع١", "ربيع٢", "جما١", "جما٢", "رجب", "شعبان", "رمضان", "شوال", "ذو. ق", "ذو. ح", ""}, date_time_format.abreviated_month_genitive_names());
@@ -981,7 +981,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM، yyyy g", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_SD) {
+    auto test_method_(ar_SD) {
       auto date_time_format = culture_info {"ar-SD"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1008,7 +1008,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_SO) {
+    auto test_method_(ar_SO) {
       auto date_time_format = culture_info {"ar-SO"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1035,7 +1035,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_SS) {
+    auto test_method_(ar_SS) {
       auto date_time_format = culture_info {"ar-SS"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1062,7 +1062,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_SY) {
+    auto test_method_(ar_SY) {
       auto date_time_format = culture_info {"ar-SY"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1089,7 +1089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_TD) {
+    auto test_method_(ar_TD) {
       auto date_time_format = culture_info {"ar-TD"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1116,7 +1116,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_TN) {
+    auto test_method_(ar_TN) {
       auto date_time_format = culture_info {"ar-TN"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانفي", "فيفري", "مارس", "أفريل", "ماي", "جوان", "جويلية", "أوت", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1143,7 +1143,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ar_YE) {
+    auto test_method_(ar_YE) {
       auto date_time_format = culture_info {"ar-YE"}.date_time_format();
       collection_assert::are_equal({"أحد", "اثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1170,7 +1170,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(arn) {
+    auto test_method_(arn) {
       auto date_time_format = culture_info {"arn"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1197,7 +1197,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(arn_CL) {
+    auto test_method_(arn_CL) {
       auto date_time_format = culture_info {"arn-CL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1224,7 +1224,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(as) {
+    auto test_method_(as) {
       auto date_time_format = culture_info {"as"}.date_time_format();
       collection_assert::are_equal({"দেও", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্ৰ", "শনি"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জানু", "ফেব্ৰু", "মাৰ্চ", "এপ্ৰিল", "মে’", "জুন", "জুলাই", "আগ", "ছেপ্তে", "অক্টো", "নৱে", "ডিচে", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1251,7 +1251,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(as_IN) {
+    auto test_method_(as_IN) {
       auto date_time_format = culture_info {"as-IN"}.date_time_format();
       collection_assert::are_equal({"দেও", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্ৰ", "শনি"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জানু", "ফেব্ৰু", "মাৰ্চ", "এপ্ৰিল", "মে’", "জুন", "জুলাই", "আগ", "ছেপ্তে", "অক্টো", "নৱে", "ডিচে", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1278,7 +1278,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(asa) {
+    auto test_method_(asa) {
       auto date_time_format = culture_info {"asa"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Ijm", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1305,7 +1305,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(asa_TZ) {
+    auto test_method_(asa_TZ) {
       auto date_time_format = culture_info {"asa-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Ijm", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1332,7 +1332,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ast) {
+    auto test_method_(ast) {
       auto date_time_format = culture_info {"ast"}.date_time_format();
       collection_assert::are_equal({"dom", "llu", "mar", "mié", "xue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"xin", "feb", "mar", "abr", "may", "xun", "xnt", "ago", "set", "och", "pay", "avi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1359,7 +1359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ast_ES) {
+    auto test_method_(ast_ES) {
       auto date_time_format = culture_info {"ast-ES"}.date_time_format();
       collection_assert::are_equal({"dom", "llu", "mar", "mié", "xue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"xin", "feb", "mar", "abr", "may", "xun", "xnt", "ago", "set", "och", "pay", "avi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1386,7 +1386,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(az) {
+    auto test_method_(az) {
       auto date_time_format = culture_info {"az"}.date_time_format();
       collection_assert::are_equal({"B.", "B.E.", "Ç.A.", "Ç.", "C.A.", "C.", "Ş."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avq", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1413,7 +1413,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(az_Cyrl) {
+    auto test_method_(az_Cyrl) {
       auto date_time_format = culture_info {"az-Cyrl"}.date_time_format();
       collection_assert::are_equal({"Б.", "Б.Е.", "Ч.А.", "Ч.", "Ҹ.А.", "Ҹ.", "Ш."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "фев", "мар", "апр", "май", "ијн", "ијл", "авг", "сен", "окт", "ној", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1440,7 +1440,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(az_Cyrl_AZ) {
+    auto test_method_(az_Cyrl_AZ) {
       auto date_time_format = culture_info {"az-Cyrl-AZ"}.date_time_format();
       collection_assert::are_equal({"Б.", "Б.Е.", "Ч.А.", "Ч.", "Ҹ.А.", "Ҹ.", "Ш."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "фев", "мар", "апр", "май", "ијн", "ијл", "авг", "сен", "окт", "ној", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1467,7 +1467,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(az_Latn) {
+    auto test_method_(az_Latn) {
       auto date_time_format = culture_info {"az-Latn"}.date_time_format();
       collection_assert::are_equal({"B.", "B.E.", "Ç.A.", "Ç.", "C.A.", "C.", "Ş."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avq", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1494,7 +1494,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(az_Latn_AZ) {
+    auto test_method_(az_Latn_AZ) {
       auto date_time_format = culture_info {"az-Latn-AZ"}.date_time_format();
       collection_assert::are_equal({"B.", "B.E.", "Ç.A.", "Ç.", "C.A.", "C.", "Ş."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avq", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1521,7 +1521,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ba) {
+    auto test_method_(ba) {
       auto date_time_format = culture_info {"ba"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1548,7 +1548,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ba_RU) {
+    auto test_method_(ba_RU) {
       auto date_time_format = culture_info {"ba-RU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1575,7 +1575,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bas) {
+    auto test_method_(bas) {
       auto date_time_format = culture_info {"bas"}.date_time_format();
       collection_assert::are_equal({"nɔy", "nja", "uum", "ŋge", "mbɔ", "kɔɔ", "jon"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"kɔn", "mac", "mat", "mto", "mpu", "hil", "nje", "hik", "dip", "bio", "may", "liɓ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1602,7 +1602,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bas_CM) {
+    auto test_method_(bas_CM) {
       auto date_time_format = culture_info {"bas-CM"}.date_time_format();
       collection_assert::are_equal({"nɔy", "nja", "uum", "ŋge", "mbɔ", "kɔɔ", "jon"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"kɔn", "mac", "mat", "mto", "mpu", "hil", "nje", "hik", "dip", "bio", "may", "liɓ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1629,7 +1629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(be) {
+    auto test_method_(be) {
       auto date_time_format = culture_info {"be"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "аў", "ср", "чц", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"сту", "лют", "сак", "кра", "мая", "чэр", "ліп", "жні", "вер", "кас", "ліс", "сне", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1656,7 +1656,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(be_BY) {
+    auto test_method_(be_BY) {
       auto date_time_format = culture_info {"be-BY"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "аў", "ср", "чц", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"сту", "лют", "сак", "кра", "мая", "чэр", "ліп", "жні", "вер", "кас", "ліс", "сне", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1683,7 +1683,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bem) {
+    auto test_method_(bem) {
       auto date_time_format = culture_info {"bem"}.date_time_format();
       collection_assert::are_equal({"Pa Mulungu", "Palichimo", "Palichibuli", "Palichitatu", "Palichine", "Palichisano", "Pachibelushi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1710,7 +1710,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bem_ZM) {
+    auto test_method_(bem_ZM) {
       auto date_time_format = culture_info {"bem-ZM"}.date_time_format();
       collection_assert::are_equal({"Pa Mulungu", "Palichimo", "Palichibuli", "Palichitatu", "Palichine", "Palichisano", "Pachibelushi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Epr", "Mei", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1737,7 +1737,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ber) {
+    auto test_method_(ber) {
       auto date_time_format = culture_info {"ber"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1764,7 +1764,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ber_Latn) {
+    auto test_method_(ber_Latn) {
       auto date_time_format = culture_info {"ber-Latn"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1791,7 +1791,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ber_Latn_MA) {
+    auto test_method_(ber_Latn_MA) {
       auto date_time_format = culture_info {"ber-Latn-MA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1818,7 +1818,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ber_Tfng) {
+    auto test_method_(ber_Tfng) {
       auto date_time_format = culture_info {"ber-Tfng"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1845,7 +1845,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ber_Tfng_MA) {
+    auto test_method_(ber_Tfng_MA) {
       auto date_time_format = culture_info {"ber-Tfng-MA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1872,7 +1872,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bez) {
+    auto test_method_(bez) {
       auto date_time_format = culture_info {"bez"}.date_time_format();
       collection_assert::are_equal({"Mul", "Vil", "Hiv", "Hid", "Hit", "Hih", "Lem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hut", "Vil", "Dat", "Tai", "Han", "Sit", "Sab", "Nan", "Tis", "Kum", "Kmj", "Kmb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1899,7 +1899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bez_TZ) {
+    auto test_method_(bez_TZ) {
       auto date_time_format = culture_info {"bez-TZ"}.date_time_format();
       collection_assert::are_equal({"Mul", "Vil", "Hiv", "Hid", "Hit", "Hih", "Lem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hut", "Vil", "Dat", "Tai", "Han", "Sit", "Sab", "Nan", "Tis", "Kum", "Kmj", "Kmb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1926,7 +1926,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bg) {
+    auto test_method_(bg) {
       auto date_time_format = culture_info {"bg"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "вт", "ср", "чт", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"яну", "фев", "март", "апр", "май", "юни", "юли", "авг", "сеп", "окт", "ное", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1953,7 +1953,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bg_BG) {
+    auto test_method_(bg_BG) {
       auto date_time_format = culture_info {"bg-BG"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "вт", "ср", "чт", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"яну", "фев", "март", "апр", "май", "юни", "юли", "авг", "сеп", "окт", "ное", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -1980,7 +1980,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bgc) {
+    auto test_method_(bgc) {
       auto date_time_format = culture_info {"bgc"}.date_time_format();
       collection_assert::are_equal({"ऐतवार", "सोमवार", "मंगलवार", "बुधवार", "बृहस्पतवार", "शुक्रवार", "शनिवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवम्बर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2007,7 +2007,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bgc_IN) {
+    auto test_method_(bgc_IN) {
       auto date_time_format = culture_info {"bgc-IN"}.date_time_format();
       collection_assert::are_equal({"ऐतवार", "सोमवार", "मंगलवार", "बुधवार", "बृहस्पतवार", "शुक्रवार", "शनिवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवम्बर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2034,7 +2034,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bho) {
+    auto test_method_(bho) {
       auto date_time_format = culture_info {"bho"}.date_time_format();
       collection_assert::are_equal({"रबीबार", "सोमबार", "मंगलबार", "बुधबार", "बृहस्पतिबार", "शुक्रबार", "सनीचर"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवंबर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2061,7 +2061,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bho_IN) {
+    auto test_method_(bho_IN) {
       auto date_time_format = culture_info {"bho-IN"}.date_time_format();
       collection_assert::are_equal({"रबीबार", "सोमबार", "मंगलबार", "बुधबार", "बृहस्पतिबार", "शुक्रबार", "सनीचर"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवंबर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2088,7 +2088,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(blo) {
+    auto test_method_(blo) {
       auto date_time_format = culture_info {"blo"}.date_time_format();
       collection_assert::are_equal({"alah", "aɖɩt", "atal", "alar", "alam", "arɩs", "asib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"kaw", "kpa", "ci", "ɖʊ", "ɖu5", "ɖu6", "la", "kǝu", "fʊm", "cim", "pom", "bʊn", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2115,7 +2115,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(blo_BJ) {
+    auto test_method_(blo_BJ) {
       auto date_time_format = culture_info {"blo-BJ"}.date_time_format();
       collection_assert::are_equal({"alah", "aɖɩt", "atal", "alar", "alam", "arɩs", "asib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"kaw", "kpa", "ci", "ɖʊ", "ɖu5", "ɖu6", "la", "kǝu", "fʊm", "cim", "pom", "bʊn", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2142,7 +2142,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bm) {
+    auto test_method_(bm) {
       auto date_time_format = culture_info {"bm"}.date_time_format();
       collection_assert::are_equal({"kar", "ntɛ", "tar", "ara", "ala", "jum", "sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"zan", "feb", "mar", "awi", "mɛ", "zuw", "zul", "uti", "sɛt", "ɔku", "now", "des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2169,7 +2169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bm_ML) {
+    auto test_method_(bm_ML) {
       auto date_time_format = culture_info {"bm-ML"}.date_time_format();
       collection_assert::are_equal({"kar", "ntɛ", "tar", "ara", "ala", "jum", "sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"zan", "feb", "mar", "awi", "mɛ", "zuw", "zul", "uti", "sɛt", "ɔku", "now", "des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2196,7 +2196,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bn) {
+    auto test_method_(bn) {
       auto date_time_format = culture_info {"bn"}.date_time_format();
       collection_assert::are_equal({"রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জানু", "ফেব", "মার্চ", "এপ্রি", "মে", "জুন", "জুল", "আগ", "সেপ", "অক্টো", "নভে", "ডিসে", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2223,7 +2223,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bn_BD) {
+    auto test_method_(bn_BD) {
       auto date_time_format = culture_info {"bn-BD"}.date_time_format();
       collection_assert::are_equal({"রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জানু", "ফেব", "মার্চ", "এপ্রি", "মে", "জুন", "জুল", "আগ", "সেপ", "অক্টো", "নভে", "ডিসে", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2250,7 +2250,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bn_IN) {
+    auto test_method_(bn_IN) {
       auto date_time_format = culture_info {"bn-IN"}.date_time_format();
       collection_assert::are_equal({"রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জানু", "ফেব", "মার্চ", "এপ্রি", "মে", "জুন", "জুল", "আগ", "সেপ্টেঃ", "অক্টোঃ", "নভেঃ", "ডিসেঃ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2277,7 +2277,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bo) {
+    auto test_method_(bo) {
       auto date_time_format = culture_info {"bo"}.date_time_format();
       collection_assert::are_equal({"ཉི་མ་", "ཟླ་བ་", "མིག་དམར་", "ལྷག་པ་", "ཕུར་བུ་", "པ་སངས་", "སྤེན་པ་"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2304,7 +2304,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bo_CN) {
+    auto test_method_(bo_CN) {
       auto date_time_format = culture_info {"bo-CN"}.date_time_format();
       collection_assert::are_equal({"ཉི་མ་", "ཟླ་བ་", "མིག་དམར་", "ལྷག་པ་", "ཕུར་བུ་", "པ་སངས་", "སྤེན་པ་"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2331,7 +2331,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bo_IN) {
+    auto test_method_(bo_IN) {
       auto date_time_format = culture_info {"bo-IN"}.date_time_format();
       collection_assert::are_equal({"ཉི་མ་", "ཟླ་བ་", "མིག་དམར་", "ལྷག་པ་", "ཕུར་བུ་", "པ་སངས་", "སྤེན་པ་"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ཟླ་༡", "ཟླ་༢", "ཟླ་༣", "ཟླ་༤", "ཟླ་༥", "ཟླ་༦", "ཟླ་༧", "ཟླ་༨", "ཟླ་༩", "ཟླ་༡༠", "ཟླ་༡༡", "ཟླ་༡༢", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2358,7 +2358,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(br) {
+    auto test_method_(br) {
       auto date_time_format = culture_info {"br"}.date_time_format();
       collection_assert::are_equal({"Sul", "Lun", "Meu.", "Mer.", "Yaou", "Gwe.", "Sad."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Gen.", "Cʼhwe.", "Meur.", "Ebr.", "Mae", "Mezh.", "Goue.", "Eost", "Gwen.", "Here", "Du", "Kzu.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2385,7 +2385,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(br_FR) {
+    auto test_method_(br_FR) {
       auto date_time_format = culture_info {"br-FR"}.date_time_format();
       collection_assert::are_equal({"Sul", "Lun", "Meu.", "Mer.", "Yaou", "Gwe.", "Sad."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Gen.", "Cʼhwe.", "Meur.", "Ebr.", "Mae", "Mezh.", "Goue.", "Eost", "Gwen.", "Here", "Du", "Kzu.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2412,7 +2412,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(brx) {
+    auto test_method_(brx) {
       auto date_time_format = culture_info {"brx"}.date_time_format();
       collection_assert::are_equal({"रबि", "सम", "मंगल", "बुध", "बिस्थि", "सुखुर", "सनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जान", "फेब", "मार्च", "एप्रि", "मे", "जुन", "जुल", "आग", "सेप", "अक्ट’", "नवे", "डिसे", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2439,7 +2439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(brx_IN) {
+    auto test_method_(brx_IN) {
       auto date_time_format = culture_info {"brx-IN"}.date_time_format();
       collection_assert::are_equal({"रबि", "सम", "मंगल", "बुध", "बिस्थि", "सुखुर", "सनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जान", "फेब", "मार्च", "एप्रि", "मे", "जुन", "जुल", "आग", "सेप", "अक्ट’", "नवे", "डिसे", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2466,7 +2466,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bs) {
+    auto test_method_(bs) {
       auto date_time_format = culture_info {"bs"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2493,7 +2493,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bs_Cyrl) {
+    auto test_method_(bs_Cyrl) {
       auto date_time_format = culture_info {"bs-Cyrl"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сри", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "ауг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2520,7 +2520,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bs_Cyrl_BA) {
+    auto test_method_(bs_Cyrl_BA) {
       auto date_time_format = culture_info {"bs-Cyrl-BA"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сри", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "ауг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2547,7 +2547,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bs_Latn) {
+    auto test_method_(bs_Latn) {
       auto date_time_format = culture_info {"bs-Latn"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2574,7 +2574,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(bs_Latn_BA) {
+    auto test_method_(bs_Latn_BA) {
       auto date_time_format = culture_info {"bs-Latn-BA"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2601,7 +2601,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(byn) {
+    auto test_method_(byn) {
       auto date_time_format = culture_info {"byn"}.date_time_format();
       collection_assert::are_equal({"ሰ/ቅ", "ሰኑ", "ሰሊጝ", "ለጓ", "ኣምድ", "ኣርብ", "ሰ/ሽ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ልደት", "ካብኽ", "ክብላ", "ፋጅኺ", "ክቢቅ", "ም/ት", "ኰር", "ማርያ", "ያኸኒ", "መተሉ", "ም/ም", "ተሕሳ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2628,7 +2628,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(byn_ER) {
+    auto test_method_(byn_ER) {
       auto date_time_format = culture_info {"byn-ER"}.date_time_format();
       collection_assert::are_equal({"ሰ/ቅ", "ሰኑ", "ሰሊጝ", "ለጓ", "ኣምድ", "ኣርብ", "ሰ/ሽ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ልደት", "ካብኽ", "ክብላ", "ፋጅኺ", "ክቢቅ", "ም/ት", "ኰር", "ማርያ", "ያኸኒ", "መተሉ", "ም/ም", "ተሕሳ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2655,7 +2655,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ca) {
+    auto test_method_(ca) {
       auto date_time_format = culture_info {"ca"}.date_time_format();
       collection_assert::are_equal({"dg", "dl", "dt", "dc", "dj", "dv", "ds"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen.", "febr.", "març", "abr.", "maig", "juny", "jul.", "ag.", "set.", "oct.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2682,7 +2682,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'del' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ca_AD) {
+    auto test_method_(ca_AD) {
       auto date_time_format = culture_info {"ca-AD"}.date_time_format();
       collection_assert::are_equal({"dg", "dl", "dt", "dc", "dj", "dv", "ds"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen.", "febr.", "març", "abr.", "maig", "juny", "jul.", "ag.", "set.", "oct.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2709,7 +2709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'del' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ca_ES) {
+    auto test_method_(ca_ES) {
       auto date_time_format = culture_info {"ca-ES"}.date_time_format();
       collection_assert::are_equal({"dg", "dl", "dt", "dc", "dj", "dv", "ds"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen.", "febr.", "març", "abr.", "maig", "juny", "jul.", "ag.", "set.", "oct.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2736,7 +2736,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'del' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ca_FR) {
+    auto test_method_(ca_FR) {
       auto date_time_format = culture_info {"ca-FR"}.date_time_format();
       collection_assert::are_equal({"dg", "dl", "dt", "dc", "dj", "dv", "ds"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen.", "febr.", "març", "abr.", "maig", "juny", "jul.", "ag.", "set.", "oct.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2763,7 +2763,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'del' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ca_IT) {
+    auto test_method_(ca_IT) {
       auto date_time_format = culture_info {"ca-IT"}.date_time_format();
       collection_assert::are_equal({"dg", "dl", "dt", "dc", "dj", "dv", "ds"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen.", "febr.", "març", "abr.", "maig", "juny", "jul.", "ag.", "set.", "oct.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2790,7 +2790,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'del' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ccp) {
+    auto test_method_(ccp) {
       auto date_time_format = culture_info {"ccp"}.date_time_format();
       collection_assert::are_equal({"𑄢𑄧𑄝𑄨", "𑄥𑄧𑄟𑄴", "𑄟𑄧𑄁𑄉𑄧𑄣𑄴", "𑄝𑄪𑄖𑄴", "𑄝𑄳𑄢𑄨𑄥𑄪𑄛𑄴", "𑄥𑄪𑄇𑄴𑄇𑄮𑄢𑄴", "𑄥𑄧𑄚𑄨"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𑄎𑄚𑄪", "𑄜𑄬𑄛𑄴", "𑄟𑄢𑄴𑄌𑄧", "𑄃𑄬𑄛𑄳𑄢𑄨𑄣𑄴", "𑄟𑄬", "𑄎𑄪𑄚𑄴", "𑄎𑄪𑄣𑄭", "𑄃𑄉𑄧𑄌𑄴𑄑𑄴", "𑄥𑄬𑄛𑄴𑄑𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄃𑄧𑄇𑄴𑄑𑄮𑄝𑄧𑄢𑄴", "𑄚𑄧𑄞𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄓𑄨𑄥𑄬𑄟𑄴𑄝𑄢𑄴", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2817,7 +2817,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ccp_BD) {
+    auto test_method_(ccp_BD) {
       auto date_time_format = culture_info {"ccp-BD"}.date_time_format();
       collection_assert::are_equal({"𑄢𑄧𑄝𑄨", "𑄥𑄧𑄟𑄴", "𑄟𑄧𑄁𑄉𑄧𑄣𑄴", "𑄝𑄪𑄖𑄴", "𑄝𑄳𑄢𑄨𑄥𑄪𑄛𑄴", "𑄥𑄪𑄇𑄴𑄇𑄮𑄢𑄴", "𑄥𑄧𑄚𑄨"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𑄎𑄚𑄪", "𑄜𑄬𑄛𑄴", "𑄟𑄢𑄴𑄌𑄧", "𑄃𑄬𑄛𑄳𑄢𑄨𑄣𑄴", "𑄟𑄬", "𑄎𑄪𑄚𑄴", "𑄎𑄪𑄣𑄭", "𑄃𑄉𑄧𑄌𑄴𑄑𑄴", "𑄥𑄬𑄛𑄴𑄑𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄃𑄧𑄇𑄴𑄑𑄮𑄝𑄧𑄢𑄴", "𑄚𑄧𑄞𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄓𑄨𑄥𑄬𑄟𑄴𑄝𑄢𑄴", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2844,7 +2844,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ccp_IN) {
+    auto test_method_(ccp_IN) {
       auto date_time_format = culture_info {"ccp-IN"}.date_time_format();
       collection_assert::are_equal({"𑄢𑄧𑄝𑄨", "𑄥𑄧𑄟𑄴", "𑄟𑄧𑄁𑄉𑄧𑄣𑄴", "𑄝𑄪𑄖𑄴", "𑄝𑄳𑄢𑄨𑄥𑄪𑄛𑄴", "𑄥𑄪𑄇𑄴𑄇𑄮𑄢𑄴", "𑄥𑄧𑄚𑄨"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𑄎𑄚𑄪", "𑄜𑄬𑄛𑄴", "𑄟𑄢𑄴𑄌𑄧", "𑄃𑄬𑄛𑄳𑄢𑄨𑄣𑄴", "𑄟𑄬", "𑄎𑄪𑄚𑄴", "𑄎𑄪𑄣𑄭", "𑄃𑄉𑄧𑄌𑄴𑄑𑄴", "𑄥𑄬𑄛𑄴𑄑𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄃𑄧𑄇𑄴𑄑𑄮𑄝𑄧𑄢𑄴", "𑄚𑄧𑄞𑄬𑄟𑄴𑄝𑄧𑄢𑄴", "𑄓𑄨𑄥𑄬𑄟𑄴𑄝𑄢𑄴", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2871,7 +2871,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ce) {
+    auto test_method_(ce) {
       auto date_time_format = culture_info {"ce"}.date_time_format();
       collection_assert::are_equal({"кӀи", "ор", "ши", "кха", "еа", "пӀе", "шуо"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2898,7 +2898,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ce_RU) {
+    auto test_method_(ce_RU) {
       auto date_time_format = culture_info {"ce-RU"}.date_time_format();
       collection_assert::are_equal({"кӀи", "ор", "ши", "кха", "еа", "пӀе", "шуо"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2925,7 +2925,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ceb) {
+    auto test_method_(ceb) {
       auto date_time_format = culture_info {"ceb"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Sep", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2952,7 +2952,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ceb_PH) {
+    auto test_method_(ceb_PH) {
       auto date_time_format = culture_info {"ceb-PH"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Sep", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -2979,7 +2979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cgg) {
+    auto test_method_(cgg) {
       auto date_time_format = culture_info {"cgg"}.date_time_format();
       collection_assert::are_equal({"SAN", "ORK", "OKB", "OKS", "OKN", "OKT", "OMK"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"KBZ", "KBR", "KST", "KKN", "KTN", "KMK", "KMS", "KMN", "KMW", "KKM", "KNK", "KNB", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3006,7 +3006,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cgg_UG) {
+    auto test_method_(cgg_UG) {
       auto date_time_format = culture_info {"cgg-UG"}.date_time_format();
       collection_assert::are_equal({"SAN", "ORK", "OKB", "OKS", "OKN", "OKT", "OMK"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"KBZ", "KBR", "KST", "KKN", "KTN", "KMK", "KMS", "KMN", "KMW", "KKM", "KNK", "KNB", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3033,7 +3033,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cho) {
+    auto test_method_(cho) {
       auto date_time_format = culture_info {"cho"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3060,7 +3060,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cho_US) {
+    auto test_method_(cho_US) {
       auto date_time_format = culture_info {"cho-US"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3087,7 +3087,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(chr) {
+    auto test_method_(chr) {
       auto date_time_format = culture_info {"chr"}.date_time_format();
       collection_assert::are_equal({"ᏆᏍᎬ", "ᏉᏅᎯ", "ᏔᎵᏁ", "ᏦᎢᏁ", "ᏅᎩᏁ", "ᏧᎾᎩ", "ᏈᏕᎾ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᎤᏃ", "ᎧᎦ", "ᎠᏅ", "ᎧᏬ", "ᎠᏂ", "ᏕᎭ", "ᎫᏰ", "ᎦᎶ", "ᏚᎵ", "ᏚᏂ", "ᏅᏓ", "ᎥᏍ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3114,7 +3114,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(chr_US) {
+    auto test_method_(chr_US) {
       auto date_time_format = culture_info {"chr-US"}.date_time_format();
       collection_assert::are_equal({"ᏆᏍᎬ", "ᏉᏅᎯ", "ᏔᎵᏁ", "ᏦᎢᏁ", "ᏅᎩᏁ", "ᏧᎾᎩ", "ᏈᏕᎾ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᎤᏃ", "ᎧᎦ", "ᎠᏅ", "ᎧᏬ", "ᎠᏂ", "ᏕᎭ", "ᎫᏰ", "ᎦᎶ", "ᏚᎵ", "ᏚᏂ", "ᏅᏓ", "ᎥᏍ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3141,7 +3141,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cic) {
+    auto test_method_(cic) {
       auto date_time_format = culture_info {"cic"}.date_time_format();
       collection_assert::are_equal({"Nittak Holloʼ", "Mantiʼ", "Chostiʼ", "Winstiʼ", "Soistiʼ", "Nannalhchifaʼ Nittak", "Nittak Holloʼ Nakfish"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hashiʼ Ammoʼnaʼ", "Hashiʼ Atokloʼ", "Hashiʼ Atochchíʼnaʼ", "Iiplal", "Mih", "Choon", "Choola", "Akaas", "Siptimpaʼ", "Aaktopaʼ", "Nofimpaʼ", "Tiisimpaʼ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3168,7 +3168,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cic_US) {
+    auto test_method_(cic_US) {
       auto date_time_format = culture_info {"cic-US"}.date_time_format();
       collection_assert::are_equal({"Nittak Holloʼ", "Mantiʼ", "Chostiʼ", "Winstiʼ", "Soistiʼ", "Nannalhchifaʼ Nittak", "Nittak Holloʼ Nakfish"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hashiʼ Ammoʼnaʼ", "Hashiʼ Atokloʼ", "Hashiʼ Atochchíʼnaʼ", "Iiplal", "Mih", "Choon", "Choola", "Akaas", "Siptimpaʼ", "Aaktopaʼ", "Nofimpaʼ", "Tiisimpaʼ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3195,7 +3195,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ckb) {
+    auto test_method_(ckb) {
       auto date_time_format = culture_info {"ckb"}.date_time_format();
       collection_assert::are_equal({"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3222,7 +3222,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ckb_IQ) {
+    auto test_method_(ckb_IQ) {
       auto date_time_format = culture_info {"ckb-IQ"}.date_time_format();
       collection_assert::are_equal({"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3249,7 +3249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ckb_IR) {
+    auto test_method_(ckb_IR) {
       auto date_time_format = culture_info {"ckb-IR"}.date_time_format();
       collection_assert::are_equal({"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"خاکەلێوە", "بانەمەڕ", "جۆزەردان", "پووشپەڕ", "گەلاوێژ", "خەرمانان", "ڕەزبەر", "خەزەڵوەر", "سەرماوەز", "بەفرانبار", "ڕێبەندان", "رەشەمێ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3276,7 +3276,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMMی yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(co) {
+    auto test_method_(co) {
       auto date_time_format = culture_info {"co"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3303,7 +3303,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(co_FR) {
+    auto test_method_(co_FR) {
       auto date_time_format = culture_info {"co-FR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3330,7 +3330,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cs) {
+    auto test_method_(cs) {
       auto date_time_format = culture_info {"cs"}.date_time_format();
       collection_assert::are_equal({"ne", "po", "út", "st", "čt", "pá", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"led", "úno", "bře", "dub", "kvě", "čvn", "čvc", "srp", "zář", "říj", "lis", "pro", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3357,7 +3357,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cs_CZ) {
+    auto test_method_(cs_CZ) {
       auto date_time_format = culture_info {"cs-CZ"}.date_time_format();
       collection_assert::are_equal({"ne", "po", "út", "st", "čt", "pá", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"led", "úno", "bře", "dub", "kvě", "čvn", "čvc", "srp", "zář", "říj", "lis", "pro", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3384,7 +3384,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(csw) {
+    auto test_method_(csw) {
       auto date_time_format = culture_info {"csw"}.date_time_format();
       collection_assert::are_equal({"ᐊᔭᒥᐦᐁᑮᓯᑳᐤ", "ᐴᓂ ᐊᔭᒥᐦᐁᑮᓯᑳᐤ", "ᓃᓱᑮᓯᑳᐤ", "ᐋᐱᐦᑕᐘᐣ", "ᐴᓂᐋᐱᐦᑕᐘᐣ", "ᑫᑳᐨ ᒫᑎᓇᐍᑮᓯᑳᐤ", "ᒫᑎᓇᐍᑮᓯᑳᐤ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᐅᒉᒥᑮᓯᑳᐏᐲᓯᒼ", "ᐸᐚᐦᒐᑭᓇᓰᐢ", "ᒥᑭᓯᐏᐲᓯᒼ", "ᓂᐢᑭᐲᓯᒼ", "ᐊᓃᑭᐲᓯᒼ", "ᐚᐏᐲᓯᒼ", "ᐹᐢᑲᐦᐋᐏᐲᓯᒼ", "ᐅᐸᐦᐅᐏᐲᓯᒼ", "ᓄᒌᑐᐏᐲᓯᒼ", "ᐱᓈᐢᑯᐏᐲᓯᒼ", "ᐋᕽᐘᑎᓄᐏᐲᓯᒼ", "ᒪᑯᓭᑮᓭᑳᐏᐲᓯᒼ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3411,7 +3411,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(csw_CA) {
+    auto test_method_(csw_CA) {
       auto date_time_format = culture_info {"csw-CA"}.date_time_format();
       collection_assert::are_equal({"ᐊᔭᒥᐦᐁᑮᓯᑳᐤ", "ᐴᓂ ᐊᔭᒥᐦᐁᑮᓯᑳᐤ", "ᓃᓱᑮᓯᑳᐤ", "ᐋᐱᐦᑕᐘᐣ", "ᐴᓂᐋᐱᐦᑕᐘᐣ", "ᑫᑳᐨ ᒫᑎᓇᐍᑮᓯᑳᐤ", "ᒫᑎᓇᐍᑮᓯᑳᐤ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᐅᒉᒥᑮᓯᑳᐏᐲᓯᒼ", "ᐸᐚᐦᒐᑭᓇᓰᐢ", "ᒥᑭᓯᐏᐲᓯᒼ", "ᓂᐢᑭᐲᓯᒼ", "ᐊᓃᑭᐲᓯᒼ", "ᐚᐏᐲᓯᒼ", "ᐹᐢᑲᐦᐋᐏᐲᓯᒼ", "ᐅᐸᐦᐅᐏᐲᓯᒼ", "ᓄᒌᑐᐏᐲᓯᒼ", "ᐱᓈᐢᑯᐏᐲᓯᒼ", "ᐋᕽᐘᑎᓄᐏᐲᓯᒼ", "ᒪᑯᓭᑮᓭᑳᐏᐲᓯᒼ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3438,7 +3438,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cv) {
+    auto test_method_(cv) {
       auto date_time_format = culture_info {"cv"}.date_time_format();
       collection_assert::are_equal({"выр.", "тун.", "ытл.", "юн.", "кӗҫ.", "эр.", "шӑм."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"кӑр.", "нар.", "пуш", "ака", "ҫу", "ҫӗр.", "утӑ", "ҫур.", "авӑн", "юпа", "чӳк", "раш.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3465,7 +3465,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'ҫ'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cv_RU) {
+    auto test_method_(cv_RU) {
       auto date_time_format = culture_info {"cv-RU"}.date_time_format();
       collection_assert::are_equal({"выр.", "тун.", "ытл.", "юн.", "кӗҫ.", "эр.", "шӑм."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"кӑр.", "нар.", "пуш", "ака", "ҫу", "ҫӗр.", "утӑ", "ҫур.", "авӑн", "юпа", "чӳк", "раш.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3492,7 +3492,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'ҫ'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cy) {
+    auto test_method_(cy) {
       auto date_time_format = culture_info {"cy"}.date_time_format();
       collection_assert::are_equal({"Sul", "Llun", "Maw", "Mer", "Iau", "Gwe", "Sad"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ion", "Chwef", "Maw", "Ebr", "Mai", "Meh", "Gorff", "Awst", "Medi", "Hyd", "Tach", "Rhag", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3519,7 +3519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(cy_GB) {
+    auto test_method_(cy_GB) {
       auto date_time_format = culture_info {"cy-GB"}.date_time_format();
       collection_assert::are_equal({"Sul", "Llun", "Maw", "Mer", "Iau", "Gwe", "Sad"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ion", "Chwef", "Maw", "Ebr", "Mai", "Meh", "Gorff", "Awst", "Medi", "Hyd", "Tach", "Rhag", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3546,7 +3546,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(da) {
+    auto test_method_(da) {
       auto date_time_format = culture_info {"da"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tirs.", "ons.", "tors.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3573,7 +3573,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(da_DK) {
+    auto test_method_(da_DK) {
       auto date_time_format = culture_info {"da-DK"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tirs.", "ons.", "tors.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3600,7 +3600,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(da_GL) {
+    auto test_method_(da_GL) {
       auto date_time_format = culture_info {"da-GL"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tirs.", "ons.", "tors.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3627,7 +3627,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dav) {
+    auto test_method_(dav) {
       auto date_time_format = culture_info {"dav"}.date_time_format();
       collection_assert::are_equal({"Jum", "Jim", "Kaw", "Kad", "Kan", "Kas", "Ngu"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Imb", "Kaw", "Kad", "Kan", "Kas", "Kar", "Mfu", "Wun", "Ike", "Iku", "Imw", "Iwi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3654,7 +3654,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dav_KE) {
+    auto test_method_(dav_KE) {
       auto date_time_format = culture_info {"dav-KE"}.date_time_format();
       collection_assert::are_equal({"Jum", "Jim", "Kaw", "Kad", "Kan", "Kas", "Ngu"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Imb", "Kaw", "Kad", "Kan", "Kas", "Kar", "Mfu", "Wun", "Ike", "Iku", "Imw", "Iwi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3681,7 +3681,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de) {
+    auto test_method_(de) {
       auto date_time_format = culture_info {"de"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3708,7 +3708,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_AT) {
+    auto test_method_(de_AT) {
       auto date_time_format = culture_info {"de-AT"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jän.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3735,7 +3735,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_BE) {
+    auto test_method_(de_BE) {
       auto date_time_format = culture_info {"de-BE"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3762,7 +3762,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_CH) {
+    auto test_method_(de_CH) {
       auto date_time_format = culture_info {"de-CH"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3789,7 +3789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_DE) {
+    auto test_method_(de_DE) {
       auto date_time_format = culture_info {"de-DE"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3816,7 +3816,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_IT) {
+    auto test_method_(de_IT) {
       auto date_time_format = culture_info {"de-IT"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jän.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3843,7 +3843,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_LI) {
+    auto test_method_(de_LI) {
       auto date_time_format = culture_info {"de-LI"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3870,7 +3870,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(de_LU) {
+    auto test_method_(de_LU) {
       auto date_time_format = culture_info {"de-LU"}.date_time_format();
       collection_assert::are_equal({"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3897,7 +3897,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dje) {
+    auto test_method_(dje) {
       auto date_time_format = culture_info {"dje"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3924,7 +3924,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dje_NE) {
+    auto test_method_(dje_NE) {
       auto date_time_format = culture_info {"dje-NE"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3951,7 +3951,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(doi) {
+    auto test_method_(doi) {
       auto date_time_format = culture_info {"doi"}.date_time_format();
       collection_assert::are_equal({"ऐत", "सोम", "मंगल", "बुध", "बीर", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन.", "फर.", "मार्च", "अप्रैल", "मेई", "जून", "जुलाई", "अग.", "सित.", "अक्तू.", "नव.", "दिस.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -3978,7 +3978,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(doi_IN) {
+    auto test_method_(doi_IN) {
       auto date_time_format = culture_info {"doi-IN"}.date_time_format();
       collection_assert::are_equal({"ऐत", "सोम", "मंगल", "बुध", "बीर", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन.", "फर.", "मार्च", "अप्रैल", "मेई", "जून", "जुलाई", "अग.", "सित.", "अक्तू.", "नव.", "दिस.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4005,7 +4005,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dsb) {
+    auto test_method_(dsb) {
       auto date_time_format = culture_info {"dsb"}.date_time_format();
       collection_assert::are_equal({"nje", "pón", "wał", "srj", "stw", "pět", "sob"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "měr.", "apr.", "maj.", "jun.", "jul.", "awg.", "sep.", "okt.", "now.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4032,7 +4032,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dsb_DE) {
+    auto test_method_(dsb_DE) {
       auto date_time_format = culture_info {"dsb-DE"}.date_time_format();
       collection_assert::are_equal({"nje", "pón", "wał", "srj", "stw", "pět", "sob"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "měr.", "apr.", "maj.", "jun.", "jul.", "awg.", "sep.", "okt.", "now.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4059,7 +4059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dua) {
+    auto test_method_(dua) {
       auto date_time_format = culture_info {"dua"}.date_time_format();
       collection_assert::are_equal({"ét", "mɔ́s", "kwa", "muk", "ŋgi", "ɗón", "esa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"di", "ŋgɔn", "sɔŋ", "diɓ", "emi", "esɔ", "mad", "diŋ", "nyɛt", "may", "tin", "elá", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4086,7 +4086,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dua_CM) {
+    auto test_method_(dua_CM) {
       auto date_time_format = culture_info {"dua-CM"}.date_time_format();
       collection_assert::are_equal({"ét", "mɔ́s", "kwa", "muk", "ŋgi", "ɗón", "esa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"di", "ŋgɔn", "sɔŋ", "diɓ", "emi", "esɔ", "mad", "diŋ", "nyɛt", "may", "tin", "elá", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4113,7 +4113,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dv) {
+    auto test_method_(dv) {
       auto date_time_format = culture_info {"dv"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4140,7 +4140,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dv_MV) {
+    auto test_method_(dv_MV) {
       auto date_time_format = culture_info {"dv-MV"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4167,7 +4167,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dyo) {
+    auto test_method_(dyo) {
       auto date_time_format = culture_info {"dyo"}.date_time_format();
       collection_assert::are_equal({"Dim", "Ten", "Tal", "Ala", "Ara", "Arj", "Sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sa", "Fe", "Ma", "Ab", "Me", "Su", "Sú", "Ut", "Se", "Ok", "No", "De", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4194,7 +4194,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dyo_SN) {
+    auto test_method_(dyo_SN) {
       auto date_time_format = culture_info {"dyo-SN"}.date_time_format();
       collection_assert::are_equal({"Dim", "Ten", "Tal", "Ala", "Ara", "Arj", "Sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sa", "Fe", "Ma", "Ab", "Me", "Su", "Sú", "Ut", "Se", "Ok", "No", "De", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4221,7 +4221,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dz) {
+    auto test_method_(dz) {
       auto date_time_format = culture_info {"dz"}.date_time_format();
       collection_assert::are_equal({"ཟླ་", "མིར་", "ལྷག་", "ཕུར་", "སངས་", "སྤེན་", "ཉི་"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"༡", "༢", "༣", "༤", "༥", "༦", "༧", "༨", "༩", "༡༠", "༡༡", "12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4248,7 +4248,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(dz_BT) {
+    auto test_method_(dz_BT) {
       auto date_time_format = culture_info {"dz-BT"}.date_time_format();
       collection_assert::are_equal({"ཟླ་", "མིར་", "ལྷག་", "ཕུར་", "སངས་", "སྤེན་", "ཉི་"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"༡", "༢", "༣", "༤", "༥", "༦", "༧", "༨", "༩", "༡༠", "༡༡", "12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4275,7 +4275,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ebu) {
+    auto test_method_(ebu) {
       auto date_time_format = culture_info {"ebu"}.date_time_format();
       collection_assert::are_equal({"Kma", "Tat", "Ine", "Tan", "Arm", "Maa", "NMM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mbe", "Kai", "Kat", "Kan", "Gat", "Gan", "Mug", "Knn", "Ken", "Iku", "Imw", "Igi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4302,7 +4302,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ebu_KE) {
+    auto test_method_(ebu_KE) {
       auto date_time_format = culture_info {"ebu-KE"}.date_time_format();
       collection_assert::are_equal({"Kma", "Tat", "Ine", "Tan", "Arm", "Maa", "NMM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mbe", "Kai", "Kat", "Kan", "Gat", "Gan", "Mug", "Knn", "Ken", "Iku", "Imw", "Igi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4329,7 +4329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ee) {
+    auto test_method_(ee) {
       auto date_time_format = culture_info {"ee"}.date_time_format();
       collection_assert::are_equal({"kɔs", "dzo", "bla", "kuɖ", "yaw", "fiɖ", "mem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"dzv", "dzd", "ted", "afɔ", "dam", "mas", "sia", "dea", "any", "kel", "ade", "dzm", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4356,7 +4356,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ee_GH) {
+    auto test_method_(ee_GH) {
       auto date_time_format = culture_info {"ee-GH"}.date_time_format();
       collection_assert::are_equal({"kɔs", "dzo", "bla", "kuɖ", "yaw", "fiɖ", "mem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"dzv", "dzd", "ted", "afɔ", "dam", "mas", "sia", "dea", "any", "kel", "ade", "dzm", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4383,7 +4383,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ee_TG) {
+    auto test_method_(ee_TG) {
       auto date_time_format = culture_info {"ee-TG"}.date_time_format();
       collection_assert::are_equal({"kɔs", "dzo", "bla", "kuɖ", "yaw", "fiɖ", "mem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"dzv", "dzd", "ted", "afɔ", "dam", "mas", "sia", "dea", "any", "kel", "ade", "dzm", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4410,7 +4410,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(el) {
+    auto test_method_(el) {
       auto date_time_format = culture_info {"el"}.date_time_format();
       collection_assert::are_equal({"Κυρ", "Δευ", "Τρί", "Τετ", "Πέμ", "Παρ", "Σάβ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ιαν", "Φεβ", "Μαρ", "Απρ", "Μαΐ", "Ιουν", "Ιουλ", "Αυγ", "Σεπ", "Οκτ", "Νοε", "Δεκ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4437,7 +4437,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(el_CY) {
+    auto test_method_(el_CY) {
       auto date_time_format = culture_info {"el-CY"}.date_time_format();
       collection_assert::are_equal({"Κυρ", "Δευ", "Τρί", "Τετ", "Πέμ", "Παρ", "Σάβ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ιαν", "Φεβ", "Μαρ", "Απρ", "Μαΐ", "Ιουν", "Ιουλ", "Αυγ", "Σεπ", "Οκτ", "Νοε", "Δεκ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4464,7 +4464,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(el_GR) {
+    auto test_method_(el_GR) {
       auto date_time_format = culture_info {"el-GR"}.date_time_format();
       collection_assert::are_equal({"Κυρ", "Δευ", "Τρί", "Τετ", "Πέμ", "Παρ", "Σάβ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ιαν", "Φεβ", "Μαρ", "Απρ", "Μαΐ", "Ιουν", "Ιουλ", "Αυγ", "Σεπ", "Οκτ", "Νοε", "Δεκ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4491,7 +4491,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en) {
+    auto test_method_(en) {
       auto date_time_format = culture_info {"en"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4518,7 +4518,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_001) {
+    auto test_method_(en_001) {
       auto date_time_format = culture_info {"en-001"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4545,7 +4545,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_150) {
+    auto test_method_(en_150) {
       auto date_time_format = culture_info {"en-150"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4572,7 +4572,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AE) {
+    auto test_method_(en_AE) {
       auto date_time_format = culture_info {"en-AE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4599,7 +4599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AG) {
+    auto test_method_(en_AG) {
       auto date_time_format = culture_info {"en-AG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4626,7 +4626,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AI) {
+    auto test_method_(en_AI) {
       auto date_time_format = culture_info {"en-AI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4653,7 +4653,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AL) {
+    auto test_method_(en_AL) {
       auto date_time_format = culture_info {"en-AL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4680,7 +4680,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AR) {
+    auto test_method_(en_AR) {
       auto date_time_format = culture_info {"en-AR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4707,7 +4707,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AS) {
+    auto test_method_(en_AS) {
       auto date_time_format = culture_info {"en-AS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4734,7 +4734,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AT) {
+    auto test_method_(en_AT) {
       auto date_time_format = culture_info {"en-AT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4761,7 +4761,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_AU) {
+    auto test_method_(en_AU) {
       auto date_time_format = culture_info {"en-AU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4788,7 +4788,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BB) {
+    auto test_method_(en_BB) {
       auto date_time_format = culture_info {"en-BB"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4815,7 +4815,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BD) {
+    auto test_method_(en_BD) {
       auto date_time_format = culture_info {"en-BD"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4842,7 +4842,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BE) {
+    auto test_method_(en_BE) {
       auto date_time_format = culture_info {"en-BE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4869,7 +4869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BG) {
+    auto test_method_(en_BG) {
       auto date_time_format = culture_info {"en-BG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4896,7 +4896,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BI) {
+    auto test_method_(en_BI) {
       auto date_time_format = culture_info {"en-BI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4923,7 +4923,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BM) {
+    auto test_method_(en_BM) {
       auto date_time_format = culture_info {"en-BM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4950,7 +4950,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BN) {
+    auto test_method_(en_BN) {
       auto date_time_format = culture_info {"en-BN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -4977,7 +4977,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BR) {
+    auto test_method_(en_BR) {
       auto date_time_format = culture_info {"en-BR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5004,7 +5004,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BS) {
+    auto test_method_(en_BS) {
       auto date_time_format = culture_info {"en-BS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5031,7 +5031,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BW) {
+    auto test_method_(en_BW) {
       auto date_time_format = culture_info {"en-BW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5058,7 +5058,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_BZ) {
+    auto test_method_(en_BZ) {
       auto date_time_format = culture_info {"en-BZ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5085,7 +5085,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CA) {
+    auto test_method_(en_CA) {
       auto date_time_format = culture_info {"en-CA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5112,7 +5112,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CC) {
+    auto test_method_(en_CC) {
       auto date_time_format = culture_info {"en-CC"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5139,7 +5139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CH) {
+    auto test_method_(en_CH) {
       auto date_time_format = culture_info {"en-CH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5166,7 +5166,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CK) {
+    auto test_method_(en_CK) {
       auto date_time_format = culture_info {"en-CK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5193,7 +5193,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CL) {
+    auto test_method_(en_CL) {
       auto date_time_format = culture_info {"en-CL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5220,7 +5220,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CM) {
+    auto test_method_(en_CM) {
       auto date_time_format = culture_info {"en-CM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5247,7 +5247,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CN) {
+    auto test_method_(en_CN) {
       auto date_time_format = culture_info {"en-CN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5274,7 +5274,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CO) {
+    auto test_method_(en_CO) {
       auto date_time_format = culture_info {"en-CO"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5301,7 +5301,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CV) {
+    auto test_method_(en_CV) {
       auto date_time_format = culture_info {"en-CV"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5328,7 +5328,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CX) {
+    auto test_method_(en_CX) {
       auto date_time_format = culture_info {"en-CX"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5355,7 +5355,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CY) {
+    auto test_method_(en_CY) {
       auto date_time_format = culture_info {"en-CY"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5382,7 +5382,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_CZ) {
+    auto test_method_(en_CZ) {
       auto date_time_format = culture_info {"en-CZ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5409,7 +5409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_DE) {
+    auto test_method_(en_DE) {
       auto date_time_format = culture_info {"en-DE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5436,7 +5436,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_DG) {
+    auto test_method_(en_DG) {
       auto date_time_format = culture_info {"en-DG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5463,7 +5463,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_DK) {
+    auto test_method_(en_DK) {
       auto date_time_format = culture_info {"en-DK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5490,7 +5490,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_DM) {
+    auto test_method_(en_DM) {
       auto date_time_format = culture_info {"en-DM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5517,7 +5517,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_EE) {
+    auto test_method_(en_EE) {
       auto date_time_format = culture_info {"en-EE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5544,7 +5544,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_ER) {
+    auto test_method_(en_ER) {
       auto date_time_format = culture_info {"en-ER"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5571,7 +5571,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_FI) {
+    auto test_method_(en_FI) {
       auto date_time_format = culture_info {"en-FI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5598,7 +5598,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_FJ) {
+    auto test_method_(en_FJ) {
       auto date_time_format = culture_info {"en-FJ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5625,7 +5625,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_FK) {
+    auto test_method_(en_FK) {
       auto date_time_format = culture_info {"en-FK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5652,7 +5652,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_FM) {
+    auto test_method_(en_FM) {
       auto date_time_format = culture_info {"en-FM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5679,7 +5679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_FR) {
+    auto test_method_(en_FR) {
       auto date_time_format = culture_info {"en-FR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5706,7 +5706,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GB) {
+    auto test_method_(en_GB) {
       auto date_time_format = culture_info {"en-GB"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5733,7 +5733,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GD) {
+    auto test_method_(en_GD) {
       auto date_time_format = culture_info {"en-GD"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5760,7 +5760,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GG) {
+    auto test_method_(en_GG) {
       auto date_time_format = culture_info {"en-GG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5787,7 +5787,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GH) {
+    auto test_method_(en_GH) {
       auto date_time_format = culture_info {"en-GH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5814,7 +5814,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GI) {
+    auto test_method_(en_GI) {
       auto date_time_format = culture_info {"en-GI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5841,7 +5841,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GM) {
+    auto test_method_(en_GM) {
       auto date_time_format = culture_info {"en-GM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5868,7 +5868,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GR) {
+    auto test_method_(en_GR) {
       auto date_time_format = culture_info {"en-GR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5895,7 +5895,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GU) {
+    auto test_method_(en_GU) {
       auto date_time_format = culture_info {"en-GU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5922,7 +5922,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_GY) {
+    auto test_method_(en_GY) {
       auto date_time_format = culture_info {"en-GY"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5949,7 +5949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_HK) {
+    auto test_method_(en_HK) {
       auto date_time_format = culture_info {"en-HK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -5976,7 +5976,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_HU) {
+    auto test_method_(en_HU) {
       auto date_time_format = culture_info {"en-HU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6003,7 +6003,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_ID) {
+    auto test_method_(en_ID) {
       auto date_time_format = culture_info {"en-ID"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6030,7 +6030,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_IE) {
+    auto test_method_(en_IE) {
       auto date_time_format = culture_info {"en-IE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6057,7 +6057,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_IL) {
+    auto test_method_(en_IL) {
       auto date_time_format = culture_info {"en-IL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6084,7 +6084,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_IM) {
+    auto test_method_(en_IM) {
       auto date_time_format = culture_info {"en-IM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6111,7 +6111,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_IN) {
+    auto test_method_(en_IN) {
       auto date_time_format = culture_info {"en-IN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6138,7 +6138,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_IO) {
+    auto test_method_(en_IO) {
       auto date_time_format = culture_info {"en-IO"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6165,7 +6165,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_JE) {
+    auto test_method_(en_JE) {
       auto date_time_format = culture_info {"en-JE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6192,7 +6192,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_JM) {
+    auto test_method_(en_JM) {
       auto date_time_format = culture_info {"en-JM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6219,7 +6219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_JP) {
+    auto test_method_(en_JP) {
       auto date_time_format = culture_info {"en-JP"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6246,7 +6246,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_KE) {
+    auto test_method_(en_KE) {
       auto date_time_format = culture_info {"en-KE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6273,7 +6273,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_KI) {
+    auto test_method_(en_KI) {
       auto date_time_format = culture_info {"en-KI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6300,7 +6300,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_KN) {
+    auto test_method_(en_KN) {
       auto date_time_format = culture_info {"en-KN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6327,7 +6327,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_KR) {
+    auto test_method_(en_KR) {
       auto date_time_format = culture_info {"en-KR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6354,7 +6354,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_KY) {
+    auto test_method_(en_KY) {
       auto date_time_format = culture_info {"en-KY"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6381,7 +6381,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_LC) {
+    auto test_method_(en_LC) {
       auto date_time_format = culture_info {"en-LC"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6408,7 +6408,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_LR) {
+    auto test_method_(en_LR) {
       auto date_time_format = culture_info {"en-LR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6435,7 +6435,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_LS) {
+    auto test_method_(en_LS) {
       auto date_time_format = culture_info {"en-LS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6462,7 +6462,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_LT) {
+    auto test_method_(en_LT) {
       auto date_time_format = culture_info {"en-LT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6489,7 +6489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_LV) {
+    auto test_method_(en_LV) {
       auto date_time_format = culture_info {"en-LV"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6516,7 +6516,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MG) {
+    auto test_method_(en_MG) {
       auto date_time_format = culture_info {"en-MG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6543,7 +6543,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MH) {
+    auto test_method_(en_MH) {
       auto date_time_format = culture_info {"en-MH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6570,7 +6570,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MM) {
+    auto test_method_(en_MM) {
       auto date_time_format = culture_info {"en-MM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6597,7 +6597,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MO) {
+    auto test_method_(en_MO) {
       auto date_time_format = culture_info {"en-MO"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6624,7 +6624,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MP) {
+    auto test_method_(en_MP) {
       auto date_time_format = culture_info {"en-MP"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6651,7 +6651,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MS) {
+    auto test_method_(en_MS) {
       auto date_time_format = culture_info {"en-MS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6678,7 +6678,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MT) {
+    auto test_method_(en_MT) {
       auto date_time_format = culture_info {"en-MT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6705,7 +6705,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MU) {
+    auto test_method_(en_MU) {
       auto date_time_format = culture_info {"en-MU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6732,7 +6732,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MV) {
+    auto test_method_(en_MV) {
       auto date_time_format = culture_info {"en-MV"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6759,7 +6759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MW) {
+    auto test_method_(en_MW) {
       auto date_time_format = culture_info {"en-MW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6786,7 +6786,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MX) {
+    auto test_method_(en_MX) {
       auto date_time_format = culture_info {"en-MX"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6813,7 +6813,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_MY) {
+    auto test_method_(en_MY) {
       auto date_time_format = culture_info {"en-MY"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6840,7 +6840,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NA) {
+    auto test_method_(en_NA) {
       auto date_time_format = culture_info {"en-NA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6867,7 +6867,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NF) {
+    auto test_method_(en_NF) {
       auto date_time_format = culture_info {"en-NF"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6894,7 +6894,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NG) {
+    auto test_method_(en_NG) {
       auto date_time_format = culture_info {"en-NG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6921,7 +6921,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NL) {
+    auto test_method_(en_NL) {
       auto date_time_format = culture_info {"en-NL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6948,7 +6948,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NO) {
+    auto test_method_(en_NO) {
       auto date_time_format = culture_info {"en-NO"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -6975,7 +6975,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NR) {
+    auto test_method_(en_NR) {
       auto date_time_format = culture_info {"en-NR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7002,7 +7002,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NU) {
+    auto test_method_(en_NU) {
       auto date_time_format = culture_info {"en-NU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7029,7 +7029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_NZ) {
+    auto test_method_(en_NZ) {
       auto date_time_format = culture_info {"en-NZ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7056,7 +7056,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PG) {
+    auto test_method_(en_PG) {
       auto date_time_format = culture_info {"en-PG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7083,7 +7083,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PH) {
+    auto test_method_(en_PH) {
       auto date_time_format = culture_info {"en-PH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7110,7 +7110,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PK) {
+    auto test_method_(en_PK) {
       auto date_time_format = culture_info {"en-PK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7137,7 +7137,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PL) {
+    auto test_method_(en_PL) {
       auto date_time_format = culture_info {"en-PL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7164,7 +7164,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PN) {
+    auto test_method_(en_PN) {
       auto date_time_format = culture_info {"en-PN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7191,7 +7191,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PR) {
+    auto test_method_(en_PR) {
       auto date_time_format = culture_info {"en-PR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7218,7 +7218,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PT) {
+    auto test_method_(en_PT) {
       auto date_time_format = culture_info {"en-PT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7245,7 +7245,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_PW) {
+    auto test_method_(en_PW) {
       auto date_time_format = culture_info {"en-PW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7272,7 +7272,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_RU) {
+    auto test_method_(en_RU) {
       auto date_time_format = culture_info {"en-RU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7299,7 +7299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_RW) {
+    auto test_method_(en_RW) {
       auto date_time_format = culture_info {"en-RW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7326,7 +7326,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SA) {
+    auto test_method_(en_SA) {
       auto date_time_format = culture_info {"en-SA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mhrm.", "Safr.", "Rab. I", "Rab. II", "Jmd. I", "Jmd. II", "Rajb.", "Shbn.", "Rmdn.", "Shwl.", "Dhuʻl-Q.", "Dhuʻl-H.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7353,7 +7353,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy g", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SB) {
+    auto test_method_(en_SB) {
       auto date_time_format = culture_info {"en-SB"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7380,7 +7380,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SC) {
+    auto test_method_(en_SC) {
       auto date_time_format = culture_info {"en-SC"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7407,7 +7407,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SD) {
+    auto test_method_(en_SD) {
       auto date_time_format = culture_info {"en-SD"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7434,7 +7434,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SE) {
+    auto test_method_(en_SE) {
       auto date_time_format = culture_info {"en-SE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7461,7 +7461,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SG) {
+    auto test_method_(en_SG) {
       auto date_time_format = culture_info {"en-SG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7488,7 +7488,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SH) {
+    auto test_method_(en_SH) {
       auto date_time_format = culture_info {"en-SH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7515,7 +7515,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SI) {
+    auto test_method_(en_SI) {
       auto date_time_format = culture_info {"en-SI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7542,7 +7542,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SK) {
+    auto test_method_(en_SK) {
       auto date_time_format = culture_info {"en-SK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7569,7 +7569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SL) {
+    auto test_method_(en_SL) {
       auto date_time_format = culture_info {"en-SL"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7596,7 +7596,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SS) {
+    auto test_method_(en_SS) {
       auto date_time_format = culture_info {"en-SS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7623,7 +7623,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SX) {
+    auto test_method_(en_SX) {
       auto date_time_format = culture_info {"en-SX"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7650,7 +7650,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_SZ) {
+    auto test_method_(en_SZ) {
       auto date_time_format = culture_info {"en-SZ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7677,7 +7677,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TC) {
+    auto test_method_(en_TC) {
       auto date_time_format = culture_info {"en-TC"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7704,7 +7704,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TH) {
+    auto test_method_(en_TH) {
       auto date_time_format = culture_info {"en-TH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7731,7 +7731,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy g", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TK) {
+    auto test_method_(en_TK) {
       auto date_time_format = culture_info {"en-TK"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7758,7 +7758,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TO) {
+    auto test_method_(en_TO) {
       auto date_time_format = culture_info {"en-TO"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7785,7 +7785,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TR) {
+    auto test_method_(en_TR) {
       auto date_time_format = culture_info {"en-TR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7812,7 +7812,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TT) {
+    auto test_method_(en_TT) {
       auto date_time_format = culture_info {"en-TT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7839,7 +7839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TV) {
+    auto test_method_(en_TV) {
       auto date_time_format = culture_info {"en-TV"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7866,7 +7866,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TW) {
+    auto test_method_(en_TW) {
       auto date_time_format = culture_info {"en-TW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7893,7 +7893,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_TZ) {
+    auto test_method_(en_TZ) {
       auto date_time_format = culture_info {"en-TZ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7920,7 +7920,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_UA) {
+    auto test_method_(en_UA) {
       auto date_time_format = culture_info {"en-UA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7947,7 +7947,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_UG) {
+    auto test_method_(en_UG) {
       auto date_time_format = culture_info {"en-UG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -7974,7 +7974,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_UM) {
+    auto test_method_(en_UM) {
       auto date_time_format = culture_info {"en-UM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8001,7 +8001,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_US) {
+    auto test_method_(en_US) {
       auto date_time_format = culture_info {"en-US"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8028,7 +8028,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_US_POSIX) {
+    auto test_method_(en_US_POSIX) {
       auto date_time_format = culture_info {"en-US-POSIX"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8055,7 +8055,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_VC) {
+    auto test_method_(en_VC) {
       auto date_time_format = culture_info {"en-VC"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8082,7 +8082,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_VG) {
+    auto test_method_(en_VG) {
       auto date_time_format = culture_info {"en-VG"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8109,7 +8109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_VI) {
+    auto test_method_(en_VI) {
       auto date_time_format = culture_info {"en-VI"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8136,7 +8136,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_VU) {
+    auto test_method_(en_VU) {
       auto date_time_format = culture_info {"en-VU"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8163,7 +8163,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_WS) {
+    auto test_method_(en_WS) {
       auto date_time_format = culture_info {"en-WS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8190,7 +8190,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_ZA) {
+    auto test_method_(en_ZA) {
       auto date_time_format = culture_info {"en-ZA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8217,7 +8217,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_ZM) {
+    auto test_method_(en_ZM) {
       auto date_time_format = culture_info {"en-ZM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8244,7 +8244,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(en_ZW) {
+    auto test_method_(en_ZW) {
       auto date_time_format = culture_info {"en-ZW"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8271,7 +8271,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(eo) {
+    auto test_method_(eo) {
       auto date_time_format = culture_info {"eo"}.date_time_format();
       collection_assert::are_equal({"di", "lu", "ma", "me", "ĵa", "ve", "sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8298,7 +8298,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(eo_001) {
+    auto test_method_(eo_001) {
       auto date_time_format = culture_info {"eo-001"}.date_time_format();
       collection_assert::are_equal({"di", "lu", "ma", "me", "ĵa", "ve", "sa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aŭg", "Sep", "Okt", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8325,7 +8325,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es) {
+    auto test_method_(es) {
       auto date_time_format = culture_info {"es"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8352,7 +8352,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_003) {
+    auto test_method_(es_003) {
       auto date_time_format = culture_info {"es-003"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8379,7 +8379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_419) {
+    auto test_method_(es_419) {
       auto date_time_format = culture_info {"es-419"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8406,7 +8406,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_AG) {
+    auto test_method_(es_AG) {
       auto date_time_format = culture_info {"es-AG"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8433,7 +8433,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_AR) {
+    auto test_method_(es_AR) {
       auto date_time_format = culture_info {"es-AR"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8460,7 +8460,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BB) {
+    auto test_method_(es_BB) {
       auto date_time_format = culture_info {"es-BB"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8487,7 +8487,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BM) {
+    auto test_method_(es_BM) {
       auto date_time_format = culture_info {"es-BM"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8514,7 +8514,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BO) {
+    auto test_method_(es_BO) {
       auto date_time_format = culture_info {"es-BO"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8541,7 +8541,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BQ) {
+    auto test_method_(es_BQ) {
       auto date_time_format = culture_info {"es-BQ"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8568,7 +8568,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BR) {
+    auto test_method_(es_BR) {
       auto date_time_format = culture_info {"es-BR"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8595,7 +8595,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BS) {
+    auto test_method_(es_BS) {
       auto date_time_format = culture_info {"es-BS"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8622,7 +8622,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_BZ) {
+    auto test_method_(es_BZ) {
       auto date_time_format = culture_info {"es-BZ"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8649,7 +8649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CA) {
+    auto test_method_(es_CA) {
       auto date_time_format = culture_info {"es-CA"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8676,7 +8676,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CL) {
+    auto test_method_(es_CL) {
       auto date_time_format = culture_info {"es-CL"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sep.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8703,7 +8703,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CO) {
+    auto test_method_(es_CO) {
       auto date_time_format = culture_info {"es-CO"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sep.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8730,7 +8730,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CR) {
+    auto test_method_(es_CR) {
       auto date_time_format = culture_info {"es-CR"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8757,7 +8757,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CU) {
+    auto test_method_(es_CU) {
       auto date_time_format = culture_info {"es-CU"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8784,7 +8784,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_CW) {
+    auto test_method_(es_CW) {
       auto date_time_format = culture_info {"es-CW"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8811,7 +8811,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_DM) {
+    auto test_method_(es_DM) {
       auto date_time_format = culture_info {"es-DM"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8838,7 +8838,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_DO) {
+    auto test_method_(es_DO) {
       auto date_time_format = culture_info {"es-DO"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8865,7 +8865,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_EA) {
+    auto test_method_(es_EA) {
       auto date_time_format = culture_info {"es-EA"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8892,7 +8892,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_EC) {
+    auto test_method_(es_EC) {
       auto date_time_format = culture_info {"es-EC"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8919,7 +8919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_ES) {
+    auto test_method_(es_ES) {
       auto date_time_format = culture_info {"es-ES"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8946,7 +8946,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_GD) {
+    auto test_method_(es_GD) {
       auto date_time_format = culture_info {"es-GD"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -8973,7 +8973,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_GQ) {
+    auto test_method_(es_GQ) {
       auto date_time_format = culture_info {"es-GQ"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9000,7 +9000,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_GT) {
+    auto test_method_(es_GT) {
       auto date_time_format = culture_info {"es-GT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9027,7 +9027,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_GY) {
+    auto test_method_(es_GY) {
       auto date_time_format = culture_info {"es-GY"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9054,7 +9054,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_HN) {
+    auto test_method_(es_HN) {
       auto date_time_format = culture_info {"es-HN"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9081,7 +9081,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_HT) {
+    auto test_method_(es_HT) {
       auto date_time_format = culture_info {"es-HT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9108,7 +9108,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_IC) {
+    auto test_method_(es_IC) {
       auto date_time_format = culture_info {"es-IC"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9135,7 +9135,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_KN) {
+    auto test_method_(es_KN) {
       auto date_time_format = culture_info {"es-KN"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9162,7 +9162,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_KY) {
+    auto test_method_(es_KY) {
       auto date_time_format = culture_info {"es-KY"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9189,7 +9189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_LC) {
+    auto test_method_(es_LC) {
       auto date_time_format = culture_info {"es-LC"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9216,7 +9216,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_MX) {
+    auto test_method_(es_MX) {
       auto date_time_format = culture_info {"es-MX"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9243,7 +9243,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_NI) {
+    auto test_method_(es_NI) {
       auto date_time_format = culture_info {"es-NI"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9270,7 +9270,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_PA) {
+    auto test_method_(es_PA) {
       auto date_time_format = culture_info {"es-PA"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9297,7 +9297,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_PE) {
+    auto test_method_(es_PE) {
       auto date_time_format = culture_info {"es-PE"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "set.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9324,7 +9324,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_PH) {
+    auto test_method_(es_PH) {
       auto date_time_format = culture_info {"es-PH"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9351,7 +9351,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_PR) {
+    auto test_method_(es_PR) {
       auto date_time_format = culture_info {"es-PR"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9378,7 +9378,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_PY) {
+    auto test_method_(es_PY) {
       auto date_time_format = culture_info {"es-PY"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9405,7 +9405,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_SV) {
+    auto test_method_(es_SV) {
       auto date_time_format = culture_info {"es-SV"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9432,7 +9432,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_TC) {
+    auto test_method_(es_TC) {
       auto date_time_format = culture_info {"es-TC"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9459,7 +9459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_TT) {
+    auto test_method_(es_TT) {
       auto date_time_format = culture_info {"es-TT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9486,7 +9486,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_US) {
+    auto test_method_(es_US) {
       auto date_time_format = culture_info {"es-US"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9513,7 +9513,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_UY) {
+    auto test_method_(es_UY) {
       auto date_time_format = culture_info {"es-UY"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "set.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9540,7 +9540,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_VC) {
+    auto test_method_(es_VC) {
       auto date_time_format = culture_info {"es-VC"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9567,7 +9567,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_VE) {
+    auto test_method_(es_VE) {
       auto date_time_format = culture_info {"es-VE"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9594,7 +9594,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_VG) {
+    auto test_method_(es_VG) {
       auto date_time_format = culture_info {"es-VG"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9621,7 +9621,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(es_VI) {
+    auto test_method_(es_VI) {
       auto date_time_format = culture_info {"es-VI"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mié", "jue", "vie", "sáb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9648,7 +9648,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(et) {
+    auto test_method_(et) {
       auto date_time_format = culture_info {"et"}.date_time_format();
       collection_assert::are_equal({"P", "E", "T", "K", "N", "R", "L"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jaan", "veebr", "märts", "apr", "mai", "juuni", "juuli", "aug", "sept", "okt", "nov", "dets", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9675,7 +9675,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(et_EE) {
+    auto test_method_(et_EE) {
       auto date_time_format = culture_info {"et-EE"}.date_time_format();
       collection_assert::are_equal({"P", "E", "T", "K", "N", "R", "L"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jaan", "veebr", "märts", "apr", "mai", "juuni", "juuli", "aug", "sept", "okt", "nov", "dets", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9702,7 +9702,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(eu) {
+    auto test_method_(eu) {
       auto date_time_format = culture_info {"eu"}.date_time_format();
       collection_assert::are_equal({"ig.", "al.", "ar.", "az.", "og.", "or.", "lr."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"urt.", "ots.", "mar.", "api.", "mai.", "eka.", "uzt.", "abu.", "ira.", "urr.", "aza.", "abe.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9729,7 +9729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy('e')'ko' MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(eu_ES) {
+    auto test_method_(eu_ES) {
       auto date_time_format = culture_info {"eu-ES"}.date_time_format();
       collection_assert::are_equal({"ig.", "al.", "ar.", "az.", "og.", "or.", "lr."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"urt.", "ots.", "mar.", "api.", "mai.", "eka.", "uzt.", "abu.", "ira.", "urr.", "aza.", "abe.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9756,7 +9756,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy('e')'ko' MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ewo) {
+    auto test_method_(ewo) {
       auto date_time_format = culture_info {"ewo"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "mɔ́n", "smb", "sml", "smn", "fúl", "sér"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ngo", "ngb", "ngl", "ngn", "ngt", "ngs", "ngz", "ngm", "nge", "nga", "ngad", "ngab", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9783,7 +9783,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ewo_CM) {
+    auto test_method_(ewo_CM) {
       auto date_time_format = culture_info {"ewo-CM"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "mɔ́n", "smb", "sml", "smn", "fúl", "sér"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ngo", "ngb", "ngl", "ngn", "ngt", "ngs", "ngz", "ngm", "nge", "nga", "ngad", "ngab", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9810,7 +9810,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fa) {
+    auto test_method_(fa) {
       auto date_time_format = culture_info {"fa"}.date_time_format();
       collection_assert::are_equal({"یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9837,7 +9837,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fa_AF) {
+    auto test_method_(fa_AF) {
       auto date_time_format = culture_info {"fa-AF"}.date_time_format();
       collection_assert::are_equal({"یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"حمل", "ثور", "جوزا", "سرطان", "اسد", "سنبلهٔ", "میزان", "عقرب", "قوس", "جدی", "دلو", "حوت", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9864,7 +9864,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fa_IR) {
+    auto test_method_(fa_IR) {
       auto date_time_format = culture_info {"fa-IR"}.date_time_format();
       collection_assert::are_equal({"یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9891,7 +9891,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff) {
+    auto test_method_(ff) {
       auto date_time_format = culture_info {"ff"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9918,7 +9918,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm) {
+    auto test_method_(ff_Adlm) {
       auto date_time_format = culture_info {"ff-Adlm"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9945,7 +9945,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_BF) {
+    auto test_method_(ff_Adlm_BF) {
       auto date_time_format = culture_info {"ff-Adlm-BF"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9972,7 +9972,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_CM) {
+    auto test_method_(ff_Adlm_CM) {
       auto date_time_format = culture_info {"ff-Adlm-CM"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -9999,7 +9999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_GH) {
+    auto test_method_(ff_Adlm_GH) {
       auto date_time_format = culture_info {"ff-Adlm-GH"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10026,7 +10026,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_GM) {
+    auto test_method_(ff_Adlm_GM) {
       auto date_time_format = culture_info {"ff-Adlm-GM"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10053,7 +10053,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_GN) {
+    auto test_method_(ff_Adlm_GN) {
       auto date_time_format = culture_info {"ff-Adlm-GN"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10080,7 +10080,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_GW) {
+    auto test_method_(ff_Adlm_GW) {
       auto date_time_format = culture_info {"ff-Adlm-GW"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10107,7 +10107,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_LR) {
+    auto test_method_(ff_Adlm_LR) {
       auto date_time_format = culture_info {"ff-Adlm-LR"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10134,7 +10134,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_MR) {
+    auto test_method_(ff_Adlm_MR) {
       auto date_time_format = culture_info {"ff-Adlm-MR"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10161,7 +10161,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_NE) {
+    auto test_method_(ff_Adlm_NE) {
       auto date_time_format = culture_info {"ff-Adlm-NE"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10188,7 +10188,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_NG) {
+    auto test_method_(ff_Adlm_NG) {
       auto date_time_format = culture_info {"ff-Adlm-NG"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10215,7 +10215,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_SL) {
+    auto test_method_(ff_Adlm_SL) {
       auto date_time_format = culture_info {"ff-Adlm-SL"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10242,7 +10242,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Adlm_SN) {
+    auto test_method_(ff_Adlm_SN) {
       auto date_time_format = culture_info {"ff-Adlm-SN"}.date_time_format();
       collection_assert::are_equal({"𞤈𞤫𞤬", "𞤀𞥄𞤩𞤵", "𞤃𞤢𞤦", "𞤔𞤫𞤧", "𞤐𞤢𞥄𞤧", "𞤃𞤢𞤣", "𞤖𞤮𞤪"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𞤅𞤭𞥅𞤤𞤮", "𞤕𞤮𞤤𞤼𞤮", "𞤐𞤦𞤮𞥅𞤴𞤮", "𞤅𞤫𞥅𞤼𞤮", "𞤁𞤵𞥅𞤶𞤮", "𞤑𞤮𞤪𞤧𞤮", "𞤃𞤮𞤪𞤧𞤮", "𞤔𞤵𞤳𞤮", "𞤅𞤭𞤤𞤼𞤮", "𞤒𞤢𞤪𞤳𞤮", "𞤔𞤮𞤤𞤮", "𞤄𞤮𞤱𞤼𞤮", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10269,7 +10269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn) {
+    auto test_method_(ff_Latn) {
       auto date_time_format = culture_info {"ff-Latn"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10296,7 +10296,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_BF) {
+    auto test_method_(ff_Latn_BF) {
       auto date_time_format = culture_info {"ff-Latn-BF"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10323,7 +10323,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_CM) {
+    auto test_method_(ff_Latn_CM) {
       auto date_time_format = culture_info {"ff-Latn-CM"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10350,7 +10350,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_GH) {
+    auto test_method_(ff_Latn_GH) {
       auto date_time_format = culture_info {"ff-Latn-GH"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10377,7 +10377,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_GM) {
+    auto test_method_(ff_Latn_GM) {
       auto date_time_format = culture_info {"ff-Latn-GM"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10404,7 +10404,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_GN) {
+    auto test_method_(ff_Latn_GN) {
       auto date_time_format = culture_info {"ff-Latn-GN"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10431,7 +10431,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_GW) {
+    auto test_method_(ff_Latn_GW) {
       auto date_time_format = culture_info {"ff-Latn-GW"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10458,7 +10458,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_LR) {
+    auto test_method_(ff_Latn_LR) {
       auto date_time_format = culture_info {"ff-Latn-LR"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10485,7 +10485,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_MR) {
+    auto test_method_(ff_Latn_MR) {
       auto date_time_format = culture_info {"ff-Latn-MR"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10512,7 +10512,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_NE) {
+    auto test_method_(ff_Latn_NE) {
       auto date_time_format = culture_info {"ff-Latn-NE"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10539,7 +10539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_NG) {
+    auto test_method_(ff_Latn_NG) {
       auto date_time_format = culture_info {"ff-Latn-NG"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10566,7 +10566,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_SL) {
+    auto test_method_(ff_Latn_SL) {
       auto date_time_format = culture_info {"ff-Latn-SL"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10593,7 +10593,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ff_Latn_SN) {
+    auto test_method_(ff_Latn_SN) {
       auto date_time_format = culture_info {"ff-Latn-SN"}.date_time_format();
       collection_assert::are_equal({"dew", "aaɓ", "maw", "nje", "naa", "mwd", "hbi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sii", "col", "mbo", "see", "duu", "kor", "mor", "juk", "slt", "yar", "jol", "bow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10620,7 +10620,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fi) {
+    auto test_method_(fi) {
       auto date_time_format = culture_info {"fi"}.date_time_format();
       collection_assert::are_equal({"su", "ma", "ti", "ke", "to", "pe", "la"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"tammi", "helmi", "maalis", "huhti", "touko", "kesä", "heinä", "elo", "syys", "loka", "marras", "joulu", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10647,7 +10647,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fi_FI) {
+    auto test_method_(fi_FI) {
       auto date_time_format = culture_info {"fi-FI"}.date_time_format();
       collection_assert::are_equal({"su", "ma", "ti", "ke", "to", "pe", "la"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"tammi", "helmi", "maalis", "huhti", "touko", "kesä", "heinä", "elo", "syys", "loka", "marras", "joulu", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10674,7 +10674,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fil) {
+    auto test_method_(fil) {
       auto date_time_format = culture_info {"fil"}.date_time_format();
       collection_assert::are_equal({"Lin", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Set", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10701,7 +10701,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fil_PH) {
+    auto test_method_(fil_PH) {
       auto date_time_format = culture_info {"fil-PH"}.date_time_format();
       collection_assert::are_equal({"Lin", "Lun", "Mar", "Miy", "Huw", "Biy", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Peb", "Mar", "Abr", "May", "Hun", "Hul", "Ago", "Set", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10728,7 +10728,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fo) {
+    auto test_method_(fo) {
       auto date_time_format = culture_info {"fo"}.date_time_format();
       collection_assert::are_equal({"sun", "mán", "týs", "mik", "hós", "frí", "ley"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "mai", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10755,7 +10755,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fo_DK) {
+    auto test_method_(fo_DK) {
       auto date_time_format = culture_info {"fo-DK"}.date_time_format();
       collection_assert::are_equal({"sun", "mán", "týs", "mik", "hós", "frí", "ley"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "mai", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10782,7 +10782,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fo_FO) {
+    auto test_method_(fo_FO) {
       auto date_time_format = culture_info {"fo-FO"}.date_time_format();
       collection_assert::are_equal({"sun", "mán", "týs", "mik", "hós", "frí", "ley"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "mai", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10809,7 +10809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr) {
+    auto test_method_(fr) {
       auto date_time_format = culture_info {"fr"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10836,7 +10836,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_BE) {
+    auto test_method_(fr_BE) {
       auto date_time_format = culture_info {"fr-BE"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10863,7 +10863,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_BF) {
+    auto test_method_(fr_BF) {
       auto date_time_format = culture_info {"fr-BF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10890,7 +10890,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_BI) {
+    auto test_method_(fr_BI) {
       auto date_time_format = culture_info {"fr-BI"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10917,7 +10917,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_BJ) {
+    auto test_method_(fr_BJ) {
       auto date_time_format = culture_info {"fr-BJ"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10944,7 +10944,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_BL) {
+    auto test_method_(fr_BL) {
       auto date_time_format = culture_info {"fr-BL"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10971,7 +10971,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CA) {
+    auto test_method_(fr_CA) {
       auto date_time_format = culture_info {"fr-CA"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juill.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -10998,7 +10998,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CD) {
+    auto test_method_(fr_CD) {
       auto date_time_format = culture_info {"fr-CD"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11025,7 +11025,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CF) {
+    auto test_method_(fr_CF) {
       auto date_time_format = culture_info {"fr-CF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11052,7 +11052,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CG) {
+    auto test_method_(fr_CG) {
       auto date_time_format = culture_info {"fr-CG"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11079,7 +11079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CH) {
+    auto test_method_(fr_CH) {
       auto date_time_format = culture_info {"fr-CH"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11106,7 +11106,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CI) {
+    auto test_method_(fr_CI) {
       auto date_time_format = culture_info {"fr-CI"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11133,7 +11133,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_CM) {
+    auto test_method_(fr_CM) {
       auto date_time_format = culture_info {"fr-CM"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11160,7 +11160,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_DJ) {
+    auto test_method_(fr_DJ) {
       auto date_time_format = culture_info {"fr-DJ"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11187,7 +11187,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_DZ) {
+    auto test_method_(fr_DZ) {
       auto date_time_format = culture_info {"fr-DZ"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11214,7 +11214,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_FR) {
+    auto test_method_(fr_FR) {
       auto date_time_format = culture_info {"fr-FR"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11241,7 +11241,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_GA) {
+    auto test_method_(fr_GA) {
       auto date_time_format = culture_info {"fr-GA"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11268,7 +11268,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_GF) {
+    auto test_method_(fr_GF) {
       auto date_time_format = culture_info {"fr-GF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11295,7 +11295,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_GN) {
+    auto test_method_(fr_GN) {
       auto date_time_format = culture_info {"fr-GN"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11322,7 +11322,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_GP) {
+    auto test_method_(fr_GP) {
       auto date_time_format = culture_info {"fr-GP"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11349,7 +11349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_GQ) {
+    auto test_method_(fr_GQ) {
       auto date_time_format = culture_info {"fr-GQ"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11376,7 +11376,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_HT) {
+    auto test_method_(fr_HT) {
       auto date_time_format = culture_info {"fr-HT"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11403,7 +11403,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_KM) {
+    auto test_method_(fr_KM) {
       auto date_time_format = culture_info {"fr-KM"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11430,7 +11430,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_LU) {
+    auto test_method_(fr_LU) {
       auto date_time_format = culture_info {"fr-LU"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11457,7 +11457,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MA) {
+    auto test_method_(fr_MA) {
       auto date_time_format = culture_info {"fr-MA"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fév.", "mar.", "avr.", "mai", "jui.", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11484,7 +11484,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MC) {
+    auto test_method_(fr_MC) {
       auto date_time_format = culture_info {"fr-MC"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11511,7 +11511,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MF) {
+    auto test_method_(fr_MF) {
       auto date_time_format = culture_info {"fr-MF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11538,7 +11538,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MG) {
+    auto test_method_(fr_MG) {
       auto date_time_format = culture_info {"fr-MG"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11565,7 +11565,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_ML) {
+    auto test_method_(fr_ML) {
       auto date_time_format = culture_info {"fr-ML"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11592,7 +11592,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MQ) {
+    auto test_method_(fr_MQ) {
       auto date_time_format = culture_info {"fr-MQ"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11619,7 +11619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MR) {
+    auto test_method_(fr_MR) {
       auto date_time_format = culture_info {"fr-MR"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11646,7 +11646,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_MU) {
+    auto test_method_(fr_MU) {
       auto date_time_format = culture_info {"fr-MU"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11673,7 +11673,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_NC) {
+    auto test_method_(fr_NC) {
       auto date_time_format = culture_info {"fr-NC"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11700,7 +11700,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_NE) {
+    auto test_method_(fr_NE) {
       auto date_time_format = culture_info {"fr-NE"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11727,7 +11727,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_PF) {
+    auto test_method_(fr_PF) {
       auto date_time_format = culture_info {"fr-PF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11754,7 +11754,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_PM) {
+    auto test_method_(fr_PM) {
       auto date_time_format = culture_info {"fr-PM"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11781,7 +11781,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_RE) {
+    auto test_method_(fr_RE) {
       auto date_time_format = culture_info {"fr-RE"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11808,7 +11808,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_RW) {
+    auto test_method_(fr_RW) {
       auto date_time_format = culture_info {"fr-RW"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11835,7 +11835,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_SC) {
+    auto test_method_(fr_SC) {
       auto date_time_format = culture_info {"fr-SC"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11862,7 +11862,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_SN) {
+    auto test_method_(fr_SN) {
       auto date_time_format = culture_info {"fr-SN"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11889,7 +11889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_SY) {
+    auto test_method_(fr_SY) {
       auto date_time_format = culture_info {"fr-SY"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11916,7 +11916,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_TD) {
+    auto test_method_(fr_TD) {
       auto date_time_format = culture_info {"fr-TD"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11943,7 +11943,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_TG) {
+    auto test_method_(fr_TG) {
       auto date_time_format = culture_info {"fr-TG"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11970,7 +11970,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_TN) {
+    auto test_method_(fr_TN) {
       auto date_time_format = culture_info {"fr-TN"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -11997,7 +11997,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_VU) {
+    auto test_method_(fr_VU) {
       auto date_time_format = culture_info {"fr-VU"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12024,7 +12024,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_WF) {
+    auto test_method_(fr_WF) {
       auto date_time_format = culture_info {"fr-WF"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12051,7 +12051,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fr_YT) {
+    auto test_method_(fr_YT) {
       auto date_time_format = culture_info {"fr-YT"}.date_time_format();
       collection_assert::are_equal({"dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12078,7 +12078,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fur) {
+    auto test_method_(fur) {
       auto date_time_format = culture_info {"fur"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mie", "joi", "vin", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Zen", "Fev", "Mar", "Avr", "Mai", "Jug", "Lui", "Avo", "Set", "Otu", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12105,7 +12105,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'dal' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fur_IT) {
+    auto test_method_(fur_IT) {
       auto date_time_format = culture_info {"fur-IT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mie", "joi", "vin", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Zen", "Fev", "Mar", "Avr", "Mai", "Jug", "Lui", "Avo", "Set", "Otu", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12132,7 +12132,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'dal' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fy) {
+    auto test_method_(fy) {
       auto date_time_format = culture_info {"fy"}.date_time_format();
       collection_assert::are_equal({"si", "mo", "ti", "wo", "to", "fr", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mrt", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12159,7 +12159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(fy_NL) {
+    auto test_method_(fy_NL) {
       auto date_time_format = culture_info {"fy-NL"}.date_time_format();
       collection_assert::are_equal({"si", "mo", "ti", "wo", "to", "fr", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mrt", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12186,7 +12186,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ga) {
+    auto test_method_(ga) {
       auto date_time_format = culture_info {"ga"}.date_time_format();
       collection_assert::are_equal({"Domh", "Luan", "Máirt", "Céad", "Déar", "Aoine", "Sath"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ean", "Feabh", "Márta", "Aib", "Beal", "Meith", "Iúil", "Lún", "MFómh", "DFómh", "Samh", "Noll", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12213,7 +12213,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ga_GB) {
+    auto test_method_(ga_GB) {
       auto date_time_format = culture_info {"ga-GB"}.date_time_format();
       collection_assert::are_equal({"Domh", "Luan", "Máirt", "Céad", "Déar", "Aoine", "Sath"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ean", "Feabh", "Márta", "Aib", "Beal", "Meith", "Iúil", "Lún", "MFómh", "DFómh", "Samh", "Noll", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12240,7 +12240,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ga_IE) {
+    auto test_method_(ga_IE) {
       auto date_time_format = culture_info {"ga-IE"}.date_time_format();
       collection_assert::are_equal({"Domh", "Luan", "Máirt", "Céad", "Déar", "Aoine", "Sath"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ean", "Feabh", "Márta", "Aib", "Beal", "Meith", "Iúil", "Lún", "MFómh", "DFómh", "Samh", "Noll", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12267,7 +12267,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gaa) {
+    auto test_method_(gaa) {
       auto date_time_format = culture_info {"gaa"}.date_time_format();
       collection_assert::are_equal({"Hɔg", "Ju", "Juf", "Shɔ", "Soo", "Soh", "Hɔɔ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Aha", "Ofl", "Ots", "Abe", "Agb", "Otu", "Maa", "Man", "Gbo", "Ant", "Ale", "Afu", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12294,7 +12294,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gaa_GH) {
+    auto test_method_(gaa_GH) {
       auto date_time_format = culture_info {"gaa-GH"}.date_time_format();
       collection_assert::are_equal({"Hɔg", "Ju", "Juf", "Shɔ", "Soo", "Soh", "Hɔɔ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Aha", "Ofl", "Ots", "Abe", "Agb", "Otu", "Maa", "Man", "Gbo", "Ant", "Ale", "Afu", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12321,7 +12321,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gd) {
+    auto test_method_(gd) {
       auto date_time_format = culture_info {"gd"}.date_time_format();
       collection_assert::are_equal({"DiD", "DiL", "DiM", "DiC", "Dia", "Dih", "DiS"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12348,7 +12348,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gd_GB) {
+    auto test_method_(gd_GB) {
       auto date_time_format = culture_info {"gd-GB"}.date_time_format();
       collection_assert::are_equal({"DiD", "DiL", "DiM", "DiC", "Dia", "Dih", "DiS"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12375,7 +12375,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gez) {
+    auto test_method_(gez) {
       auto date_time_format = culture_info {"gez"}.date_time_format();
       collection_assert::are_equal({"እኁድ", "ሰኑይ", "ሠሉስ", "ራብዕ", "ሐሙስ", "ዓርበ", "ቀዳሚት"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጠሐረ", "ከተተ", "መገበ", "አኀዘ", "ግንባት", "ሠንየ", "ሐመለ", "ነሐሰ", "ከረመ", "ጠቀመ", "ኀደረ", "ኀሠሠ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12402,7 +12402,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gez_ER) {
+    auto test_method_(gez_ER) {
       auto date_time_format = culture_info {"gez-ER"}.date_time_format();
       collection_assert::are_equal({"እኁድ", "ሰኑይ", "ሠሉስ", "ራብዕ", "ሐሙስ", "ዓርበ", "ቀዳሚት"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጠሐረ", "ከተተ", "መገበ", "አኀዘ", "ግንባት", "ሠንየ", "ሐመለ", "ነሐሰ", "ከረመ", "ጠቀመ", "ኀደረ", "ኀሠሠ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12429,7 +12429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gez_ET) {
+    auto test_method_(gez_ET) {
       auto date_time_format = culture_info {"gez-ET"}.date_time_format();
       collection_assert::are_equal({"እኁድ", "ሰኑይ", "ሠሉስ", "ራብዕ", "ሐሙስ", "ዓርበ", "ቀዳሚት"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጠሐረ", "ከተተ", "መገበ", "አኀዘ", "ግንባት", "ሠንየ", "ሐመለ", "ነሐሰ", "ከረመ", "ጠቀመ", "ኀደረ", "ኀሠሠ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12456,7 +12456,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gl) {
+    auto test_method_(gl) {
       auto date_time_format = culture_info {"gl"}.date_time_format();
       collection_assert::are_equal({"dom.", "luns", "mar.", "mér.", "xov.", "ven.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"xan.", "feb.", "mar.", "abr.", "maio", "xuño", "xul.", "ago.", "set.", "out.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12483,7 +12483,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gl_ES) {
+    auto test_method_(gl_ES) {
       auto date_time_format = culture_info {"gl-ES"}.date_time_format();
       collection_assert::are_equal({"dom.", "luns", "mar.", "mér.", "xov.", "ven.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"xan.", "feb.", "mar.", "abr.", "maio", "xuño", "xul.", "ago.", "set.", "out.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12510,7 +12510,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gn) {
+    auto test_method_(gn) {
       auto date_time_format = culture_info {"gn"}.date_time_format();
       collection_assert::are_equal({"Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12537,7 +12537,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gn_PY) {
+    auto test_method_(gn_PY) {
       auto date_time_format = culture_info {"gn-PY"}.date_time_format();
       collection_assert::are_equal({"Arateĩ", "Arakõi", "Araapy", "Ararundy", "Arapo", "Arapoteĩ", "Arapokõi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jasyteĩ", "Jasykõi", "Jasyapy", "Jasyrundy", "Jasypo", "Jasypoteĩ", "Jasypokõi", "Jasypoapy", "Jasyporundy", "Jasypa", "Jasypateĩ", "Jasypakõi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12564,7 +12564,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gsw) {
+    auto test_method_(gsw) {
       auto date_time_format = culture_info {"gsw"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mä.", "Zi.", "Mi.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12591,7 +12591,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gsw_CH) {
+    auto test_method_(gsw_CH) {
       auto date_time_format = culture_info {"gsw-CH"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mä.", "Zi.", "Mi.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12618,7 +12618,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gsw_FR) {
+    auto test_method_(gsw_FR) {
       auto date_time_format = culture_info {"gsw-FR"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mä.", "Zi.", "Mi.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12645,7 +12645,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gsw_LI) {
+    auto test_method_(gsw_LI) {
       auto date_time_format = culture_info {"gsw-LI"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mä.", "Zi.", "Mi.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12672,7 +12672,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gu) {
+    auto test_method_(gu) {
       auto date_time_format = culture_info {"gu"}.date_time_format();
       collection_assert::are_equal({"રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"જાન૰", "ફેબ૰", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગ૰", "સપ્ટ૰", "ઑક્ટ૰", "નવ૰", "ડિસ૰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12699,7 +12699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gu_IN) {
+    auto test_method_(gu_IN) {
       auto date_time_format = culture_info {"gu-IN"}.date_time_format();
       collection_assert::are_equal({"રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"જાન૰", "ફેબ૰", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગ૰", "સપ્ટ૰", "ઑક્ટ૰", "નવ૰", "ડિસ૰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12726,7 +12726,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(guz) {
+    auto test_method_(guz) {
       auto date_time_format = culture_info {"guz"}.date_time_format();
       collection_assert::are_equal({"Cpr", "Ctt", "Cmn", "Cmt", "Ars", "Icm", "Est"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Can", "Feb", "Mac", "Apr", "Mei", "Jun", "Cul", "Agt", "Sep", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12753,7 +12753,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(guz_KE) {
+    auto test_method_(guz_KE) {
       auto date_time_format = culture_info {"guz-KE"}.date_time_format();
       collection_assert::are_equal({"Cpr", "Ctt", "Cmn", "Cmt", "Ars", "Icm", "Est"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Can", "Feb", "Mac", "Apr", "Mei", "Jun", "Cul", "Agt", "Sep", "Okt", "Nob", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12780,7 +12780,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gv) {
+    auto test_method_(gv) {
       auto date_time_format = culture_info {"gv"}.date_time_format();
       collection_assert::are_equal({"Jed", "Jel", "Jem", "Jerc", "Jerd", "Jeh", "Jes"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"J-guer", "T-arree", "Mayrnt", "Avrril", "Boaldyn", "M-souree", "J-souree", "Luanistyn", "M-fouyir", "J-fouyir", "M-Houney", "M-Nollick", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12807,7 +12807,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(gv_IM) {
+    auto test_method_(gv_IM) {
       auto date_time_format = culture_info {"gv-IM"}.date_time_format();
       collection_assert::are_equal({"Jed", "Jel", "Jem", "Jerc", "Jerd", "Jeh", "Jes"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"J-guer", "T-arree", "Mayrnt", "Avrril", "Boaldyn", "M-souree", "J-souree", "Luanistyn", "M-fouyir", "J-fouyir", "M-Houney", "M-Nollick", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12834,7 +12834,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ha) {
+    auto test_method_(ha) {
       auto date_time_format = culture_info {"ha"}.date_time_format();
       collection_assert::are_equal({"Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fab", "Mar", "Afi", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12861,7 +12861,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ha_GH) {
+    auto test_method_(ha_GH) {
       auto date_time_format = culture_info {"ha-GH"}.date_time_format();
       collection_assert::are_equal({"Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fab", "Mar", "Afi", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12888,7 +12888,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ha_NE) {
+    auto test_method_(ha_NE) {
       auto date_time_format = culture_info {"ha-NE"}.date_time_format();
       collection_assert::are_equal({"Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fab", "Mar", "Afi", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12915,7 +12915,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ha_NG) {
+    auto test_method_(ha_NG) {
       auto date_time_format = culture_info {"ha-NG"}.date_time_format();
       collection_assert::are_equal({"Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fab", "Mar", "Afi", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12942,7 +12942,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(haw) {
+    auto test_method_(haw) {
       auto date_time_format = culture_info {"haw"}.date_time_format();
       collection_assert::are_equal({"LP", "P1", "P2", "P3", "P4", "P5", "P6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ian.", "Pep.", "Mal.", "ʻAp.", "Mei", "Iun.", "Iul.", "ʻAu.", "Kep.", "ʻOk.", "Now.", "Kek.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12969,7 +12969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(haw_US) {
+    auto test_method_(haw_US) {
       auto date_time_format = culture_info {"haw-US"}.date_time_format();
       collection_assert::are_equal({"LP", "P1", "P2", "P3", "P4", "P5", "P6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ian.", "Pep.", "Mal.", "ʻAp.", "Mei", "Iun.", "Iul.", "ʻAu.", "Kep.", "ʻOk.", "Now.", "Kek.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -12996,7 +12996,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(he) {
+    auto test_method_(he) {
       auto date_time_format = culture_info {"he"}.date_time_format();
       collection_assert::are_equal({"יום א׳", "יום ב׳", "יום ג׳", "יום ד׳", "יום ה׳", "יום ו׳", "שבת"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ינו׳", "פבר׳", "מרץ", "אפר׳", "מאי", "יוני", "יולי", "אוג׳", "ספט׳", "אוק׳", "נוב׳", "דצמ׳", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13023,7 +13023,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(he_IL) {
+    auto test_method_(he_IL) {
       auto date_time_format = culture_info {"he-IL"}.date_time_format();
       collection_assert::are_equal({"יום א׳", "יום ב׳", "יום ג׳", "יום ד׳", "יום ה׳", "יום ו׳", "שבת"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ינו׳", "פבר׳", "מרץ", "אפר׳", "מאי", "יוני", "יולי", "אוג׳", "ספט׳", "אוק׳", "נוב׳", "דצמ׳", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13050,7 +13050,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hi) {
+    auto test_method_(hi) {
       auto date_time_format = culture_info {"hi"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13077,7 +13077,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hi_IN) {
+    auto test_method_(hi_IN) {
       auto date_time_format = culture_info {"hi-IN"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13104,7 +13104,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hi_Latn) {
+    auto test_method_(hi_Latn) {
       auto date_time_format = culture_info {"hi-Latn"}.date_time_format();
       collection_assert::are_equal({"Ravi", "Som", "Mangal", "Budh", "Guru", "Shukra", "Shani"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13131,7 +13131,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hi_Latn_IN) {
+    auto test_method_(hi_Latn_IN) {
       auto date_time_format = culture_info {"hi-Latn-IN"}.date_time_format();
       collection_assert::are_equal({"Ravi", "Som", "Mangal", "Budh", "Guru", "Shukra", "Shani"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13158,7 +13158,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hmn) {
+    auto test_method_(hmn) {
       auto date_time_format = culture_info {"hmn"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13185,7 +13185,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hmn_CN) {
+    auto test_method_(hmn_CN) {
       auto date_time_format = culture_info {"hmn-CN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13212,7 +13212,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hr) {
+    auto test_method_(hr) {
       auto date_time_format = culture_info {"hr"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13239,7 +13239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hr_BA) {
+    auto test_method_(hr_BA) {
       auto date_time_format = culture_info {"hr-BA"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13266,7 +13266,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hr_HR) {
+    auto test_method_(hr_HR) {
       auto date_time_format = culture_info {"hr-HR"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13293,7 +13293,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hsb) {
+    auto test_method_(hsb) {
       auto date_time_format = culture_info {"hsb"}.date_time_format();
       collection_assert::are_equal({"nje", "pón", "wut", "srj", "štw", "pja", "sob"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "měr.", "apr.", "mej.", "jun.", "jul.", "awg.", "sep.", "okt.", "now.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13320,7 +13320,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hsb_DE) {
+    auto test_method_(hsb_DE) {
       auto date_time_format = culture_info {"hsb-DE"}.date_time_format();
       collection_assert::are_equal({"nje", "pón", "wut", "srj", "štw", "pja", "sob"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "měr.", "apr.", "mej.", "jun.", "jul.", "awg.", "sep.", "okt.", "now.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13347,7 +13347,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hu) {
+    auto test_method_(hu) {
       auto date_time_format = culture_info {"hu"}.date_time_format();
       collection_assert::are_equal({"V", "H", "K", "Sze", "Cs", "P", "Szo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13374,7 +13374,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hu_HU) {
+    auto test_method_(hu_HU) {
       auto date_time_format = culture_info {"hu-HU"}.date_time_format();
       collection_assert::are_equal({"V", "H", "K", "Sze", "Cs", "P", "Szo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13401,7 +13401,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hy) {
+    auto test_method_(hy) {
       auto date_time_format = culture_info {"hy"}.date_time_format();
       collection_assert::are_equal({"կիր", "երկ", "երք", "չրք", "հնգ", "ուր", "շբթ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"հնվ", "փտվ", "մրտ", "ապր", "մյս", "հնս", "հլս", "օգս", "սեպ", "հոկ", "նոյ", "դեկ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13428,7 +13428,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy թ․ MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(hy_AM) {
+    auto test_method_(hy_AM) {
       auto date_time_format = culture_info {"hy-AM"}.date_time_format();
       collection_assert::are_equal({"կիր", "երկ", "երք", "չրք", "հնգ", "ուր", "շբթ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"հնվ", "փտվ", "մրտ", "ապր", "մյս", "հնս", "հլս", "օգս", "սեպ", "հոկ", "նոյ", "դեկ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13455,7 +13455,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy թ․ MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ia) {
+    auto test_method_(ia) {
       auto date_time_format = culture_info {"ia"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "jov", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "oct", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13482,7 +13482,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ia_001) {
+    auto test_method_(ia_001) {
       auto date_time_format = culture_info {"ia-001"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "jov", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "oct", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13509,7 +13509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(id) {
+    auto test_method_(id) {
       auto date_time_format = culture_info {"id"}.date_time_format();
       collection_assert::are_equal({"Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13536,7 +13536,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(id_ID) {
+    auto test_method_(id_ID) {
       auto date_time_format = culture_info {"id-ID"}.date_time_format();
       collection_assert::are_equal({"Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13563,7 +13563,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ie) {
+    auto test_method_(ie) {
       auto date_time_format = culture_info {"ie"}.date_time_format();
       collection_assert::are_equal({"sol.", "lun.", "mar.", "mer.", "jov.", "ven.", "sat."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "febr.", "mar.", "apr.", "may", "jun.", "julí", "aug.", "sept.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13590,7 +13590,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ie_EE) {
+    auto test_method_(ie_EE) {
       auto date_time_format = culture_info {"ie-EE"}.date_time_format();
       collection_assert::are_equal({"sol.", "lun.", "mar.", "mer.", "jov.", "ven.", "sat."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "febr.", "mar.", "apr.", "may", "jun.", "julí", "aug.", "sept.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13617,7 +13617,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ig) {
+    auto test_method_(ig) {
       auto date_time_format = culture_info {"ig"}.date_time_format();
       collection_assert::are_equal({"Sọn", "Mọn", "Tiu", "Wen", "Tọọ", "Fraị", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jen", "Feb", "Maa", "Epr", "Mee", "Juu", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13644,7 +13644,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ig_NG) {
+    auto test_method_(ig_NG) {
       auto date_time_format = culture_info {"ig-NG"}.date_time_format();
       collection_assert::are_equal({"Sọn", "Mọn", "Tiu", "Wen", "Tọọ", "Fraị", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jen", "Feb", "Maa", "Epr", "Mee", "Juu", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13671,7 +13671,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ii) {
+    auto test_method_(ii) {
       auto date_time_format = culture_info {"ii"}.date_time_format();
       collection_assert::are_equal({"ꑬꆏ", "ꆏꋍ", "ꆏꑍ", "ꆏꌕ", "ꆏꇖ", "ꆏꉬ", "ꆏꃘ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ꋍꆪ", "ꑍꆪ", "ꌕꆪ", "ꇖꆪ", "ꉬꆪ", "ꃘꆪ", "ꏃꆪ", "ꉆꆪ", "ꈬꆪ", "ꊰꆪ", "ꊯꊪꆪ", "ꊰꑋꆪ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13698,7 +13698,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ii_CN) {
+    auto test_method_(ii_CN) {
       auto date_time_format = culture_info {"ii-CN"}.date_time_format();
       collection_assert::are_equal({"ꑬꆏ", "ꆏꋍ", "ꆏꑍ", "ꆏꌕ", "ꆏꇖ", "ꆏꉬ", "ꆏꃘ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ꋍꆪ", "ꑍꆪ", "ꌕꆪ", "ꇖꆪ", "ꉬꆪ", "ꃘꆪ", "ꏃꆪ", "ꉆꆪ", "ꈬꆪ", "ꊰꆪ", "ꊯꊪꆪ", "ꊰꑋꆪ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13725,7 +13725,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(inh) {
+    auto test_method_(inh) {
       auto date_time_format = culture_info {"inh"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13752,7 +13752,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(io) {
+    auto test_method_(io) {
       auto date_time_format = culture_info {"io"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13779,7 +13779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(io_001) {
+    auto test_method_(io_001) {
       auto date_time_format = culture_info {"io-001"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13806,7 +13806,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(is) {
+    auto test_method_(is) {
       auto date_time_format = culture_info {"is"}.date_time_format();
       collection_assert::are_equal({"sun.", "mán.", "þri.", "mið.", "fim.", "fös.", "lau."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maí", "jún.", "júl.", "ágú.", "sep.", "okt.", "nóv.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13833,7 +13833,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(is_IS) {
+    auto test_method_(is_IS) {
       auto date_time_format = culture_info {"is-IS"}.date_time_format();
       collection_assert::are_equal({"sun.", "mán.", "þri.", "mið.", "fim.", "fös.", "lau."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maí", "jún.", "júl.", "ágú.", "sep.", "okt.", "nóv.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13860,7 +13860,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(it) {
+    auto test_method_(it) {
       auto date_time_format = culture_info {"it"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "gio", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13887,7 +13887,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(it_CH) {
+    auto test_method_(it_CH) {
       auto date_time_format = culture_info {"it-CH"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "gio", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13914,7 +13914,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(it_IT) {
+    auto test_method_(it_IT) {
       auto date_time_format = culture_info {"it-IT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "gio", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13941,7 +13941,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(it_SM) {
+    auto test_method_(it_SM) {
       auto date_time_format = culture_info {"it-SM"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "gio", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13968,7 +13968,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(it_VA) {
+    auto test_method_(it_VA) {
       auto date_time_format = culture_info {"it-VA"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "gio", "ven", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -13995,7 +13995,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(iu) {
+    auto test_method_(iu) {
       auto date_time_format = culture_info {"iu"}.date_time_format();
       collection_assert::are_equal({"ᓈᑦᑏᖑᔭᖅ", "ᓇᒡᒐᔾᔭᐅ", "ᓇᒡᒐᔾᔭᐅᓕᖅᑭ", "ᐱᖓᑦᓯᖅ", "ᓯᑕᒻᒥᖅ", "ᑕᓪᓕᒻᒥᐅᑦ", "ᓈᑦᓰᖑᔭᓛᕐᓂᐊᖅ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᔭᓐᓄᐊᓕ", "ᕕᕝᕗᐊᓕ", "ᒫᑦᓯ", "ᐊᐃᑉᐳᓗ", "ᒪᐃ", "ᔫᓂ", "ᔪᓚᐃ", "ᐊᐅᒡᒍᓯ", "ᓯᑎᐱᕆ", "ᐆᑦᑑᕝᕙ", "ᓄᕕᐱᕆ", "ᑎᓯᐱᕆ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14022,7 +14022,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(iu_CA) {
+    auto test_method_(iu_CA) {
       auto date_time_format = culture_info {"iu-CA"}.date_time_format();
       collection_assert::are_equal({"ᓈᑦᑏᖑᔭᖅ", "ᓇᒡᒐᔾᔭᐅ", "ᓇᒡᒐᔾᔭᐅᓕᖅᑭ", "ᐱᖓᑦᓯᖅ", "ᓯᑕᒻᒥᖅ", "ᑕᓪᓕᒻᒥᐅᑦ", "ᓈᑦᓰᖑᔭᓛᕐᓂᐊᖅ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᔭᓐᓄᐊᓕ", "ᕕᕝᕗᐊᓕ", "ᒫᑦᓯ", "ᐊᐃᑉᐳᓗ", "ᒪᐃ", "ᔫᓂ", "ᔪᓚᐃ", "ᐊᐅᒡᒍᓯ", "ᓯᑎᐱᕆ", "ᐆᑦᑑᕝᕙ", "ᓄᕕᐱᕆ", "ᑎᓯᐱᕆ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14049,7 +14049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ja) {
+    auto test_method_(ja) {
       auto date_time_format = culture_info {"ja"}.date_time_format();
       collection_assert::are_equal({"日", "月", "火", "水", "木", "金", "土"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14076,7 +14076,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ja_JP) {
+    auto test_method_(ja_JP) {
       auto date_time_format = culture_info {"ja-JP"}.date_time_format();
       collection_assert::are_equal({"日", "月", "火", "水", "木", "金", "土"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14103,7 +14103,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jbo) {
+    auto test_method_(jbo) {
       auto date_time_format = culture_info {"jbo"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14130,7 +14130,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jbo_001) {
+    auto test_method_(jbo_001) {
       auto date_time_format = culture_info {"jbo-001"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14157,7 +14157,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jgo) {
+    auto test_method_(jgo) {
       auto date_time_format = culture_info {"jgo"}.date_time_format();
       collection_assert::are_equal({"Sɔ́ndi", "Mɔ́ndi", "Ápta Mɔ́ndi", "Wɛ́nɛsɛdɛ", "Tɔ́sɛdɛ", "Fɛlâyɛdɛ", "Sásidɛ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Nduŋmbi Saŋ", "Pɛsaŋ Pɛ́pá", "Pɛsaŋ Pɛ́tát", "Pɛsaŋ Pɛ́nɛ́kwa", "Pɛsaŋ Pataa", "Pɛsaŋ Pɛ́nɛ́ntúkú", "Pɛsaŋ Saambá", "Pɛsaŋ Pɛ́nɛ́fɔm", "Pɛsaŋ Pɛ́nɛ́pfúꞋú", "Pɛsaŋ Nɛgɛ́m", "Pɛsaŋ Ntsɔ̌pmɔ́", "Pɛsaŋ Ntsɔ̌ppá", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14184,7 +14184,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jgo_CM) {
+    auto test_method_(jgo_CM) {
       auto date_time_format = culture_info {"jgo-CM"}.date_time_format();
       collection_assert::are_equal({"Sɔ́ndi", "Mɔ́ndi", "Ápta Mɔ́ndi", "Wɛ́nɛsɛdɛ", "Tɔ́sɛdɛ", "Fɛlâyɛdɛ", "Sásidɛ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Nduŋmbi Saŋ", "Pɛsaŋ Pɛ́pá", "Pɛsaŋ Pɛ́tát", "Pɛsaŋ Pɛ́nɛ́kwa", "Pɛsaŋ Pataa", "Pɛsaŋ Pɛ́nɛ́ntúkú", "Pɛsaŋ Saambá", "Pɛsaŋ Pɛ́nɛ́fɔm", "Pɛsaŋ Pɛ́nɛ́pfúꞋú", "Pɛsaŋ Nɛgɛ́m", "Pɛsaŋ Ntsɔ̌pmɔ́", "Pɛsaŋ Ntsɔ̌ppá", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14211,7 +14211,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jmc) {
+    auto test_method_(jmc) {
       auto date_time_format = culture_info {"jmc"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14238,7 +14238,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jmc_TZ) {
+    auto test_method_(jmc_TZ) {
       auto date_time_format = culture_info {"jmc-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14265,7 +14265,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jv) {
+    auto test_method_(jv) {
       auto date_time_format = culture_info {"jv"}.date_time_format();
       collection_assert::are_equal({"Ahad", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14292,7 +14292,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(jv_ID) {
+    auto test_method_(jv_ID) {
       auto date_time_format = culture_info {"jv-ID"}.date_time_format();
       collection_assert::are_equal({"Ahad", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14319,7 +14319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ka) {
+    auto test_method_(ka) {
       auto date_time_format = culture_info {"ka"}.date_time_format();
       collection_assert::are_equal({"კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"იან", "თებ", "მარ", "აპრ", "მაი", "ივნ", "ივლ", "აგვ", "სექ", "ოქტ", "ნოე", "დეკ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14346,7 +14346,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ka_GE) {
+    auto test_method_(ka_GE) {
       auto date_time_format = culture_info {"ka-GE"}.date_time_format();
       collection_assert::are_equal({"კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"იან", "თებ", "მარ", "აპრ", "მაი", "ივნ", "ივლ", "აგვ", "სექ", "ოქტ", "ნოე", "დეკ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14373,7 +14373,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kab) {
+    auto test_method_(kab) {
       auto date_time_format = culture_info {"kab"}.date_time_format();
       collection_assert::are_equal({"Yan", "San", "Kraḍ", "Kuẓ", "Sam", "Sḍis", "Say"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Yen", "Fur", "Meɣ", "Yeb", "May", "Yun", "Yul", "Ɣuc", "Cte", "Tub", "Nun", "Duǧ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14400,7 +14400,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kab_DZ) {
+    auto test_method_(kab_DZ) {
       auto date_time_format = culture_info {"kab-DZ"}.date_time_format();
       collection_assert::are_equal({"Yan", "San", "Kraḍ", "Kuẓ", "Sam", "Sḍis", "Say"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Yen", "Fur", "Meɣ", "Yeb", "May", "Yun", "Yul", "Ɣuc", "Cte", "Tub", "Nun", "Duǧ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14427,7 +14427,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kaj) {
+    auto test_method_(kaj) {
       auto date_time_format = culture_info {"kaj"}.date_time_format();
       collection_assert::are_equal({"Lad", "Lin", "Tal", "Lar", "Lam", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"A̱yr", "A̱hw", "A̱ta", "A̱na", "A̱pf", "A̱ki", "A̱ty", "A̱ni", "A̱ku", "Swa", "Sby", "Sbh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14454,7 +14454,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kaj_NG) {
+    auto test_method_(kaj_NG) {
       auto date_time_format = culture_info {"kaj-NG"}.date_time_format();
       collection_assert::are_equal({"Lad", "Lin", "Tal", "Lar", "Lam", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"A̱yr", "A̱hw", "A̱ta", "A̱na", "A̱pf", "A̱ki", "A̱ty", "A̱ni", "A̱ku", "Swa", "Sby", "Sbh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14481,7 +14481,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kam) {
+    auto test_method_(kam) {
       auto date_time_format = culture_info {"kam"}.date_time_format();
       collection_assert::are_equal({"Wky", "Wkw", "Wkl", "Wtũ", "Wkn", "Wtn", "Wth"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mbe", "Kel", "Ktũ", "Kan", "Ktn", "Tha", "Moo", "Nya", "Knd", "Ĩku", "Ĩkm", "Ĩkl", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14508,7 +14508,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kam_KE) {
+    auto test_method_(kam_KE) {
       auto date_time_format = culture_info {"kam-KE"}.date_time_format();
       collection_assert::are_equal({"Wky", "Wkw", "Wkl", "Wtũ", "Wkn", "Wtn", "Wth"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mbe", "Kel", "Ktũ", "Kan", "Ktn", "Tha", "Moo", "Nya", "Knd", "Ĩku", "Ĩkm", "Ĩkl", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14535,7 +14535,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kcg) {
+    auto test_method_(kcg) {
       auto date_time_format = culture_info {"kcg"}.date_time_format();
       collection_assert::are_equal({"Lad", "Tan", "Tal", "Lar", "Lam", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Juw", "Swi", "Tsa", "Nya", "Tsw", "Ata", "Ana", "Ari", "Aku", "Swa", "Man", "Mas", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14562,7 +14562,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kcg_NG) {
+    auto test_method_(kcg_NG) {
       auto date_time_format = culture_info {"kcg-NG"}.date_time_format();
       collection_assert::are_equal({"Lad", "Tan", "Tal", "Lar", "Lam", "Jum", "Asa"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Juw", "Swi", "Tsa", "Nya", "Tsw", "Ata", "Ana", "Ari", "Aku", "Swa", "Man", "Mas", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14589,7 +14589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kde) {
+    auto test_method_(kde) {
       auto date_time_format = culture_info {"kde"}.date_time_format();
       collection_assert::are_equal({"Ll2", "Ll3", "Ll4", "Ll5", "Ll6", "Ll7", "Ll1"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14616,7 +14616,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kde_TZ) {
+    auto test_method_(kde_TZ) {
       auto date_time_format = culture_info {"kde-TZ"}.date_time_format();
       collection_assert::are_equal({"Ll2", "Ll3", "Ll4", "Ll5", "Ll6", "Ll7", "Ll1"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14643,7 +14643,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kea) {
+    auto test_method_(kea) {
       auto date_time_format = culture_info {"kea"}.date_time_format();
       collection_assert::are_equal({"dum", "sig", "ter", "kua", "kin", "ses", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Otu", "Nuv", "Diz", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14670,7 +14670,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'di' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kea_CV) {
+    auto test_method_(kea_CV) {
       auto date_time_format = culture_info {"kea-CV"}.date_time_format();
       collection_assert::are_equal({"dum", "sig", "ter", "kua", "kin", "ses", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Otu", "Nuv", "Diz", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14697,7 +14697,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'di' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kgp) {
+    auto test_method_(kgp) {
       auto date_time_format = culture_info {"kgp"}.date_time_format();
       collection_assert::are_equal({"num.", "pir.", "rég.", "tẽg.", "vẽn.", "pén.", "sav."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1Ky.", "2Ky.", "3Ky.", "4Ky.", "5Ky.", "6Ky.", "7Ky.", "8Ky.", "9Ky.", "10Ky.", "11Ky.", "12Ky.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14724,7 +14724,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kgp_BR) {
+    auto test_method_(kgp_BR) {
       auto date_time_format = culture_info {"kgp-BR"}.date_time_format();
       collection_assert::are_equal({"num.", "pir.", "rég.", "tẽg.", "vẽn.", "pén.", "sav."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1Ky.", "2Ky.", "3Ky.", "4Ky.", "5Ky.", "6Ky.", "7Ky.", "8Ky.", "9Ky.", "10Ky.", "11Ky.", "12Ky.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14751,7 +14751,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(khq) {
+    auto test_method_(khq) {
       auto date_time_format = culture_info {"khq"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alj", "Ass"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14778,7 +14778,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(khq_ML) {
+    auto test_method_(khq_ML) {
       auto date_time_format = culture_info {"khq-ML"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alj", "Ass"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14805,7 +14805,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ki) {
+    auto test_method_(ki) {
       auto date_time_format = culture_info {"ki"}.date_time_format();
       collection_assert::are_equal({"KMA", "NTT", "NMN", "NMT", "ART", "NMA", "NMM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"JEN", "WKR", "WGT", "WKN", "WTN", "WTD", "WMJ", "WNN", "WKD", "WIK", "WMW", "DIT", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14832,7 +14832,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ki_KE) {
+    auto test_method_(ki_KE) {
       auto date_time_format = culture_info {"ki-KE"}.date_time_format();
       collection_assert::are_equal({"KMA", "NTT", "NMN", "NMT", "ART", "NMA", "NMM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"JEN", "WKR", "WGT", "WKN", "WTN", "WTD", "WMJ", "WNN", "WKD", "WIK", "WMW", "DIT", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14859,7 +14859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kk) {
+    auto test_method_(kk) {
       auto date_time_format = culture_info {"kk"}.date_time_format();
       collection_assert::are_equal({"жс", "дс", "сс", "ср", "бс", "жм", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14886,7 +14886,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ж'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kk_Cyrl) {
+    auto test_method_(kk_Cyrl) {
       auto date_time_format = culture_info {"kk-Cyrl"}.date_time_format();
       collection_assert::are_equal({"жс", "дс", "сс", "ср", "бс", "жм", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14913,7 +14913,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ж'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kk_Cyrl_KZ) {
+    auto test_method_(kk_Cyrl_KZ) {
       auto date_time_format = culture_info {"kk-Cyrl-KZ"}.date_time_format();
       collection_assert::are_equal({"жс", "дс", "сс", "ср", "бс", "жм", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14940,7 +14940,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ж'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kk_KZ) {
+    auto test_method_(kk_KZ) {
       auto date_time_format = culture_info {"kk-KZ"}.date_time_format();
       collection_assert::are_equal({"жс", "дс", "сс", "ср", "бс", "жм", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14967,7 +14967,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ж'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kkj) {
+    auto test_method_(kkj) {
       auto date_time_format = culture_info {"kkj"}.date_time_format();
       collection_assert::are_equal({"sɔndi", "lundi", "mardi", "mɛrkɛrɛdi", "yedi", "vaŋdɛrɛdi", "mɔnɔ sɔndi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"pamba", "wanja", "mbiyɔ mɛndoŋgɔ", "Nyɔlɔmbɔŋgɔ", "Mɔnɔ ŋgbanja", "Nyaŋgwɛ ŋgbanja", "kuŋgwɛ", "fɛ", "njapi", "nyukul", "M11", "ɓulɓusɛ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -14994,7 +14994,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kkj_CM) {
+    auto test_method_(kkj_CM) {
       auto date_time_format = culture_info {"kkj-CM"}.date_time_format();
       collection_assert::are_equal({"sɔndi", "lundi", "mardi", "mɛrkɛrɛdi", "yedi", "vaŋdɛrɛdi", "mɔnɔ sɔndi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"pamba", "wanja", "mbiyɔ mɛndoŋgɔ", "Nyɔlɔmbɔŋgɔ", "Mɔnɔ ŋgbanja", "Nyaŋgwɛ ŋgbanja", "kuŋgwɛ", "fɛ", "njapi", "nyukul", "M11", "ɓulɓusɛ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15021,7 +15021,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kl) {
+    auto test_method_(kl) {
       auto date_time_format = culture_info {"kl"}.date_time_format();
       collection_assert::are_equal({"sap", "ata", "mar", "pin", "sis", "tal", "arf"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15048,7 +15048,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kl_GL) {
+    auto test_method_(kl_GL) {
       auto date_time_format = culture_info {"kl-GL"}.date_time_format();
       collection_assert::are_equal({"sap", "ata", "mar", "pin", "sis", "tal", "arf"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "febr", "mar", "apr", "maj", "jun", "jul", "aug", "sept", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15075,7 +15075,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kln) {
+    auto test_method_(kln) {
       auto date_time_format = culture_info {"kln"}.date_time_format();
       collection_assert::are_equal({"Kts", "Kot", "Koo", "Kos", "Koa", "Kom", "Kol"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mul", "Ngat", "Taa", "Iwo", "Mam", "Paa", "Nge", "Roo", "Bur", "Epe", "Kpt", "Kpa", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15102,7 +15102,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kln_KE) {
+    auto test_method_(kln_KE) {
       auto date_time_format = culture_info {"kln-KE"}.date_time_format();
       collection_assert::are_equal({"Kts", "Kot", "Koo", "Kos", "Koa", "Kom", "Kol"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mul", "Ngat", "Taa", "Iwo", "Mam", "Paa", "Nge", "Roo", "Bur", "Epe", "Kpt", "Kpa", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15129,7 +15129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(km) {
+    auto test_method_(km) {
       auto date_time_format = culture_info {"km"}.date_time_format();
       collection_assert::are_equal({"អាទិត្យ", "ចន្ទ", "អង្គារ", "ពុធ", "ព្រហ", "សុក្រ", "សៅរ៍"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15156,7 +15156,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(km_KH) {
+    auto test_method_(km_KH) {
       auto date_time_format = culture_info {"km-KH"}.date_time_format();
       collection_assert::are_equal({"អាទិត្យ", "ចន្ទ", "អង្គារ", "ពុធ", "ព្រហ", "សុក្រ", "សៅរ៍"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15183,7 +15183,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kn) {
+    auto test_method_(kn) {
       auto date_time_format = culture_info {"kn"}.date_time_format();
       collection_assert::are_equal({"ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15210,7 +15210,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kn_IN) {
+    auto test_method_(kn_IN) {
       auto date_time_format = culture_info {"kn-IN"}.date_time_format();
       collection_assert::are_equal({"ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15237,7 +15237,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ko) {
+    auto test_method_(ko) {
       auto date_time_format = culture_info {"ko"}.date_time_format();
       collection_assert::are_equal({"일", "월", "화", "수", "목", "금", "토"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15264,7 +15264,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy년 MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ko_CN) {
+    auto test_method_(ko_CN) {
       auto date_time_format = culture_info {"ko-CN"}.date_time_format();
       collection_assert::are_equal({"일", "월", "화", "수", "목", "금", "토"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15291,7 +15291,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy년 MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ko_KP) {
+    auto test_method_(ko_KP) {
       auto date_time_format = culture_info {"ko-KP"}.date_time_format();
       collection_assert::are_equal({"일", "월", "화", "수", "목", "금", "토"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15318,7 +15318,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy년 MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ko_KR) {
+    auto test_method_(ko_KR) {
       auto date_time_format = culture_info {"ko-KR"}.date_time_format();
       collection_assert::are_equal({"일", "월", "화", "수", "목", "금", "토"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15345,7 +15345,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy년 MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kok) {
+    auto test_method_(kok) {
       auto date_time_format = culture_info {"kok"}.date_time_format();
       collection_assert::are_equal({"आयतार", "सोमार", "मंगळार", "बुधवार", "बिरेस्तार", "शुक्रार", "शेनवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जानेवारी", "फेब्रुवारी", "मार्च", "एप्रील", "मे", "जून", "जुलय", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15372,7 +15372,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kok_Deva) {
+    auto test_method_(kok_Deva) {
       auto date_time_format = culture_info {"kok-Deva"}.date_time_format();
       collection_assert::are_equal({"आयतार", "सोमार", "मंगळार", "बुधवार", "बिरेस्तार", "शुक्रार", "शेनवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जानेवारी", "फेब्रुवारी", "मार्च", "एप्रील", "मे", "जून", "जुलय", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15399,7 +15399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kok_Deva_IN) {
+    auto test_method_(kok_Deva_IN) {
       auto date_time_format = culture_info {"kok-Deva-IN"}.date_time_format();
       collection_assert::are_equal({"आयतार", "सोमार", "मंगळार", "बुधवार", "बिरेस्तार", "शुक्रार", "शेनवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जानेवारी", "फेब्रुवारी", "मार्च", "एप्रील", "मे", "जून", "जुलय", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15426,7 +15426,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kok_Latn) {
+    auto test_method_(kok_Latn) {
       auto date_time_format = culture_info {"kok-Latn"}.date_time_format();
       collection_assert::are_equal({"Ait", "Som", "Mon", "Bud", "Bre", "Suk", "Son"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Otu", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15453,7 +15453,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kok_Latn_IN) {
+    auto test_method_(kok_Latn_IN) {
       auto date_time_format = culture_info {"kok-Latn-IN"}.date_time_format();
       collection_assert::are_equal({"Ait", "Som", "Mon", "Bud", "Bre", "Suk", "Son"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Otu", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15480,7 +15480,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kpe) {
+    auto test_method_(kpe) {
       auto date_time_format = culture_info {"kpe"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15507,7 +15507,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kpe_GN) {
+    auto test_method_(kpe_GN) {
       auto date_time_format = culture_info {"kpe-GN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15534,7 +15534,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kpe_LR) {
+    auto test_method_(kpe_LR) {
       auto date_time_format = culture_info {"kpe-LR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15561,7 +15561,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks) {
+    auto test_method_(ks) {
       auto date_time_format = culture_info {"ks"}.date_time_format();
       collection_assert::are_equal({"آتھوار", "ژٔندٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنؤری", "فرؤری", "مارٕچ", "اپریل", "مئی", "جوٗن", "جُلَے", "اگست", "ستمبر", "اکتوٗبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15588,7 +15588,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks_Arab) {
+    auto test_method_(ks_Arab) {
       auto date_time_format = culture_info {"ks-Arab"}.date_time_format();
       collection_assert::are_equal({"آتھوار", "ژٔندٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنؤری", "فرؤری", "مارٕچ", "اپریل", "مئی", "جوٗن", "جُلَے", "اگست", "ستمبر", "اکتوٗبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15615,7 +15615,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks_Arab_IN) {
+    auto test_method_(ks_Arab_IN) {
       auto date_time_format = culture_info {"ks-Arab-IN"}.date_time_format();
       collection_assert::are_equal({"آتھوار", "ژٔندٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنؤری", "فرؤری", "مارٕچ", "اپریل", "مئی", "جوٗن", "جُلَے", "اگست", "ستمبر", "اکتوٗبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15642,7 +15642,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks_Aran_IN) {
+    auto test_method_(ks_Aran_IN) {
       auto date_time_format = culture_info {"ks-Aran-IN"}.date_time_format();
       collection_assert::are_equal({"آتھوار", "ژٔندٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنؤری", "فرؤری", "مارٕچ", "اپریل", "مئی", "جوٗن", "جُلَے", "اگست", "ستمبر", "اکتوٗبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15669,7 +15669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks_Deva) {
+    auto test_method_(ks_Deva) {
       auto date_time_format = culture_info {"ks-Deva"}.date_time_format();
       collection_assert::are_equal({"आथवार", "चंदिरवार", "बुवार", "बोदवार", "ब्रेसवार", "जुम्मा", "बटवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सतुंबर", "अक्तूबर", "नवूमबर", "दसमबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15696,7 +15696,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ks_Deva_IN) {
+    auto test_method_(ks_Deva_IN) {
       auto date_time_format = culture_info {"ks-Deva-IN"}.date_time_format();
       collection_assert::are_equal({"आथवार", "चंदिरवार", "बुवार", "बोदवार", "ब्रेसवार", "जुम्मा", "बटवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सतुंबर", "अक्तूबर", "नवूमबर", "दसमबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15723,7 +15723,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksb) {
+    auto test_method_(ksb) {
       auto date_time_format = culture_info {"ksb"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jmn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15750,7 +15750,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksb_TZ) {
+    auto test_method_(ksb_TZ) {
       auto date_time_format = culture_info {"ksb-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jmn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15777,7 +15777,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksf) {
+    auto test_method_(ksf) {
       auto date_time_format = culture_info {"ksf"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "lǝn", "maa", "mɛk", "jǝǝ", "júm", "sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ŋ1", "ŋ2", "ŋ3", "ŋ4", "ŋ5", "ŋ6", "ŋ7", "ŋ8", "ŋ9", "ŋ10", "ŋ11", "ŋ12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15804,7 +15804,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksf_CM) {
+    auto test_method_(ksf_CM) {
       auto date_time_format = culture_info {"ksf-CM"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "lǝn", "maa", "mɛk", "jǝǝ", "júm", "sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ŋ1", "ŋ2", "ŋ3", "ŋ4", "ŋ5", "ŋ6", "ŋ7", "ŋ8", "ŋ9", "ŋ10", "ŋ11", "ŋ12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15831,7 +15831,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksh) {
+    auto test_method_(ksh) {
       auto date_time_format = culture_info {"ksh"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mo.", "Di.", "Me.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fäb", "Mäz", "Apr", "Mai", "Jun", "Jul", "Ouj", "Säp", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15858,7 +15858,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ksh_DE) {
+    auto test_method_(ksh_DE) {
       auto date_time_format = culture_info {"ksh-DE"}.date_time_format();
       collection_assert::are_equal({"Su.", "Mo.", "Di.", "Me.", "Du.", "Fr.", "Sa."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fäb", "Mäz", "Apr", "Mai", "Jun", "Jul", "Ouj", "Säp", "Okt", "Nov", "Dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15885,7 +15885,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ku) {
+    auto test_method_(ku) {
       auto date_time_format = culture_info {"ku"}.date_time_format();
       collection_assert::are_equal({"yşm", "dşm", "sşm", "çşm", "pşm", "înî", "şem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"rbn", "sbt", "adr", "nsn", "gln", "hzr", "trm", "tbx", "îln", "cot", "mjd", "brf", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15912,7 +15912,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM'a' yyyy'an'", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ku_TR) {
+    auto test_method_(ku_TR) {
       auto date_time_format = culture_info {"ku-TR"}.date_time_format();
       collection_assert::are_equal({"yşm", "dşm", "sşm", "çşm", "pşm", "înî", "şem"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"rbn", "sbt", "adr", "nsn", "gln", "hzr", "trm", "tbx", "îln", "cot", "mjd", "brf", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15939,7 +15939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM'a' yyyy'an'", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kw) {
+    auto test_method_(kw) {
       auto date_time_format = culture_info {"kw"}.date_time_format();
       collection_assert::are_equal({"Sul", "Lun", "Mth", "Mhr", "Yow", "Gwe", "Sad"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Gen", "Hwe", "Meu", "Ebr", "Me", "Met", "Gor", "Est", "Gwn", "Hed", "Du", "Kev", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15966,7 +15966,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kw_GB) {
+    auto test_method_(kw_GB) {
       auto date_time_format = culture_info {"kw-GB"}.date_time_format();
       collection_assert::are_equal({"Sul", "Lun", "Mth", "Mhr", "Yow", "Gwe", "Sad"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Gen", "Hwe", "Meu", "Ebr", "Me", "Met", "Gor", "Est", "Gwn", "Hed", "Du", "Kev", ""}, date_time_format.abreviated_month_genitive_names());
@@ -15993,7 +15993,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv) {
+    auto test_method_(kxv) {
       auto date_time_format = culture_info {"kxv"}.date_time_format();
       collection_assert::are_equal({"aadi", "smba", "manga", "puda", "laki", "sukru", "sani"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"pusu", "maha", "pagu", "hire", "bese", "jaṭṭa", "aasaḍi", "srabĩ", "bado", "dasara", "divi", "pande", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16020,7 +16020,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Deva) {
+    auto test_method_(kxv_Deva) {
       auto date_time_format = culture_info {"kxv-Deva"}.date_time_format();
       collection_assert::are_equal({"आदि", "साॅम्मा", "मान्गा", "पूदा", "लाक्की", "सुकुरु", "सान्नि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"पुसु", "माहा", "पागु", "हिर्रे", "बेसे", "जाट्टा", "आसाड़ी", "स्राबाँ", "बाॅदो", "दासारा", "दिवी", "पान्डे", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16047,7 +16047,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Deva_IN) {
+    auto test_method_(kxv_Deva_IN) {
       auto date_time_format = culture_info {"kxv-Deva-IN"}.date_time_format();
       collection_assert::are_equal({"आदि", "साॅम्मा", "मान्गा", "पूदा", "लाक्की", "सुकुरु", "सान्नि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"पुसु", "माहा", "पागु", "हिर्रे", "बेसे", "जाट्टा", "आसाड़ी", "स्राबाँ", "बाॅदो", "दासारा", "दिवी", "पान्डे", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16074,7 +16074,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Latn) {
+    auto test_method_(kxv_Latn) {
       auto date_time_format = culture_info {"kxv-Latn"}.date_time_format();
       collection_assert::are_equal({"aadi", "smba", "manga", "puda", "laki", "sukru", "sani"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"pusu", "maha", "pagu", "hire", "bese", "jaṭṭa", "aasaḍi", "srabĩ", "bado", "dasara", "divi", "pande", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16101,7 +16101,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Latn_IN) {
+    auto test_method_(kxv_Latn_IN) {
       auto date_time_format = culture_info {"kxv-Latn-IN"}.date_time_format();
       collection_assert::are_equal({"aadi", "smba", "manga", "puda", "laki", "sukru", "sani"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"pusu", "maha", "pagu", "hire", "bese", "jaṭṭa", "aasaḍi", "srabĩ", "bado", "dasara", "divi", "pande", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16128,7 +16128,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Orya) {
+    auto test_method_(kxv_Orya) {
       auto date_time_format = culture_info {"kxv-Orya"}.date_time_format();
       collection_assert::are_equal({"ଆଦି", "ସମ୍ବା", "ମାଙ୍ଗା", "ପୁଦା", "ଲାକି", "ସୁକ୍ରୁ", "ସାନି"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ପୁସୁ", "ମାହା", "ପାଗୁ", "ହିରେ", "ବେସେ", "ଜାଟା", "ଆସାଡ଼ି", "ସ୍ରାବାଁ", "ବଦ", "ଦାସାରା", "ଦିୱି", "ପାଣ୍ଡେ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16155,7 +16155,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Orya_IN) {
+    auto test_method_(kxv_Orya_IN) {
       auto date_time_format = culture_info {"kxv-Orya-IN"}.date_time_format();
       collection_assert::are_equal({"ଆଦି", "ସମ୍ବା", "ମାଙ୍ଗା", "ପୁଦା", "ଲାକି", "ସୁକ୍ରୁ", "ସାନି"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ପୁସୁ", "ମାହା", "ପାଗୁ", "ହିରେ", "ବେସେ", "ଜାଟା", "ଆସାଡ଼ି", "ସ୍ରାବାଁ", "ବଦ", "ଦାସାରା", "ଦିୱି", "ପାଣ୍ଡେ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16182,7 +16182,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Telu) {
+    auto test_method_(kxv_Telu) {
       auto date_time_format = culture_info {"kxv-Telu"}.date_time_format();
       collection_assert::are_equal({"వారమి", "నమారా", "మాంగాడా", "వుదారా", "లాకివరా", "నుక్ వరా", "సానివరా"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"మాగ", "గుండు", "హిరెఇ", "బెసెకి", "లండి", "రాత", "బాన్దపాణా", "బార్సి", "అస్ర", "దివెడి", "పాండు", "పుసు", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16209,7 +16209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(kxv_Telu_IN) {
+    auto test_method_(kxv_Telu_IN) {
       auto date_time_format = culture_info {"kxv-Telu-IN"}.date_time_format();
       collection_assert::are_equal({"వారమి", "నమారా", "మాంగాడా", "వుదారా", "లాకివరా", "నుక్ వరా", "సానివరా"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"మాగ", "గుండు", "హిరెఇ", "బెసెకి", "లండి", "రాత", "బాన్దపాణా", "బార్సి", "అస్ర", "దివెడి", "పాండు", "పుసు", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16236,7 +16236,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ky) {
+    auto test_method_(ky) {
       auto date_time_format = culture_info {"ky"}.date_time_format();
       collection_assert::are_equal({"жек.", "дүй.", "шейш.", "шарш.", "бейш.", "жума", "ишм."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "фев.", "мар.", "апр.", "май", "июн.", "июл.", "авг.", "сен.", "окт.", "ноя.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16263,7 +16263,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy-'ж'., MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ky_KG) {
+    auto test_method_(ky_KG) {
       auto date_time_format = culture_info {"ky-KG"}.date_time_format();
       collection_assert::are_equal({"жек.", "дүй.", "шейш.", "шарш.", "бейш.", "жума", "ишм."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "фев.", "мар.", "апр.", "май", "июн.", "июл.", "авг.", "сен.", "окт.", "ноя.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16290,7 +16290,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy-'ж'., MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lag) {
+    auto test_method_(lag) {
       auto date_time_format = culture_info {"lag"}.date_time_format();
       collection_assert::are_equal({"Píili", "Táatu", "Íne", "Táano", "Alh", "Ijm", "Móosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Fúngatɨ", "Naanɨ", "Keenda", "Ikúmi", "Inyambala", "Idwaata", "Mʉʉnchɨ", "Vɨɨrɨ", "Saatʉ", "Inyi", "Saano", "Sasatʉ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16317,7 +16317,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lag_TZ) {
+    auto test_method_(lag_TZ) {
       auto date_time_format = culture_info {"lag-TZ"}.date_time_format();
       collection_assert::are_equal({"Píili", "Táatu", "Íne", "Táano", "Alh", "Ijm", "Móosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Fúngatɨ", "Naanɨ", "Keenda", "Ikúmi", "Inyambala", "Idwaata", "Mʉʉnchɨ", "Vɨɨrɨ", "Saatʉ", "Inyi", "Saano", "Sasatʉ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16344,7 +16344,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lb) {
+    auto test_method_(lb) {
       auto date_time_format = culture_info {"lb"}.date_time_format();
       collection_assert::are_equal({"Son", "Méi", "Dën", "Mët", "Don", "Fre", "Sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "Mäe.", "Abr.", "Mee", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16371,7 +16371,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lb_LU) {
+    auto test_method_(lb_LU) {
       auto date_time_format = culture_info {"lb-LU"}.date_time_format();
       collection_assert::are_equal({"Son", "Méi", "Dën", "Mët", "Don", "Fre", "Sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan.", "Feb.", "Mäe.", "Abr.", "Mee", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16398,7 +16398,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lg) {
+    auto test_method_(lg) {
       auto date_time_format = culture_info {"lg"}.date_time_format();
       collection_assert::are_equal({"Sab", "Bal", "Lw2", "Lw3", "Lw4", "Lw5", "Lw6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apu", "Maa", "Juu", "Jul", "Agu", "Seb", "Oki", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16425,7 +16425,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lg_UG) {
+    auto test_method_(lg_UG) {
       auto date_time_format = culture_info {"lg-UG"}.date_time_format();
       collection_assert::are_equal({"Sab", "Bal", "Lw2", "Lw3", "Lw4", "Lw5", "Lw6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apu", "Maa", "Juu", "Jul", "Agu", "Seb", "Oki", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16452,7 +16452,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lij) {
+    auto test_method_(lij) {
       auto date_time_format = culture_info {"lij"}.date_time_format();
       collection_assert::are_equal({"domenega", "lunesdì", "mätesdì", "mäcordì", "zeuggia", "venardì", "sabbo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"de zenâ", "de frevâ", "de marso", "d’arvî", "de mazzo", "de zugno", "de luggio", "d’agosto", "de settembre", "d’ottobre", "de novembre", "de dexembre", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16479,7 +16479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lij_IT) {
+    auto test_method_(lij_IT) {
       auto date_time_format = culture_info {"lij-IT"}.date_time_format();
       collection_assert::are_equal({"domenega", "lunesdì", "mätesdì", "mäcordì", "zeuggia", "venardì", "sabbo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"de zenâ", "de frevâ", "de marso", "d’arvî", "de mazzo", "de zugno", "de luggio", "d’agosto", "de settembre", "d’ottobre", "de novembre", "de dexembre", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16506,7 +16506,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lkt) {
+    auto test_method_(lkt) {
       auto date_time_format = culture_info {"lkt"}.date_time_format();
       collection_assert::are_equal({"Aŋpétuwakȟaŋ", "Aŋpétuwaŋži", "Aŋpétunuŋpa", "Aŋpétuyamni", "Aŋpétutopa", "Aŋpétuzaptaŋ", "Owáŋgyužažapi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Wiótheȟika Wí", "Thiyóȟeyuŋka Wí", "Ištáwičhayazaŋ Wí", "Pȟežítȟo Wí", "Čhaŋwápetȟo Wí", "Wípazukȟa-wašté Wí", "Čhaŋpȟásapa Wí", "Wasútȟuŋ Wí", "Čhaŋwápeǧi Wí", "Čhaŋwápe-kasná Wí", "Waníyetu Wí", "Tȟahékapšuŋ Wí", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16533,7 +16533,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lkt_US) {
+    auto test_method_(lkt_US) {
       auto date_time_format = culture_info {"lkt-US"}.date_time_format();
       collection_assert::are_equal({"Aŋpétuwakȟaŋ", "Aŋpétuwaŋži", "Aŋpétunuŋpa", "Aŋpétuyamni", "Aŋpétutopa", "Aŋpétuzaptaŋ", "Owáŋgyužažapi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Wiótheȟika Wí", "Thiyóȟeyuŋka Wí", "Ištáwičhayazaŋ Wí", "Pȟežítȟo Wí", "Čhaŋwápetȟo Wí", "Wípazukȟa-wašté Wí", "Čhaŋpȟásapa Wí", "Wasútȟuŋ Wí", "Čhaŋwápeǧi Wí", "Čhaŋwápe-kasná Wí", "Waníyetu Wí", "Tȟahékapšuŋ Wí", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16560,7 +16560,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lmo) {
+    auto test_method_(lmo) {
       auto date_time_format = culture_info {"lmo"}.date_time_format();
       collection_assert::are_equal({"domenega", "lundì", "mardì", "mercoldì", "sgiovedì", "venerdì", "sabet"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sginer", "fevrer", "marz", "avril", "masg", "sgiugn", "luj", "avost", "setember", "otover", "november", "dicember", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16587,7 +16587,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lmo_IT) {
+    auto test_method_(lmo_IT) {
       auto date_time_format = culture_info {"lmo-IT"}.date_time_format();
       collection_assert::are_equal({"domenega", "lundì", "mardì", "mercoldì", "sgiovedì", "venerdì", "sabet"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sginer", "fevrer", "marz", "avril", "masg", "sgiugn", "luj", "avost", "setember", "otover", "november", "dicember", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16614,7 +16614,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ln) {
+    auto test_method_(ln) {
       auto date_time_format = culture_info {"ln"}.date_time_format();
       collection_assert::are_equal({"eye", "ybo", "mbl", "mst", "min", "mtn", "mps"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fbl", "msi", "apl", "mai", "yun", "yul", "agt", "stb", "ɔtb", "nvb", "dsb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16641,7 +16641,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ln_AO) {
+    auto test_method_(ln_AO) {
       auto date_time_format = culture_info {"ln-AO"}.date_time_format();
       collection_assert::are_equal({"eye", "ybo", "mbl", "mst", "min", "mtn", "mps"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fbl", "msi", "apl", "mai", "yun", "yul", "agt", "stb", "ɔtb", "nvb", "dsb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16668,7 +16668,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ln_CD) {
+    auto test_method_(ln_CD) {
       auto date_time_format = culture_info {"ln-CD"}.date_time_format();
       collection_assert::are_equal({"eye", "ybo", "mbl", "mst", "min", "mtn", "mps"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fbl", "msi", "apl", "mai", "yun", "yul", "agt", "stb", "ɔtb", "nvb", "dsb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16695,7 +16695,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ln_CF) {
+    auto test_method_(ln_CF) {
       auto date_time_format = culture_info {"ln-CF"}.date_time_format();
       collection_assert::are_equal({"eye", "ybo", "mbl", "mst", "min", "mtn", "mps"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fbl", "msi", "apl", "mai", "yun", "yul", "agt", "stb", "ɔtb", "nvb", "dsb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16722,7 +16722,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ln_CG) {
+    auto test_method_(ln_CG) {
       auto date_time_format = culture_info {"ln-CG"}.date_time_format();
       collection_assert::are_equal({"eye", "ybo", "mbl", "mst", "min", "mtn", "mps"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fbl", "msi", "apl", "mai", "yun", "yul", "agt", "stb", "ɔtb", "nvb", "dsb", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16749,7 +16749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lo) {
+    auto test_method_(lo) {
       auto date_time_format = culture_info {"lo"}.date_time_format();
       collection_assert::are_equal({"ອາທິດ", "ຈັນ", "ອັງຄານ", "ພຸດ", "ພະຫັດ", "ສຸກ", "ເສົາ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມິ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16776,7 +16776,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lo_LA) {
+    auto test_method_(lo_LA) {
       auto date_time_format = culture_info {"lo-LA"}.date_time_format();
       collection_assert::are_equal({"ອາທິດ", "ຈັນ", "ອັງຄານ", "ພຸດ", "ພະຫັດ", "ສຸກ", "ເສົາ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມິ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16803,7 +16803,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lrc) {
+    auto test_method_(lrc) {
       auto date_time_format = culture_info {"lrc"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16830,7 +16830,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lrc_IQ) {
+    auto test_method_(lrc_IQ) {
       auto date_time_format = culture_info {"lrc-IQ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانڤیە", "فئڤریە", "مارس", "آڤریل", "مئی", "جوٙأن", "جوٙلا", "آگوست", "سئپتامر", "ئوکتوڤر", "نوڤامر", "دئسامر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16857,7 +16857,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lrc_IR) {
+    auto test_method_(lrc_IR) {
       auto date_time_format = culture_info {"lrc-IR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16884,7 +16884,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lt) {
+    auto test_method_(lt) {
       auto date_time_format = culture_info {"lt"}.date_time_format();
       collection_assert::are_equal({"sk", "pr", "an", "tr", "kt", "pn", "št"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"saus.", "vas.", "kov.", "bal.", "geg.", "birž.", "liep.", "rugp.", "rugs.", "spal.", "lapkr.", "gruod.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16911,7 +16911,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'm'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lt_LT) {
+    auto test_method_(lt_LT) {
       auto date_time_format = culture_info {"lt-LT"}.date_time_format();
       collection_assert::are_equal({"sk", "pr", "an", "tr", "kt", "pn", "št"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"saus.", "vas.", "kov.", "bal.", "geg.", "birž.", "liep.", "rugp.", "rugs.", "spal.", "lapkr.", "gruod.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16938,7 +16938,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'm'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lu) {
+    auto test_method_(lu) {
       auto date_time_format = culture_info {"lu"}.date_time_format();
       collection_assert::are_equal({"Lum", "Nko", "Ndy", "Ndg", "Njw", "Ngv", "Lub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Cio", "Lui", "Lus", "Muu", "Lum", "Luf", "Kab", "Lush", "Lut", "Lun", "Kas", "Cis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16965,7 +16965,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lu_CD) {
+    auto test_method_(lu_CD) {
       auto date_time_format = culture_info {"lu-CD"}.date_time_format();
       collection_assert::are_equal({"Lum", "Nko", "Ndy", "Ndg", "Njw", "Ngv", "Lub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Cio", "Lui", "Lus", "Muu", "Lum", "Luf", "Kab", "Lush", "Lut", "Lun", "Kas", "Cis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -16992,7 +16992,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(luo) {
+    auto test_method_(luo) {
       auto date_time_format = culture_info {"luo"}.date_time_format();
       collection_assert::are_equal({"JMP", "WUT", "TAR", "TAD", "TAN", "TAB", "NGS"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"DAC", "DAR", "DAD", "DAN", "DAH", "DAU", "DAO", "DAB", "DOC", "DAP", "DGI", "DAG", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17019,7 +17019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(luo_KE) {
+    auto test_method_(luo_KE) {
       auto date_time_format = culture_info {"luo-KE"}.date_time_format();
       collection_assert::are_equal({"JMP", "WUT", "TAR", "TAD", "TAN", "TAB", "NGS"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"DAC", "DAR", "DAD", "DAN", "DAH", "DAU", "DAO", "DAB", "DOC", "DAP", "DGI", "DAG", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17046,7 +17046,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lut) {
+    auto test_method_(lut) {
       auto date_time_format = culture_info {"lut"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17073,7 +17073,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(luy) {
+    auto test_method_(luy) {
       auto date_time_format = culture_info {"luy"}.date_time_format();
       collection_assert::are_equal({"J2", "J3", "J4", "J5", "Al", "Ij", "J1"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17100,7 +17100,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(luy_KE) {
+    auto test_method_(luy_KE) {
       auto date_time_format = culture_info {"luy-KE"}.date_time_format();
       collection_assert::are_equal({"J2", "J3", "J4", "J5", "Al", "Ij", "J1"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17127,7 +17127,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lv) {
+    auto test_method_(lv) {
       auto date_time_format = culture_info {"lv"}.date_time_format();
       collection_assert::are_equal({"Svētd.", "Pirmd.", "Otrd.", "Trešd.", "Ceturtd.", "Piektd.", "Sestd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "febr.", "marts", "apr.", "maijs", "jūn.", "jūl.", "aug.", "sept.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17154,7 +17154,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy. 'g'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(lv_LV) {
+    auto test_method_(lv_LV) {
       auto date_time_format = culture_info {"lv-LV"}.date_time_format();
       collection_assert::are_equal({"Svētd.", "Pirmd.", "Otrd.", "Trešd.", "Ceturtd.", "Piektd.", "Sestd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janv.", "febr.", "marts", "apr.", "maijs", "jūn.", "jūl.", "aug.", "sept.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17181,7 +17181,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy. 'g'. MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mai) {
+    auto test_method_(mai) {
       auto date_time_format = culture_info {"mai"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17208,7 +17208,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mai_IN) {
+    auto test_method_(mai_IN) {
       auto date_time_format = culture_info {"mai-IN"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17235,7 +17235,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mas) {
+    auto test_method_(mas) {
       auto date_time_format = culture_info {"mas"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Dal", "Ará", "Ɔɛn", "Doy", "Lép", "Rok", "Sás", "Bɔ́r", "Kús", "Gís", "Shʉ́", "Ntʉ́", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17262,7 +17262,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mas_KE) {
+    auto test_method_(mas_KE) {
       auto date_time_format = culture_info {"mas-KE"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Dal", "Ará", "Ɔɛn", "Doy", "Lép", "Rok", "Sás", "Bɔ́r", "Kús", "Gís", "Shʉ́", "Ntʉ́", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17289,7 +17289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mas_TZ) {
+    auto test_method_(mas_TZ) {
       auto date_time_format = culture_info {"mas-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Dal", "Ará", "Ɔɛn", "Doy", "Lép", "Rok", "Sás", "Bɔ́r", "Kús", "Gís", "Shʉ́", "Ntʉ́", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17316,7 +17316,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mer) {
+    auto test_method_(mer) {
       auto date_time_format = culture_info {"mer"}.date_time_format();
       collection_assert::are_equal({"KIU", "MRA", "WAI", "WET", "WEN", "WTN", "JUM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"JAN", "FEB", "MAC", "ĨPU", "MĨĨ", "NJU", "NJR", "AGA", "SPT", "OKT", "NOV", "DEC", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17343,7 +17343,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mer_KE) {
+    auto test_method_(mer_KE) {
       auto date_time_format = culture_info {"mer-KE"}.date_time_format();
       collection_assert::are_equal({"KIU", "MRA", "WAI", "WET", "WEN", "WTN", "JUM"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"JAN", "FEB", "MAC", "ĨPU", "MĨĨ", "NJU", "NJR", "AGA", "SPT", "OKT", "NOV", "DEC", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17370,7 +17370,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mfe) {
+    auto test_method_(mfe) {
       auto date_time_format = culture_info {"mfe"}.date_time_format();
       collection_assert::are_equal({"dim", "lin", "mar", "mer", "ze", "van", "sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"zan", "fev", "mar", "avr", "me", "zin", "zil", "out", "sep", "okt", "nov", "des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17397,7 +17397,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mfe_MU) {
+    auto test_method_(mfe_MU) {
       auto date_time_format = culture_info {"mfe-MU"}.date_time_format();
       collection_assert::are_equal({"dim", "lin", "mar", "mer", "ze", "van", "sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"zan", "fev", "mar", "avr", "me", "zin", "zil", "out", "sep", "okt", "nov", "des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17424,7 +17424,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mg) {
+    auto test_method_(mg) {
       auto date_time_format = culture_info {"mg"}.date_time_format();
       collection_assert::are_equal({"Alah", "Alats", "Tal", "Alar", "Alak", "Zom", "Asab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mey", "Jon", "Jol", "Aog", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17451,7 +17451,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mg_MG) {
+    auto test_method_(mg_MG) {
       auto date_time_format = culture_info {"mg-MG"}.date_time_format();
       collection_assert::are_equal({"Alah", "Alats", "Tal", "Alar", "Alak", "Zom", "Asab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "Mey", "Jon", "Jol", "Aog", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17478,7 +17478,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mgh) {
+    auto test_method_(mgh) {
       auto date_time_format = culture_info {"mgh"}.date_time_format();
       collection_assert::are_equal({"Sab", "Jtt", "Jnn", "Jtn", "Ara", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Kwa", "Una", "Rar", "Che", "Tha", "Moc", "Sab", "Nan", "Tis", "Kum", "Moj", "Yel", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17505,7 +17505,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mgh_MZ) {
+    auto test_method_(mgh_MZ) {
       auto date_time_format = culture_info {"mgh-MZ"}.date_time_format();
       collection_assert::are_equal({"Sab", "Jtt", "Jnn", "Jtn", "Ara", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Kwa", "Una", "Rar", "Che", "Tha", "Moc", "Sab", "Nan", "Tis", "Kum", "Moj", "Yel", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17532,7 +17532,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mgo) {
+    auto test_method_(mgo) {
       auto date_time_format = culture_info {"mgo"}.date_time_format();
       collection_assert::are_equal({"Aneg 1", "Aneg 2", "Aneg 3", "Aneg 4", "Aneg 5", "Aneg 6", "Aneg 7"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mbegtug", "imeg àbùbì", "imeg mbəŋchubi", "iməg ngwə̀t", "iməg fog", "iməg ichiibɔd", "iməg àdùmbə̀ŋ", "iməg ichika", "iməg kud", "iməg tèsiʼe", "iməg zò", "iməg krizmed", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17559,7 +17559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mgo_CM) {
+    auto test_method_(mgo_CM) {
       auto date_time_format = culture_info {"mgo-CM"}.date_time_format();
       collection_assert::are_equal({"Aneg 1", "Aneg 2", "Aneg 3", "Aneg 4", "Aneg 5", "Aneg 6", "Aneg 7"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mbegtug", "imeg àbùbì", "imeg mbəŋchubi", "iməg ngwə̀t", "iməg fog", "iməg ichiibɔd", "iməg àdùmbə̀ŋ", "iməg ichika", "iməg kud", "iməg tèsiʼe", "iməg zò", "iməg krizmed", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17586,7 +17586,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mi) {
+    auto test_method_(mi) {
       auto date_time_format = culture_info {"mi"}.date_time_format();
       collection_assert::are_equal({"Rāt", "Man", "Tūr", "Wen", "Tāi", "Par", "Rāh"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hān", "Pēp", "Māe", "Āpe", "Mei", "Hun", "Hūr", "Āku", "Hep", "Oke", "Noe", "Tīh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17613,7 +17613,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mi_NZ) {
+    auto test_method_(mi_NZ) {
       auto date_time_format = culture_info {"mi-NZ"}.date_time_format();
       collection_assert::are_equal({"Rāt", "Man", "Tūr", "Wen", "Tāi", "Par", "Rāh"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Hān", "Pēp", "Māe", "Āpe", "Mei", "Hun", "Hūr", "Āku", "Hep", "Oke", "Noe", "Tīh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17640,7 +17640,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mic) {
+    auto test_method_(mic) {
       auto date_time_format = culture_info {"mic"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17667,7 +17667,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mic_CA) {
+    auto test_method_(mic_CA) {
       auto date_time_format = culture_info {"mic-CA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17694,7 +17694,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mid) {
+    auto test_method_(mid) {
       auto date_time_format = culture_info {"mid"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17721,7 +17721,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mid_IQ) {
+    auto test_method_(mid_IQ) {
       auto date_time_format = culture_info {"mid-IQ"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17748,7 +17748,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mk) {
+    auto test_method_(mk) {
       auto date_time_format = culture_info {"mk"}.date_time_format();
       collection_assert::are_equal({"нед.", "пон.", "вто.", "сре.", "чет.", "пет.", "саб."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан.", "фев.", "мар.", "апр.", "мај", "јун.", "јул.", "авг.", "сеп.", "окт.", "ное.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17775,7 +17775,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mk_MK) {
+    auto test_method_(mk_MK) {
       auto date_time_format = culture_info {"mk-MK"}.date_time_format();
       collection_assert::are_equal({"нед.", "пон.", "вто.", "сре.", "чет.", "пет.", "саб."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан.", "фев.", "мар.", "апр.", "мај", "јун.", "јул.", "авг.", "сеп.", "окт.", "ное.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17802,7 +17802,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ml) {
+    auto test_method_(ml) {
       auto date_time_format = culture_info {"ml"}.date_time_format();
       collection_assert::are_equal({"ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17829,7 +17829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ml_IN) {
+    auto test_method_(ml_IN) {
       auto date_time_format = culture_info {"ml-IN"}.date_time_format();
       collection_assert::are_equal({"ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17856,7 +17856,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mn) {
+    auto test_method_(mn) {
       auto date_time_format = culture_info {"mn"}.date_time_format();
       collection_assert::are_equal({"Ня", "Да", "Мя", "Лх", "Пү", "Ба", "Бя"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17883,7 +17883,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'оны' MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mn_MN) {
+    auto test_method_(mn_MN) {
       auto date_time_format = culture_info {"mn-MN"}.date_time_format();
       collection_assert::are_equal({"Ня", "Да", "Мя", "Лх", "Пү", "Ба", "Бя"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17910,7 +17910,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'оны' MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mni) {
+    auto test_method_(mni) {
       auto date_time_format = culture_info {"mni"}.date_time_format();
       collection_assert::are_equal({"নোংমাইজিং", "নিংথৌকাবা", "লৈবাকপোকপা", "য়ুমশকৈশা", "শগোলশেন", "ইরাই", "থাংজ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জন", "ফেব্রুৱারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "ওগ", "সেপ্টেম্বর", "ওক্টোবর", "নভেম্বর", "ডিসেম্বর", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17937,7 +17937,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mni_Beng) {
+    auto test_method_(mni_Beng) {
       auto date_time_format = culture_info {"mni-Beng"}.date_time_format();
       collection_assert::are_equal({"নোংমাইজিং", "নিংথৌকাবা", "লৈবাকপোকপা", "য়ুমশকৈশা", "শগোলশেন", "ইরাই", "থাংজ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জন", "ফেব্রুৱারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "ওগ", "সেপ্টেম্বর", "ওক্টোবর", "নভেম্বর", "ডিসেম্বর", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17964,7 +17964,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mni_Beng_IN) {
+    auto test_method_(mni_Beng_IN) {
       auto date_time_format = culture_info {"mni-Beng-IN"}.date_time_format();
       collection_assert::are_equal({"নোংমাইজিং", "নিংথৌকাবা", "লৈবাকপোকপা", "য়ুমশকৈশা", "শগোলশেন", "ইরাই", "থাংজ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"জন", "ফেব্রুৱারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "ওগ", "সেপ্টেম্বর", "ওক্টোবর", "নভেম্বর", "ডিসেম্বর", ""}, date_time_format.abreviated_month_genitive_names());
@@ -17991,7 +17991,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mni_Mtei) {
+    auto test_method_(mni_Mtei) {
       auto date_time_format = culture_info {"mni-Mtei"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18018,7 +18018,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mni_Mtei_IN) {
+    auto test_method_(mni_Mtei_IN) {
       auto date_time_format = culture_info {"mni-Mtei-IN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18045,7 +18045,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(moh) {
+    auto test_method_(moh) {
       auto date_time_format = culture_info {"moh"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18072,7 +18072,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(moh_CA) {
+    auto test_method_(moh_CA) {
       auto date_time_format = culture_info {"moh-CA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18099,7 +18099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mr) {
+    auto test_method_(mr) {
       auto date_time_format = culture_info {"mr"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जाने", "फेब्रु", "मार्च", "एप्रि", "मे", "जून", "जुलै", "ऑग", "सप्टें", "ऑक्टो", "नोव्हें", "डिसें", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18126,7 +18126,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mr_IN) {
+    auto test_method_(mr_IN) {
       auto date_time_format = culture_info {"mr-IN"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जाने", "फेब्रु", "मार्च", "एप्रि", "मे", "जून", "जुलै", "ऑग", "सप्टें", "ऑक्टो", "नोव्हें", "डिसें", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18153,7 +18153,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms) {
+    auto test_method_(ms) {
       auto date_time_format = culture_info {"ms"}.date_time_format();
       collection_assert::are_equal({"Ahd", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18180,7 +18180,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_Arab) {
+    auto test_method_(ms_Arab) {
       auto date_time_format = culture_info {"ms-Arab"}.date_time_format();
       collection_assert::are_equal({"احد", "اثنين", "ثلاث", "رابو", "خميس", "جمعة", "سبتو"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانواري", "فيبواري", "مچ", "اڤريل", "مي", "جون", "جولاي", "ݢوس", "سيڤتيمبر", "اوکتوبر", "نوۏيمبر", "ديسيمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18207,7 +18207,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_Arab_BN) {
+    auto test_method_(ms_Arab_BN) {
       auto date_time_format = culture_info {"ms-Arab-BN"}.date_time_format();
       collection_assert::are_equal({"احد", "اثنين", "ثلاث", "رابو", "خميس", "جمعة", "سبتو"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانواري", "فيبواري", "مچ", "اڤريل", "مي", "جون", "جولاي", "ݢوس", "سيڤتيمبر", "اوکتوبر", "نوۏيمبر", "ديسيمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18234,7 +18234,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_Arab_MY) {
+    auto test_method_(ms_Arab_MY) {
       auto date_time_format = culture_info {"ms-Arab-MY"}.date_time_format();
       collection_assert::are_equal({"احد", "اثنين", "ثلاث", "رابو", "خميس", "جمعة", "سبتو"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جانواري", "فيبواري", "مچ", "اڤريل", "مي", "جون", "جولاي", "ݢوس", "سيڤتيمبر", "اوکتوبر", "نوۏيمبر", "ديسيمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18261,7 +18261,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_BN) {
+    auto test_method_(ms_BN) {
       auto date_time_format = culture_info {"ms-BN"}.date_time_format();
       collection_assert::are_equal({"Ahd", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18288,7 +18288,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_ID) {
+    auto test_method_(ms_ID) {
       auto date_time_format = culture_info {"ms-ID"}.date_time_format();
       collection_assert::are_equal({"Ahd", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18315,7 +18315,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_MY) {
+    auto test_method_(ms_MY) {
       auto date_time_format = culture_info {"ms-MY"}.date_time_format();
       collection_assert::are_equal({"Ahd", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18342,7 +18342,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ms_SG) {
+    auto test_method_(ms_SG) {
       auto date_time_format = culture_info {"ms-SG"}.date_time_format();
       collection_assert::are_equal({"Ahd", "Isn", "Sel", "Rab", "Kha", "Jum", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18369,7 +18369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mt) {
+    auto test_method_(mt) {
       auto date_time_format = culture_info {"mt"}.date_time_format();
       collection_assert::are_equal({"Ħad", "Tne", "Tli", "Erb", "Ħam", "Ġim", "Sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fra", "Mar", "Apr", "Mej", "Ġun", "Lul", "Aww", "Set", "Ott", "Nov", "Diċ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18396,7 +18396,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mt_MT) {
+    auto test_method_(mt_MT) {
       auto date_time_format = culture_info {"mt-MT"}.date_time_format();
       collection_assert::are_equal({"Ħad", "Tne", "Tli", "Erb", "Ħam", "Ġim", "Sib"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fra", "Mar", "Apr", "Mej", "Ġun", "Lul", "Aww", "Set", "Ott", "Nov", "Diċ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18423,7 +18423,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mua) {
+    auto test_method_(mua) {
       auto date_time_format = culture_info {"mua"}.date_time_format();
       collection_assert::are_equal({"Cya", "Cla", "Czi", "Cko", "Cka", "Cga", "Cze"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"FLO", "CLA", "CKI", "FMF", "MAD", "MBI", "MLI", "MAM", "FDE", "FMU", "FGW", "FYU", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18450,7 +18450,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mua_CM) {
+    auto test_method_(mua_CM) {
       auto date_time_format = culture_info {"mua-CM"}.date_time_format();
       collection_assert::are_equal({"Cya", "Cla", "Czi", "Cko", "Cka", "Cga", "Cze"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"FLO", "CLA", "CKI", "FMF", "MAD", "MBI", "MLI", "MAM", "FDE", "FMU", "FGW", "FYU", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18477,7 +18477,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mus) {
+    auto test_method_(mus) {
       auto date_time_format = culture_info {"mus"}.date_time_format();
       collection_assert::are_equal({"Nettvʼcako", "Enhvteceskv", "Enhvteceskv Enhvyvtke", "Ennvrkvpv", "Ennvrkvpv Enhvyvtke", "Nak Okkoskv Nettv", "Nettv Cakʼcuse"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Rvfo Cuse", "Hotvle Hvse", "Tasahcuce", "Tasahce Rakko", "Ke Hvse", "Kvco Hvse", "Hiyuce", "Hiyo Rakko", "Otowoskuce", "Otowoskv Rakko", "Ehole", "Rvfo Rakko", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18504,7 +18504,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mus_US) {
+    auto test_method_(mus_US) {
       auto date_time_format = culture_info {"mus-US"}.date_time_format();
       collection_assert::are_equal({"Nettvʼcako", "Enhvteceskv", "Enhvteceskv Enhvyvtke", "Ennvrkvpv", "Ennvrkvpv Enhvyvtke", "Nak Okkoskv Nettv", "Nettv Cakʼcuse"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Rvfo Cuse", "Hotvle Hvse", "Tasahcuce", "Tasahce Rakko", "Ke Hvse", "Kvco Hvse", "Hiyuce", "Hiyo Rakko", "Otowoskuce", "Otowoskv Rakko", "Ehole", "Rvfo Rakko", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18531,7 +18531,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(my) {
+    auto test_method_(my) {
       auto date_time_format = culture_info {"my"}.date_time_format();
       collection_assert::are_equal({"တနင်္ဂနွေ", "တနင်္လာ", "အင်္ဂါ", "ဗုဒ္ဓဟူး", "ကြာသပတေး", "သောကြာ", "စနေ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ဇန်", "ဖေ", "မတ်", "ဧ", "မေ", "ဇွန်", "ဇူ", "ဩ", "စက်", "အောက်", "နို", "ဒီ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18558,7 +18558,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(my_MM) {
+    auto test_method_(my_MM) {
       auto date_time_format = culture_info {"my-MM"}.date_time_format();
       collection_assert::are_equal({"တနင်္ဂနွေ", "တနင်္လာ", "အင်္ဂါ", "ဗုဒ္ဓဟူး", "ကြာသပတေး", "သောကြာ", "စနေ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ဇန်", "ဖေ", "မတ်", "ဧ", "မေ", "ဇွန်", "ဇူ", "ဩ", "စက်", "အောက်", "နို", "ဒီ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18585,7 +18585,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(myv) {
+    auto test_method_(myv) {
       auto date_time_format = culture_info {"myv"}.date_time_format();
       collection_assert::are_equal({"тар", "атя", "вас", "кун", "кал", "сюк", "шля"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"якшамков", "даволков", "эйзюрков", "чадыков", "панжиков", "аштемков", "медьков", "умарьков", "таштамков", "ожоков", "сундерьков", "ацамков", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18612,7 +18612,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(myv_RU) {
+    auto test_method_(myv_RU) {
       auto date_time_format = culture_info {"myv-RU"}.date_time_format();
       collection_assert::are_equal({"тар", "атя", "вас", "кун", "кал", "сюк", "шля"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"якшамков", "даволков", "эйзюрков", "чадыков", "панжиков", "аштемков", "медьков", "умарьков", "таштамков", "ожоков", "сундерьков", "ацамков", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18639,7 +18639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mzn) {
+    auto test_method_(mzn) {
       auto date_time_format = culture_info {"mzn"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18666,7 +18666,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(mzn_IR) {
+    auto test_method_(mzn_IR) {
       auto date_time_format = culture_info {"mzn-IR"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18693,7 +18693,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(naq) {
+    auto test_method_(naq) {
       auto date_time_format = culture_info {"naq"}.date_time_format();
       collection_assert::are_equal({"Son", "Ma", "De", "Wu", "Do", "Fr", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18720,7 +18720,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(naq_NA) {
+    auto test_method_(naq_NA) {
       auto date_time_format = culture_info {"naq-NA"}.date_time_format();
       collection_assert::are_equal({"Son", "Ma", "De", "Wu", "Do", "Fr", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18747,7 +18747,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nb) {
+    auto test_method_(nb) {
       auto date_time_format = culture_info {"nb"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tir.", "ons.", "tor.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18774,7 +18774,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nb_NO) {
+    auto test_method_(nb_NO) {
       auto date_time_format = culture_info {"nb-NO"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tir.", "ons.", "tor.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18801,7 +18801,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nb_SJ) {
+    auto test_method_(nb_SJ) {
       auto date_time_format = culture_info {"nb-SJ"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tir.", "ons.", "tor.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18828,7 +18828,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nd) {
+    auto test_method_(nd) {
       auto date_time_format = culture_info {"nd"}.date_time_format();
       collection_assert::are_equal({"Son", "Mvu", "Sib", "Sit", "Sin", "Sih", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Zib", "Nhlo", "Mbi", "Mab", "Nkw", "Nhla", "Ntu", "Ncw", "Mpan", "Mfu", "Lwe", "Mpal", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18855,7 +18855,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nd_ZW) {
+    auto test_method_(nd_ZW) {
       auto date_time_format = culture_info {"nd-ZW"}.date_time_format();
       collection_assert::are_equal({"Son", "Mvu", "Sib", "Sit", "Sin", "Sih", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Zib", "Nhlo", "Mbi", "Mab", "Nkw", "Nhla", "Ntu", "Ncw", "Mpan", "Mfu", "Lwe", "Mpal", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18882,7 +18882,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nds) {
+    auto test_method_(nds) {
       auto date_time_format = culture_info {"nds"}.date_time_format();
       collection_assert::are_equal({"Sünndag", "Maandag", "Dingsdag", "Middeweken", "Dunnersdag", "Freedag", "Sünnavend"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Januaar", "Februaar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktover", "November", "Dezember", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18909,7 +18909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nds_DE) {
+    auto test_method_(nds_DE) {
       auto date_time_format = culture_info {"nds-DE"}.date_time_format();
       collection_assert::are_equal({"Sünndag", "Maandag", "Dingsdag", "Middeweken", "Dunnersdag", "Freedag", "Sünnavend"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Januaar", "Februaar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktover", "November", "Dezember", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18936,7 +18936,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nds_NL) {
+    auto test_method_(nds_NL) {
       auto date_time_format = culture_info {"nds-NL"}.date_time_format();
       collection_assert::are_equal({"Sünndag", "Maandag", "Dingsdag", "Middeweken", "Dunnersdag", "Freedag", "Sünnavend"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Januaar", "Februaar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktover", "November", "Dezember", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18963,7 +18963,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ne) {
+    auto test_method_(ne) {
       auto date_time_format = culture_info {"ne"}.date_time_format();
       collection_assert::are_equal({"आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -18990,7 +18990,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ne_IN) {
+    auto test_method_(ne_IN) {
       auto date_time_format = culture_info {"ne-IN"}.date_time_format();
       collection_assert::are_equal({"आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19017,7 +19017,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ne_NP) {
+    auto test_method_(ne_NP) {
       auto date_time_format = culture_info {"ne-NP"}.date_time_format();
       collection_assert::are_equal({"आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19044,7 +19044,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl) {
+    auto test_method_(nl) {
       auto date_time_format = culture_info {"nl"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19071,7 +19071,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_AW) {
+    auto test_method_(nl_AW) {
       auto date_time_format = culture_info {"nl-AW"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19098,7 +19098,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_BE) {
+    auto test_method_(nl_BE) {
       auto date_time_format = culture_info {"nl-BE"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19125,7 +19125,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_BQ) {
+    auto test_method_(nl_BQ) {
       auto date_time_format = culture_info {"nl-BQ"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19152,7 +19152,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_CW) {
+    auto test_method_(nl_CW) {
       auto date_time_format = culture_info {"nl-CW"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19179,7 +19179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_NL) {
+    auto test_method_(nl_NL) {
       auto date_time_format = culture_info {"nl-NL"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19206,7 +19206,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_SR) {
+    auto test_method_(nl_SR) {
       auto date_time_format = culture_info {"nl-SR"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19233,7 +19233,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nl_SX) {
+    auto test_method_(nl_SX) {
       auto date_time_format = culture_info {"nl-SX"}.date_time_format();
       collection_assert::are_equal({"zo", "ma", "di", "wo", "do", "vr", "za"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19260,7 +19260,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nmg) {
+    auto test_method_(nmg) {
       auto date_time_format = culture_info {"nmg"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "mɔ́n", "smb", "sml", "smn", "mbs", "sas"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ng1", "ng2", "ng3", "ng4", "ng5", "ng6", "ng7", "ng8", "ng9", "ng10", "ng11", "kris", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19287,7 +19287,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nmg_CM) {
+    auto test_method_(nmg_CM) {
       auto date_time_format = culture_info {"nmg-CM"}.date_time_format();
       collection_assert::are_equal({"sɔ́n", "mɔ́n", "smb", "sml", "smn", "mbs", "sas"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ng1", "ng2", "ng3", "ng4", "ng5", "ng6", "ng7", "ng8", "ng9", "ng10", "ng11", "kris", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19314,7 +19314,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nn) {
+    auto test_method_(nn) {
       auto date_time_format = culture_info {"nn"}.date_time_format();
       collection_assert::are_equal({"søn", "mån", "tys", "ons", "tor", "fre", "lau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19341,7 +19341,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nn_NO) {
+    auto test_method_(nn_NO) {
       auto date_time_format = culture_info {"nn-NO"}.date_time_format();
       collection_assert::are_equal({"søn", "mån", "tys", "ons", "tor", "fre", "lau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19368,7 +19368,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nnh) {
+    auto test_method_(nnh) {
       auto date_time_format = culture_info {"nnh"}.date_time_format();
       collection_assert::are_equal({"lyɛʼɛ́ sẅíŋtè", "mvfò lyɛ̌ʼ", "mbɔ́ɔntè mvfò lyɛ̌ʼ", "tsètsɛ̀ɛ lyɛ̌ʼ", "mbɔ́ɔntè tsetsɛ̀ɛ lyɛ̌ʼ", "mvfò màga lyɛ̌ʼ", "màga lyɛ̌ʼ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"saŋ tsetsɛ̀ɛ lùm", "saŋ kàg ngwóŋ", "saŋ lepyè shúm", "saŋ cÿó", "saŋ tsɛ̀ɛ cÿó", "saŋ njÿoláʼ", "saŋ tyɛ̀b tyɛ̀b mbʉ̀ŋ", "saŋ mbʉ̀ŋ", "saŋ ngwɔ̀ʼ mbÿɛ", "saŋ tàŋa tsetsáʼ", "saŋ mejwoŋó", "saŋ lùm", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19395,7 +19395,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nnh_CM) {
+    auto test_method_(nnh_CM) {
       auto date_time_format = culture_info {"nnh-CM"}.date_time_format();
       collection_assert::are_equal({"lyɛʼɛ́ sẅíŋtè", "mvfò lyɛ̌ʼ", "mbɔ́ɔntè mvfò lyɛ̌ʼ", "tsètsɛ̀ɛ lyɛ̌ʼ", "mbɔ́ɔntè tsetsɛ̀ɛ lyɛ̌ʼ", "mvfò màga lyɛ̌ʼ", "màga lyɛ̌ʼ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"saŋ tsetsɛ̀ɛ lùm", "saŋ kàg ngwóŋ", "saŋ lepyè shúm", "saŋ cÿó", "saŋ tsɛ̀ɛ cÿó", "saŋ njÿoláʼ", "saŋ tyɛ̀b tyɛ̀b mbʉ̀ŋ", "saŋ mbʉ̀ŋ", "saŋ ngwɔ̀ʼ mbÿɛ", "saŋ tàŋa tsetsáʼ", "saŋ mejwoŋó", "saŋ lùm", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19422,7 +19422,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nnp) {
+    auto test_method_(nnp) {
       auto date_time_format = culture_info {"nnp"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19449,7 +19449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nnp_IN) {
+    auto test_method_(nnp_IN) {
       auto date_time_format = culture_info {"nnp-IN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19476,7 +19476,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(no) {
+    auto test_method_(no) {
       auto date_time_format = culture_info {"no"}.date_time_format();
       collection_assert::are_equal({"søn.", "man.", "tir.", "ons.", "tor.", "fre.", "lør."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "mai", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "des.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19503,7 +19503,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nqo) {
+    auto test_method_(nqo) {
       auto date_time_format = culture_info {"nqo"}.date_time_format();
       collection_assert::are_equal({"ߞߊ߯ߙ", "ߞߐ߬ߓ", "ߞߐ߬ߟ", "ߞߎߣ", "ߓߌߟ", "ߛߌ߬ߣ", "ߞߍ߲ߘ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ߓߌ߲ߠ", "ߞߏ߲ߞ", "ߕߙߊ", "ߞߏ߲ߘ", "ߘߓߊ߬ߕ", "ߥߊ߬ߛ", "ߞߊ߬ߙ", "ߘߓߊ߬ߓ", "ߕߎߟߊߝߌ߲", "ߞߏ߲ߓ", "ߣߍߣ", "ߞߏߟ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19530,7 +19530,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nqo_GN) {
+    auto test_method_(nqo_GN) {
       auto date_time_format = culture_info {"nqo-GN"}.date_time_format();
       collection_assert::are_equal({"ߞߊ߯ߙ", "ߞߐ߬ߓ", "ߞߐ߬ߟ", "ߞߎߣ", "ߓߌߟ", "ߛߌ߬ߣ", "ߞߍ߲ߘ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ߓߌ߲ߠ", "ߞߏ߲ߞ", "ߕߙߊ", "ߞߏ߲ߘ", "ߘߓߊ߬ߕ", "ߥߊ߬ߛ", "ߞߊ߬ߙ", "ߘߓߊ߬ߓ", "ߕߎߟߊߝߌ߲", "ߞߏ߲ߓ", "ߣߍߣ", "ߞߏߟ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19557,7 +19557,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nr) {
+    auto test_method_(nr) {
       auto date_time_format = culture_info {"nr"}.date_time_format();
       collection_assert::are_equal({"Son", "Mvu", "Bil", "Tha", "Ne", "Hla", "Gqi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mat", "Apr", "Mey", "Jun", "Jul", "Arh", "Sep", "Okt", "Usi", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19584,7 +19584,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nr_ZA) {
+    auto test_method_(nr_ZA) {
       auto date_time_format = culture_info {"nr-ZA"}.date_time_format();
       collection_assert::are_equal({"Son", "Mvu", "Bil", "Tha", "Ne", "Hla", "Gqi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mat", "Apr", "Mey", "Jun", "Jul", "Arh", "Sep", "Okt", "Usi", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19611,7 +19611,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nso) {
+    auto test_method_(nso) {
       auto date_time_format = culture_info {"nso"}.date_time_format();
       collection_assert::are_equal({"Lam", "Mos", "Bed", "Rar", "Ne", "Hla", "Mok"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Phere", "Dibo", "Hlak", "Mora", "Mei", "June", "Mose", "Agosetose", "Lewe", "Dipha", "Diba", "Manth", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19638,7 +19638,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nso_ZA) {
+    auto test_method_(nso_ZA) {
       auto date_time_format = culture_info {"nso-ZA"}.date_time_format();
       collection_assert::are_equal({"Lam", "Mos", "Bed", "Rar", "Ne", "Hla", "Mok"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Phere", "Dibo", "Hlak", "Mora", "Mei", "June", "Mose", "Agosetose", "Lewe", "Dipha", "Diba", "Manth", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19665,7 +19665,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nus) {
+    auto test_method_(nus) {
       auto date_time_format = culture_info {"nus"}.date_time_format();
       collection_assert::are_equal({"Cäŋ", "Jiec", "Rɛw", "Diɔ̱k", "Ŋuaan", "Dhieec", "Bäkɛl"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Tiop", "Pɛt", "Duɔ̱ɔ̱", "Guak", "Duä", "Kor", "Pay", "Thoo", "Tɛɛ", "Laa", "Kur", "Tid", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19692,7 +19692,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nus_SS) {
+    auto test_method_(nus_SS) {
       auto date_time_format = culture_info {"nus-SS"}.date_time_format();
       collection_assert::are_equal({"Cäŋ", "Jiec", "Rɛw", "Diɔ̱k", "Ŋuaan", "Dhieec", "Bäkɛl"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Tiop", "Pɛt", "Duɔ̱ɔ̱", "Guak", "Duä", "Kor", "Pay", "Thoo", "Tɛɛ", "Laa", "Kur", "Tid", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19719,7 +19719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nv) {
+    auto test_method_(nv) {
       auto date_time_format = culture_info {"nv"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19746,7 +19746,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nv_US) {
+    auto test_method_(nv_US) {
       auto date_time_format = culture_info {"nv-US"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19773,7 +19773,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ny) {
+    auto test_method_(ny) {
       auto date_time_format = culture_info {"ny"}.date_time_format();
       collection_assert::are_equal({"Mul", "Lem", "Wir", "Tat", "Nai", "San", "Wer"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mal", "Epu", "Mei", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19800,7 +19800,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ny_MW) {
+    auto test_method_(ny_MW) {
       auto date_time_format = culture_info {"ny-MW"}.date_time_format();
       collection_assert::are_equal({"Mul", "Lem", "Wir", "Tat", "Nai", "San", "Wer"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mal", "Epu", "Mei", "Jun", "Jul", "Oga", "Sep", "Oku", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19827,7 +19827,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nyn) {
+    auto test_method_(nyn) {
       auto date_time_format = culture_info {"nyn"}.date_time_format();
       collection_assert::are_equal({"SAN", "ORK", "OKB", "OKS", "OKN", "OKT", "OMK"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"KBZ", "KBR", "KST", "KKN", "KTN", "KMK", "KMS", "KMN", "KMW", "KKM", "KNK", "KNB", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19854,7 +19854,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(nyn_UG) {
+    auto test_method_(nyn_UG) {
       auto date_time_format = culture_info {"nyn-UG"}.date_time_format();
       collection_assert::are_equal({"SAN", "ORK", "OKB", "OKS", "OKN", "OKT", "OMK"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"KBZ", "KBR", "KST", "KKN", "KTN", "KMK", "KMS", "KMN", "KMW", "KKM", "KNK", "KNB", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19881,7 +19881,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(oc) {
+    auto test_method_(oc) {
       auto date_time_format = culture_info {"oc"}.date_time_format();
       collection_assert::are_equal({"dimenge", "diluns", "dimars", "dimècres", "dijòus", "divendres", "dissabte"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"de genièr", "de febrièr", "de març", "d’abril", "de mai", "de junh", "de julhet", "d’agost", "de setembre", "d’octòbre", "de novembre", "de decembre", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19908,7 +19908,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(oc_ES) {
+    auto test_method_(oc_ES) {
       auto date_time_format = culture_info {"oc-ES"}.date_time_format();
       collection_assert::are_equal({"dimenge", "diluns", "dimars", "dimècres", "dijòus", "divendres", "dissabte"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"de genièr", "de febrièr", "de març", "d’abril", "de mai", "de junh", "de julhet", "d’agost", "de setembre", "d’octòbre", "de novembre", "de decembre", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19935,7 +19935,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(oc_FR) {
+    auto test_method_(oc_FR) {
       auto date_time_format = culture_info {"oc-FR"}.date_time_format();
       collection_assert::are_equal({"dimenge", "diluns", "dimars", "dimècres", "dijòus", "divendres", "dissabte"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"de genièr", "de febrièr", "de març", "d’abril", "de mai", "de junh", "de julhet", "d’agost", "de setembre", "d’octòbre", "de novembre", "de decembre", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19962,7 +19962,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(om) {
+    auto test_method_(om) {
       auto date_time_format = culture_info {"om"}.date_time_format();
       collection_assert::are_equal({"Dil", "Wix", "Kib", "Rob", "Kam", "Jim", "San"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ama", "Gur", "Bitootessa", "Elb", "Cam", "Wax", "Ado", "Hag", "Ful", "Onk", "Sadaasa", "Mud", ""}, date_time_format.abreviated_month_genitive_names());
@@ -19989,7 +19989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(om_ET) {
+    auto test_method_(om_ET) {
       auto date_time_format = culture_info {"om-ET"}.date_time_format();
       collection_assert::are_equal({"Dil", "Wix", "Kib", "Rob", "Kam", "Jim", "San"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ama", "Gur", "Bitootessa", "Elb", "Cam", "Wax", "Ado", "Hag", "Ful", "Onk", "Sadaasa", "Mud", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20016,7 +20016,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(om_KE) {
+    auto test_method_(om_KE) {
       auto date_time_format = culture_info {"om-KE"}.date_time_format();
       collection_assert::are_equal({"Dil", "Wix", "Kib", "Rob", "Kam", "Jim", "San"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ama", "Gur", "Bitootessa", "Elb", "Cam", "Wax", "Ado", "Hag", "Ful", "Onk", "Sadaasa", "Mud", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20043,7 +20043,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(or_) {
+    auto test_method_(or_) {
       auto date_time_format = culture_info {"or"}.date_time_format();
       collection_assert::are_equal({"ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20070,7 +20070,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(or_IN) {
+    auto test_method_(or_IN) {
       auto date_time_format = culture_info {"or-IN"}.date_time_format();
       collection_assert::are_equal({"ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20097,7 +20097,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(os) {
+    auto test_method_(os) {
       auto date_time_format = culture_info {"os"}.date_time_format();
       collection_assert::are_equal({"Хцб", "Крс", "Дцг", "Ӕрт", "Цпр", "Мрб", "Сбт"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "фев.", "мар.", "апр.", "майы", "июны", "июлы", "авг.", "сен.", "окт.", "ноя.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20124,7 +20124,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(os_GE) {
+    auto test_method_(os_GE) {
       auto date_time_format = culture_info {"os-GE"}.date_time_format();
       collection_assert::are_equal({"Хцб", "Крс", "Дцг", "Ӕрт", "Цпр", "Мрб", "Сбт"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "фев.", "мар.", "апр.", "майы", "июны", "июлы", "авг.", "сен.", "окт.", "ноя.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20151,7 +20151,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(os_RU) {
+    auto test_method_(os_RU) {
       auto date_time_format = culture_info {"os-RU"}.date_time_format();
       collection_assert::are_equal({"Хцб", "Крс", "Дцг", "Ӕрт", "Цпр", "Мрб", "Сбт"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "фев.", "мар.", "апр.", "майы", "июны", "июлы", "авг.", "сен.", "окт.", "ноя.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20178,7 +20178,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(osa) {
+    auto test_method_(osa) {
       auto date_time_format = culture_info {"osa"}.date_time_format();
       collection_assert::are_equal({"𐒹𐓘͘𐓬𐓘 𐓏𐓘𐓤𐓘͘𐓰𐓘𐓤𐓣", "𐒹𐓘͘𐓬𐓘 𐓄𐓘𐓡𐓛͘𐓧𐓣", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓵𐓪͘𐓬𐓘", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓵𐓘𐓜𐓣", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓰𐓪𐓬𐓘", "𐒹𐓘͘𐓬𐓘 𐓈𐓘 𐓵𐓘𐓲𐓘 𐓻𐓣͘", "𐒹𐓘͘𐓬𐓘 𐓂𐓤𐓘𐓸𐓟 𐓣͘𐓤𐓟"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𐓄𐓘𐓡𐓛͘𐓧𐓟", "𐓵𐓪͘𐓬𐓘", "𐓵𐓘𐓜𐓣", "𐓰𐓪𐓬𐓘", "𐓮𐓘𐓰𐓘", "𐓯𐓘𐓬𐓟", "𐓄𐓟𐓵𐓪͘𐓬𐓘", "𐒼𐓣𐓟𐓰𐓪𐓬𐓘", "𐒿𐓟𐓜𐓛𐓲𐓟𐓷𐓣͘𐓤𐓟", "𐒿𐓟𐓜𐓛", "𐒰𐓧𐓣 𐓏𐓣͘𐓸𐓲𐓣", "𐒰𐓧𐓣 𐓍𐓪͘𐓬𐓘", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20205,7 +20205,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(osa_US) {
+    auto test_method_(osa_US) {
       auto date_time_format = culture_info {"osa-US"}.date_time_format();
       collection_assert::are_equal({"𐒹𐓘͘𐓬𐓘 𐓏𐓘𐓤𐓘͘𐓰𐓘𐓤𐓣", "𐒹𐓘͘𐓬𐓘 𐓄𐓘𐓡𐓛͘𐓧𐓣", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓵𐓪͘𐓬𐓘", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓵𐓘𐓜𐓣", "𐒹𐓘͘𐓬𐓘 𐓏𐓟𐓰𐓪𐓬𐓘", "𐒹𐓘͘𐓬𐓘 𐓈𐓘 𐓵𐓘𐓲𐓘 𐓻𐓣͘", "𐒹𐓘͘𐓬𐓘 𐓂𐓤𐓘𐓸𐓟 𐓣͘𐓤𐓟"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"𐓄𐓘𐓡𐓛͘𐓧𐓟", "𐓵𐓪͘𐓬𐓘", "𐓵𐓘𐓜𐓣", "𐓰𐓪𐓬𐓘", "𐓮𐓘𐓰𐓘", "𐓯𐓘𐓬𐓟", "𐓄𐓟𐓵𐓪͘𐓬𐓘", "𐒼𐓣𐓟𐓰𐓪𐓬𐓘", "𐒿𐓟𐓜𐓛𐓲𐓟𐓷𐓣͘𐓤𐓟", "𐒿𐓟𐓜𐓛", "𐒰𐓧𐓣 𐓏𐓣͘𐓸𐓲𐓣", "𐒰𐓧𐓣 𐓍𐓪͘𐓬𐓘", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20232,7 +20232,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa) {
+    auto test_method_(pa) {
       auto date_time_format = culture_info {"pa"}.date_time_format();
       collection_assert::are_equal({"ਐਤ", "ਸੋਮ", "ਮੰਗਲ", "ਬੁੱਧ", "ਵੀਰ", "ਸ਼ੁੱਕਰ", "ਸ਼ਨਿੱਚਰ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ਜਨ", "ਫ਼ਰ", "ਮਾਰਚ", "ਅਪ੍ਰੈ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾ", "ਅਗ", "ਸਤੰ", "ਅਕਤੂ", "ਨਵੰ", "ਦਸੰ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20259,7 +20259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa_Arab) {
+    auto test_method_(pa_Arab) {
       auto date_time_format = culture_info {"pa-Arab"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بُدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئ", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20286,7 +20286,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa_Arab_PK) {
+    auto test_method_(pa_Arab_PK) {
       auto date_time_format = culture_info {"pa-Arab-PK"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بُدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئ", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20313,7 +20313,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa_Aran_PK) {
+    auto test_method_(pa_Aran_PK) {
       auto date_time_format = culture_info {"pa-Aran-PK"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بُدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئ", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20340,7 +20340,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa_Guru) {
+    auto test_method_(pa_Guru) {
       auto date_time_format = culture_info {"pa-Guru"}.date_time_format();
       collection_assert::are_equal({"ਐਤ", "ਸੋਮ", "ਮੰਗਲ", "ਬੁੱਧ", "ਵੀਰ", "ਸ਼ੁੱਕਰ", "ਸ਼ਨਿੱਚਰ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ਜਨ", "ਫ਼ਰ", "ਮਾਰਚ", "ਅਪ੍ਰੈ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾ", "ਅਗ", "ਸਤੰ", "ਅਕਤੂ", "ਨਵੰ", "ਦਸੰ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20367,7 +20367,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pa_Guru_IN) {
+    auto test_method_(pa_Guru_IN) {
       auto date_time_format = culture_info {"pa-Guru-IN"}.date_time_format();
       collection_assert::are_equal({"ਐਤ", "ਸੋਮ", "ਮੰਗਲ", "ਬੁੱਧ", "ਵੀਰ", "ਸ਼ੁੱਕਰ", "ਸ਼ਨਿੱਚਰ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ਜਨ", "ਫ਼ਰ", "ਮਾਰਚ", "ਅਪ੍ਰੈ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾ", "ਅਗ", "ਸਤੰ", "ਅਕਤੂ", "ਨਵੰ", "ਦਸੰ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20394,7 +20394,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pcm) {
+    auto test_method_(pcm) {
       auto date_time_format = culture_info {"pcm"}.date_time_format();
       collection_assert::are_equal({"Sọ́n", "Mọ́n", "Tiú", "Wẹ́n", "Tọ́z", "Fraí", "Sát"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jén", "Fẹ́b", "Mach", "Épr", "Mee", "Jun", "Jul", "Ọgọ", "Sẹp", "Ọkt", "Nọv", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20421,7 +20421,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pcm_NG) {
+    auto test_method_(pcm_NG) {
       auto date_time_format = culture_info {"pcm-NG"}.date_time_format();
       collection_assert::are_equal({"Sọ́n", "Mọ́n", "Tiú", "Wẹ́n", "Tọ́z", "Fraí", "Sát"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jén", "Fẹ́b", "Mach", "Épr", "Mee", "Jun", "Jul", "Ọgọ", "Sẹp", "Ọkt", "Nọv", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20448,7 +20448,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pl) {
+    auto test_method_(pl) {
       auto date_time_format = culture_info {"pl"}.date_time_format();
       collection_assert::are_equal({"niedz.", "pon.", "wt.", "śr.", "czw.", "pt.", "sob."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20475,7 +20475,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pl_PL) {
+    auto test_method_(pl_PL) {
       auto date_time_format = culture_info {"pl-PL"}.date_time_format();
       collection_assert::are_equal({"niedz.", "pon.", "wt.", "śr.", "czw.", "pt.", "sob."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20502,7 +20502,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pqm) {
+    auto test_method_(pqm) {
       auto date_time_format = culture_info {"pqm"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20529,7 +20529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pqm_CA) {
+    auto test_method_(pqm_CA) {
       auto date_time_format = culture_info {"pqm-CA"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20556,7 +20556,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(prg) {
+    auto test_method_(prg) {
       auto date_time_format = culture_info {"prg"}.date_time_format();
       collection_assert::are_equal({"nadīli", "panadīli", "wisasīdis", "pussisawaiti", "ketwirtiks", "pēntniks", "sabattika"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"rags", "wassarins", "pūlis", "sakkis", "zallaws", "sīmenis", "līpa", "daggis", "sillins", "spallins", "lapkrūtis", "sallaws", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20583,7 +20583,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(prg_PL) {
+    auto test_method_(prg_PL) {
       auto date_time_format = culture_info {"prg-PL"}.date_time_format();
       collection_assert::are_equal({"nadīli", "panadīli", "wisasīdis", "pussisawaiti", "ketwirtiks", "pēntniks", "sabattika"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"rags", "wassarins", "pūlis", "sakkis", "zallaws", "sīmenis", "līpa", "daggis", "sillins", "spallins", "lapkrūtis", "sallaws", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20610,7 +20610,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ps) {
+    auto test_method_(ps) {
       auto date_time_format = culture_info {"ps"}.date_time_format();
       collection_assert::are_equal({"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"وری", "غویی", "غبرگولی", "چنگاښ", "زمری", "وږی", "تله", "لړم", "لیندۍ", "مرغومی", "سلواغه", "کب", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20637,7 +20637,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("د g yyyy د MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ps_AF) {
+    auto test_method_(ps_AF) {
       auto date_time_format = culture_info {"ps-AF"}.date_time_format();
       collection_assert::are_equal({"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"وری", "غویی", "غبرگولی", "چنگاښ", "زمری", "وږی", "تله", "لړم", "لیندۍ", "مرغومی", "سلواغه", "کب", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20664,7 +20664,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("د g yyyy د MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ps_PK) {
+    auto test_method_(ps_PK) {
       auto date_time_format = culture_info {"ps-PK"}.date_time_format();
       collection_assert::are_equal({"يونۍ", "دونۍ", "درېنۍ", "څلرنۍ", "پينځنۍ", "جمعه", "اونۍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوري", "فبروري", "مارچ", "اپریل", "مۍ", "جون", "جولای", "اګست", "سېپتمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20691,7 +20691,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt) {
+    auto test_method_(pt) {
       auto date_time_format = culture_info {"pt"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20718,7 +20718,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_AO) {
+    auto test_method_(pt_AO) {
       auto date_time_format = culture_info {"pt-AO"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20745,7 +20745,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_BR) {
+    auto test_method_(pt_BR) {
       auto date_time_format = culture_info {"pt-BR"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20772,7 +20772,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_CH) {
+    auto test_method_(pt_CH) {
       auto date_time_format = culture_info {"pt-CH"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20799,7 +20799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_CV) {
+    auto test_method_(pt_CV) {
       auto date_time_format = culture_info {"pt-CV"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20826,7 +20826,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_FR) {
+    auto test_method_(pt_FR) {
       auto date_time_format = culture_info {"pt-FR"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20853,7 +20853,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_GQ) {
+    auto test_method_(pt_GQ) {
       auto date_time_format = culture_info {"pt-GQ"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20880,7 +20880,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_GW) {
+    auto test_method_(pt_GW) {
       auto date_time_format = culture_info {"pt-GW"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20907,7 +20907,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_LU) {
+    auto test_method_(pt_LU) {
       auto date_time_format = culture_info {"pt-LU"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20934,7 +20934,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_MO) {
+    auto test_method_(pt_MO) {
       auto date_time_format = culture_info {"pt-MO"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20961,7 +20961,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_MZ) {
+    auto test_method_(pt_MZ) {
       auto date_time_format = culture_info {"pt-MZ"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -20988,7 +20988,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_PT) {
+    auto test_method_(pt_PT) {
       auto date_time_format = culture_info {"pt-PT"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21015,7 +21015,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_ST) {
+    auto test_method_(pt_ST) {
       auto date_time_format = culture_info {"pt-ST"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21042,7 +21042,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(pt_TL) {
+    auto test_method_(pt_TL) {
       auto date_time_format = culture_info {"pt-TL"}.date_time_format();
       collection_assert::are_equal({"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21069,7 +21069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(qu) {
+    auto test_method_(qu) {
       auto date_time_format = culture_info {"qu"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21096,7 +21096,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(qu_BO) {
+    auto test_method_(qu_BO) {
       auto date_time_format = culture_info {"qu-BO"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21123,7 +21123,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(qu_EC) {
+    auto test_method_(qu_EC) {
       auto date_time_format = culture_info {"qu-EC"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21150,7 +21150,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(qu_PE) {
+    auto test_method_(qu_PE) {
       auto date_time_format = culture_info {"qu-PE"}.date_time_format();
       collection_assert::are_equal({"Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21177,7 +21177,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(raj) {
+    auto test_method_(raj) {
       auto date_time_format = culture_info {"raj"}.date_time_format();
       collection_assert::are_equal({"रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवंबर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21204,7 +21204,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(raj_IN) {
+    auto test_method_(raj_IN) {
       auto date_time_format = culture_info {"raj-IN"}.date_time_format();
       collection_assert::are_equal({"रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवंबर", "दिसंबर", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21231,7 +21231,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rej) {
+    auto test_method_(rej) {
       auto date_time_format = culture_info {"rej"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21258,7 +21258,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rej_ID) {
+    auto test_method_(rej_ID) {
       auto date_time_format = culture_info {"rej-ID"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21285,7 +21285,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rej_Rjng) {
+    auto test_method_(rej_Rjng) {
       auto date_time_format = culture_info {"rej-Rjng"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21312,7 +21312,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rej_Rjng_ID) {
+    auto test_method_(rej_Rjng_ID) {
       auto date_time_format = culture_info {"rej-Rjng-ID"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21339,7 +21339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rhg) {
+    auto test_method_(rhg) {
       auto date_time_format = culture_info {"rhg"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21366,7 +21366,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rhg_Rohg) {
+    auto test_method_(rhg_Rohg) {
       auto date_time_format = culture_info {"rhg-Rohg"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21393,7 +21393,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rhg_Rohg_BD) {
+    auto test_method_(rhg_Rohg_BD) {
       auto date_time_format = culture_info {"rhg-Rohg-BD"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21420,7 +21420,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rhg_Rohg_MM) {
+    auto test_method_(rhg_Rohg_MM) {
       auto date_time_format = culture_info {"rhg-Rohg-MM"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21447,7 +21447,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rm) {
+    auto test_method_(rm) {
       auto date_time_format = culture_info {"rm"}.date_time_format();
       collection_assert::are_equal({"du", "gli", "ma", "me", "gie", "ve", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"schan.", "favr.", "mars", "avr.", "matg", "zercl.", "fan.", "avust", "sett.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21474,7 +21474,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rm_CH) {
+    auto test_method_(rm_CH) {
       auto date_time_format = culture_info {"rm-CH"}.date_time_format();
       collection_assert::are_equal({"du", "gli", "ma", "me", "gie", "ve", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"schan.", "favr.", "mars", "avr.", "matg", "zercl.", "fan.", "avust", "sett.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21501,7 +21501,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rn) {
+    auto test_method_(rn) {
       auto date_time_format = culture_info {"rn"}.date_time_format();
       collection_assert::are_equal({"cu.", "mbe.", "kab.", "gtu.", "kan.", "gnu.", "gnd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mut.", "Gas.", "Wer.", "Mat.", "Gic.", "Kam.", "Nya.", "Kan.", "Nze.", "Ukw.", "Ugu.", "Uku.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21528,7 +21528,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rn_BI) {
+    auto test_method_(rn_BI) {
       auto date_time_format = culture_info {"rn-BI"}.date_time_format();
       collection_assert::are_equal({"cu.", "mbe.", "kab.", "gtu.", "kan.", "gnu.", "gnd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mut.", "Gas.", "Wer.", "Mat.", "Gic.", "Kam.", "Nya.", "Kan.", "Nze.", "Ukw.", "Ugu.", "Uku.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21555,7 +21555,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ro) {
+    auto test_method_(ro) {
       auto date_time_format = culture_info {"ro"}.date_time_format();
       collection_assert::are_equal({"dum.", "lun.", "mar.", "mie.", "joi", "vin.", "sâm."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ian.", "feb.", "mar.", "apr.", "mai", "iun.", "iul.", "aug.", "sept.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21582,7 +21582,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ro_MD) {
+    auto test_method_(ro_MD) {
       auto date_time_format = culture_info {"ro-MD"}.date_time_format();
       collection_assert::are_equal({"Dum", "Lun", "Mar", "Mie", "Joi", "Vin", "Sâm"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ian.", "feb.", "mar.", "apr.", "mai", "iun.", "iul.", "aug.", "sept.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21609,7 +21609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ro_RO) {
+    auto test_method_(ro_RO) {
       auto date_time_format = culture_info {"ro-RO"}.date_time_format();
       collection_assert::are_equal({"dum.", "lun.", "mar.", "mie.", "joi", "vin.", "sâm."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ian.", "feb.", "mar.", "apr.", "mai", "iun.", "iul.", "aug.", "sept.", "oct.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21636,7 +21636,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rof) {
+    auto test_method_(rof) {
       auto date_time_format = culture_info {"rof"}.date_time_format();
       collection_assert::are_equal({"Ijp", "Ijt", "Ijn", "Ijtn", "Alh", "Iju", "Ijm"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21663,7 +21663,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rof_TZ) {
+    auto test_method_(rof_TZ) {
       auto date_time_format = culture_info {"rof-TZ"}.date_time_format();
       collection_assert::are_equal({"Ijp", "Ijt", "Ijn", "Ijtn", "Alh", "Iju", "Ijm"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21690,7 +21690,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru) {
+    auto test_method_(ru) {
       auto date_time_format = culture_info {"ru"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21717,7 +21717,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_BY) {
+    auto test_method_(ru_BY) {
       auto date_time_format = culture_info {"ru-BY"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21744,7 +21744,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_KG) {
+    auto test_method_(ru_KG) {
       auto date_time_format = culture_info {"ru-KG"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21771,7 +21771,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_KZ) {
+    auto test_method_(ru_KZ) {
       auto date_time_format = culture_info {"ru-KZ"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21798,7 +21798,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_MD) {
+    auto test_method_(ru_MD) {
       auto date_time_format = culture_info {"ru-MD"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21825,7 +21825,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_RU) {
+    auto test_method_(ru_RU) {
       auto date_time_format = culture_info {"ru-RU"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21852,7 +21852,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ru_UA) {
+    auto test_method_(ru_UA) {
       auto date_time_format = culture_info {"ru-UA"}.date_time_format();
       collection_assert::are_equal({"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв.", "февр.", "марта", "апр.", "мая", "июня", "июля", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21879,7 +21879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'г'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rw) {
+    auto test_method_(rw) {
       auto date_time_format = culture_info {"rw"}.date_time_format();
       collection_assert::are_equal({"cyu.", "mbe.", "kab.", "gtu.", "kan.", "gnu.", "gnd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mut.", "gas.", "wer.", "mat.", "gic.", "kam.", "nya.", "kan.", "nze.", "ukw.", "ugu.", "uku.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21906,7 +21906,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rw_RW) {
+    auto test_method_(rw_RW) {
       auto date_time_format = culture_info {"rw-RW"}.date_time_format();
       collection_assert::are_equal({"cyu.", "mbe.", "kab.", "gtu.", "kan.", "gnu.", "gnd."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mut.", "gas.", "wer.", "mat.", "gic.", "kam.", "nya.", "kan.", "nze.", "ukw.", "ugu.", "uku.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21933,7 +21933,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rwk) {
+    auto test_method_(rwk) {
       auto date_time_format = culture_info {"rwk"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21960,7 +21960,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(rwk_TZ) {
+    auto test_method_(rwk_TZ) {
       auto date_time_format = culture_info {"rwk-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -21987,7 +21987,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sa) {
+    auto test_method_(sa) {
       auto date_time_format = culture_info {"sa"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी:", "फरवरी:", "मार्च:", "अप्रैल:", "मई", "जून:", "जुलाई:", "अगस्त:", "सितंबर:", "अक्तूबर:", "नवंबर:", "दिसंबर:", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22014,7 +22014,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sa_IN) {
+    auto test_method_(sa_IN) {
       auto date_time_format = culture_info {"sa-IN"}.date_time_format();
       collection_assert::are_equal({"रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जनवरी:", "फरवरी:", "मार्च:", "अप्रैल:", "मई", "जून:", "जुलाई:", "अगस्त:", "सितंबर:", "अक्तूबर:", "नवंबर:", "दिसंबर:", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22041,7 +22041,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sah) {
+    auto test_method_(sah) {
       auto date_time_format = culture_info {"sah"}.date_time_format();
       collection_assert::are_equal({"бс", "бн", "оп", "сэ", "чп", "бэ", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Тохс", "Олун", "Клн", "Мсу", "Ыам", "Бэс", "Отй", "Атр", "Блҕ", "Алт", "Сэт", "Ахс", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22068,7 +22068,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sah_RU) {
+    auto test_method_(sah_RU) {
       auto date_time_format = culture_info {"sah-RU"}.date_time_format();
       collection_assert::are_equal({"бс", "бн", "оп", "сэ", "чп", "бэ", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Тохс", "Олун", "Клн", "Мсу", "Ыам", "Бэс", "Отй", "Атр", "Блҕ", "Алт", "Сэт", "Ахс", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22095,7 +22095,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(saq) {
+    auto test_method_(saq) {
       auto date_time_format = culture_info {"saq"}.date_time_format();
       collection_assert::are_equal({"Are", "Kun", "Ong", "Ine", "Ile", "Sap", "Kwe"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Obo", "Waa", "Oku", "Ong", "Ime", "Ile", "Sap", "Isi", "Saa", "Tom", "Tob", "Tow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22122,7 +22122,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(saq_KE) {
+    auto test_method_(saq_KE) {
       auto date_time_format = culture_info {"saq-KE"}.date_time_format();
       collection_assert::are_equal({"Are", "Kun", "Ong", "Ine", "Ile", "Sap", "Kwe"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Obo", "Waa", "Oku", "Ong", "Ime", "Ile", "Sap", "Isi", "Saa", "Tom", "Tob", "Tow", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22149,7 +22149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sat) {
+    auto test_method_(sat) {
       auto date_time_format = culture_info {"sat"}.date_time_format();
       collection_assert::are_equal({"ᱥᱤᱸ", "ᱚᱛ", "ᱵᱟ", "ᱥᱟᱹ", "ᱥᱟᱹᱨ", "ᱡᱟᱹ", "ᱧᱩ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᱡᱟᱱ", "ᱯᱷᱟ", "ᱢᱟᱨ", "ᱟᱯᱨ", "ᱢᱮ", "ᱡᱩᱱ", "ᱡᱩᱞ", "ᱟᱜᱟ", "ᱥᱮᱯ", "ᱚᱠᱴ", "ᱱᱟᱣ", "ᱫᱤᱥ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22176,7 +22176,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sat_Deva) {
+    auto test_method_(sat_Deva) {
       auto date_time_format = culture_info {"sat-Deva"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22203,7 +22203,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sat_Deva_IN) {
+    auto test_method_(sat_Deva_IN) {
       auto date_time_format = culture_info {"sat-Deva-IN"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22230,7 +22230,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sat_Olck) {
+    auto test_method_(sat_Olck) {
       auto date_time_format = culture_info {"sat-Olck"}.date_time_format();
       collection_assert::are_equal({"ᱥᱤᱸ", "ᱚᱛ", "ᱵᱟ", "ᱥᱟᱹ", "ᱥᱟᱹᱨ", "ᱡᱟᱹ", "ᱧᱩ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᱡᱟᱱ", "ᱯᱷᱟ", "ᱢᱟᱨ", "ᱟᱯᱨ", "ᱢᱮ", "ᱡᱩᱱ", "ᱡᱩᱞ", "ᱟᱜᱟ", "ᱥᱮᱯ", "ᱚᱠᱴ", "ᱱᱟᱣ", "ᱫᱤᱥ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22257,7 +22257,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sat_Olck_IN) {
+    auto test_method_(sat_Olck_IN) {
       auto date_time_format = culture_info {"sat-Olck-IN"}.date_time_format();
       collection_assert::are_equal({"ᱥᱤᱸ", "ᱚᱛ", "ᱵᱟ", "ᱥᱟᱹ", "ᱥᱟᱹᱨ", "ᱡᱟᱹ", "ᱧᱩ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ᱡᱟᱱ", "ᱯᱷᱟ", "ᱢᱟᱨ", "ᱟᱯᱨ", "ᱢᱮ", "ᱡᱩᱱ", "ᱡᱩᱞ", "ᱟᱜᱟ", "ᱥᱮᱯ", "ᱚᱠᱴ", "ᱱᱟᱣ", "ᱫᱤᱥ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22284,7 +22284,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sbp) {
+    auto test_method_(sbp) {
       auto date_time_format = culture_info {"sbp"}.date_time_format();
       collection_assert::are_equal({"Mul", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mup", "Mwi", "Msh", "Mun", "Mag", "Muj", "Msp", "Mpg", "Mye", "Mok", "Mus", "Muh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22311,7 +22311,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sbp_TZ) {
+    auto test_method_(sbp_TZ) {
       auto date_time_format = culture_info {"sbp-TZ"}.date_time_format();
       collection_assert::are_equal({"Mul", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Mup", "Mwi", "Msh", "Mun", "Mag", "Muj", "Msp", "Mpg", "Mye", "Mok", "Mus", "Muh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22338,7 +22338,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sc) {
+    auto test_method_(sc) {
       auto date_time_format = culture_info {"sc"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mèr", "giò", "che", "sàb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ghe", "fre", "mar", "abr", "maj", "làm", "trì", "aus", "cab", "stG", "stA", "nad", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22365,7 +22365,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' 'su' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sc_IT) {
+    auto test_method_(sc_IT) {
       auto date_time_format = culture_info {"sc-IT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mèr", "giò", "che", "sàb"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ghe", "fre", "mar", "abr", "maj", "làm", "trì", "aus", "cab", "stG", "stA", "nad", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22392,7 +22392,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' 'su' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(scn) {
+    auto test_method_(scn) {
       auto date_time_format = culture_info {"scn"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22419,7 +22419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(scn_IT) {
+    auto test_method_(scn_IT) {
       auto date_time_format = culture_info {"scn-IT"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22446,7 +22446,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sd) {
+    auto test_method_(sd) {
       auto date_time_format = culture_info {"sd"}.date_time_format();
       collection_assert::are_equal({"آچر", "سومر", "اڱارو", "اربع", "خميس", "جمعو", "ڇنڇر"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22473,7 +22473,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sd_Arab) {
+    auto test_method_(sd_Arab) {
       auto date_time_format = culture_info {"sd-Arab"}.date_time_format();
       collection_assert::are_equal({"آچر", "سومر", "اڱارو", "اربع", "خميس", "جمعو", "ڇنڇر"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22500,7 +22500,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sd_Arab_PK) {
+    auto test_method_(sd_Arab_PK) {
       auto date_time_format = culture_info {"sd-Arab-PK"}.date_time_format();
       collection_assert::are_equal({"آچر", "سومر", "اڱارو", "اربع", "خميس", "جمعو", "ڇنڇر"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوري", "فيبروري", "مارچ", "اپريل", "مئي", "جون", "جولاءِ", "آگسٽ", "سيپٽمبر", "آڪٽوبر", "نومبر", "ڊسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22527,7 +22527,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sd_Deva) {
+    auto test_method_(sd_Deva) {
       auto date_time_format = culture_info {"sd-Deva"}.date_time_format();
       collection_assert::are_equal({"आ", "सू", "मं", "बुध", "विस", "जु", "छंछ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन", "फर", "मार्च", "अप्रै", "मई", "जून", "जु", "अग", "सप्टे", "ऑक्टो", "नवं", "डिसं", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22554,7 +22554,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sd_Deva_IN) {
+    auto test_method_(sd_Deva_IN) {
       auto date_time_format = culture_info {"sd-Deva-IN"}.date_time_format();
       collection_assert::are_equal({"आ", "सू", "मं", "बुध", "विस", "जु", "छंछ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन", "फर", "मार्च", "अप्रै", "मई", "जून", "जु", "अग", "सप्टे", "ऑक्टो", "नवं", "डिसं", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22581,7 +22581,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(se) {
+    auto test_method_(se) {
       auto date_time_format = culture_info {"se"}.date_time_format();
       collection_assert::are_equal({"sotn", "vuos", "maŋ", "gask", "duor", "bear", "láv"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ođđj", "guov", "njuk", "cuo", "mies", "geas", "suoi", "borg", "čakč", "golg", "skáb", "juov", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22608,7 +22608,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(se_FI) {
+    auto test_method_(se_FI) {
       auto date_time_format = culture_info {"se-FI"}.date_time_format();
       collection_assert::are_equal({"so", "má", "di", "ga", "du", "be", "lá"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ođđj", "guov", "njuk", "cuoŋ", "mies", "geas", "suoi", "borg", "čakč", "golg", "skáb", "juov", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22635,7 +22635,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(se_NO) {
+    auto test_method_(se_NO) {
       auto date_time_format = culture_info {"se-NO"}.date_time_format();
       collection_assert::are_equal({"sotn", "vuos", "maŋ", "gask", "duor", "bear", "láv"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ođđj", "guov", "njuk", "cuo", "mies", "geas", "suoi", "borg", "čakč", "golg", "skáb", "juov", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22662,7 +22662,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(se_SE) {
+    auto test_method_(se_SE) {
       auto date_time_format = culture_info {"se-SE"}.date_time_format();
       collection_assert::are_equal({"sotn", "vuos", "maŋ", "gask", "duor", "bear", "láv"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ođđj", "guov", "njuk", "cuo", "mies", "geas", "suoi", "borg", "čakč", "golg", "skáb", "juov", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22689,7 +22689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(seh) {
+    auto test_method_(seh) {
       auto date_time_format = culture_info {"seh"}.date_time_format();
       collection_assert::are_equal({"Dim", "Pos", "Pir", "Tat", "Nai", "Sha", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Aug", "Set", "Otu", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22716,7 +22716,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(seh_MZ) {
+    auto test_method_(seh_MZ) {
       auto date_time_format = culture_info {"seh-MZ"}.date_time_format();
       collection_assert::are_equal({"Dim", "Pos", "Pir", "Tat", "Nai", "Sha", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Aug", "Set", "Otu", "Nov", "Dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22743,7 +22743,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'de' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ses) {
+    auto test_method_(ses) {
       auto date_time_format = culture_info {"ses"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22770,7 +22770,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ses_ML) {
+    auto test_method_(ses_ML) {
       auto date_time_format = culture_info {"ses-ML"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22797,7 +22797,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sg) {
+    auto test_method_(sg) {
       auto date_time_format = culture_info {"sg"}.date_time_format();
       collection_assert::are_equal({"Bk1", "Bk2", "Bk3", "Bk4", "Bk5", "Lâp", "Lây"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Nye", "Ful", "Mbä", "Ngu", "Bêl", "Fön", "Len", "Kük", "Mvu", "Ngb", "Nab", "Kak", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22824,7 +22824,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sg_CF) {
+    auto test_method_(sg_CF) {
       auto date_time_format = culture_info {"sg-CF"}.date_time_format();
       collection_assert::are_equal({"Bk1", "Bk2", "Bk3", "Bk4", "Bk5", "Lâp", "Lây"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Nye", "Ful", "Mbä", "Ngu", "Bêl", "Fön", "Len", "Kük", "Mvu", "Ngb", "Nab", "Kak", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22851,7 +22851,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(shi) {
+    auto test_method_(shi) {
       auto date_time_format = culture_info {"shi"}.date_time_format();
       collection_assert::are_equal({"ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22878,7 +22878,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(shi_Latn) {
+    auto test_method_(shi_Latn) {
       auto date_time_format = culture_info {"shi-Latn"}.date_time_format();
       collection_assert::are_equal({"asa", "ayn", "asi", "akṛ", "akw", "asim", "asiḍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"inn", "bṛa", "maṛ", "ibr", "may", "yun", "yul", "ɣuc", "cut", "ktu", "nuw", "duj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22905,7 +22905,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(shi_Latn_MA) {
+    auto test_method_(shi_Latn_MA) {
       auto date_time_format = culture_info {"shi-Latn-MA"}.date_time_format();
       collection_assert::are_equal({"asa", "ayn", "asi", "akṛ", "akw", "asim", "asiḍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"inn", "bṛa", "maṛ", "ibr", "may", "yun", "yul", "ɣuc", "cut", "ktu", "nuw", "duj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22932,7 +22932,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(shi_Tfng) {
+    auto test_method_(shi_Tfng) {
       auto date_time_format = culture_info {"shi-Tfng"}.date_time_format();
       collection_assert::are_equal({"ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22959,7 +22959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(shi_Tfng_MA) {
+    auto test_method_(shi_Tfng_MA) {
       auto date_time_format = culture_info {"shi-Tfng-MA"}.date_time_format();
       collection_assert::are_equal({"ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -22986,7 +22986,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(si) {
+    auto test_method_(si) {
       auto date_time_format = culture_info {"si"}.date_time_format();
       collection_assert::are_equal({"ඉරිදා", "සඳුදා", "අඟහ", "බදාදා", "බ්‍රහස්", "සිකු", "සෙන"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ජන", "පෙබ", "මාර්තු", "අප්‍රේල්", "මැයි", "ජූනි", "ජූලි", "අගෝ", "සැප්", "ඔක්", "නොවැ", "දෙසැ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23013,7 +23013,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(si_LK) {
+    auto test_method_(si_LK) {
       auto date_time_format = culture_info {"si-LK"}.date_time_format();
       collection_assert::are_equal({"ඉරිදා", "සඳුදා", "අඟහ", "බදාදා", "බ්‍රහස්", "සිකු", "සෙන"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ජන", "පෙබ", "මාර්තු", "අප්‍රේල්", "මැයි", "ජූනි", "ජූලි", "අගෝ", "සැප්", "ඔක්", "නොවැ", "දෙසැ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23040,7 +23040,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sjd) {
+    auto test_method_(sjd) {
       auto date_time_format = culture_info {"sjd"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23067,7 +23067,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sje) {
+    auto test_method_(sje) {
       auto date_time_format = culture_info {"sje"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23094,7 +23094,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sju) {
+    auto test_method_(sju) {
       auto date_time_format = culture_info {"sju"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23121,7 +23121,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sk) {
+    auto test_method_(sk) {
       auto date_time_format = culture_info {"sk"}.date_time_format();
       collection_assert::are_equal({"ne", "po", "ut", "st", "št", "pi", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "máj", "jún", "júl", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23148,7 +23148,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sk_SK) {
+    auto test_method_(sk_SK) {
       auto date_time_format = culture_info {"sk-SK"}.date_time_format();
       collection_assert::are_equal({"ne", "po", "ut", "st", "št", "pi", "so"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "máj", "jún", "júl", "aug", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23175,7 +23175,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sl) {
+    auto test_method_(sl) {
       auto date_time_format = culture_info {"sl"}.date_time_format();
       collection_assert::are_equal({"ned.", "pon.", "tor.", "sre.", "čet.", "pet.", "sob."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "avg.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23202,7 +23202,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sl_SI) {
+    auto test_method_(sl_SI) {
       auto date_time_format = culture_info {"sl-SI"}.date_time_format();
       collection_assert::are_equal({"ned.", "pon.", "tor.", "sre.", "čet.", "pet.", "sob."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mar.", "apr.", "maj", "jun.", "jul.", "avg.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23229,7 +23229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sm) {
+    auto test_method_(sm) {
       auto date_time_format = culture_info {"sm"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23256,7 +23256,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sm_AS) {
+    auto test_method_(sm_AS) {
       auto date_time_format = culture_info {"sm-AS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23283,7 +23283,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sm_WS) {
+    auto test_method_(sm_WS) {
       auto date_time_format = culture_info {"sm-WS"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23310,7 +23310,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(smn) {
+    auto test_method_(smn) {
       auto date_time_format = culture_info {"smn"}.date_time_format();
       collection_assert::are_equal({"pas", "vuo", "maj", "kos", "tuo", "vás", "láv"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"uđiv", "kuovâ", "njuhčâ", "cuáŋui", "vyesi", "kesi", "syeini", "porge", "čohčâ", "roovvâd", "skammâ", "juovlâ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23337,7 +23337,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(smn_FI) {
+    auto test_method_(smn_FI) {
       auto date_time_format = culture_info {"smn-FI"}.date_time_format();
       collection_assert::are_equal({"pas", "vuo", "maj", "kos", "tuo", "vás", "láv"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"uđiv", "kuovâ", "njuhčâ", "cuáŋui", "vyesi", "kesi", "syeini", "porge", "čohčâ", "roovvâd", "skammâ", "juovlâ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23364,7 +23364,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sn) {
+    auto test_method_(sn) {
       auto date_time_format = culture_info {"sn"}.date_time_format();
       collection_assert::are_equal({"Svo", "Muv", "Chp", "Cht", "Chn", "Chs", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ndi", "Kuk", "Kur", "Kub", "Chv", "Chk", "Chg", "Nya", "Gun", "Gum", "Mbu", "Zvi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23391,7 +23391,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sn_ZW) {
+    auto test_method_(sn_ZW) {
       auto date_time_format = culture_info {"sn-ZW"}.date_time_format();
       collection_assert::are_equal({"Svo", "Muv", "Chp", "Cht", "Chn", "Chs", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Ndi", "Kuk", "Kur", "Kub", "Chv", "Chk", "Chg", "Nya", "Gun", "Gum", "Mbu", "Zvi", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23418,7 +23418,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(so) {
+    auto test_method_(so) {
       auto date_time_format = culture_info {"so"}.date_time_format();
       collection_assert::are_equal({"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23445,7 +23445,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(so_DJ) {
+    auto test_method_(so_DJ) {
       auto date_time_format = culture_info {"so-DJ"}.date_time_format();
       collection_assert::are_equal({"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23472,7 +23472,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(so_ET) {
+    auto test_method_(so_ET) {
       auto date_time_format = culture_info {"so-ET"}.date_time_format();
       collection_assert::are_equal({"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23499,7 +23499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(so_KE) {
+    auto test_method_(so_KE) {
       auto date_time_format = culture_info {"so-KE"}.date_time_format();
       collection_assert::are_equal({"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23526,7 +23526,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(so_SO) {
+    auto test_method_(so_SO) {
       auto date_time_format = culture_info {"so-SO"}.date_time_format();
       collection_assert::are_equal({"Axd", "Isn", "Tldo", "Arbc", "Khms", "Jmc", "Sbti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Abr", "May", "Jun", "Lul", "Ogs", "Seb", "Okt", "Nof", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23553,7 +23553,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sq) {
+    auto test_method_(sq) {
       auto date_time_format = culture_info {"sq"}.date_time_format();
       collection_assert::are_equal({"die", "hën", "mar", "mër", "enj", "pre", "sht"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "shk", "mar", "pri", "maj", "qer", "korr", "gush", "sht", "tet", "nën", "dhj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23580,7 +23580,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sq_AL) {
+    auto test_method_(sq_AL) {
       auto date_time_format = culture_info {"sq-AL"}.date_time_format();
       collection_assert::are_equal({"die", "hën", "mar", "mër", "enj", "pre", "sht"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "shk", "mar", "pri", "maj", "qer", "korr", "gush", "sht", "tet", "nën", "dhj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23607,7 +23607,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sq_MK) {
+    auto test_method_(sq_MK) {
       auto date_time_format = culture_info {"sq-MK"}.date_time_format();
       collection_assert::are_equal({"die", "hën", "mar", "mër", "enj", "pre", "sht"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "shk", "mar", "pri", "maj", "qer", "korr", "gush", "sht", "tet", "nën", "dhj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23634,7 +23634,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sq_XK) {
+    auto test_method_(sq_XK) {
       auto date_time_format = culture_info {"sq-XK"}.date_time_format();
       collection_assert::are_equal({"die", "hën", "mar", "mër", "enj", "pre", "sht"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "shk", "mar", "pri", "maj", "qer", "korr", "gush", "sht", "tet", "nën", "dhj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23661,7 +23661,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr) {
+    auto test_method_(sr) {
       auto date_time_format = culture_info {"sr"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сре", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "авг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23688,7 +23688,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Cyrl) {
+    auto test_method_(sr_Cyrl) {
       auto date_time_format = culture_info {"sr-Cyrl"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сре", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "авг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23715,7 +23715,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Cyrl_BA) {
+    auto test_method_(sr_Cyrl_BA) {
       auto date_time_format = culture_info {"sr-Cyrl-BA"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сри", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "авг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23742,7 +23742,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Cyrl_ME) {
+    auto test_method_(sr_Cyrl_ME) {
       auto date_time_format = culture_info {"sr-Cyrl-ME"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сре", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "март", "апр", "мај", "јун", "јул", "авг", "септ", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23769,7 +23769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Cyrl_RS) {
+    auto test_method_(sr_Cyrl_RS) {
       auto date_time_format = culture_info {"sr-Cyrl-RS"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сре", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "мар", "апр", "мај", "јун", "јул", "авг", "сеп", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23796,7 +23796,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Cyrl_XK) {
+    auto test_method_(sr_Cyrl_XK) {
       auto date_time_format = culture_info {"sr-Cyrl-XK"}.date_time_format();
       collection_assert::are_equal({"нед", "пон", "уто", "сре", "чет", "пет", "суб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"јан", "феб", "март", "апр", "мај", "јун", "јул", "авг", "септ", "окт", "нов", "дец", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23823,7 +23823,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Latn) {
+    auto test_method_(sr_Latn) {
       auto date_time_format = culture_info {"sr-Latn"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sre", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23850,7 +23850,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Latn_BA) {
+    auto test_method_(sr_Latn_BA) {
       auto date_time_format = culture_info {"sr-Latn-BA"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sri", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23877,7 +23877,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Latn_ME) {
+    auto test_method_(sr_Latn_ME) {
       auto date_time_format = culture_info {"sr-Latn-ME"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sre", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mart", "apr", "maj", "jun", "jul", "avg", "sept", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23904,7 +23904,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Latn_RS) {
+    auto test_method_(sr_Latn_RS) {
       auto date_time_format = culture_info {"sr-Latn-RS"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sre", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23931,7 +23931,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sr_Latn_XK) {
+    auto test_method_(sr_Latn_XK) {
       auto date_time_format = culture_info {"sr-Latn-XK"}.date_time_format();
       collection_assert::are_equal({"ned", "pon", "uto", "sre", "čet", "pet", "sub"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan", "feb", "mart", "apr", "maj", "jun", "jul", "avg", "sept", "okt", "nov", "dec", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23958,7 +23958,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ss) {
+    auto test_method_(ss) {
       auto date_time_format = culture_info {"ss"}.date_time_format();
       collection_assert::are_equal({"Son", "Mso", "Bil", "Tsa", "Ne", "Hla", "Mgc"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Bhi", "Van", "Vol", "Mab", "Nkh", "Nhl", "Kho", "Ngc", "Nyo", "Mph", "Lwe", "Ngo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -23985,7 +23985,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ss_SZ) {
+    auto test_method_(ss_SZ) {
       auto date_time_format = culture_info {"ss-SZ"}.date_time_format();
       collection_assert::are_equal({"Son", "Mso", "Bil", "Tsa", "Ne", "Hla", "Mgc"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Bhi", "Van", "Vol", "Mab", "Nkh", "Nhl", "Kho", "Ngc", "Nyo", "Mph", "Lwe", "Ngo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24012,7 +24012,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ss_ZA) {
+    auto test_method_(ss_ZA) {
       auto date_time_format = culture_info {"ss-ZA"}.date_time_format();
       collection_assert::are_equal({"Son", "Mso", "Bil", "Tsa", "Ne", "Hla", "Mgc"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Bhi", "Van", "Vol", "Mab", "Nkh", "Nhl", "Kho", "Ngc", "Nyo", "Mph", "Lwe", "Ngo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24039,7 +24039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(st) {
+    auto test_method_(st) {
       auto date_time_format = culture_info {"st"}.date_time_format();
       collection_assert::are_equal({"Son", "Mma", "Bed", "Rar", "Ne", "Hla", "Moq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Phe", "Kol", "Ube", "Mme", "Mot", "Jan", "Upu", "Pha", "Leo", "Mph", "Pun", "Tsh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24066,7 +24066,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(st_LS) {
+    auto test_method_(st_LS) {
       auto date_time_format = culture_info {"st-LS"}.date_time_format();
       collection_assert::are_equal({"Son", "Mma", "Bed", "Rar", "Ne", "Hla", "Moq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Phe", "Kol", "Ube", "Mme", "Mot", "Jan", "Upu", "Pha", "Leo", "Mph", "Pun", "Tsh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24093,7 +24093,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(st_ZA) {
+    auto test_method_(st_ZA) {
       auto date_time_format = culture_info {"st-ZA"}.date_time_format();
       collection_assert::are_equal({"Son", "Mma", "Bed", "Rar", "Ne", "Hla", "Moq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Phe", "Kol", "Ube", "Mme", "Mot", "Jan", "Upu", "Pha", "Leo", "Mph", "Pun", "Tsh", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24120,7 +24120,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(su) {
+    auto test_method_(su) {
       auto date_time_format = culture_info {"su"}.date_time_format();
       collection_assert::are_equal({"Mng", "Sen", "Sal", "Reb", "Kem", "Jum", "Sap"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Péb", "Mar", "Apr", "Méi", "Jun", "Jul", "Ags", "Sép", "Okt", "Nop", "Dés", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24147,7 +24147,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(su_Latn) {
+    auto test_method_(su_Latn) {
       auto date_time_format = culture_info {"su-Latn"}.date_time_format();
       collection_assert::are_equal({"Mng", "Sen", "Sal", "Reb", "Kem", "Jum", "Sap"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Péb", "Mar", "Apr", "Méi", "Jun", "Jul", "Ags", "Sép", "Okt", "Nop", "Dés", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24174,7 +24174,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(su_Latn_ID) {
+    auto test_method_(su_Latn_ID) {
       auto date_time_format = culture_info {"su-Latn-ID"}.date_time_format();
       collection_assert::are_equal({"Mng", "Sen", "Sal", "Reb", "Kem", "Jum", "Sap"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Péb", "Mar", "Apr", "Méi", "Jun", "Jul", "Ags", "Sép", "Okt", "Nop", "Dés", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24201,7 +24201,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sv) {
+    auto test_method_(sv) {
       auto date_time_format = culture_info {"sv"}.date_time_format();
       collection_assert::are_equal({"sön", "mån", "tis", "ons", "tors", "fre", "lör"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24228,7 +24228,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sv_AX) {
+    auto test_method_(sv_AX) {
       auto date_time_format = culture_info {"sv-AX"}.date_time_format();
       collection_assert::are_equal({"sön", "mån", "tis", "ons", "tors", "fre", "lör"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24255,7 +24255,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sv_FI) {
+    auto test_method_(sv_FI) {
       auto date_time_format = culture_info {"sv-FI"}.date_time_format();
       collection_assert::are_equal({"sön", "mån", "tis", "ons", "tors", "fre", "lör"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24282,7 +24282,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sv_SE) {
+    auto test_method_(sv_SE) {
       auto date_time_format = culture_info {"sv-SE"}.date_time_format();
       collection_assert::are_equal({"sön", "mån", "tis", "ons", "tors", "fre", "lör"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24309,7 +24309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sw) {
+    auto test_method_(sw) {
       auto date_time_format = culture_info {"sw"}.date_time_format();
       collection_assert::are_equal({"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24336,7 +24336,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sw_CD) {
+    auto test_method_(sw_CD) {
       auto date_time_format = culture_info {"sw-CD"}.date_time_format();
       collection_assert::are_equal({"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24363,7 +24363,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sw_KE) {
+    auto test_method_(sw_KE) {
       auto date_time_format = culture_info {"sw-KE"}.date_time_format();
       collection_assert::are_equal({"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24390,7 +24390,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sw_TZ) {
+    auto test_method_(sw_TZ) {
       auto date_time_format = culture_info {"sw-TZ"}.date_time_format();
       collection_assert::are_equal({"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24417,7 +24417,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(sw_UG) {
+    auto test_method_(sw_UG) {
       auto date_time_format = culture_info {"sw-UG"}.date_time_format();
       collection_assert::are_equal({"Jumapili", "Jumatatu", "Jumanne", "Jumatano", "Alhamisi", "Ijumaa", "Jumamosi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24444,7 +24444,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(syr) {
+    auto test_method_(syr) {
       auto date_time_format = culture_info {"syr"}.date_time_format();
       collection_assert::are_equal({"ܚܕ", "ܬܪܝܢ", "ܬܠܬ", "ܐܪܒܥ", "ܚܡܫ", "ܥܪܘ", "ܫܒܬܐ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ܟܢܘܢ ܒ", "ܫܒܛ", "ܐܕܪ", "ܢܝܣܢ", "ܐܝܪ", "ܚܙܝܪܢ", "ܬܡܘܙ", "ܐܒ", "ܐܝܠܘܠ", "ܬܫܪܝܢ ܐ", "ܬܫܪܝܢ ܒ", "ܟܢܘܢ ܐ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24471,7 +24471,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(syr_IQ) {
+    auto test_method_(syr_IQ) {
       auto date_time_format = culture_info {"syr-IQ"}.date_time_format();
       collection_assert::are_equal({"ܚܕ", "ܬܪܝܢ", "ܬܠܬ", "ܐܪܒܥ", "ܚܡܫ", "ܥܪܘ", "ܫܒܬܐ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ܟܢܘܢ ܒ", "ܫܒܛ", "ܐܕܪ", "ܢܝܣܢ", "ܐܝܪ", "ܚܙܝܪܢ", "ܬܡܘܙ", "ܐܒ", "ܐܝܠܘܠ", "ܬܫܪܝܢ ܐ", "ܬܫܪܝܢ ܒ", "ܟܢܘܢ ܐ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24498,7 +24498,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(syr_SY) {
+    auto test_method_(syr_SY) {
       auto date_time_format = culture_info {"syr-SY"}.date_time_format();
       collection_assert::are_equal({"ܚܕ", "ܬܪܝܢ", "ܬܠܬ", "ܐܪܒܥ", "ܚܡܫ", "ܥܪܘ", "ܫܒܬܐ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ܟܢܘܢ ܒ", "ܫܒܛ", "ܐܕܪ", "ܢܝܣܢ", "ܐܝܪ", "ܚܙܝܪܢ", "ܬܡܘܙ", "ܐܒ", "ܐܝܠܘܠ", "ܬܫܪܝܢ ܐ", "ܬܫܪܝܢ ܒ", "ܟܢܘܢ ܐ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24525,7 +24525,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(szl) {
+    auto test_method_(szl) {
       auto date_time_format = culture_info {"szl"}.date_time_format();
       collection_assert::are_equal({"niydziela", "pyńdziałek", "wtorek", "strzoda", "sztwortek", "piōntek", "sobota"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"stycznia", "lutego", "marca", "kwietnia", "moja", "czyrwca", "lipca", "siyrpnia", "września", "października", "listopada", "grudnia", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24552,7 +24552,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(szl_PL) {
+    auto test_method_(szl_PL) {
       auto date_time_format = culture_info {"szl-PL"}.date_time_format();
       collection_assert::are_equal({"niydziela", "pyńdziałek", "wtorek", "strzoda", "sztwortek", "piōntek", "sobota"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"stycznia", "lutego", "marca", "kwietnia", "moja", "czyrwca", "lipca", "siyrpnia", "września", "października", "listopada", "grudnia", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24579,7 +24579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ta) {
+    auto test_method_(ta) {
       auto date_time_format = culture_info {"ta"}.date_time_format();
       collection_assert::are_equal({"ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24606,7 +24606,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ta_IN) {
+    auto test_method_(ta_IN) {
       auto date_time_format = culture_info {"ta-IN"}.date_time_format();
       collection_assert::are_equal({"ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24633,7 +24633,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ta_LK) {
+    auto test_method_(ta_LK) {
       auto date_time_format = culture_info {"ta-LK"}.date_time_format();
       collection_assert::are_equal({"ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24660,7 +24660,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ta_MY) {
+    auto test_method_(ta_MY) {
       auto date_time_format = culture_info {"ta-MY"}.date_time_format();
       collection_assert::are_equal({"ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24687,7 +24687,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ta_SG) {
+    auto test_method_(ta_SG) {
       auto date_time_format = culture_info {"ta-SG"}.date_time_format();
       collection_assert::are_equal({"ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24714,7 +24714,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(te) {
+    auto test_method_(te) {
       auto date_time_format = culture_info {"te"}.date_time_format();
       collection_assert::are_equal({"ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24741,7 +24741,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(te_IN) {
+    auto test_method_(te_IN) {
       auto date_time_format = culture_info {"te-IN"}.date_time_format();
       collection_assert::are_equal({"ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24768,7 +24768,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(teo) {
+    auto test_method_(teo) {
       auto date_time_format = culture_info {"teo"}.date_time_format();
       collection_assert::are_equal({"Jum", "Bar", "Aar", "Uni", "Ung", "Kan", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Rar", "Muk", "Kwa", "Dun", "Mar", "Mod", "Jol", "Ped", "Sok", "Tib", "Lab", "Poo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24795,7 +24795,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(teo_KE) {
+    auto test_method_(teo_KE) {
       auto date_time_format = culture_info {"teo-KE"}.date_time_format();
       collection_assert::are_equal({"Jum", "Bar", "Aar", "Uni", "Ung", "Kan", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Rar", "Muk", "Kwa", "Dun", "Mar", "Mod", "Jol", "Ped", "Sok", "Tib", "Lab", "Poo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24822,7 +24822,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(teo_UG) {
+    auto test_method_(teo_UG) {
       auto date_time_format = culture_info {"teo-UG"}.date_time_format();
       collection_assert::are_equal({"Jum", "Bar", "Aar", "Uni", "Ung", "Kan", "Sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Rar", "Muk", "Kwa", "Dun", "Mar", "Mod", "Jol", "Ped", "Sok", "Tib", "Lab", "Poo", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24849,7 +24849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tg) {
+    auto test_method_(tg) {
       auto date_time_format = culture_info {"tg"}.date_time_format();
       collection_assert::are_equal({"Яшб", "Дшб", "Сшб", "Чшб", "Пшб", "Ҷмъ", "Шнб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24876,7 +24876,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tg_TJ) {
+    auto test_method_(tg_TJ) {
       auto date_time_format = culture_info {"tg-TJ"}.date_time_format();
       collection_assert::are_equal({"Яшб", "Дшб", "Сшб", "Чшб", "Пшб", "Ҷмъ", "Шнб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24903,7 +24903,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(th) {
+    auto test_method_(th) {
       auto date_time_format = culture_info {"th"}.date_time_format();
       collection_assert::are_equal({"อา.", "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24930,7 +24930,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(th_TH) {
+    auto test_method_(th_TH) {
       auto date_time_format = culture_info {"th-TH"}.date_time_format();
       collection_assert::are_equal({"อา.", "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24957,7 +24957,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ti) {
+    auto test_method_(ti) {
       auto date_time_format = culture_info {"ti"}.date_time_format();
       collection_assert::are_equal({"ሰን", "ሰኑ", "ሰሉ", "ረቡ", "ሓሙ", "ዓር", "ቀዳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጥሪ", "ለካ", "መጋ", "ሚያ", "ግን", "ሰነ", "ሓም", "ነሓ", "መስ", "ጥቅ", "ሕዳ", "ታሕ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -24984,7 +24984,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ti_ER) {
+    auto test_method_(ti_ER) {
       auto date_time_format = culture_info {"ti-ER"}.date_time_format();
       collection_assert::are_equal({"ሰን", "ሰኑ", "ሰሉ", "ረቡ", "ሓሙ", "ዓር", "ቀዳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጥሪ", "ለካ", "መጋ", "ሚያ", "ግን", "ሰነ", "ሓም", "ነሓ", "መስ", "ጥቅ", "ሕዳ", "ታሕ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25011,7 +25011,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ti_ET) {
+    auto test_method_(ti_ET) {
       auto date_time_format = culture_info {"ti-ET"}.date_time_format();
       collection_assert::are_equal({"ሰን", "ሰኑ", "ሰሉ", "ረቡ", "ሓሙ", "ዓር", "ቀዳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጥሪ", "ለካ", "መጋ", "ሚያ", "ግን", "ሰነ", "ሓም", "ነሓ", "መስ", "ጥቅ", "ሕዳ", "ታሕ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25038,7 +25038,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tig) {
+    auto test_method_(tig) {
       auto date_time_format = culture_info {"tig"}.date_time_format();
       collection_assert::are_equal({"ሰ/ዓ", "ሰኖ", "ታላሸ", "ኣረር", "ከሚሽ", "ጅምዓ", "ሰ/ን"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃንዩ", "ፌብሩ", "ማርች", "ኤፕረ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክተ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25065,7 +25065,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tig_ER) {
+    auto test_method_(tig_ER) {
       auto date_time_format = culture_info {"tig-ER"}.date_time_format();
       collection_assert::are_equal({"ሰ/ዓ", "ሰኖ", "ታላሸ", "ኣረር", "ከሚሽ", "ጅምዓ", "ሰ/ን"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃንዩ", "ፌብሩ", "ማርች", "ኤፕረ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክተ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25092,7 +25092,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tk) {
+    auto test_method_(tk) {
       auto date_time_format = culture_info {"tk"}.date_time_format();
       collection_assert::are_equal({"Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ýan", "few", "mart", "apr", "maý", "iýun", "iýul", "awg", "sen", "okt", "noý", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25119,7 +25119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tk_TM) {
+    auto test_method_(tk_TM) {
       auto date_time_format = culture_info {"tk-TM"}.date_time_format();
       collection_assert::are_equal({"Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ýan", "few", "mart", "apr", "maý", "iýun", "iýul", "awg", "sen", "okt", "noý", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25146,7 +25146,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tn) {
+    auto test_method_(tn) {
       auto date_time_format = culture_info {"tn"}.date_time_format();
       collection_assert::are_equal({"Tsh", "Mos", "Labb", "Labr", "Labn", "Labt", "Mat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phu", "Pha", "Lwe", "Dip", "Ngw", "Sed", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25173,7 +25173,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tn_BW) {
+    auto test_method_(tn_BW) {
       auto date_time_format = culture_info {"tn-BW"}.date_time_format();
       collection_assert::are_equal({"Tsh", "Mos", "Labb", "Labr", "Labn", "Labt", "Mat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phu", "Pha", "Lwe", "Dip", "Ngw", "Sed", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25200,7 +25200,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tn_ZA) {
+    auto test_method_(tn_ZA) {
       auto date_time_format = culture_info {"tn-ZA"}.date_time_format();
       collection_assert::are_equal({"Tsh", "Mos", "Labb", "Labr", "Labn", "Labt", "Mat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Fer", "Tlh", "Mop", "Mor", "Mot", "See", "Phu", "Pha", "Lwe", "Dip", "Ngw", "Sed", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25227,7 +25227,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(to) {
+    auto test_method_(to) {
       auto date_time_format = culture_info {"to"}.date_time_format();
       collection_assert::are_equal({"Sāp", "Mōn", "Tūs", "Pul", "Tuʻa", "Fal", "Tok"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sān", "Fēp", "Maʻa", "ʻEpe", "Mē", "Sun", "Siu", "ʻAok", "Sēp", "ʻOka", "Nōv", "Tīs", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25254,7 +25254,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(to_TO) {
+    auto test_method_(to_TO) {
       auto date_time_format = culture_info {"to-TO"}.date_time_format();
       collection_assert::are_equal({"Sāp", "Mōn", "Tūs", "Pul", "Tuʻa", "Fal", "Tok"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sān", "Fēp", "Maʻa", "ʻEpe", "Mē", "Sun", "Siu", "ʻAok", "Sēp", "ʻOka", "Nōv", "Tīs", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25281,7 +25281,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tok) {
+    auto test_method_(tok) {
       auto date_time_format = culture_info {"tok"}.date_time_format();
       collection_assert::are_equal({"suno esun #7", "suno esun #1", "suno esun #2", "suno esun #3", "suno esun #4", "suno esun #5", "suno esun #6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mun #1", "mun #2", "mun #3", "mun #4", "mun #5", "mun #6", "mun #7", "mun #8", "mun #9", "mun #10", "mun #11", "mun #12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25308,7 +25308,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tok_001) {
+    auto test_method_(tok_001) {
       auto date_time_format = culture_info {"tok-001"}.date_time_format();
       collection_assert::are_equal({"suno esun #7", "suno esun #1", "suno esun #2", "suno esun #3", "suno esun #4", "suno esun #5", "suno esun #6"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"mun #1", "mun #2", "mun #3", "mun #4", "mun #5", "mun #6", "mun #7", "mun #8", "mun #9", "mun #10", "mun #11", "mun #12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25335,7 +25335,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tr) {
+    auto test_method_(tr) {
       auto date_time_format = culture_info {"tr"}.date_time_format();
       collection_assert::are_equal({"Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25362,7 +25362,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tr_CY) {
+    auto test_method_(tr_CY) {
       auto date_time_format = culture_info {"tr-CY"}.date_time_format();
       collection_assert::are_equal({"Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25389,7 +25389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tr_TR) {
+    auto test_method_(tr_TR) {
       auto date_time_format = culture_info {"tr-TR"}.date_time_format();
       collection_assert::are_equal({"Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25416,7 +25416,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(trv) {
+    auto test_method_(trv) {
       auto date_time_format = culture_info {"trv"}.date_time_format();
       collection_assert::are_equal({"Emp", "Kin", "Dha", "Tru", "Spa", "Rim", "Mat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Kii", "Dhi", "Tri", "Spi", "Rii", "Mti", "Emi", "Mai", "Mni", "Mxi", "Mxk", "Mxd", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25443,7 +25443,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(trv_TW) {
+    auto test_method_(trv_TW) {
       auto date_time_format = culture_info {"trv-TW"}.date_time_format();
       collection_assert::are_equal({"Emp", "Kin", "Dha", "Tru", "Spa", "Rim", "Mat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Kii", "Dhi", "Tri", "Spi", "Rii", "Mti", "Emi", "Mai", "Mni", "Mxi", "Mxk", "Mxd", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25470,7 +25470,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ts) {
+    auto test_method_(ts) {
       auto date_time_format = culture_info {"ts"}.date_time_format();
       collection_assert::are_equal({"Son", "Mus", "Bir", "Har", "Ne", "Tlh", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sun", "Yan", "Kul", "Dzi", "Mud", "Kho", "Maw", "Mha", "Ndz", "Nhl", "Huk", "N’w", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25497,7 +25497,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ts_ZA) {
+    auto test_method_(ts_ZA) {
       auto date_time_format = culture_info {"ts-ZA"}.date_time_format();
       collection_assert::are_equal({"Son", "Mus", "Bir", "Har", "Ne", "Tlh", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sun", "Yan", "Kul", "Dzi", "Mud", "Kho", "Maw", "Mha", "Ndz", "Nhl", "Huk", "N’w", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25524,7 +25524,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tt) {
+    auto test_method_(tt) {
       auto date_time_format = culture_info {"tt"}.date_time_format();
       collection_assert::are_equal({"якш.", "дүш.", "сиш.", "чәр.", "пәнҗ.", "җом.", "шим."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"гыйн.", "фев.", "мар.", "апр.", "май", "июнь", "июль", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25551,7 +25551,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ел', MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tt_RU) {
+    auto test_method_(tt_RU) {
       auto date_time_format = culture_info {"tt-RU"}.date_time_format();
       collection_assert::are_equal({"якш.", "дүш.", "сиш.", "чәр.", "пәнҗ.", "җом.", "шим."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"гыйн.", "фев.", "мар.", "апр.", "май", "июнь", "июль", "авг.", "сент.", "окт.", "нояб.", "дек.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25578,7 +25578,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy 'ел', MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(twq) {
+    auto test_method_(twq) {
       auto date_time_format = culture_info {"twq"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25605,7 +25605,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(twq_NE) {
+    auto test_method_(twq_NE) {
       auto date_time_format = culture_info {"twq-NE"}.date_time_format();
       collection_assert::are_equal({"Alh", "Ati", "Ata", "Ala", "Alm", "Alz", "Asi"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Žan", "Fee", "Mar", "Awi", "Me", "Žuw", "Žuy", "Ut", "Sek", "Okt", "Noo", "Dee", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25632,7 +25632,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tzm) {
+    auto test_method_(tzm) {
       auto date_time_format = culture_info {"tzm"}.date_time_format();
       collection_assert::are_equal({"Asa", "Ayn", "Asn", "Akr", "Akw", "Asm", "Asḍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Yen", "Yeb", "Mar", "Ibr", "May", "Yun", "Yul", "Ɣuc", "Cut", "Kṭu", "Nwa", "Duj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25659,7 +25659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(tzm_MA) {
+    auto test_method_(tzm_MA) {
       auto date_time_format = culture_info {"tzm-MA"}.date_time_format();
       collection_assert::are_equal({"Asa", "Ayn", "Asn", "Akr", "Akw", "Asm", "Asḍ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Yen", "Yeb", "Mar", "Ibr", "May", "Yun", "Yul", "Ɣuc", "Cut", "Kṭu", "Nwa", "Duj", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25686,7 +25686,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ug) {
+    auto test_method_(ug) {
       auto date_time_format = culture_info {"ug"}.date_time_format();
       collection_assert::are_equal({"يە", "دۈ", "سە", "چا", "پە", "جۈ", "شە"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يانۋار", "فېۋرال", "مارت", "ئاپرېل", "ماي", "ئىيۇن", "ئىيۇل", "ئاۋغۇست", "سېنتەبىر", "ئۆكتەبىر", "نويابىر", "دېكابىر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25713,7 +25713,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ug_CN) {
+    auto test_method_(ug_CN) {
       auto date_time_format = culture_info {"ug-CN"}.date_time_format();
       collection_assert::are_equal({"يە", "دۈ", "سە", "چا", "پە", "جۈ", "شە"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"يانۋار", "فېۋرال", "مارت", "ئاپرېل", "ماي", "ئىيۇن", "ئىيۇل", "ئاۋغۇست", "سېنتەبىر", "ئۆكتەبىر", "نويابىر", "دېكابىر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25740,7 +25740,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uk) {
+    auto test_method_(uk) {
       auto date_time_format = culture_info {"uk"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "вт", "ср", "чт", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"січ.", "лют.", "бер.", "квіт.", "трав.", "черв.", "лип.", "серп.", "вер.", "жовт.", "лист.", "груд.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25767,7 +25767,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'р'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uk_UA) {
+    auto test_method_(uk_UA) {
       auto date_time_format = culture_info {"uk-UA"}.date_time_format();
       collection_assert::are_equal({"нд", "пн", "вт", "ср", "чт", "пт", "сб"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"січ.", "лют.", "бер.", "квіт.", "трав.", "черв.", "лип.", "серп.", "вер.", "жовт.", "лист.", "груд.", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25794,7 +25794,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy 'р'.", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur) {
+    auto test_method_(ur) {
       auto date_time_format = culture_info {"ur"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25821,7 +25821,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur_Arab) {
+    auto test_method_(ur_Arab) {
       auto date_time_format = culture_info {"ur-Arab"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25848,7 +25848,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur_Arab_IN) {
+    auto test_method_(ur_Arab_IN) {
       auto date_time_format = culture_info {"ur-Arab-IN"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25875,7 +25875,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur_Arab_PK) {
+    auto test_method_(ur_Arab_PK) {
       auto date_time_format = culture_info {"ur-Arab-PK"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25902,7 +25902,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur_Aran_IN) {
+    auto test_method_(ur_Aran_IN) {
       auto date_time_format = culture_info {"ur-Aran-IN"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25929,7 +25929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ur_Aran_PK) {
+    auto test_method_(ur_Aran_PK) {
       auto date_time_format = culture_info {"ur-Aran-PK"}.date_time_format();
       collection_assert::are_equal({"اتوار", "پیر", "منگل", "بدھ", "جمعرات", "جمعہ", "ہفتہ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"جنوری", "فروری", "مارچ", "اپریل", "مئی", "جون", "جولائی", "اگست", "ستمبر", "اکتوبر", "نومبر", "دسمبر", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25956,7 +25956,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz) {
+    auto test_method_(uz) {
       auto date_time_format = culture_info {"uz"}.date_time_format();
       collection_assert::are_equal({"Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -25983,7 +25983,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Arab) {
+    auto test_method_(uz_Arab) {
       auto date_time_format = culture_info {"uz-Arab"}.date_time_format();
       collection_assert::are_equal({"ی.", "د.", "س.", "چ.", "پ.", "ج.", "ش."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26010,7 +26010,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Arab_AF) {
+    auto test_method_(uz_Arab_AF) {
       auto date_time_format = culture_info {"uz-Arab-AF"}.date_time_format();
       collection_assert::are_equal({"ی.", "د.", "س.", "چ.", "پ.", "ج.", "ش."}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Farvardin", "Ordibehesht", "Khordad", "Tir", "Mordad", "Shahrivar", "Mehr", "Aban", "Azar", "Dey", "Bahman", "Esfand", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26037,7 +26037,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("g yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Cyrl) {
+    auto test_method_(uz_Cyrl) {
       auto date_time_format = culture_info {"uz-Cyrl"}.date_time_format();
       collection_assert::are_equal({"якш", "душ", "сеш", "чор", "пай", "жум", "шан"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26064,7 +26064,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Cyrl_UZ) {
+    auto test_method_(uz_Cyrl_UZ) {
       auto date_time_format = culture_info {"uz-Cyrl-UZ"}.date_time_format();
       collection_assert::are_equal({"якш", "душ", "сеш", "чор", "пай", "жум", "шан"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26091,7 +26091,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Latn) {
+    auto test_method_(uz_Latn) {
       auto date_time_format = culture_info {"uz-Latn"}.date_time_format();
       collection_assert::are_equal({"Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26118,7 +26118,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(uz_Latn_UZ) {
+    auto test_method_(uz_Latn_UZ) {
       auto date_time_format = culture_info {"uz-Latn-UZ"}.date_time_format();
       collection_assert::are_equal({"Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26145,7 +26145,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM, yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vai) {
+    auto test_method_(vai) {
       auto date_time_format = culture_info {"vai"}.date_time_format();
       collection_assert::are_equal({"ꕞꕌꔵ", "ꗳꗡꘉ", "ꕚꕞꕚ", "ꕉꕞꕒ", "ꕉꔤꕆꕢ", "ꕉꔤꕀꕮ", "ꔻꔬꔳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ꖨꖕꔞ", "ꕒꕡ", "ꕾꖺ", "ꖢꖕ", "ꖑꕱ", "ꖱꘋ", "ꖱꕞ", "ꗛꔕ", "ꕢꕌ", "ꕭꖃ", "ꔞꘋ", "ꖨꖕꗏ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26172,7 +26172,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vai_Latn) {
+    auto test_method_(vai_Latn) {
       auto date_time_format = culture_info {"vai-Latn"}.date_time_format();
       collection_assert::are_equal({"lahadi", "tɛɛnɛɛ", "talata", "alaba", "aimisa", "aijima", "siɓiti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26199,7 +26199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vai_Latn_LR) {
+    auto test_method_(vai_Latn_LR) {
       auto date_time_format = culture_info {"vai-Latn-LR"}.date_time_format();
       collection_assert::are_equal({"lahadi", "tɛɛnɛɛ", "talata", "alaba", "aimisa", "aijima", "siɓiti"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26226,7 +26226,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vai_Vaii) {
+    auto test_method_(vai_Vaii) {
       auto date_time_format = culture_info {"vai-Vaii"}.date_time_format();
       collection_assert::are_equal({"ꕞꕌꔵ", "ꗳꗡꘉ", "ꕚꕞꕚ", "ꕉꕞꕒ", "ꕉꔤꕆꕢ", "ꕉꔤꕀꕮ", "ꔻꔬꔳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ꖨꖕꔞ", "ꕒꕡ", "ꕾꖺ", "ꖢꖕ", "ꖑꕱ", "ꖱꘋ", "ꖱꕞ", "ꗛꔕ", "ꕢꕌ", "ꕭꖃ", "ꔞꘋ", "ꖨꖕꗏ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26253,7 +26253,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vai_Vaii_LR) {
+    auto test_method_(vai_Vaii_LR) {
       auto date_time_format = culture_info {"vai-Vaii-LR"}.date_time_format();
       collection_assert::are_equal({"ꕞꕌꔵ", "ꗳꗡꘉ", "ꕚꕞꕚ", "ꕉꕞꕒ", "ꕉꔤꕆꕢ", "ꕉꔤꕀꕮ", "ꔻꔬꔳ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ꖨꖕꔞ", "ꕒꕡ", "ꕾꖺ", "ꖢꖕ", "ꖑꕱ", "ꖱꘋ", "ꖱꕞ", "ꗛꔕ", "ꕢꕌ", "ꕭꖃ", "ꔞꘋ", "ꖨꖕꗏ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26280,7 +26280,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ve) {
+    auto test_method_(ve) {
       auto date_time_format = culture_info {"ve"}.date_time_format();
       collection_assert::are_equal({"Swo", "Mus", "Vhi", "Rar", "Ṋa", "Ṱan", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Pha", "Luh", "Ṱhf", "Lam", "Shu", "Lwi", "Lwa", "Ṱha", "Khu", "Tsh", "Ḽar", "Nye", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26307,7 +26307,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(ve_ZA) {
+    auto test_method_(ve_ZA) {
       auto date_time_format = culture_info {"ve-ZA"}.date_time_format();
       collection_assert::are_equal({"Swo", "Mus", "Vhi", "Rar", "Ṋa", "Ṱan", "Mug"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Pha", "Luh", "Ṱhf", "Lam", "Shu", "Lwi", "Lwa", "Ṱha", "Khu", "Tsh", "Ḽar", "Nye", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26334,7 +26334,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vec) {
+    auto test_method_(vec) {
       auto date_time_format = culture_info {"vec"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "zob", "vèn", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jen", "feb", "mar", "apr", "maj", "jug", "luj", "ago", "set", "oto", "nov", "dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26361,7 +26361,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vec_IT) {
+    auto test_method_(vec_IT) {
       auto date_time_format = culture_info {"vec-IT"}.date_time_format();
       collection_assert::are_equal({"dom", "lun", "mar", "mer", "zob", "vèn", "sab"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"jen", "feb", "mar", "apr", "maj", "jug", "luj", "ago", "set", "oto", "nov", "dez", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26388,7 +26388,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vi) {
+    auto test_method_(vi) {
       auto date_time_format = culture_info {"vi"}.date_time_format();
       collection_assert::are_equal({"CN", "Th 2", "Th 3", "Th 4", "Th 5", "Th 6", "Th 7"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"thg 1", "thg 2", "thg 3", "thg 4", "thg 5", "thg 6", "thg 7", "thg 8", "thg 9", "thg 10", "thg 11", "thg 12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26415,7 +26415,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'năm' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vi_VN) {
+    auto test_method_(vi_VN) {
       auto date_time_format = culture_info {"vi-VN"}.date_time_format();
       collection_assert::are_equal({"CN", "Th 2", "Th 3", "Th 4", "Th 5", "Th 6", "Th 7"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"thg 1", "thg 2", "thg 3", "thg 4", "thg 5", "thg 6", "thg 7", "thg 8", "thg 9", "thg 10", "thg 11", "thg 12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26442,7 +26442,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM 'năm' yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vmw) {
+    auto test_method_(vmw) {
       auto date_time_format = culture_info {"vmw"}.date_time_format();
       collection_assert::are_equal({"ettiminku", "nihiku noolempwa", "namaanli", "namararu", "namaxexe", "namathanu", "esaabadu"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janeiru", "fevereiru", "marsu", "abril", "maiu", "junyu", "julyu", "agostu", "setembru", "outubru", "novembru", "dezembru", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26469,7 +26469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vmw_MZ) {
+    auto test_method_(vmw_MZ) {
       auto date_time_format = culture_info {"vmw-MZ"}.date_time_format();
       collection_assert::are_equal({"ettiminku", "nihiku noolempwa", "namaanli", "namararu", "namaxexe", "namathanu", "esaabadu"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"janeiru", "fevereiru", "marsu", "abril", "maiu", "junyu", "julyu", "agostu", "setembru", "outubru", "novembru", "dezembru", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26496,7 +26496,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vun) {
+    auto test_method_(vun) {
       auto date_time_format = culture_info {"vun"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26523,7 +26523,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(vun_TZ) {
+    auto test_method_(vun_TZ) {
       auto date_time_format = culture_info {"vun-TZ"}.date_time_format();
       collection_assert::are_equal({"Jpi", "Jtt", "Jnn", "Jtn", "Alh", "Iju", "Jmo"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ago", "Sep", "Okt", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26550,7 +26550,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wa) {
+    auto test_method_(wa) {
       auto date_time_format = culture_info {"wa"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26577,7 +26577,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wa_BE) {
+    auto test_method_(wa_BE) {
       auto date_time_format = culture_info {"wa-BE"}.date_time_format();
       collection_assert::are_equal({"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26604,7 +26604,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wae) {
+    auto test_method_(wae) {
       auto date_time_format = culture_info {"wae"}.date_time_format();
       collection_assert::are_equal({"Sun", "Män", "Ziš", "Mit", "Fró", "Fri", "Sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jen", "Hor", "Mär", "Abr", "Mei", "Brá", "Hei", "Öig", "Her", "Wím", "Win", "Chr", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26631,7 +26631,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wae_CH) {
+    auto test_method_(wae_CH) {
       auto date_time_format = culture_info {"wae-CH"}.date_time_format();
       collection_assert::are_equal({"Sun", "Män", "Ziš", "Mit", "Fró", "Fri", "Sam"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jen", "Hor", "Mär", "Abr", "Mei", "Brá", "Hei", "Öig", "Her", "Wím", "Win", "Chr", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26658,7 +26658,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wal) {
+    auto test_method_(wal) {
       auto date_time_format = culture_info {"wal"}.date_time_format();
       collection_assert::are_equal({"ወጋ", "ሳይኖ", "ማቆሳኛ", "አሩዋ", "ሃሙሳ", "አርባ", "ቄራ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃንዩ", "ፌብሩ", "ማርች", "ኤፕረ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክተ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26685,7 +26685,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wal_ET) {
+    auto test_method_(wal_ET) {
       auto date_time_format = culture_info {"wal-ET"}.date_time_format();
       collection_assert::are_equal({"ወጋ", "ሳይኖ", "ማቆሳኛ", "አሩዋ", "ሃሙሳ", "አርባ", "ቄራ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ጃንዩ", "ፌብሩ", "ማርች", "ኤፕረ", "ሜይ", "ጁን", "ጁላይ", "ኦገስ", "ሴፕቴ", "ኦክተ", "ኖቬም", "ዲሴም", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26712,7 +26712,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wo) {
+    auto test_method_(wo) {
       auto date_time_format = culture_info {"wo"}.date_time_format();
       collection_assert::are_equal({"Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sam", "Few", "Mar", "Awr", "Mee", "Suw", "Sul", "Ut", "Sàt", "Okt", "Now", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26739,7 +26739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(wo_SN) {
+    auto test_method_(wo_SN) {
       auto date_time_format = culture_info {"wo-SN"}.date_time_format();
       collection_assert::are_equal({"Dib", "Alt", "Tal", "Àla", "Alx", "Àjj", "Ase"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Sam", "Few", "Mar", "Awr", "Mee", "Suw", "Sul", "Ut", "Sàt", "Okt", "Now", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26766,7 +26766,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xh) {
+    auto test_method_(xh) {
       auto date_time_format = culture_info {"xh"}.date_time_format();
       collection_assert::are_equal({"Caw", "Mvu", "Bin", "Tha", "Sin", "Hla", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mat", "Epr", "Mey", "Jun", "Jul", "Aga", "Sept", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26793,7 +26793,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xh_ZA) {
+    auto test_method_(xh_ZA) {
       auto date_time_format = culture_info {"xh-ZA"}.date_time_format();
       collection_assert::are_equal({"Caw", "Mvu", "Bin", "Tha", "Sin", "Hla", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mat", "Epr", "Mey", "Jun", "Jul", "Aga", "Sept", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26820,7 +26820,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xnr) {
+    auto test_method_(xnr) {
       auto date_time_format = culture_info {"xnr"}.date_time_format();
       collection_assert::are_equal({"तोआर", "सोआर", "मंगल", "बुध", "वीर", "शुक्कर", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26847,7 +26847,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xnr_IN) {
+    auto test_method_(xnr_IN) {
       auto date_time_format = culture_info {"xnr-IN"}.date_time_format();
       collection_assert::are_equal({"तोआर", "सोआर", "मंगल", "बुध", "वीर", "शुक्कर", "शनि"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26874,7 +26874,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xog) {
+    auto test_method_(xog) {
       auto date_time_format = culture_info {"xog"}.date_time_format();
       collection_assert::are_equal({"Sabi", "Bala", "Kubi", "Kusa", "Kuna", "Kuta", "Muka"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apu", "Maa", "Juu", "Jul", "Agu", "Seb", "Oki", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26901,7 +26901,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(xog_UG) {
+    auto test_method_(xog_UG) {
       auto date_time_format = culture_info {"xog-UG"}.date_time_format();
       collection_assert::are_equal({"Sabi", "Bala", "Kubi", "Kusa", "Kuna", "Kuta", "Muka"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mar", "Apu", "Maa", "Juu", "Jul", "Agu", "Seb", "Oki", "Nov", "Des", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26928,7 +26928,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yav) {
+    auto test_method_(yav) {
       auto date_time_format = culture_info {"yav"}.date_time_format();
       collection_assert::are_equal({"sd", "md", "mw", "et", "kl", "fl", "ss"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"o.1", "o.2", "o.3", "o.4", "o.5", "o.6", "o.7", "o.8", "o.9", "o.10", "o.11", "o.12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26955,7 +26955,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yav_CM) {
+    auto test_method_(yav_CM) {
       auto date_time_format = culture_info {"yav-CM"}.date_time_format();
       collection_assert::are_equal({"sd", "md", "mw", "et", "kl", "fl", "ss"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"o.1", "o.2", "o.3", "o.4", "o.5", "o.6", "o.7", "o.8", "o.9", "o.10", "o.11", "o.12", ""}, date_time_format.abreviated_month_genitive_names());
@@ -26982,7 +26982,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yi) {
+    auto test_method_(yi) {
       auto date_time_format = culture_info {"yi"}.date_time_format();
       collection_assert::are_equal({"זונטיק", "מאָנטיק", "דינסטיק", "מיטוואך", "דאנערשטיק", "פֿרײַטיק", "שבת"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"יאַנואַר", "פֿעברואַר", "מערץ", "אַפּריל", "מיי", "יוני", "יולי", "אויגוסט", "סעפּטעמבער", "אקטאבער", "נאוועמבער", "דעצעמבער", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27009,7 +27009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yi_UA) {
+    auto test_method_(yi_UA) {
       auto date_time_format = culture_info {"yi-UA"}.date_time_format();
       collection_assert::are_equal({"זונטיק", "מאָנטיק", "דינסטיק", "מיטוואך", "דאנערשטיק", "פֿרײַטיק", "שבת"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"יאַנואַר", "פֿעברואַר", "מערץ", "אַפּריל", "מיי", "יוני", "יולי", "אויגוסט", "סעפּטעמבער", "אקטאבער", "נאוועמבער", "דעצעמבער", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27036,7 +27036,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yo) {
+    auto test_method_(yo) {
       auto date_time_format = culture_info {"yo"}.date_time_format();
       collection_assert::are_equal({"Àìkú", "Ajé", "Ìsẹ́gun", "Ọjọ́rú", "Ọjọ́bọ", "Ẹtì", "Àbámẹ́ta"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27063,7 +27063,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yo_BJ) {
+    auto test_method_(yo_BJ) {
       auto date_time_format = culture_info {"yo-BJ"}.date_time_format();
       collection_assert::are_equal({"Àìkú", "Ajé", "Ìsɛ́gun", "Ɔjɔ́rú", "Ɔjɔ́bɔ", "Ɛtì", "Àbámɛ́ta"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oshù Shɛ́rɛ́", "Oshù Èrèlè", "Oshù Ɛrɛ̀nà", "Oshù Ìgbé", "Oshù Ɛ̀bibi", "Oshù Òkúdu", "Oshù Agɛmɔ", "Oshù Ògún", "Oshù Owewe", "Oshù Ɔ̀wàrà", "Oshù Bélú", "Oshù Ɔ̀pɛ̀", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27090,7 +27090,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yo_NG) {
+    auto test_method_(yo_NG) {
       auto date_time_format = culture_info {"yo-NG"}.date_time_format();
       collection_assert::are_equal({"Àìkú", "Ajé", "Ìsẹ́gun", "Ọjọ́rú", "Ọjọ́bọ", "Ẹtì", "Àbámẹ́ta"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Oṣù Ṣẹ́rẹ́", "Oṣù Èrèlè", "Oṣù Ẹrẹ̀nà", "Oṣù Ìgbé", "Oṣù Ẹ̀bibi", "Oṣù Òkúdu", "Oṣù Agẹmọ", "Oṣù Ògún", "Oṣù Owewe", "Oṣù Ọ̀wàrà", "Oṣù Bélú", "Oṣù Ọ̀pẹ̀", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27117,7 +27117,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yrl) {
+    auto test_method_(yrl) {
       auto date_time_format = culture_info {"yrl"}.date_time_format();
       collection_assert::are_equal({"mit", "mur", "mmk", "mms", "sup", "yuk", "sau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ye", "mk", "ms", "id", "pu", "py", "pm", "ps", "pi", "yp", "yy", "ym", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27144,7 +27144,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yrl_BR) {
+    auto test_method_(yrl_BR) {
       auto date_time_format = culture_info {"yrl-BR"}.date_time_format();
       collection_assert::are_equal({"mit", "mur", "mmk", "mms", "sup", "yuk", "sau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ye", "mk", "ms", "id", "pu", "py", "pm", "ps", "pi", "yp", "yy", "ym", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27171,7 +27171,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yrl_CO) {
+    auto test_method_(yrl_CO) {
       auto date_time_format = culture_info {"yrl-CO"}.date_time_format();
       collection_assert::are_equal({"mit", "mur", "mmk", "mms", "sup", "yuk", "sau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ye", "mk", "ms", "id", "pu", "py", "pm", "ps", "pi", "yp", "yy", "ym", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27198,7 +27198,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yrl_VE) {
+    auto test_method_(yrl_VE) {
       auto date_time_format = culture_info {"yrl-VE"}.date_time_format();
       collection_assert::are_equal({"mit", "mur", "mmk", "mms", "sup", "yuk", "sau"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ye", "mk", "ms", "id", "pu", "py", "pm", "ps", "pi", "yp", "yy", "ym", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27225,7 +27225,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue) {
+    auto test_method_(yue) {
       auto date_time_format = culture_info {"yue"}.date_time_format();
       collection_assert::are_equal({"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27252,7 +27252,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue_Hans) {
+    auto test_method_(yue_Hans) {
       auto date_time_format = culture_info {"yue-Hans"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27279,7 +27279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue_Hans_CN) {
+    auto test_method_(yue_Hans_CN) {
       auto date_time_format = culture_info {"yue-Hans-CN"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27306,7 +27306,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue_Hant) {
+    auto test_method_(yue_Hant) {
       auto date_time_format = culture_info {"yue-Hant"}.date_time_format();
       collection_assert::are_equal({"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27333,7 +27333,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue_Hant_CN) {
+    auto test_method_(yue_Hant_CN) {
       auto date_time_format = culture_info {"yue-Hant-CN"}.date_time_format();
       collection_assert::are_equal({"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27360,7 +27360,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(yue_Hant_HK) {
+    auto test_method_(yue_Hant_HK) {
       auto date_time_format = culture_info {"yue-Hant-HK"}.date_time_format();
       collection_assert::are_equal({"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27387,7 +27387,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(za) {
+    auto test_method_(za) {
       auto date_time_format = culture_info {"za"}.date_time_format();
       collection_assert::are_equal({"ngoenzsinghgiz", "singhgizit", "singhgizngeih", "singhgizsam", "singhgizseiq", "singhgizhaj", "singhgizroek"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ndwenit", "ndwenngeih", "ndwensam", "ndwenseiq", "ndwenngux", "ndwenloeg", "ndwencaet", "ndwenbet", "ndwengouj", "ndwencib", "ndwencib’it", "ndwencibngeih", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27414,7 +27414,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(za_CN) {
+    auto test_method_(za_CN) {
       auto date_time_format = culture_info {"za-CN"}.date_time_format();
       collection_assert::are_equal({"ngoenzsinghgiz", "singhgizit", "singhgizngeih", "singhgizsam", "singhgizseiq", "singhgizhaj", "singhgizroek"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ndwenit", "ndwenngeih", "ndwensam", "ndwenseiq", "ndwenngux", "ndwenloeg", "ndwencaet", "ndwenbet", "ndwengouj", "ndwencib", "ndwencib’it", "ndwencibngeih", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27441,7 +27441,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zgh) {
+    auto test_method_(zgh) {
       auto date_time_format = culture_info {"zgh"}.date_time_format();
       collection_assert::are_equal({"ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27468,7 +27468,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zgh_MA) {
+    auto test_method_(zgh_MA) {
       auto date_time_format = culture_info {"zgh-MA"}.date_time_format();
       collection_assert::are_equal({"ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27495,7 +27495,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy MMMM", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh) {
+    auto test_method_(zh) {
       auto date_time_format = culture_info {"zh"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27522,7 +27522,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans) {
+    auto test_method_(zh_Hans) {
       auto date_time_format = culture_info {"zh-Hans"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27549,7 +27549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_CN) {
+    auto test_method_(zh_Hans_CN) {
       auto date_time_format = culture_info {"zh-Hans-CN"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27576,7 +27576,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_HK) {
+    auto test_method_(zh_Hans_HK) {
       auto date_time_format = culture_info {"zh-Hans-HK"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27603,7 +27603,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_JP) {
+    auto test_method_(zh_Hans_JP) {
       auto date_time_format = culture_info {"zh-Hans-JP"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27630,7 +27630,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_MO) {
+    auto test_method_(zh_Hans_MO) {
       auto date_time_format = culture_info {"zh-Hans-MO"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27657,7 +27657,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_MY) {
+    auto test_method_(zh_Hans_MY) {
       auto date_time_format = culture_info {"zh-Hans-MY"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27684,7 +27684,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hans_SG) {
+    auto test_method_(zh_Hans_SG) {
       auto date_time_format = culture_info {"zh-Hans-SG"}.date_time_format();
       collection_assert::are_equal({"周日", "周一", "周二", "周三", "周四", "周五", "周六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27711,7 +27711,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant) {
+    auto test_method_(zh_Hant) {
       auto date_time_format = culture_info {"zh-Hant"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27738,7 +27738,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_CN) {
+    auto test_method_(zh_Hant_CN) {
       auto date_time_format = culture_info {"zh-Hant-CN"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27765,7 +27765,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_HK) {
+    auto test_method_(zh_Hant_HK) {
       auto date_time_format = culture_info {"zh-Hant-HK"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27792,7 +27792,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_JP) {
+    auto test_method_(zh_Hant_JP) {
       auto date_time_format = culture_info {"zh-Hant-JP"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27819,7 +27819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_MO) {
+    auto test_method_(zh_Hant_MO) {
       auto date_time_format = culture_info {"zh-Hant-MO"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27846,7 +27846,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_MY) {
+    auto test_method_(zh_Hant_MY) {
       auto date_time_format = culture_info {"zh-Hant-MY"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27873,7 +27873,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zh_Hant_TW) {
+    auto test_method_(zh_Hant_TW) {
       auto date_time_format = culture_info {"zh-Hant-TW"}.date_time_format();
       collection_assert::are_equal({"週日", "週一", "週二", "週三", "週四", "週五", "週六"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27900,7 +27900,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("yyyy年M月", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zu) {
+    auto test_method_(zu) {
       auto date_time_format = culture_info {"zu"}.date_time_format();
       collection_assert::are_equal({"Son", "Mso", "Bil", "Tha", "Sin", "Hla", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mas", "Eph", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());
@@ -27927,7 +27927,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("MMMM yyyy", date_time_format.year_month_pattern());
     }
     
-    void test_method_(zu_ZA) {
+    auto test_method_(zu_ZA) {
       auto date_time_format = culture_info {"zu-ZA"}.date_time_format();
       collection_assert::are_equal({"Son", "Mso", "Bil", "Tha", "Sin", "Hla", "Mgq"}, date_time_format.abreviated_day_names());
       collection_assert::are_equal({"Jan", "Feb", "Mas", "Eph", "Mey", "Jun", "Jul", "Aga", "Sep", "Okt", "Nov", "Dis", ""}, date_time_format.abreviated_month_genitive_names());

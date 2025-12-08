@@ -23,7 +23,7 @@ namespace xtd::forms::tests {
       using toggle_button::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       toggle_button_for_test toggle_button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, toggle_button.anchor());
       assert::are_equal(drawing::point::empty, toggle_button.auto_scroll_point());

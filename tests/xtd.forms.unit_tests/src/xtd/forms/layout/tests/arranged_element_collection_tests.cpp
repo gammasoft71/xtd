@@ -12,7 +12,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::layout::tests {
   class test_class_(arranged_element_collection_tests) {
-    void test_method_(new_collection) {
+    auto test_method_(new_collection) {
       arranged_element_collection<std::string> items;
       items.item_added += [&](size_t index, std::string & value) {
         assert::fail(string::format("added index = {}, value = {}", index, value));
@@ -27,7 +27,7 @@ namespace xtd::forms::layout::tests {
       assert::is_true(items.count() == 0);
     }
     
-    void test_method_(add_item) {
+    auto test_method_(add_item) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -53,7 +53,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, added_control_check);
     }
     
-    void test_method_(add_items) {
+    auto test_method_(add_items) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -91,7 +91,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(6_z, added_control_check);
     }
     
-    void test_method_(add_range_item) {
+    auto test_method_(add_range_item) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -117,7 +117,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, added_control_check);
     }
     
-    void test_method_(add_range_items) {
+    auto test_method_(add_range_items) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -153,7 +153,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(6_z, added_control_check);
     }
     
-    void test_method_(insert_item) {
+    auto test_method_(insert_item) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -197,7 +197,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(10_z, added_control_check);
     }
     
-    void test_method_(insert_item_in_first) {
+    auto test_method_(insert_item_in_first) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -227,7 +227,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(3_z, added_control_check);
     }
     
-    void test_method_(insert_item_in_last) {
+    auto test_method_(insert_item_in_last) {
       arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
       items.item_added += [&](size_t index, std::string & value) {
@@ -258,13 +258,13 @@ namespace xtd::forms::layout::tests {
     }
     
     
-    void test_method_(insert_item_width_bad_index) {
+    auto test_method_(insert_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c"});
       assert::throws<argument_out_of_range_exception>([&] {items.insert(items.npos, "z");});
     }
     
-    void test_method_(erase_item) {
+    auto test_method_(erase_item) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
       size_t erased_control_check = 0;
@@ -292,7 +292,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, erased_control_check);
     }
     
-    void test_method_(erase_all_items) {
+    auto test_method_(erase_all_items) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
       size_t erased_control_check = 0;
@@ -337,7 +337,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(15_z, erased_control_check);
     }
     
-    void test_method_(erase_item_first) {
+    auto test_method_(erase_item_first) {
       arranged_element_collection<std::string> items;
       size_t erased_control_check = 0_z;
       items.add_range({"a", "b", "c", "d", "e"});
@@ -365,7 +365,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, erased_control_check);
     }
     
-    void test_method_(erase_item_last) {
+    auto test_method_(erase_item_last) {
       arranged_element_collection<std::string> items;
       size_t erased_control_check = 0;
       items.add_range({"a", "b", "c", "d", "e"});
@@ -393,13 +393,13 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, erased_control_check);
     }
     
-    void test_method_(remove_at_item_width_bad_index) {
+    auto test_method_(remove_at_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c"});
       assert::throws<argument_out_of_range_exception>([&] {items.remove_at(items.npos);});
     }
     
-    void test_method_(update_item) {
+    auto test_method_(update_item) {
       arranged_element_collection<std::string> items;
       items.add_range({"a", "b", "c", "d", "e"});
       size_t updated_control_check = 0;
@@ -428,7 +428,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(1_z, updated_control_check);
     }
     
-    void test_method_(using_std_sort_two_items) {
+    auto test_method_(using_std_sort_two_items) {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
       
@@ -448,7 +448,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("z", items[1]);
     }
     
-    void test_method_(using_std_sort_four_items) {
+    auto test_method_(using_std_sort_four_items) {
       arranged_element_collection<std::string> items;
       items.add_range({"d", "a", "c", "b"});
       
@@ -470,7 +470,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("d", items[3]);
     }
     
-    void test_method_(using_std_sort_Twelve_items_with_duplicates) {
+    auto test_method_(using_std_sort_Twelve_items_with_duplicates) {
       arranged_element_collection<std::string> items;
       items.add_range({"d", "a", "c", "b", "g", "i", "b", "h", "f", "j", "f", "k"});
       
@@ -500,7 +500,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("k", items[11]);
     }
     
-    void test_method_(using_std_swap) {
+    auto test_method_(using_std_swap) {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
       size_t updated_control_check = 0;
@@ -531,7 +531,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal(3_z, updated_control_check);
     }
     
-    void test_method_(using_std_double_swap) {
+    auto test_method_(using_std_double_swap) {
       arranged_element_collection<std::string> items;
       items.add_range({"z", "a"});
       size_t updated_control_check = 0;

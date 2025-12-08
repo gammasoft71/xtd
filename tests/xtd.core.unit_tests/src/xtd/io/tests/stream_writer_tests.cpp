@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(stream_writer_tests) {
-    void test_method_(create_stream_writer_from_stringstream) {
+    auto test_method_(create_stream_writer_from_stringstream) {
       array data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s;
       
@@ -25,7 +25,7 @@ namespace xtd::io::tests {
       assert::are_equal(10u, index);
     }
     
-    void test_method_(create_stream_writer_from_stringstream_without_append) {
+    auto test_method_(create_stream_writer_from_stringstream_without_append) {
       array data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s("abc");
       
@@ -40,7 +40,7 @@ namespace xtd::io::tests {
       assert::are_equal(10u, index);
     }
     
-    void test_method_(create_stream_writer_from_stringstream_with_append) {
+    auto test_method_(create_stream_writer_from_stringstream_with_append) {
       array data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
       std::stringstream s("abc");
       

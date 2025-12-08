@@ -8,11 +8,11 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(tick_tests) {
-    void test_method_(tick_denominator) {
+    auto test_method_(tick_denominator) {
       assert::are_equal(10000000LL, tick::den);
     }
     
-    void test_method_(tick_numerator) {
+    auto test_method_(tick_numerator) {
       assert::are_equal(1LL, tick::num);
     }
   };

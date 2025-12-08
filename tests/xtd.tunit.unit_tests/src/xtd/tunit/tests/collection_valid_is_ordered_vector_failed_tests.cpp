@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_valid_is_ordered_vector_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto a = array<int> {1, 4, 8, 6};
       xtd::tunit::collection_valid::is_ordered(a);
     }

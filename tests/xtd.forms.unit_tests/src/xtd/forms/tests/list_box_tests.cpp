@@ -10,14 +10,14 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(list_box_tests) {
-    void test_method_(create_list_box) {
+    auto test_method_(create_list_box) {
       form form;
       list_box list_box;
       list_box.parent(form);
       assert::is_not_zero(list_box.handle());
     }
     
-    void test_method_(unsorted_add_items) {
+    auto test_method_(unsorted_add_items) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -30,7 +30,7 @@ namespace xtd::forms::tests {
       assert::are_equal("b", list_box.items()[3]);
     }
     
-    void test_method_(unsorted_add_items_with_tags) {
+    auto test_method_(unsorted_add_items_with_tags) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -47,7 +47,7 @@ namespace xtd::forms::tests {
       assert::are_equal(2, as<int>(list_box.items()[3].tag()));
     }
     
-    void test_method_(sorted_add_items) {
+    auto test_method_(sorted_add_items) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -61,7 +61,7 @@ namespace xtd::forms::tests {
       assert::are_equal("d", list_box.items()[3]);
     }
     
-    void test_method_(unsorted_add_items_then_make_sorted) {
+    auto test_method_(unsorted_add_items_then_make_sorted) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -75,7 +75,7 @@ namespace xtd::forms::tests {
       assert::are_equal("d", list_box.items()[3]);
     }
     
-    void test_method_(unsorted_add_items_then_make_std_sorted) {
+    auto test_method_(unsorted_add_items_then_make_std_sorted) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -89,7 +89,7 @@ namespace xtd::forms::tests {
       assert::are_equal("d", list_box.items()[3]);
     }
     
-    void test_method_(empty_list_box_selection_index_with_bad_index) {
+    auto test_method_(empty_list_box_selection_index_with_bad_index) {
       form form;
       list_box list_box;
       list_box.parent(form);
@@ -97,7 +97,7 @@ namespace xtd::forms::tests {
       assert::throws<argument_exception>([&] {list_box.selected_index(0);});
     }
     
-    void test_method_(selection_index_with_bad_index) {
+    auto test_method_(selection_index_with_bad_index) {
       form form;
       list_box list_box;
       list_box.parent(form);

@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_is_NaN_float_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       float f = 3.14159f;
       xtd::tunit::valid::is_NaN(f);
     }

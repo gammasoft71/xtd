@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_are_equal_float_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       float f = 0.2f;
       xtd::tunit::valid::are_equal(0.4f, f);
     }

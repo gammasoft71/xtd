@@ -29,7 +29,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     // Test case 1
-    void test_method_(test_case1) {
+    auto test_method_(test_case1) {
       assert::is_true(2 + 2 == 4);
     }
   };
@@ -51,7 +51,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     // Test case 1
-    void test_method_(test_case1) {
+    auto test_method_(test_case1) {
       xtd::tunit::assert::is_true(2 + 2 == 4);
     }
   };
@@ -107,11 +107,11 @@ namespace unit_tests {
     }
     
     // Test case 1
-    void test_method_(test_case1) {
+    auto test_method_(test_case1) {
     }
     
     // Test case 2
-    void test_method_(test_case2) {
+    auto test_method_(test_case2) {
     }
     
     // Ignore Test case 3
@@ -214,7 +214,7 @@ Assertions make use with the following static classes :
 ### Example
 
 ```cpp
-void test_method_(test_case_1) {
+auto test_method_(test_case_1) {
   assert::are_equal(4, 2 + 2);
   string_assert::start_width("Hello", "Hello, World!")
 }
@@ -237,7 +237,7 @@ Validations make use with the following static classes :
 ### Example
 
 ```cpp
-void test_method_(test_case_1) {
+auto test_method_(test_case_1) {
   valid::are_equal(4, 2 + 2);
   string_valid::start_width("Hello", "Hello, World!")
 }
@@ -258,7 +258,7 @@ Assumptions make use with the following static classes :
 ### Example
 
 ```cpp
-void test_method_(test_case_1) {
+auto test_method_(test_case_1) {
   assume::are_equal(4, 2 + 2);
   string_assume::start_width("Hello", "Hello, World!")
 }

@@ -9,25 +9,25 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(form_window_state_tests) {
   public:
-    void test_method_(normal) {
+    auto test_method_(normal) {
       assert::are_equal(0, enum_object<>::to_int32(form_window_state::normal));
       assert::are_equal("normal", enum_object<>::to_string(form_window_state::normal));
       assert::are_equal(form_window_state::normal, enum_object<>::parse<form_window_state>("normal"));
     }
     
-    void test_method_(minimized) {
+    auto test_method_(minimized) {
       assert::are_equal(1, enum_object<>::to_int32(form_window_state::minimized));
       assert::are_equal("minimized", enum_object<>::to_string(form_window_state::minimized));
       assert::are_equal(form_window_state::minimized, enum_object<>::parse<form_window_state>("minimized"));
     }
     
-    void test_method_(maximized) {
+    auto test_method_(maximized) {
       assert::are_equal(2, enum_object<>::to_int32(form_window_state::maximized));
       assert::are_equal("maximized", enum_object<>::to_string(form_window_state::maximized));
       assert::are_equal(form_window_state::maximized, enum_object<>::parse<form_window_state>("maximized"));
     }
     
-    void test_method_(full_screen) {
+    auto test_method_(full_screen) {
       assert::are_equal(3, enum_object<>::to_int32(form_window_state::full_screen));
       assert::are_equal("full_screen", enum_object<>::to_string(form_window_state::full_screen));
       assert::are_equal(form_window_state::full_screen, enum_object<>::parse<form_window_state>("full_screen"));

@@ -16,302 +16,302 @@ namespace xtd::tests {
       two
     };
     
-    void test_method_(to_any_from_any) {
+    auto test_method_(to_any_from_any) {
       any value = 42;
       assert::are_equal(42, xtd::any_cast<int>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_bool) {
+    auto test_method_(to_any_from_bool) {
       bool value = true;
       assert::is_true(xtd::any_cast<bool>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_byte) {
+    auto test_method_(to_any_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42u, xtd::any_cast<xtd::byte>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_char) {
+    auto test_method_(to_any_from_char) {
       char value = 'a';
       assert::are_equal('a', xtd::any_cast<char>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_char8) {
+    auto test_method_(to_any_from_char8) {
       char8 value = u8'a';
         assert::throws<invalid_cast_exception>([&] {convert::to_any(value);});
       }
       
-        void test_method_(to_any_from_char16) {
+        auto test_method_(to_any_from_char16) {
         char16 value = u'a';
         assert::are_equal(u'a', xtd::any_cast<char16>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_char32) {
+        auto test_method_(to_any_from_char32) {
         char32 value = U'a';
         assert::are_equal(U'a', xtd::any_cast<char32>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_wchar) {
+        auto test_method_(to_any_from_wchar) {
         wchar value = L'a';
         assert::are_equal(L'a', xtd::any_cast<wchar>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_decimal) {
+        auto test_method_(to_any_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42.0l, xtd::any_cast<decimal>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_double) {
+        auto test_method_(to_any_from_double) {
         double value = 42.0;
         assert::are_equal(42.0, xtd::any_cast<double>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_float) {
+        auto test_method_(to_any_from_float) {
         float value = 42.0f;
         assert::are_equal(42.0f, xtd::any_cast<float>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_int16) {
+        auto test_method_(to_any_from_int16) {
         int16 value = 42;
         assert::are_equal(42, xtd::any_cast<int16>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_int32) {
+        auto test_method_(to_any_from_int32) {
         int32 value = 42;
         assert::are_equal(42, xtd::any_cast<int32>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_int64) {
+        auto test_method_(to_any_from_int64) {
         int64 value = 42l;
         assert::are_equal(42l, xtd::any_cast<int64>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_llong) {
+        auto test_method_(to_any_from_llong) {
         slong value = 42ll;
         assert::are_equal(42ll, xtd::any_cast<slong>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_sbyte) {
+        auto test_method_(to_any_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42, xtd::any_cast<sbyte>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_uint16) {
+        auto test_method_(to_any_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42u, xtd::any_cast<uint16>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_uint32) {
+        auto test_method_(to_any_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42u, xtd::any_cast<uint32>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_uint64) {
+        auto test_method_(to_any_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42lu, xtd::any_cast<uint64>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_ullong) {
+        auto test_method_(to_any_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42llu, xtd::any_cast<xtd::ulong>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_string) {
+        auto test_method_(to_any_from_string) {
         string value = "42";
         assert::are_equal("42", xtd::any_cast<string>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_std_string) {
+        auto test_method_(to_any_from_std_string) {
         std::string value = "42";
         assert::are_equal("42", xtd::any_cast<std::string>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_u8string) {
+        auto test_method_(to_any_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(u8"42", xtd::any_cast<std::u8string>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_u16string) {
+        auto test_method_(to_any_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(u"42", xtd::any_cast<std::u16string>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_u32string) {
+        auto test_method_(to_any_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(U"42", xtd::any_cast<std::u32string>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_wstring) {
+        auto test_method_(to_any_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(L"42", xtd::any_cast<std::wstring>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_literal_char) {
+        auto test_method_(to_any_from_literal_char) {
         const char* value = "42";
         assert::are_equal("42", xtd::any_cast<const char*>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_literal_char8) {
+        auto test_method_(to_any_from_literal_char8) {
         const char8* value = u8"42";
         assert::throws<invalid_cast_exception>([&] {convert::to_any(value);});
       }
       
-        void test_method_(to_any_from_literal_char16) {
+        auto test_method_(to_any_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(u"42", xtd::any_cast<const char16*>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_literal_char32) {
+        auto test_method_(to_any_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(U"42", xtd::any_cast<const char32*>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_literal_wchar) {
+        auto test_method_(to_any_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(L"42", xtd::any_cast<const wchar*>(convert::to_any(value)));
       }
       
-        void test_method_(to_any_from_values) {
+        auto test_method_(to_any_from_values) {
         values value = values::two;
         assert::are_equal(values::two, xtd::any_cast<values>(convert::to_any(value)));
       }
       
-        void test_method_(to_boolean_from_any) {
+        auto test_method_(to_boolean_from_any) {
         any value = true;
         assert::is_true(convert::to_boolean(value));
         value = false;
         assert::is_false(convert::to_boolean(value));
       }
       
-        void test_method_(to_boolean_from_any_failed) {
+        auto test_method_(to_boolean_from_any_failed) {
         any value = "not a bool";
         assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
       }
       
-        void test_method_(to_boolean_from_bool) {
+        auto test_method_(to_boolean_from_bool) {
         bool value = true;
         assert::is_true(convert::to_boolean(value));
         value = false;
         assert::is_false(convert::to_boolean(value));
       }
       
-        void test_method_(to_boolean_from_byte) {
+        auto test_method_(to_boolean_from_byte) {
         xtd::byte value = 42;
         assert::is_true(convert::to_boolean(value));
         value = 0;
         assert::is_false(convert::to_boolean(value));
       }
       
-        void test_method_(to_boolean_from_char) {
+        auto test_method_(to_boolean_from_char) {
         char value = 'a';
         assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
       }
       
-        void test_method_(to_boolean_from_char8) {
+        auto test_method_(to_boolean_from_char8) {
         char8 value = u8'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_char16) {
+    auto test_method_(to_boolean_from_char16) {
       char16 value = u'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_char32) {
+    auto test_method_(to_boolean_from_char32) {
       char32 value = U'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_wchar) {
+    auto test_method_(to_boolean_from_wchar) {
       wchar value = L'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_decimal) {
+    auto test_method_(to_boolean_from_decimal) {
       decimal value = 0.42l;
       assert::is_true(convert::to_boolean(value));
       value = 0.0l;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_double) {
+    auto test_method_(to_boolean_from_double) {
       double value = 0.42;
       assert::is_true(convert::to_boolean(value));
       value = 0.0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_float) {
+    auto test_method_(to_boolean_from_float) {
       double value = 0.42f;
       assert::is_true(convert::to_boolean(value));
       value = 0.0f;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_int16) {
+    auto test_method_(to_boolean_from_int16) {
       int16 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_int32) {
+    auto test_method_(to_boolean_from_int32) {
       int32 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_int64) {
+    auto test_method_(to_boolean_from_int64) {
       int64 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_llong) {
+    auto test_method_(to_boolean_from_llong) {
       slong value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_sbyte) {
+    auto test_method_(to_boolean_from_sbyte) {
       sbyte value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_uint16) {
+    auto test_method_(to_boolean_from_uint16) {
       uint16 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_uint32) {
+    auto test_method_(to_boolean_from_uint32) {
       uint32 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_uint64) {
+    auto test_method_(to_boolean_from_uint64) {
       uint64 value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_ullong) {
+    auto test_method_(to_boolean_from_ullong) {
       xtd::ulong value = 42;
       assert::is_true(convert::to_boolean(value));
       value = 0;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_string) {
+    auto test_method_(to_boolean_from_string) {
       string value = "true";
       assert::is_true(convert::to_boolean(value));
       value = "false";
@@ -320,7 +320,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_std_string) {
+    auto test_method_(to_boolean_from_std_string) {
       std::string value = "true";
       assert::is_true(convert::to_boolean(value));
       value = "false";
@@ -329,7 +329,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_u8string) {
+    auto test_method_(to_boolean_from_u8string) {
       std::u8string value = u8"true";
       assert::is_true(convert::to_boolean(value));
       value = u8"false";
@@ -338,7 +338,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_u16string) {
+    auto test_method_(to_boolean_from_u16string) {
       std::u16string value = u"true";
       assert::is_true(convert::to_boolean(value));
       value = u"false";
@@ -347,7 +347,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_u32string) {
+    auto test_method_(to_boolean_from_u32string) {
       std::u32string value = U"true";
       assert::is_true(convert::to_boolean(value));
       value = U"false";
@@ -356,7 +356,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_wstring) {
+    auto test_method_(to_boolean_from_wstring) {
       std::wstring value = L"true";
       assert::is_true(convert::to_boolean(value));
       value = L"false";
@@ -365,7 +365,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_literal_char) {
+    auto test_method_(to_boolean_from_literal_char) {
       const char* value = "true";
       assert::is_true(convert::to_boolean(value));
       value = "false";
@@ -374,7 +374,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_literal_char8) {
+    auto test_method_(to_boolean_from_literal_char8) {
       const char8* value = u8"true";
       assert::is_true(convert::to_boolean(value));
       value = u8"false";
@@ -383,7 +383,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_literal_char16) {
+    auto test_method_(to_boolean_from_literal_char16) {
       const char16* value = u"true";
       assert::is_true(convert::to_boolean(value));
       value = u"false";
@@ -392,7 +392,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_literal_char32) {
+    auto test_method_(to_boolean_from_literal_char32) {
       const char32* value = U"true";
       assert::is_true(convert::to_boolean(value));
       value = U"false";
@@ -401,7 +401,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_literal_wchar) {
+    auto test_method_(to_boolean_from_literal_wchar) {
       const wchar* value = L"true";
       assert::is_true(convert::to_boolean(value));
       value = L"false";
@@ -410,54 +410,54 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_values) {
+    auto test_method_(to_boolean_from_values) {
       values value = values::two;
       assert::is_true(convert::to_boolean(value));
       value = values::zero;
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_byte_from_any) {
+    auto test_method_(to_byte_from_any) {
       any value = static_cast<xtd::byte>(42);
       assert::are_equal(42u, convert::to_byte(value));
       value = static_cast<xtd::byte>(0);
       assert::is_zero(convert::to_byte(value));
     }
     
-    void test_method_(to_byte_from_any_failed) {
+    auto test_method_(to_byte_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_byte(value);});
     }
     
-    void test_method_(to_byte_from_bool) {
+    auto test_method_(to_byte_from_bool) {
       bool value = true;
       assert::are_equal(1u, convert::to_byte(value));
       value = false;
       assert::is_zero(convert::to_byte(value));
     }
     
-    void test_method_(to_byte_from_byte) {
+    auto test_method_(to_byte_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42u, convert::to_byte(value));
       value = 0;
       assert::is_zero(convert::to_byte(value));
     }
     
-    void test_method_(to_byte_from_char) {
+    auto test_method_(to_byte_from_char) {
       char value = 'a';
       assert::are_equal(97u, convert::to_byte(value));
       value = 0;
       assert::is_zero(convert::to_byte(value));
     }
     
-    void test_method_(to_byte_from_char8) {
+    auto test_method_(to_byte_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97u, convert::to_byte(value));
         value = 0;
         assert::is_zero(convert::to_byte(value));
       }
       
-        void test_method_(to_byte_from_char16) {
+        auto test_method_(to_byte_from_char16) {
         char16 value = u'a';
         assert::are_equal(97u, convert::to_byte(value));
         value = 0;
@@ -466,7 +466,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_char32) {
+        auto test_method_(to_byte_from_char32) {
         char32 value = U'a';
         assert::are_equal(97u, convert::to_byte(value));
         value = 0;
@@ -475,7 +475,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_wchar) {
+        auto test_method_(to_byte_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97u, convert::to_byte(value));
         value = 0;
@@ -484,7 +484,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_decimal) {
+        auto test_method_(to_byte_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42u, convert::to_byte(value));
         value = 42.49l;
@@ -499,7 +499,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_double) {
+        auto test_method_(to_byte_from_double) {
         double value = 42.0;
         assert::are_equal(42u, convert::to_byte(value));
         value = 42.49;
@@ -514,7 +514,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_float) {
+        auto test_method_(to_byte_from_float) {
         float value = 42.0f;
         assert::are_equal(42u, convert::to_byte(value));
         value = 42.49f;
@@ -529,7 +529,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_int16) {
+        auto test_method_(to_byte_from_int16) {
         int16 value = 42;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0;
@@ -540,7 +540,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_int32) {
+        auto test_method_(to_byte_from_int32) {
         int32 value = 42;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0;
@@ -551,7 +551,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_int64) {
+        auto test_method_(to_byte_from_int64) {
         int64 value = 42l;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0l;
@@ -562,7 +562,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_llong) {
+        auto test_method_(to_byte_from_llong) {
         slong value = 42ll;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0ll;
@@ -573,7 +573,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_sbyte) {
+        auto test_method_(to_byte_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0;
@@ -582,7 +582,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_uint16) {
+        auto test_method_(to_byte_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0u;
@@ -591,7 +591,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_uint32) {
+        auto test_method_(to_byte_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0u;
@@ -600,7 +600,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_uint64) {
+        auto test_method_(to_byte_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0lu;
@@ -609,7 +609,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_ullong) {
+        auto test_method_(to_byte_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42u, convert::to_byte(value));
         value = 0llu;
@@ -618,7 +618,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_string) {
+        auto test_method_(to_byte_from_string) {
         string value = "42";
         assert::are_equal(42u, convert::to_byte(value));
         value = "0";
@@ -627,7 +627,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_string_with_base) {
+        auto test_method_(to_byte_from_string_with_base) {
         assert::are_equal(42u, convert::to_byte("0b101010", 2));
         assert::are_equal(42u, convert::to_byte(u8"052", 8));
         assert::are_equal(42u, convert::to_byte(u"42", 10));
@@ -635,7 +635,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_byte(L"42", 4);});
       }
       
-        void test_method_(to_byte_from_std_string) {
+        auto test_method_(to_byte_from_std_string) {
         std::string value = "42";
         assert::are_equal(42u, convert::to_byte(value));
         value = "0";
@@ -644,7 +644,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_u8string) {
+        auto test_method_(to_byte_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = u8"0";
@@ -653,7 +653,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_u16string) {
+        auto test_method_(to_byte_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = u"0";
@@ -662,7 +662,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_u32string) {
+        auto test_method_(to_byte_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = U"0";
@@ -671,7 +671,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_wstring) {
+        auto test_method_(to_byte_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = L"0";
@@ -680,7 +680,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_literal_char) {
+        auto test_method_(to_byte_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42u, convert::to_byte(value));
         value = "0";
@@ -689,7 +689,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_literal_char8) {
+        auto test_method_(to_byte_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = u8"0";
@@ -698,7 +698,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_literal_char16) {
+        auto test_method_(to_byte_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = u"0";
@@ -707,7 +707,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_literal_char32) {
+        auto test_method_(to_byte_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = U"0";
@@ -716,7 +716,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_literal_wchar) {
+        auto test_method_(to_byte_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42u, convert::to_byte(value));
         value = L"0";
@@ -725,52 +725,52 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_byte(value);});
       }
       
-        void test_method_(to_byte_from_values) {
+        auto test_method_(to_byte_from_values) {
         values value = values::two;
         assert::are_equal(2, convert::to_byte(value));
         value = values::zero;
         assert::is_zero(convert::to_byte(value));
       }
       
-        void test_method_(to_char_from_any) {
+        auto test_method_(to_char_from_any) {
         any value = 'a';
         assert::are_equal('a', convert::to_char(value));
         value = '\0';
         assert::is_zero(convert::to_char(value));
       }
       
-        void test_method_(to_char_from_any_failed) {
+        auto test_method_(to_char_from_any_failed) {
         any value = "not a char";
         assert::throws<invalid_cast_exception>([&] {convert::to_char(value);});
       }
       
-        void test_method_(to_char_from_bool) {
+        auto test_method_(to_char_from_bool) {
         bool value = true;
         assert::throws<invalid_cast_exception>([&] {convert::to_char(value);});
       }
       
-        void test_method_(to_char_from_byte) {
+        auto test_method_(to_char_from_byte) {
         xtd::byte value = 97;
         assert::are_equal('a', convert::to_char(value));
         value = 0;
         assert::is_zero(convert::to_char(value));
       }
       
-        void test_method_(to_char_from_char) {
+        auto test_method_(to_char_from_char) {
         char value = 'a';
         assert::are_equal('a', convert::to_char(value));
         value = 0;
         assert::is_zero(convert::to_char(value));
       }
       
-        void test_method_(to_char_from_char8) {
+        auto test_method_(to_char_from_char8) {
         char8 value = u8'a';
       assert::are_equal('a', convert::to_char(value));
       value = 0;
       assert::is_zero(convert::to_char(value));
     }
     
-    void test_method_(to_char_from_char16) {
+    auto test_method_(to_char_from_char16) {
       char16 value = u'a';
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -779,7 +779,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_char32) {
+    auto test_method_(to_char_from_char32) {
       char32 value = U'a';
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -788,7 +788,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_wchar) {
+    auto test_method_(to_char_from_wchar) {
       wchar value = L'a';
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -797,7 +797,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_decimal) {
+    auto test_method_(to_char_from_decimal) {
       decimal value = 97.0l;
       assert::are_equal('a', convert::to_char(value));
       value = 97.49l;
@@ -812,7 +812,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_double) {
+    auto test_method_(to_char_from_double) {
       double value = 97.0;
       assert::are_equal('a', convert::to_char(value));
       value = 97.49;
@@ -827,7 +827,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_float) {
+    auto test_method_(to_char_from_float) {
       float value = 97.0f;
       assert::are_equal('a', convert::to_char(value));
       value = 97.49f;
@@ -842,7 +842,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_int16) {
+    auto test_method_(to_char_from_int16) {
       int16 value = 97;
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -853,7 +853,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_int32) {
+    auto test_method_(to_char_from_int32) {
       int32 value = 97;
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -864,7 +864,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_int64) {
+    auto test_method_(to_char_from_int64) {
       int64 value = 97l;
       assert::are_equal('a', convert::to_char(value));
       value = 0l;
@@ -875,7 +875,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_llong) {
+    auto test_method_(to_char_from_llong) {
       slong value = 97ll;
       assert::are_equal('a', convert::to_char(value));
       value = 0ll;
@@ -886,7 +886,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_sbyte) {
+    auto test_method_(to_char_from_sbyte) {
       sbyte value = 97;
       assert::are_equal('a', convert::to_char(value));
       value = 0;
@@ -895,7 +895,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_uint16) {
+    auto test_method_(to_char_from_uint16) {
       uint16 value = 97u;
       assert::are_equal('a', convert::to_char(value));
       value = 0u;
@@ -904,7 +904,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_uint32) {
+    auto test_method_(to_char_from_uint32) {
       uint32 value = 97u;
       assert::are_equal('a', convert::to_char(value));
       value = 0u;
@@ -913,7 +913,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_uint64) {
+    auto test_method_(to_char_from_uint64) {
       uint64 value = 97lu;
       assert::are_equal('a', convert::to_char(value));
       value = 0lu;
@@ -922,7 +922,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_ullong) {
+    auto test_method_(to_char_from_ullong) {
       xtd::ulong value = 97llu;
       assert::are_equal('a', convert::to_char(value));
       value = 0llu;
@@ -931,128 +931,128 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_string) {
+    auto test_method_(to_char_from_string) {
       string value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_std_string) {
+    auto test_method_(to_char_from_std_string) {
       std::string value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_u8string) {
+    auto test_method_(to_char_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_u16string) {
+    auto test_method_(to_char_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal('a', convert::to_char(value));
       value = u"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_u32string) {
+    auto test_method_(to_char_from_u32string) {
       std::u32string value = U"a";
       assert::are_equal('a', convert::to_char(value));
       value = U"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_wstring) {
+    auto test_method_(to_char_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal('a', convert::to_char(value));
       value = L"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_literal_char) {
+    auto test_method_(to_char_from_literal_char) {
       const char* value = "a";
       assert::are_equal('a', convert::to_char(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_literal_char8) {
+    auto test_method_(to_char_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_literal_char16) {
+    auto test_method_(to_char_from_literal_char16) {
       const char16* value = u"a";
       assert::are_equal('a', convert::to_char(value));
       value = u"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_literal_char32) {
+    auto test_method_(to_char_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal('a', convert::to_char(value));
       value = U"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_literal_wchar) {
+    auto test_method_(to_char_from_literal_wchar) {
       const wchar* value = L"a";
       assert::are_equal('a', convert::to_char(value));
       value = L"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-    void test_method_(to_char_from_values) {
+    auto test_method_(to_char_from_values) {
       values value = values::two;
       assert::are_equal('\2', convert::to_char(value));
       value = values::zero;
       assert::is_zero(convert::to_char(value));
     }
     
-    void test_method_(to_char8_from_any) {
+    auto test_method_(to_char8_from_any) {
       // Cannot build on macOS: any with char8 does not link!
       //any value = u8'a';
       //assert::throws<invalid_cast_exception>([&]{convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_any_failed) {
+    auto test_method_(to_char8_from_any_failed) {
       any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_bool) {
+    auto test_method_(to_char8_from_bool) {
       bool value = true;
       assert::throws<invalid_cast_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_byte) {
+    auto test_method_(to_char8_from_byte) {
       xtd::byte value = 97;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0;
         assert::is_zero(convert::to_char8(value));
       }
       
-        void test_method_(to_char8_from_char) {
+        auto test_method_(to_char8_from_char) {
         char value = 'a';
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0;
       assert::is_zero(convert::to_char8(value));
     }
     
-    void test_method_(to_char8_from_char8) {
+    auto test_method_(to_char8_from_char8) {
       char8 value = u8'a';
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0;
       assert::is_zero(convert::to_char8(value));
     }
     
-    void test_method_(to_char8_from_char16) {
+    auto test_method_(to_char8_from_char16) {
       char16 value = u'a';
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0;
@@ -1061,7 +1061,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_char32) {
+        auto test_method_(to_char8_from_char32) {
         char32 value = U'a';
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0;
@@ -1070,7 +1070,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_wchar) {
+    auto test_method_(to_char8_from_wchar) {
       wchar value = L'a';
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0;
@@ -1079,7 +1079,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_decimal) {
+        auto test_method_(to_char8_from_decimal) {
         decimal value = 97.0l;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 97.49l;
@@ -1094,7 +1094,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_double) {
+    auto test_method_(to_char8_from_double) {
       double value = 97.0;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 97.49;
@@ -1109,7 +1109,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_float) {
+        auto test_method_(to_char8_from_float) {
         float value = 97.0f;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 97.49f;
@@ -1124,7 +1124,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_int16) {
+    auto test_method_(to_char8_from_int16) {
       int16 value = 97;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0;
@@ -1135,7 +1135,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_int32) {
+        auto test_method_(to_char8_from_int32) {
         int32 value = 97;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0;
@@ -1146,7 +1146,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_int64) {
+    auto test_method_(to_char8_from_int64) {
       int64 value = 97l;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0l;
@@ -1157,7 +1157,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_llong) {
+        auto test_method_(to_char8_from_llong) {
         slong value = 97ll;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0ll;
@@ -1168,7 +1168,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_sbyte) {
+    auto test_method_(to_char8_from_sbyte) {
       sbyte value = 97;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0;
@@ -1177,7 +1177,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_uint16) {
+        auto test_method_(to_char8_from_uint16) {
         uint16 value = 97u;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0u;
@@ -1186,7 +1186,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_uint32) {
+    auto test_method_(to_char8_from_uint32) {
       uint32 value = 97u;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0u;
@@ -1195,7 +1195,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_uint64) {
+        auto test_method_(to_char8_from_uint64) {
         uint64 value = 97lu;
         assert::are_equal(u8'a', convert::to_char8(value));
       value = 0lu;
@@ -1204,7 +1204,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_ullong) {
+    auto test_method_(to_char8_from_ullong) {
       xtd::ulong value = 97llu;
       assert::are_equal(u8'a', convert::to_char8(value));
         value = 0llu;
@@ -1213,136 +1213,136 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_string) {
+        auto test_method_(to_char8_from_string) {
         string value = "a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_std_string) {
+    auto test_method_(to_char8_from_std_string) {
       std::string value = "a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_u8string) {
+        auto test_method_(to_char8_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_u16string) {
+    auto test_method_(to_char8_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = u"ab";
         assert::throws<format_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_u32string) {
+        auto test_method_(to_char8_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = U"ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_wstring) {
+    auto test_method_(to_char8_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = L"ab";
         assert::throws<format_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_literal_char) {
+        auto test_method_(to_char8_from_literal_char) {
         const char* value = "a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_literal_char8) {
+    auto test_method_(to_char8_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = u8"ab";
         assert::throws<format_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_literal_char16) {
+        auto test_method_(to_char8_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = u"ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_literal_char32) {
+    auto test_method_(to_char8_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal(u8'a', convert::to_char8(value));
         value = U"ab";
         assert::throws<format_exception>([&] {convert::to_char8(value);});
       }
       
-        void test_method_(to_char8_from_literal_wchar) {
+        auto test_method_(to_char8_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(u8'a', convert::to_char8(value));
       value = L"ab";
       assert::throws<format_exception>([&] {convert::to_char8(value);});
     }
     
-    void test_method_(to_char8_from_values) {
+    auto test_method_(to_char8_from_values) {
       values value = values::two;
       assert::are_equal(u8'\2', convert::to_char8(value));
       value = values::zero;
       assert::is_zero(convert::to_char8(value));
     }
     
-    void test_method_(to_char16_from_any) {
+    auto test_method_(to_char16_from_any) {
       any value = u'a';
       assert::are_equal(u'a', convert::to_char16(value));
       value = u'\0';
       assert::is_zero(convert::to_char16(value));
     }
     
-    void test_method_(to_char16_from_any_failed) {
+    auto test_method_(to_char16_from_any_failed) {
       any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char16(value);});
     }
     
-    void test_method_(to_char16_from_bool) {
+    auto test_method_(to_char16_from_bool) {
       bool value = true;
       assert::throws<invalid_cast_exception>([&] {convert::to_char16(value);});
     }
     
-    void test_method_(to_char16_from_byte) {
+    auto test_method_(to_char16_from_byte) {
       xtd::byte value = 97;
       assert::are_equal(u'a', convert::to_char16(value));
       value = 0;
       assert::is_zero(convert::to_char16(value));
     }
     
-    void test_method_(to_char16_from_char) {
+    auto test_method_(to_char16_from_char) {
       char value = 'a';
       assert::are_equal(u'a', convert::to_char16(value));
       value = 0;
       assert::is_zero(convert::to_char16(value));
     }
     
-    void test_method_(to_char16_from_char8) {
+    auto test_method_(to_char16_from_char8) {
       char8 value = u8'a';
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
         assert::is_zero(convert::to_char16(value));
       }
       
-        void test_method_(to_char16_from_char16) {
+        auto test_method_(to_char16_from_char16) {
         char16 value = u'a';
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
         assert::is_zero(convert::to_char16(value));
       }
       
-        void test_method_(to_char16_from_char32) {
+        auto test_method_(to_char16_from_char32) {
         char32 value = U'a';
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
@@ -1351,14 +1351,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_wchar) {
+        auto test_method_(to_char16_from_wchar) {
         wchar value = L'a';
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
         assert::is_zero(convert::to_char16(value));
       }
       
-        void test_method_(to_char16_from_decimal) {
+        auto test_method_(to_char16_from_decimal) {
         decimal value = 97.0l;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 97.49l;
@@ -1373,7 +1373,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_double) {
+        auto test_method_(to_char16_from_double) {
         double value = 97.0;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 97.49;
@@ -1388,7 +1388,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_float) {
+        auto test_method_(to_char16_from_float) {
         float value = 97.0f;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 97.49f;
@@ -1403,7 +1403,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_int16) {
+        auto test_method_(to_char16_from_int16) {
         int16 value = 97;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
@@ -1412,7 +1412,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_int32) {
+        auto test_method_(to_char16_from_int32) {
         int32 value = 97;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
@@ -1423,7 +1423,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_int64) {
+        auto test_method_(to_char16_from_int64) {
         int64 value = 97l;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0l;
@@ -1434,7 +1434,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_llong) {
+        auto test_method_(to_char16_from_llong) {
         slong value = 97ll;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0ll;
@@ -1445,7 +1445,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_sbyte) {
+        auto test_method_(to_char16_from_sbyte) {
         sbyte value = 97;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0;
@@ -1454,14 +1454,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_uint16) {
+        auto test_method_(to_char16_from_uint16) {
         uint16 value = 97u;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0u;
         assert::is_zero(convert::to_char16(value));
       }
       
-        void test_method_(to_char16_from_uint32) {
+        auto test_method_(to_char16_from_uint32) {
         uint32 value = 97u;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0u;
@@ -1470,7 +1470,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_uint64) {
+        auto test_method_(to_char16_from_uint64) {
         uint64 value = 97lu;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0lu;
@@ -1479,7 +1479,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_ullong) {
+        auto test_method_(to_char16_from_ullong) {
         xtd::ulong value = 97llu;
         assert::are_equal(u'a', convert::to_char16(value));
         value = 0llu;
@@ -1488,150 +1488,150 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_string) {
+        auto test_method_(to_char16_from_string) {
         string value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_std_string) {
+        auto test_method_(to_char16_from_std_string) {
         std::string value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_u8string) {
+        auto test_method_(to_char16_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u8"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_u16string) {
+        auto test_method_(to_char16_from_u16string) {
         std::u16string value = u"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_u32string) {
+        auto test_method_(to_char16_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = U"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_wstring) {
+        auto test_method_(to_char16_from_wstring) {
         std::wstring value = L"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = L"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_literal_char) {
+        auto test_method_(to_char16_from_literal_char) {
         const char* value = "a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_literal_char8) {
+        auto test_method_(to_char16_from_literal_char8) {
         const char8* value = u8"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u8"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_literal_char16) {
+        auto test_method_(to_char16_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = u"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_literal_char32) {
+        auto test_method_(to_char16_from_literal_char32) {
         const char32* value = U"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = U"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_literal_wchar) {
+        auto test_method_(to_char16_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(u'a', convert::to_char16(value));
         value = L"ab";
         assert::throws<format_exception>([&] {convert::to_char16(value);});
       }
       
-        void test_method_(to_char16_from_values) {
+        auto test_method_(to_char16_from_values) {
         values value = values::two;
         assert::are_equal(u'\2', convert::to_char16(value));
         value = values::zero;
         assert::is_zero(convert::to_char16(value));
       }
       
-        void test_method_(to_char32_from_any) {
+        auto test_method_(to_char32_from_any) {
         any value = U'a';
         assert::are_equal(U'a', convert::to_char32(value));
         value = U'\0';
         assert::is_zero(convert::to_char32(value));
       }
       
-        void test_method_(to_char32_from_any_failed) {
+        auto test_method_(to_char32_from_any_failed) {
         any value = "not a char";
         assert::throws<invalid_cast_exception>([&] {convert::to_char32(value);});
       }
       
-        void test_method_(to_char32_from_bool) {
+        auto test_method_(to_char32_from_bool) {
         bool value = true;
         assert::throws<invalid_cast_exception>([&] {convert::to_char32(value);});
       }
       
-        void test_method_(to_char32_from_byte) {
+        auto test_method_(to_char32_from_byte) {
         xtd::byte value = 97;
         assert::are_equal(U'a', convert::to_char32(value));
         value = 0;
         assert::is_zero(convert::to_char32(value));
       }
       
-        void test_method_(to_char32_from_char) {
+        auto test_method_(to_char32_from_char) {
         char value = 'a';
         assert::are_equal(U'a', convert::to_char32(value));
         value = 0;
         assert::is_zero(convert::to_char32(value));
       }
       
-        void test_method_(to_char32_from_char8) {
+        auto test_method_(to_char32_from_char8) {
         char8 value = u8'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_char16) {
+    auto test_method_(to_char32_from_char16) {
       char16 value = u'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_char32) {
+    auto test_method_(to_char32_from_char32) {
       char32 value = U'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_wchar) {
+    auto test_method_(to_char32_from_wchar) {
       wchar value = L'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_decimal) {
+    auto test_method_(to_char32_from_decimal) {
       decimal value = 97.0l;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 97.49l;
@@ -1646,7 +1646,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_double) {
+    auto test_method_(to_char32_from_double) {
       double value = 97.0;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 97.49;
@@ -1661,7 +1661,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_float) {
+    auto test_method_(to_char32_from_float) {
       float value = 97.0f;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 97.49f;
@@ -1674,7 +1674,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_int16) {
+    auto test_method_(to_char32_from_int16) {
       int16 value = 97;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
@@ -1683,7 +1683,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_int32) {
+    auto test_method_(to_char32_from_int32) {
       int32 value = 97;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
@@ -1692,7 +1692,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_int64) {
+    auto test_method_(to_char32_from_int64) {
       int64 value = 97l;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0l;
@@ -1703,7 +1703,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_llong) {
+    auto test_method_(to_char32_from_llong) {
       slong value = 97ll;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0ll;
@@ -1712,7 +1712,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_sbyte) {
+    auto test_method_(to_char32_from_sbyte) {
       sbyte value = 97;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
@@ -1721,21 +1721,21 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_uint16) {
+    auto test_method_(to_char32_from_uint16) {
       uint16 value = 97u;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0u;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_uint32) {
+    auto test_method_(to_char32_from_uint32) {
       uint32 value = 97u;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0u;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_uint64) {
+    auto test_method_(to_char32_from_uint64) {
       uint64 value = 97lu;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0lu;
@@ -1744,143 +1744,143 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_ullong) {
+    auto test_method_(to_char32_from_ullong) {
       xtd::ulong value = 97llu;
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0llu;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_char32_from_string) {
+    auto test_method_(to_char32_from_string) {
       string value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_std_string) {
+    auto test_method_(to_char32_from_std_string) {
       std::string value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_u8string) {
+    auto test_method_(to_char32_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_u16string) {
+    auto test_method_(to_char32_from_u16string) {
       std::u16string value = u"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_u32string) {
+    auto test_method_(to_char32_from_u32string) {
       std::u32string value = U"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = U"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_wstring) {
+    auto test_method_(to_char32_from_wstring) {
       std::wstring value = L"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = L"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_literal_char) {
+    auto test_method_(to_char32_from_literal_char) {
       const char* value = "a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = "ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_literal_char8) {
+    auto test_method_(to_char32_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_literal_char16) {
+    auto test_method_(to_char32_from_literal_char16) {
       const char16* value = u"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_literal_char32) {
+    auto test_method_(to_char32_from_literal_char32) {
       const char32* value = U"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = U"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_literal_wchar) {
+    auto test_method_(to_char32_from_literal_wchar) {
       const wchar* value = L"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = L"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-    void test_method_(to_char32_from_values) {
+    auto test_method_(to_char32_from_values) {
       values value = values::two;
       assert::are_equal(U'\2', convert::to_char32(value));
       value = values::zero;
       assert::is_zero(convert::to_char32(value));
     }
     
-    void test_method_(to_wchar_from_any) {
+    auto test_method_(to_wchar_from_any) {
       any value = L'a';
       assert::are_equal(L'a', convert::to_wchar(value));
       value = L'\0';
       assert::is_zero(convert::to_wchar(value));
     }
     
-    void test_method_(to_wchar_from_any_failed) {
+    auto test_method_(to_wchar_from_any_failed) {
       any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_wchar(value);});
     }
     
-    void test_method_(to_wchar_from_bool) {
+    auto test_method_(to_wchar_from_bool) {
       bool value = true;
       assert::throws<invalid_cast_exception>([&] {convert::to_wchar(value);});
     }
     
-    void test_method_(to_wchar_from_byte) {
+    auto test_method_(to_wchar_from_byte) {
       xtd::byte value = 97;
       assert::are_equal(L'a', convert::to_wchar(value));
       value = 0;
       assert::is_zero(convert::to_wchar(value));
     }
     
-    void test_method_(to_wchar_from_char) {
+    auto test_method_(to_wchar_from_char) {
       char value = 'a';
       assert::are_equal(L'a', convert::to_wchar(value));
       value = 0;
       assert::is_zero(convert::to_wchar(value));
     }
     
-    void test_method_(to_wchar_from_char8) {
+    auto test_method_(to_wchar_from_char8) {
       char8 value = u8'a';
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
         assert::is_zero(convert::to_wchar(value));
       }
       
-        void test_method_(to_wchar_from_char16) {
+        auto test_method_(to_wchar_from_char16) {
         char16 value = u'a';
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
         assert::is_zero(convert::to_wchar(value));
       }
       
-        void test_method_(to_wchar_from_char32) {
+        auto test_method_(to_wchar_from_char32) {
         char32 value = U'a';
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
@@ -1889,14 +1889,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_wchar) {
+        auto test_method_(to_wchar_from_wchar) {
         wchar value = L'a';
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
         assert::is_zero(convert::to_wchar(value));
       }
       
-        void test_method_(to_wchar_from_decimal) {
+        auto test_method_(to_wchar_from_decimal) {
         decimal value = 97.0l;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 97.49l;
@@ -1911,7 +1911,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_double) {
+        auto test_method_(to_wchar_from_double) {
         double value = 97.0;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 97.49;
@@ -1926,7 +1926,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_float) {
+        auto test_method_(to_wchar_from_float) {
         float value = 97.0f;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 97.49f;
@@ -1941,7 +1941,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_int16) {
+        auto test_method_(to_wchar_from_int16) {
         int16 value = 97;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
@@ -1950,7 +1950,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_int32) {
+        auto test_method_(to_wchar_from_int32) {
         int32 value = 97;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
@@ -1961,7 +1961,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_int64) {
+        auto test_method_(to_wchar_from_int64) {
         int64 value = 97l;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0l;
@@ -1972,7 +1972,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_llong) {
+        auto test_method_(to_wchar_from_llong) {
         slong value = 97ll;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0ll;
@@ -1983,7 +1983,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_sbyte) {
+        auto test_method_(to_wchar_from_sbyte) {
         sbyte value = 97;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0;
@@ -1992,14 +1992,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_uint16) {
+        auto test_method_(to_wchar_from_uint16) {
         uint16 value = 97u;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0u;
         assert::is_zero(convert::to_wchar(value));
       }
       
-        void test_method_(to_wchar_from_uint32) {
+        auto test_method_(to_wchar_from_uint32) {
         uint32 value = 97u;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0u;
@@ -2008,7 +2008,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_uint64) {
+        auto test_method_(to_wchar_from_uint64) {
         uint64 value = 97lu;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0lu;
@@ -2017,7 +2017,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_ullong) {
+        auto test_method_(to_wchar_from_ullong) {
         xtd::ulong value = 97llu;
         assert::are_equal(L'a', convert::to_wchar(value));
         value = 0llu;
@@ -2026,159 +2026,159 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_string) {
+        auto test_method_(to_wchar_from_string) {
         string value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_std_string) {
+        auto test_method_(to_wchar_from_std_string) {
         std::string value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_u8string) {
+        auto test_method_(to_wchar_from_u8string) {
         std::u8string value = u8"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u8"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_u16string) {
+        auto test_method_(to_wchar_from_u16string) {
         std::u16string value = u"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_u32string) {
+        auto test_method_(to_wchar_from_u32string) {
         std::u32string value = U"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = U"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_wstring) {
+        auto test_method_(to_wchar_from_wstring) {
         std::wstring value = L"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = L"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_literal_char) {
+        auto test_method_(to_wchar_from_literal_char) {
         const char* value = "a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = "ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_literal_char8) {
+        auto test_method_(to_wchar_from_literal_char8) {
         const char8* value = u8"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u8"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_literal_char16) {
+        auto test_method_(to_wchar_from_literal_char16) {
         const char16* value = u"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = u"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_literal_char32) {
+        auto test_method_(to_wchar_from_literal_char32) {
         const char32* value = U"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = U"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_literal_wchar) {
+        auto test_method_(to_wchar_from_literal_wchar) {
         const wchar* value = L"a";
         assert::are_equal(L'a', convert::to_wchar(value));
         value = L"ab";
         assert::throws<format_exception>([&] {convert::to_wchar(value);});
       }
       
-        void test_method_(to_wchar_from_values) {
+        auto test_method_(to_wchar_from_values) {
         values value = values::two;
         assert::are_equal(L'\2', convert::to_wchar(value));
         value = values::zero;
         assert::is_zero(convert::to_wchar(value));
       }
       
-        void test_method_(to_decimal_from_any) {
+        auto test_method_(to_decimal_from_any) {
         any value = 42.0l;
         assert::are_equal(42.0l, convert::to_decimal(value));
         value = 0.0l;
         assert::is_zero(convert::to_decimal(value));
       }
       
-        void test_method_(to_decimal_from_any_failed) {
+        auto test_method_(to_decimal_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_decimal(value);});
       }
       
-        void test_method_(to_decimal_from_bool) {
+        auto test_method_(to_decimal_from_bool) {
         bool value = true;
         assert::are_equal(1.0l, convert::to_decimal(value));
         value = false;
         assert::is_zero(convert::to_decimal(value));
       }
       
-        void test_method_(to_decimal_from_byte) {
+        auto test_method_(to_decimal_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42.0l, convert::to_decimal(value));
         value = 0;
         assert::is_zero(convert::to_decimal(value));
       }
       
-        void test_method_(to_decimal_from_char) {
+        auto test_method_(to_decimal_from_char) {
         char value = 'a';
         assert::are_equal(97.0l, convert::to_decimal(value));
         value = 0;
         assert::is_zero(convert::to_decimal(value));
       }
       
-        void test_method_(to_decimal_from_char8) {
+        auto test_method_(to_decimal_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_char16) {
+    auto test_method_(to_decimal_from_char16) {
       char16 value = u'a';
       assert::are_equal(97.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_char32) {
+    auto test_method_(to_decimal_from_char32) {
       char32 value = U'a';
       assert::are_equal(97.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_wchar) {
+    auto test_method_(to_decimal_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_decimal) {
+    auto test_method_(to_decimal_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_double) {
+    auto test_method_(to_decimal_from_double) {
       double value = 42.0;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
@@ -2186,77 +2186,77 @@ namespace xtd::tests {
       
     }
     
-    void test_method_(to_decimal_from_float) {
+    auto test_method_(to_decimal_from_float) {
       float value = 42.0f;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_int16) {
+    auto test_method_(to_decimal_from_int16) {
       int16 value = 42;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_int32) {
+    auto test_method_(to_decimal_from_int32) {
       int32 value = 42;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_int64) {
+    auto test_method_(to_decimal_from_int64) {
       int64 value = 42l;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_llong) {
+    auto test_method_(to_decimal_from_llong) {
       slong value = 42ll;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_sbyte) {
+    auto test_method_(to_decimal_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_uint16) {
+    auto test_method_(to_decimal_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_uint32) {
+    auto test_method_(to_decimal_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_uint64) {
+    auto test_method_(to_decimal_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_ullong) {
+    auto test_method_(to_decimal_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_decimal_from_string) {
+    auto test_method_(to_decimal_from_string) {
       string value = "42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = "0";
@@ -2265,7 +2265,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_std_string) {
+    auto test_method_(to_decimal_from_std_string) {
       std::string value = "42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = "0";
@@ -2274,7 +2274,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_u8string) {
+    auto test_method_(to_decimal_from_u8string) {
       std::u8string value = u8"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = u8"0";
@@ -2283,7 +2283,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_u16string) {
+    auto test_method_(to_decimal_from_u16string) {
       std::u16string value = u"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = u"0";
@@ -2292,7 +2292,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_u32string) {
+    auto test_method_(to_decimal_from_u32string) {
       std::u32string value = U"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = U"0";
@@ -2301,7 +2301,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_wstring) {
+    auto test_method_(to_decimal_from_wstring) {
       std::wstring value = L"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = L"0";
@@ -2310,7 +2310,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_literal_char) {
+    auto test_method_(to_decimal_from_literal_char) {
       const char* value = "42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = "0";
@@ -2319,7 +2319,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_literal_char8) {
+    auto test_method_(to_decimal_from_literal_char8) {
       const char8* value = u8"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = u8"0";
@@ -2328,7 +2328,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_literal_char16) {
+    auto test_method_(to_decimal_from_literal_char16) {
       const char16* value = u"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = u"0";
@@ -2337,7 +2337,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_literal_char32) {
+    auto test_method_(to_decimal_from_literal_char32) {
       const char32* value = U"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = U"0";
@@ -2346,7 +2346,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_literal_wchar) {
+    auto test_method_(to_decimal_from_literal_wchar) {
       const wchar* value = L"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = L"0";
@@ -2355,82 +2355,82 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-    void test_method_(to_decimal_from_values) {
+    auto test_method_(to_decimal_from_values) {
       values value = values::two;
       assert::are_equal(2.0l, convert::to_decimal(value));
       value = values::zero;
       assert::is_zero(convert::to_decimal(value));
     }
     
-    void test_method_(to_double_from_any) {
+    auto test_method_(to_double_from_any) {
       any value = 42.0;
       assert::are_equal(42.0, convert::to_double(value));
       value = 0.0;
       assert::is_zero(convert::to_double(value));
     }
     
-    void test_method_(to_double_from_any_failed) {
+    auto test_method_(to_double_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_double(value);});
     }
     
-    void test_method_(to_double_from_bool) {
+    auto test_method_(to_double_from_bool) {
       bool value = true;
       assert::are_equal(1.0, convert::to_double(value));
       value = false;
       assert::is_zero(convert::to_double(value));
     }
     
-    void test_method_(to_double_from_byte) {
+    auto test_method_(to_double_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42.0, convert::to_double(value));
       value = 0;
       assert::is_zero(convert::to_double(value));
     }
     
-    void test_method_(to_double_from_char) {
+    auto test_method_(to_double_from_char) {
       char value = 'a';
       assert::are_equal(97.0, convert::to_double(value));
       value = 0;
       assert::is_zero(convert::to_double(value));
     }
     
-    void test_method_(to_double_from_char8) {
+    auto test_method_(to_double_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_char16) {
+        auto test_method_(to_double_from_char16) {
         char16 value = u'a';
         assert::are_equal(97.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_char32) {
+        auto test_method_(to_double_from_char32) {
         char32 value = U'a';
         assert::are_equal(97.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_wchar) {
+        auto test_method_(to_double_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_decimal) {
+        auto test_method_(to_double_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_double) {
+        auto test_method_(to_double_from_double) {
         double value = 42.0;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
@@ -2438,77 +2438,77 @@ namespace xtd::tests {
         
       }
       
-        void test_method_(to_double_from_float) {
+        auto test_method_(to_double_from_float) {
         float value = 42.0f;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_int16) {
+        auto test_method_(to_double_from_int16) {
         int16 value = 42;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_int32) {
+        auto test_method_(to_double_from_int32) {
         int32 value = 42;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_int64) {
+        auto test_method_(to_double_from_int64) {
         int64 value = 42l;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_llong) {
+        auto test_method_(to_double_from_llong) {
         slong value = 42ll;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_sbyte) {
+        auto test_method_(to_double_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_uint16) {
+        auto test_method_(to_double_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_uint32) {
+        auto test_method_(to_double_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_uint64) {
+        auto test_method_(to_double_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_ullong) {
+        auto test_method_(to_double_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42.0, convert::to_double(value));
         value = 0;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_double_from_string) {
+        auto test_method_(to_double_from_string) {
         string value = "42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = "0";
@@ -2517,7 +2517,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_std_string) {
+        auto test_method_(to_double_from_std_string) {
         std::string value = "42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = "0";
@@ -2526,7 +2526,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_u8string) {
+        auto test_method_(to_double_from_u8string) {
         std::u8string value = u8"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = u8"0";
@@ -2535,7 +2535,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_u16string) {
+        auto test_method_(to_double_from_u16string) {
         std::u16string value = u"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = u"0";
@@ -2544,7 +2544,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_u32string) {
+        auto test_method_(to_double_from_u32string) {
         std::u32string value = U"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = U"0";
@@ -2553,7 +2553,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_wstring) {
+        auto test_method_(to_double_from_wstring) {
         std::wstring value = L"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = L"0";
@@ -2562,7 +2562,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_literal_char) {
+        auto test_method_(to_double_from_literal_char) {
         const char* value = "42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = "0";
@@ -2571,7 +2571,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_literal_char8) {
+        auto test_method_(to_double_from_literal_char8) {
         const char8* value = u8"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = u8"0";
@@ -2580,7 +2580,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_literal_char16) {
+        auto test_method_(to_double_from_literal_char16) {
         const char16* value = u"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = u"0";
@@ -2589,7 +2589,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_literal_char32) {
+        auto test_method_(to_double_from_literal_char32) {
         const char32* value = U"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = U"0";
@@ -2598,7 +2598,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_literal_wchar) {
+        auto test_method_(to_double_from_literal_wchar) {
         const wchar* value = L"42.0";
         assert::are_equal(42.0, convert::to_double(value));
         value = L"0";
@@ -2607,82 +2607,82 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_double(value);});
       }
       
-        void test_method_(to_double_from_values) {
+        auto test_method_(to_double_from_values) {
         values value = values::two;
         assert::are_equal(2.0, convert::to_double(value));
         value = values::zero;
         assert::is_zero(convert::to_double(value));
       }
       
-        void test_method_(to_single_from_any) {
+        auto test_method_(to_single_from_any) {
         any value = 42.0f;
         assert::are_equal(42.0f, convert::to_single(value));
         value = 0.0f;
         assert::is_zero(convert::to_single(value));
       }
       
-        void test_method_(to_single_from_any_failed) {
+        auto test_method_(to_single_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_single(value);});
       }
       
-        void test_method_(to_single_from_bool) {
+        auto test_method_(to_single_from_bool) {
         bool value = true;
         assert::are_equal(1.0f, convert::to_single(value));
         value = false;
         assert::is_zero(convert::to_single(value));
       }
       
-        void test_method_(to_single_from_byte) {
+        auto test_method_(to_single_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42.0f, convert::to_single(value));
         value = 0;
         assert::is_zero(convert::to_single(value));
       }
       
-        void test_method_(to_single_from_char) {
+        auto test_method_(to_single_from_char) {
         char value = 'a';
         assert::are_equal(97.0f, convert::to_single(value));
         value = 0;
         assert::is_zero(convert::to_single(value));
       }
       
-        void test_method_(to_single_from_char8) {
+        auto test_method_(to_single_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_char16) {
+    auto test_method_(to_single_from_char16) {
       char16 value = u'a';
       assert::are_equal(97.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_char32) {
+    auto test_method_(to_single_from_char32) {
       char32 value = U'a';
       assert::are_equal(97.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_wchar) {
+    auto test_method_(to_single_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_decimal) {
+    auto test_method_(to_single_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_double) {
+    auto test_method_(to_single_from_double) {
       double value = 42.0;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
@@ -2690,77 +2690,77 @@ namespace xtd::tests {
       
     }
     
-    void test_method_(to_single_from_float) {
+    auto test_method_(to_single_from_float) {
       float value = 42.0f;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_int16) {
+    auto test_method_(to_single_from_int16) {
       int16 value = 42;
       assert::are_equal(42.0, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_int32) {
+    auto test_method_(to_single_from_int32) {
       int32 value = 42;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_int64) {
+    auto test_method_(to_single_from_int64) {
       int64 value = 42l;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_llong) {
+    auto test_method_(to_single_from_llong) {
       slong value = 42ll;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_sbyte) {
+    auto test_method_(to_single_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_uint16) {
+    auto test_method_(to_single_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_uint32) {
+    auto test_method_(to_single_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_uint64) {
+    auto test_method_(to_single_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_ullong) {
+    auto test_method_(to_single_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_single_from_string) {
+    auto test_method_(to_single_from_string) {
       string value = "42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = "0";
@@ -2769,7 +2769,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_std_string) {
+    auto test_method_(to_single_from_std_string) {
       std::string value = "42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = "0";
@@ -2778,7 +2778,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_u8string) {
+    auto test_method_(to_single_from_u8string) {
       std::u8string value = u8"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = u8"0";
@@ -2787,7 +2787,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_u16string) {
+    auto test_method_(to_single_from_u16string) {
       std::u16string value = u"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = u"0";
@@ -2796,7 +2796,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_u32string) {
+    auto test_method_(to_single_from_u32string) {
       std::u32string value = U"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = U"0";
@@ -2805,7 +2805,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_wstring) {
+    auto test_method_(to_single_from_wstring) {
       std::wstring value = L"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = L"0";
@@ -2814,7 +2814,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_literal_char) {
+    auto test_method_(to_single_from_literal_char) {
       const char* value = "42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = "0";
@@ -2823,7 +2823,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_literal_char8) {
+    auto test_method_(to_single_from_literal_char8) {
       const char8* value = u8"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = u8"0";
@@ -2832,7 +2832,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_literal_char16) {
+    auto test_method_(to_single_from_literal_char16) {
       const char16* value = u"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = u"0";
@@ -2841,7 +2841,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_literal_char32) {
+    auto test_method_(to_single_from_literal_char32) {
       const char32* value = U"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = U"0";
@@ -2850,7 +2850,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_literal_wchar) {
+    auto test_method_(to_single_from_literal_wchar) {
       const wchar* value = L"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
       value = L"0";
@@ -2859,61 +2859,61 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-    void test_method_(to_single_from_values) {
+    auto test_method_(to_single_from_values) {
       values value = values::two;
       assert::are_equal(2.0f, convert::to_single(value));
       value = values::zero;
       assert::is_zero(convert::to_single(value));
     }
     
-    void test_method_(to_int16_from_any) {
+    auto test_method_(to_int16_from_any) {
       any value = static_cast<int16>(42);
       assert::are_equal(42, convert::to_int16(value));
       value = static_cast<int16>(0);
       assert::is_zero(convert::to_int16(value));
     }
     
-    void test_method_(to_int16_from_any_failed) {
+    auto test_method_(to_int16_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_int16(value);});
     }
     
-    void test_method_(to_int16_from_bool) {
+    auto test_method_(to_int16_from_bool) {
       bool value = true;
       assert::are_equal(1, convert::to_int16(value));
       value = false;
       assert::is_zero(convert::to_int16(value));
     }
     
-    void test_method_(to_int16_from_byte) {
+    auto test_method_(to_int16_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42, convert::to_int16(value));
       value = 0;
       assert::is_zero(convert::to_int16(value));
     }
     
-    void test_method_(to_int16_from_char) {
+    auto test_method_(to_int16_from_char) {
       char value = 'a';
       assert::are_equal(97, convert::to_int16(value));
       value = 0;
       assert::is_zero(convert::to_int16(value));
     }
     
-    void test_method_(to_int16_from_char8) {
+    auto test_method_(to_int16_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97, convert::to_int16(value));
         value = 0;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int16_from_char16) {
+        auto test_method_(to_int16_from_char16) {
         char16 value = u'a';
         assert::are_equal(97, convert::to_int16(value));
         value = 0;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int16_from_char32) {
+        auto test_method_(to_int16_from_char32) {
         char32 value = U'a';
         assert::are_equal(97, convert::to_int16(value));
         value = 0;
@@ -2922,14 +2922,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_wchar) {
+        auto test_method_(to_int16_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97, convert::to_int16(value));
         value = 0;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int16_from_decimal) {
+        auto test_method_(to_int16_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42, convert::to_int16(value));
         value = 42.49l;
@@ -2942,7 +2942,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_double) {
+        auto test_method_(to_int16_from_double) {
         double value = 42.0;
         assert::are_equal(42, convert::to_int16(value));
         value = 42.49;
@@ -2955,7 +2955,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_float) {
+        auto test_method_(to_int16_from_float) {
         float value = 42.0f;
         assert::are_equal(42, convert::to_int16(value));
         value = 42.49f;
@@ -2968,14 +2968,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_int16) {
+        auto test_method_(to_int16_from_int16) {
         int16 value = 42;
         assert::are_equal(42, convert::to_int16(value));
         value = 0;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int16_from_int32) {
+        auto test_method_(to_int16_from_int32) {
         int32 value = 42;
         assert::are_equal(42, convert::to_int16(value));
         value = 0;
@@ -2984,7 +2984,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_int64) {
+        auto test_method_(to_int16_from_int64) {
         int64 value = 42l;
         assert::are_equal(42, convert::to_int16(value));
         value = 0l;
@@ -2993,7 +2993,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_llong) {
+        auto test_method_(to_int16_from_llong) {
         slong value = 42ll;
         assert::are_equal(42, convert::to_int16(value));
         value = 0ll;
@@ -3002,14 +3002,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_sbyte) {
+        auto test_method_(to_int16_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42, convert::to_int16(value));
         value = 0;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int16_from_uint16) {
+        auto test_method_(to_int16_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42, convert::to_int16(value));
         value = 0u;
@@ -3018,7 +3018,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_uint32) {
+        auto test_method_(to_int16_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42, convert::to_int16(value));
         value = 0u;
@@ -3027,7 +3027,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_uint64) {
+        auto test_method_(to_int16_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42, convert::to_int16(value));
         value = 0lu;
@@ -3036,7 +3036,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_ullong) {
+        auto test_method_(to_int16_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42, convert::to_int16(value));
         value = 0llu;
@@ -3045,7 +3045,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_string) {
+        auto test_method_(to_int16_from_string) {
         string value = "42";
         assert::are_equal(42, convert::to_int16(value));
         value = "0";
@@ -3054,7 +3054,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_string_with_base) {
+        auto test_method_(to_int16_from_string_with_base) {
         assert::are_equal(42, convert::to_int16("0b101010", 2));
         assert::are_equal(42, convert::to_int16(u8"052", 8));
         assert::are_equal(42, convert::to_int16(u"42", 10));
@@ -3062,7 +3062,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_int16(L"42", 4);});
       }
       
-        void test_method_(to_int16_from_std_string) {
+        auto test_method_(to_int16_from_std_string) {
         std::string value = "42";
         assert::are_equal(42, convert::to_int16(value));
         value = "0";
@@ -3071,7 +3071,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_u8string) {
+        auto test_method_(to_int16_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42, convert::to_int16(value));
         value = u8"0";
@@ -3080,7 +3080,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_u16string) {
+        auto test_method_(to_int16_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42, convert::to_int16(value));
         value = u"0";
@@ -3089,7 +3089,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_u32string) {
+        auto test_method_(to_int16_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42, convert::to_int16(value));
         value = U"0";
@@ -3098,7 +3098,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_wstring) {
+        auto test_method_(to_int16_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42, convert::to_int16(value));
         value = L"0";
@@ -3107,7 +3107,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_literal_char) {
+        auto test_method_(to_int16_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42, convert::to_int16(value));
         value = "0";
@@ -3116,7 +3116,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_literal_char8) {
+        auto test_method_(to_int16_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42, convert::to_int16(value));
         value = u8"0";
@@ -3125,7 +3125,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_literal_char16) {
+        auto test_method_(to_int16_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42, convert::to_int16(value));
         value = u"0";
@@ -3134,7 +3134,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_literal_char32) {
+        auto test_method_(to_int16_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42, convert::to_int16(value));
         value = U"0";
@@ -3143,7 +3143,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_literal_wchar) {
+        auto test_method_(to_int16_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42, convert::to_int16(value));
         value = L"0";
@@ -3152,75 +3152,75 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int16(value);});
       }
       
-        void test_method_(to_int16_from_values) {
+        auto test_method_(to_int16_from_values) {
         values value = values::two;
         assert::are_equal(2, convert::to_int16(value));
         value = values::zero;
         assert::is_zero(convert::to_int16(value));
       }
       
-        void test_method_(to_int32_from_any) {
+        auto test_method_(to_int32_from_any) {
         any value = static_cast<int32>(42);
         assert::are_equal(42, convert::to_int32(value));
         value = static_cast<int32>(0);
         assert::is_zero(convert::to_int32(value));
       }
       
-        void test_method_(to_int32_from_any_failed) {
+        auto test_method_(to_int32_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_int32(value);});
       }
       
-        void test_method_(to_int32_from_bool) {
+        auto test_method_(to_int32_from_bool) {
         bool value = true;
         assert::are_equal(1, convert::to_int32(value));
         value = false;
         assert::is_zero(convert::to_int32(value));
       }
       
-        void test_method_(to_int32_from_byte) {
+        auto test_method_(to_int32_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42, convert::to_int32(value));
         value = 0;
         assert::is_zero(convert::to_int32(value));
       }
       
-        void test_method_(to_int32_from_char) {
+        auto test_method_(to_int32_from_char) {
         char value = 'a';
         assert::are_equal(97, convert::to_int32(value));
         value = 0;
         assert::is_zero(convert::to_int32(value));
       }
       
-        void test_method_(to_int32_from_char8) {
+        auto test_method_(to_int32_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_char16) {
+    auto test_method_(to_int32_from_char16) {
       char16 value = u'a';
       assert::are_equal(97, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_char32) {
+    auto test_method_(to_int32_from_char32) {
       char32 value = U'a';
       assert::are_equal(97, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_wchar) {
+    auto test_method_(to_int32_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_decimal) {
+    auto test_method_(to_int32_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42, convert::to_int32(value));
       value = 42.49l;
@@ -3233,7 +3233,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_double) {
+    auto test_method_(to_int32_from_double) {
       double value = 42.0;
       assert::are_equal(42, convert::to_int32(value));
       value = 42.49;
@@ -3246,7 +3246,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_float) {
+    auto test_method_(to_int32_from_float) {
       float value = 42.0f;
       assert::are_equal(42, convert::to_int32(value));
       value = 42.49f;
@@ -3257,21 +3257,21 @@ namespace xtd::tests {
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_int16) {
+    auto test_method_(to_int32_from_int16) {
       int16 value = 42;
       assert::are_equal(42, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_int32) {
+    auto test_method_(to_int32_from_int32) {
       int32 value = 42;
       assert::are_equal(42, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_int64) {
+    auto test_method_(to_int32_from_int64) {
       int64 value = 42l;
       assert::are_equal(42, convert::to_int32(value));
       value = 0l;
@@ -3280,28 +3280,28 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_llong) {
+    auto test_method_(to_int32_from_llong) {
       slong value = 42ll;
       assert::are_equal(42, convert::to_int32(value));
       value = 0ll;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_sbyte) {
+    auto test_method_(to_int32_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_uint16) {
+    auto test_method_(to_int32_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42, convert::to_int32(value));
       value = 0u;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int32_from_uint32) {
+    auto test_method_(to_int32_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42, convert::to_int32(value));
       value = 0u;
@@ -3310,7 +3310,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_uint64) {
+    auto test_method_(to_int32_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42, convert::to_int32(value));
       value = 0lu;
@@ -3319,7 +3319,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_ullong) {
+    auto test_method_(to_int32_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42, convert::to_int32(value));
       value = 0llu;
@@ -3328,7 +3328,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_string) {
+    auto test_method_(to_int32_from_string) {
       string value = "42";
       assert::are_equal(42, convert::to_int32(value));
       value = "0";
@@ -3337,7 +3337,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_string_with_base) {
+    auto test_method_(to_int32_from_string_with_base) {
       assert::are_equal(42, convert::to_int32("0b101010", 2));
       assert::are_equal(42, convert::to_int32(u8"052", 8));
       assert::are_equal(42, convert::to_int32(u"42", 10));
@@ -3345,7 +3345,7 @@ namespace xtd::tests {
       assert::throws<argument_exception>([&] {convert::to_int32(L"42", 4);});
     }
     
-    void test_method_(to_int32_from_std_string) {
+    auto test_method_(to_int32_from_std_string) {
       std::string value = "42";
       assert::are_equal(42, convert::to_int32(value));
       value = "0";
@@ -3354,7 +3354,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_u8string) {
+    auto test_method_(to_int32_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42, convert::to_int32(value));
       value = u8"0";
@@ -3363,7 +3363,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_u16string) {
+    auto test_method_(to_int32_from_u16string) {
       std::u16string value = u"42";
       assert::are_equal(42, convert::to_int32(value));
       value = u"0";
@@ -3372,7 +3372,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_u32string) {
+    auto test_method_(to_int32_from_u32string) {
       std::u32string value = U"42";
       assert::are_equal(42, convert::to_int32(value));
       value = U"0";
@@ -3381,7 +3381,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_wstring) {
+    auto test_method_(to_int32_from_wstring) {
       std::wstring value = L"42";
       assert::are_equal(42, convert::to_int32(value));
       value = L"0";
@@ -3390,7 +3390,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_literal_char) {
+    auto test_method_(to_int32_from_literal_char) {
       const char* value = "42";
       assert::are_equal(42, convert::to_int32(value));
       value = "0";
@@ -3399,7 +3399,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_literal_char8) {
+    auto test_method_(to_int32_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42, convert::to_int32(value));
       value = u8"0";
@@ -3408,7 +3408,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_literal_char16) {
+    auto test_method_(to_int32_from_literal_char16) {
       const char16* value = u"42";
       assert::are_equal(42, convert::to_int32(value));
       value = u"0";
@@ -3417,7 +3417,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_literal_char32) {
+    auto test_method_(to_int32_from_literal_char32) {
       const char32* value = U"42";
       assert::are_equal(42, convert::to_int32(value));
       value = U"0";
@@ -3426,7 +3426,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_literal_wchar) {
+    auto test_method_(to_int32_from_literal_wchar) {
       const wchar* value = L"42";
       assert::are_equal(42, convert::to_int32(value));
       value = L"0";
@@ -3435,75 +3435,75 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-    void test_method_(to_int32_from_values) {
+    auto test_method_(to_int32_from_values) {
       values value = values::two;
       assert::are_equal(2, convert::to_int32(value));
       value = values::zero;
       assert::is_zero(convert::to_int32(value));
     }
     
-    void test_method_(to_int64_from_any) {
+    auto test_method_(to_int64_from_any) {
       any value = static_cast<int64>(42);
       assert::are_equal(42l, convert::to_int64(value));
       value = static_cast<int64>(0);
       assert::is_zero(convert::to_int64(value));
     }
     
-    void test_method_(to_int64_from_any_failed) {
+    auto test_method_(to_int64_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_int64(value);});
     }
     
-    void test_method_(to_int64_from_bool) {
+    auto test_method_(to_int64_from_bool) {
       bool value = true;
       assert::are_equal(1l, convert::to_int64(value));
       value = false;
       assert::is_zero(convert::to_int64(value));
     }
     
-    void test_method_(to_int64_from_byte) {
+    auto test_method_(to_int64_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42l, convert::to_int64(value));
       value = 0;
       assert::is_zero(convert::to_int64(value));
     }
     
-    void test_method_(to_int64_from_char) {
+    auto test_method_(to_int64_from_char) {
       char value = 'a';
       assert::are_equal(97l, convert::to_int64(value));
       value = 0;
       assert::is_zero(convert::to_int64(value));
     }
     
-    void test_method_(to_int64_from_char8) {
+    auto test_method_(to_int64_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_char16) {
+        auto test_method_(to_int64_from_char16) {
         char16 value = u'a';
         assert::are_equal(97l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_char32) {
+        auto test_method_(to_int64_from_char32) {
         char32 value = U'a';
         assert::are_equal(97l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_wchar) {
+        auto test_method_(to_int64_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_decimal) {
+        auto test_method_(to_int64_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42l, convert::to_int64(value));
         value = 42.49l;
@@ -3514,7 +3514,7 @@ namespace xtd::tests {
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_double) {
+        auto test_method_(to_int64_from_double) {
         double value = 42.0;
         assert::are_equal(42l, convert::to_int64(value));
         value = 42.49;
@@ -3525,7 +3525,7 @@ namespace xtd::tests {
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_float) {
+        auto test_method_(to_int64_from_float) {
         float value = 42.0f;
         assert::are_equal(42l, convert::to_int64(value));
         value = 42.49f;
@@ -3536,56 +3536,56 @@ namespace xtd::tests {
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_int16) {
+        auto test_method_(to_int64_from_int16) {
         int16 value = 42;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_int32) {
+        auto test_method_(to_int64_from_int32) {
         int32 value = 42;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_int64) {
+        auto test_method_(to_int64_from_int64) {
         int64 value = 42l;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0l;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_llong) {
+        auto test_method_(to_int64_from_llong) {
         slong value = 42ll;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0ll;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_sbyte) {
+        auto test_method_(to_int64_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_uint16) {
+        auto test_method_(to_int64_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0u;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_uint32) {
+        auto test_method_(to_int64_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0u;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_uint64) {
+        auto test_method_(to_int64_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0lu;
@@ -3594,14 +3594,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_ullong) {
+        auto test_method_(to_int64_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42l, convert::to_int64(value));
         value = 0llu;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_int64_from_string) {
+        auto test_method_(to_int64_from_string) {
         string value = "42";
         assert::are_equal(42l, convert::to_int64(value));
         value = "0";
@@ -3610,7 +3610,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_string_with_base) {
+        auto test_method_(to_int64_from_string_with_base) {
         assert::are_equal(42, convert::to_int64("0b101010", 2));
         assert::are_equal(42, convert::to_int64(u8"052", 8));
         assert::are_equal(42, convert::to_int64(u"42", 10));
@@ -3618,7 +3618,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_int64(L"42", 4);});
       }
       
-        void test_method_(to_int64_from_std_string) {
+        auto test_method_(to_int64_from_std_string) {
         std::string value = "42";
         assert::are_equal(42l, convert::to_int64(value));
         value = "0";
@@ -3627,7 +3627,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_u8string) {
+        auto test_method_(to_int64_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = u8"0";
@@ -3636,7 +3636,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_u16string) {
+        auto test_method_(to_int64_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = u"0";
@@ -3645,7 +3645,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_u32string) {
+        auto test_method_(to_int64_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = U"0";
@@ -3654,7 +3654,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_wstring) {
+        auto test_method_(to_int64_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = L"0";
@@ -3663,7 +3663,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_literal_char) {
+        auto test_method_(to_int64_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42l, convert::to_int64(value));
         value = "0";
@@ -3672,7 +3672,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_literal_char8) {
+        auto test_method_(to_int64_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = u8"0";
@@ -3681,7 +3681,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_literal_char16) {
+        auto test_method_(to_int64_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = u"0";
@@ -3690,7 +3690,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_literal_char32) {
+        auto test_method_(to_int64_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = U"0";
@@ -3699,7 +3699,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_literal_wchar) {
+        auto test_method_(to_int64_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42l, convert::to_int64(value));
         value = L"0";
@@ -3708,75 +3708,75 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_int64(value);});
       }
       
-        void test_method_(to_int64_from_values) {
+        auto test_method_(to_int64_from_values) {
         values value = values::two;
         assert::are_equal(2l, convert::to_int64(value));
         value = values::zero;
         assert::is_zero(convert::to_int64(value));
       }
       
-        void test_method_(to_llong_from_any) {
+        auto test_method_(to_llong_from_any) {
         any value = static_cast<slong>(42ll);
         assert::are_equal(42ll, convert::to_llong(value));
         value = static_cast<slong>(0ll);
         assert::is_zero(convert::to_llong(value));
       }
       
-        void test_method_(to_llong_from_any_failed) {
+        auto test_method_(to_llong_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_llong(value);});
       }
       
-        void test_method_(to_llong_from_bool) {
+        auto test_method_(to_llong_from_bool) {
         bool value = true;
         assert::are_equal(1ll, convert::to_llong(value));
         value = false;
         assert::is_zero(convert::to_llong(value));
       }
       
-        void test_method_(to_llong_from_byte) {
+        auto test_method_(to_llong_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42ll, convert::to_llong(value));
         value = 0;
         assert::is_zero(convert::to_llong(value));
       }
       
-        void test_method_(to_llong_from_char) {
+        auto test_method_(to_llong_from_char) {
         char value = 'a';
         assert::are_equal(97ll, convert::to_llong(value));
         value = 0;
         assert::is_zero(convert::to_llong(value));
       }
       
-        void test_method_(to_llong_from_char8) {
+        auto test_method_(to_llong_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_char16) {
+    auto test_method_(to_llong_from_char16) {
       char16 value = u'a';
       assert::are_equal(97ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_char32) {
+    auto test_method_(to_llong_from_char32) {
       char32 value = U'a';
       assert::are_equal(97ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_wchar) {
+    auto test_method_(to_llong_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_decimal) {
+    auto test_method_(to_llong_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 42.49l;
@@ -3787,7 +3787,7 @@ namespace xtd::tests {
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_double) {
+    auto test_method_(to_llong_from_double) {
       double value = 42.0;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 42.49;
@@ -3798,7 +3798,7 @@ namespace xtd::tests {
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_float) {
+    auto test_method_(to_llong_from_float) {
       float value = 42.0f;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 42.49f;
@@ -3809,56 +3809,56 @@ namespace xtd::tests {
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_int16) {
+    auto test_method_(to_llong_from_int16) {
       int16 value = 42;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_int32) {
+    auto test_method_(to_llong_from_int32) {
       int32 value = 42;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_int64) {
+    auto test_method_(to_llong_from_int64) {
       int64 value = 42l;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0l;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_llong) {
+    auto test_method_(to_llong_from_llong) {
       slong value = 42ll;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0ll;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_sbyte) {
+    auto test_method_(to_llong_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_uint16) {
+    auto test_method_(to_llong_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0u;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_uint32) {
+    auto test_method_(to_llong_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0u;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_uint64) {
+    auto test_method_(to_llong_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0lu;
@@ -3867,14 +3867,14 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_ullong) {
+    auto test_method_(to_llong_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42ll, convert::to_llong(value));
       value = 0llu;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_llong_from_string) {
+    auto test_method_(to_llong_from_string) {
       string value = "42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = "0";
@@ -3883,7 +3883,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_string_with_base) {
+    auto test_method_(to_llong_from_string_with_base) {
       assert::are_equal(42, convert::to_llong("0b101010", 2));
       assert::are_equal(42, convert::to_llong(u8"052", 8));
       assert::are_equal(42, convert::to_llong(u"42", 10));
@@ -3891,7 +3891,7 @@ namespace xtd::tests {
       assert::throws<argument_exception>([&] {convert::to_llong(L"42", 4);});
     }
     
-    void test_method_(to_llong_from_std_string) {
+    auto test_method_(to_llong_from_std_string) {
       std::string value = "42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = "0";
@@ -3900,7 +3900,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_u8string) {
+    auto test_method_(to_llong_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = u8"0";
@@ -3909,7 +3909,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_u16string) {
+    auto test_method_(to_llong_from_u16string) {
       std::u16string value = u"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = u"0";
@@ -3918,7 +3918,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_u32string) {
+    auto test_method_(to_llong_from_u32string) {
       std::u32string value = U"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = U"0";
@@ -3927,7 +3927,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_wstring) {
+    auto test_method_(to_llong_from_wstring) {
       std::wstring value = L"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = L"0";
@@ -3936,7 +3936,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_literal_char) {
+    auto test_method_(to_llong_from_literal_char) {
       const char* value = "42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = "0";
@@ -3945,7 +3945,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_literal_char8) {
+    auto test_method_(to_llong_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = u8"0";
@@ -3954,7 +3954,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_literal_char16) {
+    auto test_method_(to_llong_from_literal_char16) {
       const char16* value = u"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = u"0";
@@ -3963,7 +3963,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_literal_char32) {
+    auto test_method_(to_llong_from_literal_char32) {
       const char32* value = U"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = U"0";
@@ -3972,7 +3972,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_literal_wchar) {
+    auto test_method_(to_llong_from_literal_wchar) {
       const wchar* value = L"42";
       assert::are_equal(42ll, convert::to_llong(value));
       value = L"0";
@@ -3981,54 +3981,54 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-    void test_method_(to_llong_from_values) {
+    auto test_method_(to_llong_from_values) {
       values value = values::two;
       assert::are_equal(2ll, convert::to_llong(value));
       value = values::zero;
       assert::is_zero(convert::to_llong(value));
     }
     
-    void test_method_(to_sbyte_from_any) {
+    auto test_method_(to_sbyte_from_any) {
       any value = static_cast<sbyte>(42);
       assert::are_equal(42, convert::to_sbyte(value));
       value = static_cast<sbyte>(0);
       assert::is_zero(convert::to_sbyte(value));
     }
     
-    void test_method_(to_sbyte_from_any_failed) {
+    auto test_method_(to_sbyte_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_sbyte(value);});
     }
     
-    void test_method_(to_sbyte_from_bool) {
+    auto test_method_(to_sbyte_from_bool) {
       bool value = true;
       assert::are_equal(1, convert::to_sbyte(value));
       value = false;
       assert::is_zero(convert::to_sbyte(value));
     }
     
-    void test_method_(to_sbyte_from_byte) {
+    auto test_method_(to_sbyte_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42, convert::to_sbyte(value));
       value = 0;
       assert::is_zero(convert::to_sbyte(value));
     }
     
-    void test_method_(to_sbyte_from_char) {
+    auto test_method_(to_sbyte_from_char) {
       char value = 'a';
       assert::are_equal(97, convert::to_sbyte(value));
       value = 0;
       assert::is_zero(convert::to_sbyte(value));
     }
     
-    void test_method_(to_sbyte_from_char8) {
+    auto test_method_(to_sbyte_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97, convert::to_sbyte(value));
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
       }
       
-        void test_method_(to_sbyte_from_char16) {
+        auto test_method_(to_sbyte_from_char16) {
         char16 value = u'a';
         assert::are_equal(97, convert::to_sbyte(value));
         value = 0;
@@ -4037,7 +4037,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_char32) {
+        auto test_method_(to_sbyte_from_char32) {
         char32 value = U'a';
         assert::are_equal(97, convert::to_sbyte(value));
         value = 0;
@@ -4046,7 +4046,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_wchar) {
+        auto test_method_(to_sbyte_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97, convert::to_sbyte(value));
         value = 0;
@@ -4055,7 +4055,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_decimal) {
+        auto test_method_(to_sbyte_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 42.49l;
@@ -4068,7 +4068,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_double) {
+        auto test_method_(to_sbyte_from_double) {
         double value = 42.0;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 42.49;
@@ -4081,7 +4081,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_float) {
+        auto test_method_(to_sbyte_from_float) {
         float value = 42.0f;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 42.49f;
@@ -4094,7 +4094,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_int16) {
+        auto test_method_(to_sbyte_from_int16) {
         int16 value = 42;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0;
@@ -4103,7 +4103,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_int32) {
+        auto test_method_(to_sbyte_from_int32) {
         int32 value = 42;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0;
@@ -4112,7 +4112,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_int64) {
+        auto test_method_(to_sbyte_from_int64) {
         int64 value = 42l;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0l;
@@ -4121,7 +4121,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_llong) {
+        auto test_method_(to_sbyte_from_llong) {
         slong value = 42ll;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0ll;
@@ -4130,14 +4130,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_sbyte) {
+        auto test_method_(to_sbyte_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0;
         assert::is_zero(convert::to_sbyte(value));
       }
       
-        void test_method_(to_sbyte_from_uint16) {
+        auto test_method_(to_sbyte_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0u;
@@ -4146,7 +4146,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_uint32) {
+        auto test_method_(to_sbyte_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0u;
@@ -4155,7 +4155,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_uint64) {
+        auto test_method_(to_sbyte_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0lu;
@@ -4164,7 +4164,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_ullong) {
+        auto test_method_(to_sbyte_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42, convert::to_sbyte(value));
         value = 0llu;
@@ -4173,7 +4173,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_string) {
+        auto test_method_(to_sbyte_from_string) {
         string value = "42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = "0";
@@ -4182,7 +4182,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_string_with_base) {
+        auto test_method_(to_sbyte_from_string_with_base) {
         assert::are_equal(42, convert::to_sbyte("0b101010", 2));
         assert::are_equal(42, convert::to_sbyte(u8"052", 8));
         assert::are_equal(42, convert::to_sbyte(u"42", 10));
@@ -4190,7 +4190,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_sbyte(L"42", 4);});
       }
       
-        void test_method_(to_sbyte_from_std_string) {
+        auto test_method_(to_sbyte_from_std_string) {
         std::string value = "42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = "0";
@@ -4199,7 +4199,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_u8string) {
+        auto test_method_(to_sbyte_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = u8"0";
@@ -4208,7 +4208,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_u16string) {
+        auto test_method_(to_sbyte_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = u"0";
@@ -4217,7 +4217,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_u32string) {
+        auto test_method_(to_sbyte_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = U"0";
@@ -4226,7 +4226,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_wstring) {
+        auto test_method_(to_sbyte_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = L"0";
@@ -4235,7 +4235,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_literal_char) {
+        auto test_method_(to_sbyte_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = "0";
@@ -4244,7 +4244,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_literal_char8) {
+        auto test_method_(to_sbyte_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = u8"0";
@@ -4253,7 +4253,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_literal_char16) {
+        auto test_method_(to_sbyte_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = u"0";
@@ -4262,7 +4262,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_literal_char32) {
+        auto test_method_(to_sbyte_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = U"0";
@@ -4271,7 +4271,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_literal_wchar) {
+        auto test_method_(to_sbyte_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42, convert::to_sbyte(value));
         value = L"0";
@@ -4280,61 +4280,61 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_sbyte(value);});
       }
       
-        void test_method_(to_sbyte_from_values) {
+        auto test_method_(to_sbyte_from_values) {
         values value = values::two;
         assert::are_equal(2, convert::to_sbyte(value));
         value = values::zero;
         assert::is_zero(convert::to_sbyte(value));
       }
       
-        void test_method_(to_uint16_from_any) {
+        auto test_method_(to_uint16_from_any) {
         any value = static_cast<uint16>(42);
         assert::are_equal(42u, convert::to_uint16(value));
         value = static_cast<uint16>(0);
         assert::is_zero(convert::to_uint16(value));
       }
       
-        void test_method_(to_uint16_from_any_failed) {
+        auto test_method_(to_uint16_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_uint16(value);});
       }
       
-        void test_method_(to_uint16_from_bool) {
+        auto test_method_(to_uint16_from_bool) {
         bool value = true;
         assert::are_equal(1, convert::to_uint16(value));
         value = false;
         assert::is_zero(convert::to_uint16(value));
       }
       
-        void test_method_(to_uint16_from_byte) {
+        auto test_method_(to_uint16_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42u, convert::to_uint16(value));
         value = 0;
         assert::is_zero(convert::to_uint16(value));
       }
       
-        void test_method_(to_uint16_from_char) {
+        auto test_method_(to_uint16_from_char) {
         char value = 'a';
         assert::are_equal(97u, convert::to_uint16(value));
         value = 0;
         assert::is_zero(convert::to_uint16(value));
       }
       
-        void test_method_(to_uint16_from_char8) {
+        auto test_method_(to_uint16_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_char16) {
+    auto test_method_(to_uint16_from_char16) {
       char16 value = u'a';
       assert::are_equal(97u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_char32) {
+    auto test_method_(to_uint16_from_char32) {
       char32 value = U'a';
       assert::are_equal(97u, convert::to_uint16(value));
       value = 0;
@@ -4343,14 +4343,14 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_wchar) {
+    auto test_method_(to_uint16_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_decimal) {
+    auto test_method_(to_uint16_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 42.49l;
@@ -4363,7 +4363,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_double) {
+    auto test_method_(to_uint16_from_double) {
       double value = 42.0;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 42.49;
@@ -4376,7 +4376,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_float) {
+    auto test_method_(to_uint16_from_float) {
       float value = 42.0f;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 42.49f;
@@ -4389,14 +4389,14 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_int16) {
+    auto test_method_(to_uint16_from_int16) {
       int16 value = 42;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_int32) {
+    auto test_method_(to_uint16_from_int32) {
       int32 value = 42;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0;
@@ -4405,7 +4405,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_int64) {
+    auto test_method_(to_uint16_from_int64) {
       int64 value = 42l;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0l;
@@ -4414,7 +4414,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_llong) {
+    auto test_method_(to_uint16_from_llong) {
       slong value = 42ll;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0ll;
@@ -4423,21 +4423,21 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_sbyte) {
+    auto test_method_(to_uint16_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_uint16) {
+    auto test_method_(to_uint16_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0u;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint16_from_uint32) {
+    auto test_method_(to_uint16_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0u;
@@ -4446,7 +4446,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_uint64) {
+    auto test_method_(to_uint16_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0lu;
@@ -4455,7 +4455,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_ullong) {
+    auto test_method_(to_uint16_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42u, convert::to_uint16(value));
       value = 0llu;
@@ -4464,7 +4464,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_string) {
+    auto test_method_(to_uint16_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = "0";
@@ -4473,7 +4473,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_string_with_base) {
+    auto test_method_(to_uint16_from_string_with_base) {
       assert::are_equal(42u, convert::to_uint16("0b101010", 2));
       assert::are_equal(42u, convert::to_uint16(u8"052", 8));
       assert::are_equal(42u, convert::to_uint16(u"42", 10));
@@ -4481,7 +4481,7 @@ namespace xtd::tests {
       assert::throws<argument_exception>([&] {convert::to_uint16(L"42", 4);});
     }
     
-    void test_method_(to_uint16_from_std_string) {
+    auto test_method_(to_uint16_from_std_string) {
       std::string value = "42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = "0";
@@ -4490,7 +4490,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_u8string) {
+    auto test_method_(to_uint16_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = u8"0";
@@ -4499,7 +4499,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_u16string) {
+    auto test_method_(to_uint16_from_u16string) {
       std::u16string value = u"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = u"0";
@@ -4508,7 +4508,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_u32string) {
+    auto test_method_(to_uint16_from_u32string) {
       std::u32string value = U"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = U"0";
@@ -4517,7 +4517,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_wstring) {
+    auto test_method_(to_uint16_from_wstring) {
       std::wstring value = L"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = L"0";
@@ -4526,7 +4526,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_literal_char) {
+    auto test_method_(to_uint16_from_literal_char) {
       const char* value = "42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = "0";
@@ -4535,7 +4535,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_literal_char8) {
+    auto test_method_(to_uint16_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = u8"0";
@@ -4544,7 +4544,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_literal_char16) {
+    auto test_method_(to_uint16_from_literal_char16) {
       const char16* value = u"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = u"0";
@@ -4553,7 +4553,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_literal_char32) {
+    auto test_method_(to_uint16_from_literal_char32) {
       const char32* value = U"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = U"0";
@@ -4562,7 +4562,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_literal_wchar) {
+    auto test_method_(to_uint16_from_literal_wchar) {
       const wchar* value = L"42";
       assert::are_equal(42u, convert::to_uint16(value));
       value = L"0";
@@ -4571,75 +4571,75 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-    void test_method_(to_uint16_from_values) {
+    auto test_method_(to_uint16_from_values) {
       values value = values::two;
       assert::are_equal(2u, convert::to_uint16(value));
       value = values::zero;
       assert::is_zero(convert::to_uint16(value));
     }
     
-    void test_method_(to_uint32_from_any) {
+    auto test_method_(to_uint32_from_any) {
       any value = static_cast<uint32>(42);
       assert::are_equal(42u, convert::to_uint32(value));
       value = static_cast<uint32>(0);
       assert::is_zero(convert::to_uint32(value));
     }
     
-    void test_method_(to_uint32_from_any_failed) {
+    auto test_method_(to_uint32_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_uint32(value);});
     }
     
-    void test_method_(to_uint32_from_bool) {
+    auto test_method_(to_uint32_from_bool) {
       bool value = true;
       assert::are_equal(1u, convert::to_uint32(value));
       value = false;
       assert::is_zero(convert::to_uint32(value));
     }
     
-    void test_method_(to_uint32_from_byte) {
+    auto test_method_(to_uint32_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42u, convert::to_uint32(value));
       value = 0;
       assert::is_zero(convert::to_uint32(value));
     }
     
-    void test_method_(to_uint32_from_char) {
+    auto test_method_(to_uint32_from_char) {
       char value = 'a';
       assert::are_equal(97u, convert::to_uint32(value));
       value = 0;
       assert::is_zero(convert::to_uint32(value));
     }
     
-    void test_method_(to_uint32_from_char8) {
+    auto test_method_(to_uint32_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_char16) {
+        auto test_method_(to_uint32_from_char16) {
         char16 value = u'a';
         assert::are_equal(97u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_char32) {
+        auto test_method_(to_uint32_from_char32) {
         char32 value = U'a';
         assert::are_equal(97u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_wchar) {
+        auto test_method_(to_uint32_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_decimal) {
+        auto test_method_(to_uint32_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 42.49l;
@@ -4652,7 +4652,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_double) {
+        auto test_method_(to_uint32_from_double) {
         double value = 42.0;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 42.49;
@@ -4665,7 +4665,7 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_float) {
+        auto test_method_(to_uint32_from_float) {
         float value = 42.0f;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 42.49f;
@@ -4676,21 +4676,21 @@ namespace xtd::tests {
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_int16) {
+        auto test_method_(to_uint32_from_int16) {
         int16 value = 42;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_int32) {
+        auto test_method_(to_uint32_from_int32) {
         int32 value = 42;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_int64) {
+        auto test_method_(to_uint32_from_int64) {
         int64 value = 42l;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0l;
@@ -4699,35 +4699,35 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_llong) {
+        auto test_method_(to_uint32_from_llong) {
         slong value = 42;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0ll;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_sbyte) {
+        auto test_method_(to_uint32_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_uint16) {
+        auto test_method_(to_uint32_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0u;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_uint32) {
+        auto test_method_(to_uint32_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0u;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_uint64) {
+        auto test_method_(to_uint32_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0lu;
@@ -4736,14 +4736,14 @@ namespace xtd::tests {
         assert::throws<overflow_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_ullong) {
+        auto test_method_(to_uint32_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42u, convert::to_uint32(value));
         value = 0llu;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint32_from_string) {
+        auto test_method_(to_uint32_from_string) {
         string value = "42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = "0";
@@ -4752,7 +4752,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_string_with_base) {
+        auto test_method_(to_uint32_from_string_with_base) {
         assert::are_equal(42u, convert::to_uint32("0b101010", 2));
         assert::are_equal(42u, convert::to_uint32(u8"052", 8));
         assert::are_equal(42u, convert::to_uint32(u"42", 10));
@@ -4760,7 +4760,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_uint32(L"42", 4);});
       }
       
-        void test_method_(to_uint32_from_std_string) {
+        auto test_method_(to_uint32_from_std_string) {
         std::string value = "42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = "0";
@@ -4769,7 +4769,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_u8string) {
+        auto test_method_(to_uint32_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = u8"0";
@@ -4778,7 +4778,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_u16string) {
+        auto test_method_(to_uint32_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = u"0";
@@ -4787,7 +4787,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_u32string) {
+        auto test_method_(to_uint32_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = U"0";
@@ -4796,7 +4796,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_wstring) {
+        auto test_method_(to_uint32_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = L"0";
@@ -4805,7 +4805,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_literal_char) {
+        auto test_method_(to_uint32_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = "0";
@@ -4814,7 +4814,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_literal_char8) {
+        auto test_method_(to_uint32_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = u8"0";
@@ -4823,7 +4823,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_literal_char16) {
+        auto test_method_(to_uint32_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = u"0";
@@ -4832,7 +4832,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_literal_char32) {
+        auto test_method_(to_uint32_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = U"0";
@@ -4841,7 +4841,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_literal_wchar) {
+        auto test_method_(to_uint32_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42u, convert::to_uint32(value));
         value = L"0";
@@ -4850,75 +4850,75 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_uint32(value);});
       }
       
-        void test_method_(to_uint32_from_values) {
+        auto test_method_(to_uint32_from_values) {
         values value = values::two;
         assert::are_equal(2u, convert::to_uint32(value));
         value = values::zero;
         assert::is_zero(convert::to_uint32(value));
       }
       
-        void test_method_(to_uint64_from_any) {
+        auto test_method_(to_uint64_from_any) {
         any value = static_cast<uint64>(42);
         assert::are_equal(42u, convert::to_uint64(value));
         value = static_cast<uint64>(0);
         assert::is_zero(convert::to_uint64(value));
       }
       
-        void test_method_(to_uint64_from_any_failed) {
+        auto test_method_(to_uint64_from_any_failed) {
         any value = "not a byte";
         assert::throws<invalid_cast_exception>([&] {convert::to_uint64(value);});
       }
       
-        void test_method_(to_uint64_from_bool) {
+        auto test_method_(to_uint64_from_bool) {
         bool value = true;
         assert::are_equal(1u, convert::to_uint64(value));
         value = false;
         assert::is_zero(convert::to_uint64(value));
       }
       
-        void test_method_(to_uint64_from_byte) {
+        auto test_method_(to_uint64_from_byte) {
         xtd::byte value = 42;
         assert::are_equal(42u, convert::to_uint64(value));
         value = 0;
         assert::is_zero(convert::to_uint64(value));
       }
       
-        void test_method_(to_uint64_from_char) {
+        auto test_method_(to_uint64_from_char) {
         char value = 'a';
         assert::are_equal(97u, convert::to_uint64(value));
         value = 0;
         assert::is_zero(convert::to_uint64(value));
       }
       
-        void test_method_(to_uint64_from_char8) {
+        auto test_method_(to_uint64_from_char8) {
         char8 value = u8'a';
       assert::are_equal(97u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_char16) {
+    auto test_method_(to_uint64_from_char16) {
       char16 value = u'a';
       assert::are_equal(97u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_char32) {
+    auto test_method_(to_uint64_from_char32) {
       char32 value = U'a';
       assert::are_equal(97u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_wchar) {
+    auto test_method_(to_uint64_from_wchar) {
       wchar value = L'a';
       assert::are_equal(97u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_decimal) {
+    auto test_method_(to_uint64_from_decimal) {
       decimal value = 42.0l;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 42.49l;
@@ -4929,7 +4929,7 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_double) {
+    auto test_method_(to_uint64_from_double) {
       double value = 42.0;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 42.49;
@@ -4940,7 +4940,7 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_float) {
+    auto test_method_(to_uint64_from_float) {
       float value = 42.0f;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 42.49f;
@@ -4951,70 +4951,70 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_int16) {
+    auto test_method_(to_uint64_from_int16) {
       int16 value = 42;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_int32) {
+    auto test_method_(to_uint64_from_int32) {
       int32 value = 42;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_int64) {
+    auto test_method_(to_uint64_from_int64) {
       int64 value = 42l;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0l;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_llong) {
+    auto test_method_(to_uint64_from_llong) {
       slong value = 42ll;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0ll;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_sbyte) {
+    auto test_method_(to_uint64_from_sbyte) {
       sbyte value = 42;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_uint16) {
+    auto test_method_(to_uint64_from_uint16) {
       uint16 value = 42u;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0u;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_uint32) {
+    auto test_method_(to_uint64_from_uint32) {
       uint32 value = 42u;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0u;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_uint64) {
+    auto test_method_(to_uint64_from_uint64) {
       uint64 value = 42lu;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0lu;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_ullong) {
+    auto test_method_(to_uint64_from_ullong) {
       xtd::ulong value = 42llu;
       assert::are_equal(42u, convert::to_uint64(value));
       value = 0llu;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_uint64_from_string) {
+    auto test_method_(to_uint64_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = "0";
@@ -5023,7 +5023,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_string_with_base) {
+    auto test_method_(to_uint64_from_string_with_base) {
       assert::are_equal(42u, convert::to_uint64("0b101010", 2));
       assert::are_equal(42u, convert::to_uint64(u8"052", 8));
       assert::are_equal(42u, convert::to_uint64(u"42", 10));
@@ -5031,7 +5031,7 @@ namespace xtd::tests {
       assert::throws<argument_exception>([&] {convert::to_uint64(L"42", 4);});
     }
     
-    void test_method_(to_uint64_from_std_string) {
+    auto test_method_(to_uint64_from_std_string) {
       std::string value = "42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = "0";
@@ -5040,7 +5040,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_u8string) {
+    auto test_method_(to_uint64_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = u8"0";
@@ -5049,7 +5049,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_u16string) {
+    auto test_method_(to_uint64_from_u16string) {
       std::u16string value = u"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = u"0";
@@ -5058,7 +5058,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_u32string) {
+    auto test_method_(to_uint64_from_u32string) {
       std::u32string value = U"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = U"0";
@@ -5067,7 +5067,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_wstring) {
+    auto test_method_(to_uint64_from_wstring) {
       std::wstring value = L"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = L"0";
@@ -5076,7 +5076,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_literal_char) {
+    auto test_method_(to_uint64_from_literal_char) {
       const char* value = "42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = "0";
@@ -5085,7 +5085,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_literal_char8) {
+    auto test_method_(to_uint64_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = u8"0";
@@ -5094,7 +5094,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_literal_char16) {
+    auto test_method_(to_uint64_from_literal_char16) {
       const char16* value = u"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = u"0";
@@ -5103,7 +5103,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_literal_char32) {
+    auto test_method_(to_uint64_from_literal_char32) {
       const char32* value = U"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = U"0";
@@ -5112,7 +5112,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_literal_wchar) {
+    auto test_method_(to_uint64_from_literal_wchar) {
       const wchar* value = L"42";
       assert::are_equal(42u, convert::to_uint64(value));
       value = L"0";
@@ -5121,75 +5121,75 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-    void test_method_(to_uint64_from_values) {
+    auto test_method_(to_uint64_from_values) {
       values value = values::two;
       assert::are_equal(2u, convert::to_uint64(value));
       value = values::zero;
       assert::is_zero(convert::to_uint64(value));
     }
     
-    void test_method_(to_ullong_from_any) {
+    auto test_method_(to_ullong_from_any) {
       any value = static_cast<xtd::ulong>(42);
       assert::are_equal(42llu, convert::to_ullong(value));
       value = static_cast<xtd::ulong>(0);
       assert::is_zero(convert::to_ullong(value));
     }
     
-    void test_method_(to_ullong_from_any_failed) {
+    auto test_method_(to_ullong_from_any_failed) {
       any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_ullong(value);});
     }
     
-    void test_method_(to_ullong_from_bool) {
+    auto test_method_(to_ullong_from_bool) {
       bool value = true;
       assert::are_equal(1llu, convert::to_ullong(value));
       value = false;
       assert::is_zero(convert::to_ullong(value));
     }
     
-    void test_method_(to_ullong_from_byte) {
+    auto test_method_(to_ullong_from_byte) {
       xtd::byte value = 42;
       assert::are_equal(42llu, convert::to_ullong(value));
       value = 0;
       assert::is_zero(convert::to_ullong(value));
     }
     
-    void test_method_(to_ullong_from_char) {
+    auto test_method_(to_ullong_from_char) {
       char value = 'a';
       assert::are_equal(97llu, convert::to_ullong(value));
       value = 0;
       assert::is_zero(convert::to_ullong(value));
     }
     
-    void test_method_(to_ullong_from_char8) {
+    auto test_method_(to_ullong_from_char8) {
       char8 value = u8'a';
         assert::are_equal(97llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_char16) {
+        auto test_method_(to_ullong_from_char16) {
         char16 value = u'a';
         assert::are_equal(97llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_char32) {
+        auto test_method_(to_ullong_from_char32) {
         char32 value = U'a';
         assert::are_equal(97llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_wchar) {
+        auto test_method_(to_ullong_from_wchar) {
         wchar value = L'a';
         assert::are_equal(97llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_decimal) {
+        auto test_method_(to_ullong_from_decimal) {
         decimal value = 42.0l;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 42.49l;
@@ -5200,7 +5200,7 @@ namespace xtd::tests {
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_double) {
+        auto test_method_(to_ullong_from_double) {
         double value = 42.0;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 42.49;
@@ -5211,7 +5211,7 @@ namespace xtd::tests {
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_float) {
+        auto test_method_(to_ullong_from_float) {
         float value = 42.0f;
         assert::are_equal(42u, convert::to_ullong(value));
         value = 42.49f;
@@ -5222,70 +5222,70 @@ namespace xtd::tests {
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_int16) {
+        auto test_method_(to_ullong_from_int16) {
         int16 value = 42;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_int32) {
+        auto test_method_(to_ullong_from_int32) {
         int32 value = 42;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_int64) {
+        auto test_method_(to_ullong_from_int64) {
         int64 value = 42l;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0l;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_llong) {
+        auto test_method_(to_ullong_from_llong) {
         slong value = 42ll;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0ll;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_sbyte) {
+        auto test_method_(to_ullong_from_sbyte) {
         sbyte value = 42;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_uint16) {
+        auto test_method_(to_ullong_from_uint16) {
         uint16 value = 42u;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0u;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_uint32) {
+        auto test_method_(to_ullong_from_uint32) {
         uint32 value = 42u;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0u;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_uint64) {
+        auto test_method_(to_ullong_from_uint64) {
         uint64 value = 42lu;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0lu;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_ullong) {
+        auto test_method_(to_ullong_from_ullong) {
         xtd::ulong value = 42llu;
         assert::are_equal(42llu, convert::to_ullong(value));
         value = 0llu;
         assert::is_zero(convert::to_ullong(value));
       }
       
-        void test_method_(to_ullong_from_string) {
+        auto test_method_(to_ullong_from_string) {
         string value = "42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = "0";
@@ -5294,7 +5294,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_string_with_base) {
+        auto test_method_(to_ullong_from_string_with_base) {
         assert::are_equal(42u, convert::to_ullong("0b101010", 2));
         assert::are_equal(42u, convert::to_ullong(u8"052", 8));
         assert::are_equal(42u, convert::to_ullong(u"42", 10));
@@ -5302,7 +5302,7 @@ namespace xtd::tests {
         assert::throws<argument_exception>([&] {convert::to_ullong(L"42", 4);});
       }
       
-        void test_method_(to_ullong_from_std_string) {
+        auto test_method_(to_ullong_from_std_string) {
         std::string value = "42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = "0";
@@ -5311,7 +5311,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_u8string) {
+        auto test_method_(to_ullong_from_u8string) {
         std::u8string value = u8"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = u8"0";
@@ -5320,7 +5320,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_u16string) {
+        auto test_method_(to_ullong_from_u16string) {
         std::u16string value = u"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = u"0";
@@ -5329,7 +5329,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_u32string) {
+        auto test_method_(to_ullong_from_u32string) {
         std::u32string value = U"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = U"0";
@@ -5338,7 +5338,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_wstring) {
+        auto test_method_(to_ullong_from_wstring) {
         std::wstring value = L"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = L"0";
@@ -5347,7 +5347,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_literal_char) {
+        auto test_method_(to_ullong_from_literal_char) {
         const char* value = "42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = "0";
@@ -5356,7 +5356,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_literal_char8) {
+        auto test_method_(to_ullong_from_literal_char8) {
         const char8* value = u8"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = u8"0";
@@ -5365,7 +5365,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_literal_char16) {
+        auto test_method_(to_ullong_from_literal_char16) {
         const char16* value = u"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = u"0";
@@ -5374,7 +5374,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_literal_char32) {
+        auto test_method_(to_ullong_from_literal_char32) {
         const char32* value = U"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = U"0";
@@ -5383,7 +5383,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_literal_wchar) {
+        auto test_method_(to_ullong_from_literal_wchar) {
         const wchar* value = L"42";
         assert::are_equal(42llu, convert::to_ullong(value));
         value = L"0";
@@ -5392,7 +5392,7 @@ namespace xtd::tests {
         assert::throws<format_exception>([&] {convert::to_ullong(value);});
       }
       
-        void test_method_(to_ullong_from_values) {
+        auto test_method_(to_ullong_from_values) {
         values value = values::two;
         assert::are_equal(2llu, convert::to_ullong(value));
         value = values::zero;

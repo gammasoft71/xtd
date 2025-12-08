@@ -8,31 +8,31 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(socket_option_level_tests) {
-    void test_method_(socket) {
+    auto test_method_(socket) {
       assert::are_equal(65535, enum_object<>::to_int32(socket_option_level::socket));
       assert::are_equal("socket", enum_object<>::to_string(socket_option_level::socket));
       assert::are_equal(socket_option_level::socket, enum_object<>::parse<socket_option_level>("socket"));
     }
     
-    void test_method_(ip) {
+    auto test_method_(ip) {
       assert::are_equal(0, enum_object<>::to_int32(socket_option_level::ip));
       assert::are_equal("ip", enum_object<>::to_string(socket_option_level::ip));
       assert::are_equal(socket_option_level::ip, enum_object<>::parse<socket_option_level>("ip"));
     }
     
-    void test_method_(ip_v6) {
+    auto test_method_(ip_v6) {
       assert::are_equal(41, enum_object<>::to_int32(socket_option_level::ip_v6));
       assert::are_equal("ip_v6", enum_object<>::to_string(socket_option_level::ip_v6));
       assert::are_equal(socket_option_level::ip_v6, enum_object<>::parse<socket_option_level>("ip_v6"));
     }
     
-    void test_method_(tcp) {
+    auto test_method_(tcp) {
       assert::are_equal(6, enum_object<>::to_int32(socket_option_level::tcp));
       assert::are_equal("tcp", enum_object<>::to_string(socket_option_level::tcp));
       assert::are_equal(socket_option_level::tcp, enum_object<>::parse<socket_option_level>("tcp"));
     }
     
-    void test_method_(udp) {
+    auto test_method_(udp) {
       assert::are_equal(17, enum_object<>::to_int32(socket_option_level::udp));
       assert::are_equal("udp", enum_object<>::to_string(socket_option_level::udp));
       assert::are_equal(socket_option_level::udp, enum_object<>::parse<socket_option_level>("udp"));

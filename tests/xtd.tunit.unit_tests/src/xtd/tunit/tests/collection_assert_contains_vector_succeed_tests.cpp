@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_assert_contains_vector_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto a = array<int> {1, 2, 3, 4};
       xtd::tunit::collection_assert::contains({1, 2}, a);
     }

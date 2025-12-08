@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::net::tests {
   class test_class_(network_credential_tests) {
-    void test_method_(create_with_default_constructor) {
+    auto test_method_(create_with_default_constructor) {
       network_credential nc;
       assert::is_empty(nc.user_name());
       assert::is_empty(nc.password());
@@ -17,7 +17,7 @@ namespace xtd::net::tests {
       assert::is_empty(nc.domain());
     }
     
-    void test_method_(create_with_user_name_and_password) {
+    auto test_method_(create_with_user_name_and_password) {
       network_credential nc("gammasoft", "sysadmin!nimdasys");
       assert::are_equal("gammasoft", nc.user_name());
       assert::are_equal("sysadmin!nimdasys", nc.password());
@@ -25,7 +25,7 @@ namespace xtd::net::tests {
       assert::is_empty(nc.domain());
     }
     
-    void test_method_(create_with_user_name_password_and_domain) {
+    auto test_method_(create_with_user_name_password_and_domain) {
       network_credential nc("gammasoft", "sysadmin!nimdasys", "domain");
       assert::are_equal("gammasoft", nc.user_name());
       assert::are_equal("sysadmin!nimdasys", nc.password());

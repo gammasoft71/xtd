@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(distribution_tests) {
-    void test_method_(default_ctor) {
+    auto test_method_(default_ctor) {
       auto d = distribution {};
       assert::are_equal(uri {}, d.bug_repport());
       assert::is_empty(d.code_name());
@@ -23,7 +23,7 @@ namespace xtd::tests {
       assert::is_empty(d.to_string());
     }
     
-    void test_method_(ctor_with_params) {
+    auto test_method_(ctor_with_params) {
       auto d = distribution {"macOS", version {12, 6, 5}, "Monterey", "Apple macOS 12.6.5 (Monterey)", "macos", {"macos", "osx"}, "12.6.5 (Monterey)", uri {"https://www.apple.com/macos"}, uri {"https://support.apple.com/macos"}};
       assert::are_equal(uri {"https://support.apple.com/macos"}, d.bug_repport());
       assert::are_equal("Monterey", d.code_name());

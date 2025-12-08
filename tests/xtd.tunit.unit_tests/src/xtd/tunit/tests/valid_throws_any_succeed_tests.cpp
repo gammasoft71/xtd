@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_throws_any_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto a = array {1, 2, 3, 4};
       xtd::tunit::valid::throws_any([&] {a[5];});
     }

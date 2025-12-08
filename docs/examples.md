@@ -128,13 +128,13 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(hello_world_test) {
   public:
-    void test_method_(create_string_from_literal) {
+    auto test_method_(create_string_from_literal) {
       string s = "Hello, World!";
       valid::are_equal(13, s.length());
       assert::are_equal("Hello, World!", s);
     }
     
-    void test_method_(create_string_from_chars) {
+    auto test_method_(create_string_from_chars) {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.length());
       string_assert::starts_with("Hello,", s);

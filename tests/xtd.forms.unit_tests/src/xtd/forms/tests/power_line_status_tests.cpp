@@ -9,19 +9,19 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(power_line_status_tests) {
   public:
-    void test_method_(offline) {
+    auto test_method_(offline) {
       assert::are_equal(0, enum_object<>::to_int32(power_line_status::offline));
       assert::are_equal("offline", enum_object<>::to_string(power_line_status::offline));
       assert::are_equal(power_line_status::offline, enum_object<>::parse<power_line_status>("offline"));
     }
     
-    void test_method_(online) {
+    auto test_method_(online) {
       assert::are_equal(1, enum_object<>::to_int32(power_line_status::online));
       assert::are_equal("online", enum_object<>::to_string(power_line_status::online));
       assert::are_equal(power_line_status::online, enum_object<>::parse<power_line_status>("online"));
     }
     
-    void test_method_(unknown) {
+    auto test_method_(unknown) {
       assert::are_equal(255, enum_object<>::to_int32(power_line_status::unknown));
       assert::are_equal("unknown", enum_object<>::to_string(power_line_status::unknown));
       assert::are_equal(power_line_status::unknown, enum_object<>::parse<power_line_status>("unknown"));

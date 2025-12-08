@@ -17,7 +17,7 @@ namespace xtd::tests {
     static constexpr int32 cpp_unknown = 0;
     static constexpr int32 cpp20_experimental = 201707l;
     
-    void test_method_(default_ctor) {
+    auto test_method_(default_ctor) {
       cpp_language cl;
       
       assert::is_false(cl.is_experimental_language());
@@ -33,7 +33,7 @@ namespace xtd::tests {
       assert::are_equal("<unknown> 0.0", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp20) {
+    auto test_method_(ctor_witth_cpp20) {
       cpp_language cl {cpp20};
       
       assert::is_false(cl.is_experimental_language());
@@ -49,7 +49,7 @@ namespace xtd::tests {
       assert::are_equal("C++ 20 2020.2", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp17) {
+    auto test_method_(ctor_witth_cpp17) {
       cpp_language cl {cpp17};
       
       assert::is_false(cl.is_experimental_language());
@@ -65,7 +65,7 @@ namespace xtd::tests {
       assert::are_equal("C++ 17 2017.3", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp14) {
+    auto test_method_(ctor_witth_cpp14) {
       cpp_language cl {cpp14};
       
       assert::is_false(cl.is_experimental_language());
@@ -81,7 +81,7 @@ namespace xtd::tests {
       assert::are_equal("C++ 14 2014.2", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp11) {
+    auto test_method_(ctor_witth_cpp11) {
       cpp_language cl {cpp11};
       
       assert::is_false(cl.is_experimental_language());
@@ -97,7 +97,7 @@ namespace xtd::tests {
       assert::are_equal("C++ 11 2011.3", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp98) {
+    auto test_method_(ctor_witth_cpp98) {
       cpp_language cl {cpp98};
       
       assert::is_false(cl.is_experimental_language());
@@ -113,7 +113,7 @@ namespace xtd::tests {
       assert::are_equal("C++ 98 1997.11", cl.to_string());
     }
     
-    void test_method_(ctor_witth_cpp_pre98) {
+    auto test_method_(ctor_witth_cpp_pre98) {
       cpp_language cl {cpp_pre98};
       
       assert::is_false(cl.is_experimental_language());
@@ -129,7 +129,7 @@ namespace xtd::tests {
       assert::are_equal("C++ Pre 98 0.1", cl.to_string());
     }
     
-    void test_method_(ctor_with_cpp_unknown) {
+    auto test_method_(ctor_with_cpp_unknown) {
       cpp_language cl {cpp_unknown};
       
       assert::is_false(cl.is_experimental_language());
@@ -145,7 +145,7 @@ namespace xtd::tests {
       assert::are_equal("<unknown> 0.0", cl.to_string());
     }
     
-    void test_method_(ctor_with_cpp20_experimental) {
+    auto test_method_(ctor_with_cpp20_experimental) {
       cpp_language cl {cpp20_experimental};
       
       assert::is_true(cl.is_experimental_language());

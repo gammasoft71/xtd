@@ -23,7 +23,7 @@ namespace xtd::forms::tests {
       using command_link_button::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       command_link_button_for_test command_link_button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -100,7 +100,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto command_link_button = forms::command_link_button::create();
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -163,7 +163,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_text) {
+    auto test_method_(create_with_text) {
       auto command_link_button = forms::command_link_button::create("new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -226,7 +226,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_text_and_location) {
+    auto test_method_(create_with_text_and_location) {
       auto command_link_button = forms::command_link_button::create("new text", drawing::point {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -289,7 +289,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_text_location_and_size) {
+    auto test_method_(create_with_text_location_and_size) {
       auto command_link_button = forms::command_link_button::create("new text", drawing::point {10, 20}, drawing::size {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -355,7 +355,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_text_location_size_and_name) {
+    auto test_method_(create_with_text_location_size_and_name) {
       auto command_link_button = forms::command_link_button::create("new text", {10, 20}, {30, 40}, "command_link_button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -421,7 +421,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_texts) {
+    auto test_method_(create_with_texts) {
       auto command_link_button = forms::command_link_button::create(std::make_tuple("new text", "other"));
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -484,7 +484,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_texts_and_location) {
+    auto test_method_(create_with_texts_and_location) {
       auto command_link_button = forms::command_link_button::create(std::make_tuple("new text", "other"), drawing::point {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -547,7 +547,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_texts_location_and_size) {
+    auto test_method_(create_with_texts_location_and_size) {
       auto command_link_button = forms::command_link_button::create(std::make_tuple("new text", "other"), drawing::point {10, 20}, drawing::size {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -613,7 +613,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_texts_location_size_and_name) {
+    auto test_method_(create_with_texts_location_size_and_name) {
       auto command_link_button = forms::command_link_button::create(std::make_tuple("new text", "other"), {10, 20}, {30, 40}, "command_link_button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
       assert::are_equal(drawing::point::empty, command_link_button.auto_scroll_point());
@@ -679,7 +679,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent) {
+    auto test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form);
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -743,7 +743,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_and_text) {
+    auto test_method_(create_with_parent_and_text) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, "new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -807,7 +807,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_text_and_location) {
+    auto test_method_(create_with_parent_text_and_location) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, "new text", drawing::point {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -871,7 +871,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_text_location_and_size) {
+    auto test_method_(create_with_parent_text_location_and_size) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, "new text", drawing::point {10, 20}, drawing::size {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -938,7 +938,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_text_location_size_and_name) {
+    auto test_method_(create_with_parent_text_location_size_and_name) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, "new text", {10, 20}, {30, 40}, "command_link_button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -1005,7 +1005,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_texts) {
+    auto test_method_(create_with_parent_texts) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, std::make_tuple("new text", "other"));
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -1069,7 +1069,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_texts_and_location) {
+    auto test_method_(create_with_parent_texts_and_location) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, std::make_tuple("new text", "other"), drawing::point {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -1133,7 +1133,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_texts_location_and_size) {
+    auto test_method_(create_with_parent_texts_location_and_size) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, std::make_tuple("new text", "other"), drawing::point {10, 20}, drawing::size {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -1200,7 +1200,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(create_with_parent_texts_location_size_and_name) {
+    auto test_method_(create_with_parent_texts_location_size_and_name) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form, std::make_tuple("new text", "other"), {10, 20}, {30, 40}, "command_link_button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, command_link_button.anchor());
@@ -1267,7 +1267,7 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
     
-    void test_method_(set_client_size) {
+    auto test_method_(set_client_size) {
       form form;
       command_link_button_for_test command_link_button;
       command_link_button.parent(form);
@@ -1275,7 +1275,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(100, 50), command_link_button.client_size());
     }
     
-    void test_method_(set_size) {
+    auto test_method_(set_size) {
       form form;
       command_link_button_for_test command_link_button;
       command_link_button.parent(form);

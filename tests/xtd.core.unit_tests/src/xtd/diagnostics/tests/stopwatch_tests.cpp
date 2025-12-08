@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::diagnostics::tests {
   class test_class_(stopwatch_tests) {
-    void test_method_(create_stopwatch) {
+    auto test_method_(create_stopwatch) {
       stopwatch s;
       thread::sleep(1_ms);
       assert::is_false(s.is_running());
@@ -20,7 +20,7 @@ namespace xtd::diagnostics::tests {
       assert::are_equal(0, s.elapsed_ticks());
     }
     
-    void test_method_(start_stopwatch) {
+    auto test_method_(start_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);
@@ -31,7 +31,7 @@ namespace xtd::diagnostics::tests {
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000);
     }
     
-    void test_method_(start_start_stopwatch) {
+    auto test_method_(start_start_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);
@@ -43,7 +43,7 @@ namespace xtd::diagnostics::tests {
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000);
     }
     
-    void test_method_(stop_without_start_stopwatch) {
+    auto test_method_(stop_without_start_stopwatch) {
       stopwatch s;
       s.stop();
       thread::sleep(1_ms);
@@ -54,7 +54,7 @@ namespace xtd::diagnostics::tests {
       assert::are_equal(0, s.elapsed_ticks());
     }
     
-    void test_method_(start_stop_stopwatch) {
+    auto test_method_(start_stop_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);
@@ -66,7 +66,7 @@ namespace xtd::diagnostics::tests {
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000);
     }
     
-    void test_method_(start_stop_reset_stopwatch) {
+    auto test_method_(start_stop_reset_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);
@@ -79,7 +79,7 @@ namespace xtd::diagnostics::tests {
       assert::are_equal(0, s.elapsed_ticks());
     }
     
-    void test_method_(start_reset_stopwatch) {
+    auto test_method_(start_reset_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);
@@ -91,7 +91,7 @@ namespace xtd::diagnostics::tests {
       assert::are_equal(0, s.elapsed_ticks());
     }
     
-    void test_method_(reset_stopwatch) {
+    auto test_method_(reset_stopwatch) {
       stopwatch s;
       s.reset();
       assert::is_false(s.is_running());
@@ -101,7 +101,7 @@ namespace xtd::diagnostics::tests {
       assert::are_equal(0, s.elapsed_ticks());
     }
     
-    void test_method_(restart_stopwatch) {
+    auto test_method_(restart_stopwatch) {
       stopwatch s;
       s.restart();
       thread::sleep(1_ms);
@@ -112,7 +112,7 @@ namespace xtd::diagnostics::tests {
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000);
     }
     
-    void test_method_(start_new_stopwatch) {
+    auto test_method_(start_new_stopwatch) {
       auto s = stopwatch::start_new();
       thread::sleep(1_ms);
       assert::is_true(s.is_running());
@@ -122,7 +122,7 @@ namespace xtd::diagnostics::tests {
       assert::is_greater_or_equal(s.elapsed_ticks(), 10000);
     }
     
-    void test_method_(cumulative_elapsed_stopwatch) {
+    auto test_method_(cumulative_elapsed_stopwatch) {
       stopwatch s;
       s.start();
       thread::sleep(1_ms);

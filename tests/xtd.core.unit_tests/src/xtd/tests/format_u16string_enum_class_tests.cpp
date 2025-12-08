@@ -26,39 +26,39 @@ template<> struct xtd::enum_register<xtd::tests::day> {
 
 namespace xtd::tests {
   class test_class_(format_u16string_enum_class_tests) {
-    void test_method_(format_sunday_with_default_argument) {
+    auto test_method_(format_sunday_with_default_argument) {
       assert::are_equal(u"sunday", format(u"{0}", day::sunday));
     }
     
-    void test_method_(format_monday_with_left_alignment) {
+    auto test_method_(format_monday_with_left_alignment) {
       assert::are_equal(u"    monday", string::format(u"{0,10}", day::monday));
     }
     
-    void test_method_(format_tuesday_with_right_alignment) {
+    auto test_method_(format_tuesday_with_right_alignment) {
       assert::are_equal(u"tuesday   ", string::format(u"{0, -10}", day::tuesday));
     }
     
-    void test_method_(format_wednesday_with_binary_argument) {
+    auto test_method_(format_wednesday_with_binary_argument) {
       assert::are_equal(u"11", format(u"{0:b}", day::wednesday));
     }
     
-    void test_method_(format_thursday_with_decimal_argument) {
+    auto test_method_(format_thursday_with_decimal_argument) {
       assert::are_equal(u"4", format(u"{0:d}", day::thursday));
     }
     
-    void test_method_(format_friday_with_general_argument) {
+    auto test_method_(format_friday_with_general_argument) {
       assert::are_equal(u"friday", format(u"{0:g}", day::friday));
     }
     
-    void test_method_(format_saturday_with_octal_argument) {
+    auto test_method_(format_saturday_with_octal_argument) {
       assert::are_equal(u"6", format(u"{0:o}", day::saturday));
     }
     
-    void test_method_(format_sunday_with_hexadecimal_argument) {
+    auto test_method_(format_sunday_with_hexadecimal_argument) {
       assert::are_equal(u"0", format(u"{0:x}", day::sunday));
     }
     
-    void test_method_(format_tuesday_with_invalid_argument) {
+    auto test_method_(format_tuesday_with_invalid_argument) {
       assert::throws<xtd::format_exception>([] {format(u"{0:e}", day::tuesday);});
     }
   };

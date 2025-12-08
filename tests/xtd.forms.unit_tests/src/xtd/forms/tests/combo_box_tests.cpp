@@ -24,7 +24,7 @@ namespace xtd::forms::tests {
       using combo_box::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       combo_box_for_test combo_box;
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -99,7 +99,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto combo_box = forms::combo_box::create();
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -160,7 +160,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_items) {
+    auto test_method_(create_with_items) {
       auto combo_box = forms::combo_box::create({"Item1", "Item2", "Item3"});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -221,7 +221,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_items_and_selected_index) {
+    auto test_method_(create_with_items_and_selected_index) {
       auto combo_box = forms::combo_box::create({"Item1", "Item2", "Item3"}, 2);
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -282,7 +282,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_items_selected_index_and_location) {
+    auto test_method_(create_with_items_selected_index_and_location) {
       auto combo_box = forms::combo_box::create({"Item1", "Item2", "Item3"}, 2, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -343,7 +343,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_items_selected_index_location_and_size) {
+    auto test_method_(create_with_items_selected_index_location_and_size) {
       auto combo_box = forms::combo_box::create({"Item1", "Item2", "Item3"}, 2, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -407,7 +407,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_items_selected_index_location_size_and_name) {
+    auto test_method_(create_with_items_selected_index_location_size_and_name) {
       auto combo_box = forms::combo_box::create({"Item1", "Item2", "Item3"}, 2, {10, 20}, {30, 40}, "combo_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
       assert::are_equal(drawing::point::empty, combo_box.auto_scroll_point());
@@ -471,7 +471,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent) {
+    auto test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form);
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
@@ -533,7 +533,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent_and_items) {
+    auto test_method_(create_with_parent_and_items) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form, {"Item1", "Item2", "Item3"});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
@@ -595,7 +595,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent_items_and_selected_index) {
+    auto test_method_(create_with_parent_items_and_selected_index) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form, {"Item1", "Item2", "Item3"}, 2);
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
@@ -657,7 +657,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent_items_selected_index_and_location) {
+    auto test_method_(create_with_parent_items_selected_index_and_location) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form, {"Item1", "Item2", "Item3"}, 2, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
@@ -719,7 +719,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent_items_selected_index_location_and_size) {
+    auto test_method_(create_with_parent_items_selected_index_location_and_size) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form, {"Item1", "Item2", "Item3"}, 2, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());
@@ -784,7 +784,7 @@ namespace xtd::forms::tests {
       assert::is_false(combo_box.sorted());
     }
     
-    void test_method_(create_with_parent_items_selected_index_location_size_and_name) {
+    auto test_method_(create_with_parent_items_selected_index_location_size_and_name) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form, {"Item1", "Item2", "Item3"}, 2, {10, 20}, {30, 40}, "combo_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, combo_box.anchor());

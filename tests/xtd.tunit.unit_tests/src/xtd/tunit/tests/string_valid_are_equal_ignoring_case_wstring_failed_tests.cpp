@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(string_valid_are_equal_ignoring_case_uwstring_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       std::wstring s = L"VALUE";
       xtd::tunit::string_valid::are_equal_ignoring_case(L"key", s);
     }

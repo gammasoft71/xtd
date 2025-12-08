@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_are_equal_double_with_tolerence_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       double d = 0.599;
       xtd::tunit::assert::are_equal(0.6, d, 0.001);
     }

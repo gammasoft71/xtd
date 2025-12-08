@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(file_assume_are_equal_string_failed_tests) {
   public:
-    void test_method_(test_case_lenght_failed) {
+    auto test_method_(test_case_lenght_failed) {
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file1.txt"), "Test xtd::tunit::file_assume::are_equl.");
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file2.txt"), "Test xtd::tunit::file_assume::are_equal.");
       
@@ -16,7 +16,7 @@ namespace xtd::tunit::tests {
       xtd::io::file::remove(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file2.txt"));
     }
     
-    void test_method_(test_case_letter_failed) {
+    auto test_method_(test_case_letter_failed) {
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file1.txt"), "Test xtd::tunit::Dile_assert::are_equal.");
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file2.txt"), "Test xtd::tunit::file_assume::are_equal.");
       

@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_is_less_or_equal_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       int i = 42;
       xtd::tunit::assert::is_less_or_equal(i, 84);
       xtd::tunit::assert::is_less_or_equal(i, 42);

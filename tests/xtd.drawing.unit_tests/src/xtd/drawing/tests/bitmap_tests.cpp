@@ -72,7 +72,7 @@ namespace xtd::drawing::tests {
       to_ppm(path::combine(path::get_directory_name(filename), string::format("{}{}", path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
     }
     
-    void test_method_(empty) {
+    auto test_method_(empty) {
       auto bmp = bitmap::empty;
       
       assert::is_zero(bmp.flags());
@@ -93,7 +93,7 @@ namespace xtd::drawing::tests {
       assert::is_zero(bmp.width());
     }
     
-    void test_method_(create_from_image) {
+    auto test_method_(create_from_image) {
       auto bmp = bitmap {create_image({3, 2})};
       
       assert::are_equal(2, bmp.flags());
@@ -121,7 +121,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_image_and_size_greather_than_image) {
+    auto test_method_(create_from_image_and_size_greather_than_image) {
       auto bmp = bitmap {create_image({3, 2}), {4, 3}};
       
       assert::are_equal(2, bmp.flags());
@@ -183,7 +183,7 @@ namespace xtd::drawing::tests {
       }
     }
     
-    void test_method_(create_from_image_and_size_less_than_image) {
+    auto test_method_(create_from_image_and_size_less_than_image) {
       auto bmp = bitmap {create_image({3, 2}), {2, 1}};
       
       assert::are_equal(2, bmp.flags());
@@ -207,7 +207,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0xFF7F7F7F, bmp.get_pixel(1, 0).to_argb());
     }
     
-    void test_method_(create_from_image_and_size_same_than_image) {
+    auto test_method_(create_from_image_and_size_same_than_image) {
       auto bmp = bitmap {create_image({3, 2}), {3, 2}};
       
       assert::are_equal(2, bmp.flags());
@@ -235,15 +235,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_image_and_size_with_invalid_height) {
+    auto test_method_(create_from_image_and_size_with_invalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {create_image({3, 2}), {1, 0}};});
     }
     
-    void test_method_(create_from_image_and_size_with_invalid_width) {
+    auto test_method_(create_from_image_and_size_with_invalid_width) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {create_image({3, 2}), {0, 1}};});
     }
     
-    void test_method_(create_from_image_width_and_height_greather_than_image) {
+    auto test_method_(create_from_image_width_and_height_greather_than_image) {
       auto bmp = bitmap {create_image({3, 2}), 4, 3};
       
       assert::are_equal(2, bmp.flags());
@@ -305,7 +305,7 @@ namespace xtd::drawing::tests {
       }
     }
     
-    void test_method_(create_from_image_width_and_height_less_than_image) {
+    auto test_method_(create_from_image_width_and_height_less_than_image) {
       auto bmp = bitmap {create_image({3, 2}), {2, 1}};
       
       assert::are_equal(2, bmp.flags());
@@ -329,7 +329,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(0xFF7F7F7F, bmp.get_pixel(1, 0).to_argb());
     }
     
-    void test_method_(create_from_image_width_and_height_same_than_image) {
+    auto test_method_(create_from_image_width_and_height_same_than_image) {
       auto bmp = bitmap {create_image({3, 2}), 3, 2};
       
       assert::are_equal(2, bmp.flags());
@@ -357,15 +357,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_image_width_and_invalid_height) {
+    auto test_method_(create_from_image_width_and_invalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {create_image({3, 2}), 1, 0};});
     }
     
-    void test_method_(create_from_image_invalid_width_and_height) {
+    auto test_method_(create_from_image_invalid_width_and_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {create_image({3, 2}), 0, 1};});
     }
     
-    void test_method_(create_from_file_bmp) {
+    auto test_method_(create_from_file_bmp) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.bmp")};
       
       assert::are_equal(2, bmp.flags());
@@ -393,7 +393,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_gif) {
+    auto test_method_(create_from_file_gif) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.gif")};
       
       assert::are_equal(2, bmp.flags());
@@ -421,7 +421,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_exif) {
+    auto test_method_(create_from_file_exif) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.exif")};
       
       assert::are_equal(2, bmp.flags());
@@ -449,7 +449,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_jpg) {
+    auto test_method_(create_from_file_jpg) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.jpg")};
       
       assert::are_equal(2, bmp.flags());
@@ -477,7 +477,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_pcx) {
+    auto test_method_(create_from_file_pcx) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.pcx")};
       
       assert::are_equal(2, bmp.flags());
@@ -505,7 +505,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_png) {
+    auto test_method_(create_from_file_png) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.png")};
       
       assert::are_equal(2, bmp.flags());
@@ -533,7 +533,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_pnm) {
+    auto test_method_(create_from_file_pnm) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.pnm")};
       
       assert::are_equal(2, bmp.flags());
@@ -561,7 +561,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_ppm) {
+    auto test_method_(create_from_file_ppm) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.ppm")};
       
       assert::are_equal(2, bmp.flags());
@@ -589,7 +589,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_tga) {
+    auto test_method_(create_from_file_tga) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.tga")};
       
       assert::are_equal(2, bmp.flags());
@@ -617,7 +617,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_tiff) {
+    auto test_method_(create_from_file_tiff) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.tiff")};
       
       assert::are_equal(2, bmp.flags());
@@ -645,7 +645,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_xbm) {
+    auto test_method_(create_from_file_xbm) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.xbm")};
       
       assert::are_equal(2, bmp.flags());
@@ -673,7 +673,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::white, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_file_xpm) {
+    auto test_method_(create_from_file_xpm) {
       auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.xpm")};
       
       assert::are_equal(2, bmp.flags());
@@ -701,15 +701,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_from_unsupported_format_file) {
+    auto test_method_(create_from_unsupported_format_file) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.xcf")};});
     }
     
-    void test_method_(create_from_non_existent_file) {
+    auto test_method_(create_from_non_existent_file) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_not_existent_file.any")};});
     }
     
-    void test_method_(create_with_with_and_height) {
+    auto test_method_(create_with_with_and_height) {
       auto bmp = bitmap {3, 2};
       
       assert::are_equal(2, bmp.flags());
@@ -737,15 +737,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::transparent, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_with_invalid_width_and_height) {
+    auto test_method_(create_with_invalid_width_and_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {0, 200};});
     }
     
-    void test_method_(create_with_with_and_invalid_height) {
+    auto test_method_(create_with_with_and_invalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {320, 0};});
     }
     
-    void test_method_(create_with_invalid_width_and_ivalid_height) {
+    auto test_method_(create_with_invalid_width_and_ivalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {0, 0};});
     }
   };

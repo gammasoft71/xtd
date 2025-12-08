@@ -13,35 +13,35 @@ using namespace xtd::tunit;
 
 namespace xtd::collections::generic::tests {
   class test_class_(stack_tests) {
-    void test_method_(value_type) {
+    auto test_method_(value_type) {
       assert::are_equal(typeof_<int>(), typeof_<stack<int>::value_type>());
     }
     
-    void test_method_(base_type) {
+    auto test_method_(base_type) {
       assert::are_equal(typeof_<raw_stack<int>>(), typeof_<stack<int>::base_type > ());
     }
     
-    void test_method_(size_type) {
+    auto test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<stack<int>::size_type>());
       assert::are_equal(typeof_<stack<bool>::base_type::size_type>(), typeof_<stack<int>::size_type>());
     }
     
-    void test_method_(reference) {
+    auto test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<stack<int>::reference>());
     }
     
-    void test_method_(const_reference) {
+    auto test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<stack<int>::const_reference>());
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto items = stack<string> {};
       assert::is_zero(items.capacity());
       assert::is_zero(items.count());
       collection_assert::is_empty(items);
     }
     
-    void test_method_(constructor_copy_stack) {
+    auto test_method_(constructor_copy_stack) {
       auto s = stack {84, 42, 21};
       auto items = stack(s);
       assert::are_equal(3_z, items.count());
@@ -50,7 +50,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({21, 42, 84}, s);
     }
     
-    void test_method_(constructor_move_stack) {
+    auto test_method_(constructor_move_stack) {
       auto s = stack {84, 42, 21};
       auto items = stack(std::move(s));
       assert::are_equal(3_z, items.count());
@@ -58,7 +58,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(s.count());
     }
     
-    void test_method_(constructor_copy_std_stack) {
+    auto test_method_(constructor_copy_std_stack) {
       auto s = std::stack(std::deque {84, 42, 21});
       auto items = stack(s);
       assert::are_equal(3_z, items.count());
@@ -67,7 +67,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(21, s.top());
     }
     
-    void test_method_(constructor_move_std_stack) {
+    auto test_method_(constructor_move_std_stack) {
       auto s = std::stack(std::deque {84, 42, 21});
       auto items = stack(std::move(s));
       assert::are_equal(3_z, items.count());
@@ -75,38 +75,38 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(s.size());
     }
     
-    void test_method_(constructor_with_ienumerable) {
+    auto test_method_(constructor_with_ienumerable) {
       auto a = array {84, 42, 21};
       auto items = stack(a);
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({21, 42, 84}, items);
     }
     
-    void test_method_(constructor_with_capacity) {
+    auto test_method_(constructor_with_capacity) {
       auto items = stack<boolean>(3);
       assert::is_greater_or_equal(items.capacity(), 3_z);
       assert::is_zero(items.count());
     }
     
-    void test_method_(constructor_with_initializer_list) {
+    auto test_method_(constructor_with_initializer_list) {
       auto items = stack {84, 42, 21};
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({21, 42, 84}, items);
     }
     
-    void test_method_(constructor_with_iterators) {
+    auto test_method_(constructor_with_iterators) {
       auto a = array {84, 42, 21};
       auto items = stack(a.begin(), a.end());
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({21, 42, 84}, items);
     }
     
-    void test_method_(begin) {
+    auto test_method_(begin) {
       auto items = stack {84, 42, 21};
       assert::are_equal(21, *items.begin());
     }
     
-    void test_method_(capacity) {
+    auto test_method_(capacity) {
       auto items = stack {84, 42, 21};
       assert::are_equal(3_z, items.count());
       
@@ -115,17 +115,17 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
     }
     
-    void test_method_(cbegin) {
+    auto test_method_(cbegin) {
       auto items = stack {84, 42, 21};
       assert::are_equal(21, *items.cbegin());
     }
     
-    void test_method_(cend) {
+    auto test_method_(cend) {
       auto items = stack {84, 42, 21};
       assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
-    void test_method_(count) {
+    auto test_method_(count) {
       auto items = stack<int> {};
       assert::is_zero(items.count());
       items.push(84);
@@ -134,22 +134,22 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
     }
     
-    void test_method_(end) {
+    auto test_method_(end) {
       auto items = stack {84, 42, 21};
       assert::is_true(items.end() == items.begin() + items.count());
     }
     
-    void test_method_(is_read_only) {
+    auto test_method_(is_read_only) {
       // Is always false;
       assert::is_false(as<icollection<int>>(stack<int> {}).is_read_only());
     }
     
-    void test_method_(is_synchronized) {
+    auto test_method_(is_synchronized) {
       // Is always false;
       assert::is_false(as<icollection<int>>(stack<int> {}).is_synchronized());
     }
     
-    void test_method_(items_const) {
+    auto test_method_(items_const) {
       auto s = stack {1, 2, 3, 4, 5}.items();
       assert::are_equal(5, s.top());
       s.pop();
@@ -164,7 +164,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(s.size());
     }
     
-    void test_method_(clear) {
+    auto test_method_(clear) {
       auto items = stack {84, 42, 21};
       items.clear();
       assert::is_zero(items.count());
@@ -172,7 +172,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(items.count());
     }
     
-    void test_method_(contains) {
+    auto test_method_(contains) {
       auto items = stack {84, 42, 21};
       assert::is_true(items.contains(84));
       assert::is_true(items.contains(42));
@@ -182,7 +182,7 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.contains(-1));
     }
     
-    void test_method_(copy_to_with_index) {
+    auto test_method_(copy_to_with_index) {
       auto items = stack {84, 42, 21};
       auto dest = array<int>(5);
       items.copy_to(dest, 2);
@@ -196,7 +196,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(dest, 1);});
     }
     
-    void test_method_(pop) {
+    auto test_method_(pop) {
       auto items = stack {1, 2, 3, 4, 5};
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
       items.pop();
@@ -212,7 +212,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<invalid_operation_exception>([&] {items.pop();});
     }
     
-    void test_method_(push) {
+    auto test_method_(push) {
       auto items = stack<int> {};
       collection_assert::is_empty(items);
       items.push(1);
@@ -227,7 +227,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
     }
     
-    void test_method_(ensure_capacity) {
+    auto test_method_(ensure_capacity) {
       auto items = stack<int> {};
       assert::is_zero(items.capacity());
       assert::are_equal(3_z, items.ensure_capacity(3));
@@ -238,7 +238,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(5_z, items.capacity());
     }
     
-    void test_method_(get_enumerator) {
+    auto test_method_(get_enumerator) {
       auto items = stack {84, 42, 21};
       auto enumerator = items.get_enumerator();
       assert::throws<invalid_operation_exception>([&] {enumerator.current();});
@@ -252,7 +252,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<invalid_operation_exception>([&] {enumerator.current();});
     }
     
-    void test_method_(peek) {
+    auto test_method_(peek) {
       auto items = stack {84, 42, 21};
       assert::are_equal(21, items.peek());
       items.pop();
@@ -263,18 +263,18 @@ namespace xtd::collections::generic::tests {
       assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto i = items.peek();});
     }
     
-    void test_method_(to_array) {
+    auto test_method_(to_array) {
       assert::is_instance_of<array<int>>(stack {84, 42, 21}.to_array());
       collection_assert::are_equal({21, 42, 84}, stack {84, 42, 21}.to_array());
       collection_assert::is_empty(stack<int> {}.to_array());
     }
     
-    void test_method_(to_string) {
+    auto test_method_(to_string) {
       assert::are_equal("[21, 42, 84]", stack {84, 42, 21}.to_string());
       assert::are_equal("[]", stack<int> {}.to_string());
     }
     
-    void test_method_(trim_excess) {
+    auto test_method_(trim_excess) {
       auto items = stack {84, 42, 21};
       assert::are_equal(3_z, items.capacity());
       items.ensure_capacity(5);
@@ -289,7 +289,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(4_z, items.capacity());
     }
     
-    void test_method_(trim_excess_with_capacity) {
+    auto test_method_(trim_excess_with_capacity) {
       auto items = stack {84, 42, 21};
       assert::are_equal(3_z, items.capacity());
       items.ensure_capacity(10);
@@ -303,7 +303,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(10_z, items.capacity());
     }
     
-    void test_method_(try_pop) {
+    auto test_method_(try_pop) {
       auto items = stack {1, 2, 3, 4, 5};
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
       auto item = 0;
@@ -326,7 +326,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(0, item);
     }
     
-    void test_method_(try_peek) {
+    auto test_method_(try_peek) {
       auto items = stack {84, 42, 21};
       auto item = 0;
       assert::is_true(items.try_peek(item));
@@ -342,7 +342,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(0, item);
     }
     
-    void test_method_(operator_copy_stack) {
+    auto test_method_(operator_copy_stack) {
       auto s = stack {84, 42, 21};
       auto items = stack<int> {};
       items = s;
@@ -352,7 +352,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({21, 42, 84}, s);
     }
     
-    void test_method_(operator_move_stack) {
+    auto test_method_(operator_move_stack) {
       auto s = stack {84, 42, 21};
       auto items = stack<int> {};
       items = std::move(s);
@@ -361,7 +361,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(s.count());
     }
     
-    void test_method_(operator_copy_std_stack) {
+    auto test_method_(operator_copy_std_stack) {
       auto s = std::stack(std::deque {84, 42, 21});
       auto items = stack<int> {};
       items = s;
@@ -371,7 +371,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(21, s.top());
     }
     
-    void test_method_(operator_move_std_stack) {
+    auto test_method_(operator_move_std_stack) {
       auto s = std::stack(std::deque {84, 42, 21});
       auto items = stack<int> {};
       items = std::move(s);
@@ -380,7 +380,7 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(s.size());
     }
     
-    void test_method_(operator_cast_as_std_stack) {
+    auto test_method_(operator_cast_as_std_stack) {
       auto s = static_cast<const std::stack<int>&>(stack {1, 2, 3, 4, 5});
       assert::are_equal(5, s.top());
       s.pop();

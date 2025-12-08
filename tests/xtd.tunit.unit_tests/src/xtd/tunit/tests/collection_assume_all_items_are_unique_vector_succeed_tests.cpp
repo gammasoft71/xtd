@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_assume_all_items_are_unqiue_vector_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto a = array<int> {1, 2, 3, 4};
       xtd::tunit::collection_assume::all_items_are_unique(a);
     }

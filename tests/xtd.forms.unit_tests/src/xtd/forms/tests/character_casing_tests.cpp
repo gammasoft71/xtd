@@ -9,19 +9,19 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(character_casing_tests) {
   public:
-    void test_method_(normal) {
+    auto test_method_(normal) {
       assert::are_equal(0, enum_object<>::to_int32(character_casing::normal));
       assert::are_equal("normal", enum_object<>::to_string(character_casing::normal));
       assert::are_equal(character_casing::normal, enum_object<>::parse<character_casing>("normal"));
     }
     
-    void test_method_(upper) {
+    auto test_method_(upper) {
       assert::are_equal(1, enum_object<>::to_int32(character_casing::upper));
       assert::are_equal("upper", enum_object<>::to_string(character_casing::upper));
       assert::are_equal(character_casing::upper, enum_object<>::parse<character_casing>("upper"));
     }
     
-    void test_method_(lower) {
+    auto test_method_(lower) {
       assert::are_equal(2, enum_object<>::to_int32(character_casing::lower));
       assert::are_equal("lower", enum_object<>::to_string(character_casing::lower));
       assert::are_equal(character_casing::lower, enum_object<>::parse<character_casing>("lower"));

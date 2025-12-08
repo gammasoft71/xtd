@@ -6,12 +6,12 @@
 namespace xtd::tunit::tests {
   class test_class_(file_valid_are_equal_istream_failed_tests) {
   public:
-    void test_method_(test_case_lenght_failed) {
+    auto test_method_(test_case_lenght_failed) {
       // As the xtd::tunit::file_valid::are_equal method uses std::istream and not std::ifstream, the test can be performed with std::istringstream.
       xtd::tunit::file_valid::are_equal(std::istringstream("Test xtd::tunit::file_valid::are_equal."), std::istringstream("Test xtd::tunit::file_valid::are_equa."));
     }
     
-    void test_method_(test_case_letter_failed) {
+    auto test_method_(test_case_letter_failed) {
       // As the xtd::tunit::file_valid::are_equal method uses std::istream and not std::ifstream, the test can be performed with std::istringstream.
       xtd::tunit::file_valid::are_equal(std::istringstream("Test xtd::tunit::file_valid::are_equal."), std::istringstream("Test xtd::tunit::Dile_valid::are_equal."));
     }

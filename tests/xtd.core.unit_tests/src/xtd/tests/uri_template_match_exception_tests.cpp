@@ -32,7 +32,7 @@ namespace xtd::tests {
       uri_template_match_exception::enable_stack_trace(stack_trace_enabled);
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto e = uri_template_match_exception {};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -50,7 +50,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(default_constructor_with_stack_frame) {
+    auto test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {stack_frame};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
@@ -69,7 +69,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message) {
+    auto test_method_(constructor_with_nullopt_message) {
       auto e = uri_template_match_exception {nullopt};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -87,7 +87,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {nullopt, stack_frame};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
@@ -106,7 +106,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_empty_message) {
+    auto test_method_(constructor_with_empty_message) {
       auto e = uri_template_match_exception {""};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -124,7 +124,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::uri_template_match_exception", e.what());
     }
     
-    void test_method_(constructor_with_message_empty_and_stack_frame) {
+    auto test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {"", stack_frame};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
@@ -143,7 +143,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::uri_template_match_exception", e.what());
     }
     
-    void test_method_(constructor_with_message) {
+    auto test_method_(constructor_with_message) {
       auto e = uri_template_match_exception {"System error."};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -161,7 +161,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_stack_frame) {
+    auto test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {"System error.", stack_frame};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
@@ -180,7 +180,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = uri_template_match_exception {nullopt, inner_exception};
       assert::are_equal("xtd::uri_template_match_exception", e.get_type().full_name());
@@ -200,7 +200,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame_inner_exception) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {nullopt, inner_exception, stack_frame};
@@ -221,7 +221,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_inner_exception) {
+    auto test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = uri_template_match_exception {"System error.", inner_exception};
       assert::is_empty(e.help_link());
@@ -241,7 +241,7 @@ namespace xtd::tests {
       assert::are_equal("System error.", e.what());
     }
     
-    void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = uri_template_match_exception {"System error.", inner_exception, stack_frame};

@@ -11,31 +11,31 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(double_object_tests) {
-    void test_method_(epsilon) {
+    auto test_method_(epsilon) {
       assert::are_equal(4.94066e-324, double_object::epsilon);
     }
     
-    void test_method_(max_value) {
+    auto test_method_(max_value) {
       assert::are_equal(std::numeric_limits<double>::max(), double_object::max_value);
     }
     
-    void test_method_(min_value) {
+    auto test_method_(min_value) {
       assert::are_equal(std::numeric_limits<double>::lowest(), double_object::min_value);
     }
     
-    void test_method_(NaN) {
+    auto test_method_(NaN) {
       assert::is_NaN(double_object::NaN);
     }
     
-    void test_method_(negative_infinity) {
+    auto test_method_(negative_infinity) {
       assert::are_equal(-std::numeric_limits<double>::infinity(), double_object::negative_infinity);
     }
     
-    void test_method_(positive_infinity) {
+    auto test_method_(positive_infinity) {
       assert::are_equal(std::numeric_limits<double>::infinity(), double_object::positive_infinity);
     }
     
-    void test_method_(is_infinity) {
+    auto test_method_(is_infinity) {
       assert::is_false(double_object::is_infinity(0.0));
       assert::is_false(double_object::is_infinity(1.0));
       assert::is_false(double_object::is_infinity(255.0));
@@ -53,7 +53,7 @@ namespace xtd::tests {
       assert::is_true(double_object::is_infinity(double_object::positive_infinity));
     }
     
-    void test_method_(is_negative_infinity) {
+    auto test_method_(is_negative_infinity) {
       assert::is_false(double_object::is_negative_infinity(0.0));
       assert::is_false(double_object::is_negative_infinity(1.0));
       assert::is_false(double_object::is_negative_infinity(255.0));
@@ -71,7 +71,7 @@ namespace xtd::tests {
       assert::is_false(double_object::is_negative_infinity(double_object::positive_infinity));
     }
     
-    void test_method_(is_positive_infinity) {
+    auto test_method_(is_positive_infinity) {
       assert::is_false(double_object::is_positive_infinity(0.0));
       assert::is_false(double_object::is_positive_infinity(1.0));
       assert::is_false(double_object::is_positive_infinity(255.0));
@@ -89,7 +89,7 @@ namespace xtd::tests {
       assert::is_true(double_object::is_positive_infinity(double_object::positive_infinity));
     }
     
-    void test_method_(is_NaN) {
+    auto test_method_(is_NaN) {
       assert::is_false(double_object::is_NaN(0.0));
       assert::is_false(double_object::is_NaN(1.0));
       assert::is_false(double_object::is_NaN(255.0));
@@ -107,7 +107,7 @@ namespace xtd::tests {
       assert::is_false(double_object::is_NaN(double_object::positive_infinity));
     }
     
-    void test_method_(format) {
+    auto test_method_(format) {
       assert::are_equal("0", string::format("{}", 0.0));
       assert::are_equal("1", string::format("{}", 1.0));
       assert::are_equal("255", string::format("{}", 255.0));
@@ -122,7 +122,7 @@ namespace xtd::tests {
       assert::are_equal("inf", string::format("{}", double_object::positive_infinity));
     }
     
-    void test_method_(to_string) {
+    auto test_method_(to_string) {
       assert::are_equal("0", double_object(0.0).to_string());
       assert::are_equal("1", double_object(1.0).to_string());
       assert::are_equal("255", double_object(255.0).to_string());

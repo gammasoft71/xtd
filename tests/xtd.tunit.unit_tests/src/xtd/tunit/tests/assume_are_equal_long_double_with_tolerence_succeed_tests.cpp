@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assume_are_equal_long_double_with_tolerence_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       long double ld = 0.599l;
       xtd::tunit::assume::are_equal(0.6l, ld, 0.01l);
     }

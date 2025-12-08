@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(directory_valid_exists_string_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto d = io::path::combine(environment::get_folder_path(environment::special_folder::common_application_data), "__xtd_test_directory_not_found__");
       xtd::tunit::directory_valid::exists(d);
     }

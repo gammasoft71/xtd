@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_is_less_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       int i = 42;
       xtd::tunit::assert::is_less(i, 24);
     }

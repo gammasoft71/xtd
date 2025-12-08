@@ -5,19 +5,19 @@
 namespace xtd::tunit::tests {
   class test_class_(two_tests_five_test_cases_1_tests) {
   public:
-    void test_method_(test_case1) {
+    auto test_method_(test_case1) {
     }
-    void test_method_(test_case2) {
+    auto test_method_(test_case2) {
     }
   };
   
   class test_class_(two_tests_five_test_cases_2_tests) {
   public:
-    void test_method_(test_case3) {
+    auto test_method_(test_case3) {
     }
-    void test_method_(test_case4) {
+    auto test_method_(test_case4) {
     }
-    void test_method_(test_case5) {
+    auto test_method_(test_case5) {
     }
   };
   

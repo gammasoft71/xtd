@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assume_are_same_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       int a = 24;
       int& b = a;
       xtd::tunit::assume::are_same(b, a);

@@ -8,37 +8,37 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::text::tests {
   class test_class_(text_rendering_hint_tests) {
-    void test_method_(system_default) {
+    auto test_method_(system_default) {
       assert::are_equal(0, enum_object<>::to_int32(text_rendering_hint::system_default));
       assert::are_equal("system_default", enum_object<>::to_string(text_rendering_hint::system_default));
       assert::are_equal(text_rendering_hint::system_default, enum_object<>::parse<text_rendering_hint>("system_default"));
     }
     
-    void test_method_(single_bit_per_pixel_grid_fit) {
+    auto test_method_(single_bit_per_pixel_grid_fit) {
       assert::are_equal(1, enum_object<>::to_int32(text_rendering_hint::single_bit_per_pixel_grid_fit));
       assert::are_equal("single_bit_per_pixel_grid_fit", enum_object<>::to_string(text_rendering_hint::single_bit_per_pixel_grid_fit));
       assert::are_equal(text_rendering_hint::single_bit_per_pixel_grid_fit, enum_object<>::parse<text_rendering_hint>("single_bit_per_pixel_grid_fit"));
     }
     
-    void test_method_(single_bit_per_pixel) {
+    auto test_method_(single_bit_per_pixel) {
       assert::are_equal(2, enum_object<>::to_int32(text_rendering_hint::single_bit_per_pixel));
       assert::are_equal("single_bit_per_pixel", enum_object<>::to_string(text_rendering_hint::single_bit_per_pixel));
       assert::are_equal(text_rendering_hint::single_bit_per_pixel, enum_object<>::parse<text_rendering_hint>("single_bit_per_pixel"));
     }
     
-    void test_method_(anti_alias_grid_fit) {
+    auto test_method_(anti_alias_grid_fit) {
       assert::are_equal(3, enum_object<>::to_int32(text_rendering_hint::anti_alias_grid_fit));
       assert::are_equal("anti_alias_grid_fit", enum_object<>::to_string(text_rendering_hint::anti_alias_grid_fit));
       assert::are_equal(text_rendering_hint::anti_alias_grid_fit, enum_object<>::parse<text_rendering_hint>("anti_alias_grid_fit"));
     }
     
-    void test_method_(anti_alias) {
+    auto test_method_(anti_alias) {
       assert::are_equal(4, enum_object<>::to_int32(text_rendering_hint::anti_alias));
       assert::are_equal("anti_alias", enum_object<>::to_string(text_rendering_hint::anti_alias));
       assert::are_equal(text_rendering_hint::anti_alias, enum_object<>::parse<text_rendering_hint>("anti_alias"));
     }
     
-    void test_method_(clear_type_grid_fit) {
+    auto test_method_(clear_type_grid_fit) {
       assert::are_equal(5, enum_object<>::to_int32(text_rendering_hint::clear_type_grid_fit));
       assert::are_equal("clear_type_grid_fit", enum_object<>::to_string(text_rendering_hint::clear_type_grid_fit));
       assert::are_equal(text_rendering_hint::clear_type_grid_fit, enum_object<>::parse<text_rendering_hint>("clear_type_grid_fit"));

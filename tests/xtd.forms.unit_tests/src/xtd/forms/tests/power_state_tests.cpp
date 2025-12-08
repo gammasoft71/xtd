@@ -9,13 +9,13 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(power_state_tests) {
   public:
-    void test_method_(suspend) {
+    auto test_method_(suspend) {
       assert::are_equal(0, enum_object<>::to_int32(power_state::suspend));
       assert::are_equal("suspend", enum_object<>::to_string(power_state::suspend));
       assert::are_equal(power_state::suspend, enum_object<>::parse<power_state>("suspend"));
     }
     
-    void test_method_(hibernate) {
+    auto test_method_(hibernate) {
       assert::are_equal(1, enum_object<>::to_int32(power_state::hibernate));
       assert::are_equal("hibernate", enum_object<>::to_string(power_state::hibernate));
       assert::are_equal(power_state::hibernate, enum_object<>::parse<power_state>("hibernate"));

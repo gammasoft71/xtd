@@ -11,7 +11,7 @@ using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
   class test_class_(thread_pool_tests) {
-    void test_method_(get_max_threads) {
+    auto test_method_(get_max_threads) {
       size_t max_worker_threads = 0;
       size_t max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
@@ -19,7 +19,7 @@ namespace xtd::threading::tests {
       assert::are_equal(800ul, max_completion_port_threads);
     }
     
-    void test_method_(get_min_threads) {
+    auto test_method_(get_min_threads) {
       size_t min_worker_threads = 0;
       size_t min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
@@ -27,7 +27,7 @@ namespace xtd::threading::tests {
       assert::are_equal(environment::processor_count(), min_completion_port_threads);
     }
     
-    void test_method_(queue_user_work_item_one) {
+    auto test_method_(queue_user_work_item_one) {
       auto count = 0;
       auto action = wait_callback {[&] {
           interlocked::increment(count);
@@ -38,7 +38,7 @@ namespace xtd::threading::tests {
       assert::are_equal(1, count);
     }
     
-    void test_method_(queue_user_work_item_after_close) {
+    auto test_method_(queue_user_work_item_after_close) {
       auto count = 0;
       auto action = wait_callback {[&] {
           interlocked::increment(count);
@@ -52,7 +52,7 @@ namespace xtd::threading::tests {
       assert::are_equal(2, count);
     }
     
-    void test_method_(queue_user_work_item_min_thread) {
+    auto test_method_(queue_user_work_item_min_thread) {
       size_t min_worker_threads = 0;
       size_t min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
@@ -67,7 +67,7 @@ namespace xtd::threading::tests {
       assert::are_equal(min_worker_threads, as<size_t>(count));
     }
     
-    void test_method_(queue_user_work_item_max_thread) {
+    auto test_method_(queue_user_work_item_max_thread) {
       size_t max_worker_threads = 0;
       size_t max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);

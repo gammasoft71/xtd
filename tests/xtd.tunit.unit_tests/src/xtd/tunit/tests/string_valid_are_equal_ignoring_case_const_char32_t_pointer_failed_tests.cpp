@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(string_valid_are_equal_ignoring_case_const_char32_t_pointer_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       const char32* s = U"VALUE";
       xtd::tunit::string_valid::are_equal_ignoring_case(U"key", s);
     }

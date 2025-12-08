@@ -19,7 +19,7 @@ flags_attribute_(, registered_enum_struct_flags_test);
 
 namespace xtd::tests {
   class test_class_(registered_enum_struct_flags_tests) {
-    void test_method_(format) {
+    auto test_method_(format) {
       assert::are_equal("none", string::format("{}", registered_enum_struct_flags_test::none));
       assert::are_equal("one", string::format("{}", registered_enum_struct_flags_test::one));
       assert::are_equal("two", string::format("{}", registered_enum_struct_flags_test::two));
@@ -30,11 +30,11 @@ namespace xtd::tests {
       assert::are_equal("one, two, three, four", string::format("{}", registered_enum_struct_flags_test::none | registered_enum_struct_flags_test::one | registered_enum_struct_flags_test::two | registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four));
     }
     
-    void test_method_(format_with_invalid_enum) {
+    auto test_method_(format_with_invalid_enum) {
       assert::are_equal("16", string::format("{}", as<registered_enum_struct_flags_test>(16)));
     }
     
-    void test_method_(format_with_specified_format) {
+    auto test_method_(format_with_specified_format) {
       assert::are_equal("0b1100", string::format("0b{:b}", registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four));
       assert::are_equal("0b1100", string::format("0b{:B}", registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four));
       assert::are_equal("12", string::format("{:d}", registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four));
@@ -47,7 +47,7 @@ namespace xtd::tests {
       assert::are_equal("0xC", string::format("0x{:X}", registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four));
     }
     
-    void test_method_(parse) {
+    auto test_method_(parse) {
       assert::are_equal(registered_enum_struct_flags_test::none, string::parse<registered_enum_struct_flags_test>("none"));
       assert::are_equal(registered_enum_struct_flags_test::one, string::parse<registered_enum_struct_flags_test>("one"));
       assert::are_equal(registered_enum_struct_flags_test::two, string::parse<registered_enum_struct_flags_test>("two"));
@@ -65,7 +65,7 @@ namespace xtd::tests {
       assert::are_equal(registered_enum_struct_flags_test::three | registered_enum_struct_flags_test::four, string::parse<registered_enum_struct_flags_test>("12"));
     }
     
-    void test_method_(parse_with_invalid_enum) {
+    auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<registered_enum_struct_flags_test>(16), string::parse<registered_enum_struct_flags_test>("16"));
       assert::throws<format_exception>([] {string::parse<registered_enum_struct_flags_test>("five");});
     }

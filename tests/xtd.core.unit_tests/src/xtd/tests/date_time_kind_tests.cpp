@@ -8,19 +8,19 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(date_time_kind_tests) {
-    void test_method_(unspecified) {
+    auto test_method_(unspecified) {
       assert::are_equal(0, enum_object<>::to_int32(date_time_kind::unspecified));
       assert::are_equal("unspecified", enum_object<>::to_string(date_time_kind::unspecified));
       assert::are_equal(date_time_kind::unspecified, enum_object<>::parse<date_time_kind>("unspecified"));
     }
     
-    void test_method_(utc) {
+    auto test_method_(utc) {
       assert::are_equal(1, enum_object<>::to_int32(date_time_kind::utc));
       assert::are_equal("utc", enum_object<>::to_string(date_time_kind::utc));
       assert::are_equal(date_time_kind::utc, enum_object<>::parse<date_time_kind>("utc"));
     }
     
-    void test_method_(local) {
+    auto test_method_(local) {
       assert::are_equal(2, enum_object<>::to_int32(date_time_kind::local));
       assert::are_equal("local", enum_object<>::to_string(date_time_kind::local));
       assert::are_equal(date_time_kind::local, enum_object<>::parse<date_time_kind>("local"));

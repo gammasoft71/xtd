@@ -16,7 +16,7 @@ using namespace xtd::tunit;
 
 namespace xtd::configuration::tests {
   class test_class_(file_settings_tests) {
-    void test_method_(default_ctor) {
+    auto test_method_(default_ctor) {
       auto fs = file_settings {};
       assert::is_false(fs.auto_save());
       assert::is_empty(fs.bottom_file_comment());
@@ -28,7 +28,7 @@ namespace xtd::configuration::tests {
       assert::is_empty(fs.top_file_comment());
     }
     
-    void test_method_(ctor_with_empty_string) {
+    auto test_method_(ctor_with_empty_string) {
       auto fs = file_settings {string::empty_string};
       assert::is_false(fs.auto_save());
       assert::is_empty(fs.bottom_file_comment());
@@ -40,7 +40,7 @@ namespace xtd::configuration::tests {
       assert::is_empty(fs.top_file_comment());
     }
     
-    void test_method_(ctor_with_non_existent_file_name) {
+    auto test_method_(ctor_with_non_existent_file_name) {
       auto file_name = "non_existent_file_name.ini";
       file_assume::does_not_exist(file_name);
       auto fs = file_settings {file_name};
@@ -54,7 +54,7 @@ namespace xtd::configuration::tests {
       assert::is_empty(fs.top_file_comment());
     }
     
-    void test_method_(ctor_with_empty_file) {
+    auto test_method_(ctor_with_empty_file) {
       auto file_name = "empty_file.ini";
       file::write_all_text(file_name, "");
       file_assume::exists(file_name);
@@ -70,7 +70,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_file_containing_one_section) {
+    auto test_method_(ctor_with_file_containing_one_section) {
       auto file_name = "file.ini";
       auto file_content = "[section1]\n";
       file::write_all_text(file_name, file_content);
@@ -89,7 +89,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_file_containing_many_sections) {
+    auto test_method_(ctor_with_file_containing_many_sections) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -119,7 +119,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_file_containing_one_section_and_one_key_value) {
+    auto test_method_(ctor_with_file_containing_one_section_and_one_key_value) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -138,7 +138,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_file_containing_one_section_and_many_key_values) {
+    auto test_method_(ctor_with_file_containing_one_section_and_many_key_values) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -161,7 +161,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_file_containing_many_sections_and_many_key_values) {
+    auto test_method_(ctor_with_file_containing_many_sections_and_many_key_values) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -216,7 +216,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(ctor_with_stream_containing_one_section_and_many_key_values) {
+    auto test_method_(ctor_with_stream_containing_one_section_and_many_key_values) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -241,7 +241,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(from_string) {
+    auto test_method_(from_string) {
       auto fs = file_settings {};
       fs.from_string("[section1]\n"
                      "key1=value1\n"
@@ -270,7 +270,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"section2"}, fs.sections());
     }
     
-    void test_method_(load_file) {
+    auto test_method_(load_file) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -293,7 +293,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(load_stream) {
+    auto test_method_(load_stream) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -317,17 +317,17 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(load_with_non_existent_file_name) {
+    auto test_method_(load_with_non_existent_file_name) {
       assert::throws<file_not_found_exception>([] {file_settings {}.load("non_existent_file_name.ini");});
     }
     
-    void test_method_(load_with_invalid_stream) {
+    auto test_method_(load_with_invalid_stream) {
       auto stream = std::fstream {"non_existent_file_name.ini", std::ios::in | std::ios::out};
       stream.close();
       assert::throws<io_exception>([&] {file_settings {}.load(stream);});
     }
     
-    void test_method_(read_key_with_fallback) {
+    auto test_method_(read_key_with_fallback) {
       auto fs = file_settings {};
       assert::are_equal("default_value1", fs.read("key1", "default_value1"));
       assert::are_equal(42, fs.read("key2", 42));
@@ -335,7 +335,7 @@ namespace xtd::configuration::tests {
       assert::are_equal(42, fs.read("section1", "key2", 42));
     }
     
-    void test_method_(read_key) {
+    auto test_method_(read_key) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n"
                      "key2=84\n"
@@ -348,13 +348,13 @@ namespace xtd::configuration::tests {
       assert::are_equal(21, fs.read("section1", "key2", 42));
     }
     
-    void test_method_(read_invalid_key) {
+    auto test_method_(read_invalid_key) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n");
       assert::throws<format_exception>([&] {fs.read("key1", 42);});
     }
     
-    void test_method_(remove) {
+    auto test_method_(remove) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n"
                      "key2=value2\n"
@@ -372,7 +372,7 @@ namespace xtd::configuration::tests {
       collection_assert::are_equivalent({"key1", "key3"}, fs.keys("section1"));
     }
     
-    void test_method_(remove_all_keys) {
+    auto test_method_(remove_all_keys) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n"
                      "key2=value2\n"
@@ -390,7 +390,7 @@ namespace xtd::configuration::tests {
       collection_assert::is_empty(fs.keys("section1"));
     }
     
-    void test_method_(reset) {
+    auto test_method_(reset) {
       auto fs = file_settings {};
       fs.from_string("key1=value1\n"
                      "key2=value2\n"
@@ -406,7 +406,7 @@ namespace xtd::configuration::tests {
       collection_assert::is_empty(fs.keys("section1"));
     }
     
-    void test_method_(save) {
+    auto test_method_(save) {
       auto file_name = "file.ini";
       auto file_content =
         "[section1]\n"
@@ -423,7 +423,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(save_as_with_file) {
+    auto test_method_(save_as_with_file) {
       auto file_name = "file.ini";
       file_assume::does_not_exist(file_name);
       
@@ -439,7 +439,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(save_as_with_stream) {
+    auto test_method_(save_as_with_stream) {
       auto file_name = "file.ini";
       file_assume::does_not_exist(file_name);
       
@@ -457,7 +457,7 @@ namespace xtd::configuration::tests {
       file::remove(file_name);
     }
     
-    void test_method_(to_string) {
+    auto test_method_(to_string) {
       auto content =
         "[section1]\n"
         "key1 = value1\n"
@@ -477,12 +477,12 @@ namespace xtd::configuration::tests {
       assert::are_equal(content, fs.to_string());
     }
     
-    void test_method_(to_string_empty) {
+    auto test_method_(to_string_empty) {
       auto fs = file_settings {};
       assert::is_empty(fs.to_string());
     }
     
-    void test_method_(to_string_with_global_key_values) {
+    auto test_method_(to_string_with_global_key_values) {
       auto fs = file_settings {};
       fs.write("key1", "value1");
       fs.write("key2", "value2");
@@ -490,7 +490,7 @@ namespace xtd::configuration::tests {
                         "key2 = value2\n", fs.to_string());
     }
     
-    void test_method_(to_string_with_section_key_values) {
+    auto test_method_(to_string_with_section_key_values) {
       auto fs = file_settings {};
       fs.write("section1", "key1", "value1");
       fs.write("section1", "key2", "value2");
@@ -505,21 +505,21 @@ namespace xtd::configuration::tests {
                         "key2 = value2\n", fs.to_string());
     }
     
-    void test_method_(top_file_comment_on_one_line) {
+    auto test_method_(top_file_comment_on_one_line) {
       auto fs = file_settings {};
       
       fs.top_file_comment("Top file comment on one line");
       assert::are_equal("Top file comment on one line", fs.top_file_comment());
     }
     
-    void test_method_(top_file_comment_on_multi_line) {
+    auto test_method_(top_file_comment_on_multi_line) {
       auto fs = file_settings {};
       
       fs.top_file_comment("Top file comment\non multi line");
       assert::are_equal("Top file comment\non multi line", fs.top_file_comment());
     }
     
-    void test_method_(write) {
+    auto test_method_(write) {
       auto fs = file_settings {};
       
       fs.write("key1", "value1");
@@ -533,7 +533,7 @@ namespace xtd::configuration::tests {
       assert::are_equal(84, fs.read("section1", "key2", 42));
     }
     
-    void test_method_(array_operator) {
+    auto test_method_(array_operator) {
       auto fs = file_settings {};
       
       fs[""]["key1"] = "value1";
@@ -557,7 +557,7 @@ namespace xtd::configuration::tests {
       assert::are_equal(84, as<int>(fs["section2"]["key3"]));
     }
     
-    void test_method_(from_string_with_spaces_comments_and_escape_sequences) {
+    auto test_method_(from_string_with_spaces_comments_and_escape_sequences) {
       auto content =
         "# Section 1\n"
         "[section 1]\n"

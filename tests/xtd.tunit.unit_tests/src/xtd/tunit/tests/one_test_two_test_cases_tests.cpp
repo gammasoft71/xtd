@@ -5,9 +5,9 @@
 namespace xtd::tunit::tests {
   class test_class_(one_test_two_test_cases_tests) {
   public:
-    void test_method_(test_case1) {
+    auto test_method_(test_case1) {
     }
-    void test_method_(test_case2) {
+    auto test_method_(test_case2) {
     }
   };
   

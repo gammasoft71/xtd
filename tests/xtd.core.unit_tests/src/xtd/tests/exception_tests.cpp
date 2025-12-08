@@ -32,11 +32,11 @@ namespace xtd::tests {
       exception::enable_stack_trace(stack_trace_enabled);
     }
     
-    void test_method_(exception_ref) {
+    auto test_method_(exception_ref) {
       assert::are_equal(typeof_<optional<ref<const exception>>>(), typeof_<exception::exception_ref>());
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto e = exception {};
       assert::are_equal("xtd::exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -54,7 +54,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(default_constructor_with_stack_frame) {
+    auto test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {stack_frame};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -73,7 +73,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message) {
+    auto test_method_(constructor_with_nullopt_message) {
       auto e = exception {nullopt};
       assert::are_equal("xtd::exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -91,7 +91,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {nullopt, stack_frame};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -110,7 +110,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(constructor_with_empty_message) {
+    auto test_method_(constructor_with_empty_message) {
       auto e = exception {""};
       assert::are_equal("xtd::exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -128,7 +128,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception", e.what());
     }
     
-    void test_method_(constructor_with_message_empty_and_stack_frame) {
+    auto test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {"", stack_frame};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -147,7 +147,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception", e.what());
     }
     
-    void test_method_(constructor_with_message) {
+    auto test_method_(constructor_with_message) {
       auto e = exception {"Test excpetion message."};
       assert::are_equal("xtd::exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -165,7 +165,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_stack_frame) {
+    auto test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {"Test excpetion message.", stack_frame};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -184,7 +184,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = exception {nullopt, inner_exception};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -205,7 +205,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {nullopt, inner_exception, stack_frame};
@@ -227,7 +227,7 @@ namespace xtd::tests {
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_inner_exception) {
+    auto test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = exception {"Test excpetion message.", inner_exception};
       assert::is_empty(e.help_link());
@@ -247,7 +247,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {"Test excpetion message.", inner_exception, stack_frame};
@@ -269,7 +269,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(copy_constructor) {
+    auto test_method_(copy_constructor) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {"Test excpetion message.", inner_exception, stack_frame};
@@ -291,7 +291,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(copy_operator) {
+    auto test_method_(copy_operator) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {};
@@ -314,13 +314,13 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(help_link) {
+    auto test_method_(help_link) {
       auto e = exception {};
       e.help_link("https://gammasoft71.github.io/xtd/");
       assert::are_equal("https://gammasoft71.github.io/xtd/", e.help_link());
     }
     
-    void test_method_(h_result_with_h_result_value) {
+    auto test_method_(h_result_with_h_result_value) {
       auto e = exception {};
       e.h_result(h_result::E_HANDLE);
       assert::are_equal(h_result::E_HANDLE, e.h_result());
@@ -328,7 +328,7 @@ namespace xtd::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
     }
     
-    void test_method_(h_result_without_h_result_value) {
+    auto test_method_(h_result_without_h_result_value) {
       auto e = exception {};
       e.h_result(42);
       assert::are_equal(42, e.h_result());
@@ -336,7 +336,7 @@ namespace xtd::tests {
       assert::are_equal(e.h_result(), e.error_code().value());
     }
     
-    void test_method_(error_code_with_h_result_make_error_code) {
+    auto test_method_(error_code_with_h_result_make_error_code) {
       auto e = exception {};
       e.error_code(h_result::make_error_code(h_result::E_HANDLE));
       assert::are_equal(h_result::E_HANDLE, e.error_code().value());
@@ -344,7 +344,7 @@ namespace xtd::tests {
       assert::are_equal(h_result::E_HANDLE, e.h_result());
     }
     
-    void test_method_(error_code_with_std_make_error_code) {
+    auto test_method_(error_code_with_std_make_error_code) {
       auto e = exception {};
       e.error_code(std::make_error_code(std::errc::invalid_argument));
       assert::are_equal(EINVAL, e.error_code().value());
@@ -352,13 +352,13 @@ namespace xtd::tests {
       assert::are_equal(h_result::COR_E_EXCEPTION, e.h_result());
     }
     
-    void test_method_(source) {
+    auto test_method_(source) {
       auto e = exception {};
       e.source("my_application");
       assert::are_equal("my_application", e.source());
     }
     
-    void test_method_(enable_stack_trace) {
+    auto test_method_(enable_stack_trace) {
       auto e = exception {};
       auto enable_stack_trace = e.enable_stack_trace();
       e.enable_stack_trace(!enable_stack_trace);

@@ -9,207 +9,207 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(as_tests) {
-    void test_method_(bool_as_int) {
+    auto test_method_(bool_as_int) {
       assert::is_true(is<int>(as<int>((bool)true)));
     }
     
-    void test_method_(literal_bool_as_int) {
+    auto test_method_(literal_bool_as_int) {
       assert::is_true(is<int>(as<int>(true)));
     }
     
-    void test_method_(char_as_int) {
+    auto test_method_(char_as_int) {
       assert::is_true(is<int>(as<int>((char)'a')));
     }
     
-    void test_method_(char8_as_int) {
+    auto test_method_(char8_as_int) {
       assert::is_true(is<int>(as<int>((char8)'a')));
     }
     
-    void test_method_(char16_as_int) {
+    auto test_method_(char16_as_int) {
       assert::is_true(is<int>(as<int>((char16)'a')));
     }
     
-    void test_method_(char32_as_int) {
+    auto test_method_(char32_as_int) {
       assert::is_true(is<int>(as<int>((char32)'a')));
     }
     
-    void test_method_(wchar_as_int) {
+    auto test_method_(wchar_as_int) {
       assert::is_true(is<int>(as<int>((wchar)'a')));
     }
     
-    void test_method_(unsigned_char_as_int) {
+    auto test_method_(unsigned_char_as_int) {
       assert::is_true(is<int>(as<int>((unsigned char)'a')));
     }
     
-    void test_method_(literal_char_as_int) {
+    auto test_method_(literal_char_as_int) {
       assert::is_true(is<int>(as<int>('a')));
     }
     
-    void test_method_(literal_char8_as_int) {
+    auto test_method_(literal_char8_as_int) {
       assert::is_true(is<int>(as<int>(u8'a')));
           }
           
-            void test_method_(literal_char16_as_int) {
+            auto test_method_(literal_char16_as_int) {
             assert::is_true(is<int>(as<int>(u'a')));
           }
           
-            void test_method_(literal_char32_as_int) {
+            auto test_method_(literal_char32_as_int) {
             assert::is_true(is<int>(as<int>(U'a')));
           }
           
-            void test_method_(literal_wchar_as_int) {
+            auto test_method_(literal_wchar_as_int) {
             assert::is_true(is<int>(as<int>(L'a')));
           }
           
-            void test_method_(short_as_double) {
+            auto test_method_(short_as_double) {
             assert::is_true(is<double>(as<double>((short)42)));
           }
           
-            void test_method_(int_as_double) {
+            auto test_method_(int_as_double) {
             assert::is_true(is<double>(as<double>((int)42)));
           }
           
-            void test_method_(long_as_double) {
+            auto test_method_(long_as_double) {
             assert::is_true(is<double>(as<double>((long)42)));
           }
           
-            void test_method_(long_long_as_double) {
+            auto test_method_(long_long_as_double) {
             assert::is_true(is<double>(as<double>((long long)42)));
           }
           
-            void test_method_(long_long_int_as_double) {
+            auto test_method_(long_long_int_as_double) {
             assert::is_true(is<double>(as<double>((long long int)42)));
           }
           
-            void test_method_(int8_as_double) {
+            auto test_method_(int8_as_double) {
             assert::is_true(is<double>(as<double>((sbyte)42)));
           }
           
-            void test_method_(int16_as_double) {
+            auto test_method_(int16_as_double) {
             assert::is_true(is<double>(as<double>((int16)42)));
           }
           
-            void test_method_(int32_as_double) {
+            auto test_method_(int32_as_double) {
             assert::is_true(is<double>(as<double>((int32)42)));
           }
           
-            void test_method_(int64_as_double) {
+            auto test_method_(int64_as_double) {
             assert::is_true(is<double>(as<double>((int64)42)));
           }
           
-            void test_method_(llong_as_double) {
+            auto test_method_(llong_as_double) {
             assert::is_true(is<double>(as<double>((slong)42)));
           }
           
-            void test_method_(literal_int_as_double) {
+            auto test_method_(literal_int_as_double) {
             assert::is_true(is<double>(as<double>(42)));
           }
           
-            void test_method_(literal_long_as_double) {
+            auto test_method_(literal_long_as_double) {
             assert::is_true(is<double>(as<double>(42l)));
           }
           
-            void test_method_(literal_long_llong_as_double) {
+            auto test_method_(literal_long_llong_as_double) {
             assert::is_true(is<double>(as<double>(42ll)));
           }
           
-            void test_method_(unsigned_short_as_double) {
+            auto test_method_(unsigned_short_as_double) {
             assert::is_true(is<double>(as<double>((unsigned short)42)));
           }
           
-            void test_method_(unsigned_int_as_double) {
+            auto test_method_(unsigned_int_as_double) {
             assert::is_true(is<double>(as<double>((unsigned int)42)));
           }
           
-            void test_method_(unsigned_long_as_double) {
+            auto test_method_(unsigned_long_as_double) {
             assert::is_true(is<double>(as<double>((unsigned long)42)));
           }
           
-            void test_method_(unsigned_long_long_as_double) {
+            auto test_method_(unsigned_long_long_as_double) {
             assert::is_true(is<double>(as<double>((unsigned long long)42)));
           }
           
-            void test_method_(unsigned_long_long_int_as_double) {
+            auto test_method_(unsigned_long_long_int_as_double) {
             assert::is_true(is<double>(as<double>((unsigned long long int)42)));
           }
           
-            void test_method_(unsigned_as_double) {
+            auto test_method_(unsigned_as_double) {
             assert::is_true(is<double>(as<double>((unsigned)42)));
           }
           
-            void test_method_(uint8_as_double) {
+            auto test_method_(uint8_as_double) {
             assert::is_true(is<double>(as<double>((xtd::byte)42)));
           }
           
-            void test_method_(uint16_as_double) {
+            auto test_method_(uint16_as_double) {
             assert::is_true(is<double>(as<double>((uint16)42)));
           }
           
-            void test_method_(uint32_as_double) {
+            auto test_method_(uint32_as_double) {
             assert::is_true(is<double>(as<double>((uint32)42)));
           }
           
-            void test_method_(uint64_as_double) {
+            auto test_method_(uint64_as_double) {
             assert::is_true(is<double>(as<double>((uint64)42)));
           }
           
-            void test_method_(ullong_as_double) {
+            auto test_method_(ullong_as_double) {
             assert::is_true(is<double>(as<double>((xtd::ulong)42)));
           }
           
-            void test_method_(literal_unsigned_int_as_double) {
+            auto test_method_(literal_unsigned_int_as_double) {
             assert::is_true(is<double>(as<double>(42u)));
           }
           
-            void test_method_(literal_unsigned_long_as_double) {
+            auto test_method_(literal_unsigned_long_as_double) {
             assert::is_true(is<double>(as<double>(42ul)));
           }
           
-            void test_method_(literal_unsigned_long_llong_as_double) {
+            auto test_method_(literal_unsigned_long_llong_as_double) {
             assert::is_true(is<double>(as<double>(42ull)));
           }
           
-            void test_method_(size_t_as_int) {
+            auto test_method_(size_t_as_int) {
             assert::is_true(is<int>(as<int>((size_t)42)));
           }
           
-            void test_method_(intptr_as_int) {
+            auto test_method_(intptr_as_int) {
             assert::is_true(is<int>(as<int>((intptr)42)));
           }
           
-            void test_method_(uintptr_as_int) {
+            auto test_method_(uintptr_as_int) {
             assert::is_true(is<int>(as<int>((uintptr)42)));
           }
           
-            void test_method_(float_as_int) {
+            auto test_method_(float_as_int) {
             assert::is_true(is<int>(as<int>((float)42.f)));
           }
           
-            void test_method_(double_as_int) {
+            auto test_method_(double_as_int) {
             assert::is_true(is<int>(as<int>((double)42.)));
           }
           
-            void test_method_(decimal_as_int) {
+            auto test_method_(decimal_as_int) {
             assert::is_true(is<int>(as<int>((decimal)42.)));
           }
           
-            void test_method_(long_double_as_int) {
+            auto test_method_(long_double_as_int) {
             assert::is_true(is<int>(as<int>((long double)42.)));
           }
           
-            void test_method_(literal_float_as_int) {
+            auto test_method_(literal_float_as_int) {
             assert::is_true(is<int>(as<int>(42.f)));
           }
           
-            void test_method_(literal_double_as_int) {
+            auto test_method_(literal_double_as_int) {
             assert::is_true(is<int>(as<int>(42.)));
           }
           
-            void test_method_(literal_decimal_as_int) {
+            auto test_method_(literal_decimal_as_int) {
             assert::is_true(is<int>(as<int>(42.l)));
           }
           
-            void test_method_(ref_as_base) {
+            auto test_method_(ref_as_base) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             
@@ -218,7 +218,7 @@ namespace xtd::tests {
             assert::is_true(is<base>(as<base>(d)));
           }
           
-            void test_method_(ref_as_other) {
+            auto test_method_(ref_as_other) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             struct other {virtual ~other() = default;};
@@ -228,7 +228,7 @@ namespace xtd::tests {
             assert::throws<invalid_cast_exception>([&] {as<other>(d);});
           }
           
-            void test_method_(const_ref_as_base) {
+            auto test_method_(const_ref_as_base) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             
@@ -237,7 +237,7 @@ namespace xtd::tests {
             assert::is_true(is<base>(as<base>(d)));
           }
           
-            void test_method_(const_ref_as_other) {
+            auto test_method_(const_ref_as_other) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             struct other {virtual ~other() = default;};
@@ -247,7 +247,7 @@ namespace xtd::tests {
             assert::throws<invalid_cast_exception>([&] {as<other>(d);});
           }
           
-            void test_method_(ptr_as_base) {
+            auto test_method_(ptr_as_base) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             
@@ -256,7 +256,7 @@ namespace xtd::tests {
             assert::is_true(is<base>(as<base>(d)));
           }
           
-            void test_method_(ptr_as_other) {
+            auto test_method_(ptr_as_other) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             struct other {virtual ~other() = default;};
@@ -266,7 +266,7 @@ namespace xtd::tests {
             assert::throws<invalid_cast_exception>([&] {as<other>(d);});
           }
           
-            void test_method_(const_ptr_as_base) {
+            auto test_method_(const_ptr_as_base) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             
@@ -275,7 +275,7 @@ namespace xtd::tests {
             assert::is_true(is<base>(as<base>(d)));
           }
           
-            void test_method_(const_ptr_as_other) {
+            auto test_method_(const_ptr_as_other) {
             struct base {virtual ~base() = default;};
             struct derived : public base {};
             struct other {virtual ~other() = default;};

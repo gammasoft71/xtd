@@ -17,7 +17,7 @@ enum unregistered_enum_test {
 
 namespace xtd::tests {
   class test_class_(unregistered_enum_tests) {
-    void test_method_(format) {
+    auto test_method_(format) {
       assert::are_equal("0", string::format("{}", unregistered_enum_test::none));
       assert::are_equal("1", string::format("{}", unregistered_enum_test::one));
       assert::are_equal("2", string::format("{}", unregistered_enum_test::two));
@@ -25,11 +25,11 @@ namespace xtd::tests {
       assert::are_equal("4", string::format("{}", unregistered_enum_test::four));
     }
     
-    void test_method_(format_with_invalid_enum) {
+    auto test_method_(format_with_invalid_enum) {
       assert::are_equal("5", string::format("{}", as<unregistered_enum_test>(5)));
     }
     
-    void test_method_(format_with_specified_format) {
+    auto test_method_(format_with_specified_format) {
       assert::are_equal("0b100", string::format("0b{:b}", unregistered_enum_test::four));
       assert::are_equal("0b100", string::format("0b{:B}", unregistered_enum_test::four));
       assert::are_equal("4", string::format("{:d}", unregistered_enum_test::four));
@@ -42,7 +42,7 @@ namespace xtd::tests {
       assert::are_equal("0x4", string::format("0x{:X}", unregistered_enum_test::four));
     }
     
-    void test_method_(parse) {
+    auto test_method_(parse) {
       assert::are_equal(unregistered_enum_test::none, string::parse<unregistered_enum_test>("0"));
       assert::are_equal(unregistered_enum_test::one, string::parse<unregistered_enum_test>("1"));
       assert::are_equal(unregistered_enum_test::two, string::parse<unregistered_enum_test>("2"));
@@ -50,7 +50,7 @@ namespace xtd::tests {
       assert::are_equal(unregistered_enum_test::four, string::parse<unregistered_enum_test>("4"));
     }
     
-    void test_method_(parse_with_invalid_enum) {
+    auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<unregistered_enum_test>(5), string::parse<unregistered_enum_test>("5"));
       assert::throws<format_exception>([] {string::parse<unregistered_enum_test>("one");});
     }

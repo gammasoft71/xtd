@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(file_assert_are_not_equal_istream_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       // As the xtd::tunit::file_assert::are_not_equal method uses std::istream and not std::ifstream, the test can be performed with std::istringstream.
       xtd::tunit::file_assert::are_not_equal(std::istringstream("Test xtd::tunit::file_assert::are_not_equal."), std::istringstream("Test xtd::tunit::file_assert::are_not_equal."));
     }

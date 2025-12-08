@@ -28,7 +28,7 @@ struct tunit_export_ __tunit_main final static_ {
 /// namespace unit_tests {
 ///   test_class_(class_to_test) {
 ///   public:
-///     void test_method_(test1) {
+///     auto test_method_(test1) {
 ///       // Do test...
 ///     }
 ///   };
@@ -54,7 +54,7 @@ struct tunit_export_ __tunit_main final static_ {
 /// namespace unit_tests {
 ///   test_class_(class_to_test) {
 ///   public:
-///     void test_method_(test1) {
+///     auto test_method_(test1) {
 ///       // Do test...
 ///     }
 ///   };

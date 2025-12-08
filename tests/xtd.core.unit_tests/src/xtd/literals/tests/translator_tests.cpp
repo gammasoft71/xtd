@@ -16,27 +16,27 @@ namespace xtd {
           translator::add_value("fr", "literals_translator_key1", "literals_translator_key1_fr");
         }
         
-        void test_method_(_t_operator_on_char_ptr) {
+        auto test_method_(_t_operator_on_char_ptr) {
           translator::language("fr");
           assert::are_equal("literals_translator_key1_fr", "literals_translator_key1"_t);
         }
         
-        void test_method_(_t_operator_on_char8_ptr) {
+        auto test_method_(_t_operator_on_char8_ptr) {
           translator::language("fr");
           assert::are_equal("literals_translator_key1_fr", u8"literals_translator_key1"_t);
         }
         
-        void test_method_(_t_operator_on_char16_ptr) {
+        auto test_method_(_t_operator_on_char16_ptr) {
           translator::language("fr");
           assert::are_equal("literals_translator_key1_fr", u"literals_translator_key1"_t);
         }
         
-        void test_method_(_t_operator_on_char32_ptr) {
+        auto test_method_(_t_operator_on_char32_ptr) {
           translator::language("fr");
           assert::are_equal("literals_translator_key1_fr", U"literals_translator_key1"_t);
         }
         
-        void test_method_(_t_operator_on_wchar_ptr) {
+        auto test_method_(_t_operator_on_wchar_ptr) {
           translator::language("fr");
           assert::are_equal("literals_translator_key1_fr", L"literals_translator_key1"_t);
         }

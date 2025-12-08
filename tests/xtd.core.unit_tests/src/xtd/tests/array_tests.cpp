@@ -13,186 +13,186 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(array_tests) {
-    void test_method_(value_type) {
+    auto test_method_(value_type) {
       assert::are_equal(typeof_<int>(), typeof_<array<int>::value_type>());
     }
     
-    void test_method_(value_type_of_boolean) {
+    auto test_method_(value_type_of_boolean) {
       assert::are_equal(typeof_<bool>(), typeof_<array<bool>::value_type>());
     }
     
-    void test_method_(base_type) {
+    auto test_method_(base_type) {
       assert::are_equal(typeof_<std::vector<int>>(), typeof_<array<int>::base_type > ());
     }
     
-    void test_method_(base_type_boolean) {
+    auto test_method_(base_type_boolean) {
       assert::are_equal(typeof_<std::vector<byte>>(), typeof_<array<bool>::base_type > ());
     }
     
-    void test_method_(size_type) {
+    auto test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<array<int>::size_type>());
     }
     
-    void test_method_(difference_type) {
+    auto test_method_(difference_type) {
       assert::are_equal(typeof_<xtd::ptrdiff>(), typeof_<array<int>::difference_type>());
     }
     
-    void test_method_(reference) {
+    auto test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<array<int>::reference>());
     }
     
-    void test_method_(reference_of_boolean) {
+    auto test_method_(reference_of_boolean) {
       assert::are_equal(typeof_<bool&>(), typeof_<array<bool>::reference>());
     }
     
-    void test_method_(const_reference) {
+    auto test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<array<int>::const_reference>());
     }
     
-    void test_method_(const_reference_of_boolean) {
+    auto test_method_(const_reference_of_boolean) {
       assert::are_equal(typeof_<const bool&>(), typeof_<array<bool>::const_reference>());
     }
     
-    void test_method_(pointer) {
+    auto test_method_(pointer) {
       assert::are_equal(typeof_<int*>(), typeof_<array<int>::pointer>());
     }
     
-    void test_method_(pointer_of_boolean) {
+    auto test_method_(pointer_of_boolean) {
       assert::are_equal(typeof_<bool*>(), typeof_<array<bool>::pointer>());
     }
     
-    void test_method_(const_pointer) {
+    auto test_method_(const_pointer) {
       assert::are_equal(typeof_<const int*>(), typeof_<array<int>::const_pointer>());
     }
     
-    void test_method_(const_pointer_of_boolean) {
+    auto test_method_(const_pointer_of_boolean) {
       assert::are_equal(typeof_<const bool*>(), typeof_<array<bool>::const_pointer>());
     }
     
-    void test_method_(iterator) {
+    auto test_method_(iterator) {
       assert::are_equal(typeof_<ilist<int>::iterator>(), typeof_<array<int>::iterator>());
     }
     
-    void test_method_(iterator_of_boolean) {
+    auto test_method_(iterator_of_boolean) {
       assert::are_equal(typeof_<ilist<bool>::iterator>(), typeof_<array<bool>::iterator>());
     }
     
-    void test_method_(const_iterator) {
+    auto test_method_(const_iterator) {
       assert::are_equal(typeof_<ilist<int>::const_iterator>(), typeof_<array<int>::const_iterator>());
     }
     
-    void test_method_(const_iterator_of_boolean) {
+    auto test_method_(const_iterator_of_boolean) {
       assert::are_equal(typeof_<ilist<bool>::const_iterator>(), typeof_<array<bool>::const_iterator>());
     }
     
-    void test_method_(reverse_iterator) {
+    auto test_method_(reverse_iterator) {
       assert::are_equal(typeof_<xtd::collections::generic::helpers::raw_array<int>::reverse_iterator>(), typeof_<array<int>::reverse_iterator>());
     }
     
-    void test_method_(reverse_iterator_of_boolean) {
+    auto test_method_(reverse_iterator_of_boolean) {
       assert::are_equal(typeof_<xtd::collections::generic::helpers::raw_array<bool>::reverse_iterator>(), typeof_<array<bool>::reverse_iterator>());
     }
     
-    void test_method_(const_reverse_iterator) {
+    auto test_method_(const_reverse_iterator) {
       assert::are_equal(typeof_<xtd::collections::generic::helpers::raw_array<int>::const_reverse_iterator>(), typeof_<array<int>::const_reverse_iterator>());
     }
     
-    void test_method_(const_reverse_iterator_of_boolean) {
+    auto test_method_(const_reverse_iterator_of_boolean) {
       assert::are_equal(typeof_<xtd::collections::generic::helpers::raw_array<bool>::const_reverse_iterator>(), typeof_<array<bool>::const_reverse_iterator>());
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       collection_assert::is_empty(array<int> {});
     }
     
-    void test_method_(default_constructor_of_boolean) {
+    auto test_method_(default_constructor_of_boolean) {
       collection_assert::is_empty(array<bool> {});
     }
     
-    void test_method_(epos) {
+    auto test_method_(epos) {
       assert::are_equal(size_object::max_value - 1, array<int>::epos);
     }
     
-    void test_method_(npos) {
+    auto test_method_(npos) {
       assert::are_equal(size_object::max_value, array<int>::npos);
     }
     
-    void test_method_(constructor_with_initializer_lit) {
+    auto test_method_(constructor_with_initializer_lit) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array {1, 2, 3, 4, 5});
     }
     
-    void test_method_(constructor_with_initializer_lit_of_booleans) {
+    auto test_method_(constructor_with_initializer_lit_of_booleans) {
       collection_assert::are_equal({true, false, false, true, false}, array {true, false, false, true, false});
     }
     
-    void test_method_(constructor_with_array) {
+    auto test_method_(constructor_with_array) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array {array {1, 2, 3, 4, 5}});
     }
     
-    void test_method_(constructor_with_array_of_booleans) {
+    auto test_method_(constructor_with_array_of_booleans) {
       collection_assert::are_equal({true, false, false, true, false}, array {array {true, false, false, true, false}});
     }
     
-    void test_method_(constructor_with_size) {
+    auto test_method_(constructor_with_size) {
       collection_assert::are_equal({0, 0, 0, 0, 0}, array<int>(5));
     }
     
-    void test_method_(constructor_with_size_of_booleans) {
+    auto test_method_(constructor_with_size_of_booleans) {
       collection_assert::are_equal({false, false, false, false, false}, array<bool>(5));
     }
     
-    void test_method_(constructor_with_native_array) {
+    auto test_method_(constructor_with_native_array) {
       int a[] = {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a, a + 5));
     }
     
-    void test_method_(constructor_with_native_array_of_booleans) {
+    auto test_method_(constructor_with_native_array_of_booleans) {
       bool a[] = {true, false, false, true, false};
       collection_assert::are_equal({true, false, false, true, false}, array<bool>(a, a + 5));
     }
     
-    void test_method_(constructor_with_const_pointer_and_length) {
+    auto test_method_(constructor_with_const_pointer_and_length) {
       int a[] = {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, array<int>(a, a + 5));
     }
     
-    void test_method_(constructor_with_const_pointer_and_length_of_booleans) {
+    auto test_method_(constructor_with_const_pointer_and_length_of_booleans) {
       bool a[] = {true, false, false, true, false};
       collection_assert::are_equal({true, false, false, true, false}, array<bool>(a, a + 5));
     }
     
-    void test_method_(constructor_with_ienumerable) {
+    auto test_method_(constructor_with_ienumerable) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array<int> {as<ienumerable<int >> (list {1, 2, 3, 4, 5})});
     }
     
-    void test_method_(constructor_with_ienumerable_of_booleans) {
+    auto test_method_(constructor_with_ienumerable_of_booleans) {
       collection_assert::are_equal({true, false, false, true, false}, array<bool> {as<ienumerable<bool >> (list {true, false, false, true, false})});
     }
     
-    void test_method_(constructor_with_ilist) {
+    auto test_method_(constructor_with_ilist) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array<int> {as<ilist<int >> (list {1, 2, 3, 4, 5})});
     }
     
-    void test_method_(constructor_with_ilist_of_booleans) {
+    auto test_method_(constructor_with_ilist_of_booleans) {
       collection_assert::are_equal({true, false, false, true, false}, array<bool> {as<ilist<bool >> (list {true, false, false, true, false})});
     }
     
-    void test_method_(begin) {
+    auto test_method_(begin) {
       auto items = array {84, 42, 21};
       assert::are_equal(84, *items.begin());
     }
     
-    void test_method_(cbegin) {
+    auto test_method_(cbegin) {
       auto items = array {84, 42, 21};
       assert::are_equal(84, *items.cbegin());
     }
     
-    void test_method_(cend) {
+    auto test_method_(cend) {
       auto items = array {84, 42, 21};
       assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
-    void test_method_(count) {
+    auto test_method_(count) {
       auto items = array<int> {};
       assert::is_zero(items.count());
       items.resize(3);
@@ -201,7 +201,7 @@ namespace xtd::tests {
       assert::are_equal(50_z, items.count());
     }
     
-    void test_method_(empty) {
+    auto test_method_(empty) {
       assert::is_true(array<int> {}.empty());
       assert::is_false(array<int> {42}.empty());
       
@@ -213,32 +213,32 @@ namespace xtd::tests {
       assert::is_true(items.empty());
     }
     
-    void test_method_(end) {
+    auto test_method_(end) {
       auto items = array {84, 42, 21};
       assert::is_true(items.end() == items.begin() + items.count());
     }
     
-    void test_method_(is_fixed_size) {
+    auto test_method_(is_fixed_size) {
       // Is always true;
       assert::is_true(as<ilist<int>>(array<int> {}).is_fixed_size());
     }
     
-    void test_method_(is_read_only) {
+    auto test_method_(is_read_only) {
       // Is always false;
       assert::is_false(as<icollection<int>>(array<int> {}).is_read_only());
     }
     
-    void test_method_(is_synchronized) {
+    auto test_method_(is_synchronized) {
       // Is always false;
       assert::is_false(as<icollection<int>>(array<int> {}).is_synchronized());
     }
     
-    void test_method_(items_const) {
+    auto test_method_(items_const) {
       assert::are_equal(typeof_<array<int>::base_type>(), typeof_(array {1, 2, 3, 4, 5}.items()));
       collection_assert::are_equal({1, 2, 3, 4, 5}, array {1, 2, 3, 4, 5}.items());
     }
     
-    void test_method_(items) {
+    auto test_method_(items) {
       auto items = array {84, 42, 21};
       assert::are_equal(typeof_<array<int>::base_type>(), typeof_(items.items()));
       
@@ -260,7 +260,7 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    void test_method_(length) {
+    auto test_method_(length) {
       auto items = array<int> {};
       assert::is_zero(items.length());
       items.resize(3);
@@ -269,7 +269,7 @@ namespace xtd::tests {
       assert::are_equal(50_z, items.length());
     }
     
-    void test_method_(long_length) {
+    auto test_method_(long_length) {
       auto items = array<int> {};
       assert::is_zero(items.long_length());
       items.resize(3);
@@ -278,15 +278,15 @@ namespace xtd::tests {
       assert::are_equal(50l, items.long_length());
     }
     
-    void test_method_(rank) {
+    auto test_method_(rank) {
       assert::are_equal(1_z, array<int> {}.rank());
     }
     
-    void test_method_(rank_of_boolean) {
+    auto test_method_(rank_of_boolean) {
       assert::are_equal(1_z, array<bool> {}.rank());
     }
     
-    void test_method_(size) {
+    auto test_method_(size) {
       auto items = array<int> {};
       assert::is_zero(items.length());
       items.resize(3);
@@ -295,7 +295,7 @@ namespace xtd::tests {
       assert::are_equal(50_z, items.length());
     }
     
-    void test_method_(contains) {
+    auto test_method_(contains) {
       auto items = array {84, 42, 21};
       assert::is_true(items.contains(84));
       assert::is_true(items.contains(42));
@@ -305,7 +305,7 @@ namespace xtd::tests {
       assert::is_false(items.contains(-1));
     }
     
-    void test_method_(copy_to) {
+    auto test_method_(copy_to) {
       auto items = array {84, 42, 21};
       auto dest = array<int>(3);
       items.copy_to(dest, 0);
@@ -320,7 +320,7 @@ namespace xtd::tests {
       collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest);
     }
     
-    void test_method_(equals_object) {
+    auto test_method_(equals_object) {
       auto items1 = array {84, 42, 21};
       auto items2 = array {84, 42, 21};
       assert::is_true(items1.equals(as<object>(items2)));
@@ -330,7 +330,7 @@ namespace xtd::tests {
       assert::is_false(items1.equals(items4));
     }
     
-    void test_method_(equals_array) {
+    auto test_method_(equals_array) {
       auto items1 = array {84, 42, 21};
       auto items2 = array {84, 42, 21};
       assert::is_true(items1.equals(items2));
@@ -338,7 +338,7 @@ namespace xtd::tests {
       assert::is_false(items1.equals(items3));
     }
     
-    void test_method_(fill) {
+    auto test_method_(fill) {
       auto items = array<int>(5);
       items.fill(84);
       collection_assert::are_equal({84, 84, 84, 84, 84}, items);
@@ -348,7 +348,7 @@ namespace xtd::tests {
       collection_assert::are_equal({21, 21, 21, 21, 21}, items);
     }
     
-    void test_method_(for_each) {
+    auto test_method_(for_each) {
       auto items = array {1, 2, 3, 4, 5};
       auto accumulator = 0;
       for (auto item : items)
@@ -356,7 +356,7 @@ namespace xtd::tests {
       assert::are_equal(15, accumulator);
     }
     
-    void test_method_(get_enumerator) {
+    auto test_method_(get_enumerator) {
       auto items = array {1, 2, 3, 4, 5};
       auto enumerator = items.get_enumerator();
       auto accumulator = 0;
@@ -365,31 +365,31 @@ namespace xtd::tests {
       assert::are_equal(15, accumulator);
     }
     
-    void test_method_(get_length) {
+    auto test_method_(get_length) {
       auto items = array {84, 42, 21};
       assert::are_equal(3_z, items.get_length(0));
       assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto l = items.get_length(1);});
     }
     
-    void test_method_(get_long_length) {
+    auto test_method_(get_long_length) {
       auto items = array {84, 42, 21};
       assert::are_equal(3, items.get_long_length(0));
       assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto l = items.get_long_length(1);});
     }
     
-    void test_method_(get_lower_bound) {
+    auto test_method_(get_lower_bound) {
       auto items = array {84, 42, 21};
       assert::is_zero(items.get_lower_bound(0));
       assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto l = items.get_lower_bound(1);});
     }
     
-    void test_method_(get_upper_bound) {
+    auto test_method_(get_upper_bound) {
       auto items = array {84, 42, 21};
       assert::are_equal(2_z, items.get_upper_bound(0));
       assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto l = items.get_upper_bound(1);});
     }
     
-    void test_method_(get_value_with_index) {
+    auto test_method_(get_value_with_index) {
       auto items = array {1, 2, 3, 4, 5};
       assert::are_equal(1, items.get_value(0));
       assert::are_equal(2, items.get_value(1));
@@ -399,7 +399,7 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items.get_value(5);});
     }
     
-    void test_method_(get_value_with_indexes_array) {
+    auto test_method_(get_value_with_indexes_array) {
       auto items = array {1, 2, 3, 4, 5};
       assert::are_equal(1, items.get_value(array {0_z}));
       assert::are_equal(2, items.get_value(array {1_z}));
@@ -409,13 +409,13 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items.get_value(array {5_z});});
     }
     
-    void test_method_(index_of_with_value_type) {
+    auto test_method_(index_of_with_value_type) {
       assert::are_equal(array<int>::npos, array<int> {}.index_of(42));
       assert::are_equal(1_z, array {84, 42, 21, 42}.index_of(42));
       assert::are_equal(array<int>::npos, array {84, 42, 21, 42}.index_of(0));
     }
     
-    void test_method_(resize) {
+    auto test_method_(resize) {
       auto items = array<int> {};
       assert::is_zero(items.count());
       items.resize(5);
@@ -435,7 +435,7 @@ namespace xtd::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(resize_with_value_type) {
+    auto test_method_(resize_with_value_type) {
       auto items = array<int> {};
       assert::is_zero(items.count());
       items.resize(5, 84);
@@ -455,13 +455,13 @@ namespace xtd::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(reverse) {
+    auto test_method_(reverse) {
       auto items = array<int> {1, 2, 3, 4, 5};
       array<>::reverse(items);
       collection_assert::are_equal({5, 4, 3, 2, 1}, items);
     }
     
-    void test_method_(reverse_with_index_and_count) {
+    auto test_method_(reverse_with_index_and_count) {
       auto items = array<int> {1, 2, 3, 4, 5};
       array<>::reverse(items, 1, 3);
       collection_assert::are_equal({1, 4, 3, 2, 5}, items);
@@ -469,7 +469,7 @@ namespace xtd::tests {
       assert::throws<argument_out_of_range_exception>([&] {array<>::reverse(items, 1, 5);});
     }
     
-    void test_method_(set_value_with_index) {
+    auto test_method_(set_value_with_index) {
       auto items = array {1, 2, 3, 4, 5};
       items.set_value(6, 0);
       items.set_value(7, 1);
@@ -480,7 +480,7 @@ namespace xtd::tests {
       collection_assert::are_equal({6, 7, 8, 9, 10}, items);
     }
     
-    void test_method_(set_value_with_indexes_array) {
+    auto test_method_(set_value_with_indexes_array) {
       auto items = array {1, 2, 3, 4, 5};
       items.set_value(6, array {0_z});
       items.set_value(7, array {1_z});
@@ -491,7 +491,7 @@ namespace xtd::tests {
       collection_assert::are_equal({6, 7, 8, 9, 10}, items);
     }
     
-    void test_method_(swap) {
+    auto test_method_(swap) {
       auto items1 = array<int> {1, 2, 3, 4, 5};
       auto items2 = array<int> {6, 7, 8, 9, 10};
       std::swap(items1, items2);
@@ -499,18 +499,18 @@ namespace xtd::tests {
       collection_assert::are_equal({1, 2, 3, 4, 5}, items2);
     }
     
-    void test_method_(to_string) {
+    auto test_method_(to_string) {
       assert::are_equal("[1, 2, 3, 4, 5]", array {1, 2, 3, 4, 5}.to_string());
       assert::are_equal("[one, two, three, four, five]", array {"one", "two", "three", "four", "five"}.to_string());
     }
     
-    void test_method_(index_of_with_array_and_value_type) {
+    auto test_method_(index_of_with_array_and_value_type) {
       assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42));
       assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42));
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0));
     }
     
-    void test_method_(index_of_with_array_value_type_and_index) {
+    auto test_method_(index_of_with_array_value_type_and_index) {
       assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0));
       assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 1);});
       assert::are_equal(1_z, array<>::index_of(array {84, 42, 21, 42}, 42, 0));
@@ -520,7 +520,7 @@ namespace xtd::tests {
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0));
     }
     
-    void test_method_(index_of_with_array_value_type_index_and_count) {
+    auto test_method_(index_of_with_array_value_type_index_and_count) {
       assert::are_equal(array<int>::npos, array<>::index_of(array<int> {}, 42, 0, 0));
       assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 1, 0);});
       assert::throws<argument_out_of_range_exception>([&] {array<>::index_of(array<int> {}, 42, 0, 1);});
@@ -532,7 +532,7 @@ namespace xtd::tests {
       assert::are_equal(array<int>::npos, array<>::index_of(array {84, 42, 21, 42}, 0, 0, 4));
     }
     
-    void test_method_(equal_copy_operator_with_array) {
+    auto test_method_(equal_copy_operator_with_array) {
       auto items1 = array<int> {};
       auto items2 = array {84, 42, 21};
       collection_assert::is_empty(items1);
@@ -543,7 +543,7 @@ namespace xtd::tests {
       collection_assert::is_empty(items1);
     }
     
-    void test_method_(equal_copy_operator_with_initializer_list) {
+    auto test_method_(equal_copy_operator_with_initializer_list) {
       auto items = array<int> {};
       collection_assert::is_empty(items);
       items = {84, 42, 21};
@@ -552,7 +552,7 @@ namespace xtd::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(equal_move_operator_with_array) {
+    auto test_method_(equal_move_operator_with_array) {
       auto items = array<int> {};
       collection_assert::is_empty(items);
       items = array {84, 42, 21};
@@ -561,19 +561,19 @@ namespace xtd::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(const_base_type_cast_operator) {
+    auto test_method_(const_base_type_cast_operator) {
       const auto items = array {84, 42, 21};
       const std::vector<int> base_itmes = items;
       collection_assert::are_equal({84, 42, 21}, base_itmes);
     }
     
-    void test_method_(base_type_cast_operator) {
+    auto test_method_(base_type_cast_operator) {
       auto items = array {84, 42, 21};
       std::vector<int> base_itmes = items;
       collection_assert::are_equal({84, 42, 21}, base_itmes);
     }
     
-    void test_method_(index_operator) {
+    auto test_method_(index_operator) {
       auto items = array {84, 42, 21};
       
       assert::are_equal(84, items[0]);
@@ -589,7 +589,7 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    void test_method_(index_operators_with_epos) {
+    auto test_method_(index_operators_with_epos) {
       auto items = array {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items[items.count() - 1]);
@@ -607,7 +607,7 @@ namespace xtd::tests {
       assert::are_equal(7, items[xtd::epos]);
     }
     
-    void test_method_(index_functor) {
+    auto test_method_(index_functor) {
       auto items = array {84, 42, 21};
       
       assert::are_equal(84, items(0));
@@ -623,7 +623,7 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
-    void test_method_(index_functor_with_epos) {
+    auto test_method_(index_functor_with_epos) {
       auto items = array {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items(items.count() - 1));
@@ -641,7 +641,7 @@ namespace xtd::tests {
       assert::are_equal(7, items(xtd::epos));
     }
     
-    void test_method_(indexes_array_functor) {
+    auto test_method_(indexes_array_functor) {
       auto items = array {84, 42, 21};
       
       assert::are_equal(84, items(array {0_z}));

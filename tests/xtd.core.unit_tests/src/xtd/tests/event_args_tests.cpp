@@ -25,16 +25,16 @@ namespace xtd::tests {
       int32 args_ = 0;
     };
     
-    void test_method_(event_args_ctor) {
+    auto test_method_(event_args_ctor) {
       assert::does_not_throw([] {event_args {};});
     }
     
-    void test_method_(event_args_copy) {
+    auto test_method_(event_args_copy) {
       event_args e1;
       assert::does_not_throw([&] {auto e2 = e1;});
     }
     
-    void test_method_(event_args_using) {
+    auto test_method_(event_args_using) {
       auto m_executed = false;
       auto m = [&](const event_args & e) {
         m_executed = true;
@@ -45,7 +45,7 @@ namespace xtd::tests {
       assert::is_true(m_executed);
     }
     
-    void test_method_(event_args_using_empty) {
+    auto test_method_(event_args_using_empty) {
       auto m_executed = false;
       auto m = [&](const event_args & e) {
         m_executed = true;
@@ -56,27 +56,27 @@ namespace xtd::tests {
       assert::is_true(m_executed);
     }
     
-    void test_method_(event_args_copy_with_empty) {
+    auto test_method_(event_args_copy_with_empty) {
       assert::does_not_throw([&] {auto e = event_args::empty;});
     }
     
-    void test_method_(test_event_args_ctor) {
+    auto test_method_(test_event_args_ctor) {
       test_event_args e{};
       assert::is_zero(e.args());
     }
     
-    void test_method_(test_event_args_ctor_with_args) {
+    auto test_method_(test_event_args_ctor_with_args) {
       test_event_args e{42};
       assert::are_equal(42, e.args());
     }
     
-    void test_method_(test_event_args_copy) {
+    auto test_method_(test_event_args_copy) {
       test_event_args e1;
       auto e2 = e1;
       assert::is_zero(e2.args());
     }
     
-    void test_method_(test_event_args_copy_with_args) {
+    auto test_method_(test_event_args_copy_with_args) {
       test_event_args e1 {42};
       auto e2 = e1;
       assert::are_equal(42, e2.args());

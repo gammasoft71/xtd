@@ -24,13 +24,13 @@ namespace xtd::io::tests {
       directory_assume::does_not_exist(test_path);
     }
     
-    void test_method_(create_directory) {
+    auto test_method_(create_directory) {
       directory_assume::does_not_exist(path::combine(test_path, "directory"));
       directory::create_directory(path::combine(test_path, "directory"));
       directory_assert::exists(path::combine(test_path, "directory"));
     }
     
-    void test_method_(create_directory_with_an_existing_directtory) {
+    auto test_method_(create_directory_with_an_existing_directtory) {
       directory_assume::does_not_exist(path::combine(test_path, "directory"));
       directory::create_directory(path::combine(test_path, "directory"));
       directory_assert::exists(path::combine(test_path, "directory"));
@@ -38,25 +38,25 @@ namespace xtd::io::tests {
       directory_assert::exists(path::combine(test_path, "directory"));
     }
     
-    void test_method_(create_directory_with_three_directories) {
+    auto test_method_(create_directory_with_three_directories) {
       directory_assume::does_not_exist(path::combine(test_path, "directory1", "directory2", "directory3"));
       directory::create_directory(path::combine(test_path, "directory1", "directory2", "directory3"));
       directory_assert::exists(path::combine(test_path, "directory1", "directory2", "directory3"));
     }
     
-    void test_method_(create_directory_with_empty_path) {
+    auto test_method_(create_directory_with_empty_path) {
       assert::throws<argument_exception>([] {directory::create_directory("");});
     }
     
-    void test_method_(create_directory_with_path_that_contains_spaces) {
+    auto test_method_(create_directory_with_path_that_contains_spaces) {
       assert::throws<argument_exception>([] {directory::create_directory("   ");});
     }
     
-    void test_method_(create_directory_with_path_that_contains_invalid_characters) {
+    auto test_method_(create_directory_with_path_that_contains_invalid_characters) {
       assert::throws<argument_exception>([] {directory::create_directory("direct<ory1");});
     }
     
-    void test_method_(create_directory_with_path_too_long) {
+    auto test_method_(create_directory_with_path_too_long) {
       // Windows :
       //   https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd
       //   #define MAX_PATH 260

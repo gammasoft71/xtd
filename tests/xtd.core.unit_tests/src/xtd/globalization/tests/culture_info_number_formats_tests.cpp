@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::globalization::tests {
   class test_class_(culture_info_number_formats_tests) {
-    void test_method_(invariant) {
+    auto test_method_(invariant) {
       auto number_format = culture_info {""}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -39,7 +39,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(af) {
+    auto test_method_(af) {
       auto number_format = culture_info {"af"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -69,7 +69,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(af_NA) {
+    auto test_method_(af_NA) {
       auto number_format = culture_info {"af-NA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -99,7 +99,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(af_ZA) {
+    auto test_method_(af_ZA) {
       auto number_format = culture_info {"af-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -129,7 +129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(agq) {
+    auto test_method_(agq) {
       auto number_format = culture_info {"agq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -159,7 +159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(agq_CM) {
+    auto test_method_(agq_CM) {
       auto number_format = culture_info {"agq-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -189,7 +189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ain) {
+    auto test_method_(ain) {
       auto number_format = culture_info {"ain"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -219,7 +219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ain_JP) {
+    auto test_method_(ain_JP) {
       auto number_format = culture_info {"ain-JP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -249,7 +249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ak) {
+    auto test_method_(ak) {
       auto number_format = culture_info {"ak"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -279,7 +279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ak_GH) {
+    auto test_method_(ak_GH) {
       auto number_format = culture_info {"ak-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -309,7 +309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(am) {
+    auto test_method_(am) {
       auto number_format = culture_info {"am"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -339,7 +339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(am_ET) {
+    auto test_method_(am_ET) {
       auto number_format = culture_info {"am-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -369,7 +369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(apw) {
+    auto test_method_(apw) {
       auto number_format = culture_info {"apw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -399,7 +399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(apw_US) {
+    auto test_method_(apw_US) {
       auto number_format = culture_info {"apw-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -429,7 +429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ar) {
+    auto test_method_(ar) {
       auto number_format = culture_info {"ar"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -459,7 +459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_001) {
+    auto test_method_(ar_001) {
       auto number_format = culture_info {"ar-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -489,7 +489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_AE) {
+    auto test_method_(ar_AE) {
       auto number_format = culture_info {"ar-AE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -519,7 +519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_BH) {
+    auto test_method_(ar_BH) {
       auto number_format = culture_info {"ar-BH"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -549,7 +549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_DJ) {
+    auto test_method_(ar_DJ) {
       auto number_format = culture_info {"ar-DJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -579,7 +579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_DZ) {
+    auto test_method_(ar_DZ) {
       auto number_format = culture_info {"ar-DZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -609,7 +609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_EG) {
+    auto test_method_(ar_EG) {
       auto number_format = culture_info {"ar-EG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -639,7 +639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_EH) {
+    auto test_method_(ar_EH) {
       auto number_format = culture_info {"ar-EH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -669,7 +669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_ER) {
+    auto test_method_(ar_ER) {
       auto number_format = culture_info {"ar-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -699,7 +699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_IL) {
+    auto test_method_(ar_IL) {
       auto number_format = culture_info {"ar-IL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -729,7 +729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_IQ) {
+    auto test_method_(ar_IQ) {
       auto number_format = culture_info {"ar-IQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -759,7 +759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_JO) {
+    auto test_method_(ar_JO) {
       auto number_format = culture_info {"ar-JO"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -789,7 +789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_KM) {
+    auto test_method_(ar_KM) {
       auto number_format = culture_info {"ar-KM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -819,7 +819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_KW) {
+    auto test_method_(ar_KW) {
       auto number_format = culture_info {"ar-KW"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -849,7 +849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_LB) {
+    auto test_method_(ar_LB) {
       auto number_format = culture_info {"ar-LB"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -879,7 +879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_LY) {
+    auto test_method_(ar_LY) {
       auto number_format = culture_info {"ar-LY"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -909,7 +909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_MA) {
+    auto test_method_(ar_MA) {
       auto number_format = culture_info {"ar-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -939,7 +939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_MR) {
+    auto test_method_(ar_MR) {
       auto number_format = culture_info {"ar-MR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -969,7 +969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_OM) {
+    auto test_method_(ar_OM) {
       auto number_format = culture_info {"ar-OM"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -999,7 +999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_PS) {
+    auto test_method_(ar_PS) {
       auto number_format = culture_info {"ar-PS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1029,7 +1029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_QA) {
+    auto test_method_(ar_QA) {
       auto number_format = culture_info {"ar-QA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1059,7 +1059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_SA) {
+    auto test_method_(ar_SA) {
       auto number_format = culture_info {"ar-SA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1089,7 +1089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_SD) {
+    auto test_method_(ar_SD) {
       auto number_format = culture_info {"ar-SD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1119,7 +1119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_SO) {
+    auto test_method_(ar_SO) {
       auto number_format = culture_info {"ar-SO"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1149,7 +1149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_SS) {
+    auto test_method_(ar_SS) {
       auto number_format = culture_info {"ar-SS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1179,7 +1179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_SY) {
+    auto test_method_(ar_SY) {
       auto number_format = culture_info {"ar-SY"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1209,7 +1209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_TD) {
+    auto test_method_(ar_TD) {
       auto number_format = culture_info {"ar-TD"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1239,7 +1239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(ar_TN) {
+    auto test_method_(ar_TN) {
       auto number_format = culture_info {"ar-TN"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1269,7 +1269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ar_YE) {
+    auto test_method_(ar_YE) {
       auto number_format = culture_info {"ar-YE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -1299,7 +1299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(arn) {
+    auto test_method_(arn) {
       auto number_format = culture_info {"arn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1329,7 +1329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(arn_CL) {
+    auto test_method_(arn_CL) {
       auto number_format = culture_info {"arn-CL"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1359,7 +1359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(as) {
+    auto test_method_(as) {
       auto number_format = culture_info {"as"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1389,7 +1389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(as_IN) {
+    auto test_method_(as_IN) {
       auto number_format = culture_info {"as-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1419,7 +1419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(asa) {
+    auto test_method_(asa) {
       auto number_format = culture_info {"asa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1449,7 +1449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(asa_TZ) {
+    auto test_method_(asa_TZ) {
       auto number_format = culture_info {"asa-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1479,7 +1479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ast) {
+    auto test_method_(ast) {
       auto number_format = culture_info {"ast"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1509,7 +1509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ast_ES) {
+    auto test_method_(ast_ES) {
       auto number_format = culture_info {"ast-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1539,7 +1539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(az) {
+    auto test_method_(az) {
       auto number_format = culture_info {"az"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1569,7 +1569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(az_Cyrl) {
+    auto test_method_(az_Cyrl) {
       auto number_format = culture_info {"az-Cyrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1599,7 +1599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(az_Cyrl_AZ) {
+    auto test_method_(az_Cyrl_AZ) {
       auto number_format = culture_info {"az-Cyrl-AZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1629,7 +1629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(az_Latn) {
+    auto test_method_(az_Latn) {
       auto number_format = culture_info {"az-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1659,7 +1659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(az_Latn_AZ) {
+    auto test_method_(az_Latn_AZ) {
       auto number_format = culture_info {"az-Latn-AZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1689,7 +1689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ba) {
+    auto test_method_(ba) {
       auto number_format = culture_info {"ba"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1719,7 +1719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ba_RU) {
+    auto test_method_(ba_RU) {
       auto number_format = culture_info {"ba-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1749,7 +1749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bas) {
+    auto test_method_(bas) {
       auto number_format = culture_info {"bas"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1779,7 +1779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bas_CM) {
+    auto test_method_(bas_CM) {
       auto number_format = culture_info {"bas-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1809,7 +1809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(be) {
+    auto test_method_(be) {
       auto number_format = culture_info {"be"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1839,7 +1839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(be_BY) {
+    auto test_method_(be_BY) {
       auto number_format = culture_info {"be-BY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -1869,7 +1869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bem) {
+    auto test_method_(bem) {
       auto number_format = culture_info {"bem"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1899,7 +1899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bem_ZM) {
+    auto test_method_(bem_ZM) {
       auto number_format = culture_info {"bem-ZM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1929,7 +1929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ber) {
+    auto test_method_(ber) {
       auto number_format = culture_info {"ber"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1959,7 +1959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ber_Latn) {
+    auto test_method_(ber_Latn) {
       auto number_format = culture_info {"ber-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -1989,7 +1989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ber_Latn_MA) {
+    auto test_method_(ber_Latn_MA) {
       auto number_format = culture_info {"ber-Latn-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2019,7 +2019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ber_Tfng) {
+    auto test_method_(ber_Tfng) {
       auto number_format = culture_info {"ber-Tfng"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2049,7 +2049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ber_Tfng_MA) {
+    auto test_method_(ber_Tfng_MA) {
       auto number_format = culture_info {"ber-Tfng-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2079,7 +2079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bez) {
+    auto test_method_(bez) {
       auto number_format = culture_info {"bez"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2109,7 +2109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bez_TZ) {
+    auto test_method_(bez_TZ) {
       auto number_format = culture_info {"bez-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2139,7 +2139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bg) {
+    auto test_method_(bg) {
       auto number_format = culture_info {"bg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2169,7 +2169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bg_BG) {
+    auto test_method_(bg_BG) {
       auto number_format = culture_info {"bg-BG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2199,7 +2199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bgc) {
+    auto test_method_(bgc) {
       auto number_format = culture_info {"bgc"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2229,7 +2229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bgc_IN) {
+    auto test_method_(bgc_IN) {
       auto number_format = culture_info {"bgc-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2259,7 +2259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bho) {
+    auto test_method_(bho) {
       auto number_format = culture_info {"bho"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2289,7 +2289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bho_IN) {
+    auto test_method_(bho_IN) {
       auto number_format = culture_info {"bho-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2319,7 +2319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(blo) {
+    auto test_method_(blo) {
       auto number_format = culture_info {"blo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2349,7 +2349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(blo_BJ) {
+    auto test_method_(blo_BJ) {
       auto number_format = culture_info {"blo-BJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2379,7 +2379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bm) {
+    auto test_method_(bm) {
       auto number_format = culture_info {"bm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2409,7 +2409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bm_ML) {
+    auto test_method_(bm_ML) {
       auto number_format = culture_info {"bm-ML"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2439,7 +2439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bn) {
+    auto test_method_(bn) {
       auto number_format = culture_info {"bn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2469,7 +2469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bn_BD) {
+    auto test_method_(bn_BD) {
       auto number_format = culture_info {"bn-BD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2499,7 +2499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bn_IN) {
+    auto test_method_(bn_IN) {
       auto number_format = culture_info {"bn-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2529,7 +2529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bo) {
+    auto test_method_(bo) {
       auto number_format = culture_info {"bo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2559,7 +2559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bo_CN) {
+    auto test_method_(bo_CN) {
       auto number_format = culture_info {"bo-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2589,7 +2589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bo_IN) {
+    auto test_method_(bo_IN) {
       auto number_format = culture_info {"bo-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2619,7 +2619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(br) {
+    auto test_method_(br) {
       auto number_format = culture_info {"br"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2649,7 +2649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(br_FR) {
+    auto test_method_(br_FR) {
       auto number_format = culture_info {"br-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2679,7 +2679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(brx) {
+    auto test_method_(brx) {
       auto number_format = culture_info {"brx"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2709,7 +2709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(brx_IN) {
+    auto test_method_(brx_IN) {
       auto number_format = culture_info {"brx-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2739,7 +2739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bs) {
+    auto test_method_(bs) {
       auto number_format = culture_info {"bs"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2769,7 +2769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bs_Cyrl) {
+    auto test_method_(bs_Cyrl) {
       auto number_format = culture_info {"bs-Cyrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2799,7 +2799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bs_Cyrl_BA) {
+    auto test_method_(bs_Cyrl_BA) {
       auto number_format = culture_info {"bs-Cyrl-BA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2829,7 +2829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bs_Latn) {
+    auto test_method_(bs_Latn) {
       auto number_format = culture_info {"bs-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2859,7 +2859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(bs_Latn_BA) {
+    auto test_method_(bs_Latn_BA) {
       auto number_format = culture_info {"bs-Latn-BA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2889,7 +2889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(byn) {
+    auto test_method_(byn) {
       auto number_format = culture_info {"byn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2919,7 +2919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(byn_ER) {
+    auto test_method_(byn_ER) {
       auto number_format = culture_info {"byn-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -2949,7 +2949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ca) {
+    auto test_method_(ca) {
       auto number_format = culture_info {"ca"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -2979,7 +2979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ca_AD) {
+    auto test_method_(ca_AD) {
       auto number_format = culture_info {"ca-AD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3009,7 +3009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ca_ES) {
+    auto test_method_(ca_ES) {
       auto number_format = culture_info {"ca-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3039,7 +3039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ca_FR) {
+    auto test_method_(ca_FR) {
       auto number_format = culture_info {"ca-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3069,7 +3069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ca_IT) {
+    auto test_method_(ca_IT) {
       auto number_format = culture_info {"ca-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3099,7 +3099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ccp) {
+    auto test_method_(ccp) {
       auto number_format = culture_info {"ccp"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3129,7 +3129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ccp_BD) {
+    auto test_method_(ccp_BD) {
       auto number_format = culture_info {"ccp-BD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3159,7 +3159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ccp_IN) {
+    auto test_method_(ccp_IN) {
       auto number_format = culture_info {"ccp-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3189,7 +3189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ce) {
+    auto test_method_(ce) {
       auto number_format = culture_info {"ce"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3219,7 +3219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ce_RU) {
+    auto test_method_(ce_RU) {
       auto number_format = culture_info {"ce-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3249,7 +3249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ceb) {
+    auto test_method_(ceb) {
       auto number_format = culture_info {"ceb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3279,7 +3279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ceb_PH) {
+    auto test_method_(ceb_PH) {
       auto number_format = culture_info {"ceb-PH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3309,7 +3309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cgg) {
+    auto test_method_(cgg) {
       auto number_format = culture_info {"cgg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3339,7 +3339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cgg_UG) {
+    auto test_method_(cgg_UG) {
       auto number_format = culture_info {"cgg-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3369,7 +3369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cho) {
+    auto test_method_(cho) {
       auto number_format = culture_info {"cho"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3399,7 +3399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cho_US) {
+    auto test_method_(cho_US) {
       auto number_format = culture_info {"cho-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3429,7 +3429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(chr) {
+    auto test_method_(chr) {
       auto number_format = culture_info {"chr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3459,7 +3459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(chr_US) {
+    auto test_method_(chr_US) {
       auto number_format = culture_info {"chr-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3489,7 +3489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cic) {
+    auto test_method_(cic) {
       auto number_format = culture_info {"cic"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3519,7 +3519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cic_US) {
+    auto test_method_(cic_US) {
       auto number_format = culture_info {"cic-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3549,7 +3549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ckb) {
+    auto test_method_(ckb) {
       auto number_format = culture_info {"ckb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -3579,7 +3579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‏+", number_format.positive_sign());
     }
     
-    void test_method_(ckb_IQ) {
+    auto test_method_(ckb_IQ) {
       auto number_format = culture_info {"ckb-IQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -3609,7 +3609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‏+", number_format.positive_sign());
     }
     
-    void test_method_(ckb_IR) {
+    auto test_method_(ckb_IR) {
       auto number_format = culture_info {"ckb-IR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -3639,7 +3639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‏+", number_format.positive_sign());
     }
     
-    void test_method_(co) {
+    auto test_method_(co) {
       auto number_format = culture_info {"co"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3669,7 +3669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(co_FR) {
+    auto test_method_(co_FR) {
       auto number_format = culture_info {"co-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3699,7 +3699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cs) {
+    auto test_method_(cs) {
       auto number_format = culture_info {"cs"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3729,7 +3729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cs_CZ) {
+    auto test_method_(cs_CZ) {
       auto number_format = culture_info {"cs-CZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3759,7 +3759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(csw) {
+    auto test_method_(csw) {
       auto number_format = culture_info {"csw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3789,7 +3789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(csw_CA) {
+    auto test_method_(csw_CA) {
       auto number_format = culture_info {"csw-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3819,7 +3819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cv) {
+    auto test_method_(cv) {
       auto number_format = culture_info {"cv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3849,7 +3849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cv_RU) {
+    auto test_method_(cv_RU) {
       auto number_format = culture_info {"cv-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3879,7 +3879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cy) {
+    auto test_method_(cy) {
       auto number_format = culture_info {"cy"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3909,7 +3909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(cy_GB) {
+    auto test_method_(cy_GB) {
       auto number_format = culture_info {"cy-GB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -3939,7 +3939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(da) {
+    auto test_method_(da) {
       auto number_format = culture_info {"da"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3969,7 +3969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(da_DK) {
+    auto test_method_(da_DK) {
       auto number_format = culture_info {"da-DK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -3999,7 +3999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(da_GL) {
+    auto test_method_(da_GL) {
       auto number_format = culture_info {"da-GL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4029,7 +4029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dav) {
+    auto test_method_(dav) {
       auto number_format = culture_info {"dav"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4059,7 +4059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dav_KE) {
+    auto test_method_(dav_KE) {
       auto number_format = culture_info {"dav-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4089,7 +4089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de) {
+    auto test_method_(de) {
       auto number_format = culture_info {"de"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4119,7 +4119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_AT) {
+    auto test_method_(de_AT) {
       auto number_format = culture_info {"de-AT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4149,7 +4149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_BE) {
+    auto test_method_(de_BE) {
       auto number_format = culture_info {"de-BE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4179,7 +4179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_CH) {
+    auto test_method_(de_CH) {
       auto number_format = culture_info {"de-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4209,7 +4209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_DE) {
+    auto test_method_(de_DE) {
       auto number_format = culture_info {"de-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4239,7 +4239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_IT) {
+    auto test_method_(de_IT) {
       auto number_format = culture_info {"de-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4269,7 +4269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_LI) {
+    auto test_method_(de_LI) {
       auto number_format = culture_info {"de-LI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4299,7 +4299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(de_LU) {
+    auto test_method_(de_LU) {
       auto number_format = culture_info {"de-LU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4329,7 +4329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dje) {
+    auto test_method_(dje) {
       auto number_format = culture_info {"dje"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4359,7 +4359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dje_NE) {
+    auto test_method_(dje_NE) {
       auto number_format = culture_info {"dje-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4389,7 +4389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(doi) {
+    auto test_method_(doi) {
       auto number_format = culture_info {"doi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4419,7 +4419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(doi_IN) {
+    auto test_method_(doi_IN) {
       auto number_format = culture_info {"doi-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4449,7 +4449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dsb) {
+    auto test_method_(dsb) {
       auto number_format = culture_info {"dsb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4479,7 +4479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dsb_DE) {
+    auto test_method_(dsb_DE) {
       auto number_format = culture_info {"dsb-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4509,7 +4509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dua) {
+    auto test_method_(dua) {
       auto number_format = culture_info {"dua"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4539,7 +4539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dua_CM) {
+    auto test_method_(dua_CM) {
       auto number_format = culture_info {"dua-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4569,7 +4569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dv) {
+    auto test_method_(dv) {
       auto number_format = culture_info {"dv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4599,7 +4599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dv_MV) {
+    auto test_method_(dv_MV) {
       auto number_format = culture_info {"dv-MV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4629,7 +4629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dyo) {
+    auto test_method_(dyo) {
       auto number_format = culture_info {"dyo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4659,7 +4659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dyo_SN) {
+    auto test_method_(dyo_SN) {
       auto number_format = culture_info {"dyo-SN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4689,7 +4689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dz) {
+    auto test_method_(dz) {
       auto number_format = culture_info {"dz"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4719,7 +4719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(dz_BT) {
+    auto test_method_(dz_BT) {
       auto number_format = culture_info {"dz-BT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4749,7 +4749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ebu) {
+    auto test_method_(ebu) {
       auto number_format = culture_info {"ebu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4779,7 +4779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ebu_KE) {
+    auto test_method_(ebu_KE) {
       auto number_format = culture_info {"ebu-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4809,7 +4809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ee) {
+    auto test_method_(ee) {
       auto number_format = culture_info {"ee"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4839,7 +4839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ee_GH) {
+    auto test_method_(ee_GH) {
       auto number_format = culture_info {"ee-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4869,7 +4869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ee_TG) {
+    auto test_method_(ee_TG) {
       auto number_format = culture_info {"ee-TG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -4899,7 +4899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(el) {
+    auto test_method_(el) {
       auto number_format = culture_info {"el"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4929,7 +4929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(el_CY) {
+    auto test_method_(el_CY) {
       auto number_format = culture_info {"el-CY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4959,7 +4959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(el_GR) {
+    auto test_method_(el_GR) {
       auto number_format = culture_info {"el-GR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -4989,7 +4989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en) {
+    auto test_method_(en) {
       auto number_format = culture_info {"en"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5019,7 +5019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_001) {
+    auto test_method_(en_001) {
       auto number_format = culture_info {"en-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5049,7 +5049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_150) {
+    auto test_method_(en_150) {
       auto number_format = culture_info {"en-150"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5079,7 +5079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AE) {
+    auto test_method_(en_AE) {
       auto number_format = culture_info {"en-AE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5109,7 +5109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AG) {
+    auto test_method_(en_AG) {
       auto number_format = culture_info {"en-AG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5139,7 +5139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AI) {
+    auto test_method_(en_AI) {
       auto number_format = culture_info {"en-AI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5169,7 +5169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AL) {
+    auto test_method_(en_AL) {
       auto number_format = culture_info {"en-AL"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5199,7 +5199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AR) {
+    auto test_method_(en_AR) {
       auto number_format = culture_info {"en-AR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5229,7 +5229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AS) {
+    auto test_method_(en_AS) {
       auto number_format = culture_info {"en-AS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5259,7 +5259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AT) {
+    auto test_method_(en_AT) {
       auto number_format = culture_info {"en-AT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5289,7 +5289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_AU) {
+    auto test_method_(en_AU) {
       auto number_format = culture_info {"en-AU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5319,7 +5319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BB) {
+    auto test_method_(en_BB) {
       auto number_format = culture_info {"en-BB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5349,7 +5349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BD) {
+    auto test_method_(en_BD) {
       auto number_format = culture_info {"en-BD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5379,7 +5379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BE) {
+    auto test_method_(en_BE) {
       auto number_format = culture_info {"en-BE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5409,7 +5409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BG) {
+    auto test_method_(en_BG) {
       auto number_format = culture_info {"en-BG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5439,7 +5439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BI) {
+    auto test_method_(en_BI) {
       auto number_format = culture_info {"en-BI"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5469,7 +5469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BM) {
+    auto test_method_(en_BM) {
       auto number_format = culture_info {"en-BM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5499,7 +5499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BN) {
+    auto test_method_(en_BN) {
       auto number_format = culture_info {"en-BN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5529,7 +5529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BR) {
+    auto test_method_(en_BR) {
       auto number_format = culture_info {"en-BR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5559,7 +5559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BS) {
+    auto test_method_(en_BS) {
       auto number_format = culture_info {"en-BS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5589,7 +5589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BW) {
+    auto test_method_(en_BW) {
       auto number_format = culture_info {"en-BW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5619,7 +5619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_BZ) {
+    auto test_method_(en_BZ) {
       auto number_format = culture_info {"en-BZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5649,7 +5649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CA) {
+    auto test_method_(en_CA) {
       auto number_format = culture_info {"en-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5679,7 +5679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CC) {
+    auto test_method_(en_CC) {
       auto number_format = culture_info {"en-CC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5709,7 +5709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CH) {
+    auto test_method_(en_CH) {
       auto number_format = culture_info {"en-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5739,7 +5739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CK) {
+    auto test_method_(en_CK) {
       auto number_format = culture_info {"en-CK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5769,7 +5769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CL) {
+    auto test_method_(en_CL) {
       auto number_format = culture_info {"en-CL"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5799,7 +5799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CM) {
+    auto test_method_(en_CM) {
       auto number_format = culture_info {"en-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5829,7 +5829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CN) {
+    auto test_method_(en_CN) {
       auto number_format = culture_info {"en-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5859,7 +5859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CO) {
+    auto test_method_(en_CO) {
       auto number_format = culture_info {"en-CO"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -5889,7 +5889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CV) {
+    auto test_method_(en_CV) {
       auto number_format = culture_info {"en-CV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("$", number_format.currency_decimal_separator());
@@ -5919,7 +5919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CX) {
+    auto test_method_(en_CX) {
       auto number_format = culture_info {"en-CX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5949,7 +5949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CY) {
+    auto test_method_(en_CY) {
       auto number_format = culture_info {"en-CY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -5979,7 +5979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_CZ) {
+    auto test_method_(en_CZ) {
       auto number_format = culture_info {"en-CZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6009,7 +6009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_DE) {
+    auto test_method_(en_DE) {
       auto number_format = culture_info {"en-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6039,7 +6039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_DG) {
+    auto test_method_(en_DG) {
       auto number_format = culture_info {"en-DG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6069,7 +6069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_DK) {
+    auto test_method_(en_DK) {
       auto number_format = culture_info {"en-DK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6099,7 +6099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_DM) {
+    auto test_method_(en_DM) {
       auto number_format = culture_info {"en-DM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6129,7 +6129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_EE) {
+    auto test_method_(en_EE) {
       auto number_format = culture_info {"en-EE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6159,7 +6159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_ER) {
+    auto test_method_(en_ER) {
       auto number_format = culture_info {"en-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6189,7 +6189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_FI) {
+    auto test_method_(en_FI) {
       auto number_format = culture_info {"en-FI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6219,7 +6219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_FJ) {
+    auto test_method_(en_FJ) {
       auto number_format = culture_info {"en-FJ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6249,7 +6249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_FK) {
+    auto test_method_(en_FK) {
       auto number_format = culture_info {"en-FK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6279,7 +6279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_FM) {
+    auto test_method_(en_FM) {
       auto number_format = culture_info {"en-FM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6309,7 +6309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_FR) {
+    auto test_method_(en_FR) {
       auto number_format = culture_info {"en-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6339,7 +6339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GB) {
+    auto test_method_(en_GB) {
       auto number_format = culture_info {"en-GB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6369,7 +6369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GD) {
+    auto test_method_(en_GD) {
       auto number_format = culture_info {"en-GD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6399,7 +6399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GG) {
+    auto test_method_(en_GG) {
       auto number_format = culture_info {"en-GG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6429,7 +6429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GH) {
+    auto test_method_(en_GH) {
       auto number_format = culture_info {"en-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6459,7 +6459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GI) {
+    auto test_method_(en_GI) {
       auto number_format = culture_info {"en-GI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6489,7 +6489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GM) {
+    auto test_method_(en_GM) {
       auto number_format = culture_info {"en-GM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6519,7 +6519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GR) {
+    auto test_method_(en_GR) {
       auto number_format = culture_info {"en-GR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6549,7 +6549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GU) {
+    auto test_method_(en_GU) {
       auto number_format = culture_info {"en-GU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6579,7 +6579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_GY) {
+    auto test_method_(en_GY) {
       auto number_format = culture_info {"en-GY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6609,7 +6609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_HK) {
+    auto test_method_(en_HK) {
       auto number_format = culture_info {"en-HK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6639,7 +6639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_HU) {
+    auto test_method_(en_HU) {
       auto number_format = culture_info {"en-HU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6669,7 +6669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_ID) {
+    auto test_method_(en_ID) {
       auto number_format = culture_info {"en-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -6699,7 +6699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_IE) {
+    auto test_method_(en_IE) {
       auto number_format = culture_info {"en-IE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6729,7 +6729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_IL) {
+    auto test_method_(en_IL) {
       auto number_format = culture_info {"en-IL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6759,7 +6759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_IM) {
+    auto test_method_(en_IM) {
       auto number_format = culture_info {"en-IM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6789,7 +6789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_IN) {
+    auto test_method_(en_IN) {
       auto number_format = culture_info {"en-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6819,7 +6819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_IO) {
+    auto test_method_(en_IO) {
       auto number_format = culture_info {"en-IO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6849,7 +6849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_JE) {
+    auto test_method_(en_JE) {
       auto number_format = culture_info {"en-JE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6879,7 +6879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_JM) {
+    auto test_method_(en_JM) {
       auto number_format = culture_info {"en-JM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6909,7 +6909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_JP) {
+    auto test_method_(en_JP) {
       auto number_format = culture_info {"en-JP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6939,7 +6939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_KE) {
+    auto test_method_(en_KE) {
       auto number_format = culture_info {"en-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6969,7 +6969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_KI) {
+    auto test_method_(en_KI) {
       auto number_format = culture_info {"en-KI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -6999,7 +6999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_KN) {
+    auto test_method_(en_KN) {
       auto number_format = culture_info {"en-KN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7029,7 +7029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_KR) {
+    auto test_method_(en_KR) {
       auto number_format = culture_info {"en-KR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7059,7 +7059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_KY) {
+    auto test_method_(en_KY) {
       auto number_format = culture_info {"en-KY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7089,7 +7089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_LC) {
+    auto test_method_(en_LC) {
       auto number_format = culture_info {"en-LC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7119,7 +7119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_LR) {
+    auto test_method_(en_LR) {
       auto number_format = culture_info {"en-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7149,7 +7149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_LS) {
+    auto test_method_(en_LS) {
       auto number_format = culture_info {"en-LS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7179,7 +7179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_LT) {
+    auto test_method_(en_LT) {
       auto number_format = culture_info {"en-LT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -7209,7 +7209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_LV) {
+    auto test_method_(en_LV) {
       auto number_format = culture_info {"en-LV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -7239,7 +7239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MG) {
+    auto test_method_(en_MG) {
       auto number_format = culture_info {"en-MG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7269,7 +7269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MH) {
+    auto test_method_(en_MH) {
       auto number_format = culture_info {"en-MH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7299,7 +7299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MM) {
+    auto test_method_(en_MM) {
       auto number_format = culture_info {"en-MM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7329,7 +7329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MO) {
+    auto test_method_(en_MO) {
       auto number_format = culture_info {"en-MO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7359,7 +7359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MP) {
+    auto test_method_(en_MP) {
       auto number_format = culture_info {"en-MP"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7389,7 +7389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MS) {
+    auto test_method_(en_MS) {
       auto number_format = culture_info {"en-MS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7419,7 +7419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MT) {
+    auto test_method_(en_MT) {
       auto number_format = culture_info {"en-MT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7449,7 +7449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MU) {
+    auto test_method_(en_MU) {
       auto number_format = culture_info {"en-MU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7479,7 +7479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MV) {
+    auto test_method_(en_MV) {
       auto number_format = culture_info {"en-MV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7509,7 +7509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MW) {
+    auto test_method_(en_MW) {
       auto number_format = culture_info {"en-MW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7539,7 +7539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MX) {
+    auto test_method_(en_MX) {
       auto number_format = culture_info {"en-MX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7569,7 +7569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_MY) {
+    auto test_method_(en_MY) {
       auto number_format = culture_info {"en-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7599,7 +7599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NA) {
+    auto test_method_(en_NA) {
       auto number_format = culture_info {"en-NA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7629,7 +7629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NF) {
+    auto test_method_(en_NF) {
       auto number_format = culture_info {"en-NF"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7659,7 +7659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NG) {
+    auto test_method_(en_NG) {
       auto number_format = culture_info {"en-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7689,7 +7689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NL) {
+    auto test_method_(en_NL) {
       auto number_format = culture_info {"en-NL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -7719,7 +7719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NO) {
+    auto test_method_(en_NO) {
       auto number_format = culture_info {"en-NO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -7749,7 +7749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NR) {
+    auto test_method_(en_NR) {
       auto number_format = culture_info {"en-NR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7779,7 +7779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NU) {
+    auto test_method_(en_NU) {
       auto number_format = culture_info {"en-NU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7809,7 +7809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_NZ) {
+    auto test_method_(en_NZ) {
       auto number_format = culture_info {"en-NZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7839,7 +7839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PG) {
+    auto test_method_(en_PG) {
       auto number_format = culture_info {"en-PG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7869,7 +7869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PH) {
+    auto test_method_(en_PH) {
       auto number_format = culture_info {"en-PH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7899,7 +7899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PK) {
+    auto test_method_(en_PK) {
       auto number_format = culture_info {"en-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7929,7 +7929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PL) {
+    auto test_method_(en_PL) {
       auto number_format = culture_info {"en-PL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -7959,7 +7959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PN) {
+    auto test_method_(en_PN) {
       auto number_format = culture_info {"en-PN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -7989,7 +7989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PR) {
+    auto test_method_(en_PR) {
       auto number_format = culture_info {"en-PR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8019,7 +8019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PT) {
+    auto test_method_(en_PT) {
       auto number_format = culture_info {"en-PT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8049,7 +8049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_PW) {
+    auto test_method_(en_PW) {
       auto number_format = culture_info {"en-PW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8079,7 +8079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_RU) {
+    auto test_method_(en_RU) {
       auto number_format = culture_info {"en-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8109,7 +8109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_RW) {
+    auto test_method_(en_RW) {
       auto number_format = culture_info {"en-RW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8139,7 +8139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SA) {
+    auto test_method_(en_SA) {
       auto number_format = culture_info {"en-SA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8169,7 +8169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SB) {
+    auto test_method_(en_SB) {
       auto number_format = culture_info {"en-SB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8199,7 +8199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SC) {
+    auto test_method_(en_SC) {
       auto number_format = culture_info {"en-SC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8229,7 +8229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SD) {
+    auto test_method_(en_SD) {
       auto number_format = culture_info {"en-SD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8259,7 +8259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SE) {
+    auto test_method_(en_SE) {
       auto number_format = culture_info {"en-SE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8289,7 +8289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SG) {
+    auto test_method_(en_SG) {
       auto number_format = culture_info {"en-SG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8319,7 +8319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SH) {
+    auto test_method_(en_SH) {
       auto number_format = culture_info {"en-SH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8349,7 +8349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SI) {
+    auto test_method_(en_SI) {
       auto number_format = culture_info {"en-SI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8379,7 +8379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SK) {
+    auto test_method_(en_SK) {
       auto number_format = culture_info {"en-SK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8409,7 +8409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SL) {
+    auto test_method_(en_SL) {
       auto number_format = culture_info {"en-SL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8439,7 +8439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SS) {
+    auto test_method_(en_SS) {
       auto number_format = culture_info {"en-SS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8469,7 +8469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SX) {
+    auto test_method_(en_SX) {
       auto number_format = culture_info {"en-SX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8499,7 +8499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_SZ) {
+    auto test_method_(en_SZ) {
       auto number_format = culture_info {"en-SZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8529,7 +8529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TC) {
+    auto test_method_(en_TC) {
       auto number_format = culture_info {"en-TC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8559,7 +8559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TH) {
+    auto test_method_(en_TH) {
       auto number_format = culture_info {"en-TH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8589,7 +8589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TK) {
+    auto test_method_(en_TK) {
       auto number_format = culture_info {"en-TK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8619,7 +8619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TO) {
+    auto test_method_(en_TO) {
       auto number_format = culture_info {"en-TO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8649,7 +8649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TR) {
+    auto test_method_(en_TR) {
       auto number_format = culture_info {"en-TR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8679,7 +8679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TT) {
+    auto test_method_(en_TT) {
       auto number_format = culture_info {"en-TT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8709,7 +8709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TV) {
+    auto test_method_(en_TV) {
       auto number_format = culture_info {"en-TV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8739,7 +8739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TW) {
+    auto test_method_(en_TW) {
       auto number_format = culture_info {"en-TW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8769,7 +8769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_TZ) {
+    auto test_method_(en_TZ) {
       auto number_format = culture_info {"en-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8799,7 +8799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_UA) {
+    auto test_method_(en_UA) {
       auto number_format = culture_info {"en-UA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -8829,7 +8829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_UG) {
+    auto test_method_(en_UG) {
       auto number_format = culture_info {"en-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8859,7 +8859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_UM) {
+    auto test_method_(en_UM) {
       auto number_format = culture_info {"en-UM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8889,7 +8889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_US) {
+    auto test_method_(en_US) {
       auto number_format = culture_info {"en-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8919,7 +8919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_US_POSIX) {
+    auto test_method_(en_US_POSIX) {
       auto number_format = culture_info {"en-US-POSIX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8949,7 +8949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_VC) {
+    auto test_method_(en_VC) {
       auto number_format = culture_info {"en-VC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -8979,7 +8979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_VG) {
+    auto test_method_(en_VG) {
       auto number_format = culture_info {"en-VG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9009,7 +9009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_VI) {
+    auto test_method_(en_VI) {
       auto number_format = culture_info {"en-VI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9039,7 +9039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_VU) {
+    auto test_method_(en_VU) {
       auto number_format = culture_info {"en-VU"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9069,7 +9069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_WS) {
+    auto test_method_(en_WS) {
       auto number_format = culture_info {"en-WS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9099,7 +9099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_ZA) {
+    auto test_method_(en_ZA) {
       auto number_format = culture_info {"en-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9129,7 +9129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_ZM) {
+    auto test_method_(en_ZM) {
       auto number_format = culture_info {"en-ZM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9159,7 +9159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(en_ZW) {
+    auto test_method_(en_ZW) {
       auto number_format = culture_info {"en-ZW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9189,7 +9189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(eo) {
+    auto test_method_(eo) {
       auto number_format = culture_info {"eo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9219,7 +9219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(eo_001) {
+    auto test_method_(eo_001) {
       auto number_format = culture_info {"eo-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9249,7 +9249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es) {
+    auto test_method_(es) {
       auto number_format = culture_info {"es"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9279,7 +9279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_003) {
+    auto test_method_(es_003) {
       auto number_format = culture_info {"es-003"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9309,7 +9309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_419) {
+    auto test_method_(es_419) {
       auto number_format = culture_info {"es-419"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9339,7 +9339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_AG) {
+    auto test_method_(es_AG) {
       auto number_format = culture_info {"es-AG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9369,7 +9369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_AR) {
+    auto test_method_(es_AR) {
       auto number_format = culture_info {"es-AR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9399,7 +9399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BB) {
+    auto test_method_(es_BB) {
       auto number_format = culture_info {"es-BB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9429,7 +9429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BM) {
+    auto test_method_(es_BM) {
       auto number_format = culture_info {"es-BM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9459,7 +9459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BO) {
+    auto test_method_(es_BO) {
       auto number_format = culture_info {"es-BO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9489,7 +9489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BQ) {
+    auto test_method_(es_BQ) {
       auto number_format = culture_info {"es-BQ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9519,7 +9519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BR) {
+    auto test_method_(es_BR) {
       auto number_format = culture_info {"es-BR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9549,7 +9549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BS) {
+    auto test_method_(es_BS) {
       auto number_format = culture_info {"es-BS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9579,7 +9579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_BZ) {
+    auto test_method_(es_BZ) {
       auto number_format = culture_info {"es-BZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9609,7 +9609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CA) {
+    auto test_method_(es_CA) {
       auto number_format = culture_info {"es-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9639,7 +9639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CL) {
+    auto test_method_(es_CL) {
       auto number_format = culture_info {"es-CL"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9669,7 +9669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CO) {
+    auto test_method_(es_CO) {
       auto number_format = culture_info {"es-CO"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9699,7 +9699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CR) {
+    auto test_method_(es_CR) {
       auto number_format = culture_info {"es-CR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9729,7 +9729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CU) {
+    auto test_method_(es_CU) {
       auto number_format = culture_info {"es-CU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9759,7 +9759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_CW) {
+    auto test_method_(es_CW) {
       auto number_format = culture_info {"es-CW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9789,7 +9789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_DM) {
+    auto test_method_(es_DM) {
       auto number_format = culture_info {"es-DM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9819,7 +9819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_DO) {
+    auto test_method_(es_DO) {
       auto number_format = culture_info {"es-DO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9849,7 +9849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_EA) {
+    auto test_method_(es_EA) {
       auto number_format = culture_info {"es-EA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9879,7 +9879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_EC) {
+    auto test_method_(es_EC) {
       auto number_format = culture_info {"es-EC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9909,7 +9909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_ES) {
+    auto test_method_(es_ES) {
       auto number_format = culture_info {"es-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9939,7 +9939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_GD) {
+    auto test_method_(es_GD) {
       auto number_format = culture_info {"es-GD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -9969,7 +9969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_GQ) {
+    auto test_method_(es_GQ) {
       auto number_format = culture_info {"es-GQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -9999,7 +9999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_GT) {
+    auto test_method_(es_GT) {
       auto number_format = culture_info {"es-GT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10029,7 +10029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_GY) {
+    auto test_method_(es_GY) {
       auto number_format = culture_info {"es-GY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10059,7 +10059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_HN) {
+    auto test_method_(es_HN) {
       auto number_format = culture_info {"es-HN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10089,7 +10089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_HT) {
+    auto test_method_(es_HT) {
       auto number_format = culture_info {"es-HT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10119,7 +10119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_IC) {
+    auto test_method_(es_IC) {
       auto number_format = culture_info {"es-IC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10149,7 +10149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_KN) {
+    auto test_method_(es_KN) {
       auto number_format = culture_info {"es-KN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10179,7 +10179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_KY) {
+    auto test_method_(es_KY) {
       auto number_format = culture_info {"es-KY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10209,7 +10209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_LC) {
+    auto test_method_(es_LC) {
       auto number_format = culture_info {"es-LC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10239,7 +10239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_MX) {
+    auto test_method_(es_MX) {
       auto number_format = culture_info {"es-MX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10269,7 +10269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_NI) {
+    auto test_method_(es_NI) {
       auto number_format = culture_info {"es-NI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10299,7 +10299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_PA) {
+    auto test_method_(es_PA) {
       auto number_format = culture_info {"es-PA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10329,7 +10329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_PE) {
+    auto test_method_(es_PE) {
       auto number_format = culture_info {"es-PE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10359,7 +10359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_PH) {
+    auto test_method_(es_PH) {
       auto number_format = culture_info {"es-PH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10389,7 +10389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_PR) {
+    auto test_method_(es_PR) {
       auto number_format = culture_info {"es-PR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10419,7 +10419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_PY) {
+    auto test_method_(es_PY) {
       auto number_format = culture_info {"es-PY"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10449,7 +10449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_SV) {
+    auto test_method_(es_SV) {
       auto number_format = culture_info {"es-SV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10479,7 +10479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_TC) {
+    auto test_method_(es_TC) {
       auto number_format = culture_info {"es-TC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10509,7 +10509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_TT) {
+    auto test_method_(es_TT) {
       auto number_format = culture_info {"es-TT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10539,7 +10539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_US) {
+    auto test_method_(es_US) {
       auto number_format = culture_info {"es-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10569,7 +10569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_UY) {
+    auto test_method_(es_UY) {
       auto number_format = culture_info {"es-UY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10599,7 +10599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_VC) {
+    auto test_method_(es_VC) {
       auto number_format = culture_info {"es-VC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10629,7 +10629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_VE) {
+    auto test_method_(es_VE) {
       auto number_format = culture_info {"es-VE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10659,7 +10659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_VG) {
+    auto test_method_(es_VG) {
       auto number_format = culture_info {"es-VG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10689,7 +10689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(es_VI) {
+    auto test_method_(es_VI) {
       auto number_format = culture_info {"es-VI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -10719,7 +10719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(et) {
+    auto test_method_(et) {
       auto number_format = culture_info {"et"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10749,7 +10749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(et_EE) {
+    auto test_method_(et_EE) {
       auto number_format = culture_info {"et-EE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10779,7 +10779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(eu) {
+    auto test_method_(eu) {
       auto number_format = culture_info {"eu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10809,7 +10809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(eu_ES) {
+    auto test_method_(eu_ES) {
       auto number_format = culture_info {"eu-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10839,7 +10839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ewo) {
+    auto test_method_(ewo) {
       auto number_format = culture_info {"ewo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10869,7 +10869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ewo_CM) {
+    auto test_method_(ewo_CM) {
       auto number_format = culture_info {"ewo-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -10899,7 +10899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fa) {
+    auto test_method_(fa) {
       auto number_format = culture_info {"fa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -10929,7 +10929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(fa_AF) {
+    auto test_method_(fa_AF) {
       auto number_format = culture_info {"fa-AF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -10959,7 +10959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(fa_IR) {
+    auto test_method_(fa_IR) {
       auto number_format = culture_info {"fa-IR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -10989,7 +10989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ff) {
+    auto test_method_(ff) {
       auto number_format = culture_info {"ff"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11019,7 +11019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm) {
+    auto test_method_(ff_Adlm) {
       auto number_format = culture_info {"ff-Adlm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11049,7 +11049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_BF) {
+    auto test_method_(ff_Adlm_BF) {
       auto number_format = culture_info {"ff-Adlm-BF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11079,7 +11079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_CM) {
+    auto test_method_(ff_Adlm_CM) {
       auto number_format = culture_info {"ff-Adlm-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11109,7 +11109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_GH) {
+    auto test_method_(ff_Adlm_GH) {
       auto number_format = culture_info {"ff-Adlm-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11139,7 +11139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_GM) {
+    auto test_method_(ff_Adlm_GM) {
       auto number_format = culture_info {"ff-Adlm-GM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11169,7 +11169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_GN) {
+    auto test_method_(ff_Adlm_GN) {
       auto number_format = culture_info {"ff-Adlm-GN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11199,7 +11199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_GW) {
+    auto test_method_(ff_Adlm_GW) {
       auto number_format = culture_info {"ff-Adlm-GW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11229,7 +11229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_LR) {
+    auto test_method_(ff_Adlm_LR) {
       auto number_format = culture_info {"ff-Adlm-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11259,7 +11259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_MR) {
+    auto test_method_(ff_Adlm_MR) {
       auto number_format = culture_info {"ff-Adlm-MR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11289,7 +11289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_NE) {
+    auto test_method_(ff_Adlm_NE) {
       auto number_format = culture_info {"ff-Adlm-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11319,7 +11319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_NG) {
+    auto test_method_(ff_Adlm_NG) {
       auto number_format = culture_info {"ff-Adlm-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11349,7 +11349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_SL) {
+    auto test_method_(ff_Adlm_SL) {
       auto number_format = culture_info {"ff-Adlm-SL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11379,7 +11379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Adlm_SN) {
+    auto test_method_(ff_Adlm_SN) {
       auto number_format = culture_info {"ff-Adlm-SN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11409,7 +11409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn) {
+    auto test_method_(ff_Latn) {
       auto number_format = culture_info {"ff-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11439,7 +11439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_BF) {
+    auto test_method_(ff_Latn_BF) {
       auto number_format = culture_info {"ff-Latn-BF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11469,7 +11469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_CM) {
+    auto test_method_(ff_Latn_CM) {
       auto number_format = culture_info {"ff-Latn-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11499,7 +11499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_GH) {
+    auto test_method_(ff_Latn_GH) {
       auto number_format = culture_info {"ff-Latn-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11529,7 +11529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_GM) {
+    auto test_method_(ff_Latn_GM) {
       auto number_format = culture_info {"ff-Latn-GM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11559,7 +11559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_GN) {
+    auto test_method_(ff_Latn_GN) {
       auto number_format = culture_info {"ff-Latn-GN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11589,7 +11589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_GW) {
+    auto test_method_(ff_Latn_GW) {
       auto number_format = culture_info {"ff-Latn-GW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11619,7 +11619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_LR) {
+    auto test_method_(ff_Latn_LR) {
       auto number_format = culture_info {"ff-Latn-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11649,7 +11649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_MR) {
+    auto test_method_(ff_Latn_MR) {
       auto number_format = culture_info {"ff-Latn-MR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11679,7 +11679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_NE) {
+    auto test_method_(ff_Latn_NE) {
       auto number_format = culture_info {"ff-Latn-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11709,7 +11709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_NG) {
+    auto test_method_(ff_Latn_NG) {
       auto number_format = culture_info {"ff-Latn-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11739,7 +11739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_SL) {
+    auto test_method_(ff_Latn_SL) {
       auto number_format = culture_info {"ff-Latn-SL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11769,7 +11769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ff_Latn_SN) {
+    auto test_method_(ff_Latn_SN) {
       auto number_format = culture_info {"ff-Latn-SN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11799,7 +11799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fi) {
+    auto test_method_(fi) {
       auto number_format = culture_info {"fi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11829,7 +11829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fi_FI) {
+    auto test_method_(fi_FI) {
       auto number_format = culture_info {"fi-FI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11859,7 +11859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fil) {
+    auto test_method_(fil) {
       auto number_format = culture_info {"fil"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11889,7 +11889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fil_PH) {
+    auto test_method_(fil_PH) {
       auto number_format = culture_info {"fil-PH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -11919,7 +11919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fo) {
+    auto test_method_(fo) {
       auto number_format = culture_info {"fo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11949,7 +11949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fo_DK) {
+    auto test_method_(fo_DK) {
       auto number_format = culture_info {"fo-DK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -11979,7 +11979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fo_FO) {
+    auto test_method_(fo_FO) {
       auto number_format = culture_info {"fo-FO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12009,7 +12009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr) {
+    auto test_method_(fr) {
       auto number_format = culture_info {"fr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12039,7 +12039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_BE) {
+    auto test_method_(fr_BE) {
       auto number_format = culture_info {"fr-BE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12069,7 +12069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_BF) {
+    auto test_method_(fr_BF) {
       auto number_format = culture_info {"fr-BF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12099,7 +12099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_BI) {
+    auto test_method_(fr_BI) {
       auto number_format = culture_info {"fr-BI"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12129,7 +12129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_BJ) {
+    auto test_method_(fr_BJ) {
       auto number_format = culture_info {"fr-BJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12159,7 +12159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_BL) {
+    auto test_method_(fr_BL) {
       auto number_format = culture_info {"fr-BL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12189,7 +12189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CA) {
+    auto test_method_(fr_CA) {
       auto number_format = culture_info {"fr-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12219,7 +12219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CD) {
+    auto test_method_(fr_CD) {
       auto number_format = culture_info {"fr-CD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12249,7 +12249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CF) {
+    auto test_method_(fr_CF) {
       auto number_format = culture_info {"fr-CF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12279,7 +12279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CG) {
+    auto test_method_(fr_CG) {
       auto number_format = culture_info {"fr-CG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12309,7 +12309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CH) {
+    auto test_method_(fr_CH) {
       auto number_format = culture_info {"fr-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -12339,7 +12339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CI) {
+    auto test_method_(fr_CI) {
       auto number_format = culture_info {"fr-CI"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12369,7 +12369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_CM) {
+    auto test_method_(fr_CM) {
       auto number_format = culture_info {"fr-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12399,7 +12399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_DJ) {
+    auto test_method_(fr_DJ) {
       auto number_format = culture_info {"fr-DJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12429,7 +12429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_DZ) {
+    auto test_method_(fr_DZ) {
       auto number_format = culture_info {"fr-DZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12459,7 +12459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_FR) {
+    auto test_method_(fr_FR) {
       auto number_format = culture_info {"fr-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12489,7 +12489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_GA) {
+    auto test_method_(fr_GA) {
       auto number_format = culture_info {"fr-GA"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12519,7 +12519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_GF) {
+    auto test_method_(fr_GF) {
       auto number_format = culture_info {"fr-GF"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12549,7 +12549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_GN) {
+    auto test_method_(fr_GN) {
       auto number_format = culture_info {"fr-GN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12579,7 +12579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_GP) {
+    auto test_method_(fr_GP) {
       auto number_format = culture_info {"fr-GP"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12609,7 +12609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_GQ) {
+    auto test_method_(fr_GQ) {
       auto number_format = culture_info {"fr-GQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12639,7 +12639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_HT) {
+    auto test_method_(fr_HT) {
       auto number_format = culture_info {"fr-HT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12669,7 +12669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_KM) {
+    auto test_method_(fr_KM) {
       auto number_format = culture_info {"fr-KM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12699,7 +12699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_LU) {
+    auto test_method_(fr_LU) {
       auto number_format = culture_info {"fr-LU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12729,7 +12729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MA) {
+    auto test_method_(fr_MA) {
       auto number_format = culture_info {"fr-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12759,7 +12759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MC) {
+    auto test_method_(fr_MC) {
       auto number_format = culture_info {"fr-MC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12789,7 +12789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MF) {
+    auto test_method_(fr_MF) {
       auto number_format = culture_info {"fr-MF"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12819,7 +12819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MG) {
+    auto test_method_(fr_MG) {
       auto number_format = culture_info {"fr-MG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12849,7 +12849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_ML) {
+    auto test_method_(fr_ML) {
       auto number_format = culture_info {"fr-ML"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12879,7 +12879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MQ) {
+    auto test_method_(fr_MQ) {
       auto number_format = culture_info {"fr-MQ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12909,7 +12909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MR) {
+    auto test_method_(fr_MR) {
       auto number_format = culture_info {"fr-MR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12939,7 +12939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_MU) {
+    auto test_method_(fr_MU) {
       auto number_format = culture_info {"fr-MU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12969,7 +12969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_NC) {
+    auto test_method_(fr_NC) {
       auto number_format = culture_info {"fr-NC"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -12999,7 +12999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_NE) {
+    auto test_method_(fr_NE) {
       auto number_format = culture_info {"fr-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13029,7 +13029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_PF) {
+    auto test_method_(fr_PF) {
       auto number_format = culture_info {"fr-PF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13059,7 +13059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_PM) {
+    auto test_method_(fr_PM) {
       auto number_format = culture_info {"fr-PM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13089,7 +13089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_RE) {
+    auto test_method_(fr_RE) {
       auto number_format = culture_info {"fr-RE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13119,7 +13119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_RW) {
+    auto test_method_(fr_RW) {
       auto number_format = culture_info {"fr-RW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13149,7 +13149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_SC) {
+    auto test_method_(fr_SC) {
       auto number_format = culture_info {"fr-SC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13179,7 +13179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_SN) {
+    auto test_method_(fr_SN) {
       auto number_format = culture_info {"fr-SN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13209,7 +13209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_SY) {
+    auto test_method_(fr_SY) {
       auto number_format = culture_info {"fr-SY"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13239,7 +13239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_TD) {
+    auto test_method_(fr_TD) {
       auto number_format = culture_info {"fr-TD"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13269,7 +13269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_TG) {
+    auto test_method_(fr_TG) {
       auto number_format = culture_info {"fr-TG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13299,7 +13299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_TN) {
+    auto test_method_(fr_TN) {
       auto number_format = culture_info {"fr-TN"}.number_format();
       assert::are_equal(3, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13329,7 +13329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_VU) {
+    auto test_method_(fr_VU) {
       auto number_format = culture_info {"fr-VU"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13359,7 +13359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_WF) {
+    auto test_method_(fr_WF) {
       auto number_format = culture_info {"fr-WF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13389,7 +13389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fr_YT) {
+    auto test_method_(fr_YT) {
       auto number_format = culture_info {"fr-YT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13419,7 +13419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fur) {
+    auto test_method_(fur) {
       auto number_format = culture_info {"fur"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13449,7 +13449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fur_IT) {
+    auto test_method_(fur_IT) {
       auto number_format = culture_info {"fur-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13479,7 +13479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fy) {
+    auto test_method_(fy) {
       auto number_format = culture_info {"fy"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13509,7 +13509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(fy_NL) {
+    auto test_method_(fy_NL) {
       auto number_format = culture_info {"fy-NL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13539,7 +13539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ga) {
+    auto test_method_(ga) {
       auto number_format = culture_info {"ga"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13569,7 +13569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ga_GB) {
+    auto test_method_(ga_GB) {
       auto number_format = culture_info {"ga-GB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13599,7 +13599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ga_IE) {
+    auto test_method_(ga_IE) {
       auto number_format = culture_info {"ga-IE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13629,7 +13629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gaa) {
+    auto test_method_(gaa) {
       auto number_format = culture_info {"gaa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13659,7 +13659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gaa_GH) {
+    auto test_method_(gaa_GH) {
       auto number_format = culture_info {"gaa-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13689,7 +13689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gd) {
+    auto test_method_(gd) {
       auto number_format = culture_info {"gd"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13719,7 +13719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gd_GB) {
+    auto test_method_(gd_GB) {
       auto number_format = culture_info {"gd-GB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13749,7 +13749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gez) {
+    auto test_method_(gez) {
       auto number_format = culture_info {"gez"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13779,7 +13779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gez_ER) {
+    auto test_method_(gez_ER) {
       auto number_format = culture_info {"gez-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13809,7 +13809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gez_ET) {
+    auto test_method_(gez_ET) {
       auto number_format = culture_info {"gez-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13839,7 +13839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gl) {
+    auto test_method_(gl) {
       auto number_format = culture_info {"gl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13869,7 +13869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gl_ES) {
+    auto test_method_(gl_ES) {
       auto number_format = culture_info {"gl-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -13899,7 +13899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gn) {
+    auto test_method_(gn) {
       auto number_format = culture_info {"gn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13929,7 +13929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gn_PY) {
+    auto test_method_(gn_PY) {
       auto number_format = culture_info {"gn-PY"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13959,7 +13959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gsw) {
+    auto test_method_(gsw) {
       auto number_format = culture_info {"gsw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -13989,7 +13989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gsw_CH) {
+    auto test_method_(gsw_CH) {
       auto number_format = culture_info {"gsw-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14019,7 +14019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gsw_FR) {
+    auto test_method_(gsw_FR) {
       auto number_format = culture_info {"gsw-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14049,7 +14049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gsw_LI) {
+    auto test_method_(gsw_LI) {
       auto number_format = culture_info {"gsw-LI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14079,7 +14079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gu) {
+    auto test_method_(gu) {
       auto number_format = culture_info {"gu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14109,7 +14109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gu_IN) {
+    auto test_method_(gu_IN) {
       auto number_format = culture_info {"gu-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14139,7 +14139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(guz) {
+    auto test_method_(guz) {
       auto number_format = culture_info {"guz"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14169,7 +14169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(guz_KE) {
+    auto test_method_(guz_KE) {
       auto number_format = culture_info {"guz-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14199,7 +14199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gv) {
+    auto test_method_(gv) {
       auto number_format = culture_info {"gv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14229,7 +14229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(gv_IM) {
+    auto test_method_(gv_IM) {
       auto number_format = culture_info {"gv-IM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14259,7 +14259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ha) {
+    auto test_method_(ha) {
       auto number_format = culture_info {"ha"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14289,7 +14289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ha_GH) {
+    auto test_method_(ha_GH) {
       auto number_format = culture_info {"ha-GH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14319,7 +14319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ha_NE) {
+    auto test_method_(ha_NE) {
       auto number_format = culture_info {"ha-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14349,7 +14349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ha_NG) {
+    auto test_method_(ha_NG) {
       auto number_format = culture_info {"ha-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14379,7 +14379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(haw) {
+    auto test_method_(haw) {
       auto number_format = culture_info {"haw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14409,7 +14409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(haw_US) {
+    auto test_method_(haw_US) {
       auto number_format = culture_info {"haw-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14439,7 +14439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(he) {
+    auto test_method_(he) {
       auto number_format = culture_info {"he"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14469,7 +14469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(he_IL) {
+    auto test_method_(he_IL) {
       auto number_format = culture_info {"he-IL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14499,7 +14499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(hi) {
+    auto test_method_(hi) {
       auto number_format = culture_info {"hi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14529,7 +14529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hi_IN) {
+    auto test_method_(hi_IN) {
       auto number_format = culture_info {"hi-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14559,7 +14559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hi_Latn) {
+    auto test_method_(hi_Latn) {
       auto number_format = culture_info {"hi-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14589,7 +14589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hi_Latn_IN) {
+    auto test_method_(hi_Latn_IN) {
       auto number_format = culture_info {"hi-Latn-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14619,7 +14619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hmn) {
+    auto test_method_(hmn) {
       auto number_format = culture_info {"hmn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14649,7 +14649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hmn_CN) {
+    auto test_method_(hmn_CN) {
       auto number_format = culture_info {"hmn-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -14679,7 +14679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hr) {
+    auto test_method_(hr) {
       auto number_format = culture_info {"hr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14709,7 +14709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hr_BA) {
+    auto test_method_(hr_BA) {
       auto number_format = culture_info {"hr-BA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14739,7 +14739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hr_HR) {
+    auto test_method_(hr_HR) {
       auto number_format = culture_info {"hr-HR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14769,7 +14769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hsb) {
+    auto test_method_(hsb) {
       auto number_format = culture_info {"hsb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14799,7 +14799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hsb_DE) {
+    auto test_method_(hsb_DE) {
       auto number_format = culture_info {"hsb-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14829,7 +14829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hu) {
+    auto test_method_(hu) {
       auto number_format = culture_info {"hu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14859,7 +14859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hu_HU) {
+    auto test_method_(hu_HU) {
       auto number_format = culture_info {"hu-HU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14889,7 +14889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hy) {
+    auto test_method_(hy) {
       auto number_format = culture_info {"hy"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14919,7 +14919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(hy_AM) {
+    auto test_method_(hy_AM) {
       auto number_format = culture_info {"hy-AM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14949,7 +14949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ia) {
+    auto test_method_(ia) {
       auto number_format = culture_info {"ia"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -14979,7 +14979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ia_001) {
+    auto test_method_(ia_001) {
       auto number_format = culture_info {"ia-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15009,7 +15009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(id) {
+    auto test_method_(id) {
       auto number_format = culture_info {"id"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15039,7 +15039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(id_ID) {
+    auto test_method_(id_ID) {
       auto number_format = culture_info {"id-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15069,7 +15069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ie) {
+    auto test_method_(ie) {
       auto number_format = culture_info {"ie"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15099,7 +15099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ie_EE) {
+    auto test_method_(ie_EE) {
       auto number_format = culture_info {"ie-EE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15129,7 +15129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ig) {
+    auto test_method_(ig) {
       auto number_format = culture_info {"ig"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15159,7 +15159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ig_NG) {
+    auto test_method_(ig_NG) {
       auto number_format = culture_info {"ig-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15189,7 +15189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ii) {
+    auto test_method_(ii) {
       auto number_format = culture_info {"ii"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15219,7 +15219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ii_CN) {
+    auto test_method_(ii_CN) {
       auto number_format = culture_info {"ii-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15249,7 +15249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(inh) {
+    auto test_method_(inh) {
       auto number_format = culture_info {"inh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15279,7 +15279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(io) {
+    auto test_method_(io) {
       auto number_format = culture_info {"io"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15309,7 +15309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(io_001) {
+    auto test_method_(io_001) {
       auto number_format = culture_info {"io-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15339,7 +15339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(is) {
+    auto test_method_(is) {
       auto number_format = culture_info {"is"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15369,7 +15369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(is_IS) {
+    auto test_method_(is_IS) {
       auto number_format = culture_info {"is-IS"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15399,7 +15399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(it) {
+    auto test_method_(it) {
       auto number_format = culture_info {"it"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15429,7 +15429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(it_CH) {
+    auto test_method_(it_CH) {
       auto number_format = culture_info {"it-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15459,7 +15459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(it_IT) {
+    auto test_method_(it_IT) {
       auto number_format = culture_info {"it-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15489,7 +15489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(it_SM) {
+    auto test_method_(it_SM) {
       auto number_format = culture_info {"it-SM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15519,7 +15519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(it_VA) {
+    auto test_method_(it_VA) {
       auto number_format = culture_info {"it-VA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15549,7 +15549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(iu) {
+    auto test_method_(iu) {
       auto number_format = culture_info {"iu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15579,7 +15579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(iu_CA) {
+    auto test_method_(iu_CA) {
       auto number_format = culture_info {"iu-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15609,7 +15609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ja) {
+    auto test_method_(ja) {
       auto number_format = culture_info {"ja"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15639,7 +15639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ja_JP) {
+    auto test_method_(ja_JP) {
       auto number_format = culture_info {"ja-JP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15669,7 +15669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jbo) {
+    auto test_method_(jbo) {
       auto number_format = culture_info {"jbo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15699,7 +15699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jbo_001) {
+    auto test_method_(jbo_001) {
       auto number_format = culture_info {"jbo-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15729,7 +15729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jgo) {
+    auto test_method_(jgo) {
       auto number_format = culture_info {"jgo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15759,7 +15759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jgo_CM) {
+    auto test_method_(jgo_CM) {
       auto number_format = culture_info {"jgo-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15789,7 +15789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jmc) {
+    auto test_method_(jmc) {
       auto number_format = culture_info {"jmc"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15819,7 +15819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jmc_TZ) {
+    auto test_method_(jmc_TZ) {
       auto number_format = culture_info {"jmc-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -15849,7 +15849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jv) {
+    auto test_method_(jv) {
       auto number_format = culture_info {"jv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15879,7 +15879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(jv_ID) {
+    auto test_method_(jv_ID) {
       auto number_format = culture_info {"jv-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15909,7 +15909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ka) {
+    auto test_method_(ka) {
       auto number_format = culture_info {"ka"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15939,7 +15939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ka_GE) {
+    auto test_method_(ka_GE) {
       auto number_format = culture_info {"ka-GE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15969,7 +15969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kab) {
+    auto test_method_(kab) {
       auto number_format = culture_info {"kab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -15999,7 +15999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kab_DZ) {
+    auto test_method_(kab_DZ) {
       auto number_format = culture_info {"kab-DZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16029,7 +16029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kaj) {
+    auto test_method_(kaj) {
       auto number_format = culture_info {"kaj"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16059,7 +16059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kaj_NG) {
+    auto test_method_(kaj_NG) {
       auto number_format = culture_info {"kaj-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16089,7 +16089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kam) {
+    auto test_method_(kam) {
       auto number_format = culture_info {"kam"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16119,7 +16119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kam_KE) {
+    auto test_method_(kam_KE) {
       auto number_format = culture_info {"kam-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16149,7 +16149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kcg) {
+    auto test_method_(kcg) {
       auto number_format = culture_info {"kcg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16179,7 +16179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kcg_NG) {
+    auto test_method_(kcg_NG) {
       auto number_format = culture_info {"kcg-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16209,7 +16209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kde) {
+    auto test_method_(kde) {
       auto number_format = culture_info {"kde"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16239,7 +16239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kde_TZ) {
+    auto test_method_(kde_TZ) {
       auto number_format = culture_info {"kde-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16269,7 +16269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kea) {
+    auto test_method_(kea) {
       auto number_format = culture_info {"kea"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16299,7 +16299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kea_CV) {
+    auto test_method_(kea_CV) {
       auto number_format = culture_info {"kea-CV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("$", number_format.currency_decimal_separator());
@@ -16329,7 +16329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kgp) {
+    auto test_method_(kgp) {
       auto number_format = culture_info {"kgp"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16359,7 +16359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kgp_BR) {
+    auto test_method_(kgp_BR) {
       auto number_format = culture_info {"kgp-BR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16389,7 +16389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(khq) {
+    auto test_method_(khq) {
       auto number_format = culture_info {"khq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16419,7 +16419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(khq_ML) {
+    auto test_method_(khq_ML) {
       auto number_format = culture_info {"khq-ML"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16449,7 +16449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ki) {
+    auto test_method_(ki) {
       auto number_format = culture_info {"ki"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16479,7 +16479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ki_KE) {
+    auto test_method_(ki_KE) {
       auto number_format = culture_info {"ki-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16509,7 +16509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kk) {
+    auto test_method_(kk) {
       auto number_format = culture_info {"kk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16539,7 +16539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kk_Cyrl) {
+    auto test_method_(kk_Cyrl) {
       auto number_format = culture_info {"kk-Cyrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16569,7 +16569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kk_Cyrl_KZ) {
+    auto test_method_(kk_Cyrl_KZ) {
       auto number_format = culture_info {"kk-Cyrl-KZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16599,7 +16599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kk_KZ) {
+    auto test_method_(kk_KZ) {
       auto number_format = culture_info {"kk-KZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16629,7 +16629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kkj) {
+    auto test_method_(kkj) {
       auto number_format = culture_info {"kkj"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16659,7 +16659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kkj_CM) {
+    auto test_method_(kkj_CM) {
       auto number_format = culture_info {"kkj-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16689,7 +16689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kl) {
+    auto test_method_(kl) {
       auto number_format = culture_info {"kl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16719,7 +16719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kl_GL) {
+    auto test_method_(kl_GL) {
       auto number_format = culture_info {"kl-GL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -16749,7 +16749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kln) {
+    auto test_method_(kln) {
       auto number_format = culture_info {"kln"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16779,7 +16779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kln_KE) {
+    auto test_method_(kln_KE) {
       auto number_format = culture_info {"kln-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16809,7 +16809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(km) {
+    auto test_method_(km) {
       auto number_format = culture_info {"km"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16839,7 +16839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(km_KH) {
+    auto test_method_(km_KH) {
       auto number_format = culture_info {"km-KH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16869,7 +16869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kn) {
+    auto test_method_(kn) {
       auto number_format = culture_info {"kn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16899,7 +16899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kn_IN) {
+    auto test_method_(kn_IN) {
       auto number_format = culture_info {"kn-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16929,7 +16929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ko) {
+    auto test_method_(ko) {
       auto number_format = culture_info {"ko"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16959,7 +16959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ko_CN) {
+    auto test_method_(ko_CN) {
       auto number_format = culture_info {"ko-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -16989,7 +16989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ko_KP) {
+    auto test_method_(ko_KP) {
       auto number_format = culture_info {"ko-KP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17019,7 +17019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ko_KR) {
+    auto test_method_(ko_KR) {
       auto number_format = culture_info {"ko-KR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17049,7 +17049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kok) {
+    auto test_method_(kok) {
       auto number_format = culture_info {"kok"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17079,7 +17079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kok_Deva) {
+    auto test_method_(kok_Deva) {
       auto number_format = culture_info {"kok-Deva"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17109,7 +17109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kok_Deva_IN) {
+    auto test_method_(kok_Deva_IN) {
       auto number_format = culture_info {"kok-Deva-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17139,7 +17139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kok_Latn) {
+    auto test_method_(kok_Latn) {
       auto number_format = culture_info {"kok-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17169,7 +17169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kok_Latn_IN) {
+    auto test_method_(kok_Latn_IN) {
       auto number_format = culture_info {"kok-Latn-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17199,7 +17199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kpe) {
+    auto test_method_(kpe) {
       auto number_format = culture_info {"kpe"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17229,7 +17229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kpe_GN) {
+    auto test_method_(kpe_GN) {
       auto number_format = culture_info {"kpe-GN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17259,7 +17259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kpe_LR) {
+    auto test_method_(kpe_LR) {
       auto number_format = culture_info {"kpe-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17289,7 +17289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ks) {
+    auto test_method_(ks) {
       auto number_format = culture_info {"ks"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -17319,7 +17319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ks_Arab) {
+    auto test_method_(ks_Arab) {
       auto number_format = culture_info {"ks-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -17349,7 +17349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ks_Arab_IN) {
+    auto test_method_(ks_Arab_IN) {
       auto number_format = culture_info {"ks-Arab-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -17379,7 +17379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ks_Aran_IN) {
+    auto test_method_(ks_Aran_IN) {
       auto number_format = culture_info {"ks-Aran-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -17409,7 +17409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ks_Deva) {
+    auto test_method_(ks_Deva) {
       auto number_format = culture_info {"ks-Deva"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17439,7 +17439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ks_Deva_IN) {
+    auto test_method_(ks_Deva_IN) {
       auto number_format = culture_info {"ks-Deva-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17469,7 +17469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksb) {
+    auto test_method_(ksb) {
       auto number_format = culture_info {"ksb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17499,7 +17499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksb_TZ) {
+    auto test_method_(ksb_TZ) {
       auto number_format = culture_info {"ksb-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17529,7 +17529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksf) {
+    auto test_method_(ksf) {
       auto number_format = culture_info {"ksf"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17559,7 +17559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksf_CM) {
+    auto test_method_(ksf_CM) {
       auto number_format = culture_info {"ksf-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17589,7 +17589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksh) {
+    auto test_method_(ksh) {
       auto number_format = culture_info {"ksh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17619,7 +17619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ksh_DE) {
+    auto test_method_(ksh_DE) {
       auto number_format = culture_info {"ksh-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17649,7 +17649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ku) {
+    auto test_method_(ku) {
       auto number_format = culture_info {"ku"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17679,7 +17679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ku_TR) {
+    auto test_method_(ku_TR) {
       auto number_format = culture_info {"ku-TR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -17709,7 +17709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kw) {
+    auto test_method_(kw) {
       auto number_format = culture_info {"kw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17739,7 +17739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kw_GB) {
+    auto test_method_(kw_GB) {
       auto number_format = culture_info {"kw-GB"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17769,7 +17769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv) {
+    auto test_method_(kxv) {
       auto number_format = culture_info {"kxv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17799,7 +17799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Deva) {
+    auto test_method_(kxv_Deva) {
       auto number_format = culture_info {"kxv-Deva"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17829,7 +17829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Deva_IN) {
+    auto test_method_(kxv_Deva_IN) {
       auto number_format = culture_info {"kxv-Deva-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17859,7 +17859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Latn) {
+    auto test_method_(kxv_Latn) {
       auto number_format = culture_info {"kxv-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17889,7 +17889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Latn_IN) {
+    auto test_method_(kxv_Latn_IN) {
       auto number_format = culture_info {"kxv-Latn-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17919,7 +17919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Orya) {
+    auto test_method_(kxv_Orya) {
       auto number_format = culture_info {"kxv-Orya"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17949,7 +17949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Orya_IN) {
+    auto test_method_(kxv_Orya_IN) {
       auto number_format = culture_info {"kxv-Orya-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -17979,7 +17979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Telu) {
+    auto test_method_(kxv_Telu) {
       auto number_format = culture_info {"kxv-Telu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18009,7 +18009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(kxv_Telu_IN) {
+    auto test_method_(kxv_Telu_IN) {
       auto number_format = culture_info {"kxv-Telu-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18039,7 +18039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ky) {
+    auto test_method_(ky) {
       auto number_format = culture_info {"ky"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18069,7 +18069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ky_KG) {
+    auto test_method_(ky_KG) {
       auto number_format = culture_info {"ky-KG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18099,7 +18099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lag) {
+    auto test_method_(lag) {
       auto number_format = culture_info {"lag"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18129,7 +18129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lag_TZ) {
+    auto test_method_(lag_TZ) {
       auto number_format = culture_info {"lag-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18159,7 +18159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lb) {
+    auto test_method_(lb) {
       auto number_format = culture_info {"lb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18189,7 +18189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lb_LU) {
+    auto test_method_(lb_LU) {
       auto number_format = culture_info {"lb-LU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18219,7 +18219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lg) {
+    auto test_method_(lg) {
       auto number_format = culture_info {"lg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18249,7 +18249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lg_UG) {
+    auto test_method_(lg_UG) {
       auto number_format = culture_info {"lg-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18279,7 +18279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lij) {
+    auto test_method_(lij) {
       auto number_format = culture_info {"lij"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18309,7 +18309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lij_IT) {
+    auto test_method_(lij_IT) {
       auto number_format = culture_info {"lij-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18339,7 +18339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lkt) {
+    auto test_method_(lkt) {
       auto number_format = culture_info {"lkt"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18369,7 +18369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lkt_US) {
+    auto test_method_(lkt_US) {
       auto number_format = culture_info {"lkt-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18399,7 +18399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lmo) {
+    auto test_method_(lmo) {
       auto number_format = culture_info {"lmo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18429,7 +18429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lmo_IT) {
+    auto test_method_(lmo_IT) {
       auto number_format = culture_info {"lmo-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18459,7 +18459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ln) {
+    auto test_method_(ln) {
       auto number_format = culture_info {"ln"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18489,7 +18489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ln_AO) {
+    auto test_method_(ln_AO) {
       auto number_format = culture_info {"ln-AO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18519,7 +18519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ln_CD) {
+    auto test_method_(ln_CD) {
       auto number_format = culture_info {"ln-CD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18549,7 +18549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ln_CF) {
+    auto test_method_(ln_CF) {
       auto number_format = culture_info {"ln-CF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18579,7 +18579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ln_CG) {
+    auto test_method_(ln_CG) {
       auto number_format = culture_info {"ln-CG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18609,7 +18609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lo) {
+    auto test_method_(lo) {
       auto number_format = culture_info {"lo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18639,7 +18639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lo_LA) {
+    auto test_method_(lo_LA) {
       auto number_format = culture_info {"lo-LA"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18669,7 +18669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lrc) {
+    auto test_method_(lrc) {
       auto number_format = culture_info {"lrc"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -18699,7 +18699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(lrc_IQ) {
+    auto test_method_(lrc_IQ) {
       auto number_format = culture_info {"lrc-IQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -18729,7 +18729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(lrc_IR) {
+    auto test_method_(lrc_IR) {
       auto number_format = culture_info {"lrc-IR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -18759,7 +18759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(lt) {
+    auto test_method_(lt) {
       auto number_format = culture_info {"lt"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18789,7 +18789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lt_LT) {
+    auto test_method_(lt_LT) {
       auto number_format = culture_info {"lt-LT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18819,7 +18819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lu) {
+    auto test_method_(lu) {
       auto number_format = culture_info {"lu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18849,7 +18849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lu_CD) {
+    auto test_method_(lu_CD) {
       auto number_format = culture_info {"lu-CD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -18879,7 +18879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(luo) {
+    auto test_method_(luo) {
       auto number_format = culture_info {"luo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18909,7 +18909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(luo_KE) {
+    auto test_method_(luo_KE) {
       auto number_format = culture_info {"luo-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18939,7 +18939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lut) {
+    auto test_method_(lut) {
       auto number_format = culture_info {"lut"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18969,7 +18969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(luy) {
+    auto test_method_(luy) {
       auto number_format = culture_info {"luy"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -18999,7 +18999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(luy_KE) {
+    auto test_method_(luy_KE) {
       auto number_format = culture_info {"luy-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19029,7 +19029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lv) {
+    auto test_method_(lv) {
       auto number_format = culture_info {"lv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19059,7 +19059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(lv_LV) {
+    auto test_method_(lv_LV) {
       auto number_format = culture_info {"lv-LV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19089,7 +19089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mai) {
+    auto test_method_(mai) {
       auto number_format = culture_info {"mai"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19119,7 +19119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mai_IN) {
+    auto test_method_(mai_IN) {
       auto number_format = culture_info {"mai-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19149,7 +19149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mas) {
+    auto test_method_(mas) {
       auto number_format = culture_info {"mas"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19179,7 +19179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mas_KE) {
+    auto test_method_(mas_KE) {
       auto number_format = culture_info {"mas-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19209,7 +19209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mas_TZ) {
+    auto test_method_(mas_TZ) {
       auto number_format = culture_info {"mas-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19239,7 +19239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mer) {
+    auto test_method_(mer) {
       auto number_format = culture_info {"mer"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19269,7 +19269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mer_KE) {
+    auto test_method_(mer_KE) {
       auto number_format = culture_info {"mer-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19299,7 +19299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mfe) {
+    auto test_method_(mfe) {
       auto number_format = culture_info {"mfe"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19329,7 +19329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mfe_MU) {
+    auto test_method_(mfe_MU) {
       auto number_format = culture_info {"mfe-MU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19359,7 +19359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mg) {
+    auto test_method_(mg) {
       auto number_format = culture_info {"mg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19389,7 +19389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mg_MG) {
+    auto test_method_(mg_MG) {
       auto number_format = culture_info {"mg-MG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19419,7 +19419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mgh) {
+    auto test_method_(mgh) {
       auto number_format = culture_info {"mgh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19449,7 +19449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mgh_MZ) {
+    auto test_method_(mgh_MZ) {
       auto number_format = culture_info {"mgh-MZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19479,7 +19479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mgo) {
+    auto test_method_(mgo) {
       auto number_format = culture_info {"mgo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19509,7 +19509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mgo_CM) {
+    auto test_method_(mgo_CM) {
       auto number_format = culture_info {"mgo-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19539,7 +19539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mi) {
+    auto test_method_(mi) {
       auto number_format = culture_info {"mi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19569,7 +19569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mi_NZ) {
+    auto test_method_(mi_NZ) {
       auto number_format = culture_info {"mi-NZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19599,7 +19599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mic) {
+    auto test_method_(mic) {
       auto number_format = culture_info {"mic"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19629,7 +19629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mic_CA) {
+    auto test_method_(mic_CA) {
       auto number_format = culture_info {"mic-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19659,7 +19659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mid) {
+    auto test_method_(mid) {
       auto number_format = culture_info {"mid"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19689,7 +19689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mid_IQ) {
+    auto test_method_(mid_IQ) {
       auto number_format = culture_info {"mid-IQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19719,7 +19719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mk) {
+    auto test_method_(mk) {
       auto number_format = culture_info {"mk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19749,7 +19749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mk_MK) {
+    auto test_method_(mk_MK) {
       auto number_format = culture_info {"mk-MK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -19779,7 +19779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ml) {
+    auto test_method_(ml) {
       auto number_format = culture_info {"ml"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19809,7 +19809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ml_IN) {
+    auto test_method_(ml_IN) {
       auto number_format = culture_info {"ml-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19839,7 +19839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mn) {
+    auto test_method_(mn) {
       auto number_format = culture_info {"mn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19869,7 +19869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mn_MN) {
+    auto test_method_(mn_MN) {
       auto number_format = culture_info {"mn-MN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19899,7 +19899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mni) {
+    auto test_method_(mni) {
       auto number_format = culture_info {"mni"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19929,7 +19929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mni_Beng) {
+    auto test_method_(mni_Beng) {
       auto number_format = culture_info {"mni-Beng"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19959,7 +19959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mni_Beng_IN) {
+    auto test_method_(mni_Beng_IN) {
       auto number_format = culture_info {"mni-Beng-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -19989,7 +19989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mni_Mtei) {
+    auto test_method_(mni_Mtei) {
       auto number_format = culture_info {"mni-Mtei"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20019,7 +20019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mni_Mtei_IN) {
+    auto test_method_(mni_Mtei_IN) {
       auto number_format = culture_info {"mni-Mtei-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20049,7 +20049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(moh) {
+    auto test_method_(moh) {
       auto number_format = culture_info {"moh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20079,7 +20079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(moh_CA) {
+    auto test_method_(moh_CA) {
       auto number_format = culture_info {"moh-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20109,7 +20109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mr) {
+    auto test_method_(mr) {
       auto number_format = culture_info {"mr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20139,7 +20139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mr_IN) {
+    auto test_method_(mr_IN) {
       auto number_format = culture_info {"mr-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20169,7 +20169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms) {
+    auto test_method_(ms) {
       auto number_format = culture_info {"ms"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20199,7 +20199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_Arab) {
+    auto test_method_(ms_Arab) {
       auto number_format = culture_info {"ms-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20229,7 +20229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_Arab_BN) {
+    auto test_method_(ms_Arab_BN) {
       auto number_format = culture_info {"ms-Arab-BN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20259,7 +20259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_Arab_MY) {
+    auto test_method_(ms_Arab_MY) {
       auto number_format = culture_info {"ms-Arab-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20289,7 +20289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_BN) {
+    auto test_method_(ms_BN) {
       auto number_format = culture_info {"ms-BN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20319,7 +20319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_ID) {
+    auto test_method_(ms_ID) {
       auto number_format = culture_info {"ms-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20349,7 +20349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_MY) {
+    auto test_method_(ms_MY) {
       auto number_format = culture_info {"ms-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20379,7 +20379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ms_SG) {
+    auto test_method_(ms_SG) {
       auto number_format = culture_info {"ms-SG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20409,7 +20409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mt) {
+    auto test_method_(mt) {
       auto number_format = culture_info {"mt"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20439,7 +20439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mt_MT) {
+    auto test_method_(mt_MT) {
       auto number_format = culture_info {"mt-MT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20469,7 +20469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mua) {
+    auto test_method_(mua) {
       auto number_format = culture_info {"mua"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20499,7 +20499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mua_CM) {
+    auto test_method_(mua_CM) {
       auto number_format = culture_info {"mua-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20529,7 +20529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mus) {
+    auto test_method_(mus) {
       auto number_format = culture_info {"mus"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20559,7 +20559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mus_US) {
+    auto test_method_(mus_US) {
       auto number_format = culture_info {"mus-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20589,7 +20589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(my) {
+    auto test_method_(my) {
       auto number_format = culture_info {"my"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20619,7 +20619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(my_MM) {
+    auto test_method_(my_MM) {
       auto number_format = culture_info {"my-MM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20649,7 +20649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(myv) {
+    auto test_method_(myv) {
       auto number_format = culture_info {"myv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20679,7 +20679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(myv_RU) {
+    auto test_method_(myv_RU) {
       auto number_format = culture_info {"myv-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20709,7 +20709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(mzn) {
+    auto test_method_(mzn) {
       auto number_format = culture_info {"mzn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -20739,7 +20739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(mzn_IR) {
+    auto test_method_(mzn_IR) {
       auto number_format = culture_info {"mzn-IR"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -20769,7 +20769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(naq) {
+    auto test_method_(naq) {
       auto number_format = culture_info {"naq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20799,7 +20799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(naq_NA) {
+    auto test_method_(naq_NA) {
       auto number_format = culture_info {"naq-NA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20829,7 +20829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nb) {
+    auto test_method_(nb) {
       auto number_format = culture_info {"nb"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20859,7 +20859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nb_NO) {
+    auto test_method_(nb_NO) {
       auto number_format = culture_info {"nb-NO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20889,7 +20889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nb_SJ) {
+    auto test_method_(nb_SJ) {
       auto number_format = culture_info {"nb-SJ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -20919,7 +20919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nd) {
+    auto test_method_(nd) {
       auto number_format = culture_info {"nd"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20949,7 +20949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nd_ZW) {
+    auto test_method_(nd_ZW) {
       auto number_format = culture_info {"nd-ZW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -20979,7 +20979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nds) {
+    auto test_method_(nds) {
       auto number_format = culture_info {"nds"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21009,7 +21009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nds_DE) {
+    auto test_method_(nds_DE) {
       auto number_format = culture_info {"nds-DE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21039,7 +21039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nds_NL) {
+    auto test_method_(nds_NL) {
       auto number_format = culture_info {"nds-NL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21069,7 +21069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ne) {
+    auto test_method_(ne) {
       auto number_format = culture_info {"ne"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21099,7 +21099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ne_IN) {
+    auto test_method_(ne_IN) {
       auto number_format = culture_info {"ne-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21129,7 +21129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ne_NP) {
+    auto test_method_(ne_NP) {
       auto number_format = culture_info {"ne-NP"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21159,7 +21159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl) {
+    auto test_method_(nl) {
       auto number_format = culture_info {"nl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21189,7 +21189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_AW) {
+    auto test_method_(nl_AW) {
       auto number_format = culture_info {"nl-AW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21219,7 +21219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_BE) {
+    auto test_method_(nl_BE) {
       auto number_format = culture_info {"nl-BE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21249,7 +21249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_BQ) {
+    auto test_method_(nl_BQ) {
       auto number_format = culture_info {"nl-BQ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21279,7 +21279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_CW) {
+    auto test_method_(nl_CW) {
       auto number_format = culture_info {"nl-CW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21309,7 +21309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_NL) {
+    auto test_method_(nl_NL) {
       auto number_format = culture_info {"nl-NL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21339,7 +21339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_SR) {
+    auto test_method_(nl_SR) {
       auto number_format = culture_info {"nl-SR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21369,7 +21369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nl_SX) {
+    auto test_method_(nl_SX) {
       auto number_format = culture_info {"nl-SX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21399,7 +21399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nmg) {
+    auto test_method_(nmg) {
       auto number_format = culture_info {"nmg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21429,7 +21429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nmg_CM) {
+    auto test_method_(nmg_CM) {
       auto number_format = culture_info {"nmg-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21459,7 +21459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nn) {
+    auto test_method_(nn) {
       auto number_format = culture_info {"nn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21489,7 +21489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nn_NO) {
+    auto test_method_(nn_NO) {
       auto number_format = culture_info {"nn-NO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21519,7 +21519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nnh) {
+    auto test_method_(nnh) {
       auto number_format = culture_info {"nnh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21549,7 +21549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nnh_CM) {
+    auto test_method_(nnh_CM) {
       auto number_format = culture_info {"nnh-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21579,7 +21579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nnp) {
+    auto test_method_(nnp) {
       auto number_format = culture_info {"nnp"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21609,7 +21609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nnp_IN) {
+    auto test_method_(nnp_IN) {
       auto number_format = culture_info {"nnp-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21639,7 +21639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(no) {
+    auto test_method_(no) {
       auto number_format = culture_info {"no"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21669,7 +21669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nqo) {
+    auto test_method_(nqo) {
       auto number_format = culture_info {"nqo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21699,7 +21699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nqo_GN) {
+    auto test_method_(nqo_GN) {
       auto number_format = culture_info {"nqo-GN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21729,7 +21729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nr) {
+    auto test_method_(nr) {
       auto number_format = culture_info {"nr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21759,7 +21759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nr_ZA) {
+    auto test_method_(nr_ZA) {
       auto number_format = culture_info {"nr-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -21789,7 +21789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nso) {
+    auto test_method_(nso) {
       auto number_format = culture_info {"nso"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21819,7 +21819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nso_ZA) {
+    auto test_method_(nso_ZA) {
       auto number_format = culture_info {"nso-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21849,7 +21849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nus) {
+    auto test_method_(nus) {
       auto number_format = culture_info {"nus"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21879,7 +21879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nus_SS) {
+    auto test_method_(nus_SS) {
       auto number_format = culture_info {"nus-SS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21909,7 +21909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nv) {
+    auto test_method_(nv) {
       auto number_format = culture_info {"nv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21939,7 +21939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nv_US) {
+    auto test_method_(nv_US) {
       auto number_format = culture_info {"nv-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21969,7 +21969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ny) {
+    auto test_method_(ny) {
       auto number_format = culture_info {"ny"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -21999,7 +21999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ny_MW) {
+    auto test_method_(ny_MW) {
       auto number_format = culture_info {"ny-MW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22029,7 +22029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nyn) {
+    auto test_method_(nyn) {
       auto number_format = culture_info {"nyn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22059,7 +22059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(nyn_UG) {
+    auto test_method_(nyn_UG) {
       auto number_format = culture_info {"nyn-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22089,7 +22089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(oc) {
+    auto test_method_(oc) {
       auto number_format = culture_info {"oc"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22119,7 +22119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(oc_ES) {
+    auto test_method_(oc_ES) {
       auto number_format = culture_info {"oc-ES"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22149,7 +22149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(oc_FR) {
+    auto test_method_(oc_FR) {
       auto number_format = culture_info {"oc-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22179,7 +22179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(om) {
+    auto test_method_(om) {
       auto number_format = culture_info {"om"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22209,7 +22209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(om_ET) {
+    auto test_method_(om_ET) {
       auto number_format = culture_info {"om-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22239,7 +22239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(om_KE) {
+    auto test_method_(om_KE) {
       auto number_format = culture_info {"om-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22269,7 +22269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(or_) {
+    auto test_method_(or_) {
       auto number_format = culture_info {"or"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22299,7 +22299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(or_IN) {
+    auto test_method_(or_IN) {
       auto number_format = culture_info {"or-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22329,7 +22329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(os) {
+    auto test_method_(os) {
       auto number_format = culture_info {"os"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22359,7 +22359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(os_GE) {
+    auto test_method_(os_GE) {
       auto number_format = culture_info {"os-GE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22389,7 +22389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(os_RU) {
+    auto test_method_(os_RU) {
       auto number_format = culture_info {"os-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22419,7 +22419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(osa) {
+    auto test_method_(osa) {
       auto number_format = culture_info {"osa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22449,7 +22449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(osa_US) {
+    auto test_method_(osa_US) {
       auto number_format = culture_info {"osa-US"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22479,7 +22479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pa) {
+    auto test_method_(pa) {
       auto number_format = culture_info {"pa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22509,7 +22509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pa_Arab) {
+    auto test_method_(pa_Arab) {
       auto number_format = culture_info {"pa-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22539,7 +22539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(pa_Arab_PK) {
+    auto test_method_(pa_Arab_PK) {
       auto number_format = culture_info {"pa-Arab-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22569,7 +22569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(pa_Aran_PK) {
+    auto test_method_(pa_Aran_PK) {
       auto number_format = culture_info {"pa-Aran-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22599,7 +22599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(pa_Guru) {
+    auto test_method_(pa_Guru) {
       auto number_format = culture_info {"pa-Guru"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22629,7 +22629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pa_Guru_IN) {
+    auto test_method_(pa_Guru_IN) {
       auto number_format = culture_info {"pa-Guru-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22659,7 +22659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pcm) {
+    auto test_method_(pcm) {
       auto number_format = culture_info {"pcm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22689,7 +22689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pcm_NG) {
+    auto test_method_(pcm_NG) {
       auto number_format = culture_info {"pcm-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22719,7 +22719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pl) {
+    auto test_method_(pl) {
       auto number_format = culture_info {"pl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22749,7 +22749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pl_PL) {
+    auto test_method_(pl_PL) {
       auto number_format = culture_info {"pl-PL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22779,7 +22779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pqm) {
+    auto test_method_(pqm) {
       auto number_format = culture_info {"pqm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22809,7 +22809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pqm_CA) {
+    auto test_method_(pqm_CA) {
       auto number_format = culture_info {"pqm-CA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -22839,7 +22839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(prg) {
+    auto test_method_(prg) {
       auto number_format = culture_info {"prg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22869,7 +22869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(prg_PL) {
+    auto test_method_(prg_PL) {
       auto number_format = culture_info {"prg-PL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -22899,7 +22899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ps) {
+    auto test_method_(ps) {
       auto number_format = culture_info {"ps"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22929,7 +22929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ps_AF) {
+    auto test_method_(ps_AF) {
       auto number_format = culture_info {"ps-AF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22959,7 +22959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(ps_PK) {
+    auto test_method_(ps_PK) {
       auto number_format = culture_info {"ps-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -22989,7 +22989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(pt) {
+    auto test_method_(pt) {
       auto number_format = culture_info {"pt"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23019,7 +23019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_AO) {
+    auto test_method_(pt_AO) {
       auto number_format = culture_info {"pt-AO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23049,7 +23049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_BR) {
+    auto test_method_(pt_BR) {
       auto number_format = culture_info {"pt-BR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23079,7 +23079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_CH) {
+    auto test_method_(pt_CH) {
       auto number_format = culture_info {"pt-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23109,7 +23109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_CV) {
+    auto test_method_(pt_CV) {
       auto number_format = culture_info {"pt-CV"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("$", number_format.currency_decimal_separator());
@@ -23139,7 +23139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_FR) {
+    auto test_method_(pt_FR) {
       auto number_format = culture_info {"pt-FR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23169,7 +23169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_GQ) {
+    auto test_method_(pt_GQ) {
       auto number_format = culture_info {"pt-GQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23199,7 +23199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_GW) {
+    auto test_method_(pt_GW) {
       auto number_format = culture_info {"pt-GW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23229,7 +23229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_LU) {
+    auto test_method_(pt_LU) {
       auto number_format = culture_info {"pt-LU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23259,7 +23259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_MO) {
+    auto test_method_(pt_MO) {
       auto number_format = culture_info {"pt-MO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23289,7 +23289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_MZ) {
+    auto test_method_(pt_MZ) {
       auto number_format = culture_info {"pt-MZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23319,7 +23319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_PT) {
+    auto test_method_(pt_PT) {
       auto number_format = culture_info {"pt-PT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23349,7 +23349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_ST) {
+    auto test_method_(pt_ST) {
       auto number_format = culture_info {"pt-ST"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23379,7 +23379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(pt_TL) {
+    auto test_method_(pt_TL) {
       auto number_format = culture_info {"pt-TL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23409,7 +23409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(qu) {
+    auto test_method_(qu) {
       auto number_format = culture_info {"qu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23439,7 +23439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(qu_BO) {
+    auto test_method_(qu_BO) {
       auto number_format = culture_info {"qu-BO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23469,7 +23469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(qu_EC) {
+    auto test_method_(qu_EC) {
       auto number_format = culture_info {"qu-EC"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23499,7 +23499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(qu_PE) {
+    auto test_method_(qu_PE) {
       auto number_format = culture_info {"qu-PE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23529,7 +23529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(raj) {
+    auto test_method_(raj) {
       auto number_format = culture_info {"raj"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23559,7 +23559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(raj_IN) {
+    auto test_method_(raj_IN) {
       auto number_format = culture_info {"raj-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23589,7 +23589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rej) {
+    auto test_method_(rej) {
       auto number_format = culture_info {"rej"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23619,7 +23619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rej_ID) {
+    auto test_method_(rej_ID) {
       auto number_format = culture_info {"rej-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23649,7 +23649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rej_Rjng) {
+    auto test_method_(rej_Rjng) {
       auto number_format = culture_info {"rej-Rjng"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23679,7 +23679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rej_Rjng_ID) {
+    auto test_method_(rej_Rjng_ID) {
       auto number_format = culture_info {"rej-Rjng-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23709,7 +23709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rhg) {
+    auto test_method_(rhg) {
       auto number_format = culture_info {"rhg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23739,7 +23739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rhg_Rohg) {
+    auto test_method_(rhg_Rohg) {
       auto number_format = culture_info {"rhg-Rohg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23769,7 +23769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rhg_Rohg_BD) {
+    auto test_method_(rhg_Rohg_BD) {
       auto number_format = culture_info {"rhg-Rohg-BD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23799,7 +23799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rhg_Rohg_MM) {
+    auto test_method_(rhg_Rohg_MM) {
       auto number_format = culture_info {"rhg-Rohg-MM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23829,7 +23829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rm) {
+    auto test_method_(rm) {
       auto number_format = culture_info {"rm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23859,7 +23859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rm_CH) {
+    auto test_method_(rm_CH) {
       auto number_format = culture_info {"rm-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -23889,7 +23889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rn) {
+    auto test_method_(rn) {
       auto number_format = culture_info {"rn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23919,7 +23919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rn_BI) {
+    auto test_method_(rn_BI) {
       auto number_format = culture_info {"rn-BI"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23949,7 +23949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ro) {
+    auto test_method_(ro) {
       auto number_format = culture_info {"ro"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -23979,7 +23979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ro_MD) {
+    auto test_method_(ro_MD) {
       auto number_format = culture_info {"ro-MD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24009,7 +24009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ro_RO) {
+    auto test_method_(ro_RO) {
       auto number_format = culture_info {"ro-RO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24039,7 +24039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rof) {
+    auto test_method_(rof) {
       auto number_format = culture_info {"rof"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24069,7 +24069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rof_TZ) {
+    auto test_method_(rof_TZ) {
       auto number_format = culture_info {"rof-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24099,7 +24099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru) {
+    auto test_method_(ru) {
       auto number_format = culture_info {"ru"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24129,7 +24129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_BY) {
+    auto test_method_(ru_BY) {
       auto number_format = culture_info {"ru-BY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24159,7 +24159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_KG) {
+    auto test_method_(ru_KG) {
       auto number_format = culture_info {"ru-KG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24189,7 +24189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_KZ) {
+    auto test_method_(ru_KZ) {
       auto number_format = culture_info {"ru-KZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24219,7 +24219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_MD) {
+    auto test_method_(ru_MD) {
       auto number_format = culture_info {"ru-MD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24249,7 +24249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_RU) {
+    auto test_method_(ru_RU) {
       auto number_format = culture_info {"ru-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24279,7 +24279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ru_UA) {
+    auto test_method_(ru_UA) {
       auto number_format = culture_info {"ru-UA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24309,7 +24309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rw) {
+    auto test_method_(rw) {
       auto number_format = culture_info {"rw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24339,7 +24339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rw_RW) {
+    auto test_method_(rw_RW) {
       auto number_format = culture_info {"rw-RW"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24369,7 +24369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rwk) {
+    auto test_method_(rwk) {
       auto number_format = culture_info {"rwk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24399,7 +24399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(rwk_TZ) {
+    auto test_method_(rwk_TZ) {
       auto number_format = culture_info {"rwk-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24429,7 +24429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sa) {
+    auto test_method_(sa) {
       auto number_format = culture_info {"sa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24459,7 +24459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sa_IN) {
+    auto test_method_(sa_IN) {
       auto number_format = culture_info {"sa-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24489,7 +24489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sah) {
+    auto test_method_(sah) {
       auto number_format = culture_info {"sah"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24519,7 +24519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sah_RU) {
+    auto test_method_(sah_RU) {
       auto number_format = culture_info {"sah-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24549,7 +24549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(saq) {
+    auto test_method_(saq) {
       auto number_format = culture_info {"saq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24579,7 +24579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(saq_KE) {
+    auto test_method_(saq_KE) {
       auto number_format = culture_info {"saq-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24609,7 +24609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sat) {
+    auto test_method_(sat) {
       auto number_format = culture_info {"sat"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24639,7 +24639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sat_Deva) {
+    auto test_method_(sat_Deva) {
       auto number_format = culture_info {"sat-Deva"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24669,7 +24669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sat_Deva_IN) {
+    auto test_method_(sat_Deva_IN) {
       auto number_format = culture_info {"sat-Deva-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24699,7 +24699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sat_Olck) {
+    auto test_method_(sat_Olck) {
       auto number_format = culture_info {"sat-Olck"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24729,7 +24729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sat_Olck_IN) {
+    auto test_method_(sat_Olck_IN) {
       auto number_format = culture_info {"sat-Olck-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24759,7 +24759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sbp) {
+    auto test_method_(sbp) {
       auto number_format = culture_info {"sbp"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24789,7 +24789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sbp_TZ) {
+    auto test_method_(sbp_TZ) {
       auto number_format = culture_info {"sbp-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24819,7 +24819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sc) {
+    auto test_method_(sc) {
       auto number_format = culture_info {"sc"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24849,7 +24849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sc_IT) {
+    auto test_method_(sc_IT) {
       auto number_format = culture_info {"sc-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -24879,7 +24879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(scn) {
+    auto test_method_(scn) {
       auto number_format = culture_info {"scn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24909,7 +24909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(scn_IT) {
+    auto test_method_(scn_IT) {
       auto number_format = culture_info {"scn-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24939,7 +24939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sd) {
+    auto test_method_(sd) {
       auto number_format = culture_info {"sd"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24969,7 +24969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(sd_Arab) {
+    auto test_method_(sd_Arab) {
       auto number_format = culture_info {"sd-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -24999,7 +24999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(sd_Arab_PK) {
+    auto test_method_(sd_Arab_PK) {
       auto number_format = culture_info {"sd-Arab-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25029,7 +25029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("؜+", number_format.positive_sign());
     }
     
-    void test_method_(sd_Deva) {
+    auto test_method_(sd_Deva) {
       auto number_format = culture_info {"sd-Deva"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25059,7 +25059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sd_Deva_IN) {
+    auto test_method_(sd_Deva_IN) {
       auto number_format = culture_info {"sd-Deva-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25089,7 +25089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(se) {
+    auto test_method_(se) {
       auto number_format = culture_info {"se"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25119,7 +25119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(se_FI) {
+    auto test_method_(se_FI) {
       auto number_format = culture_info {"se-FI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25149,7 +25149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(se_NO) {
+    auto test_method_(se_NO) {
       auto number_format = culture_info {"se-NO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25179,7 +25179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(se_SE) {
+    auto test_method_(se_SE) {
       auto number_format = culture_info {"se-SE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25209,7 +25209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(seh) {
+    auto test_method_(seh) {
       auto number_format = culture_info {"seh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25239,7 +25239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(seh_MZ) {
+    auto test_method_(seh_MZ) {
       auto number_format = culture_info {"seh-MZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25269,7 +25269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ses) {
+    auto test_method_(ses) {
       auto number_format = culture_info {"ses"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25299,7 +25299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ses_ML) {
+    auto test_method_(ses_ML) {
       auto number_format = culture_info {"ses-ML"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25329,7 +25329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sg) {
+    auto test_method_(sg) {
       auto number_format = culture_info {"sg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25359,7 +25359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sg_CF) {
+    auto test_method_(sg_CF) {
       auto number_format = culture_info {"sg-CF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25389,7 +25389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(shi) {
+    auto test_method_(shi) {
       auto number_format = culture_info {"shi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25419,7 +25419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(shi_Latn) {
+    auto test_method_(shi_Latn) {
       auto number_format = culture_info {"shi-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25449,7 +25449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(shi_Latn_MA) {
+    auto test_method_(shi_Latn_MA) {
       auto number_format = culture_info {"shi-Latn-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25479,7 +25479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(shi_Tfng) {
+    auto test_method_(shi_Tfng) {
       auto number_format = culture_info {"shi-Tfng"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25509,7 +25509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(shi_Tfng_MA) {
+    auto test_method_(shi_Tfng_MA) {
       auto number_format = culture_info {"shi-Tfng-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25539,7 +25539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(si) {
+    auto test_method_(si) {
       auto number_format = culture_info {"si"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25569,7 +25569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(si_LK) {
+    auto test_method_(si_LK) {
       auto number_format = culture_info {"si-LK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25599,7 +25599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sjd) {
+    auto test_method_(sjd) {
       auto number_format = culture_info {"sjd"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25629,7 +25629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sje) {
+    auto test_method_(sje) {
       auto number_format = culture_info {"sje"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25659,7 +25659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sju) {
+    auto test_method_(sju) {
       auto number_format = culture_info {"sju"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25689,7 +25689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sk) {
+    auto test_method_(sk) {
       auto number_format = culture_info {"sk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25719,7 +25719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sk_SK) {
+    auto test_method_(sk_SK) {
       auto number_format = culture_info {"sk-SK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25749,7 +25749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sl) {
+    auto test_method_(sl) {
       auto number_format = culture_info {"sl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25779,7 +25779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sl_SI) {
+    auto test_method_(sl_SI) {
       auto number_format = culture_info {"sl-SI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25809,7 +25809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sm) {
+    auto test_method_(sm) {
       auto number_format = culture_info {"sm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25839,7 +25839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sm_AS) {
+    auto test_method_(sm_AS) {
       auto number_format = culture_info {"sm-AS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25869,7 +25869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sm_WS) {
+    auto test_method_(sm_WS) {
       auto number_format = culture_info {"sm-WS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25899,7 +25899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(smn) {
+    auto test_method_(smn) {
       auto number_format = culture_info {"smn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25929,7 +25929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(smn_FI) {
+    auto test_method_(smn_FI) {
       auto number_format = culture_info {"smn-FI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -25959,7 +25959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sn) {
+    auto test_method_(sn) {
       auto number_format = culture_info {"sn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -25989,7 +25989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sn_ZW) {
+    auto test_method_(sn_ZW) {
       auto number_format = culture_info {"sn-ZW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26019,7 +26019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(so) {
+    auto test_method_(so) {
       auto number_format = culture_info {"so"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26049,7 +26049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(so_DJ) {
+    auto test_method_(so_DJ) {
       auto number_format = culture_info {"so-DJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26079,7 +26079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(so_ET) {
+    auto test_method_(so_ET) {
       auto number_format = culture_info {"so-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26109,7 +26109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(so_KE) {
+    auto test_method_(so_KE) {
       auto number_format = culture_info {"so-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26139,7 +26139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(so_SO) {
+    auto test_method_(so_SO) {
       auto number_format = culture_info {"so-SO"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26169,7 +26169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sq) {
+    auto test_method_(sq) {
       auto number_format = culture_info {"sq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26199,7 +26199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sq_AL) {
+    auto test_method_(sq_AL) {
       auto number_format = culture_info {"sq-AL"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26229,7 +26229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sq_MK) {
+    auto test_method_(sq_MK) {
       auto number_format = culture_info {"sq-MK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26259,7 +26259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sq_XK) {
+    auto test_method_(sq_XK) {
       auto number_format = culture_info {"sq-XK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26289,7 +26289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr) {
+    auto test_method_(sr) {
       auto number_format = culture_info {"sr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26319,7 +26319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Cyrl) {
+    auto test_method_(sr_Cyrl) {
       auto number_format = culture_info {"sr-Cyrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26349,7 +26349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Cyrl_BA) {
+    auto test_method_(sr_Cyrl_BA) {
       auto number_format = culture_info {"sr-Cyrl-BA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26379,7 +26379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Cyrl_ME) {
+    auto test_method_(sr_Cyrl_ME) {
       auto number_format = culture_info {"sr-Cyrl-ME"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26409,7 +26409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Cyrl_RS) {
+    auto test_method_(sr_Cyrl_RS) {
       auto number_format = culture_info {"sr-Cyrl-RS"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26439,7 +26439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Cyrl_XK) {
+    auto test_method_(sr_Cyrl_XK) {
       auto number_format = culture_info {"sr-Cyrl-XK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26469,7 +26469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Latn) {
+    auto test_method_(sr_Latn) {
       auto number_format = culture_info {"sr-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26499,7 +26499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Latn_BA) {
+    auto test_method_(sr_Latn_BA) {
       auto number_format = culture_info {"sr-Latn-BA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26529,7 +26529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Latn_ME) {
+    auto test_method_(sr_Latn_ME) {
       auto number_format = culture_info {"sr-Latn-ME"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26559,7 +26559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Latn_RS) {
+    auto test_method_(sr_Latn_RS) {
       auto number_format = culture_info {"sr-Latn-RS"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26589,7 +26589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sr_Latn_XK) {
+    auto test_method_(sr_Latn_XK) {
       auto number_format = culture_info {"sr-Latn-XK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26619,7 +26619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ss) {
+    auto test_method_(ss) {
       auto number_format = culture_info {"ss"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26649,7 +26649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ss_SZ) {
+    auto test_method_(ss_SZ) {
       auto number_format = culture_info {"ss-SZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26679,7 +26679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ss_ZA) {
+    auto test_method_(ss_ZA) {
       auto number_format = culture_info {"ss-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26709,7 +26709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(st) {
+    auto test_method_(st) {
       auto number_format = culture_info {"st"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26739,7 +26739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(st_LS) {
+    auto test_method_(st_LS) {
       auto number_format = culture_info {"st-LS"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26769,7 +26769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(st_ZA) {
+    auto test_method_(st_ZA) {
       auto number_format = culture_info {"st-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -26799,7 +26799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(su) {
+    auto test_method_(su) {
       auto number_format = culture_info {"su"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26829,7 +26829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(su_Latn) {
+    auto test_method_(su_Latn) {
       auto number_format = culture_info {"su-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26859,7 +26859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(su_Latn_ID) {
+    auto test_method_(su_Latn_ID) {
       auto number_format = culture_info {"su-Latn-ID"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26889,7 +26889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sv) {
+    auto test_method_(sv) {
       auto number_format = culture_info {"sv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26919,7 +26919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sv_AX) {
+    auto test_method_(sv_AX) {
       auto number_format = culture_info {"sv-AX"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26949,7 +26949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sv_FI) {
+    auto test_method_(sv_FI) {
       auto number_format = culture_info {"sv-FI"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -26979,7 +26979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sv_SE) {
+    auto test_method_(sv_SE) {
       auto number_format = culture_info {"sv-SE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27009,7 +27009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sw) {
+    auto test_method_(sw) {
       auto number_format = culture_info {"sw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27039,7 +27039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sw_CD) {
+    auto test_method_(sw_CD) {
       auto number_format = culture_info {"sw-CD"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27069,7 +27069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sw_KE) {
+    auto test_method_(sw_KE) {
       auto number_format = culture_info {"sw-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27099,7 +27099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sw_TZ) {
+    auto test_method_(sw_TZ) {
       auto number_format = culture_info {"sw-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27129,7 +27129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(sw_UG) {
+    auto test_method_(sw_UG) {
       auto number_format = culture_info {"sw-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27159,7 +27159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(syr) {
+    auto test_method_(syr) {
       auto number_format = culture_info {"syr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27189,7 +27189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(syr_IQ) {
+    auto test_method_(syr_IQ) {
       auto number_format = culture_info {"syr-IQ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27219,7 +27219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(syr_SY) {
+    auto test_method_(syr_SY) {
       auto number_format = culture_info {"syr-SY"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27249,7 +27249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(szl) {
+    auto test_method_(szl) {
       auto number_format = culture_info {"szl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27279,7 +27279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(szl_PL) {
+    auto test_method_(szl_PL) {
       auto number_format = culture_info {"szl-PL"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27309,7 +27309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ta) {
+    auto test_method_(ta) {
       auto number_format = culture_info {"ta"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27339,7 +27339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ta_IN) {
+    auto test_method_(ta_IN) {
       auto number_format = culture_info {"ta-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27369,7 +27369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ta_LK) {
+    auto test_method_(ta_LK) {
       auto number_format = culture_info {"ta-LK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27399,7 +27399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ta_MY) {
+    auto test_method_(ta_MY) {
       auto number_format = culture_info {"ta-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27429,7 +27429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ta_SG) {
+    auto test_method_(ta_SG) {
       auto number_format = culture_info {"ta-SG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27459,7 +27459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(te) {
+    auto test_method_(te) {
       auto number_format = culture_info {"te"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27489,7 +27489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(te_IN) {
+    auto test_method_(te_IN) {
       auto number_format = culture_info {"te-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27519,7 +27519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(teo) {
+    auto test_method_(teo) {
       auto number_format = culture_info {"teo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27549,7 +27549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(teo_KE) {
+    auto test_method_(teo_KE) {
       auto number_format = culture_info {"teo-KE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27579,7 +27579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(teo_UG) {
+    auto test_method_(teo_UG) {
       auto number_format = culture_info {"teo-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27609,7 +27609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tg) {
+    auto test_method_(tg) {
       auto number_format = culture_info {"tg"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27639,7 +27639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tg_TJ) {
+    auto test_method_(tg_TJ) {
       auto number_format = culture_info {"tg-TJ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27669,7 +27669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(th) {
+    auto test_method_(th) {
       auto number_format = culture_info {"th"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27699,7 +27699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(th_TH) {
+    auto test_method_(th_TH) {
       auto number_format = culture_info {"th-TH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27729,7 +27729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ti) {
+    auto test_method_(ti) {
       auto number_format = culture_info {"ti"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27759,7 +27759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ti_ER) {
+    auto test_method_(ti_ER) {
       auto number_format = culture_info {"ti-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27789,7 +27789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ti_ET) {
+    auto test_method_(ti_ET) {
       auto number_format = culture_info {"ti-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27819,7 +27819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tig) {
+    auto test_method_(tig) {
       auto number_format = culture_info {"tig"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27849,7 +27849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tig_ER) {
+    auto test_method_(tig_ER) {
       auto number_format = culture_info {"tig-ER"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27879,7 +27879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tk) {
+    auto test_method_(tk) {
       auto number_format = culture_info {"tk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27909,7 +27909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tk_TM) {
+    auto test_method_(tk_TM) {
       auto number_format = culture_info {"tk-TM"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -27939,7 +27939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tn) {
+    auto test_method_(tn) {
       auto number_format = culture_info {"tn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27969,7 +27969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tn_BW) {
+    auto test_method_(tn_BW) {
       auto number_format = culture_info {"tn-BW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -27999,7 +27999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tn_ZA) {
+    auto test_method_(tn_ZA) {
       auto number_format = culture_info {"tn-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28029,7 +28029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(to) {
+    auto test_method_(to) {
       auto number_format = culture_info {"to"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28059,7 +28059,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(to_TO) {
+    auto test_method_(to_TO) {
       auto number_format = culture_info {"to-TO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28089,7 +28089,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tok) {
+    auto test_method_(tok) {
       auto number_format = culture_info {"tok"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28119,7 +28119,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tok_001) {
+    auto test_method_(tok_001) {
       auto number_format = culture_info {"tok-001"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28149,7 +28149,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tr) {
+    auto test_method_(tr) {
       auto number_format = culture_info {"tr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28179,7 +28179,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tr_CY) {
+    auto test_method_(tr_CY) {
       auto number_format = culture_info {"tr-CY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28209,7 +28209,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tr_TR) {
+    auto test_method_(tr_TR) {
       auto number_format = culture_info {"tr-TR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28239,7 +28239,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(trv) {
+    auto test_method_(trv) {
       auto number_format = culture_info {"trv"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28269,7 +28269,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(trv_TW) {
+    auto test_method_(trv_TW) {
       auto number_format = culture_info {"trv-TW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28299,7 +28299,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ts) {
+    auto test_method_(ts) {
       auto number_format = culture_info {"ts"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28329,7 +28329,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ts_ZA) {
+    auto test_method_(ts_ZA) {
       auto number_format = culture_info {"ts-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28359,7 +28359,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tt) {
+    auto test_method_(tt) {
       auto number_format = culture_info {"tt"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28389,7 +28389,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tt_RU) {
+    auto test_method_(tt_RU) {
       auto number_format = culture_info {"tt-RU"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28419,7 +28419,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(twq) {
+    auto test_method_(twq) {
       auto number_format = culture_info {"twq"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28449,7 +28449,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(twq_NE) {
+    auto test_method_(twq_NE) {
       auto number_format = culture_info {"twq-NE"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28479,7 +28479,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tzm) {
+    auto test_method_(tzm) {
       auto number_format = culture_info {"tzm"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28509,7 +28509,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(tzm_MA) {
+    auto test_method_(tzm_MA) {
       auto number_format = culture_info {"tzm-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28539,7 +28539,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ug) {
+    auto test_method_(ug) {
       auto number_format = culture_info {"ug"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28569,7 +28569,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ug_CN) {
+    auto test_method_(ug_CN) {
       auto number_format = culture_info {"ug-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28599,7 +28599,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uk) {
+    auto test_method_(uk) {
       auto number_format = culture_info {"uk"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28629,7 +28629,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uk_UA) {
+    auto test_method_(uk_UA) {
       auto number_format = culture_info {"uk-UA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28659,7 +28659,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ur) {
+    auto test_method_(ur) {
       auto number_format = culture_info {"ur"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28689,7 +28689,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ur_Arab) {
+    auto test_method_(ur_Arab) {
       auto number_format = culture_info {"ur-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28719,7 +28719,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ur_Arab_IN) {
+    auto test_method_(ur_Arab_IN) {
       auto number_format = culture_info {"ur-Arab-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28749,7 +28749,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ur_Arab_PK) {
+    auto test_method_(ur_Arab_PK) {
       auto number_format = culture_info {"ur-Arab-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28779,7 +28779,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ur_Aran_IN) {
+    auto test_method_(ur_Aran_IN) {
       auto number_format = culture_info {"ur-Aran-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28809,7 +28809,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(ur_Aran_PK) {
+    auto test_method_(ur_Aran_PK) {
       auto number_format = culture_info {"ur-Aran-PK"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -28839,7 +28839,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+", number_format.positive_sign());
     }
     
-    void test_method_(uz) {
+    auto test_method_(uz) {
       auto number_format = culture_info {"uz"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28869,7 +28869,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uz_Arab) {
+    auto test_method_(uz_Arab) {
       auto number_format = culture_info {"uz-Arab"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -28899,7 +28899,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(uz_Arab_AF) {
+    auto test_method_(uz_Arab_AF) {
       auto number_format = culture_info {"uz-Arab-AF"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal("٫", number_format.currency_decimal_separator());
@@ -28929,7 +28929,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("‎+‎", number_format.positive_sign());
     }
     
-    void test_method_(uz_Cyrl) {
+    auto test_method_(uz_Cyrl) {
       auto number_format = culture_info {"uz-Cyrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28959,7 +28959,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uz_Cyrl_UZ) {
+    auto test_method_(uz_Cyrl_UZ) {
       auto number_format = culture_info {"uz-Cyrl-UZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -28989,7 +28989,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uz_Latn) {
+    auto test_method_(uz_Latn) {
       auto number_format = culture_info {"uz-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29019,7 +29019,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(uz_Latn_UZ) {
+    auto test_method_(uz_Latn_UZ) {
       auto number_format = culture_info {"uz-Latn-UZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29049,7 +29049,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vai) {
+    auto test_method_(vai) {
       auto number_format = culture_info {"vai"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29079,7 +29079,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vai_Latn) {
+    auto test_method_(vai_Latn) {
       auto number_format = culture_info {"vai-Latn"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29109,7 +29109,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vai_Latn_LR) {
+    auto test_method_(vai_Latn_LR) {
       auto number_format = culture_info {"vai-Latn-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29139,7 +29139,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vai_Vaii) {
+    auto test_method_(vai_Vaii) {
       auto number_format = culture_info {"vai-Vaii"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29169,7 +29169,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vai_Vaii_LR) {
+    auto test_method_(vai_Vaii_LR) {
       auto number_format = culture_info {"vai-Vaii-LR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29199,7 +29199,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ve) {
+    auto test_method_(ve) {
       auto number_format = culture_info {"ve"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29229,7 +29229,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(ve_ZA) {
+    auto test_method_(ve_ZA) {
       auto number_format = culture_info {"ve-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29259,7 +29259,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vec) {
+    auto test_method_(vec) {
       auto number_format = culture_info {"vec"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29289,7 +29289,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vec_IT) {
+    auto test_method_(vec_IT) {
       auto number_format = culture_info {"vec-IT"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29319,7 +29319,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vi) {
+    auto test_method_(vi) {
       auto number_format = culture_info {"vi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29349,7 +29349,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vi_VN) {
+    auto test_method_(vi_VN) {
       auto number_format = culture_info {"vi-VN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29379,7 +29379,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vmw) {
+    auto test_method_(vmw) {
       auto number_format = culture_info {"vmw"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29409,7 +29409,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vmw_MZ) {
+    auto test_method_(vmw_MZ) {
       auto number_format = culture_info {"vmw-MZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29439,7 +29439,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vun) {
+    auto test_method_(vun) {
       auto number_format = culture_info {"vun"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29469,7 +29469,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(vun_TZ) {
+    auto test_method_(vun_TZ) {
       auto number_format = culture_info {"vun-TZ"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29499,7 +29499,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wa) {
+    auto test_method_(wa) {
       auto number_format = culture_info {"wa"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29529,7 +29529,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wa_BE) {
+    auto test_method_(wa_BE) {
       auto number_format = culture_info {"wa-BE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29559,7 +29559,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wae) {
+    auto test_method_(wae) {
       auto number_format = culture_info {"wae"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29589,7 +29589,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wae_CH) {
+    auto test_method_(wae_CH) {
       auto number_format = culture_info {"wae-CH"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29619,7 +29619,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wal) {
+    auto test_method_(wal) {
       auto number_format = culture_info {"wal"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29649,7 +29649,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wal_ET) {
+    auto test_method_(wal_ET) {
       auto number_format = culture_info {"wal-ET"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29679,7 +29679,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wo) {
+    auto test_method_(wo) {
       auto number_format = culture_info {"wo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29709,7 +29709,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(wo_SN) {
+    auto test_method_(wo_SN) {
       auto number_format = culture_info {"wo-SN"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29739,7 +29739,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xh) {
+    auto test_method_(xh) {
       auto number_format = culture_info {"xh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29769,7 +29769,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xh_ZA) {
+    auto test_method_(xh_ZA) {
       auto number_format = culture_info {"xh-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29799,7 +29799,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xnr) {
+    auto test_method_(xnr) {
       auto number_format = culture_info {"xnr"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29829,7 +29829,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xnr_IN) {
+    auto test_method_(xnr_IN) {
       auto number_format = culture_info {"xnr-IN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29859,7 +29859,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xog) {
+    auto test_method_(xog) {
       auto number_format = culture_info {"xog"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29889,7 +29889,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(xog_UG) {
+    auto test_method_(xog_UG) {
       auto number_format = culture_info {"xog-UG"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -29919,7 +29919,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yav) {
+    auto test_method_(yav) {
       auto number_format = culture_info {"yav"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29949,7 +29949,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yav_CM) {
+    auto test_method_(yav_CM) {
       auto number_format = culture_info {"yav-CM"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -29979,7 +29979,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yi) {
+    auto test_method_(yi) {
       auto number_format = culture_info {"yi"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30009,7 +30009,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yi_UA) {
+    auto test_method_(yi_UA) {
       auto number_format = culture_info {"yi-UA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30039,7 +30039,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yo) {
+    auto test_method_(yo) {
       auto number_format = culture_info {"yo"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30069,7 +30069,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yo_BJ) {
+    auto test_method_(yo_BJ) {
       auto number_format = culture_info {"yo-BJ"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30099,7 +30099,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yo_NG) {
+    auto test_method_(yo_NG) {
       auto number_format = culture_info {"yo-NG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30129,7 +30129,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yrl) {
+    auto test_method_(yrl) {
       auto number_format = culture_info {"yrl"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30159,7 +30159,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yrl_BR) {
+    auto test_method_(yrl_BR) {
       auto number_format = culture_info {"yrl-BR"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30189,7 +30189,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yrl_CO) {
+    auto test_method_(yrl_CO) {
       auto number_format = culture_info {"yrl-CO"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30219,7 +30219,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yrl_VE) {
+    auto test_method_(yrl_VE) {
       auto number_format = culture_info {"yrl-VE"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30249,7 +30249,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue) {
+    auto test_method_(yue) {
       auto number_format = culture_info {"yue"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30279,7 +30279,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue_Hans) {
+    auto test_method_(yue_Hans) {
       auto number_format = culture_info {"yue-Hans"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30309,7 +30309,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue_Hans_CN) {
+    auto test_method_(yue_Hans_CN) {
       auto number_format = culture_info {"yue-Hans-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30339,7 +30339,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue_Hant) {
+    auto test_method_(yue_Hant) {
       auto number_format = culture_info {"yue-Hant"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30369,7 +30369,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue_Hant_CN) {
+    auto test_method_(yue_Hant_CN) {
       auto number_format = culture_info {"yue-Hant-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30399,7 +30399,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(yue_Hant_HK) {
+    auto test_method_(yue_Hant_HK) {
       auto number_format = culture_info {"yue-Hant-HK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30429,7 +30429,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(za) {
+    auto test_method_(za) {
       auto number_format = culture_info {"za"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30459,7 +30459,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(za_CN) {
+    auto test_method_(za_CN) {
       auto number_format = culture_info {"za-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30489,7 +30489,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zgh) {
+    auto test_method_(zgh) {
       auto number_format = culture_info {"zgh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30519,7 +30519,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zgh_MA) {
+    auto test_method_(zgh_MA) {
       auto number_format = culture_info {"zgh-MA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(",", number_format.currency_decimal_separator());
@@ -30549,7 +30549,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh) {
+    auto test_method_(zh) {
       auto number_format = culture_info {"zh"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30579,7 +30579,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans) {
+    auto test_method_(zh_Hans) {
       auto number_format = culture_info {"zh-Hans"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30609,7 +30609,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_CN) {
+    auto test_method_(zh_Hans_CN) {
       auto number_format = culture_info {"zh-Hans-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30639,7 +30639,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_HK) {
+    auto test_method_(zh_Hans_HK) {
       auto number_format = culture_info {"zh-Hans-HK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30669,7 +30669,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_JP) {
+    auto test_method_(zh_Hans_JP) {
       auto number_format = culture_info {"zh-Hans-JP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30699,7 +30699,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_MO) {
+    auto test_method_(zh_Hans_MO) {
       auto number_format = culture_info {"zh-Hans-MO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30729,7 +30729,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_MY) {
+    auto test_method_(zh_Hans_MY) {
       auto number_format = culture_info {"zh-Hans-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30759,7 +30759,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hans_SG) {
+    auto test_method_(zh_Hans_SG) {
       auto number_format = culture_info {"zh-Hans-SG"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30789,7 +30789,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant) {
+    auto test_method_(zh_Hant) {
       auto number_format = culture_info {"zh-Hant"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30819,7 +30819,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_CN) {
+    auto test_method_(zh_Hant_CN) {
       auto number_format = culture_info {"zh-Hant-CN"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30849,7 +30849,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_HK) {
+    auto test_method_(zh_Hant_HK) {
       auto number_format = culture_info {"zh-Hant-HK"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30879,7 +30879,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_JP) {
+    auto test_method_(zh_Hant_JP) {
       auto number_format = culture_info {"zh-Hant-JP"}.number_format();
       assert::are_equal(0, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30909,7 +30909,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_MO) {
+    auto test_method_(zh_Hant_MO) {
       auto number_format = culture_info {"zh-Hant-MO"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30939,7 +30939,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_MY) {
+    auto test_method_(zh_Hant_MY) {
       auto number_format = culture_info {"zh-Hant-MY"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30969,7 +30969,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zh_Hant_TW) {
+    auto test_method_(zh_Hant_TW) {
       auto number_format = culture_info {"zh-Hant-TW"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -30999,7 +30999,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zu) {
+    auto test_method_(zu) {
       auto number_format = culture_info {"zu"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());
@@ -31029,7 +31029,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("+", number_format.positive_sign());
     }
     
-    void test_method_(zu_ZA) {
+    auto test_method_(zu_ZA) {
       auto number_format = culture_info {"zu-ZA"}.number_format();
       assert::are_equal(2, number_format.currency_decimal_digits());
       assert::are_equal(".", number_format.currency_decimal_separator());

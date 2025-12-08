@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_is_NaN_float_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       float f = std::numeric_limits<float>::quiet_NaN();
       xtd::tunit::valid::is_NaN(f);
     }

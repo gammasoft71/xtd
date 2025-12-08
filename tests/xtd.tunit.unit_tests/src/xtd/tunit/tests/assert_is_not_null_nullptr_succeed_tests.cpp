@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_is_not_null_nullptr_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       int i = 0;
       int* p = &i;
       xtd::tunit::assert::is_not_null(p);

@@ -25,7 +25,7 @@ namespace xtd::forms::tests {
       using tab_control::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       tab_control_for_test tab_control;
       assert::are_equal(anchor_styles::left | anchor_styles::top, tab_control.anchor());
       assert::are_equal(drawing::point::empty, tab_control.auto_scroll_point());
@@ -97,7 +97,7 @@ namespace xtd::forms::tests {
       assert::is_zero(tab_control.tab_pages().count());
     }
     
-    void test_method_(alignment) {
+    auto test_method_(alignment) {
       forms::form form;
       tab_control_for_test tab_control;
       tab_control.parent(form);
@@ -114,7 +114,7 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_alignment::top, tab_control.alignment());
     }
     
-    void test_method_(alignment_without_form) {
+    auto test_method_(alignment_without_form) {
       tab_control_for_test tab_control;
       tab_control.alignment(tab_alignment::left);
       assert::are_equal(tab_alignment::left, tab_control.alignment());
@@ -129,14 +129,14 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_alignment::top, tab_control.alignment());
     }
     
-    void test_method_(handle) {
+    auto test_method_(handle) {
       forms::form form;
       tab_control_for_test tab_control;
       tab_control.parent(form);
       assert::is_not_zero(tab_control.handle());
     }
     
-    void test_method_(image_list) {
+    auto test_method_(image_list) {
       forms::form form;
       tab_control_for_test tab_control;
       tab_control.parent(form);
@@ -148,7 +148,7 @@ namespace xtd::forms::tests {
       assert::are_equal(1_z, tab_control.image_list().images().count());
     }
     
-    void test_method_(image_list_without_form) {
+    auto test_method_(image_list_without_form) {
       tab_control_for_test tab_control;
       
       forms::image_list image_list;
@@ -158,14 +158,14 @@ namespace xtd::forms::tests {
       assert::are_equal(1_z, tab_control.image_list().images().count());
     }
     
-    void test_method_(native_handle) {
+    auto test_method_(native_handle) {
       forms::form form;
       tab_control_for_test tab_control;
       tab_control.parent(form);
       assert::is_not_zero(tab_control.native_handle());
     }
     
-    void test_method_(parent) {
+    auto test_method_(parent) {
       forms::form form;
       tab_control_for_test tab_control;
       tab_control.parent(form);
@@ -174,7 +174,7 @@ namespace xtd::forms::tests {
       assert::is_null(tab_control.parent());
     }
     
-    void test_method_(selected_index) {
+    auto test_method_(selected_index) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
@@ -187,7 +187,7 @@ namespace xtd::forms::tests {
       assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(1);});
     }
     
-    void test_method_(selected_index_without_form) {
+    auto test_method_(selected_index_without_form) {
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
       
@@ -198,7 +198,7 @@ namespace xtd::forms::tests {
       assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(1);});
     }
     
-    void test_method_(tab_pages_add_pages_with_tab_pages_add) {
+    auto test_method_(tab_pages_add_pages_with_tab_pages_add) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
@@ -219,7 +219,7 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_page3, tab_control.tab_pages()[2].get());
     }
     
-    void test_method_(tab_pages_add_pages_with_tab_pages_add_without_form) {
+    auto test_method_(tab_pages_add_pages_with_tab_pages_add_without_form) {
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
       forms::tab_page tab_page2;
@@ -238,7 +238,7 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_page3, tab_control.tab_pages()[2].get());
     }
     
-    void test_method_(tab_pages_add_pages_with_tab_page_parent) {
+    auto test_method_(tab_pages_add_pages_with_tab_page_parent) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
@@ -261,7 +261,7 @@ namespace xtd::forms::tests {
       assert::are_same(tab_page3, tab_control.tab_pages()[2].get());
     }
     
-    void test_method_(tab_pages_remove_pages_with_tab_page_parent) {
+    auto test_method_(tab_pages_remove_pages_with_tab_page_parent) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
@@ -277,7 +277,7 @@ namespace xtd::forms::tests {
       assert::is_null(tab_page2.parent());
     }
     
-    void test_method_(tab_pages_remove_pages_with_tab_pages_eraqe_at) {
+    auto test_method_(tab_pages_remove_pages_with_tab_pages_eraqe_at) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
@@ -293,7 +293,7 @@ namespace xtd::forms::tests {
       assert::is_null(tab_page2.parent());
     }
     
-    void test_method_(tab_pages_remove_pages_with_tab_pages_clear) {
+    auto test_method_(tab_pages_remove_pages_with_tab_pages_clear) {
       forms::form form;
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;

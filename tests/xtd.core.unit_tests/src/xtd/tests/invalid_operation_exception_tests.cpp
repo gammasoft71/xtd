@@ -32,7 +32,7 @@ namespace xtd::tests {
       invalid_operation_exception::enable_stack_trace(stack_trace_enabled);
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto e = invalid_operation_exception {};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -50,7 +50,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(default_constructor_with_stack_frame) {
+    auto test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {stack_frame};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
@@ -69,7 +69,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message) {
+    auto test_method_(constructor_with_nullopt_message) {
       auto e = invalid_operation_exception {nullopt};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -87,7 +87,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {nullopt, stack_frame};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
@@ -106,7 +106,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(constructor_with_empty_message) {
+    auto test_method_(constructor_with_empty_message) {
       auto e = invalid_operation_exception {""};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -124,7 +124,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::invalid_operation_exception", e.what());
     }
     
-    void test_method_(constructor_with_message_empty_and_stack_frame) {
+    auto test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {"", stack_frame};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
@@ -143,7 +143,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::invalid_operation_exception", e.what());
     }
     
-    void test_method_(constructor_with_message) {
+    auto test_method_(constructor_with_message) {
       auto e = invalid_operation_exception {"Test excpetion message."};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -161,7 +161,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_stack_frame) {
+    auto test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {"Test excpetion message.", stack_frame};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
@@ -180,7 +180,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = invalid_operation_exception {nullopt, inner_exception};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
@@ -200,7 +200,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame_inner_exception) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {nullopt, inner_exception, stack_frame};
@@ -221,7 +221,7 @@ namespace xtd::tests {
       assert::are_equal("Operation is not valid due to the current state of the object.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_inner_exception) {
+    auto test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = invalid_operation_exception {"Test excpetion message.", inner_exception};
       assert::is_empty(e.help_link());
@@ -241,7 +241,7 @@ namespace xtd::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = invalid_operation_exception {"Test excpetion message.", inner_exception, stack_frame};

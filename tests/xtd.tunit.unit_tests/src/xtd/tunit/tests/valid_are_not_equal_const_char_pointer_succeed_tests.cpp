@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_are_not_equal_const_char_pointer_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       const char* s = "string";
       xtd::tunit::valid::are_not_equal("str", s);
     }

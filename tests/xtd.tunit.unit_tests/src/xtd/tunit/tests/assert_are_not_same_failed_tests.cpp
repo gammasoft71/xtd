@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_are_not_same_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       int a = 24;
       int& b = a;
       xtd::tunit::assert::are_not_same(b, a);

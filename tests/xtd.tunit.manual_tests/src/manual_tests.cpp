@@ -40,7 +40,7 @@ using namespace xtd::tunit;
 namespace xtd::tunit::tests {
   class test_class_(manual_test_tunit) {
   public:
-    void test_method_(test_method1) {
+    auto test_method_(test_method1) {
       assert::is_true(true);
     }
   };

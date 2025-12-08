@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(link_label_tests) {
-    void test_method_(new_link_label) {
+    auto test_method_(new_link_label) {
       form form;
       link_label label;
       label.parent(form);

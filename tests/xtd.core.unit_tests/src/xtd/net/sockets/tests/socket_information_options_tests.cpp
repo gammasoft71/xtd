@@ -8,31 +8,31 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(socket_information_options_tests) {
-    void test_method_(none) {
+    auto test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(socket_information_options::none));
       assert::are_equal("none", enum_object<>::to_string(socket_information_options::none));
       assert::are_equal(socket_information_options::none, enum_object<>::parse<socket_information_options>("none"));
     }
     
-    void test_method_(non_blocking) {
+    auto test_method_(non_blocking) {
       assert::are_equal(1, enum_object<>::to_int32(socket_information_options::non_blocking));
       assert::are_equal("non_blocking", enum_object<>::to_string(socket_information_options::non_blocking));
       assert::are_equal(socket_information_options::non_blocking, enum_object<>::parse<socket_information_options>("non_blocking"));
     }
     
-    void test_method_(connected) {
+    auto test_method_(connected) {
       assert::are_equal(2, enum_object<>::to_int32(socket_information_options::connected));
       assert::are_equal("connected", enum_object<>::to_string(socket_information_options::connected));
       assert::are_equal(socket_information_options::connected, enum_object<>::parse<socket_information_options>("connected"));
     }
     
-    void test_method_(listening) {
+    auto test_method_(listening) {
       assert::are_equal(4, enum_object<>::to_int32(socket_information_options::listening));
       assert::are_equal("listening", enum_object<>::to_string(socket_information_options::listening));
       assert::are_equal(socket_information_options::listening, enum_object<>::parse<socket_information_options>("listening"));
     }
     
-    void test_method_(use_only_overlapped_io) {
+    auto test_method_(use_only_overlapped_io) {
       assert::are_equal(8, enum_object<>::to_int32(socket_information_options::use_only_overlapped_io));
       assert::are_equal("use_only_overlapped_io", enum_object<>::to_string(socket_information_options::use_only_overlapped_io));
       assert::are_equal(socket_information_options::use_only_overlapped_io, enum_object<>::parse<socket_information_options>("use_only_overlapped_io"));

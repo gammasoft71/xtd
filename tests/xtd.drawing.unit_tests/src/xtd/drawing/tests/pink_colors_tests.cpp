@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(pink_colors_tests) {
-    void test_method_(medium_violet_red) {
+    auto test_method_(medium_violet_red) {
       auto c = pink_colors::medium_violet_red();
       
       assert::are_equal(pink_colors::medium_violet_red(), c);
@@ -36,7 +36,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::medium_violet_red, c.to_known_color());
     }
     
-    void test_method_(deep_pink) {
+    auto test_method_(deep_pink) {
       auto c = pink_colors::deep_pink();
       
       assert::are_equal(pink_colors::deep_pink(), c);
@@ -62,7 +62,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::deep_pink, c.to_known_color());
     }
     
-    void test_method_(pale_violet_red) {
+    auto test_method_(pale_violet_red) {
       auto c = pink_colors::pale_violet_red();
       
       assert::are_equal(pink_colors::pale_violet_red(), c);
@@ -88,7 +88,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::pale_violet_red, c.to_known_color());
     }
     
-    void test_method_(hot_pink) {
+    auto test_method_(hot_pink) {
       auto c = pink_colors::hot_pink();
       
       assert::are_equal(pink_colors::hot_pink(), c);
@@ -114,7 +114,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::hot_pink, c.to_known_color());
     }
     
-    void test_method_(light_pink) {
+    auto test_method_(light_pink) {
       auto c = pink_colors::light_pink();
       
       assert::are_equal(pink_colors::light_pink(), c);
@@ -140,7 +140,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::light_pink, c.to_known_color());
     }
     
-    void test_method_(pink) {
+    auto test_method_(pink) {
       auto c = pink_colors::pink();
       
       assert::are_equal(pink_colors::pink(), c);

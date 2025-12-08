@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_is_null_nullptr_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       int i = 0;
       int* p = &i;
       xtd::tunit::valid::is_null(p);

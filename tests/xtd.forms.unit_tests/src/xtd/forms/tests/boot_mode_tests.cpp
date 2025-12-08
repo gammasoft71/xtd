@@ -9,19 +9,19 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(boot_mode_tests) {
   public:
-    void test_method_(normal) {
+    auto test_method_(normal) {
       assert::are_equal(0, enum_object<>::to_int32(boot_mode::normal));
       assert::are_equal("normal", enum_object<>::to_string(boot_mode::normal));
       assert::are_equal(boot_mode::normal, enum_object<>::parse<boot_mode>("normal"));
     }
     
-    void test_method_(fail_safe) {
+    auto test_method_(fail_safe) {
       assert::are_equal(1, enum_object<>::to_int32(boot_mode::fail_safe));
       assert::are_equal("fail_safe", enum_object<>::to_string(boot_mode::fail_safe));
       assert::are_equal(boot_mode::fail_safe, enum_object<>::parse<boot_mode>("fail_safe"));
     }
     
-    void test_method_(fail_safe_with_network) {
+    auto test_method_(fail_safe_with_network) {
       assert::are_equal(2, enum_object<>::to_int32(boot_mode::fail_safe_with_network));
       assert::are_equal("fail_safe_with_network", enum_object<>::to_string(boot_mode::fail_safe_with_network));
       assert::are_equal(boot_mode::fail_safe_with_network, enum_object<>::parse<boot_mode>("fail_safe_with_network"));

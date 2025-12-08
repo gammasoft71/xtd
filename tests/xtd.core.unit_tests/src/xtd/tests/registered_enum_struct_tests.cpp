@@ -17,7 +17,7 @@ enum_struct_(, registered_enum_struct_test,
 
 namespace xtd::tests {
   class test_class_(registered_enum_struct_tests) {
-    void test_method_(format) {
+    auto test_method_(format) {
       assert::are_equal("none", string::format("{}", registered_enum_struct_test::none));
       assert::are_equal("one", string::format("{}", registered_enum_struct_test::one));
       assert::are_equal("two", string::format("{}", registered_enum_struct_test::two));
@@ -25,11 +25,11 @@ namespace xtd::tests {
       assert::are_equal("four", string::format("{}", registered_enum_struct_test::four));
     }
     
-    void test_method_(format_with_invalid_enum) {
+    auto test_method_(format_with_invalid_enum) {
       assert::are_equal("5", string::format("{}", as<registered_enum_struct_test>(5)));
     }
     
-    void test_method_(format_with_specified_format) {
+    auto test_method_(format_with_specified_format) {
       assert::are_equal("0b100", string::format("0b{:b}", registered_enum_struct_test::four));
       assert::are_equal("0b100", string::format("0b{:B}", registered_enum_struct_test::four));
       assert::are_equal("4", string::format("{:d}", registered_enum_struct_test::four));
@@ -42,7 +42,7 @@ namespace xtd::tests {
       assert::are_equal("0x4", string::format("0x{:X}", registered_enum_struct_test::four));
     }
     
-    void test_method_(parse) {
+    auto test_method_(parse) {
       assert::are_equal(registered_enum_struct_test::none, string::parse<registered_enum_struct_test>("none"));
       assert::are_equal(registered_enum_struct_test::one, string::parse<registered_enum_struct_test>("one"));
       assert::are_equal(registered_enum_struct_test::two, string::parse<registered_enum_struct_test>("two"));
@@ -56,7 +56,7 @@ namespace xtd::tests {
       assert::are_equal(registered_enum_struct_test::four, string::parse<registered_enum_struct_test>("4"));
     }
     
-    void test_method_(parse_with_invalid_enum) {
+    auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<registered_enum_struct_test>(5), string::parse<registered_enum_struct_test>("5"));
       assert::throws<format_exception>([] {string::parse<registered_enum_struct_test>("five");});
     }

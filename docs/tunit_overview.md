@@ -18,7 +18,7 @@ using namespace xtd::tunit;
 namespace unit_test_project2 {
   class test_class_(unit_test1) {
   public:
-    void test_method_(test_method1) {
+    auto test_method_(test_method1) {
       assert::is_true(true);
     }
 
@@ -26,18 +26,18 @@ namespace unit_test_project2 {
       assert::is_true(true);
     }
 
-    void test_method_(test_method3) {
+    auto test_method_(test_method3) {
       assert::is_true(false);
     }
   };
 
   class test_class_(unit_test2) {
   public:
-    void test_method_(test_method1) {
+    auto test_method_(test_method1) {
       assert::is_true(true);
     }
 
-    void test_method_(test_method2) {
+    auto test_method_(test_method2) {
       assert::is_true(true);
     }
   };

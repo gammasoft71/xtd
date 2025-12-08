@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(directory_assert_are_not_equal_filesystem_directory_entry_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       std::filesystem::directory_entry d1(std::filesystem::path("."));
       std::filesystem::directory_entry d2(std::filesystem::path(".."));
       xtd::tunit::directory_assert::are_not_equal(d1, d2);

@@ -33,7 +33,7 @@ namespace xtd::collections::generic::tests {
       key_not_found_exception::enable_stack_trace(stack_trace_enabled);
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto e = key_not_found_exception {};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -51,7 +51,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(default_constructor_with_stack_frame) {
+    auto test_method_(default_constructor_with_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {stack_frame};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
@@ -70,7 +70,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message) {
+    auto test_method_(constructor_with_nullopt_message) {
       auto e = key_not_found_exception {nullopt};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -88,7 +88,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {nullopt, stack_frame};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
@@ -107,7 +107,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(constructor_with_empty_message) {
+    auto test_method_(constructor_with_empty_message) {
       auto e = key_not_found_exception {""};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -125,7 +125,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.what());
     }
     
-    void test_method_(constructor_with_message_empty_and_stack_frame) {
+    auto test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {"", stack_frame};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
@@ -144,7 +144,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.what());
     }
     
-    void test_method_(constructor_with_message) {
+    auto test_method_(constructor_with_message) {
       auto e = key_not_found_exception {"Test excpetion message."};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
       assert::is_empty(e.help_link());
@@ -162,7 +162,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_stack_frame) {
+    auto test_method_(constructor_with_message_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {"Test excpetion message.", stack_frame};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
@@ -181,7 +181,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_and_inner_exception) {
+    auto test_method_(constructor_with_nullopt_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = key_not_found_exception {nullopt, inner_exception};
       assert::are_equal("xtd::collections::generic::key_not_found_exception", e.get_type().full_name());
@@ -201,7 +201,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_nullopt_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {nullopt, inner_exception, stack_frame};
@@ -222,7 +222,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("The given key was not present in the dictionary.", e.what());
     }
     
-    void test_method_(constructor_with_message_and_inner_exception) {
+    auto test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = key_not_found_exception {"Test excpetion message.", inner_exception};
       assert::is_empty(e.help_link());
@@ -242,7 +242,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("Test excpetion message.", e.what());
     }
     
-    void test_method_(constructor_with_message_inner_exception_and_stack_frame) {
+    auto test_method_(constructor_with_message_inner_exception_and_stack_frame) {
       auto inner_exception = argument_exception {};
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = key_not_found_exception {"Test excpetion message.", inner_exception, stack_frame};

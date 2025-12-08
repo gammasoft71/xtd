@@ -17,7 +17,7 @@ using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
   class test_class_(thread_tests) {
-    void test_method_(constructor_empty) {
+    auto test_method_(constructor_empty) {
       auto thread = threading::thread {};
       assert::are_equal(threading::thread::invalid_handle, thread.handle());
       assert::is_false(thread.is_alive());
@@ -31,15 +31,15 @@ namespace xtd::threading::tests {
       assert::are_equal(thread_state::unstarted, thread.thread_state());
     }
     
-    void test_method_(constructor_with_empty_thread_start) {
+    auto test_method_(constructor_with_empty_thread_start) {
       assert::throws<argument_exception>([] {thread t {thread_start {}};});
     }
     
-    void test_method_(constructor_with_thread_start_and_negative_max_stack_size) {
+    auto test_method_(constructor_with_thread_start_and_negative_max_stack_size) {
       assert::throws<argument_exception>([] {thread t {thread_start {[] {}}, -1};});
     }
     
-    void test_method_(constructor_with_thread_start) {
+    auto test_method_(constructor_with_thread_start) {
       auto thread = threading::thread {thread_start {[] {}}};
       assert::are_equal(threading::thread::invalid_handle, thread.handle());
       assert::is_false(thread.is_alive());
@@ -53,15 +53,15 @@ namespace xtd::threading::tests {
       assert::are_equal(thread_state::unstarted, thread.thread_state());
     }
     
-    void test_method_(constructor_with_empty_parameterized_thread_start) {
+    auto test_method_(constructor_with_empty_parameterized_thread_start) {
       assert::throws<argument_exception>([] {thread t {parameterized_thread_start {}};});
     }
     
-    void test_method_(constructor_with_parameterized_thread_start_and_negative_max_stack_size) {
+    auto test_method_(constructor_with_parameterized_thread_start_and_negative_max_stack_size) {
       assert::throws<argument_exception>([] {thread t {parameterized_thread_start {[](const any_object&) {}}, -1};});
     }
     
-    void test_method_(constructor_with_parameterized_thread_start) {
+    auto test_method_(constructor_with_parameterized_thread_start) {
       auto thread = threading::thread {parameterized_thread_start {[](const any_object&) {}}};
       assert::are_equal(threading::thread::invalid_handle, thread.handle());
       assert::is_false(thread.is_alive());
@@ -75,7 +75,7 @@ namespace xtd::threading::tests {
       assert::are_equal(thread_state::unstarted, thread.thread_state());
     }
     
-    void test_method_(main_as_current_thread) {
+    auto test_method_(main_as_current_thread) {
       auto thread = threading::thread::current_thread();
       assert::are_not_equal(threading::thread::invalid_handle, thread.handle());
       assert::is_true(thread.is_alive());
@@ -89,7 +89,7 @@ namespace xtd::threading::tests {
       assert::are_equal(thread_state::running, thread.thread_state());
     }
     
-    void test_method_(std_thread_as_current_thread) {
+    auto test_method_(std_thread_as_current_thread) {
       bool thread_ran = false;
       auto thread = std::thread {[&] {
           thread_ran = true;
@@ -109,7 +109,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(xtd_threading_as_current_thread) {
+    auto test_method_(xtd_threading_as_current_thread) {
       bool thread_ran = false;
       auto thread = threading::thread {thread_start {[&] {
             thread_ran = true;
@@ -131,7 +131,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_ran);
     }
     
-    void test_method_(handle) {
+    auto test_method_(handle) {
       assert::is_not_zero(threading::thread::current_thread().handle());
       assert::are_not_equal(threading::thread::invalid_handle, threading::thread::current_thread().thread_id());
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
@@ -145,7 +145,7 @@ namespace xtd::threading::tests {
       assert::are_not_equal(thread.thread_id(), thread2.handle());
     }
     
-    void test_method_(is_alive) {
+    auto test_method_(is_alive) {
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       assert::is_false(thread.is_alive());
       thread.start();
@@ -154,7 +154,7 @@ namespace xtd::threading::tests {
       assert::is_false(thread.is_alive());
     }
     
-    void test_method_(is_background) {
+    auto test_method_(is_background) {
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       assert::is_false(thread.is_background());
       thread.is_background(true);
@@ -163,21 +163,21 @@ namespace xtd::threading::tests {
       assert::is_false(thread.is_background());
     }
     
-    void test_method_(is_main_thread) {
+    auto test_method_(is_main_thread) {
       assert::is_true(threading::thread::current_thread().is_main_thread());
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       thread.start();
       assert::is_false(thread.is_main_thread());
     }
     
-    void test_method_(is_thread_pool_thread) {
+    auto test_method_(is_thread_pool_thread) {
       assert::is_false(threading::thread::current_thread().is_thread_pool_thread());
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       thread.start();
       assert::is_false(thread.is_thread_pool_thread());
     }
     
-    void test_method_(joinable) {
+    auto test_method_(joinable) {
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       assert::is_false(thread.joinable());
       thread.start();
@@ -186,7 +186,7 @@ namespace xtd::threading::tests {
       assert::is_false(thread.joinable());
     }
     
-    void test_method_(managed_thread_id) {
+    auto test_method_(managed_thread_id) {
       assert::are_equal(1, threading::thread::current_thread().managed_thread_id());
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       auto thread2 = threading::thread {thread_start {[] {thread::sleep(2);}}};
@@ -194,7 +194,7 @@ namespace xtd::threading::tests {
       assert::are_equal(thread.managed_thread_id() + 1, thread2.managed_thread_id());
     }
     
-    void test_method_(name) {
+    auto test_method_(name) {
       auto thread = threading::thread {thread_start {[] {
             threading::thread::current_thread().name("other");
             assert::are_equal("other", threading::thread::current_thread().name());
@@ -208,7 +208,7 @@ namespace xtd::threading::tests {
       assert::are_equal("other", thread.name());
     }
     
-    void test_method_(priority) {
+    auto test_method_(priority) {
       auto thread = threading::thread {thread_start {[] {
             assert::are_equal(thread_priority::normal, threading::thread::current_thread().priority());
             threading::thread::current_thread().priority(xtd::threading::thread_priority::lowest);
@@ -239,19 +239,19 @@ namespace xtd::threading::tests {
       assert::are_equal(thread_priority::above_normal, thread.priority());
     }
     
-    void test_method_(priority_argument_exception) {
+    auto test_method_(priority_argument_exception) {
       auto thread = threading::thread {thread_start {[] {}}};
       assert::throws<argument_exception>([&] {thread.priority(as<xtd::threading::thread_priority>(10));});
     }
     
-    void test_method_(priority_thread_state_exception) {
+    auto test_method_(priority_thread_state_exception) {
       auto thread = threading::thread {thread_start {[] {}}};
       thread.start();
       thread.join();
       assert::throws<thread_state_exception>([&] {thread.priority(xtd::threading::thread_priority::lowest);});
     }
     
-    void test_method_(thread_id) {
+    auto test_method_(thread_id) {
       assert::is_not_zero(threading::thread::current_thread().thread_id());
       assert::are_not_equal(threading::thread::invalid_handle, threading::thread::current_thread().thread_id());
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
@@ -265,7 +265,7 @@ namespace xtd::threading::tests {
       assert::are_not_equal(thread.thread_id(), thread2.thread_id());
     }
     
-    void test_method_(thread_state) {
+    auto test_method_(thread_state) {
       assert::are_equal(threading::thread_state::running, threading::thread::current_thread().thread_state());
       auto thread = threading::thread {thread_start {[] {
             assert::is_true(threading::thread::current_thread().thread_state() == threading::thread_state::running || threading::thread::current_thread().thread_state() == threading::thread_state::wait_sleep_join);
@@ -278,7 +278,7 @@ namespace xtd::threading::tests {
       assert::are_equal(threading::thread_state::stopped, thread.thread_state());
     }
     
-    void test_method_(current_thread) {
+    auto test_method_(current_thread) {
       assert::is_true(threading::thread::current_thread().is_alive());
       assert::is_false(threading::thread::current_thread().is_background());
       assert::is_true(threading::thread::current_thread().is_main_thread());
@@ -309,7 +309,7 @@ namespace xtd::threading::tests {
       assert::are_equal(thread2.thread_id(), thread.thread_id());
     }
     
-    void test_method_(main_thread) {
+    auto test_method_(main_thread) {
       assert::are_equal(threading::thread::current_thread().handle(), threading::thread::main_thread().handle());
       assert::is_true(threading::thread::main_thread().is_alive());
       assert::is_false(threading::thread::main_thread().is_background());
@@ -323,7 +323,7 @@ namespace xtd::threading::tests {
       assert::are_equal(threading::thread_state::running, threading::thread::main_thread().thread_state());
     }
     
-    void test_method_(abort) {
+    auto test_method_(abort) {
       if (environment::os_version().is_windows()) assert::ignore("Ignore \"abort\" unit test on Windows (The timing is not constant)");
       
       bool thread_aborted = false;
@@ -340,7 +340,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_aborted);
     }
     
-    void test_method_(abort_main_thread) {
+    auto test_method_(abort_main_thread) {
       if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"abort_main_thread\" test when debugger is attached");
       
       bool main_thread_aborted = false;
@@ -356,19 +356,19 @@ namespace xtd::threading::tests {
       assert::is_true(main_thread_aborted);
     }
     
-    void test_method_(abort_state_exception) {
+    auto test_method_(abort_state_exception) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.abort();});
     }
     
-    void test_method_(detach) {
+    auto test_method_(detach) {
       auto thread = threading::thread {thread_start {[] {thread::sleep(2);}}};
       assert::is_false(thread.is_background());
       thread.detach();
       assert::is_true(thread.is_background());
     }
     
-    void test_method_(interrupt) {
+    auto test_method_(interrupt) {
       if (environment::os_version().is_windows()) assert::ignore("Ignore \"interrupt\" unit test on Windows (The timing is not constant)");
       bool thread_interrupted = false;
       auto thread = threading::thread {thread_start {[&] {
@@ -388,7 +388,7 @@ namespace xtd::threading::tests {
       assert::is_true(thread_interrupted);
     }
     
-    void test_method_(interrupt_main_thread) {
+    auto test_method_(interrupt_main_thread) {
       if (diagnostics::debugger::is_attached()) assert::ignore("Ignore \"interrupt_main_thread\" test when debugger is attached");
       
       bool thread_interrupted = false;
@@ -405,20 +405,20 @@ namespace xtd::threading::tests {
       assert::is_true(thread_interrupted);
     }
     
-    void test_method_(join) {
+    auto test_method_(join) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       assert::does_not_throw([&] {thread.join();});
     }
     
-    void test_method_(join_and_join) {
+    auto test_method_(join_and_join) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       assert::does_not_throw([&] {thread.join();});
       assert::does_not_throw([&] {thread.join();});
     }
     
-    void test_method_(join_with_milliseconds_timeout) {
+    auto test_method_(join_with_milliseconds_timeout) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(50);}}};
       thread.start();
       thread::sleep(3);
@@ -426,7 +426,7 @@ namespace xtd::threading::tests {
       thread.join();
     }
     
-    void test_method_(join_with_timeout) {
+    auto test_method_(join_with_timeout) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(50);}}};
       thread.start();
       thread::sleep(3);
@@ -434,12 +434,12 @@ namespace xtd::threading::tests {
       thread.join();
     }
     
-    void test_method_(join_without_start) {
+    auto test_method_(join_without_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.join();});
     }
     
-    void test_method_(resume) {
+    auto test_method_(resume) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       thread.suspend();
@@ -449,46 +449,46 @@ namespace xtd::threading::tests {
       thread.join();
     }
     
-    void test_method_(resume_without_start) {
+    auto test_method_(resume_without_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.resume();});
     }
     
-    void test_method_(resume_without_suspend) {
+    auto test_method_(resume_without_suspend) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       assert::throws<thread_state_exception>([&] {thread.resume();});
       thread.join();
     }
     
-    void test_method_(start) {
+    auto test_method_(start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::does_not_throw([&] {thread.start();});
       thread.join();
     }
     
-    void test_method_(start_with_parameterized_thread_start) {
+    auto test_method_(start_with_parameterized_thread_start) {
       auto thread = threading::thread {parameterized_thread_start {[&] {thread::sleep(2);}}};
       assert::does_not_throw([&] {thread.start();});
     }
     
-    void test_method_(start_without_thread_start) {
+    auto test_method_(start_without_thread_start) {
       auto thread = threading::thread {};
       assert::throws<invalid_operation_exception>([&] {thread.start();});
     }
     
-    void test_method_(start_any) {
+    auto test_method_(start_any) {
       auto thread = threading::thread {parameterized_thread_start {[&] {thread::sleep(2);}}};
       assert::does_not_throw([&] {thread.start(0);});
       thread.join();
     }
     
-    void test_method_(start_any_with_thread_start) {
+    auto test_method_(start_any_with_thread_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<invalid_operation_exception>([&] {thread.start(0);});
     }
     
-    void test_method_(suspend) {
+    auto test_method_(suspend) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread.start();
       thread.suspend();
@@ -498,12 +498,12 @@ namespace xtd::threading::tests {
       thread.join();
     }
     
-    void test_method_(suspend_without_start) {
+    auto test_method_(suspend_without_start) {
       auto thread = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       assert::throws<thread_state_exception>([&] {thread.suspend();});
     }
     
-    void test_method_(join_all) {
+    auto test_method_(join_all) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(2);}}};
       thread1.start();
@@ -511,11 +511,11 @@ namespace xtd::threading::tests {
       assert::does_not_throw([&] {threading::thread::join_all();});
     }
     
-    void test_method_(join_all_without_thread) {
+    auto test_method_(join_all_without_thread) {
       assert::does_not_throw([&] {threading::thread::join_all();});
     }
     
-    void test_method_(join_all_with_milliseconds_timeout) {
+    auto test_method_(join_all_with_milliseconds_timeout) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
@@ -524,7 +524,7 @@ namespace xtd::threading::tests {
       threading::thread::join_all();
     }
     
-    void test_method_(join_all_with_timeout) {
+    auto test_method_(join_all_with_timeout) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
@@ -533,7 +533,7 @@ namespace xtd::threading::tests {
       threading::thread::join_all();
     }
     
-    void test_method_(join_all_with_collection) {
+    auto test_method_(join_all_with_collection) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
@@ -541,7 +541,7 @@ namespace xtd::threading::tests {
       assert::does_not_throw([&] {threading::thread::join_all({thread1, thread2});});
     }
     
-    void test_method_(join_all_with_collection_and_milliseconds_timeout) {
+    auto test_method_(join_all_with_collection_and_milliseconds_timeout) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
@@ -550,7 +550,7 @@ namespace xtd::threading::tests {
       threading::thread::join_all({thread1, thread2});
     }
     
-    void test_method_(join_all_with_collection_and_timeout) {
+    auto test_method_(join_all_with_collection_and_timeout) {
       auto thread1 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       auto thread2 = threading::thread {thread_start {[&] {thread::sleep(10);}}};
       thread1.start();
@@ -559,7 +559,7 @@ namespace xtd::threading::tests {
       threading::thread::join_all({thread1, thread2});
     }
     
-    void test_method_(join_all_with_vector) {
+    auto test_method_(join_all_with_vector) {
       list<thread> threads;
       threads.add(thread {thread_start {[&] {thread::sleep(10);}}});
       threads[threads.count() - 1].start();
@@ -568,7 +568,7 @@ namespace xtd::threading::tests {
       assert::does_not_throw([&] {threading::thread::join_all(threads);});
     }
     
-    void test_method_(join_all_with_vector_and_milliseconds_timeout) {
+    auto test_method_(join_all_with_vector_and_milliseconds_timeout) {
       list<thread> threads;
       threads.add(thread {thread_start {[&] {thread::sleep(20);}}});
       threads[threads.count() - 1].start();
@@ -578,7 +578,7 @@ namespace xtd::threading::tests {
       threading::thread::join_all(threads);
     }
     
-    void test_method_(join_all_with_vector_and_timeout) {
+    auto test_method_(join_all_with_vector_and_timeout) {
       list<thread> threads;
       threads.add(thread {thread_start {[&] {thread::sleep(10);}}});
       threads[threads.count() - 1].start();
@@ -588,35 +588,35 @@ namespace xtd::threading::tests {
       threading::thread::join_all(threads);
     }
     
-    void test_method_(sleep_milliseconds_timeout) {
+    auto test_method_(sleep_milliseconds_timeout) {
       auto sw = diagnostics::stopwatch::start_new();
       thread::sleep(10);
       assert::is_greater_or_equal(sw.elapsed_milliseconds(), 10);
     }
     
-    void test_method_(sleep_timeout) {
+    auto test_method_(sleep_timeout) {
       auto sw = diagnostics::stopwatch::start_new();
       thread::sleep(time_span::from_milliseconds(10.0));
       assert::is_greater_or_equal(sw.elapsed_milliseconds(), 10);
     }
     
-    void test_method_(start_new) {
+    auto test_method_(start_new) {
       auto thread = threading::thread::start_new(thread_start {[&] {thread::sleep(2);}});
       assert::are_not_equal(threading::thread::invalid_handle, thread.handle());
       thread.join();
     }
     
-    void test_method_(start_new_with_arg) {
+    auto test_method_(start_new_with_arg) {
       auto thread = threading::thread::start_new(parameterized_thread_start {[&] {thread::sleep(2);}}, 0);
       assert::are_not_equal(threading::thread::invalid_handle, thread.handle());
       thread.join();
     }
     
-    void test_method_(yield) {
+    auto test_method_(yield) {
       assert::is_true(thread::yield());
     }
     
-    void test_method_(create_many_threads) {
+    auto test_method_(create_many_threads) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
           interlocked::increment(counter);
@@ -636,7 +636,7 @@ namespace xtd::threading::tests {
       assert::are_equal(max_count_thread, as<size_t>(counter));
     }
     
-    void test_method_(create_many_threads_with_join_all) {
+    auto test_method_(create_many_threads_with_join_all) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
           interlocked::increment(counter);
@@ -653,7 +653,7 @@ namespace xtd::threading::tests {
       assert::are_equal(max_count_thread, as<size_t>(counter));
     }
     
-    void test_method_(create_many_threads_with_join_all_global) {
+    auto test_method_(create_many_threads_with_join_all_global) {
       auto counter = 0;
       auto thread_proc = thread_start {[&] {
           interlocked::increment(counter);

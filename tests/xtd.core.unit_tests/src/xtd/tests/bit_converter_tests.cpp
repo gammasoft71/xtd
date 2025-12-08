@@ -12,7 +12,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(bit_converter_tests) {
-    void test_method_(get_bytes_boolean) {
+    auto test_method_(get_bytes_boolean) {
       block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(false)) {
         bytes_assert::are_equal(0, bytes);
       }
@@ -22,7 +22,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(get_bytes_char) {
+    auto test_method_(get_bytes_char) {
       block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(' ')) {
         bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
       }
@@ -52,7 +52,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(get_bytes_char8) {
+    auto test_method_(get_bytes_char8) {
       block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8' ')) {
         bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
       }
@@ -82,7 +82,7 @@ namespace xtd::tests {
             }
             }
             
-              void test_method_(get_bytes_char16) {
+              auto test_method_(get_bytes_char16) {
               block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u' ')) {
               bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
             }
@@ -112,7 +112,7 @@ namespace xtd::tests {
                 }
                 }
                 
-                  void test_method_(get_bytes_char32) {
+                  auto test_method_(get_bytes_char32) {
                   block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U' ')) {
                   bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
                 }
@@ -142,7 +142,7 @@ namespace xtd::tests {
                     }
                     }
                     
-                      void test_method_(get_bytes_wchar) {
+                      auto test_method_(get_bytes_wchar) {
                       block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L' ')) {
                       bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
                     }
@@ -172,7 +172,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_double) {
+                          auto test_method_(get_bytes_double) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0.0)) {
                           bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes);
                         }
@@ -242,7 +242,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_int16) {
+                          auto test_method_(get_bytes_int16) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(static_cast<int16>(0))) {
                           bytes_assert::are_equal(0x00, 0x00, bytes);
                         }
@@ -272,7 +272,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_int32) {
+                          auto test_method_(get_bytes_int32) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0)) {
                           bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes);
                         }
@@ -310,7 +310,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_int64) {
+                          auto test_method_(get_bytes_int64) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0LL)) {
                           bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes);
                         }
@@ -360,7 +360,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_float) {
+                          auto test_method_(get_bytes_float) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0.0f)) {
                           bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, bytes);
                         }
@@ -431,7 +431,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_uint16_t) {
+                          auto test_method_(get_bytes_uint16_t) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(static_cast<uint16>(15))) {
                           bytes_assert::are_equal(0x0F, 0x00, bytes);
                         }
@@ -457,7 +457,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(get_bytes_uint32) {
+                          auto test_method_(get_bytes_uint32) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(15u)) {
                           bytes_assert::are_equal(0x0F, 0x00, 0x00, 0x00, bytes);
                         }
@@ -483,7 +483,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(getBytesUInt64) {
+                          auto test_method_(getBytesUInt64) {
                           block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0xFFFFFFull)) {
                           bytes_assert::are_equal(0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, bytes);
                         }
@@ -517,7 +517,7 @@ namespace xtd::tests {
                         }
                         }
                         
-                          void test_method_(to_boolean) {
+                          auto test_method_(to_boolean) {
                           assert::throws<index_out_of_range_exception>([] {bit_converter::to_boolean(array<byte> {0}, 1);});
                           
                           assert::is_false(bit_converter::to_boolean(array<byte> {0}, 0));
@@ -532,7 +532,7 @@ namespace xtd::tests {
                           assert::is_true(bit_converter::to_boolean(array<byte> {255}, 0));
                         }
                         
-                          void test_method_(to_char) {
+                          auto test_method_(to_char) {
                           assert::throws<index_out_of_range_exception>([] {bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
                           assert::throws<index_out_of_range_exception>([] {bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                           
@@ -545,7 +545,7 @@ namespace xtd::tests {
                             assert::are_equal(U'{', bit_converter::to_char(array<byte> {0x7B, 0x00, 0x00, 0x00}, 0));
                             }
                             
-                              void test_method_(to_double) {
+                              auto test_method_(to_double) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -568,7 +568,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<double>::infinity(), bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x7F}, 0));
                             }
                             
-                              void test_method_(to_int16) {
+                              auto test_method_(to_int16) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 2);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 1);});
                               
@@ -581,7 +581,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<int16>::max(), bit_converter::to_int16(array<byte> {0xFF, 0x7F}, 0));
                             }
                             
-                              void test_method_(to_int32) {
+                              auto test_method_(to_int32) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -596,7 +596,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<int32>::max(), bit_converter::to_int32(array<byte> {0xFF, 0xFF, 0xFF, 0x7F}, 0));
                             }
                             
-                              void test_method_(to_int64) {
+                              auto test_method_(to_int64) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -614,7 +614,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<int64>::max(), bit_converter::to_int64(array<byte> {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F}, 0));
                             }
                             
-                              void test_method_(to_single) {
+                              auto test_method_(to_single) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -637,7 +637,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<float>::infinity(), bit_converter::to_single(array<byte> {0x00, 0x00, 0x80, 0x7F}, 0));
                             }
                             
-                              void test_method_(to_string) {
+                              auto test_method_(to_string) {
                               array<xtd::byte> vectorOne = {0, 1, 2, 4, 8, 16, 32, 64, 128, 255};
                               assert::are_equal("00-01-02-04-08-10-20-40-80-FF", bit_converter::to_string(vectorOne));
                               
@@ -654,7 +654,7 @@ namespace xtd::tests {
                               assert::is_empty(bit_converter::to_string(vectorEmpty));
                             }
                             
-                              void test_method_(to_string_with_start_index) {
+                              auto test_method_(to_string_with_start_index) {
                               array<xtd::byte> vectorOne = {3, 6, 9};
                               assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0));
                               assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1));
@@ -666,7 +666,7 @@ namespace xtd::tests {
                               assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);});
                             }
                             
-                              void test_method_(to_string_with_start_index_and_length) {
+                              auto test_method_(to_string_with_start_index_and_length) {
                               array<xtd::byte> vectorOne = {3, 6, 9};
                               
                               assert::is_empty(bit_converter::to_string(vectorOne, 0, 0));
@@ -690,7 +690,7 @@ namespace xtd::tests {
                               assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);});
                             }
                             
-                              void test_method_(to_uint16) {
+                              auto test_method_(to_uint16) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 2);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 1);});
                               
@@ -702,7 +702,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<uint16>::max(), bit_converter::to_uint16(array<byte> {0xFF, 0xFF}, 0));
                             }
                             
-                              void test_method_(to_uint32) {
+                              auto test_method_(to_uint32) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -714,7 +714,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<uint32>::max(), bit_converter::to_uint32(array<byte> {0xFF, 0xFF, 0xFF, 0xFF}, 0));
                             }
                             
-                              void test_method_(to_uint64) {
+                              auto test_method_(to_uint64) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
@@ -728,7 +728,7 @@ namespace xtd::tests {
                               assert::are_equal(std::numeric_limits<uint64>::max(), bit_converter::to_uint64(array<byte> {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
                             }
                             
-                              void test_method_(to_size) {
+                              auto test_method_(to_size) {
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
                               assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               

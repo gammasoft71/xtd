@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_is_negative_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       int i = -1;
       xtd::tunit::valid::is_negative(i);
     }

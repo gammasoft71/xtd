@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(file_valid_does_not_exist_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       xtd::io::file::write_all_text(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"), "Test xtd::tunit::file_valid::does_not_exist.");
       
       file_valid::does_not_exist(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));

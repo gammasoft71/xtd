@@ -58,14 +58,14 @@ namespace xtd {
 /// namespace unit_tests {
 ///   test_class_(base_class) {
 ///   public:
-///     void test_method_(test1) {
+///     auto test_method_(test1) {
 ///       // Do test...
 ///     }
 ///   };
 ///
 ///   test_class_from_(derived_class, base_class) {
 ///   public:
-///     void test_method_(test2) {
+///     auto test_method_(test2) {
 ///       // Do test...
 ///     }
 ///   };

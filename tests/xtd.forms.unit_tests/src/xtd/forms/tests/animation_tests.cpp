@@ -23,7 +23,7 @@ namespace xtd::forms::tests {
       using animation::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       animation_for_test animation;
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -99,7 +99,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto animation = forms::animation::create();
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -161,7 +161,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_frame_per_second) {
+    auto test_method_(create_with_frame_per_second) {
       auto animation = forms::animation::create(60);
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -223,7 +223,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_frame_per_second_and_location) {
+    auto test_method_(create_with_frame_per_second_and_location) {
       auto animation = forms::animation::create(60, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -285,7 +285,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_frame_per_second_location_and_size) {
+    auto test_method_(create_with_frame_per_second_location_and_size) {
       auto animation = forms::animation::create(60, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -350,7 +350,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_frame_per_second_location_size_and_name) {
+    auto test_method_(create_with_frame_per_second_location_size_and_name) {
       auto animation = forms::animation::create(60, {10, 20}, {30, 40}, "animation");
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
       assert::are_equal(drawing::point::empty, animation.auto_scroll_point());
@@ -415,7 +415,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_parent) {
+    auto test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto animation = forms::animation::create(form);
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
@@ -478,7 +478,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_parent_and_frame_per_second) {
+    auto test_method_(create_with_parent_and_frame_per_second) {
       auto form = forms::form::create();
       auto animation = forms::animation::create(form, 60);
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
@@ -541,7 +541,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_parent_frame_per_second_and_location) {
+    auto test_method_(create_with_parent_frame_per_second_and_location) {
       auto form = forms::form::create();
       auto animation = forms::animation::create(form, 60, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
@@ -604,7 +604,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_parent_frame_per_second_location_and_size) {
+    auto test_method_(create_with_parent_frame_per_second_location_and_size) {
       auto form = forms::form::create();
       auto animation = forms::animation::create(form, 60, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());
@@ -670,7 +670,7 @@ namespace xtd::forms::tests {
       assert::is_false(animation.running());
     }
     
-    void test_method_(create_with_parent_frame_per_second_location_size_and_name) {
+    auto test_method_(create_with_parent_frame_per_second_location_size_and_name) {
       auto form = forms::form::create();
       auto animation = forms::animation::create(form, 60, {10, 20}, {30, 40}, "animation");
       assert::are_equal(anchor_styles::left | anchor_styles::top, animation.anchor());

@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_abort_aborted_tests) {
   public:
-    void test_method_(test_case_aborted) {
+    auto test_method_(test_case_aborted) {
       xtd::tunit::assert::abort(xtd::diagnostics::stack_frame {"assert_abort_aborted_tests.cpp", 8});
     }
   };

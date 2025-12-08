@@ -48,46 +48,46 @@ namespace xtd::tests {
       xtd::globalization::culture_info::current_culture(previous_culture);
     }
     
-    void test_method_(parse_styles_none) {
+    auto test_method_(parse_styles_none) {
       assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42", number_styles::none));
     }
     
-    void test_method_(parse_styles_none_with_leading_white_spaces) {
+    auto test_method_(parse_styles_none_with_leading_white_spaces) {
       assert::throws<format_exception>([] {xtd::parse<value_t>(" \f\n\r\t\v42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_trailing_white_spaces) {
+    auto test_method_(parse_styles_none_with_trailing_white_spaces) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42 \f\n\r\t\v", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_leading_plus_sign) {
+    auto test_method_(parse_styles_none_with_leading_plus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("+42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_leading_plus_sign) {
+    auto test_method_(parse_styles_none_with_two_leading_plus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("++42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_leading_minus_sign) {
+    auto test_method_(parse_styles_none_with_leading_minus_sign) {
       if (std::is_signed<value_t>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("-42", number_styles::none);});
       else
         assert::throws<format_exception>([] {xtd::parse<value_t>("-42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_leading_minus_sign) {
+    auto test_method_(parse_styles_none_with_two_leading_minus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("--42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_trailing_plus_sign) {
+    auto test_method_(parse_styles_none_with_trailing_plus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42+", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_trailing_plus_sign) {
+    auto test_method_(parse_styles_none_with_two_trailing_plus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42++", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_trailing_minus_sign) {
+    auto test_method_(parse_styles_none_with_trailing_minus_sign) {
       if (std::is_signed<value_t>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("42-", number_styles::none);});
       #if !defined(__linux__)
@@ -96,64 +96,64 @@ namespace xtd::tests {
       #endif
     }
     
-    void test_method_(parse_styles_none_with_two_trailing_minus_sign) {
+    auto test_method_(parse_styles_none_with_two_trailing_minus_sign) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42--", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_parentheses) {
+    auto test_method_(parse_styles_none_with_parentheses) {
       if (std::is_signed<value_t>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("(42)", number_styles::none);});
       else
         assert::throws<format_exception>([] {xtd::parse<value_t>("(42)", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_parentheses) {
+    auto test_method_(parse_styles_none_with_two_parentheses) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("((42))", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_decimal_point) {
+    auto test_method_(parse_styles_none_with_decimal_point) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42.0", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_decimal_point) {
+    auto test_method_(parse_styles_none_with_two_decimal_point) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("4.2.0", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_thousands) {
+    auto test_method_(parse_styles_none_with_thousands) {
       if (!std::is_same<value_t, sbyte>::value && !std::is_same<value_t, char>::value && !std::is_same<value_t, unsigned char>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("1,234", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_two_thousands) {
+    auto test_method_(parse_styles_none_with_two_thousands) {
       if (!std::is_same<value_t, sbyte>::value && !std::is_same<value_t, char>::value && !std::is_same<value_t, unsigned char>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("1,,234", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_exponent) {
+    auto test_method_(parse_styles_none_with_exponent) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("4E+01", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_leading_currency_symbol) {
+    auto test_method_(parse_styles_none_with_leading_currency_symbol) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("$42", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_trailing_currency_symbol) {
+    auto test_method_(parse_styles_none_with_trailing_currency_symbol) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("42$", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_binary_specifier) {
+    auto test_method_(parse_styles_none_with_binary_specifier) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("0b101010", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_with_octal_specifier) {
+    auto test_method_(parse_styles_none_with_octal_specifier) {
       assert::are_equal(static_cast<value_t>(52), xtd::parse<value_t>("052", number_styles::none));
     }
     
-    void test_method_(parse_styles_none_with_hexa_specifier) {
+    auto test_method_(parse_styles_none_with_hexa_specifier) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("0x2A", number_styles::none);});
     }
     
-    void test_method_(parse_styles_none_invalid) {
+    auto test_method_(parse_styles_none_invalid) {
       assert::throws<format_exception>([] {xtd::parse<value_t>("z42", number_styles::none);});
     }
   };

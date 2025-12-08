@@ -10,21 +10,21 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::tests {
   class test_class_(lcd_label_tests) {
-    void test_method_(new_lcd_label) {
+    auto test_method_(new_lcd_label) {
       form form;
       lcd_label label;
       label.parent(form);
       assert::are_equal(drawing::size(100, 25),  label.size());
     }
     
-    void test_method_(new_lcd_label_adn_add_to_form) {
+    auto test_method_(new_lcd_label_adn_add_to_form) {
       form form;
       lcd_label label;
       label.parent(form);
       assert::are_equal(drawing::size(100, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_with_one_char) {
+    auto test_method_(lcd_label_auto_size_with_one_char) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -33,7 +33,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(13, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_with_default_spacing_with_2_chars) {
+    auto test_method_(lcd_label_auto_size_with_default_spacing_with_2_chars) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -42,7 +42,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(27, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_with_default_spacing_with_3_chars) {
+    auto test_method_(lcd_label_auto_size_with_default_spacing_with_3_chars) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -51,7 +51,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(41, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_set_spacing_to_8_with_2_chars) {
+    auto test_method_(lcd_label_auto_size_set_spacing_to_8_with_2_chars) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -61,7 +61,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(32, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_set_spacing_to_8_with_3_chars) {
+    auto test_method_(lcd_label_auto_size_set_spacing_to_8_with_3_chars) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -71,7 +71,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(51, 25),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_with_default_spacing_with_5_chars_and_height_to_203) {
+    auto test_method_(lcd_label_auto_size_with_default_spacing_with_5_chars_and_height_to_203) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -81,7 +81,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(586, 203),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_set_spacing_to_10_with_5_chars_and_height_to_203) {
+    auto test_method_(lcd_label_auto_size_set_spacing_to_10_with_5_chars_and_height_to_203) {
       form form;
       lcd_label label;
       label.parent(form);
@@ -92,7 +92,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(542, 203),  label.size());
     }
     
-    void test_method_(lcd_label_auto_size_with_default_spacing_with_11_chars) {
+    auto test_method_(lcd_label_auto_size_with_default_spacing_with_11_chars) {
       form form;
       lcd_label label;
       label.parent(form);

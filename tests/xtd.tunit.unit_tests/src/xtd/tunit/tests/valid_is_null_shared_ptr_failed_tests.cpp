@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_is_null_shared_ptr_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       xtd::sptr<int> p = xtd::new_sptr<int>(42);
       xtd::tunit::valid::is_null(p);
     }

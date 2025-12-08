@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(directory_assert_does_not_exist_string_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto d = environment::get_folder_path(environment::special_folder::common_application_data);
       xtd::tunit::directory_assert::does_not_exist(d);
     }

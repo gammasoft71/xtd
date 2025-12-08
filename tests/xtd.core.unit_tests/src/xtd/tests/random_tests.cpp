@@ -12,40 +12,40 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(random_tests) {
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       assert::are_equal(std::default_random_engine {static_cast<uint32>(environment::tick_count().ticks())}, xtd::random {}.generator());
     }
     
-    void test_method_(constructor_with_seed) {
+    auto test_method_(constructor_with_seed) {
       assert::are_equal(std::default_random_engine {1}, xtd::random {0}.generator());
       assert::are_equal(std::default_random_engine {2}, xtd::random {1}.generator());
       assert::are_equal(std::default_random_engine {11}, xtd::random {10}.generator());
     }
     
-    void test_method_(constructor_with_device) {
+    auto test_method_(constructor_with_device) {
       // to be defined...
     }
     
-    void test_method_(copy_constructor) {
+    auto test_method_(copy_constructor) {
       assert::are_equal(std::default_random_engine {43}, xtd::random {xtd::random {42}}.generator());
     }
     
-    void test_method_(copy_operator) {
+    auto test_method_(copy_operator) {
       auto rnd = xtd::random {};
       rnd = xtd::random {42};
       assert::are_equal(std::default_random_engine {43}, rnd.generator());
     }
     
-    void test_method_(generator) {
+    auto test_method_(generator) {
       assert::are_equal(std::default_random_engine {1}, xtd::random {0}.generator());
     }
     
-    void test_method_(const_generator) {
+    auto test_method_(const_generator) {
       auto rnd = xtd::random {0};
       assert::are_equal(std::default_random_engine {1}, as_const(rnd).generator());
     }
     
-    void test_method_(get_items_int_with_choices_array_and_length) {
+    auto test_method_(get_items_int_with_choices_array_and_length) {
       auto items = xtd::random {1}.get_items<int>(array<int> {0, 1, 2, 3}, 16);
       assert::are_equal(16_z, items.length());
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
@@ -54,7 +54,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({1, 3, 3, 1, 1, 0, 2, 0, 1, 2, 2, 2, 1, 2, 2, 1}, items);
     }
     
-    void test_method_(get_items_boolean_with_choices_array_and_length) {
+    auto test_method_(get_items_boolean_with_choices_array_and_length) {
       auto items = xtd::random {1}.get_items<boolean>(array<boolean> {false, true}, 16);
       assert::are_equal(16_z, items.length());
       if (environment::os_version().is_linux()) collection_assert::are_equal({false, true, false, false, true, false, false, false, false, false, false, true, false, false, false, true}, items);
@@ -62,7 +62,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
     
-    void test_method_(get_items_double_with_choices_array_and_length) {
+    auto test_method_(get_items_double_with_choices_array_and_length) {
       auto items = xtd::random {1}.get_items<double>(array<double> {0.3, 0.5, 0.8}, 16);
       assert::are_equal(16_z, items.length());
       collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
@@ -71,7 +71,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({0.3, 0.8, 0.8, 0.5, 0.5, 0.3, 0.5, 0.3, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.5}, items);
     }
     
-    void test_method_(get_items_int_with_choices_read_only_span_and_length) {
+    auto test_method_(get_items_int_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<int>(read_only_span<int> {0, 1, 2, 3}, 16);
       assert::are_equal(16_z, items.length());
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
@@ -80,7 +80,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({1, 3, 3, 1, 1, 0, 2, 0, 1, 2, 2, 2, 1, 2, 2, 1}, items);
     }
     
-    void test_method_(get_items_boolean_with_choices_read_only_span_and_length) {
+    auto test_method_(get_items_boolean_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, 16);
       assert::are_equal(16_z, items.length());
       if (environment::os_version().is_linux()) collection_assert::are_equal({false, true, false, false, true, false, false, false, false, false, false, true, false, false, false, true}, items);
@@ -88,7 +88,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
     
-    void test_method_(get_items_double_with_choices_read_only_span_and_length) {
+    auto test_method_(get_items_double_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, 16);
       assert::are_equal(16_z, items.length());
       collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
@@ -97,7 +97,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({0.3, 0.8, 0.8, 0.5, 0.5, 0.3, 0.5, 0.3, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.5}, items);
     }
     
-    void test_method_(get_items_int_with_choices_read_only_span_and_destination) {
+    auto test_method_(get_items_int_with_choices_read_only_span_and_destination) {
       auto items_array = array<int>(16);
       auto items = span<int>(items_array);
       xtd::random {1}.get_items<int>(read_only_span<int> {0, 1, 2, 3}, items);
@@ -107,7 +107,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({1, 3, 3, 1, 1, 0, 2, 0, 1, 2, 2, 2, 1, 2, 2, 1}, items);
     }
     
-    void test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
+    auto test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
       auto items_array = array<boolean>(16);
       auto items = span<boolean>(items_array);
       xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, items);
@@ -116,7 +116,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
     
-    void test_method_(get_items_double_with_choices_read_only_span_and_destination) {
+    auto test_method_(get_items_double_with_choices_read_only_span_and_destination) {
       auto items_array = array<double>(16);
       auto items = span<double>(items_array);
       xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, items);
@@ -126,7 +126,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({0.3, 0.8, 0.8, 0.5, 0.5, 0.3, 0.5, 0.3, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.5}, items);
     }
     
-    void test_method_(next) {
+    auto test_method_(next) {
       if (!environment::os_version().is_macos()) return;
       auto rnd = xtd::random {1};
       assert::are_equal(365211587, rnd.next());
@@ -136,7 +136,7 @@ namespace xtd::tests {
       assert::are_equal(1045878015, rnd.next());
     }
     
-    void test_method_(next_with_boolean) {
+    auto test_method_(next_with_boolean) {
       if (!environment::os_version().is_macos()) return;
       auto rnd = xtd::random {1};
       assert::are_equal(false, rnd.next<boolean>());
@@ -146,7 +146,7 @@ namespace xtd::tests {
       assert::are_equal(false, rnd.next<boolean>());
     }
     
-    void test_method_(next_with_double) {
+    auto test_method_(next_with_double) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(4.72929156823009E+307, rnd.next<double>());
@@ -169,7 +169,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_int_with_max_value_less_or_equal_to_1) {
+    auto test_method_(next_int_with_max_value_less_or_equal_to_1) {
       auto rnd = xtd::random {1};
       assert::are_equal(0, rnd.next(0));
       assert::are_equal(0, rnd.next(0));
@@ -179,21 +179,21 @@ namespace xtd::tests {
       assert::are_equal(0, rnd.next(1));
     }
     
-    void test_method_(next_boolean_with_max_value_equal_to_false) {
+    auto test_method_(next_boolean_with_max_value_equal_to_false) {
       auto rnd = xtd::random {1};
       assert::are_equal(false, rnd.next(false));
       assert::are_equal(false, rnd.next(false));
       assert::are_equal(false, rnd.next(false));
     }
     
-    void test_method_(next_double_with_max_value_equal_to_0) {
+    auto test_method_(next_double_with_max_value_equal_to_0) {
       auto rnd = xtd::random {1};
       assert::are_equal(0.0, rnd.next(0.0));
       assert::are_equal(0.0, rnd.next(0.0));
       assert::are_equal(0.0, rnd.next(0.0));
     }
     
-    void test_method_(next_int_with_max_value) {
+    auto test_method_(next_int_with_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(1, rnd.next(4));
@@ -216,7 +216,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_boolean_with_max_value) {
+    auto test_method_(next_boolean_with_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(false, rnd.next(true));
@@ -239,7 +239,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_int_with_min_and_max_with_same_value_or_same_value_plus_one) {
+    auto test_method_(next_int_with_min_and_max_with_same_value_or_same_value_plus_one) {
       auto rnd = xtd::random {1};
       assert::are_equal(4, rnd.next(4, 4));
       assert::are_equal(4, rnd.next(4, 4));
@@ -247,7 +247,7 @@ namespace xtd::tests {
       assert::are_equal(4, rnd.next(4, 5));
     }
     
-    void test_method_(next_boolean_with_min_and_max_with_same_value) {
+    auto test_method_(next_boolean_with_min_and_max_with_same_value) {
       auto rnd = xtd::random {1};
       assert::are_equal(false, rnd.next<boolean>(false, false));
       assert::are_equal(false, rnd.next<boolean>(false, false));
@@ -255,13 +255,13 @@ namespace xtd::tests {
       assert::are_equal(true, rnd.next<boolean>(true, true));
     }
     
-    void test_method_(next_double_with_min_and_max_with_same_valuee) {
+    auto test_method_(next_double_with_min_and_max_with_same_valuee) {
       auto rnd = xtd::random {1};
       assert::are_equal(4, rnd.next(4.0, 4.0));
       assert::are_equal(4, rnd.next(4.0, 4.0));
     }
     
-    void test_method_(next_int_with_min_and_max_value) {
+    auto test_method_(next_int_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(5, rnd.next(4, 8));
@@ -284,7 +284,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_boolean_with_min_and_max_value) {
+    auto test_method_(next_boolean_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(false, rnd.next(true));
@@ -307,7 +307,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_double_with_min_and_max_value) {
+    auto test_method_(next_double_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(5.05230230377273, rnd.next(4.0, 8.0));
@@ -330,7 +330,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_bytes_with_array) {
+    auto test_method_(next_bytes_with_array) {
       auto rnd = xtd::random {1};
       auto bytes = array<byte>(16_z);
       rnd.next_bytes(bytes);
@@ -339,7 +339,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({47, 237, 241, 123, 81, 39, 178, 30, 123, 161, 208, 173, 127, 149, 183, 66}, bytes);
     }
     
-    void test_method_(next_bytes_with_span) {
+    auto test_method_(next_bytes_with_span) {
       auto rnd = xtd::random {1};
       auto bytes = array<byte>(16_z);
       auto span_byes = span<byte> {bytes};
@@ -349,7 +349,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({47, 237, 241, 123, 81, 39, 178, 30, 123, 161, 208, 173, 127, 149, 183, 66}, span_byes);
     }
     
-    void test_method_(next_double) {
+    auto test_method_(next_double) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
         assert::are_equal(0.263075575943183, rnd.next_double());
@@ -372,7 +372,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_values_with_array_of_ints) {
+    auto test_method_(next_values_with_array_of_ints) {
       auto rnd = xtd::random {1};
       auto values = array<int>(16_z);
       rnd.next_values(values);
@@ -381,7 +381,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({397460743, 2000468770, 2035235988, 1040990757, 688346755, 331628760, 1500796196, 257591832, 1041907343, 1358793929, 1757128505, 1466787154, 1070651954, 1260136916, 1545660440, 555120403}, values);
     }
     
-    void test_method_(next_values_with_array_of_booleans) {
+    auto test_method_(next_values_with_array_of_booleans) {
       auto rnd = xtd::random {1};
       auto values = array<boolean>(16_z);
       rnd.next_values(values);
@@ -390,7 +390,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, values);
     }
     
-    void test_method_(next_values_with_array_of_double) {
+    auto test_method_(next_values_with_array_of_double) {
       auto rnd = xtd::random {1};
       auto values = array<double>(16_z);
       rnd.next_values(values);
@@ -399,7 +399,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({3.32721e+307, 1.67462e+308, 1.70373e+308, 8.7143e+307, 5.76226e+307, 2.77612e+307, 1.25634e+308, 2.15634e+307, 8.72197e+307, 1.13747e+308, 1.47092e+308, 1.22787e+308, 8.9626e+307, 1.05488e+308, 1.2939e+308, 4.647e+307}, values);
     }
     
-    void test_method_(next_values_with_span_of_ints) {
+    auto test_method_(next_values_with_span_of_ints) {
       auto rnd = xtd::random {1};
       auto values = array<int>(16_z);
       auto span_values = span<int>(values);
@@ -409,7 +409,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({397460743, 2000468770, 2035235988, 1040990757, 688346755, 331628760, 1500796196, 257591832, 1041907343, 1358793929, 1757128505, 1466787154, 1070651954, 1260136916, 1545660440, 555120403}, span_values);
     }
     
-    void test_method_(next_values_with_span_of_booleans) {
+    auto test_method_(next_values_with_span_of_booleans) {
       auto rnd = xtd::random {1};
       auto values = array<boolean>(16_z);
       auto span_values = span<boolean>(values);

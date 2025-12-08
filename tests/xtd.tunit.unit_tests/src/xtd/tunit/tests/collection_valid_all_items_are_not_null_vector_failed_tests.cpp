@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_valid_all_items_are_not_null_vector_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto a = xtd::array<int*> {nullptr};
       xtd::tunit::collection_valid::all_items_are_not_null(a);
     }

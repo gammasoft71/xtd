@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assume_is_null_weak_ptr_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       xtd::sptr<int> i = xtd::new_sptr<int>(42);
       xtd::wptr<int> p = i;
       xtd::tunit::assume::is_null(p);

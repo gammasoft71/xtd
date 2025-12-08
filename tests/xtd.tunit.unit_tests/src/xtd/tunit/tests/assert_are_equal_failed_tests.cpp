@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_are_equal_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       int i = 24;
       xtd::tunit::assert::are_equal(23, i);
     }

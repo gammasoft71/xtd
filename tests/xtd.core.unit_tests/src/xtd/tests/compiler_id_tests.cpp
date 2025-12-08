@@ -8,31 +8,31 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(compiler_id_tests) {
-    void test_method_(unknown) {
+    auto test_method_(unknown) {
       assert::are_equal(-1, enum_object<>::to_int32(compiler_id::unknown));
       assert::are_equal("unknown", enum_object<>::to_string(compiler_id::unknown));
       assert::are_equal(compiler_id::unknown, enum_object<>::parse<compiler_id>("unknown"));
     }
     
-    void test_method_(msvc) {
+    auto test_method_(msvc) {
       assert::are_equal(0, enum_object<>::to_int32(compiler_id::msvc));
       assert::are_equal("msvc", enum_object<>::to_string(compiler_id::msvc));
       assert::are_equal(compiler_id::msvc, enum_object<>::parse<compiler_id>("msvc"));
     }
     
-    void test_method_(clang) {
+    auto test_method_(clang) {
       assert::are_equal(1, enum_object<>::to_int32(compiler_id::clang));
       assert::are_equal("clang", enum_object<>::to_string(compiler_id::clang));
       assert::are_equal(compiler_id::clang, enum_object<>::parse<compiler_id>("clang"));
     }
     
-    void test_method_(gcc) {
+    auto test_method_(gcc) {
       assert::are_equal(2, enum_object<>::to_int32(compiler_id::gcc));
       assert::are_equal("gcc", enum_object<>::to_string(compiler_id::gcc));
       assert::are_equal(compiler_id::gcc, enum_object<>::parse<compiler_id>("gcc"));
     }
     
-    void test_method_(apple_clang) {
+    auto test_method_(apple_clang) {
       assert::are_equal(3, enum_object<>::to_int32(compiler_id::apple_clang));
       assert::are_equal("apple_clang", enum_object<>::to_string(compiler_id::apple_clang));
       assert::are_equal(compiler_id::apple_clang, enum_object<>::parse<compiler_id>("apple_clang"));

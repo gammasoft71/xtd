@@ -15,15 +15,15 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(socket_tests) {
-    void test_method_(os_supports_ip_v4) {
+    auto test_method_(os_supports_ip_v4) {
       assume::is_true(socket::os_supports_ip_v4());
     }
     
-    void test_method_(os_supports_ip_v6) {
+    auto test_method_(os_supports_ip_v6) {
       assume::is_true(socket::os_supports_ip_v6());
     }
     
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       socket s;
       assert::are_equal(address_family::unspecified, s.address_family());
       assert::throws<object_closed_exception>([&] {s.available();});
@@ -49,7 +49,7 @@ namespace xtd::net::sockets::tests {
       assert::throws<object_closed_exception>([&] {s.ttl();});
     }
     
-    void test_method_(constructor_with_socket_type_stream_and_protocol_type_tcp) {
+    auto test_method_(constructor_with_socket_type_stream_and_protocol_type_tcp) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(socket_type::stream, protocol_type::tcp);
       assert::are_equal(address_family::inter_network_v6, s.address_family());
@@ -79,7 +79,7 @@ namespace xtd::net::sockets::tests {
       // assert::is_not_zero(s.ttl());
     }
     
-    void test_method_(constructor_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp) {
+    auto test_method_(constructor_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(socket_type::stream, protocol_type::tcp);
       assert::are_equal(address_family::inter_network_v6, s.address_family());
@@ -109,7 +109,7 @@ namespace xtd::net::sockets::tests {
       // assert::is_not_zero(s.ttl());
     }
     
-    void test_method_(constructor_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp) {
+    auto test_method_(constructor_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp) {
       #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
       return;
       #endif
@@ -142,7 +142,7 @@ namespace xtd::net::sockets::tests {
       assert::is_not_zero(s.ttl());
     }
     
-    void test_method_(constructor_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp) {
+    auto test_method_(constructor_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp) {
       #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
       return;
       #endif
@@ -172,94 +172,94 @@ namespace xtd::net::sockets::tests {
       assert::is_not_zero(s.ttl());
     }
     
-    void test_method_(bind_with_bad_socket) {
+    auto test_method_(bind_with_bad_socket) {
       socket s;
       assert::throws<object_closed_exception>([&] {s.bind(ip_end_point(ip_address(127, 0, 0, 1), 9400));});
     }
     
-    void test_method_(bind_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(bind_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::is_true(s.is_bound());
     }
     
-    void test_method_(bind_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(bind_with_address_family_internet_network_v6_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::is_true(s.is_bound());
     }
     
-    void test_method_(bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::any, 4242));
       assert::is_true(s.is_bound());
     }
     
-    void test_method_(bind_with_address_family_internet_network_v6_socket_type_dgram_and_protocol_type_udp_socket) {
+    auto test_method_(bind_with_address_family_internet_network_v6_socket_type_dgram_and_protocol_type_udp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::dgram, protocol_type::udp);
       s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::is_true(s.is_bound());
     }
     
-    void test_method_(bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
+    auto test_method_(bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
       s.bind(ip_end_point(ip_address::any, 4242));
       assert::is_true(s.is_bound());
     }
     
-    void test_method_(bind_with_empty_socket) {
+    auto test_method_(bind_with_empty_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s;
       assert::throws<object_closed_exception>([&] {s.bind(ip_end_point(ip_address::any, 9400));});
       assert::is_false(s.is_bound());
     }
     
-    void test_method_(listen_with_bind_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(listen_with_bind_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::ip_v6_any, 4242));
       assert::does_not_throw([&] {s.listen(10);});
     }
     
-    void test_method_(listen_with_bind_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(listen_with_bind_with_address_family_internet_v6_network_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v6());
       socket s(address_family::inter_network_v6, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::ip_v6_any, 9400));
       assert::does_not_throw([&] {s.listen(10);});
     }
     
-    void test_method_(listen_with_bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
+    auto test_method_(listen_with_bind_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.bind(ip_end_point(ip_address::any, 9400));
       assert::does_not_throw([&] {s.listen(10);});
     }
     
-    void test_method_(listen_with_bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
+    auto test_method_(listen_with_bind_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
       s.bind(ip_end_point(ip_address::any, 4242));
       assert::throws<socket_exception>([&] {s.listen(10);});
     }
     
-    void test_method_(listen_with_empty_socket) {
+    auto test_method_(listen_with_empty_socket) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s;
       assert::throws<object_closed_exception>([&] {s.listen(10);});
     }
     
-    void test_method_(listen_without_bind) {
+    auto test_method_(listen_without_bind) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       assert::throws<socket_exception>([&] {s.listen(10);});
     }
     
-    void test_method_(set_receive_buffer_size) {
+    auto test_method_(set_receive_buffer_size) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.receive_buffer_size(4242);
@@ -267,14 +267,14 @@ namespace xtd::net::sockets::tests {
       //assert::are_equal(4242u, s.receive_buffer_size());
     }
     
-    void test_method_(set_receive_timeout) {
+    auto test_method_(set_receive_timeout) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.receive_timeout(1000);
       assert::are_equal(1000, s.receive_timeout());
     }
     
-    void test_method_(set_send_buffer_size) {
+    auto test_method_(set_send_buffer_size) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_buffer_size(4242);
@@ -282,7 +282,7 @@ namespace xtd::net::sockets::tests {
       //assert::are_equal(4242u, s.send_buffer_size());
     }
     
-    void test_method_(set_send_timeout) {
+    auto test_method_(set_send_timeout) {
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       s.send_timeout(1000);

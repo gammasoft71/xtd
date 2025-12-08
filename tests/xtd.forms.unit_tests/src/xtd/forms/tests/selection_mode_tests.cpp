@@ -9,25 +9,25 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(selection_mode_tests) {
   public:
-    void test_method_(none) {
+    auto test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(selection_mode::none));
       assert::are_equal("none", enum_object<>::to_string(selection_mode::none));
       assert::are_equal(selection_mode::none, enum_object<>::parse<selection_mode>("none"));
     }
     
-    void test_method_(one) {
+    auto test_method_(one) {
       assert::are_equal(1, enum_object<>::to_int32(selection_mode::one));
       assert::are_equal("one", enum_object<>::to_string(selection_mode::one));
       assert::are_equal(selection_mode::one, enum_object<>::parse<selection_mode>("one"));
     }
     
-    void test_method_(multi_simple) {
+    auto test_method_(multi_simple) {
       assert::are_equal(2, enum_object<>::to_int32(selection_mode::multi_simple));
       assert::are_equal("multi_simple", enum_object<>::to_string(selection_mode::multi_simple));
       assert::are_equal(selection_mode::multi_simple, enum_object<>::parse<selection_mode>("multi_simple"));
     }
     
-    void test_method_(multi_extended) {
+    auto test_method_(multi_extended) {
       assert::are_equal(3, enum_object<>::to_int32(selection_mode::multi_extended));
       assert::are_equal("multi_extended", enum_object<>::to_string(selection_mode::multi_extended));
       assert::are_equal(selection_mode::multi_extended, enum_object<>::parse<selection_mode>("multi_extended"));

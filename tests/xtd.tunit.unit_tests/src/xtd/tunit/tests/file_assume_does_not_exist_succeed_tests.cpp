@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(file_assume_does_not_exist_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       file_assume::does_not_exist(xtd::io::path::combine(xtd::io::path::get_temp_path(), "test_tunit_file.txt"));
     }
   };

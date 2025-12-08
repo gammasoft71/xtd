@@ -8,25 +8,25 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(console_cancel_event_args_tests) {
-    void test_method_(default_constructor) {
+    auto test_method_(default_constructor) {
       auto ea = console_cancel_event_args();
       assert::is_false(ea.cancel());
       assert::is_zero(ea.special_key());
     }
     
-    void test_method_(constructor_with_special_key_control_break) {
+    auto test_method_(constructor_with_special_key_control_break) {
       auto ea = console_cancel_event_args(console_special_key::control_break);
       assert::is_false(ea.cancel());
       assert::are_equal(console_special_key::control_break, ea.special_key());
     }
     
-    void test_method_(constructor_with_special_key_control_backslash) {
+    auto test_method_(constructor_with_special_key_control_backslash) {
       auto ea = console_cancel_event_args(console_special_key::control_backslash);
       assert::is_false(ea.cancel());
       assert::are_equal(console_special_key::control_backslash, ea.special_key());
     }
     
-    void test_method_(cancel) {
+    auto test_method_(cancel) {
       auto ea = console_cancel_event_args(console_special_key::control_break);
       assert::is_false(ea.cancel());
       ea.cancel(true);

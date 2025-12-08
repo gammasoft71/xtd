@@ -23,7 +23,7 @@ namespace xtd::io::tests {
         ::remove(test_file_name);
     }
     
-    void test_method_(append_all_lines) {
+    auto test_method_(append_all_lines) {
       assert::does_not_throw([] {file::append_all_lines(test_file_name, {"Line 1"});});
       assert::does_not_throw([] {file::append_all_lines(test_file_name, {"Line 2", "Line 3"});});
       
@@ -32,7 +32,7 @@ namespace xtd::io::tests {
       assert::are_equal("Line 1\nLine 2\nLine 3\n", contents);
     }
     
-    void test_method_(append_all_text) {
+    auto test_method_(append_all_text) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "This is a text ");});
       assert::does_not_throw([] {file::append_all_text(test_file_name, "to append");});
       
@@ -41,7 +41,7 @@ namespace xtd::io::tests {
       assert::are_equal("This is a text to append", contents);
     }
     
-    void test_method_(copy) {
+    auto test_method_(copy) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");});
       //std::cout << file::read_all_text(test_file_name) << std::endl;
       assert::does_not_throw([] {file::copy(test_file_name, "file2.txt");});
@@ -53,7 +53,7 @@ namespace xtd::io::tests {
       ::remove("file2.txt");
     }
     
-    void test_method_(copy_with_override) {
+    auto test_method_(copy_with_override) {
       std::ofstream existing_file("file2.txt");
       existing_file << "Existing";
       existing_file.close();
@@ -67,7 +67,7 @@ namespace xtd::io::tests {
       ::remove("file2.txt");
     }
     
-    void test_method_(copy_with_override_false) {
+    auto test_method_(copy_with_override_false) {
       std::ofstream existing_file("file2.txt");
       existing_file << "Existing";
       existing_file.close();
@@ -82,7 +82,7 @@ namespace xtd::io::tests {
       ::remove("file2.txt");
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto file = file::create(test_file_name);
       
       assert::is_true(file.good());
@@ -90,7 +90,7 @@ namespace xtd::io::tests {
       assert::are_equal(0, file.tellp());
     }
     
-    void test_method_(create_with_override) {
+    auto test_method_(create_with_override) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");});
       auto file = file::create(test_file_name);
       
@@ -99,7 +99,7 @@ namespace xtd::io::tests {
       assert::are_equal(0, file.tellp());
     }
     
-    void test_method_(create_text) {
+    auto test_method_(create_text) {
       auto file = file::create_text(test_file_name);
       
       assert::is_true(file.good());
@@ -107,7 +107,7 @@ namespace xtd::io::tests {
       assert::are_equal(0, file.tellp());
     }
     
-    void test_method_(create_text_with_override) {
+    auto test_method_(create_text_with_override) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");});
       auto file = file::create_text(test_file_name);
       
@@ -116,24 +116,24 @@ namespace xtd::io::tests {
       assert::are_equal(0, file.tellp());
     }
     
-    void test_method_(exists) {
+    auto test_method_(exists) {
       assert::is_false(file::exists(test_file_name));
       std::ofstream file(test_file_name);
       file.close();
       assert::is_true(file::exists(test_file_name));
     }
     
-    void test_method_(get_attributes_directory) {
+    auto test_method_(get_attributes_directory) {
       assert::is_true((file::get_attributes(".") & file_attributes::directory) == file_attributes::directory);
     }
     
-    void test_method_(get_attributes_normal) {
+    auto test_method_(get_attributes_normal) {
       std::ofstream file(test_file_name);
       file.close();
       assert::is_true((file::get_attributes(test_file_name) & file_attributes::normal) == file_attributes::normal || (file::get_attributes(test_file_name) & file_attributes::archive) == file_attributes::archive);
     }
     
-    void test_method_(move) {
+    auto test_method_(move) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");});
       assert::does_not_throw([] {file::move(test_file_name, "file2.txt");});
       
@@ -144,7 +144,7 @@ namespace xtd::io::tests {
       ::remove("file2.txt");
     }
     
-    void test_method_(move_on_existing_file) {
+    auto test_method_(move_on_existing_file) {
       std::ofstream existing_file("file2.txt");
       existing_file << "Existing";
       existing_file.close();
@@ -161,7 +161,7 @@ namespace xtd::io::tests {
       ::remove("file2.txt");
     }
     
-    void test_method_(open_mode_in_with_existing_file) {
+    auto test_method_(open_mode_in_with_existing_file) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Text";
       existing_file.close();
@@ -172,17 +172,17 @@ namespace xtd::io::tests {
       assert::are_equal("Text", contents);
     }
     
-    void test_method_(open_mode_in_without_existing_file) {
+    auto test_method_(open_mode_in_without_existing_file) {
       assert::throws<file_not_found_exception>([] {file::open(test_file_name, std::ios::in);});
     }
     
-    void test_method_(open_mode_out) {
+    auto test_method_(open_mode_out) {
       std::fstream file = file::open(test_file_name, std::ios::out);
       
       assert::is_true(file.good());
     }
     
-    void test_method_(open_mode_out_with_existing_file) {
+    auto test_method_(open_mode_out_with_existing_file) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Text";
       existing_file.close();
@@ -193,7 +193,7 @@ namespace xtd::io::tests {
       assert::is_empty(contents);
     }
     
-    void test_method_(open_read_with_existing_file) {
+    auto test_method_(open_read_with_existing_file) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Text";
       existing_file.close();
@@ -204,11 +204,11 @@ namespace xtd::io::tests {
       assert::are_equal("Text", contents);
     }
     
-    void test_method_(open_read_without_existing_file) {
+    auto test_method_(open_read_without_existing_file) {
       assert::throws<file_not_found_exception>([] {file::open_read(test_file_name);});
     }
     
-    void test_method_(open_text_with_existing_file) {
+    auto test_method_(open_text_with_existing_file) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Text";
       existing_file.close();
@@ -219,17 +219,17 @@ namespace xtd::io::tests {
       assert::are_equal("Text", contents);
     }
     
-    void test_method_(open_text_without_existing_file) {
+    auto test_method_(open_text_without_existing_file) {
       assert::throws<file_not_found_exception>([] {file::open_text(test_file_name);});
     }
     
-    void test_method_(open_write) {
+    auto test_method_(open_write) {
       std::ofstream file = file::open_write(test_file_name);
       
       assert::is_true(file.good());
     }
     
-    void test_method_(read_all_bytes) {
+    auto test_method_(read_all_bytes) {
       std::ofstream existing_file(test_file_name, std::ios::binary | std::ios::out);
       array<byte> b = {0x42, 0x24, 0x12, 0x84};
       existing_file.write(reinterpret_cast<char*>(b.data()), b.length());
@@ -243,11 +243,11 @@ namespace xtd::io::tests {
       assert::are_equal(0x84, bytes[3]);
     }
     
-    void test_method_(read_all_bytes_with_unexisting_file) {
+    auto test_method_(read_all_bytes_with_unexisting_file) {
       assert::throws<file_not_found_exception>([] {file::read_all_bytes(test_file_name);});
     }
     
-    void test_method_(read_all_lines) {
+    auto test_method_(read_all_lines) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
@@ -258,11 +258,11 @@ namespace xtd::io::tests {
       assert::are_equal("Line 3", lines[2]);
     }
     
-    void test_method_(read_all_lines_with_unexisting_file) {
+    auto test_method_(read_all_lines_with_unexisting_file) {
       assert::throws<file_not_found_exception>([] {file::read_all_lines(test_file_name);});
     }
     
-    void test_method_(read_all_text) {
+    auto test_method_(read_all_text) {
       std::ofstream existing_file(test_file_name);
       existing_file << "This is a \nmultiline text";
       existing_file.close();
@@ -270,11 +270,11 @@ namespace xtd::io::tests {
       assert::are_equal("This is a \nmultiline text", text);
     }
     
-    void test_method_(read_all_text_with_unexisting_file) {
+    auto test_method_(read_all_text_with_unexisting_file) {
       assert::throws<file_not_found_exception>([] {file::read_all_text(test_file_name);});
     }
     
-    void test_method_(remove) {
+    auto test_method_(remove) {
       std::ofstream existing_file(test_file_name);
       existing_file.close();
       assert::is_true(std::ifstream(test_file_name).good());
@@ -283,7 +283,7 @@ namespace xtd::io::tests {
       assert::is_false(std::ifstream(test_file_name).good());
     }
     
-    void test_method_(replace) {
+    auto test_method_(replace) {
       auto file_name1 = "file1.txt";
       std::ofstream existing_file1(file_name1);
       existing_file1 << "Text1";
@@ -312,7 +312,7 @@ namespace xtd::io::tests {
       ::remove(file_name3);
     }
     
-    void test_method_(replace_without_source) {
+    auto test_method_(replace_without_source) {
       auto file_name1 = "file1.txt";
       auto file_name2 = "file2.txt";
       std::ofstream existing_file2(file_name2);
@@ -334,7 +334,7 @@ namespace xtd::io::tests {
       ::remove(file_name3);
     }
     
-    void test_method_(replace_without_destination) {
+    auto test_method_(replace_without_destination) {
       auto file_name1 = "file1.txt";
       std::ofstream existing_file1(file_name1);
       existing_file1 << "Text1";
@@ -355,7 +355,7 @@ namespace xtd::io::tests {
       ::remove(file_name3);
     }
     
-    void test_method_(replace_with_existing_destination_backuo) {
+    auto test_method_(replace_with_existing_destination_backuo) {
       auto file_name1 = "file1.txt";
       std::ofstream existing_file1(file_name1);
       existing_file1 << "Text1";
@@ -385,7 +385,7 @@ namespace xtd::io::tests {
       ::remove(file_name3);
     }
     
-    void test_method_(write_all_lines) {
+    auto test_method_(write_all_lines) {
       assert::does_not_throw([] {file::write_all_lines(test_file_name, {"Line 1"});});
       assert::does_not_throw([] {file::write_all_lines(test_file_name, {"Line 2", "Line 3"});});
       
@@ -394,7 +394,7 @@ namespace xtd::io::tests {
       assert::are_equal("Line 2\nLine 3\n", contents);
     }
     
-    void test_method_(write_all_text) {
+    auto test_method_(write_all_text) {
       assert::does_not_throw([] {file::write_all_text(test_file_name, "This is a text ");});
       assert::does_not_throw([] {file::write_all_text(test_file_name, "to write");});
       

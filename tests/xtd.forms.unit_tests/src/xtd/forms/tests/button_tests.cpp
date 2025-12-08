@@ -23,7 +23,7 @@ namespace xtd::forms::tests {
       using button::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       button_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -105,7 +105,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto button = forms::button::create();
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -173,7 +173,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_text) {
+    auto test_method_(create_with_text) {
       auto button = forms::button::create("new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -241,7 +241,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_text_and_location) {
+    auto test_method_(create_with_text_and_location) {
       auto button = forms::button::create("new text", {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -309,7 +309,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_text_location_and_size) {
+    auto test_method_(create_with_text_location_and_size) {
       auto button = forms::button::create("new text", {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -380,7 +380,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_text_location_size_and_name) {
+    auto test_method_(create_with_text_location_size_and_name) {
       auto button = forms::button::create("new text", {10, 20}, {30, 40}, "button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -451,7 +451,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_parent) {
+    auto test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto button = forms::button::create(form);
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
@@ -520,7 +520,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_parent_and_text) {
+    auto test_method_(create_with_parent_and_text) {
       auto form = forms::form::create();
       auto button = forms::button::create(form, "new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
@@ -589,7 +589,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_parent_text_and_location) {
+    auto test_method_(create_with_parent_text_and_location) {
       auto form = forms::form::create();
       auto button = forms::button::create(form, "new text", {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
@@ -658,7 +658,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_parent_text_location_and_size) {
+    auto test_method_(create_with_parent_text_location_and_size) {
       auto form = forms::form::create();
       auto button = forms::button::create(form, "new text", {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
@@ -730,7 +730,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(create_with_parent_text_location_size_and_name) {
+    auto test_method_(create_with_parent_text_location_size_and_name) {
       auto form = forms::form::create();
       auto button = forms::button::create(form, "new text", {10, 20}, {30, 40}, "button");
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
@@ -802,7 +802,7 @@ namespace xtd::forms::tests {
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
     
-    void test_method_(perform_click_form_button) {
+    auto test_method_(perform_click_form_button) {
       form form;
       button_for_test button;
       button.parent(form);
@@ -815,7 +815,7 @@ namespace xtd::forms::tests {
     }
     
     /*
-    void test_method_(send_message_button_click_form_panel_button) {
+    auto test_method_(send_message_button_click_form_panel_button) {
       form form;
       panel panel;
       panel.parent(form);
@@ -829,7 +829,7 @@ namespace xtd::forms::tests {
       assert::are_equal(1, click_control_check);
     }*/
     
-    void test_method_(set_client_size) {
+    auto test_method_(set_client_size) {
       form form;
       button_for_test button;
       button.parent(form);
@@ -837,7 +837,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(100, 50), button.client_size());
     }
     
-    void test_method_(set_size) {
+    auto test_method_(set_size) {
       form form;
       button_for_test button;
       button.parent(form);

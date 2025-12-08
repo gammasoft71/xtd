@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(apple_colors_tests) {
-    void test_method_(black) {
+    auto test_method_(black) {
       auto c = apple_colors::black();
       
       assert::are_equal(apple_colors::black(), c);
@@ -36,7 +36,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_black, c.to_known_color());
     }
     
-    void test_method_(blue) {
+    auto test_method_(blue) {
       auto c = apple_colors::blue();
       
       assert::are_equal(apple_colors::blue(), c);
@@ -62,7 +62,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_blue, c.to_known_color());
     }
     
-    void test_method_(brown) {
+    auto test_method_(brown) {
       auto c = apple_colors::brown();
       
       assert::are_equal(apple_colors::brown(), c);
@@ -88,7 +88,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_brown, c.to_known_color());
     }
     
-    void test_method_(cyan) {
+    auto test_method_(cyan) {
       auto c = apple_colors::cyan();
       
       assert::are_equal(apple_colors::cyan(), c);
@@ -114,7 +114,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_cyan, c.to_known_color());
     }
     
-    void test_method_(green) {
+    auto test_method_(green) {
       auto c = apple_colors::green();
       
       assert::are_equal(apple_colors::green(), c);
@@ -140,7 +140,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_green, c.to_known_color());
     }
     
-    void test_method_(magenta) {
+    auto test_method_(magenta) {
       auto c = apple_colors::magenta();
       
       assert::are_equal(apple_colors::magenta(), c);
@@ -166,7 +166,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_magenta, c.to_known_color());
     }
     
-    void test_method_(orange) {
+    auto test_method_(orange) {
       auto c = apple_colors::orange();
       
       assert::are_equal(apple_colors::orange(), c);
@@ -192,7 +192,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_orange, c.to_known_color());
     }
     
-    void test_method_(purple) {
+    auto test_method_(purple) {
       auto c = apple_colors::purple();
       
       assert::are_equal(apple_colors::purple(), c);
@@ -218,7 +218,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_purple, c.to_known_color());
     }
     
-    void test_method_(red) {
+    auto test_method_(red) {
       auto c = apple_colors::red();
       
       assert::are_equal(apple_colors::red(), c);
@@ -244,7 +244,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_red, c.to_known_color());
     }
     
-    void test_method_(yellow) {
+    auto test_method_(yellow) {
       auto c = apple_colors::yellow();
       
       assert::are_equal(apple_colors::yellow(), c);
@@ -270,7 +270,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_yellow, c.to_known_color());
     }
     
-    void test_method_(white) {
+    auto test_method_(white) {
       auto c = apple_colors::white();
       
       assert::are_equal(apple_colors::white(), c);

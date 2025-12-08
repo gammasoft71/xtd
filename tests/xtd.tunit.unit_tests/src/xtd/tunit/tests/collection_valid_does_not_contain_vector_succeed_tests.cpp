@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_valid_does_not_contain_vector_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto a = array<int> {1, 2, 3, 4};
       xtd::tunit::collection_valid::does_not_contain({1, 2, 6}, a);
     }

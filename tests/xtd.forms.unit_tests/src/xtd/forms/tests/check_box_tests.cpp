@@ -23,7 +23,7 @@ namespace xtd::forms::tests {
       using check_box::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       check_box_for_test check_box;
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -104,7 +104,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create) {
+    auto test_method_(create) {
       auto check_box = forms::check_box::create();
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -171,7 +171,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_text) {
+    auto test_method_(create_with_text) {
       auto check_box = forms::check_box::create("new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -238,7 +238,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_text_and_three_state) {
+    auto test_method_(create_with_text_and_three_state) {
       auto check_box = forms::check_box::create("new text", true);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -305,7 +305,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_text_three_state_and_check_state) {
+    auto test_method_(create_with_text_three_state_and_check_state) {
       auto check_box = forms::check_box::create("new text", true, check_state::checked);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -372,7 +372,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_text_three_state_check_state_and_location) {
+    auto test_method_(create_with_text_three_state_check_state_and_location) {
       auto check_box = forms::check_box::create("new text", true, check_state::checked, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -439,7 +439,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_text_three_state_check_state_location_and_size) {
+    auto test_method_(create_with_text_three_state_check_state_location_and_size) {
       auto check_box = forms::check_box::create("new text", true, check_state::checked, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -509,7 +509,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_text_three_state_check_state_location_size_and_name) {
+    auto test_method_(create_with_text_three_state_check_state_location_size_and_name) {
       auto check_box = forms::check_box::create("new text", true, check_state::checked, {10, 20}, {30, 40}, "check_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -579,7 +579,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_parent) {
+    auto test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -647,7 +647,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_and_text) {
+    auto test_method_(create_with_parent_and_text) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -715,7 +715,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_and_three_state) {
+    auto test_method_(create_with_parent_text_and_three_state) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", true);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -783,7 +783,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_three_state_and_check_state) {
+    auto test_method_(create_with_parent_text_three_state_and_check_state) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", true, check_state::checked);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -851,7 +851,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_three_state_check_state_and_location) {
+    auto test_method_(create_with_parent_text_three_state_check_state_and_location) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", true, check_state::checked, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -919,7 +919,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_three_state_check_state_location_and_size) {
+    auto test_method_(create_with_parent_text_three_state_check_state_location_and_size) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", true, check_state::checked, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -990,7 +990,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_three_state_check_state_location_size_and_name) {
+    auto test_method_(create_with_parent_text_three_state_check_state_location_size_and_name) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", true, check_state::checked, {10, 20}, {30, 40}, "check_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -1061,7 +1061,7 @@ namespace xtd::forms::tests {
       assert::is_true(check_box.three_state());
     }
     
-    void test_method_(create_with_text_and_check_state) {
+    auto test_method_(create_with_text_and_check_state) {
       auto check_box = forms::check_box::create("new text", check_state::checked);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -1128,7 +1128,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_text_check_state_and_location) {
+    auto test_method_(create_with_text_check_state_and_location) {
       auto check_box = forms::check_box::create("new text", check_state::checked, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -1195,7 +1195,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_text_check_state_location_and_size) {
+    auto test_method_(create_with_text_check_state_location_and_size) {
       auto check_box = forms::check_box::create("new text", check_state::checked, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -1265,7 +1265,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_text_check_state_location_size_and_name) {
+    auto test_method_(create_with_text_check_state_location_size_and_name) {
       auto check_box = forms::check_box::create("new text", check_state::checked, {10, 20}, {30, 40}, "check_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
       assert::are_equal(drawing::point::empty, check_box.auto_scroll_point());
@@ -1335,7 +1335,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_and_check_state) {
+    auto test_method_(create_with_parent_text_and_check_state) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", check_state::checked);
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -1403,7 +1403,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_check_state_and_location) {
+    auto test_method_(create_with_parent_text_check_state_and_location) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", check_state::checked, {10, 20});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -1471,7 +1471,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_check_state_location_and_size) {
+    auto test_method_(create_with_parent_text_check_state_location_and_size) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", check_state::checked, {10, 20}, {30, 40});
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -1542,7 +1542,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(create_with_parent_text_check_state_location_size_and_name) {
+    auto test_method_(create_with_parent_text_check_state_location_size_and_name) {
       auto form = forms::form::create();
       auto check_box = forms::check_box::create(form, "new text", check_state::checked, {10, 20}, {30, 40}, "check_box");
       assert::are_equal(anchor_styles::left | anchor_styles::top, check_box.anchor());
@@ -1613,7 +1613,7 @@ namespace xtd::forms::tests {
       assert::is_false(check_box.three_state());
     }
     
-    void test_method_(set_client_size) {
+    auto test_method_(set_client_size) {
       form form;
       check_box_for_test check_box;
       check_box.parent(form);
@@ -1621,7 +1621,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::size(100, 50), check_box.client_size());
     }
     
-    void test_method_(set_size) {
+    auto test_method_(set_size) {
       form form;
       check_box_for_test check_box;
       check_box.parent(form);

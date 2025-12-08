@@ -8,19 +8,19 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(uri_kind_tests) {
-    void test_method_(relative_or_absolute) {
+    auto test_method_(relative_or_absolute) {
       assert::are_equal(0, enum_object<>::to_int32(uri_kind::relative_or_absolute));
       assert::are_equal("relative_or_absolute", enum_object<>::to_string(uri_kind::relative_or_absolute));
       assert::are_equal(uri_kind::relative_or_absolute, enum_object<>::parse<uri_kind>("relative_or_absolute"));
     }
     
-    void test_method_(absolute) {
+    auto test_method_(absolute) {
       assert::are_equal(1, enum_object<>::to_int32(uri_kind::absolute));
       assert::are_equal("absolute", enum_object<>::to_string(uri_kind::absolute));
       assert::are_equal(uri_kind::absolute, enum_object<>::parse<uri_kind>("absolute"));
     }
     
-    void test_method_(relative) {
+    auto test_method_(relative) {
       assert::are_equal(2, enum_object<>::to_int32(uri_kind::relative));
       assert::are_equal("relative", enum_object<>::to_string(uri_kind::relative));
       assert::are_equal(uri_kind::relative, enum_object<>::parse<uri_kind>("relative"));

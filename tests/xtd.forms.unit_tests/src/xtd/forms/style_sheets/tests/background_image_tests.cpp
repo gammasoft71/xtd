@@ -14,7 +14,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(background_image_tests) {
-    void test_method_(create_with_default_constructor) {
+    auto test_method_(create_with_default_constructor) {
       background_image i;
       assert::are_equal(image_type::none, i.image_type());
       assert::is_empty(i.url().to_string());
@@ -23,7 +23,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(180, i.angle());
     }
     
-    void test_method_(create_with_specified_url) {
+    auto test_method_(create_with_specified_url) {
       background_image i("file://arrow.png");
       assert::are_equal(image_type::url, i.image_type());
       assert::are_equal("arrow.png", i.url().host());
@@ -32,7 +32,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(180, i.angle());
     }
     
-    void test_method_(create_with_specified_colors) {
+    auto test_method_(create_with_specified_colors) {
       background_image i({color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type());
       assert::is_empty(i.url().to_string());
@@ -41,7 +41,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(180, i.angle());
     }
     
-    void test_method_(create_with_specified_image_type_linear_gradient_and_colors) {
+    auto test_method_(create_with_specified_image_type_linear_gradient_and_colors) {
       background_image i(image_type::linear_gradient, {color::blue, color::white});
       assert::are_equal(image_type::linear_gradient, i.image_type());
       assert::is_empty(i.url().to_string());
@@ -50,19 +50,19 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(180, i.angle());
     }
     
-    void test_method_(create_with_specified_image_type_linear_gradient_and_one_color) {
+    auto test_method_(create_with_specified_image_type_linear_gradient_and_one_color) {
       assert::throws<argument_exception>([] {background_image i(image_type::linear_gradient, {color::blue});});
     }
     
-    void test_method_(create_with_specified_image_type_radial_gradient_and_colors) {
+    auto test_method_(create_with_specified_image_type_radial_gradient_and_colors) {
       assert::throws<not_supported_exception>([] {background_image i(image_type::radial_gradient, {color::blue, color::white});});
     }
     
-    void test_method_(create_with_specified_image_type_conic_gradient_and_colors) {
+    auto test_method_(create_with_specified_image_type_conic_gradient_and_colors) {
       assert::throws<not_supported_exception>([] {background_image i(image_type::conic_gradient, {color::blue, color::white});});
     }
     
-    void test_method_(create_with_specified_image_type_linear_gradient_colors_and_angle) {
+    auto test_method_(create_with_specified_image_type_linear_gradient_colors_and_angle) {
       background_image i(image_type::linear_gradient, {color::blue, color::white}, 270);
       assert::are_equal(image_type::linear_gradient, i.image_type());
       assert::is_empty(i.url().to_string());
@@ -71,15 +71,15 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal(270, i.angle());
     }
     
-    void test_method_(create_with_specified_image_type_linear_gradient_one_color_and_angle) {
+    auto test_method_(create_with_specified_image_type_linear_gradient_one_color_and_angle) {
       assert::throws<argument_exception>([] {background_image i(image_type::linear_gradient, {color::blue}, 270);});
     }
     
-    void test_method_(create_with_specified_image_type_radial_gradient_colors_and_angle) {
+    auto test_method_(create_with_specified_image_type_radial_gradient_colors_and_angle) {
       assert::throws<not_supported_exception>([] {background_image i(image_type::radial_gradient, {color::blue, color::white}, 270);});
     }
     
-    void test_method_(create_with_specified_image_type_conic_gradient_colors_and_angle) {
+    auto test_method_(create_with_specified_image_type_conic_gradient_colors_and_angle) {
       assert::throws<not_supported_exception>([] {background_image i(image_type::conic_gradient, {color::blue, color::white}, 270);});
     }
   };

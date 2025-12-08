@@ -8,25 +8,25 @@ using namespace xtd::tunit;
 
 namespace xtd::net::sockets::tests {
   class test_class_(ip_protection_level_tests) {
-    void test_method_(unspecified) {
+    auto test_method_(unspecified) {
       assert::are_equal(-1, enum_object<>::to_int32(ip_protection_level::unspecified));
       assert::are_equal("unspecified", enum_object<>::to_string(ip_protection_level::unspecified));
       assert::are_equal(ip_protection_level::unspecified, enum_object<>::parse<ip_protection_level>("unspecified"));
     }
     
-    void test_method_(unrestricted) {
+    auto test_method_(unrestricted) {
       assert::are_equal(10, enum_object<>::to_int32(ip_protection_level::unrestricted));
       assert::are_equal("unrestricted", enum_object<>::to_string(ip_protection_level::unrestricted));
       assert::are_equal(ip_protection_level::unrestricted, enum_object<>::parse<ip_protection_level>("unrestricted"));
     }
     
-    void test_method_(edge_restricted) {
+    auto test_method_(edge_restricted) {
       assert::are_equal(20, enum_object<>::to_int32(ip_protection_level::edge_restricted));
       assert::are_equal("edge_restricted", enum_object<>::to_string(ip_protection_level::edge_restricted));
       assert::are_equal(ip_protection_level::edge_restricted, enum_object<>::parse<ip_protection_level>("edge_restricted"));
     }
     
-    void test_method_(restricted) {
+    auto test_method_(restricted) {
       assert::are_equal(30, enum_object<>::to_int32(ip_protection_level::restricted));
       assert::are_equal("restricted", enum_object<>::to_string(ip_protection_level::restricted));
       assert::are_equal(ip_protection_level::restricted, enum_object<>::parse<ip_protection_level>("restricted"));

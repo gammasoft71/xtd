@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(valid_are_not_equal_double_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       double d = 0.4;
       xtd::tunit::valid::are_not_equal(0.2, d);
     }

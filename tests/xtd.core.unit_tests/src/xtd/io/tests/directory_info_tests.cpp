@@ -24,45 +24,45 @@ namespace xtd::io::tests {
       directory_assume::does_not_exist(test_path);
     }
     
-    void test_method_(create_with_existing_path) {
+    auto test_method_(create_with_existing_path) {
       directory_assume::exists(test_path);
       assert::does_not_throw([] {directory_info di(test_path);});
     }
     
-    void test_method_(create_with_not_existing_path) {
+    auto test_method_(create_with_not_existing_path) {
       directory_assume::does_not_exist(path::combine(test_path, "directory"));
       assert::does_not_throw([] {directory_info di(path::combine(test_path, "directory"));});
     }
     
-    void test_method_(create_with_invalid_path) {
+    auto test_method_(create_with_invalid_path) {
       assert::throws<argument_exception>([] {directory_info di(path::combine(test_path, "direc<tory"));});
     }
     
-    void test_method_(exists_with_existing_path) {
+    auto test_method_(exists_with_existing_path) {
       directory_assume::exists(test_path);
       directory_info di(test_path);
       assert::is_true(di.exists());
     }
     
-    void test_method_(exists_with_not_existing_path) {
+    auto test_method_(exists_with_not_existing_path) {
       directory_assume::does_not_exist(path::combine(test_path, "directory"));
       directory_info di(path::combine(test_path, "directory"));
       assert::is_false(di.exists());
     }
     
-    void test_method_(name) {
+    auto test_method_(name) {
       directory_info di(path::combine(test_path, "directory"));
       assert::are_equal("directory", di.name());
     }
     
-    void test_method_(remove_an_existing_directory) {
+    auto test_method_(remove_an_existing_directory) {
       directory_info di(path::combine(test_path, "directory"));
       di.create();
       assert::does_not_throw([&] {di.remove();});
       directory_assert::does_not_exist(path::combine(test_path, "directory"));
     }
     
-    void test_method_(remove_a_not_existing_directory) {
+    auto test_method_(remove_a_not_existing_directory) {
       directory_info di(path::combine(test_path, "directory"));
       assert::throws<directory_not_found_exception>([&] {di.remove();});
     }

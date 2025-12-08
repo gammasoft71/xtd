@@ -9,19 +9,19 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(horizontal_alignment_tests) {
   public:
-    void test_method_(left) {
+    auto test_method_(left) {
       assert::are_equal(0, enum_object<>::to_int32(horizontal_alignment::left));
       assert::are_equal("left", enum_object<>::to_string(horizontal_alignment::left));
       assert::are_equal(horizontal_alignment::left, enum_object<>::parse<horizontal_alignment>("left"));
     }
     
-    void test_method_(right) {
+    auto test_method_(right) {
       assert::are_equal(1, enum_object<>::to_int32(horizontal_alignment::right));
       assert::are_equal("right", enum_object<>::to_string(horizontal_alignment::right));
       assert::are_equal(horizontal_alignment::right, enum_object<>::parse<horizontal_alignment>("right"));
     }
     
-    void test_method_(center) {
+    auto test_method_(center) {
       assert::are_equal(2, enum_object<>::to_int32(horizontal_alignment::center));
       assert::are_equal("center", enum_object<>::to_string(horizontal_alignment::center));
       assert::are_equal(horizontal_alignment::center, enum_object<>::parse<horizontal_alignment>("center"));

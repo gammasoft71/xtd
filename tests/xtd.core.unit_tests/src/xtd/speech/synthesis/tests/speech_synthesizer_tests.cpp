@@ -8,19 +8,19 @@ using namespace xtd::tunit;
 
 namespace xtd::speech::synthesis::tests {
   class test_class_(speech_synthesizer_tests) {
-    void test_method_(create) {
+    auto test_method_(create) {
       auto speech = speech_synthesizer {};
       assert::are_equal("xtd::speech::synthesis::speech_synthesizer", speech.to_string());
     }
     
-    void test_method_(state) {
+    auto test_method_(state) {
       auto s = speech_synthesizer {};
       assert::are_equal(synthesizer_state::ready, s.state());
       s.speak("");
       assert::are_equal(synthesizer_state::ready, s.state());
     }
     
-    void test_method_(speak_with_prompt) {
+    auto test_method_(speak_with_prompt) {
       auto s = speech_synthesizer {};
       auto p = prompt("");
       assert::is_false(p.is_completed());
@@ -28,24 +28,24 @@ namespace xtd::speech::synthesis::tests {
       assert::is_true(p.is_completed());
     }
     
-    void test_method_(speak_with_string) {
+    auto test_method_(speak_with_string) {
       assert::does_not_throw([] {speech_synthesizer {}.speak("");});
     }
     
-    void test_method_(speak_async_with_prompt) {
+    auto test_method_(speak_async_with_prompt) {
       auto s = speech_synthesizer {};
       auto p = prompt("");
       s.speak_async(p);
       assert::is_true(p.is_completed());
     }
     
-    void test_method_(speak_async_with_string) {
+    auto test_method_(speak_async_with_string) {
       auto s = speech_synthesizer {};
       auto p = s.speak_async("");
       assert::is_true(p.is_completed());
     }
     
-    void test_method_(speak_completed) {
+    auto test_method_(speak_completed) {
       auto has_completed_event = false;
       auto s = speech_synthesizer {};
       auto p = prompt("");
@@ -63,7 +63,7 @@ namespace xtd::speech::synthesis::tests {
       assert::is_true(has_completed_event);
     }
     
-    void test_method_(speak_started) {
+    auto test_method_(speak_started) {
       auto has_started_event = false;
       auto s = speech_synthesizer {};
       auto p = prompt("");
@@ -80,7 +80,7 @@ namespace xtd::speech::synthesis::tests {
       assert::is_true(has_started_event);
     }
     
-    void test_method_(state_changed) {
+    auto test_method_(state_changed) {
       auto state_changed_event_value = 0;
       auto s = speech_synthesizer {};
       auto p = prompt("");

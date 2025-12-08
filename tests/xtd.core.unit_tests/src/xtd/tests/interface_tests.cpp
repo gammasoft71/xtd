@@ -29,13 +29,13 @@ namespace xtd::tests {
       int value_ = 0;
     };
     
-    void test_method_(interface_test_value) {
+    auto test_method_(interface_test_value) {
       interface_test it {42};
       assert::are_equal(42, it.value());
       assert::are_equal(42, as<iinterface_test>(it).value());
     }
     
-    void test_method_(iinterface_test_value) {
+    auto test_method_(iinterface_test_value) {
       interface_test it {42};
       iinterface_test& iit = it;
       assert::are_equal(42, it.value());
@@ -43,7 +43,7 @@ namespace xtd::tests {
       assert::are_equal(42, as<interface_test>(iit).value());
     }
     
-    void test_method_(interface_value) {
+    auto test_method_(interface_value) {
       interface_test it {42};
       interface& i = it;
       assert::are_equal(42, it.value());

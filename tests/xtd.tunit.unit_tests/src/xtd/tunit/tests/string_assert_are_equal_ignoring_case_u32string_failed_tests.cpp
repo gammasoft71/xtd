@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(string_assert_are_equal_ignoring_case_u32string_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       std::u32string s = U"VALUE";
       xtd::tunit::string_assert::are_equal_ignoring_case(U"key", s);
     }

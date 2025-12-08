@@ -18,7 +18,7 @@ namespace xtd::tests {
       }
       
     };
-    void test_method_(add_event) {
+    auto test_method_(add_event) {
       auto c = 0;
       auto l = [&](const object & sender, const event_args & e) {++c;};
       auto o = test_object {};
@@ -26,7 +26,7 @@ namespace xtd::tests {
       assert::is_zero(c);
     }
     
-    void test_method_(add_event_and_invoke_it) {
+    auto test_method_(add_event_and_invoke_it) {
       auto c = 0;
       auto l = [&](const object & sender, const event_args & e) {++c;};
       auto o = test_object {};
@@ -40,7 +40,7 @@ namespace xtd::tests {
       assert::are_equal(5, c);
     }
     
-    void test_method_(add_event_with_auto_argument) {
+    auto test_method_(add_event_with_auto_argument) {
       auto c = 0;
       auto l = [&](auto sender, auto e) {++c;};
       auto o = test_object {};
@@ -48,7 +48,7 @@ namespace xtd::tests {
       assert::is_zero(c);
     }
     
-    void test_method_(add_event_with_auto_argument_and_invoke_it) {
+    auto test_method_(add_event_with_auto_argument_and_invoke_it) {
       auto c = 0;
       auto l = [&](auto sender, auto e) {++c;};
       auto o = test_object {};
@@ -62,7 +62,7 @@ namespace xtd::tests {
       assert::are_equal(5, c);
     }
     
-    void test_method_(add_event_without_argument) {
+    auto test_method_(add_event_without_argument) {
       auto c = 0;
       auto l = [&] {++c;};
       auto o = test_object {};
@@ -70,7 +70,7 @@ namespace xtd::tests {
       assert::is_zero(c);
     }
     
-    void test_method_(add_event_without_argument_and_invoke_it) {
+    auto test_method_(add_event_without_argument_and_invoke_it) {
       auto c = 0;
       auto l = [&] {++c;};
       auto o = test_object {};

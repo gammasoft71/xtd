@@ -102,229 +102,229 @@ namespace xtd::tests {
       xtd::globalization::culture_info::current_culture(previous_culture);
     }
     
-    void test_method_(format_with_none) {
+    auto test_method_(format_with_none) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number) {
+    auto test_method_(format_with_sequence_number) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_left_alignment) {
+    auto test_method_(format_with_none_and_left_alignment) {
       assert::are_equal(u8"                1/2/2019 3:04:05 AM", format(u8"{, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_left_alignment_2) {
+    auto test_method_(format_with_none_and_left_alignment_2) {
       assert::are_equal(u8"                1/2/2019 3:04:05 AM", format(u8"{, +35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_left_alignment) {
+    auto test_method_(format_with_sequence_number_and_left_alignment) {
       assert::are_equal(u8"                1/2/2019 3:04:05 AM", format(u8"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_left_alignment_2) {
+    auto test_method_(format_with_sequence_number_and_left_alignment_2) {
       assert::are_equal(u8"                1/2/2019 3:04:05 AM", format(u8"{0, +35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_left_alignment_to_zero) {
+    auto test_method_(format_with_none_and_left_alignment_to_zero) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_left_alignment_to_zero_2) {
+    auto test_method_(format_with_none_and_left_alignment_to_zero_2) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{, +0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_left_alignment_to_zero) {
+    auto test_method_(format_with_sequence_number_and_left_alignment_to_zero) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_left_alignment_to_zero_2) {
+    auto test_method_(format_with_sequence_number_and_left_alignment_to_zero_2) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0, +0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and__right_alignment) {
+    auto test_method_(format_with_none_and__right_alignment) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM                ", format(u8"{,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and__right_alignment) {
+    auto test_method_(format_with_sequence_number_and__right_alignment) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM                ", format(u8"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_right_alignment_to_zero) {
+    auto test_method_(format_with_none_and_right_alignment_to_zero) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_right_alignment_to_zero) {
+    auto test_method_(format_with_sequence_number_and_right_alignment_to_zero) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_right_alignment_empty) {
+    auto test_method_(format_with_none_and_right_alignment_empty) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_sequence_number_and_right_alignment_empty) {
+    auto test_method_(format_with_sequence_number_and_right_alignment_empty) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_with_none_and_alignment_invalid) {
+    auto test_method_(format_with_none_and_alignment_invalid) {
       assert::throws<format_exception>([] {format(u8"{,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
       assert::throws<format_exception>([] {format(u8"{, }", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
     }
     
-    void test_method_(format_with_sequence_number_and_alignment_invalid) {
+    auto test_method_(format_with_sequence_number_and_alignment_invalid) {
       assert::throws<format_exception>([] {format(u8"{0,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
       assert::throws<format_exception>([] {format(u8"{0, }", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
     }
     
-    void test_method_(format_short_date_with_none) {
+    auto test_method_(format_short_date_with_none) {
       assert::are_equal(u8"1/2/2019", format(u8"{:d}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_short_date_with_sequence_number) {
+    auto test_method_(format_short_date_with_sequence_number) {
       assert::are_equal(u8"1/2/2019", format(u8"{0:d}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_long_date_with_none) {
+    auto test_method_(format_long_date_with_none) {
       assert::are_equal(u8"Wednesday, January 2, 2019", format(u8"{:D}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_long_date_with_sequence_number) {
+    auto test_method_(format_long_date_with_sequence_number) {
       assert::are_equal(u8"Wednesday, January 2, 2019", format(u8"{0:D}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_full_date_short_time_with_none) {
+    auto test_method_(format_full_date_short_time_with_none) {
       assert::are_equal(u8"Wednesday, January 2, 2019 3:04 AM", format(u8"{:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_full_date_short_time_with_sequence_number) {
+    auto test_method_(format_full_date_short_time_with_sequence_number) {
       assert::are_equal(u8"Wednesday, January 2, 2019 3:04 AM", format(u8"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_full_date_long_time_with_none) {
+    auto test_method_(format_full_date_long_time_with_none) {
       assert::are_equal(u8"Wednesday, January 2, 2019 3:04:05 AM", format(u8"{:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_full_date_long_time_with_sequence_number) {
+    auto test_method_(format_full_date_long_time_with_sequence_number) {
       assert::are_equal(u8"Wednesday, January 2, 2019 3:04:05 AM", format(u8"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_general_short_with_none) {
+    auto test_method_(format_general_short_with_none) {
       assert::are_equal(u8"1/2/2019 3:04 AM", format(u8"{:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_general_short_with_sequence_number) {
+    auto test_method_(format_general_short_with_sequence_number) {
       assert::are_equal(u8"1/2/2019 3:04 AM", format(u8"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_general_long_with_none) {
+    auto test_method_(format_general_long_with_none) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_general_long_with_sequence_number) {
+    auto test_method_(format_general_long_with_sequence_number) {
       assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_month_day_with_none) {
+    auto test_method_(format_month_day_with_none) {
       assert::are_equal(u8"January 2", format(u8"{:m}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_month_day_with_none_2) {
+    auto test_method_(format_month_day_with_none_2) {
       assert::are_equal(u8"January 2", format(u8"{:M}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_month_day_with_sequence_number) {
+    auto test_method_(format_month_day_with_sequence_number) {
       assert::are_equal(u8"January 2", format(u8"{0:m}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_month_day_with_sequence_number_2) {
+    auto test_method_(format_month_day_with_sequence_number_2) {
       assert::are_equal(u8"January 2", format(u8"{0:M}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_iso_8601_with_none) {
+    auto test_method_(format_iso_8601_with_none) {
       assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{:o}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_iso_8601_with_none_2) {
+    auto test_method_(format_iso_8601_with_none_2) {
       assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_iso_8601_with_sequence_number) {
+    auto test_method_(format_iso_8601_with_sequence_number) {
       assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{0:o}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_iso_8601_with_sequence_number_2) {
+    auto test_method_(format_iso_8601_with_sequence_number_2) {
       assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{0:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_rfc1123_with_none) {
+    auto test_method_(format_rfc1123_with_none) {
       assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 GMT", format(u8"{:r}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_rfc1123_with_none_2) {
+    auto test_method_(format_rfc1123_with_none_2) {
       assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 GMT", format(u8"{:R}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_rfc1123_with_sequence_number) {
+    auto test_method_(format_rfc1123_with_sequence_number) {
       assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 GMT", format(u8"{0:r}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_rfc1123_with_sequence_number_2) {
+    auto test_method_(format_rfc1123_with_sequence_number_2) {
       assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 GMT", format(u8"{0:R}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_sortable_with_none) {
+    auto test_method_(format_sortable_with_none) {
       assert::are_equal(u8"2019-01-02T03:04:05", format(u8"{:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_sortable_with_sequence_number) {
+    auto test_method_(format_sortable_with_sequence_number) {
       assert::are_equal(u8"2019-01-02T03:04:05", format(u8"{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_short_time_with_none) {
+    auto test_method_(format_short_time_with_none) {
       assert::are_equal(u8"3:04 AM", format(u8"{:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_short_time_with_sequence_number) {
+    auto test_method_(format_short_time_with_sequence_number) {
       assert::are_equal(u8"3:04 AM", format(u8"{0:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_long_time_with_none) {
+    auto test_method_(format_long_time_with_none) {
       assert::are_equal(u8"3:04:05 AM", format(u8"{:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_long_time_with_sequence_number) {
+    auto test_method_(format_long_time_with_sequence_number) {
       assert::are_equal(u8"3:04:05 AM", format(u8"{0:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_universal_sortable_with_none) {
+    auto test_method_(format_universal_sortable_with_none) {
       //assert::are_equal(u8"2019-01-02 03:04:05Z", format(u8"{:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5, true)));
     }
     
-    void test_method_(format_universal_sortable_with_sequence_number) {
+    auto test_method_(format_universal_sortable_with_sequence_number) {
       //assert::are_equal(u8"2019-01-02 03:04:05Z", format(u8"{0:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5, true)));
     }
     
-    void test_method_(format_universal_full_with_none) {
+    auto test_method_(format_universal_full_with_none) {
       //assert::are_equal(u8"Wednesday, January 2, 2019 3:04:05 AM", format(u8"{:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5, true)));
     }
     
-    void test_method_(format_universal_full_with_sequence_number) {
+    auto test_method_(format_universal_full_with_sequence_number) {
       //assert::are_equal(u8"Wednesday, January 2, 2019 3:04:05 AM", format(u8"{0:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5, true)));
     }
     
-    void test_method_(format_year_month_with_none) {
+    auto test_method_(format_year_month_with_none) {
       assert::are_equal(u8"January 2019", format(u8"{:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_year_month_with_none_2) {
+    auto test_method_(format_year_month_with_none_2) {
       assert::are_equal(u8"January 2019", format(u8"{:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_year_month_with_sequence_number) {
+    auto test_method_(format_year_month_with_sequence_number) {
       assert::are_equal(u8"January 2019", format(u8"{0:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_year_month_with_sequence_number_2) {
+    auto test_method_(format_year_month_with_sequence_number_2) {
       assert::are_equal(u8"January 2019", format(u8"{0:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
   };

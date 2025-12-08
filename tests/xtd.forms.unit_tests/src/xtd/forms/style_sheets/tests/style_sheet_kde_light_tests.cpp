@@ -11,7 +11,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_kde_light_tests) {
-    void test_method_(theme) {
+    auto test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("KDE (light)")->second;
       assert::are_equal("KDE (light)", style.theme().name());

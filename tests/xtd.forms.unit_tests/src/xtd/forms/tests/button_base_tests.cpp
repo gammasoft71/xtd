@@ -30,7 +30,7 @@ namespace xtd::forms::tests {
       using button_base::default_size;
     };
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       button_base_for_test button;
       assert::are_equal(anchor_styles::left | anchor_styles::top, button.anchor());
       assert::are_equal(drawing::point::empty, button.auto_scroll_point());
@@ -107,13 +107,13 @@ namespace xtd::forms::tests {
       assert::are_equal(content_alignment::middle_center, button.text_align());
     }
     
-    void test_method_(auto_elipsis_without_parent) {
+    auto test_method_(auto_elipsis_without_parent) {
       button_base_for_test button;
       button.auto_ellipsis(true);
       assert::is_true(button.auto_ellipsis());
     }
     
-    void test_method_(auto_elipsis_with_parent) {
+    auto test_method_(auto_elipsis_with_parent) {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -121,13 +121,13 @@ namespace xtd::forms::tests {
       assert::is_true(button.auto_ellipsis());
     }
     
-    void test_method_(auto_size_without_parent) {
+    auto test_method_(auto_size_without_parent) {
       button_base_for_test button;
       button.auto_size(true);
       assert::is_true(button.auto_size());
     }
     
-    void test_method_(auto_size_with_parent) {
+    auto test_method_(auto_size_with_parent) {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -135,7 +135,7 @@ namespace xtd::forms::tests {
       assert::is_true(button.auto_size());
     }
     
-    void test_method_(control_appearance_without_parent) {
+    auto test_method_(control_appearance_without_parent) {
       button_base_for_test button;
       button.control_appearance(xtd::forms::control_appearance::system);
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance());
@@ -146,7 +146,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::flat_style::standard, button.flat_style());
     }
     
-    void test_method_(control_appearance_with_parent) {
+    auto test_method_(control_appearance_with_parent) {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -159,7 +159,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::flat_style::standard, button.flat_style());
     }
     
-    void test_method_(flat_appearance_without_parent) {
+    auto test_method_(flat_appearance_without_parent) {
       button_base_for_test button;
       auto appearance = flat_button_appearance().border_color(drawing::color::spring_green);
       button.flat_appearance(appearance);
@@ -167,7 +167,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color());
     }
     
-    void test_method_(flat_appearance_with_parent) {
+    auto test_method_(flat_appearance_with_parent) {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -177,7 +177,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::color::spring_green, button.flat_appearance().border_color());
     }
     
-    void test_method_(flat_style_without_parent) {
+    auto test_method_(flat_style_without_parent) {
       button_base_for_test button;
       button.flat_style(xtd::forms::flat_style::flat);
       assert::are_equal(xtd::forms::flat_style::flat, button.flat_style());
@@ -188,7 +188,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance());
     }
     
-    void test_method_(flat_style_with_parent) {
+    auto test_method_(flat_style_with_parent) {
       forms::form form;
       button_base_for_test button;
       button.parent(form);
@@ -201,7 +201,7 @@ namespace xtd::forms::tests {
       assert::are_equal(xtd::forms::control_appearance::system, button.control_appearance());
     }
     
-    void test_method_(image_changed) {
+    auto test_method_(image_changed) {
       bool image_changed_raised = false;
       button_base_for_test button;
       button.image_changed += [&]() {
@@ -214,7 +214,7 @@ namespace xtd::forms::tests {
       assert::is_true(image_changed_raised);
     }
     
-    void test_method_(on_image_changed) {
+    auto test_method_(on_image_changed) {
       button_base_for_test button;
       
       button.image(image::empty);

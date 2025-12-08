@@ -11,7 +11,7 @@ using namespace xtd::tunit;
 
 namespace xtd::forms::style_sheets::tests {
   class test_class_(style_sheet_symbolic_light_tests) {
-    void test_method_(theme) {
+    auto test_method_(theme) {
       auto styles = style_sheet::style_sheets();
       auto style = styles.find("Symbolic (light)")->second;
       assert::are_equal("Symbolic (light)", style.theme().name());

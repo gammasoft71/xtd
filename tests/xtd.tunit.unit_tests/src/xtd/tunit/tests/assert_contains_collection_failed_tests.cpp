@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_contains_collection_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto v = array {0, 1, 2, 3};
       xtd::tunit::assert::contains(4, v);
     }

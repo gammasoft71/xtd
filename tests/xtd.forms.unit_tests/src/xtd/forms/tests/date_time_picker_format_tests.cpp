@@ -9,25 +9,25 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(date_time_picker_format_tests) {
   public:
-    void test_method_(long_format) {
+    auto test_method_(long_format) {
       assert::are_equal(1, enum_object<>::to_int32(date_time_picker_format::long_format));
       assert::are_equal("long_format", enum_object<>::to_string(date_time_picker_format::long_format));
       assert::are_equal(date_time_picker_format::long_format, enum_object<>::parse<date_time_picker_format>("long_format"));
     }
     
-    void test_method_(short_format) {
+    auto test_method_(short_format) {
       assert::are_equal(2, enum_object<>::to_int32(date_time_picker_format::short_format));
       assert::are_equal("short_format", enum_object<>::to_string(date_time_picker_format::short_format));
       assert::are_equal(date_time_picker_format::short_format, enum_object<>::parse<date_time_picker_format>("short_format"));
     }
     
-    void test_method_(time) {
+    auto test_method_(time) {
       assert::are_equal(4, enum_object<>::to_int32(date_time_picker_format::time));
       assert::are_equal("time", enum_object<>::to_string(date_time_picker_format::time));
       assert::are_equal(date_time_picker_format::time, enum_object<>::parse<date_time_picker_format>("time"));
     }
     
-    void test_method_(custom) {
+    auto test_method_(custom) {
       assert::are_equal(8, enum_object<>::to_int32(date_time_picker_format::custom));
       assert::are_equal("custom", enum_object<>::to_string(date_time_picker_format::custom));
       assert::are_equal(date_time_picker_format::custom, enum_object<>::parse<date_time_picker_format>("custom"));

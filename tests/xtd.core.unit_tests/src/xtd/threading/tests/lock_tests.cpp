@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
   class test_class_(lock_tests) {
-    void test_method_(lock_object) {
+    auto test_method_(lock_object) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object));
       block_scope_(lock lock {lock_object}) {
@@ -19,7 +19,7 @@ namespace xtd::threading::tests {
       assert::is_false(monitor::is_entered(lock_object));
     }
     
-    void test_method_(lock_string) {
+    auto test_method_(lock_string) {
       assert::is_false(monitor::is_entered("lock_string"));
       block_scope_(lock lock {"lock_string"}) {
         assert::is_true(monitor::is_entered("lock_string"));
@@ -27,7 +27,7 @@ namespace xtd::threading::tests {
       assert::is_false(monitor::is_entered("lock_string"));
     }
     
-    void test_method_(lock_int) {
+    auto test_method_(lock_int) {
       int lock_int = 0;
       assert::is_false(monitor::is_entered(lock_int));
       block_scope_(lock lock {lock_int}) {
@@ -36,7 +36,7 @@ namespace xtd::threading::tests {
       assert::is_false(monitor::is_entered(lock_int));
     }
     
-    void test_method_(double_lock) {
+    auto test_method_(double_lock) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object));
       block_scope_(lock lock1 {lock_object}) {

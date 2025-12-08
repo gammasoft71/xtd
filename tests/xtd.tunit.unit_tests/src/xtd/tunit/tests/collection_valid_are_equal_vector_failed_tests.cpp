@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(collection_valid_are_equal_vector_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       auto a = array<int> {1, 2, 3, 4};
       xtd::tunit::collection_valid::are_equal({4, 3, 2, 1}, a);
     }

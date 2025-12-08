@@ -9,25 +9,25 @@ using namespace xtd::tunit;
 namespace xtd::forms::style_sheets::tests {
   class test_class_(text_decoration_tests) {
   public:
-    void test_method_(none) {
+    auto test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(text_decoration::none));
       assert::are_equal("none", enum_object<>::to_string(text_decoration::none));
       assert::are_equal(text_decoration::none, enum_object<>::parse<text_decoration>("none"));
     }
     
-    void test_method_(overline) {
+    auto test_method_(overline) {
       assert::are_equal(1, enum_object<>::to_int32(text_decoration::overline));
       assert::are_equal("overline", enum_object<>::to_string(text_decoration::overline));
       assert::are_equal(text_decoration::overline, enum_object<>::parse<text_decoration>("overline"));
     }
     
-    void test_method_(line_through) {
+    auto test_method_(line_through) {
       assert::are_equal(2, enum_object<>::to_int32(text_decoration::line_through));
       assert::are_equal("line_through", enum_object<>::to_string(text_decoration::line_through));
       assert::are_equal(text_decoration::line_through, enum_object<>::parse<text_decoration>("line_through"));
     }
     
-    void test_method_(underline) {
+    auto test_method_(underline) {
       assert::are_equal(3, enum_object<>::to_int32(text_decoration::underline));
       assert::are_equal("underline", enum_object<>::to_string(text_decoration::underline));
       assert::are_equal(text_decoration::underline, enum_object<>::parse<text_decoration>("underline"));

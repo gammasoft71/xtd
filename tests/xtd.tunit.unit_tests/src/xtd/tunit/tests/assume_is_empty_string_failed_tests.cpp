@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assume_is_empty_string_failed_tests) {
   public:
-    void test_method_(test_case_failed) {
+    auto test_method_(test_case_failed) {
       std::string s = "string";
       xtd::tunit::assume::is_empty(s);
     }

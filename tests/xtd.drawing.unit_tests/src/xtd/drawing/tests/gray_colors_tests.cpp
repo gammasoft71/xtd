@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(gray_colors_tests) {
-    void test_method_(black) {
+    auto test_method_(black) {
       auto c = gray_colors::black();
       
       assert::are_equal(gray_colors::black(), c);
@@ -36,7 +36,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::black, c.to_known_color());
     }
     
-    void test_method_(dark_slate_gray) {
+    auto test_method_(dark_slate_gray) {
       auto c = gray_colors::dark_slate_gray();
       
       assert::are_equal(gray_colors::dark_slate_gray(), c);
@@ -62,7 +62,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::dark_slate_gray, c.to_known_color());
     }
     
-    void test_method_(dim_gray) {
+    auto test_method_(dim_gray) {
       auto c = gray_colors::dim_gray();
       
       assert::are_equal(gray_colors::dim_gray(), c);
@@ -88,7 +88,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::dim_gray, c.to_known_color());
     }
     
-    void test_method_(slate_gray) {
+    auto test_method_(slate_gray) {
       auto c = gray_colors::slate_gray();
       
       assert::are_equal(gray_colors::slate_gray(), c);
@@ -114,7 +114,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::slate_gray, c.to_known_color());
     }
     
-    void test_method_(gray) {
+    auto test_method_(gray) {
       auto c = gray_colors::gray();
       
       assert::are_equal(gray_colors::gray(), c);
@@ -140,7 +140,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::gray, c.to_known_color());
     }
     
-    void test_method_(light_slate_gray) {
+    auto test_method_(light_slate_gray) {
       auto c = gray_colors::light_slate_gray();
       
       assert::are_equal(gray_colors::light_slate_gray(), c);
@@ -166,7 +166,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::light_slate_gray, c.to_known_color());
     }
     
-    void test_method_(dark_gray) {
+    auto test_method_(dark_gray) {
       auto c = gray_colors::dark_gray();
       
       assert::are_equal(gray_colors::dark_gray(), c);
@@ -192,7 +192,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::dark_gray, c.to_known_color());
     }
     
-    void test_method_(silver) {
+    auto test_method_(silver) {
       auto c = gray_colors::silver();
       
       assert::are_equal(gray_colors::silver(), c);
@@ -218,7 +218,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::silver, c.to_known_color());
     }
     
-    void test_method_(light_gray) {
+    auto test_method_(light_gray) {
       auto c = gray_colors::light_gray();
       
       assert::are_equal(gray_colors::light_gray(), c);
@@ -244,7 +244,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::light_gray, c.to_known_color());
     }
     
-    void test_method_(gainsboro) {
+    auto test_method_(gainsboro) {
       auto c = gray_colors::gainsboro();
       
       assert::are_equal(gray_colors::gainsboro(), c);

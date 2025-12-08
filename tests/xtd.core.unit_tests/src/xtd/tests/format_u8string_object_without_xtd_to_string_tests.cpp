@@ -16,23 +16,23 @@ struct size_sof {
 
 namespace xtd::tests {
   class test_class_(format_u8string_object_without_xtd_to_string_tests) {
-    void test_method_(format_location_with_default_argument) {
+    auto test_method_(format_location_with_default_argument) {
       assert::are_equal("(42, 24)", format(u8"{0}", ::size_sof {42, 24}));
     }
     
-    void test_method_(format_location_with_left_alignment) {
+    auto test_method_(format_location_with_left_alignment) {
       assert::are_equal("  (42, 24)", format(u8"{0,10}", ::size_sof {42, 24}));
     }
     
-    void test_method_(format_location_with_right_alignment) {
+    auto test_method_(format_location_with_right_alignment) {
       assert::are_equal("(42, 24)  ", format(u8"{0,-10}", ::size_sof {42, 24}));
     }
     
-    void test_method_(format_location_with_zero_alignment) {
+    auto test_method_(format_location_with_zero_alignment) {
       assert::are_equal("(42, 24)", format(u8"{0,0}", ::size_sof {42, 24}));
     }
     
-    void test_method_(format_location_with_invalid_argument) {
+    auto test_method_(format_location_with_invalid_argument) {
       assert::are_equal("(42, 24)", format(u8"{0:G}", ::size_sof {42, 24}));
     }
   };

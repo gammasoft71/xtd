@@ -6,7 +6,7 @@
 namespace xtd::tunit::tests {
   class test_class_(directory_valid_exists_string_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto d = environment::get_folder_path(environment::special_folder::common_application_data);
       xtd::tunit::directory_valid::exists(d);
     }

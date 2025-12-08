@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assume_is_empty_collection_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       auto v = array<int> {};
       xtd::tunit::assume::is_empty(v);
     }

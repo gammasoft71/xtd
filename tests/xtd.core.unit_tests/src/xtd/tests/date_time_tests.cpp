@@ -20,7 +20,7 @@ namespace xtd::tests {
       return date;
     }
     
-    void test_method_(create_date_with_default_constructor) {
+    auto test_method_(create_date_with_default_constructor) {
       auto d = date_time {};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::is_zero(d.ticks());
@@ -34,7 +34,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 0:00:00 AM", d.to_string());
     }
     
-    void test_method_(create_date_with_ticks) {
+    auto test_method_(create_date_with_ticks) {
       auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::seconds(42))};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::seconds(42)).count(), d.ticks());
@@ -48,7 +48,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 0:00:42 AM", d.to_string());
     }
     
-    void test_method_(create_date_with_ticks_and_date_time_kind_unspecified) {
+    auto test_method_(create_date_with_ticks_and_date_time_kind_unspecified) {
       auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks());
@@ -62,7 +62,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 0:24:00 AM", d.to_string());
     }
     
-    void test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
+    auto test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
       auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks());
@@ -76,7 +76,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 0:24:00 AM", d.to_string());
     }
     
-    void test_method_(create_date_with_ticks_and_date_time_kind_utc) {
+    auto test_method_(create_date_with_ticks_and_date_time_kind_utc) {
       auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::hours(12)), date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
@@ -90,7 +90,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day) {
+    auto test_method_(create_date_with_year_month_day) {
       auto d = date_time {1971, 1, 5};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -103,7 +103,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 0:00:00 AM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second) {
       auto d = date_time {1971, 1, 5, 21, 10, 30};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -116,7 +116,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_unspecified) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_unspecified) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -129,7 +129,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_local) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_local) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
@@ -141,7 +141,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_utc) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_utc) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
@@ -154,7 +154,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_millisecond) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, 242};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -167,7 +167,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_unspecified) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_unspecified) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -180,7 +180,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_local) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_local) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
@@ -193,7 +193,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_utc) {
+    auto test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_utc) {
       auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
@@ -206,7 +206,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(create_date_max_value) {
+    auto test_method_(create_date_max_value) {
       auto d = date_time::max_value;
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(3155378975999999999ll, d.ticks());
@@ -220,7 +220,7 @@ namespace xtd::tests {
       assert::are_equal("12/31/9999 11:59:59 PM", d.to_string());
     }
     
-    void test_method_(create_date_min_value) {
+    auto test_method_(create_date_min_value) {
       auto d = date_time::min_value;
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::is_zero(d.ticks());
@@ -234,19 +234,19 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 0:00:00 AM", d.to_string());
     }
     
-    void test_method_(create_date_now) {
+    auto test_method_(create_date_now) {
       assert::are_equal(date_time_kind::local, date_time::now().kind());
       assert::is_not_zero(date_time::now().ticks());
       assert::are_equal(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()), date_time::now().to_time_t());
     }
     
-    void test_method_(create_date_utc_now) {
+    auto test_method_(create_date_utc_now) {
       assert::are_equal(date_time_kind::utc, date_time::utc_now().kind());
       assert::is_not_zero(date_time::utc_now().ticks());
       assert::are_equal(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()), date_time::utc_now().to_local_time().to_time_t());
     }
     
-    void test_method_(from_duration) {
+    auto test_method_(from_duration) {
       auto d = date_time::from_duration(std::chrono::hours(12));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
@@ -260,7 +260,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
-    void test_method_(from_duration_local) {
+    auto test_method_(from_duration_local) {
       auto d = date_time::from_duration(std::chrono::hours(12), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
@@ -274,7 +274,7 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
-    void test_method_(from_duration_utc) {
+    auto test_method_(from_duration_utc) {
       auto d = date_time::from_duration(std::chrono::hours(12), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
@@ -288,28 +288,28 @@ namespace xtd::tests {
       assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
-    void test_method_(from_time_t) {
+    auto test_method_(from_time_t) {
       auto tms = make_tm(1971, 1, 5, 21, 10, 30);
       auto d = date_time::from_time_t(std::mktime(&tms));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t());
     }
     
-    void test_method_(from_time_t_local) {
+    auto test_method_(from_time_t_local) {
       auto tms = make_tm(1971, 1, 5, 21, 10, 30);
       auto d = date_time::from_time_t(std::mktime(&tms), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_time_t());
     }
     
-    void test_method_(from_time_t_utc) {
+    auto test_method_(from_time_t_utc) {
       auto tms = make_tm(1971, 1, 5, 21, 10, 30);
       auto d = date_time::from_time_t(std::mktime(&tms), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t());
     }
     
-    void test_method_(from_tm) {
+    auto test_method_(from_tm) {
       auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
@@ -322,7 +322,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(from_tm_local) {
+    auto test_method_(from_tm_local) {
       auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
@@ -335,7 +335,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(from_tm_utc) {
+    auto test_method_(from_tm_utc) {
       auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
@@ -348,7 +348,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
-    void test_method_(add_duration) {
+    auto test_method_(add_duration) {
       auto d1 = date_time {std::chrono::seconds(20), date_time_kind::local};
       auto d2 = d1.add(std::chrono::seconds(22));
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::seconds(42)).count(), d2.ticks());
@@ -362,7 +362,7 @@ namespace xtd::tests {
       assert::is_zero(d2.millisecond());
     }
     
-    void test_method_(add_time_span) {
+    auto test_method_(add_time_span) {
       auto d1 = date_time {ticks(20), date_time_kind::local};
       auto d2 = d1.add(time_span(22));
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -376,7 +376,7 @@ namespace xtd::tests {
       assert::is_zero(d2.millisecond());
     }
     
-    void test_method_(add_days) {
+    auto test_method_(add_days) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_days(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -390,7 +390,7 @@ namespace xtd::tests {
       assert::are_equal("1/12/1971 9:10:30 AM", d2.to_string());
     }
     
-    void test_method_(add_hours) {
+    auto test_method_(add_hours) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_hours(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -404,7 +404,7 @@ namespace xtd::tests {
       assert::are_equal("1/6/1971 3:40:30 AM", d2.to_string());
     }
     
-    void test_method_(add_milliseconds) {
+    auto test_method_(add_milliseconds) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_milliseconds(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -418,7 +418,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:30 PM", d2.to_string());
     }
     
-    void test_method_(add_minutes) {
+    auto test_method_(add_minutes) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_minutes(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -432,7 +432,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:17:00 PM", d2.to_string());
     }
     
-    void test_method_(add_months) {
+    auto test_method_(add_months) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_months(6);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -446,7 +446,7 @@ namespace xtd::tests {
       assert::are_equal("7/5/1971 9:10:30 PM", d2.to_string());
     }
     
-    void test_method_(add_seconds) {
+    auto test_method_(add_seconds) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_seconds(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -460,7 +460,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:36 PM", d2.to_string());
     }
     
-    void test_method_(add_ticks) {
+    auto test_method_(add_ticks) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_ticks(65000000);
       assert::are_equal(date_time_kind::local, d2.kind());
@@ -474,7 +474,7 @@ namespace xtd::tests {
       assert::are_equal("1/5/1971 9:10:36 PM", d2.to_string());
     }
     
-    void test_method_(add_years) {
+    auto test_method_(add_years) {
       auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       auto d2 = d1.add_years(6);
       assert::are_equal(date_time_kind::local, d2.kind());

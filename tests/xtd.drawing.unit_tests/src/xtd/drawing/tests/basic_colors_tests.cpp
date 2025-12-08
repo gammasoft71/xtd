@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(basic_colors_tests) {
-    void test_method_(white) {
+    auto test_method_(white) {
       auto c = basic_colors::white();
       
       assert::are_equal(basic_colors::white(), c);
@@ -36,7 +36,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::white, c.to_known_color());
     }
     
-    void test_method_(silver) {
+    auto test_method_(silver) {
       auto c = basic_colors::silver();
       
       assert::are_equal(basic_colors::silver(), c);
@@ -62,7 +62,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::silver, c.to_known_color());
     }
     
-    void test_method_(gray) {
+    auto test_method_(gray) {
       auto c = basic_colors::gray();
       
       assert::are_equal(basic_colors::gray(), c);
@@ -88,7 +88,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::gray, c.to_known_color());
     }
     
-    void test_method_(black) {
+    auto test_method_(black) {
       auto c = basic_colors::black();
       
       assert::are_equal(basic_colors::black(), c);
@@ -114,7 +114,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::black, c.to_known_color());
     }
     
-    void test_method_(red) {
+    auto test_method_(red) {
       auto c = basic_colors::red();
       
       assert::are_equal(basic_colors::red(), c);
@@ -140,7 +140,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::red, c.to_known_color());
     }
     
-    void test_method_(maroon) {
+    auto test_method_(maroon) {
       auto c = basic_colors::maroon();
       
       assert::are_equal(basic_colors::maroon(), c);
@@ -166,7 +166,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::maroon, c.to_known_color());
     }
     
-    void test_method_(yellow) {
+    auto test_method_(yellow) {
       auto c = basic_colors::yellow();
       
       assert::are_equal(basic_colors::yellow(), c);
@@ -192,7 +192,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::yellow, c.to_known_color());
     }
     
-    void test_method_(olive) {
+    auto test_method_(olive) {
       auto c = basic_colors::olive();
       
       assert::are_equal(basic_colors::olive(), c);
@@ -218,7 +218,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::olive, c.to_known_color());
     }
     
-    void test_method_(lime) {
+    auto test_method_(lime) {
       auto c = basic_colors::lime();
       
       assert::are_equal(basic_colors::lime(), c);
@@ -244,7 +244,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::lime, c.to_known_color());
     }
     
-    void test_method_(green) {
+    auto test_method_(green) {
       auto c = basic_colors::green();
       
       assert::are_equal(basic_colors::green(), c);
@@ -270,7 +270,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::green, c.to_known_color());
     }
     
-    void test_method_(aqua) {
+    auto test_method_(aqua) {
       auto c = basic_colors::aqua();
       
       assert::are_equal(basic_colors::aqua(), c);
@@ -296,7 +296,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::aqua, c.to_known_color());
     }
     
-    void test_method_(teal) {
+    auto test_method_(teal) {
       auto c = basic_colors::teal();
       
       assert::are_equal(basic_colors::teal(), c);
@@ -322,7 +322,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::teal, c.to_known_color());
     }
     
-    void test_method_(blue) {
+    auto test_method_(blue) {
       auto c = basic_colors::blue();
       
       assert::are_equal(basic_colors::blue(), c);
@@ -348,7 +348,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::blue, c.to_known_color());
     }
     
-    void test_method_(navy) {
+    auto test_method_(navy) {
       auto c = basic_colors::navy();
       
       assert::are_equal(basic_colors::navy(), c);
@@ -374,7 +374,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::navy, c.to_known_color());
     }
     
-    void test_method_(fuchsia) {
+    auto test_method_(fuchsia) {
       auto c = basic_colors::fuchsia();
       
       assert::are_equal(basic_colors::fuchsia(), c);
@@ -400,7 +400,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::fuchsia, c.to_known_color());
     }
     
-    void test_method_(purple) {
+    auto test_method_(purple) {
       auto c = basic_colors::purple();
       
       assert::are_equal(basic_colors::purple(), c);

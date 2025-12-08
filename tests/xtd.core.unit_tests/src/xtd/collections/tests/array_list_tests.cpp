@@ -11,70 +11,70 @@ using namespace xtd::tunit;
 
 namespace xtd::collections::tests {
   class test_class_(array_list_tests) {
-    void test_method_(value_type) {
+    auto test_method_(value_type) {
       assert::are_equal(typeof_<any_object>(), typeof_<array_list::value_type>());
     }
     
-    void test_method_(base_type) {
+    auto test_method_(base_type) {
       assert::are_equal(typeof_<std::vector<any_object>>(), typeof_<array_list::base_type>());
     }
     
-    void test_method_(size_type) {
+    auto test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<array_list::size_type>());
     }
     
-    void test_method_(reference) {
+    auto test_method_(reference) {
       assert::are_equal(typeof_<any_object&>(), typeof_<array_list::reference>());
     }
     
-    void test_method_(const_reference) {
+    auto test_method_(const_reference) {
       assert::are_equal(typeof_<const any_object&>(), typeof_<array_list::const_reference>());
     }
     
-    void test_method_(pointer) {
+    auto test_method_(pointer) {
       assert::are_equal(typeof_<any_object*>(), typeof_<array_list::pointer>());
     }
     
-    void test_method_(const_pointer) {
+    auto test_method_(const_pointer) {
       assert::are_equal(typeof_<const any_object*>(), typeof_<array_list::const_pointer>());
     }
     
-    void test_method_(epos) {
+    auto test_method_(epos) {
       assert::are_equal(size_object::max_value - 1, array_list::epos);
     }
     
-    void test_method_(npos) {
+    auto test_method_(npos) {
       assert::are_equal(size_object::max_value, array_list::npos);
     }
     
-    void test_method_(constructor) {
+    auto test_method_(constructor) {
       auto items = array_list {};
       assert::is_zero(items.capacity());
       assert::is_zero(items.count());
       collection_assert::is_empty(items);
     }
     
-    void test_method_(constructor_with_capacity) {
+    auto test_method_(constructor_with_capacity) {
       auto items = array_list(3_z);
       assert::is_greater_or_equal(items.capacity(), 3_z);
       assert::is_zero(items.count());
     }
     
-    void test_method_(constructor_with_iterators) {
+    auto test_method_(constructor_with_iterators) {
       array a = {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items = array_list(a.begin(), a.end());
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, items);
     }
     
-    void test_method_(constructor_with_base_type) {
+    auto test_method_(constructor_with_base_type) {
       auto bt = array_list::base_type {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items = array_list(bt);
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, items);
     }
     
-    void test_method_(constructor_with_array_list) {
+    auto test_method_(constructor_with_array_list) {
       auto l = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items = array_list(l);
       l.add("Mamenchisaurus");
@@ -82,7 +82,7 @@ namespace xtd::collections::tests {
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, items);
     }
     
-    void test_method_(constructor_with_move_array_list) {
+    auto test_method_(constructor_with_move_array_list) {
       auto l = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items = array_list(std::move(l));
       assert::are_equal(3_z, items.count());
@@ -90,7 +90,7 @@ namespace xtd::collections::tests {
       collection_assert::is_empty(l);
     }
     
-    void test_method_(constructor_with_move_base_type) {
+    auto test_method_(constructor_with_move_base_type) {
       auto bt = array_list::base_type {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items = array_list(std::move(bt));
       assert::are_equal(3_z, items.count());
@@ -98,12 +98,12 @@ namespace xtd::collections::tests {
       collection_assert::is_empty(bt);
     }
     
-    void test_method_(begin) {
+    auto test_method_(begin) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal("Tyrannosaurus", *items.begin());
     }
     
-    void test_method_(capacity) {
+    auto test_method_(capacity) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal(3_z, items.count());
       
@@ -112,17 +112,17 @@ namespace xtd::collections::tests {
       assert::are_equal(3_z, items.count());
     }
     
-    void test_method_(cbegin) {
+    auto test_method_(cbegin) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal("Tyrannosaurus", *items.cbegin());
     }
     
-    void test_method_(cend) {
+    auto test_method_(cend) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
-    void test_method_(count) {
+    auto test_method_(count) {
       auto items = array_list {};
       assert::is_zero(items.count());
       items.add("Tyrannosaurus");
@@ -131,31 +131,31 @@ namespace xtd::collections::tests {
       assert::are_equal(3_z, items.count());
     }
     
-    void test_method_(end) {
+    auto test_method_(end) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items.end() == items.begin() + items.count());
     }
     
-    void test_method_(is_fixed_size) {
+    auto test_method_(is_fixed_size) {
       // Is always false;
       assert::is_false(as<ilist>(array_list {}).is_fixed_size());
     }
     
-    void test_method_(is_read_only) {
+    auto test_method_(is_read_only) {
       // Is always false;
       assert::is_false(as<icollection>(array_list {}).is_read_only());
     }
     
-    void test_method_(is_synchronized) {
+    auto test_method_(is_synchronized) {
       // Is always false;
       assert::is_false(as<icollection>(array_list {}).is_synchronized());
     }
     
-    void test_method_(items_const) {
+    auto test_method_(items_const) {
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"}.items());
     }
     
-    void test_method_(items) {
+    auto test_method_(items) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       
       auto& inners = items.items();
@@ -176,7 +176,7 @@ namespace xtd::collections::tests {
       collection_assert::are_equal({"Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
     }
     
-    void test_method_(add) {
+    auto test_method_(add) {
       auto items = array_list {};
       
       items.add("Tyrannosaurus");
@@ -189,7 +189,7 @@ namespace xtd::collections::tests {
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus", "Mamenchisaurus"}, items);
     }
     
-    void test_method_(add_range) {
+    auto test_method_(add_range) {
       auto items = array_list {};
       
       items.add_range({"Tyrannosaurus", "Compsognathus", "Amargasaurus"});
@@ -200,7 +200,7 @@ namespace xtd::collections::tests {
     }
     
     /*
-    void test_method_(binary_search) {
+    auto test_method_(binary_search) {
       auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
       assert::are_equal(~3_z, items.binary_search(16));
       assert::are_equal(3_z, items.binary_search(20));
@@ -209,7 +209,7 @@ namespace xtd::collections::tests {
       assert::are_equal(~8_z, items.binary_search(50));
     }
     
-    void test_method_(binary_search_with_comparer) {
+    auto test_method_(binary_search_with_comparer) {
       auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
       assert::are_equal(~3_z, items.binary_search(16, collections::comparer::default_comparer));
       assert::are_equal(3_z, items.binary_search(20, collections::comparer::default_comparer));
@@ -218,7 +218,7 @@ namespace xtd::collections::tests {
       assert::are_equal(~8_z, items.binary_search(50, collections::comparer::default_comparer));
     }
     
-    void test_method_(binary_search_with_index_count_and_comparer) {
+    auto test_method_(binary_search_with_index_count_and_comparer) {
       auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
       assert::are_equal(~3_z, items.binary_search(2, 3, 16, collections::comparer::default_comparer));
       assert::are_equal(3_z, items.binary_search(2, 3, 20, collections::comparer::default_comparer));
@@ -228,7 +228,7 @@ namespace xtd::collections::tests {
     }
      */
     
-    void test_method_(contains) {
+    auto test_method_(contains) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items.contains("Tyrannosaurus"));
       assert::is_true(items.contains("Compsognathus"));
@@ -238,19 +238,19 @@ namespace xtd::collections::tests {
       assert::is_false(items.contains(""));
     }
     
-    void test_method_(convert_all) {
+    auto test_method_(convert_all) {
       auto items = array_list {84, 42, 21};
       collection_assert::are_equal({"84", "42", "21"}, items.convert_all<string>([](auto n) {return string::format("{}", n);}));
     }
     
-    void test_method_(copy_to) {
+    auto test_method_(copy_to) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto dest = array<any_object>(3_z);
       items.copy_to(dest, 0);
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, dest);
     }
     
-    void test_method_(copy_to_with_index) {
+    auto test_method_(copy_to_with_index) {
       auto items = array_list {84, 42, 21};
       auto dest = array<any_object>(5);
       items.copy_to(dest, 2);
@@ -264,7 +264,7 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
     }
     
-    void test_method_(copy_to_with_index_and_count) {
+    auto test_method_(copy_to_with_index_and_count) {
       auto items = array_list {84, 42, 21, 33};
       auto dest = array<any_object>(5);
       items.copy_to(3, dest, 2, 1);
@@ -276,7 +276,7 @@ namespace xtd::collections::tests {
       assert::throws<argument_exception>([&] {items.copy_to(1, dest, 1, 3);});
     }
     
-    void test_method_(equals_object) {
+    auto test_method_(equals_object) {
       auto items1 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items2 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items1.equals(as<object>(items2)));
@@ -286,7 +286,7 @@ namespace xtd::collections::tests {
       assert::is_false(items1.equals(items4));
     }
     
-    void test_method_(equals_array_list) {
+    auto test_method_(equals_array_list) {
       auto items1 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items2 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items1.equals(items2));
@@ -294,7 +294,7 @@ namespace xtd::collections::tests {
       assert::is_false(items1.equals(items3));
     }
     
-    void test_method_(for_each) {
+    auto test_method_(for_each) {
       auto items = array_list {1, 2, 3, 4, 5};
       auto accumulator = 0;
       for (auto item : items)
@@ -302,7 +302,7 @@ namespace xtd::collections::tests {
       assert::are_equal(15, accumulator);
     }
     
-    void test_method_(get_enumerator) {
+    auto test_method_(get_enumerator) {
       auto items = array_list {1, 2, 3, 4, 5};
       auto enumerator = items.get_enumerator();
       auto accumulator = 0;
@@ -311,7 +311,7 @@ namespace xtd::collections::tests {
       assert::are_equal(15, accumulator);
     }
     
-    void test_method_(index_operator) {
+    auto test_method_(index_operator) {
       auto items = array_list {"Tyrannosaurus", 42, 64.5};
       
       assert::are_equal("Tyrannosaurus", items[0]);
@@ -327,7 +327,7 @@ namespace xtd::collections::tests {
       collection_assert::are_equal(array_list {24, "Deinonychus", "Compsognathus"}, items);
     }
     
-    void test_method_(index_operators_with_epos) {
+    auto test_method_(index_operators_with_epos) {
       auto items = array_list {1, 2, 3, 4, 5};
       
       assert::are_equal(5, items[items.count() - 1]);

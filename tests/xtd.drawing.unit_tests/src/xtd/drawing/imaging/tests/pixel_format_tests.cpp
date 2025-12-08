@@ -8,133 +8,133 @@ using namespace xtd::tunit;
 
 namespace xtd::drawing::imaging::tests {
   class test_class_(pixel_format_tests) {
-    void test_method_(undefined) {
+    auto test_method_(undefined) {
       assert::are_equal(0, enum_object<>::to_int32(pixel_format::undefined));
       assert::are_equal("undefined", enum_object<>::to_string(pixel_format::undefined));
       assert::are_equal(pixel_format::undefined, enum_object<>::parse<pixel_format>("undefined"));
     }
     
-    void test_method_(max) {
+    auto test_method_(max) {
       assert::are_equal(15, enum_object<>::to_int32(pixel_format::max));
       assert::are_equal("max", enum_object<>::to_string(pixel_format::max));
       assert::are_equal(pixel_format::max, enum_object<>::parse<pixel_format>("max"));
     }
     
-    void test_method_(indexed) {
+    auto test_method_(indexed) {
       assert::are_equal(65536, enum_object<>::to_int32(pixel_format::indexed));
       assert::are_equal("indexed", enum_object<>::to_string(pixel_format::indexed));
       assert::are_equal(pixel_format::indexed, enum_object<>::parse<pixel_format>("indexed"));
     }
     
-    void test_method_(gdi) {
+    auto test_method_(gdi) {
       assert::are_equal(131072, enum_object<>::to_int32(pixel_format::gdi));
       assert::are_equal("gdi", enum_object<>::to_string(pixel_format::gdi));
       assert::are_equal(pixel_format::gdi, enum_object<>::parse<pixel_format>("gdi"));
     }
     
-    void test_method_(format_16bpp_rgb555) {
+    auto test_method_(format_16bpp_rgb555) {
       assert::are_equal(135173, enum_object<>::to_int32(pixel_format::format_16bpp_rgb555));
       assert::are_equal("format_16bpp_rgb555", enum_object<>::to_string(pixel_format::format_16bpp_rgb555));
       assert::are_equal(pixel_format::format_16bpp_rgb555, enum_object<>::parse<pixel_format>("format_16bpp_rgb555"));
     }
     
-    void test_method_(format_16bpp_rgb565) {
+    auto test_method_(format_16bpp_rgb565) {
       assert::are_equal(135174, enum_object<>::to_int32(pixel_format::format_16bpp_rgb565));
       assert::are_equal("format_16bpp_rgb565", enum_object<>::to_string(pixel_format::format_16bpp_rgb565));
       assert::are_equal(pixel_format::format_16bpp_rgb565, enum_object<>::parse<pixel_format>("format_16bpp_rgb565"));
     }
     
-    void test_method_(format_24bpp_rgb) {
+    auto test_method_(format_24bpp_rgb) {
       assert::are_equal(137224, enum_object<>::to_int32(pixel_format::format_24bpp_rgb));
       assert::are_equal("format_24bpp_rgb", enum_object<>::to_string(pixel_format::format_24bpp_rgb));
       assert::are_equal(pixel_format::format_24bpp_rgb, enum_object<>::parse<pixel_format>("format_24bpp_rgb"));
     }
     
-    void test_method_(format_32bpp_rgb) {
+    auto test_method_(format_32bpp_rgb) {
       assert::are_equal(139273, enum_object<>::to_int32(pixel_format::format_32bpp_rgb));
       assert::are_equal("format_32bpp_rgb", enum_object<>::to_string(pixel_format::format_32bpp_rgb));
       assert::are_equal(pixel_format::format_32bpp_rgb, enum_object<>::parse<pixel_format>("format_32bpp_rgb"));
     }
     
-    void test_method_(format_1bpp_indexed) {
+    auto test_method_(format_1bpp_indexed) {
       assert::are_equal(196865, enum_object<>::to_int32(pixel_format::format_1bpp_indexed));
       assert::are_equal("format_1bpp_indexed", enum_object<>::to_string(pixel_format::format_1bpp_indexed));
       assert::are_equal(pixel_format::format_1bpp_indexed, enum_object<>::parse<pixel_format>("format_1bpp_indexed"));
     }
     
-    void test_method_(format_4bpp_indexed) {
+    auto test_method_(format_4bpp_indexed) {
       assert::are_equal(197634, enum_object<>::to_int32(pixel_format::format_4bpp_indexed));
       assert::are_equal("format_4bpp_indexed", enum_object<>::to_string(pixel_format::format_4bpp_indexed));
       assert::are_equal(pixel_format::format_4bpp_indexed, enum_object<>::parse<pixel_format>("format_4bpp_indexed"));
     }
     
-    void test_method_(format_8bpp_indexed) {
+    auto test_method_(format_8bpp_indexed) {
       assert::are_equal(198659, enum_object<>::to_int32(pixel_format::format_8bpp_indexed));
       assert::are_equal("format_8bpp_indexed", enum_object<>::to_string(pixel_format::format_8bpp_indexed));
       assert::are_equal(pixel_format::format_8bpp_indexed, enum_object<>::parse<pixel_format>("format_8bpp_indexed"));
     }
     
-    void test_method_(alpha) {
+    auto test_method_(alpha) {
       assert::are_equal(262144, enum_object<>::to_int32(pixel_format::alpha));
       assert::are_equal("alpha", enum_object<>::to_string(pixel_format::alpha));
       assert::are_equal(pixel_format::alpha, enum_object<>::parse<pixel_format>("alpha"));
     }
     
-    void test_method_(format_16bpp_argb1555) {
+    auto test_method_(format_16bpp_argb1555) {
       assert::are_equal(397319, enum_object<>::to_int32(pixel_format::format_16bpp_argb1555));
       assert::are_equal("format_16bpp_argb1555", enum_object<>::to_string(pixel_format::format_16bpp_argb1555));
       assert::are_equal(pixel_format::format_16bpp_argb1555, enum_object<>::parse<pixel_format>("format_16bpp_argb1555"));
     }
     
-    void test_method_(palpha) {
+    auto test_method_(palpha) {
       assert::are_equal(524288, enum_object<>::to_int32(pixel_format::palpha));
       assert::are_equal("palpha", enum_object<>::to_string(pixel_format::palpha));
       assert::are_equal(pixel_format::palpha, enum_object<>::parse<pixel_format>("palpha"));
     }
     
-    void test_method_(format_32bpp_pargb) {
+    auto test_method_(format_32bpp_pargb) {
       assert::are_equal(925707, enum_object<>::to_int32(pixel_format::format_32bpp_pargb));
       assert::are_equal("format_32bpp_pargb", enum_object<>::to_string(pixel_format::format_32bpp_pargb));
       assert::are_equal(pixel_format::format_32bpp_pargb, enum_object<>::parse<pixel_format>("format_32bpp_pargb"));
     }
     
-    void test_method_(extended) {
+    auto test_method_(extended) {
       assert::are_equal(1048576, enum_object<>::to_int32(pixel_format::extended));
       assert::are_equal("extended", enum_object<>::to_string(pixel_format::extended));
       assert::are_equal(pixel_format::extended, enum_object<>::parse<pixel_format>("extended"));
     }
     
-    void test_method_(format_16bpp_gray_scale) {
+    auto test_method_(format_16bpp_gray_scale) {
       assert::are_equal(1052676, enum_object<>::to_int32(pixel_format::format_16bpp_gray_scale));
       assert::are_equal("format_16bpp_gray_scale", enum_object<>::to_string(pixel_format::format_16bpp_gray_scale));
       assert::are_equal(pixel_format::format_16bpp_gray_scale, enum_object<>::parse<pixel_format>("format_16bpp_gray_scale"));
     }
     
-    void test_method_(format_48bpp_rgb) {
+    auto test_method_(format_48bpp_rgb) {
       assert::are_equal(1060876, enum_object<>::to_int32(pixel_format::format_48bpp_rgb));
       assert::are_equal("format_48bpp_rgb", enum_object<>::to_string(pixel_format::format_48bpp_rgb));
       assert::are_equal(pixel_format::format_48bpp_rgb, enum_object<>::parse<pixel_format>("format_48bpp_rgb"));
     }
     
-    void test_method_(format_64bpp_pargb) {
+    auto test_method_(format_64bpp_pargb) {
       assert::are_equal(1851406, enum_object<>::to_int32(pixel_format::format_64bpp_pargb));
       assert::are_equal("format_64bpp_pargb", enum_object<>::to_string(pixel_format::format_64bpp_pargb));
       assert::are_equal(pixel_format::format_64bpp_pargb, enum_object<>::parse<pixel_format>("format_64bpp_pargb"));
     }
     
-    void test_method_(canonical) {
+    auto test_method_(canonical) {
       assert::are_equal(2097152, enum_object<>::to_int32(pixel_format::canonical));
       assert::are_equal("canonical", enum_object<>::to_string(pixel_format::canonical));
       assert::are_equal(pixel_format::canonical, enum_object<>::parse<pixel_format>("canonical"));
     }
     
-    void test_method_(format_32bpp_argb) {
+    auto test_method_(format_32bpp_argb) {
       assert::are_equal(2498570, enum_object<>::to_int32(pixel_format::format_32bpp_argb));
       assert::are_equal("format_32bpp_argb", enum_object<>::to_string(pixel_format::format_32bpp_argb));
       assert::are_equal(pixel_format::format_32bpp_argb, enum_object<>::parse<pixel_format>("format_32bpp_argb"));
     }
     
-    void test_method_(format_64bpp_argb) {
+    auto test_method_(format_64bpp_argb) {
       assert::are_equal(3424269, enum_object<>::to_int32(pixel_format::format_64bpp_argb));
       assert::are_equal("format_64bpp_argb", enum_object<>::to_string(pixel_format::format_64bpp_argb));
       assert::are_equal(pixel_format::format_64bpp_argb, enum_object<>::parse<pixel_format>("format_64bpp_argb"));

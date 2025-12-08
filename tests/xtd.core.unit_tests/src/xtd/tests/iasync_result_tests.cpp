@@ -64,7 +64,7 @@ namespace xtd::tests {
       test_async_result result_;
     };
     
-    void test_method_(test_async_result_ctor) {
+    auto test_method_(test_async_result_ctor) {
       test_async_result ar;
       
       assert::is_false(ar.async_state().has_value());
@@ -73,7 +73,7 @@ namespace xtd::tests {
       assert::is_false(ar.async_wait_handle().wait_one(0));
     }
     
-    void test_method_(execute_test_async_runner) {
+    auto test_method_(execute_test_async_runner) {
       test_async_runner runner;
       auto& result = runner.start();
       assert::are_equal("Started", as<string>(result.async_state()));

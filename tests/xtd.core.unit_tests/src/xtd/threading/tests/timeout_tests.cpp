@@ -8,11 +8,11 @@ using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
   class test_class_(timeout_tests) {
-    void test_method_(infinite) {
+    auto test_method_(infinite) {
       assert::are_equal(-1, timeout::infinite);
     }
     
-    void test_method_(infinite_time_span) {
+    auto test_method_(infinite_time_span) {
       assert::are_equal(time_span {-1}, timeout::infinite_time_span);
     }
   };

@@ -8,19 +8,19 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(environment_variable_target_tests) {
-    void test_method_(process) {
+    auto test_method_(process) {
       assert::are_equal(0, enum_object<>::to_int32(environment_variable_target::process));
       assert::are_equal("process", enum_object<>::to_string(environment_variable_target::process));
       assert::are_equal(environment_variable_target::process, enum_object<>::parse<environment_variable_target>("process"));
     }
     
-    void test_method_(user) {
+    auto test_method_(user) {
       assert::are_equal(1, enum_object<>::to_int32(environment_variable_target::user));
       assert::are_equal("user", enum_object<>::to_string(environment_variable_target::user));
       assert::are_equal(environment_variable_target::user, enum_object<>::parse<environment_variable_target>("user"));
     }
     
-    void test_method_(machine) {
+    auto test_method_(machine) {
       assert::are_equal(2, enum_object<>::to_int32(environment_variable_target::machine));
       assert::are_equal("machine", enum_object<>::to_string(environment_variable_target::machine));
       assert::are_equal(environment_variable_target::machine, enum_object<>::parse<environment_variable_target>("machine"));

@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_is_NaN_long_double_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       long double ld = std::numeric_limits<long double>::quiet_NaN();
       xtd::tunit::assert::is_NaN(ld);
     }

@@ -9,19 +9,19 @@ using namespace xtd::tunit;
 namespace xtd::forms::tests {
   class test_class_(status_bar_panel_style_tests) {
   public:
-    void test_method_(text) {
+    auto test_method_(text) {
       assert::are_equal(1, enum_object<>::to_int32(status_bar_panel_style::text));
       assert::are_equal("text", enum_object<>::to_string(status_bar_panel_style::text));
       assert::are_equal(status_bar_panel_style::text, enum_object<>::parse<status_bar_panel_style>("text"));
     }
     
-    void test_method_(owner_draw) {
+    auto test_method_(owner_draw) {
       assert::are_equal(2, enum_object<>::to_int32(status_bar_panel_style::owner_draw));
       assert::are_equal("owner_draw", enum_object<>::to_string(status_bar_panel_style::owner_draw));
       assert::are_equal(status_bar_panel_style::owner_draw, enum_object<>::parse<status_bar_panel_style>("owner_draw"));
     }
     
-    void test_method_(control) {
+    auto test_method_(control) {
       assert::are_equal(3, enum_object<>::to_int32(status_bar_panel_style::control));
       assert::are_equal("control", enum_object<>::to_string(status_bar_panel_style::control));
       assert::are_equal(status_bar_panel_style::control, enum_object<>::parse<status_bar_panel_style>("control"));

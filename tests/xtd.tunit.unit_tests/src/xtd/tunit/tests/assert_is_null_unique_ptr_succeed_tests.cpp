@@ -7,7 +7,7 @@
 namespace xtd::tunit::tests {
   class test_class_(assert_is_null_unique_ptr_succeed_tests) {
   public:
-    void test_method_(test_case_succeed) {
+    auto test_method_(test_case_succeed) {
       xtd::uptr<int> p;
       xtd::tunit::assert::is_null(p);
     }
