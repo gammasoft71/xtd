@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "generic_stream_output.hpp"
 #include "interface.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -30,7 +31,3 @@ namespace xtd {
     /// @}
   };
 }
-
-/// @cond
-std::ostream& operator <<(std::ostream& os, const xtd::istringable& obj) noexcept;
-/// @endcond
