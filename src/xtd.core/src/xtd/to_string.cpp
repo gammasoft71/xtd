@@ -45,7 +45,7 @@ namespace xtd {
   xtd::string to_string(const std::wstring& value, const xtd::string& fmt, const std::locale& loc) {
     return __string_formatter(fmt.chars(), value, loc);
   }
-
+  
   xtd::string to_string(const std::locale& value, const xtd::string& fmt, const std::locale& loc) {
     return "locale {" + value.name() + "}";
   }
