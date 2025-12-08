@@ -7,37 +7,33 @@
 using namespace xtd;
 using namespace xtd::tunit;
 
-class size_sof {
-public:
+struct size_sof {
   int w = 0;
   int h = 0;
+  
+  friend std::ostream& operator << (std::ostream& os, const size_sof& value) {return os << string::format("({}, {})", value.w, value.h);}
 };
-
-template<class char_t>
-std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::size_sof& p) {
-  return os << "(" << p.w << ", " << p.h << ")";
-}
 
 namespace xtd::tests {
   class test_class_(format_u32string_object_without_xtd_to_string_tests) {
     void test_method_(format_location_with_default_argument) {
-      assert::throws<xtd::format_exception>([] {format(U"{0}", ::size_sof {42, 24});});
+      assert::are_equal("(42, 24)", format(U"{0}", ::size_sof {42, 24}));
     }
     
     void test_method_(format_location_with_left_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(U"{0,10}", ::size_sof {42, 24});});
+      assert::are_equal("  (42, 24)", format(U"{0,10}", ::size_sof {42, 24}));
     }
     
     void test_method_(format_location_with_right_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(U"{0, -10}", ::size_sof {42, 24});});
+      assert::are_equal("(42, 24)  ", format(U"{0,-10}", ::size_sof {42, 24}));
     }
     
     void test_method_(format_location_with_zero_alignment) {
-      assert::throws<xtd::format_exception>([] {string::format(U"{0,0}", ::size_sof {42, 24});});
+      assert::are_equal("(42, 24)", format(U"{0,0}", ::size_sof {42, 24}));
     }
     
     void test_method_(format_location_with_invalid_argument) {
-      assert::throws<xtd::format_exception>([] {format(U"{0:G}", ::size_sof {42, 24});});
+      assert::are_equal("(42, 24)", format(U"{0:G}", ::size_sof {42, 24}));
     }
   };
 }
