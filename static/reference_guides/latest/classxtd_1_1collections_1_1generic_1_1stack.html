@@ -113,7 +113,7 @@ Inheritance diagram for xtd::collections::generic::stack&lt; type_t, container_t
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt;<br />
-class xtd::collections::generic::stack&lt; type_t, container_t &gt;</div><p>Represents a last-in, first-out collection of objects. </p>
+class xtd::collections::generic::stack&lt; type_t, container_t &gt;</div><p>Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> container_t = std::deque&lt;type_t&gt;&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a1f5295a6e3530e1e428214404b20b081">stack</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> xtd::collections::generic::icollection&lt;type_t&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1stack_html_a1f5295a6e3530e1e428214404b20b081"><div class="ttname"><a href="#a1f5295a6e3530e1e428214404b20b081">xtd::collections::generic::stack::stack</a></div><div class="ttdeci">stack()=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::stack &lt;type_t&gt; class that is empty and h...</div></div>
@@ -123,18 +123,18 @@ class xtd::collections::generic::stack&lt; type_t, container_t &gt;</div><p>Repr
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This class implements a generic stack as a circular array. Objects stored in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; are inserted at one end and removed from the other. Queues and stacks are useful when you need temporary storage for information; that is, when you might want to discard an element after retrieving its value. Use <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; if you need to access the information in the same order that it is stored in the collection. Use <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; if you need to access the information in reverse order. Use xtd::collections::generic::concurrent_queue &lt;type_t&gt; or xtd::collections::generic::concurrent_stack &lt;type_t&gt; if you need to access the collection from multiple threads concurrently. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This class implements a generic stack as a circular array. Objects stored in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; are inserted at one end and removed from the other. Queues and stacks are useful when you need temporary storage for information; that is, when you might want to discard an element after retrieving its value. Use <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; if you need to access the information in the same order that it is stored in the collection. Use <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; if you need to access the information in reverse order. Use xtd::collections::generic::concurrent_queue &lt;type_t&gt; or xtd::collections::generic::concurrent_stack &lt;type_t&gt; if you need to access the collection from multiple threads concurrently. </dd>
 <dd>
-Three main operations can be performed on a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; and its elements:<ul>
-<li><a class="el" href="#a0f8a3dfaf2d601dc6b12a90c2c32b7c9" title="Adds an object to the end of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::push</a> adds an element to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.</li>
-<li><a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> removes the oldest element from the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.</li>
-<li><a class="el" href="#a8ec274947050be3adf71f38ca12534ce" title="Returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt; without removing...">xtd::collections::generic::stack::peek</a> peek returns the oldest element that is at the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; but does not remove it from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </li>
+Three main operations can be performed on a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; and its elements:<ul>
+<li><a class="el" href="#a0f8a3dfaf2d601dc6b12a90c2c32b7c9" title="Adds an object to the end of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::push</a> adds an element to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.</li>
+<li><a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> removes the oldest element from the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.</li>
+<li><a class="el" href="#a8ec274947050be3adf71f38ca12534ce" title="Returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt; without removing...">xtd::collections::generic::stack::peek</a> peek returns the oldest element that is at the start of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; but does not remove it from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </li>
 </ul>
 </dd>
 <dd>
-The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a>. </dd>
+The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, the capacity is automatically increased as required by reallocating the internal array. The capacity can be decreased by calling <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a>. </dd>
 <dd>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; allows duplicate elements. </dd></dl>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; allows duplicate elements. </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">type_t</td><td>The value type of the generic container. </td></tr>
@@ -142,7 +142,92 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stac
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates several methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; generic class. The code example creates a stack of strings with default capacity and uses the <a class="el" href="#a0f8a3dfaf2d601dc6b12a90c2c32b7c9" title="Adds an object to the end of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::push</a> method to stack five strings. The elements of the stack are enumerated, which does not change the state of the stack. The <a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> method is used to pop the first string. The <a class="el" href="#a8ec274947050be3adf71f38ca12534ce" title="Returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt; without removing...">xtd::collections::generic::stack::peek</a> method is used to look at the next item in the stack, and then the <a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> method is used to pop it. The <a class="el" href="#ab7bf01c30280cdf84abfd82e2a353993" title="Copies the xtd::collections::generic::stack &lt;type_t&gt; elements to a new array.">xtd::collections::generic::stack::to_array</a> method is used to create an array and copy the stack elements to it, then the array is passed to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; constructor that takes <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;, creating a copy of the stack. The elements of the copy are displayed. An array twice the size of the stack is created, and the <a class="el" href="#abe5d862176da21e4f250bb197d3c1610" title="Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional ar...">xtd::collections::generic::stack::copy_to</a> method is used to copy the array elements beginning at the middle of the array. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; constructor is used again to create a second copy of the stack containing three null elements at the beginning. The <a class="el" href="#ac231646146223371ad6e544e2e2a7060" title="Determines whether an element is in the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::contains</a> method is used to show that the string "four" is in the first copy of the stack, after which the Clear method clears the copy and the <a class="el" href="#a701d6da1683e7771dcd38e970ef8a6de" title="Gets the number of nodes actually contained in the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::count</a> property shows that the stack is empty. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates several methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; generic class. The code example creates a stack of strings with default capacity and uses the <a class="el" href="#a0f8a3dfaf2d601dc6b12a90c2c32b7c9" title="Adds an object to the end of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::push</a> method to stack five strings. The elements of the stack are enumerated, which does not change the state of the stack. The <a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> method is used to pop the first string. The <a class="el" href="#a8ec274947050be3adf71f38ca12534ce" title="Returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt; without removing...">xtd::collections::generic::stack::peek</a> method is used to look at the next item in the stack, and then the <a class="el" href="#ac979a70033b55f6e227f366de76e71c9" title="Removes and returns the object at the beginning of the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::pop</a> method is used to pop it. The <a class="el" href="#ab7bf01c30280cdf84abfd82e2a353993" title="Copies the xtd::collections::generic::stack &lt;type_t&gt; elements to a new array.">xtd::collections::generic::stack::to_array</a> method is used to create an array and copy the stack elements to it, then the array is passed to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; constructor that takes <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;, creating a copy of the stack. The elements of the copy are displayed. An array twice the size of the stack is created, and the <a class="el" href="#abe5d862176da21e4f250bb197d3c1610" title="Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional ar...">xtd::collections::generic::stack::copy_to</a> method is used to copy the array elements beginning at the middle of the array. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; constructor is used again to create a second copy of the stack containing three null elements at the beginning. The <a class="el" href="#ac231646146223371ad6e544e2e2a7060" title="Determines whether an element is in the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::contains</a> method is used to show that the string "four" is in the first copy of the stack, after which the Clear method clears the copy and the <a class="el" href="#a701d6da1683e7771dcd38e970ef8a6de" title="Gets the number of nodes actually contained in the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::count</a> property shows that the stack is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>examples {</div>
+<div class="line">  <span class="keyword">class </span>program {</div>
+<div class="line">  <span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">      <span class="keyword">auto</span> numbers = <a class="code hl_function" href="#a1f5295a6e3530e1e428214404b20b081">stack&lt;string&gt;</a> {};</div>
+<div class="line">      numbers.push(<span class="stringliteral">&quot;one&quot;</span>);</div>
+<div class="line">      numbers.push(<span class="stringliteral">&quot;two&quot;</span>);</div>
+<div class="line">      numbers.push(<span class="stringliteral">&quot;three&quot;</span>);</div>
+<div class="line">      numbers.push(<span class="stringliteral">&quot;four&quot;</span>);</div>
+<div class="line">      numbers.push(<span class="stringliteral">&quot;five&quot;</span>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// A stack can be enumerated without disturbing its contents.</span></div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a> : numbers)</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a>);</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nPopping &#39;{}&#39;&quot;</span>, numbers.pop());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Peek at next item to destack: {}&quot;</span>, numbers.peek());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Popping &#39;{}&#39;&quot;</span>, numbers.pop());</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Create a copy of the stack, using the to_array method and the constructor that accepts an ienumerable&lt;type_t&gt;.</span></div>
+<div class="line">      <span class="keyword">auto</span> stack2 = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1stack.html">stack&lt;string&gt;</a>(numbers.to_array());</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nContents of the first copy:&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a> : stack2 )</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a>);</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Create an array twice the size of the stack and copy the elements of the stack, starting at the middle of the array.</span></div>
+<div class="line">      <span class="keyword">auto</span> array2 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a>(numbers.count() * 2);</div>
+<div class="line">      numbers.copy_to(array2, numbers.count());</div>
+<div class="line">      </div>
+<div class="line">      <span class="comment">// Create a second stack, using the constructor that accepts an ienumerable&lt;type_t&gt;.</span></div>
+<div class="line">      <span class="keyword">auto</span> stack3 = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1stack.html">stack&lt;string&gt;</a>(array2);</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nContents of the second copy, with duplicates and nulls:&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a> : stack3 )</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a>);</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nstack2.contains(\&quot;four\&quot;) = {0}&quot;</span>, stack2.contains(<span class="stringliteral">&quot;four&quot;</span>));</div>
+<div class="line">      </div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nstack2.clear()&quot;</span>);</div>
+<div class="line">      stack2.clear();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nstack2.count() = {0}&quot;</span>, stack2.count());</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// five</span></div>
+<div class="line"><span class="comment">// four</span></div>
+<div class="line"><span class="comment">// three</span></div>
+<div class="line"><span class="comment">// two</span></div>
+<div class="line"><span class="comment">// one</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Popping &#39;five&#39;</span></div>
+<div class="line"><span class="comment">// Peek at next item to destack: four</span></div>
+<div class="line"><span class="comment">// Popping &#39;four&#39;</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Contents of the first copy:</span></div>
+<div class="line"><span class="comment">// one</span></div>
+<div class="line"><span class="comment">// two</span></div>
+<div class="line"><span class="comment">// three</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Contents of the second copy, with duplicates and nulls:</span></div>
+<div class="line"><span class="comment">// one</span></div>
+<div class="line"><span class="comment">// two</span></div>
+<div class="line"><span class="comment">// three</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// stack2.contains(&quot;four&quot;) = false</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// stack2.clear()</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// stack2.count() = 0</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1stack_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1stack.html">xtd::collections::generic::stack</a></div><div class="ttdoc">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...</div><div class="ttdef"><b>Definition</b> stack.hpp:47</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__xtd__core_html_gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df"><div class="ttname"><a href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">xtd::number_styles::number</a></div><div class="ttdeci">@ number</div><div class="ttdoc">Indicates that the allow_leading_white, allow_trailing_white, allow_leading_sign, allow_trailing_sign...</div><div class="ttdef"><b>Definition</b> number_styles.hpp:46</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:aaccfc5f63950fc2f4344b4f97d39558c" id="r_aaccfc5f63950fc2f4344b4f97d39558c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a></td></tr>
@@ -163,7 +248,7 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stac
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a1f5295a6e3530e1e428214404b20b081" id="r_a1f5295a6e3530e1e428214404b20b081"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f5295a6e3530e1e428214404b20b081">stack</a> ()=default</td></tr>
-<tr class="memdesc:a1f5295a6e3530e1e428214404b20b081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the default initial capacity.  <br /></td></tr>
+<tr class="memdesc:a1f5295a6e3530e1e428214404b20b081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the default initial capacity.  <br /></td></tr>
 <tr class="separator:a1f5295a6e3530e1e428214404b20b081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e03e312aae4047918b192b0fe82fcac" id="r_a8e03e312aae4047918b192b0fe82fcac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e03e312aae4047918b192b0fe82fcac">stack</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html">stack</a> &amp;&amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html">stack</a>)</td></tr>
 <tr class="memdesc:a8e03e312aae4047918b192b0fe82fcac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified stack.  <br /></td></tr>
@@ -178,10 +263,10 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stac
 <tr class="memdesc:a53d22390f68f1913922c34db000e583d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified stack.  <br /></td></tr>
 <tr class="separator:a53d22390f68f1913922c34db000e583d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ac718576bfa4c60dcb6adc0cd0ac31" id="r_a28ac718576bfa4c60dcb6adc0cd0ac31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28ac718576bfa4c60dcb6adc0cd0ac31">stack</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a>&lt; <a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &gt; &amp;collection)</td></tr>
-<tr class="memdesc:a28ac718576bfa4c60dcb6adc0cd0ac31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
+<tr class="memdesc:a28ac718576bfa4c60dcb6adc0cd0ac31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
 <tr class="separator:a28ac718576bfa4c60dcb6adc0cd0ac31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade0576668bfebe65297c079c4dc66d00" id="r_ade0576668bfebe65297c079c4dc66d00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0576668bfebe65297c079c4dc66d00">stack</a> (<a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a> <a class="el" href="#a59a6ac85e27fceb0caa9cd72afe3966f">capacity</a>)</td></tr>
-<tr class="memdesc:ade0576668bfebe65297c079c4dc66d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the specified initial capacity.  <br /></td></tr>
+<tr class="memdesc:ade0576668bfebe65297c079c4dc66d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the specified initial capacity.  <br /></td></tr>
 <tr class="separator:ade0576668bfebe65297c079c4dc66d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addeb06cabe8632055e7860854f8afabe" id="r_addeb06cabe8632055e7860854f8afabe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addeb06cabe8632055e7860854f8afabe">stack</a> (std::initializer_list&lt; type_t &gt; il)</td></tr>
 <tr class="memdesc:addeb06cabe8632055e7860854f8afabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
@@ -196,7 +281,7 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stac
 <tr class="memdesc:a59a6ac85e27fceb0caa9cd72afe3966f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total numbers of elements the internal data structure can hold without resizing.  <br /></td></tr>
 <tr class="separator:a59a6ac85e27fceb0caa9cd72afe3966f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701d6da1683e7771dcd38e970ef8a6de" id="r_a701d6da1683e7771dcd38e970ef8a6de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701d6da1683e7771dcd38e970ef8a6de">count</a> () const noexcept -&gt; <a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a> override</td></tr>
-<tr class="memdesc:a701d6da1683e7771dcd38e970ef8a6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a701d6da1683e7771dcd38e970ef8a6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a701d6da1683e7771dcd38e970ef8a6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e26f697cf45649f32b29c7c99e1039f" id="r_a6e26f697cf45649f32b29c7c99e1039f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e26f697cf45649f32b29c7c99e1039f">items</a> () const</td></tr>
 <tr class="memdesc:a6e26f697cf45649f32b29c7c99e1039f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a std::stack&lt;type_t&gt;.  <br /></td></tr>
@@ -204,49 +289,49 @@ The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stac
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:aed7047d95d1000bd6c1d78f44cf66329" id="r_aed7047d95d1000bd6c1d78f44cf66329"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed7047d95d1000bd6c1d78f44cf66329">clear</a> () -&gt; void override</td></tr>
-<tr class="memdesc:aed7047d95d1000bd6c1d78f44cf66329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:aed7047d95d1000bd6c1d78f44cf66329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:aed7047d95d1000bd6c1d78f44cf66329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac231646146223371ad6e544e2e2a7060" id="r_ac231646146223371ad6e544e2e2a7060"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac231646146223371ad6e544e2e2a7060">contains</a> (<a class="el" href="#a19ef2f3287dead1ada59ae845c7b6135">const_reference</a> value) const noexcept -&gt; bool override</td></tr>
-<tr class="memdesc:ac231646146223371ad6e544e2e2a7060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:ac231646146223371ad6e544e2e2a7060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ac231646146223371ad6e544e2e2a7060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe5d862176da21e4f250bb197d3c1610" id="r_abe5d862176da21e4f250bb197d3c1610"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe5d862176da21e4f250bb197d3c1610">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a> array_index) const -&gt; void override</td></tr>
 <tr class="memdesc:abe5d862176da21e4f250bb197d3c1610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
 <tr class="separator:abe5d862176da21e4f250bb197d3c1610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac979a70033b55f6e227f366de76e71c9" id="r_ac979a70033b55f6e227f366de76e71c9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac979a70033b55f6e227f366de76e71c9">pop</a> () -&gt; <a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a></td></tr>
-<tr class="memdesc:ac979a70033b55f6e227f366de76e71c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:ac979a70033b55f6e227f366de76e71c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ac979a70033b55f6e227f366de76e71c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f8a3dfaf2d601dc6b12a90c2c32b7c9" id="r_a0f8a3dfaf2d601dc6b12a90c2c32b7c9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f8a3dfaf2d601dc6b12a90c2c32b7c9">push</a> (<a class="el" href="#a19ef2f3287dead1ada59ae845c7b6135">const_reference</a> value) -&gt; void</td></tr>
-<tr class="memdesc:a0f8a3dfaf2d601dc6b12a90c2c32b7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a0f8a3dfaf2d601dc6b12a90c2c32b7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a0f8a3dfaf2d601dc6b12a90c2c32b7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd077fe93f484c88a6890957f5c82690" id="r_afd077fe93f484c88a6890957f5c82690"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd077fe93f484c88a6890957f5c82690">push</a> (<a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &amp;&amp;value) -&gt; void</td></tr>
-<tr class="memdesc:afd077fe93f484c88a6890957f5c82690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:afd077fe93f484c88a6890957f5c82690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:afd077fe93f484c88a6890957f5c82690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31ce67fd4e74ff5a608a3a15e1662ac8" id="r_a31ce67fd4e74ff5a608a3a15e1662ac8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31ce67fd4e74ff5a608a3a15e1662ac8">ensure_capacity</a> (<a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a> <a class="el" href="#a59a6ac85e27fceb0caa9cd72afe3966f">capacity</a>) -&gt; <a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a></td></tr>
 <tr class="memdesc:a31ce67fd4e74ff5a608a3a15e1662ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the capacity of this stack is at least the specified <code>capacity</code>. If the current capacity is less than <code>capacity</code>, it is increased to at least the specified <code>capacity</code>.  <br /></td></tr>
 <tr class="separator:a31ce67fd4e74ff5a608a3a15e1662ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add8094323278167408c88d97858a1164" id="r_add8094323278167408c88d97858a1164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add8094323278167408c88d97858a1164">get_enumerator</a> () const noexcept override</td></tr>
-<tr class="memdesc:add8094323278167408c88d97858a1164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:add8094323278167408c88d97858a1164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:add8094323278167408c88d97858a1164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec274947050be3adf71f38ca12534ce" id="r_a8ec274947050be3adf71f38ca12534ce"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec274947050be3adf71f38ca12534ce">peek</a> () const -&gt; <a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a></td></tr>
-<tr class="memdesc:a8ec274947050be3adf71f38ca12534ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
+<tr class="memdesc:a8ec274947050be3adf71f38ca12534ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; without removing it.  <br /></td></tr>
 <tr class="separator:a8ec274947050be3adf71f38ca12534ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7bf01c30280cdf84abfd82e2a353993" id="r_ab7bf01c30280cdf84abfd82e2a353993"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7bf01c30280cdf84abfd82e2a353993">to_array</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &gt;</td></tr>
-<tr class="memdesc:ab7bf01c30280cdf84abfd82e2a353993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; elements to a new array.  <br /></td></tr>
+<tr class="memdesc:ab7bf01c30280cdf84abfd82e2a353993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; elements to a new array.  <br /></td></tr>
 <tr class="separator:ab7bf01c30280cdf84abfd82e2a353993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f580b1f0fcadc937605691e6058a461" id="r_a7f580b1f0fcadc937605691e6058a461"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f580b1f0fcadc937605691e6058a461">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> override</td></tr>
 <tr class="memdesc:a7f580b1f0fcadc937605691e6058a461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:a7f580b1f0fcadc937605691e6058a461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91ccde9ea848840e1782ae84a895d88d" id="r_a91ccde9ea848840e1782ae84a895d88d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ccde9ea848840e1782ae84a895d88d">trim_excess</a> () -&gt; void</td></tr>
-<tr class="memdesc:a91ccde9ea848840e1782ae84a895d88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity.  <br /></td></tr>
+<tr class="memdesc:a91ccde9ea848840e1782ae84a895d88d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity.  <br /></td></tr>
 <tr class="separator:a91ccde9ea848840e1782ae84a895d88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df99cbc7a463df82699f78270f8a24c" id="r_a5df99cbc7a463df82699f78270f8a24c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5df99cbc7a463df82699f78270f8a24c">trim_excess</a> (<a class="el" href="#a2a1001730e15a86974c7dbfb70464769">size_type</a> <a class="el" href="#a59a6ac85e27fceb0caa9cd72afe3966f">capacity</a>) -&gt; void</td></tr>
-<tr class="memdesc:a5df99cbc7a463df82699f78270f8a24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; object to the specified number of entries.  <br /></td></tr>
+<tr class="memdesc:a5df99cbc7a463df82699f78270f8a24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; object to the specified number of entries.  <br /></td></tr>
 <tr class="separator:a5df99cbc7a463df82699f78270f8a24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fb24f83c0f91b681730d96e7690a33a" id="r_a5fb24f83c0f91b681730d96e7690a33a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fb24f83c0f91b681730d96e7690a33a">try_pop</a> (<a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &amp;result) noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a5fb24f83c0f91b681730d96e7690a33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, and copies it to the result parameter.  <br /></td></tr>
+<tr class="memdesc:a5fb24f83c0f91b681730d96e7690a33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, and copies it to the result parameter.  <br /></td></tr>
 <tr class="separator:a5fb24f83c0f91b681730d96e7690a33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4887575e43e30c2344c414e478c49f8d" id="r_a4887575e43e30c2344c414e478c49f8d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4887575e43e30c2344c414e478c49f8d">try_peek</a> (<a class="el" href="#aaccfc5f63950fc2f4344b4f97d39558c">value_type</a> &amp;result) const noexcept -&gt; bool</td></tr>
-<tr class="memdesc:a4887575e43e30c2344c414e478c49f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a4887575e43e30c2344c414e478c49f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a4887575e43e30c2344c414e478c49f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
@@ -407,7 +492,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the default initial capacity. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the default initial capacity. </p>
 
 </div>
 </div>
@@ -439,7 +524,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <p>Move constructor with specified stack. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stack</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; which elements will be moved from. </td></tr>
+    <tr><td class="paramname">stack</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; which elements will be moved from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -474,7 +559,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <p>Default copy constructor with specified stack. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stack</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; which elements will be inserted from. </td></tr>
+    <tr><td class="paramname">stack</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; which elements will be inserted from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -576,10 +661,10 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">collection</td><td>The collection whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname">collection</td><td>The collection whose elements are copied to the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
@@ -611,10 +696,10 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the specified initial capacity. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; class that is empty and has the specified initial capacity. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">capacity</td><td>The initial number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; can contain. </td></tr>
+    <tr><td class="paramname">capacity</td><td>The initial number of elements that the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; can contain. </td></tr>
   </table>
   </dd>
 </dl>
@@ -754,8 +839,8 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
+<p>Gets the number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of nodes actually contained in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation. </dd></dl>
 
 </div>
@@ -815,10 +900,10 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<p>Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Count is set to zero, and references to other objects from elements of the collection are also released. </dd>
 <dd>
-The capacity remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, call <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a>. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; to the default capacity. </dd>
+The capacity remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, call <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a>. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; to the default capacity. </dd>
 <dd>
 This method is an O(n) operation, where n is Count. </dd></dl>
 
@@ -849,14 +934,14 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<p>Determines whether an element is in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname">item</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>item</code> is found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;; otherwise, <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>item</code> is found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -936,11 +1021,11 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>The object that is removed from the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
+<p>Removes and returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The object that is removed from the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </td></tr>
   </table>
   </dd>
 </dl>
@@ -972,10 +1057,10 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<p>Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. The value can be null for reference types. </td></tr>
+    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. The value can be null for reference types. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1007,10 +1092,10 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<p>Adds an object to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. The value can be null for reference types. </td></tr>
+    <tr><td class="paramname">item</td><td>The object to add to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. The value can be null for reference types. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1078,8 +1163,8 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a>::.enumerator for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
+<p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a>::.enumerator for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
 
 </div>
 </div>
@@ -1108,11 +1193,11 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; without removing it. </p>
-<dl class="section return"><dt>Returns</dt><dd>The object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
+<p>Returns the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; without removing it. </p>
+<dl class="section return"><dt>Returns</dt><dd>The object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1144,8 +1229,8 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; elements to a new array. </p>
-<dl class="section return"><dt>Returns</dt><dd>A new array containing elements copied from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
+<p>Copies the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; elements to a new array. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new array containing elements copied from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </dd></dl>
 
 </div>
 </div>
@@ -1206,12 +1291,12 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; can be considerable, however, so the <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a> method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain. </dd>
+<p>Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, if that number is less than 90 percent of current capacity. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; can be considerable, however, so the <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a> method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain. </dd>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="#a701d6da1683e7771dcd38e970ef8a6de" title="Gets the number of nodes actually contained in the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::count</a>. </dd>
 <dd>
-To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="#aed7047d95d1000bd6c1d78f44cf66329" title="Removes all elements from the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::clear</a> method before calling <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; to the default capacity. </dd></dl>
+To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="#aed7047d95d1000bd6c1d78f44cf66329" title="Removes all elements from the xtd::collections::generic::stack &lt;type_t&gt;.">xtd::collections::generic::stack::clear</a> method before calling <a class="el" href="#a91ccde9ea848840e1782ae84a895d88d" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::stack &lt;type_t&gt;,...">xtd::collections::generic::stack::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; to the default capacity. </dd></dl>
 
 </div>
 </div>
@@ -1240,7 +1325,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; object to the specified number of entries. </p>
+<p>Sets the capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; object to the specified number of entries. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">capacity</td><td>The new capacity. </td></tr>
@@ -1281,14 +1366,14 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, and copies it to the result parameter. </p>
+<p>Removes the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, and copies it to the result parameter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">The</td><td>removed object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the object is successfully removed; <code>false</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the object is successfully removed; <code>false</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </dd></dl>
 
 </div>
 </div>
@@ -1317,14 +1402,14 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 </table>
 </div><div class="memdoc">
 
-<p>Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
+<p>Returns a value that indicates whether there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;, and if one is present, copies it to the result parameter. The object is not removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">If</td><td>present, the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;; otherwise, the default value of <code>type_t</code>. </td></tr>
+    <tr><td class="paramname">If</td><td>present, the object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;; otherwise, the default value of <code>type_t</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt;; <code>false</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a last-in, first-out collection of objects.">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if there is an object at the beginning of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt;; <code>false</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1stack.html" title="Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...">xtd::collections::generic::stack</a> &lt;type_t&gt; is empty. </dd></dl>
 
 </div>
 </div>
@@ -1473,7 +1558,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 5 2025 21:27:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 11:35:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
