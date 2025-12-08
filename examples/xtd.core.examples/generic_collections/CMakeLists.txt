@@ -30,5 +30,6 @@ add_projects(
   generic_list_reverse
   generic_ordered_dictionary
   generic_queue
+  generic_stack
   mix_generic_list_and_std_vector_api
 )
