@@ -1,7 +1,7 @@
 #include <xtd/xtd>
 
 template<size rank>
-auto print_values(const array<int, rank>& my_arr) -> void {
+auto print_values(const array<int, rank>& my_arr) {
   auto my_enumerator = my_arr.get_enumerator();
   auto i = 0_z;
   auto cols = my_arr.get_length(my_arr.rank() - 1);
