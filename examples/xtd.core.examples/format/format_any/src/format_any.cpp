@@ -38,3 +38,4 @@ auto main() -> int {
 // Before register_any_stringer : (unregistered)
 // After register_any_stringer : Jean-Luc Picard (Captain)
 // After unregister_any_stringer : (unregistered)
+
