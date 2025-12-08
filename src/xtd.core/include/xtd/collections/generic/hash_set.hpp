@@ -115,6 +115,11 @@ namespace xtd {
           for (const auto& value : init)
             add(value);
         }
+        hash_set(std::initializer_list <value_type> init, const xtd::collections::generic::iequality_comparer<key_type>& comparer) noexcept : data_(xtd::new_ptr<hash_set_data>(comparer)) {
+          ensure_capacity(init.size());
+          for (const auto& value : init)
+            add(value);
+        }
         template <class input_iterator_t>
         explicit hash_set(input_iterator_t first, input_iterator_t last) {
           for (auto iterator = first; iterator != last; ++iterator)
