@@ -21,15 +21,15 @@ xtdc run
 foo1 standard output :
   (unregistered)
   42
-  exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
-  exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+  (unregistered)
+  0b(unregistered)
   0b00101010
 
 foo1 write_line :
-  exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+  (unregistered)
   42
-  exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
-  exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+  (unregistered)
+  0b(unregistered)
   0b00101010
 
 foo2 standard output :

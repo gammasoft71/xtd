@@ -2,8 +2,8 @@
 
 using namespace xtd::globalization;
 
-// The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,
-// and generates the invalid result "(unregistered)" with output stream.
+// The following simple class generates the invalid result "(unregistered)" with the `xtd::console::write_line` method,
+// and generates the invalid result "(unregistered)" too with output stream.
 // Remarks: You needs to write to_strings methods.
 class foo1 {
 public:
@@ -115,37 +115,17 @@ auto main() -> int {
   console::out << "foo1 standard output :" << environment::new_line;
   console::out << "  " << f1 << environment::new_line;
   console::out << "  " << f1.to_string() << environment::new_line;
-  try {
-    console::out << string::format("  {}", f1) << environment::new_line;
-  } catch(const format_exception& e) {
-    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
-  }
-  try {
-    console::out << string::format("  0b{:b8}", f1) << environment::new_line;
-  } catch(const format_exception& e) {
-    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
-  }
+  console::out << string::format("  {}", f1) << environment::new_line;
+  console::out << string::format("  0b{:b8}", f1) << environment::new_line;
   console::out << "  0b" << f1.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo1 write_line :");
   console::write("  ");
-  try {
-    console::write_line(f1);
-  } catch(const format_exception& e) {
-    console::out << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
-  }
+  console::write_line(f1);
   console::write("  ");
   console::write_line(f1.to_string());
-  try {
-    console::write_line("  {}", f1);
-  } catch(const format_exception& e) {
-    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
-  }
-  try {
-    console::write_line("  0b{:b8}", f1);
-  } catch(const format_exception& e) {
-    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
-  }
+  console::write_line("  {}", f1);
+  console::write_line("  0b{:b8}", f1);
   console::write("  0b");
   console::write_line(f1.to_string("b8", culture_info::current_culture()));
   console::write_line();
@@ -270,15 +250,15 @@ auto main() -> int {
 // foo1 standard output :
 //   (unregistered)
 //   42
-//   exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
-//   exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+//   (unregistered)
+//   0b(unregistered)
 //   0b00101010
 //
 // foo1 write_line :
-//   exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+//   (unregistered)
 //   42
-//   exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
-//   exception : The `foo1` type does not inherit from `xtd::iformat` or the specialisation for the `foo1` type in the `xtd::to_string` specialisation method does not exist.
+//   (unregistered)
+//   0b(unregistered)
 //   0b00101010
 //
 // foo2 standard output :
