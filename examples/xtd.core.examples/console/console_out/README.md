@@ -22,6 +22,6 @@ Hello, World!
 Value = 42
 Value (Hex) = 0x2A
 Current date = Tue Jul  4 15:30:02 2023
-DayOfWeek = (unregistered)
+DayOfWeek = monday
 Duration = 23:05:24
 ```
