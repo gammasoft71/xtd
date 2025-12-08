@@ -39,7 +39,9 @@ inline static std::string __to_string_enum(const value_t& value, const std::stri
 
 template<class value_t>
 inline static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_not_iformatable, typeid(value));
+  std::stringstream ss;
+  ss << value;
+  return ss.str();
 }
 
 template<class value_t>
@@ -47,6 +49,8 @@ inline static std::wstring __to_string_enum(const value_t& value, const std::wst
 
 template<class value_t>
 inline static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_not_iformatable, typeid(value));
+  std::wstringstream ss;
+  ss << value;
+  return ss.str();
 }
 /// @endcond
