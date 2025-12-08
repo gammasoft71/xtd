@@ -43,6 +43,13 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
   return os << "exception: " << value.what();
 }
 
+template < class char_t, class char_traits_t >
+inline std::basic_ostream < char_t, char_traits_t >& operator <<(std::basic_ostream < char_t, char_traits_t >& os, xtd::any value) {
+  auto it = __any_stringer__.find(std::type_index(value.type()));
+  if (it == __any_stringer__.cend()) return os << "(unregistered)";
+  return os << it->second(value);
+}
+
 template<class char_t, class char_traits_t, class value_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
   if (!value.has_value()) return os << "(null)";
@@ -194,10 +201,10 @@ inline std::basic_ostream < char_t, char_traits_t >& operator <<(std::basic_ostr
   return os << "(value = " << value.value() << "category= " << value.category().name() << ")";
 }
 
-template < class char_t, class char_traits_t >
-inline std::basic_ostream < char_t, char_traits_t >& operator <<(std::basic_ostream < char_t, char_traits_t >& os, xtd::any value) {
-  auto it = __any_stringer__.find(std::type_index(value.type()));
-  if (it == __any_stringer__.cend()) return os << "(unregistered)";
-  return os << it->second(value);
+namespace xtd {
+  class iformatable;
+  class istringable;
 }
+auto operator << (std::ostream& os, const xtd::iformatable& value) -> std::ostream&;
+auto operator << (std::ostream& os, const xtd::istringable& value) noexcept -> std::ostream&;
 /// @endcond

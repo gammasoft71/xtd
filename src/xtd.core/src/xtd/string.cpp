@@ -1,6 +1,7 @@
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/types>
 #undef __XTD_CORE_NATIVE_LIBRARY__
+#include "../../include/xtd/globalization/culture_info.hpp"
 #include "../../include/xtd/string.hpp"
 #include "../../include/xtd/typeof.hpp"
 #include "../../include/xtd/argument_exception.hpp"
@@ -15,6 +16,7 @@
 
 using namespace xtd;
 using namespace xtd::collections::generic;
+using namespace xtd::globalization;
 
 string xtd::to_string(int val) {
   return string::format("{}", val);
@@ -50,4 +52,12 @@ string xtd::to_string(double val) {
 
 string xtd::to_string(long double val) {
   return string::format("{}", val);
+}
+
+auto operator << (std::ostream& os, const xtd::iformatable& value) -> std::ostream& {
+  return os << value.to_string("", culture_info::current_culture());
+}
+
+auto operator << (std::ostream& os, const xtd::istringable& value) noexcept -> std::ostream& {
+  return os << value.to_string();
 }
