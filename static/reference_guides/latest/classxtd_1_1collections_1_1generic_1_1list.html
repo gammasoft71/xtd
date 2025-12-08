@@ -121,7 +121,7 @@ class xtd::collections::generic::list&lt; type_t, allocator_t &gt;</div><p>Repre
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a84c3e29f04a6474378357709ee06c800">list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, xtd::collections::generic::ilist&lt;type_t&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::collections::generic::list&lt;type_t&gt;&gt;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a84c3e29f04a6474378357709ee06c800"><div class="ttname"><a href="#a84c3e29f04a6474378357709ee06c800">xtd::collections::generic::list::list</a></div><div class="ttdeci">list() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::list class that is empty.</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
@@ -559,7 +559,7 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <tr class="memdesc:a875f06fa795e11b273c035dcdeb4a7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains the specified number of elements and ends at the specified index.  <br /></td></tr>
 <tr class="separator:a875f06fa795e11b273c035dcdeb4a7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a" id="r_a9a008eefbbd66aa32e8802a281dd313a"><td class="memTemplParams" colspan="2">template&lt;class action_t&gt; </td></tr>
-<tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9a008eefbbd66aa32e8802a281dd313a">for_each</a> (action_t action) -&gt; void</td></tr>
+<tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9a008eefbbd66aa32e8802a281dd313a">for_each</a> (action_t <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action</a>) -&gt; void</td></tr>
 <tr class="memdesc:a9a008eefbbd66aa32e8802a281dd313a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the specified action on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a9a008eefbbd66aa32e8802a281dd313a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0e759973f7728389fde69b1bc862d70" id="r_ab0e759973f7728389fde69b1bc862d70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e759973f7728389fde69b1bc862d70">get_enumerator</a> () const noexcept override</td></tr>
@@ -4580,11 +4580,11 @@ template&lt;class action_t&gt; </div>
 <p>Performs the specified action on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">action</td><td>The xtd::action &lt;type_t&gt; delegate to perform on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname">action</td><td>The <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> &lt;type_t&gt; delegate to perform on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the xtd::action &lt;type_t&gt; delegate to print the contents of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object. In this example the <code>print</code> method is used to display the contents of the list to the console. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the use of the <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> &lt;type_t&gt; delegate to print the contents of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object. In this example the <code>print</code> method is used to display the contents of the list to the console. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -4595,9 +4595,9 @@ template&lt;class action_t&gt; </div>
 <div class="line">    names.add(<span class="stringliteral">&quot;Tim&quot;</span>);</div>
 <div class="line">    names.add(<span class="stringliteral">&quot;Richard&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    names.for_each(action&lt;const string&amp;&gt; {<a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>});</div>
+<div class="line">    names.for_each(<a class="code hl_typedef" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action&lt;const string&amp;&gt;</a> {<a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>});</div>
 <div class="line">    </div>
-<div class="line">    names.for_each(action&lt;const string&amp;&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) {</div>
+<div class="line">    names.for_each(<a class="code hl_typedef" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action&lt;const string&amp;&gt;</a> {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(name);</div>
 <div class="line">    }});</div>
 <div class="line">  }</div>
@@ -4620,9 +4620,10 @@ template&lt;class action_t&gt; </div>
 <div class="line"><span class="comment">// Alfred</span></div>
 <div class="line"><span class="comment">// Tim</span></div>
 <div class="line"><span class="comment">// Richard</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ga79b9e415252e85714d5549936d31439a"><div class="ttname"><a href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.hpp:20</div></div>
 <div class="ttc" id="anamespacextd_html_aa7ce9a70ea867f52d614f508f8911d27"><div class="ttname"><a href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">xtd::print</a></div><div class="ttdeci">void print(FILE *file, arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The xtd::action &lt;type_t&gt; is a delegate to a method that performs an action on the object passed to it. The elements of the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are individually passed to the xtd::action &lt;type_t&gt; delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> &lt;type_t&gt; is a delegate to a method that performs an action on the object passed to it. The elements of the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are individually passed to the <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> &lt;type_t&gt; delegate. </dd>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd>
 <dd>
@@ -6802,7 +6803,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 11:35:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 21:17:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

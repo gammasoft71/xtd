@@ -105,27 +105,29 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="____string__definitions_8hpp.html">internal/__string_definitions.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8hpp.html">interface.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//#include &quot;globalization/culture_info.hpp&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classxtd_1_1iformatable.html">   41</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1iformatable.html">iformatable</a> <a class="code hl_define" href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a> {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">   50</a></span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">to_string</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a>&amp; culture) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  };</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="generic__stream__output_8hpp.html">generic_stream_output.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8hpp.html">interface.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//#include &quot;globalization/culture_info.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classxtd_1_1iformatable.html">   42</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1iformatable.html">iformatable</a> <a class="code hl_define" href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">   51</a></span>    <span class="keyword">virtual</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">to_string</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">globalization::culture_info</a>&amp; culture) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  };</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 <div class="ttc" id="a____string__definitions_8hpp_html"><div class="ttname"><a href="____string__definitions_8hpp.html">__string_definitions.hpp</a></div><div class="ttdoc">Contains string definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:43</div></div>
-<div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html_a76dcf190c16d7426f26dcbf0961669ca"><div class="ttname"><a href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">xtd::iformatable::to_string</a></div><div class="ttdeci">virtual xtd::string to_string(const xtd::string &amp;format, const globalization::culture_info &amp;culture) const =0</div><div class="ttdoc">Formats the value of the current instance using the specified format.</div></div>
+<div class="ttc" id="ageneric__stream__output_8hpp_html"><div class="ttname"><a href="generic__stream__output_8hpp.html">generic_stream_output.hpp</a></div><div class="ttdoc">Contains generic stream output methods.</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:21</div></div>
 <div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.hpp:58</div></div>
 <div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
@@ -136,7 +138,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 11:35:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 21:17:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

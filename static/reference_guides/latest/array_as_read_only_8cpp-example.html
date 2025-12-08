@@ -99,13 +99,13 @@ $(function(){ initResizable(false); });
 <p>Shows how to use xtd::array::as_read_only method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> array&lt;string&gt;&amp; my_arr)  {</div>
+<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> array&lt;string&gt;&amp; my_arr) -&gt; <span class="keywordtype">void</span>  {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; my_arr.length(); ++i)</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;   [{0}] : {1}&quot;</span>, i, my_arr[i]);</div>
 <div class="line">  console::write_line();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> ilist&lt;string&gt;&amp; my_list)  {</div>
+<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> ilist&lt;string&gt;&amp; my_list) -&gt; <span class="keywordtype">void</span>  {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; my_list.count(); ++i)</div>
 <div class="line">    console::write_line( <span class="stringliteral">&quot;   [{0}] : {1}&quot;</span>, i, my_list[i]);</div>
 <div class="line">  console::write_line();</div>
@@ -179,7 +179,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 11:35:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 21:17:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

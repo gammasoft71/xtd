@@ -103,30 +103,30 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">explicit</span> foo1(<span class="keywordtype">int</span> v) : value(v) {}</div>
 <div class="line">  <span class="keywordtype">int</span> value = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;foo1&gt;(o) &amp;&amp; equals(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>foo1&amp;<span class="keyword">&gt;</span>(o));}</div>
-<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> foo1&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value == f.value;}</div>
-<div class="line">  int32 compare_to(<span class="keyword">const</span> foo1&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value &lt; f.value ? -1 : value &gt; f.value ? 1 : 0;}</div>
+<div class="line">  <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;foo1&gt;(o) &amp;&amp; equals(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>foo1&amp;<span class="keyword">&gt;</span>(o));}</div>
+<div class="line">  <span class="keyword">auto</span> equals(<span class="keyword">const</span> foo1&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value == f.value;}</div>
+<div class="line">  <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> foo1&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; int32 <span class="keyword">override</span> {<span class="keywordflow">return</span> value &lt; f.value ? -1 : value &gt; f.value ? 1 : 0;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>foo2 {</div>
 <div class="line">  <span class="keywordtype">int</span> value = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value == f.value;}</div>
-<div class="line">  <span class="keywordtype">bool</span> operator &lt;(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.value;}</div>
-<div class="line">  <span class="keywordtype">bool</span> operator &gt;(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.value;}</div>
+<div class="line">  <span class="keyword">auto</span> operator ==(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {<span class="keywordflow">return</span> value == f.value;}</div>
+<div class="line">  <span class="keyword">auto</span> operator &lt;(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {<span class="keywordflow">return</span> value &lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.value;}</div>
+<div class="line">  <span class="keyword">auto</span> operator &gt;(<span class="keyword">const</span> foo2&amp; f) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {<span class="keywordflow">return</span> value &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.value;}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><span class="keywordtype">string</span> <a id="a0" name="a0"></a><a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a>(<span class="keyword">const</span> foo2&amp; value, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#gac8e2f13523520227e0137c8f5ce7b86d">xtd::int32_object</a> {value.value}.to_string(fmt, loc);}</div>
+<div class="line"><span class="keyword">auto</span> <a id="a0" name="a0"></a><a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a>(<span class="keyword">const</span> foo2&amp; value, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) -&gt; <span class="keywordtype">string</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#gac8e2f13523520227e0137c8f5ce7b86d">xtd::int32_object</a> {value.value}.to_string(fmt, loc);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><span class="keyword">struct </span>std::hash&lt;foo2&gt; {</div>
-<div class="line">  <a id="a1" name="a1"></a><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a>(value.value);}</div>
+<div class="line">  <span class="keyword">auto</span> operator()(<span class="keyword">const</span> foo2&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a id="a1" name="a1"></a><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> {<span class="keywordflow">return</span> <a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a>(value.value);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
-<div class="line"><span class="keywordtype">string</span> get_any_info(<span class="keyword">const</span> type_t&amp; value) {</div>
+<div class="line"><span class="keyword">auto</span> get_any_info(<span class="keyword">const</span> type_t&amp; value) -&gt; <span class="keywordtype">string</span> {</div>
 <div class="line">  <span class="keyword">auto</span> any_value = any_object (value);</div>
 <div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[value = {} ({}), any = {} ({})]&quot;</span>, value, <a id="a3" name="a3"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), any_value.value(), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(any_value.value()));</div>
 <div class="line">}</div>
@@ -160,7 +160,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 11:35:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Dec 8 2025 21:17:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
