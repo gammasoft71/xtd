@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "generic_stream_output.hpp"
 #include "interface.hpp"
 //#include "globalization/culture_info.hpp"
 #include <locale>
