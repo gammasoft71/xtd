@@ -464,6 +464,8 @@ namespace xtd {
   template<class type_t>
   inline xtd::string to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il);
   
+  xtd::string to_string(const std::locale& value, const xtd::string& fmt, const std::locale& loc);
+
   #if defined(__xtd__cpp_lib_ranges)
   //template <std::ranges::range range_t>
   //inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
