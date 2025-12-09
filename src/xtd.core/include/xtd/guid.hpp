@@ -217,7 +217,7 @@ namespace xtd {
     /// @cond
     friend auto operator << (std::ostream& os, const guid& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
-
+    
   private:
     xtd::array<xtd::byte> data_ = xtd::array<xtd::byte>(16);
   };
