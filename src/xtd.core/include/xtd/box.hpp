@@ -156,6 +156,10 @@ namespace xtd {
     xtd::string to_string(const xtd::string& format, const globalization::culture_info& culture) const override;
     /// @}
     
+    /// @cond
+    friend auto operator << (std::ostream& os, const box& value) -> std::ostream& {return os << value.to_string();}
+    /// @endcond
+    
     /// @name Public Static Methods
     
     /// @{
