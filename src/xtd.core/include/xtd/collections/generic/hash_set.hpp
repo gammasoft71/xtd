@@ -410,8 +410,8 @@ namespace xtd {
         
         struct hash_set_data {
           hash_set_data() = default;
-          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer) : comparer {&comparer}, items  {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}} {}
-          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer, const base_type& items, size_type version) noexcept : comparer {&comparer}, items {size_type {}, hasher_t {*comparer}, equator_t {*comparer}, allocator_t {}}, version {version} {
+          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer) : comparer {&comparer}, items  {size_type {}, hasher_t {comparer}, equator_t {comparer}, allocator_t {}} {}
+          hash_set_data(const xtd::collections::generic::iequality_comparer<key_type>& comparer, const base_type& items, size_type version) noexcept : comparer {&comparer}, items {size_type {}, hasher_t {comparer}, equator_t {comparer}, allocator_t {}}, version {version} {
             for (const auto& item : items)
               self_.items.insert(item);
           }
