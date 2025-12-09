@@ -3,7 +3,7 @@
 auto orig_row = 0;
 auto orig_col = 0;
 
-void write_at(const string& s, int x, int y) {
+auto write_at(const string& s, int x, int y) {
   console::set_cursor_position(orig_col + x, orig_row + y);
   console::write(s);
 }
