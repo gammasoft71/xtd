@@ -50,7 +50,7 @@ public:
   }
     
   template<class object_t>
-  static void print_values(const ienumerable<object_t>& my_list, int my_width )  {
+  static auto print_values(const ienumerable<object_t>& my_list, int my_width) -> void {
     auto i = my_width;
     for (auto obj : my_list) {
       if (i <= 0)  {
