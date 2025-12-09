@@ -110,14 +110,14 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keywordtype">string</span> first_name;</div>
 <div class="line">    <span class="keywordtype">string</span> last_name;</div>
 <div class="line"> </div>
-<div class="line">    int32 compare_to(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; int32 <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name == o.first_name &amp;&amp; last_name == o.last_name) <span class="keywordflow">return</span> 0;</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; o.first_name || (first_name == o.first_name &amp;&amp; last_name &gt; o.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
-<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
-<div class="line">    <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
+<div class="line">    <span class="keyword">auto</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
+<div class="line">    <span class="keyword">auto</span> equals(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
+<div class="line">    <span class="keyword">auto</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">string</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Collection of person objects. This class implements xtd::collections::ienumerable so that it can be used with for each syntax.</span></div>
@@ -126,15 +126,15 @@ $(function(){ initResizable(false); });
 <div class="line">    collections::array_list people_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
+<div class="line">    <span class="keyword">explicit</span> people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
 <div class="line">      people_ = collections::array_list(p_array.length());</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; p_array.length(); ++i)</div>
-<div class="line">        people_[i] = p_array[i];</div>
+<div class="line">        people_.add(p_array[i]);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Implementation for the xtd::collections::ienumerable::get_enumerator method.</span></div>
-<div class="line">    collections::enumerator get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() <span class="keyword">const</span> -&gt; collections::enumerator <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">return</span> collections::enumerator {new_ptr&lt;people_enumerator&gt;(people_)};</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -150,11 +150,11 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
+<div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{position = collections::array_list::npos;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">const</span> any_object&amp; current()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> current() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> any_object&amp; <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> people_[position];</div>
 <div class="line">    }</div>
@@ -175,7 +175,6 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
-<div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// John Smith</span></div>
@@ -187,7 +186,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 22:04:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Dec 9 2025 21:41:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

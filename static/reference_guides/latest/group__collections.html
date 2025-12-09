@@ -198,7 +198,7 @@ Typedefs</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
-<div class="line"><span class="keywordtype">void</span> print_values(<span class="keyword">const</span> collection_t&amp; my_list) {</div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> collection_t&amp; my_list) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> obj : my_list)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;   {0}&quot;</span>, obj);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
@@ -542,14 +542,14 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">    <span class="keywordtype">string</span> first_name;</div>
 <div class="line">    <span class="keywordtype">string</span> last_name;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> compare_to(<span class="keyword">const</span> person&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> person&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name) <span class="keywordflow">return</span> 0;</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name || (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
-<div class="line">    <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
+<div class="line">    <span class="keyword">auto</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Collection of person objects. This class implements xtd::collections::ienumerable so that it can be used with for each syntax.</span></div>
@@ -558,15 +558,15 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">    collections::array_list people_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
+<div class="line">    <span class="keyword">explicit</span> people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
 <div class="line">      people_ = collections::array_list(p_array.length());</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.length(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        people_[i] = p_array[i];</div>
+<div class="line">        people_.add(p_array[i]);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Implementation for the xtd::collections::ienumerable::get_enumerator method.</span></div>
-<div class="line">    collections::enumerator get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() const -&gt; collections::enumerator<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">return</span> collections::enumerator {new_ptr&lt;people_enumerator&gt;(people_)};</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -582,11 +582,11 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
+<div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{position = collections::array_list::npos;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">const</span> any_object&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>() const -&gt; const any_object&amp;<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> people_[position];</div>
 <div class="line">    }</div>
@@ -606,7 +606,6 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -666,14 +665,14 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">    <span class="keywordtype">string</span> first_name;</div>
 <div class="line">    <span class="keywordtype">string</span> last_name;</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> compare_to(<span class="keyword">const</span> person&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> compare_to(<span class="keyword">const</span> person&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name) <span class="keywordflow">return</span> 0;</div>
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name || (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
-<div class="line">    <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
+<div class="line">    <span class="keyword">auto</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Collection of person objects. This class implements xtd::collections::ienumerable so that it can be used with for each syntax.</span></div>
@@ -682,15 +681,15 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">    collections::array_list people_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
+<div class="line">    <span class="keyword">explicit</span> people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
 <div class="line">      people_ = collections::array_list(p_array.length());</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.length(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        people_[i] = p_array[i];</div>
+<div class="line">        people_.add(p_array[i]);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Implementation for the xtd::collections::ienumerable::get_enumerator method.</span></div>
-<div class="line">    collections::enumerator get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() const -&gt; collections::enumerator<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">return</span> collections::enumerator {new_ptr&lt;people_enumerator&gt;(people_)};</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -706,11 +705,11 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
+<div class="line">    <span class="keyword">auto</span> move_next() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{position = collections::array_list::npos;}</div>
+<div class="line">    <span class="keyword">auto</span> reset() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {position = collections::array_list::npos;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">const</span> any_object&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>() const -&gt; const any_object&amp;<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.count()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> people_[position];</div>
 <div class="line">    }</div>
@@ -730,7 +729,6 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -865,7 +863,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line"> </div>
 <div class="line">    simple_list() {count_ = 0;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> print_contents() const noexcept {</div>
+<div class="line">    <span class="keyword">auto</span> print_contents() const noexcept -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;List has a capacity of {} and currently has {} elements.&quot;</span>, contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>(), count_);</div>
 <div class="line">      console::write(<span class="stringliteral">&quot;List contents:&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; count(); ++i)</div>
@@ -875,34 +873,34 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line"> </div>
 <div class="line">    <span class="comment">// xtd::collections::iist Members</span></div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> is_fixed_size() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">true</span>;}</div>
+<div class="line">    <span class="keyword">auto</span> is_fixed_size() const noexcept -&gt; <span class="keywordtype">bool</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">true</span>;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> is_read_only() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line">    <span class="keyword">auto</span> is_read_only() const noexcept -&gt; <span class="keywordtype">bool</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">add</a>(<span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">add</a>(<span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (count_ &lt; contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>()) {</div>
 <div class="line">        contents_[count_] = value;</div>
 <div class="line">        count_++;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">clear</a>() -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      count_ = 0;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> contains(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> contains(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        <span class="keywordflow">if</span> (contents_[i] == value) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        <span class="keywordflow">if</span> (contents_[i] == value) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
 <div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (count_ + 1 &lt;= contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &amp;&amp; index &lt; count()) {</div>
 <div class="line">        ++count_;</div>
 <div class="line">        </div>
@@ -913,13 +911,13 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd_1_1collections_1_1generic.html#a0b6870aa765b78724e8120131cf32773">remove</a>(<span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd_1_1collections_1_1generic.html#a0b6870aa765b78724e8120131cf32773">remove</a>(<span class="keyword">const</span> any_object&amp; value) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keyword">auto</span> index = index_of(value);</div>
 <div class="line">      remove_at(index);</div>
 <div class="line">      <span class="keywordflow">return</span> index != <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> remove_at(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> remove_at(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">if</span> (index &lt; count()) {</div>
 <div class="line">        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> i = index; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count() - 1; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">          contents_[i] = contents_[i + 1];</div>
@@ -927,31 +925,31 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">const</span> any_object&amp; operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) <span class="keyword">const</span> -&gt; <span class="keyword">const</span> any_object&amp; <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">return</span> contents_[index];</div>
 <div class="line">    }</div>
-<div class="line">    any_object&amp; operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) -&gt; any_object&amp; <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">return</span> contents_[index];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// xtd::collections::icollection members.</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> count_;}</div>
+<div class="line">    <span class="keyword">auto</span> count() const noexcept -&gt; xtd::size<span class="keyword"> override </span>{<span class="keywordflow">return</span> count_;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> is_synchronized() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
+<div class="line">    <span class="keyword">auto</span> is_synchronized() const noexcept -&gt; <span class="keywordtype">bool</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Return the current instance since the underlying store is not</span></div>
 <div class="line">    <span class="comment">// publicly available.</span></div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">object</span>&amp; sync_root() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
+<div class="line">    <span class="keyword">auto</span> sync_root() const noexcept -&gt; const <span class="keywordtype">object</span>&amp;<span class="keyword"> override </span>{<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#a308b91f8df5043299f180a996d60cadf">copy_to</a>(xtd::array&lt;any_object&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_function" href="namespacextd.html#a308b91f8df5043299f180a996d60cadf">copy_to</a>(xtd::array&lt;any_object&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) <span class="keyword">const</span> <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        array[index + i] = contents_[i];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// xtd::collections::ienumerable Members</span></div>
 <div class="line">    </div>
-<div class="line">    collections::enumerator get_enumerator()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> get_enumerator() const -&gt; collections::enumerator<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="comment">// Refer to the xtd::collection::ienumerator documentation for an example of</span></div>
 <div class="line">      <span class="comment">// implementing an enumerator.</span></div>
 <div class="line">      <span class="keywordflow">throw</span> not_implemented_exception {<span class="stringliteral">&quot;The method or operation is not implemented.&quot;</span>};</div>
@@ -960,7 +958,6 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="line"> </div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1077,7 +1074,7 @@ For the generic version of this interface, see xtd::collections::generic::ilist 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 22:04:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Dec 9 2025 21:42:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

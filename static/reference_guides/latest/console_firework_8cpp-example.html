@@ -105,12 +105,12 @@ $(function(){ initResizable(false); });
 <div class="line">    firework(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> delay_) : x_(x), y_(y), color_(color), delay_(delay_) {}</div>
 <div class="line">    firework(<span class="keyword">const</span> firework&amp; firework) : x_(firework.x_), y_(firework.y_), color_(firework.color_), delay_(firework.delay_) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">int</span> delay() {<span class="keywordflow">return</span> delay_;}</div>
+<div class="line">    <span class="keyword">auto</span> delay() -&gt; <span class="keywordtype">int</span> {<span class="keywordflow">return</span> delay_;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint() <span class="keyword">const</span> = 0;</div>
+<div class="line">    <span class="keyword">virtual</span> <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> = 0;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">protected</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> write(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> write(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      console::set_cursor_position(x, y);</div>
 <div class="line">      console::write(str);</div>
 <div class="line">    }</div>
@@ -126,7 +126,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_start(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_, y_, <span class="stringliteral">&quot;+&quot;</span>);</div>
 <div class="line">    }</div>
@@ -137,7 +137,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_exploded(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_exploded(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 1, y_ - 1, <span class="stringliteral">&quot; - &quot;</span>);</div>
 <div class="line">      write(x_ - 1, y_, <span class="stringliteral">&quot;-+-&quot;</span>);</div>
@@ -150,7 +150,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_start_expanded1(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded1(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 2, y_ - 2, <span class="stringliteral">&quot; --- &quot;</span>);</div>
 <div class="line">      write(x_ - 2, y_ - 1, <span class="stringliteral">&quot;-+++-&quot;</span>);</div>
@@ -165,7 +165,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_start_expanded2(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded2(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 2, y_ - 2, <span class="stringliteral">&quot; +++ &quot;</span>);</div>
 <div class="line">      write(x_ - 2, y_ - 1, <span class="stringliteral">&quot;++#++&quot;</span>);</div>
@@ -180,7 +180,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_start_expanded3(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded3(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 2, y_ - 2, <span class="stringliteral">&quot;  #  &quot;</span>);</div>
 <div class="line">      write(x_ - 2, y_ - 1, <span class="stringliteral">&quot;## ##&quot;</span>);</div>
@@ -195,7 +195,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_start_expanded4(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_start_expanded4(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 2, y_ - 2, <span class="stringliteral">&quot; # # &quot;</span>);</div>
 <div class="line">      write(x_ - 2, y_ - 1, <span class="stringliteral">&quot;#   #&quot;</span>);</div>
@@ -210,7 +210,7 @@ $(function(){ initResizable(false); });
 <div class="line">    firework_end(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, console_color color, <span class="keywordtype">int</span> speed) : console_firework_example::firework(x, y, color, speed) {}</div>
 <div class="line">    <span class="keyword">explicit</span> firework_end(<span class="keyword">const</span> firework&amp; firework) : console_firework_example::firework(firework) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> paint()<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">auto</span> paint() <span class="keyword">const</span> -&gt; <span class="keywordtype">void</span> <span class="keyword">override</span> {</div>
 <div class="line">      console::foreground_color(color_);</div>
 <div class="line">      write(x_ - 2, y_ - 2, <span class="stringliteral">&quot;     &quot;</span>);</div>
 <div class="line">      write(x_ - 2, y_ - 1, <span class="stringliteral">&quot;     &quot;</span>);</div>
@@ -222,7 +222,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>program <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Adjuste window size and pres any key when ready to start...&quot;</span>);</div>
 <div class="line">      <span class="keyword">auto</span> console_height = console::window_height();</div>
 <div class="line">      <span class="keyword">auto</span> console_width = console::window_width();</div>
@@ -255,7 +255,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> explode(ptr&lt;firework&gt;&amp; firework) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> explode(ptr&lt;firework&gt;&amp; firework) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      firework-&gt;paint();</div>
 <div class="line">      <span class="keywordflow">if</span> (is&lt;firework_start_expanded4&gt;(firework)) firework = new_ptr&lt;firework_end&gt;(*firework);</div>
 <div class="line">      <span class="keywordflow">if</span> (is&lt;firework_start_expanded3&gt;(firework)) firework = new_ptr&lt;firework_start_expanded4&gt;(*firework);</div>
@@ -303,7 +303,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2025 22:04:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Dec 9 2025 21:41:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
