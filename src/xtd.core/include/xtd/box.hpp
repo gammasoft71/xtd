@@ -144,11 +144,11 @@ namespace xtd {
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::istringable, value_type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
+    xtd::string to_string() const noexcept override;
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::string to_string(const xtd::string& format) const {return to_string(format, std::locale {});}
+    xtd::string to_string(const xtd::string& format) const;
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format, and locale.
     /// @param format A value type format string.
     /// @param culture An xtd::globalization::culture_info object that contains culture information.

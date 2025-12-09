@@ -13,6 +13,11 @@
 
 /// @cond
 template<class type_t>
+inline xtd::string xtd::box<type_t>::to_string() const noexcept {return to_string("", xtd::globalization::culture_info::current_culture());}
+template<class type_t>
+inline xtd::string xtd::box<type_t>::to_string(const xtd::string& format) const {return to_string(format, xtd::globalization::culture_info::current_culture());}
+
+template<class type_t>
 inline xtd::string xtd::box<type_t>::to_string(const xtd::string& format, const xtd::globalization::culture_info& culture) const {
   return xtd::string::format(culture, xtd::string::format("{{:{}}}", format), value);
 }
