@@ -6,12 +6,12 @@ namespace console_firework_example {
     firework(int x, int y, console_color color, int delay_) : x_(x), y_(y), color_(color), delay_(delay_) {}
     firework(const firework& firework) : x_(firework.x_), y_(firework.y_), color_(firework.color_), delay_(firework.delay_) {}
     
-    int delay() {return delay_;}
+    auto delay() -> int {return delay_;}
     
-    virtual void paint() const = 0;
+    virtual auto paint() const -> void = 0;
     
   protected:
-    static void write(int x, int y, const string& str) {
+    static auto write(int x, int y, const string& str) -> void {
       console::set_cursor_position(x, y);
       console::write(str);
     }
@@ -27,7 +27,7 @@ namespace console_firework_example {
     firework_start(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_start(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_, y_, "+");
     }
@@ -38,7 +38,7 @@ namespace console_firework_example {
     firework_exploded(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_exploded(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 1, y_ - 1, " - ");
       write(x_ - 1, y_, "-+-");
@@ -51,7 +51,7 @@ namespace console_firework_example {
     firework_start_expanded1(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_start_expanded1(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " --- ");
       write(x_ - 2, y_ - 1, "-+++-");
@@ -66,7 +66,7 @@ namespace console_firework_example {
     firework_start_expanded2(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_start_expanded2(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " +++ ");
       write(x_ - 2, y_ - 1, "++#++");
@@ -81,7 +81,7 @@ namespace console_firework_example {
     firework_start_expanded3(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_start_expanded3(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, "  #  ");
       write(x_ - 2, y_ - 1, "## ##");
@@ -96,7 +96,7 @@ namespace console_firework_example {
     firework_start_expanded4(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_start_expanded4(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, " # # ");
       write(x_ - 2, y_ - 1, "#   #");
@@ -111,7 +111,7 @@ namespace console_firework_example {
     firework_end(int x, int y, console_color color, int speed) : console_firework_example::firework(x, y, color, speed) {}
     explicit firework_end(const firework& firework) : console_firework_example::firework(firework) {}
     
-    void paint() const override {
+    auto paint() const -> void override {
       console::foreground_color(color_);
       write(x_ - 2, y_ - 2, "     ");
       write(x_ - 2, y_ - 1, "     ");
@@ -123,7 +123,7 @@ namespace console_firework_example {
   
   class program static_ {
   public:
-    static void main() {
+    static auto main() {
       console::write_line("Adjuste window size and pres any key when ready to start...");
       auto console_height = console::window_height();
       auto console_width = console::window_width();
@@ -156,7 +156,7 @@ namespace console_firework_example {
     }
 
   private:
-    static void explode(ptr<firework>& firework) {
+    static auto explode(ptr<firework>& firework) -> void {
       firework->paint();
       if (is<firework_start_expanded4>(firework)) firework = new_ptr<firework_end>(*firework);
       if (is<firework_start_expanded3>(firework)) firework = new_ptr<firework_start_expanded4>(*firework);
