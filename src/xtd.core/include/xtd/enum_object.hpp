@@ -241,7 +241,12 @@ namespace xtd {
       return to_enum(xtd::parse<int64>(str));
     }
     /// @}
+
     
+    /// @cond
+    friend auto operator << (std::ostream& os, const enum_object& value) -> std::ostream& {return os << value.to_string();}
+    /// @endcond
+
   private:
     friend struct enum_object<std::nullptr_t>;
     
