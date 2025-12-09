@@ -1403,6 +1403,7 @@ namespace xtd {
     date_time operator ++(int32);
     date_time& operator --();
     date_time operator --(int32);
+    friend auto operator << (std::ostream& os, const date_time& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
     
   private:
