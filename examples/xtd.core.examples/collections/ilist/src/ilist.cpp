@@ -53,7 +53,7 @@ public:
 
     simple_list() {count_ = 0;}
     
-    void print_contents() const noexcept {
+    auto print_contents() const noexcept -> void {
       console::write_line("List has a capacity of {} and currently has {} elements.", contents_.length(), count_);
       console::write("List contents:");
       for (auto i = 0_z; i < count(); ++i)
@@ -63,34 +63,34 @@ public:
 
     // xtd::collections::iist Members
     
-    bool is_fixed_size() const noexcept override {return true;}
+    auto is_fixed_size() const noexcept -> bool override {return true;}
     
-    bool is_read_only() const noexcept override {return false;}
+    auto is_read_only() const noexcept -> bool override {return false;}
 
-    void add(const any_object& value) override {
+    auto add(const any_object& value) -> void override {
       if (count_ < contents_.length()) {
         contents_[count_] = value;
         count_++;
       }
     }
     
-    void clear() override {
+    auto clear() -> void override {
       count_ = 0;
     }
     
-    bool contains(const any_object& value) const noexcept override {
+    auto contains(const any_object& value) const noexcept -> bool override {
       for (auto i = 0_z; i < count(); ++i)
         if (contents_[i] == value) return true;
       return false;
     }
     
-    xtd::size index_of(const any_object& value) const noexcept override {
+    auto index_of(const any_object& value) const noexcept -> xtd::size override {
       for (auto i = 0_z; i < count(); ++i)
         if (contents_[i] == value) return i;
       return npos;
     }
     
-    void insert(xtd::size index, const any_object& value) override {
+    auto insert(xtd::size index, const any_object& value) -> void override {
       if (count_ + 1 <= contents_.length() && index < count()) {
         ++count_;
         
@@ -101,13 +101,13 @@ public:
       }
     }
     
-    bool remove(const any_object& value) override {
+    auto remove(const any_object& value) -> bool override {
       auto index = index_of(value);
       remove_at(index);
       return index != npos;
     }
     
-    void remove_at(xtd::size index) override {
+    auto remove_at(xtd::size index) -> void override {
       if (index < count()) {
         for (xtd::size i = index; i < count() - 1; ++i)
           contents_[i] = contents_[i + 1];
@@ -115,31 +115,31 @@ public:
       }
     }
     
-    const any_object& operator [] (xtd::size index) const override {
+    auto operator [] (xtd::size index) const -> const any_object& override {
       return contents_[index];
     }
-    any_object& operator [] (xtd::size index) override {
+    auto operator [] (xtd::size index) -> any_object& override {
       return contents_[index];
     }
     
     // xtd::collections::icollection members.
     
-    xtd::size count() const noexcept override {return count_;}
+    auto count() const noexcept -> xtd::size override {return count_;}
     
-    bool is_synchronized() const noexcept override {return false;}
+    auto is_synchronized() const noexcept -> bool override {return false;}
     
     // Return the current instance since the underlying store is not
     // publicly available.
-    const object& sync_root() const noexcept override {return *this;}
+    auto sync_root() const noexcept -> const object& override {return *this;}
     
-    void copy_to(xtd::array<any_object>& array, xtd::size index) const noexcept override {
+    auto copy_to(xtd::array<any_object>& array, xtd::size index) const noexcept -> void override {
       for (auto i = 0_z; i < count(); ++i)
         array[index + i] = contents_[i];
     }
     
     // xtd::collections::ienumerable Members
     
-    collections::enumerator get_enumerator() const override {
+    auto get_enumerator() const -> collections::enumerator override {
       // Refer to the xtd::collection::ienumerator documentation for an example of
       // implementing an enumerator.
       throw not_implemented_exception {"The method or operation is not implemented."};
@@ -148,7 +148,6 @@ public:
 };
 
 startup_(program::main);
-
 
 // This code produces the following output :
 //
