@@ -9,13 +9,13 @@ public:
   
   // The add_key_value method has an xtd::object as the second parameter to force
   // the application to use the boxing method for native and non-native setup parameters.
-  void add_key_value(const string& key, const object& value) {
+  auto add_key_value(const string& key, const object& value) -> void {
     key_values_.add({key, value.to_string()});
   }
   
-  void title(const string& title) {title_ = title;}
+  auto title(const string& title) -> void {title_ = title;}
   
-  string to_string() const noexcept override {
+  auto to_string() const noexcept -> string override {
     auto result = string::format("[{}]{}{}", title_, environment::new_line());
     for (const auto& [key, value] : key_values_)
       result += string::format("{}={}{}", key, value, environment::new_line());
@@ -27,16 +27,16 @@ private:
   string title_;
 };
 
-struct setup {
-  int x = 0;
-  int y = 0;
-  int width = 0;
-  int height = 0;
-  string text;
-  xtd::version version;
-};
-
 auto main() -> int {
+  struct setup {
+    int x = 0;
+    int y = 0;
+    int width = 0;
+    int height = 0;
+    string text;
+    xtd::version version;
+  };
+  
   auto my_application_setup = setup {10, 10, 300, 300, "My application", {1, 2, 3}};
   
   auto serializer = setup_serializer {};
