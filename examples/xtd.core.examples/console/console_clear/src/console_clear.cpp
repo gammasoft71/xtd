@@ -43,7 +43,7 @@ namespace console_clear_example {
         console::background_color(new_back_color);
         console::write_line(text_to_display);
         console::write_line();
-        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", list<char32_t> { 'Y', 'N' })) == 'N')
+        if (char32_object::to_upper(get_key_press("Display another message (Y/N): ", list<char32> {'Y', 'N'})) == 'N')
           continue_flag = false;
           
         // Restore the default settings and clear the screen.
@@ -54,7 +54,7 @@ namespace console_clear_example {
     }
     
   private:
-    static char32_t get_key_press(const string& msg, const list<char32_t>& valid_chars) {
+    static auto get_key_press(const string& msg, const list<char32>& valid_chars) -> char32 {
       auto key_pressed = console_key_info {};
       auto valid = false;
       
@@ -65,7 +65,6 @@ namespace console_clear_example {
         console::write_line();
         if (std::find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())
           valid = true;
-          
       } while (!valid);
       return key_pressed.key_char();
     }
