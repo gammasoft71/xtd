@@ -27,11 +27,11 @@ public:
     collections::array_list people_;
     
   public:
-    people(const array<person>& p_array) {
+    explicit people(const array<person>& p_array) {
       people_ = collections::array_list(p_array.length());
       
       for (auto i = 0_z; i < p_array.length(); ++i)
-        people_[i] = p_array[i];
+        people_.add(p_array[i]);
     }
     
     // Implementation for the xtd::collections::ienumerable::get_enumerator method.
