@@ -11,14 +11,14 @@ public:
     string first_name;
     string last_name;
 
-    int32 compare_to(const person& o) const noexcept override {
+    auto compare_to(const person& o) const noexcept -> int32 override {
       if (first_name == o.first_name && last_name == o.last_name) return 0;
       if (first_name > o.first_name || (first_name == o.first_name && last_name > o.last_name)) return 1;
       return -1;
     }
-    bool equals(const object& o) const noexcept override {return is<person>(o) && equals(as<person>(o));}
-    bool equals(const person& o) const noexcept override {return compare_to(o) == 0;}
-    string to_string() const noexcept override {return string::format("{} {}", first_name, last_name);}
+    auto equals(const object& o) const noexcept -> bool override {return is<person>(o) && equals(as<person>(o));}
+    auto equals(const person& o) const noexcept -> bool override {return compare_to(o) == 0;}
+    auto to_string() const noexcept -> string override {return string::format("{} {}", first_name, last_name);}
   };
   
   // Collection of person objects. This class implements xtd::collections::ienumerable so that it can be used with for each syntax.
@@ -35,7 +35,7 @@ public:
     }
     
     // Implementation for the xtd::collections::ienumerable::get_enumerator method.
-    collections::enumerator get_enumerator() const override {
+    auto get_enumerator() const -> collections::enumerator override {
       return collections::enumerator {new_ptr<people_enumerator>(people_)};
     }
   };
@@ -51,11 +51,11 @@ public:
   public:
     people_enumerator(const collections::array_list& list) : people_(list) {}
     
-    bool move_next() override {return ++position < people_.count();}
+    auto move_next() -> bool override {return ++position < people_.count();}
     
-    void reset() override {position = collections::array_list::npos;}
+    auto reset() -> void override {position = collections::array_list::npos;}
     
-    const any_object& current() const override {
+    auto current() const -> const any_object& override {
       if (position >= people_.count()) throw invalid_operation_exception {};
       return people_[position];
     }
@@ -75,7 +75,6 @@ public:
 };
 
 startup_(program::main);
-
 
 // This code produces the following output :
 //
