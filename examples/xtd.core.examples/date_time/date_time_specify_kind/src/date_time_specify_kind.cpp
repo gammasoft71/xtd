@@ -45,7 +45,7 @@ public:
   // structure converted to universal time.
   
   inline static const string date_patt = "M/d/yyyy hh:mm:ss tt";  
-  static void display(const string& title, const date_time& input_dt) {
+  static auto display(const string& title, const date_time& input_dt) -> void {
     auto disp_dt = input_dt;
     auto dt_string = string::empty_string;
     
@@ -78,7 +78,7 @@ public:
   
   // display the value and kind property for date_time::now() and date_time::utc_now().
   
-  static void display_now(const string& title, const date_time& input_dt) {
+  static auto display_now(const string& title, const date_time& input_dt) -> void {
     auto dt_string = input_dt.to_string(date_patt);
     console::write_line("{0} {1}, kind = {2}", title, dt_string, input_dt.kind());
   }
