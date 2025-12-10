@@ -8,10 +8,10 @@ auto main() -> int {
   }};
   
   // Display the contents of the list using the print delegate.
-  std::for_each(names.begin(), names.end(), print);
+  names.for_each(print);
   
   // The following demonstrates the lambda of c++ to display the contents of the list to the console.
-  std::for_each(names.begin(), names.end(), [](const string & value) {
+  names.for_each([](const string & value) {
     console::write_line(value);
   });
 }
