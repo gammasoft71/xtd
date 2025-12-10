@@ -6,12 +6,10 @@ auto main() -> int {
   
   // Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.
   constexpr auto nchars = 0x044F - 0x0410 + 1;
-  auto chars = list<char32_t> {nchars};
+  auto chars = array<char32>(nchars);
   auto code_point = U'\U00000410';
-  for (auto ctr = 0_z; ctr < chars.count(); ctr++) {
-    chars[ctr] = code_point;
-    code_point++;
-  }
+  for (auto& ch : chars)
+    ch = code_point++;
   
   console::write_line("Current code page: {}\n", console::output_code_page());
   // Display the characters.
