@@ -4,7 +4,7 @@ class program {
 public:
   static auto main() {
     auto date_value = date_time {2013, 9, 15, 12, 0, 0};
-    auto minutes = list {.01667, .08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 15.0, 30.0, 17.0, 45.0, 60.0, 180.0, 60.0 * 24.0};
+    auto minutes = array {.01667, .08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 15.0, 30.0, 17.0, 45.0, 60.0, 180.0, 60.0 * 24.0};
     
     for (auto minute : minutes)
       console::write_line("{0} + {1} minute(s) = {2}", date_value, minute, date_value.add_minutes(minute));
