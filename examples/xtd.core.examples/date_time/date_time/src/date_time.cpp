@@ -31,11 +31,9 @@ public:
   }
   
 private:
-  static bool roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) {
+  static auto roughly_equals(const date_time& time, const date_time& time_with_window, int window_in_seconds, int frequency_in_seconds) -> bool {
     auto delta = convert::to_int32((time_with_window - time).total_seconds_duration().count()) % frequency_in_seconds;
-    
     delta = delta > window_in_seconds ? frequency_in_seconds - delta : delta;
-    
     return math::abs(delta) < window_in_seconds;
   }
 };
