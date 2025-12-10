@@ -4,7 +4,7 @@ class test_delegate {
 public:
   test_delegate() = default;
   
-  void write(const string& str) {
+  auto write(const string& str) -> void {
     console::write_line(str);
   }
 };
