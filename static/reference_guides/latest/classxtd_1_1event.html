@@ -134,8 +134,8 @@ For more info about events see <a href="https://gammasoft71.github.io/xtd/docs/d
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">control</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> text_;}</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>) {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>() const -&gt; const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp; {<span class="keywordflow">return</span> text_;}</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keywordflow">if</span> (text_ != <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>) {</div>
 <div class="line">      text_ = <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>;</div>
 <div class="line">      on_text_changed(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);</div>
@@ -145,7 +145,7 @@ For more info about events see <a href="https://gammasoft71.github.io/xtd/docs/d
 <div class="line">  xtd::event&lt;control, xtd::event_handler&gt; text_changed;</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> on_text_changed(<span class="keyword">const</span> xtd::event_args&amp; e) {text_changed(*<span class="keyword">this</span>, e);}</div>
+<div class="line">  <span class="keyword">auto</span> on_text_changed(<span class="keyword">const</span> xtd::event_args&amp; e) -&gt; <span class="keywordtype">void</span> {text_changed(*<span class="keyword">this</span>, e);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> text_;</div>
@@ -157,10 +157,10 @@ For more info about events see <a href="https://gammasoft71.github.io/xtd/docs/d
 <div class="line">  </div>
 <div class="line">  xtd::event&lt;button, xtd::event_handler&gt; click;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> perform_click() {on_click(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);}</div>
+<div class="line">  <span class="keyword">auto</span> perform_click() -&gt; <span class="keywordtype">void</span> {on_click(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_click(<span class="keyword">const</span> xtd::event_args&amp; e) {click(*<span class="keyword">this</span>, e);}</div>
+<div class="line">  <span class="keyword">virtual</span> <span class="keyword">auto</span> on_click(<span class="keyword">const</span> xtd::event_args&amp; e) -&gt; <span class="keywordtype">void</span> {click(*<span class="keyword">this</span>, e);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -196,6 +196,7 @@ For more info about events see <a href="https://gammasoft71.github.io/xtd/docs/d
 <div class="ttc" id="agroup__xtd__core_html_ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b"><div class="ttname"><a href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">xtd::console_modifiers::control</a></div><div class="ttdeci">@ control</div><div class="ttdoc">The left or right CTRL modifier key.</div><div class="ttdef"><b>Definition</b> console_modifiers.hpp:28</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div><div class="ttdef"><b>Definition</b> message_dialog_default_button.hpp:24</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="event_8cpp-example.html#_a2">event.cpp</a>.</dd>
 </dl>
@@ -517,7 +518,7 @@ template&lt;class object_t, class handler_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:42:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

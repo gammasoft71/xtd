@@ -102,17 +102,17 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">using </span>writer = delegate&lt;void(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str)&gt;;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> write_debug(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) {</div>
+<div class="line"><span class="keyword">auto</span> write_debug(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  cdebug &lt;&lt; str &lt;&lt; environment::new_line &lt;&lt; std::flush;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>tracer {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> write_trace(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) {</div>
+<div class="line">  <span class="keyword">auto</span> write_trace(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    ctrace &lt;&lt; str &lt;&lt; environment::new_line &lt;&lt; std::flush;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> write_trace2(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) {</div>
+<div class="line">  <span class="keyword">auto</span> write_trace2(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <a class="code hl_function" href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">ctrace</a> &lt;&lt; <span class="stringliteral">&quot;2 &quot;</span> &lt;&lt; str &lt;&lt; environment::new_line &lt;&lt; std::flush;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -162,7 +162,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:41:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

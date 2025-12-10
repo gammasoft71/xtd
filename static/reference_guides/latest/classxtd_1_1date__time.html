@@ -199,11 +199,9 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> roughly_equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time_with_window, <span class="keywordtype">int</span> window_in_seconds, <span class="keywordtype">int</span> frequency_in_seconds) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> roughly_equals(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; time_with_window, <span class="keywordtype">int</span> window_in_seconds, <span class="keywordtype">int</span> frequency_in_seconds) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">    <span class="keyword">auto</span> delta = <a class="code hl_function" href="classxtd_1_1convert.html#a3d25ecd9929d32c63c5a24bbdb8438eb">convert::to_int32</a>((time_with_window - time).total_seconds_duration().count()) % frequency_in_seconds;</div>
-<div class="line">    </div>
 <div class="line">    delta = delta &gt; window_in_seconds ? frequency_in_seconds - delta : delta;</div>
-<div class="line">    </div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(delta) &lt; window_in_seconds;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -1591,7 +1589,7 @@ The <a class="el" href="#a907e5ccf896744690074196778815697" title="Gets the day 
 <div class="line">  <span class="comment">// structure converted to universal time.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> date_patt = <span class="stringliteral">&quot;M/d/yyyy hh:mm:ss tt&quot;</span>;  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> disp_dt = input_dt;</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = string::empty_string;</div>
 <div class="line">    </div>
@@ -1624,7 +1622,7 @@ The <a class="el" href="#a907e5ccf896744690074196778815697" title="Gets the day 
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display the value and kind property for date_time::now() and date_time::utc_now().</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = input_dt.to_string(date_patt);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0} {1}, kind = {2}&quot;</span>, title, dt_string, input_dt.kind());</div>
 <div class="line">  }</div>
@@ -2255,7 +2253,7 @@ The <a class="el" href="#a7644578aa80da95945aad6a09baeb8ff" title="Returns a new
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> hours = list {.08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 29.0, 30.0, 31.0, 90.0, 365.0};</div>
+<div class="line">    <span class="keyword">auto</span> hours = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {.08333, .16667, .25, .33333, .5, .66667, 1.0, 2.0, 29.0, 30.0, 31.0, 90.0, 365.0};</div>
 <div class="line">    <span class="keyword">auto</span> date_value = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {2009, 3, 1, 12, 0, 0};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> hour : hours)</div>
@@ -3099,7 +3097,7 @@ The <a class="el" href="#a516cc6f765178cad69020570fa75e736" title="Converts the 
 <div class="line">  <span class="comment">// structure converted to universal time.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> date_patt = <span class="stringliteral">&quot;M/d/yyyy hh:mm:ss tt&quot;</span>;  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> disp_dt = input_dt;</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = string::empty_string;</div>
 <div class="line">    </div>
@@ -3132,7 +3130,7 @@ The <a class="el" href="#a516cc6f765178cad69020570fa75e736" title="Converts the 
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display the value and kind property for date_time::now() and date_time::utc_now().</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = input_dt.to_string(date_patt);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0} {1}, kind = {2}&quot;</span>, title, dt_string, input_dt.kind());</div>
 <div class="line">  }</div>
@@ -4597,7 +4595,7 @@ See &lt;<a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for m
 <div class="line">  <span class="comment">// structure converted to universal time.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> date_patt = <span class="stringliteral">&quot;M/d/yyyy hh:mm:ss tt&quot;</span>;  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> disp_dt = input_dt;</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = string::empty_string;</div>
 <div class="line">    </div>
@@ -4630,7 +4628,7 @@ See &lt;<a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for m
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display the value and kind property for date_time::now() and date_time::utc_now().</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = input_dt.to_string(date_patt);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0} {1}, kind = {2}&quot;</span>, title, dt_string, input_dt.kind());</div>
 <div class="line">  }</div>
@@ -4947,7 +4945,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> years = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;uint32&gt;</a> {2012, 2014};</div>
+<div class="line">    <span class="keyword">auto</span> years = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2012u, 2014u};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Days in the Month for the Gregorian calendar\n&quot;</span>);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
@@ -5078,7 +5076,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> years = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;uint32&gt;</a> {2012, 2014};</div>
+<div class="line">    <span class="keyword">auto</span> years = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2012u, 2014u};</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Days in the Month for the Gregorian calendar\n&quot;</span>);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}\n&quot;</span>, <span class="stringliteral">&quot;Year&quot;</span>, <span class="stringliteral">&quot;Month&quot;</span>, <span class="stringliteral">&quot;Days&quot;</span>);</div>
 <div class="line">    </div>
@@ -5779,7 +5777,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <div class="line">  <span class="comment">// structure converted to universal time.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> date_patt = <span class="stringliteral">&quot;M/d/yyyy hh:mm:ss tt&quot;</span>;  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> disp_dt = input_dt;</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = string::empty_string;</div>
 <div class="line">    </div>
@@ -5812,7 +5810,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display the value and kind property for date_time::now() and date_time::utc_now().</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = input_dt.to_string(date_patt);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0} {1}, kind = {2}&quot;</span>, title, dt_string, input_dt.kind());</div>
 <div class="line">  }</div>
@@ -6701,7 +6699,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:42:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

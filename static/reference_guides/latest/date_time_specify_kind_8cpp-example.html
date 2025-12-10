@@ -144,7 +144,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="comment">// structure converted to universal time.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> date_patt = <span class="stringliteral">&quot;M/d/yyyy hh:mm:ss tt&quot;</span>;  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> disp_dt = input_dt;</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = string::empty_string;</div>
 <div class="line">    </div>
@@ -177,7 +177,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <span class="comment">// display the value and kind property for date_time::now() and date_time::utc_now().</span></div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> display_now(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; title, <span class="keyword">const</span> date_time&amp; input_dt) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> dt_string = input_dt.to_string(date_patt);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;{0} {1}, kind = {2}&quot;</span>, title, dt_string, input_dt.kind());</div>
 <div class="line">  }</div>
@@ -206,7 +206,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:41:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

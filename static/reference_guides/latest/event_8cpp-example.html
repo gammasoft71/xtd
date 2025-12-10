@@ -108,8 +108,8 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <a id="a1" name="a1"></a><a class="code hl_enumvalue" href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786afc5364bf9dbfa34954526becad136d4b">control</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; text()<span class="keyword"> const </span>{<span class="keywordflow">return</span> text_;}</div>
-<div class="line">  <span class="keywordtype">void</span> text(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; text) {</div>
+<div class="line">  <span class="keyword">auto</span> text() <span class="keyword">const</span> -&gt; <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; {<span class="keywordflow">return</span> text_;}</div>
+<div class="line">  <span class="keyword">auto</span> text(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; text) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keywordflow">if</span> (text_ != text) {</div>
 <div class="line">      text_ = text;</div>
 <div class="line">      on_text_changed(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);</div>
@@ -119,7 +119,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1event.html">xtd::event&lt;control, xtd::event_handler&gt;</a> text_changed;</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> on_text_changed(<span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {text_changed(*<span class="keyword">this</span>, e);}</div>
+<div class="line">  <span class="keyword">auto</span> on_text_changed(<span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {text_changed(*<span class="keyword">this</span>, e);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> text_;</div>
@@ -131,10 +131,10 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1event.html">xtd::event&lt;button, xtd::event_handler&gt;</a> click;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> perform_click() {on_click(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);}</div>
+<div class="line">  <span class="keyword">auto</span> perform_click() -&gt; <span class="keywordtype">void</span> {on_click(<a class="code hl_variable" href="classxtd_1_1event__args.html#a57d59e60c60a648d26aa9e8cee2986ff">xtd::event_args::empty</a>);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> on_click(<span class="keyword">const</span> xtd::event_args&amp; e) {click(*<span class="keyword">this</span>, e);}</div>
+<div class="line">  <span class="keyword">virtual</span> <span class="keyword">auto</span> on_click(<span class="keyword">const</span> xtd::event_args&amp; e) -&gt; <span class="keywordtype">void</span> {click(*<span class="keyword">this</span>, e);}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -174,7 +174,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:41:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

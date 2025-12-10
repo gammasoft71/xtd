@@ -105,12 +105,10 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Create a Char array for the modern Cyrillic alphabet, from U+0410 to U+044F.</span></div>
 <div class="line">  <span class="keyword">constexpr</span> <span class="keyword">auto</span> nchars = 0x044F - 0x0410 + 1;</div>
-<div class="line">  <span class="keyword">auto</span> chars = list&lt;char32_t&gt; {nchars};</div>
+<div class="line">  <span class="keyword">auto</span> chars = array&lt;char32&gt;(nchars);</div>
 <div class="line">  <span class="keyword">auto</span> code_point = U<span class="stringliteral">&#39;\U00000410&#39;</span>;</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0_z; ctr &lt; chars.count(); ctr++) {</div>
-<div class="line">    chars[ctr] = code_point;</div>
-<div class="line">    code_point++;</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; ch : chars)</div>
+<div class="line">    ch = code_point++;</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Current code page: {}\n&quot;</span>, console::output_code_page());</div>
 <div class="line">  <span class="comment">// Display the characters.</span></div>
@@ -133,7 +131,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 9 2025 21:41:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 10 2025 12:01:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
