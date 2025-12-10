@@ -753,6 +753,7 @@ bool console::cursor_visible(bool visible) {
 }
 
 bool console::echo(bool on) {
+  if (!terminal::is_ansi_supported()) return false;
   return terminal::terminal_.echo(on);
 }
 

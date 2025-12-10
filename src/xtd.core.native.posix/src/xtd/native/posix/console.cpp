@@ -732,6 +732,7 @@ int32_t console::foreground_color() {
 }
 
 bool console::echo(bool on) {
+  if (!terminal::is_ansi_supported()) return false;
   return terminal::terminal_.echo(on);
 }
 
