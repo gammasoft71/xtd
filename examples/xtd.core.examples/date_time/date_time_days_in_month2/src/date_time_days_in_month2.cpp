@@ -3,7 +3,7 @@
 class program {
 public:
   static auto main() {
-    auto years = array<uint32> {2012, 2014};
+    auto years = array {2012u, 2014u};
     console::write_line("Days in the Month for the Gregorian calendar\n");
     console::write_line("{0,-10}{1,-15}{2,4}\n", "Year", "Month", "Days");
     
