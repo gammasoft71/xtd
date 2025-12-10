@@ -1,12 +1,12 @@
 #include <xtd/xtd>
 
-void goodbye(const string& s) {
+auto goodbye(const string& s) -> void {
   console::write_line("Goodbye {}", s);
 }
 
 class object {
 public:
-  void hello(const string& s) {
+  auto hello(const string& s) -> void {
     console::write_line("Hello {}", s);
   }
 };
