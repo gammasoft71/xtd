@@ -9,8 +9,8 @@ class control : public xtd::object {
 public:
   control() = default;
   
-  const xtd::string& text() const {return text_;}
-  void text(const xtd::string& text) {
+  auto text() const -> const xtd::string& {return text_;}
+  auto text(const xtd::string& text) -> void {
     if (text_ != text) {
       text_ = text;
       on_text_changed(xtd::event_args::empty);
@@ -20,7 +20,7 @@ public:
   xtd::event<control, xtd::event_handler> text_changed;
   
 protected:
-  void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
+  auto on_text_changed(const xtd::event_args& e) -> void {text_changed(*this, e);}
   
 private:
   xtd::string text_;
@@ -32,10 +32,10 @@ public:
   
   xtd::event<button, xtd::event_handler> click;
   
-  void perform_click() {on_click(xtd::event_args::empty);}
+  auto perform_click() -> void {on_click(xtd::event_args::empty);}
   
 protected:
-  virtual void on_click(const xtd::event_args& e) {click(*this, e);}
+  virtual auto on_click(const xtd::event_args& e) -> void {click(*this, e);}
 };
 
 auto main() -> int {
