@@ -46,17 +46,17 @@ public:
   bool operator ==(const note& rhs) const noexcept {return tone_val == rhs.tone_val && dur_val == rhs.dur_val;}
 
   // Define properties to return the note's tone and duration.
-  tone note_tone() const noexcept {return tone_val;}
-  duration note_duration() const noexcept {return dur_val;}
+  auto note_tone() const noexcept -> tone {return tone_val;}
+  auto note_duration() const noexcept -> duration {return dur_val;}
 };
 
 // Play the notes in a song.
-void play(const list<note>& tune) {
+auto play(const list<note>& tune) -> void {
   for (auto n : tune) {
     if (n.note_tone() == tone::rest)
       threading::thread::sleep(as<int>(n.note_duration()));
     else
-      console::beep(as<unsigned int>(n.note_tone()), as<unsigned int>(n.note_duration()));
+      console::beep(as<uint32>(n.note_tone()), as<uint32>(n.note_duration()));
   }
 }
 
