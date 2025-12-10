@@ -2,11 +2,11 @@
 
 using display_message = action<const string&>;
 
-void show_windows_message(const string& message) {
+auto show_windows_message(const string& message) -> void {
   forms::message_box::show(message);
 }
 
-void write_line(const string& message) {
+auto write_line(const string& message) -> void {
   console::write_line(message);
 }
 
