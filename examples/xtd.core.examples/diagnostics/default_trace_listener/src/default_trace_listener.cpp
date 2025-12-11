@@ -66,7 +66,7 @@ public:
     }
   }
   
-  static decimal calc_binomial(decimal possibilities, decimal outcomes) {
+  static auto calc_binomial(decimal possibilities, decimal outcomes) -> decimal {
     // Calculate a binomial coefficient, and minimize the chance of overflow.
     auto result = 1.0l;
     auto iter = .0l;
