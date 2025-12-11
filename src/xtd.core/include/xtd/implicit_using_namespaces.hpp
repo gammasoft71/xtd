@@ -31,6 +31,7 @@ __using_namespace__(xtd::forms);
 
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_TEST_APPLICATION__
 __using_namespace__(xtd::tunit);
+__using_namespace__(xtd::tunit::constraints);
 #endif
 
 #undef __using_namespace__

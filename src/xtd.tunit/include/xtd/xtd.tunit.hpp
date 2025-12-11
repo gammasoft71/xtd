@@ -3,6 +3,21 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/xtd.core>
+#include "tunit/constraints/actual_value.hpp"
+#include "tunit/constraints/and_operator_value.hpp"
+#include "tunit/constraints/assert.hpp"
+#include "tunit/constraints/assert_that.hpp"
+#include "tunit/constraints/assert_value.hpp"
+#include "tunit/constraints/assume_that.hpp"
+#include "tunit/constraints/assume.hpp"
+#include "tunit/constraints/does_not_value.hpp"
+#include "tunit/constraints/does_value.hpp"
+#include "tunit/constraints/is_not_value.hpp"
+#include "tunit/constraints/is_value.hpp"
+#include "tunit/constraints/operator_value.hpp"
+#include "tunit/constraints/that_value.hpp"
+#include "tunit/constraints/valid_that.hpp"
+#include "tunit/constraints/valid.hpp"
 #include "tunit/abort_error.hpp"
 #include "tunit/assert.hpp"
 #include "tunit/assert_error.hpp"
