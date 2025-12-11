@@ -5,5 +5,6 @@ find_package(xtd REQUIRED)
 
 add_projects(
   hello_world_tunit
+  hello_world_tunit_constraints
   hello_world_tunit_without_helpers
 )

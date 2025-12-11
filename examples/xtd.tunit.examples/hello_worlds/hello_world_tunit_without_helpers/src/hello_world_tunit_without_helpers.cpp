@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::tunit;
-
 namespace unit_tests {
   class hello_world_test;
   
@@ -11,14 +8,14 @@ namespace unit_tests {
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
     auto create_string_from_literal() -> void {
       auto s = string {"Hello, World!"};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       assert::are_equal("Hello, World!", s);
     }
     
     test_method_attribute create_string_from_chars_attr {"create_string_from_chars", *this, &hello_world_test::create_string_from_chars};
     auto create_string_from_chars() -> void {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       string_assert::starts_with("Hello,", s);
       string_assert::does_not_end_with(" le monde!", s);
     }
@@ -33,9 +30,9 @@ auto main() -> int {
 //
 // Start 2 tests from 1 test case
 // Run tests:
-//   SUCCEED unit_tests::hello_world_test.create_string_from_literal (0 ms total)
-//   SUCCEED unit_tests::hello_world_test.create_string_from_chars (0 ms total)
+//   SUCCEED unit_tests::hello_world_test.create_string_from_literal [< 1 ms]
+//   SUCCEED unit_tests::hello_world_test.create_string_from_chars [< 1 ms]
 //
 // Test results:
 //   SUCCEED 2 tests.
-// End 2 tests from 1 test case ran. (0 ms total)
+// End 2 tests from 1 test case ran. [0.0001 seconds]

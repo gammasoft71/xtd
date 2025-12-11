@@ -4,21 +4,21 @@ namespace unit_tests {
   class test_class_(hello_world_test) {
     auto test_method_(create_string_from_literal) {
       auto s = string {"Hello, World!"};
-      valid::are_equal(13_z, s.length());
-      assert::are_equal("Hello, World!", s);
+      valid_that(s.length()).is().equal_to(13_z);
+      assert_that(s).is().equal_to("Hello, World!");
     }
     
     auto test_method_(create_string_from_chars) {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      valid::are_equal(13_z, s.length());
-      string_assert::starts_with("Hello,", s);
-      string_assert::does_not_end_with(" le monde!", s);
+      valid_that(s.length()).is().equal_to(13_z);
+      assert_that(s).does().start_with("Hello,");
+      assert_that(s).does().not_().end_with(" le monde!");
     }
   };
 }
 
 auto main() -> int {
-  return console_unit_test().run();
+  return console_unit_test {}.run();
 }
 
 // This code produces the following output :
