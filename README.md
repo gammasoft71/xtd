@@ -286,7 +286,7 @@ namespace unit_tests {
 }
 
 auto main() -> int {
-  return console_unit_test().run();
+  return console_unit_test {}.run();
 }
 ```
 
@@ -318,7 +318,7 @@ namespace unit_tests {
 }
 
 auto main() -> int {
-  return console_unit_test().run();
+  return console_unit_test {}.run();
 }
 ```
 
