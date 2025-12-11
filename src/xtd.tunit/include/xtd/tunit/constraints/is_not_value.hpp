@@ -22,7 +22,7 @@ namespace xtd {
       class is_not_value : public actual_value<actual_t> {
       public:
         is_not_value() = default;
-        is_not_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move (v)} {}
+        is_not_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         is_not_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
         template<class expected_t>

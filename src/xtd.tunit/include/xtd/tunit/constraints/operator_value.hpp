@@ -13,7 +13,7 @@ namespace xtd {
       class operator_value : public actual_value<actual_t> {
       public:
         operator_value() = default;
-        operator_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move (v)} {}
+        operator_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         operator_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
         inline auto and_();

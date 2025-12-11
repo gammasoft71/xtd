@@ -15,7 +15,7 @@ namespace xtd {
       class that_value : public actual_value<actual_t> {
       public:
         that_value() = default;
-        that_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move (v)} {}
+        that_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         that_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
         inline auto does() {return does_value<actual_t>(self_);}
