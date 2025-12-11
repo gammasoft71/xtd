@@ -221,12 +221,14 @@ var searchData=
   ['ip_5fpacket_5finformation_218',['ip_packet_information',['../classxtd_1_1net_1_1sockets_1_1ip__packet__information.html',1,'xtd::net::sockets']]],
   ['ip_5fv6_5fmulticast_5foption_219',['ip_v6_multicast_option',['../classxtd_1_1net_1_1sockets_1_1ip__v6__multicast__option.html',1,'xtd::net::sockets']]],
   ['iprogress_220',['iprogress',['../classxtd_1_1iprogress.html',1,'xtd']]],
-  ['iset_221',['iset',['../classxtd_1_1collections_1_1generic_1_1iset.html',1,'xtd::collections::generic']]],
-  ['istringable_222',['istringable',['../classxtd_1_1istringable.html',1,'xtd']]],
-  ['isynchronize_5finvoke_223',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
-  ['item_224',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
-  ['item_5fcheck_5fevent_5fargs_225',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
-  ['items_5fadded_5fevent_5fargs_226',['items_added_event_args',['../classxtd_1_1forms_1_1layout_1_1items__added__event__args.html',1,'xtd::forms::layout']]],
-  ['itext_5fmodel_227',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
-  ['iwin32_5fwindow_228',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
+  ['is_5fnot_5fvalue_221',['is_not_value',['../classxtd_1_1tunit_1_1constraints_1_1is__not__value.html',1,'xtd::tunit::constraints']]],
+  ['is_5fvalue_222',['is_value',['../classxtd_1_1tunit_1_1constraints_1_1is__value.html',1,'xtd::tunit::constraints']]],
+  ['iset_223',['iset',['../classxtd_1_1collections_1_1generic_1_1iset.html',1,'xtd::collections::generic']]],
+  ['istringable_224',['istringable',['../classxtd_1_1istringable.html',1,'xtd']]],
+  ['isynchronize_5finvoke_225',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
+  ['item_226',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
+  ['item_5fcheck_5fevent_5fargs_227',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
+  ['items_5fadded_5fevent_5fargs_228',['items_added_event_args',['../classxtd_1_1forms_1_1layout_1_1items__added__event__args.html',1,'xtd::forms::layout']]],
+  ['itext_5fmodel_229',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
+  ['iwin32_5fwindow_230',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
 ];

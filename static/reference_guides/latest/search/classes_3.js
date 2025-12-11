@@ -34,11 +34,13 @@ var searchData=
   ['dns_31',['dns',['../classxtd_1_1net_1_1dns.html',1,'xtd::net']]],
   ['dns_5fend_5fpoint_32',['dns_end_point',['../classxtd_1_1net_1_1dns__end__point.html',1,'xtd::net']]],
   ['do_5fwork_5fevent_5fargs_33',['do_work_event_args',['../classxtd_1_1forms_1_1do__work__event__args.html',1,'xtd::forms']]],
-  ['domain_5fexception_34',['domain_exception',['../classxtd_1_1domain__exception.html',1,'xtd']]],
-  ['domain_5fup_5fdown_35',['domain_up_down',['../classxtd_1_1forms_1_1domain__up__down.html',1,'xtd::forms']]],
-  ['dot_5fmatrix_5fdisplay_36',['dot_matrix_display',['../classxtd_1_1forms_1_1dot__matrix__display.html',1,'xtd::forms']]],
-  ['draw_5fitem_5fevent_5fargs_37',['draw_item_event_args',['../classxtd_1_1forms_1_1draw__item__event__args.html',1,'xtd::forms']]],
-  ['drive_5finfo_38',['drive_info',['../classxtd_1_1io_1_1drive__info.html',1,'xtd::io']]],
-  ['drive_5fnot_5ffound_5fexception_39',['drive_not_found_exception',['../classxtd_1_1io_1_1drive__not__found__exception.html',1,'xtd::io']]],
-  ['drop_5fshadow_5feffect_40',['drop_shadow_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1drop__shadow__effect.html',1,'xtd::drawing::imaging::effects']]]
+  ['does_5fnot_5fvalue_34',['does_not_value',['../classxtd_1_1tunit_1_1constraints_1_1does__not__value.html',1,'xtd::tunit::constraints']]],
+  ['does_5fvalue_35',['does_value',['../classxtd_1_1tunit_1_1constraints_1_1does__value.html',1,'xtd::tunit::constraints']]],
+  ['domain_5fexception_36',['domain_exception',['../classxtd_1_1domain__exception.html',1,'xtd']]],
+  ['domain_5fup_5fdown_37',['domain_up_down',['../classxtd_1_1forms_1_1domain__up__down.html',1,'xtd::forms']]],
+  ['dot_5fmatrix_5fdisplay_38',['dot_matrix_display',['../classxtd_1_1forms_1_1dot__matrix__display.html',1,'xtd::forms']]],
+  ['draw_5fitem_5fevent_5fargs_39',['draw_item_event_args',['../classxtd_1_1forms_1_1draw__item__event__args.html',1,'xtd::forms']]],
+  ['drive_5finfo_40',['drive_info',['../classxtd_1_1io_1_1drive__info.html',1,'xtd::io']]],
+  ['drive_5fnot_5ffound_5fexception_41',['drive_not_found_exception',['../classxtd_1_1io_1_1drive__not__found__exception.html',1,'xtd::io']]],
+  ['drop_5fshadow_5feffect_42',['drop_shadow_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1drop__shadow__effect.html',1,'xtd::drawing::imaging::effects']]]
 ];
