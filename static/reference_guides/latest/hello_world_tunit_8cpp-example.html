@@ -99,55 +99,43 @@ $(function(){ initResizable(false); });
 <p>The classic first application "Hello, World!" with <a class="el" href="classxtd_1_1tunit_1_1console__unit__test.html" title="The console_unit_test class is console unit test interface.">xtd::tunit::console_unit_test</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(hello_world_test) {</div>
 <div class="line">    <span class="keyword">auto</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(create_string_from_literal) {</div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello, World!&quot;</span>};</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a2f604329bd280704a1c554bd0e5e7dd4">valid::are_equal</a>(13, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1assert.html#a8c63096161c26e67cc8fe7dd0b1889ec">assert::are_equal</a>(<span class="stringliteral">&quot;Hello, World!&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello, World!&quot;</span>};</div>
+<div class="line">      valid::are_equal(13_z, s.length());</div>
+<div class="line">      assert::are_equal(<span class="stringliteral">&quot;Hello, World!&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(create_string_from_chars) {</div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="keywordtype">string</span> {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1valid.html#a2f604329bd280704a1c554bd0e5e7dd4">valid::are_equal</a>(13, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1string__assert.html#a58653b393b2c80bb2cb5b23f54af387a">string_assert::starts_with</a>(<span class="stringliteral">&quot;Hello,&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1string__assert.html#aaeef46a46171818d2c276bb3a5d8332f">string_assert::does_not_end_with</a>(<span class="stringliteral">&quot; le monde!&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>);</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="charliteral">&#39;H&#39;</span>, <span class="charliteral">&#39;e&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;o&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;d&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
+<div class="line">      valid::are_equal(13_z, s.length());</div>
+<div class="line">      string_assert::starts_with(<span class="stringliteral">&quot;Hello,&quot;</span>, s);</div>
+<div class="line">      string_assert::does_not_end_with(<span class="stringliteral">&quot; le monde!&quot;</span>, s);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">return</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1tunit_1_1console__unit__test.html">console_unit_test</a>().<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">run</a>();</div>
+<div class="line">  <span class="keywordflow">return</span> console_unit_test().run();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Start 2 tests from 1 test case</span></div>
 <div class="line"><span class="comment">// Run tests:</span></div>
-<div class="line"><span class="comment">//   SUCCEED unit_tests::hello_world_test.create_string_from_literal (0 ms total)</span></div>
-<div class="line"><span class="comment">//   SUCCEED unit_tests::hello_world_test.create_string_from_chars (0 ms total)</span></div>
+<div class="line"><span class="comment">//   SUCCEED unit_tests::hello_world_test.create_string_from_literal [&lt; 1 ms]</span></div>
+<div class="line"><span class="comment">//   SUCCEED unit_tests::hello_world_test.create_string_from_chars [&lt; 1 ms]</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 2 tests.</span></div>
-<div class="line"><span class="comment">// End 2 tests from 1 test case ran. (0 ms total)</span></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_a8c63096161c26e67cc8fe7dd0b1889ec"><div class="ttname"><a href="classxtd_1_1tunit_1_1assert.html#a8c63096161c26e67cc8fe7dd0b1889ec">xtd::tunit::assert::are_equal</a></div><div class="ttdeci">static void are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two type are equal.</div><div class="ttdef"><b>Definition</b> assert.hpp:50</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1string__assert_html_a58653b393b2c80bb2cb5b23f54af387a"><div class="ttname"><a href="classxtd_1_1tunit_1_1string__assert.html#a58653b393b2c80bb2cb5b23f54af387a">xtd::tunit::string_assert::starts_with</a></div><div class="ttdeci">static void starts_with(const xtd::string &amp;item, const xtd::string &amp;string, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that string starts with item.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1string__assert_html_aaeef46a46171818d2c276bb3a5d8332f"><div class="ttname"><a href="classxtd_1_1tunit_1_1string__assert.html#aaeef46a46171818d2c276bb3a5d8332f">xtd::tunit::string_assert::does_not_end_with</a></div><div class="ttdeci">static void does_not_end_with(const xtd::string &amp;item, const xtd::string &amp;string, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that string starts with item.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1valid_html_a2f604329bd280704a1c554bd0e5e7dd4"><div class="ttname"><a href="classxtd_1_1tunit_1_1valid.html#a2f604329bd280704a1c554bd0e5e7dd4">xtd::tunit::valid::are_equal</a></div><div class="ttdeci">static void are_equal(const expected_t &amp;expected, const actual_t &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validates that two type are equal.</div><div class="ttdef"><b>Definition</b> valid.hpp:41</div></div>
+<div class="line"><span class="comment">// End 2 tests from 1 test case ran. [0.0001 seconds]</span></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:124</div></div>
-<div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 11 2025 20:43:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Dec 11 2025 21:21:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

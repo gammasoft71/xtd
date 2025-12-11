@@ -121,7 +121,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1constraints_1_1does__not__value.html">   22</a></span>      <span class="keyword">class </span>does_not_value : <span class="keyword">public</span> actual_value&lt;actual_t&gt; {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        does_not_value() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        does_not_value(actual_value&lt;actual_t&gt;&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) : actual_value&lt;actual_t&gt; {std::move (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>)} {}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        does_not_value(actual_value&lt;actual_t&gt;&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) : actual_value&lt;actual_t&gt; {std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>)} {}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        does_not_value(<span class="keyword">const</span> actual_value&lt;actual_t&gt;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) : actual_value&lt;actual_t&gt; {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>} {}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> expected_t&gt;</div>
@@ -131,7 +131,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>          <span class="keywordflow">else</span> <a class="code hl_function" href="classxtd_1_1tunit_1_1string__assume.html#a84ba6eca457e3d5f46c30faffccb5a7c">xtd::tunit::string_assume::does_not_end_with</a>(expected, actual_value&lt;actual_t&gt;::actual(), stack_frame);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1constraints_1_1operator__value.html">operator_value&lt;actual_t&gt;</a>(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> expected_t&gt;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">auto</span> start_with(<span class="keyword">const</span> expected_t&amp; expected, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a>&amp; stack_frame = <a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          <span class="keywordflow">if</span> (actual_value&lt;actual_t&gt;::is_assert()) <a class="code hl_function" href="classxtd_1_1tunit_1_1string__assert.html#aff0bb3776e4ac971e866c295c278442d">xtd::tunit::string_assert::does_not_start_with</a>(expected, actual_value&lt;actual_t&gt;::actual(), stack_frame);</div>
@@ -171,7 +171,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 11 2025 20:43:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Dec 11 2025 21:21:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
