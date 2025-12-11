@@ -272,13 +272,13 @@ namespace unit_tests {
   class test_class_(hello_world_test) {
     auto test_method_(create_string_from_literal) {
       auto s = string {"Hello, World!"};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       assert::are_equal("Hello, World!", s);
     }
     
     auto test_method_(create_string_from_chars) {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       string_assert::starts_with("Hello,", s);
       string_assert::does_not_end_with(" le monde!", s);
     }
@@ -303,14 +303,14 @@ namespace unit_tests {
     test_method_attribute create_string_from_literal_attr {"create_string_from_literal", *this, &hello_world_test::create_string_from_literal};
     auto create_string_from_literal() -> void {
       auto s = string {"Hello, World!"};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       assert::are_equal("Hello, World!", s);
     }
     
     test_method_attribute create_string_from_chars_attr {"create_string_from_chars", *this, &hello_world_test::create_string_from_chars};
     auto create_string_from_chars() -> void {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      valid::are_equal(13, s.length());
+      valid::are_equal(13_z, s.length());
       string_assert::starts_with("Hello,", s);
       string_assert::does_not_end_with(" le monde!", s);
     }
