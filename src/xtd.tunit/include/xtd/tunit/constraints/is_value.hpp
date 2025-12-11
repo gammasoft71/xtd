@@ -22,7 +22,7 @@ namespace xtd {
       class is_value : public actual_value<actual_t> {
       public:
         is_value() = default;
-        is_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move (v)} {}
+        is_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         is_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
         inline auto not_() {return is_not_value<actual_t>(self_);}

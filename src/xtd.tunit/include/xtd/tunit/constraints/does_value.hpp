@@ -22,7 +22,7 @@ namespace xtd {
       class does_value : public actual_value<actual_t> {
       public:
         does_value() = default;
-        does_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move (v)} {}
+        does_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         does_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
         inline auto not_() {return does_not_value<actual_t>(self_);}
