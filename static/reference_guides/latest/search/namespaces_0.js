@@ -46,6 +46,7 @@ var searchData=
   ['xtd_3a_3athreading_3a_3athis_5fthread_43',['this_thread',['../namespacextd_1_1threading_1_1this__thread.html',1,'xtd::threading']]],
   ['xtd_3a_3atimers_44',['timers',['../namespacextd_1_1timers.html',1,'xtd']]],
   ['xtd_3a_3atunit_45',['tunit',['../namespacextd_1_1tunit.html',1,'xtd']]],
-  ['xtd_3a_3aweb_46',['web',['../namespacextd_1_1web.html',1,'xtd']]],
-  ['xtd_3a_3awindows_47',['windows',['../namespacextd_1_1windows.html',1,'xtd']]]
+  ['xtd_3a_3atunit_3a_3aconstraints_46',['constraints',['../namespacextd_1_1tunit_1_1constraints.html',1,'xtd::tunit']]],
+  ['xtd_3a_3aweb_47',['web',['../namespacextd_1_1web.html',1,'xtd']]],
+  ['xtd_3a_3awindows_48',['windows',['../namespacextd_1_1windows.html',1,'xtd']]]
 ];

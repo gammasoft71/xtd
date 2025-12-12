@@ -106,25 +106,26 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">tunit</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">namespace </span>constraints {</div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1constraints_1_1assert__value.html">   12</a></span>      <span class="keyword">class </span>assert_value {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        assert_value(<span class="keyword">const</span> assert_type&amp; <a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>) : type_ {<a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>} {}</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> actual_t&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">inline</span> <span class="keyword">auto</span> that(<span class="keyword">const</span> actual_t&amp; actual) {<span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1constraints_1_1that__value.html">that_value&lt;actual_t&gt;</a> {<a class="code hl_class" href="classxtd_1_1tunit_1_1constraints_1_1actual__value.html">actual_value&lt;actual_t&gt;</a> {}.type(type_).actual(actual)};}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">const</span> assert_type&amp; type_;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      };</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit_1_1constraints.html">constraints</a> {</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classxtd_1_1tunit_1_1constraints_1_1assert__value.html">   13</a></span>      <span class="keyword">class </span>assert_value {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        assert_value(<span class="keyword">const</span> assert_type&amp; <a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>) : type_ {<a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>} {}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> actual_t&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">inline</span> <span class="keyword">auto</span> that(<span class="keyword">const</span> actual_t&amp; actual) {<span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1tunit_1_1constraints_1_1that__value.html">that_value&lt;actual_t&gt;</a> {<a class="code hl_class" href="classxtd_1_1tunit_1_1constraints_1_1actual__value.html">actual_value&lt;actual_t&gt;</a> {}.type(type_).actual(actual)};}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">const</span> assert_type&amp; type_;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      };</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1constraints_1_1actual__value_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1constraints_1_1actual__value.html">xtd::tunit::constraints::actual_value</a></div><div class="ttdef"><b>Definition</b> actual_value.hpp:13</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1constraints_1_1that__value_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1constraints_1_1that__value.html">xtd::tunit::constraints::that_value</a></div><div class="ttdef"><b>Definition</b> that_value.hpp:15</div></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1constraints_1_1actual__value_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1constraints_1_1actual__value.html">xtd::tunit::constraints::actual_value</a></div><div class="ttdef"><b>Definition</b> actual_value.hpp:18</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1constraints_1_1that__value_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1constraints_1_1that__value.html">xtd::tunit::constraints::that_value</a></div><div class="ttdef"><b>Definition</b> that_value.hpp:16</div></div>
 <div class="ttc" id="agroup__types_html_ga03b6109bac255dc61a3df38c5d80a46c"><div class="ttname"><a href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">xtd::type</a></div><div class="ttdeci">std::type_info type</div><div class="ttdoc">Stores information about a type.</div><div class="ttdef"><b>Definition</b> type.hpp:23</div></div>
+<div class="ttc" id="anamespacextd_1_1tunit_1_1constraints_html"><div class="ttname"><a href="namespacextd_1_1tunit_1_1constraints.html">xtd::tunit::constraints</a></div><div class="ttdoc">The contraints namespace contains the constraint-based assert model.</div><div class="ttdef"><b>Definition</b> actual_value.hpp:12</div></div>
 <div class="ttc" id="anamespacextd_1_1tunit_html"><div class="ttname"><a href="namespacextd_1_1tunit.html">xtd::tunit</a></div><div class="ttdoc">The tunit namespace contains a unit test library.</div><div class="ttdef"><b>Definition</b> abort_error.hpp:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="athat__value_8hpp_html"><div class="ttname"><a href="that__value_8hpp.html">that_value.hpp</a></div><div class="ttdoc">Contains xtd::tunit::constraints::that_value class.</div></div>
@@ -132,7 +133,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 12 2025 08:48:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 12 2025 11:11:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
