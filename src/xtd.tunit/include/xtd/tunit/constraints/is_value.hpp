@@ -2,6 +2,7 @@
 /// @brief Contains xtd::tunit::constraints::is_value class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "is_not_value.hpp"
 #include "operator_value.hpp"
 #include "../assert.hpp"
 #include "../assume.hpp"
