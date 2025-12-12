@@ -20,13 +20,16 @@ namespace xtd {
   namespace tunit {
     /// @brief The contraints namespace contains the constraint-based assert model.
     namespace constraints {
+      /// @cond
+      template<class actual_t> class that_value;
+      /// @endcond
+
       template<class actual_t>
       class is_value : public actual_value<actual_t> {
       public:
-        is_value() = default;
-        is_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
-        is_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
+        /// @name Public Methods
         
+        /// @{
         inline auto not_() {return is_not_value<actual_t>(self_);}
         
         /// @brief Asserts that value is empty.
@@ -138,6 +141,19 @@ namespace xtd {
           else xtd::tunit::assume::are_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
           return operator_value<actual_t>(self_);
         }
+        /// @}
+
+      protected:
+        /// @name Protected Construtors
+        
+        /// @{
+        is_value() = default;
+        is_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
+        is_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
+        /// @}
+        
+      private:
+        template<class value_t> friend class that_value;
       };
     }
   }
