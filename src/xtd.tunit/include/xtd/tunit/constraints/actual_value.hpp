@@ -9,9 +9,13 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     namespace constraints {
+      /// @cond
+      class assert_value;
+      /// @endcond
+      
       template<class actual_t>
       class actual_value {
-      public:
+      protected:
         actual_value() {}
         actual_value(actual_value&&) = default;
         actual_value(const actual_value&) = default;
@@ -33,6 +37,7 @@ namespace xtd {
         }
         
       private:
+        friend class assert_value;
         xtd::tunit::constraints::assert_type assert_type_;
         const actual_t* actual_ = null;
       };
