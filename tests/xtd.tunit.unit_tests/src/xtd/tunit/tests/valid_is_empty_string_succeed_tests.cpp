@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(valid_is_empty_string_succeed_tests) {
   public:
     auto test_method_(test_case_succeed) {
-      auto s;
+      auto s = "";
       xtd::tunit::valid::is_empty(s);
     }
   };
