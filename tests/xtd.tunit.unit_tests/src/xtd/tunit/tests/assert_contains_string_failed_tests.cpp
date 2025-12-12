@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_contains_string_failed_tests) {
   public:
     auto test_method_(test_case_failed) {
-      std::string s = "string";
+      auto s = "string";
       xtd::tunit::assert::contains('a', s);
     }
   };
@@ -18,7 +18,7 @@ namespace xtd::tunit::tests {
     assert_value_("Start 1 test from 1 test case\n"
                   "   FAILED xtd::tunit::tests::assert_contains_string_failed_tests.test_case_failed\n"
                   "    Expected: collection containing a\n"
-                  "    But was:  < 's', 't', 'r', 'i', 'n', 'g' >\n"
+                  "    But was:  < s, t, r, i, n, g >\n"
                   "End 1 test from 1 test case ran.\n", output);
   }
   
