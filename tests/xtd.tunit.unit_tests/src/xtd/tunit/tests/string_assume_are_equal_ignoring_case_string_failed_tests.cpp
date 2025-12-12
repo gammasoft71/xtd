@@ -7,7 +7,7 @@ namespace xtd::tunit::tests {
   class test_class_(string_assume_are_equal_ignoring_case_string_failed_tests) {
   public:
     auto test_method_(test_case_failed) {
-      std::string s = "VALUE";
+      auto s = "VALUE";
       xtd::tunit::string_assume::are_equal_ignoring_case("key", s);
     }
   };
