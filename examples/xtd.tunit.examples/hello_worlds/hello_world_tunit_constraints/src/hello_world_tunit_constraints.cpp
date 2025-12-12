@@ -11,7 +11,7 @@ namespace unit_tests {
     auto test_method_(create_string_from_chars) {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid_that(s.length()).is().equal_to(13_z);
-      assert_that(s).does().start_with("Hello,").and_().does().not_().end_with(" le monde!");
+      assert_that(s).does().start_with("Hello,").and_().does().end_with(" World!");
     }
   };
 }
