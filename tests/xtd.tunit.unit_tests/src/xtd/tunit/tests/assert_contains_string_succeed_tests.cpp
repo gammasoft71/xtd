@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_contains_string_succeed_tests) {
   public:
     auto test_method_(test_case_succeed) {
-      std::string s = "string";
+      auto s = "string";
       xtd::tunit::assert::contains('i', s);
     }
   };
