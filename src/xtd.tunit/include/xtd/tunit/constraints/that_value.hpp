@@ -12,15 +12,33 @@ namespace xtd {
   namespace tunit {
     /// @brief The contraints namespace contains the constraint-based assert model.
     namespace constraints {
+      /// @cond
+      class assert_value;
+      template<class actual_t> class operator_value;
+      /// @endcond
+      
       template<class actual_t>
       class that_value : public actual_value<actual_t> {
       public:
+        /// @name Public Methods
+        
+        /// @{
+        inline auto does() {return does_value<actual_t>(self_);}
+        inline auto is() {return is_value<actual_t>(self_);}
+        /// @}
+
+      protected:
+        /// @name Protected Construtors
+        
+        /// @{
         that_value() = default;
         that_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         that_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
-        
-        inline auto does() {return does_value<actual_t>(self_);}
-        inline auto is() {return is_value<actual_t>(self_);}
+        /// @}
+
+      private:
+        friend class assert_value;
+        template<class value_t> friend class operator_value;
       };
     }
   }
