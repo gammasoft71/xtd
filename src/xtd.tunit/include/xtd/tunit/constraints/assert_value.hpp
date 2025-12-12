@@ -12,10 +12,18 @@ namespace xtd {
     namespace constraints {
       class assert_value {
       public:
-        assert_value(const assert_type& type) : type_ {type} {}
+        /// @name Public Construtors
         
+        /// @{
+        assert_value(const assert_type& type) : type_ {type} {}
+        /// @}
+        
+        /// @name Public Methods
+        
+        /// @{
         template<class actual_t>
         inline auto that(const actual_t& actual) {return that_value<actual_t> {actual_value<actual_t> {}.type(type_).actual(actual)};}
+        /// @}
         
       private:
         const assert_type& type_;
