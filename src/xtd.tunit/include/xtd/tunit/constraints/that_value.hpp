@@ -26,7 +26,7 @@ namespace xtd {
         inline auto does() {return does_value<actual_t>(self_);}
         inline auto is() {return is_value<actual_t>(self_);}
         /// @}
-
+        
       protected:
         /// @name Protected Construtors
         
@@ -35,7 +35,7 @@ namespace xtd {
         that_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         that_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         /// @}
-
+        
       private:
         friend class assert_value;
         template<class value_t> friend class operator_value;

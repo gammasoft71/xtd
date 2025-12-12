@@ -23,7 +23,7 @@ namespace xtd {
       /// @cond
       template<class actual_t> class that_value;
       /// @endcond
-
+      
       template<class actual_t>
       class is_value : public actual_value<actual_t> {
       public:
@@ -142,7 +142,7 @@ namespace xtd {
           return operator_value<actual_t>(self_);
         }
         /// @}
-
+        
       protected:
         /// @name Protected Construtors
         

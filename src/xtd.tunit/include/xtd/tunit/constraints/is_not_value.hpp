@@ -139,7 +139,7 @@ namespace xtd {
           return operator_value<actual_t>(self_);
         }
         /// @}
-
+        
       protected:
         /// @name Protected Construtors
         

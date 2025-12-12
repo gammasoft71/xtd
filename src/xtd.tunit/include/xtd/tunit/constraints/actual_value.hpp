@@ -44,7 +44,7 @@ namespace xtd {
           return self_;
         }
         /// @}
-
+        
       private:
         friend class assert_value;
         xtd::tunit::constraints::assert_type assert_type_;

@@ -57,7 +57,7 @@ namespace xtd {
           return operator_value<actual_t>(self_);
         }
         /// @}
-
+        
       protected:
         /// @name Protected Construtors
         
@@ -65,7 +65,7 @@ namespace xtd {
         does_not_value() = default;
         does_not_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         does_not_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
-        /// @}        
+        /// @}
       };
     }
   }

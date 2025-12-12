@@ -13,7 +13,7 @@ namespace xtd {
       /// @cond
       template<class actual_t> class operator_value;
       /// @endcond
-
+      
       template<class actual_t>
       class and_operator_value : public that_value<actual_t> {
       protected:
@@ -24,7 +24,7 @@ namespace xtd {
         and_operator_value(that_value<actual_t>&& v) : that_value<actual_t> {std::move(v)} {}
         and_operator_value(const that_value<actual_t>& v) : that_value<actual_t> {v} {}
         /// @}
-
+        
       private:
         template<class value_t> friend class operator_value;
       };

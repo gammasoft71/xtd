@@ -34,7 +34,7 @@ namespace xtd {
         operator_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         operator_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         /// @}
-
+        
       private:
         template<class value_t> friend class does_not_value;
         template<class value_t> friend class does_value;
