@@ -48,7 +48,7 @@ namespace xtd {
           else xtd::tunit::assume::is_empty(actual_value<actual_t>::actual(), stack_frame);
           return operator_value<actual_t>(self_);
         }
-        /// @brief Asserts that value is empty.
+        /// @brief Asserts that value is empty and specified user message.
         /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
         /// @param stack_frame Contains information about current file and current line.
         /// @exception xtd::tunit::assert_error If bad assertion.

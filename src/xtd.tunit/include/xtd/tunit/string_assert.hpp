@@ -131,7 +131,7 @@ namespace xtd {
       /// ```
       static void does_not_contain(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
-      /// @brief Asserts that string starts with item.
+      /// @brief Asserts that string ends with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -143,7 +143,7 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_end_with("lue", s); // test throws an assert_error exception.
       /// ```
       static void does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      /// @brief Asserts that string starts with item.
+      /// @brief Asserts that string ends with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -207,7 +207,7 @@ namespace xtd {
       /// ```
       static void does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
-      /// @brief Asserts that string starts with item.
+      /// @brief Asserts that string ends with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param stack_frame Contains information about current file and current line.
@@ -219,7 +219,7 @@ namespace xtd {
       /// xtd::tunit::string_assert::ends_with("law", s); // test throws an assert_error exception.
       /// ```
       static void ends_with(const xtd::string& item, const xtd::string& string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      /// @brief Asserts that string starts with item.
+      /// @brief Asserts that string ends with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
