@@ -17,10 +17,17 @@ namespace xtd {
       template<class actual_t>
       class actual_value {
       protected:
+        /// @name Protected Construtors
+        
+        /// @{
         actual_value() {}
         actual_value(actual_value&&) = default;
         actual_value(const actual_value&) = default;
+        /// @}
         
+        /// @name Protected Properties
+        
+        /// @{
         xtd::tunit::constraints::assert_type assert_type() const noexcept {return assert_type_;};
         actual_value& type(xtd::tunit::constraints::assert_type assert_type) noexcept {
           assert_type_ = assert_type;
@@ -36,7 +43,8 @@ namespace xtd {
           actual_ = &actual;
           return self_;
         }
-        
+        /// @}
+
       private:
         friend class assert_value;
         xtd::tunit::constraints::assert_type assert_type_;
