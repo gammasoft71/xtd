@@ -62,7 +62,7 @@ namespace xtd {
           else xtd::tunit::assume::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
           return operator_value<actual_t>(self_);
         }
-
+        
         /// @brief Asserts that value not is equal to specified expected.
         /// @param expected the expected value.
         /// @param stack_frame Contains information about current file and current line.
