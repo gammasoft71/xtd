@@ -36,10 +36,26 @@ namespace xtd {
         }
         
         template<class expected_t>
+        auto end_with(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::ends_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::ends_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::string_assume::ends_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+
+        template<class expected_t>
         auto start_with(const expected_t& expected, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::starts_with(expected, actual_value<actual_t>::actual(), stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::starts_with(expected, actual_value<actual_t>::actual(), stack_frame);
           else xtd::tunit::string_assume::starts_with(expected, actual_value<actual_t>::actual(), stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+
+        template<class expected_t>
+        auto start_with(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::string_assert::starts_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::string_valid::starts_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
+          else xtd::tunit::string_assume::starts_with(expected, actual_value<actual_t>::actual(), message, stack_frame);
           return operator_value<actual_t>(self_);
         }
       };
