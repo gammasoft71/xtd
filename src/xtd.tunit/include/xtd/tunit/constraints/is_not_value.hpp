@@ -17,6 +17,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @brief The contraints namespace contains the constraint-based assert model.
     namespace constraints {
       template<class actual_t>
       class is_not_value : public actual_value<actual_t> {
