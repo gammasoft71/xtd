@@ -534,6 +534,10 @@ add_sources(
   "src/xtd/tunit/constraints/tests/assert_that_is_equal_to_succeed_tests.cpp"
   "src/xtd/tunit/constraints/tests/assert_that_is_not_equal_to_failed_tests.cpp"
   "src/xtd/tunit/constraints/tests/assert_that_is_not_equal_to_succeed_tests.cpp"
+  "src/xtd/tunit/constraints/tests/assert_that_is_not_same_as_failed_tests.cpp"
+  "src/xtd/tunit/constraints/tests/assert_that_is_not_same_as_succeed_tests.cpp"
+  "src/xtd/tunit/constraints/tests/assert_that_is_same_as_failed_tests.cpp"
+  "src/xtd/tunit/constraints/tests/assert_that_is_same_as_succeed_tests.cpp"
 )
 target_default_namespace("xtd::tunit::tests")
 target_type(TEST_APPLICATION)
