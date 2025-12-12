@@ -53,6 +53,7 @@ namespace xtd {
         /// valid_that(value).is().not_().equal_to(23 "User message..."); // test ok.
         /// assert_that(value).is().not_().equal_to(24, "User message..."); // test throws an assert_error exception.
         /// ```
+        template<class expected_t>
         auto equal_to(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_equal(expected, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_equal(expected, actual_value<actual_t>::actual(), message, stack_frame);
@@ -92,6 +93,7 @@ namespace xtd {
         /// valid_that(a).is().equal_to(b "User message..."); // test ok.
         /// assert_that(a).is().equal_to(c, "User message..."); // test throws an assert_error exception.
         /// ```
+        template<class expected_t>
         auto same_as(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
           if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::are_not_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
           else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::are_not_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
