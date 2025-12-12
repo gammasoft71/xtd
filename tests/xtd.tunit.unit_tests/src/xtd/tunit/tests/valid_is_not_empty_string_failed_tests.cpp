@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(valid_is_not_empty_string_failed_tests) {
   public:
     auto test_method_(test_case_failed) {
-      std::string s;
+      auto s;
       xtd::tunit::valid::is_not_empty(s);
     }
   };
