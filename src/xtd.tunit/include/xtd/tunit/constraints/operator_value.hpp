@@ -15,7 +15,7 @@ namespace xtd {
     template<class actual_t> class is_value;
     /// @endcond
     
-    /// @brief The contraints namespace contains the constraint-based assert model.
+    /// @brief The constraints namespace contains the constraint-based assert model.
     namespace constraints {
       template<class actual_t>
       class operator_value : public actual_value<actual_t> {
