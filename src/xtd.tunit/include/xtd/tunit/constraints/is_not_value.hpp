@@ -25,6 +25,40 @@ namespace xtd {
         is_not_value(actual_value<actual_t>&& v) : actual_value<actual_t> {std::move(v)} {}
         is_not_value(const actual_value<actual_t>& v) : actual_value<actual_t> {v} {}
         
+        /// @brief Asserts that value is empty.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = xtd::array {0, 1, 2, 3};
+        /// auto v2 = xtd::array<int> {};
+        /// valid_that(v1).is().not_().empty(); // test ok.
+        /// assert_that(v2).is().not_().empty(); // test throws an assert_error exception.
+        /// ```
+        auto empty(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          else xtd::tunit::assume::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+        /// @brief Asserts that value is empty.
+        /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+        /// @param stack_frame Contains information about current file and current line.
+        /// @exception xtd::tunit::assert_error If bad assertion.
+        /// @par Examples
+        /// ```cpp
+        /// auto v1 = xtd::array {0, 1, 2, 3};
+        /// auto v2 = xtd::array<int> {};
+        /// valid_that(v1).is().not_().empty("User message..."); // test ok.
+        /// assert_that(v2).is().not_().empty("User message..."); // test throws an assert_error exception.
+        /// ```
+        auto empty(const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+          if (actual_value<actual_t>::is_assert()) xtd::tunit::assert::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          else if (actual_value<actual_t>::is_valid()) xtd::tunit::valid::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          else xtd::tunit::assume::is_not_empty(actual_value<actual_t>::actual(), stack_frame);
+          return operator_value<actual_t>(self_);
+        }
+
         /// @brief Asserts that value not is equal to specified expected.
         /// @param expected the expected value.
         /// @param stack_frame Contains information about current file and current line.
@@ -68,10 +102,10 @@ namespace xtd {
         /// @par Examples
         /// ```cpp
         /// int a = 24;
-        /// int& b = a;
-        /// int c = 24;
-        /// valid_that(a).is().not_().same_as(c); // test ok.
-        /// assert_that(a).is().not_().same_as(b); // test throws an assert_error exception.
+        /// int b = 24;
+        /// int& c = a;
+        /// valid_that(a).is().not_().same_as(b); // test ok.
+        /// assert_that(a).is().not_().same_as(c); // test throws an assert_error exception.
         /// ```
         template<class expected_t>
         auto same_as(const expected_t& expected, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
@@ -88,10 +122,10 @@ namespace xtd {
         /// @par Examples
         /// ```cpp
         /// int a = 24;
-        /// int& b = a;
-        /// int c = 24;
-        /// valid_that(a).is().equal_to(b "User message..."); // test ok.
-        /// assert_that(a).is().equal_to(c, "User message..."); // test throws an assert_error exception.
+        /// int b = 24;
+        /// int& c = a;
+        /// valid_that(a).is().not_().same_as(b "User message..."); // test ok.
+        /// assert_that(a).is().not_().same_as(c, "User message..."); // test throws an assert_error exception.
         /// ```
         template<class expected_t>
         auto same_as(const expected_t& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const {
