@@ -354,7 +354,7 @@
 
 * [system_sounds](media/system_sounds/README.md) shows how to use [xtd::media::system_sounds](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1media_1_1system__sounds.html) and [xtd::media::system_sound](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1media_1_1system__sound.html) classes.
 
-## [%emory information](memory_information/README.md)
+## [Memory information](memory_information/README.md)
 
 * [memory_information](memory_information/memory_information/README.md) shows how to use [xtd::memory_information](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1memory__information.html) class.
 
