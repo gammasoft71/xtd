@@ -38,7 +38,7 @@
 
 * [array_list](collections/array_list/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 * [array_list2](collections/array_list2/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
-* [array_list3](collections/array_list2/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+* [array_list3](collections/array_list3/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 * [bit_array](collections/bit_array/README.md) shows how to use [xtd::collections::bit_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1bit__array.html) class.
 * [hashtable](collections/hashtable/README.md) shows how to use [xtd::collections::hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 * [hashtable2](collections/hashtable2/README.md) shows how to use [xtd::collections::hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
