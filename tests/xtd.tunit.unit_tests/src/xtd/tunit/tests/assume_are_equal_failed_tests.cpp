@@ -4,7 +4,7 @@
 #include "../../../assert_unit_tests/assert_unit_tests.hpp"
 
 namespace xtd::tunit::tests {
-  class test_class_(assumet_are_equal_failed_tests) {
+  class test_class_(assume_are_equal_failed_tests) {
   public:
     auto test_method_(test_case_failed) {
       int i = 24;
@@ -12,16 +12,16 @@ namespace xtd::tunit::tests {
     }
   };
   
-  void test_(assumet_are_equal_failed_tests, test_output) {
-    auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
+  void test_(assume_are_equal_failed_tests, test_output) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assume_are_equal_failed_tests.*");
     assert_value_("Start 1 test from 1 test case\n"
-                  "  ABORTED xtd::tunit::tests::assumet_are_equal_failed_tests.test_case_failed\n"
+                  "  ABORTED xtd::tunit::tests::assume_are_equal_failed_tests.test_case_failed\n"
                   "    Test aborted\n"
                   "End 1 test from 1 test case ran.\n", output);
   }
   
-  void test_(assumet_are_equal_failed_tests, test_result) {
-    auto [output, result] = run_test_("xtd::tunit::tests::assumet_are_equal_failed_tests.*");
+  void test_(assume_are_equal_failed_tests, test_result) {
+    auto [output, result] = run_test_("xtd::tunit::tests::assume_are_equal_failed_tests.*");
     assert_value_(0, result);
   }
 }
