@@ -9,6 +9,7 @@ add_projects(
   collection_asserts
   collection_assumes
   collection_valids
+  constraints
   directory_asserts
   directory_assumes
   directory_valids
