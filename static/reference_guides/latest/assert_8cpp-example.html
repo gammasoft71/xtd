@@ -98,10 +98,8 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1assert.html" title="The assert class contains a collection of static methods that implement the most common assertions us...">xtd::tunit::assert</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
-<div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
 <div class="line">      assert::is_true(<span class="keyword">true</span>);</div>
@@ -112,7 +110,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> index_out_of_range_exception(<span class="stringliteral">&quot;error&quot;</span>);});</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -129,11 +127,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//   FAILED unit_tests::test.test_case2 [&lt; 1 ms]</span></div>
 <div class="line"><span class="comment">//     Expected: false</span></div>
 <div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:10</span></div>
 <div class="line"><span class="comment">//   FAILED  unit_tests::test.test_case3 [&lt; 1 ms]</span></div>
 <div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//     But was:  &lt;xtd::index_out_of_range_exception&gt;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
@@ -144,7 +142,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 13 2025 18:57:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 14 2025 11:50:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

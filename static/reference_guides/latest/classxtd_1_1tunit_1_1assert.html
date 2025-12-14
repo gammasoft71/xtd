@@ -122,10 +122,8 @@ If an assertion fails, the method call does not return and an error is reported.
 <dd>
 Each method may be called without a message, with a simple text message or with a message and arguments. In the last case the message is formatted using the provided text and arguments. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example show how to used some methods : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
-<div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
 <div class="line">      <a class="code hl_function" href="#a973ca3d18acabc421936bc87974a11c4">assert::is_true</a>(<span class="keyword">true</span>);</div>
@@ -136,7 +134,7 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case3) {</div>
-<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> std::range_error(<span class="stringliteral">&quot;error&quot;</span>);});</div>
+<div class="line">      assert::does_not_throw([] {<span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1index__out__of__range__exception.html">index_out_of_range_exception</a>(<span class="stringliteral">&quot;error&quot;</span>);});</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -153,16 +151,17 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="comment">//   FAILED unit_tests::test.test_case2 [&lt; 1 ms]</span></div>
 <div class="line"><span class="comment">//     Expected: false</span></div>
 <div class="line"><span class="comment">//     But was:  true</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:10</span></div>
 <div class="line"><span class="comment">//   FAILED  unit_tests::test.test_case3 [&lt; 1 ms]</span></div>
 <div class="line"><span class="comment">//     Expected: No Exception to be thrown</span></div>
-<div class="line"><span class="comment">//     But was:  &lt;std::range_error&gt;</span></div>
-<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:18</span></div>
+<div class="line"><span class="comment">//     But was:  &lt;xtd::index_out_of_range_exception&gt;</span></div>
+<div class="line"><span class="comment">//     Stack Trace: in |---OMITTED---|/assert.cpp:14</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Test results:</span></div>
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. [0.0006 seconds]</span></div>
+<div class="ttc" id="aclassxtd_1_1index__out__of__range__exception_html"><div class="ttname"><a href="classxtd_1_1index__out__of__range__exception.html">xtd::index_out_of_range_exception</a></div><div class="ttdoc">The exception that is thrown when an attempt is made to access an element of an array with an index t...</div><div class="ttdef"><b>Definition</b> index_out_of_range_exception.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_a973ca3d18acabc421936bc87974a11c4"><div class="ttname"><a href="#a973ca3d18acabc421936bc87974a11c4">xtd::tunit::assert::is_true</a></div><div class="ttdeci">static void is_true(bool condition, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that a condition is true.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assert_html_af86ec19d67707e0f6fc7b5d466be45b6"><div class="ttname"><a href="#af86ec19d67707e0f6fc7b5d466be45b6">xtd::tunit::assert::is_false</a></div><div class="ttdeci">static void is_false(bool condition, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that a condition is false.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
@@ -5001,7 +5000,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 13 2025 18:57:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 14 2025 11:50:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
