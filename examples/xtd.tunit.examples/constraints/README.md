@@ -1,6 +1,6 @@
 # Constraints examples
 
-* [assert_that](assert_that/README.md) shows how to use [xtd::tunit::assert_that](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__that.html) methdo.
+* [assert_that](assert_that/README.md) shows how to use [xtd::tunit::assert_that](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__that.html) methdod.
 
 ## Build and run any project
 
