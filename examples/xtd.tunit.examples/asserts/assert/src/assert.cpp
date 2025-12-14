@@ -1,8 +1,6 @@
 #include <xtd/xtd.tunit>
-#include <stdexcept>
 
 namespace unit_tests {
-  // The class test must be declared with test_class_ helper.
   class test_class_(test) {
     void test_method_(test_case1) {
       assert::is_true(true);
@@ -13,7 +11,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      assert::does_not_throw([] {throw std::range_error("error");});
+      assert::does_not_throw([] {throw index_out_of_range_exception("error");});
     }
   };
 }
@@ -30,11 +28,11 @@ auto main() -> int {
 //   FAILED unit_tests::test.test_case2 [< 1 ms]
 //     Expected: false
 //     But was:  true
-//     Stack Trace: in |---OMITTED---|/assert.cpp:14
+//     Stack Trace: in |---OMITTED---|/assert.cpp:10
 //   FAILED  unit_tests::test.test_case3 [< 1 ms]
 //     Expected: No Exception to be thrown
-//     But was:  <std::range_error>
-//     Stack Trace: in |---OMITTED---|/assert.cpp:18
+//     But was:  <xtd::index_out_of_range_exception>
+//     Stack Trace: in |---OMITTED---|/assert.cpp:14
 //
 // Test results:
 //   SUCCEED 1 test.
