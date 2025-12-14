@@ -10,6 +10,11 @@
 * [hello_world_tunit](hello_worlds/hello_world_tunit/README.md) shows the classic first application "hello, world!".
 * [hello_world_tunit_without_helpers](hello_worlds/hello_world_tunit_without_helpers/README.md) shows the classic first application "hello, world!" without helpers.
 
+
+## [Constraints](constraints/README.md)
+
+* [assert_that](constraints/assert_that/README.md) shows how to use [xtd::tunit::constraints::assert_that](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__that.html) methdode.
+
 ## [Asserts](asserts/README.md)
 
 * [assert](asserts/assert/README.md) shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert.html) class.
@@ -59,10 +64,6 @@
 * [collection_assert_is_empty](collection_asserts/collection_assert_is_empty/README.md) shows how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a9c7837d7a624e3dda086f3eceaf6fd4e) method.
 * [collection_assert_is_not_empty](collection_asserts/collection_assert_is_not_empty/README.md) shows how to use [xtd::tunit::collection_assert::is_not_empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#ae90a7624d807c336badf3a19f9d0c5ee) method.
 * [collection_assert_is_ordered](collection_asserts/collection_assert_is_ordered/README.md) shows how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1collection__assert.html#a5af8ad7461b20cf4a1b6528377a5be0f) method.
-
-## [Constraints](constraints/README.md)
-
-* [assert_that](constraints/assert_that/README.md) shows how to use [xtd::tunit::assert_that](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1assert__that.html) methdode.
 
 ## [Directory asserts](directory_asserts/README.md)
 
@@ -266,6 +267,7 @@
 
 ## [Unit tests](unit_tests/README.md)
 
+* [assert_syntax](unit_tests/assert_syntax/README.md) shows how to use [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html).
 * [console_unit_test](unit_tests/console_unit_test/README.md) shows how to use [xtd::tunit::console_unit_test](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1console__unit__test.html) class.
 * [ostream_unit_test](unit_tests/ostream_unit_test/README.md) shows how to use [xtd::tunit::ostream_unit_test](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1tunit_1_1ostream__unit__test.html) class.
 
