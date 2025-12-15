@@ -14,6 +14,15 @@ jobs:
     - name: Checkout xtd
       uses: actions/checkout@v2
 
+    - name: Remove unnecessary packages to free disk space
+      run: |
+        sudo apt-get clean
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        docker rmi $(docker images -q) || true
+        
+    - name: Free up npm cache space
+      run: npm cache clean --force
+    
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y gcovr lcov libasound2-dev libgsound-dev libgtk-3-dev libwxgtk3.2-dev
 
