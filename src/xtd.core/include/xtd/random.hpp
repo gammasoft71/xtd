@@ -235,6 +235,14 @@ namespace xtd {
       shuffle(span_values);
       return values;
     }
+    /// @brief Performs an in-place shuffle of an array.
+    /// @param values The array to shuffle.
+    template<class collection_t>
+    collection_t shuffle(const collection_t& values) const {
+      auto result = values;
+      shuffle(result);
+      return result;
+    }
     /// @}
     
   protected:
