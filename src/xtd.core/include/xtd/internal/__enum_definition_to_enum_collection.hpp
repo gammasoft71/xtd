@@ -23,8 +23,8 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::s
   using namespace xtd;
   if (xtd::string::is_empty(enum_definition)) return entries;
   xtd::int64 current_value = 0;
-  for (auto entry : enum_definition.split({','})) {
-    auto key_value = entry.trim().split({'='});
+  for (auto entry : enum_definition.split(',')) {
+    auto key_value = entry.trim().split('=');
     if (key_value.length() < 1 || key_value.length() > 2 || (key_value.length() == 2 && xtd::string::is_empty(key_value[1])))
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Not a valid enum declaration");
     xtd::int64 value = current_value;
