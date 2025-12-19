@@ -245,15 +245,24 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
 </div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">  244</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">sample</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keyword">mutable</span> std::default_random_engine generator_;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  };</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#afab08aecc22a0fc3bd3f17f84df3d6c6">  241</a></span>    collection_t <a class="code hl_function" href="classxtd_1_1random.html#afab08aecc22a0fc3bd3f17f84df3d6c6">shuffle</a>(<span class="keyword">const</span> collection_t&amp; values)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <span class="keyword">auto</span> result = values;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <a class="code hl_function" href="classxtd_1_1random.html#a5e528d44e971ca388304266b5938dfb9">shuffle</a>(result);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
 </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">  252</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">sample</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keyword">mutable</span> std::default_random_engine generator_;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  };</div>
+</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
 <div class="ttc" id="aargument__null__exception_8hpp_html"><div class="ttname"><a href="argument__null__exception_8hpp.html">argument_null_exception.hpp</a></div><div class="ttdoc">Contains xtd::argument_null_exception exception.</div></div>
 <div class="ttc" id="aargument__out__of__range__exception_8hpp_html"><div class="ttname"><a href="argument__out__of__range__exception_8hpp.html">argument_out_of_range_exception.hpp</a></div><div class="ttdoc">Contains xtd::argument_out_of_range_exception exception.</div></div>
 <div class="ttc" id="aarray_8hpp_html"><div class="ttname"><a href="array_8hpp.html">array.hpp</a></div><div class="ttdoc">Contains xtd::array class.</div></div>
@@ -288,6 +297,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1random_html_ae7c9a9db253259056ee6335a9bce03e1"><div class="ttname"><a href="classxtd_1_1random.html#ae7c9a9db253259056ee6335a9bce03e1">xtd::random::random</a></div><div class="ttdeci">random()</div><div class="ttdoc">Initializes a new instance of the random class, using a default generated seed value.</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html_af5a84d2617f754220f6a383520bfa98f"><div class="ttname"><a href="classxtd_1_1random.html#af5a84d2617f754220f6a383520bfa98f">xtd::random::sample</a></div><div class="ttdeci">virtual double sample() const</div><div class="ttdoc">Returns a random number between 0.0 and 1.0.</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html_af8dee61c03a83ef71bf478f603094111"><div class="ttname"><a href="classxtd_1_1random.html#af8dee61c03a83ef71bf478f603094111">xtd::random::next_bytes</a></div><div class="ttdeci">virtual void next_bytes(xtd::span&lt; xtd::byte &gt; &amp;buffer) const</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
+<div class="ttc" id="aclassxtd_1_1random_html_afab08aecc22a0fc3bd3f17f84df3d6c6"><div class="ttname"><a href="classxtd_1_1random.html#afab08aecc22a0fc3bd3f17f84df3d6c6">xtd::random::shuffle</a></div><div class="ttdeci">collection_t shuffle(const collection_t &amp;values) const</div><div class="ttdoc">Performs an in-place shuffle of an array.</div><div class="ttdef"><b>Definition</b> random.hpp:241</div></div>
 <div class="ttc" id="aclassxtd_1_1span_html"><div class="ttname"><a href="classxtd_1_1span.html">xtd::span</a></div><div class="ttdoc">Represents a non-owning view over a contiguous sequence of objects.</div><div class="ttdef"><b>Definition</b> span.hpp:58</div></div>
 <div class="ttc" id="aclassxtd_1_1span_html_a385c8ab57f856aef24866794bf96f8d5"><div class="ttname"><a href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">xtd::span::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current span.</div><div class="ttdef"><b>Definition</b> span.hpp:253</div></div>
 <div class="ttc" id="acore__export_8hpp_html"><div class="ttname"><a href="core__export_8hpp.html">core_export.hpp</a></div><div class="ttdoc">Contains core_export_ keyword.</div></div>
@@ -312,7 +322,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 17 2025 10:41:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Dec 19 2025 22:31:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
