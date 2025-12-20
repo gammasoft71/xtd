@@ -31,7 +31,6 @@ jobs:
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
           -DCMAKE_INSTALL_PREFIX=~/local \
           -DXTD_BUILD_CPP_STANDARD=20 \
-          -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
           -DXTD_BUILD_TESTS_XTD_CORE=OFF \
           -DXTD_BUILD_TESTS_XTD_DRAWING=OFF \
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \

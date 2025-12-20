@@ -23,7 +23,6 @@ option(XTD_BUILD_TESTS_XTD_DRAWING "Build xtd.drawing tests" OFF)
 option(XTD_BUILD_TESTS_XTD_FORMS "Build xtd.forms tests" OFF)
 option(XTD_BUILD_TESTS_XTD_TUNIT "Build xtd.tunit tests" OFF)
 option(XTD_BUILD_TOOLS "Build tools" ON)
-option(XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM "Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration." OFF)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
@@ -52,10 +51,6 @@ set(ASTYLE_SOURCE_FILES
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
-
-if (XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM)
-  add_definitions(-D__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
-endif ()
 
 if (XTD_KEEP_CLONED_CONTROLS)
   message(WARNING "The XTD_KEEP_CLONED_CONTROLS option can only be used for debugging.\nUse xtd::application::keep_cloned_controls() instead.\nSee https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a for more information")
