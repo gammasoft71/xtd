@@ -270,7 +270,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_get_length.cpp
-    constexpr xtd::int64 get_long_length(size_type dimension) const {return static_cast < xtd::int64 > (get_upper_bound(dimension) + 1);}
+    constexpr xtd::int64 get_long_length(size_type dimension) const {return static_cast < xtd::int64 > (get_upper_bound(dimension) - get_lower_bound(dimension) + 1);}
     
     /// @brief Gets the lower bound of the specified dimension in the array.
     /// @param dimension A zero-based dimension of the array whose lower bound needs to be determined.
