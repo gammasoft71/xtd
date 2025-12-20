@@ -41,10 +41,9 @@ namespace xtd::drawing::tests {
     }
     
     auto test_method_(from_argb_to_win32) {
-      #if !defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+      if (environment::get_environment_variable("CI") == "true") return;
       assert::are_equal(4678655, color_translator::to_win32(color::from_argb(255, 255, 99, 71)));
       assert::are_equal(4678655, color_translator::to_win32(color::from_argb(128, 255, 99, 71)));
-      #endif
     }
     
     auto test_method_(from_known_color_to_hex) {
@@ -86,7 +85,7 @@ namespace xtd::drawing::tests {
     }
     
     auto test_method_(from_known_color_to_win32) {
-      #if !defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+      if (environment::get_environment_variable("CI") == "true") return;
       assert::are_equal(255, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::red)));
       assert::are_equal(16748574, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::dodger_blue)));
       assert::are_equal(13882323, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::light_gray)));
@@ -94,7 +93,6 @@ namespace xtd::drawing::tests {
       if (environment::os_version().is_linux()) assert::are_equal(2894892, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
       else if (environment::os_version().is_macos()) assert::are_equal(10132122, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
       else if (environment::os_version().is_windows()) assert::are_equal(2829099, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
-      #endif
     }
   };
 }
