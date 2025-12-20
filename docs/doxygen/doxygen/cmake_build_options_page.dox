@@ -14,7 +14,6 @@
 /// | XTD_BUILD_SHARED_LIBRARIES                   | bool   | Build shared libraries                                                                                                                  | OFF                 |
 /// | XTD_BUILD_TESTS                              | bool   | Build tests                                                                                                                             | OFF                 |
 /// | XTD_BUILD_TOOLS                              | bool   | Build tools                                                                                                                             | ON                  |
-/// | XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM | bool   | Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration. | OFF                 |
 /// | XTD_DOWNLOAD_ASTYLE                          | bool   | Download and build astyle from Github                                                                                                   | OFF                 |
 /// | XTD_DOWNLOAD_CPPCHECK                        | bool   | Download and build cppcheck from Github                                                                                                 | OFF                 |
 /// | XTD_DOWNLOAD_DOXYGEN                         | bool   | Download and build doxygen from Github                                                                                                  | OFF                 |
