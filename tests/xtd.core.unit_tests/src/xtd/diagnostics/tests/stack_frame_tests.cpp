@@ -115,11 +115,9 @@ namespace xtd::diagnostics::tests {
     }
     
     auto test_method_(current) {
-      #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
-      return;
-      #endif
+      if (environment::get_environment_variable("CI") == "true") return;
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
-      assert::are_equal(122_z, stack_frame::current().get_file_line_number());
+      assert::are_equal(120_z, stack_frame::current().get_file_line_number());
       if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::diagnostics::tests::stack_frame_tests::current()", stack_frame::current().get_method());
       else assert::are_equal("void __cdecl xtd::diagnostics::tests::stack_frame_tests::current(void)", stack_frame::current().get_method());
     }
