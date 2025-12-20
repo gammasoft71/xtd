@@ -7,7 +7,7 @@ namespace list_box_example {
       text("List box example");
       client_size({360, 240});
       
-      layout_panel.parent(*this);
+      layout_panel.parent(self_);
       layout_panel.controls().add_range({list_box_left, list_box_right});
       layout_panel.control_layout_style(list_box_left, {size_type::auto_size, true});
       layout_panel.control_layout_style(list_box_right, {size_type::auto_size, true});
