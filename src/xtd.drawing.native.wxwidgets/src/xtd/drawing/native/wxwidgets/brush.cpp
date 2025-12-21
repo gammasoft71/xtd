@@ -29,10 +29,8 @@ void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
   auto [end_r, end_g, end_b, end_a, end_pos] = colors[colors.length() - 1];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
-  for (auto color : colors) {
-    auto [r, g, b, a, pos] = color;
+  for (auto [r, g, b, a, pos] : colors)
     colours.Add(wxColour(r, g, b, a), pos);
-  }
   
   reinterpret_cast<wx_brush*>(brush)->create_conical_gradiant_brush(center_point, colours, angle);
 }
@@ -55,10 +53,8 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
   auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1_z];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
-  for (auto color : colors) {
-    auto [r, g, b, a, pos] = color;
+  for (auto [r, g, b, a, pos] : colors)
     colours.Add(wxColour(r, g, b, a), pos);
-  }
   
   if (angle == 0 || angle == 180) p2.y = p1.y;
   if (angle == 90 || angle == 270) p2.x = p1.x;
@@ -76,10 +72,8 @@ void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
   auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1_z];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
-  for (auto color : colors) {
-    auto [r, g, b, a, pos] = color;
+  for (auto [r, g, b, a, pos]  : colors)
     colours.Add(wxColour(r, g, b, a), pos);
-  }
   
   reinterpret_cast<wx_brush*>(brush)->create_radial_gradiant_brush(center_point, focal_point, colours, radius);
 }
