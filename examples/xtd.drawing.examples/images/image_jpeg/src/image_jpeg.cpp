@@ -4,5 +4,5 @@
 auto main() -> int {
   auto bmp = image_jpeg::properties::resources::gammasoft_jpeg();
   bmp.save(path::combine(path::get_temp_path(), "image_jpeg.png"));
-  diagnostics::process::start(diagnostics::process_start_info {path::combine(path::get_temp_path(), "image_jpeg.png")}.use_shell_execute(true));
+  diagnostics::process::start(diagnostics::process_start_info {path::combine(path::get_temp_path(), "image_jpeg.png")}.use_shell_execute(true)).wait_for_exit();
 }
