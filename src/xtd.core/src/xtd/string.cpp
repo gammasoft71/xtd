@@ -53,11 +53,3 @@ string xtd::to_string(double val) {
 string xtd::to_string(long double val) {
   return string::format("{}", val);
 }
-
-auto operator << (std::ostream& os, const xtd::iformatable& value) -> std::ostream& {
-  return os << value.to_string("", culture_info::current_culture());
-}
-
-auto operator << (std::ostream& os, const xtd::istringable& value) noexcept -> std::ostream& {
-  return os << value.to_string();
-}

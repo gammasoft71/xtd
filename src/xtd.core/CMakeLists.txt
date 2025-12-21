@@ -1309,6 +1309,7 @@ add_sources(
   "src/xtd/hash_code.cpp"
   "src/xtd/h_result.cpp"
   "src/xtd/h_result_category.cpp"
+  "src/xtd/iformatable.cpp"
   "src/xtd/invalid_handle.cpp"
   "src/xtd/invalid_operation_exception.cpp"
   "src/xtd/istringable.cpp"
