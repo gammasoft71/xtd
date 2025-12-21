@@ -190,7 +190,7 @@ string directory_info::name() const {
   auto items = full_path_.split(path::directory_separator_char());
   if (items.length() == 0)
     return full_path_;
-  return items[~1];
+  return items[~1_z];
 }
 
 directory_info directory_info::parent() const {

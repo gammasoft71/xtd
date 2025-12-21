@@ -56,7 +56,7 @@ size_t file_info::length() const {
 string file_info::name() const {
   auto items = full_path_.split(path::directory_separator_char());
   if (items.length() == 0) return full_path_;
-  return items[~1];
+  return items[~1_z];
 }
 
 stream_writer file_info::append_text() const {

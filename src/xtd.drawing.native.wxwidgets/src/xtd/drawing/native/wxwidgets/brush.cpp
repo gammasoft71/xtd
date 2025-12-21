@@ -53,7 +53,7 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
   auto p1 = wxPoint(x1, y1);
   auto p2 = wxPoint(x2, y2);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
-  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1_z];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
   for (auto color : colors) {
     auto [r, g, b, a, pos] = color;
@@ -74,7 +74,7 @@ void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 
   auto center_point = wxPoint(center_x, center_y);
   auto focal_point = wxPoint(focal_x, focal_y);
   auto [start_r, start_g, start_b, start_a, start_pos] = colors[0];
-  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1];
+  auto [end_r, end_g, end_b, end_a, end_pos] = colors[~1_z];
   wxGraphicsGradientStops colours(wxColour(start_r, start_g, start_b, start_a), wxColour(end_r, end_g, end_b, end_a));
   for (auto color : colors) {
     auto [r, g, b, a, pos] = color;

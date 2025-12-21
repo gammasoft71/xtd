@@ -37,36 +37,36 @@ auto main() -> int {
   println();
   
   try {
-    println("a[~0] = {}", a[~0]);
+    println("a[~0_z] = {}", a[~0_z]);
   } catch (const index_out_of_range_exception& e) {
-    println("a[~0] Throws {}", e);
+    println("a[~0_z] Throws {}", e);
   }
-  println("a[~1] = {}", a[~1]);
-  println("a[~2] = {}", a[~2]);
-  println("a[~3] = {}", a[~3]);
-  println("a[~4] = {}", a[~4]);
-  println("a[~5] = {}", a[~5]);
+  println("a[~1_z] = {}", a[~1_z]);
+  println("a[~2_z] = {}", a[~2_z]);
+  println("a[~3_z] = {}", a[~3_z]);
+  println("a[~4_z] = {}", a[~4_z]);
+  println("a[~5_z] = {}", a[~5_z]);
   try {
-    println("a[~6] = {}", a[~6]);
+    println("a[~6_z] = {}", a[~6_z]);
   } catch (const index_out_of_range_exception& e) {
-    println("a[~6] Throws {}", e);
+    println("a[~6_z] Throws {}", e);
   }
   println();
   
   try {
-    println("a[-1] = {}", a[-1]);
+    println("a[-1_z] = {}", a[-1_z]);
   } catch (const index_out_of_range_exception& e) {
-    println("a[-1] Throws {}", e);
+    println("a[-1_z] Throws {}", e);
   }
-  println("a[-2] = {}", a[-2]);
-  println("a[-3] = {}", a[-3]);
-  println("a[-4] = {}", a[-4]);
-  println("a[-5] = {}", a[-5]);
-  println("a[-6] = {}", a[-6]);
+  println("a[-2_z] = {}", a[-2_z]);
+  println("a[-3_z] = {}", a[-3_z]);
+  println("a[-4_z] = {}", a[-4_z]);
+  println("a[-5_z] = {}", a[-5_z]);
+  println("a[-6_z] = {}", a[-6_z]);
   try {
-    println("a[-7] = {}", a[-7]);
+    println("a[-7_z] = {}", a[-7_z]);
   } catch (const index_out_of_range_exception& e) {
-    println("a[-7] Throws {}", e);
+    println("a[-7_z] Throws {}", e);
   }
   println();
   
@@ -101,7 +101,7 @@ auto main() -> int {
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 8
+//    at main in xtd_collection_indexer.cpp:line 6
 // a[0] = 1
 // a[1] = 2
 // a[2] = 3
@@ -112,14 +112,14 @@ auto main() -> int {
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 18
+//    at main in xtd_collection_indexer.cpp:line 16
 //
 // a[bpos-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 25
+//    at main in xtd_collection_indexer.cpp:line 23
 // a[bpos]   = 1
 // a[bpos+1] = 2
 // a[bpos+2] = 3
@@ -130,50 +130,50 @@ auto main() -> int {
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 35
+//    at main in xtd_collection_indexer.cpp:line 33
 //
-// a[~0] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
+// a[~0_z] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 42
-// a[~1] = 5
-// a[~2] = 4
-// a[~3] = 3
-// a[~4] = 2
-// a[~5] = 1
-// a[~6] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
+//    at main in xtd_collection_indexer.cpp:line 40
+// a[~1_z] = 5
+// a[~2_z] = 4
+// a[~3_z] = 3
+// a[~4_z] = 2
+// a[~5_z] = 1
+// a[~6_z] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 52
+//    at main in xtd_collection_indexer.cpp:line 50
 //
-// a[-1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
+// a[-1_z] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 59
-// a[-2] = 5
-// a[-3] = 4
-// a[-4] = 3
-// a[-5] = 2
-// a[-6] = 1
-// a[-7] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
+//    at main in xtd_collection_indexer.cpp:line 57
+// a[-2_z] = 5
+// a[-3_z] = 4
+// a[-4_z] = 3
+// a[-5_z] = 2
+// a[-6_z] = 1
+// a[-7_z] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 69
+//    at main in xtd_collection_indexer.cpp:line 67
 //
 // a[epos+1] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 76
+//    at main in xtd_collection_indexer.cpp:line 74
 // a[epos]   = 5
 // a[epos-1] = 4
 // a[epos-2] = 3
@@ -184,11 +184,11 @@ auto main() -> int {
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 86
+//    at main in xtd_collection_indexer.cpp:line 84
 //
 // a[npos] Throws xtd::index_out_of_range_exception : Index was outside the bounds of the array.
 //    at xtd::index_out_of_range_exception::index_out_of_range_exception(xtd::diagnostics::stack_frame const&) in index_out_of_range_exception.hpp:line 26
 //    at xtd::helpers::throw_helper::throws(xtd::helpers::exception_case, std::source_location const&) in throw_helper.cpp:line 80
 //    at xtd::basic_array<int, std::allocator<int>>::operator[](unsigned long) in basic_array.hpp:line 0
 //    at xtd::array<int, 1ul, std::allocator<int>>::operator[](unsigned long) in array_1.hpp:line 249
-//    at main in xtd_collection_indexer.cpp:line 93
+//    at main in xtd_collection_indexer.cpp:line 91
