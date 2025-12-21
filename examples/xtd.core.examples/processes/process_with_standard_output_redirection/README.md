@@ -18,7 +18,7 @@ xtdc run
 ## Output
 
 ```
-xtdc version 1.0.0, © 2021 by Gammasoft
+xtdc version 0.2.0, (c) 2025 by Gammasoft
 
 Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]
 
@@ -29,6 +29,7 @@ options:
 
 command:
   new              Initializes project.
+  generate         Generate project from existing source files.
   add              Adds new project to project.
   update           Regenerates a project.
   run              Compiles and immediately executes a project.
@@ -42,7 +43,7 @@ command:
   documentation    Open xtd documentation.
   examples         Open xtd examples.
   guide            Open xtd reference guide.
-  web              Open Gammasoft website.
+  web              Open xtd website.
   help             Show help.
 
 Run 'xtdc command --help' for more information on a command.
