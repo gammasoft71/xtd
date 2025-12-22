@@ -20,7 +20,7 @@ auto main() -> int {
   console::write_line("[day_of_week] = {}", items["day_of_week"]);
 }
 
-// This code can produces the following output:
+// This code can produce the following output :
 //
 // 0.42      -> "double"
 // 12:24:42  -> "time_span"
