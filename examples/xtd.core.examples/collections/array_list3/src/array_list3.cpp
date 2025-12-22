@@ -10,7 +10,7 @@ auto main() -> int {
   }
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // 42       --> "42"
 // 42       --> 0x002A
