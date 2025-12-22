@@ -78,7 +78,7 @@ Same code in c#
   }
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Write binary file
 //
