@@ -51,7 +51,7 @@ auto main() -> int {
   println("v  = {}", v);
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // l  = [one, two, three, four, five]
 // v  = [one, two, three, four, five]
