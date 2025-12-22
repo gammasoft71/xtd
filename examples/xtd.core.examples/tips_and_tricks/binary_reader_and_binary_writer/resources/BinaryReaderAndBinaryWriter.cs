@@ -1,4 +1,4 @@
-﻿namespace BinaryReaderAndBinaryWriter {
+namespace BinaryReaderAndBinaryWriter {
   class MainClass {
     static void WriteBinaryFile(string FileName, Tuple<float, string, int, bool> items) {
       using (var writer = new BinaryWriter(new FileStream(FileName, FileMode.OpenOrCreate))) {
@@ -31,7 +31,7 @@
   }
 }
 
-// This code produces the following output:
+// This code produces the following output :
 //
 // Write binary file
 //
