@@ -12,7 +12,7 @@ auto main() -> int {
   d1.invoke(42);
 }
 
-// This code can produces the following output:
+// This code produces the following output :
 //
 // main) thread id = 1
 // (invoker) thread id = 1, value = 42
