@@ -130,13 +130,13 @@ $(function(){ initResizable(false); });
 <div class="line">      radio_button1.name(<span class="stringliteral">&quot;radio_button1&quot;</span>);</div>
 <div class="line">      radio_button1.size({100, 17});</div>
 <div class="line">      radio_button1.text(<span class="stringliteral">&quot;button1&quot;</span>);</div>
-<div class="line">      radio_button1.enabled_changed += event_handler(*<span class="keyword">this</span>, &amp;form1::radio_button1_enabled_changed);</div>
+<div class="line">      radio_button1.enabled_changed += event_handler {<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, &amp;form1::radio_button1_enabled_changed};</div>
 <div class="line">      </div>
 <div class="line">      radio_button2.location({0, 39});</div>
 <div class="line">      radio_button2.name(<span class="stringliteral">&quot;radio_button2&quot;</span>);</div>
 <div class="line">      radio_button2.size({150, 17});</div>
 <div class="line">      radio_button2.text(<span class="stringliteral">&quot;Disable button1&quot;</span>);</div>
-<div class="line">      radio_button2.checked_changed += event_handler(*<span class="keyword">this</span>, &amp;form1::radio_button2_checked_changed);</div>
+<div class="line">      radio_button2.checked_changed += event_handler {<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, &amp;form1::radio_button2_checked_changed};</div>
 <div class="line">      </div>
 <div class="line">      client_size({292, 273});</div>
 <div class="line">      controls().add_range({radio_button1, radio_button2});</div>
@@ -144,11 +144,11 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">void</span> radio_button1_enabled_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> radio_button1_enabled_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      message_box::show(<span class="stringliteral">&quot;This button has been disabled.&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> radio_button2_checked_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    <span class="keyword">auto</span> radio_button2_checked_changed(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      radio_button1.enabled(<span class="keyword">false</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -160,11 +160,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(enable_changed_event_example::form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 22 2025 12:09:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Dec 23 2025 19:01:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
