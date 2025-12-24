@@ -126,7 +126,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">class </span>main_form : <span class="keyword">public</span> form, <span class="keyword">public</span> imessage_filter {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    main_form() {</div>
-<div class="line">      <a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a>(*<span class="keyword">this</span>);</div>
+<div class="line">      <a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a>(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>);</div>
 <div class="line">      text(<span class="stringliteral">&quot;Application add message filter example&quot;</span>);</div>
 <div class="line">      panel_.border_style(forms::border_style::groove);</div>
 <div class="line">      skip_button_click_check_box_.auto_size(<span class="keyword">true</span>);</div>
@@ -144,7 +144,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    debug_form debug_form_;</div>
-<div class="line">    panel panel_ = panel::create(*<span class="keyword">this</span>, {10, 10}, {200, 100});</div>
+<div class="line">    panel panel_ = panel::create(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, {10, 10}, {200, 100});</div>
 <div class="line">    button button_ = button::create(panel_, <span class="stringliteral">&quot;Click me&quot;</span>, {10, 10});</div>
 <div class="line">    check_box skip_button_click_check_box_ = check_box::create(panel_, <span class="stringliteral">&quot;Skip button click event&quot;</span>, check_state::unchecked, {10, 40});</div>
 <div class="line">  };</div>
@@ -154,12 +154,13 @@ $(function(){ initResizable(false); });
 <div class="line">  application::run(application_add_message_filter_example::main_form {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4f8eac12a2e3e29b5308846260788d14"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4f8eac12a2e3e29b5308846260788d14">xtd::forms::application::add_message_filter</a></div><div class="ttdeci">static void add_message_filter(const imessage_filter &amp;value)</div><div class="ttdoc">Adds a message filter to monitor Windows messages as they are routed to their destinations.</div></div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 23 2025 19:01:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 24 2025 09:06:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
