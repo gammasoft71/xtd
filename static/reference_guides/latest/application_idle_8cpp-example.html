@@ -126,7 +126,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      application::idle += {*<span class="keyword">this</span>, &amp;form1::on_application_idle};</div>
+<div class="line">      application::idle += {<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, &amp;form1::on_application_idle};</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -141,11 +141,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(application_idle_example::form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 24 2025 09:06:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Dec 24 2025 09:12:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
