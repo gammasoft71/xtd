@@ -4,7 +4,7 @@ namespace application_add_message_filter_example {
   class main_form : public form, public imessage_filter {
   public:
     main_form() {
-      xtd::forms::application::add_message_filter(*this);
+      xtd::forms::application::add_message_filter(self_);
       text("Application add message filter example");
       panel_.border_style(forms::border_style::groove);
       skip_button_click_check_box_.auto_size(true);
@@ -22,7 +22,7 @@ namespace application_add_message_filter_example {
     }
     
     debug_form debug_form_;
-    panel panel_ = panel::create(*this, {10, 10}, {200, 100});
+    panel panel_ = panel::create(self_, {10, 10}, {200, 100});
     button button_ = button::create(panel_, "Click me", {10, 10});
     check_box skip_button_click_check_box_ = check_box::create(panel_, "Skip button click event", check_state::unchecked, {10, 40});
   };
