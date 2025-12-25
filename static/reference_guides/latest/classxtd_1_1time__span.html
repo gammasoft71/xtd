@@ -2225,7 +2225,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a130173b3c3e8483b0a7b2fd162edf8a4" title="Returns a xtd::time_span that represents a specified number of days, where the specification is accur...">xtd::time_span::from_days</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> gen_time_span_from_days (<span class="keywordtype">double</span> <a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>) {</div>
+<div class="line"><span class="keyword">auto</span> gen_time_span_from_days (<span class="keywordtype">double</span> <a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="comment">// Crée un objet TimeSpan et une chaîne TimeSpan à partir</span></div>
 <div class="line">  <span class="comment">// d&#39;un nombre de jours.</span></div>
 <div class="line">  <span class="keyword">auto</span> interval = <a class="code hl_function" href="#a130173b3c3e8483b0a7b2fd162edf8a4">time_span::from_days</a>(<a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>);</div>
@@ -2233,14 +2233,14 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Remplit la fin de la chaîne TimeSpan avec des espaces si elle</span></div>
 <div class="line">  <span class="comment">// ne contient pas de millisecondes.</span></div>
-<div class="line">  <span class="keywordtype">size_t</span> index = time_interval.index_of( <span class="charliteral">&#39;:&#39;</span> );</div>
-<div class="line">  index = time_interval.index_of( <span class="charliteral">&#39;.&#39;</span>, index );</div>
+<div class="line">  <span class="keyword">auto</span> index = time_interval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line">  index = time_interval.index_of(<span class="charliteral">&#39;.&#39;</span>, index);</div>
 <div class="line">  <span class="keywordflow">if</span> (index == string::npos) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, <a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, time_interval);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;This example of time_span::from_days(double)\n&quot;</span></div>
 <div class="line">                      <span class="stringliteral">&quot;generates the following output.\n&quot;</span> );</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
@@ -3222,7 +3222,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 24 2025 09:12:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Dec 25 2025 22:43:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
