@@ -1,13 +1,11 @@
 #include <xtd/xtd>
 
 auto gen_time_span_from_days (double days) -> void {
-  // Crée un objet TimeSpan et une chaîne TimeSpan à partir
-  // d'un nombre de jours.
+  // Creates a time_span object and a time_span string from a number of days.
   auto interval = time_span::from_days(days);
   auto time_interval = interval.to_string();
   
-  // Remplit la fin de la chaîne TimeSpan avec des espaces si elle
-  // ne contient pas de millisecondes.
+  // Fills the end of the time_span string with spaces if it does not contain milliseconds.
   auto index = time_interval.index_of(':');
   index = time_interval.index_of('.', index);
   if (index == string::npos) time_interval += "        ";
@@ -17,11 +15,9 @@ auto gen_time_span_from_days (double days) -> void {
 
 auto main() -> int {
   console::write_line("This example of time_span::from_days(double)\n"
-                      "generates the following output.\n" );
-  console::write_line("{0,21}{1,19}",
-                      "from_days", "time_span" );
-  console::write_line("{0,21}{1,19}",
-                      "---------", "---------" );
+                      "generates the following output.\n");
+  console::write_line("{0,21}{1,19}", "from_days", "time_span");
+  console::write_line("{0,21}{1,19}", "---------", "---------");
   
   gen_time_span_from_days(0.000000006);
   gen_time_span_from_days(0.000000017);
