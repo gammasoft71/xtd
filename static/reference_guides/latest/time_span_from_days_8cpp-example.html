@@ -100,13 +100,11 @@ $(function(){ initResizable(false); });
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> gen_time_span_from_days (<span class="keywordtype">double</span> days) -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">  <span class="comment">// Crée un objet TimeSpan et une chaîne TimeSpan à partir</span></div>
-<div class="line">  <span class="comment">// d&#39;un nombre de jours.</span></div>
+<div class="line">  <span class="comment">// Creates a time_span object and a time_span string from a number of days.</span></div>
 <div class="line">  <span class="keyword">auto</span> interval = time_span::from_days(days);</div>
 <div class="line">  <span class="keyword">auto</span> time_interval = interval.to_string();</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Remplit la fin de la chaîne TimeSpan avec des espaces si elle</span></div>
-<div class="line">  <span class="comment">// ne contient pas de millisecondes.</span></div>
+<div class="line">  <span class="comment">// Fills the end of the time_span string with spaces if it does not contain milliseconds.</span></div>
 <div class="line">  <span class="keyword">auto</span> index = time_interval.index_of(<span class="charliteral">&#39;:&#39;</span>);</div>
 <div class="line">  index = time_interval.index_of(<span class="charliteral">&#39;.&#39;</span>, index);</div>
 <div class="line">  <span class="keywordflow">if</span> (index == string::npos) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
@@ -116,11 +114,9 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;This example of time_span::from_days(double)\n&quot;</span></div>
-<div class="line">                      <span class="stringliteral">&quot;generates the following output.\n&quot;</span> );</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
-<div class="line">                      <span class="stringliteral">&quot;from_days&quot;</span>, <span class="stringliteral">&quot;time_span&quot;</span> );</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
-<div class="line">                      <span class="stringliteral">&quot;---------&quot;</span>, <span class="stringliteral">&quot;---------&quot;</span> );</div>
+<div class="line">                      <span class="stringliteral">&quot;generates the following output.\n&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>, <span class="stringliteral">&quot;from_days&quot;</span>, <span class="stringliteral">&quot;time_span&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>, <span class="stringliteral">&quot;---------&quot;</span>, <span class="stringliteral">&quot;---------&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  gen_time_span_from_days(0.000000006);</div>
 <div class="line">  gen_time_span_from_days(0.000000017);</div>
@@ -153,7 +149,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 26 2025 10:55:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 28 2025 05:00:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
