@@ -4,14 +4,14 @@ namespace timer_example {
   class form1 : public form {
   public:
     form1() {
-      label1.parent(*this);
+      label1.parent(self_);
       label1.text("0.0");
       label1.font(drawing::font("Arial", 48, font_style::italic));
       label1.location({10, 10});
       label1.auto_size(true);
       label1.fore_color(color::dodger_blue);
       
-      button1.parent(*this);
+      button1.parent(self_);
       button1.text("Start");
       button1.location({10, 90});
       button1.click += delegate_(object & sender, const event_args & e) {
