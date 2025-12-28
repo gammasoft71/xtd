@@ -10,7 +10,7 @@ public:
     button1.text("Color...");
     button1.click += delegate_ {
       auto color = back_color();
-      if (color_box::show(color, *this) == forms::dialog_result::ok)
+      if (color_box::show(color, self_) == forms::dialog_result::ok)
         back_color(color);
     };
   }
