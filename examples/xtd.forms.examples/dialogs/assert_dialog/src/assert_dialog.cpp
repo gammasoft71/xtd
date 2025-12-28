@@ -12,7 +12,7 @@ public:
     button1.click += delegate_ {
       auto dialog = assert_dialog {};
       dialog.message("Index must be > 0");
-      switch(dialog.show_sheet_dialog(*this)) {
+      switch(dialog.show_sheet_dialog(self_)) {
         case forms::dialog_result::abort: application::exit(); break;
         case forms::dialog_result::retry: diagnostics::debugger::debug_break(); break;
         default: break;
