@@ -17,7 +17,7 @@ public:
       dialog.back_color(xtd::drawing::color::red);
       dialog.fore_color(xtd::drawing::color::white);
       dialog.opacity(0.75);
-      dialog.show(*this);
+      dialog.show(self_);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
         thread::sleep(10);
