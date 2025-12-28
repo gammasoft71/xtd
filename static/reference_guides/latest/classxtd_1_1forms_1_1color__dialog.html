@@ -161,7 +161,7 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_function" href="#ab783ee1342b249792cbf5d279a8db222">color_dialog</a> {};</div>
 <div class="line">      dialog.color(selected_color);</div>
 <div class="line">      dialog.custom_colors(custom_colors);</div>
-<div class="line">      <span class="keywordflow">if</span> (dialog.show_dialog(*<span class="keyword">this</span>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (dialog.show_dialog(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>) == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">forms::dialog_result::ok</a>) {</div>
 <div class="line">        selected_color = dialog.color();</div>
 <div class="line">        color_label.text(color_translator::to_html(selected_color));</div>
 <div class="line">        test_zone.invalidate();</div>
@@ -182,9 +182,9 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  color selected_color = system_colors::control();</div>
 <div class="line">  color_dialog::colors custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::control()};</div>
-<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Color...&quot;</span>, {10, 10});</div>
-<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga5d515deb0a90a03355e9eb4783207c9b">panel</a> test_zone = <a class="code hl_function" href="classxtd_1_1forms_1_1panel.html#a021bc9044b4e6ef3fb8e1ff648632a60">panel::create</a>(*<span class="keyword">this</span>, {10, 50});</div>
-<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a> color_label = <a class="code hl_function" href="classxtd_1_1forms_1_1label.html#a0360050ed100c9ec1c42643d403cd0e8">label::create</a>(*<span class="keyword">this</span>, color_translator::to_html(selected_color), {10, 160});</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a> = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, <span class="stringliteral">&quot;Color...&quot;</span>, {10, 10});</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga5d515deb0a90a03355e9eb4783207c9b">panel</a> test_zone = <a class="code hl_function" href="classxtd_1_1forms_1_1panel.html#a021bc9044b4e6ef3fb8e1ff648632a60">panel::create</a>(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, {10, 50});</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a> color_label = <a class="code hl_function" href="classxtd_1_1forms_1_1label.html#a0360050ed100c9ec1c42643d403cd0e8">label::create</a>(<a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>, color_translator::to_html(selected_color), {10, 160});</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -195,6 +195,7 @@ When you create an instance of <a class="el" href="classxtd_1_1forms_1_1color__d
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html_a0360050ed100c9ec1c42643d403cd0e8"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html#a0360050ed100c9ec1c42643d403cd0e8">xtd::forms::label::create</a></div><div class="ttdeci">static label create()</div><div class="ttdoc">A factory to create an xtd::forms::label.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html_a021bc9044b4e6ef3fb8e1ff648632a60"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html#a021bc9044b4e6ef3fb8e1ff648632a60">xtd::forms::panel::create</a></div><div class="ttdeci">static panel create()</div><div class="ttdoc">A factory to create an xtd::forms::panel.</div></div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga5d515deb0a90a03355e9eb4783207c9b"><div class="ttname"><a href="group__style__sheets.html#ga5d515deb0a90a03355e9eb4783207c9b">xtd::forms::style_sheets::panel</a></div><div class="ttdeci">xtd::forms::style_sheets::control panel</div><div class="ttdoc">The panel data allows you to specify the box of a panel control.</div><div class="ttdef"><b>Definition</b> panel.hpp:25</div></div>
@@ -1065,7 +1066,7 @@ Custom colors can only be defined if allow_full_open is set to <code>true</code>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 28 2025 20:13:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Dec 28 2025 23:08:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
