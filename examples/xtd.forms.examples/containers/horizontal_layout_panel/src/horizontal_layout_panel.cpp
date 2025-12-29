@@ -5,7 +5,7 @@ public:
   form_main() {
     text("Horizontal layout panel example");
     
-    layout_panel.parent(*this);
+    layout_panel.parent(self_);
     layout_panel.controls().add_range({light_pink_panel, light_green_panel, light_blue_panel, light_yellow_panel});
     layout_panel.control_layout_style(light_pink_panel, {30, size_type::absolute, true});
     layout_panel.control_layout_style(light_green_panel, {.70f, size_type::percent, true});
