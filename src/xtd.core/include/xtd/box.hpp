@@ -57,19 +57,19 @@ namespace xtd {
     /// @name Public Aliases
     
     /// @{
-    /// Represents the value type.
+    /// @brief Represents the value type.
     using value_type = type_t;
     
-    /// Represents the reference type.
+    /// @brief Represents the reference type.
     using reference = type_t&;
     
-    /// Represents the cont reference type.
+    /// @brief Represents the cont reference type.
     using const_reference = const type_t&;
     
-    /// Represents the reference type.
+    /// @brief Represents the reference type.
     using pointer = type_t*;
     
-    /// Represents the cont reference type.
+    /// @brief Represents the cont reference type.
     using const_pointer = const type_t*;
     /// @}
     
