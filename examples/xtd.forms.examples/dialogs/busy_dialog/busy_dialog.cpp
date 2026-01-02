@@ -7,7 +7,7 @@ public:
     
     button1.auto_size(true);
     button1.location({10, 10});
-    button1.parent(*this);
+    button1.parent(self_);
     button1.text("Do something...");
     button1.click += delegate_ {
       auto dialog = busy_dialog {};
@@ -17,7 +17,7 @@ public:
       dialog.back_color(xtd::drawing::color::red);
       dialog.fore_color(xtd::drawing::color::white);
       dialog.opacity(0.75);
-      dialog.show(*this);
+      dialog.show(self_);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
         thread::sleep(10);

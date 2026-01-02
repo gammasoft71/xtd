@@ -7,7 +7,7 @@ public:
     
     button1.auto_size(true);
     button1.location({10, 10});
-    button1.parent(*this);
+    button1.parent(self_);
     button1.text("Do something...");
     button1.click += delegate_ {
       busy_box::show("Please wait while do something...", "Application busy");

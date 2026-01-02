@@ -6,7 +6,7 @@ public:
     text("Split container example");
     client_size({300, 300});
     
-    split_container_left.parent(*this);
+    split_container_left.parent(self_);
     split_container_left.dock(dock_style::fill);
     split_container_left.panel1().back_color(color::light_blue);
     split_container_left.splitter_distance(70);

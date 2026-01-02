@@ -4,7 +4,7 @@ namespace application_idle_example {
   class form1 : public form {
   public:
     form1() {
-      application::idle += {*this, &form1::on_application_idle};
+      application::idle += {self_, &form1::on_application_idle};
     }
     
   private:

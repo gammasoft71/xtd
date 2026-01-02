@@ -9,7 +9,7 @@ public:
       auto dialog = color_dialog {};
       dialog.color(selected_color);
       dialog.custom_colors(custom_colors);
-      if (dialog.show_dialog(*this) == forms::dialog_result::ok) {
+      if (dialog.show_dialog(self_) == forms::dialog_result::ok) {
         selected_color = dialog.color();
         color_label.text(color_translator::to_html(selected_color));
         test_zone.invalidate();
@@ -30,9 +30,9 @@ public:
 private:
   color selected_color = system_colors::control();
   color_dialog::colors custom_colors = {color::red, color::green, color::blue, color::yellow, system_colors::control()};
-  button button1 = button::create(*this, "Color...", {10, 10});
-  panel test_zone = panel::create(*this, {10, 50});
-  label color_label = label::create(*this, color_translator::to_html(selected_color), {10, 160});
+  button button1 = button::create(self_, "Color...", {10, 10});
+  panel test_zone = panel::create(self_, {10, 50});
+  label color_label = label::create(self_, color_translator::to_html(selected_color), {10, 160});
 };
 
 auto main() -> int {
