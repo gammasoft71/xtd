@@ -487,7 +487,7 @@ namespace xtd {
     template < class input_iterator_t >
     basic_array(input_iterator_t first, input_iterator_t last) {
       data_->items.assign(first, last);
-      data_->upper_bound.push_back(data_->items.size() - 1);
+      data_->upper_bound[0] = data_->items.size() - 1;
     }
     
     basic_array(const std::vector < type_t >& items) {
