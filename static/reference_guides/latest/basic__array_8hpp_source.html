@@ -376,7 +376,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>    <span class="keyword">template</span> &lt; <span class="keyword">class</span> input_iterator_t &gt;</div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    basic_array(input_iterator_t <a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>) {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      data_-&gt;items.assign(<a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>);</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>      data_-&gt;upper_bound.push_back(data_-&gt;items.size() - 1);</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>      data_-&gt;upper_bound[0] = data_-&gt;items.size() - 1;</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    }</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    </div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    basic_array(<span class="keyword">const</span> std::vector &lt; type_t &gt;&amp; <a class="code hl_function" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>) {</div>
@@ -563,7 +563,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 31 2025 22:36:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 2 2026 00:14:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
