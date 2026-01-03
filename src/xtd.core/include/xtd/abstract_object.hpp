@@ -32,7 +32,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::abstract_object class.
     abstract_object() = default;
     /// @}
-
+    
     /// @cond
     ~abstract_object() override = default;
     /// @endcond
