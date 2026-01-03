@@ -87,7 +87,12 @@ namespace {
   };
 }
 
-const std::tuple<const trace_listener_collection&, const string_dictionary&>& __xtd___read_diagnostics_config__() {
+struct __xtd__diagnostics_config__ final {
+  const trace_listener_collection& listeners;
+  const string_dictionary& switches;
+};
+
+const __xtd__diagnostics_config__& __xtd___read_diagnostics_config__() {
   static auto listeners = trace_listener_collection {};
   static auto switches = string_dictionary {};
   call_once_ {
@@ -128,6 +133,6 @@ const std::tuple<const trace_listener_collection&, const string_dictionary&>& __
     
     if (!listeners.count()) listeners.add(xtd::new_sptr<default_trace_listener>());
   };
-  static auto result = std::tuple<const trace_listener_collection&, const string_dictionary&> {listeners, switches};
+  static auto result = __xtd__diagnostics_config__ {.listeners = listeners, .switches = switches};
   return result;
 }

@@ -9,7 +9,11 @@ using namespace xtd::collections::specialized;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
 
-const std::tuple<const trace_listener_collection&, const string_dictionary&>& __xtd___read_diagnostics_config__();
+struct __xtd__diagnostics_config__ final {
+  const trace_listener_collection& listeners;
+  const string_dictionary& switches;
+};
+const __xtd__diagnostics_config__& __xtd___read_diagnostics_config__();
 
 const switch_object::attribute_collection& switch_object::attributes() const noexcept {
   return attributes_;

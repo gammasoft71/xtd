@@ -8,12 +8,17 @@
 #include <mutex>
 
 using namespace xtd;
+using namespace xtd::collections::specialized;
 using namespace xtd::diagnostics;
 using namespace xtd::reflection;
 
 extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
-const std::tuple<const xtd::diagnostics::trace_listener_collection&, const xtd::collections::specialized::string_dictionary&>& __xtd___read_diagnostics_config__();
+struct __xtd__diagnostics_config__ final {
+  const trace_listener_collection& listeners;
+  const string_dictionary& switches;
+};
+const __xtd__diagnostics_config__& __xtd___read_diagnostics_config__();
 
 trace_listener_collection& trace::listeners_ = __listeners__;
 
