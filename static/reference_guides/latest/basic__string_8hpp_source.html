@@ -1914,6 +1914,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l03114" name="l03114"></a><span class="lineno"> 3114</span><span class="preprocessor">#define __XTD_BASIC_STRING_INTERNAL__</span></div>
 <div class="line"><a id="l03115" name="l03115"></a><span class="lineno"> 3115</span><span class="preprocessor">#include &quot;<a class="code" href="basic__string___8hpp.html">basic_string_.hpp</a>&quot;</span></div>
 <div class="line"><a id="l03116" name="l03116"></a><span class="lineno"> 3116</span><span class="preprocessor">#undef __XTD_BASIC_STRING_INTERNAL__</span></div>
+<div class="line"><a id="l03117" name="l03117"></a><span class="lineno"> 3117</span></div>
+<div class="line"><a id="l03119" name="l03119"></a><span class="lineno"> 3119</span><span class="keyword">namespace </span>std {</div>
+<div class="line"><a id="l03120" name="l03120"></a><span class="lineno"> 3120</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t&gt;</div>
+<div class="line"><a id="l03121" name="l03121"></a><span class="lineno"> 3121</span>  <span class="keyword">struct </span>hash&lt;xtd::basic_string&lt;char_t&gt;&gt; {</div>
+<div class="line"><a id="l03122" name="l03122"></a><span class="lineno"> 3122</span>    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> operator()(<span class="keyword">const</span> xtd::basic_string&lt;char_t&gt;&amp; s) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.get_hash_code();}</div>
+<div class="line"><a id="l03123" name="l03123"></a><span class="lineno"> 3123</span>  };</div>
+<div class="line"><a id="l03124" name="l03124"></a><span class="lineno"> 3124</span>}</div>
 <div class="ttc" id="a____array__definition_8hpp_html"><div class="ttname"><a href="____array__definition_8hpp.html">__array_definition.hpp</a></div><div class="ttdoc">Contains xtd::array definitions.</div></div>
 <div class="ttc" id="a____format__information_8hpp_html"><div class="ttname"><a href="____format__information_8hpp.html">__format_information.hpp</a></div><div class="ttdoc">Contains __format_information struct.</div></div>
 <div class="ttc" id="a____sprintf_8hpp_html"><div class="ttname"><a href="____sprintf_8hpp.html">__sprintf.hpp</a></div><div class="ttdoc">Contains __format method.</div></div>
@@ -2145,7 +2152,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 3 2026 14:25:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 3 2026 18:15:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
