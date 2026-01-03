@@ -1286,7 +1286,6 @@ add_sources(
 )
 add_sources(
   "src/xtd/environment_version.cpp"
-  "src/xtd/abstract.cpp"
   "src/xtd/access_violation_exception.cpp"
   "src/xtd/register_any_stringer.cpp"
   "src/xtd/attribute.cpp"
