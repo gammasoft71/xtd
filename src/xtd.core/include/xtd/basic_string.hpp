@@ -3114,3 +3114,12 @@ namespace xtd {
 #define __XTD_BASIC_STRING_INTERNAL__
 #include "basic_string_.hpp"
 #undef __XTD_BASIC_STRING_INTERNAL__
+
+/// @cond
+namespace std {
+  template<typename char_t>
+  struct hash<xtd::basic_string<char_t>> {
+    xtd::size operator()(const xtd::basic_string<char_t>& s) const noexcept {return s.get_hash_code();}
+  };
+}
+/// @endcond
