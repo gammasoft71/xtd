@@ -33,24 +33,4 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
     default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
   }
 }
-
-template<class value_t>
-inline static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
-
-template<class value_t>
-inline static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {
-  std::stringstream ss;
-  ss << value;
-  return ss.str();
-}
-
-template<class value_t>
-inline static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
-
-template<class value_t>
-inline static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
-  std::wstringstream ss;
-  ss << value;
-  return ss.str();
-}
 /// @endcond

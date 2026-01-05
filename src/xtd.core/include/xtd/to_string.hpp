@@ -10,6 +10,7 @@
 #include "internal/__currency_formatter.hpp"
 #include "internal/__date_time_formatter.hpp"
 #include "internal/__duration_formatter.hpp"
+#include "internal/__enum_formatter.hpp"
 #include "internal/__iformatable_formatter.hpp"
 #include "internal/__floating_point_formatter.hpp"
 #include "internal/__natural_formatter.hpp"
