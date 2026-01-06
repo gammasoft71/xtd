@@ -377,7 +377,7 @@ inline xtd::string xtd::to_string(type_t value, const std::initializer_list<std:
 //inline xtd::string xtd::to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
 //  return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
 //}
-/*
+
 template <std::ranges::range range_t>
 inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
   std::ostringstream oss;
@@ -393,7 +393,6 @@ inline xtd::string to_string(const range_t& values, const xtd::string& fmt, cons
   oss << "]";
   return oss.str();
 }
-*/
 #endif
 
 template<class type_t>
