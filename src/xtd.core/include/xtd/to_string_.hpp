@@ -13,10 +13,16 @@
 #include "to_string.hpp"
 
 /// @cond
+template<class range_t>
+std::string __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
+
 template<class value_t>
 inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) {
   if constexpr (std::is_polymorphic<value_t>()) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr (std::is_enum<value_t>()) return __enum_formatter<char>(fmt, value, loc);
+#if defined(__xtd__cpp_lib_ranges)
+  else if constexpr (std::ranges::range<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_range_to_string(value, fmt, loc);
+#endif
   else if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) {
     auto ss = std::stringstream {};
     ss << value;
@@ -241,6 +247,21 @@ inline std::string __xtd_sequence_container_to_string(const iterator_t& begin, c
   return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";
 }
 
+template<class range_t>
+inline std::string __xtd_range_to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
+  std::ostringstream oss;
+  oss.imbue(loc);
+  oss << "[";
+  bool first = true;
+  for (auto&& v : values) {
+    if (!first) oss << ", ";
+    first = false;
+    oss << xtd::to_string(v, fmt, loc);
+  }
+  oss << "]";
+  return oss.str();
+}
+
 template<class type_t, size_t size>
 inline xtd::string xtd::to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
@@ -373,25 +394,9 @@ inline xtd::string xtd::to_string(type_t value, const std::initializer_list<std:
 }
 
 #if defined(__xtd__cpp_lib_ranges)
-//template <std::ranges::range range_t>
-//inline xtd::string xtd::to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
-//  return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);
-//}
-
 template <std::ranges::range range_t>
 inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc) {
-  std::ostringstream oss;
-  oss.imbue(loc);
-
-  oss << "[";
-  bool first = true;
-  for (auto&& v : values) {
-    if (!first) oss << ", ";
-    first = false;
-    oss << xtd::to_string(v, fmt, loc);
-  }
-  oss << "]";
-  return oss.str();
+  return __xtd_range_to_string(values, fmt, loc);
 }
 #endif
 
