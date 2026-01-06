@@ -134,7 +134,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">inline</span> std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> std::optional&lt;value_t&gt;&amp; value) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> (!value.has_value()) <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(null)&quot;</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> os &lt;&lt; <span class="charliteral">&#39;(&#39;</span> &lt;&lt; value.value() &lt;&lt; <span class="charliteral">&#39;)&#39;</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  } <span class="keywordflow">else</span> <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(unregistered)&quot;</span>;</div>
@@ -306,7 +306,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 6 2026 13:37:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 6 2026 14:12:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
