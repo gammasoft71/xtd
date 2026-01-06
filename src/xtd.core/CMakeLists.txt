@@ -892,7 +892,6 @@ add_sources(
   "include/xtd/internal/__parse.hpp"
   "include/xtd/internal/__polymorphic_comparer.hpp"
   "include/xtd/internal/__polymorphic_equator.hpp"
-  "include/xtd/internal/__polymorphic_hasher.hpp"
   "include/xtd/internal/__polymorphic_lesser.hpp"
   "include/xtd/internal/__print.hpp"
   "include/xtd/internal/__show_generic_exception_message.hpp"

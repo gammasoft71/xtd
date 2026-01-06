@@ -2,10 +2,10 @@
 /// @brief Contains xtd::collections::generic::helpers::hasher struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_CORE_INTERNAL__
-#include "../../../internal/__polymorphic_hasher.hpp"
-#undef __XTD_CORE_INTERNAL__
 #include "../iequality_comparer.hpp"
+#include "../../../object.hpp"
+#include "../../../ihashable.hpp"
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -51,12 +51,19 @@ namespace xtd {
           
           /// @{
           /// @brief Initializes a new instance of the hasher.
-          hasher() = default;
+          hasher() noexcept = default;
           /// @brief Initializes a new instance of the hasher with specified comparer.
           /// @param comparer A comparer used to hash the key.
-          explicit hasher(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
+          explicit hasher(const xtd::collections::generic::iequality_comparer<key_t>& comparer) noexcept : comparer {const_cast<xtd::collections::generic::iequality_comparer<key_t>*>(&comparer)} {}
           /// @}
-          
+
+          /// @cond
+          hasher(const hasher&) noexcept = default;
+          hasher(hasher&&) noexcept = default;
+          hasher& operator=(const hasher&) noexcept = default;
+          hasher& operator=(hasher&&) noexcept = default;
+          /// @endcond
+
           /// @name Public Operators
           
           /// @{
@@ -64,14 +71,17 @@ namespace xtd {
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          auto operator()(const argument_type& key) const -> result_type {
+          auto operator()(const argument_type& key) const noexcept -> result_type {
             if (comparer) return comparer->get_hash_code(key);
-            return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);
+            if constexpr (std::is_polymorphic<argument_type>() && std::is_base_of<xtd::ihashable, argument_type>()) return static_cast<const xtd::ihashable&>(key).get_hash_code();
+            else if constexpr (std::is_polymorphic<argument_type>() && std::is_base_of<xtd::object, argument_type>()) return static_cast<const xtd::object&>(key).get_hash_code();
+            else if constexpr (std::is_invocable<std::hash<argument_type>, const argument_type&>()) return std::hash<argument_type> {}(key);
+            else return std::hash<std::intptr_t> {}(reinterpret_cast<std::intptr_t>(&key));
           }
           /// @}
           
         private:
-          const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
+          xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
         };
       }
     }
