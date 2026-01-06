@@ -1,14 +1,20 @@
 #include <xtd/xtd>
 
 auto main() -> int {
+  auto names = {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   //string names[] = {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
-  //auto names = fixed_array<string, 8> {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
+  //auto names = std::initializer_list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = std::array<string, 8> {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
   //auto names = std::vector {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   //auto names = std::list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = std::unordered_set {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = fixed_array<string, 8> {"Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David"};
   //auto names = array {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   //auto names = list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   //auto names = linked_list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
-  auto names = {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = hash_set {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = queue {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
+  //auto names = stack {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   
   // xtd::linq query
   auto query1 = from(names)
