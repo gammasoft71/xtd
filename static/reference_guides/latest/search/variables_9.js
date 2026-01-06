@@ -30,10 +30,11 @@ var searchData=
   ['ip_5fv6_5fnone_27',['ip_v6_none',['../classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04ddf3bd884f549',1,'xtd::net::ip_address']]],
   ['is_5fbig_5fendian_28',['is_big_endian',['../classxtd_1_1bit__converter.html#a604c4e12079655a803ed3a3e78dde225',1,'xtd::bit_converter']]],
   ['is_5flittle_5fendian_29',['is_little_endian',['../classxtd_1_1bit__converter.html#a163edd918104e0923f51d774809313b9',1,'xtd::bit_converter']]],
-  ['item_5fadded_30',['item_added',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#afadce93d0b8a19c5d61f3b417158747c',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['item_5fcheck_31',['item_check',['../classxtd_1_1forms_1_1checked__list__box.html#a20d2c75ef01e7ab4ca2ba55f69c1481c',1,'xtd::forms::checked_list_box']]],
-  ['item_5fremoved_32',['item_removed',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad37a37d62a7b257ac20274e95a6501f3',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['item_5fupdated_33',['item_updated',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a3ccfbdf5ef99ca06e5c380c2f4de4076',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['ivory_34',['ivory',['../classxtd_1_1drawing_1_1color.html#ad61b49bc957e05fd2ca57b3104f07f40',1,'xtd::drawing::color']]],
-  ['izakaya_5flantern_35',['izakaya_lantern',['../classxtd_1_1forms_1_1emoticons.html#a441cde3d2869900f05a733c32c69c7bd',1,'xtd::forms::emoticons']]]
+  ['is_5fstream_5finsertable_5fv_30',['is_stream_insertable_v',['../namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1',1,'xtd::helpers']]],
+  ['item_5fadded_31',['item_added',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#afadce93d0b8a19c5d61f3b417158747c',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['item_5fcheck_32',['item_check',['../classxtd_1_1forms_1_1checked__list__box.html#a20d2c75ef01e7ab4ca2ba55f69c1481c',1,'xtd::forms::checked_list_box']]],
+  ['item_5fremoved_33',['item_removed',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad37a37d62a7b257ac20274e95a6501f3',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['item_5fupdated_34',['item_updated',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a3ccfbdf5ef99ca06e5c380c2f4de4076',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['ivory_35',['ivory',['../classxtd_1_1drawing_1_1color.html#ad61b49bc957e05fd2ca57b3104f07f40',1,'xtd::drawing::color']]],
+  ['izakaya_5flantern_36',['izakaya_lantern',['../classxtd_1_1forms_1_1emoticons.html#a441cde3d2869900f05a733c32c69c7bd',1,'xtd::forms::emoticons']]]
 ];
