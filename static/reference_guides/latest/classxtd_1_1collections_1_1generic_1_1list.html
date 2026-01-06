@@ -335,14 +335,20 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//string names[] = {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
-<div class="line">  <span class="comment">//auto names = fixed_array&lt;string, 8&gt; {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
+<div class="line">  <span class="comment">//auto names = std::initializer_list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = std::array&lt;string, 8&gt; {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
 <div class="line">  <span class="comment">//auto names = std::vector {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
 <div class="line">  <span class="comment">//auto names = std::list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = std::unordered_set {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = fixed_array&lt;string, 8&gt; {&quot;Burke&quot;, &quot;Connor&quot;, &quot;Frank&quot;, &quot;Everett&quot;, &quot;Albert&quot;, &quot;George&quot;, &quot;Harris&quot;, &quot;David&quot;};</span></div>
 <div class="line">  <span class="comment">//auto names = array {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
 <div class="line">  <span class="comment">//auto names = list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
 <div class="line">  <span class="comment">//auto names = linked_list {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = hash_set {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = queue {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
+<div class="line">  <span class="comment">//auto names = stack {&quot;Burke&quot;_s, &quot;Connor&quot;_s, &quot;Frank&quot;_s, &quot;Everett&quot;_s, &quot;Albert&quot;_s, &quot;George&quot;_s, &quot;Harris&quot;_s, &quot;David&quot;_s};</span></div>
 <div class="line">  <span class="keyword">auto</span> names = {<span class="stringliteral">&quot;Burke&quot;</span>_s, <span class="stringliteral">&quot;Connor&quot;</span>_s, <span class="stringliteral">&quot;Frank&quot;</span>_s, <span class="stringliteral">&quot;Everett&quot;</span>_s, <span class="stringliteral">&quot;Albert&quot;</span>_s, <span class="stringliteral">&quot;George&quot;</span>_s, <span class="stringliteral">&quot;Harris&quot;</span>_s, <span class="stringliteral">&quot;David&quot;</span>_s};</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line">  <span class="comment">// xtd::linq query</span></div>
 <div class="line">  <span class="keyword">auto</span> query1 = from(names)</div>
 <div class="line">    .where(<a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>.length() == 5;})</div>
@@ -6803,7 +6809,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 6 2026 14:12:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 6 2026 22:28:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
