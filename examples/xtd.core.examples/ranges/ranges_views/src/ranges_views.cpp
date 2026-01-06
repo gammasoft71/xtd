@@ -27,12 +27,12 @@ auto main() -> int {
   // std::ranges combined with xtd::ranges query
   auto query3 = names
     | std::views::filter(delegate_(auto s) {return s.length() == 5;})
-    | order_by(delegate_(auto s) {return s;})
+    | xtd::views::order_by(delegate_(auto s) {return s;})
     | std::views::transform(delegate_(auto s) {return s.to_upper();});
   println(query3);
 }
 
-// Console output :
+// This code produces the following output :
 //
 // [BURKE, DAVID, FRANK]
 // [BURKE, DAVID, FRANK]
