@@ -19,21 +19,19 @@ xtdc run
 
 ```
 foo1 standard output :
-  (unregistered)
   42
-  (unregistered)
-  0b(unregistered)
+  exception : One of the identified items was in an invalid format.
+  exception : One of the identified items was in an invalid format.
   0b00101010
 
 foo1 write_line :
-  (unregistered)
+  exception : One of the identified items was in an invalid format.
   42
-  (unregistered)
-  0b(unregistered)
+  exception : One of the identified items was in an invalid format.
+  exception : One of the identified items was in an invalid format.
   0b00101010
 
 foo2 standard output :
-  (unregistered)
   42
   42
   0b00101010
@@ -47,7 +45,7 @@ foo2 write_line :
   0b00101010
 
 foo3 standard output :
-  (unregistered)
+  42
   42
   42
   0b00101010

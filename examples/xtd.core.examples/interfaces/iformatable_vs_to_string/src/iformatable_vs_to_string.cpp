@@ -2,8 +2,8 @@
 
 using namespace xtd::globalization;
 
-// The following simple class generates the invalid result "(unregistered)" with the `xtd::console::write_line` method,
-// and generates the invalid result "(unregistered)" too with output stream.
+// The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,
+// and generates the invalid result "(unregistered)" with output stream.
 // Remarks: You needs to write to_strings methods.
 class foo1 {
 public:
@@ -113,26 +113,50 @@ private:
 auto main() -> int {
   auto f1 = foo1 {42};
   console::out << "foo1 standard output :" << environment::new_line;
-  console::out << "  " << f1 << environment::new_line;
+  //console::out << "  " << f1 << environment::new_line;
   console::out << "  " << f1.to_string() << environment::new_line;
-  console::out << string::format("  {}", f1) << environment::new_line;
-  console::out << string::format("  0b{:b8}", f1) << environment::new_line;
-  console::out << "  0b" << f1.to_string("b8", culture_info::current_culture()) << environment::new_line;
+  try {
+    console::out << string::format("  {}", f1) << environment::new_line;
+  } catch(const format_exception& e) {
+    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
+  try {
+    console::out << string::format("  0b{:b8}", f1) << environment::new_line;
+  } catch(const format_exception& e) {
+    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
+  try {
+    console::out << "  0b" << f1.to_string("b8", culture_info::current_culture()) << environment::new_line;
+  } catch(const format_exception& e) {
+    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
   console::write_line();
   console::write_line("foo1 write_line :");
   console::write("  ");
-  console::write_line(f1);
+  try {
+    console::write_line(f1);
+  } catch(const format_exception& e) {
+    console::out << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
   console::write("  ");
   console::write_line(f1.to_string());
-  console::write_line("  {}", f1);
-  console::write_line("  0b{:b8}", f1);
+  try {
+    console::write_line("  {}", f1);
+  } catch(const format_exception& e) {
+    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
+  try {
+    console::write_line("  0b{:b8}", f1);
+  } catch(const format_exception& e) {
+    console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
+  }
   console::write("  0b");
   console::write_line(f1.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f2 = foo2 {42};
   console::out << "foo2 standard output :" << environment::new_line;
-  console::out << "  " << f2 << environment::new_line;
+  //console::out << "  " << f2 << environment::new_line;
   console::out << "  " << f2.to_string() << environment::new_line;
   console::out << string::format("  {}", f2) << environment::new_line;
   console::out << string::format("  0b{:b8}", f2) << environment::new_line;
@@ -227,7 +251,7 @@ auto main() -> int {
 
   auto f7 = foo7 {42};
   console::out << "foo7 standard output :" << environment::new_line;
-  console::out << "  " << f7 << environment::new_line;
+  //console::out << "  " << f7 << environment::new_line;
   console::out << "  " << f7.to_string() << environment::new_line;
   console::out << string::format("  {}", f7) << environment::new_line;
   console::out << string::format("  0b{:b8}", f7) << environment::new_line;
@@ -248,21 +272,19 @@ auto main() -> int {
 // This code produces the following output :
 //
 // foo1 standard output :
-//   (unregistered)
 //   42
-//   (unregistered)
-//   0b(unregistered)
+//   exception : One of the identified items was in an invalid format.
+//   exception : One of the identified items was in an invalid format.
 //   0b00101010
 //
 // foo1 write_line :
-//   (unregistered)
+//   exception : One of the identified items was in an invalid format.
 //   42
-//   (unregistered)
-//   0b(unregistered)
+//   exception : One of the identified items was in an invalid format.
+//   exception : One of the identified items was in an invalid format.
 //   0b00101010
 //
 // foo2 standard output :
-//   (unregistered)
 //   42
 //   42
 //   0b00101010
@@ -276,7 +298,7 @@ auto main() -> int {
 //   0b00101010
 //
 // foo3 standard output :
-//   (unregistered)
+//   42
 //   42
 //   42
 //   0b00101010
