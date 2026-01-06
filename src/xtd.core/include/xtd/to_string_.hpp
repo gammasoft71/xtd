@@ -9,6 +9,7 @@
 /// @endcond
 
 //#include "globalization/culture_info.hpp"
+#include "helpers/is_stream_insertable.hpp"
 #include "to_string.hpp"
 
 /// @cond
@@ -16,11 +17,11 @@ template<class value_t>
 inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) {
   if constexpr (std::is_polymorphic<value_t>()) return __to_string_polymorphic(value, fmt, loc);
   else if constexpr (std::is_enum<value_t>()) return __enum_formatter<char>(fmt, value, loc);
-  else {
+  else if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) {
     auto ss = std::stringstream {};
     ss << value;
     return ss.str();
-  } //else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  } else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
 }
 
 template<>

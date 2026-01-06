@@ -828,6 +828,8 @@ add_sources(
   "include/xtd/globalization/translator.hpp"
   "include/xtd/helpers/exception_case.hpp"
   "include/xtd/helpers/exception_case"
+  "include/xtd/helpers/is_stream_insertable.hpp"
+  "include/xtd/helpers/is_stream_insertable"
   "include/xtd/helpers/throw_helper.hpp"
   "include/xtd/helpers/throw_helper"
   "include/xtd/extensions/comparison_operators.hpp"

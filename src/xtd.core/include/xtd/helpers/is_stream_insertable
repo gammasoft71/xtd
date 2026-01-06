@@ -1,0 +1,2 @@
+#pragma once
+#include <xtd/helpers/is_stream_insertable.hpp>

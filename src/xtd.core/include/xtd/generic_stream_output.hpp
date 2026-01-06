@@ -2,8 +2,9 @@
 /// @brief Contains generic stream output methods.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <xtd/any>
-#include <xtd/optional>
+#include "helpers/is_stream_insertable.hpp"
+#include "any.hpp"
+#include "optional.hpp"
 #include <array>
 #include <deque>
 #include <stdexcept>
@@ -27,33 +28,17 @@
 /// @cond
 extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 
-/*
-template<class char_t, class char_traits_t, class type_t>
-std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
-  size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
-  os << sizeof(value) << std::basic_string<char_t> {'-', 'b', 'y', 't', 'e', ' ', 'o', 'b', 'j', 'e', 'c', 't', '<'};
-  for (size_t index = 0; index != size; index++)
-    os <<  (index != 0 ? (index % 2 == 0 ? ' ' : '-') : '\0') << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
-  os << (size < sizeof(value) ? std::basic_string<char_t> {'-', '.', '.', '.'} : std::basic_string<char_t> {}) << '>';
-  return os;
-}*/
-
 template<class char_t, class char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::exception& value) {
   return os << "exception: " << value.what();
 }
 
-template < class char_t, class char_traits_t >
-inline std::basic_ostream < char_t, char_traits_t >& operator <<(std::basic_ostream < char_t, char_traits_t >& os, xtd::any value) {
-  auto it = __any_stringer__.find(std::type_index(value.type()));
-  if (it == __any_stringer__.cend()) return os << "(unregistered)";
-  return os << it->second(value);
-}
-
 template<class char_t, class char_traits_t, class value_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
-  if (!value.has_value()) return os << "(null)";
-  return os << '(' << value.value() << ')';
+  if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) {
+    if (!value.has_value()) return os << "(null)";
+    return os << '(' << value.value() << ')';
+  } else return os << "(unregistered)";
 }
 
 template<class char_t, class char_traits_t, class type1_t, class type2_t>
