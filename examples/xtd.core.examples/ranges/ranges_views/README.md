@@ -18,5 +18,7 @@ xtdc run
 ## Output
 
 ```
-numbers = [2, 7, 3, 1, 4, 10, 5, 6, 8, 9]
+[BURKE, DAVID, FRANK]
+[BURKE, DAVID, FRANK]
+[BURKE, DAVID, FRANK]
 ```
