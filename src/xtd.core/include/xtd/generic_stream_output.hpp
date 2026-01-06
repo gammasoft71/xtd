@@ -35,7 +35,7 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
 
 template<class char_t, class char_traits_t, class value_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
-  if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) {
+  if constexpr(xtd::helpers::is_stream_insertable_v<value_t>) {
     if (!value.has_value()) return os << "(null)";
     return os << '(' << value.value() << ')';
   } else return os << "(unregistered)";
