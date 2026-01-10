@@ -2,10 +2,10 @@
 /// @brief Contains xtd::collections::generic::helpers::equator struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_CORE_INTERNAL__
-#include "../../../internal/__polymorphic_equator.hpp"
-#undef __XTD_CORE_INTERNAL__
 #include "../iequality_comparer.hpp"
+#include "../../../object.hpp"
+#include "../../../iequatable.hpp"
+#include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -69,7 +69,10 @@ namespace xtd {
           auto operator()(const first_argument_type& a, const second_argument_type& b) const -> result_type {
             if (&a == &b) return true;
             if (comparer) return comparer->equals(a, b);
-            return __polymorphic_equator__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(a, b);
+            if constexpr(std::is_polymorphic_v<first_argument_type> && std::is_base_of_v<xtd::iequatable<first_argument_type>, first_argument_type>) return static_cast<const xtd::iequatable<first_argument_type>&>(a).equals(b);
+            else if constexpr(std::is_polymorphic_v<first_argument_type> && std::is_base_of_v<xtd::object, first_argument_type>) return static_cast<const xtd::object&>(a).equals(b);
+            else if constexpr(std::equality_comparable<first_argument_type>) return a == b;
+            else return false;
           }
           /// @}
           
