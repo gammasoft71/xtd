@@ -6,6 +6,8 @@
 #include "../../../internal/__polymorphic_comparer.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "../icomparer.hpp"
+#include "../../../int32.hpp"
+#include "../../../helpers/strictly_ordered.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
