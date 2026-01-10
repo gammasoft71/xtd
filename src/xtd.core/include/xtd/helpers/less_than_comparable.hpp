@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Concept less than comparable.
     /// @par Definition
     /// ```cpp
-    /// template<typename T>
+    /// template<typename value_t>
     /// concept less_than_comparable;
     /// ```
     /// @par Header
@@ -24,9 +24,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core helpers
-    template<typename T>
+    template<typename value_t>
     concept less_than_comparable =
-    requires(const T& a, const T& b) {
+    requires(const value_t& a, const value_t& b) {
       { a < b } -> std::convertible_to<bool>;
     };
   }
