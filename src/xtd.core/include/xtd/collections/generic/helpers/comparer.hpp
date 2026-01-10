@@ -28,15 +28,15 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class type_t = void>
+        template<class value_t = void>
         struct comparer {
           /// @name Public Aliases
           
           /// @{
           /// @brief Represents the first argument type.
-          using first_argument_type = type_t;
+          using first_argument_type = value_t;
           /// @brief Represents the second argument type.
-          using second_argument_type = type_t;
+          using second_argument_type = value_t;
           /// @brief Represents the result type.
           using result_type = int32;
           /// @}
@@ -48,7 +48,7 @@ namespace xtd {
           comparer() = default;
           /// @brief Initializes a new instance of the comparer with specified comparer.
           /// @param comparer A comparer used to hash the key.
-          explicit comparer(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_ {&comparer} {}
+          explicit comparer(const xtd::collections::generic::icomparer<value_t>& comparer) : comparer_ {&comparer} {}
           /// @}
           
           /// @name Public Operators
@@ -74,7 +74,7 @@ namespace xtd {
           /// @}
           
         private:
-          const xtd::collections::generic::icomparer<type_t>* comparer_ = nullptr;
+          const xtd::collections::generic::icomparer<value_t>* comparer_ = nullptr;
         };
       }
     }
