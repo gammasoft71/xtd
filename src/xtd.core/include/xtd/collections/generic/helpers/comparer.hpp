@@ -2,10 +2,8 @@
 /// @brief Contains xtd::collections::generic::helpers::comparer struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#define __XTD_CORE_INTERNAL__
-#include "../../../internal/__polymorphic_comparer.hpp"
-#undef __XTD_CORE_INTERNAL__
 #include "../icomparer.hpp"
+#include "../../../icomparable.hpp"
 #include "../../../int32.hpp"
 #include "../../../helpers/strictly_ordered.hpp"
 
@@ -67,8 +65,11 @@ namespace xtd {
           /// | Zero              | x equals y.          |
           /// | Greater than zero | x is greater than y. |
           constexpr auto operator()(const first_argument_type& x, const second_argument_type& y) const -> result_type {
+            if (&x == &y) return 0;
             if (comparer_) return comparer_->compare(x, y);
-            return __polymorphic_comparer__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(x, y);
+            if constexpr(std::is_polymorphic_v<first_argument_type> && std::is_base_of_v<xtd::icomparable<first_argument_type>, first_argument_type>) return static_cast<const xtd::icomparable<first_argument_type>&>(x).compare_to(y);
+            else if constexpr(xtd::helpers::strictly_ordered<first_argument_type>) return x < y ? -1 : (x > y ? 1 : 0);
+            else return &x < &y ? -1 : 1;
           }
           /// @}
           
