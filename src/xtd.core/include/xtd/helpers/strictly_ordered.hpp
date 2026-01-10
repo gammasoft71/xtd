@@ -12,7 +12,7 @@ namespace xtd {
     /// @brief Concept strictly ordered.
     /// @par Definition
     /// ```cpp
-    /// template<typename T>
+    /// template<typename value_t>
     /// concept less_than_comparable;
     /// ```
     /// @par Header
@@ -24,7 +24,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core helpers
-    template<typename T>
-    concept strictly_ordered = less_than_comparable<T> && greater_than_comparable<T>;
+    template<typename value_t>
+    concept strictly_ordered = less_than_comparable<value_t> && greater_than_comparable<value_t>;
   }
 }
