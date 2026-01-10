@@ -15,8 +15,9 @@ var searchData=
   ['graphics_5funit_2ehpp_12',['graphics_unit.hpp',['../graphics__unit_8hpp.html',1,'']]],
   ['gray_5fcolors_2ehpp_13',['gray_colors.hpp',['../gray__colors_8hpp.html',1,'']]],
   ['grayscale_5feffect_2ehpp_14',['grayscale_effect.hpp',['../grayscale__effect_8hpp.html',1,'']]],
-  ['green_5fcolors_2ehpp_15',['green_colors.hpp',['../green__colors_8hpp.html',1,'']]],
-  ['group_5fbox_2ehpp_16',['group_box.hpp',['../group__box_8hpp.html',1,'']]],
-  ['groups_2edox_17',['groups.dox',['../groups_8dox.html',1,'']]],
-  ['guid_2ehpp_18',['guid.hpp',['../guid_8hpp.html',1,'(Global Namespace)'],['../literals_2guid_8hpp.html',1,'(Global Namespace)']]]
+  ['greater_5fthan_5fcomparable_2ehpp_15',['greater_than_comparable.hpp',['../greater__than__comparable_8hpp.html',1,'']]],
+  ['green_5fcolors_2ehpp_16',['green_colors.hpp',['../green__colors_8hpp.html',1,'']]],
+  ['group_5fbox_2ehpp_17',['group_box.hpp',['../group__box_8hpp.html',1,'']]],
+  ['groups_2edox_18',['groups.dox',['../groups_8dox.html',1,'']]],
+  ['guid_2ehpp_19',['guid.hpp',['../guid_8hpp.html',1,'(Global Namespace)'],['../literals_2guid_8hpp.html',1,'(Global Namespace)']]]
 ];

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd::collections::generic::helpers::lesser&lt; type_t &gt; Struct Template Reference</title>
+		<title>xtd: xtd::collections::generic::helpers::lesser&lt; value_t &gt; Struct Template Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -99,59 +99,59 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::collections::generic::helpers::lesser&lt; type_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a> &raquo; <a class="el" href="group__helpers__generic__collections.html">helpers</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::collections::generic::helpers::lesser&lt; value_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a> &raquo; <a class="el" href="group__helpers__generic__collections.html">helpers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t = void&gt;<br />
-struct xtd::collections::generic::helpers::lesser&lt; type_t &gt;</div><p>Implements a function object for compare data. </p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_function" href="#a99e1d49ed0d7090f9307faf10e382dab">lesser</a>;</div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1lesser_html_a99e1d49ed0d7090f9307faf10e382dab"><div class="ttname"><a href="#a99e1d49ed0d7090f9307faf10e382dab">xtd::collections::generic::helpers::lesser::lesser</a></div><div class="ttdeci">lesser()=default</div><div class="ttdoc">Initializes a new instance of the comparer.</div></div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class value_t = void&gt;<br />
+struct xtd::collections::generic::helpers::lesser&lt; value_t &gt;</div><p>Implements a function object for compare data. </p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_function" href="#a81644fb4332f6e956e64dcf1c5246153">lesser</a>;</div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1lesser_html_a81644fb4332f6e956e64dcf1c5246153"><div class="ttname"><a href="#a81644fb4332f6e956e64dcf1c5246153">xtd::collections::generic::helpers::lesser::lesser</a></div><div class="ttdeci">lesser()=default</div><div class="ttdoc">Initializes a new instance of the comparer.</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/helpers/lesser&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic_1_1helpers.html" title="The xtd::collections::generic::helpers namespace contains helpers for generic collections,...">xtd::collections::generic::helpers</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The associative containers <a class="el" href="group__generic__collections.html#gaec2bb22f4e33469ef19e4ad307c1ec4e" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a>, xtd::collections::generic::sorted_multi_set, <a class="el" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a>, xtd::collections::generic::sorted_multi_dictionary use specializations of the template <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html" title="Implements a function object for compare data.">xtd::collections::generic::helpers::lesser</a> as the defaultcompare function. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html" title="Implements a function object for compare data.">xtd::collections::generic::helpers::lesser</a> with <code>std::unordered_map</code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> key_values = std::map&lt;xtd::date_time, xtd::string, xtd::collections::generic::helpers::lesser&lt;xtd::date_time&gt;, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9">xtd::collections::generic::helpers::allocator&lt;xtd::collections::generic::key_value_pair&lt;const xtd::date_time, xtd::string&gt;</a>&gt;&gt; {};</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html" title="Implements a function object for compare data.">xtd::collections::generic::helpers::lesser</a> with <code>std::map</code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> key_values = std::map&lt;xtd::date_time, xtd::string, xtd::collections::generic::helpers::lesser&lt;xtd::date_time&gt;, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9">xtd::collections::generic::helpers::allocator&lt;xtd::collections::generic::key_value_pair&lt;const xtd::date_time, xtd::string&gt;</a>&gt;&gt; {};</div>
 <div class="line">key_values.insert({{1971, 1, 5}, <span class="stringliteral">&quot;Birth date&quot;</span>});</div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gab599dabbf34e1e5238de4589ab6614b9"><div class="ttname"><a href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
-<tr class="memitem:a165de4db3374f7ac7ad7550bde518467" id="r_a165de4db3374f7ac7ad7550bde518467"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a165de4db3374f7ac7ad7550bde518467">first_argument_type</a></td></tr>
-<tr class="memdesc:a165de4db3374f7ac7ad7550bde518467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the first argument type.  <br /></td></tr>
-<tr class="separator:a165de4db3374f7ac7ad7550bde518467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f73db651ab5df554b8fd7cc23a71a31" id="r_a1f73db651ab5df554b8fd7cc23a71a31"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f73db651ab5df554b8fd7cc23a71a31">second_argument_type</a></td></tr>
-<tr class="memdesc:a1f73db651ab5df554b8fd7cc23a71a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the second argument type.  <br /></td></tr>
-<tr class="separator:a1f73db651ab5df554b8fd7cc23a71a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20a76033d1aac6f86a78d6014e73c4a9" id="r_a20a76033d1aac6f86a78d6014e73c4a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20a76033d1aac6f86a78d6014e73c4a9">result_type</a></td></tr>
-<tr class="memdesc:a20a76033d1aac6f86a78d6014e73c4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
-<tr class="separator:a20a76033d1aac6f86a78d6014e73c4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1df021014119967959d8498938cc78" id="r_a3f1df021014119967959d8498938cc78"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f1df021014119967959d8498938cc78">first_argument_type</a></td></tr>
+<tr class="memdesc:a3f1df021014119967959d8498938cc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the first argument type.  <br /></td></tr>
+<tr class="separator:a3f1df021014119967959d8498938cc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb80e887fe200d7a463bd95ea246d4f" id="r_aacb80e887fe200d7a463bd95ea246d4f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacb80e887fe200d7a463bd95ea246d4f">second_argument_type</a></td></tr>
+<tr class="memdesc:aacb80e887fe200d7a463bd95ea246d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the second argument type.  <br /></td></tr>
+<tr class="separator:aacb80e887fe200d7a463bd95ea246d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad543ac82fc408fa193b5067ab9c1778f" id="r_ad543ac82fc408fa193b5067ab9c1778f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad543ac82fc408fa193b5067ab9c1778f">result_type</a></td></tr>
+<tr class="memdesc:ad543ac82fc408fa193b5067ab9c1778f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the result type.  <br /></td></tr>
+<tr class="separator:ad543ac82fc408fa193b5067ab9c1778f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a99e1d49ed0d7090f9307faf10e382dab" id="r_a99e1d49ed0d7090f9307faf10e382dab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e1d49ed0d7090f9307faf10e382dab">lesser</a> ()=default</td></tr>
-<tr class="memdesc:a99e1d49ed0d7090f9307faf10e382dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer.  <br /></td></tr>
-<tr class="separator:a99e1d49ed0d7090f9307faf10e382dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae14ada3d664f085e4dfd0fc5952d7335" id="r_ae14ada3d664f085e4dfd0fc5952d7335"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae14ada3d664f085e4dfd0fc5952d7335">lesser</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">comparer</a>)</td></tr>
-<tr class="memdesc:ae14ada3d664f085e4dfd0fc5952d7335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer with specified comparer.  <br /></td></tr>
-<tr class="separator:ae14ada3d664f085e4dfd0fc5952d7335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81644fb4332f6e956e64dcf1c5246153" id="r_a81644fb4332f6e956e64dcf1c5246153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81644fb4332f6e956e64dcf1c5246153">lesser</a> ()=default</td></tr>
+<tr class="memdesc:a81644fb4332f6e956e64dcf1c5246153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer.  <br /></td></tr>
+<tr class="separator:a81644fb4332f6e956e64dcf1c5246153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981fcc4a2854658de0bafd11cb57ff83" id="r_a981fcc4a2854658de0bafd11cb57ff83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a981fcc4a2854658de0bafd11cb57ff83">lesser</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; value_t &gt; &amp;<a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a981fcc4a2854658de0bafd11cb57ff83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the comparer with specified comparer.  <br /></td></tr>
+<tr class="separator:a981fcc4a2854658de0bafd11cb57ff83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
-<tr class="memitem:adba12bb8772f6ece437cafecbadf21a5" id="r_adba12bb8772f6ece437cafecbadf21a5"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adba12bb8772f6ece437cafecbadf21a5">operator()</a> (const <a class="el" href="#a165de4db3374f7ac7ad7550bde518467">first_argument_type</a> &amp;lhs, const <a class="el" href="#a1f73db651ab5df554b8fd7cc23a71a31">second_argument_type</a> &amp;rhs) const -&gt; <a class="el" href="#a20a76033d1aac6f86a78d6014e73c4a9">result_type</a></td></tr>
-<tr class="memdesc:adba12bb8772f6ece437cafecbadf21a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a specified key with a particular type (type_t).  <br /></td></tr>
-<tr class="separator:adba12bb8772f6ece437cafecbadf21a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105bb0d3664837b1b8b6429ad012e7a2" id="r_a105bb0d3664837b1b8b6429ad012e7a2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105bb0d3664837b1b8b6429ad012e7a2">operator()</a> (const <a class="el" href="#a3f1df021014119967959d8498938cc78">first_argument_type</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, const <a class="el" href="#aacb80e887fe200d7a463bd95ea246d4f">second_argument_type</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>) const -&gt; <a class="el" href="#ad543ac82fc408fa193b5067ab9c1778f">result_type</a></td></tr>
+<tr class="memdesc:a105bb0d3664837b1b8b6429ad012e7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two entities and returns a value indicating whether one is less than the other.  <br /></td></tr>
+<tr class="separator:a105bb0d3664837b1b8b6429ad012e7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a165de4db3374f7ac7ad7550bde518467" name="a165de4db3374f7ac7ad7550bde518467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a165de4db3374f7ac7ad7550bde518467">&#9670;&#160;</a></span>first_argument_type</h2>
+<a id="a3f1df021014119967959d8498938cc78" name="a3f1df021014119967959d8498938cc78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f1df021014119967959d8498938cc78">&#9670;&#160;</a></span>first_argument_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::first_argument_type</td>
+          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::first_argument_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,16 +160,16 @@ template&lt;class type_t = void&gt; </div>
 
 </div>
 </div>
-<a id="a1f73db651ab5df554b8fd7cc23a71a31" name="a1f73db651ab5df554b8fd7cc23a71a31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f73db651ab5df554b8fd7cc23a71a31">&#9670;&#160;</a></span>second_argument_type</h2>
+<a id="aacb80e887fe200d7a463bd95ea246d4f" name="aacb80e887fe200d7a463bd95ea246d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb80e887fe200d7a463bd95ea246d4f">&#9670;&#160;</a></span>second_argument_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::second_argument_type</td>
+          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::second_argument_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,16 +178,16 @@ template&lt;class type_t = void&gt; </div>
 
 </div>
 </div>
-<a id="a20a76033d1aac6f86a78d6014e73c4a9" name="a20a76033d1aac6f86a78d6014e73c4a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20a76033d1aac6f86a78d6014e73c4a9">&#9670;&#160;</a></span>result_type</h2>
+<a id="ad543ac82fc408fa193b5067ab9c1778f" name="ad543ac82fc408fa193b5067ab9c1778f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad543ac82fc408fa193b5067ab9c1778f">&#9670;&#160;</a></span>result_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::result_type</td>
+          <td class="memname">using <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::result_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,19 +197,19 @@ template&lt;class type_t = void&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a99e1d49ed0d7090f9307faf10e382dab" name="a99e1d49ed0d7090f9307faf10e382dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99e1d49ed0d7090f9307faf10e382dab">&#9670;&#160;</a></span>lesser() <span class="overload">[1/2]</span></h2>
+<a id="a81644fb4332f6e956e64dcf1c5246153" name="a81644fb4332f6e956e64dcf1c5246153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81644fb4332f6e956e64dcf1c5246153">&#9670;&#160;</a></span>lesser() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::lesser </td>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::lesser </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -226,21 +226,21 @@ template&lt;class type_t = void&gt; </div>
 
 </div>
 </div>
-<a id="ae14ada3d664f085e4dfd0fc5952d7335" name="ae14ada3d664f085e4dfd0fc5952d7335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae14ada3d664f085e4dfd0fc5952d7335">&#9670;&#160;</a></span>lesser() <span class="overload">[2/2]</span></h2>
+<a id="a981fcc4a2854658de0bafd11cb57ff83" name="a981fcc4a2854658de0bafd11cb57ff83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981fcc4a2854658de0bafd11cb57ff83">&#9670;&#160;</a></span>lesser() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::lesser </td>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::lesser </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; value_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -262,26 +262,26 @@ template&lt;class type_t = void&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adba12bb8772f6ece437cafecbadf21a5" name="adba12bb8772f6ece437cafecbadf21a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adba12bb8772f6ece437cafecbadf21a5">&#9670;&#160;</a></span>operator()()</h2>
+<a id="a105bb0d3664837b1b8b6429ad012e7a2" name="a105bb0d3664837b1b8b6429ad012e7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105bb0d3664837b1b8b6429ad012e7a2">&#9670;&#160;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t = void&gt; </div>
+template&lt;class value_t = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; type_t &gt;::operator() </td>
+          <td class="memname">auto <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">xtd::collections::generic::helpers::lesser</a>&lt; value_t &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a165de4db3374f7ac7ad7550bde518467">first_argument_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="#a3f1df021014119967959d8498938cc78">first_argument_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="#a1f73db651ab5df554b8fd7cc23a71a31">second_argument_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;) const -&gt; <a class="el" href="#a20a76033d1aac6f86a78d6014e73c4a9">result_type</a> </td>
+          <td class="paramtype">const <a class="el" href="#aacb80e887fe200d7a463bd95ea246d4f">second_argument_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const -&gt; <a class="el" href="#ad543ac82fc408fa193b5067ab9c1778f">result_type</a> </td>
         </tr>
       </table>
   </td>
@@ -291,15 +291,15 @@ template&lt;class type_t = void&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Serves as a hash function for a specified key with a particular type (type_t). </p>
+<p>Compares two entities and returns a value indicating whether one is less than the other. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>The key to hash. </td></tr>
+    <tr><td class="paramname">x</td><td>The first entity to compare. </td></tr>
+    <tr><td class="paramname">y</td><td>The second entity to compare. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A hash code for the spesified key. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If key_t inherits from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508" title="Serves as a hash function for a particular type.">xtd::object::get_hash_code</a> method will be used; otherwise, the <a href="https://en.cppreference.com/w/cpp/utility/hash">std::hash</a> object function will be used. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true is x less than y; otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -310,7 +310,7 @@ template&lt;class type_t = void&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 9 2026 15:38:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 10 2026 18:38:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
