@@ -17,7 +17,7 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be xtd::any_object.
         /// ```cpp
-        /// template<class key_t>
+        /// template<class value_t>
         /// struct equator;
         /// ```
         /// @par Header
@@ -35,15 +35,15 @@ namespace xtd {
         /// auto key_values = std::unordered_map<xtd::date_time, xtd::string, xtd::collections::generic::helpers::hasher<xtd::date_time>, xtd::collections::generic::helpers::equator<xtd::date_time>, xtd::collections::generic::helpers::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::string>>> {};
         /// key_values.insert({{1971, 1, 5}, "Birth date"});
         /// ```
-        template<class key_t>
+        template<class value_t>
         struct equator {
           /// @name Public Aliases
           
           /// @{
           /// @brief Represents the first argument type.
-          using first_argument_type = key_t;
+          using first_argument_type = value_t;
           /// @brief Represents the second argument type.
-          using second_argument_type = key_t;
+          using second_argument_type = value_t;
           /// @brief Represents the result type.
           using result_type = bool;
           /// @}
@@ -55,7 +55,7 @@ namespace xtd {
           equator() = default;
           /// @brief Initializes a new instance of the hasher with specified comparer.
           /// @param comparer A comparer used to hash the key.
-          explicit equator(const xtd::collections::generic::iequality_comparer<key_t>& comparer) : comparer {&comparer} {}
+          explicit equator(const xtd::collections::generic::iequality_comparer<value_t>& comparer) : comparer {&comparer} {}
           /// @}
           
           /// @name Public Operators
@@ -65,7 +65,7 @@ namespace xtd {
           /// @param a The first key to check.
           /// @param b The second key to check.
           /// @return `true` if keys are equals; otherwise `false`.
-          /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
+          /// @remarks If value_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           auto operator()(const first_argument_type& a, const second_argument_type& b) const -> result_type {
             if (&a == &b) return true;
             if (comparer) return comparer->equals(a, b);
@@ -77,7 +77,7 @@ namespace xtd {
           /// @}
           
         private:
-          const xtd::collections::generic::iequality_comparer<key_t>* comparer = nullptr;
+          const xtd::collections::generic::iequality_comparer<value_t>* comparer = nullptr;
         };
       }
     }
