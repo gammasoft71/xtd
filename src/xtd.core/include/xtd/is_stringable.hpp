@@ -32,13 +32,13 @@ namespace xtd {
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not stringable.
   template<class value_t>
   concept is_stringable =
-  std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
-  std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable> ||
-  std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> ||
-  std::derived_from<std::remove_cvref_t<value_t>, std::exception> ||
-  std::is_enum_v<std::remove_cvref_t<value_t>> ||
-#if defined(__xtd__cpp_lib_ranges)
-  std::ranges::range<std::remove_cvref_t<value_t>> ||
-#endif
-  xtd::helpers::is_stream_insertable_v<std::remove_cvref_t<value_t>>;
+    std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
+    std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable> ||
+    std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> ||
+    std::derived_from<std::remove_cvref_t<value_t>, std::exception> ||
+    std::is_enum_v<std::remove_cvref_t<value_t>> ||
+    #if defined(__xtd__cpp_lib_ranges)
+    std::ranges::range<std::remove_cvref_t<value_t>> ||
+    #endif
+    xtd::helpers::is_stream_insertable_v<std::remove_cvref_t<value_t>>;
 }
