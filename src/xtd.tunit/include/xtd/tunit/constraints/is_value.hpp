@@ -102,13 +102,13 @@ namespace xtd {
           return operator_value<actual_t>(self_);
         }
         
-        /// @brief Asserts that value is true.
+        /// @brief Asserts that value is false.
         /// @param stack_frame Contains information about current file and current line.
         /// @exception xtd::tunit::assert_error If bad assertion.
         /// @par Examples
         /// ```cpp
-        /// auto v1 = true;
-        /// auto v2 = false;
+        /// auto v1 = false;
+        /// auto v2 = true;
         /// valid_that(v1).is().false_(); // test ok.
         /// assert_that(v2).is().false_(); // test throws an assert_error exception.
         /// ```
@@ -118,14 +118,14 @@ namespace xtd {
           else xtd::tunit::assume::is_false(actual_value<actual_t>::actual(), stack_frame);
           return operator_value<actual_t>(self_);
         }
-        /// @brief Asserts that value is true and specified user message.
+        /// @brief Asserts that value is false and specified user message.
         /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
         /// @param stack_frame Contains information about current file and current line.
         /// @exception xtd::tunit::assert_error If bad assertion.
         /// @par Examples
         /// ```cpp
-        /// auto v1 = true;
-        /// auto v2 = false;
+        /// auto v1 = false;
+        /// auto v2 = true;
         /// valid_that(v1).is().false_("User message..."); // test ok.
         /// assert_that(v2).is().false_("User message..."); // test throws an assert_error exception.
         /// ```
