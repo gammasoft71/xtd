@@ -138,7 +138,7 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line">      <span class="keyword">auto</span> txt_files = <a class="code hl_function" href="#a33fc22b50dbb33fe9fc338b4726713f6">directory::enumerate_files</a>(source_directory, <span class="stringliteral">&quot;*.txt&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">string</span> current_file : txt_files) {</div>
-<div class="line">        <span class="keywordtype">string</span> file_name = current_file.substring(source_directory.length() + 1);</div>
+<div class="line">        <span class="keywordtype">string</span> file_name = current_file.substring(source_directory.<a class="code hl_function" href="classxtd_1_1basic__string.html#ab3cc660de2ee37f52e9251cb1587e56e">length</a>() + 1);</div>
 <div class="line">        <a class="code hl_function" href="#a4a78c760fbcf159d5b2848bf17d3c23b">directory::move</a>(current_file, <a class="code hl_function" href="classxtd_1_1io_1_1path.html#ae64bf12dad2f160ad85a951b9d011023">path::combine</a>(archive_directory, file_name));</div>
 <div class="line">      }</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<a class="code hl_class" href="classxtd_1_1exception.html">exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
@@ -148,6 +148,7 @@ Inheritance diagram for xtd::io::directory:</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_ab3cc660de2ee37f52e9251cb1587e56e"><div class="ttname"><a href="classxtd_1_1basic__string.html#ab3cc660de2ee37f52e9251cb1587e56e">xtd::basic_string::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:381</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a33fc22b50dbb33fe9fc338b4726713f6"><div class="ttname"><a href="#a33fc22b50dbb33fe9fc338b4726713f6">xtd::io::directory::enumerate_files</a></div><div class="ttdeci">static xtd::io::directory::file_iterator enumerate_files(const xtd::string &amp;path)</div><div class="ttdoc">Returns an enumerable collection of full file names in a specified path.</div></div>
@@ -3284,7 +3285,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 10 2026 22:00:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 11 2026 04:51:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

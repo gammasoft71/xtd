@@ -145,7 +145,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
@@ -156,6 +156,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Ola Mundo!</span></div>
 <div class="line"><span class="comment">// What is your name: James</span></div>
 <div class="line"><span class="comment">// Buenos Dias, James!</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a0ae9e9b0cbe9df3f4fc03f7e4682ef2e"><div class="ttname"><a href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::basic_string&lt; char &gt;::empty_string</a></div><div class="ttdeci">static const basic_string empty_string</div><div class="ttdef"><b>Definition</b> basic_string.hpp:112</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:47</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
@@ -1458,7 +1459,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; in the first column to show \n&quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;the cursor, &#39;-&#39; to hide the cursor, &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;or lowercase &#39;x&#39; to quit:&quot;</span>_s;</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_visibile = <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>();</div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_size = <a class="code hl_function" href="#a8e1659ecf422f01fd2c88de0c38c3668">console::cursor_size</a>();</div>
@@ -1468,7 +1469,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line">    <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, ((<a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
 <div class="line">        <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
@@ -1514,7 +1515,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Type any text then press Enter. Type &#39;+&#39; in the first column to show</span></div>
 <div class="line"><span class="comment">// the cursor, &#39;-&#39; to hide the cursor, or lowercase &#39;x&#39; to quit:</span></div>
 <div class="line"><span class="comment">// x</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_ab4bdd160233334a9b7d36af486906d4b"><div class="ttname"><a href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">static bool is_empty(const xtd::basic_string&lt; value_type, traits_type, allocator_type &gt; &amp;string) noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1693</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:3035</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae45a442bc3942b2270998ae8c574abe9"><div class="ttname"><a href="#ae45a442bc3942b2270998ae8c574abe9">xtd::console::cursor_visible</a></div><div class="ttdeci">static bool cursor_visible()</div><div class="ttdoc">Gets a value indicating whether the cursor is visible.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1557,7 +1558,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; in the first column to show \n&quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;the cursor, &#39;-&#39; to hide the cursor, &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;or lowercase &#39;x&#39; to quit:&quot;</span>_s;</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_visibile = <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>();</div>
 <div class="line">  <span class="keyword">auto</span> save_cursor_size = <a class="code hl_function" href="#a8e1659ecf422f01fd2c88de0c38c3668">console::cursor_size</a>();</div>
@@ -1567,7 +1568,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line">  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line">    <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, ((<a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#ab4bdd160233334a9b7d36af486906d4b">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
 <div class="line">        <a class="code hl_function" href="#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
@@ -3950,7 +3951,7 @@ template&lt;class ... args_t&gt; </div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
@@ -3994,7 +3995,7 @@ template&lt;class ... args_t&gt; </div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
-<div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> name = <a class="code hl_variable" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">string::empty_string</a>;</div>
 <div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
@@ -4053,7 +4054,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 10 2026 22:00:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 11 2026 04:51:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
