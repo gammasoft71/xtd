@@ -6,7 +6,7 @@ class program {
 public:
   static auto main() {
     auto local_date = date_time::now();
-    auto culture_names = array {"en-US", "en-GB", "fr-FR", "de-DE", "ru-RU"};
+    auto culture_names = {"en-US", "en-GB", "fr-FR", "de-DE", "ru-RU"};
     
     for (auto culture_name : culture_names) {
       auto culture = culture_info {culture_name};
