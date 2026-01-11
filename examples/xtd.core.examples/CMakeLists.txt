@@ -10,6 +10,7 @@ add_projects(
   bit_converter
   boxing
   collections
+  concepts
   configuration
   console
   convert

@@ -46,6 +46,10 @@
 * [ienumerator](collections/ienumerator/README.md) shows how to use [xtd::collections::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506) interface.
 * [ilist](collections/ilist/README.md) shows how to use [xtd::collections::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4) interface.
 
+## [Concepts](concepts/README.md)
+
+* [is_stringable](concepts/is_stringable/README.md) shows how to use how to use [xtd::is_stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1is__stringable.html) concept.
+
 ## [Configuration](configuration/README.md)
 
 * [file_settings](configuration/file_settings/README.md) shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1configuration_1_1file__settings.html) object.
