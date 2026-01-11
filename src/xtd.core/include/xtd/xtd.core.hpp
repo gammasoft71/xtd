@@ -418,6 +418,7 @@
 #include "iobserver.hpp"
 #include "iprogress.hpp"
 #include "is.hpp"
+#include "is_stringable.hpp"
 #include "istringable.hpp"
 #include "keywords.hpp"
 #include "language_id.hpp"

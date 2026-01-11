@@ -315,6 +315,8 @@ add_sources(
   "include/xtd/iprogress"
   "include/xtd/is.hpp"
   "include/xtd/is"
+  "include/xtd/is_stringable.hpp"
+  "include/xtd/is_stringable"
   "include/xtd/istringable.hpp"
   "include/xtd/istringable"
   "include/xtd/isynchronize_invoke.hpp"
