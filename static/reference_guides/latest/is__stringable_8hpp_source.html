@@ -114,15 +114,15 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="conceptxtd_1_1is__stringable.html">   34</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1is__stringable.html">is_stringable</a> =</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>&gt; ||</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1istringable.html">xtd::istringable</a>&gt; ||</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1iformatable.html">xtd::iformatable</a>&gt; ||</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, std::exception&gt; ||</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt; ||</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#if defined(__xtd__cpp_lib_ranges)</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  std::ranges::range&lt;std::remove_cvref_t&lt;value_t&gt;&gt; ||</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;std::remove_cvref_t&lt;value_t&gt;</a>&gt;;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>&gt; ||</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1istringable.html">xtd::istringable</a>&gt; ||</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, <a class="code hl_class" href="classxtd_1_1iformatable.html">xtd::iformatable</a>&gt; ||</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::derived_from&lt;std::remove_cvref_t&lt;value_t&gt;, std::exception&gt; ||</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt; ||</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    #if defined(__xtd__cpp_lib_ranges)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::ranges::range&lt;std::remove_cvref_t&lt;value_t&gt;&gt; ||</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;std::remove_cvref_t&lt;value_t&gt;</a>&gt;;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 <div class="ttc" id="a____xtd__std__version_8hpp_html"><div class="ttname"><a href="____xtd__std__version_8hpp.html">__xtd_std_version.hpp</a></div><div class="ttdoc">Contains __xtd_std_version definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
@@ -132,14 +132,14 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aiformatable_8hpp_html"><div class="ttname"><a href="iformatable_8hpp.html">iformatable.hpp</a></div><div class="ttdoc">Contains xtd::iformatable interface.</div></div>
 <div class="ttc" id="ais__stream__insertable_8hpp_html"><div class="ttname"><a href="is__stream__insertable_8hpp.html">is_stream_insertable.hpp</a></div><div class="ttdoc">Contains xtd::helpers::is_stream_insertable struct and is_stream_insertable_v struct.</div></div>
 <div class="ttc" id="aistringable_8hpp_html"><div class="ttname"><a href="istringable_8hpp.html">istringable.hpp</a></div><div class="ttdoc">Contains xtd::istringable interface.</div></div>
-<div class="ttc" id="anamespacextd_1_1helpers_html_ad486ecb6deeeeccd083816a64f5588c1"><div class="ttname"><a href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v</a></div><div class="ttdeci">constexpr bool is_stream_insertable_v</div><div class="ttdoc">Convenience variable template equivalent to is_stream_insertable&lt;value_t&gt;::value. This helper allows ...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:67</div></div>
+<div class="ttc" id="anamespacextd_1_1helpers_html_ad486ecb6deeeeccd083816a64f5588c1"><div class="ttname"><a href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v</a></div><div class="ttdeci">constexpr bool is_stream_insertable_v</div><div class="ttdoc">Convenience variable template equivalent to is_stream_insertable&lt;value_t&gt;::value. This helper allows ...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:89</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains xtd::object class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 18:29:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 11 2026 21:26:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

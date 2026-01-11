@@ -255,10 +255,10 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#aeb7d506d2678b798fc86d75ea35c069c">  264</a></span>    result_t <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#aeb7d506d2678b798fc86d75ea35c069c">operator()</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      <span class="keywordflow">if</span> (data_-&gt;functions.size() == 0) {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_reference_v &lt; result_t &gt;) {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v &lt; result_t &gt;) {</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t &lt; result_t &gt;;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_const_v &lt; underlying_t &gt;) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v &lt; underlying_t &gt;) {</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keyword">static</span> <span class="keyword">const</span> underlying_t empty_value{};</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <span class="keywordflow">return</span> empty_value;</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>          } <span class="keywordflow">else</span> {</div>
@@ -629,10 +629,10 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00741" data-start="{" data-end="}">
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno"><a class="line" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html#a22e01da6cfa39bb83e146bc4d268d722">  741</a></span>    result_t <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html#a22e01da6cfa39bb83e146bc4d268d722">operator()</a>(arguments_t... arguments)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>      <span class="keywordflow">if</span> (data_-&gt;no_arguments_functions.size() == 0 &amp;&amp; data_-&gt;functions.size() == 0) {</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_reference_v &lt; result_t &gt;) {</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v &lt; result_t &gt;) {</div>
 <div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t &lt; result_t &gt;;</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_const_v &lt; underlying_t &gt;) {</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v &lt; underlying_t &gt;) {</div>
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>            <span class="keyword">static</span> <span class="keyword">const</span> underlying_t empty_value{};</div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>            <span class="keywordflow">return</span> empty_value;</div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>          } <span class="keywordflow">else</span> {</div>
@@ -893,7 +893,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 18:29:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 11 2026 21:26:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
