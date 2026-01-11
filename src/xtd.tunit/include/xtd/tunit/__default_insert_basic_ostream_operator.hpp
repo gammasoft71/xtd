@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include <algorithm>
 #include <array>
 #include <cstdint>
 #include <deque>
@@ -31,74 +32,44 @@
 #include <xtd/optional>
 #include <xtd/target_id>
 #include <xtd/string>
+#include <xtd/helpers/is_stream_insertable>
 
 /// @cond
-template<class type_t> struct __tunit_is_printable : std::false_type {};
-template<> struct __tunit_is_printable<bool> : std::true_type {};
-template<> struct __tunit_is_printable<char> : std::true_type {};
-template<> struct __tunit_is_printable<signed char> : std::true_type {};
-template<> struct __tunit_is_printable<unsigned char> : std::true_type {};
-template<> struct __tunit_is_printable<wchar_t> : std::true_type {};
-template<> struct __tunit_is_printable<xtd::char8> : std::true_type {};
-template<> struct __tunit_is_printable<xtd::char16> : std::true_type {};
-template<> struct __tunit_is_printable<xtd::char32> : std::true_type {};
-template<> struct __tunit_is_printable<short> : std::true_type {};
-template<> struct __tunit_is_printable<unsigned short> : std::true_type {};
-template<> struct __tunit_is_printable<int> : std::true_type {};
-template<> struct __tunit_is_printable<unsigned int> : std::true_type {};
-template<> struct __tunit_is_printable<long> : std::true_type {};
-template<> struct __tunit_is_printable<unsigned long> : std::true_type {};
-template<> struct __tunit_is_printable<long long> : std::true_type {};
-template<> struct __tunit_is_printable<unsigned long long> : std::true_type {};
-template<> struct __tunit_is_printable<const char*> : std::true_type {};
-template<> struct __tunit_is_printable<const wchar_t*> : std::true_type {};
-template<> struct __tunit_is_printable<float> : std::true_type {};
-template<> struct __tunit_is_printable<double> : std::true_type {};
-template<> struct __tunit_is_printable<long double> : std::true_type {};
-template<> struct __tunit_is_printable<std::string> : std::true_type {};
-template<> struct __tunit_is_printable<xtd::string> : std::true_type {};
-template<> struct __tunit_is_printable<std::u8string> : std::true_type {};
-template<> struct __tunit_is_printable<std::u16string> : std::true_type {};
-template<> struct __tunit_is_printable<std::u32string> : std::true_type {};
-template<> struct __tunit_is_printable<std::wstring> : std::true_type {};
+template<class char_t, class char_traits_t, class value_t>
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
+  if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) os.operator << (value);
+  else {
+    auto size = std::min(sizeof(value), size_t {32});
+    os << size << "-byte object <";
+    for (size_t index = 0; index != size; index++)
+      os << (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
+    os << (size < sizeof(value) ? "-..." : "") << ">";
+  }
+}
 
 template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::true_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
   os.operator << (value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value, std::true_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
   os.operator << (value);
-}
-
-template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value, std::true_type) {
-  os.operator << (value);
-}
-
-template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::false_type) {
-  size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
-  os << size << "-byte object <";
-  for (size_t index = 0; index != size; index++)
-    os << (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
-  os << (size < sizeof(value) ? "-..." : "") << ">";
 }
 
 template<class char_t, class char_traits_t, class value_t>
 inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
-  __tunit_print_value(os, value, __tunit_is_printable<value_t>());
+  __tunit_print_value(os, value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
 inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
-  __tunit_print_value(os, value, __tunit_is_printable<value_t>());
+  __tunit_print_value(os, value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
 inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
-  __tunit_print_value(os, value, __tunit_is_printable<value_t>());
+  __tunit_print_value(os, value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
