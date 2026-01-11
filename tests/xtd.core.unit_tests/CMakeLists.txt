@@ -249,6 +249,7 @@ add_sources(
   "src/xtd/tests/invalid_cast_exception_tests.cpp"
   "src/xtd/tests/invalid_operation_exception_tests.cpp"
   "src/xtd/tests/invalid_program_exception_tests.cpp"
+  "src/xtd/tests/is_stringable_tests.cpp"
   "src/xtd/tests/is_tests.cpp"
   "src/xtd/tests/language_id_tests.cpp"
   "src/xtd/tests/length_exception_tests.cpp"
