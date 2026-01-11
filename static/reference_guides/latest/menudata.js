@@ -136,7 +136,6 @@ var menudata={children:[
 {text:"v",url:"functions_type_v.html#index_v"},
 {text:"x",url:"functions_type_x.html#index_x"}]},
 {text:"Enumerations",url:"functions_enum.html"},
-{text:"Related Symbols",url:"functions_rela.html",children:[
-{text:"o",url:"functions_rela.html#index_o"}]}]}]},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html"},
 {text:"Examples",url:"examples.html"}]}
