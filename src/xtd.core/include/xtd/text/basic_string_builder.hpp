@@ -39,7 +39,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the basic string base type.
-      /// @remarks Is equal to `std::basic_string<char_t, traits_t, allocator_t>`.`
+      /// @remarks Is equal to `std::basic_string<char_t, traits_t, allocator_t>`.
       using base_type = std::basic_string<char_t, traits_t, allocator_t>;
       /// @brief Represents the basic string traits type.
       using traits_type = typename base_type::traits_type;
