@@ -45,7 +45,7 @@ namespace xtd::tests {
     
     auto test_method_(value_type) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string<char_t>::value_type>());
     }
     
@@ -63,25 +63,25 @@ namespace xtd::tests {
     
     auto test_method_(reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string<char_t>::reference>());
     }
     
     auto test_method_(const_reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string<char_t>::const_reference>());
     }
     
     auto test_method_(pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string<char_t>::pointer>());
     }
     
     auto test_method_(const_pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string<char_t>::const_pointer>());
     }
     
@@ -319,7 +319,7 @@ namespace xtd::tests {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
       assert::is_empty(basic_string<char_t> {}.chars().c_str());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.chars().c_str());
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else {
         assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.chars().c_str()));
         assert::is_empty(basic_string<char_t> {}.chars().c_str());
@@ -359,7 +359,7 @@ namespace xtd::tests {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
       assert::is_empty(basic_string<char_t> {}.data());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data());
-      if constexpr (std::is_same<char_t, char8>::value) return;
+      if constexpr(std::is_same<char_t, char8>::value) return;
       else {
         assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.data()));
         assert::is_empty(basic_string<char_t> {}.data());
@@ -1405,42 +1405,42 @@ namespace xtd::tests {
     }
     
     auto test_method_(sprintf_char) {
-      if constexpr (std::is_same<char_t, char16>::value) return;
-      else if constexpr (std::is_same<char_t, char32>::value) return;
-      else if constexpr (std::is_same<char_t, char8>::value) return;
-      else if constexpr (std::is_same<char_t, wchar>::value) return;
+      if constexpr(std::is_same<char_t, char16>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf("%s", "A test string to test"));
     }
     
     auto test_method_(sprintf_char16) {
-      if constexpr (std::is_same<char_t, char16>::value) return;
-      else if constexpr (std::is_same<char_t, char32>::value) return;
-      else if constexpr (std::is_same<char_t, char8>::value) return;
-      else if constexpr (std::is_same<char_t, wchar>::value) return;
+      if constexpr(std::is_same<char_t, char16>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u"%s", "A test string to test"));
     }
     
     auto test_method_(sprintf_char32) {
-      if constexpr (std::is_same<char_t, char16>::value) return;
-      else if constexpr (std::is_same<char_t, char32>::value) return;
-      else if constexpr (std::is_same<char_t, char8>::value) return;
-      else if constexpr (std::is_same<char_t, wchar>::value) return;
+      if constexpr(std::is_same<char_t, char16>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(U"%s", "A test string to test"));
     }
     
     auto test_method_(sprintf_char8) {
-      if constexpr (std::is_same<char_t, char16>::value) return;
-      else if constexpr (std::is_same<char_t, char32>::value) return;
-      else if constexpr (std::is_same<char_t, char8>::value) return;
-      else if constexpr (std::is_same<char_t, wchar>::value) return;
+      if constexpr(std::is_same<char_t, char16>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u8"%s", "A test string to test"));
     }
     
     auto test_method_(sprintf_wchar) {
-      if constexpr (std::is_same<char_t, char16>::value) return;
-      else if constexpr (std::is_same<char_t, char32>::value) return;
-      else if constexpr (std::is_same<char_t, char8>::value) return;
-      else if constexpr (std::is_same<char_t, wchar>::value) return;
+      if constexpr(std::is_same<char_t, char16>::value) return;
+      else if constexpr(std::is_same<char_t, char32>::value) return;
+      else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr(std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(L"%s", "A test string to test"));
     }
     

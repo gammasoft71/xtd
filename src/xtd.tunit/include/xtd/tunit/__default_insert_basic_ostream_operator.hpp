@@ -37,7 +37,7 @@
 /// @cond
 template<class char_t, class char_traits_t, class value_t>
 inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
-  if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) os.operator << (value);
+  if constexpr(xtd::helpers::is_stream_insertable_v<value_t>) os.operator << (value);
   else {
     auto size = std::min(sizeof(value), size_t {32});
     os << size << "-byte object <";

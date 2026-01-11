@@ -12,7 +12,7 @@ inline std::pair<const std::type_index, std::function<std::string(xtd::any const
   return {
     std::type_index(typeid(type_t)),
     [f = func](xtd::any const & value)->std::string {
-      if constexpr (std::is_void_v<type_t>) return f();
+      if constexpr(std::is_void_v<type_t>) return f();
       else return f(xtd::any_cast<const type_t&>(value));
     }
   };

@@ -18,12 +18,12 @@ std::string __xtd_range_to_string(const range_t& values, const xtd::string& fmt,
 
 template<class value_t>
 inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc) {
-  if constexpr (std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
-  else if constexpr (std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
+  if constexpr(std::is_polymorphic_v<value_t>) return __to_string_polymorphic(value, fmt, loc);
+  else if constexpr(std::is_enum_v<value_t>) return __enum_formatter<char>(fmt, value, loc);
   #if defined(__xtd__cpp_lib_ranges)
-  else if constexpr (std::ranges::range<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_range_to_string(value, fmt, loc);
+  else if constexpr(std::ranges::range<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_range_to_string(value, fmt, loc);
   #endif
-  else if constexpr (xtd::helpers::is_stream_insertable_v<value_t>) {
+  else if constexpr(xtd::helpers::is_stream_insertable_v<value_t>) {
     auto ss = std::stringstream {};
     ss << value;
     return ss.str();

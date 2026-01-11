@@ -53,8 +53,8 @@ namespace xtd {
     /// @tparam value_t The type to test for stream insertability.
     /// @see is_stream_insertable_v
     template<class value_t>
-    struct is_stream_insertable<value_t,
-    std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>())>> : std::true_type {};
+    struct is_stream_insertable < value_t,
+           std::void_t < decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>()) >> : std::true_type {};
     /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
     /// @par Definition
     /// ```cpp
@@ -76,7 +76,7 @@ namespace xtd {
     template<class value_t>
     requires std::is_enum_v<std::remove_cvref_t<value_t>>
     struct is_stream_insertable<value_t> : std::false_type {};
-
+    
     /// @brief Convenience variable template equivalent to `is_stream_insertable<value_t>::value`.
     /// This helper allows simpler and more readable usage, especially in `if constexpr` expressions and static assertions.
     /// @tparam value_t The type to test for stream insertability.

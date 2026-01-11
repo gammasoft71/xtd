@@ -132,7 +132,7 @@ namespace xtd {
           else xtd::tunit::assume::is_false(actual_value<actual_t>::actual(), stack_frame);
           return operator_value<actual_t>(self_);
         }
-
+        
         /// @brief Asserts that value is not same as specified expected.
         /// @param expected the expected value.
         /// @param stack_frame Contains information about current file and current line.
@@ -172,7 +172,7 @@ namespace xtd {
           else xtd::tunit::assume::are_not_same(expected, actual_value<actual_t>::actual(), message, stack_frame);
           return operator_value<actual_t>(self_);
         }
-
+        
         /// @brief Asserts that value is not true.
         /// @param stack_frame Contains information about current file and current line.
         /// @exception xtd::tunit::assert_error If bad assertion.

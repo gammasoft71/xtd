@@ -255,10 +255,10 @@ namespace xtd {
           .show_help((options & open_file_box_options::show_help) == open_file_box_options::show_help)
           .show_preview((options & open_file_box_options::show_preview) == open_file_box_options::show_preview)
           .support_multi_dotted_extensions((options & open_file_box_options::support_multi_dotted_extensions) == open_file_box_options::support_multi_dotted_extensions);
-        if constexpr (!multiselect) dialog.file_name(output);
+        if constexpr(!multiselect) dialog.file_name(output);
         const auto res = owner ? dialog.show_sheet_dialog(*owner) : dialog.show_dialog();
         if (res != dialog_result::ok) return res;
-        if constexpr (multiselect) output = dialog.file_names();
+        if constexpr(multiselect) output = dialog.file_names();
         else output = dialog.file_name();
         return res;
       }
