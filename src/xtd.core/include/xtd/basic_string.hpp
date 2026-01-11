@@ -164,61 +164,61 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<char>& str) noexcept {
-      if constexpr(std::is_same_v<char, char_t>) chars_ = str.chars_;
+      if constexpr (std::is_same_v<char, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::char16>& str) noexcept {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = str.chars_;
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::char32>& str) noexcept {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = str.chars_;
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::char8>& str) noexcept {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = str.chars_;
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::wchar>& str) noexcept {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = str.chars_;
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<char>& str) noexcept { // Can't be explicit by design.
-      if constexpr(std::is_same_v<char, char_t>) chars_ = str;
+      if constexpr (std::is_same_v<char, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char16>& str) noexcept { // Can't be explicit by design.
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = str;
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char32>& str) noexcept { // Can't be explicit by design.
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = str;
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char8>& str) noexcept { // Can't be explicit by design.
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = str;
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::wchar>& str) noexcept { // Can't be explicit by design.
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = str;
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
@@ -245,35 +245,35 @@ namespace xtd {
     /// @param str The string to copy.
     basic_string(const char* str) {  // Can't be explicit by design.
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
+      if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char16 * str) { // Can't be explicit by design.
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char32 * str) { // Can't be explicit by design.
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char8 * str) { // Can't be explicit by design.
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::wchar * str) { // Can't be explicit by design.
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
     }
     
@@ -281,35 +281,35 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     basic_string(const char* str, xtd::size count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count);
+      if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char16 * str, xtd::size count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count);
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char32 * str, xtd::size count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count);
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char8 * str, xtd::size count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count);
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::wchar * str, xtd::size count) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count);
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
@@ -1060,7 +1060,7 @@ namespace xtd {
     /// @remarks for more information see [std::quoted](https://en.cppreference.com/w/cpp/io/manip/quoted).
     basic_string quoted(value_type delimiter, value_type escape) const {
       std::wstringstream ss;
-      if constexpr(std::is_same_v<xtd::wchar, value_type>) ss << std::quoted(chars_, delimiter, escape);
+      if constexpr (std::is_same_v<xtd::wchar, value_type>) ss << std::quoted(chars_, delimiter, escape);
       else ss << std::quoted(__xtd_convert_to_string<xtd::wchar>(chars_), static_cast<xtd::wchar>(delimiter), static_cast<xtd::wchar>(escape));
       return ss.str();
     }
@@ -1357,7 +1357,7 @@ namespace xtd {
     /// @return The current string.
     /// @todo Uncomment the folllowing line and remove the next..
     basic_string<char> to_string() const noexcept override {
-      if constexpr(std::is_same_v<char, char_t>) return chars_;
+      if constexpr (std::is_same_v<char, char_t>) return chars_;
       else return __xtd_convert_to_string<char>(chars_);
     }
     
@@ -1368,21 +1368,21 @@ namespace xtd {
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char16>.
     /// @return The current string.
     basic_string<xtd::char16> to_u16string() const noexcept {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) return chars_;
+      if constexpr (std::is_same_v<xtd::char16, char_t>) return chars_;
       else return __xtd_convert_to_string<xtd::char16>(chars_);
     }
     
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char32>.
     /// @return The current string.
     basic_string<xtd::char32> to_u32string() const noexcept {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) return chars_;
+      if constexpr (std::is_same_v<xtd::char32, char_t>) return chars_;
       else return __xtd_convert_to_string<xtd::char32>(chars_);
     }
     
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char8>.
     /// @return The current string.
     basic_string<xtd::char8> to_u8string() const noexcept {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) return chars_;
+      if constexpr (std::is_same_v<xtd::char8, char_t>) return chars_;
       else return __xtd_convert_to_string<xtd::char8>(chars_);
     }
     
@@ -1397,7 +1397,7 @@ namespace xtd {
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::wchar>.
     /// @return The current string.
     basic_string<xtd::wchar> to_wstring() const noexcept {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) return chars_;
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) return chars_;
       else return __xtd_convert_to_string<xtd::wchar>(chars_);
     }
     
@@ -1634,7 +1634,7 @@ namespace xtd {
     /// // demangled name = xtd::date_time
     /// ```
     static basic_string demangle(const basic_string & name) {
-      if constexpr(std::is_same_v<char, char_t>) return __xtd_demangle(name.chars());
+      if constexpr (std::is_same_v<char, char_t>) return __xtd_demangle(name.chars());
       else return __xtd_demangle(__xtd_convert_to_string<char>(name.chars()));
     }
     
@@ -1749,7 +1749,7 @@ namespace xtd {
     /// @return The value_t object parsed.
     template<class value_t>
     inline static value_t parse(const basic_string & str) {
-      if constexpr(std::is_same_v<char, char_t>) return xtd::parse<value_t>(str.chars());
+      if constexpr (std::is_same_v<char, char_t>) return xtd::parse<value_t>(str.chars());
       else return xtd::parse<value_t>(__xtd_convert_to_string<char>(str.chars()));
     }
     
@@ -1850,7 +1850,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<char>& str) noexcept {
-      if constexpr(std::is_same<char_t, char>::value) chars_ = str.chars_;
+      if constexpr (std::is_same<char_t, char>::value) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return self_;
     }
@@ -1858,7 +1858,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char16>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = str.chars_;
+      if constexpr (std::is_same<char_t, xtd::char16>::value) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return self_;
     }
@@ -1866,7 +1866,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char32>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = str.chars_;
+      if constexpr (std::is_same<char_t, xtd::char32>::value) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return self_;
     }
@@ -1874,7 +1874,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::char8>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = str.chars_;
+      if constexpr (std::is_same<char_t, xtd::char8>::value) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return self_;
     }
@@ -1882,7 +1882,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const basic_string<xtd::wchar>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = str.chars_;
+      if constexpr (std::is_same<char_t, xtd::wchar>::value) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return self_;
     }
@@ -1891,7 +1891,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<char>&& str) noexcept {
-      if constexpr(std::is_same<char_t, char>::value) chars_ = std::move(str.chars_);
+      if constexpr (std::is_same<char_t, char>::value) chars_ = std::move(str.chars_);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return self_;
     }
@@ -1899,7 +1899,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char16>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str.chars_);
+      if constexpr (std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str.chars_);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return self_;
     }
@@ -1907,7 +1907,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char32>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str.chars_);
+      if constexpr (std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str.chars_);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return self_;
     }
@@ -1915,7 +1915,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::char8>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str.chars_);
+      if constexpr (std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str.chars_);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return self_;
     }
@@ -1923,7 +1923,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(basic_string<xtd::wchar>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str.chars_);
+      if constexpr (std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str.chars_);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return self_;
     }
@@ -1932,7 +1932,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<char>& str) noexcept {
-      if constexpr(std::is_same<char_t, char>::value) chars_ = str;
+      if constexpr (std::is_same<char_t, char>::value) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -1940,7 +1940,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char16>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = str;
+      if constexpr (std::is_same<char_t, xtd::char16>::value) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -1948,7 +1948,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char32>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = str;
+      if constexpr (std::is_same<char_t, xtd::char32>::value) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -1956,7 +1956,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::char8>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = str;
+      if constexpr (std::is_same<char_t, xtd::char8>::value) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -1964,7 +1964,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(const std::basic_string<xtd::wchar>& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = str;
+      if constexpr (std::is_same<char_t, xtd::wchar>::value) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -1973,7 +1973,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<char>&& str) noexcept {
-      if constexpr(std::is_same<char_t, char>::value) chars_ = std::move(str);
+      if constexpr (std::is_same<char_t, char>::value) chars_ = std::move(str);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return self_;
     }
@@ -1981,7 +1981,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char16>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str);
+      if constexpr (std::is_same<char_t, xtd::char16>::value) chars_ = std::move(str);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return self_;
     }
@@ -1989,7 +1989,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char32>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str);
+      if constexpr (std::is_same<char_t, xtd::char32>::value) chars_ = std::move(str);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return self_;
     }
@@ -1997,7 +1997,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::char8>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str);
+      if constexpr (std::is_same<char_t, xtd::char8>::value) chars_ = std::move(str);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return self_;
     }
@@ -2005,7 +2005,7 @@ namespace xtd {
     /// @param str String to use as data source.
     /// @return This current instance.
     basic_string& operator =(std::basic_string<xtd::wchar>&& str) noexcept {
-      if constexpr(std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str);
+      if constexpr (std::is_same<char_t, xtd::wchar>::value) chars_ = std::move(str);
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return self_;
     }
@@ -2016,7 +2016,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const char* str) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
+      if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str));
       return self_;
     }
@@ -2026,7 +2026,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char16 * str) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str));
       return self_;
     }
@@ -2036,7 +2036,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char32 * str) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
       return self_;
     }
@@ -2046,7 +2046,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::char8 * str) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
       return self_;
     }
@@ -2056,7 +2056,7 @@ namespace xtd {
     /// @return This current instance.
     basic_string& operator =(const xtd::wchar * str) {
       if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
       return self_;
     }
@@ -2137,7 +2137,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const basic_string<char>& str) {
-      if constexpr(std::is_same_v<char, char_t>) chars_ += str.chars_;
+      if constexpr (std::is_same_v<char, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
     }
@@ -2145,7 +2145,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const basic_string<xtd::char16>& str) {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += str.chars_;
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
     }
@@ -2153,7 +2153,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const basic_string<xtd::char32>& str) {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += str.chars_;
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
     }
@@ -2161,7 +2161,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const basic_string<xtd::char8>& str) {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += str.chars_;
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
     }
@@ -2169,7 +2169,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const basic_string<xtd::wchar>& str) {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += str.chars_;
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
     }
@@ -2178,7 +2178,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(basic_string<char>&& str) {
-      if constexpr(std::is_same_v<char, char_t>) chars_ += std::move(str.chars_);
+      if constexpr (std::is_same_v<char, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
     }
@@ -2186,7 +2186,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(basic_string<xtd::char16>&& str) {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += std::move(str.chars_);
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
     }
@@ -2194,7 +2194,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(basic_string<xtd::char32>&& str) {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += std::move(str.chars_);
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
     }
@@ -2202,7 +2202,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(basic_string<xtd::char8>&& str) {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += std::move(str.chars_);
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
     }
@@ -2210,7 +2210,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(basic_string<xtd::wchar>&& str) {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += std::move(str.chars_);
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
     }
@@ -2219,7 +2219,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const std::basic_string<char>& str) {
-      if constexpr(std::is_same_v<char, char_t>) chars_ += str;
+      if constexpr (std::is_same_v<char, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -2227,7 +2227,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const std::basic_string<xtd::char16>& str) {
-      if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += str;
+      if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -2235,7 +2235,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const std::basic_string<xtd::char32>& str) {
-      if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += str;
+      if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -2243,7 +2243,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const std::basic_string<xtd::char8>& str) {
-      if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += str;
+      if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -2251,7 +2251,7 @@ namespace xtd {
     /// @param str string to append.
     /// @return This current instance with characters added.
     basic_string& operator +=(const std::basic_string<xtd::wchar>& str) {
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += str;
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
     }
@@ -2562,7 +2562,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const std::basic_string<char>& lhs, const basic_string & rhs) {
       auto result = lhs;
-      if constexpr(std::is_same_v<char, char_t>) result += rhs.chars();
+      if constexpr (std::is_same_v<char, char_t>) result += rhs.chars();
       else result += __xtd_convert_to_string<char>(rhs.chars());
       return result;
     }
@@ -2572,7 +2572,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const std::basic_string<xtd::char16>& lhs, const basic_string & rhs) {
       auto result = lhs;
-      if constexpr(std::is_same_v<xtd::char16, char_t>) result += rhs.chars();
+      if constexpr (std::is_same_v<xtd::char16, char_t>) result += rhs.chars();
       else result += __xtd_convert_to_string<xtd::char16>(rhs.chars());
       return result;
     }
@@ -2582,7 +2582,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const std::basic_string<xtd::char32>& lhs, const basic_string & rhs) {
       auto result = lhs;
-      if constexpr(std::is_same_v<xtd::char32, char_t>) result += rhs.chars();
+      if constexpr (std::is_same_v<xtd::char32, char_t>) result += rhs.chars();
       else result += __xtd_convert_to_string<xtd::char32>(rhs.chars());
       return result;
     }
@@ -2592,7 +2592,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const std::basic_string<xtd::char8>& lhs, const basic_string & rhs) {
       auto result = lhs;
-      if constexpr(std::is_same_v<xtd::char8, char_t>) result += rhs.chars();
+      if constexpr (std::is_same_v<xtd::char8, char_t>) result += rhs.chars();
       else result += __xtd_convert_to_string<xtd::char8>(rhs.chars());
       return result;
     }
@@ -2602,7 +2602,7 @@ namespace xtd {
     /// @return A string containing characters from `lhs` followed by the characters from `rhs`.
     friend basic_string operator +(const std::basic_string<xtd::wchar>& lhs, const basic_string & rhs) {
       auto result = lhs;
-      if constexpr(std::is_same_v<xtd::wchar, char_t>) result += rhs.chars();
+      if constexpr (std::is_same_v<xtd::wchar, char_t>) result += rhs.chars();
       else result += __xtd_convert_to_string<xtd::wchar>(rhs.chars());
       return result;
     }
@@ -2985,7 +2985,7 @@ namespace xtd {
     /// @todo uncomment following line and remove the next.
     //friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string& str) {return stream << str.to_string().chars_;}
     friend std::basic_ostream<char>& operator <<(std::basic_ostream<char>& stream, const basic_string & str) {
-      if constexpr(std::is_same_v<char, char_t>) return stream << str.chars();
+      if constexpr (std::is_same_v<char, char_t>) return stream << str.chars();
       else return stream << __xtd_convert_to_string<char>(str.chars());
     }
     /// @brief Output stream operator. Behaves as a [FormattedOutputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction). After constructing and checking the sentry object, [determines the output format padding](https://en.cppreference.com/w/cpp/named_req/FormattedOutputFunction#Padding).
@@ -3091,12 +3091,12 @@ namespace xtd {
     
     template<class arg_t>
     inline static auto convert_param(arg_t&& arg) noexcept {
-      if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u32string>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u8string>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
-      else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, basic_string>::value) return std::forward<arg_t>(arg).c_str();
+      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u32string>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u8string>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, basic_string>::value) return std::forward<arg_t>(arg).c_str();
       else return std::forward<arg_t>(arg);
     }
     

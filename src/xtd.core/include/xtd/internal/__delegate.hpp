@@ -24,7 +24,7 @@ inline void __xtd_delegate_any_cast<void>(const xtd::any_object& value) {
 
 template<class result_t>
 inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) {
-  if constexpr(!std::is_void_v<result_t>) return xtd::any_object(invoke());
+  if constexpr (!std::is_void_v<result_t>) return xtd::any_object(invoke());
   else {
     invoke();
     return xtd::any_object {};
@@ -33,7 +33,7 @@ inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) 
 
 template<typename function_t, typename... arguments_t>
 inline xtd::any_object __xtd_delegate_invoker(function_t&& invoke, arguments_t&&... arguments) {
-  if constexpr(!std::is_void_v<std::invoke_result_t<function_t, arguments_t...>>)
+  if constexpr (!std::is_void_v<std::invoke_result_t<function_t, arguments_t...>>)
     return xtd::any_object(std::invoke(std::forward<function_t>(invoke), std::forward<arguments_t>(arguments)...));
   else {
     std::invoke(std::forward<function_t>(invoke), std::forward<arguments_t>(arguments)...);

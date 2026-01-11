@@ -45,7 +45,7 @@ namespace xtd::text::tests {
     
     auto test_method_(value_type) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      if constexpr (std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string_builder<char_t>::value_type>());
     }
     
@@ -63,25 +63,25 @@ namespace xtd::text::tests {
     
     auto test_method_(reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      if constexpr (std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string_builder<char_t>::reference>());
     }
     
     auto test_method_(const_reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      if constexpr (std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string_builder<char_t>::const_reference>());
     }
     
     auto test_method_(pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      if constexpr (std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string_builder<char_t>::pointer>());
     }
     
     auto test_method_(const_pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(std::is_same<char_t, char8>::value) return;
+      if constexpr (std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string_builder<char_t>::const_pointer>());
     }
     
@@ -229,7 +229,7 @@ namespace xtd::text::tests {
     
     auto test_method_(c_str) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(!std::is_same<char_t, char8>::value)
+      if constexpr (!std::is_same<char_t, char8>::value)
         assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string_builder<char_t> {}.c_str()));
       assert::is_empty(basic_string_builder<char_t> {}.c_str());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.c_str());
@@ -274,7 +274,7 @@ namespace xtd::text::tests {
     auto test_method_(data_const) {
       const auto str = basic_string_builder<char_t> {};
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      if constexpr(!std::is_same<char_t, char8>::value)
+      if constexpr (!std::is_same<char_t, char8>::value)
         assert::are_equal(typeof_<const char_t*>(), typeof_(str.data()));
       assert::is_empty(str.data());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.data());
@@ -470,28 +470,28 @@ namespace xtd::text::tests {
     
     auto test_method_(append_const_pointer_and_count) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.append(" to test", 8);
-      if constexpr(std::is_same<char_t, char16>::value) s.append(u" to test", 8);
-      if constexpr(std::is_same<char_t, char32>::value) s.append(U" to test", 8);
-      if constexpr(std::is_same<char_t, char8>::value) s.append(u8" to test", 8);
-      if constexpr(std::is_same<char_t, wchar>::value) s.append(L" to test", 8);
+      if constexpr (std::is_same<char_t, char>::value) s.append(" to test", 8);
+      if constexpr (std::is_same<char_t, char16>::value) s.append(u" to test", 8);
+      if constexpr (std::is_same<char_t, char32>::value) s.append(U" to test", 8);
+      if constexpr (std::is_same<char_t, char8>::value) s.append(u8" to test", 8);
+      if constexpr (std::is_same<char_t, wchar>::value) s.append(L" to test", 8);
       assert::are_equal("A test string to test", s.to_string());
       
-      if constexpr(std::is_same<char_t, char>::value) s.append(" and check", 4);
-      if constexpr(std::is_same<char_t, char16>::value) s.append(u" and check", 4);
-      if constexpr(std::is_same<char_t, char32>::value) s.append(U" and check", 4);
-      if constexpr(std::is_same<char_t, char8>::value) s.append(u8" and check", 4);
-      if constexpr(std::is_same<char_t, wchar>::value) s.append(L" and check", 4);
+      if constexpr (std::is_same<char_t, char>::value) s.append(" and check", 4);
+      if constexpr (std::is_same<char_t, char16>::value) s.append(u" and check", 4);
+      if constexpr (std::is_same<char_t, char32>::value) s.append(U" and check", 4);
+      if constexpr (std::is_same<char_t, char8>::value) s.append(u8" and check", 4);
+      if constexpr (std::is_same<char_t, wchar>::value) s.append(L" and check", 4);
       assert::are_equal("A test string to test and", s.to_string());
     }
     
     auto test_method_(append_const_pointer) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.append(" to test");
-      if constexpr(std::is_same<char_t, char16>::value) s.append(u" to test");
-      if constexpr(std::is_same<char_t, char32>::value) s.append(U" to test");
-      if constexpr(std::is_same<char_t, char8>::value) s.append(u8" to test");
-      if constexpr(std::is_same<char_t, wchar>::value) s.append(L" to test");
+      if constexpr (std::is_same<char_t, char>::value) s.append(" to test");
+      if constexpr (std::is_same<char_t, char16>::value) s.append(u" to test");
+      if constexpr (std::is_same<char_t, char32>::value) s.append(U" to test");
+      if constexpr (std::is_same<char_t, char8>::value) s.append(u8" to test");
+      if constexpr (std::is_same<char_t, wchar>::value) s.append(L" to test");
       assert::are_equal("A test string to test", s.to_string());
     }
     
@@ -809,28 +809,28 @@ namespace xtd::text::tests {
     
     auto test_method_(insert_with_index_and_const_pointer) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test");
-      if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test");
-      if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test");
-      if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test");
-      if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test");
+      if constexpr (std::is_same<char_t, char>::value) s.insert(6, " to test");
+      if constexpr (std::is_same<char_t, char16>::value) s.insert(6, u" to test");
+      if constexpr (std::is_same<char_t, char32>::value) s.insert(6, U" to test");
+      if constexpr (std::is_same<char_t, char8>::value) s.insert(6, u8" to test");
+      if constexpr (std::is_same<char_t, wchar>::value) s.insert(6, L" to test");
       assert::are_equal("A test to test string", s.to_string());
     }
     
     auto test_method_(insert_with_index_const_pointer_and_count) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test", 8);
-      if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test", 8);
-      if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test", 8);
-      if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test", 8);
-      if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test", 8);
+      if constexpr (std::is_same<char_t, char>::value) s.insert(6, " to test", 8);
+      if constexpr (std::is_same<char_t, char16>::value) s.insert(6, u" to test", 8);
+      if constexpr (std::is_same<char_t, char32>::value) s.insert(6, U" to test", 8);
+      if constexpr (std::is_same<char_t, char8>::value) s.insert(6, u8" to test", 8);
+      if constexpr (std::is_same<char_t, wchar>::value) s.insert(6, L" to test", 8);
       assert::are_equal("A test to test string", s.to_string());
       
-      if constexpr(std::is_same<char_t, char>::value) s.insert(9, " and check", 4);
-      if constexpr(std::is_same<char_t, char16>::value) s.insert(9, u" and check", 4);
-      if constexpr(std::is_same<char_t, char32>::value) s.insert(9, U" and check", 4);
-      if constexpr(std::is_same<char_t, char8>::value) s.insert(9, u8" and check", 4);
-      if constexpr(std::is_same<char_t, wchar>::value) s.insert(9, L" and check", 4);
+      if constexpr (std::is_same<char_t, char>::value) s.insert(9, " and check", 4);
+      if constexpr (std::is_same<char_t, char16>::value) s.insert(9, u" and check", 4);
+      if constexpr (std::is_same<char_t, char32>::value) s.insert(9, U" and check", 4);
+      if constexpr (std::is_same<char_t, char8>::value) s.insert(9, u8" and check", 4);
+      if constexpr (std::is_same<char_t, wchar>::value) s.insert(9, L" and check", 4);
       assert::are_equal("A test to and test string", s.to_string());
     }
     
@@ -950,41 +950,41 @@ namespace xtd::text::tests {
     
     auto test_method_(replace_with_pos_count_cstr_and_count2) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value string", 5_z);
-      if constexpr(std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value string", 5_z);
-      if constexpr(std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value string", 5_z);
-      if constexpr(std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value string", 5_z);
-      if constexpr(std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value string", 5_z);
+      if constexpr (std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value string", 5_z);
+      if constexpr (std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value string", 5_z);
+      if constexpr (std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value string", 5_z);
+      if constexpr (std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value string", 5_z);
+      if constexpr (std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value string", 5_z);
       assert::are_equal("A value string", s.to_string());
     }
     
     auto test_method_(replace_with_first_last_cstr_and_count2) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value string", 5_z);
-      if constexpr(std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value string", 5_z);
-      if constexpr(std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value string", 5_z);
-      if constexpr(std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value string", 5_z);
-      if constexpr(std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value string", 5_z);
+      if constexpr (std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value string", 5_z);
+      if constexpr (std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value string", 5_z);
+      if constexpr (std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value string", 5_z);
+      if constexpr (std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value string", 5_z);
+      if constexpr (std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value string", 5_z);
       assert::are_equal("A value string", s.to_string());
     }
     
     auto test_method_(replace_with_pos_count_and_cstr) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value");
-      if constexpr(std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value");
-      if constexpr(std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value");
-      if constexpr(std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value");
-      if constexpr(std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value");
+      if constexpr (std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value");
+      if constexpr (std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value");
+      if constexpr (std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value");
+      if constexpr (std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value");
+      if constexpr (std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value");
       assert::are_equal("A value string", s.to_string());
     }
     
     auto test_method_(replace_with_first_last_and_cstr) {
       auto s = basic_string_builder<char_t> {"A test string"};
-      if constexpr(std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value");
-      if constexpr(std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value");
-      if constexpr(std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value");
-      if constexpr(std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value");
-      if constexpr(std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value");
+      if constexpr (std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value");
+      if constexpr (std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value");
+      if constexpr (std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value");
+      if constexpr (std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value");
+      if constexpr (std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value");
       assert::are_equal("A value string", s.to_string());
     }
     

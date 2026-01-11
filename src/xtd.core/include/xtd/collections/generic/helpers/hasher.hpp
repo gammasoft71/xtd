@@ -73,9 +73,9 @@ namespace xtd {
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
           auto operator()(const argument_type& key) const noexcept -> result_type {
             if (comparer) return comparer->get_hash_code(key);
-            if constexpr(std::is_polymorphic_v<argument_type> && std::is_base_of_v<xtd::ihashable, argument_type>) return static_cast<const xtd::ihashable&>(key).get_hash_code();
-            else if constexpr(std::is_polymorphic_v<argument_type> && std::is_base_of_v<xtd::object, argument_type>) return static_cast<const xtd::object&>(key).get_hash_code();
-            else if constexpr(std::is_invocable_v<std::hash<argument_type>, const argument_type&>) return std::hash<argument_type> {}(key);
+            if constexpr (std::is_polymorphic_v<argument_type> && std::is_base_of_v<xtd::ihashable, argument_type>) return static_cast<const xtd::ihashable&>(key).get_hash_code();
+            else if constexpr (std::is_polymorphic_v<argument_type> && std::is_base_of_v<xtd::object, argument_type>) return static_cast<const xtd::object&>(key).get_hash_code();
+            else if constexpr (std::is_invocable_v<std::hash<argument_type>, const argument_type&>) return std::hash<argument_type> {}(key);
             else return std::hash<std::intptr_t> {}(reinterpret_cast<std::intptr_t>(&key));
           }
           /// @}
