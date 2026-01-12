@@ -15,6 +15,6 @@
 // These four following methods are implemented in src/xtd/date_time.cpp file.
 std::string __date_time_formatter(std::string fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc);
 std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc);
-std::string __date_time_formatter(const std::string& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc);
-std::wstring __date_time_formatter(const std::wstring& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc);
+std::string __date_time_formatter(const std::string& fmt, std::time_t time, xtd::uint32 nanoseconds, const std::locale& loc);
+std::wstring __date_time_formatter(const std::wstring& fmt, std::time_t time, xtd::uint32 nanoseconds, const std::locale& loc);
 /// @endcond
