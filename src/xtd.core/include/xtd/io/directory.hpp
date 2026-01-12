@@ -1774,7 +1774,7 @@ namespace xtd {
       /// ```
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
-      static void set_creation_time(const xtd::string& path, time_t creation_time);
+      static void set_creation_time(const xtd::string& path, std::time_t creation_time);
       
       /// @brief Sets the application's current working directory to the specified directory.
       /// @param path The path to which the current working directory is set.
@@ -1931,7 +1931,7 @@ namespace xtd {
       /// @}
       
     private:
-      static std::tuple<time_t, time_t, time_t> get_file_times(const string& path);
+      static std::tuple<time_t, std::time_t, std::time_t> get_file_times(const string& path);
     };
   }
 }

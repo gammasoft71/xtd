@@ -47,7 +47,7 @@ namespace xtd::threading::tests {
         return result;
       }
       
-      bool wait(int32_t milliseconds_timeout) override {
+      bool wait(std::int32_t milliseconds_timeout) override {
         if (!mutex_) throw_helper::throws(exception_case::object_closed);
         if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
         

@@ -110,7 +110,7 @@ void file_system_info::refresh() {
   auto attributes = 0;
   if (native::file_system::get_attributes(full_path_, attributes) == 0) {
     attributes_ = as<xtd::io::file_attributes>(attributes);
-    auto creation_time = time_t {}, last_access_time = time_t {}, last_write_time = time_t {};
+    auto creation_time = std::time_t {}, last_access_time = std::time_t {}, last_write_time = std::time_t {};
     native::file_system::get_file_times(full_path_, creation_time, last_access_time, last_write_time);
     creation_time_ = date_time::from_time_t(creation_time, date_time_kind::local);
     last_access_time_ = date_time::from_time_t(last_access_time, date_time_kind::local);

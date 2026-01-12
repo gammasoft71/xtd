@@ -245,12 +245,12 @@ namespace {
   }
   
   #if defined(_WIN32)
-  inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
+  inline struct tm* to_tm(const std::time_t* timer, struct tm* buf) noexcept {
     localtime_s(buf, timer);
     return buf;
   }
   #else
-  inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
+  inline struct tm* to_tm(const std::time_t* timer, struct tm* buf) noexcept {
     return localtime_r(timer, buf);
   }
   #endif
@@ -1016,12 +1016,12 @@ std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, xtd::u
   return date_time_formatter(fmt, time, nanoseconds, loc).to_wstring();
 }
 
-std::string __date_time_formatter(const std::string& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+std::string __date_time_formatter(const std::string& fmt, std::time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   tm buf;
   return date_time_formatter(fmt, *to_tm(&time, &buf), nanoseconds, loc);
 }
 
-std::wstring __date_time_formatter(const std::wstring& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+std::wstring __date_time_formatter(const std::wstring& fmt, std::time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
   tm buf;
   return date_time_formatter(fmt, *to_tm(&time, &buf), nanoseconds, loc).to_wstring();
 }

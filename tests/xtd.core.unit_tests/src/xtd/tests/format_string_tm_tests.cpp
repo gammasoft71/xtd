@@ -9,9 +9,9 @@
 
 #include <time.h>
 #if defined(_WIN32)
-static time_t __make_utc_date_time(struct tm* tm) noexcept {return _mkgmtime(tm);}
+static std::time_t __make_utc_date_time(struct tm* tm) noexcept {return _mkgmtime(tm);}
 #else
-static time_t __make_utc_date_time(struct tm* tm) noexcept {return timegm(tm);}
+static std::time_t __make_utc_date_time(struct tm* tm) noexcept {return timegm(tm);}
 #endif
 
 using namespace xtd;
