@@ -134,7 +134,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> __tunit_print_value(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> value_t&amp; value) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) os.operator &lt;&lt; (value);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) os.operator &lt;&lt; (value);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> = std::min(<span class="keyword">sizeof</span>(value), <span class="keywordtype">size_t</span> {32});</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    os &lt;&lt; <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &lt;&lt; <span class="stringliteral">&quot;-byte object &lt;&quot;</span>;</div>
@@ -812,7 +812,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 21:26:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 04:01:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

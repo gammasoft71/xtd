@@ -115,12 +115,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">inline</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a>(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_polymorphic_v&lt;value_t&gt;) <span class="keywordflow">return</span> __to_string_polymorphic(value, fmt, loc);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_enum_v&lt;value_t&gt;) <span class="keywordflow">return</span> __enum_formatter&lt;char&gt;(fmt, value, loc);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_polymorphic_v&lt;value_t&gt;) <span class="keywordflow">return</span> __to_string_polymorphic(value, fmt, loc);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::is_enum_v&lt;value_t&gt;) <span class="keywordflow">return</span> __enum_formatter&lt;char&gt;(fmt, value, loc);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">  #if defined(__xtd__cpp_lib_ranges)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::ranges::range&lt;value_t&gt; &amp;&amp; !std::is_same_v&lt;value_t, xtd::string&gt;) <span class="keywordflow">return</span> __xtd_range_to_string(value, fmt, loc);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(std::ranges::range&lt;value_t&gt; &amp;&amp; !std::is_same_v&lt;value_t, xtd::string&gt;) <span class="keywordflow">return</span> __xtd_range_to_string(value, fmt, loc);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">  #endif</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span>(<a class="code hl_variable" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;value_t&gt;</a>) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">auto</span> ss = std::stringstream {};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    ss &lt;&lt; value;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> ss.str();</div>
@@ -682,7 +682,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 21:26:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 04:01:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
