@@ -46,29 +46,29 @@ namespace xtd {
         /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
         /// @return The created font handle.
         /// @warning Internal use only
-        static intptr create(const xtd::string& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font);
+        static auto create(const xtd::string& family_name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font) -> intptr;
         
         /// @brief Creates font from hdc.
         /// @param hdc The handle of the device context font.
         /// @return The created font handle.
         /// @warning Internal use only
-        static intptr create_from_hdc(intptr hdc);
+        static auto create_from_hdc(intptr hdc); -> intptr
         
         /// @brief Creates font from hfont.
         /// @param hfont The handle of the font.
         /// @return The created font handle.
         /// @warning Internal use only
-        static intptr create_from_hfont(intptr hfont);
+        static auto create_from_hfont(intptr hfont) -> intptr;
         
         /// @brief Destroys the font.
         /// @param font The font handle.
         /// @warning Internal use only
-        static void destroy(intptr font);
+        static auto destroy(intptr font) -> void;
         
         /// @brief Gets the screen dpi .
         /// @return The screen dpi.
         /// @warning Internal use only
-        static int32 dpi();
+        static auto dpi() -> int32;
         
         /// @brief Gets the font information from font hanfle.
         /// @param font The font handle to retrieve informations.
@@ -103,20 +103,20 @@ namespace xtd {
         /// | MAC           | 77    |
         /// | BALTIC        | 186   |
         /// @warning Internal use only
-        static void get_information(intptr font, xtd::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font);
+        static auto get_information(intptr font, xtd::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font) -> void;
         
         /// @brief Gets the font height.
         /// @param font The font handle.
         /// @return The font height.
         /// @warning Internal use only
-        static float height(intptr font);
+        static auto height(intptr font) -> float;
         
         /// @brief Gets the font height for the specified hdc.
         /// @param font The font handle.
         /// @param hdc The device context handle.
         /// @return The font height.
         /// @warning Internal use only
-        static float height(intptr font, intptr hdc);
+        static auto height(intptr font, intptr hdc) -> float;
         /// @}
       };
     }
