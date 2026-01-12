@@ -22,30 +22,30 @@ settings::settings() : data_(xtd::new_sptr<data>()) {
   data_->file_settings = file_settings {io::path::combine(environment::get_folder_path(environment::special_folder::application_data), company_name, product_name + native::settings::get_file_extension().c_str())};
 }
 
-const string& settings::file_path() const noexcept {
+auto settings::file_path() const noexcept -> const string& {
   return data_->file_settings.file_path();
 }
 
-string settings::read(const string& key, const string& default_value) {
+auto settings::read(const string& key, const string& default_value) -> string {
   return read_string(key, default_value);
 }
 
-void settings::reset() {
+auto settings::reset() -> void {
   data_->file_settings.reset();
 }
 
-void settings::save() {
+auto settings::save() -> void {
   data_->file_settings.save();
 }
 
-void settings::write(const string& key, const string& value) {
+auto settings::write(const string& key, const string& value) -> void {
   write_string(key, value);
 }
 
-string settings::read_string(const string& key, const string& default_value) {
+auto settings::read_string(const string& key, const string& default_value) -> string {
   return data_->file_settings.read(key, default_value);
 }
 
-void settings::write_string(const string& key, const string& value) {
+auto settings::write_string(const string& key, const string& value) -> void {
   data_->file_settings.write(key, value);
 }
