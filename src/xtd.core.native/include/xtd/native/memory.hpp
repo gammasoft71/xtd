@@ -43,28 +43,28 @@ namespace xtd {
       /// @brief Gets the total physical memory in bytes.
       /// @return The total physical memory value.
       /// @warning Internal use only
-      static size_t get_total_physical_memory();
+      static auto get_total_physical_memory() -> std::size_t;
       /// @brief Gets the total process memory in bytes.
       /// @return The total process memory value.
       /// @warning Internal use only
-      static size_t get_total_process_memory();
+      static auto get_total_process_memory() -> std::size_t;
       /// @brief Gets the total virtual memory in bytes.
       /// @return The total virtual memory value.
       /// @warning Internal use only
-      static size_t get_total_virtual_memory();
+      static auto get_total_virtual_memory() -> std::size_t;
       
       /// @brief Gets the used physical memory in bytes.
       /// @return The used physical memory value.
       /// @warning Internal use only
-      static size_t get_used_physical_memory();
+      static auto get_used_physical_memory() -> std::size_t;
       /// @brief Gets the used process memory in bytes.
       /// @return The used process memory value.
       /// @warning Internal use only
-      static size_t get_used_process_memory();
+      static auto get_used_process_memory() -> std::size_t;
       /// @brief Gets the used virtual memory in bytes.
       /// @return The used virtual memory value.
       /// @warning Internal use only
-      static size_t get_used_virtual_memory();
+      static auto get_used_virtual_memory() -> std::size_t;
       /// @}
     };
   }
