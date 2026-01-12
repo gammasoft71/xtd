@@ -42,7 +42,7 @@ namespace assert_unit_tests {
             ++error_test_count;
           }
         }
-
+        
         std::cout << std::endl << "Test results:" << std::endl;
         std::cout << xtd::foreground_color(xtd::console_color::dark_green) << "  SUCCEED " << xtd::reset_color() << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() - error_test_count - ignore_test_count << " tests." << std::endl;
         if (error_test_count) std::cout << xtd::foreground_color(xtd::console_color::dark_green) << "   FAILED " << xtd::reset_color() << error_test_count << " tests." << std::endl;
