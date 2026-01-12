@@ -41,7 +41,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a frame object that contains file name, line, column, method name and offset.
-      using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
+      using frame = std::tuple<std::string, std::size_t, std::size_t, std::string, std::size_t>;
       /// @brief Represents a frame collection.
       using frame_collection = std::vector<frame>;
       /// @}
@@ -52,12 +52,12 @@ namespace xtd {
       /// @brief Gets the offset from the start of the native code for the method that is being executed.
       /// @return The offset from the start of the native code for the method that is being executed.
       /// @warning Internal use only
-      static size_t get_native_offset();
+      static auto get_native_offset() -> std::size_t;
       
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
-      static frame_collection get_frames(size_t skip_frames, bool need_file_info);
+      static auto get_frames(size_t skip_frames, bool need_file_info) -> frame_collection;
       /// @}
     };
   }
