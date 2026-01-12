@@ -245,6 +245,11 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
 }
 
 void ostream_event_listener::on_unit_test_start(const tunit_event_args& e) const {
+  if (settings::default_settings().brief()) {
+    os_ << "Run tests..." << std::endl;
+    return;
+  }
+  
   if (e.unit_test().repeat_tests()) {
     if (!settings::default_settings().gtest_compatibility()) console::foreground_color(console_color::cyan);
     os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;

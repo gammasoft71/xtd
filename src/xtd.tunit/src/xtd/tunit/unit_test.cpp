@@ -148,7 +148,7 @@ int32 unit_test::run() noexcept {
         random.shuffle(test_classes());
         
       try {
-        if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(tunit_event_args(*this));
+        event_listener_->on_unit_test_start(tunit_event_args(*this));
         
         if (!settings::default_settings().brief()) event_listener_->on_unit_test_initialize_start(tunit_event_args(*this));
         unit_test_initialize();
