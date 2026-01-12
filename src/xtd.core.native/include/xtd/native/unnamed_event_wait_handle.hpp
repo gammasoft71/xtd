@@ -45,24 +45,24 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created event wait handle.
       /// @warning Internal use only
-      static intmax_t create(bool initial_state, bool manual_reset);
+      static auto create(bool initial_state, bool manual_reset) -> std::intmax_t;
       
       /// @brief Destroy named event wait handle with specified event wait handle handle.
       /// @param handle The event wait handle handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle);
+      static auto destroy(std::intmax_t handle) -> void;
       
       /// @brief Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
       /// @param handle The event wait handle handle to set.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool set(intmax_t handle, bool& io_error);
+      static auto set(std::intmax_t handle, bool& io_error) -> bool;
       
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @param handle The event wait handle handle to reset.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool reset(intmax_t handle, bool& io_error);
+      static auto reset(std::intmax_t handle, bool& io_error) -> bool;
       
       /// @brief Wait named event wait handle with specified event wait handle handle, timeout and manual reset.
       /// @param handle The event wait handle handle to wait.
@@ -74,7 +74,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static std::uint32_t wait(intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset);
+      static auto wait(std::intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset) -> std::uint32_t;
       /// @}
     };
   }
