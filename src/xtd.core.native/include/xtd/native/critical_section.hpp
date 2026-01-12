@@ -42,27 +42,27 @@ namespace xtd {
       /// @brief Create critical section.
       /// @return The handle of the created critical section.
       /// @warning Internal use only
-      static intmax_t create();
+      static auto create() -> std::intmax_t;
       
       /// @brief Destroy critical section with specified critical section handle.
       /// @param handle The critical section handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle);
+      static auto destroy(std::intmax_t handle) -> void;
       
       /// @brief Wait critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
       /// @return `true` if succeed; otherwise `false`.
-      static void enter(intmax_t handle);
+      static auto enter(std::intmax_t handle) -> void;
       
       /// @brief Attempts to enter critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
       /// @return `true` if succeed; otherwise `false`.
-      static bool try_enter(intmax_t handle);
+      static auto try_enter(std::intmax_t handle) -> bool;
       
       /// @brief Release`critical section with specified critical section handle.
       /// @param handle The critical section handle to release.
       /// @warning Internal use only
-      static void leave(intmax_t handle);
+      static auto leave(std::intmax_t handle) -> void;
       /// @}
     };
   }
