@@ -24,19 +24,19 @@ namespace image_effects_example::properties {
 
     /// @{
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& ball() {
+    static auto ball() -> const xtd::drawing::bitmap& {
       static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), "ball.png")};
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& pineapple() {
+    static auto pineapple() -> const xtd::drawing::bitmap& {
       static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), "pineapple.png")};
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& rose() {
+    static auto rose() -> const xtd::drawing::bitmap& {
       static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), "rose.png")};
       return bitmap;
     }
