@@ -66,7 +66,7 @@ namespace xtd {
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t get_attributes(const std::string& path, std::int32_t& attributes);
+      static auto get_attributes(const std::string& path, std::int32_t& attributes) -> std::int32_t;
       /// @brief Gets file creeation time, last access time and lastt write time of specified path.
       /// @param path The relative or absolute path to the directory to get times.
       /// @param creation_time That contains the creation time.
@@ -74,53 +74,53 @@ namespace xtd {
       /// @param last_write_time That contains the last write time.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t get_file_times(const std::string& path, time_t& creation_time, time_t& last_access_time, time_t& last_write_time);
+      static auto get_file_times(const std::string& path, std::time_t& creation_time, std::time_t& last_access_time, std::time_t& last_write_time) -> std::int32_t;
       /// @brief Gets full path of specified path.
       /// @param relative_path The relative path to the directory to search.
       /// @return The fulll path.
       /// @warning Internal use only
-      static std::string get_full_path(const std::string& relative_path);
+      static auto get_full_path(const std::string& relative_path) -> std::string;
       /// @brief Check if specified path is too long for the OS.
       /// @param path The path to cjheck the size.
       /// @return `true` if path too long; otherwiser `false`.
       /// @warning Internal use only
-      static bool is_path_too_long(const std::string& path);
+      static auto is_path_too_long(const std::string& path) -> bool;
       /// @brief Sets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_attributes(const std::string& path, std::int32_t attributes);
+      static auto set_attributes(const std::string& path, std::int32_t attributes) -> std::int32_t;
       /// @brief Sets the creation time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param creation_time The file or path creation time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_creation_time(const std::string& path, time_t creation_time);
+      static auto set_creation_time(const std::string& path, std::time_t creation_time) -> std::int32_t;
       /// @brief Sets the last access time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_access_time The file or path last access time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_last_access_time(const std::string& path, time_t last_access_time);
+      static auto set_last_access_time(const std::string& path, std::time_t last_access_time) -> std::int32_t;
       /// @brief Sets the last write time for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param last_write_time The file or path last write time.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_last_write_time(const std::string& path, time_t last_write_time);
+      static auto set_last_write_time(const std::string& path, std::time_t last_write_time) -> std::int32_t;
       /// @brief Gets the permissions for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path permissions. (see file_permission.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t get_permissions(const std::string& path, std::int32_t& permissions);
+      static auto get_permissions(const std::string& path, std::int32_t& permissions) -> std::int32_t;
       /// @brief Sets the permissions for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path permissions. (see file_permission.h)
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_permissions(const std::string& path, std::int32_t permissions);
+      static auto set_permissions(const std::string& path, std::int32_t permissions) -> std::int32_t;
       /// @}
     };
   }
