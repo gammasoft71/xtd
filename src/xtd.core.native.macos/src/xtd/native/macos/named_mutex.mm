@@ -9,10 +9,10 @@ using namespace xtd::native;
 
 intmax_t named_mutex::create(bool initially_owned, const std::string& name) {
   auto semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initially_owned ? 0 : 1);
-  return reinterpret_cast<intmax_t>(semaphore);
+  return reinterpret_cast<std::intmax_t>(semaphore);
 }
 
-void named_mutex::destroy(intmax_t handle, const std::string& name) {
+void named_mutex::destroy(std::intmax_t handle, const std::string& name) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0) sem_unlink(name.c_str());
 }
@@ -23,10 +23,10 @@ size_t named_mutex::max_name_size() {
 
 intmax_t named_mutex::open(const std::string& name) {
   auto semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
-  return reinterpret_cast<intmax_t>(semaphore);
+  return reinterpret_cast<std::intmax_t>(semaphore);
 }
 
-bool named_mutex::signal(intmax_t handle, bool& io_error) {
+bool named_mutex::signal(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -36,7 +36,7 @@ bool named_mutex::signal(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-uint32_t named_mutex::wait(intmax_t handle, std::int32_t milliseconds_timeout) {
+uint32_t named_mutex::wait(std::intmax_t handle, std::int32_t milliseconds_timeout) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

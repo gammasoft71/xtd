@@ -10,29 +10,29 @@ intmax_t condition_variable::create() {
   auto handle = new pthread_cond_t;
   if (pthread_cond_init(handle, nullptr) != 0) {
     delete handle;
-    return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+    return reinterpret_cast<std::intmax_t>(MUTEX_FAILED);
   }
-  return reinterpret_cast<intmax_t>(handle);
+  return reinterpret_cast<std::intmax_t>(handle);
 }
 
-void condition_variable::destroy(intmax_t handle) {
-  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+void condition_variable::destroy(std::intmax_t handle) {
+  if (handle == reinterpret_cast<std::intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_destroy(reinterpret_cast<pthread_cond_t*>(handle));
   delete reinterpret_cast<pthread_cond_t*>(handle);
 }
 
-void condition_variable::pulse(intmax_t handle) {
-  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+void condition_variable::pulse(std::intmax_t handle) {
+  if (handle == reinterpret_cast<std::intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_signal(reinterpret_cast<pthread_cond_t*>(handle));
 }
 
-void condition_variable::pulse_all(intmax_t handle) {
-  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
+void condition_variable::pulse_all(std::intmax_t handle) {
+  if (handle == reinterpret_cast<std::intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_broadcast(reinterpret_cast<pthread_cond_t*>(handle));
 }
 
-bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, std::int32_t milliseconds_timeout) {
-  if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
+bool condition_variable::wait(std::intmax_t handle, std::intmax_t critical_section_handle, std::int32_t milliseconds_timeout) {
+  if (handle == reinterpret_cast<std::intmax_t>(MUTEX_FAILED)) return false;
   if (reinterpret_cast<pthread_mutex_t*>(critical_section_handle) == nullptr) return false;
   
   if (milliseconds_timeout == -1) return pthread_cond_wait(reinterpret_cast<pthread_cond_t*>(handle), reinterpret_cast<pthread_mutex_t*>(critical_section_handle));

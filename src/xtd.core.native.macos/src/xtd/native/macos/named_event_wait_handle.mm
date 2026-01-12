@@ -9,10 +9,10 @@ using namespace xtd::native;
 
 intmax_t named_event_wait_handle::create(bool initial_state, bool manual_reset, const std::string& name) {
   auto semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, initial_state ? 1 : 0);
-  return reinterpret_cast<intmax_t>(semaphore);
+  return reinterpret_cast<std::intmax_t>(semaphore);
 }
 
-void named_event_wait_handle::destroy(intmax_t handle, const std::string& name) {
+void named_event_wait_handle::destroy(std::intmax_t handle, const std::string& name) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   if (sem_close(reinterpret_cast<sem_t*>(handle)) == 0) sem_unlink(name.c_str());
 }
@@ -23,10 +23,10 @@ size_t named_event_wait_handle::max_name_size() {
 
 intmax_t named_event_wait_handle::open(const std::string& name) {
   auto semaphore = sem_open(name.c_str(), O_RDWR, S_IRUSR | S_IWUSR);
-  return reinterpret_cast<intmax_t>(semaphore);
+  return reinterpret_cast<std::intmax_t>(semaphore);
 }
 
-bool named_event_wait_handle::set(intmax_t handle, bool& io_error) {
+bool named_event_wait_handle::set(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -36,7 +36,7 @@ bool named_event_wait_handle::set(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-bool named_event_wait_handle::reset(intmax_t handle, bool& io_error) {
+bool named_event_wait_handle::reset(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -47,7 +47,7 @@ bool named_event_wait_handle::reset(intmax_t handle, bool& io_error) {
   return true;
 }
 
-uint32_t named_event_wait_handle::wait(intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset) {
+uint32_t named_event_wait_handle::wait(std::intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

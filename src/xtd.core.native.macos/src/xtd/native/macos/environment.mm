@@ -21,7 +21,7 @@ namespace {
   char** environment_argv = nullptr;
   
   #if defined (__clang__) || defined(__GNUC__)
-  __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
+  __attribute__((constructor)) void startup_program(std::int32_t argc, char** argv) {
     environment_argc = argc;
     environment_argv = argv;
   }
@@ -167,7 +167,7 @@ std::string environment::get_distribution_name() {
   return name_it->second;
 }
 
-void environment::get_distribution_version(int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
+void environment::get_distribution_version(std::int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
   auto versions = xtd::native::macos::strings::split(name_it->second, {'.'});
@@ -197,7 +197,7 @@ std::string environment::get_environment_variable(const std::string& variable, s
 
 extern char** environ;
 
-std::map<std::string, std::string>& environment::get_environment_variables(int32_t target) {
+std::map<std::string, std::string>& environment::get_environment_variables(std::int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static auto envs = std::map<std::string, std::string> {};
     if (envs.size() == 0) {
@@ -223,7 +223,7 @@ std::map<std::string, std::string>& environment::get_environment_variables(int32
   return envs;
 }
 
-std::string environment::get_know_folder_path(int32_t csidl) {
+std::string environment::get_know_folder_path(std::int32_t csidl) {
   static auto special_folders = std::map<int32_t, std::string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Preferences"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
@@ -242,7 +242,7 @@ int32_t environment::get_os_platform_id() {
   #endif
 }
 
-void environment::get_os_version(int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
+void environment::get_os_version(std::int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
   auto numbers = macos::strings::split(macos::shell_execute::run("sw_vers", "-productVersion"), {'.', '\n'});
   if (numbers.size() < 1 || !macos::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !macos::strings::try_parse(numbers[1], minor)) minor = 0;
@@ -312,7 +312,7 @@ std::string environment::new_line() {
   return "\n";
 }
 
-void environment::quick_exit(int32_t exit_code) noexcept {
+void environment::quick_exit(std::int32_t exit_code) noexcept {
   /// Workaround std::quick_exit and std::at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //std::quick_exit(exit_code)

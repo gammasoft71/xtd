@@ -22,5 +22,5 @@ string types::demangle(const string& name) {
 }
 
 intmax_t types::invalid_handle() noexcept {
-  return reinterpret_cast<intmax_t>(SEM_FAILED);
+  return reinterpret_cast<std::intmax_t>(SEM_FAILED);
 }

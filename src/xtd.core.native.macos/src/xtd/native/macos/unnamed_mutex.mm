@@ -14,17 +14,17 @@ intmax_t unnamed_mutex::create(bool initially_owned) {
     pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
     pthread_mutex_init(handle, &mutex_attribute) != 0) {
     delete handle;
-    return reinterpret_cast<intmax_t>(MUTEX_FAILED);
+    return reinterpret_cast<std::intmax_t>(MUTEX_FAILED);
   }
-  return reinterpret_cast<intmax_t>(handle);
+  return reinterpret_cast<std::intmax_t>(handle);
 }
 
-void unnamed_mutex::destroy(intmax_t handle) {
+void unnamed_mutex::destroy(std::intmax_t handle) {
   pthread_mutex_destroy(reinterpret_cast<pthread_mutex_t*>(handle));
   delete reinterpret_cast<pthread_mutex_t*>(handle);
 }
 
-bool unnamed_mutex::signal(intmax_t handle, bool& io_error) {
+bool unnamed_mutex::signal(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<pthread_mutex_t*>(handle) == MUTEX_FAILED) {
     io_error = true;
@@ -34,7 +34,7 @@ bool unnamed_mutex::signal(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-uint32_t unnamed_mutex::wait(intmax_t handle, std::int32_t milliseconds_timeout) {
+uint32_t unnamed_mutex::wait(std::intmax_t handle, std::int32_t milliseconds_timeout) {
   if (reinterpret_cast<pthread_mutex_t*>(handle) == MUTEX_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? pthread_mutex_unlock(reinterpret_cast<pthread_mutex_t*>(handle)) : pthread_mutex_milliseconds_timedlock(reinterpret_cast<pthread_mutex_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

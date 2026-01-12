@@ -19,7 +19,7 @@ void dns::cleanup() {
   endhostent();
 }
 
-void dns::destroy(intmax_t host) {
+void dns::destroy(std::intmax_t host) {
   delete reinterpret_cast<hostent*>(host);
 }
 
@@ -29,17 +29,17 @@ intmax_t dns::get_host_by_address(const std::string& host_address, std::int32_t 
   inet_pton(host_address_type, host_address.c_str(), &internet_address);
   auto host = gethostbyaddr(reinterpret_cast<char*>(&internet_address), host_address_type == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16, host_address_type);
   if (host == nullptr) return 0;
-  return reinterpret_cast<intmax_t>(new hostent(*host));
+  return reinterpret_cast<std::intmax_t>(new hostent(*host));
 }
 
 intmax_t dns::get_host_by_name(const std::string& host_name) {
   auto lock = std::lock_guard<std::mutex> {dns_mutex};
   auto host = gethostbyname(host_name.c_str());
   if (host == nullptr) return 0;
-  return reinterpret_cast<intmax_t>(new hostent(*host));
+  return reinterpret_cast<std::intmax_t>(new hostent(*host));
 }
 
-std::vector<std::string> dns::get_aliases(intmax_t host) {
+std::vector<std::string> dns::get_aliases(std::intmax_t host) {
   auto aliases = std::vector<std::string> {};
   auto index = size_t {0};
   while (reinterpret_cast<hostent*>(host)->h_aliases[index] != nullptr)
@@ -47,8 +47,8 @@ std::vector<std::string> dns::get_aliases(intmax_t host) {
   return aliases;
 }
 
-std::vector<std::vector<uint8_t>> dns::get_addresses(intmax_t host) {
-  auto addresses = std::vector<std::vector<uint8_t>> {};
+std::vector<std::vector<std::uint8_t>> dns::get_addresses(std::intmax_t host) {
+  auto addresses = std::vector<std::vector<std::uint8_t>> {};
   auto index = size_t {0};
   while (reinterpret_cast<hostent*>(host)->h_addr_list[index] != nullptr) {
     addresses.emplace_back(reinterpret_cast<const std::uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const std::uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16));
@@ -57,7 +57,7 @@ std::vector<std::vector<uint8_t>> dns::get_addresses(intmax_t host) {
   return addresses;
 }
 
-std::string dns::get_host_name(intmax_t host) {
+std::string dns::get_host_name(std::intmax_t host) {
   return reinterpret_cast<hostent*>(host)->h_name;
 }
 

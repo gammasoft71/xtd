@@ -40,29 +40,29 @@ intmax_t speech_synthesizer::create() {
   cmd_file << "say \"$*\"\n";
   cmd_file.close();
   native::file_system::set_permissions(data->say_cmd_file_name, FILE_PERMISSIONS_OWNER_ALL);
-  return reinterpret_cast<intmax_t>(data);
+  return reinterpret_cast<std::intmax_t>(data);
 }
 
-void speech_synthesizer::destroy(intmax_t handle) {
+void speech_synthesizer::destroy(std::intmax_t handle) {
   unlink(reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name.c_str());
   delete reinterpret_cast<speech_synthesizer_data*>(handle);
 }
 
-void speech_synthesizer::pause(intmax_t handle) {
+void speech_synthesizer::pause(std::intmax_t handle) {
 
 }
 
-void speech_synthesizer::resume(intmax_t handle) {
+void speech_synthesizer::resume(std::intmax_t handle) {
 
 }
 
-void speech_synthesizer::speak(intmax_t handle, const std::string& text_to_speak) {
+void speech_synthesizer::speak(std::intmax_t handle, const std::string& text_to_speak) {
   speak_async(handle, text_to_speak, [] {});
   auto exit_code = 0;
   native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
 }
 
-void speech_synthesizer::speak_async(intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed) {
+void speech_synthesizer::speak_async(std::intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed) {
   reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle = native::process::shell_execute("", reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name, text_to_speak, "", PROCESS_WINDOW_STYLE_HIDDEN);
   auto wait_process_thread = std::thread {[on_speak_completed, handle] {
       std::int32_t exit_code = 0;
@@ -72,6 +72,6 @@ void speech_synthesizer::speak_async(intmax_t handle, const std::string& text_to
   wait_process_thread.detach();
 }
 
-void speech_synthesizer::stop(intmax_t handle) {
+void speech_synthesizer::stop(std::intmax_t handle) {
 
 }

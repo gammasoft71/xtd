@@ -59,6 +59,6 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   //#endif
 }
 
-void debugger::log(int32_t level, const std::string& category, const std::string& message) {
+void debugger::log(std::int32_t level, const std::string& category, const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 }

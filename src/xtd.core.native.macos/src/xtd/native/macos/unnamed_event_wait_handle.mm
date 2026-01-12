@@ -14,16 +14,16 @@ using namespace xtd::native;
 intmax_t unnamed_event_wait_handle::create(bool initial_state, bool manual_reset) {
   auto semaphore = semaphore_t {};
   if (semaphore_create(current_task(), &semaphore, SYNC_POLICY_FIFO, initial_state ? 1 : 0) != err_none)
-    return reinterpret_cast<intmax_t>(SEM_FAILED);
-  return static_cast<intmax_t>(semaphore);
+    return reinterpret_cast<std::intmax_t>(SEM_FAILED);
+  return static_cast<std::intmax_t>(semaphore);
 }
 
-void unnamed_event_wait_handle::destroy(intmax_t handle) {
+void unnamed_event_wait_handle::destroy(std::intmax_t handle) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return;
   semaphore_destroy(current_task(), static_cast<semaphore_t>(handle));
 }
 
-bool unnamed_event_wait_handle::set(intmax_t handle, bool& io_error) {
+bool unnamed_event_wait_handle::set(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -33,7 +33,7 @@ bool unnamed_event_wait_handle::set(intmax_t handle, bool& io_error) {
   return !io_error;
 }
 
-bool unnamed_event_wait_handle::reset(intmax_t handle, bool& io_error) {
+bool unnamed_event_wait_handle::reset(std::intmax_t handle, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -44,7 +44,7 @@ bool unnamed_event_wait_handle::reset(intmax_t handle, bool& io_error) {
   return true;
 }
 
-uint32_t unnamed_event_wait_handle::wait(intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset) {
+uint32_t unnamed_event_wait_handle::wait(std::intmax_t handle, std::int32_t milliseconds_timeout, bool manual_reset) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

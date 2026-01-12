@@ -23,7 +23,7 @@ using namespace xtd::native;
 namespace {
   class file_descriptor_streambuf : public std::streambuf {
   public:
-    explicit file_descriptor_streambuf(int32_t file_descriptor) : file_descriptor_(file_descriptor) {}
+    explicit file_descriptor_streambuf(std::int32_t file_descriptor) : file_descriptor_(file_descriptor) {}
     ~file_descriptor_streambuf() {close(file_descriptor_);}
     
   protected:
@@ -35,7 +35,7 @@ namespace {
       return std::streambuf::underflow(); // EOF
     }
     
-    std::int32_t overflow(int32_t c) override {
+    std::int32_t overflow(std::int32_t c) override {
       value_ = static_cast<char>(c);
       if (write(file_descriptor_, &value_, 1) != -1) {
         this->setp(&value_, &value_);
@@ -50,7 +50,7 @@ namespace {
   
   class process_istream : public std::istream {
   public:
-    explicit process_istream(int32_t file_descriptor) : std::istream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_istream(std::int32_t file_descriptor) : std::istream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -58,7 +58,7 @@ namespace {
   
   class process_ostream : public std::ostream {
   public:
-    explicit process_ostream(int32_t file_descriptor) : std::ostream(&stream_buf_), stream_buf_(file_descriptor) {}
+    explicit process_ostream(std::int32_t file_descriptor) : std::ostream(&stream_buf_), stream_buf_(file_descriptor) {}
     
   private:
     file_descriptor_streambuf stream_buf_;
@@ -141,7 +141,7 @@ namespace {
     return arguments;
   }
   
-  bool compute_base_priority(int32_t priority, std::int32_t& base_priority) {
+  bool compute_base_priority(std::int32_t priority, std::int32_t& base_priority) {
     static auto base_priorities = std::map<int32_t, std::int32_t> {{IDLE_PRIORITY_CLASS, PRIO_MIN}, {BELOW_NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4}, {NORMAL_PRIORITY_CLASS, PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2}, {ABOVE_NORMAL_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4}, {HIGH_PRIORITY_CLASS, PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8}, {REALTIME_PRIORITY_CLASS, PRIO_MAX}};
     auto it = base_priorities.find(priority);
     if (it == base_priorities.end()) return false;
@@ -150,18 +150,18 @@ namespace {
   }
 }
 
-int32_t process::base_priority(int32_t priority) {
+int32_t process::base_priority(std::int32_t priority) {
   auto base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
   compute_base_priority(priority, base_priority);
   return base_priority;
 }
 
-bool process::kill(intmax_t process) {
+bool process::kill(std::intmax_t process) {
   if (process == 0) return false;
   return ::kill(static_cast<pid_t>(process), SIGTERM) == 0;
 }
 
-bool process::priority_class(intmax_t process, std::int32_t priority) {
+bool process::priority_class(std::intmax_t process, std::int32_t priority) {
   auto base_priority = PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 2;
   if (compute_base_priority(priority, base_priority) == false) return false;
   return setpriority(PRIO_PROCESS, static_cast<id_t>(process), base_priority) == 0;
@@ -210,7 +210,7 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
     execvp(execvp_args[0], execvp_args.data());
     exit(-1);
   }
-  return static_cast<intmax_t>(process);
+  return static_cast<std::intmax_t>(process);
 }
 
 process::started_process process::start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, std::int32_t process_window_style, std::int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams) {
@@ -259,10 +259,10 @@ process::started_process process::start(const std::string& file_name, const std:
   if (redirect_standard_output) close(pipe_stdout[1]);
   if (redirect_standard_error) close(pipe_stderr[1]);
   
-  return std::make_tuple(static_cast<intmax_t>(process), static_cast<int32_t>(process), std::make_unique<process_ostream>(pipe_stdin[1]), std::make_unique<process_istream>(pipe_stdout[0]), std::make_unique<process_istream>(pipe_stderr[0]));
+  return std::make_tuple(static_cast<std::intmax_t>(process), static_cast<int32_t>(process), std::make_unique<process_ostream>(pipe_stdin[1]), std::make_unique<process_istream>(pipe_stdout[0]), std::make_unique<process_istream>(pipe_stderr[0]));
 }
 
-bool process::wait(intmax_t process, std::int32_t& exit_code) {
+bool process::wait(std::intmax_t process, std::int32_t& exit_code) {
   if (process == 0) return false;
   auto wait_info = siginfo_t {};
   wait_info.si_pid = static_cast<pid_t>(process);

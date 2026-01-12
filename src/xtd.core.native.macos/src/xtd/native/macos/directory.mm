@@ -59,7 +59,7 @@ directory::directory_iterator& directory::directory_iterator::operator ++() {
   return *this;
 }
 
-directory::directory_iterator directory::directory_iterator::operator ++(int32_t) {
+directory::directory_iterator directory::directory_iterator::operator ++(std::int32_t) {
   auto result = directory_iterator {*this};
   ++(*this);
   return result;
@@ -129,7 +129,7 @@ directory::file_iterator& directory::file_iterator::operator ++() {
   return *this;
 }
 
-directory::file_iterator directory::file_iterator::operator ++(int32_t) {
+directory::file_iterator directory::file_iterator::operator ++(std::int32_t) {
   auto result = file_iterator {*this};
   ++(*this);
   return result;
@@ -199,7 +199,7 @@ directory::file_and_directory_iterator& directory::file_and_directory_iterator::
   return *this;
 }
 
-directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(int32_t) {
+directory::file_and_directory_iterator directory::file_and_directory_iterator::operator ++(std::int32_t) {
   auto result = file_and_directory_iterator {*this};
   ++(*this);
   return result;
