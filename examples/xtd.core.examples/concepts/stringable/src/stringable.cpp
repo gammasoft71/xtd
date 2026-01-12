@@ -40,7 +40,7 @@ struct my_string {
   string value;
 };
 
-template<is_stringable value_t>
+template<stringable value_t>
 auto log_to_console(const value_t& value) noexcept {
   console::write_line(value);
 }
@@ -77,4 +77,4 @@ auto main() -> int {
 // [1, 8, 27, 64, 125]
 // xtd::argument_out_of_range_exception : Specified argument is out of range of valid values.
 //    at xtd::argument_out_of_range_exception::argument_out_of_range_exception(xtd::diagnostics::stack_frame const&) in argument_out_of_range_exception.hpp:line 30
-//    at main in is_stringable.cpp:line 62
+//    at main in stringable.cpp:line 62

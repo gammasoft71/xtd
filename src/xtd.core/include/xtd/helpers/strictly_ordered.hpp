@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core helpers
+    /// @ingroup xtd_core helpers concepts
     template<typename value_t>
     concept strictly_ordered = less_than_comparable<value_t> && greater_than_comparable<value_t>;
   }

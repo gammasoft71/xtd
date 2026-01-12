@@ -48,7 +48,7 @@
 
 ## [Concepts](concepts/README.md)
 
-* [is_stringable](concepts/is_stringable/README.md) shows how to use how to use [xtd::is_stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1is__stringable.html) concept.
+* [is_stringable](concepts/stringable/README.md) shows how to use how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1stringable.html) concept.
 
 ## [Configuration](configuration/README.md)
 

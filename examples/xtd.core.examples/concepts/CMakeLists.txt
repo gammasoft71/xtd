@@ -4,6 +4,6 @@ project(concepts)
 find_package(xtd REQUIRED)
 
 add_projects(
-  is_stringable
+  stringable
 )
 

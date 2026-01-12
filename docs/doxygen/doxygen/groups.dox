@@ -158,6 +158,10 @@
     |   |         /// @brief Contains specialized collections definitions.
     |   |         /// @ingroup collections
     |   |         /// @defgroup specialized_collections specialized
+    |   |- concepts
+    |   |     /// @brief Contains concepts definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup concepts concepts
     |   |- configuration
     |   |     /// @brief Contains configuration definitions.
     |   |     /// @ingroup system
@@ -226,6 +230,10 @@
     |   |     /// @brief Contains timers definitions.
     |   |     /// @ingroup system
     |   |     /// @defgroup timers timers
+    |   |- traits
+    |   |     /// @brief Contains traits definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup traits traits
     |   |- web
     |         /// @brief Contains web definitions.
     |         /// @ingroup system

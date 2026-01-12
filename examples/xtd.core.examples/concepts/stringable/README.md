@@ -1,10 +1,10 @@
-# is_stringable
+# stringable
 
-Shows how to use [xtd::is_stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1is__stringable.html) concept.
+Shows how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1istringable.html) concept.
 
 ## Sources
 
-* [src/is_stringable.cpp](src/is_stringable.cpp)
+* [src/stringable.cpp](src/stringable.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
@@ -31,5 +31,5 @@ saturday
 [1, 8, 27, 64, 125]
 xtd::argument_out_of_range_exception : Specified argument is out of range of valid values.
    at xtd::argument_out_of_range_exception::argument_out_of_range_exception(xtd::diagnostics::stack_frame const&) in argument_out_of_range_exception.hpp:line 30
-   at main in is_stringable.cpp:line 62
+   at main in stringable.cpp:line 62
 ```

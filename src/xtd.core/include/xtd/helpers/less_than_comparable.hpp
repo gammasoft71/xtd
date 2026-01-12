@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core helpers
+    /// @ingroup xtd_core helpers concepts
     template<typename value_t>
     concept less_than_comparable =
     requires(const value_t& a, const value_t& b) {

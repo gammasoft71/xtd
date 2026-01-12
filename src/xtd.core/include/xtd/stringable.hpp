@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::is_stringable concept.
+/// @brief Contains xtd::stringable concept.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_STD_INTERNAL__
@@ -13,25 +13,25 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept is stringable.
+  /// @brief Concept stringable.
   /// @par Definition
   /// ```cpp
   /// template<class value_t>
-  /// concept xtd::is_stringable;
+  /// concept xtd::stringable;
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/helpers/is_stringable>
+  /// #include <xtd/helpers/stringable>
   /// ```
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core helpers
+  /// @ingroup xtd_core concepts
   /// @return `true` if value_t is derived from xtd::object, or value_t is derived from xtd::istringable, or value_t is derived from xtd::iformatable, or value_t is derived from std::exception, or value_t is an enum, value_t is std::ranges::range, or value_t has output stream operator `<<`; otherwise `false`.
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not stringable.
   template<class value_t>
-  concept is_stringable =
+  concept stringable =
     std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
     std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable> ||
     std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> ||

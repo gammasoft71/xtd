@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core helpers
+    /// @ingroup xtd_core helpers traits
     /// This trait evaluates to `std::true_type` if the following expression is valid:
     /// ```cpp
     /// std::declval<std::ostream&>() << std::declval<const value_t&>()
@@ -48,13 +48,12 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core helpers
+    /// @ingroup xtd_core helpers traits
     /// This specialization is selected when `value_t` provides a valid `operator<<` overload compatible with `std::ostream`.
     /// @tparam value_t The type to test for stream insertability.
     /// @see is_stream_insertable_v
     template<class value_t>
-    struct is_stream_insertable < value_t,
-           std::void_t < decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>()) >> : std::true_type {};
+    struct is_stream_insertable<value_t, std::void_t < decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>()) >> : std::true_type {};
     /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
     /// @par Definition
     /// ```cpp
@@ -69,7 +68,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core helpers
+    /// @ingroup xtd_core helpers traits
     /// This specialization is selected when `value_t` provides a valid `operator<<` overload compatible with `std::ostream`.
     /// @tparam value_t The type to test for stream insertability.
     /// @see is_stream_insertable_v
@@ -77,7 +76,21 @@ namespace xtd {
     requires std::is_enum_v<std::remove_cvref_t<value_t>>
     struct is_stream_insertable<value_t> : std::false_type {};
     
-    /// @brief Convenience variable template equivalent to `is_stream_insertable<value_t>::value`.
+    /// @brief Convenience variable template equivalent to `is_stream_insertable_v<value_t>::value`.
+    /// @par Definition
+    /// ```cpp
+    /// template<class value_t>
+    /// inline constexpr bool is_stream_insertable_v = is_stream_insertable<std::remove_cvref_t<value_t>>::value;
+    /// ```
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/helpers/is_stream_insertable>
+    /// ```
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core helpers traits
     /// This helper allows simpler and more readable usage, especially in `if constexpr` expressions and static assertions.
     /// @tparam value_t The type to test for stream insertability.
     /// ```cpp
