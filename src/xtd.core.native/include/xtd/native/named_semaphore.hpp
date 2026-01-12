@@ -42,30 +42,30 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static intmax_t create(int32_t initial_count, std::int32_t max_count, const std::string& name);
+      static auto create(std::int32_t initial_count, std::int32_t max_count, const std::string& name) -> std::intmax_t;
       
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
       /// @param handle The semaphore handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle, const std::string& name);
+      static auto destroy(std::intmax_t handle, const std::string& name) -> void;
       
       /// @brief Gets the maximum name size supported.
       /// @return The maximum name size supported.
       /// @warning Internal use only
-      static size_t max_name_size();
+      static auto max_name_size() -> std::size_t;
       
       /// @brief Open named semaphore with specified name.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the opened semaphore.
       /// @warning Internal use only
-      static intmax_t open(const std::string& name);
+      static auto open(const std::string& name) -> std::intmax_t;
       
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, std::int32_t release_count, std::int32_t& previous_count, bool& io_error);
+      static auto signal(std::intmax_t handle, std::int32_t release_count, std::int32_t& previous_count, bool& io_error) -> bool;
       
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
@@ -76,7 +76,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static std::uint32_t wait(intmax_t handle, std::int32_t milliseconds_timeout);
+      static auto wait(std::intmax_t handle, std::int32_t milliseconds_timeout) -> std::uint32_t;
       /// @}
     };
   }
