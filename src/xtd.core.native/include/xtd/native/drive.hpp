@@ -34,9 +34,8 @@ namespace xtd {
     /// @warning Internal use only
     class core_native_export_ drive final {
       drive() = delete;
-    protected:
       friend class xtd::io::drive_info;
-      
+    protected:
       /// @name Protected Static Methods
       
       /// @{
@@ -47,29 +46,29 @@ namespace xtd {
       /// @param total_number_of_free_bytes Return total number of free bytes in bytes.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes);
+      static auto get_available_free_space(const std::string& root_path_name, std::size_t& free_bytes, std::size_t& total_number_of_bytes, std::size_t& total_number_of_free_bytes) -> bool;
       /// @brief Gets drive type.
       /// @param root_path_name root path name to get drive type.
       /// @return The drive type (see drive_type.h file).
       /// @warning Internal use only
-      static std::int32_t get_drive_type(const std::string& root_path_name);
+      static auto get_drive_type(const std::string& root_path_name) -> std::int32_t;
       /// @brief Gets system drive names array.
       /// @return An array of system drive names.
       /// @warning Internal use only
-      static std::vector<std::string> get_drives();
+      static auto get_drives() -> std::vector<std::string>;
       /// @brief Gets volume information
       /// @param root_path_name The root path name of the volume
       /// @param volume_name The name of the volume.
       /// @param file_system_name The file system name.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name);
+      static auto get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name) -> bool;
       /// @brief Sets volume label
       /// @param root_path_name The root path name of the volume
       /// @param volume The volume name to set.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool set_Volume_label(const std::string& root_path_name, const std::string& volume_name);
+      static auto set_Volume_label(const std::string& root_path_name, const std::string& volume_name) -> bool;
       /// @}
     };
   }
