@@ -110,19 +110,15 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable.html">   36</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> : std::false_type {};</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07s4f7638f687d206709f54a29bf9f7cd93.html">   56</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> &lt; value_t,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>           std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
-</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    template&lt;class value_t&gt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    requires std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_01_4.html">   78</a></span>    struct is_stream_insertable&lt;value_t&gt; : std::false_type {};</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    template&lt;class value_t&gt;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="namespacextd_1_1helpers.html#ad486ecb6deeeeccd083816a64f5588c1">   89</a></span>    inline constexpr bool is_stream_insertable_v = is_stream_insertable&lt;std::remove_cvref_t&lt;value_t&gt;&gt;::value;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07s4f7638f687d206709f54a29bf9f7cd93.html">   56</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a>&lt;value_t, std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    requires std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_01_4.html">   77</a></span>    struct is_stream_insertable&lt;value_t&gt; : std::false_type {};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="group__traits.html#gad486ecb6deeeeccd083816a64f5588c1">  102</a></span>    inline constexpr bool is_stream_insertable_v = is_stream_insertable&lt;std::remove_cvref_t&lt;value_t&gt;&gt;::value;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 <div class="ttc" id="anamespacextd_1_1helpers_html"><div class="ttname"><a href="namespacextd_1_1helpers.html">xtd::helpers</a></div><div class="ttdoc">The xtd::helpers namespace contains helpers for xtd objects, sush as exception static class.</div><div class="ttdef"><b>Definition</b> exception_case.hpp:9</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="astructxtd_1_1helpers_1_1is__stream__insertable_html"><div class="ttname"><a href="structxtd_1_1helpers_1_1is__stream__insertable.html">xtd::helpers::is_stream_insertable</a></div><div class="ttdoc">Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:36</div></div>
@@ -130,7 +126,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 12 2026 11:39:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 19:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
