@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Gets the machine's GUID.
       /// @return A byte array that contains the machine GUID.
       /// @warning Internal use only
-      static std::vector<uint8_t> machine_guid();
+      static auto machine_guid() -> std::vector<std::uint8_t>;
       /// @}
     };
   }
