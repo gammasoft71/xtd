@@ -43,30 +43,30 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created mutex.
       /// @warning Internal use only
-      static intmax_t create(bool initially_owned, const std::string& name);
+      static auto create(bool initially_owned, const std::string& name) -> std::intmax_t;
       
       /// @brief Destroy named mutex with specified mutex handle.
       /// @param name The name of the mutex.
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle, const std::string& name);
+      static auto destroy(std::intmax_t handle, const std::string& name) -> void;
       
       /// @brief Gets the maximum name size supported.
       /// @return The maximum name size supported.
       /// @warning Internal use only
-      static size_t max_name_size();
+      static auto max_name_size() -> std::size_t;
       
       /// @brief Open named mutex with specified name.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the opened mutex.
       /// @warning Internal use only
-      static intmax_t open(const std::string& name);
+      static auto open(const std::string& name) -> std::intmax_t;
       
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, bool& io_error);
+      static auto signal(std::intmax_t handle, bool& io_error) -> bool;
       
       /// @brief Wait named mutex with specified mutex handle and timeout.
       /// @param handle The mutex handle to wait.
@@ -77,7 +77,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static std::uint32_t wait(intmax_t handle, std::int32_t milliseconds_timeout);
+      static auto wait(std::intmax_t handle, std::int32_t milliseconds_timeout) -> std::uint32_t;
       /// @}
     };
   }
