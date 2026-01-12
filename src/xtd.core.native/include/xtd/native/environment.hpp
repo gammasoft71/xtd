@@ -120,7 +120,7 @@ namespace xtd {
       /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
       /// @warning Internal use only
-      static auto get_environment_variables(std::int32_t target) -> std::map<std::string, std::string>&;
+      static auto get_environment_variables(std::int32_t target) -> std::map<std::string, std::string>& ;
       /// @brief Retrieves the value of an environment variable from the current process.
       /// @param variable The name of the environment variable.
       /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
