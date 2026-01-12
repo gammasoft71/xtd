@@ -1931,7 +1931,7 @@ namespace xtd {
       /// @}
       
     private:
-      static std::tuple<time_t, std::time_t, std::time_t> get_file_times(const string& path);
+      static std::tuple<std::time_t, std::time_t, std::time_t> get_file_times(const string& path);
     };
   }
 }
