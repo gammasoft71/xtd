@@ -52,7 +52,7 @@ namespace xtd {
         /// @param hdc The handle of the device context font.
         /// @return The created font handle.
         /// @warning Internal use only
-        static auto create_from_hdc(intptr hdc); -> intptr
+        static auto create_from_hdc(intptr hdc) -> intptr;
         
         /// @brief Creates font from hfont.
         /// @param hfont The handle of the font.
