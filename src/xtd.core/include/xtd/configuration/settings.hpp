@@ -212,7 +212,7 @@ namespace xtd {
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
-       auto read(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
+      auto read(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
       /// @brief Reads a value for specified key. If not found default value is used.
       /// @tparam type_t The type of value to read.
       /// @param key The key used to read a value.
