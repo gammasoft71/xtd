@@ -42,7 +42,7 @@ namespace xtd {
       /// @remarks * " Preferences" on macos.
       /// @remarks * ".conf" on linux.
       /// @warning Internal use only
-      static std::string get_file_extension();
+      static auto get_file_extension() -> std::string;
       /// @}
     };
   }
