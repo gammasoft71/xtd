@@ -89,37 +89,37 @@ namespace xtd {
     ///     // @{
     ///     // @brief Gets the back_color user setting property.
     ///     // @return A xtd::drawing::color value.
-    ///     xtd::drawing::color back_color() const noexcept {return back_color_;}
+    ///     auto back_color() const noexcept -> xtd::drawing::color {return back_color_;}
     ///     // @brief Sets the back_color user setting property.
     ///     // @param value A xtd::drawing::color value.
-    ///     settings& back_color(xtd::drawing::color value) noexcept {
+    ///     auto back_color(xtd::drawing::color value) noexcept -> settings& {
     ///       back_color_ = value;
     ///       return *this;
     ///     }
     ///
     ///     // @brief Gets the location user setting property.
     ///     // @return A xtd::drawing::point value.
-    ///     xtd::drawing::point location() const noexcept {return location_;}
+    ///     auto location() const noexcept -> xtd::drawing::point {return location_;}
     ///     // @brief Sets the location user setting property.
     ///     // @param value A xtd::drawing::point value.
-    ///     settings& location(xtd::drawing::point value) noexcept {
+    ///     auto location(xtd::drawing::point value) noexcept -> settings& {
     ///       location_ = value;
     ///       return *this;
     ///     }
     ///
     ///     // @brief Gets the size user setting property.
     ///     // @return A xtd::drawing::size value.
-    ///     xtd::drawing::size size() const noexcept {return size_;}
+    ///     auto size() const noexcept -> xtd::drawing::size {return size_;}
     ///     // @brief Sets the size user setting property.
     ///     // @param value A xtd::drawing::size value.
-    ///     settings& size(xtd::drawing::size value) noexcept {
+    ///     auto size(xtd::drawing::size value) noexcept -> settings& {
     ///       size_ = value;
     ///       return *this;
     ///     }
     ///
     ///     // @brief Gets the text system setting property.
     ///     // @return A xtd::string value.
-    ///     xtd::string text() const noexcept {return "Settings example";}
+    ///     auto text() const noexcept -> xtd::string {return "Settings example";}
     ///
     ///     // @}
     ///
@@ -128,7 +128,7 @@ namespace xtd {
     ///     // @{
     ///     // @brief Reload all properties with the last saved values.
     ///     // @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
-    ///     void reload() noexcept {
+    ///     auto reload() noexcept -> void {
     ///       back_color_ = settings_.read("back_color", back_color_);
     ///       location_ = settings_.read("location", location_);
     ///       size_ = settings_.read("size", size_);
@@ -136,14 +136,14 @@ namespace xtd {
     ///
     ///     // @brief Reset all properties to their default values.
     ///     // @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
-    ///     void reset() noexcept {
+    ///     auto reset() noexcept -> void {
     ///       settings_.reset();
     ///       *this = settings {false};
     ///     }
     ///
     ///     // @brief Save all properties.
     ///     // @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
-    ///     void save() noexcept {
+    ///     auto save() noexcept -> void {
     ///       settings_.write("back_color", back_color_);
     ///       settings_.write("location", location_);
     ///       settings_.write("size", size_);
@@ -157,7 +157,7 @@ namespace xtd {
     ///     // @brief Gets the default instance of settings.
     ///     // @return The default instance.
     ///     // @remarks At the first call all properties are reloaded with the last saved values.
-    ///     static settings& default_settings() noexcept {
+    ///     static auto default_settings() noexcept -> settings& {
     ///       static auto default_settings = settings {};
     ///       return default_settings;
     ///     }
@@ -202,7 +202,7 @@ namespace xtd {
       /// @remarks The product_name is defined by the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if it’s not empty; otherwise, it defaults to the filename of the first argument passed to main.
       /// @remarks The company_name is defined by the xtd::reflection::assembly::company() property of the same assembly if not empty; otherwise, it defaults to the same value as product_name.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
-      const xtd::string& file_path() const noexcept;
+      auto file_path() const noexcept -> const xtd::string&;
       /// @}
       
       /// @name Public Methods
@@ -212,45 +212,45 @@ namespace xtd {
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
-      xtd::string read(const xtd::string& key, const xtd::string& default_value);
+       auto read(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
       /// @brief Reads a value for specified key. If not found default value is used.
       /// @tparam type_t The type of value to read.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A type_t that represent the value associate to the key.
       template<class type_t>
-      type_t read(const xtd::string& key, const type_t& default_value) {
+      auto read(const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(key, xtd::string::format("{}", default_value)));
       }
       
       /// @brief Reset application settings.
       /// @remarks The settings are cleared and the application settings file is removed.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
-      void reset();
+      auto reset() -> void;
       
       /// @brief Save application settings.
       /// @remarks The settings are saved in the application settings file.
-      void save();
+      auto save() -> void;
       
       /// @brief Writes a specified value for specified key.
       /// @param key The key used to write a value.
       /// @param value A string to write.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
-      void write(const xtd::string& key, const xtd::string& value);
+      auto write(const xtd::string& key, const xtd::string& value) -> void;
       /// @brief Writes a specified value for specified key.
       /// @tparam type_t The type of value to write.
       /// @param key The key used to write a value.
       /// @param value A type_t to write.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
       template<class type_t>
-      void write(const xtd::string& key, type_t&& value) {
+      auto write(const xtd::string& key, type_t&& value) -> void {
         write_string(key, xtd::string::format("{}", value));
       }
       /// @}
       
     private:
-      xtd::string read_string(const xtd::string& key, const xtd::string& default_value);
-      void write_string(const xtd::string& key, const xtd::string& value);
+      auto read_string(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
+      auto write_string(const xtd::string& key, const xtd::string& value) -> void;
       
       xtd::sptr<data> data_;
     };
