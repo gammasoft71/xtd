@@ -46,27 +46,27 @@ namespace xtd {
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific alternate character used to separate directory levels in a path string.
       /// @warning Internal use only
-      static char alt_directory_separator_char();
+      static auto alt_directory_separator_char() -> char;
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific character used to separate directory levels in a path string.
       /// @warning Internal use only
-      static char directory_separator_char();
+      static auto directory_separator_char() -> char;
       /// @brief Gets temp path.
       /// @return The temp path.
       /// @warning Internal use only
-      static std::string get_temp_path();
+      static auto get_temp_path() -> std::string;
       /// @brief Provides a platform-specific array of characters that cannot be specified in path string arguments passed to members of the Path class.
       /// @return A platform-specific array of characters that cannot be specified in path string.
       /// @warning Internal use only
-      static std::vector<char> invalid_path_chars();
+      static auto invalid_path_chars() -> std::vector<char>;
       /// @brief Provides a platform-specific separator character used to separate path strings in environment variables.A platform-specific separator character used to separate path strings in environment variables.
       /// @return A platform-specific separator character used to separate path strings.
       /// @warning Internal use only
-      static char path_separator();
+      static auto path_separator() -> char;
       /// @brief Provides a platform-specific volume separator character.
       /// @return A platform-specific volume separator character.
       /// @warning Internal use only
-      static char volume_separator_char();
+      static auto volume_separator_char() -> char;
       /// @}
     };
   }
