@@ -5,6 +5,7 @@ namespace xtd::tunit {
   class unit_tests {
   public:
     static auto main() {
+      // Using `--verbose` command line argument to show SUCCEED tests.
       return assert_unit_tests::register_assert_unit_test::run_all_tests();
     }
   };
