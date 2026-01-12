@@ -5,7 +5,7 @@ namespace xtd::drawing {
   class unit_tests {
   public:
     static auto main() {
-      settings::default_settings().brief(environment::get_environment_variable("CI") == "true");
+      settings::default_settings().brief(true);
       return console_unit_test {}.run();
     }
   };

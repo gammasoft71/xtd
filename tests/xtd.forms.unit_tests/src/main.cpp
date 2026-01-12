@@ -5,7 +5,7 @@ namespace xtd::forms {
   class unit_tests {
   public:
     static auto main() {
-      settings::default_settings().brief(environment::get_environment_variable("CI") == "true");
+      settings::default_settings().brief(true);
       return tunit::console_unit_test {}.run();
     }
   };
