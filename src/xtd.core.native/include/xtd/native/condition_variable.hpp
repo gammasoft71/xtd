@@ -42,22 +42,22 @@ namespace xtd {
       /// @brief Create condition variable.
       /// @return The handle of the created condition variable.
       /// @warning Internal use only
-      static intmax_t create();
+      static auto create() -> std::intmax_t;
       
       /// @brief Destroy condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to destroy.
       /// @warning Internal use only
-      static void destroy(intmax_t handle);
+      static auto destroy(std::intmax_t handle) -> void;
       
       /// @brief Pulse wainting condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to pulse.
       /// @return `true` if succeed; otherwise `false`.
-      static void pulse(intmax_t handle);
+      static auto pulse(std::intmax_t handle) -> void;
       
       /// @brief Pulse all waiting condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to pulse all.
       /// @return `true` if succeed; otherwise `false`.
-      static void pulse_all(intmax_t handle);
+      static auto pulse_all(std::intmax_t handle) -> void;
       
       /// @brief Wait`condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to release.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool wait(intmax_t handle, intmax_t critical_section_handle, std::int32_t milliseconds_timeout);
+      static auto wait(std::intmax_t handle, std::intmax_t critical_section_handle, std::int32_t milliseconds_timeout) -> bool;
       /// @}
     };
   }

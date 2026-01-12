@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
-      static void play(uint32_t sound);
+      static auto play(uint32_t sound) -> void;
       /// @}
     };
   }
