@@ -52,13 +52,13 @@ namespace xtd {
       /// @param value The value to be added to the integer at location.
       /// @return std::int32_t The new value stored at location.
       /// @warning Internal use only
-      static std::int32_t add(int32_t& location, std::int32_t value);
+      static auto add(std::int32_t& location, std::int32_t value) -> std::int32_t;
       /// @brief Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
       /// @return std::int64_t The new value stored at location.
       /// @warning Internal use only
-      static std::int64_t add(int64_t& location, std::int64_t value);
+      static auto add(int64_t& location, std::int64_t value) -> std::int64_t;
       
       /// @brief Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with Comparand and possibly replaced.
@@ -66,75 +66,75 @@ namespace xtd {
       /// @param Comparand The value that is compared to the value at location.
       /// @return The original value in location.
       /// @warning Internal use only
-      static std::int32_t compare_exchange(int32_t& location, std::int32_t value, std::int32_t comparand);
+      static auto compare_exchange(std::int32_t& location, std::int32_t value, std::int32_t comparand) -> std::int32_t;
       /// @brief Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       /// @warning Internal use only
-      static std::int64_t compare_exchange(int64_t& location, std::int64_t value, std::int64_t comparand);
+      static auto compare_exchange(int64_t& location, std::int64_t value, std::int64_t comparand) -> std::int64_t;
       /// @brief Compares two __slong__ signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       /// @warning Internal use only
-      static __slong__ compare_exchange(__slong__& location, __slong__ value, __slong__ comparand);
+      static auto compare_exchange(__slong__& location, __slong__ value, __slong__ comparand) -> __slong__;
       /// @brief Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       /// @warning Internal use only
-      static void* compare_exchange(void*& location, void* value, void* comparand);
+      static auto compare_exchange(void*& location, void* value, void* comparand) -> void*;
       
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
       /// @warning Internal use only
-      static std::int32_t decrement(int32_t& location);
+      static auto decrement(std::int32_t& location) -> std::int32_t;
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
       /// @warning Internal use only
-      static std::int64_t decrement(int64_t& location);
+      static auto decrement(int64_t& location) -> std::int64_t;
       
       /// @brief Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       /// @warning Internal use only
-      static std::int32_t exchange(int32_t& location, std::int32_t value);
+      static auto exchange(std::int32_t& location, std::int32_t value) -> std::int32_t;
       /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       /// @warning Internal use only
-      static std::int64_t exchange(int64_t& location, std::int64_t value);
+      static auto exchange(int64_t& location, std::int64_t value) -> std::int64_t;
       /// @brief Sets a __slong__ signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       /// @warning Internal use only
-      static __slong__ exchange(__slong__& location, __slong__ value);
+      static auto exchange(__slong__& location, __slong__ value) -> __slong__;
       /// @brief Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       /// @warning Internal use only
-      static void* exchange(void*& location, void* value);
+      static auto exchange(void*& location, void* value) -> void*;
       
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.
       /// @warning Internal use only
-      static std::int32_t increment(int32_t& location);
+      static auto increment(std::int32_t& location) -> std::int32_t;
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.
       /// @warning Internal use only
-      static std::int64_t increment(int64_t& location);
+      static auto increment(int64_t& location) -> std::int64_t;
       /// @}
     };
   }
