@@ -232,37 +232,37 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">    <span class="comment">// @{</span></div>
 <div class="line">    <span class="comment">// @brief Gets the back_color user setting property.</span></div>
 <div class="line">    <span class="comment">// @return A xtd::drawing::color value.</span></div>
-<div class="line">    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color back_color() const noexcept {<span class="keywordflow">return</span> back_color_;}</div>
+<div class="line">    auto back_color() const noexcept -&gt; <a class="code hl_namespace" href="namespacextd.html">xtd</a>::drawing::color {<span class="keywordflow">return</span> back_color_;}</div>
 <div class="line">    <span class="comment">// @brief Sets the back_color user setting property.</span></div>
 <div class="line">    <span class="comment">// @param value A xtd::drawing::color value.</span></div>
-<div class="line">    settings&amp; back_color(xtd::drawing::color value) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keyword">auto</span> back_color(xtd::drawing::color value) <span class="keyword">noexcept</span> -&gt; settings&amp; {</div>
 <div class="line">      back_color_ = value;</div>
 <div class="line">      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Gets the location user setting property.</span></div>
 <div class="line">    <span class="comment">// @return A xtd::drawing::point value.</span></div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::point</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>() const noexcept {<span class="keywordflow">return</span> location_;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>() const noexcept -&gt; xtd::drawing::point {<span class="keywordflow">return</span> location_;}</div>
 <div class="line">    <span class="comment">// @brief Sets the location user setting property.</span></div>
 <div class="line">    <span class="comment">// @param value A xtd::drawing::point value.</span></div>
-<div class="line">    settings&amp; <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>(<a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::point</a> value) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>(<a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::point</a> value) <span class="keyword">noexcept</span> -&gt; settings&amp; {</div>
 <div class="line">      location_ = value;</div>
 <div class="line">      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Gets the size user setting property.</span></div>
 <div class="line">    <span class="comment">// @return A xtd::drawing::size value.</span></div>
-<div class="line">    xtd::drawing::size <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>() const noexcept {<span class="keywordflow">return</span> size_;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>() const noexcept -&gt; xtd::drawing::size {<span class="keywordflow">return</span> size_;}</div>
 <div class="line">    <span class="comment">// @brief Sets the size user setting property.</span></div>
 <div class="line">    <span class="comment">// @param value A xtd::drawing::size value.</span></div>
-<div class="line">    settings&amp; <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(xtd::drawing::size value) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>(xtd::drawing::size value) <span class="keyword">noexcept</span> -&gt; settings&amp; {</div>
 <div class="line">      size_ = value;</div>
 <div class="line">      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Gets the text system setting property.</span></div>
 <div class="line">    <span class="comment">// @return A xtd::string value.</span></div>
-<div class="line">    <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>() const noexcept {<span class="keywordflow">return</span> <span class="stringliteral">&quot;Settings example&quot;</span>;}</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>() const noexcept -&gt; xtd::<span class="keywordtype">string</span> {<span class="keywordflow">return</span> <span class="stringliteral">&quot;Settings example&quot;</span>;}</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @}</span></div>
 <div class="line"> </div>
@@ -271,7 +271,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">    <span class="comment">// @{</span></div>
 <div class="line">    <span class="comment">// @brief Reload all properties with the last saved values.</span></div>
 <div class="line">    <span class="comment">// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.</span></div>
-<div class="line">    <span class="keywordtype">void</span> reload() noexcept {</div>
+<div class="line">    <span class="keyword">auto</span> reload() noexcept -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      back_color_ = settings_.read(<span class="stringliteral">&quot;back_color&quot;</span>, back_color_);</div>
 <div class="line">      location_ = settings_.read(<span class="stringliteral">&quot;location&quot;</span>, location_);</div>
 <div class="line">      size_ = settings_.read(<span class="stringliteral">&quot;size&quot;</span>, size_);</div>
@@ -279,14 +279,14 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Reset all properties to their default values.</span></div>
 <div class="line">    <span class="comment">// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.</span></div>
-<div class="line">    <span class="keywordtype">void</span> reset() noexcept {</div>
+<div class="line">    <span class="keyword">auto</span> reset() noexcept -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      settings_.reset();</div>
 <div class="line">      *<span class="keyword">this</span> = settings {<span class="keyword">false</span>};</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// @brief Save all properties.</span></div>
 <div class="line">    <span class="comment">// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.</span></div>
-<div class="line">    <span class="keywordtype">void</span> save() noexcept {</div>
+<div class="line">    <span class="keyword">auto</span> save() noexcept -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">      settings_.write(<span class="stringliteral">&quot;back_color&quot;</span>, back_color_);</div>
 <div class="line">      settings_.write(<span class="stringliteral">&quot;location&quot;</span>, location_);</div>
 <div class="line">      settings_.write(<span class="stringliteral">&quot;size&quot;</span>, size_);</div>
@@ -300,7 +300,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">    <span class="comment">// @brief Gets the default instance of settings.</span></div>
 <div class="line">    <span class="comment">// @return The default instance.</span></div>
 <div class="line">    <span class="comment">// @remarks At the first call all properties are reloaded with the last saved values.</span></div>
-<div class="line">    <span class="keyword">static</span> settings&amp; default_settings() noexcept {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> default_settings() noexcept -&gt; settings&amp; {</div>
 <div class="line">      <span class="keyword">static</span> <span class="keyword">auto</span> default_settings = settings {};</div>
 <div class="line">      <span class="keywordflow">return</span> default_settings;</div>
 <div class="line">    }</div>
@@ -318,7 +318,6 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__colors_html_aaee26ec4d36ad4a99550bec18c258d84"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__colors.html#aaee26ec4d36ad4a99550bec18c258d84">xtd::drawing::system_colors::control</a></div><div class="ttdeci">static xtd::drawing::color control()</div><div class="ttdoc">Gets a xtd::drawing::color structure that is the face color of a 3-D element.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1settings_html_ac42c075373ddc30f7e6a7e04021cbc7c"><div class="ttname"><a href="#ac42c075373ddc30f7e6a7e04021cbc7c">xtd::forms::settings::settings</a></div><div class="ttdeci">settings()</div><div class="ttdoc">Initializes a new instance of settings class.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
-<div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9"><div class="ttname"><a href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::graphics_unit::point</a></div><div class="ttdeci">@ point</div><div class="ttdoc">Specifies a printer&#39;s point (1/72 inch) as the unit of measure.</div><div class="ttdef"><b>Definition</b> graphics_unit.hpp:25</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --><p> The following code example demonstrates the use of <a class="el" href="classxtd_1_1configuration_1_1settings.html" title="Represent settings associate to the application.">xtd::configuration::settings</a> class without <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection">CMake setting commands</a>. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -367,31 +366,31 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <tr class="separator:ac42c075373ddc30f7e6a7e04021cbc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a5feb9bec7a1d08151f7e3a4738f2c68c" id="r_a5feb9bec7a1d08151f7e3a4738f2c68c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5feb9bec7a1d08151f7e3a4738f2c68c">file_path</a> () const noexcept</td></tr>
-<tr class="memdesc:a5feb9bec7a1d08151f7e3a4738f2c68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the application settings.  <br /></td></tr>
-<tr class="separator:a5feb9bec7a1d08151f7e3a4738f2c68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b8f4ab18eb1cee09a55dfeae5d60ec" id="r_a01b8f4ab18eb1cee09a55dfeae5d60ec"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01b8f4ab18eb1cee09a55dfeae5d60ec">file_path</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a01b8f4ab18eb1cee09a55dfeae5d60ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path of the application settings.  <br /></td></tr>
+<tr class="separator:a01b8f4ab18eb1cee09a55dfeae5d60ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a68beee56bdd9b761deb7c600acc373f6" id="r_a68beee56bdd9b761deb7c600acc373f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68beee56bdd9b761deb7c600acc373f6">read</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;default_value)</td></tr>
-<tr class="memdesc:a68beee56bdd9b761deb7c600acc373f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value for specified key. If not found default value is used.  <br /></td></tr>
-<tr class="separator:a68beee56bdd9b761deb7c600acc373f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26d06e49bd28082128bd8192e5197cb5" id="r_a26d06e49bd28082128bd8192e5197cb5"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a26d06e49bd28082128bd8192e5197cb5"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a26d06e49bd28082128bd8192e5197cb5">read</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const type_t &amp;default_value)</td></tr>
-<tr class="memdesc:a26d06e49bd28082128bd8192e5197cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value for specified key. If not found default value is used.  <br /></td></tr>
-<tr class="separator:a26d06e49bd28082128bd8192e5197cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70597323a20259508bcfce797ed4997" id="r_ae70597323a20259508bcfce797ed4997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae70597323a20259508bcfce797ed4997">reset</a> ()</td></tr>
-<tr class="memdesc:ae70597323a20259508bcfce797ed4997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset application settings.  <br /></td></tr>
-<tr class="separator:ae70597323a20259508bcfce797ed4997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a089a23666c57a7b26c6641f195bb69f9" id="r_a089a23666c57a7b26c6641f195bb69f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a089a23666c57a7b26c6641f195bb69f9">save</a> ()</td></tr>
-<tr class="memdesc:a089a23666c57a7b26c6641f195bb69f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save application settings.  <br /></td></tr>
-<tr class="separator:a089a23666c57a7b26c6641f195bb69f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0f88d393e6e4d035a816f2ef3cbcad" id="r_a3f0f88d393e6e4d035a816f2ef3cbcad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f0f88d393e6e4d035a816f2ef3cbcad">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
-<tr class="memdesc:a3f0f88d393e6e4d035a816f2ef3cbcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specified value for specified key.  <br /></td></tr>
-<tr class="separator:a3f0f88d393e6e4d035a816f2ef3cbcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4719f4dfdfa3fc84541b31967f7f827" id="r_ae4719f4dfdfa3fc84541b31967f7f827"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:ae4719f4dfdfa3fc84541b31967f7f827"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae4719f4dfdfa3fc84541b31967f7f827">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, type_t &amp;&amp;value)</td></tr>
-<tr class="memdesc:ae4719f4dfdfa3fc84541b31967f7f827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specified value for specified key.  <br /></td></tr>
-<tr class="separator:ae4719f4dfdfa3fc84541b31967f7f827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1116b04d81b203b5eb5bb3045e2b227" id="r_ad1116b04d81b203b5eb5bb3045e2b227"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1116b04d81b203b5eb5bb3045e2b227">read</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;default_value) -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:ad1116b04d81b203b5eb5bb3045e2b227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value for specified key. If not found default value is used.  <br /></td></tr>
+<tr class="separator:ad1116b04d81b203b5eb5bb3045e2b227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5fa8adf48991deb9618e8bcbed5e06" id="r_acf5fa8adf48991deb9618e8bcbed5e06"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:acf5fa8adf48991deb9618e8bcbed5e06"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acf5fa8adf48991deb9618e8bcbed5e06">read</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const type_t &amp;default_value) -&gt; type_t</td></tr>
+<tr class="memdesc:acf5fa8adf48991deb9618e8bcbed5e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value for specified key. If not found default value is used.  <br /></td></tr>
+<tr class="separator:acf5fa8adf48991deb9618e8bcbed5e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3eff875b639ecfa689b89d5f1d0c27" id="r_a7c3eff875b639ecfa689b89d5f1d0c27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3eff875b639ecfa689b89d5f1d0c27">reset</a> () -&gt; void</td></tr>
+<tr class="memdesc:a7c3eff875b639ecfa689b89d5f1d0c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset application settings.  <br /></td></tr>
+<tr class="separator:a7c3eff875b639ecfa689b89d5f1d0c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1468ad1f64b8c122a1aa386ca4d4d48e" id="r_a1468ad1f64b8c122a1aa386ca4d4d48e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1468ad1f64b8c122a1aa386ca4d4d48e">save</a> () -&gt; void</td></tr>
+<tr class="memdesc:a1468ad1f64b8c122a1aa386ca4d4d48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save application settings.  <br /></td></tr>
+<tr class="separator:a1468ad1f64b8c122a1aa386ca4d4d48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f74fb597a2a505ff22cd312faa0fb8" id="r_aa8f74fb597a2a505ff22cd312faa0fb8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8f74fb597a2a505ff22cd312faa0fb8">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; void</td></tr>
+<tr class="memdesc:aa8f74fb597a2a505ff22cd312faa0fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specified value for specified key.  <br /></td></tr>
+<tr class="separator:aa8f74fb597a2a505ff22cd312faa0fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682094abaf4ec9ac86dda3d3cb95e14b" id="r_a682094abaf4ec9ac86dda3d3cb95e14b"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a682094abaf4ec9ac86dda3d3cb95e14b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a682094abaf4ec9ac86dda3d3cb95e14b">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, type_t &amp;&amp;value) -&gt; void</td></tr>
+<tr class="memdesc:a682094abaf4ec9ac86dda3d3cb95e14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specified value for specified key.  <br /></td></tr>
+<tr class="separator:a682094abaf4ec9ac86dda3d3cb95e14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -444,8 +443,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5feb9bec7a1d08151f7e3a4738f2c68c" name="a5feb9bec7a1d08151f7e3a4738f2c68c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5feb9bec7a1d08151f7e3a4738f2c68c">&#9670;&#160;</a></span>file_path()</h2>
+<a id="a01b8f4ab18eb1cee09a55dfeae5d60ec" name="a01b8f4ab18eb1cee09a55dfeae5d60ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b8f4ab18eb1cee09a55dfeae5d60ec">&#9670;&#160;</a></span>file_path()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,10 +453,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::configuration::settings::file_path </td>
+          <td class="memname">auto xtd::configuration::settings::file_path </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -492,21 +491,21 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 
 </div>
 </div>
-<a id="a68beee56bdd9b761deb7c600acc373f6" name="a68beee56bdd9b761deb7c600acc373f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68beee56bdd9b761deb7c600acc373f6">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="ad1116b04d81b203b5eb5bb3045e2b227" name="ad1116b04d81b203b5eb5bb3045e2b227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1116b04d81b203b5eb5bb3045e2b227">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::configuration::settings::read </td>
+          <td class="memname">auto xtd::configuration::settings::read </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -523,8 +522,8 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 
 </div>
 </div>
-<a id="a26d06e49bd28082128bd8192e5197cb5" name="a26d06e49bd28082128bd8192e5197cb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26d06e49bd28082128bd8192e5197cb5">&#9670;&#160;</a></span>read() <span class="overload">[2/2]</span></h2>
+<a id="acf5fa8adf48991deb9618e8bcbed5e06" name="acf5fa8adf48991deb9618e8bcbed5e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5fa8adf48991deb9618e8bcbed5e06">&#9670;&#160;</a></span>read() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -535,14 +534,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::configuration::settings::read </td>
+          <td class="memname">auto xtd::configuration::settings::read </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;)</td>
+          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>default_value</em></span>&#160;) -&gt; type_t </td>
         </tr>
       </table>
   </td>
@@ -570,17 +569,17 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="ae70597323a20259508bcfce797ed4997" name="ae70597323a20259508bcfce797ed4997"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae70597323a20259508bcfce797ed4997">&#9670;&#160;</a></span>reset()</h2>
+<a id="a7c3eff875b639ecfa689b89d5f1d0c27" name="a7c3eff875b639ecfa689b89d5f1d0c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3eff875b639ecfa689b89d5f1d0c27">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::configuration::settings::reset </td>
+          <td class="memname">auto xtd::configuration::settings::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -588,21 +587,21 @@ template&lt;class type_t&gt; </div>
 <p>Reset application settings. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The settings are cleared and the application settings file is removed. </dd>
 <dd>
-To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
+To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a1468ad1f64b8c122a1aa386ca4d4d48e" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 
 </div>
 </div>
-<a id="a089a23666c57a7b26c6641f195bb69f9" name="a089a23666c57a7b26c6641f195bb69f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a089a23666c57a7b26c6641f195bb69f9">&#9670;&#160;</a></span>save()</h2>
+<a id="a1468ad1f64b8c122a1aa386ca4d4d48e" name="a1468ad1f64b8c122a1aa386ca4d4d48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1468ad1f64b8c122a1aa386ca4d4d48e">&#9670;&#160;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::configuration::settings::save </td>
+          <td class="memname">auto xtd::configuration::settings::save </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,21 +611,21 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
 
 </div>
 </div>
-<a id="a3f0f88d393e6e4d035a816f2ef3cbcad" name="a3f0f88d393e6e4d035a816f2ef3cbcad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0f88d393e6e4d035a816f2ef3cbcad">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
+<a id="aa8f74fb597a2a505ff22cd312faa0fb8" name="aa8f74fb597a2a505ff22cd312faa0fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f74fb597a2a505ff22cd312faa0fb8">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::configuration::settings::write </td>
+          <td class="memname">auto xtd::configuration::settings::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -639,12 +638,12 @@ To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1se
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a1468ad1f64b8c122a1aa386ca4d4d48e" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 
 </div>
 </div>
-<a id="ae4719f4dfdfa3fc84541b31967f7f827" name="ae4719f4dfdfa3fc84541b31967f7f827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4719f4dfdfa3fc84541b31967f7f827">&#9670;&#160;</a></span>write() <span class="overload">[2/2]</span></h2>
+<a id="a682094abaf4ec9ac86dda3d3cb95e14b" name="a682094abaf4ec9ac86dda3d3cb95e14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682094abaf4ec9ac86dda3d3cb95e14b">&#9670;&#160;</a></span>write() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -655,14 +654,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::configuration::settings::write </td>
+          <td class="memname">auto xtd::configuration::settings::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">type_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">type_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -686,7 +685,7 @@ template&lt;class type_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a089a23666c57a7b26c6641f195bb69f9" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To write permanently use the <a class="el" href="classxtd_1_1configuration_1_1settings.html#a1468ad1f64b8c122a1aa386ca4d4d48e" title="Save application settings.">xtd::configuration::settings::save</a> method. </dd></dl>
 
 </div>
 </div>
@@ -697,7 +696,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 12 2026 19:49:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 21:59:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

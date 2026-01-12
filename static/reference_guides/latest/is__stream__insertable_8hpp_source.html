@@ -110,7 +110,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable.html">   36</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> : std::false_type {};</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07s4f7638f687d206709f54a29bf9f7cd93.html">   56</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a>&lt;value_t, std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07s4f7638f687d206709f54a29bf9f7cd93.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> &lt; value_t, std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    template&lt;class value_t&gt;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    requires std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_01_4.html">   77</a></span>    struct is_stream_insertable&lt;value_t&gt; : std::false_type {};</div>
@@ -126,7 +126,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 12 2026 19:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 21:58:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
