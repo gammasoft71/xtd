@@ -57,6 +57,7 @@ add_sources(
   "include/xtd/native/interlocked.hpp"
   "include/xtd/native/interlocked"
   "include/xtd/native/memory.hpp"
+  "include/xtd/native/memory"
   "include/xtd/native/named_event_wait_handle.hpp"
   "include/xtd/native/named_event_wait_handle"
   "include/xtd/native/named_mutex.hpp"
