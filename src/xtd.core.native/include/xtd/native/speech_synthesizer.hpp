@@ -41,19 +41,40 @@ namespace xtd {
       friend xtd::speech::synthesis::speech_synthesizer;
       
     protected:
-      /// @name Protectedstatic  methods
+      /// @name Protected static  methods
       
       /// @{
-      static intmax_t create();
-      static void destroy(intmax_t handle);
-      static void pause(intmax_t handle);
-      static void resume(intmax_t handle);
-      /// @brief Synchronously speaks the contents of a string.
-      /// @return The text to speak.
+      /// @brief Create a speach synthesizer.
+      /// @return The new speach synthesizer handle created. .
       /// @warning Internal use only
-      static void speak(intmax_t handle, const std::string& text_to_speak);
-      static void speak_async(intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed);
-      static void stop(intmax_t handle);
+      static auto create() -> std::intmax_t;
+      /// @brief Destroys the speach synthesizer.
+      /// @param handle The speach synthesizer handle.
+      /// @warning Internal use only
+      static auto destroy(std::intmax_t handle) -> void;
+      /// @brief Pause the speach synthesizer.
+      /// @param handle The speach synthesizer handle.
+      /// @warning Internal use only
+      static auto pause(std::intmax_t handle) -> void;
+      /// @brief Resume the speach synthesizer.
+      /// @param handle The speach synthesizer handle.
+      /// @warning Internal use only
+      static auto resume(std::intmax_t handle) -> void;
+      /// @brief Synchronously speaks the contents of a string.
+      /// @param handle The speach synthesizer handle.
+      /// @param text_to_speack The text to speak.
+      /// @warning Internal use only
+      static auto speak(std::intmax_t handle, const std::string& text_to_speak) -> void;
+      /// @brief Asynchronously speaks the contents of a string.
+      /// @param handle The speach synthesizer handle.
+      /// @param text_to_speack The text to speak.
+      /// @param on_speak_completed The callback that will be invoked when speak completed.
+      /// @warning Internal use only
+      static auto speak_async(std::intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed) -> void;
+      /// @brief Stop the speach synthesizer.
+      /// @param handle The speach synthesizer handle.
+      /// @warning Internal use only
+      static auto stop(std::intmax_t handle) -> void;
       /// @}
     };
   }
