@@ -50,7 +50,7 @@ namespace xtd {
       /// * [2] : The created ostream for the standard input.
       /// * [3] : The created istream for the standard output.
       /// * [4] : The created istream for the standard error.
-      using started_process = std::tuple<intmax_t, std::int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream >>;
+      using started_process = std::tuple<std::intmax_t, std::int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream >>;
       /// @}
       
       /// @name Protected Static Methods
@@ -68,18 +68,18 @@ namespace xtd {
       /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | ABOVE_NORMAL_PRIORITY_CLASS |
       /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | HIGH_PRIORITY_CLASS         |
       /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | REALTIME_PRIORITY_CLASS     |
-      static std::int32_t base_priority(int32_t priority);
+      static auto base_priority(std::int32_t priority) -> std::int32_t;
       /// @brief Kill process.
       /// @param process The process handle to kill.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool kill(intmax_t process);
+      static auto kill(std::intmax_t process) -> bool;
       /// @brief Sets the overall priority category for the associated process.
       /// @param process The process handle to set priority class.
       /// @param priority The priority category for the associated process, from which the base_priority of the process is calculated. (see priority_class.h file).
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool priority_class(intmax_t process, std::int32_t priority);
+      static auto priority_class(std::intmax_t process, std::int32_t priority) -> bool;
       /// @brief Creates a process with specified file name, specified arguments, specified working directory, specified process creation flags, and specified process window style.
       /// @param file_name the name of the application file to run in process launched by the shell execute.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -87,7 +87,7 @@ namespace xtd {
       /// @param process_window_style One of the values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal. (see process_window_window_style.h file).
       /// @return The created process handle.
       /// @warning Internal use only
-      static intmax_t shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, std::int32_t process_window_style);
+      static auto shell_execute(const std::string& verb, const std::string& file_name, const std::string& arguments, const std::string& working_directory, std::int32_t process_window_style) -> std::intmax_t;
       /// @brief Starts a process with specified file name, specified arguments, specified working directory, specified process window style, specified process creation flags, and specified boolean tuples that represent redirect standard streams.
       /// @param file_name the name of the application file to run in the process.
       /// @param arguments Command-line arguments to pass when starting the process.
@@ -100,13 +100,13 @@ namespace xtd {
       /// * [2] : `true` if input should be written to standard_error; otherwise, `false`. The default is `false`.
       /// @return A process::started_process that contains the created process handle, id and created standard streams.
       /// @warning Internal use only
-      static started_process start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, std::int32_t process_window_style, std::int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams);
+      static auto start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, std::int32_t process_window_style, std::int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams) -> started_process;
       /// @brief Wait process and close handles.
       /// @param process The process handle to wait.
       /// @param exit Receives the process exit code.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool wait(intmax_t process, std::int32_t& exit_code);
+      static auto wait(std::intmax_t process, std::int32_t& exit_code) -> bool;
       /// @}
     };
   }
