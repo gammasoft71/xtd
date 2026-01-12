@@ -61,7 +61,7 @@ auto file_settings::key_values(const string& section) const noexcept -> string_d
   return section_key_values_.at(section);
 }
 
-file_settings::string_collection file_settings::keys() const noexcept {
+auto file_settings::keys() const noexcept -> file_settings::string_collection {
   return keys(string::empty_string);
 }
 
