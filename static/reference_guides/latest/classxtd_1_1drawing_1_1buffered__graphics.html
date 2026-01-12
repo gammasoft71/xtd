@@ -128,12 +128,12 @@ Graphics that use double buffering can reduce or eliminate flicker that is cause
 <dd>
 The <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> property can be used for drawing to the graphics buffer. This property provides access to the <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object that draws to the graphics buffer allocated for this <a class="el" href="classxtd_1_1drawing_1_1buffered__graphics.html" title="Provides a graphics buffer for double buffering.">xtd::drawing::buffered_graphics</a> object. </dd>
 <dd>
-The <a class="el" href="#adcb9c249f424ea373de535cf120ab42d" title="Writes the contents of the graphics buffer to the default device.">xtd::drawing::buffered_graphics::render</a> method with no arguments draws the contents of the graphics buffer to the surface specified when the buffer was allocated. Other overloads of the <a class="el" href="#adcb9c249f424ea373de535cf120ab42d" title="Writes the contents of the graphics buffer to the default device.">xtd::drawing::buffered_graphics::render</a> method allow you to specify a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object or an <a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece" title="Represent a pointer or a handle.">xtd::intptr</a> type that points to a device context to which to draw the contents of the graphics buffer. </dd></dl>
+The <a class="el" href="#adcb9c249f424ea373de535cf120ab42d" title="Writes the contents of the graphics buffer to the default device.">xtd::drawing::buffered_graphics::render</a> method with no arguments draws the contents of the graphics buffer to the surface specified when the buffer was allocated. Other overloads of the <a class="el" href="#adcb9c249f424ea373de535cf120ab42d" title="Writes the contents of the graphics buffer to the default device.">xtd::drawing::buffered_graphics::render</a> method allow you to specify a <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object or an <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f" title="Represent a pointer or a handle.">xtd::intptr</a> type that points to a device context to which to draw the contents of the graphics buffer. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8e90719452b605a2488b0e79d7d4050f" id="r_a8e90719452b605a2488b0e79d7d4050f"><td class="memItemLeft" align="right" valign="top"><a id="a8e90719452b605a2488b0e79d7d4050f" name="a8e90719452b605a2488b0e79d7d4050f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>buffered_graphics</b> (const <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a> &amp;buffered_graphics_surface, std::optional&lt; <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a> &gt; target_graphics, <a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a> target_dc, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;target_location, <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> virtual_size)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>buffered_graphics</b> (const <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a> &amp;buffered_graphics_surface, std::optional&lt; <a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a> &gt; target_graphics, <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> target_dc, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;target_location, <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> virtual_size)</td></tr>
 <tr class="separator:a8e90719452b605a2488b0e79d7d4050f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
@@ -151,7 +151,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7738d1d3ed3705d0f2ee646b2c1059d9" id="r_a7738d1d3ed3705d0f2ee646b2c1059d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7738d1d3ed3705d0f2ee646b2c1059d9">render</a> (<a class="el" href="classxtd_1_1drawing_1_1graphics.html">xtd::drawing::graphics</a> &amp;target)</td></tr>
 <tr class="memdesc:a7738d1d3ed3705d0f2ee646b2c1059d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the contents of the graphics buffer to the specified <a class="el" href="classxtd_1_1drawing_1_1graphics.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::graphics</a> object.  <br /></td></tr>
 <tr class="separator:a7738d1d3ed3705d0f2ee646b2c1059d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0adc11b44002787d7df55d8e5e1bdc56" id="r_a0adc11b44002787d7df55d8e5e1bdc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0adc11b44002787d7df55d8e5e1bdc56">render</a> (<a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a> target_dc)</td></tr>
+<tr class="memitem:a0adc11b44002787d7df55d8e5e1bdc56" id="r_a0adc11b44002787d7df55d8e5e1bdc56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0adc11b44002787d7df55d8e5e1bdc56">render</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> target_dc)</td></tr>
 <tr class="memdesc:a0adc11b44002787d7df55d8e5e1bdc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the contents of the graphics buffer to the device context associated with the specified intptr handle.  <br /></td></tr>
 <tr class="separator:a0adc11b44002787d7df55d8e5e1bdc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -270,7 +270,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void xtd::drawing::buffered_graphics::render </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a></td>          <td class="paramname"><span class="paramname"><em>target_dc</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>target_dc</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -294,7 +294,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 12 2026 09:20:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 12 2026 11:40:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

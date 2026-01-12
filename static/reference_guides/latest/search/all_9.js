@@ -418,7 +418,7 @@ var searchData=
   ['intersects_5fwith_415',['intersects_with',['../structxtd_1_1drawing_1_1rectangle.html#af97ee435b660521bb433c4696290b78c',1,'xtd::drawing::rectangle::intersects_with()'],['../structxtd_1_1drawing_1_1rectangle__f.html#a945fd74d56a0baf273b850ccbe96b001',1,'xtd::drawing::rectangle_f::intersects_with()']]],
   ['interval_416',['interval',['../classxtd_1_1timers_1_1timer.html#afc9cdc22482bfa4188aba3b36b457b0c',1,'xtd::timers::timer::interval() const noexcept'],['../classxtd_1_1timers_1_1timer.html#a746cbdbd901dbe1a05c73e1f571e2344',1,'xtd::timers::timer::interval(double value)'],['../classxtd_1_1forms_1_1timer.html#a07c15d7f98dcf3331c3f38c8ece68005',1,'xtd::forms::timer::interval() const noexcept'],['../classxtd_1_1forms_1_1timer.html#ab22c40956e0961a0c2b7a05eae85baf9',1,'xtd::forms::timer::interval(const time_span &amp;interval)']]],
   ['interval_5fmilliseconds_417',['interval_milliseconds',['../classxtd_1_1forms_1_1timer.html#ad587b29d859f22e3d525348a14c776bb',1,'xtd::forms::timer::interval_milliseconds() const noexcept'],['../classxtd_1_1forms_1_1timer.html#a6633e473dba62dbf3e3864cd07aa5880',1,'xtd::forms::timer::interval_milliseconds(int32 interval)']]],
-  ['intptr_418',['intptr',['../group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece',1,'xtd']]],
+  ['intptr_418',['intptr',['../group__types.html#ga4caacfecf928a301a87e8b7accd31f1f',1,'xtd']]],
   ['intptr_2ehpp_419',['intptr.hpp',['../intptr_8hpp.html',1,'']]],
   ['intptr_5fobject_420',['intptr_object',['../group__types.html#ga9db85e8feacd14b43c871b464a19ea5c',1,'xtd']]],
   ['intptr_5fobject_2ehpp_421',['intptr_object.hpp',['../intptr__object_8hpp.html',1,'']]],
