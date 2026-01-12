@@ -31,31 +31,32 @@ file_settings::~file_settings() {
   if (auto_save_) save();
 }
 
-bool file_settings::auto_save() const noexcept {
+auto file_settings::auto_save() const noexcept -> bool {
   return auto_save_;
 }
-void file_settings::auto_save(bool value) noexcept {
+
+auto file_settings::auto_save(bool value) noexcept -> void {
   auto_save_ = value;
 }
 
-xtd::string file_settings::bottom_file_comment() const noexcept {
+auto file_settings::bottom_file_comment() const noexcept -> string {
   return convert_comment_to_text(bottom_file_comment_);
 }
 
-file_settings& file_settings::bottom_file_comment(const xtd::string& value) noexcept {
+auto file_settings::bottom_file_comment(const string& value) noexcept -> file_settings& {
   bottom_file_comment_ = convert_text_to_comment(value);
   return *this;
 }
 
-const xtd::string& file_settings::file_path() const noexcept {
+auto file_settings::file_path() const noexcept -> const string& {
   return file_path_;
 }
 
-file_settings::string_dictionary file_settings::key_values() const noexcept {
+auto file_settings::key_values() const noexcept -> string_dictionary {
   return key_values(string::empty_string);
 }
 
-file_settings::string_dictionary file_settings::key_values(const string& section) const noexcept {
+auto file_settings::key_values(const string& section) const noexcept -> string_dictionary {
   if (section_key_values_.find(section) == section_key_values_.end()) return {};
   return section_key_values_.at(section);
 }
@@ -64,7 +65,7 @@ file_settings::string_collection file_settings::keys() const noexcept {
   return keys(string::empty_string);
 }
 
-file_settings::string_collection file_settings::keys(const string& section) const noexcept {
+auto file_settings::keys(const string& section) const noexcept -> string_collection {
   if (section_key_values_.find(section) == section_key_values_.end()) return {};
   auto keys = string_collection {};
   for (auto [key, value] : section_key_values_.at(section))
@@ -72,35 +73,35 @@ file_settings::string_collection file_settings::keys(const string& section) cons
   return keys;
 }
 
-file_settings::string_collection file_settings::sections() const noexcept {
+auto file_settings::sections() const noexcept -> string_collection {
   auto sections = string_collection {};
   for (auto [section, key_value] : section_key_values_)
     sections.add(section);
   return sections;
 }
 
-std::optional<ref<std::iostream>> file_settings::stream() const noexcept {
+auto file_settings::stream() const noexcept -> std::optional<ref<std::iostream>> {
   return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
 }
 
-xtd::string file_settings::top_file_comment() const noexcept {
+auto file_settings::top_file_comment() const noexcept -> string {
   return convert_comment_to_text(top_file_comment_);
 }
 
-file_settings& file_settings::top_file_comment(const xtd::string& value) noexcept {
+auto file_settings::top_file_comment(const string& value) noexcept -> file_settings& {
   top_file_comment_ = convert_text_to_comment(value);
   return *this;
 }
 
-bool file_settings::equals(const object& obj) const noexcept {
+auto file_settings::equals(const object& obj) const noexcept -> bool {
   return is<file_settings>(obj) && equals(static_cast<const file_settings&>(obj));
 }
 
-bool file_settings::equals(const file_settings& other) const noexcept {
+auto file_settings::equals(const file_settings& other) const noexcept -> bool {
   return section_key_values_ == other.section_key_values_;
 }
 
-void file_settings::from_string(const xtd::string& text) {
+auto file_settings::from_string(const string& text) -> void {
   auto unescaping = [](const string & line) {return line.replace("\\\\", "\\").replace("\\\'", "\'").replace("\\\"", "\"").replace("\\0", "\0").replace("\\a", "\a").replace("\\t", "\t").replace("\\r", "\r").replace("\\n", "\n").replace("\\;", ";").replace("\\#", "#").replace("\\=", "=").replace("\\:", ":").replace("\\ ", " ");};
   auto separate_comment = [](const string & line, string & comment) {
     auto result = line.trim();
@@ -160,65 +161,65 @@ void file_settings::from_string(const xtd::string& text) {
   if (!string::is_empty(comment)) bottom_file_comment_ += comment;
 }
 
-void file_settings::load(const xtd::string& file_path) {
+auto file_settings::load(const string& file_path) -> void {
   file_path_ = path::get_full_path(file_path);
   from_string(stream_reader {file_path_}.read_to_end());
 }
 
-void file_settings::load(std::istream& stream) {
+auto file_settings::load(std::istream& stream) -> void {
   if (!stream.good()) throw_helper::throws(exception_case::io);
   from_string(stream_reader {stream}.read_to_end());
 }
 
-string file_settings::read(const string& key, const string& default_value) noexcept {
+auto file_settings::read(const string& key, const string& default_value) noexcept -> string {
   return read_string(string::empty_string, key, default_value);
 }
 
-string file_settings::read(const string& section, const string& key, const string& default_value) noexcept {
+auto file_settings::read(const string& section, const string& key, const string& default_value) noexcept -> string {
   return read_string(section, key, default_value);
 }
 
-void file_settings::remove(const string& key) noexcept {
+auto file_settings::remove(const string& key) noexcept -> void {
   remove(string::empty_string, key);
 }
 
-void file_settings::remove(const string& section, const string& key) noexcept {
+auto file_settings::remove(const string& section, const string& key) noexcept -> void {
   if (section_key_values_.find(section) == section_key_values_.end() || section_key_values_[section].find(key) == section_key_values_[section].end()) return;
   section_key_values_[section].erase(key);
 }
 
-void file_settings::remove_all_keys() noexcept {
+auto file_settings::remove_all_keys() noexcept -> void {
   remove_all_keys(string::empty_string);
 }
 
-void file_settings::remove_all_keys(const string& section) noexcept {
+auto file_settings::remove_all_keys(const string& section) noexcept -> void {
   if (section_key_values_.find(section) == section_key_values_.end()) return;
   section_key_values_[section].clear();
 }
 
-void file_settings::reset() {
+auto file_settings::reset() -> void {
   section_key_values_.clear();
   if (!string::is_empty(file_path_) && file::exists(file_path_)) file::remove(file_path_);
   if (stream_) stream_writer(*stream_).write("");
 }
 
-void file_settings::save() {
+auto file_settings::save() -> void {
   if (!string::is_empty(file_path_)) save_as(file_path_);
   if (stream_) save_as(*stream_);
 }
 
-void file_settings::save_as(const xtd::string& file_path) {
+auto file_settings::save_as(const string& file_path) -> void {
   directory::create_directory(path::get_directory_name(path::get_full_path(file_path)));
   auto sw = stream_writer {file_path};
   sw.write(to_string());
 }
 
-void file_settings::save_as(std::ostream& stream) {
+auto file_settings::save_as(std::ostream& stream) -> void {
   auto sw = stream_writer {stream};
   sw.write(to_string());
 }
 
-string file_settings::to_string() const noexcept {
+auto file_settings::to_string() const noexcept -> string {
   auto split_comment = [](const string & comments) {
     auto result = string::empty_string;
     for (auto comment : comments.split({10, 13}))
@@ -258,30 +259,30 @@ string file_settings::to_string() const noexcept {
   return text;
 }
 
-void file_settings::write(const string& key, const string& value) noexcept {
+auto file_settings::write(const string& key, const string& value) noexcept -> void {
   write_string(string::empty_string, key, value);
 }
 
-void file_settings::write(const string& section, const string& key, const string& value) noexcept {
+auto file_settings::write(const string& section, const string& key, const string& value) noexcept -> void {
   write_string(section, key, value);
 }
 
-const file_settings::string_dictionary& file_settings::operator [](const string& section) const noexcept {
+auto file_settings::operator [](const string& section) const noexcept -> const string_dictionary& {
   return section_key_values_.at(section);
 }
 
-file_settings::string_dictionary& file_settings::operator [](const string& section) noexcept {
+auto file_settings::operator [](const string& section) noexcept -> string_dictionary& {
   return section_key_values_[section];
 }
 
-xtd::string file_settings::convert_comment_to_text(const xtd::string& text) const noexcept {
+auto file_settings::convert_comment_to_text(const string& text) const noexcept -> string {
   auto lines = text.split({10, 13});
   for (auto& line : lines)
     if (line.starts_with(comment_delimiter) || line.starts_with(alt_comment_delimiter)) line = line.remove(0, 1).trim();
   return string::join(environment::new_line(), lines);
 }
 
-xtd::string file_settings::convert_text_to_comment(const xtd::string& text) const noexcept {
+auto file_settings::convert_text_to_comment(const string& text) const noexcept -> string {
   auto lines = text.split({10, 13});
   for (auto& line : lines)
     if (!line.starts_with(comment_delimiter) && !line.starts_with(alt_comment_delimiter))
@@ -289,12 +290,12 @@ xtd::string file_settings::convert_text_to_comment(const xtd::string& text) cons
   return string::join(environment::new_line(), lines);
 }
 
-xtd::string file_settings::read_string(const xtd::string& section, const xtd::string& key, const xtd::string& default_value) noexcept {
+auto file_settings::read_string(const string& section, const string& key, const string& default_value) noexcept -> string {
   if (section_key_values_.find(section) == section_key_values_.end() || section_key_values_[section].find(key) == section_key_values_[section].end()) section_key_values_[section][key] = default_value;
   return section_key_values_[section][key];
 }
 
-void file_settings::write_string(const xtd::string& section, const xtd::string& key, const xtd::string& value) noexcept {
+auto file_settings::write_string(const string& section, const string& key, const string& value) noexcept -> void {
   if (section_key_values_.find(section) != section_key_values_.end() && section_key_values_[section].find(key) != section_key_values_[section].end() && section_key_values_[section][key] == value) return;
   section_key_values_[section][key] = value;
 }
