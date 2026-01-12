@@ -67,17 +67,17 @@ namespace xtd {
         directory_iterator(directory_iterator&&) = default;
         ~directory_iterator();
         
-        directory_iterator& operator ++();
-        directory_iterator operator ++(int32_t);
-        bool operator ==(directory_iterator other) const;
-        bool operator !=(directory_iterator other) const {return !operator ==(other);}
-        value_type operator *() const;
+        auto operator ++() -> directory_iterator&;
+        auto operator ++(std::int32_t) -> directory_iterator;
+        auto operator ==(directory_iterator other) const -> bool;
+        auto operator !=(directory_iterator other) const -> bool {return !operator ==(other);}
+        auto operator *() const -> value_type;
         
-        xtd::native::directory::directory_iterator begin() const;
-        xtd::native::directory::directory_iterator end() const;
+        auto begin() const -> directory_iterator;
+        auto end() const -> directory_iterator;
         
-        const std::string& path() const;
-        const std::string& pattern() const;
+        auto path() const -> const std::string&;
+        auto pattern() const -> const std::string&;
         /// @endcond
         
       private:
@@ -106,16 +106,16 @@ namespace xtd {
         file_iterator(file_iterator&&) = default;
         ~file_iterator();
         
-        file_iterator& operator ++();
-        file_iterator operator ++(int32_t);
-        bool operator ==(file_iterator other) const;
-        bool operator !=(file_iterator other) const {return !operator ==(other);}
-        value_type operator *() const;
-        xtd::native::directory::file_iterator begin() const;
-        xtd::native::directory::file_iterator end() const;
+        auto operator ++() -> file_iterator&;
+        auto operator ++(std::int32_t) -> file_iterator;
+        auto operator ==(file_iterator other) const -> bool;
+        auto operator !=(file_iterator other) const -> bool {return !operator ==(other);}
+        auto operator *() const -> value_type;
+        auto begin() const -> file_iterator;
+        auto end() const -> file_iterator;
         
-        const std::string& path() const;
-        const std::string& pattern() const;
+        auto path() const -> const std::string&;
+        auto pattern() const -> const std::string&;
         /// @endcond
         
       private:
@@ -144,16 +144,16 @@ namespace xtd {
         file_and_directory_iterator(file_and_directory_iterator&&) = default;
         ~file_and_directory_iterator();
         
-        file_and_directory_iterator& operator ++();
-        file_and_directory_iterator operator ++(int32_t);
-        bool operator ==(file_and_directory_iterator other) const;
-        bool operator !=(file_and_directory_iterator other) const {return !operator ==(other);}
-        value_type operator *() const;
-        xtd::native::directory::file_and_directory_iterator begin() const;
-        xtd::native::directory::file_and_directory_iterator end() const;
+        auto operator ++() -> file_and_directory_iterator&;
+        auto operator ++(std::int32_t) -> file_and_directory_iterator;
+        auto operator ==(file_and_directory_iterator other) const -> bool;
+        auto operator !=(file_and_directory_iterator other) const -> bool {return !operator ==(other);}
+        auto operator *() const -> value_type;
+        auto begin() const -> file_and_directory_iterator;
+        auto end() const -> file_and_directory_iterator;
         
-        const std::string& path() const;
-        const std::string& pattern() const;
+        auto path() const -> const std::string&;
+        auto pattern() const -> const std::string&;
         /// @endcond
         
       private:
@@ -171,45 +171,45 @@ namespace xtd {
       /// @param directory_name The directory to create.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t create(const std::string& directory_name);
+      static auto create(const std::string& directory_name) -> std::int32_t;
       /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the directories in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
-      static directory_iterator enumerate_directories(const std::string& path, const std::string& pattern);
+      static auto enumerate_directories(const std::string& path, const std::string& pattern) -> directory_iterator;
       /// @brief Returns an iterator of full file names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
-      static file_iterator enumerate_files(const std::string& path, const std::string& pattern);
+      static auto enumerate_files(const std::string& path, const std::string& pattern) -> file_iterator;
       /// @brief Returns an iterator of full file names and full direcctory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An iterator of the full names (including paths) for the files in the directory specified by path and that match the specified search pattern.
       /// @warning Internal use only
-      static file_and_directory_iterator enumerate_files_and_directories(const std::string& path, const std::string& pattern);
+      static auto enumerate_files_and_directories(const std::string& path, const std::string& pattern) -> file_and_directory_iterator;
       /// @brief Check if specified directory exist.
       /// @param path The diretory path to check.
       /// @return `true` is file exist; otherwise `false`.
       /// @warning Internal use only
-      static bool exists(const std::string& path);
+      static auto exists(const std::string& path) -> bool;
       /// @brief Gets the current directory.
       /// @return The currrent directory.
       /// @remarks On error the return value is an empty string ("").
       /// @warning Internal use only
-      static std::string get_current_directory();
+      static auto get_current_directory() -> std::string;
       /// @brief Deletes an empty directory from a specified path.
       /// @param directory_name The name of the empty directory to remove. This directory must be writable and empty.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t remove(const std::string& directory_name);
+      static auto remove(const std::string& directory_name) -> std::int32_t;
       /// @brief Sets the current directory.
       /// @param dirrectory_name The currrent directory.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static std::int32_t set_current_directory(const std::string& directory_name);
+      static auto set_current_directory(const std::string& directory_name) -> std::int32_t;
       /// @}
     };
   }
