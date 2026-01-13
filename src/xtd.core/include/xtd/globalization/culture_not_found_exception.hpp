@@ -53,7 +53,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      static const xtd::string& get_default_message();
+      static auto get_default_message() -> const xtd::string&;
     };
   }
 }
