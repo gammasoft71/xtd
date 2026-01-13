@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ trace_listener_collection : public xtd::collections::generic::list<xtd::sptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
+    class core_export_ trace_listener_collection : public xtd::collections::generic::list<xtd::sptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<xtd::diagnostics::trace_listener_collection> {
     public:
       /// @name Public Aliases
       
@@ -46,15 +46,15 @@ namespace xtd {
       /// @}
       /// @cond
       explicit trace_listener_collection(const base& collection);
-      trace_listener_collection(const trace_listener_collection& collection);
-      trace_listener_collection& operator =(const trace_listener_collection& collection);
-      trace_listener_collection(trace_listener_collection&&) = default;
+      trace_listener_collection(const xtd::diagnostics::trace_listener_collection& collection);
+      trace_listener_collection& operator =(const xtd::diagnostics::trace_listener_collection& collection);
+      trace_listener_collection(xtd::diagnostics::trace_listener_collection&&) = default;
       /// @endcond
       
       /// @{
-      bool equals(const object& value) const noexcept override;
+      auto equals(const xtd::object& value) const noexcept -> bool override;
       using list::equals;
-      bool equals(const trace_listener_collection& value) const noexcept override;
+      auto equals(const xtd::diagnostics::trace_listener_collection& value) const noexcept -> bool override;
       /// @}
       
       /// @name Operators
@@ -76,7 +76,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// ```
-      const_reference operator [](const xtd::string& name) const;
+      auto operator [](const xtd::string& name) const -> const_reference;
       /// @brief Gets the first xtd::diagnostics::trace_listener in the list with the specified name.
       /// @param name The name of the xtd::diagnostics::trace_listener to get from the list.
       /// @return The first xtd::diagnostics::trace_listener in the list with the given Name. This item returns empty if no xtd::diagnostics::trace_listener with the given name can be found.
@@ -92,7 +92,7 @@ namespace xtd {
       ///   debug::listeners()["default"]->write_line("User message");
       /// }
       /// ```
-      reference operator [](const xtd::string& name);
+      auto operator [](const xtd::string& name) -> reference;
       /// @}
       
       /// @name Public Methods
