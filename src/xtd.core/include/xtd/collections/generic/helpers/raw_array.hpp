@@ -185,164 +185,104 @@ namespace xtd {
           /// @name Public Properties
           
           /// @{
-          reference back() {return at(size() - 1);}
-          const_reference back() const {return at(size() - 1);}
+          auto back() -> reference {return at(size() - 1);}
+          auto back() const -> const_reference {return at(size() - 1);}
           
-          iterator begin() noexcept {return to_type_iterator(items_.begin());}
-          const_iterator begin() const noexcept {return to_type_iterator(items_.cbegin());}
+          auto begin() noexcept -> iterator {return to_type_iterator(items_.begin());}
+          auto begin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
           
-          size_type capacity() const noexcept {return items_.capacity();}
+          auto capacity() const noexcept -> size_type {return items_.capacity();}
           
-          const_iterator cbegin() const noexcept {return to_type_iterator(items_.cbegin());}
-          const_iterator cend() const noexcept {return to_type_iterator(items_.cend()); }
+          auto cbegin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
+          auto cend() const noexcept -> const_iterator {return to_type_iterator(items_.cend()); }
           
-          const_reverse_iterator crbegin() const noexcept {return const_reverse_iterator(end());}
-          const_reverse_iterator crend() const noexcept {return const_reverse_iterator(begin());}
+          auto crbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
+          auto crend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
           
-          pointer data() noexcept {return reinterpret_cast<pointer>(items_.data());}
-          const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(items_.data());}
+          auto data() noexcept -> pointer {return reinterpret_cast<pointer>(items_.data());}
+          auto data() const noexcept -> const_pointer {return reinterpret_cast<const_pointer>(items_.data());}
           
-          bool empty() const noexcept {return items_.empty();}
+          auto empty() const noexcept -> bool {return items_.empty();}
           
-          iterator end() noexcept {return to_type_iterator(items_.end());}
-          const_iterator end() const noexcept {return to_type_iterator(items_.cend());}
+          auto end() noexcept -> iterator {return to_type_iterator(items_.end());}
+          auto end() const noexcept -> const_iterator {return to_type_iterator(items_.cend());}
           
-          reference front() {return at(0);}
-          const_reference front() const {return at(0);}
+          auto front() -> reference {return at(0);}
+          auto front() const -> const_reference {return at(0);}
           
-          const_base_type& items() const noexcept {return items_;}
-          base_type& items() noexcept {return items_;}
+          auto items() const noexcept -> const_base_type& {return items_;}
+          auto items() noexcept -> base_type& {return items_;}
           
-          size_type max_size() const noexcept {return std::min(items_.max_size(), npos / 2);}
+          auto max_size() const noexcept -> size_type {return std::min(items_.max_size(), npos / 2);}
           
-          reverse_iterator rbegin() noexcept {return reverse_iterator(end());}
-          const_reverse_iterator rbegin() const noexcept {return const_reverse_iterator(end());}
+          auto rbegin() noexcept -> reverse_iterator {return reverse_iterator(end());}
+          auto rbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
           
-          reverse_iterator rend() noexcept {return reverse_iterator(begin());}
-          const_reverse_iterator rend() const noexcept {return const_reverse_iterator(begin());}
+          auto rend() noexcept -> reverse_iterator {return reverse_iterator(begin());}
+          auto rend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
           
-          size_type size() const noexcept {return items_.size();}
+          auto size() const noexcept -> size_type {return items_.size();}
           
-          size_type version() const noexcept {return version_;}
+          auto version() const noexcept -> size_type {return version_;}
           /// @}
           
           /// @name Public Methods
           
           /// @{
-          void assign(size_type count, const type_t& value) {
-            ++version_;
-            items_.assign(count, value);
-          }
+          auto assign(size_type count, const type_t& value) -> void {++version_; items_.assign(count, value);}
           template<class input_iterator_t>
-          void assign(input_iterator_t first, input_iterator_t last) {
-            ++version_;
-            items_.assign(first, last);
-          }
-          void assign(std::initializer_list<type_t> items) {
-            ++version_;
-            items_.assign(items.begin(), items.end());
-          }
+          auto assign(input_iterator_t first, input_iterator_t last) -> void{++version_; items_.assign(first, last);}
+          auto assign(std::initializer_list<type_t> items) -> void {++version_; items_.assign(items.begin(), items.end());}
           
-          reference at(size_type index) {return reinterpret_cast<reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
-          const_reference at(size_type index) const {return reinterpret_cast<const_reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
+          auto at(size_type index) -> reference {return reinterpret_cast<reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
+          auto at(size_type index) const -> const_reference {return reinterpret_cast<const_reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
           
-          void clear() {
-            ++version_;
-            items_.clear();
-          }
+          auto clear() -> void {++version_; items_.clear();}
           
           template<class ...args_t>
-          iterator emplace(const_iterator pos, args_t&&... args) {
-            ++version_;
-            return to_type_iterator(items_.emplace(pos.to_base_type(), std::forward<args_t>(args)...));
-          }
+          auto emplace(const_iterator pos, args_t&&... args) -> iterator {++version_; return to_type_iterator(items_.emplace(pos.to_base_type(), std::forward<args_t>(args)...));}
           template<class ...args_t>
-          reference emplace_back(args_t&&... args) {
-            ++version_;
-            return reinterpret_cast<reference>(items_.emplace_back(std::forward<args_t>(args)...));
-          }
+          auto emplace_back(args_t&&... args) -> reference {++version_; return reinterpret_cast<reference>(items_.emplace_back(std::forward<args_t>(args)...));}
           
-          iterator erase(const_iterator pos) {
-            ++version_;
-            return to_type_iterator(items_.erase(pos.to_base_type()));
-          }
-          iterator erase(const_iterator first, const_iterator last) {
-            ++version_;
-            return to_type_iterator(items_.erase(first.to_base_type(), last.to_base_type()));
-          }
+          auto erase(const_iterator pos) -> iterator {++version_; return to_type_iterator(items_.erase(pos.to_base_type()));}
+          auto erase(const_iterator first, const_iterator last) -> iterator {++version_; return to_type_iterator(items_.erase(first.to_base_type(), last.to_base_type()));}
           
-          allocator_type get_allocator() const {return items_.get_allocator();}
+          auto get_allocator() const -> allocator_type {return items_.get_allocator();}
           
-          size_type increment_version() noexcept {return ++version_;}
+          auto increment_version() noexcept -> size_type {return ++version_;}
           
-          iterator insert(const_iterator pos, const type_t& value) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), value));
-          }
-          iterator insert(const_iterator pos, type_t&& value) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), std::move(value)));
-          }
-          iterator insert(const_iterator pos, size_type count, const type_t& value) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), count, value));
-          }
-          iterator insert(const_iterator pos, size_type count, type_t&& value) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), count, std::move(value)));
-          }
+          auto insert(const_iterator pos, const type_t& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), value));}
+          auto insert(const_iterator pos, type_t&& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), std::move(value)));}
+          auto insert(const_iterator pos, size_type count, const type_t& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), count, value));}
+          auto insert(const_iterator pos, size_type count, type_t&& value) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), count, std::move(value)));}
           template<class input_iterator_t>
-          iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), first, last));
-          }
-          iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
-            ++version_;
-            return to_type_iterator(items_.insert(pos.to_base_type(), items.begin(), items.end()));
-          }
+          auto insert(const_iterator pos, input_iterator_t first, input_iterator_t last) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), first, last));}
+          auto insert(const_iterator pos, const std::initializer_list<type_t>& items) -> iterator {++version_; return to_type_iterator(items_.insert(pos.to_base_type(), items.begin(), items.end()));}
           
-          void pop_back() {
-            ++version_;
-            items_.pop_back();
-          }
-          void push_back(const type_t& value) {
-            ++version_;
-            items_.push_back(value);
-          }
-          void push_back(type_t&& value) {
-            ++version_;
-            items_.push_back(std::move(value));
-          }
+          auto pop_back() -> void {++version_; items_.pop_back();}
+          auto push_back(const type_t& value) -> void {++version_; items_.push_back(value);}
+          auto push_back(type_t&& value) -> void {++version_; items_.push_back(std::move(value));}
           
-          void reserve(size_type new_cap) {items_.reserve(new_cap);}
+          auto reserve(size_type new_cap) -> void {++version_; items_.reserve(new_cap);}
           
-          void resize(size_type count) {
-            ++version_;
-            resize(count, value_type {});
-          }
-          void resize(size_type count, const value_type & value) {
-            ++version_;
-            items_.resize(count, value);
-          }
+          auto resize(size_type count) -> void {++version_; resize(count, value_type {});}
+          auto resize(size_type count, const value_type & value) -> void {++version_; items_.resize(count, value);}
           
-          void shrink_to_fit() {items_.shrink_to_fit();}
+          auto shrink_to_fit() -> void {++version_; items_.shrink_to_fit();}
           
-          void swap(raw_array & other) noexcept {
-            ++version_;
-            items_.swap(other.items_);
-          }
+          auto swap(raw_array & other) noexcept -> void {++version_; items_.swap(other.items_);}
           /// @}
           
           /// @name Public Operators
           /// @{
-          raw_array& operator =(const raw_array & other) = default;
-          raw_array& operator =(raw_array&& other) noexcept  = default;
-          raw_array& operator =(std::initializer_list<type_t>& items) requires(!std::is_same_v<type_t, bool>) {
+          auto operator =(const raw_array & other) -> raw_array& = default;
+          auto operator =(raw_array&& other) noexcept -> raw_array&  = default;
+          auto operator =(std::initializer_list<type_t>& items) -> raw_array& requires(!std::is_same_v<type_t, bool>) {
             ++version_;
             items_ = items;
             return *this;
           }
-          raw_array& operator =(std::initializer_list<bool>& items) requires(std::is_same_v<type_t, bool>) {
+          auto operator =(std::initializer_list<bool>& items) -> raw_array& requires(std::is_same_v<type_t, bool>) {
             ++version_;
             items_.clear();
             items_.reserve(items.size());
@@ -351,36 +291,36 @@ namespace xtd {
             return *this;
           }
           
-          friend bool operator ==(const raw_array<type_t>& a, const raw_array<type_t>& b) {
+          friend auto operator ==(const raw_array<type_t>& a, const raw_array<type_t>& b) -> bool {
             return a.items() == b.items();
           }
-          friend bool operator ==(const raw_array<type_t>& a, const std::vector<type_t>& b) {
+          friend auto operator ==(const raw_array<type_t>& a, const std::vector<type_t>& b) -> bool {
             return a.items() == b;
           }
-          friend bool operator ==(const std::vector<type_t>& a, const raw_array<type_t>& b) {
+          friend auto operator ==(const std::vector<type_t>& a, const raw_array<type_t>& b) -> bool {
             return a == b.items();
           }
           
-          friend bool operator !=(const raw_array<type_t>& a, const raw_array<type_t>& b) {
+          friend auto operator !=(const raw_array<type_t>& a, const raw_array<type_t>& b) -> bool {
             return a.items() != b.items();
           }
-          friend bool operator !=(const raw_array<type_t>& a, const std::vector<type_t>& b) {
+          friend auto operator !=(const raw_array<type_t>& a, const std::vector<type_t>& b) -> bool {
             return a.items() != b;
           }
-          friend bool operator !=(const std::vector<type_t>& a, const raw_array<type_t>& b) {
+          friend auto operator !=(const std::vector<type_t>& a, const raw_array<type_t>& b) -> bool {
             return a != b.items();
           }
           
-          const_reference operator [](size_type index) const {return at(index);}
-          reference operator [](size_type index) {return at(index);}
+          auto operator [](size_type index) const -> const_reference {return at(index);}
+          auto operator [](size_type index) -> reference {return at(index);}
           
           operator const base_type& () const noexcept {return items_;}
           operator base_type& () noexcept {return items_;}
           /// @}
           
         private:
-          iterator to_type_iterator(typename base_type::iterator it) { return iterator(it); }
-          const_iterator to_type_iterator(typename base_type::const_iterator it) const { return const_iterator(it); }
+          auto to_type_iterator(typename base_type::iterator it) -> iterator { return iterator(it); }
+          auto to_type_iterator(typename base_type::const_iterator it) const -> const_iterator { return const_iterator(it); }
           
           base_type items_;
           size_type version_ = 0;
