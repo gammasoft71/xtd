@@ -6,40 +6,40 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-string trace_event_cache::call_stack() const noexcept {
+auto trace_event_cache::call_stack() const noexcept -> string {
   return stack_trace(true).to_string();
 }
 
-const date_time& trace_event_cache::date_time() const noexcept {
+auto trace_event_cache::date_time() const noexcept -> const class date_time& {
   if (date_time_ == date_time::min_value)
     date_time_ = date_time::utc_now();
   return date_time_;
 }
 
-array<string> trace_event_cache::logical_operation_stack() const noexcept {
+auto trace_event_cache::logical_operation_stack() const noexcept -> array<string> {
   return array<string>();
 }
 
-int32 trace_event_cache::process_id() const noexcept {
+auto trace_event_cache::process_id() const noexcept -> int32 {
   return -1;
 }
 
-string trace_event_cache::thread_id() const noexcept {
+auto trace_event_cache::thread_id() const noexcept -> string {
   return string::format("{}", threading::thread::current_thread().managed_thread_id());
 }
 
-std::chrono::nanoseconds trace_event_cache::timestamp() const noexcept {
+auto trace_event_cache::timestamp() const noexcept -> std::chrono::nanoseconds {
   return stopwatch::get_timestamp();
 }
 
-int64 trace_event_cache::timestamp_milliseconds() const noexcept {
+auto trace_event_cache::timestamp_milliseconds() const noexcept -> int64 {
   return stopwatch::get_timestamp_milliseconds();
 }
 
-int64 trace_event_cache::timestamp_nanoseconds() const noexcept {
+auto trace_event_cache::timestamp_nanoseconds() const noexcept -> int64 {
   return stopwatch::get_timestamp_nanoseconds();
 }
 
-int64 trace_event_cache::timestamp_ticks() const noexcept {
+auto trace_event_cache::timestamp_ticks() const noexcept -> int64 {
   return stopwatch::get_timestamp_ticks();
 }
