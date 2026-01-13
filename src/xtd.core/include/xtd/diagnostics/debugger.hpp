@@ -38,7 +38,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
       /// @return `true` if a debugger is attached; otherwise, `false`.
-      static bool is_attached();
+      static auto is_attached() -> bool;
       
       /// @brief Signals a breakpoint to an attached debugger.
       /// @par Examples
@@ -47,17 +47,17 @@ namespace xtd {
       /// debugger_break_();
       /// console::write_line("Hello, world.");
       /// ```
-      static void debug_break();
+      static auto debug_break() -> void;
       
       /// @brief Checks to see if logging is enabled by an attached debugger.
       /// @return `true` if a debugger is attached and logging is enabled; otherwise, `false`.
-      static bool is_logging();
+      static auto is_logging() -> bool;
       
       /// @brief Launches and attaches a debugger to the process.
       /// @return `true` if the startup is successful or if the debugger is already attached; otherwise, `false`.
       /// @remarks If a debugger is already attached, nothing happens.
       /// @remarks Debugger launch is only supported on Windows. On Unix and macOS operating systems, the method returns `true` without launching a debugger.
-      static bool launch();
+      static auto launch() -> bool;
       
       /// @brief Posts a message for the attached debugger.
       /// @param level A description of the importance of the message.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param message The message to show.
       /// @remarks If there is no debugger attached, this method has no effect. The debugger might or might not report the message, depending upon its settings.
       /// @note The category parameter is limited to 256 characters. std::string longer than 256 characters are truncated.
-      static void log(int32 level, const xtd::string& category, const xtd::string& message);
+      static auto log(xtd::int32 level, const xtd::string& category, const xtd::string& message) -> void;
       /// @}
     };
   }
