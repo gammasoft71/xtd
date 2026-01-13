@@ -3,11 +3,11 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-bool trace_filter::should_trace(const xtd::diagnostics::trace_event_cache& cache, const string& source, trace_event_type event_type, int32 id, const string& message) noexcept {
+auto trace_filter::should_trace(const trace_event_cache& cache, const string& source, trace_event_type event_type, int32 id, const string& message) noexcept -> bool {
   return should_trace(cache, source, event_type, id, message, nullptr, {});
 }
 
-bool trace_filter::should_trace(const xtd::diagnostics::trace_event_cache& cache, const string& source, trace_event_type event_type, int32 id, const string& message, any_object data1) noexcept {
+auto trace_filter::should_trace(const trace_event_cache& cache, const string& source, trace_event_type event_type, int32 id, const string& message, any_object data1) noexcept -> bool {
   return should_trace(cache, source, event_type, id, message, data1, {});
 }
 
