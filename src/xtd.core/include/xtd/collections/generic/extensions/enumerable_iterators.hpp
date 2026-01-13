@@ -73,7 +73,7 @@ namespace xtd {
               return const_cast<enumerable_iterator&>(*this);
             }
             
-            auto compare_to(const enumerable_iterator& rhs) const noexcept -> int32 override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
+            auto compare_to(const enumerable_iterator& rhs) const noexcept -> xtd::int32 override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
             auto equals(const enumerable_iterator& rhs) const noexcept -> bool override {return pos_ == rhs.pos_;}
             
             auto operator *() const -> reference {return const_cast<value_type&>(enumerator_.current());}
@@ -175,7 +175,7 @@ namespace xtd {
             if (value == source_collection.cend()) return target_collection.cend();
             
             auto result = target_collection.cbegin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
             return result;
           }
           
@@ -193,7 +193,7 @@ namespace xtd {
             if (value == source_collection.cend()) return target_collection.cend();
             
             auto result = target_collection.cbegin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
             return result;
           }
           
@@ -211,7 +211,7 @@ namespace xtd {
             if (value == source_collection.cend()) return target_collection.cend();
             
             auto result = target_collection.cbegin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
             return result;
           }
           
@@ -229,7 +229,7 @@ namespace xtd {
             if (value == source_collection.end()) return target_collection.end();
             
             auto result = target_collection.begin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
             return result;
           }
           
@@ -247,7 +247,7 @@ namespace xtd {
             if (value == source_collection.cend()) return target_collection.cend();
             
             auto result = target_collection.cbegin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
             return result;
           }
           
@@ -265,7 +265,7 @@ namespace xtd {
             if (value == source_collection.end()) return target_collection.end();
             
             auto result = target_collection.begin();
-            for (auto index = ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
+            for (auto index = xtd::ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
             return result;
           }
           /// @}
