@@ -97,47 +97,47 @@ stack_frame stack_frame::empty() noexcept {
   return null;
 }
 
-bool stack_frame::equals(const object& obj) const noexcept {
+auto stack_frame::equals(const object& obj) const noexcept -> bool {
   return is<stack_frame>(obj) && equals(static_cast<const stack_frame&>(obj));
 }
 
-bool stack_frame::equals(const stack_frame& other) const noexcept {
+auto stack_frame::equals(const stack_frame& other) const noexcept -> bool {
   return data_->file_name == other.data_->file_name && data_->file_line_number == other.data_->file_line_number && data_->method_name == other.data_->method_name && data_->file_column_number == other.data_->file_column_number && data_->offset == other.data_->offset;
 }
 
-size stack_frame::get_hash_code() const noexcept {
+auto stack_frame::get_hash_code() const noexcept -> size {
   return hash_code::combine(data_->file_name, data_->file_line_number, data_->method_name, data_->file_column_number, data_->offset);
 }
 
-xtd::size stack_frame::get_file_column_number() const noexcept {
+auto stack_frame::get_file_column_number() const noexcept -> size {
   return data_->file_column_number;
 }
 
-xtd::size stack_frame::get_file_line_number() const noexcept {
+auto stack_frame::get_file_line_number() const noexcept -> size {
   return data_->file_line_number;
 }
 
-const string& stack_frame::get_file_name() const noexcept {
+auto stack_frame::get_file_name() const noexcept -> const string& {
   return data_->file_name;
 }
 
-const string& stack_frame::get_method() const noexcept {
+auto stack_frame::get_method() const noexcept -> const string& {
   return data_->method_name;
 }
 
-xtd::size stack_frame::get_native_offset() const noexcept {
+auto stack_frame::get_native_offset() const noexcept -> size {
   return native::stack_trace::get_native_offset();
 }
 
-xtd::size stack_frame::get_offset() const noexcept {
+auto stack_frame::get_offset() const noexcept -> size {
   return data_->offset;
 }
 
-string stack_frame::to_string() const noexcept {
+auto stack_frame::to_string() const noexcept -> string {
   if (*this == empty()) return "";
   return string::format("{} at offset {} in file:line:column {}:{}:{}{}", xtd::string::is_empty(data_->method_name) ? "<unknown method>" : data_->method_name, data_->offset == OFFSET_UNKNOWN ? "<unknown offset>" : std::to_string(data_->offset), xtd::string::is_empty(data_->file_name) ? "<filename unknown>" : data_->file_name, data_->file_line_number, data_->file_column_number, environment::new_line());
 }
 
-stack_frame stack_frame::current(const xtd::diagnostics::source_location& value) noexcept {
+auto stack_frame::current(const xtd::diagnostics::source_location& value) noexcept -> stack_frame {
   return stack_frame {value};
 }
