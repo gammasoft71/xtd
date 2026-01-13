@@ -13,16 +13,16 @@ boolean_switch::boolean_switch(const string& display_name, const string& descrip
   value(default_switch_value);
 }
 
-bool boolean_switch::enabled() const {
+auto boolean_switch::enabled() const -> bool {
   return switch_setting();
 }
 
-void boolean_switch::enabled(bool enabled) {
+auto boolean_switch::enabled(bool enabled) -> void {
   if (self_.enabled() == enabled) return;
   value(as<string>(enabled));
 }
 
-void boolean_switch::on_value_changed() {
+auto boolean_switch::on_value_changed() -> void {
   auto bool_value = false;
   if (string::try_parse(value(), bool_value)) switch_setting(as<int32>(bool_value));
   else switch_object::on_value_changed();
