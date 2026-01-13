@@ -96,14 +96,14 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">culture_info_is_neutral_culture.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1globalization_1_1culture__info.html#a955ff6a98bc7a8a673a7f51474216a48" title="Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral cul...">xtd::globalization::culture_info::is_neutral_culture</a> property.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1globalization_1_1culture__info.html#a21b21895190f32011572c1c75444a7e2" title="Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral cul...">xtd::globalization::culture_info::is_neutral_culture</a> property.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Lists the cultures that use the Chinese language and determines if each is a neutral culture.</span></div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a1ddb8e48584985576089861483976df7">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ci : <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a714f23f75de6271ca4776fde793b6b7c">culture_info::get_cultures</a>(<a class="code hl_enumvalue" href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">culture_types::all_cultures</a>)) {</div>
 <div class="line">    <span class="keywordflow">if</span> (ci.two_letter_iso_language_name() == <span class="stringliteral">&quot;zh&quot;</span>) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{,-11} {,-40}&quot;</span>, ci.name(), ci.english_name());</div>
 <div class="line">      <span class="keywordflow">if</span> (ci.is_neutral_culture())</div>
@@ -133,14 +133,14 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// zh-Hant-TW  Chinese, Traditional (Taiwan)           : specific</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a1ddb8e48584985576089861483976df7"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html#a1ddb8e48584985576089861483976df7">xtd::globalization::culture_info::get_cultures</a></div><div class="ttdeci">static xtd::array&lt; culture_info &gt; get_cultures(xtd::globalization::culture_types types)</div><div class="ttdoc">Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types param...</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a714f23f75de6271ca4776fde793b6b7c"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html#a714f23f75de6271ca4776fde793b6b7c">xtd::globalization::culture_info::get_cultures</a></div><div class="ttdeci">static auto get_cultures(xtd::globalization::culture_types types) -&gt; xtd::array&lt; xtd::globalization::culture_info &gt;</div><div class="ttdoc">Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types param...</div></div>
 <div class="ttc" id="agroup__globalization_html_gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d"><div class="ttname"><a href="group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a7b305fa3207bc7aeb6422063924f269d">xtd::globalization::culture_types::all_cultures</a></div><div class="ttdeci">@ all_cultures</div><div class="ttdoc">All cultures that are recognized by xtd, including neutral and specific cultures and custom cultures ...</div><div class="ttdef"><b>Definition</b> culture_types.hpp:30</div></div>
 <div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:20</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 19:07:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 21:08:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
