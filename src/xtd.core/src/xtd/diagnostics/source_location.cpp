@@ -24,11 +24,12 @@ source_location::source_location(const source_location& other) : data_ {new_ptr<
   *data_ = *other.data_;
 }
 
-source_location& source_location::operator =(source_location&& other) {
+auto source_location::operator =(source_location&& other) -> source_location& {
   data_ = std::move(other.data_);
   return *this;
 }
-source_location& source_location::operator =(const source_location& other) {
+
+auto source_location::operator =(const source_location& other) -> source_location& {
   *data_ = *other.data_;
   return *this;
 }
@@ -36,26 +37,26 @@ source_location& source_location::operator =(const source_location& other) {
 source_location::source_location(const xtd::string& file, xtd::size line, const xtd::string& func, xtd::size column) : data_ {new_ptr<data>(file, line, func, column)} {
 }
 
-size source_location::column() const noexcept {
+auto source_location::column() const noexcept -> size {
   return data_->column;
 }
 
-const string& source_location::file_name() const noexcept {
+auto source_location::file_name() const noexcept -> const string& {
   return data_->file;
 }
 
-const string& source_location::function_name() const noexcept {
+auto source_location::function_name() const noexcept -> const string& {
   return data_->func;
 }
 
-size source_location::line() const noexcept {
+auto source_location::line() const noexcept -> size {
   return data_->line;
 }
 
-xtd::string source_location::to_string() const noexcept {
+auto source_location::to_string() const noexcept -> xtd::string {
   return string::format("{} in file:line:column {}:{}:{}", function_name(), file_name(), line(), column());
 }
 
-source_location source_location::current(const __xtd_source_location__& value) noexcept {
+auto source_location::current(const __xtd_source_location__& value) noexcept -> source_location {
   return source_location {value.file_name(), static_cast<xtd::size>(value.line()), value.function_name() == xtd::string {} ? "<unknown>" : value.function_name(), static_cast<xtd::size>(value.column())};
 }
