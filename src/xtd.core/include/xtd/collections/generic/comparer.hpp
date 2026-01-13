@@ -30,7 +30,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       template<class type_t>
-      class comparer : public object, public icomparer<type_t> {
+      class comparer : public xtd::object, public xtd::collections::generic::icomparer<type_t> {
       public:
         /// @name Public Aliases
         
@@ -40,7 +40,7 @@ namespace xtd {
         /// @brief Represents the second argument type.
         using second_argument_type = type_t;
         /// @brief Represents the result type.
-        using result_type = int32;
+        using result_type = xtd::int32;
         /// @}
         
         /// @name Public Properties
