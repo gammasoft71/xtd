@@ -10,36 +10,36 @@ trace_source::trace_source::trace_source(const string& name, xtd::diagnostics::s
   source_switch_.level(switch_levels_);
 }
 
-xtd::diagnostics::trace_listener_collection& trace_source::listeners() noexcept {
+auto trace_source::listeners() noexcept -> trace_listener_collection& {
   return listeners_;
 }
 
-void trace_source::listeners(const xtd::diagnostics::trace_listener_collection& listeners) noexcept {
+auto trace_source::listeners(const trace_listener_collection& listeners) noexcept -> void {
   listeners_ = listeners;
 }
 
-const string& trace_source::name() const noexcept {
+auto trace_source::name() const noexcept -> const string& {
   return name_;
 }
 
-const xtd::diagnostics::source_switch& trace_source::source_switch() const noexcept {
+auto trace_source::source_switch() const noexcept -> const class source_switch& {
   return source_switch_;
 }
 
-void trace_source::source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept {
+auto trace_source::source_switch(const class source_switch& source_switch) noexcept -> void {
   source_switch_ = source_switch;
 }
 
-void trace_source::close() {
+auto trace_source::close() -> void {
   for (auto listener : listeners_)
     listener->close();
 }
 
-void trace_source::flush() {
+auto trace_source::flush() -> void {
   for (auto listener : listeners_)
     listener->flush();
 }
 
-void trace_source::trace_information(const string& message) {
+auto trace_source::trace_information(const string& message) -> void {
   trace_event(trace_event_type::information, 0, message);
 }
