@@ -7,23 +7,23 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-bool debugger::is_attached() {
+auto debugger::is_attached() -> bool {
   return native::debugger::is_attached();
 }
 
-void debugger::debug_break() {
+auto debugger::debug_break() -> void {
   debug_break_();
 }
 
-bool debugger::is_logging() {
+auto debugger::is_logging() -> bool {
   return native::debugger::is_logging();
 }
 
-bool debugger::launch() {
+auto debugger::launch() -> bool {
   if (is_attached()) return true;
   return native::debugger::launch();
 }
 
-void debugger::log(int32 level, const string& category, const string& message) {
+auto debugger::log(int32 level, const string& category, const string& message) -> void {
   return native::debugger::log(level, category, message);
 }
