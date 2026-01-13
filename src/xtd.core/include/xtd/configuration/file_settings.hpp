@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a xtd::collections::generic::sorted_dictionary with the key and the value strongly typed to be strings.
-      using string_dictionary = std::map<xtd::string, xtd::string>;
+      using string_dictionary = xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string>;
       
       /// @brief Represents a collection of strings.
       using string_collection = xtd::collections::specialized::string_collection;
@@ -620,15 +620,15 @@ namespace xtd {
       auto write_string(const xtd::string& section, const xtd::string& key, const xtd::string& value) noexcept -> void;
       
       bool auto_save_ = false;
-      std::map<xtd::string, string_dictionary> after_key_value_comment_;
-      std::map<xtd::string, xtd::string> after_section_comment_;
-      std::map<xtd::string, string_dictionary> before_key_value_comment_;
-      std::map<xtd::string, xtd::string> before_section_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, string_dictionary> after_key_value_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string> after_section_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, string_dictionary> before_key_value_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string> before_section_comment_;
       xtd::string bottom_file_comment_;
       xtd::string file_path_;
-      std::map<xtd::string, string_dictionary> key_value_comment_;
-      std::map<xtd::string, xtd::string> section_comment_;
-      std::map<xtd::string, string_dictionary> section_key_values_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, string_dictionary> key_value_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string> section_comment_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, string_dictionary> section_key_values_;
       std::iostream* stream_ = nullptr;
       xtd::string top_file_comment_;
     };
