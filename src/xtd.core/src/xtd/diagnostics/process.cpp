@@ -81,7 +81,7 @@ auto process::exit_event::is_empty() const noexcept -> bool {
   return event_handler::is_empty();
 }
 
-auto process::exit_event::operator +=(const event_handler& handler) noexcept -> event_handler&{
+auto process::exit_event::operator +=(const event_handler& handler) noexcept -> event_handler& {
   data_->exit_callback += (handler);
   return event_handler::operator +=(handler);
 }
@@ -211,7 +211,7 @@ auto process::priority_class(process_priority_class value) -> process& {
   return *this;
 }
 
-auto process::process_name() const -> string{
+auto process::process_name() const -> string {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return path::get_file_name_without_extension(data_->start_info.file_name());
 }
@@ -234,7 +234,7 @@ auto process::standard_output() -> std::istream& {
   return *data_->standard_output;
 }
 
-auto process::start_info() const -> const process_start_info&{
+auto process::start_info() const -> const process_start_info& {
   return data_->start_info;
 }
 

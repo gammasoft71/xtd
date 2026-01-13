@@ -37,12 +37,12 @@ namespace xtd {
       /// @param data The line that was written by an associated Process to its redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream.
       explicit data_received_event_args(const xtd::string& data) : data_(data) {}
       /// @}
-
+      
       /// @cond
       data_received_event_args(const xtd::diagnostics::data_received_event_args&) = default;
       auto operator =(const xtd::diagnostics::data_received_event_args&) -> xtd::diagnostics::data_received_event_args& = default;
       /// @endcond
-            
+      
       /// @name Public Properties
       
       /// @{
