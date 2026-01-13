@@ -52,35 +52,35 @@ namespace xtd {
       /// @brief Gets the trace level that determines the messages the switch allows.
       /// @return One of the xtd::diagnostics::trace_level values that specifies the level of messages that are allowed by the switch.
       /// @remarks Setting this property updates the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to reflect the new value.
-      xtd::diagnostics::trace_level level() const noexcept;
+      auto level() const noexcept -> xtd::diagnostics::trace_level;
       /// @brief Sets the trace level that determines the messages the switch allows.
       /// @param level One of the xtd::diagnostics::trace_level values that specifies the level of messages that are allowed by the switch.
       /// @remarks Setting this property updates the xtd::diagnostics::trace_switch::trace_error, xtd::diagnostics::trace_switch::trace_warning, xtd::diagnostics::trace_switch::trace_info, and xtd::diagnostics::trace_switch::trace_verbose properties to reflect the new value.
-      void level(xtd::diagnostics::trace_level level) noexcept;
+      auto level(xtd::diagnostics::trace_level level) noexcept -> void;
       
       /// @brief Gets a value indicating whether the switch allows error-handling messages.
       /// @return `true` if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::error, xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, `false`.
-      bool trace_error() const noexcept;
+      auto trace_error() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the switch allows informational messages.
       /// @return `true` if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, `false`.
-      bool trace_info() const noexcept;
+      auto trace_info() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the switch allows all messages.
       /// @return `true` if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::verbose; otherwise, `false`.
-      bool trace_verbose() const noexcept;
+      auto trace_verbose() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the switch allows warning messages.
       /// @return `true` if the xtd::diagnostics::trace_switch::level property is set to xtd::diagnostics::trace_level::warning, xtd::diagnostics::trace_level::info, or xtd::diagnostics::trace_level::verbose; otherwise, `false`.
-      bool trace_warning() const noexcept;
+      auto trace_warning() const noexcept -> bool;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      void on_switch_setting_changed() override;
-      void on_value_changed() override;
+      auto on_switch_setting_changed() -> void override;
+      auto on_value_changed() -> void override;
       /// @}
     };
   }
