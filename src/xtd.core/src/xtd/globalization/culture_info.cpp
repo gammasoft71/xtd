@@ -20,19 +20,19 @@ optional<culture_info> culture_info::current_culture_;
 struct culture_info::data {
   xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
   optional<date_time_format_info> date_time_format;
-  xtd::string display_name = "Invariant Language (Invariant Country)";
-  xtd::string english_name = "Invariant Language (Invariant Country)";
+  string display_name = "Invariant Language (Invariant Country)";
+  string english_name = "Invariant Language (Invariant Country)";
   bool is_read_only = false;
-  xtd::size keyboard_layout_id = 127;
-  xtd::size lcid = 127;
+  size keyboard_layout_id = 127;
+  size lcid = 127;
   std::locale locale = std::locale {""};
-  xtd::string name;
-  xtd::string native_name = "Invariant Language (Invariant Country)";
+  string name;
+  string native_name = "Invariant Language (Invariant Country)";
   optional<number_format_info> number_format;
-  xtd::string parent_name;
-  xtd::string three_letter_iso_language_name = "ivl";
-  xtd::string three_letter_windows_language_name = "IVL";
-  xtd::string two_letter_iso_language_name = "iv";
+  string parent_name;
+  string three_letter_iso_language_name = "ivl";
+  string three_letter_windows_language_name = "IVL";
+  string two_letter_iso_language_name = "iv";
   bool use_user_override = false;
 };
 
@@ -65,136 +65,136 @@ culture_info::culture_info(const string& name, bool use_user_override) : culture
   data_->use_user_override = use_user_override;
 }
 
-globalization::culture_types culture_info::culture_types() const noexcept {
+auto culture_info::culture_types() const noexcept -> globalization::culture_types {
   return data_->culture_types;
 }
 
-const date_time_format_info& culture_info::date_time_format() const {
+auto culture_info::date_time_format() const -> const date_time_format_info& {
   if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
 
-date_time_format_info& culture_info::date_time_format() {
+auto culture_info::date_time_format() -> date_time_format_info& {
   if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
 
-const string& culture_info::display_name() const noexcept {
+auto culture_info::display_name() const noexcept -> const string& {
   return data_->display_name;
 }
 
-const string& culture_info::english_name() const noexcept {
+auto culture_info::english_name() const noexcept -> const string& {
   return data_->english_name;
 }
 
-bool culture_info::is_locale_available() const noexcept {
+auto culture_info::is_locale_available() const noexcept -> bool {
   return data_->locale.name() != "C";
 }
 
-bool culture_info::is_neutral_culture() const noexcept {
+auto culture_info::is_neutral_culture() const noexcept -> bool {
   return enum_object<globalization::culture_types>(culture_types()).has_flag(xtd::globalization::culture_types::neutral_cultures);
 }
 
-bool culture_info::is_read_only() const noexcept {
+auto culture_info::is_read_only() const noexcept -> bool {
   return data_->is_read_only;
 }
 
-xtd::size culture_info::keyboard_layout_id() const noexcept {
+auto culture_info::keyboard_layout_id() const noexcept -> size {
   return data_->keyboard_layout_id;
 }
 
-xtd::size culture_info::lcid() const noexcept {
+auto culture_info::lcid() const noexcept -> size {
   return data_->lcid;
 }
 
-const std::locale& culture_info::locale() const noexcept {
+auto culture_info::locale() const noexcept -> const std::locale& {
   return data_->locale;
 }
 
-const string& culture_info::name() const noexcept {
+auto culture_info::name() const noexcept -> const string& {
   return data_->name;
 }
 
-const string& culture_info::native_name() const noexcept {
+auto culture_info::native_name() const noexcept -> const string& {
   return data_->native_name;
 }
 
-const xtd::globalization::number_format_info& culture_info::number_format() const {
+auto culture_info::number_format() const -> const number_format_info& {
   if (data_->number_format == nullopt) data_->number_format = number_format_info::formats()[data_->name.to_lower()];
   return data_->number_format.value();
 }
 
-xtd::globalization::number_format_info& culture_info::number_format() {
+auto culture_info::number_format() -> number_format_info& {
   if (data_->number_format == nullopt) data_->number_format = number_format_info::formats()[data_->name.to_lower()];
   return data_->number_format.value();
 }
 
-culture_info culture_info::parent() const noexcept {
+auto culture_info::parent() const noexcept -> culture_info {
   return culture_info::get_culture_info(data_->parent_name, cultures().contains_key(data_->parent_name.to_lower()));
 }
 
-const string& culture_info::three_letter_iso_language_name() const noexcept {
+auto culture_info::three_letter_iso_language_name() const noexcept -> const string& {
   return data_->three_letter_iso_language_name;
 }
 
-const string& culture_info::three_letter_windows_language_name() const noexcept {
+auto culture_info::three_letter_windows_language_name() const noexcept -> const string& {
   return data_->three_letter_windows_language_name;
 }
 
-const string& culture_info::two_letter_iso_language_name() const noexcept {
+auto culture_info::two_letter_iso_language_name() const noexcept -> const string& {
   return data_->two_letter_iso_language_name;
 }
 
-bool culture_info::use_user_override() const noexcept {
+auto culture_info::use_user_override() const noexcept -> bool {
   return data_->use_user_override;
 }
 
-culture_info culture_info::current_culture() noexcept {
+auto culture_info::current_culture() noexcept -> culture_info {
   auto locale = !current_culture_.has_value() ? std::locale {xtd::native::culture_info::current_locale_name()} : std::locale {};
   if (!current_culture_.has_value()) current_culture_ = culture_info {locale};
   else if (locale.name() != "C") current_culture_ = culture_info {locale};
   return current_culture_.value();
 }
 
-void culture_info::current_culture(const culture_info& value) {
+auto culture_info::current_culture(const culture_info& value) -> void {
   if (current_culture_.has_value() && current_culture_ == value) return;
   current_culture_ = value;
   std::locale::global(value.locale());
 }
 
-culture_info culture_info::invariant_culture() noexcept {
+auto culture_info::invariant_culture() noexcept -> culture_info {
   return cultures()[""];
 }
 
-culture_info culture_info::clone() const noexcept {
+auto culture_info::clone() const noexcept -> culture_info {
   auto result = culture_info {};
   *result.data_ = *data_;
   return result;
 }
 
-bool culture_info::equals(const object& obj) const noexcept {
+auto culture_info::equals(const object& obj) const noexcept -> bool {
   return is<culture_info>(obj) && equals(static_cast<const culture_info&>(obj));
 }
 
-bool culture_info::equals(const culture_info& obj) const noexcept {
+auto culture_info::equals(const culture_info& obj) const noexcept -> bool {
   return data_->name == obj.data_->name;;
 }
 
-xtd::size culture_info::get_hash_code() const noexcept {
+auto culture_info::get_hash_code() const noexcept -> size {
   return xtd::hash_code::combine(data_->name);
 }
 
-xtd::string culture_info::to_string() const noexcept {
+auto culture_info::to_string() const noexcept -> string {
   return data_->name;
 }
 
-culture_info culture_info::get_culture_info(const xtd::string& name) {
+auto culture_info::get_culture_info(const string& name) -> culture_info {
   auto culture = culture_info {name};
   culture.data_->is_read_only = true;
   return culture;
 }
 
-culture_info culture_info::get_culture_info(const xtd::string& name, bool predefined_only) {
+auto culture_info::get_culture_info(const string& name, bool predefined_only) -> culture_info {
   if (predefined_only || cultures().contains_key(name)) return culture_info(name);
   auto culture = culture_info {""};
   culture.data_->name = name;
@@ -202,7 +202,7 @@ culture_info culture_info::get_culture_info(const xtd::string& name, bool predef
   return culture;
 }
 
-culture_info culture_info::get_culture_info(const xtd::string& name, const xtd::string& alt_name) {
+auto culture_info::get_culture_info(const string& name, const string& alt_name) -> culture_info {
   auto alt_culture = culture_info {alt_name};
   auto culture = culture_info {name};
   culture.data_->is_read_only = true;
@@ -211,11 +211,11 @@ culture_info culture_info::get_culture_info(const xtd::string& name, const xtd::
   return culture;
 }
 
-culture_info culture_info::get_culture_info(xtd::size culture) {
+auto culture_info::get_culture_info(size culture) -> culture_info {
   return culture_info {culture};
 }
 
-array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) {
+auto culture_info::get_cultures(xtd::globalization::culture_types types) -> array<culture_info> {
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures())
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
@@ -224,7 +224,7 @@ array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types
   return array<culture_info>(result);
 }
 
-array<std::locale> culture_info::get_system_locales() noexcept {
+auto culture_info::get_system_locales() noexcept -> array<std::locale> {
   static auto result = list<std::locale> {};
   call_once_ {
     for (auto system_locale_name : native::culture_info::system_locale_names())
@@ -234,18 +234,18 @@ array<std::locale> culture_info::get_system_locales() noexcept {
   return array<std::locale>(result);
 }
 
-void culture_info::initialize_all_cultures() noexcept {
+auto culture_info::initialize_all_cultures() noexcept -> void {
   [[maybe_unused]] auto ci = culture_info {"en-US"};
   [[maybe_unused]] auto dtf = ci.date_time_format();
   [[maybe_unused]] auto nf = ci.number_format();
 }
 
-culture_info& culture_info::operator =(std::locale&& locale) {
+auto culture_info::operator =(std::locale&& locale) -> culture_info& {
   data_->locale = std::move(locale);
   return self_;
 }
 
-culture_info& culture_info::operator =(const std::locale& locale) {
+auto culture_info::operator =(const std::locale& locale) -> culture_info& {
   data_->locale = locale;
   return self_;
 }
@@ -270,14 +270,14 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->is_read_only = true;
 }
 
-void culture_info::fill_from_name(const string& name) {
+auto culture_info::fill_from_name(const string& name) -> void {
   auto lower_name = name.to_lower();
   if (!cultures().contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
   *data_ = *cultures()[lower_name].data_;
   data_->is_read_only = false;
 }
 
-dictionary<string, culture_info>& culture_info::cultures() {
+auto culture_info::cultures() -> dictionary<string, culture_info>& {
   static auto cultures = dictionary<string, culture_info> {{"", {}}, {"en-us", {globalization::culture_types::specific_cultures, "English (United States)", "English (United States)", 1033, 1033, "en-US", "English (United States)", "en", "eng", "ENU", "en"}}};
   call_once_ {
     auto culture_bin = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "cultures.bin"});
@@ -294,7 +294,7 @@ dictionary<string, culture_info>& culture_info::cultures() {
   return cultures;
 }
 
-bool culture_info::is_system_locale_available(const string& name) noexcept {
+auto culture_info::is_system_locale_available(const string& name) noexcept -> bool {
   static auto system_locale_names = array<string> {};
   call_once_ {
     auto native_system_locale_names = native::culture_info::system_locale_names();
@@ -303,7 +303,7 @@ bool culture_info::is_system_locale_available(const string& name) noexcept {
   return system_locale_names.contains(name);
 }
 
-string culture_info::to_cldr_name(const string& name) {
+auto culture_info::to_cldr_name(const string& name) -> string {
   if (string::is_empty(name)) return "";
   if (name == "C" || name == "C.UTF-8" || name == "POSIX" || name == "POSIX.UTF-8") return "en-US";
   static const dictionary<string, string> locale_to_cldr_fixups = {{"ar_ar", "ar"}, {"az_az", "az-Latn-AZ"}, {"bs_ba", "bs-Latn-BA"}, {"en_en", "en"}, {"eo_eo", "eo"}, {"ff_bf", "ff-Latn-BF"}, {"ff_cm", "ff-Latn-CM"}, {"ff_gh", "ff-Latn-GH"}, {"ff_gm", "ff-Latn-GM"}, {"ff_gn", "ff-Latn-GN"}, {"ff_gw", "ff-Latn-GW"}, {"ff_lr", "ff-Latn-LR"}, {"ff_mr", "ff-Latn-MR"}, {"ff_ne", "ff-Latn-NE"}, {"ff_ng", "ff-Latn-NG"}, {"ff_sl", "ff-Latn-SL"}, {"ff_sn", "ff-Latn-SN"}, {"ia_ia", "ia"}, {"id_id", "id"}, {"kok_in", "kok-Deva-IN"}, {"ks_in", "ks-Arab-IN"}, {"mni_in", "mni-Beng-IN"}, {"pa_pk", "pa-Arab-PK"}, {"pa_in", "pa-Guru-IN"}, {"sat_in", "sat-Deva-IN"}, {"sd_pk", "sd-Arab-PK"}, {"sd_in", "sd-Deva-IN"}, {"shi_ma", "shi-Latn-MA"}, {"sr_xk", "sr-Latn-XK"}, {"sr_rs", "sr-Cyrl-RS"}, {"sr_me", "sr-Latn-ME"}, {"sr_ba", "sr-Latn-BA"}, {"su_id", "su-Latn-ID"}, {"ur_in", "ur-Arab-IN"}, {"ur_pk", "ur-Arab-PK"}, {"uz_uz", "uz-Latn-UZ"}, {"uz_af", "uz-Arab-AF"}, {"vai_lr", "vai-Latn-LR"}, {"zh_cn", "zh-Hans-CN"}, {"zh_sg", "zh-Hans-SG"}, {"zh_hk", "zh-Hant-HK"}, {"zh_tw", "zh-Hant-TW"}, {"zh_mo", "zh-Hant-MO"}};
@@ -311,7 +311,7 @@ string culture_info::to_cldr_name(const string& name) {
   return locale_to_cldr_fixups.contains_key(cldr_name.to_lower()) ? locale_to_cldr_fixups[cldr_name.to_lower()] : cldr_name.replace("_", "-");
 }
 
-string culture_info::to_locale_name(const string& name) {
+auto culture_info::to_locale_name(const string& name) -> string {
   if (string::is_empty(name) || name == "C" || name == "POSIX") return name;
   if (name == "C.UTF-8") return "C";
   if (name == "POSIX.UTF-8") return "POSIX";
