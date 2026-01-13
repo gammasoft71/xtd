@@ -92,7 +92,7 @@ struct __xtd__diagnostics_config__ final {
   const string_dictionary& switches;
 };
 
-const __xtd__diagnostics_config__& __xtd___read_diagnostics_config__() {
+auto __xtd___read_diagnostics_config__() -> const __xtd__diagnostics_config__& {
   static auto listeners = trace_listener_collection {};
   static auto switches = string_dictionary {};
   call_once_ {
