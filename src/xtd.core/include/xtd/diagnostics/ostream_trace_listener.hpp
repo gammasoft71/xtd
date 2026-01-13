@@ -43,31 +43,31 @@ namespace xtd {
       /// @{
       /// @brief Gets the underlying stream.
       /// @return A std::ostream that represents the stream the ostream_trace_listener writes to.
-      virtual const std::ostream& ostream() const;
+      virtual auto ostream() const -> const std::ostream&;
       /// @brief Sets the underlying stream.
       /// @param ostream A std::ostream that represents the stream the ostream_trace_listener writes to.
-      virtual void ostream(const std::ostream& ostream);
+      virtual auto ostream(const std::ostream& ostream) -> void;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void close() override;
-      void flush() override {
+      auto close() -> void override;
+      auto flush() -> void override {
         #if DEBUG || TRACE
         flush_();
         #endif
       }
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const xtd::string& message) override {
+      auto write(const xtd::string& message) -> void override {
         #if DEBUG || TRACE
         write_(message);
         #endif
       }
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const xtd::string& message) override {
+      auto write_line(const xtd::string& message) -> void override {
         #if DEBUG || TRACE
         write_line_(message);
         #endif
@@ -75,9 +75,10 @@ namespace xtd {
       /// @}
       
     private:
-      void flush_();
-      void write_(const xtd::string& message);
-      void write_line_(const xtd::string& message);
+      auto flush_() -> void;
+      auto write_(const xtd::string& message) -> void;
+      auto write_line_(const xtd::string& message) -> void;
+      
       std::ostream ostream_ {nullptr};
     };
   }
