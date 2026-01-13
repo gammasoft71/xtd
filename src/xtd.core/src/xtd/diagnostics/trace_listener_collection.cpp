@@ -13,21 +13,21 @@ trace_listener_collection& trace_listener_collection::operator =(const trace_lis
   return *this;
 }
 
-bool trace_listener_collection::equals(const object& value) const noexcept {
+auto trace_listener_collection::equals(const object& value) const noexcept -> bool {
   return is<trace_listener_collection>(value) && equals(static_cast<const trace_listener_collection&>(value));
 }
 
-bool trace_listener_collection::equals(const trace_listener_collection& value) const noexcept {
+auto trace_listener_collection::equals(const trace_listener_collection& value) const noexcept -> bool {
   return static_cast<const base&>(*this) == static_cast<const base&>(value);
 }
 
-trace_listener_collection::const_reference trace_listener_collection::operator [](const string& name) const {
+auto trace_listener_collection::operator [](const string& name) const -> const_reference {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;
 }
 
-trace_listener_collection::reference trace_listener_collection::operator [](const string& name) {
+auto trace_listener_collection::operator [](const string& name) -> reference {
   for (auto& item : *this)
     if (item->name() == name) return item;
   return empty_;
