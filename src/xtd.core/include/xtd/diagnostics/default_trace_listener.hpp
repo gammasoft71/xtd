@@ -78,7 +78,7 @@ namespace xtd {
       ///   return;
       /// }
       /// ```
-      bool assert_ui_enabled() const noexcept;
+      auto assert_ui_enabled() const noexcept -> bool;
       /// @brief Sets a value indicating whether the application is running in user-interface mode.
       /// @param assert_ui_enabled `true` if user-interface mode is enabled; otherwise, `false`.
       /// @par Examples
@@ -95,7 +95,7 @@ namespace xtd {
       ///   return;
       /// }
       /// ```
-      void assert_ui_enabled(bool assert_ui_enabled) noexcept;
+      auto assert_ui_enabled(bool assert_ui_enabled) noexcept -> void;
       
       /// @brief Gets the name of a log file to write trace or debug messages to.
       /// @return The name of a log file to write trace or debug messages to.
@@ -110,7 +110,7 @@ namespace xtd {
       /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
-      xtd::string log_file_name() const noexcept;
+      auto log_file_name() const noexcept -> xtd::string;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples
@@ -124,20 +124,20 @@ namespace xtd {
       /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
-      void log_file_name(const xtd::string log_file_name) noexcept;
+      auto log_file_name(const xtd::string log_file_name) noexcept -> void;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void close() override;
-      void flush() override;
+      auto close() -> void override;
+      auto flush() -> void override;
       
       using xtd::diagnostics::trace_listener::write;
-      void write(const xtd::string& message) override;
+      auto write(const xtd::string& message) -> void override;
       
       using xtd::diagnostics::trace_listener::write_line;
-      void write_line(const xtd::string& message) override;
+      auto write_line(const xtd::string& message) -> void override;
       /// @}
       
     private:
