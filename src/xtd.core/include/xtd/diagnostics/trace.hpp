@@ -159,14 +159,14 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<class ...args_t>
-      inline static auto print(const xtd::string& format, args_t&& ... args) -> void {
+      static auto print(const xtd::string& format, args_t&& ... args) -> void {
         #if TRACE
         write_line_(xtd::string::format(format, args...));
         #endif
       }
       /// @cond
       template<class ...args_t>
-      inline static auto print(const char* format, args_t&& ... args) -> void {
+      static auto print(const char* format, args_t&& ... args) -> void {
         #if TRACE
         write_line_(xtd::string::format(format, args...));
         #endif
@@ -186,7 +186,7 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_error calls the trace_event methods in the trace listeners with the trace event type error, passing the message content as an object array with formatting information.
       template<class ...objects>
-      inline static auto trace_error(const xtd::string& message, const objects& ... args) -> void {
+      static auto trace_error(const xtd::string& message, const objects& ... args) -> void {
         #if TRACE
         trace_event_(xtd::diagnostics::trace_event_type::error, message, args...);
         #endif
@@ -205,7 +205,7 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_information calls the trace_event methods in the trace listeners with the trace event type information, passing the message content as an object array with formatting information.
       template<class ...objects>
-      inline static auto trace_information(const xtd::string& message, const objects& ... args) -> void {
+      static auto trace_information(const xtd::string& message, const objects& ... args) -> void {
         #if TRACE
         trace_event_(xtd::diagnostics::trace_event_type::information, xtd::string::format(message, args...));
         #endif
@@ -224,7 +224,7 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks trace_warning calls the trace_event methods in the trace listeners with the trace event type Warning, passing the message content as an object array with formatting information.
       template<class ...objects>
-      inline static auto trace_warning(const xtd::string& message, const objects& ... args) -> void {
+      static auto trace_warning(const xtd::string& message, const objects& ... args) -> void {
         #if TRACE
         trace_event_(xtd::diagnostics::trace_event_type::warning, xtd::string::format(message, args...));
         #endif
@@ -248,7 +248,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write(const object_t& message) -> void {
+      static auto write(const object_t& message) -> void {
         #if TRACE
         write_(xtd::string::format("{}", message));
         #endif
@@ -260,7 +260,7 @@ namespace xtd {
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write(const object_t& message, const xtd::string& category) -> void {
+      static auto write(const object_t& message, const xtd::string& category) -> void {
         #if TRACE
         write_(xtd::string::format("{}", message), category);
         #endif
@@ -271,14 +271,14 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class ...args_t>
-      inline static auto write(const xtd::string& format, args_t&& ... args) -> void {
+      static auto write(const xtd::string& format, args_t&& ... args) -> void {
         #if TRACE
         write_(string::format(format, args...));
         #endif
       }
       /// @cond
       template<class ...args_t>
-      inline static auto write(const char* format, args_t&& ... args) -> void {
+      static auto write(const char* format, args_t&& ... args) -> void {
         #if TRACE
         write_(string::format(format, args...));
         #endif
@@ -301,7 +301,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_if(bool condition, const object_t& message) -> void {
+      static auto write_if(bool condition, const object_t& message) -> void {
         #if TRACE
         if (condition) write_(xtd::string::format("{}", message));
         #endif
@@ -313,7 +313,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_if(bool condition, const object_t& message, const xtd::string& category) -> void {
+      static auto write_if(bool condition, const object_t& message, const xtd::string& category) -> void {
         #if TRACE
         if (condition) write_(xtd::string::format("{}", message), category);
         #endif
@@ -342,7 +342,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_line(const object_t& message) -> void {
+      static auto write_line(const object_t& message) -> void {
         #if TRACE
         write_line_(xtd::string::format("{}", message));
         #endif
@@ -354,7 +354,7 @@ namespace xtd {
       /// @remarks Use the category parameter to group output messages.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_line(const object_t& message, const xtd::string& category) -> void {
+      static auto write_line(const object_t& message, const xtd::string& category) -> void {
         #if TRACE
         write_line_(xtd::string::format("{}", message), category);
         #endif
@@ -364,14 +364,14 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
       template<class ...args_t>
-      inline static auto write_line(const xtd::string& format, args_t&& ... args) -> void {
+      static auto write_line(const xtd::string& format, args_t&& ... args) -> void {
         #if TRACE
         write_line_(xtd::string::format(format, args...));
         #endif
       }
       /// @cond
       template<class ...args_t>
-      inline static auto write_line(const char* format, args_t&& ... args) -> void {
+      static auto write_line(const char* format, args_t&& ... args) -> void {
         #if TRACE
         write_line_(xtd::string::format(format, args...));
         #endif
@@ -394,7 +394,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_line_if(bool condition, const object_t& message) -> void {
+      static auto write_line_if(bool condition, const object_t& message) -> void {
         #if TRACE
         if (condition) write_line_(xtd::string::format("{}", message));
         #endif
@@ -406,7 +406,7 @@ namespace xtd {
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
       template<class object_t>
-      inline static auto write_line_if(bool condition, const object_t& message, const xtd::string& category) -> void {
+      static auto write_line_if(bool condition, const object_t& message, const xtd::string& category) -> void {
         #if TRACE
         if (condition) write_line_(xtd::string::format("{}", message), category);
         #endif
@@ -414,9 +414,9 @@ namespace xtd {
       /// @}
       
       /// @cond
-      static inline auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition) -> bool {return __should_aborted__(stack_frame, condition, xtd::string::empty_string);}
-      static inline auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message) -> bool {return __should_aborted__(stack_frame, condition, message, xtd::string::empty_string);}
-      static inline auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message, const xtd::string& detail_message) -> bool {
+      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition) -> bool {return __should_aborted__(stack_frame, condition, xtd::string::empty_string);}
+      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message) -> bool {return __should_aborted__(stack_frame, condition, message, xtd::string::empty_string);}
+      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message, const xtd::string& detail_message) -> bool {
         #if TRACE
         auto result = xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
