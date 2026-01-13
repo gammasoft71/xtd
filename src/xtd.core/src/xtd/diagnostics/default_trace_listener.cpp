@@ -10,43 +10,43 @@ using namespace xtd::diagnostics;
 default_trace_listener::default_trace_listener() : default_trace_listener("") {
 }
 
-default_trace_listener::default_trace_listener(const xtd::string log_file_name) : trace_listener("default"), log_file_name_ {log_file_name} {
+default_trace_listener::default_trace_listener(const string log_file_name) : trace_listener("default"), log_file_name_ {log_file_name} {
 }
 
 default_trace_listener::~default_trace_listener() {
   flush();
 }
 
-bool default_trace_listener::assert_ui_enabled() const noexcept {
+auto default_trace_listener::assert_ui_enabled() const noexcept -> bool {
   return assert_ui_enabled_;
 }
 
-void default_trace_listener::assert_ui_enabled(bool assert_ui_enabled) noexcept {
+auto default_trace_listener::assert_ui_enabled(bool assert_ui_enabled) noexcept -> void {
   assert_ui_enabled_ = assert_ui_enabled;
 }
 
-string default_trace_listener::log_file_name() const noexcept {
+auto default_trace_listener::log_file_name() const noexcept -> string {
   return log_file_name_;
 }
 
-void default_trace_listener::log_file_name(const string log_file_name) noexcept {
+auto default_trace_listener::log_file_name(const string log_file_name) noexcept -> void {
   log_file_name_ = log_file_name;
 }
 
-void default_trace_listener::close() {
+auto default_trace_listener::close() -> void {
 }
 
-void default_trace_listener::flush() {
+auto default_trace_listener::flush() -> void {
   if (!xtd::string::is_empty(message_line_)) write_line("");
 }
 
-void default_trace_listener::write(const string& message) {
+auto default_trace_listener::write(const string& message) -> void {
   if (need_indent()) write_indent();
   message_line_ += message;
   if (!xtd::string::is_empty(log_file_name_)) xtd::io::file::append_all_text(string(log_file_name_), message);
 }
 
-void default_trace_listener::write_line(const string& message) {
+auto default_trace_listener::write_line(const string& message) -> void {
   write(message + "\n");
   native::debugger::log(0, string::empty_string, message_line_);
   message_line_ = "";
