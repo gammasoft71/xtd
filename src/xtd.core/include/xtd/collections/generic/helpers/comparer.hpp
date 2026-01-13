@@ -38,7 +38,7 @@ namespace xtd {
           /// @brief Represents the second argument type.
           using second_argument_type = value_t;
           /// @brief Represents the result type.
-          using result_type = int32;
+          using result_type = xtd::int32;
           /// @}
           
           /// @name Public Constructors
