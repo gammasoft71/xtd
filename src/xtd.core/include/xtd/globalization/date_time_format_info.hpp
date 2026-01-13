@@ -50,10 +50,10 @@ namespace xtd {
       date_time_format_info();
       /// @brief Initializes a new instance of the xtd::globalization::date_time_format_info class with specified info.
       /// @param info The xtd::globalization::date_time_format_info to inititalise this instance.
-      date_time_format_info(date_time_format_info&& info) = default;
+      date_time_format_info(xtd::globalization::date_time_format_info&& info) = default;
       /// @brief Initializes a new instance of the xtd::globalization::date_time_format_info class with specified infp.
       /// @param info The xtd::globalization::date_time_format_info to inititalise this instance.
-      date_time_format_info(const date_time_format_info& info);
+      date_time_format_info(const xtd::globalization::date_time_format_info& info);
       /// @}
       
       /// @name Public Properties
@@ -61,85 +61,85 @@ namespace xtd {
       /// @{
       /// @brief Gets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
       /// @return A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
-      const xtd::array<xtd::string>& abreviated_day_names() const noexcept;
+      auto abreviated_day_names() const noexcept -> const xtd::array<xtd::string>&;
       /// @brief Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
       /// @param value A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
       /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 7.
-      date_time_format_info& abreviated_day_names(const xtd::array<xtd::string>& value) noexcept;
+      auto abreviated_day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& abreviated_month_genitive_names() const noexcept;
-      date_time_format_info& abreviated_month_genitive_names(const xtd::array<xtd::string>& value) noexcept;
+      auto abreviated_month_genitive_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto abreviated_month_genitive_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& abreviated_month_names() const noexcept;
-      date_time_format_info& abreviated_month_names(const xtd::array<xtd::string>& value) noexcept;
+      auto abreviated_month_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto abreviated_month_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::string& am_designator() const noexcept;
-      date_time_format_info& am_designator(const xtd::string& value) noexcept;
+      auto am_designator() const noexcept -> const xtd::string&;
+      auto am_designator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::string& date_separator() const noexcept;
-      date_time_format_info& date_separator(const xtd::string& value) noexcept;
+      auto date_separator() const noexcept -> const xtd::string&;
+      auto date_separator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& day_names() const noexcept;
-      date_time_format_info& day_names(const xtd::array<xtd::string>& value) noexcept;
+      auto day_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      xtd::day_of_week first_day_of_week() const noexcept;
-      date_time_format_info& first_day_of_week(xtd::day_of_week value) noexcept;
+      auto first_day_of_week() const noexcept -> xtd::day_of_week;
+      auto first_day_of_week(xtd::day_of_week value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& full_date_time_pattern() const noexcept;
-      date_time_format_info& full_date_time_pattern(const string& value) noexcept;
+      auto full_date_time_pattern() const noexcept -> const xtd::string&;
+      auto full_date_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& long_date_pattern() const noexcept;
-      date_time_format_info& long_date_pattern(const string& value) noexcept;
+      auto long_date_pattern() const noexcept -> const xtd::string&;
+      auto long_date_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& long_time_pattern() const noexcept;
-      date_time_format_info& long_time_pattern(const string& value) noexcept;
+      auto long_time_pattern() const noexcept -> const xtd::string&;
+      auto long_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& month_day_pattern() const noexcept;
-      date_time_format_info& month_day_pattern(const string& value) noexcept;
+      auto month_day_pattern() const noexcept -> const xtd::string&;
+      auto month_day_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& month_genitive_names() const noexcept;
-      date_time_format_info& month_genitive_names(const xtd::array<xtd::string>& value) noexcept;
+      auto month_genitive_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto month_genitive_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& month_names() const noexcept;
-      date_time_format_info& month_names(const xtd::array<xtd::string>& value) noexcept;
+      auto month_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto month_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::string& native_calendar_name() const noexcept;
-      date_time_format_info& native_calendar_name(const xtd::string& value) noexcept;
+      auto native_calendar_name() const noexcept -> const xtd::string&;
+      auto native_calendar_name(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::string& pm_designator() const noexcept;
-      date_time_format_info& pm_designator(const xtd::string& value) noexcept;
+      auto pm_designator() const noexcept -> const xtd::string&;
+      auto pm_designator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& rfc_1123_pattern() const noexcept;
-      date_time_format_info& rfc_1123_pattern(const string& value) noexcept;
+      auto rfc_1123_pattern() const noexcept -> const xtd::string&;
+      auto rfc_1123_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& short_date_pattern() const noexcept;
-      date_time_format_info& short_date_pattern(const string& value) noexcept;
+      auto short_date_pattern() const noexcept -> const xtd::string&;
+      auto short_date_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& short_time_pattern() const noexcept;
-      date_time_format_info& short_time_pattern(const string& value) noexcept;
+      auto short_time_pattern() const noexcept -> const xtd::string&;
+      auto short_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::array<xtd::string>& shortest_day_names() const noexcept;
-      date_time_format_info& shortest_day_names(const xtd::array<xtd::string>& value) noexcept;
+      auto shortest_day_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto shortest_day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& sortable_date_time_pattern() const noexcept;
-      date_time_format_info& sortable_date_time_pattern(const string& value) noexcept;
+      auto sortable_date_time_pattern() const noexcept -> const xtd::string&;
+      auto sortable_date_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const xtd::string& time_separator() const noexcept;
-      date_time_format_info& time_separator(const xtd::string& value) noexcept;
+      auto time_separator() const noexcept -> const xtd::string&;
+      auto time_separator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& universal_sortable_date_time_pattern() const noexcept;
-      date_time_format_info& universal_sortable_date_time_pattern(const string& value) noexcept;
+      auto universal_sortable_date_time_pattern() const noexcept -> const xtd::string&;
+      auto universal_sortable_date_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      const string& year_month_pattern() const noexcept;
-      date_time_format_info& year_month_pattern(const string& value) noexcept;
+      auto year_month_pattern() const noexcept -> const xtd::string&;
+      auto year_month_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       /// @}
       
       /// @name Public Static Properties
       
       /// @{
-      static const date_time_format_info& current_info() noexcept;
+      static auto current_info() noexcept -> const xtd::globalization::date_time_format_info&;
       
-      static const date_time_format_info& invariant_info() noexcept;
+      static auto invariant_info() noexcept -> const xtd::globalization::date_time_format_info&;
       /// @}
       
       /// @name Public Methods
@@ -158,17 +158,17 @@ namespace xtd {
       /// @}
       
       /// @cond
-      date_time_format_info& operator =(date_time_format_info&& culture) = default;
-      date_time_format_info& operator =(const date_time_format_info& culture);
+      auto operator =(xtd::globalization::date_time_format_info&& culture) -> xtd::globalization::date_time_format_info& = default;
+      auto operator =(const xtd::globalization::date_time_format_info& culture) -> xtd::globalization::date_time_format_info&;
       /// @endcond
       
     private:
       friend class culture_info;
       date_time_format_info(xtd::array<xtd::string>&& abreviated_day_names, xtd::array<xtd::string>&& abreviated_genitive_month_names, xtd::array<xtd::string>&& abreviated_month_names, xtd::string&& am_designator, xtd::string&& date_separator, xtd::array<xtd::string>&& day_names, xtd::day_of_week first_day_of_week, xtd::string&& full_date_time_pattern, xtd::string&& long_date_pattern, xtd::string&& long_time_pattern, xtd::string&& month_day_pattern, xtd::array<xtd::string>&& month_genitive_names, xtd::array<xtd::string>&& month_names, xtd::string&& native_calendar_name, xtd::string&& pm_designator, xtd::string&& rfc_1123_pattern, xtd::string&& short_date_pattern, xtd::string&& short_time_pattern, xtd::array<xtd::string>&& shortest_day_names, xtd::string&& sortable_date_time_pattern, xtd::string&& time_separator, xtd::string&& universal_sortable_date_time_pattern, xtd::string&& year_month_pattern);
-      static xtd::collections::generic::dictionary<xtd::string, date_time_format_info>& formats();
+      static xtd::collections::generic::dictionary<xtd::string, xtd::globalization::date_time_format_info>& formats();
       
       struct data;
-      ptr<data> data_;
+      xtd::ptr<data> data_;
     };
   }
 }
