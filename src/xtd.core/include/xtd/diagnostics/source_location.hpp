@@ -40,10 +40,10 @@ namespace xtd {
       /// @}
       
       /// @cond
-      source_location(source_location&& other);
-      source_location(const source_location& other);
-      source_location& operator =(source_location&& other);
-      source_location& operator =(const source_location& other);
+      source_location(xtd::diagnostics::source_location&& other);
+      source_location(const xtd::diagnostics::source_location& other);
+      source_location& operator =(xtd::diagnostics::source_location&& other);
+      source_location& operator =(const xtd::diagnostics::source_location& other);
       /// @endcond
       
       /// @name Public Properties
@@ -52,24 +52,24 @@ namespace xtd {
       /// @brief Gets the column number represented by this object.
       /// @return The column number represented by this object.
       /// @remarks Returns 0 when the column number is unknown.
-      xtd::size column() const noexcept;
+      auto column() const noexcept -> xtd::size;
       /// @brief Gets the name of the current source file represented by this object, represented as a null-terminated byte string.
       /// @return The name of the current source file represented by this object.
       /// @remarks Returns xtd::string::empty_string (`""`) when the source file is unknown.
-      const xtd::string& file_name() const noexcept;
+      auto file_name() const noexcept -> const xtd::string&;
       /// @brief Gets the name of the function associated with the position represented by this object, if any.
       /// @return If this object represents a position in a body of a function, returns a string corresponding to the name of the function; otherwise, an xtd::string::empty_string (`""`) is returned.
-      const xtd::string& function_name() const noexcept;
+      auto function_name() const noexcept -> const xtd::string&;
       /// @brief Gets the line number represented by this object.
       /// @return The line number represented by this object.
       /// @remarks Returns 0 when the line number is unknown.
-      xtd::size line() const noexcept;
+      auto line() const noexcept -> xtd::size;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      xtd::string to_string() const noexcept override;
+      auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -82,7 +82,7 @@ namespace xtd {
       /// @remarks If xtd::diagnostics::source_location::current is used in a default argument, the return value corresponds to the location of the call to xtd::diagnostics::source_location::current at the call site.
       /// @remarks If xtd::diagnostics::source_location::current is invoked in any other manner, the return value is unspecified.
       /// @note xtd::diagnostics::source_location::current typically requires compiler's built-in implementation.
-      static source_location current(const __xtd_source_location__& value = __xtd_source_location__::current()) noexcept;
+      static auto current(const __xtd_source_location__& value = __xtd_source_location__::current()) noexcept -> xtd::diagnostics::source_location;
       /// @}
       
     private:
