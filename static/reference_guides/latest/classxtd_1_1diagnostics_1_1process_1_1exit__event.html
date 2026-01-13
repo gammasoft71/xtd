@@ -114,35 +114,35 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>Used by <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a> event. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a06e047a6742043d5dae1c4da23c0e125" id="r_a06e047a6742043d5dae1c4da23c0e125"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06e047a6742043d5dae1c4da23c0e125">is_empty</a> () const noexcept</td></tr>
-<tr class="memdesc:a06e047a6742043d5dae1c4da23c0e125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate if the event is empty.  <br /></td></tr>
-<tr class="separator:a06e047a6742043d5dae1c4da23c0e125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a59c5a7a188e2bcbff982b5a5469e4" id="r_a21a59c5a7a188e2bcbff982b5a5469e4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21a59c5a7a188e2bcbff982b5a5469e4">is_empty</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a21a59c5a7a188e2bcbff982b5a5469e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate if the event is empty.  <br /></td></tr>
+<tr class="separator:a21a59c5a7a188e2bcbff982b5a5469e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Operators</h2></td></tr>
-<tr class="memitem:a35d4253e094de90551db7e9eb7f73740" id="r_a35d4253e094de90551db7e9eb7f73740"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35d4253e094de90551db7e9eb7f73740">operator+=</a> (const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;handler) noexcept</td></tr>
-<tr class="memdesc:a35d4253e094de90551db7e9eb7f73740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an handler to the event.  <br /></td></tr>
-<tr class="separator:a35d4253e094de90551db7e9eb7f73740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08bd4757789b02a0cea849dfc31c6389" id="r_a08bd4757789b02a0cea849dfc31c6389"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08bd4757789b02a0cea849dfc31c6389">operator+=</a> (const typename xtd::event_handler::function_t &amp;function) noexcept</td></tr>
-<tr class="memdesc:a08bd4757789b02a0cea849dfc31c6389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
-<tr class="separator:a08bd4757789b02a0cea849dfc31c6389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426b6cbb10aa100e9c4055dbffa45680" id="r_a426b6cbb10aa100e9c4055dbffa45680"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
-<tr class="memitem:a426b6cbb10aa100e9c4055dbffa45680"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a426b6cbb10aa100e9c4055dbffa45680">operator+=</a> (fn_t function) noexcept</td></tr>
-<tr class="memdesc:a426b6cbb10aa100e9c4055dbffa45680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
-<tr class="separator:a426b6cbb10aa100e9c4055dbffa45680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba460ca0de8172a984716a7b217d221" id="r_a7ba460ca0de8172a984716a7b217d221"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ba460ca0de8172a984716a7b217d221">operator-=</a> (const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;handler) noexcept</td></tr>
-<tr class="memdesc:a7ba460ca0de8172a984716a7b217d221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an handler to the event.  <br /></td></tr>
-<tr class="separator:a7ba460ca0de8172a984716a7b217d221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccdf9d2ed762aacfd01b828661a7441" id="r_a0ccdf9d2ed762aacfd01b828661a7441"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ccdf9d2ed762aacfd01b828661a7441">operator-=</a> (const typename xtd::event_handler::function_t &amp;function) noexcept</td></tr>
-<tr class="memdesc:a0ccdf9d2ed762aacfd01b828661a7441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
-<tr class="separator:a0ccdf9d2ed762aacfd01b828661a7441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb4373e658b849244b11a3060a1af106" id="r_aeb4373e658b849244b11a3060a1af106"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
-<tr class="memitem:aeb4373e658b849244b11a3060a1af106"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aeb4373e658b849244b11a3060a1af106">operator-=</a> (fn_t function) noexcept</td></tr>
-<tr class="memdesc:aeb4373e658b849244b11a3060a1af106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
-<tr class="separator:aeb4373e658b849244b11a3060a1af106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40839622d4ee1e6a51b29f0d0423c425" id="r_a40839622d4ee1e6a51b29f0d0423c425"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40839622d4ee1e6a51b29f0d0423c425">operator+=</a> (const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;handler) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a40839622d4ee1e6a51b29f0d0423c425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an handler to the event.  <br /></td></tr>
+<tr class="separator:a40839622d4ee1e6a51b29f0d0423c425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7efa8677eaa5a470b45e0e23d800cc" id="r_a6c7efa8677eaa5a470b45e0e23d800cc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c7efa8677eaa5a470b45e0e23d800cc">operator+=</a> (const typename xtd::event_handler::function_t &amp;function) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a6c7efa8677eaa5a470b45e0e23d800cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
+<tr class="separator:a6c7efa8677eaa5a470b45e0e23d800cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7175e337242ea7e1462c75c7f3707c9d" id="r_a7175e337242ea7e1462c75c7f3707c9d"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
+<tr class="memitem:a7175e337242ea7e1462c75c7f3707c9d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7175e337242ea7e1462c75c7f3707c9d">operator+=</a> (fn_t function) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a7175e337242ea7e1462c75c7f3707c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
+<tr class="separator:a7175e337242ea7e1462c75c7f3707c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b91d49dff41ea567f0ae845b423bb7" id="r_a85b91d49dff41ea567f0ae845b423bb7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b91d49dff41ea567f0ae845b423bb7">operator-=</a> (const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;handler) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a85b91d49dff41ea567f0ae845b423bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an handler to the event.  <br /></td></tr>
+<tr class="separator:a85b91d49dff41ea567f0ae845b423bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea09189b8f46b40c61229267f421bfc4" id="r_aea09189b8f46b40c61229267f421bfc4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea09189b8f46b40c61229267f421bfc4">operator-=</a> (const typename xtd::event_handler::function_t &amp;function) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:aea09189b8f46b40c61229267f421bfc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
+<tr class="separator:aea09189b8f46b40c61229267f421bfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed53c45985dc7c6381caa2ccdd91eb0" id="r_a4ed53c45985dc7c6381caa2ccdd91eb0"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
+<tr class="memitem:a4ed53c45985dc7c6381caa2ccdd91eb0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4ed53c45985dc7c6381caa2ccdd91eb0">operator-=</a> (fn_t function) noexcept -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a4ed53c45985dc7c6381caa2ccdd91eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
+<tr class="separator:a4ed53c45985dc7c6381caa2ccdd91eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a06e047a6742043d5dae1c4da23c0e125" name="a06e047a6742043d5dae1c4da23c0e125"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06e047a6742043d5dae1c4da23c0e125">&#9670;&#160;</a></span>is_empty()</h2>
+<a id="a21a59c5a7a188e2bcbff982b5a5469e4" name="a21a59c5a7a188e2bcbff982b5a5469e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a59c5a7a188e2bcbff982b5a5469e4">&#9670;&#160;</a></span>is_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,10 +151,10 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::diagnostics::process::exit_event::is_empty </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::is_empty </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -169,8 +169,8 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
 
 </div>
 </div>
-<a id="a35d4253e094de90551db7e9eb7f73740" name="a35d4253e094de90551db7e9eb7f73740"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d4253e094de90551db7e9eb7f73740">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
+<a id="a40839622d4ee1e6a51b29f0d0423c425" name="a40839622d4ee1e6a51b29f0d0423c425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40839622d4ee1e6a51b29f0d0423c425">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,10 +179,10 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>handler</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -203,8 +203,8 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
 
 </div>
 </div>
-<a id="a08bd4757789b02a0cea849dfc31c6389" name="a08bd4757789b02a0cea849dfc31c6389"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08bd4757789b02a0cea849dfc31c6389">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
+<a id="a6c7efa8677eaa5a470b45e0e23d800cc" name="a6c7efa8677eaa5a470b45e0e23d800cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7efa8677eaa5a470b45e0e23d800cc">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,10 +213,10 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">const typename xtd::event_handler::function_t &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -237,8 +237,8 @@ Inheritance diagram for xtd::diagnostics::process::exit_event:</div>
 
 </div>
 </div>
-<a id="a426b6cbb10aa100e9c4055dbffa45680" name="a426b6cbb10aa100e9c4055dbffa45680"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a426b6cbb10aa100e9c4055dbffa45680">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
+<a id="a7175e337242ea7e1462c75c7f3707c9d" name="a7175e337242ea7e1462c75c7f3707c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7175e337242ea7e1462c75c7f3707c9d">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,10 +249,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">fn_t</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -273,8 +273,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="a7ba460ca0de8172a984716a7b217d221" name="a7ba460ca0de8172a984716a7b217d221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ba460ca0de8172a984716a7b217d221">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/3]</span></h2>
+<a id="a85b91d49dff41ea567f0ae845b423bb7" name="a85b91d49dff41ea567f0ae845b423bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b91d49dff41ea567f0ae845b423bb7">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,10 +283,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>handler</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -307,8 +307,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="a0ccdf9d2ed762aacfd01b828661a7441" name="a0ccdf9d2ed762aacfd01b828661a7441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ccdf9d2ed762aacfd01b828661a7441">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/3]</span></h2>
+<a id="aea09189b8f46b40c61229267f421bfc4" name="aea09189b8f46b40c61229267f421bfc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea09189b8f46b40c61229267f421bfc4">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,10 +317,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">const typename xtd::event_handler::function_t &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -341,8 +341,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="aeb4373e658b849244b11a3060a1af106" name="aeb4373e658b849244b11a3060a1af106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb4373e658b849244b11a3060a1af106">&#9670;&#160;</a></span>operator-=() <span class="overload">[3/3]</span></h2>
+<a id="a4ed53c45985dc7c6381caa2ccdd91eb0" name="a4ed53c45985dc7c6381caa2ccdd91eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed53c45985dc7c6381caa2ccdd91eb0">&#9670;&#160;</a></span>operator-=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,10 +353,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a> &amp; xtd::diagnostics::process::exit_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::exit_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">fn_t</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -384,7 +384,7 @@ template&lt;class fn_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 10:13:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 14:59:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

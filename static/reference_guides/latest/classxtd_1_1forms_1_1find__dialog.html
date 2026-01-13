@@ -162,7 +162,7 @@ Inheritance diagram for xtd::forms::find_dialog:</div>
 <div class="line">    find_dialog.title(<span class="stringliteral">&quot;Find&quot;</span>);</div>
 <div class="line">    find_dialog.find_string(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
 <div class="line">    find_dialog.find_next += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> find_event_args&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">diagnostics::debug::write_line</a>(string::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.find_string(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.match_case(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.search_direction(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.whole_word()));</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a36c589c895e4ae6a4f1e5be406d40140">diagnostics::debug::write_line</a>(string::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.find_string(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.match_case(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.search_direction(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.whole_word()));</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -175,7 +175,7 @@ Inheritance diagram for xtd::forms::find_dialog:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:346</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a36c589c895e4ae6a4f1e5be406d40140"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a36c589c895e4ae6a4f1e5be406d40140">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static auto write_line() -&gt; void</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:346</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1find__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1find__dialog.html">xtd::forms::find_dialog</a></div><div class="ttdoc">Represents a dialog box that displays find dialog.</div><div class="ttdef"><b>Definition</b> find_dialog.hpp:38</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1find__dialog_html_a1bc37cae2de2aa9e51c1a9662d63f9ee"><div class="ttname"><a href="#a1bc37cae2de2aa9e51c1a9662d63f9ee">xtd::forms::find_dialog::show</a></div><div class="ttdeci">void show(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs find dialog box.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
@@ -945,7 +945,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 10:13:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 14:59:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

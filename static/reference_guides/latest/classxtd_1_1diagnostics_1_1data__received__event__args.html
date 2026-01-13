@@ -122,20 +122,20 @@ Inheritance diagram for xtd::diagnostics::data_received_event_args:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1diagnostics.html" title="The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...">xtd::diagnostics</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To asynchronously collect the redirected <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a2cda84618767aa8e357f49efc3186f4d" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> or <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream output of a process, you must create a method that handles the redirected stream output events. The event-handler method is called when the process writes to the redirected stream. The event delegate calls your event handler with an instance of <a class="el" href="classxtd_1_1diagnostics_1_1data__received__event__args.html" title="Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::...">xtd::diagnostics::data_received_event_args</a>. The <a class="el" href="#a7c111f3e965216a9912191aeb64421ab" title="Gets the line of characters that was written to a redirected Process output stream.">xtd::diagnostics::data_received_event_args::data</a> property contains the text line that the process wrote to the redirected stream. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To asynchronously collect the redirected <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aefb5078ab8d928d9015ef449107f273e" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> or <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a6ea192be7b894210a2b7f936d121a9c8" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream output of a process, you must create a method that handles the redirected stream output events. The event-handler method is called when the process writes to the redirected stream. The event delegate calls your event handler with an instance of <a class="el" href="classxtd_1_1diagnostics_1_1data__received__event__args.html" title="Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::...">xtd::diagnostics::data_received_event_args</a>. The <a class="el" href="#ac97793fcd7f8d60c42bdca41df017e7f" title="Gets the line of characters that was written to a redirected Process output stream.">xtd::diagnostics::data_received_event_args::data</a> property contains the text line that the process wrote to the redirected stream. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a31be3dc923dc45a50a34de05c150bff2" id="r_a31be3dc923dc45a50a34de05c150bff2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31be3dc923dc45a50a34de05c150bff2">data_received_event_args</a> ()=default</td></tr>
 <tr class="memdesc:a31be3dc923dc45a50a34de05c150bff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1data__received__event__args.html" title="Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::...">data_received_event_args</a> class.  <br /></td></tr>
 <tr class="separator:a31be3dc923dc45a50a34de05c150bff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea7204e176864c3d9f2492d78a7916dc" id="r_aea7204e176864c3d9f2492d78a7916dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea7204e176864c3d9f2492d78a7916dc">data_received_event_args</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a7c111f3e965216a9912191aeb64421ab">data</a>)</td></tr>
+<tr class="memitem:aea7204e176864c3d9f2492d78a7916dc" id="r_aea7204e176864c3d9f2492d78a7916dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea7204e176864c3d9f2492d78a7916dc">data_received_event_args</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#ac97793fcd7f8d60c42bdca41df017e7f">data</a>)</td></tr>
 <tr class="memdesc:aea7204e176864c3d9f2492d78a7916dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1data__received__event__args.html" title="Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::...">data_received_event_args</a> class.  <br /></td></tr>
 <tr class="separator:aea7204e176864c3d9f2492d78a7916dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a7c111f3e965216a9912191aeb64421ab" id="r_a7c111f3e965216a9912191aeb64421ab"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c111f3e965216a9912191aeb64421ab">data</a> () const noexcept</td></tr>
-<tr class="memdesc:a7c111f3e965216a9912191aeb64421ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line of characters that was written to a redirected Process output stream.  <br /></td></tr>
-<tr class="separator:a7c111f3e965216a9912191aeb64421ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97793fcd7f8d60c42bdca41df017e7f" id="r_ac97793fcd7f8d60c42bdca41df017e7f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac97793fcd7f8d60c42bdca41df017e7f">data</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:ac97793fcd7f8d60c42bdca41df017e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line of characters that was written to a redirected Process output stream.  <br /></td></tr>
+<tr class="separator:ac97793fcd7f8d60c42bdca41df017e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -227,7 +227,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1diagnostics_1_1data__received__event__args.html" title="Provides data for the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::...">data_received_event_args</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>The line that was written by an associated Process to its redirected <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a2cda84618767aa8e357f49efc3186f4d" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> or <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. </td></tr>
+    <tr><td class="paramname">data</td><td>The line that was written by an associated Process to its redirected <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aefb5078ab8d928d9015ef449107f273e" title="Gets a stream used to read the textual output of the application.">xtd::diagnostics::process::standard_output</a> or <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a6ea192be7b894210a2b7f936d121a9c8" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,8 +235,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7c111f3e965216a9912191aeb64421ab" name="a7c111f3e965216a9912191aeb64421ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c111f3e965216a9912191aeb64421ab">&#9670;&#160;</a></span>data()</h2>
+<a id="ac97793fcd7f8d60c42bdca41df017e7f" name="ac97793fcd7f8d60c42bdca41df017e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97793fcd7f8d60c42bdca41df017e7f">&#9670;&#160;</a></span>data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,10 +245,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::diagnostics::data_received_event_args::data </td>
+          <td class="memname">auto xtd::diagnostics::data_received_event_args::data </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -270,7 +270,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 10:13:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 14:59:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

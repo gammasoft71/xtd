@@ -128,7 +128,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1trace__source.html" title="Pr
 <dd>
 <a class="el" href="classxtd_1_1diagnostics_1_1trace__source.html" title="Provides a set of methods and properties that enable applications to trace the execution of code and ...">trace_source</a> defines tracing methods but does not actually provide any specific mechanism for generating and storing tracing data. The tracing data is produced by trace listeners, which are plug-ins that can be loaded by trace sources. </dd>
 <dd>
-You can customize the tracing output's target by adding or removing <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">trace_listener</a> instances to or from the collection stored in the <a class="el" href="#a0ec2270560c1117d35abb75e8403784f" title="Gets the collection of trace listeners for the trace source.">trace_source::listeners</a> property. By default, trace output is produced using an instance of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> class. </dd></dl>
+You can customize the tracing output's target by adding or removing <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">trace_listener</a> instances to or from the collection stored in the <a class="el" href="#a0143a1849b7a6a6dd64afab8d5f08d38" title="Gets the collection of trace listeners for the trace source.">trace_source::listeners</a> property. By default, trace output is produced using an instance of the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a> class. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Adding a trace listener to the listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the <a class="el" href="classxtd_1_1diagnostics_1_1trace__source.html" title="Provides a set of methods and properties that enable applications to trace the execution of code and ...">trace_source</a> methods in try/catch blocks to detect and handle any exceptions from trace listeners. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> class provides the means to dynamically control the tracing output. You can modify the value of the source switch without recompiling your application. </dd>
 <dd>
@@ -147,66 +147,66 @@ To disable trace mode with CMake, add the command line <code>add_definitions(-DN
 <dl class="section remark"><dt>Remarks</dt><dd>To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a5557d60fdaa45a6462895d811b937e11" id="r_a5557d60fdaa45a6462895d811b937e11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5557d60fdaa45a6462895d811b937e11">trace_source</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#ac1ba7e77cd4ec55e873b694f8a49519f">name</a>)</td></tr>
+<tr class="memitem:a5557d60fdaa45a6462895d811b937e11" id="r_a5557d60fdaa45a6462895d811b937e11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5557d60fdaa45a6462895d811b937e11">trace_source</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a7017eaba1de02752556f330c288ea859">name</a>)</td></tr>
 <tr class="memdesc:a5557d60fdaa45a6462895d811b937e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Trace_Source class, using the specified name for the source.  <br /></td></tr>
 <tr class="separator:a5557d60fdaa45a6462895d811b937e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47e4d1ecd2e7a3faa240f9a0b6961d5c" id="r_a47e4d1ecd2e7a3faa240f9a0b6961d5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47e4d1ecd2e7a3faa240f9a0b6961d5c">trace_source</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#ac1ba7e77cd4ec55e873b694f8a49519f">name</a>, <a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> default_levels)</td></tr>
+<tr class="memitem:a47e4d1ecd2e7a3faa240f9a0b6961d5c" id="r_a47e4d1ecd2e7a3faa240f9a0b6961d5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47e4d1ecd2e7a3faa240f9a0b6961d5c">trace_source</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a7017eaba1de02752556f330c288ea859">name</a>, <a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> default_levels)</td></tr>
 <tr class="memdesc:a47e4d1ecd2e7a3faa240f9a0b6961d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the Trace_Source class, using the specified name for the source.  <br /></td></tr>
 <tr class="separator:a47e4d1ecd2e7a3faa240f9a0b6961d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a0ec2270560c1117d35abb75e8403784f" id="r_a0ec2270560c1117d35abb75e8403784f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ec2270560c1117d35abb75e8403784f">listeners</a> () noexcept</td></tr>
-<tr class="memdesc:a0ec2270560c1117d35abb75e8403784f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collection of trace listeners for the trace source.  <br /></td></tr>
-<tr class="separator:a0ec2270560c1117d35abb75e8403784f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c16fa1dfea9aec8ff90044da8cc65d" id="r_a62c16fa1dfea9aec8ff90044da8cc65d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62c16fa1dfea9aec8ff90044da8cc65d">listeners</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;listeners) noexcept</td></tr>
-<tr class="memdesc:a62c16fa1dfea9aec8ff90044da8cc65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the collection of trace listeners for the trace source.  <br /></td></tr>
-<tr class="separator:a62c16fa1dfea9aec8ff90044da8cc65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ba7e77cd4ec55e873b694f8a49519f" id="r_ac1ba7e77cd4ec55e873b694f8a49519f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ba7e77cd4ec55e873b694f8a49519f">name</a> () const noexcept</td></tr>
-<tr class="memdesc:ac1ba7e77cd4ec55e873b694f8a49519f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the trace source.  <br /></td></tr>
-<tr class="separator:ac1ba7e77cd4ec55e873b694f8a49519f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae5b6211c059a2119f596a70e55d5ece" id="r_aae5b6211c059a2119f596a70e55d5ece"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae5b6211c059a2119f596a70e55d5ece">source_switch</a> () const noexcept</td></tr>
-<tr class="memdesc:aae5b6211c059a2119f596a70e55d5ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the source switch value.  <br /></td></tr>
-<tr class="separator:aae5b6211c059a2119f596a70e55d5ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5e621945b317af01e0c10fad35a9857" id="r_ac5e621945b317af01e0c10fad35a9857"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5e621945b317af01e0c10fad35a9857">source_switch</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">source_switch</a>) noexcept</td></tr>
-<tr class="memdesc:ac5e621945b317af01e0c10fad35a9857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the source switch value.  <br /></td></tr>
-<tr class="separator:ac5e621945b317af01e0c10fad35a9857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0143a1849b7a6a6dd64afab8d5f08d38" id="r_a0143a1849b7a6a6dd64afab8d5f08d38"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0143a1849b7a6a6dd64afab8d5f08d38">listeners</a> () noexcept -&gt; <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;</td></tr>
+<tr class="memdesc:a0143a1849b7a6a6dd64afab8d5f08d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collection of trace listeners for the trace source.  <br /></td></tr>
+<tr class="separator:a0143a1849b7a6a6dd64afab8d5f08d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde6bbcd79863aba40535ff0e925977d" id="r_adde6bbcd79863aba40535ff0e925977d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adde6bbcd79863aba40535ff0e925977d">listeners</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;listeners) noexcept -&gt; void</td></tr>
+<tr class="memdesc:adde6bbcd79863aba40535ff0e925977d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the collection of trace listeners for the trace source.  <br /></td></tr>
+<tr class="separator:adde6bbcd79863aba40535ff0e925977d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7017eaba1de02752556f330c288ea859" id="r_a7017eaba1de02752556f330c288ea859"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7017eaba1de02752556f330c288ea859">name</a> () const noexcept -&gt; const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td></tr>
+<tr class="memdesc:a7017eaba1de02752556f330c288ea859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the trace source.  <br /></td></tr>
+<tr class="separator:a7017eaba1de02752556f330c288ea859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3796963ead4233b8a78b61f6db41cd6" id="r_ac3796963ead4233b8a78b61f6db41cd6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3796963ead4233b8a78b61f6db41cd6">source_switch</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;</td></tr>
+<tr class="memdesc:ac3796963ead4233b8a78b61f6db41cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the source switch value.  <br /></td></tr>
+<tr class="separator:ac3796963ead4233b8a78b61f6db41cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ee0b87bf21d365a04eb65277d3d06e" id="r_aa5ee0b87bf21d365a04eb65277d3d06e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ee0b87bf21d365a04eb65277d3d06e">source_switch</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;<a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">source_switch</a>) noexcept -&gt; void</td></tr>
+<tr class="memdesc:aa5ee0b87bf21d365a04eb65277d3d06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the source switch value.  <br /></td></tr>
+<tr class="separator:aa5ee0b87bf21d365a04eb65277d3d06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a1f5fd4c5114a90da66249da545b9e067" id="r_a1f5fd4c5114a90da66249da545b9e067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f5fd4c5114a90da66249da545b9e067">close</a> ()</td></tr>
-<tr class="memdesc:a1f5fd4c5114a90da66249da545b9e067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all the trace listeners in the trace listener collection.  <br /></td></tr>
-<tr class="separator:a1f5fd4c5114a90da66249da545b9e067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4dd869493e09ea6ffe54ba2cc64eecd" id="r_ab4dd869493e09ea6ffe54ba2cc64eecd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4dd869493e09ea6ffe54ba2cc64eecd">flush</a> ()</td></tr>
-<tr class="memdesc:ab4dd869493e09ea6ffe54ba2cc64eecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all the trace listeners in the trace listener collection.  <br /></td></tr>
-<tr class="separator:ab4dd869493e09ea6ffe54ba2cc64eecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c20b84b950faaa2cf7ce0c5124c16f" id="r_a12c20b84b950faaa2cf7ce0c5124c16f"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
-<tr class="memitem:a12c20b84b950faaa2cf7ce0c5124c16f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a12c20b84b950faaa2cf7ce0c5124c16f">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id, const object_t &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>)</td></tr>
-<tr class="memdesc:a12c20b84b950faaa2cf7ce0c5124c16f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
-<tr class="separator:a12c20b84b950faaa2cf7ce0c5124c16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a671d916e3be43169cbb00e82f61eb" id="r_ad5a671d916e3be43169cbb00e82f61eb"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
-<tr class="memitem:ad5a671d916e3be43169cbb00e82f61eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad5a671d916e3be43169cbb00e82f61eb">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>)</td></tr>
-<tr class="memdesc:ad5a671d916e3be43169cbb00e82f61eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
-<tr class="separator:ad5a671d916e3be43169cbb00e82f61eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1661e1afd4750b38b537479bd8ea20d2" id="r_a1661e1afd4750b38b537479bd8ea20d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1661e1afd4750b38b537479bd8ea20d2">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id)</td></tr>
-<tr class="memdesc:a1661e1afd4750b38b537479bd8ea20d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type and event identifier.  <br /></td></tr>
-<tr class="separator:a1661e1afd4750b38b537479bd8ea20d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9937ff228b9e00de788926fafd416520" id="r_a9937ff228b9e00de788926fafd416520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9937ff228b9e00de788926fafd416520">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message)</td></tr>
-<tr class="memdesc:a9937ff228b9e00de788926fafd416520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type, event identifier adn message.  <br /></td></tr>
-<tr class="separator:a9937ff228b9e00de788926fafd416520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39377a652d12853d94cb894aa9b20fb8" id="r_a39377a652d12853d94cb894aa9b20fb8"><td class="memTemplParams" colspan="2">template&lt;class ... objects&gt; </td></tr>
-<tr class="memitem:a39377a652d12853d94cb894aa9b20fb8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a39377a652d12853d94cb894aa9b20fb8">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const objects &amp;... args)</td></tr>
-<tr class="memdesc:a39377a652d12853d94cb894aa9b20fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type, event identifier, and argument array and format.  <br /></td></tr>
-<tr class="separator:a39377a652d12853d94cb894aa9b20fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3fe28b5b1366fb2df197b1157f5e25f" id="r_ad3fe28b5b1366fb2df197b1157f5e25f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3fe28b5b1366fb2df197b1157f5e25f">trace_information</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message)</td></tr>
-<tr class="memdesc:ad3fe28b5b1366fb2df197b1157f5e25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an informational message to the trace listeners in the listeners collection using the specified message.  <br /></td></tr>
-<tr class="separator:ad3fe28b5b1366fb2df197b1157f5e25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b25d545fbb3c9993d755ae64b4d019a" id="r_a4b25d545fbb3c9993d755ae64b4d019a"><td class="memTemplParams" colspan="2">template&lt;class ... objects_t&gt; </td></tr>
-<tr class="memitem:a4b25d545fbb3c9993d755ae64b4d019a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4b25d545fbb3c9993d755ae64b4d019a">trace_information</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const objects_t &amp;... args)</td></tr>
-<tr class="memdesc:a4b25d545fbb3c9993d755ae64b4d019a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.  <br /></td></tr>
-<tr class="separator:a4b25d545fbb3c9993d755ae64b4d019a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89a202cb844339ad9047d2adbe25da2f" id="r_a89a202cb844339ad9047d2adbe25da2f"><td class="memTemplParams" colspan="2">template&lt;class guid_t&gt; </td></tr>
-<tr class="memitem:a89a202cb844339ad9047d2adbe25da2f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a89a202cb844339ad9047d2adbe25da2f">trace_transfer</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const guid_t &amp;related_activity_id)</td></tr>
-<tr class="memdesc:a89a202cb844339ad9047d2adbe25da2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.  <br /></td></tr>
-<tr class="separator:a89a202cb844339ad9047d2adbe25da2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90970c9e8642d05bfa42416b1f54de25" id="r_a90970c9e8642d05bfa42416b1f54de25"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90970c9e8642d05bfa42416b1f54de25">close</a> () -&gt; void</td></tr>
+<tr class="memdesc:a90970c9e8642d05bfa42416b1f54de25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes all the trace listeners in the trace listener collection.  <br /></td></tr>
+<tr class="separator:a90970c9e8642d05bfa42416b1f54de25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fcf05bc449265959e66047a6fa8704" id="r_a63fcf05bc449265959e66047a6fa8704"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63fcf05bc449265959e66047a6fa8704">flush</a> () -&gt; void</td></tr>
+<tr class="memdesc:a63fcf05bc449265959e66047a6fa8704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all the trace listeners in the trace listener collection.  <br /></td></tr>
+<tr class="separator:a63fcf05bc449265959e66047a6fa8704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf94e9f84ccdbc31933ab352917ea68" id="r_adcf94e9f84ccdbc31933ab352917ea68"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:adcf94e9f84ccdbc31933ab352917ea68"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adcf94e9f84ccdbc31933ab352917ea68">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const object_t &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>) -&gt; void</td></tr>
+<tr class="memdesc:adcf94e9f84ccdbc31933ab352917ea68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
+<tr class="separator:adcf94e9f84ccdbc31933ab352917ea68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa852d2067d1eabf35da652eb9832f59d" id="r_aa852d2067d1eabf35da652eb9832f59d"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:aa852d2067d1eabf35da652eb9832f59d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa852d2067d1eabf35da652eb9832f59d">trace_data</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;<a class="el" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>) -&gt; void</td></tr>
+<tr class="memdesc:aa852d2067d1eabf35da652eb9832f59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.  <br /></td></tr>
+<tr class="separator:aa852d2067d1eabf35da652eb9832f59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9de821d64edba7e39726ee952d010df" id="r_ab9de821d64edba7e39726ee952d010df"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9de821d64edba7e39726ee952d010df">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id) -&gt; void</td></tr>
+<tr class="memdesc:ab9de821d64edba7e39726ee952d010df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type and event identifier.  <br /></td></tr>
+<tr class="separator:ab9de821d64edba7e39726ee952d010df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a38ed50e05ce73983e363e6bdf14ca" id="r_a00a38ed50e05ce73983e363e6bdf14ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00a38ed50e05ce73983e363e6bdf14ca">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message) -&gt; void</td></tr>
+<tr class="memdesc:a00a38ed50e05ce73983e363e6bdf14ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type, event identifier adn message.  <br /></td></tr>
+<tr class="separator:a00a38ed50e05ce73983e363e6bdf14ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe37d28ab15edfee5f65d3bc0cce2696" id="r_afe37d28ab15edfee5f65d3bc0cce2696"><td class="memTemplParams" colspan="2">template&lt;class ... objects&gt; </td></tr>
+<tr class="memitem:afe37d28ab15edfee5f65d3bc0cce2696"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afe37d28ab15edfee5f65d3bc0cce2696">trace_event</a> (const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;event_type, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const objects &amp;... args) -&gt; void</td></tr>
+<tr class="memdesc:afe37d28ab15edfee5f65d3bc0cce2696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace event message to the trace listeners in the listeners collection using the specified event type, event identifier, and argument array and format.  <br /></td></tr>
+<tr class="separator:afe37d28ab15edfee5f65d3bc0cce2696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd428bc3eb3fdad3dc1a28626777d677" id="r_afd428bc3eb3fdad3dc1a28626777d677"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd428bc3eb3fdad3dc1a28626777d677">trace_information</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message) -&gt; void</td></tr>
+<tr class="memdesc:afd428bc3eb3fdad3dc1a28626777d677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an informational message to the trace listeners in the listeners collection using the specified message.  <br /></td></tr>
+<tr class="separator:afd428bc3eb3fdad3dc1a28626777d677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4104fa7b4056bf7062bc8859713b241e" id="r_a4104fa7b4056bf7062bc8859713b241e"><td class="memTemplParams" colspan="2">template&lt;class ... objects_t&gt; </td></tr>
+<tr class="memitem:a4104fa7b4056bf7062bc8859713b241e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4104fa7b4056bf7062bc8859713b241e">trace_information</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const objects_t &amp;... args) -&gt; void</td></tr>
+<tr class="memdesc:a4104fa7b4056bf7062bc8859713b241e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.  <br /></td></tr>
+<tr class="separator:a4104fa7b4056bf7062bc8859713b241e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7766940f380b7c09a59feb1df218526" id="r_ac7766940f380b7c09a59feb1df218526"><td class="memTemplParams" colspan="2">template&lt;class guid_t&gt; </td></tr>
+<tr class="memitem:ac7766940f380b7c09a59feb1df218526"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac7766940f380b7c09a59feb1df218526">trace_transfer</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, const guid_t &amp;related_activity_id) -&gt; void</td></tr>
+<tr class="memdesc:ac7766940f380b7c09a59feb1df218526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.  <br /></td></tr>
+<tr class="separator:ac7766940f380b7c09a59feb1df218526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -311,8 +311,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0ec2270560c1117d35abb75e8403784f" name="a0ec2270560c1117d35abb75e8403784f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ec2270560c1117d35abb75e8403784f">&#9670;&#160;</a></span>listeners() <span class="overload">[1/2]</span></h2>
+<a id="a0143a1849b7a6a6dd64afab8d5f08d38" name="a0143a1849b7a6a6dd64afab8d5f08d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0143a1849b7a6a6dd64afab8d5f08d38">&#9670;&#160;</a></span>listeners() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,10 +321,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp; xtd::diagnostics::trace_source::listeners </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::listeners </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -340,8 +340,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a62c16fa1dfea9aec8ff90044da8cc65d" name="a62c16fa1dfea9aec8ff90044da8cc65d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62c16fa1dfea9aec8ff90044da8cc65d">&#9670;&#160;</a></span>listeners() <span class="overload">[2/2]</span></h2>
+<a id="adde6bbcd79863aba40535ff0e925977d" name="adde6bbcd79863aba40535ff0e925977d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde6bbcd79863aba40535ff0e925977d">&#9670;&#160;</a></span>listeners() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,10 +350,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::listeners </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::listeners </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html">xtd::diagnostics::trace_listener_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>listeners</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -374,8 +374,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac1ba7e77cd4ec55e873b694f8a49519f" name="ac1ba7e77cd4ec55e873b694f8a49519f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ba7e77cd4ec55e873b694f8a49519f">&#9670;&#160;</a></span>name()</h2>
+<a id="a7017eaba1de02752556f330c288ea859" name="a7017eaba1de02752556f330c288ea859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7017eaba1de02752556f330c288ea859">&#9670;&#160;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,10 +384,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp; xtd::diagnostics::trace_source::name </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -402,8 +402,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aae5b6211c059a2119f596a70e55d5ece" name="aae5b6211c059a2119f596a70e55d5ece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae5b6211c059a2119f596a70e55d5ece">&#9670;&#160;</a></span>source_switch() <span class="overload">[1/2]</span></h2>
+<a id="ac3796963ead4233b8a78b61f6db41cd6" name="ac3796963ead4233b8a78b61f6db41cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3796963ead4233b8a78b61f6db41cd6">&#9670;&#160;</a></span>source_switch() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,10 +412,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp; xtd::diagnostics::trace_source::source_switch </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::source_switch </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -433,8 +433,8 @@ The switch is used to check whether trace calls should be generated or ignored. 
 
 </div>
 </div>
-<a id="ac5e621945b317af01e0c10fad35a9857" name="ac5e621945b317af01e0c10fad35a9857"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5e621945b317af01e0c10fad35a9857">&#9670;&#160;</a></span>source_switch() <span class="overload">[2/2]</span></h2>
+<a id="aa5ee0b87bf21d365a04eb65277d3d06e" name="aa5ee0b87bf21d365a04eb65277d3d06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ee0b87bf21d365a04eb65277d3d06e">&#9670;&#160;</a></span>source_switch() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,10 +443,10 @@ The switch is used to check whether trace calls should be generated or ignored. 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::source_switch </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::source_switch </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html">xtd::diagnostics::source_switch</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source_switch</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -469,17 +469,17 @@ The switch is used to check whether trace calls should be generated or ignored. 
 
 </div>
 </div>
-<a id="a1f5fd4c5114a90da66249da545b9e067" name="a1f5fd4c5114a90da66249da545b9e067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f5fd4c5114a90da66249da545b9e067">&#9670;&#160;</a></span>close()</h2>
+<a id="a90970c9e8642d05bfa42416b1f54de25" name="a90970c9e8642d05bfa42416b1f54de25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90970c9e8642d05bfa42416b1f54de25">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::close </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -489,17 +489,17 @@ The switch is used to check whether trace calls should be generated or ignored. 
 
 </div>
 </div>
-<a id="ab4dd869493e09ea6ffe54ba2cc64eecd" name="ab4dd869493e09ea6ffe54ba2cc64eecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4dd869493e09ea6ffe54ba2cc64eecd">&#9670;&#160;</a></span>flush()</h2>
+<a id="a63fcf05bc449265959e66047a6fa8704" name="a63fcf05bc449265959e66047a6fa8704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63fcf05bc449265959e66047a6fa8704">&#9670;&#160;</a></span>flush()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::flush </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::flush </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -509,8 +509,8 @@ The switch is used to check whether trace calls should be generated or ignored. 
 
 </div>
 </div>
-<a id="a12c20b84b950faaa2cf7ce0c5124c16f" name="a12c20b84b950faaa2cf7ce0c5124c16f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c20b84b950faaa2cf7ce0c5124c16f">&#9670;&#160;</a></span>trace_data() <span class="overload">[1/2]</span></h2>
+<a id="adcf94e9f84ccdbc31933ab352917ea68" name="adcf94e9f84ccdbc31933ab352917ea68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf94e9f84ccdbc31933ab352917ea68">&#9670;&#160;</a></span>trace_data() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -521,19 +521,19 @@ template&lt;class object_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_data </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_data </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const object_t &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype">const object_t &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -554,12 +554,12 @@ template&lt;class object_t&gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace. </dd>
 <dd>
-The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
+The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#a62c99697226c8dfbdb4234fc0ed76a69" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
 
 </div>
 </div>
-<a id="ad5a671d916e3be43169cbb00e82f61eb" name="ad5a671d916e3be43169cbb00e82f61eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5a671d916e3be43169cbb00e82f61eb">&#9670;&#160;</a></span>trace_data() <span class="overload">[2/2]</span></h2>
+<a id="aa852d2067d1eabf35da652eb9832f59d" name="aa852d2067d1eabf35da652eb9832f59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa852d2067d1eabf35da652eb9832f59d">&#9670;&#160;</a></span>trace_data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -570,19 +570,19 @@ template&lt;class object_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_data </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_data </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -603,12 +603,12 @@ template&lt;class object_t&gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace. </dd>
 <dd>
-The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
+The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#a62c99697226c8dfbdb4234fc0ed76a69" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
 
 </div>
 </div>
-<a id="a1661e1afd4750b38b537479bd8ea20d2" name="a1661e1afd4750b38b537479bd8ea20d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1661e1afd4750b38b537479bd8ea20d2">&#9670;&#160;</a></span>trace_event() <span class="overload">[1/3]</span></h2>
+<a id="ab9de821d64edba7e39726ee952d010df" name="ab9de821d64edba7e39726ee952d010df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9de821d64edba7e39726ee952d010df">&#9670;&#160;</a></span>trace_event() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,14 +617,14 @@ The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1s
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_event </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_event </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -646,8 +646,8 @@ The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1s
 
 </div>
 </div>
-<a id="a9937ff228b9e00de788926fafd416520" name="a9937ff228b9e00de788926fafd416520"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9937ff228b9e00de788926fafd416520">&#9670;&#160;</a></span>trace_event() <span class="overload">[2/3]</span></h2>
+<a id="a00a38ed50e05ce73983e363e6bdf14ca" name="a00a38ed50e05ce73983e363e6bdf14ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a38ed50e05ce73983e363e6bdf14ca">&#9670;&#160;</a></span>trace_event() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,19 +656,19 @@ The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1s
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_event </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_event </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -690,8 +690,8 @@ The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1s
 
 </div>
 </div>
-<a id="a39377a652d12853d94cb894aa9b20fb8" name="a39377a652d12853d94cb894aa9b20fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39377a652d12853d94cb894aa9b20fb8">&#9670;&#160;</a></span>trace_event() <span class="overload">[3/3]</span></h2>
+<a id="afe37d28ab15edfee5f65d3bc0cce2696" name="afe37d28ab15edfee5f65d3bc0cce2696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe37d28ab15edfee5f65d3bc0cce2696">&#9670;&#160;</a></span>trace_event() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -702,14 +702,14 @@ template&lt;class ... objects&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_event </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_event </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>event_type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -719,7 +719,7 @@ template&lt;class ... objects&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const objects &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+          <td class="paramtype">const objects &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -742,17 +742,17 @@ template&lt;class ... objects&gt; </div>
 
 </div>
 </div>
-<a id="ad3fe28b5b1366fb2df197b1157f5e25f" name="ad3fe28b5b1366fb2df197b1157f5e25f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3fe28b5b1366fb2df197b1157f5e25f">&#9670;&#160;</a></span>trace_information() <span class="overload">[1/2]</span></h2>
+<a id="afd428bc3eb3fdad3dc1a28626777d677" name="afd428bc3eb3fdad3dc1a28626777d677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd428bc3eb3fdad3dc1a28626777d677">&#9670;&#160;</a></span>trace_information() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_information </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_information </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -770,8 +770,8 @@ trace_information(const std::string&amp;, calls the trace_event(const trace_even
 
 </div>
 </div>
-<a id="a4b25d545fbb3c9993d755ae64b4d019a" name="a4b25d545fbb3c9993d755ae64b4d019a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b25d545fbb3c9993d755ae64b4d019a">&#9670;&#160;</a></span>trace_information() <span class="overload">[2/2]</span></h2>
+<a id="a4104fa7b4056bf7062bc8859713b241e" name="a4104fa7b4056bf7062bc8859713b241e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4104fa7b4056bf7062bc8859713b241e">&#9670;&#160;</a></span>trace_information() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,14 +782,14 @@ template&lt;class ... objects_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_information </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_information </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const objects_t &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+          <td class="paramtype">const objects_t &amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -813,8 +813,8 @@ trace_information(const std::string&amp;, const Objects_t) calls the trace_event
 
 </div>
 </div>
-<a id="a89a202cb844339ad9047d2adbe25da2f" name="a89a202cb844339ad9047d2adbe25da2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89a202cb844339ad9047d2adbe25da2f">&#9670;&#160;</a></span>trace_transfer()</h2>
+<a id="ac7766940f380b7c09a59feb1df218526" name="ac7766940f380b7c09a59feb1df218526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7766940f380b7c09a59feb1df218526">&#9670;&#160;</a></span>trace_transfer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -825,9 +825,9 @@ template&lt;class guid_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::diagnostics::trace_source::trace_transfer </td>
+          <td class="memname">auto xtd::diagnostics::trace_source::trace_transfer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -837,7 +837,7 @@ template&lt;class guid_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const guid_t &amp;</td>          <td class="paramname"><span class="paramname"><em>related_activity_id</em></span>&#160;)</td>
+          <td class="paramtype">const guid_t &amp;</td>          <td class="paramname"><span class="paramname"><em>related_activity_id</em></span>&#160;) -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -869,7 +869,7 @@ trace_transfer is intended to be used with the logical operations of a correlati
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 10:13:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 14:59:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

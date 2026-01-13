@@ -10,7 +10,7 @@ var searchData=
   ['ifstream_5fref_7',['ifstream_ref',['../classxtd_1_1net_1_1sockets_1_1send__packets__element.html#aa72b6c43d46ec692d35ade9a111dd51e',1,'xtd::net::sockets::send_packets_element']]],
   ['ilist_8',['ilist',['../group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b',1,'xtd::collections']]],
   ['image_5fcollection_9',['image_collection',['../classxtd_1_1forms_1_1image__list.html#ab2980da466b87684eb01dc92804c1d73',1,'xtd::forms::image_list']]],
-  ['ini_5ffile_5fsettings_10',['ini_file_settings',['../group__configuration.html#ga785bf10449f6f18571691505d315693e',1,'xtd::configuration']]],
+  ['ini_5ffile_5fsettings_10',['ini_file_settings',['../group__configuration.html#ga8bcf94a2571e09c11e27297ea5601b55',1,'xtd::configuration']]],
   ['int16_11',['int16',['../group__types.html#gac1b58c138d196c1ee8710d40e7d28751',1,'xtd']]],
   ['int16_5fobject_12',['int16_object',['../group__types.html#gad832bbb32c3d3bba1a68745c30016221',1,'xtd']]],
   ['int32_13',['int32',['../group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5',1,'xtd']]],

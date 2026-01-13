@@ -114,35 +114,35 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
 <dl class="section remark"><dt>Remarks</dt><dd>Used by <a class="el" href="classxtd_1_1diagnostics_1_1process.html#ae2705d1c3fc2c5d87ddbe2c187fd8abd" title="Occurs when a process exits.">xtd::diagnostics::process::exited</a>, <a class="el" href="classxtd_1_1diagnostics_1_1process.html#aad3ef28b885187da57863189383fa7d3" title="Occurs when an application writes to its redirected xtd::diagnostics::process::standard_error stream.">xtd::diagnostics::process::error_data_received</a> and <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a1e1cc3459ad0434a30618151a2ca38c9" title="Occurs each time an application writes a line to its redirected xtd::diagnostics::process::standard_o...">xtd::diagnostics::process::output_data_received</a> events. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a30de144e524fd2a5e1105acd89a73498" id="r_a30de144e524fd2a5e1105acd89a73498"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30de144e524fd2a5e1105acd89a73498">is_empty</a> () const noexcept</td></tr>
-<tr class="memdesc:a30de144e524fd2a5e1105acd89a73498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate if the event is empty.  <br /></td></tr>
-<tr class="separator:a30de144e524fd2a5e1105acd89a73498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4766a2039e24ccc396dd338d02671d72" id="r_a4766a2039e24ccc396dd338d02671d72"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4766a2039e24ccc396dd338d02671d72">is_empty</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a4766a2039e24ccc396dd338d02671d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicate if the event is empty.  <br /></td></tr>
+<tr class="separator:a4766a2039e24ccc396dd338d02671d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Operators</h2></td></tr>
-<tr class="memitem:a95cef20244541495bdfe7b1af214dea5" id="r_a95cef20244541495bdfe7b1af214dea5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95cef20244541495bdfe7b1af214dea5">operator+=</a> (const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;handler) noexcept</td></tr>
-<tr class="memdesc:a95cef20244541495bdfe7b1af214dea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an handler to the event.  <br /></td></tr>
-<tr class="separator:a95cef20244541495bdfe7b1af214dea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae61694027ea43c7eb176ede9f8fb04" id="r_a1ae61694027ea43c7eb176ede9f8fb04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ae61694027ea43c7eb176ede9f8fb04">operator+=</a> (const typename xtd::diagnostics::data_received_event_handler::function_t &amp;function) noexcept</td></tr>
-<tr class="memdesc:a1ae61694027ea43c7eb176ede9f8fb04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
-<tr class="separator:a1ae61694027ea43c7eb176ede9f8fb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1649b6439ab29bf5aacfadb072037aa" id="r_ac1649b6439ab29bf5aacfadb072037aa"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
-<tr class="memitem:ac1649b6439ab29bf5aacfadb072037aa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac1649b6439ab29bf5aacfadb072037aa">operator+=</a> (fn_t function) noexcept</td></tr>
-<tr class="memdesc:ac1649b6439ab29bf5aacfadb072037aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
-<tr class="separator:ac1649b6439ab29bf5aacfadb072037aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14db537157b57912238e2a457f954884" id="r_a14db537157b57912238e2a457f954884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14db537157b57912238e2a457f954884">operator-=</a> (const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;handler) noexcept</td></tr>
-<tr class="memdesc:a14db537157b57912238e2a457f954884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an handler to the event.  <br /></td></tr>
-<tr class="separator:a14db537157b57912238e2a457f954884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae93db0f80451b0e1787dae07687bc51a" id="r_ae93db0f80451b0e1787dae07687bc51a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae93db0f80451b0e1787dae07687bc51a">operator-=</a> (const typename xtd::diagnostics::data_received_event_handler::function_t &amp;function) noexcept</td></tr>
-<tr class="memdesc:ae93db0f80451b0e1787dae07687bc51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
-<tr class="separator:ae93db0f80451b0e1787dae07687bc51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c05d663721fa21cdb00ac9f51d7bdc" id="r_ad3c05d663721fa21cdb00ac9f51d7bdc"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
-<tr class="memitem:ad3c05d663721fa21cdb00ac9f51d7bdc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad3c05d663721fa21cdb00ac9f51d7bdc">operator-=</a> (fn_t function) noexcept</td></tr>
-<tr class="memdesc:ad3c05d663721fa21cdb00ac9f51d7bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
-<tr class="separator:ad3c05d663721fa21cdb00ac9f51d7bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60575e326762548e3f620fae1477a307" id="r_a60575e326762548e3f620fae1477a307"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60575e326762548e3f620fae1477a307">operator+=</a> (const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;handler) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a60575e326762548e3f620fae1477a307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an handler to the event.  <br /></td></tr>
+<tr class="separator:a60575e326762548e3f620fae1477a307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab270e1dedbb65c778376301a56bd276f" id="r_ab270e1dedbb65c778376301a56bd276f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab270e1dedbb65c778376301a56bd276f">operator+=</a> (const typename xtd::diagnostics::data_received_event_handler::function_t &amp;function) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:ab270e1dedbb65c778376301a56bd276f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
+<tr class="separator:ab270e1dedbb65c778376301a56bd276f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99e3220e7bc394a84caf08fee9ce91d" id="r_ab99e3220e7bc394a84caf08fee9ce91d"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
+<tr class="memitem:ab99e3220e7bc394a84caf08fee9ce91d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab99e3220e7bc394a84caf08fee9ce91d">operator+=</a> (fn_t function) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:ab99e3220e7bc394a84caf08fee9ce91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a function to the event.  <br /></td></tr>
+<tr class="separator:ab99e3220e7bc394a84caf08fee9ce91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ee06471ed59b1f8c5b108ba17fee46" id="r_a20ee06471ed59b1f8c5b108ba17fee46"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20ee06471ed59b1f8c5b108ba17fee46">operator-=</a> (const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;handler) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a20ee06471ed59b1f8c5b108ba17fee46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an handler to the event.  <br /></td></tr>
+<tr class="separator:a20ee06471ed59b1f8c5b108ba17fee46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6a270a59021d11db94edad32f8496d" id="r_a5e6a270a59021d11db94edad32f8496d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e6a270a59021d11db94edad32f8496d">operator-=</a> (const typename xtd::diagnostics::data_received_event_handler::function_t &amp;function) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:a5e6a270a59021d11db94edad32f8496d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
+<tr class="separator:a5e6a270a59021d11db94edad32f8496d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91143572435f315e530a70ce4429b55" id="r_ae91143572435f315e530a70ce4429b55"><td class="memTemplParams" colspan="2">template&lt;class fn_t&gt; </td></tr>
+<tr class="memitem:ae91143572435f315e530a70ce4429b55"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae91143572435f315e530a70ce4429b55">operator-=</a> (fn_t function) noexcept -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td></tr>
+<tr class="memdesc:ae91143572435f315e530a70ce4429b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a function to the event.  <br /></td></tr>
+<tr class="separator:ae91143572435f315e530a70ce4429b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a30de144e524fd2a5e1105acd89a73498" name="a30de144e524fd2a5e1105acd89a73498"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30de144e524fd2a5e1105acd89a73498">&#9670;&#160;</a></span>is_empty()</h2>
+<a id="a4766a2039e24ccc396dd338d02671d72" name="a4766a2039e24ccc396dd338d02671d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4766a2039e24ccc396dd338d02671d72">&#9670;&#160;</a></span>is_empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,10 +151,10 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::diagnostics::process::error_data_received_event::is_empty </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::is_empty </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -169,8 +169,8 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
 
 </div>
 </div>
-<a id="a95cef20244541495bdfe7b1af214dea5" name="a95cef20244541495bdfe7b1af214dea5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95cef20244541495bdfe7b1af214dea5">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
+<a id="a60575e326762548e3f620fae1477a307" name="a60575e326762548e3f620fae1477a307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60575e326762548e3f620fae1477a307">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,10 +179,10 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>handler</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -203,8 +203,8 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
 
 </div>
 </div>
-<a id="a1ae61694027ea43c7eb176ede9f8fb04" name="a1ae61694027ea43c7eb176ede9f8fb04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ae61694027ea43c7eb176ede9f8fb04">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
+<a id="ab270e1dedbb65c778376301a56bd276f" name="ab270e1dedbb65c778376301a56bd276f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab270e1dedbb65c778376301a56bd276f">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,10 +213,10 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">const typename xtd::diagnostics::data_received_event_handler::function_t &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -237,8 +237,8 @@ Inheritance diagram for xtd::diagnostics::process::error_data_received_event:</d
 
 </div>
 </div>
-<a id="ac1649b6439ab29bf5aacfadb072037aa" name="ac1649b6439ab29bf5aacfadb072037aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1649b6439ab29bf5aacfadb072037aa">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
+<a id="ab99e3220e7bc394a84caf08fee9ce91d" name="ab99e3220e7bc394a84caf08fee9ce91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99e3220e7bc394a84caf08fee9ce91d">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,10 +249,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator+= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator+= </td>
           <td>(</td>
           <td class="paramtype">fn_t</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -273,8 +273,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="a14db537157b57912238e2a457f954884" name="a14db537157b57912238e2a457f954884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14db537157b57912238e2a457f954884">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/3]</span></h2>
+<a id="a20ee06471ed59b1f8c5b108ba17fee46" name="a20ee06471ed59b1f8c5b108ba17fee46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ee06471ed59b1f8c5b108ba17fee46">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,10 +283,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>handler</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -307,8 +307,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="ae93db0f80451b0e1787dae07687bc51a" name="ae93db0f80451b0e1787dae07687bc51a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae93db0f80451b0e1787dae07687bc51a">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/3]</span></h2>
+<a id="a5e6a270a59021d11db94edad32f8496d" name="a5e6a270a59021d11db94edad32f8496d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6a270a59021d11db94edad32f8496d">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,10 +317,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">const typename xtd::diagnostics::data_received_event_handler::function_t &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp;</td>
         </tr>
       </table>
   </td>
@@ -341,8 +341,8 @@ template&lt;class fn_t&gt; </div>
 
 </div>
 </div>
-<a id="ad3c05d663721fa21cdb00ac9f51d7bdc" name="ad3c05d663721fa21cdb00ac9f51d7bdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3c05d663721fa21cdb00ac9f51d7bdc">&#9670;&#160;</a></span>operator-=() <span class="overload">[3/3]</span></h2>
+<a id="ae91143572435f315e530a70ce4429b55" name="ae91143572435f315e530a70ce4429b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae91143572435f315e530a70ce4429b55">&#9670;&#160;</a></span>operator-=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,10 +353,10 @@ template&lt;class fn_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a> &amp; xtd::diagnostics::process::error_data_received_event::operator-= </td>
+          <td class="memname">auto xtd::diagnostics::process::error_data_received_event::operator-= </td>
           <td>(</td>
           <td class="paramtype">fn_t</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="group__events.html#gaca48d5a8c6f0631740bdab338dec43ef">xtd::diagnostics::data_received_event_handler</a>&amp; </td>
         </tr>
       </table>
   </td>
@@ -384,7 +384,7 @@ template&lt;class fn_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 13 2026 10:13:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 13 2026 14:59:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

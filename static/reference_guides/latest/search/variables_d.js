@@ -37,7 +37,7 @@ var searchData=
   ['menorah_5fwith_5fnine_5fbranches_34',['menorah_with_nine_branches',['../classxtd_1_1forms_1_1emoticons.html#afe3cbec1e7142d2e6dd5bf57fcc49484',1,'xtd::forms::emoticons']]],
   ['mens_5fsymbol_35',['mens_symbol',['../classxtd_1_1forms_1_1emoticons.html#a82d20a5a7f47564b5a6199e6a5995483',1,'xtd::forms::emoticons']]],
   ['merperson_36',['merperson',['../classxtd_1_1forms_1_1emoticons.html#aa418c5936e89cf6553c857d1ef67cd09',1,'xtd::forms::emoticons']]],
-  ['methods_5fto_5fskip_37',['METHODS_TO_SKIP',['../classxtd_1_1diagnostics_1_1stack__trace.html#a34e54818fc370e75aa7f063528f1348d',1,'xtd::diagnostics::stack_trace']]],
+  ['methods_5fto_5fskip_37',['METHODS_TO_SKIP',['../classxtd_1_1diagnostics_1_1stack__trace.html#a3e3ccd4501e814e0dd9e888e9a18c936',1,'xtd::diagnostics::stack_trace']]],
   ['metro_38',['metro',['../classxtd_1_1forms_1_1emoticons.html#a2ccdb1fd668b638b19c0d6198ba6b3d4',1,'xtd::forms::emoticons']]],
   ['microbe_39',['microbe',['../classxtd_1_1forms_1_1emoticons.html#acc73859c681721c5c5d485b18b9e2ec1',1,'xtd::forms::emoticons']]],
   ['microphone_40',['microphone',['../classxtd_1_1forms_1_1emoticons.html#aa40597f279010a6c19c6ad1c71541d60',1,'xtd::forms::emoticons']]],
