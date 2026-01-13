@@ -42,11 +42,11 @@ namespace xtd {
       /// @brief Gets the event type of the messages to trace.
       /// @return A bitwise combination of the xtd::diagnostics::source_levels values.
       /// @remarks The xtd::diagnostics::event_type_filter::event_type property indicates the level at which to trace.
-      xtd::diagnostics::source_levels event_type() const noexcept;
+      auto event_type() const noexcept -> xtd::diagnostics::source_levels;
       /// @brief Sets the event type of the messages to trace.
       /// @param level A bitwise combination of the xtd::diagnostics::source_levels values.
       /// @remarks The xtd::diagnostics::event_type_filter::event_type property indicates the level at which to trace.
-      void event_type(xtd::diagnostics::source_levels level) noexcept;
+      auto event_type(xtd::diagnostics::source_levels level) noexcept -> void;
       /// @}
       
       /// @name Public Methods
@@ -61,7 +61,7 @@ namespace xtd {
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
       /// @remarks If the value of the event_type parameter is greater than or equal to the value of the xtd::diagnostics::event_type_filter::event_type property, the method returns `true`.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, xtd::any_object data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept override;
+      auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message, xtd::any_object data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept -> bool override;
       /// @}
       
     private:
