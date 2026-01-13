@@ -61,16 +61,16 @@ namespace xtd {
       /// @{
       /// @brief Gets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
       /// @return A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
-      auto abreviated_day_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto abreviated_day_names() const noexcept -> const xtd::array<xtd::string>& ;
       /// @brief Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
       /// @param value A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
       /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 7.
       auto abreviated_day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto abreviated_month_genitive_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto abreviated_month_genitive_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto abreviated_month_genitive_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto abreviated_month_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto abreviated_month_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto abreviated_month_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
       auto am_designator() const noexcept -> const xtd::string&;
@@ -79,7 +79,7 @@ namespace xtd {
       auto date_separator() const noexcept -> const xtd::string&;
       auto date_separator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto day_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto day_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
       auto first_day_of_week() const noexcept -> xtd::day_of_week;
@@ -97,10 +97,10 @@ namespace xtd {
       auto month_day_pattern() const noexcept -> const xtd::string&;
       auto month_day_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto month_genitive_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto month_genitive_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto month_genitive_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto month_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto month_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto month_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
       auto native_calendar_name() const noexcept -> const xtd::string&;
@@ -118,7 +118,7 @@ namespace xtd {
       auto short_time_pattern() const noexcept -> const xtd::string&;
       auto short_time_pattern(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
-      auto shortest_day_names() const noexcept -> const xtd::array<xtd::string>&;
+      auto shortest_day_names() const noexcept -> const xtd::array<xtd::string>& ;
       auto shortest_day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
       
       auto sortable_date_time_pattern() const noexcept -> const xtd::string&;

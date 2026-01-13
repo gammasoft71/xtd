@@ -396,7 +396,7 @@ namespace xtd {
       culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       auto fill_from_name(const xtd::string& name) -> void;
-      static auto cultures() -> xtd::collections::generic::dictionary<xtd::string, culture_info>&;
+      static auto cultures() -> xtd::collections::generic::dictionary<xtd::string, culture_info>& ;
       static auto is_system_locale_available(const xtd::string& name) noexcept -> bool;
       
       static auto to_cldr_name(const xtd::string& name) -> xtd::string;
