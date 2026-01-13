@@ -13,33 +13,33 @@ struct __xtd__diagnostics_config__ final {
   const trace_listener_collection& listeners;
   const string_dictionary& switches;
 };
-const __xtd__diagnostics_config__& __xtd___read_diagnostics_config__();
+auto __xtd___read_diagnostics_config__() -> const __xtd__diagnostics_config__&;
 
-const switch_object::attribute_collection& switch_object::attributes() const noexcept {
+auto switch_object::attributes() const noexcept -> const attribute_collection& {
   return attributes_;
 }
 
-switch_object::attribute_collection& switch_object::attributes() noexcept {
+auto switch_object::attributes() noexcept -> attribute_collection& {
   return attributes_;
 }
 
-void switch_object::attributes(const attribute_collection& attributes) noexcept {
+auto switch_object::attributes(const attribute_collection& attributes) noexcept -> void {
   attributes_ = attributes;
 }
 
-const string& switch_object::description() const noexcept {
+auto switch_object::description() const noexcept -> const string& {
   return description_;
 }
 
-const string& switch_object::display_name() const noexcept {
+auto switch_object::display_name() const noexcept -> const string& {
   return display_name_;
 }
 
-const string& switch_object::value() const noexcept {
+auto switch_object::value() const noexcept -> const string& {
   return value_;
 }
 
-void switch_object::value(const string& value) {
+auto switch_object::value(const string& value) -> void {
   auto new_value = value;
   call_once_ {
     if (switches_.count()) return;
@@ -56,35 +56,35 @@ void switch_object::value(const string& value) {
   on_value_changed();
 }
 
-bool switch_object::equals(const object& obj) const noexcept {
+auto switch_object::equals(const object& obj) const noexcept -> bool {
   return is<switch_object>(obj) && equals(static_cast<const switch_object&>(obj));
 }
 
-bool switch_object::equals(const switch_object& other) const noexcept {
+auto switch_object::equals(const switch_object& other) const noexcept -> bool {
   return display_name_ == other.display_name_ && description_ == other.description_ && attributes_ == other.attributes_ && switch_setting_ == other.switch_setting_ && value_ == other.value_;
 }
 
 switch_object::switch_object(const string& display_name, const string& description) : display_name_(display_name), description_(description) {
 }
 
-int32 switch_object::switch_setting() const noexcept {
+auto switch_object::switch_setting() const noexcept -> int32 {
   return switch_setting_;
 }
 
-void switch_object::switch_setting(int32 switch_setting) {
+auto switch_object::switch_setting(int32 switch_setting) -> void {
   if (switch_setting_ == switch_setting) return;
   switch_setting_ = switch_setting;
   on_switch_setting_changed();
 }
 
-array<string> switch_object::get_supported_attributes() const noexcept {
+auto switch_object::get_supported_attributes() const noexcept -> array<string> {
   return {};
 }
 
-void switch_object::on_switch_setting_changed() {
+auto switch_object::on_switch_setting_changed() -> void {
 }
 
-void switch_object::on_value_changed() {
+auto switch_object::on_value_changed() -> void {
   auto int_value = 0;
   if (!string::try_parse(value(), int_value)) throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format.");
   switch_setting(int_value);
