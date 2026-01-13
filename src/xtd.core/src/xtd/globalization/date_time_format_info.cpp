@@ -46,223 +46,223 @@ date_time_format_info::date_time_format_info(const date_time_format_info& info) 
   *data_ = *info.data_;
 }
 
-const array<string>& date_time_format_info::abreviated_day_names() const noexcept {
+auto date_time_format_info::abreviated_day_names() const noexcept -> const array<string>& {
   return data_->abreviated_day_names;
 }
 
-date_time_format_info& date_time_format_info::abreviated_day_names(const array<string>& value) noexcept {
+auto date_time_format_info::abreviated_day_names(const array<string>& value) noexcept -> date_time_format_info& {
   if (value.length() != 7_z) throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->abreviated_day_names = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::abreviated_month_genitive_names() const noexcept {
+auto date_time_format_info::abreviated_month_genitive_names() const noexcept -> const array<string>& {
   return data_->abreviated_month_genitive_names;
 }
 
-date_time_format_info& date_time_format_info::abreviated_month_genitive_names(const array<string>& value) noexcept {
+auto date_time_format_info::abreviated_month_genitive_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->abreviated_month_genitive_names = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::abreviated_month_names() const noexcept {
+auto date_time_format_info::abreviated_month_names() const noexcept -> const array<string>& {
   return data_->abreviated_month_names;
 }
 
-date_time_format_info& date_time_format_info::abreviated_month_names(const array<string>& value) noexcept {
+auto date_time_format_info::abreviated_month_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->abreviated_month_names = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::am_designator() const noexcept {
+auto date_time_format_info::am_designator() const noexcept -> const string& {
   return data_->am_designator;
 }
 
-date_time_format_info& date_time_format_info::am_designator(const xtd::string& value) noexcept {
+auto date_time_format_info::am_designator(const string& value) noexcept -> date_time_format_info& {
   data_->am_designator = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::date_separator() const noexcept {
+auto date_time_format_info::date_separator() const noexcept -> const string& {
   return data_->date_separator;
 }
 
-date_time_format_info& date_time_format_info::date_separator(const xtd::string& value) noexcept {
+auto date_time_format_info::date_separator(const string& value) noexcept -> date_time_format_info& {
   data_->date_separator = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::day_names() const noexcept {
+auto date_time_format_info::day_names() const noexcept -> const array<string>& {
   return data_->day_names;
 }
 
-date_time_format_info& date_time_format_info::day_names(const array<string>& value) noexcept {
+auto date_time_format_info::day_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->day_names = value;
   return self_;
 }
 
-day_of_week date_time_format_info::first_day_of_week() const noexcept {
+auto date_time_format_info::first_day_of_week() const noexcept -> day_of_week {
   return data_->first_day_of_week;
 }
 
-date_time_format_info& date_time_format_info::first_day_of_week(day_of_week value) noexcept {
+auto date_time_format_info::first_day_of_week(day_of_week value) noexcept -> date_time_format_info& {
   data_->first_day_of_week = value;
   return self_;
 }
 
-const string& date_time_format_info::full_date_time_pattern() const noexcept {
+auto date_time_format_info::full_date_time_pattern() const noexcept -> const string& {
   return data_->full_date_time_pattern;
 }
 
-date_time_format_info& date_time_format_info::full_date_time_pattern(const string& value) noexcept {
+auto date_time_format_info::full_date_time_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->full_date_time_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::long_date_pattern() const noexcept {
+auto date_time_format_info::long_date_pattern() const noexcept -> const string& {
   return data_->long_date_pattern;
 }
 
-date_time_format_info& date_time_format_info::long_date_pattern(const string& value) noexcept {
+auto date_time_format_info::long_date_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->long_date_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::long_time_pattern() const noexcept {
+auto date_time_format_info::long_time_pattern() const noexcept -> const string& {
   return data_->long_time_pattern;
 }
 
-date_time_format_info& date_time_format_info::long_time_pattern(const string& value) noexcept {
+auto date_time_format_info::long_time_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->long_time_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::month_day_pattern() const noexcept {
+auto date_time_format_info::month_day_pattern() const noexcept -> const string& {
   return data_->month_day_pattern;
 }
 
-date_time_format_info& date_time_format_info::month_day_pattern(const string& value) noexcept {
+auto date_time_format_info::month_day_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->month_day_pattern = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::month_genitive_names() const noexcept {
+auto date_time_format_info::month_genitive_names() const noexcept -> const array<string>& {
   return data_->month_genitive_names;
 }
 
-date_time_format_info& date_time_format_info::month_genitive_names(const array<string>& value) noexcept {
+auto date_time_format_info::month_genitive_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->month_genitive_names = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::month_names() const noexcept {
+auto date_time_format_info::month_names() const noexcept -> const array<string>& {
   return data_->month_names;
 }
 
-date_time_format_info& date_time_format_info::month_names(const array<string>& value) noexcept {
+auto date_time_format_info::month_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->month_names = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::native_calendar_name() const noexcept {
+auto date_time_format_info::native_calendar_name() const noexcept -> const string& {
   return data_->native_calendar_name;
 }
 
-date_time_format_info& date_time_format_info::native_calendar_name(const xtd::string& value) noexcept {
+auto date_time_format_info::native_calendar_name(const string& value) noexcept -> date_time_format_info& {
   data_->native_calendar_name = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::pm_designator() const noexcept {
+auto date_time_format_info::pm_designator() const noexcept -> const string& {
   return data_->pm_designator;
 }
 
-date_time_format_info& date_time_format_info::pm_designator(const xtd::string& value) noexcept {
+auto date_time_format_info::pm_designator(const string& value) noexcept -> date_time_format_info& {
   data_->pm_designator = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::rfc_1123_pattern() const noexcept {
+auto date_time_format_info::rfc_1123_pattern() const noexcept -> const string& {
   return data_->rfc_1123_pattern;
 }
 
-date_time_format_info& date_time_format_info::rfc_1123_pattern(const xtd::string& value) noexcept {
+auto date_time_format_info::rfc_1123_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->rfc_1123_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::short_date_pattern() const noexcept {
+auto date_time_format_info::short_date_pattern() const noexcept -> const string& {
   return data_->short_date_pattern;
 }
 
-date_time_format_info& date_time_format_info::short_date_pattern(const string& value) noexcept {
+auto date_time_format_info::short_date_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->short_date_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::short_time_pattern() const noexcept {
+auto date_time_format_info::short_time_pattern() const noexcept -> const string& {
   return data_->short_time_pattern;
 }
 
-date_time_format_info& date_time_format_info::short_time_pattern(const string& value) noexcept {
+auto date_time_format_info::short_time_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->short_time_pattern = value;
   return self_;
 }
 
-const array<string>& date_time_format_info::shortest_day_names() const noexcept {
+auto date_time_format_info::shortest_day_names() const noexcept -> const array<string>& {
   return data_->shortest_day_names;
 }
 
-date_time_format_info& date_time_format_info::shortest_day_names(const array<string>& value) noexcept {
+auto date_time_format_info::shortest_day_names(const array<string>& value) noexcept -> date_time_format_info& {
   data_->shortest_day_names = value;
   return self_;
 }
 
-const string& date_time_format_info::sortable_date_time_pattern() const noexcept {
+auto date_time_format_info::sortable_date_time_pattern() const noexcept -> const string& {
   return data_->sortable_date_time_pattern;
 }
 
-date_time_format_info& date_time_format_info::sortable_date_time_pattern(const string& value) noexcept {
+auto date_time_format_info::sortable_date_time_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->sortable_date_time_pattern = value;
   return self_;
 }
 
-const xtd::string& date_time_format_info::time_separator() const noexcept {
+auto date_time_format_info::time_separator() const noexcept -> const string& {
   return data_->time_separator;
 }
 
-date_time_format_info& date_time_format_info::time_separator(const xtd::string& value) noexcept {
+auto date_time_format_info::time_separator(const string& value) noexcept -> date_time_format_info& {
   data_->time_separator = value;
   return self_;
 }
 
-const string& date_time_format_info::universal_sortable_date_time_pattern() const noexcept {
+auto date_time_format_info::universal_sortable_date_time_pattern() const noexcept -> const string& {
   return data_->universal_sortable_date_time_pattern;
 }
 
-date_time_format_info& date_time_format_info::universal_sortable_date_time_pattern(const string& value) noexcept {
+auto date_time_format_info::universal_sortable_date_time_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->universal_sortable_date_time_pattern = value;
   return self_;
 }
 
-const string& date_time_format_info::year_month_pattern() const noexcept {
+auto date_time_format_info::year_month_pattern() const noexcept -> const string& {
   return data_->year_month_pattern;
 }
 
-date_time_format_info& date_time_format_info::year_month_pattern(const string& value) noexcept {
+auto date_time_format_info::year_month_pattern(const string& value) noexcept -> date_time_format_info& {
   data_->year_month_pattern = value;
   return self_;
 }
 
-const date_time_format_info& date_time_format_info::current_info() noexcept {
+auto date_time_format_info::current_info() noexcept -> const date_time_format_info& {
   return culture_info::current_culture().date_time_format();
 }
 
-const date_time_format_info& date_time_format_info::invariant_info() noexcept {
+auto date_time_format_info::invariant_info() noexcept -> const date_time_format_info& {
   return culture_info::invariant_culture().date_time_format();
 }
 
-date_time_format_info& date_time_format_info::operator =(const date_time_format_info& info) {
+auto date_time_format_info::operator =(const date_time_format_info& info) -> date_time_format_info& {
   *data_ = *info.data_;
   return self_;
 }
@@ -293,7 +293,7 @@ date_time_format_info::date_time_format_info(array<string>&& abreviated_day_name
   data_->year_month_pattern = std::move(year_month_pattern);
 }
 
-dictionary<string, date_time_format_info>& date_time_format_info::formats() {
+auto date_time_format_info::formats() -> dictionary<string, date_time_format_info>& {
   static auto formats = dictionary<string, date_time_format_info> {{"", {}}, {"en-us", {array<string> {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, array<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, array<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, "AM", "/", array<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}, xtd::day_of_week::sunday, "dddd, MMMM d, yyyy h:mm:ss tt", "dddd, MMMM d, yyyy", "h:mm:ss tt", "MMMM d", array<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ""}, array<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ""}, "Gregorian Calendar", "PM", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'", "M/d/yyyy", "h:mm tt", array<string> {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"}, "yyyy'-'MM'-'dd'T'HH':'mm':'ss", ":", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "MMMM yyyy"}}};
   call_once_ {
     auto read_strings = [](auto & br, auto count) {
