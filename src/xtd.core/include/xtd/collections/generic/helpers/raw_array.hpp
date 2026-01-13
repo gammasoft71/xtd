@@ -231,7 +231,7 @@ namespace xtd {
           /// @{
           auto assign(size_type count, const type_t& value) -> void {++version_; items_.assign(count, value);}
           template<class input_iterator_t>
-          auto assign(input_iterator_t first, input_iterator_t last) -> void{++version_; items_.assign(first, last);}
+          auto assign(input_iterator_t first, input_iterator_t last) -> void {++version_; items_.assign(first, last);}
           auto assign(std::initializer_list<type_t> items) -> void {++version_; items_.assign(items.begin(), items.end());}
           
           auto at(size_type index) -> reference {return reinterpret_cast<reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
