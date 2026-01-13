@@ -11,7 +11,7 @@ culture_not_found_exception::culture_not_found_exception(const std::optional<str
   error_code(h_result::make_error_code(h_result::COR_E_ARGUMENT));
 }
 
-const string& culture_not_found_exception::get_default_message() {
+auto culture_not_found_exception::get_default_message() -> const string& {
   static auto message = string {"Culture is not supported."};
   return message;
 }
