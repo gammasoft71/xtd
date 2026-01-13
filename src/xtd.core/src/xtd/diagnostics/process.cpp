@@ -25,17 +25,17 @@ namespace {
 }
 
 struct process::data {
-  xtd::diagnostics::process_start_info start_info;
+  process_start_info start_info;
   std::optional<intptr> handle = 0;
   int32 id = 0;
   string machine_name;
-  xtd::diagnostics::process_priority_class priority_class = xtd::diagnostics::process_priority_class::normal;
-  xtd::uptr<std::ostream> standard_input;
-  xtd::uptr<std::istream> standard_output;
-  xtd::uptr<std::istream> standard_error;
+  process_priority_class priority_class = process_priority_class::normal;
+  uptr<std::ostream> standard_input;
+  uptr<std::istream> standard_output;
+  uptr<std::istream> standard_error;
   class thread thread;
-  xtd::date_time start_time;
-  xtd::date_time exit_time;
+  date_time start_time;
+  date_time exit_time;
   bool enable_raising_events = false;
   bool allow_to_continue = false;
   std::optional<int32> exit_code;
@@ -49,87 +49,87 @@ struct process::data {
 // This operation can be done only if xtd.forms lib is present.
 //xtd::delegate<void(const xtd::string&)> process::message_box_message_;
 
-bool process::error_data_received_event::is_empty() const noexcept {
+auto process::error_data_received_event::is_empty() const noexcept -> bool {
   return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler& process::error_data_received_event::operator +=(const data_received_event_handler& handler) noexcept {
+auto process::error_data_received_event::operator +=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
   data_->error_data_received_callback += (handler);
   return data_received_event_handler::operator +=(handler);
 }
 
-data_received_event_handler& process::error_data_received_event::operator +=(const typename data_received_event_handler::function_t& function) noexcept {
+auto process::error_data_received_event::operator +=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
   data_->error_data_received_callback += (function);
   return data_received_event_handler::operator +=(function);
 }
 
-data_received_event_handler& process::error_data_received_event::operator -=(const data_received_event_handler& handler) noexcept {
+auto process::error_data_received_event::operator -=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
   data_->error_data_received_callback -= (handler);
   return data_received_event_handler::operator -=(handler);
 }
 
-data_received_event_handler& process::error_data_received_event::operator -=(const typename data_received_event_handler::function_t& function) noexcept {
+auto process::error_data_received_event::operator -=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
   data_->error_data_received_callback -= (function);
   return data_received_event_handler::operator -=(function);
 }
 
-data_received_event_handler& process::error_data_received_event::error_data_received_callback() noexcept {
+auto process::error_data_received_event::error_data_received_callback() noexcept -> data_received_event_handler& {
   return data_->error_data_received_callback;
 }
 
-bool process::exit_event::is_empty() const noexcept {
+auto process::exit_event::is_empty() const noexcept -> bool {
   return event_handler::is_empty();
 }
 
-event_handler& process::exit_event::operator +=(const event_handler& handler) noexcept {
+auto process::exit_event::operator +=(const event_handler& handler) noexcept -> event_handler&{
   data_->exit_callback += (handler);
   return event_handler::operator +=(handler);
 }
 
-event_handler& process::exit_event::operator +=(const typename event_handler::function_t& function) noexcept {
+auto process::exit_event::operator +=(const typename event_handler::function_t& function) noexcept -> event_handler& {
   data_->exit_callback += (function);
   return event_handler::operator +=(function);
 }
 
-event_handler& process::exit_event::operator -=(const event_handler& handler) noexcept {
+auto process::exit_event::operator -=(const event_handler& handler) noexcept -> event_handler& {
   data_->exit_callback -= (handler);
   return event_handler::operator -=(handler);
 }
 
-event_handler& process::exit_event::operator -=(const typename event_handler::function_t& function) noexcept {
+auto process::exit_event::operator -=(const typename event_handler::function_t& function) noexcept -> event_handler& {
   data_->exit_callback -= (function);
   return event_handler::operator -=(function);
 }
 
-event_handler& process::exit_event::exit_callback() noexcept {
+auto process::exit_event::exit_callback() noexcept -> event_handler& {
   return data_->exit_callback;
 }
 
-bool process::output_data_received_event::is_empty() const noexcept {
+auto process::output_data_received_event::is_empty() const noexcept -> bool {
   return data_received_event_handler::is_empty();
 }
 
-data_received_event_handler& process::output_data_received_event::operator +=(const data_received_event_handler& handler) noexcept {
+auto process::output_data_received_event::operator +=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
   data_->output_data_received_callback += (handler);
   return data_received_event_handler::operator +=(handler);
 }
 
-data_received_event_handler& process::output_data_received_event::operator +=(const typename data_received_event_handler::function_t& function) noexcept {
+auto process::output_data_received_event::operator +=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
   data_->output_data_received_callback += (function);
   return data_received_event_handler::operator +=(function);
 }
 
-data_received_event_handler& process::output_data_received_event::operator -=(const data_received_event_handler& handler) noexcept {
+auto process::output_data_received_event::operator -=(const data_received_event_handler& handler) noexcept -> data_received_event_handler& {
   data_->output_data_received_callback -= (handler);
   return data_received_event_handler::operator -=(handler);
 }
 
-data_received_event_handler& process::output_data_received_event::operator -=(const typename data_received_event_handler::function_t& function) noexcept {
+auto process::output_data_received_event::operator -=(const typename data_received_event_handler::function_t& function) noexcept -> data_received_event_handler& {
   data_->output_data_received_callback -= (function);
   return data_received_event_handler::operator -=(function);
 }
 
-data_received_event_handler& process::output_data_received_event::output_data_received_callback() noexcept {
+auto process::output_data_received_event::output_data_received_callback() noexcept -> data_received_event_handler& {
   return data_->output_data_received_callback;
 }
 
@@ -137,7 +137,7 @@ process::process() : data_(xtd::new_sptr<data>()) {
   exited.set_data(data_.get());
 }
 
-process& process::operator =(const process& value) {
+auto process::operator =(const process& value) -> process& {
   if (data_.use_count() == 1 && data_->thread.joinable()) data_->thread.detach();
   auto exit_callback = data_->exit_callback;
   data_ = value.data_;
@@ -151,57 +151,57 @@ process::~process() {
   if (data_.use_count() == 1 && data_->thread.joinable()) data_->thread.detach();
 }
 
-int32 process::base_priority() const {
+auto process::base_priority() const -> int32 {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   static auto base_priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, 4}, {process_priority_class::below_normal, 6}, {process_priority_class::normal, 8}, {process_priority_class::above_normal, 10}, {process_priority_class::high, 13}, {process_priority_class::real_time, 24}};
   return base_priorities[priority_class()];
 }
 
-bool process::enable_raising_events() const {
+auto process::enable_raising_events() const -> bool {
   return data_->enable_raising_events;
 }
 
-process& process::enable_raising_events(bool value) {
+auto process::enable_raising_events(bool value) -> process& {
   data_->enable_raising_events = value;
   return *this;
 }
 
-int32 process::exit_code() const {
+auto process::exit_code() const -> int32 {
   if (!data_->handle.has_value() || !has_exited()) throw_helper::throws(exception_case::invalid_operation);
   return data_->exit_code.value();
 }
 
-date_time process::exit_time() const {
+auto process::exit_time() const -> date_time {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->exit_time;
 }
 
-intptr process::handle() const {
+auto process::handle() const -> intptr {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->handle.value();
 }
 
-bool process::has_exited() const {
+auto process::has_exited() const -> bool {
   if (!data_->handle.has_value() || !data_->exit_code.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->exit_code.has_value();
 }
 
-int32 process::id() const {
+auto process::id() const -> int32 {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->id;
 }
 
-string process::machine_name() const {
+auto process::machine_name() const -> string {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->machine_name;
 }
 
-process_priority_class process::priority_class() const {
+auto process::priority_class() const -> process_priority_class {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->priority_class;
 }
 
-process& process::priority_class(process_priority_class value) {
+auto process::priority_class(process_priority_class value) -> process& {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   data_->priority_class = value;
   auto priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
@@ -211,48 +211,48 @@ process& process::priority_class(process_priority_class value) {
   return *this;
 }
 
-string process::process_name() const {
+auto process::process_name() const -> string{
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return path::get_file_name_without_extension(data_->start_info.file_name());
 }
 
-std::istream& process::standard_error() {
+auto process::standard_error() -> std::istream& {
   if (!data_->handle.has_value() || data_->standard_error == nullptr || !data_->start_info.redirect_standard_error() || data_->start_info.use_shell_execute())
     throw_helper::throws(exception_case::invalid_operation);
   return *data_->standard_error;
 }
 
-std::ostream& process::standard_input() {
+auto process::standard_input() -> std::ostream& {
   if (!data_->handle.has_value() || data_->standard_input == nullptr || !data_->start_info.redirect_standard_input() || data_->start_info.use_shell_execute())
     throw_helper::throws(exception_case::invalid_operation);
   return *data_->standard_input;
 }
 
-std::istream& process::standard_output() {
+auto process::standard_output() -> std::istream& {
   if (!data_->handle.has_value() || data_->standard_output == nullptr || !data_->start_info.redirect_standard_output() || data_->start_info.use_shell_execute())
     throw_helper::throws(exception_case::invalid_operation);
   return *data_->standard_output;
 }
 
-const process_start_info& process::start_info() const {
+auto process::start_info() const -> const process_start_info&{
   return data_->start_info;
 }
 
-process_start_info& process::start_info() {
+auto process::start_info() -> process_start_info& {
   return data_->start_info;
 }
 
-process& process::start_info(const process_start_info& value) {
+auto process::start_info(const process_start_info& value) -> process& {
   data_->start_info = value;
   return *this;
 }
 
-date_time process::start_time() const {
+auto process::start_time() const -> date_time {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   return data_->start_time;
 }
 
-void process::close() {
+auto process::close() -> void {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   if (data_.use_count() == 1 && data_->thread.joinable()) {
     data_->thread.detach();
@@ -260,13 +260,13 @@ void process::close() {
   }
 }
 
-void process::kill() {
+auto process::kill() -> void {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   native::process::kill(data_->handle.value());
   debug::write_line_if(show_debug_process().enabled(), string::format("process::kill [handle={}, killed]", data_->handle));
 }
 
-bool process::start() {
+auto process::start() -> bool {
   //if (data_->handle.has_value() && !data_->exit_code.has_value()) return false;
   if (data_->thread.joinable()) return false;
   data_->thread = thread {parameterized_thread_start {[](xtd::any_object arg) {
@@ -313,22 +313,22 @@ bool process::start() {
   rethrow_exception(exception_pointer);
 }
 
-process process::start(const process_start_info& start_info) {
+auto process::start(const process_start_info& start_info) -> process {
   auto process = diagnostics::process {};
   process.start_info(start_info);
   process.start();
   return process;
 }
 
-process process::start(const string& file_name) {
+auto process::start(const string& file_name) -> process {
   return start(process_start_info {file_name});
 }
 
-process process::start(const string& file_name, const string& arguments) {
+auto process::start(const string& file_name, const string& arguments) -> process {
   return start(process_start_info {file_name, arguments});
 }
 
-process& process::wait_for_exit() {
+auto process::wait_for_exit() -> process& {
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
   debug::write_line_if(show_debug_process().enabled(), string::format("process::wait_for_exit [handle={}, wait...]", data_->handle));
   if (data_->thread.joinable()) data_->thread.join();
@@ -344,7 +344,7 @@ process& process::wait_for_exit() {
   return *this;
 }
 
-process& process::wait_for_exit(int32 milliseconds) {
+auto process::wait_for_exit(int32 milliseconds) -> process& {
   /// @todo create a timeout...
   /// @see https://stackoverflow.com/questions/9948420/timeout-for-thread-join
   if (!data_->handle.has_value()) throw_helper::throws(exception_case::invalid_operation);
@@ -362,7 +362,7 @@ process& process::wait_for_exit(int32 milliseconds) {
   return *this;
 }
 
-void process::on_exited() {
+auto process::on_exited() -> void {
   if (!data_->enable_raising_events) return;
   auto safe_exit_callback = data_->exit_callback;
   if (safe_exit_callback.is_empty()) return;
