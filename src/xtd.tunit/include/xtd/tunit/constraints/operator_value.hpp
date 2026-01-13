@@ -23,7 +23,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        inline auto and_();
+        auto and_();
         /// @}
         
       protected:

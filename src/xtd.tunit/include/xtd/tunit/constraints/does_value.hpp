@@ -29,7 +29,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        inline auto not_() {return does_not_value<actual_t>(self_);}
+        auto not_() {return does_not_value<actual_t>(self_);}
         
         /// @brief Asserts that string ends with specified item.
         /// @param item object to verify.

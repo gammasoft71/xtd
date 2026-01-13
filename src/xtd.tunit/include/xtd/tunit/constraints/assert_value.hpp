@@ -22,7 +22,7 @@ namespace xtd {
         
         /// @{
         template<class actual_t>
-        inline auto that(const actual_t& actual) {return that_value<actual_t> {actual_value<actual_t> {}.type(type_).actual(actual)};}
+        auto that(const actual_t& actual) {return that_value<actual_t> {actual_value<actual_t> {}.type(type_).actual(actual)};}
         /// @}
         
       private:

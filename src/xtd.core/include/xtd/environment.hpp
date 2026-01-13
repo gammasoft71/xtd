@@ -437,7 +437,7 @@ namespace xtd {
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
     /// @return Argument os.
     template<class char_t, class traits_t>
-    inline static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
+    static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
       for (auto c : new_line())
         os.put(os.widen(c));
       return os;
@@ -667,7 +667,7 @@ namespace xtd {
     static void on_program_exit(const program_exit_event_args& e);
     
     static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_gui_application());
-    inline static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
+    static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
   };
 }

@@ -30,7 +30,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        inline auto not_() {return is_not_value<actual_t>(self_);}
+        auto not_() {return is_not_value<actual_t>(self_);}
         
         /// @brief Asserts that value is empty.
         /// @param stack_frame Contains information about current file and current line.
