@@ -17,7 +17,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  class test_class_(is_stringable_tests) {
+  class test_class_(stringable_tests) {
     auto test_method_(is_stringable_with_object) {
       struct my_object_test : public object {};
       assert_that(stringable<my_object_test>).is().true_();
@@ -88,7 +88,7 @@ namespace xtd::tests {
     #endif
     
     auto test_method_(is_stringable_with_xtd_ranges) {
-      auto items = array {1, 2, 3, 4, 5} | select(delegate_(auto v) {return v * v * v;});
+      auto items = array {1, 2, 3, 4, 5} | xtd::views::select(delegate_(auto v) {return v * v * v;});
       assert_that(stringable<decltype(items)>).is().true_();
       assert_that(stringable < decltype(items) && >).is().true_();
       assert_that(stringable<decltype(items)&>).is().true_();
