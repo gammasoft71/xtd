@@ -28,29 +28,27 @@ namespace xtd {
     class data_received_event_args final : public xtd::event_args {
     public:
       /// @name Public Constructors
-      /// @{
       
+      /// @{
       /// @brief Initializes a new instance of the data_received_event_args class.
       data_received_event_args() = default;
       
       /// @brief Initializes a new instance of the data_received_event_args class.
       /// @param data The line that was written by an associated Process to its redirected xtd::diagnostics::process::standard_output or xtd::diagnostics::process::standard_error stream.
       explicit data_received_event_args(const xtd::string& data) : data_(data) {}
-      
-      /// @cond
-      data_received_event_args(const data_received_event_args&) = default;
-      data_received_event_args& operator =(const data_received_event_args&) = default;
-      /// @endcond
-      
       /// @}
-      
+
+      /// @cond
+      data_received_event_args(const xtd::diagnostics::data_received_event_args&) = default;
+      auto operator =(const xtd::diagnostics::data_received_event_args&) -> xtd::diagnostics::data_received_event_args& = default;
+      /// @endcond
+            
       /// @name Public Properties
-      /// @{
       
+      /// @{
       /// @brief Gets the line of characters that was written to a redirected Process output stream.
       /// @return `true` if the current process should resume when the event handler concludes; `false` if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If `true`, the current process continues.
-      const xtd::string& data() const noexcept {return data_;}
-      
+      auto data() const noexcept -> const xtd::string& {return data_;}
       /// @}
       
     private:
