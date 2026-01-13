@@ -10,27 +10,27 @@ ostream_trace_listener::~ostream_trace_listener() {
   flush();
 }
 
-const std::ostream& ostream_trace_listener::ostream() const {
+auto ostream_trace_listener::ostream() const -> const std::ostream& {
   return ostream_;
 }
 
-void ostream_trace_listener::ostream(const std::ostream& ostream) {
+auto ostream_trace_listener::ostream(const std::ostream& ostream) -> void {
   ostream_.rdbuf(ostream.rdbuf());
 }
 
-void ostream_trace_listener::close() {
+auto ostream_trace_listener::close() -> void {
 }
 
-void ostream_trace_listener::flush_() {
+auto ostream_trace_listener::flush_() -> void {
   if (ostream_.good()) ostream_ << std::flush;
 }
 
-void ostream_trace_listener::write_(const string& message) {
+auto ostream_trace_listener::write_(const string& message) -> void {
   if (need_indent()) write_indent();
   if (ostream_.good()) ostream_ << message;
 }
 
-void ostream_trace_listener::write_line_(const string& message) {
+auto ostream_trace_listener::write_line_(const string& message) -> void {
   write(message + "\n");
   need_indent(true);
 }
