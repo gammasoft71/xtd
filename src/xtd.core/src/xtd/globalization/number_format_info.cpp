@@ -48,249 +48,249 @@ number_format_info::number_format_info(const number_format_info& info) : number_
   *data_ = *info.data_;
 }
 
-int32 number_format_info::currency_decimal_digits() const noexcept {
+auto number_format_info::currency_decimal_digits() const noexcept -> int32 {
   return data_->currency_decimal_digits;
 }
 
-number_format_info& number_format_info::currency_decimal_digits(int32 value) noexcept {
+auto number_format_info::currency_decimal_digits(int32 value) noexcept -> number_format_info& {
   data_->currency_decimal_digits = value;
   return self_;
 }
 
-const string& number_format_info::currency_decimal_separator() const noexcept {
+auto number_format_info::currency_decimal_separator() const noexcept -> const string& {
   return data_->currency_decimal_separator;
 }
 
-number_format_info& number_format_info::currency_decimal_separator(const string& value) noexcept {
+auto number_format_info::currency_decimal_separator(const string& value) noexcept -> number_format_info& {
   data_->currency_decimal_separator = value;
   return self_;
 }
 
-const string& number_format_info::currency_group_separator() const noexcept {
+auto number_format_info::currency_group_separator() const noexcept -> const string& {
   return data_->currency_group_separator;
 }
 
-number_format_info& number_format_info::currency_group_separator(const string& value) noexcept {
+auto number_format_info::currency_group_separator(const string& value) noexcept -> number_format_info& {
   data_->currency_group_separator = value;
   return self_;
 }
 
-const array<int32>& number_format_info::currency_group_sizes() const noexcept {
+auto number_format_info::currency_group_sizes() const noexcept -> const array<int32>& {
   return data_->currency_group_sizes;
 }
 
-number_format_info& number_format_info::currency_group_sizes(const array<int32>& value) noexcept {
+auto number_format_info::currency_group_sizes(const array<int32>& value) noexcept -> number_format_info& {
   data_->currency_group_sizes = value;
   return self_;
 }
 
-int32 number_format_info::currency_negative_pattern() const noexcept {
+auto number_format_info::currency_negative_pattern() const noexcept -> int32 {
   return data_->currency_negative_pattern;
 }
 
-number_format_info& number_format_info::currency_negative_pattern(int32 value) noexcept {
+auto number_format_info::currency_negative_pattern(int32 value) noexcept -> number_format_info& {
   data_->currency_negative_pattern = value;
   return self_;
 }
 
-int32 number_format_info::currency_positive_pattern() const noexcept {
+auto number_format_info::currency_positive_pattern() const noexcept -> int32 {
   return data_->currency_positive_pattern;
 }
 
-number_format_info& number_format_info::currency_positive_pattern(int32 value) noexcept {
+auto number_format_info::currency_positive_pattern(int32 value) noexcept -> number_format_info& {
   data_->currency_positive_pattern = value;
   return self_;
 }
 
-const string& number_format_info::currency_symbol() const noexcept {
+auto number_format_info::currency_symbol() const noexcept -> const string& {
   return data_->currency_symbol;
 }
 
-number_format_info& number_format_info::currency_symbol(const string& value) noexcept {
+auto number_format_info::currency_symbol(const string& value) noexcept -> number_format_info& {
   data_->currency_symbol = value;
   return self_;
 }
 
-int32 number_format_info::digit_substitution() const noexcept {
+auto number_format_info::digit_substitution() const noexcept -> int32 {
   return data_->digit_substitution;
 }
 
-number_format_info& number_format_info::digit_substitution(int32 value) noexcept {
+auto number_format_info::digit_substitution(int32 value) noexcept -> number_format_info& {
   data_->digit_substitution = value;
   return self_;
 }
 
-const string& number_format_info::nan_symbol() const noexcept {
+auto number_format_info::nan_symbol() const noexcept -> const string& {
   return data_->nan_symbol;
 }
 
-number_format_info& number_format_info::nan_symbol(const string& value) noexcept {
+auto number_format_info::nan_symbol(const string& value) noexcept -> number_format_info& {
   data_->nan_symbol = value;
   return self_;
 }
 
-const string& number_format_info::negative_infinity_symbol() const noexcept {
+auto number_format_info::negative_infinity_symbol() const noexcept -> const string& {
   return data_->negative_infinity_symbol;
 }
 
-number_format_info& number_format_info::negative_infinity_symbol(const string& value) noexcept {
+auto number_format_info::negative_infinity_symbol(const string& value) noexcept -> number_format_info& {
   data_->negative_infinity_symbol = value;
   return self_;
 }
 
-const string& number_format_info::negative_sign() const noexcept {
+auto number_format_info::negative_sign() const noexcept -> const string& {
   return data_->negative_sign;
 }
 
-number_format_info& number_format_info::negative_sign(const string& value) noexcept {
+auto number_format_info::negative_sign(const string& value) noexcept -> number_format_info& {
   data_->negative_sign = value; return self_;
 }
 
-int32 number_format_info::number_decimal_digits() const noexcept {
+auto number_format_info::number_decimal_digits() const noexcept -> int32 {
   return data_->number_decimal_digits;
 }
 
-number_format_info& number_format_info::number_decimal_digits(int32 value) noexcept {
+auto number_format_info::number_decimal_digits(int32 value) noexcept -> number_format_info& {
   data_->number_decimal_digits = value;
   return self_;
 }
 
-const string& number_format_info::number_decimal_separator() const noexcept {
+auto number_format_info::number_decimal_separator() const noexcept -> const string& {
   return data_->number_decimal_separator;
 }
 
-number_format_info& number_format_info::number_decimal_separator(const string& value) noexcept {
+auto number_format_info::number_decimal_separator(const string& value) noexcept -> number_format_info& {
   data_->number_decimal_separator = value;
   return self_;
 }
 
-const string& number_format_info::number_group_separator() const noexcept {
+auto number_format_info::number_group_separator() const noexcept -> const string& {
   return data_->number_group_separator;
 }
 
-number_format_info& number_format_info::number_group_separator(const string& value) noexcept {
+auto number_format_info::number_group_separator(const string& value) noexcept -> number_format_info& {
   data_->number_group_separator = value;
   return self_;
 }
 
-const array<int32>& number_format_info::number_group_sizes() const noexcept {
+auto number_format_info::number_group_sizes() const noexcept -> const array<int32>& {
   return data_->number_group_sizes;
 }
 
-number_format_info& number_format_info::number_group_sizes(const array<int32>& value) noexcept {
+auto number_format_info::number_group_sizes(const array<int32>& value) noexcept -> number_format_info& {
   data_->number_group_sizes = value;
   return self_;
 }
 
-int32 number_format_info::number_negative_pattern() const noexcept {
+auto number_format_info::number_negative_pattern() const noexcept -> int32 {
   return data_->number_negative_pattern;
 }
 
-number_format_info& number_format_info::number_negative_pattern(int32 value) noexcept {
+auto number_format_info::number_negative_pattern(int32 value) noexcept -> number_format_info& {
   data_->number_negative_pattern = value;
   return self_;
 }
 
-int32 number_format_info::percent_decimal_digits() const noexcept {
+auto number_format_info::percent_decimal_digits() const noexcept -> int32 {
   return data_->percent_decimal_digits;
 }
 
-number_format_info& number_format_info::percent_decimal_digits(int32 value) noexcept {
+auto number_format_info::percent_decimal_digits(int32 value) noexcept -> number_format_info& {
   data_->percent_decimal_digits = value;
   return self_;
 }
 
-const string& number_format_info::percent_decimal_separator() const noexcept {
+auto number_format_info::percent_decimal_separator() const noexcept -> const string& {
   return data_->percent_decimal_separator;
 }
 
-number_format_info& number_format_info::percent_decimal_separator(const string& value) noexcept {
+auto number_format_info::percent_decimal_separator(const string& value) noexcept -> number_format_info& {
   data_->percent_decimal_separator = value;
   return self_;
 }
 
-const string& number_format_info::percent_group_separator() const noexcept {
+auto number_format_info::percent_group_separator() const noexcept -> const string& {
   return data_->percent_group_separator;
 }
 
-number_format_info& number_format_info::percent_group_separator(const string& value) noexcept {
+auto number_format_info::percent_group_separator(const string& value) noexcept -> number_format_info& {
   data_->percent_group_separator = value;
   return self_;
 }
 
-const array<int32>& number_format_info::percent_group_sizes() const noexcept {
+auto number_format_info::percent_group_sizes() const noexcept -> const array<int32>& {
   return data_->percent_group_sizes;
 }
 
-number_format_info& number_format_info::percent_group_sizes(const array<int32>& value) noexcept {
+auto number_format_info::percent_group_sizes(const array<int32>& value) noexcept -> number_format_info& {
   data_->percent_group_sizes = value;
   return self_;
 }
 
-int32 number_format_info::percent_negative_pattern() const noexcept {
+auto number_format_info::percent_negative_pattern() const noexcept -> int32 {
   return data_->percent_negative_pattern;
 }
 
-number_format_info& number_format_info::percent_negative_pattern(int32 value) noexcept {
+auto number_format_info::percent_negative_pattern(int32 value) noexcept -> number_format_info& {
   data_->percent_negative_pattern = value;
   return self_;
 }
 
-int32 number_format_info::percent_positive_pattern() const noexcept {
+auto number_format_info::percent_positive_pattern() const noexcept -> int32 {
   return data_->percent_positive_pattern;
 }
 
-number_format_info& number_format_info::percent_positive_pattern(int32 value) noexcept {
+auto number_format_info::percent_positive_pattern(int32 value) noexcept -> number_format_info& {
   data_->percent_positive_pattern = value;
   return self_;
 }
 
-const string& number_format_info::percent_symbol() const noexcept {
+auto number_format_info::percent_symbol() const noexcept -> const string& {
   return data_->percent_symbol;
 }
 
-number_format_info& number_format_info::percent_symbol(const string& value) noexcept {
+auto number_format_info::percent_symbol(const string& value) noexcept -> number_format_info& {
   data_->percent_symbol = value;
   return self_;
 }
 
-const string& number_format_info::per_mille_symbol() const noexcept {
+auto number_format_info::per_mille_symbol() const noexcept -> const string& {
   return data_->per_mille_symbol;
 }
 
-number_format_info& number_format_info::per_mille_symbol(const string& value) noexcept {
+auto number_format_info::per_mille_symbol(const string& value) noexcept -> number_format_info& {
   data_->per_mille_symbol = value;
   return self_;
 }
 
-const string& number_format_info::positive_infinity_symbol() const noexcept {
+auto number_format_info::positive_infinity_symbol() const noexcept -> const string& {
   return data_->positive_infinity_symbol;
 }
 
-number_format_info& number_format_info::positive_infinity_symbol(const string& value) noexcept {
+auto number_format_info::positive_infinity_symbol(const string& value) noexcept -> number_format_info& {
   data_->positive_infinity_symbol = value;
   return self_;
 }
 
-const string& number_format_info::positive_sign() const noexcept {
+auto number_format_info::positive_sign() const noexcept -> const string& {
   return data_->positive_sign;
 }
 
-number_format_info& number_format_info::positive_sign(const string& value) noexcept {
+auto number_format_info::positive_sign(const string& value) noexcept -> number_format_info& {
   data_->positive_sign = value;
   return self_;
 }
 
-number_format_info& number_format_info::operator=(const number_format_info& info) {
+auto number_format_info::operator=(const number_format_info& info) -> number_format_info& {
   *data_ = *info.data_;
   return self_;
 }
 
-const number_format_info& number_format_info::current_info() noexcept {
+auto number_format_info::current_info() noexcept -> const number_format_info& {
   return culture_info::current_culture().number_format();
 }
 
-const number_format_info& number_format_info::invariant_info() noexcept {
+auto number_format_info::invariant_info() noexcept -> const number_format_info& {
   return culture_info::invariant_culture().number_format();
 }
 
@@ -323,7 +323,7 @@ number_format_info::number_format_info(int32 currency_decimal_digits, xtd::strin
   data_->positive_sign = std::move(positive_sign);
 }
 
-dictionary<string, number_format_info>& number_format_info::formats() {
+auto number_format_info::formats() -> dictionary<string, number_format_info>& {
   static auto formats = dictionary<string, number_format_info> {{"", {}}, {"en-us", {2, ".", ",", array<int32> {3}, 1, 0, "$", 1, "NaN", "-∞", "-", 3, ".", ",", array<int32> {3}, 1, 3, ".", ",", array<int32> {3}, 1, 1, "%", "‰", "∞", "+"}}};
   call_once_ {
     auto read_int32s = [](auto & br, auto count) {
