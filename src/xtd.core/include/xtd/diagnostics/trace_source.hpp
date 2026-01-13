@@ -5,6 +5,7 @@
 #include <map>
 #include "../array.hpp"
 #include "../object.hpp"
+#include "../collections/generic/sorted_dictionary.hpp"
 #include "default_trace_listener.hpp"
 #include "source_levels.hpp"
 #include "source_switch.hpp"
@@ -65,27 +66,27 @@ namespace xtd {
       /// @brief Gets the collection of trace listeners for the trace source.
       /// @return A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      xtd::diagnostics::trace_listener_collection& listeners() noexcept;
+      auto listeners() noexcept -> xtd::diagnostics::trace_listener_collection&;
       
       /// @brief Sets the collection of trace listeners for the trace source.
       /// @param listeners A trace_listener_collection that contains the active trace listeners associated with the source.
       /// @remarks Use this property to access and perform operations on the trace listeners.
-      void listeners(const xtd::diagnostics::trace_listener_collection& listeners) noexcept;
+      auto listeners(const xtd::diagnostics::trace_listener_collection& listeners) noexcept -> void;
       
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      const xtd::string& name() const noexcept;
+      auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the source switch value.
       /// @return A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns `true`, the listeners are called.
-      const xtd::diagnostics::source_switch& source_switch() const noexcept;
+      auto source_switch() const noexcept -> const xtd::diagnostics::source_switch&;
       /// @brief Sets the source switch value.
       /// @param source_switch A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
       /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns `true`, the listeners are called.
-      void source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept;
+      auto source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept -> void;
       /// @}
       
       /// @name Public Methods
@@ -93,11 +94,11 @@ namespace xtd {
       /// @{
       /// @brief Closes all the trace listeners in the trace listener collection.
       /// @remarks The close method calls the close method of each trace listener in the listeners collection.
-      void close();
+      auto close() -> void;
       
       /// @brief Flushes all the trace listeners in the trace listener collection.
       /// @remarks The flush method calls the flush method of each trace listener in the listeners collection.
-      void flush();
+      auto flush() -> void;
       
       /// @brief Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.
       /// @param event_type One of the enumeration values that specifies the event type of the trace data.
@@ -106,7 +107,7 @@ namespace xtd {
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
       template<class object_t>
-      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const object_t& data) {
+      auto trace_data(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const object_t& data) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
@@ -121,7 +122,7 @@ namespace xtd {
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
       template<class object_t>
-      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::array<object_t>& data) {
+      auto trace_data(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::array<object_t>& data) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
@@ -133,7 +134,7 @@ namespace xtd {
       /// @param event_type One of the enumeration values that specifies the event type of the trace data.
       /// @param id A numeric identifier for the event.
       /// @remarks The trace_event method is intended to trace events that can be processed automatically by tools. For example, a monitoring tool can notify an administrator if a specific event is traced by a specific source.
-      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32 id) {
+      auto trace_event(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
@@ -145,7 +146,7 @@ namespace xtd {
       /// @param event_type One of the enumeration values that specifies the event type of the trace data.
       /// @param id A numeric identifier for the event.
       /// @param message The trace message to write.
-      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::string& message) {
+      auto trace_event(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::string& message) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
@@ -159,7 +160,7 @@ namespace xtd {
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param args... An object array containing zero or more objects to format.
       template<class ...objects>
-      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::string& format, const objects& ... args) {
+      auto trace_event(const xtd::diagnostics::trace_event_type& event_type, xtd::int32 id, const xtd::string& format, const objects& ... args) -> void {
         #if TRACE
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
@@ -171,7 +172,7 @@ namespace xtd {
       /// @param message The informative message to write.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
       /// @remarks trace_information(const std::string&, calls the trace_event(const trace_eventType&, std::int32_t, const xtd::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, std::int32_t, xtd::string&) method in turn calls the trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, std::int32_t, const xtd::string&) method of each trace listener.
-      void trace_information(const xtd::string& message);
+      auto trace_information(const xtd::string& message) -> void;
       
       /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
@@ -179,7 +180,7 @@ namespace xtd {
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
       /// @remarks trace_information(const std::string&, const Objects_t) calls the trace_event(const trace_eventType&, std::int32_t, const xtd::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, std::int32_t, xtd::string&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, std::int32_t, const xtd::string&, ...objects_t) method of each trace listener.
       template<class ...objects_t>
-      void trace_information(const xtd::string& format, const objects_t& ... args) {trace_event(trace_event_type::information, 0, format, args...);}
+      auto trace_information(const xtd::string& format, const objects_t& ... args) -> void {trace_event(trace_event_type::information, 0, format, args...);}
       
       /// @brief Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.
       /// @param id A numeric identifier for the event.
@@ -188,7 +189,7 @@ namespace xtd {
       /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, std::int32_t, const xtd::string&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
       /// @remarks trace_transfer is intended to be used with the logical operations of a correlation_manager. The related_activity_id parameter relates to the activity_id property of a correlation_manager object. If a logical operation begins in one activity and transfers to another, the second activity logs the transfer by calling the trace_transfer method. The trace_transfer call relates the new activity identity to the previous identity. The most likely consumer of this functionality is a trace viewer that can report logical operations that span multiple activities.
       template<class guid_t>
-      void trace_transfer(int32 id, const xtd::string& message, const  guid_t& related_activity_id) {
+      auto trace_transfer(xtd::int32 id, const xtd::string& message, const  guid_t& related_activity_id) -> void {
         #if TRACE
         for (auto listener : listeners_)
           listener->trace_transfer(trace_event_cache(), name_, id, message, related_activity_id);
@@ -197,7 +198,7 @@ namespace xtd {
       /// @}
       
     private:
-      std::map<xtd::string, xtd::string> attributes_;
+      xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string> attributes_;
       xtd::string name_;
       /// @todo Update source_switch with this...
       xtd::diagnostics::source_levels switch_levels_ = xtd::diagnostics::source_levels::off;
