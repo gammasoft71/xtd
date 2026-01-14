@@ -1,4 +1,5 @@
 #include <xtd/enum_attribute>
+#include <xtd/enum_set_attribute.hpp>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
