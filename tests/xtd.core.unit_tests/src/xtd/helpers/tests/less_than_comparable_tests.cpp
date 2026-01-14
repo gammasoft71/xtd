@@ -15,7 +15,7 @@ namespace xtd::helpers::tests {
       assert_that(less_than_comparable<my_object_test&>).is().false_();
       assert_that(less_than_comparable<const my_object_test&>).is().false_();
     }
-
+    
     auto test_method_(with_icomparable) {
       struct my_icomparable_test : public icomparable<my_icomparable_test> {
         auto compare_to(const my_icomparable_test&) const noexcept -> int32 override {return 0;}
@@ -71,7 +71,7 @@ namespace xtd::helpers::tests {
       assert_that(less_than_comparable<my_tri_sstate_test&>).is().true_();
       assert_that(less_than_comparable<const my_tri_sstate_test&>).is().true_();
     }
-
+    
     auto test_method_(with_somes_integrals) {
       assert_that(less_than_comparable<sbyte>).is().true_();
       assert_that(less_than_comparable < sbyte && >).is().true_();
