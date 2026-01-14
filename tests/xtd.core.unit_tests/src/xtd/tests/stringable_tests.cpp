@@ -18,7 +18,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(stringable_tests) {
-    auto test_method_(is_stringable_with_object) {
+    auto test_method_(with_object) {
       struct my_object_test : public object {};
       assert_that(stringable<my_object_test>).is().true_();
       assert_that(stringable < my_object_test && >).is().true_();
@@ -26,7 +26,7 @@ namespace xtd::tests {
       assert_that(stringable<const my_object_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_istringable) {
+    auto test_method_(with_istringable) {
       struct my_istringable_test : public istringable {
         auto to_string() const noexcept -> string override {return "";}
       };
@@ -36,7 +36,7 @@ namespace xtd::tests {
       assert_that(stringable<const my_istringable_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_iformatable) {
+    auto test_method_(with_iformatable) {
       struct my_iformatable_test : public iformatable {
         auto to_string(const string&, const globalization::culture_info&) const noexcept -> string override {return "";}
       };
@@ -46,14 +46,14 @@ namespace xtd::tests {
       assert_that(stringable<const my_iformatable_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_exception) {
+    auto test_method_(with_exception) {
       assert_that(stringable<argument_exception>).is().true_();
       assert_that(stringable < argument_exception && >).is().true_();
       assert_that(stringable<argument_exception&>).is().true_();
       assert_that(stringable<const argument_exception&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_enum) {
+    auto test_method_(with_enum) {
       enum my_enum_test {};
       assert_that(stringable<my_enum_test>).is().true_();
       assert_that(stringable < my_enum_test && >).is().true_();
@@ -61,7 +61,7 @@ namespace xtd::tests {
       assert_that(stringable<const my_enum_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_enum_class) {
+    auto test_method_(with_enum_class) {
       enum class my_enum_class_test {};
       assert_that(stringable<my_enum_class_test>).is().true_();
       assert_that(stringable < my_enum_class_test && >).is().true_();
@@ -69,7 +69,7 @@ namespace xtd::tests {
       assert_that(stringable<const my_enum_class_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_enum_struct) {
+    auto test_method_(with_enum_struct) {
       enum struct my_enum_struct_test {};
       assert_that(stringable<my_enum_struct_test>).is().true_();
       assert_that(stringable < my_enum_struct_test && >).is().true_();
@@ -78,7 +78,7 @@ namespace xtd::tests {
     }
     
     #if defined(__xtd__cpp_lib_ranges)
-    auto test_method_(is_stringable_with_std_ranges) {
+    auto test_method_(with_std_ranges) {
       auto items = array {1, 2, 3, 4, 5} | std::views::transform(delegate_(auto v) {return v * v * v;});
       assert_that(stringable<decltype(items)>).is().true_();
       assert_that(stringable < decltype(items) && >).is().true_();
@@ -87,7 +87,7 @@ namespace xtd::tests {
     }
     #endif
     
-    auto test_method_(is_stringable_with_xtd_ranges) {
+    auto test_method_(with_xtd_ranges) {
       auto items = array {1, 2, 3, 4, 5} | xtd::views::select(delegate_(auto v) {return v * v * v;});
       assert_that(stringable<decltype(items)>).is().true_();
       assert_that(stringable < decltype(items) && >).is().true_();
@@ -95,7 +95,7 @@ namespace xtd::tests {
       assert_that(stringable<const decltype(items)&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_link) {
+    auto test_method_(with_linq) {
       auto items = array {1, 2, 3, 4, 5}.select(delegate_(auto v) {return v * v * v;});
       assert_that(stringable<decltype(items)>).is().true_();
       assert_that(stringable < decltype(items) && >).is().true_();
@@ -104,17 +104,17 @@ namespace xtd::tests {
     }
     
     struct my_streamable_test {
-      friend auto operator <<(std::ostream& os, const my_streamable_test&) noexcept -> std::ostream& {return os;}
+      friend auto& operator <<(std::ostream& os, const my_streamable_test&) noexcept {return os;}
     };
     
-    auto test_method_(is_stringable_with_streamble) {
+    auto test_method_(with_streamble) {
       assert_that(stringable<my_streamable_test>).is().true_();
       assert_that(stringable < my_streamable_test && >).is().true_();
       assert_that(stringable<my_streamable_test&>).is().true_();
       assert_that(stringable<const my_streamable_test&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_somes_integrals) {
+    auto test_method_(with_somes_integrals) {
       assert_that(stringable<sbyte>).is().true_();
       assert_that(stringable < sbyte && >).is().true_();
       assert_that(stringable<sbyte&>).is().true_();
@@ -181,7 +181,7 @@ namespace xtd::tests {
       assert_that(stringable<const decimal&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_xtd_collections) {
+    auto test_method_(with_xtd_collections) {
       assert_that(stringable<fixed_array<int, 5>>).is().true_();
       assert_that(stringable < fixed_array<int, 5>&& >).is().true_();
       assert_that(stringable<fixed_array<int, 5>&>).is().true_();
@@ -218,7 +218,7 @@ namespace xtd::tests {
       assert_that(stringable<const stack<uint64>&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_std_collections) {
+    auto test_method_(with_std_collections) {
       assert_that(stringable<std::initializer_list<std::string>>).is().true_();
       assert_that(stringable < std::initializer_list<std::string>&& >).is().true_();
       assert_that(stringable<std::initializer_list<std::string>&>).is().true_();
@@ -245,7 +245,7 @@ namespace xtd::tests {
       assert_that(stringable<const std::unordered_set<float>&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_somes_std_objects) {
+    auto test_method_(with_somes_std_objects) {
       assert_that(stringable<std::chrono::system_clock::duration>).is().true_();
       assert_that(stringable < std::chrono::system_clock::duration && >).is().true_();
       assert_that(stringable<std::chrono::system_clock::duration&>).is().true_();
@@ -262,7 +262,7 @@ namespace xtd::tests {
       assert_that(stringable<const std::runtime_error&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_somes_xtd_objects) {
+    auto test_method_(with_somes_xtd_objects) {
       assert_that(stringable<date_time>).is().true_();
       assert_that(stringable < date_time && >).is().true_();
       assert_that(stringable<date_time&>).is().true_();
@@ -284,7 +284,7 @@ namespace xtd::tests {
       assert_that(stringable<const version&>).is().true_();
     }
     
-    auto test_method_(is_stringable_with_invalid_type) {
+    auto test_method_(with_invalid_type) {
       struct my_struct_test {};
       assert_that(stringable<my_struct_test>).is().false_();
       assert_that(stringable < my_struct_test && >).is().false_();
