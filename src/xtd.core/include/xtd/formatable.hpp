@@ -2,6 +2,7 @@
 /// @brief Contains xtd::formatable concept.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "helpers/is_stream_insertable.hpp"
 #include "iformatable.hpp"
 #include <type_traits>
 
@@ -22,8 +23,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
-  /// @return `true` if value_t is derived from xtd::object, or value_t is derived from xtd::iformatable, or value_t is derived from xtd::iformatable, or value_t is derived from std::exception, or value_t is an enum, value_t is std::ranges::range, or value_t has output stream operator `<<`; otherwise `false`.
+  /// @return `true` if value_t is derived from xtd::iformatable, or value_t has output stream operator `<<`; otherwise `false`.
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not formatable.
   template<class value_t>
-  concept formatable = std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable>;
+  concept formatable = std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> || xtd::helpers::is_stream_insertable_v<std::remove_cvref_t<value_t>>;
 }
