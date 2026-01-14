@@ -40,6 +40,7 @@ add_sources(
   "src/xtd/globalization/tests/translator_tests.cpp"
   "src/xtd/helpers/tests/exception_case_tests.cpp"
   "src/xtd/helpers/tests/greater_than_comparable_tests.cpp"
+  "src/xtd/helpers/tests/less_than_comparable_tests.cpp"
   "src/xtd/io/tests/binary_reader_tests.cpp"
   "src/xtd/io/tests/directory_tests.cpp"
   "src/xtd/io/tests/directory_info_tests.cpp"
