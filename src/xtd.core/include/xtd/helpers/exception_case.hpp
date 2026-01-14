@@ -114,3 +114,5 @@ namespace xtd {
     };
   }
 }
+
+// This file is included before enum definition so the enum_register is in the xtd/enum_set_attribute.hpp file.
