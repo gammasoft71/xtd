@@ -33,30 +33,6 @@ namespace xtd {
       /// @name Public Operators
       
       /// @{
-      /// @brief Less than comparison operator with specidied lhs ans rhs values.
-      /// @param lhs The left hand side value to compare.
-      /// @param rhs The right hand side value to compare.
-      /// @return `true` if lhs less than rhs; otherwise `false`.
-      friend bool operator <(const type_t& lhs, const type_t& rhs) noexcept {return lhs.compare_to(rhs) < 0;}
-      
-      /// @brief Less than or equal to comparison operator with specidied lhs ans rhs values.
-      /// @param lhs The left hand side value to compare.
-      /// @param rhs The right hand side value to compare.
-      /// @return `true` if lhs less than or equal to rhs; otherwise `false`.
-      friend bool operator <=(const type_t& lhs, const type_t& rhs) noexcept {return lhs.compare_to(rhs) <= 0;}
-      
-      /// @brief Greater than or equal to comparison operator with specidied lhs ans rhs values.
-      /// @param lhs The left hand side value to compare.
-      /// @param rhs The right hand side value to compare.
-      /// @return `true` if lhs greater than rhs; otherwise `false`.
-      friend bool operator >(const type_t& lhs, const type_t& rhs) noexcept {return lhs.compare_to(rhs) > 0;}
-      
-      /// @brief Less than comparison operator with specidied lhs ans rhs values.
-      /// @param lhs The left hand side value to compare.
-      /// @param rhs The right hand side value to compare.
-      /// @return `true` if lhs greater than or equal to rhs; otherwise `false`.
-      friend bool operator >=(const type_t& lhs, const type_t& rhs) noexcept {return lhs.compare_to(rhs) >= 0;}
-      
       /// @brief Three-way comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
