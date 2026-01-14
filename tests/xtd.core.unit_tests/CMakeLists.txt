@@ -38,6 +38,7 @@ add_sources(
   "src/xtd/globalization/tests/culture_not_found_exception_tests.cpp"
   "src/xtd/globalization/tests/culture_types_tests.cpp"
   "src/xtd/globalization/tests/translator_tests.cpp"
+  "src/xtd/helpers/tests/exception_case_tests.cpp"
   "src/xtd/io/tests/binary_reader_tests.cpp"
   "src/xtd/io/tests/directory_tests.cpp"
   "src/xtd/io/tests/directory_info_tests.cpp"
