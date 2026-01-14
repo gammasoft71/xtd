@@ -3,6 +3,11 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "enum_attribute.hpp"
+#include "enum_register.hpp"
+#include "number_styles.hpp"
+#include "string_comparison.hpp"
+#include "string_split_options.hpp"
+#include "helpers/exception_case.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -70,5 +75,9 @@ template<> struct xtd::enum_register<xtd::string_comparison> {
 
 template<> struct xtd::enum_register<xtd::string_split_options> {
   explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_split_options> {{xtd::string_split_options::none, "none"}, {xtd::string_split_options::remove_empty_entries, "remove_empty_entries"}};}
+};
+
+template<> struct xtd::enum_register<xtd::helpers::exception_case> {
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::helpers::exception_case> {{xtd::helpers::exception_case::abandoned_mutex, "abandoned_mutex"}, {xtd::helpers::exception_case::access_violation, "access_violation"}, {xtd::helpers::exception_case::argument, "argument"}, {xtd::helpers::exception_case::argument_null, "argument_null"}, {xtd::helpers::exception_case::argument_out_of_range, "argument_out_of_range"}, {xtd::helpers::exception_case::arithmetic, "arithmetic"}, {xtd::helpers::exception_case::barrier_post_phase, "barrier_post_phase"}, {xtd::helpers::exception_case::culture_not_found, "culture_not_found"}, {xtd::helpers::exception_case::directory_not_found, "directory_not_found"}, {xtd::helpers::exception_case::divided_by_zero, "divided_by_zero"}, {xtd::helpers::exception_case::end_of_stream, "end_of_stream"}, {xtd::helpers::exception_case::file_not_found, "file_not_found"}, {xtd::helpers::exception_case::format, "format"}, {xtd::helpers::exception_case::format_closing_bracket_without_open_bracket, "format_closing_bracket_without_open_bracket"}, {xtd::helpers::exception_case::format_opened_bracket_without_end_bracket, "format_opened_bracket_without_end_bracket"}, {xtd::helpers::exception_case::format_no_start_colon, "format_no_start_colon"}, {xtd::helpers::exception_case::format_not_iformatable, "format_not_iformatable"}, {xtd::helpers::exception_case::index_out_of_range, "index_out_of_range"}, {xtd::helpers::exception_case::invalid_cast, "invalid_cast"}, {xtd::helpers::exception_case::invalid_operation, "invalid_operation"}, {xtd::helpers::exception_case::interrupt, "interrupt"}, {xtd::helpers::exception_case::io, "io"}, {xtd::helpers::exception_case::key_not_found, "key_not_found"}, {xtd::helpers::exception_case::lock_recursion, "lock_recursion"}, {xtd::helpers::exception_case::not_implemented, "not_implemented"}, {xtd::helpers::exception_case::not_supported, "not_supported"}, {xtd::helpers::exception_case::null_pointer, "null_pointer"}, {xtd::helpers::exception_case::object_closed, "object_closed"}, {xtd::helpers::exception_case::operation_canceled, "operation_canceled"}, {xtd::helpers::exception_case::overflow, "overflow"}, {xtd::helpers::exception_case::out_of_memory, "out_of_memory"}, {xtd::helpers::exception_case::path_too_long, "path_too_long"}, {xtd::helpers::exception_case::platform_not_supported, "platform_not_supported"}, {xtd::helpers::exception_case::rank, "rank"}, {xtd::helpers::exception_case::semaphore_full, "semaphore_full"}, {xtd::helpers::exception_case::socket, "socket"}, {xtd::helpers::exception_case::software_termination, "software_termination"}, {xtd::helpers::exception_case::synchronization_lock, "synchronization_lock"}, {xtd::helpers::exception_case::thread_abort, "thread_abort"}, {xtd::helpers::exception_case::thread_interrupted, "thread_interrupted"}, {xtd::helpers::exception_case::thread_state, "thread_state"}, {xtd::helpers::exception_case::time_zone_not_found, "time_zone_not_found"}, {xtd::helpers::exception_case::unauthorized_access, "unauthorized_access"}, {xtd::helpers::exception_case::uri_format, "uri_format"}};}
 };
 /// @endcond
