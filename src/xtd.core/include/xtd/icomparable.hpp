@@ -17,6 +17,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::icomparable interface.
   /// @include icomparable.cpp
+  /// @remarks Implementing xtd::icomparable<T> automatically enables the tri-state comparison operator (operator <=>) based on the compare_to(const type_t& obj) method.
   template<class type_t>
   class icomparable interface_, public extensions::comparison_operators<type_t, icomparable<type_t>> {
   public:
