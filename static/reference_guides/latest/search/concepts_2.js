@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['strictly_5fordered_0',['strictly_ordered',['../conceptxtd_1_1helpers_1_1strictly__ordered.html',1,'xtd::helpers']]],
-  ['stringable_1',['stringable',['../conceptxtd_1_1stringable.html',1,'xtd']]]
+  ['less_5fthan_5fcomparable_0',['less_than_comparable',['../conceptxtd_1_1helpers_1_1less__than__comparable.html',1,'xtd::helpers']]]
 ];

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd::istringable Class Reference</title>
+		<title>xtd: xtd::istringable&lt; type_t &gt; Class Template Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -99,20 +99,22 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="classxtd_1_1istringable-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::istringable Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__interfaces.html">interfaces</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::istringable&lt; type_t &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__interfaces.html">interfaces</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for xtd::istringable:</div>
+Inheritance diagram for xtd::istringable&lt; type_t &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classxtd_1_1istringable.png" usemap="#xtd::istringable_map" alt=""/>
-  <map id="xtd::istringable_map" name="xtd::istringable_map">
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,92,24"/>
+  <img src="classxtd_1_1istringable.png" usemap="#xtd::istringable_3C_20type_5Ft_20_3E_map" alt=""/>
+  <map id="xtd::istringable_3C_20type_5Ft_20_3E_map" name="xtd::istringable_3C_20type_5Ft_20_3E_map">
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,429,24"/>
+<area href="classxtd_1_1extensions_1_1stream__insertion__operator.html" alt="xtd::extensions::stream_insertion_operator&lt; type_t, istringable&lt; type_t &gt; &gt;" shape="rect" coords="439,0,868,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Provides a way to represent the current object as a string. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t&gt;<br />
+class xtd::istringable&lt; type_t &gt;</div><p>Provides a way to represent the current object as a string. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following exemple shows how to use <a class="el" href="classxtd_1_1istringable.html" title="Provides a way to represent the current object as a string.">xtd::istringable</a> interface. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -124,7 +126,7 @@ Inheritance diagram for xtd::istringable:</div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() const noexcept {<span class="keywordflow">return</span> name_;}</div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank() const noexcept {<span class="keywordflow">return</span> rank_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="#a938940eaf830158edf5c54772df5e325">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab691c58cc9150a197eb216695219ac3d">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">string</span> name_;</div>
@@ -147,28 +149,32 @@ Inheritance diagram for xtd::istringable:</div>
 <div class="line"><span class="comment">// Geordi La Forge (Lieutenant Commander)</span></div>
 <div class="line"><span class="comment">// Worf (Lieutenant Commander)</span></div>
 <div class="line"><span class="comment">// Tasha Yar (Lieutenant)</span></div>
-<div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1istringable_html_a938940eaf830158edf5c54772df5e325"><div class="ttname"><a href="#a938940eaf830158edf5c54772df5e325">xtd::istringable::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const =0</div><div class="ttdoc">Gets a string that represents the current object.</div></div>
+<div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:26</div></div>
+<div class="ttc" id="aclassxtd_1_1istringable_html_ab691c58cc9150a197eb216695219ac3d"><div class="ttname"><a href="#ab691c58cc9150a197eb216695219ac3d">xtd::istringable::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const =0</div><div class="ttdoc">Gets a string that represents the current object.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Types inheriting from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> should not implement the <a class="el" href="classxtd_1_1istringable.html" title="Provides a way to represent the current object as a string.">xtd::istringable</a> interface. For more info, see <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe" title="Returns a xtd::string that represents the current object.">xtd::object::to_string</a> Method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Types inheriting from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> should not implement the <a class="el" href="classxtd_1_1istringable.html" title="Provides a way to represent the current object as a string.">xtd::istringable</a> interface. For more info, see <a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18" title="Returns a xtd::string that represents the current object.">xtd::object::to_string</a> Method. </dd>
+<dd>
+Implementing <a class="el" href="classxtd_1_1istringable.html" title="Provides a way to represent the current object as a string.">xtd::istringable&lt;T&gt;</a> automatically enables stream insertion (operator&lt;&lt;) using the <a class="el" href="#ab691c58cc9150a197eb216695219ac3d" title="Gets a string that represents the current object.">to_string()</a> representation. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a938940eaf830158edf5c54772df5e325" id="r_a938940eaf830158edf5c54772df5e325"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a938940eaf830158edf5c54772df5e325">to_string</a> () const =0</td></tr>
-<tr class="memdesc:a938940eaf830158edf5c54772df5e325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
-<tr class="separator:a938940eaf830158edf5c54772df5e325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab691c58cc9150a197eb216695219ac3d" id="r_ab691c58cc9150a197eb216695219ac3d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab691c58cc9150a197eb216695219ac3d">to_string</a> () const =0</td></tr>
+<tr class="memdesc:ab691c58cc9150a197eb216695219ac3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a string that represents the current object.  <br /></td></tr>
+<tr class="separator:ab691c58cc9150a197eb216695219ac3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a938940eaf830158edf5c54772df5e325" name="a938940eaf830158edf5c54772df5e325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a938940eaf830158edf5c54772df5e325">&#9670;&#160;</a></span>to_string()</h2>
+<a id="ab691c58cc9150a197eb216695219ac3d" name="ab691c58cc9150a197eb216695219ac3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab691c58cc9150a197eb216695219ac3d">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::istringable::to_string </td>
+          <td class="memname">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="classxtd_1_1istringable.html">xtd::istringable</a>&lt; type_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -193,7 +199,7 @@ Inheritance diagram for xtd::istringable:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 14 2026 13:30:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 14 2026 22:25:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
