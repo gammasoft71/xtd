@@ -25,7 +25,7 @@ namespace xtd {
       ///   return __xtd_range_view_adapter__<decltype(result)> {std::move(result)};
       /// }
       template <typename range_t>
-      class __xtd_range_view_adapter__ : public xtd::istringable {
+      class __xtd_range_view_adapter__ : public xtd::istringable<__xtd_range_view_adapter__<range_t>> {
       public:
         explicit __xtd_range_view_adapter__(range_t&& range) : range(std::move(range)) {}
         auto begin() {return range.begin();}

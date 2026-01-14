@@ -100,6 +100,11 @@ struct std::formatter<xtd::string> : std::formatter<std::string> {
 */
 
 /// @cond
+template<class type_t>
+inline std::string __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) {
+  return obj->to_string();
+}
+
 template<class key_t, class value_t>
 inline xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("({}, {})", first, second);}
 

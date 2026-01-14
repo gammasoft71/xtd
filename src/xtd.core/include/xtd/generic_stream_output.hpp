@@ -188,8 +188,12 @@ inline std::basic_ostream < char_t, char_traits_t >& operator <<(std::basic_ostr
 
 namespace xtd {
   class iformatable;
+  template <class type_t>
   class istringable;
 }
 auto operator << (std::ostream& os, const xtd::iformatable& value) -> std::ostream&;
-auto operator << (std::ostream& os, const xtd::istringable& value) noexcept -> std::ostream&;
+template<class type_t>
+auto operator << (std::ostream& os, const xtd::istringable<type_t>& value) noexcept -> std::ostream& {
+  return os << value.to_string();
+}
 /// @endcond

@@ -27,7 +27,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(with_istringable) {
-      struct my_istringable_test : public istringable {
+      struct my_istringable_test : public istringable<my_istringable_test> {
         auto to_string() const noexcept -> string override {return "";}
       };
       assert_that(stringable<my_istringable_test>).is().true_();

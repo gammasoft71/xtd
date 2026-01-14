@@ -106,7 +106,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates what to_string returns.
     /// @include object_to_string.cpp
-    virtual xtd::string to_string() const noexcept;
+    virtual xtd::string to_string() const;
     /// @}
     
     /// @name Public Static Methods

@@ -33,7 +33,7 @@ namespace xtd {
   template<class value_t>
   concept stringable =
     std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
-    std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable> ||
+    std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable<std::remove_cvref_t<value_t>>> ||
     std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> ||
     std::derived_from<std::remove_cvref_t<value_t>, std::exception> ||
     std::is_enum_v<std::remove_cvref_t<value_t>> ||

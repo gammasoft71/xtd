@@ -32,7 +32,7 @@ type_object object::get_type() const noexcept {
   return type_object(typeid(*this));
 }
 
-string object::to_string() const noexcept {
+string object::to_string() const {
   if (dynamic_cast<const iformatable*>(this)) return dynamic_cast<const iformatable*>(this)->to_string("", culture_info::current_culture());
   return get_type().full_name();
 }
@@ -43,8 +43,4 @@ std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
 
 std::string __object_to_string__(const xtd::object& obj) noexcept {
   return obj.to_string();
-}
-
-std::string __istringable_to_string__(const xtd::istringable& stringable) noexcept {
-  return stringable.to_string();
 }

@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "extensions/stream_insertion_operator.hpp"
 #include "generic_stream_output.hpp"
 #include "interface.hpp"
 
@@ -20,7 +21,8 @@ namespace xtd {
   /// The following exemple shows how to use xtd::istringable interface.
   /// @include istringable.cpp
   /// @remarks Types inheriting from xtd::object should not implement the xtd::istringable interface. For more info, see xtd::object::to_string Method.
-  class istringable interface_ {
+  template<class type_t>
+  class istringable interface_, public extensions::stream_insertion_operator<type_t, istringable<type_t>> {
   public:
     /// @name Public Methods
     
@@ -28,6 +30,6 @@ namespace xtd {
     /// @brief Gets a string that represents the current object.
     /// @return A string that represents the current object.
     virtual xtd::string to_string() const = 0;
-    /// @}
+    /// @}    
   };
 }
