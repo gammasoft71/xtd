@@ -247,6 +247,8 @@ add_sources(
   "include/xtd/format"
   "include/xtd/format_exception.hpp"
   "include/xtd/format_exception"
+  "include/xtd/formatable.hpp"
+  "include/xtd/formatable"
   #"include/xtd/formatter.hpp"
   #"include/xtd/formatter"
   "include/xtd/func.hpp"

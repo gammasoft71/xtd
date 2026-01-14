@@ -385,6 +385,7 @@
 #include "foreground_color.hpp"
 #include "format.hpp"
 #include "format_exception.hpp"
+#include "formatable.hpp"
 #include "func.hpp"
 #include "generic_stream_output.hpp"
 #include "get_err_rdbuf.hpp"
