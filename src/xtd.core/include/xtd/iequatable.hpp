@@ -19,6 +19,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::iequatable interface.
   /// @include iequatable.cpp
+  /// @remarks Implementing xtd::iequatable<T> automatically enables the equality operators (operator == and operator !=) based on the equals(const type_t& obj) method.
   class iequatable interface_, public extensions::equality_operators<type_t, iequatable<type_t>> {
   public:
     /// @name Public Methods
