@@ -12,7 +12,7 @@ namespace unit_tests {
       auto s = string {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13_z, s.length());
       string_assert::starts_with("Hello,", s);
-      string_assert::does_end_with(" World!", s);
+      string_assert::ends_with(" World!", s);
     }
   };
 }

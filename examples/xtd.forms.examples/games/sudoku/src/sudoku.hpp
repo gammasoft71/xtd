@@ -5,7 +5,7 @@
 #include <xtd/random>
 
 namespace sudoku {
-  class sudoku : public xtd::istringable {
+  class sudoku : public xtd::istringable<sudoku> {
   public:
     enum class difficulty {
       easy,

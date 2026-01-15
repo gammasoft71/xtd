@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-struct coordinate : public istringable {
+struct coordinate : public istringable<coordinate> {
   int x = 0;
   int y = 0;
   

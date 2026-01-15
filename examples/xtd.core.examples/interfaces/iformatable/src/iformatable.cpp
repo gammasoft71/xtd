@@ -16,7 +16,7 @@ private:
 auto main() -> int {
   auto f = foo {42};  
   console::out << "standard output :" << environment::new_line;
-  console::out << "  " << f << environment::new_line;
+  console::out << "  " << as<object>(f) << environment::new_line;
   console::out << "  " << f.to_string() << environment::new_line;
   console::out << string::format("  {}", f) << environment::new_line;
   console::out << string::format("  0b{:b8}", f) << environment::new_line;

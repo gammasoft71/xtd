@@ -2,7 +2,7 @@
 
 // To box a structure or class, it must inherit the xtd::icomparable, and xtd::iequatable interfaces, or implements `<`, `>` and `==` operators.
 
-struct foo1 : icomparable<foo1>, iequatable<foo1>, istringable {
+struct foo1 : icomparable<foo1>, iequatable<foo1>, istringable<foo1> {
   foo1() = default;
   explicit foo1(int value) : value {value} {}
   

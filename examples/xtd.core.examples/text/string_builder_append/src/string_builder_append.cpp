@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-class dog : public istringable {
+class dog : public istringable<dog> {
 private:
   string dog_breed;
   string dog_name;

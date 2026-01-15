@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-struct contact_info : istringable {
+struct contact_info : istringable<contact_info> {
   contact_info() = default;
   contact_info(int id, const string& email, const string& phone) : id {id}, email {email}, phone {phone} {}
   
@@ -16,7 +16,7 @@ struct score_info {
   int id = 0;
 };
 
-struct student : istringable {
+struct student : istringable<student> {
   student() = default;
   student(const string& first, const string& last, int id, const list<int>& scores) : first {first}, last {last}, id {id}, scores {scores} {}
   

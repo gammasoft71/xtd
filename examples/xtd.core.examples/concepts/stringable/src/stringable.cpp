@@ -7,7 +7,7 @@ struct my_formatable_string : public iformatable {
   string value;
 };
 
-struct my_stringable_string : public istringable {
+struct my_stringable_string : public istringable<my_stringable_string> {
   my_stringable_string(const string& value) : value {value} {}
   auto to_string() const noexcept -> string override {return value;}
   
