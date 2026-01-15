@@ -9,7 +9,7 @@
 /// @endcond
 
 //#include "globalization/culture_info.hpp"
-#include "helpers/is_stream_insertable.hpp"
+#include "stream_insertable.hpp"
 #include "to_string.hpp"
 
 /// @cond
@@ -23,7 +23,7 @@ inline xtd::string xtd::to_string(const value_t& value, const xtd::string& fmt, 
   #if defined(__xtd__cpp_lib_ranges)
   else if constexpr(std::ranges::range<value_t> && !std::is_same_v<value_t, xtd::string>) return __xtd_range_to_string(value, fmt, loc);
   #endif
-  else if constexpr(xtd::helpers::is_stream_insertable_v<value_t>) {
+  else if constexpr(xtd::stream_insertable<value_t>) {
     auto ss = std::stringstream {};
     ss << value;
     return ss.str();

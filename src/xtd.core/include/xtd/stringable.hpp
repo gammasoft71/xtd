@@ -5,7 +5,7 @@
 #define __XTD_STD_INTERNAL__
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
-#include "helpers/is_stream_insertable.hpp"
+#include "stream_insertable.hpp"
 #include "iformatable.hpp"
 #include "istringable.hpp"
 #include "object.hpp"
@@ -40,5 +40,5 @@ namespace xtd {
     #if defined(__xtd__cpp_lib_ranges)
     std::ranges::range<std::remove_cvref_t<value_t>> ||
     #endif
-    xtd::helpers::is_stream_insertable_v<std::remove_cvref_t<value_t>>;
+    xtd::stream_insertable<std::remove_cvref_t<value_t>>;
 }
