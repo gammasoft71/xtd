@@ -22,6 +22,7 @@ add_projects(
   mutex
   semaphore
   thread
+  thread2
   thread_pool
   timeout
   timer
