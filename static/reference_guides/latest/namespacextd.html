@@ -399,6 +399,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iprogress.html">iprogress</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a provider for progress updates.  <a href="classxtd_1_1iprogress.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1is__stream__insertable.html">is_stream_insertable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type trait that determines whether a type can be inserted into an std::ostream using the stream insertion operator (<code>operator&lt;&lt;</code>).  <a href="structxtd_1_1is__stream__insertable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1is__stream__insertable_3_01value__t_01_4.html">is_stream_insertable&lt; value_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structxtd_1_1is__stream__insertable.html" title="Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...">is_stream_insertable</a> for types that support stream insertion into std::ostream.  <a href="structxtd_1_1is__stream__insertable_3_01value__t_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07std_1_1declv2839eb551a72afab5e5c57f5cea22dd0.html">is_stream_insertable&lt; value_t, std::void_t&lt; decltype(std::declval&lt; std::ostream &amp; &gt;()&lt;&lt; std::declval&lt; const std::remove_cvref_t&lt; value_t &gt; &amp; &gt;()) &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structxtd_1_1is__stream__insertable.html" title="Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...">is_stream_insertable</a> for types that support stream insertion into std::ostream.  <a href="structxtd_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07std_1_1declv2839eb551a72afab5e5c57f5cea22dd0.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1istringable.html">istringable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to represent the current object as a string.  <a href="classxtd_1_1istringable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5872,6 +5881,10 @@ Variables</h2></td></tr>
 <tr class="memitem:gab1baffeaeffcd6acba6428ebf6113595" id="r_gab1baffeaeffcd6acba6428ebf6113595"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gab1baffeaeffcd6acba6428ebf6113595">invalid_handle</a></td></tr>
 <tr class="memdesc:gab1baffeaeffcd6acba6428ebf6113595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an invalid native operating system handle. This field is read-only.  <br /></td></tr>
 <tr class="separator:gab1baffeaeffcd6acba6428ebf6113595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15488925bf910f147bbf86d5ff2753b1" id="r_ga15488925bf910f147bbf86d5ff2753b1"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; </td></tr>
+<tr class="memitem:ga15488925bf910f147bbf86d5ff2753b1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__traits.html#ga15488925bf910f147bbf86d5ff2753b1">is_stream_insertable_v</a></td></tr>
+<tr class="memdesc:ga15488925bf910f147bbf86d5ff2753b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience variable template equivalent to <code>is_stream_insertable_v&lt;value_t&gt;::value</code>.  <br /></td></tr>
+<tr class="separator:ga15488925bf910f147bbf86d5ff2753b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3076865c8390f78bfa45c7fbd8df1b65" id="r_ga3076865c8390f78bfa45c7fbd8df1b65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">null_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga3076865c8390f78bfa45c7fbd8df1b65">null</a></td></tr>
 <tr class="memdesc:ga3076865c8390f78bfa45c7fbd8df1b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a null pointer value.  <br /></td></tr>
 <tr class="separator:ga3076865c8390f78bfa45c7fbd8df1b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -10428,7 +10441,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 14 2026 22:25:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 15 2026 18:15:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

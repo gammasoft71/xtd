@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/helpers/is_stream_insertable.hpp Source File</title>
+		<title>xtd: xtd.core/include/xtd/is_stream_insertable.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -92,7 +92,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li><li class="navelem"><a class="el" href="dir_0c2536c39ffcf4b1efe22b529eb81c45.html">helpers</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc97fa897e7997e4ee808021e868856c.html">xtd.core</a></li><li class="navelem"><a class="el" href="dir_cd4d13b1160eb35a323b5c83cf3e9e5e.html">include</a></li><li class="navelem"><a class="el" href="dir_8bddd848f68e3e28b5aa5e234df2e4b1.html">xtd</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -106,27 +106,24 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1helpers.html">helpers</a> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable.html">   36</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> : std::false_type {};</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07s4f7638f687d206709f54a29bf9f7cd93.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1helpers_1_1is__stream__insertable.html">is_stream_insertable</a> &lt; value_t, std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    template&lt;class value_t&gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    requires std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structxtd_1_1helpers_1_1is__stream__insertable_3_01value__t_01_4.html">   77</a></span>    struct is_stream_insertable&lt;value_t&gt; : std::false_type {};</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    template&lt;class value_t&gt;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="group__traits.html#gad486ecb6deeeeccd083816a64f5588c1">  102</a></span>    inline constexpr bool is_stream_insertable_v = is_stream_insertable&lt;std::remove_cvref_t&lt;value_t&gt;&gt;::value;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
-<div class="ttc" id="anamespacextd_1_1helpers_html"><div class="ttname"><a href="namespacextd_1_1helpers.html">xtd::helpers</a></div><div class="ttdoc">The xtd::helpers namespace contains helpers for xtd objects, sush as exception static class.</div><div class="ttdef"><b>Definition</b> exception_case.hpp:9</div></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t, <span class="keyword">class</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structxtd_1_1is__stream__insertable.html">   34</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1is__stream__insertable.html">is_stream_insertable</a> : std::false_type {};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structxtd_1_1is__stream__insertable_3_01value__t_00_01std_1_1void__t_3_01decltype_07std_1_1declv2839eb551a72afab5e5c57f5cea22dd0.html">   54</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1is__stream__insertable.html">is_stream_insertable</a> &lt; value_t, std::void_t &lt; decltype(std::declval&lt;std::ostream&amp;&gt;() &lt;&lt; std::declval&lt;const std::remove_cvref_t&lt;value_t&gt;&amp;&gt;()) &gt;&gt; : std::true_type {};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  requires std::is_enum_v&lt;std::remove_cvref_t&lt;value_t&gt;&gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structxtd_1_1is__stream__insertable_3_01value__t_01_4.html">   75</a></span>  struct is_stream_insertable&lt;value_t&gt; : std::false_type {};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  template&lt;class value_t&gt;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="group__traits.html#ga15488925bf910f147bbf86d5ff2753b1">  100</a></span>  inline constexpr bool is_stream_insertable_v = is_stream_insertable&lt;std::remove_cvref_t&lt;value_t&gt;&gt;::value;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1helpers_1_1is__stream__insertable_html"><div class="ttname"><a href="structxtd_1_1helpers_1_1is__stream__insertable.html">xtd::helpers::is_stream_insertable</a></div><div class="ttdoc">Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:36</div></div>
+<div class="ttc" id="astructxtd_1_1is__stream__insertable_html"><div class="ttname"><a href="structxtd_1_1is__stream__insertable.html">xtd::is_stream_insertable</a></div><div class="ttdoc">Type trait that determines whether a type can be inserted into an std::ostream using the stream inser...</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 14 2026 22:25:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 15 2026 18:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

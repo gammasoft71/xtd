@@ -105,7 +105,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __XTD_STD_INTERNAL__</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__std__version_8hpp.html">internal/__xtd_std_version.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef __XTD_STD_INTERNAL__</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="is__stream__insertable_8hpp.html">helpers/is_stream_insertable.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="stream__insertable_8hpp.html">stream_insertable.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="iformatable_8hpp.html">iformatable.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="istringable_8hpp.html">istringable.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="object_8hpp.html">object.hpp</a>&quot;</span></div>
@@ -122,24 +122,24 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    #if defined(__xtd__cpp_lib_ranges)</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::ranges::range&lt;std::remove_cvref_t&lt;value_t&gt;&gt; ||</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    #endif</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_variable" href="group__traits.html#gad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v&lt;std::remove_cvref_t&lt;value_t&gt;</a>&gt;;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_concept" href="conceptxtd_1_1stream__insertable.html">xtd::stream_insertable&lt;std::remove_cvref_t&lt;value_t&gt;</a>&gt;;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 <div class="ttc" id="a____xtd__std__version_8hpp_html"><div class="ttname"><a href="____xtd__std__version_8hpp.html">__xtd_std_version.hpp</a></div><div class="ttdoc">Contains __xtd_std_version definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:26</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
+<div class="ttc" id="aconceptxtd_1_1stream__insertable_html"><div class="ttname"><a href="conceptxtd_1_1stream__insertable.html">xtd::stream_insertable</a></div><div class="ttdoc">Concept stream_insertable.</div><div class="ttdef"><b>Definition</b> stream_insertable.hpp:26</div></div>
 <div class="ttc" id="aconceptxtd_1_1stringable_html"><div class="ttname"><a href="conceptxtd_1_1stringable.html">xtd::stringable</a></div><div class="ttdoc">Concept stringable.</div><div class="ttdef"><b>Definition</b> stringable.hpp:34</div></div>
-<div class="ttc" id="agroup__traits_html_gad486ecb6deeeeccd083816a64f5588c1"><div class="ttname"><a href="group__traits.html#gad486ecb6deeeeccd083816a64f5588c1">xtd::helpers::is_stream_insertable_v</a></div><div class="ttdeci">constexpr bool is_stream_insertable_v</div><div class="ttdoc">Convenience variable template equivalent to is_stream_insertable_v&lt;value_t&gt;::value.</div><div class="ttdef"><b>Definition</b> is_stream_insertable.hpp:102</div></div>
 <div class="ttc" id="aiformatable_8hpp_html"><div class="ttname"><a href="iformatable_8hpp.html">iformatable.hpp</a></div><div class="ttdoc">Contains xtd::iformatable interface.</div></div>
-<div class="ttc" id="ais__stream__insertable_8hpp_html"><div class="ttname"><a href="is__stream__insertable_8hpp.html">is_stream_insertable.hpp</a></div><div class="ttdoc">Contains xtd::helpers::is_stream_insertable struct and is_stream_insertable_v struct.</div></div>
 <div class="ttc" id="aistringable_8hpp_html"><div class="ttname"><a href="istringable_8hpp.html">istringable.hpp</a></div><div class="ttdoc">Contains xtd::istringable interface.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains xtd::object class.</div></div>
+<div class="ttc" id="astream__insertable_8hpp_html"><div class="ttname"><a href="stream__insertable_8hpp.html">stream_insertable.hpp</a></div><div class="ttdoc">Contains xtd::stream_insertable concept.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 14 2026 22:25:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 15 2026 18:15:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
