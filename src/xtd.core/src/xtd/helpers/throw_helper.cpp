@@ -53,12 +53,12 @@ using namespace xtd::net::sockets;
 using namespace xtd::threading;
 
 namespace {
-  stack_frame to_stack_frame(const throw_helper::source_location& location) {
+  auto to_stack_frame(const throw_helper::source_location& location) -> stack_frame {
     return stack_frame {location.file_name(), location.line(), location.function_name(), location.column()};
   }
 }
 
-void throw_helper::throws(enum exception_case exception_case, const source_location& location) {
+auto throw_helper::throws(enum exception_case exception_case, const source_location& location) -> void {
   switch (exception_case) {
     case exception_case::abandoned_mutex: throw abandoned_mutex_exception {to_stack_frame(location)};
     case exception_case::access_violation: throw access_violation_exception {to_stack_frame(location)};
@@ -108,7 +108,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
   }
 }
 
-void throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) {
+auto throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) -> void {
   if (!message) throws(exception_case, location);
   switch (exception_case) {
     case exception_case::abandoned_mutex: throw abandoned_mutex_exception {message, to_stack_frame(location)};
@@ -158,12 +158,12 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
   }
 }
 
-void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
+auto throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) -> void {
   if (exception_case != exception_case::format_not_iformatable) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value."};
   throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).chars().c_str(), location);
 }
 
-void throw_helper::throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location) {
+auto throw_helper::throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location) -> void {
   if (exception_case != exception_case::socket) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::socket value."};
   throw socket_exception(error, to_stack_frame(location));
 }

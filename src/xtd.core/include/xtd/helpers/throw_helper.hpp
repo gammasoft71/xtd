@@ -44,21 +44,21 @@ namespace xtd {
       
       /// @brief Throws an exption with specified exception case.
       /// @param exception_case One of xtd::helpers::exception_case values.
-      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const source_location& location = source_location::current());
+      [[noreturn]] static auto throws(xtd::helpers::exception_case exception_case, const source_location& location = source_location::current()) -> void;
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param message The message associate to the exception.
-      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const char* message, const source_location& location = source_location::current());
+      [[noreturn]] static auto throws(xtd::helpers::exception_case exception_case, const char* message, const source_location& location = source_location::current()) -> void;
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case The xtd::helpers::exception_case::format_not_iformatable value.
       /// @param type The type associate to the exception.
       /// @remarks This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value.
-      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current());
+      [[noreturn]] static auto throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current()) -> void;
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case The xtd::helpers::exception_case::format_not_iformatable value.
       /// @param type The type associate to the exception.
       /// @remarks This overload can only be used with the xtd::helpers::exception_case::socket value.
-      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location = source_location::current());
+      [[noreturn]] static auto throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location = source_location::current()) -> void;
     };
   }
 }
