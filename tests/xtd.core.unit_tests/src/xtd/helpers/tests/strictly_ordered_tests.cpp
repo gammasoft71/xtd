@@ -15,7 +15,7 @@ namespace xtd::helpers::tests {
       assert_that(strictly_ordered<my_object_test&>).is().false_();
       assert_that(strictly_ordered<const my_object_test&>).is().false_();
     }
-
+    
     auto test_method_(with_icomparable) {
       struct my_icomparable_test : public icomparable<my_icomparable_test> {
         auto compare_to(const my_icomparable_test&) const noexcept -> int32 override {return 0;}
@@ -72,7 +72,7 @@ namespace xtd::helpers::tests {
       assert_that(strictly_ordered<my_tri_sstate_test&>).is().true_();
       assert_that(strictly_ordered<const my_tri_sstate_test&>).is().true_();
     }
-
+    
     auto test_method_(with_somes_integrals) {
       assert_that(strictly_ordered<sbyte>).is().true_();
       assert_that(strictly_ordered < sbyte && >).is().true_();
