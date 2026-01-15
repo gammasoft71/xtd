@@ -24,6 +24,7 @@ add_projects(
   thread
   thread2
   thread_pool
+  thread_pool2
   timeout
   timer
   wait_handle

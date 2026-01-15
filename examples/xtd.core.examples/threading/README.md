@@ -21,6 +21,7 @@
 * [thread](thread/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 * [thread2](thread2/README.md) shows hows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread.html) class.
 * [thread_pool](thread_pool/README.md) shows hows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
+* [thread_pool2](thread_pool2/README.md) shows hows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1thread__pool.html) class.
 * [timeout](timeout/README.md) shows how to use [xtd::threading:timeout](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timeout.html) class.
 * [timer](timer/README.md) shows how to use [xtd::threading:timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1timer.html) class.
 * [wait_handle](wait_handle/README.md) shows how to use [xtd::threading:wait_handle](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1wait__handle.html) class.

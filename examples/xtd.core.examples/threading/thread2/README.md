@@ -19,7 +19,7 @@ xtdc run
 
 ```
 (thread 1) main -> start
-(thread 1) main -> sleep(200)
+(thread 1) main -> sleep(200_ms)
   (thread 2) -> count 1
   (thread 2) -> count 2
 (thread 1) main -> join thread 2

@@ -9,7 +9,7 @@ auto main() -> int {
       thread::sleep(100_ms);
     }
   });
-  println("(thread {}) main -> sleep(200)", thread::current_thread().managed_thread_id());
+  println("(thread {}) main -> sleep(200_ms)", thread::current_thread().managed_thread_id());
   thread::sleep(200_ms);
   println("(thread {}) main -> join thread {}", thread::current_thread().managed_thread_id(), worker.managed_thread_id());
   worker.join();
@@ -19,7 +19,7 @@ auto main() -> int {
 // This code can produce the following output :
 //
 // (thread 1) main -> start
-// (thread 1) main -> sleep(200)
+// (thread 1) main -> sleep(200_ms)
 //   (thread 2) -> count 1
 //   (thread 2) -> count 2
 // (thread 1) main -> join thread 2
