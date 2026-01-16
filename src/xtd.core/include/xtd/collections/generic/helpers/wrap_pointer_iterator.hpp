@@ -77,10 +77,10 @@ namespace xtd {
           /// @{
           /// @brief Gets iterator data.
           /// @return The iterator data.
-          auto data() const noexcept -> const value_t& {return data_;}
+          [[nodiscard]] auto data() const noexcept -> const value_t& {return data_;}
           /// @brief Gets iterator data.
           /// @return The iterator data.
-          auto data() noexcept -> value_t& {return data_;}
+          [[nodiscard]] auto data() noexcept -> value_t& {return data_;}
           /// @}
           
           /// @name Public methods
