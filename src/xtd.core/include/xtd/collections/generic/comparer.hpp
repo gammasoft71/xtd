@@ -63,7 +63,7 @@ namespace xtd {
         /// | Less than zero    | x is less than y.    |
         /// | Zero              | x equals y.          |
         /// | Greater than zero | x is greater than y. |
-        auto compare(const first_argument_type& x, const second_argument_type& y) const -> result_type override {
+        [[nodiscard]] auto compare(const first_argument_type& x, const second_argument_type& y) const -> result_type override {
           if constexpr(xtd::helpers::strictly_ordered<first_argument_type> || std::derived_from<first_argument_type, xtd::icomparable<first_argument_type>>) return helpers::comparer<type_t> {}(x, y);
           else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Failed to compare two elements in the array.");
         }
