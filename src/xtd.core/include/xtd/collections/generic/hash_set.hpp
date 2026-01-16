@@ -132,12 +132,12 @@ namespace xtd {
         /// @{
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
-        auto capacity() const noexcept -> size_type {return items().bucket_count();}
+        [[nodiscard]] auto capacity() const noexcept -> size_type {return items().bucket_count();}
         
         /// @brief Gets the xtd::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the set.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::hash_set <type_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::hash_set <type_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        auto comparer() const noexcept -> const iequality_comparer<key_type>& {
+        [[nodiscard]] auto comparer() const noexcept -> const iequality_comparer<key_type>& {
           if (!data_->comparer) return equality_comparer <key_type>::default_equality_comparer();
           return *data_->comparer;
         }
@@ -147,14 +147,14 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        auto count() const noexcept -> size_type override {return items().size();}
+        [[nodiscard]] auto count() const noexcept -> size_type override {return items().size();}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual auto items() const noexcept -> const base_type& {return data_->items;}
+        [[nodiscard]] virtual auto items() const noexcept -> const base_type& {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual auto items() noexcept -> base_type& {return data_->items;}
+        [[nodiscard]] virtual auto items() noexcept -> base_type& {return data_->items;}
         /// @}
         
         /// @name Public Methods
@@ -180,7 +180,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
-        auto contains(const value_type & item) const noexcept -> bool override {
+        [[nodiscard]] auto contains(const value_type & item) const noexcept -> bool override {
           return items().find(item) != items().end();
         }
         
@@ -237,7 +237,7 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::hash_set <type_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::hash_set <type_t>.
-        enumerator<value_type> get_enumerator() const noexcept override {
+        [[nodiscard]] enumerator<value_type> get_enumerator() const noexcept override {
           struct hash_set_enumerator : public ienumerator < value_type > {
             explicit hash_set_enumerator(const hash_set & items, size_type version) : items_(items), version_(version) {}
             
@@ -286,7 +286,7 @@ namespace xtd {
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        auto is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (count() == 0) return set.count() > 0;
           if (count() >= set.count()) return false;
@@ -296,7 +296,7 @@ namespace xtd {
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        auto is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (set.count() == 0) return count() > 0;
           if (set.count() >= count()) return false;
@@ -306,21 +306,21 @@ namespace xtd {
         /// @brief Determines whether a set is a subset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a subset of `other`; otherwise, `false`.
-        auto is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           return sub_set(hash_set {other});
         }
         
         /// @brief Determines whether a set is a superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a superset of `other`; otherwise, `false`.
-        auto is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           return super_set(hash_set {other});
         }
         
         /// @brief Determines whether the current set overlaps with the specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set and `other` share at least one common element; otherwise, `false`.
-        auto overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           if (count() == 0) return false;
           for (const auto& item : other)
             if (contains(item)) return true;
@@ -352,7 +352,7 @@ namespace xtd {
         /// @brief Determines whether the current set and the specified collection contain the same elements.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is equal to `other`; otherwise, `false`.
-        auto set_equals(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
+        [[nodiscard]] auto set_equals(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool override {
           auto set = hash_set {other};
           if (count() != set.count()) return false;
           for (const auto& item : other)
@@ -371,7 +371,7 @@ namespace xtd {
         
         /// @brief Gets a string that represents the current object.
         /// @return A string that represents the current object.
-        auto to_string() const noexcept -> xtd::string override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override {return xtd::string::format("{{{}}}", xtd::string::join(", ", self_));}
         
         /// @brief Modifies the current set so that it contains all elements that are present in the current set, in the specified collection, or in both.
         /// @param other The collection to compare to the current set.
