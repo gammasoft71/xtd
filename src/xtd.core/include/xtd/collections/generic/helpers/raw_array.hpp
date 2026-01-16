@@ -185,45 +185,45 @@ namespace xtd {
           /// @name Public Properties
           
           /// @{
-          auto back() -> reference {return at(size() - 1);}
-          auto back() const -> const_reference {return at(size() - 1);}
+          [[nodiscard]] auto back() -> reference {return at(size() - 1);}
+          [[nodiscard]] auto back() const -> const_reference {return at(size() - 1);}
           
-          auto begin() noexcept -> iterator {return to_type_iterator(items_.begin());}
-          auto begin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
+          [[nodiscard]] auto begin() noexcept -> iterator {return to_type_iterator(items_.begin());}
+          [[nodiscard]] auto begin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
           
-          auto capacity() const noexcept -> size_type {return items_.capacity();}
+          [[nodiscard]] auto capacity() const noexcept -> size_type {return items_.capacity();}
           
-          auto cbegin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
-          auto cend() const noexcept -> const_iterator {return to_type_iterator(items_.cend()); }
+          [[nodiscard]] auto cbegin() const noexcept -> const_iterator {return to_type_iterator(items_.cbegin());}
+          [[nodiscard]] auto cend() const noexcept -> const_iterator {return to_type_iterator(items_.cend()); }
           
-          auto crbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
-          auto crend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
+          [[nodiscard]] auto crbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
+          [[nodiscard]] auto crend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
           
-          auto data() noexcept -> pointer {return reinterpret_cast<pointer>(items_.data());}
-          auto data() const noexcept -> const_pointer {return reinterpret_cast<const_pointer>(items_.data());}
+          [[nodiscard]] auto data() noexcept -> pointer {return reinterpret_cast<pointer>(items_.data());}
+          [[nodiscard]] auto data() const noexcept -> const_pointer {return reinterpret_cast<const_pointer>(items_.data());}
           
-          auto empty() const noexcept -> bool {return items_.empty();}
+          [[nodiscard]] auto empty() const noexcept -> bool {return items_.empty();}
           
-          auto end() noexcept -> iterator {return to_type_iterator(items_.end());}
-          auto end() const noexcept -> const_iterator {return to_type_iterator(items_.cend());}
+          [[nodiscard]] auto end() noexcept -> iterator {return to_type_iterator(items_.end());}
+          [[nodiscard]] auto end() const noexcept -> const_iterator {return to_type_iterator(items_.cend());}
           
-          auto front() -> reference {return at(0);}
-          auto front() const -> const_reference {return at(0);}
+          [[nodiscard]] auto front() -> reference {return at(0);}
+          [[nodiscard]] auto front() const -> const_reference {return at(0);}
           
-          auto items() const noexcept -> const_base_type& {return items_;}
-          auto items() noexcept -> base_type& {return items_;}
+          [[nodiscard]] auto items() const noexcept -> const_base_type& {return items_;}
+          [[nodiscard]] auto items() noexcept -> base_type& {return items_;}
           
-          auto max_size() const noexcept -> size_type {return std::min(items_.max_size(), npos / 2);}
+          [[nodiscard]] auto max_size() const noexcept -> size_type {return std::min(items_.max_size(), npos / 2);}
           
-          auto rbegin() noexcept -> reverse_iterator {return reverse_iterator(end());}
-          auto rbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
+          [[nodiscard]] auto rbegin() noexcept -> reverse_iterator {return reverse_iterator(end());}
+          [[nodiscard]] auto rbegin() const noexcept -> const_reverse_iterator {return const_reverse_iterator(end());}
           
-          auto rend() noexcept -> reverse_iterator {return reverse_iterator(begin());}
-          auto rend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
+          [[nodiscard]] auto rend() noexcept -> reverse_iterator {return reverse_iterator(begin());}
+          [[nodiscard]] auto rend() const noexcept -> const_reverse_iterator {return const_reverse_iterator(begin());}
           
-          auto size() const noexcept -> size_type {return items_.size();}
+          [[nodiscard]] auto size() const noexcept -> size_type {return items_.size();}
           
-          auto version() const noexcept -> size_type {return version_;}
+          [[nodiscard]] auto version() const noexcept -> size_type {return version_;}
           /// @}
           
           /// @name Public Methods
