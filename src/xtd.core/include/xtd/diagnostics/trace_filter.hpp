@@ -65,7 +65,7 @@ namespace xtd {
       /// @param event_type One of the trace_event_type values specifying the type of event that has caused the trace
       /// @param id A trace identifier number.
       /// @param message Message to write.
-      auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message) noexcept -> bool;
+      [[nodiscard]] auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message) noexcept -> bool;
       /// @brief determines whether the trace listener should trace the event.
       /// @param cache The trace_event_cache that contains information for the trace event.
       /// @param source The name of the source.
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param id A trace identifier number.
       /// @param message Message to write.
       /// @param data1 A trace data object.
-      auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message, xtd::any_object data1) noexcept -> bool;
+      [[nodiscard]] auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message, xtd::any_object data1) noexcept -> bool;
       /// @}
     };
   }

@@ -243,7 +243,7 @@ namespace xtd {
       ///   }
       /// }
       /// ```
-      auto frame_count() const noexcept -> xtd::size;
+      [[nodiscard]] auto frame_count() const noexcept -> xtd::size;
       /// @}
       
       /// @name Public Methods
@@ -286,7 +286,7 @@ namespace xtd {
       /// }
       /// ```
       /// @remarks Stack frames are numbered starting at 0, which is the last stack frame pushed.
-      auto get_frame(xtd::size index) noexcept -> const xtd::diagnostics::stack_frame&;
+      [[nodiscard]] auto get_frame(xtd::size index) noexcept -> const xtd::diagnostics::stack_frame&;
       
       /// @brief Returns a copy of all stack frames in the current stack trace.
       /// @return An array of type xtd::diagnostics::stack_frame representing the function calls in the stack trace.
@@ -303,7 +303,7 @@ namespace xtd {
       /// @remarks Use the returned xtd::diagnostics::stack_frame array to enumerate and examine function calls in the xtd::diagnostics::stack_trace. The size of the returned array is equal to the frame_count() property value.
       /// @remarks The xtd::diagnostics::stack_frame array elements are in reverse chronological order. The xtd::diagnostics::stack_frame at array index 0 represents the most recent function call in the stack trace and the last frame pushed onto the call stack. The xtd::diagnostics::stack_frame at array index frame_count() minus 1 represents the oldest function call in the stack trace and the first frame pushed onto the call stack.
       /// @remarks Use the get_frames() method to obtain all stack frames in a stack trace; use the get_frame(size_t) method to obtain a specific stack frame in a stack trace. The xtd::diagnostics::stack_frame indexes are ordered alike by the two methods. For example, the xtd::diagnostics::stack_frame at index 0 in the array returned by get_frames() is equivalent to the xtd::diagnostics::stack_frame returned by get_frame(size_t) with an input index of 0.
-      auto get_frames() const noexcept -> const stack_frame_collection&;
+      [[nodiscard]] auto get_frames() const noexcept -> const stack_frame_collection&;
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
@@ -314,7 +314,7 @@ namespace xtd {
       /// stack_trace st(fr);
       /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
       /// ```
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @brief Create a new instance of the xtd::diagnostics::stack_trace class that contains a single frame.
@@ -327,14 +327,14 @@ namespace xtd {
       /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
       /// ```
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
-      static auto from_stack_frame(const xtd::diagnostics::stack_frame& frame) -> xtd::diagnostics::stack_trace;
+      [[nodiscard]] static auto from_stack_frame(const xtd::diagnostics::stack_frame& frame) -> xtd::diagnostics::stack_trace;
       
       
     private:
       friend class xtd::exception;
       stack_trace(const xtd::diagnostics::stack_frame& frame, bool empty);
       stack_trace(const xtd::string& str, xtd::size skip_frames, bool need_file_info);
-      auto to_string(xtd::size skip_frames) const noexcept -> xtd::string;
+      [[nodiscard]] auto to_string(xtd::size skip_frames) const noexcept -> xtd::string;
       
       struct data;
       xtd::ptr<data> data_;

@@ -89,7 +89,7 @@ namespace xtd {
       /// file_open = resources/symbolic_open.png
       /// file_save = resources/symbolic_save.png
       /// ```
-      auto auto_save() const noexcept -> bool;
+      [[nodiscard]] auto auto_save() const noexcept -> bool;
       /// @brief Sets whether save should be called on the xtd::configuration::file_settings destructor.
       /// @param value `true` if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, `false`.
       /// @remarks The default is `false`.
@@ -128,7 +128,7 @@ namespace xtd {
       ///
       /// # Modifications must be made with care, as they may result in incorrect behavior.
       /// ```
-      auto bottom_file_comment() const noexcept -> xtd::string;
+      [[nodiscard]] auto bottom_file_comment() const noexcept -> xtd::string;
       /// @brief Sets bottom file comment text.
       /// @param value Bottom file comment text.
       /// @return This current instance.
@@ -155,36 +155,36 @@ namespace xtd {
       /// @return The file path of the current instance.
       /// @remarks If no file the property can be return xtd::string::empty_string.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
-      auto file_path() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto file_path() const noexcept -> const xtd::string&;
       
       /// @brief Gets all key-value pairs from global section.
       /// @return The key-value pairs map.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::key_values (const xtd::string& section) with xtd::string::empty_string paramreter.
-      auto key_values() const noexcept -> string_dictionary;
+      [[nodiscard]] auto key_values() const noexcept -> string_dictionary;
       /// @brief Gets all key-value pairs from a specified section.
       /// @param section The section to get key-value pairs.
       /// @return The key-value pairs map from the specified section.
       /// @remarks Use xtd::string::empty_string paramreter to get key-value pairs of the global section.
-      auto key_values(const xtd::string& section) const noexcept -> string_dictionary;
+      [[nodiscard]] auto key_values(const xtd::string& section) const noexcept -> string_dictionary;
       
       /// @brief Gets all keys from global section.
       /// @return The keys colection.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::keys (const xtd::string& section) with xtd::string::empty_string paramreter.
-      auto keys() const noexcept -> string_collection;
+      [[nodiscard]] auto keys() const noexcept -> string_collection;
       /// @brief Gets all keys from a specified section.
       /// @param section The section to get keys.
       /// @return The keys collection from the specified section.
       /// @remarks Use xtd::string::empty_string paramreter to get keys of the global section.
-      auto keys(const xtd::string& section) const noexcept -> string_collection;
+      [[nodiscard]] auto keys(const xtd::string& section) const noexcept -> string_collection;
       
       /// @brief Gets all sections.
       /// @return The sections colection.
-      auto sections() const noexcept -> string_collection;
+      [[nodiscard]] auto sections() const noexcept -> string_collection;
       
       /// @brief Gets the stream of the current instance.
       /// @return The stream of the current instance.
       /// @warning Don't manipulate the stream yourself, otherwise the expected result may be undefined.
-      auto stream() const noexcept -> std::optional<xtd::ref<std::iostream>>;
+      [[nodiscard]] auto stream() const noexcept -> std::optional<xtd::ref<std::iostream>>;
       
       /// @brief Gets top file comment text.
       /// @return Top file comment textr.
@@ -207,7 +207,7 @@ namespace xtd {
       /// file_open = resources/symbolic_open.png
       /// file_save = resources/symbolic_save.png
       /// ```
-      auto top_file_comment() const noexcept -> xtd::string;
+      [[nodiscard]] auto top_file_comment() const noexcept -> xtd::string;
       /// @brief Sets top file comment text.
       /// @param value Top file comment textr.
       /// @return This current instance.
@@ -239,11 +239,11 @@ namespace xtd {
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      auto equals(const xtd::object& obj) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param other An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      auto equals(const file_settings& other) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const file_settings& other) const noexcept -> bool override;
       
       /// @brief Sets the current settings with parsing the xtd::string in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @param text A text to set the current setting.
@@ -279,7 +279,7 @@ namespace xtd {
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::string& section, const xtd::string& key, const xtd::string& default_value) with xtd::string::empty_string paramreter as section parameter.
-      auto read(const xtd::string& key, const xtd::string& default_value) noexcept -> xtd::string;
+      [[nodiscard]] auto read(const xtd::string& key, const xtd::string& default_value) noexcept -> xtd::string;
       /// @brief Reads a value for specified key in the global section. If not found default value is used.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
@@ -287,7 +287,7 @@ namespace xtd {
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::read (const xtd::string& section, const xtd::string& key, const xtd::string& default_value) with xtd::string::empty_string paramreter as section parameter.
       template<class type_t>
-      auto read(const xtd::string& key, const type_t& default_value) -> type_t {
+      [[nodiscard]] auto read(const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(xtd::string::empty_string, key, xtd::string::format("{}", default_value)));
       }
       /// @brief Reads a value for specified key in the specified section. If not found default value is used.
@@ -296,7 +296,7 @@ namespace xtd {
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
-      auto read(const xtd::string& section, const xtd::string& key, const xtd::string& default_value) noexcept -> xtd::string;
+      [[nodiscard]] auto read(const xtd::string& section, const xtd::string& key, const xtd::string& default_value) noexcept -> xtd::string;
       /// @brief Reads a value for specified key in the specified section. If not found default value is used.
       /// @param section The section where the key is read.
       /// @param key The key used to read a value.
@@ -304,7 +304,7 @@ namespace xtd {
       /// @return A string that represent the value associate to the key.
       /// @remarks Use xtd::string::empty_string for section paramreter to read keys of the global section.
       template<class type_t>
-      auto read(const xtd::string& section, const xtd::string& key, const type_t& default_value) -> type_t {
+      [[nodiscard]] auto read(const xtd::string& section, const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(section, key, xtd::string::format("{}", default_value)));
       }
       
@@ -477,7 +477,7 @@ namespace xtd {
       /// @return A string that represents the current setting.
       /// @par Notes to inheritors
       /// To create your own file_settings with another format, you just need to override the xtd::configuration::file_settings::from_string and xtd::configuration::file_settings::to_string methods.
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       
       /// @brief Writes a specified value for specified key in the global section.
       /// @param key The key used to write a value.

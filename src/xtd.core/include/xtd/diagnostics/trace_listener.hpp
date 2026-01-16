@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return uint32 The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      auto indent_level() const noexcept -> xtd::uint32;
+      [[nodiscard]] auto indent_level() const noexcept -> xtd::uint32;
       
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
@@ -80,7 +80,7 @@ namespace xtd {
       /// @brief Gets the number of spaces in an indent.
       /// @return uint32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      auto indent_size() const noexcept -> xtd::uint32;
+      [[nodiscard]] auto indent_size() const noexcept -> xtd::uint32;
       
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
@@ -90,12 +90,12 @@ namespace xtd {
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool `true` if the trace listener is thread safe; otherwise, `false`. The default is `false`.
       /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is `false`, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is `true` and the value of UseGlobalLock is `false`. The default behavior is to use the global lock whenever writing to the listener.
-      virtual auto is_thread_safe() const noexcept -> bool;
+      [[nodiscard]] virtual auto is_thread_safe() const noexcept -> bool;
       
       /// @brief Gets or sets a name for this TraceListener.
       /// @return string A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      auto name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Sets a name for this TraceListener.
       /// @param name A name for this TraceListener. The default is an empty string ("").
@@ -109,7 +109,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      auto trace_output_options() const noexcept -> xtd::diagnostics::trace_options;
+      [[nodiscard]] auto trace_output_options() const noexcept -> xtd::diagnostics::trace_options;
       
       /// @brief Sets the trace output options.
       /// @param trace_output_options A bitwise combination of the enumeration values. The default is None.
@@ -324,7 +324,7 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether to indent the output.
       /// @return `true` if the output should be indented; otherwise, `false`.
-      auto need_indent() const noexcept -> bool;
+      [[nodiscard]] auto need_indent() const noexcept -> bool;
       /// @brief Sets a value indicating whether to indent the output.
       /// @param need_indent `true` if the output should be indented; otherwise, `false`.
       auto need_indent(bool need_indent) noexcept -> void;

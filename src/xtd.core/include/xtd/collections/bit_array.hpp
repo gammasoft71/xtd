@@ -141,7 +141,7 @@ namespace xtd {
       /// @brief Returns a [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object containing the Booleans contained in the current xtd::collections::bit_array.
       /// @return The [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object.
       template<xtd::size length>
-      auto bits() const noexcept -> std::bitset<length> {
+      [[nodiscard]] auto bits() const noexcept -> std::bitset<length> {
         auto result = std::bitset<length> {};
         auto bits_count = xtd::math::min(length, count());
         for (auto index = xtd::size {0}; index < bits_count; ++index)
@@ -151,7 +151,7 @@ namespace xtd {
       
       /// @brief Returns a [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object containing the Booleans contained in the current xtd::collections::bit_array.
       /// @return The [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object.
-      auto bits() const noexcept -> std::vector<bool> {
+      [[nodiscard]] auto bits() const noexcept -> std::vector<bool> {
         auto result = std::vector<bool> {};
         for (auto index = xtd::size {0}; index < count(); ++index)
           result[index] = self_[index];
@@ -161,12 +161,12 @@ namespace xtd {
       /// @brief Gets the number of elements contained in the xtd::collections::bit_array.
       /// @return The number of elements contained in the xtd::collections::bit_array.
       /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-      auto count() const noexcept -> xtd::size override;
+      [[nodiscard]] auto count() const noexcept -> xtd::size override;
       
       /// @brief Gets the number of elements contained in the xtd::collections::bit_array.
       /// @return The number of elements contained in the xtd::collections::bit_array.
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
-      auto length() const noexcept -> xtd::size;
+      [[nodiscard]] auto length() const noexcept -> xtd::size;
       /// @brief Sets the number of elements contained in the xtd::collections::bit_array.
       /// @param value The number of elements contained in the xtd::collections::bit_array.
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
@@ -186,7 +186,7 @@ namespace xtd {
       
       /// @brief Creates a new object that is a copy of the current instance.
       /// @return A new object that is a copy of this instance.
-      xtd::uptr<xtd::object> clone() const override;
+      [[nodiscard]] xtd::uptr<xtd::object> clone() const override;
       
       /// @brief Copies the elements of the xtd::collections::bit_array to an xtd::array, starting at a particular xtd::array index.
       /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::bit_array. The xtd::array must have zero-based indexing.
@@ -197,38 +197,38 @@ namespace xtd {
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param value The xtd::collections::bit_array to compare with the current object.
       /// @return `true` if the specified value is equal to the current object. otherwise, `false`.
-      auto equals(const bit_array& value) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const bit_array& value) const noexcept -> bool override;
       
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      auto equals(const object& obj) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       
       /// @brief Gets the value of the bit at a specific position in the xtd::collections::bit_array.
       /// @param index The zero-based index of the value to get.
       /// @return The value of the bit at position index.
       /// @exception xtd::argument_out_of_range_exception index is less than zero. -or- index is greater than or equal to the number of elements in the xtd::collections::bit_array.
       /// @remarks This method is an O(1) operation.
-      auto get(xtd::size index) const -> bool;
+      [[nodiscard]] auto get(xtd::size index) const -> bool;
       
       /// @brief Gets the value of the bit at a specific position in the xtd::collections::bit_array.
       /// @param index The zero-based index of the value to get.
       /// @return The value of the bit at position index.
       /// @exception xtd::argument_out_of_range_exception index is less than zero. -or- index is greater than or equal to the number of elements in the xtd::collections::bit_array.
       /// @remarks This method is an O(1) operation.
-      auto get(xtd::size index) -> bool&;
+      [[nodiscard]] auto get(xtd::size index) -> bool&;
       
       /// @brief Returns an enumerator that iterates through a collection.
       /// @return An xtd::collections::generic::ienumerator object that can be used to iterate through the collection.
-      xtd::collections::generic::enumerator<bool> get_enumerator() const override;
+      [[nodiscard]] xtd::collections::generic::enumerator<bool> get_enumerator() const override;
       
       /// @brief Determines whether all bits in the xtd::collections::bit_array are set to `true`.
       /// @return `true` if every bit in the xtd::collections::bit_array is set to true, or if xtd::collections::bit_array is empty; otherwise, `false`.
-      auto has_all_set() const noexcept -> bool;
+      [[nodiscard]] auto has_all_set() const noexcept -> bool;
       
       /// @brief Determines whether any bit in the xtd::collections::bit_array is set to `true`.
       /// @return `true` if xtd::collections::bit_array is not empty and at least one of its bit is set to `true`; otherwise, `false`.
-      auto has_any_set() const noexcept -> bool;
+      [[nodiscard]] auto has_any_set() const noexcept -> bool;
       
       /// @brief Shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
       /// @param count The number of shifts to make for each bit.
@@ -269,7 +269,7 @@ namespace xtd {
       
       /// @brief Returns a xtd::string that represents the current object.
       /// @return A string that represents the current object.
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       
       /// @brief Performs the bitwise exclusive OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @param value The xtd::collections::bit_array with which to perform the bitwise exclusive OR operation.

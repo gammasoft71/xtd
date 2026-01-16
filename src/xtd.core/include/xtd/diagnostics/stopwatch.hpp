@@ -65,7 +65,7 @@ namespace xtd {
       /// @par Examples
       /// The following example initializes a xtd::diagnostics::stopwatch instance by using a simple class constructor.
       /// @include stopwatch_constructor.cpp
-      auto elapsed() const noexcept -> xtd::time_span;
+      [[nodiscard]] auto elapsed() const noexcept -> xtd::time_span;
       
       /// @brief Gets the total elapsed time measured by the current instance, in milliseconds.
       /// @return A long integer representing the total number of milliseconds measured by the current instance.
@@ -75,14 +75,14 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
-      auto elapsed_milliseconds() const noexcept -> xtd::int64;
+      [[nodiscard]] auto elapsed_milliseconds() const noexcept -> xtd::int64;
       
       /// @brief Gets the total elapsed time measured by the current instance, in nanoseconds.
       /// @return A long integer representing the total number of nanoseconds measured by the current instance.
       /// @remarks This property represents the number of elapsed nanoseconds in the underlying timer mechanism. A nanosecond is the smallest unit of time that the stopwatch timer can measure. Use the Frequency field to convert the ElapsedTicks value into a number of seconds.
       /// @remarks You can query the properties xtd::diagnostics::stopwatch::elapsed, xtd::diagnostics::stopwatch::elapsed_milliseconds, xtd::diagnostics::stopwatch::elapsed_ticks, and xtd::diagnostics::stopwatch::elapsed_nanoseconds while the xtd::diagnostics::stopwatch instance is running or stopped. The elapsed time properties steadily increase while the xtd::diagnostics::stopwatch is running; they remain constant when the instance is stopped.
       /// @remarks By default, the elapsed time value of a xtd::diagnostics::stopwatch instance equals the total of all measured time intervals. Each call to start begins counting at the cumulative elapsed time; each call to xtd::diagnostics::stopwatch::stop ends the current interval measurement and freezes the cumulative elapsed time value. Use the xtd::diagnostics::stopwatch::reset method to clear the cumulative elapsed time in an existing xtd::diagnostics::stopwatch instance.
-      auto elapsed_nanoseconds() const noexcept -> xtd::int64;
+      [[nodiscard]] auto elapsed_nanoseconds() const noexcept -> xtd::int64;
       
       /// @brief Gets the total elapsed time measured by the current instance, in timer ticks.
       /// @return A long integer representing the total number of timer ticks measured by the current instance.
@@ -92,12 +92,12 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
-      auto elapsed_ticks() const noexcept -> xtd::int64;
+      [[nodiscard]] auto elapsed_ticks() const noexcept -> xtd::int64;
       
       /// @brief Gets a value indicating whether the stopwatch timer is running.
       /// @return `true` if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, `false`.
       /// @remarks A xtd::diagnostics::stopwatch instance begins running with a call to xtd::diagnostics::stopwatch::start or xtd::diagnostics::stopwatch::start_new. The instance stops running with a call to xtd::diagnostics::stopwatch::stop or xtd::diagnostics::stopwatch::reset.
-      auto is_running() const noexcept -> bool;
+      [[nodiscard]] auto is_running() const noexcept -> bool;
       /// @}
       
       /// @name Public Static Properties
@@ -105,13 +105,13 @@ namespace xtd {
       /// @{
       /// @brief Gets the frequency of the timer as the number of nanoseconds per second. This field is read-only.
       /// @return The frequency of the timer as the number of nanoseconds per second.
-      static auto frequency() noexcept -> xtd::int64;
+      [[nodiscard]] static auto frequency() noexcept -> xtd::int64;
       
       /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
       /// @return `true` if the timer is based on a high-resolution performance count; otherwise, `false`.
       /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is `true` if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is `false`, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
       /// @remarks Returns always `true`.
-      static auto is_high_resolution() noexcept -> bool;
+      [[nodiscard]] static auto is_high_resolution() noexcept -> bool;
       /// @}
       
       /// @name Public Methods
@@ -139,7 +139,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to use the xtd::diagnostics::stopwatch class to determine the execution time for an application.
       /// @include stopwatch.cpp
-      static auto start_new() noexcept -> xtd::diagnostics::stopwatch;
+      [[nodiscard]] static auto start_new() noexcept -> xtd::diagnostics::stopwatch;
       
       /// @brief Stops measuring elapsed time for an interval.
       /// @remarks In a typical xtd::diagnostics::stopwatch scenario, you call the xtd::diagnostics::stopwatch::start method, then eventually call the xtd::diagnostics::stopwatch::stop method, and then you check elapsed time using the xtd::diagnostics::stopwatch::elapsed property.
@@ -156,19 +156,19 @@ namespace xtd {
       /// @{
       /// @brief Gets the current number of nanoseconds in the timer mechanism.
       /// @return A std::chrono::nanoseconds representing the nanosecond counter value of the underlying timer mechanism.
-      static auto get_timestamp() noexcept -> std::chrono::nanoseconds;
+      [[nodiscard]] static auto get_timestamp() noexcept -> std::chrono::nanoseconds;
       
       /// @brief Gets the current number of nanoseconds in the timer mechanism, in milliseconds.
       /// @return A long integer representing the millisecond counter value of the underlying timer mechanism.
-      static auto get_timestamp_milliseconds() noexcept -> xtd::int64;
+      [[nodiscard]] static auto get_timestamp_milliseconds() noexcept -> xtd::int64;
       
       /// @brief Gets the current number of nanoseconds in the timer mechanism, in nanoseconds.
       /// @return A long integer representing the nanosecond counter value of the underlying timer mechanism.
-      static auto get_timestamp_nanoseconds() noexcept -> xtd::int64;
+      [[nodiscard]] static auto get_timestamp_nanoseconds() noexcept -> xtd::int64;
       
       /// @brief Gets the current number of nanoseconds in the timer mechanism, in ticks.
       /// @return A long integer representing the ticks counter value of the underlying timer mechanism.
-      static auto get_timestamp_ticks() noexcept -> xtd::int64;
+      [[nodiscard]] static auto get_timestamp_ticks() noexcept -> xtd::int64;
       /// @}
       
     private:

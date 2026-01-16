@@ -212,14 +212,14 @@ namespace xtd {
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A string that represent the value associate to the key.
-      auto read(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
+      [[nodiscard]] auto read(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
       /// @brief Reads a value for specified key. If not found default value is used.
       /// @tparam type_t The type of value to read.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A type_t that represent the value associate to the key.
       template<class type_t>
-      auto read(const xtd::string& key, const type_t& default_value) -> type_t {
+      [[nodiscard]] auto read(const xtd::string& key, const type_t& default_value) -> type_t {
         return xtd::parse<type_t>(read_string(key, xtd::string::format("{}", default_value)));
       }
       
@@ -249,7 +249,7 @@ namespace xtd {
       /// @}
       
     private:
-      auto read_string(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
+      [[nodiscard]] auto read_string(const xtd::string& key, const xtd::string& default_value) -> xtd::string;
       auto write_string(const xtd::string& key, const xtd::string& value) -> void;
       
       xtd::sptr<data> data_;

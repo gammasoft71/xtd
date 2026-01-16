@@ -114,7 +114,7 @@ namespace xtd {
       /// @{
       /// @brief Return an empty stack frame.
       /// @return Empty stack frame.
-      static auto empty() noexcept -> xtd::diagnostics::stack_frame;
+      [[nodiscard]] static auto empty() noexcept -> xtd::diagnostics::stack_frame;
       
       /// @brief Defines the value that is returned from the get_offset() method when the offset is unknown. This field is constant.
       /// @remarks The value of this constant is `std::numeric_limits<xtd::size>::max()`.
@@ -127,15 +127,15 @@ namespace xtd {
       /// @brief Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      auto equals(const xtd::object& obj) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.
       /// @param other An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      auto equals(const xtd::diagnostics::stack_frame& other) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::diagnostics::stack_frame& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
@@ -152,7 +152,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual auto get_file_column_number() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_file_column_number() const noexcept -> xtd::size;
       
       /// @brief Gets the line number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file line number, or 0 (zero) if the file line number cannot be determined.
@@ -169,7 +169,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual auto get_file_line_number() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_file_line_number() const noexcept -> xtd::size;
       
       /// @brief Gets the file name that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file name, or empty ("") if the file name cannot be determined.
@@ -186,7 +186,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual auto get_file_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] virtual auto get_file_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the method in which the frame is executing.
       /// @return The method in which the frame is executing.
@@ -203,7 +203,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual auto get_method() const noexcept -> const xtd::string&;
+      [[nodiscard]] virtual auto get_method() const noexcept -> const xtd::string&;
       
       /// @brief Gets the offset from the start of the native code for the method that is being executed.
       /// @return The offset from the start of the native code for the method that is being executed.
@@ -220,7 +220,7 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Native Offset: {}", sf.get_native_offset());
       /// ```
-      virtual auto get_native_offset() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_native_offset() const noexcept -> xtd::size;
       
       /// @brief Gets the offset from the start of the code for the method that is being executed.
       /// @return The offset from the code for the method that is being executed.
@@ -237,11 +237,11 @@ namespace xtd {
       /// if (sf.get_offset() != stack_frame::OFFSET_UNKNOWN)
       ///   console::write_line(" Offset: {}", sf.get_offset());
       /// ```
-      virtual auto get_offset() const noexcept -> xtd::size;
+      [[nodiscard]] virtual auto get_offset() const noexcept -> xtd::size;
       
       /// @brief Builds a readable representation of the stack trace.
       /// @return A readable representation of the stack trace.
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -254,7 +254,7 @@ namespace xtd {
       /// @remarks If xtd::diagnostics::stack_frame::current is used in a default argument, the return value corresponds to the location of the call to xtd::diagnostics::source_location::current at the call site.
       /// @remarks If xtd::diagnostics::stack_frame::current is invoked in any other manner, the return value is unspecified.
       /// @note xtd::diagnostics::stack_frame::current typically requires compiler's built-in implementation.
-      static auto current(const xtd::diagnostics::source_location& value = xtd::diagnostics::source_location::current()) noexcept -> xtd::diagnostics::stack_frame;
+      [[nodiscard]] static auto current(const xtd::diagnostics::source_location& value = xtd::diagnostics::source_location::current()) noexcept -> xtd::diagnostics::stack_frame;
       /// @}
       
     private:

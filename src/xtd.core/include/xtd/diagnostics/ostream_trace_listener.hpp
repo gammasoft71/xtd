@@ -43,7 +43,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the underlying stream.
       /// @return A std::ostream that represents the stream the ostream_trace_listener writes to.
-      virtual auto ostream() const -> const std::ostream&;
+      [[nodiscard]] virtual auto ostream() const -> const std::ostream&;
       /// @brief Sets the underlying stream.
       /// @param ostream A std::ostream that represents the stream the ostream_trace_listener writes to.
       virtual auto ostream(const std::ostream& ostream) -> void;

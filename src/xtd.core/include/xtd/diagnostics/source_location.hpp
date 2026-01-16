@@ -52,24 +52,24 @@ namespace xtd {
       /// @brief Gets the column number represented by this object.
       /// @return The column number represented by this object.
       /// @remarks Returns 0 when the column number is unknown.
-      auto column() const noexcept -> xtd::size;
+      [[nodiscard]] auto column() const noexcept -> xtd::size;
       /// @brief Gets the name of the current source file represented by this object, represented as a null-terminated byte string.
       /// @return The name of the current source file represented by this object.
       /// @remarks Returns xtd::string::empty_string (`""`) when the source file is unknown.
-      auto file_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto file_name() const noexcept -> const xtd::string&;
       /// @brief Gets the name of the function associated with the position represented by this object, if any.
       /// @return If this object represents a position in a body of a function, returns a string corresponding to the name of the function; otherwise, an xtd::string::empty_string (`""`) is returned.
-      auto function_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto function_name() const noexcept -> const xtd::string&;
       /// @brief Gets the line number represented by this object.
       /// @return The line number represented by this object.
       /// @remarks Returns 0 when the line number is unknown.
-      auto line() const noexcept -> xtd::size;
+      [[nodiscard]] auto line() const noexcept -> xtd::size;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -82,7 +82,7 @@ namespace xtd {
       /// @remarks If xtd::diagnostics::source_location::current is used in a default argument, the return value corresponds to the location of the call to xtd::diagnostics::source_location::current at the call site.
       /// @remarks If xtd::diagnostics::source_location::current is invoked in any other manner, the return value is unspecified.
       /// @note xtd::diagnostics::source_location::current typically requires compiler's built-in implementation.
-      static auto current(const __xtd_source_location__& value = __xtd_source_location__::current()) noexcept -> xtd::diagnostics::source_location;
+      [[nodiscard]] static auto current(const __xtd_source_location__& value = __xtd_source_location__::current()) noexcept -> xtd::diagnostics::source_location;
       /// @}
       
     private:

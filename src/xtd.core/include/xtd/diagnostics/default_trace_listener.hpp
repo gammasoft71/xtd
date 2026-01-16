@@ -78,7 +78,7 @@ namespace xtd {
       ///   return;
       /// }
       /// ```
-      auto assert_ui_enabled() const noexcept -> bool;
+      [[nodiscard]] auto assert_ui_enabled() const noexcept -> bool;
       /// @brief Sets a value indicating whether the application is running in user-interface mode.
       /// @param assert_ui_enabled `true` if user-interface mode is enabled; otherwise, `false`.
       /// @par Examples
@@ -110,7 +110,7 @@ namespace xtd {
       /// if (args.length() >= 2)
       ///   default_listener->log_file_name(args[1]);
       /// ```
-      auto log_file_name() const noexcept -> xtd::string;
+      [[nodiscard]] auto log_file_name() const noexcept -> xtd::string;
       /// @brief Sets the name of a log file to write trace or debug messages to.
       /// @param log_file_name The name of a log file to write trace or debug messages to.
       /// @par Examples

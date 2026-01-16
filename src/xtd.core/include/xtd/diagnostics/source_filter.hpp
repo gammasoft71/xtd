@@ -42,7 +42,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
-      auto source() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto source() const noexcept -> const xtd::string&;
       /// @brief Gets the name of the trace source.
       /// @param source The name of the trace source.
       auto source(const xtd::string& source) noexcept -> void;
@@ -59,7 +59,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message, xtd::any_object data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept -> bool override;
+      [[nodiscard]] auto should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, xtd::int32 id, const xtd::string& message, xtd::any_object data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept -> bool override;
       /// @}
       
     private:

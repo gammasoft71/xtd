@@ -52,9 +52,9 @@ namespace xtd {
       /// @endcond
       
       /// @{
-      auto equals(const xtd::object& value) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::object& value) const noexcept -> bool override;
       using list::equals;
-      auto equals(const xtd::diagnostics::trace_listener_collection& value) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::diagnostics::trace_listener_collection& value) const noexcept -> bool override;
       /// @}
       
       /// @name Operators

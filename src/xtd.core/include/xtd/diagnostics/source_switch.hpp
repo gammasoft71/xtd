@@ -50,7 +50,7 @@ namespace xtd {
       /// @brief Gets the level of the switch.
       /// @return One of the SourceLevels values that represents the event level of the switch.
       /// @remarks This property gets its value from the switch_setting property. Setting this property also modifies the switch_setting property.
-      auto level() const noexcept -> xtd::diagnostics::source_levels;
+      [[nodiscard]] auto level() const noexcept -> xtd::diagnostics::source_levels;
       /// @brief Sets the level of the switch.
       /// @param level One of the SourceLevels values that represents the event level of the switch.
       /// @remarks This property gets its value from the switch_setting property. Setting this property also modifies the switch_setting property.
@@ -65,7 +65,7 @@ namespace xtd {
       /// @return `true` if the trace listeners should be called; otherwise, `false`.
       /// @remarks This method is called by the trace methods in the trace_source class to determine whether listeners should be called to write a trace.
       /// @note Application code should not call this method; it is intended to be called only by methods in the trace_source class.
-      auto should_trace(xtd::diagnostics::trace_event_type event_type) noexcept -> bool;
+      [[nodiscard]] auto should_trace(xtd::diagnostics::trace_event_type event_type) noexcept -> bool;
       /// @}
       
     protected:

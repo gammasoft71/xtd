@@ -51,7 +51,7 @@ namespace xtd {
       /// @return `true` if Flush is called on the Listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
-      static auto auto_flush() noexcept -> bool;
+      [[nodiscard]] static auto auto_flush() noexcept -> bool;
       /// @brief Sets whether Flush should be called on the Listeners after every write.
       /// @param auto_flush `true` if Flush is called on the Listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Gets the indent level.
       /// @return The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
-      static auto indent_level() noexcept -> xtd::uint32;
+      [[nodiscard]] static auto indent_level() noexcept -> xtd::uint32;
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times the indent of size IndentSize is applied. This property is stored on per-thread/per-request basis.
@@ -70,7 +70,7 @@ namespace xtd {
       /// @brief Gets the number of spaces in an indent.
       /// @return The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
-      static auto indent_size() noexcept -> xtd::uint32;
+      [[nodiscard]] static auto indent_size() noexcept -> xtd::uint32;
       /// @brief Sets the number of spaces in an indent.
       /// @param indent_size The number of spaces in an indent. The default is four.
       /// @remarks A ostream_trace_listener interprets this number as spaces. An event_log_trace_listener ignores this value.
@@ -80,7 +80,7 @@ namespace xtd {
       /// @return A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
-      static auto listeners() -> listener_collection&;
+      [[nodiscard]] static auto listeners() -> listener_collection&;
       /// @brief Sets the collection of listeners that is monitoring the trace output.
       /// @param listeners A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
@@ -90,7 +90,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return `true` if the global lock is to be used; otherwise, `false`. The default is `true`.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is `false` and the value of IsThreadSafe is `true`. The default behavior is to use the global lock.
-      static auto use_global_lock() noexcept -> bool;
+      [[nodiscard]] static auto use_global_lock() noexcept -> bool;
       /// @brief Sets a value indicating whether the global lock should be used.
       /// @param use_global_lock `true` if the global lock is to be used; otherwise, `false`. The default is `true`.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is `false` and the value of IsThreadSafe is `true`. The default behavior is to use the global lock.
@@ -414,9 +414,9 @@ namespace xtd {
       /// @}
       
       /// @cond
-      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition) -> bool {return __should_aborted__(stack_frame, condition, xtd::string::empty_string);}
-      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message) -> bool {return __should_aborted__(stack_frame, condition, message, xtd::string::empty_string);}
-      static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message, const xtd::string& detail_message) -> bool {
+      [[nodiscard]] static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition) -> bool {return __should_aborted__(stack_frame, condition, xtd::string::empty_string);}
+      [[nodiscard]] static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message) -> bool {return __should_aborted__(stack_frame, condition, message, xtd::string::empty_string);}
+      [[nodiscard]] static auto __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message, const xtd::string& detail_message) -> bool {
         #if TRACE
         auto result = xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);
@@ -435,7 +435,7 @@ namespace xtd {
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       /// @deprecated Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.")]]
-      static auto show_assert_dialog() noexcept -> bool;
+      [[nodiscard]] static auto show_assert_dialog() noexcept -> bool;
       /// @brief Sets a value indicating whether the assert dialog should be show.
       /// @return `true` if assert dialog is to be shown; otherwise, `false`. The default is `true`.
       /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or xtd::diagnostics::trace::cassert or #assert_ is called to ask user to ignore, continue or retry the assert.

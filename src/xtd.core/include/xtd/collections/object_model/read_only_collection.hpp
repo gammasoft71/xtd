@@ -42,17 +42,17 @@ namespace xtd {
           using iterator = typename generic::ilist<list_type_t>::iterator;
           using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
           
-          auto contains(const list_type_t& item) const noexcept -> bool override {return false;}
+          [[nodiscard]] auto contains(const list_type_t& item) const noexcept -> bool override {return false;}
           auto copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const -> void override {}
-          generic::enumerator<list_type_t> get_enumerator() const noexcept override {
+          [[nodiscard]] generic::enumerator<list_type_t> get_enumerator() const noexcept override {
             struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
-              const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
-              bool move_next() override {return false;}
+              [[nodiscard]] const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+              [[nodiscard]] bool move_next() override {return false;}
               void reset() override {}
             };
             return {new_ptr<empty_list_enumerator>()};
           }
-          auto index_of(const list_type_t& item) const noexcept -> xtd::size override {return npos;}
+          [[nodiscard]] auto index_of(const list_type_t& item) const noexcept -> xtd::size override {return npos;}
           
           const list_type_t& operator [](xtd::size index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           list_type_t& operator [](xtd::size index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
@@ -123,18 +123,18 @@ namespace xtd {
         /// Finally, the code example creates an array larger than the collection and uses the xtd::collections::object_model::read_only_collection::copy_to method to insert the elements of the collection into the middle of the array.
         /// @include read_only_collection.cpp
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto count() const noexcept -> xtd::size override {return items_.count();}
+        [[nodiscard]] auto count() const noexcept -> xtd::size override {return items_.count();}
         
         /// @brief Gets an empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @return An empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @remarks The returned instance is immutable and will always be empty.
-        static auto empty_collection() -> const read_only_collection<value_type>& {
+        [[nodiscard]] static auto empty_collection() -> const read_only_collection<value_type>& {
           static auto el = empty_list<value_type> {};
           static auto roc_el = read_only_collection<value_type> {el};
           return roc_el;
         }
         
-        const xtd::object& sync_root() const noexcept override {return items_.sync_root();}
+        [[nodiscard]] const xtd::object& sync_root() const noexcept override {return items_.sync_root();}
         /// @}
         
         /// @name Public Methods
@@ -152,7 +152,7 @@ namespace xtd {
         /// @include read_only_collection.cpp
         /// @remarks This method determines equality using the default equality comparer xtd::collections::generic::equality_comparer::default_comparer.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
-        auto contains(const type_t& item) const noexcept -> bool override {return items_.contains(item);}
+        [[nodiscard]] auto contains(const type_t& item) const noexcept -> bool override {return items_.contains(item);}
         
         /// @brief Copies the entire xtd::collections::object_model::read_only_collection <type_t> to a compatible one-dimensional Array, starting at the specified index of the target array.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::object_model::read_only_collection <type_t>. The xtd::array must have zero-based indexing.
@@ -188,7 +188,7 @@ namespace xtd {
         /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
         /// @remarks Default implementations of collections in xtd::collections::generic are not synchronized.
         /// @remarks This method is an O(1) operation
-        generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
+        [[nodiscard]] generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
         
         /// @brief Searches for the specified object and returns the zero-based index of the first occurrence within the entire xtd::collections::object_model::read_only_collection <type_t>.
         /// @param item The object to locate in the xtd::collections::object_model::read_only_collection <type_t>.
@@ -203,7 +203,7 @@ namespace xtd {
         /// @remarks The xtd::collections::object_model::read_only_collection <type_t> is searched forward starting at the first element and ending at the last element.
         /// @remarks This method determines equality using the default comparer xtd::collections::generic::equality_comparer::default_comparer.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
-        auto index_of(const type_t& item) const noexcept -> xtd::size override {return items_.index_of(item);}
+        [[nodiscard]] auto index_of(const type_t& item) const noexcept -> xtd::size override {return items_.index_of(item);}
         /// @}
         
         /// @name Public Operators
