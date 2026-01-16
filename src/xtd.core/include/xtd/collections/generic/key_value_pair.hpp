@@ -94,11 +94,11 @@ namespace xtd {
         
         /// @brief Gets the key in the key/value pair.
         /// @return key_t A key_t that is the key of the key_value_pair<key_t, value_t>.
-        auto key() const noexcept -> const key_t& {return first;}
+        [[nodiscard]] auto key() const noexcept -> const key_t& {return first;}
         
         /// @brief Gets the value in the key/value pair.
         /// @return value_t A value_t that is the value of the key_value_pair<key_t, value_t>.
-        auto value() const noexcept -> const value_t& {return second;}
+        [[nodiscard]] auto value() const noexcept -> const value_t& {return second;}
         /// @}
         
         /// @name Public Methods
