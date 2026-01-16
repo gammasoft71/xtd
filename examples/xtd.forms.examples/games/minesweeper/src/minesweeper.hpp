@@ -40,47 +40,47 @@ namespace minesweeper {
     
     /// @{
     /// @brief The main entry point for the game.
-    static void main();
+    static auto main() -> void;
     /// @}
 
   private:
-    void change_level(level l);
+    auto change_level(level l) -> void;
     
-    void new_game();
+    auto new_game() -> void;
     
-    void check_neighbors(const point& cell_location);
-    int checked_cell(const point& cell_location);
+    auto check_neighbors(const point& cell_location) -> void;
+    [[nodiscard]] auto checked_cell(const point& cell_location) -> int;
     
-    void draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell);
-    void draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle);
-    void draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle);
+    auto draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void;
+    auto draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) -> void;
+    auto draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) -> void;
     
-    void game_over();
+    auto game_over() -> void;
     
-    void mark_cell(int x, int y);
+    auto mark_cell(int x, int y) -> void;
     
-    void on_about_menu_click(object& sender, const event_args& e);
-    void on_custom_menu_click(object& sender, const event_args& e);
-    void on_help_content_menu_click(object& sender, const event_args& e);
-    void on_game_panel_mouse_up(object& sender, const mouse_event_args& e);
-    void on_game_panel_paint(object& sender, paint_event_args& e);
-    void on_marks_menu_click(object& sender, const event_args& e);
-    void on_original_color_menu_click(object& sender, const event_args& e);
-    void on_status_panel_paint(object& sender, paint_event_args& e);
-    void on_status_panel_resize(object& sender, const event_args& e);
-    void on_stopwatch_tick();
+    auto on_about_menu_click(object& sender, const event_args& e) -> void;
+    auto on_custom_menu_click(object& sender, const event_args& e) -> void;
+    auto on_help_content_menu_click(object& sender, const event_args& e) -> void;
+    auto on_game_panel_mouse_up(object& sender, const mouse_event_args& e) -> void;
+    auto on_game_panel_paint(object& sender, paint_event_args& e) -> void;
+    auto on_marks_menu_click(object& sender, const event_args& e) -> void;
+    auto on_original_color_menu_click(object& sender, const event_args& e) -> void;
+    auto on_status_panel_paint(object& sender, paint_event_args& e) -> void;
+    auto on_status_panel_resize(object& sender, const event_args& e) -> void;
+    auto on_stopwatch_tick() -> void;
     
-    void uncover_cell(int x, int y);
-    void update_colors();
+    auto uncover_cell(int x, int y) -> void;
+    auto update_colors() -> void;
     
-    void you_win();
+    auto you_win() -> void;
     
     panel game_panel_;
     panel status_panel_;

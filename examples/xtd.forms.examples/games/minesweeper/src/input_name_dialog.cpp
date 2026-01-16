@@ -37,25 +37,25 @@ input_name_dialog::input_name_dialog() {
   accept_button(ok_button_);
 }
 
-minesweeper::level input_name_dialog::level() const noexcept {
+auto input_name_dialog::level() const noexcept -> minesweeper::level {
   return level_;
 }
 
-void input_name_dialog::level(minesweeper::level level) noexcept {
+auto input_name_dialog::level(minesweeper::level level) noexcept -> void {
   level_ = level;
   message_label_.text(xtd::string::format("You have the fastest time\nfor {} level.\nPlease type your name."_t, level_to_string()));
 }
 
-string input_name_dialog::gammer_name() const noexcept {
+auto input_name_dialog::gammer_name() const noexcept -> string {
   return gammer_name_;
 }
 
-void input_name_dialog::gammer_name(const string& gammer_name) noexcept {
+auto input_name_dialog::gammer_name(const string& gammer_name) noexcept -> void {
   gammer_name_ = gammer_name;
   name_text_box_.text(gammer_name_);
 }
 
-string input_name_dialog::level_to_string() noexcept {
+auto input_name_dialog::level_to_string() noexcept -> string {
   static std::map<minesweeper::level, string> levels {{minesweeper::level::beginner, "beginner"_t}, {minesweeper::level::intermediate, "intermediate"_t}, {minesweeper::level::expert, "expert"_t}};
   auto it = levels.find(level_);
   if (it == levels.end()) return "{unknown"_t;

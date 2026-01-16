@@ -10,7 +10,7 @@
 
 using namespace minesweeper;
 
-void minesweeper_form::main() {
+auto minesweeper_form::main() -> void {
   application::run(minesweeper_form());
 }
 
@@ -65,7 +65,7 @@ minesweeper_form::minesweeper_form() {
   change_level(as<level>(properties::settings::default_settings().level()));
 }
 
-void minesweeper_form::change_level(level l) {
+auto minesweeper_form::change_level(level l) -> void {
   properties::settings::default_settings().level(l);
   properties::settings::default_settings().save();
   
@@ -80,7 +80,7 @@ void minesweeper_form::change_level(level l) {
   new_game();
 }
 
-void minesweeper_form::new_game() {
+auto minesweeper_form::new_game() -> void {
   game_over_ = false;
   stopwatch_timer_.enabled(false);
   checked_cell_count_ = 0;
@@ -115,7 +115,7 @@ void minesweeper_form::new_game() {
   invalidate();
 }
 
-void minesweeper_form::check_neighbors(const point& cell_location) {
+auto minesweeper_form::check_neighbors(const point& cell_location) -> void {
   if (checked_cell(cell_location) != 0) return;
   for (auto y = cell_location.y - 1; y <= cell_location.y + 1; ++y)
     for (auto x = cell_location.x - 1; x <= cell_location.x + 1; ++x)
@@ -123,7 +123,7 @@ void minesweeper_form::check_neighbors(const point& cell_location) {
         check_neighbors({x, y});
 }
 
-int minesweeper_form::checked_cell(const point& cell_location) {
+auto minesweeper_form::checked_cell(const point& cell_location) -> int {
   if (cells_[cell_location.x][cell_location.y].state() == cell_state::unchecked) {
     cells_[cell_location.x][cell_location.y].state(cell_state::checked);
     checked_cell_count_++;
@@ -131,16 +131,16 @@ int minesweeper_form::checked_cell(const point& cell_location) {
   return cells_[cell_location.x][cell_location.y].number_of_neighbouring_mines();
 }
 
-void minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   static std::map<cell_state, delegate<void(paint_event_args&, const rectangle&, minesweeper::cell)>> draw_state {{cell_state::unchecked, {*this, &minesweeper_form::draw_unchecked}}, {cell_state::checked, {*this, &minesweeper_form::draw_checked}}, {cell_state::flag, {*this, &minesweeper_form::draw_flag}}, {cell_state::question, {*this, &minesweeper_form::draw_question}}, {cell_state::mine, {*this, &minesweeper_form::draw_mine}}, {cell_state::exploded_mine, {*this, &minesweeper_form::draw_exploded_mine}}, {cell_state::error, {*this, &minesweeper_form::draw_error}}};
   draw_state[cell.state()](e, clip_rectangle, cell);
 }
 
-void minesweeper_form::draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_unchecked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_unchecked(e, clip_rectangle);
 }
 
-void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_checked(e, clip_rectangle);
   color text_color;
   
@@ -187,7 +187,7 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
   e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
 }
 
-void minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_unchecked(e, clip_rectangle);
   
   static auto flag = bitmap {properties::resources::flag(), {16, 16}};
@@ -196,7 +196,7 @@ void minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rect
   e.graphics().draw_image(flag, x, y);
 }
 
-void minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_unchecked(e, clip_rectangle);
   auto x = clip_rectangle.left() + (clip_rectangle.width - e.graphics().measure_string("?", font()).width) / 2;
   auto y = clip_rectangle.top() + (clip_rectangle.height - e.graphics().measure_string("?", font()).height) / 2;
@@ -204,7 +204,7 @@ void minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_
   e.graphics().draw_string("?", font(), solid_brush(question_color), x, y);
 }
 
-void minesweeper_form::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_checked(e, clip_rectangle);
   static auto mine = bitmap {properties::resources::mine(), {16, 16}};
   auto x = clip_rectangle.left() + (clip_rectangle.width - mine.width()) / 2;
@@ -212,19 +212,19 @@ void minesweeper_form::draw_mine(paint_event_args& e, const rectangle& clip_rect
   e.graphics().draw_image(mine, x, y);
 }
 
-void minesweeper_form::draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_exploded_mine(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   e.graphics().fill_rectangle(brushes::red(), clip_rectangle);
   draw_mine(e, clip_rectangle, cell);
 }
 
-void minesweeper_form::draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
+auto minesweeper_form::draw_error(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) -> void {
   draw_border_checked(e, clip_rectangle);
   draw_mine(e, clip_rectangle, cell);
   e.graphics().draw_line(pen {color::red, 3}, clip_rectangle.left() + 7, clip_rectangle.top() + 7, clip_rectangle.right() - 7, clip_rectangle.bottom() - 7);
   e.graphics().draw_line(pen {color::red, 3}, clip_rectangle.right() - 7, clip_rectangle.top() + 7, clip_rectangle.left() + 7, clip_rectangle.bottom() - 7);
 }
 
-void minesweeper_form::draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) {
+auto minesweeper_form::draw_border_unchecked(paint_event_args& e, const rectangle& clip_rectangle) -> void {
   if (!properties::settings::default_settings().original_color()) {
     if (back_color().get_brightness() < 0.5f) e.graphics().fill_rectangle(solid_brush {color_converter::light(back_color(), 0.1)}, clip_rectangle);
     else e.graphics().fill_rectangle(solid_brush {color_converter::dark(back_color(), 0.1)}, clip_rectangle);
@@ -246,14 +246,14 @@ void minesweeper_form::draw_border_unchecked(paint_event_args& e, const rectangl
   e.graphics().draw_line(pen {color_converter::dark(color_converter::dark(color_converter::dark(back_color())))}, clip_rectangle.right() - 1, clip_rectangle.top(), clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
-void minesweeper_form::draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) {
+auto minesweeper_form::draw_border_checked(paint_event_args& e, const rectangle& clip_rectangle) -> void {
   e.graphics().draw_line(pen {color_converter::dark(back_color())}, clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.right(), clip_rectangle.top());
   e.graphics().draw_line(pen {color_converter::dark(back_color())}, clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());
   e.graphics().draw_line(pen {color_converter::light(back_color())}, clip_rectangle.left() + 1, clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);
   e.graphics().draw_line(pen {color_converter::light(back_color())}, clip_rectangle.right() - 1, clip_rectangle.top() + 1, clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);
 }
 
-void minesweeper_form::game_over() {
+auto minesweeper_form::game_over() -> void {
   stopwatch_timer_.enabled(false);
   game_over_ = true;
   start_game_.image(bitmap {properties::resources::smiley2(), {24, 24}});
@@ -268,7 +268,7 @@ void minesweeper_form::game_over() {
   }
 }
 
-void minesweeper_form::mark_cell(int x, int y) {
+auto minesweeper_form::mark_cell(int x, int y) -> void {
   auto& cell = cells_[x][y];
   if (cell.state() == cell_state::unchecked) {
     cell.state(cell_state::flag);
@@ -282,7 +282,7 @@ void minesweeper_form::mark_cell(int x, int y) {
   invalidate();
 }
 
-void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args& e) {
+auto minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args& e) -> void {
   static auto dialog = about_dialog {};
   static auto information_page = tab_page::create("Information");
   information_page.auto_scroll(true);
@@ -329,11 +329,11 @@ void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args
   dialog.show();
 }
 
-void minesweeper_form::on_help_content_menu_click(object& sender, const xtd::event_args& e) {
+auto minesweeper_form::on_help_content_menu_click(object& sender, const xtd::event_args& e) -> void {
   diagnostics::process::start(diagnostics::process_start_info {"https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md"}.use_shell_execute(true));
 }
 
-void minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_args& e) {
+auto minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_args& e) -> void {
   auto dialog = custom_field_dialog {};
   dialog.custom_height(properties::settings::default_settings().custom_height());
   dialog.custom_width(properties::settings::default_settings().custom_width());
@@ -346,7 +346,7 @@ void minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_arg
   change_level(level::custom);
 }
 
-void minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_args& e) {
+auto minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_args& e) -> void {
   if (game_over_) return;
   stopwatch_timer_.enabled(true);
   
@@ -358,7 +358,7 @@ void minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_
   else if (e.button() == mouse_buttons::left) uncover_cell(x, y);
 }
 
-void minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) {
+auto minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) -> void {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, 0, 0, 0, e.clip_rectangle().height);
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(back_color()))}, 1, 0, 1, e.clip_rectangle().height);
@@ -389,18 +389,18 @@ void minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) 
       draw_cell(e, {15 + x * cell::width(), 15 + y * cell::height(), cell::width(), cell::height()}, cells_[x][y]);
 }
 
-void minesweeper_form::on_marks_menu_click(object& sender, const xtd::event_args& e) {
+auto minesweeper_form::on_marks_menu_click(object& sender, const xtd::event_args& e) -> void {
   properties::settings::default_settings().marks(!properties::settings::default_settings().marks());
   properties::settings::default_settings().save();
 }
 
-void minesweeper_form::on_original_color_menu_click(object& sender, const xtd::event_args& e) {
+auto minesweeper_form::on_original_color_menu_click(object& sender, const xtd::event_args& e) -> void {
   properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());
   properties::settings::default_settings().save();
   update_colors();
 }
 
-void minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e) {
+auto minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e) -> void {
   e.graphics().clear(back_color());
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, 0, 0, e.clip_rectangle().width, 0);
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(back_color()))}, 0, 1, e.clip_rectangle().width, 1);
@@ -427,17 +427,17 @@ void minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, e.clip_rectangle().width - 1 - offset, offset, e.clip_rectangle().width - 1 - offset, e.clip_rectangle().height - 1);
 }
 
-void minesweeper_form::on_status_panel_resize(object& sender, const event_args& e) {
+auto minesweeper_form::on_status_panel_resize(object& sender, const event_args& e) -> void {
   start_game_.location({status_panel_.size().width / 2 - 21, 17});
   stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});
 }
 
-void minesweeper_form::on_stopwatch_tick() {
+auto minesweeper_form::on_stopwatch_tick() -> void {
   if (stopwatch_count_ < 999)
     stopwatch_label_.text(string::format("{:D3}", ++stopwatch_count_));
 }
 
-void minesweeper_form::uncover_cell(int x, int y) {
+auto minesweeper_form::uncover_cell(int x, int y) -> void {
   start_game_.image(bitmap(properties::resources::smiley4(), {24, 24}));
   application::do_events();
   if (cells_[x][y].state() == cell_state::question)
@@ -455,12 +455,12 @@ void minesweeper_form::uncover_cell(int x, int y) {
   }
 }
 
-void minesweeper_form::update_colors() {
+auto minesweeper_form::update_colors() -> void {
   back_color(properties::settings::default_settings().original_color() ? color::from_argb(192, 196, 200) : default_back_color());
   fore_color(properties::settings::default_settings().original_color() ? color::black : default_fore_color());
 }
 
-void minesweeper_form::you_win() {
+auto minesweeper_form::you_win() -> void {
   stopwatch_timer_.enabled(false);
   game_over_ = true;
   for (auto y = 0; y < grid_size_.height; ++y)

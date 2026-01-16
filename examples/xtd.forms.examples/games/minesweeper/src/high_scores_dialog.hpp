@@ -16,7 +16,7 @@ namespace minesweeper {
     /// @}
     
   private:
-    void read_and_update_settings();
+    auto read_and_update_settings() -> void;
     
     label title_;
     label beginner_level_label_;

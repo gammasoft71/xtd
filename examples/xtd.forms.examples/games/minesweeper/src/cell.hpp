@@ -16,46 +16,46 @@ namespace minesweeper {
     /// @{
     /// @brief Gets a value indicate if cell contains mine.
     /// @return true if cell contains mine; otherwhise false.
-    bool contains_mine() const noexcept;
+    [[nodiscard]] auto contains_mine() const noexcept -> bool;
     /// @brief Sets a value indicate if cell contains mine.
     /// @param value true if cell contains mine; otherwhise false.
     void has_mine(bool value) noexcept;
     
     /// @brief Gets a value indicate if cell has neighboring mines.
     /// @return true if cell has neighbors; otherwhise false.
-    bool has_neighbouring_mines() const noexcept;
+    [[nodiscard]] bool has_neighbouring_mines() const noexcept;
     
     /// @brief Gets the height of cell in pixels.
     /// @return The height of cell.
     /// @remarks The values is 30.
-    static int height() noexcept;
+    [[nodiscard]] static auto height() noexcept -> int;
     
     /// @brief Gets the number of neighboring mines of the cell.
     /// @return The number of cell's neighbors.
     /// @remarks The value is betwen 0 and 8.
-    int number_of_neighbouring_mines() const noexcept;
+    [[nodiscard]] auto number_of_neighbouring_mines() const noexcept -> int;
     /// @brief Sets the number of neighboring mines of the cell.
     /// @param value The number neighbors of the cell.
     /// @remarks The value must be betwen 0 and 8.
     /// @remarks The value is provided by minesweeper::minesweeper_form and there is no check.
-    void neighbors(int value) noexcept;
+    auto neighbors(int value) noexcept -> void;
     
     /// @brief Gets the size of cell in pixels.
     /// @return The size of cell.
     /// @remarks The values is 30 x 30.
-    static drawing::size size() noexcept;
+    [[nodiscard]] static auto size() noexcept -> drawing::size;
     
     /// @brief Gets the cell state.
     /// @return One of minesweeper::cell_state value.
-    cell_state state() const noexcept;
+    [[nodiscard]] auto state() const noexcept -> cell_state;
     /// @brief Sets the cell state.
     /// @param value One of minesweeper::cell_state value.
-    void state(cell_state value) noexcept;
+    auto state(cell_state value) noexcept -> void;
     
     /// @brief Gets the width of cell in pixels.
     /// @return The width of cell.
     /// @remarks The values is 30.
-    static int width() noexcept;
+    [[nodiscard]] static auto width() noexcept -> int;
     /// @}
     
     /// @name Public Methods
@@ -70,7 +70,7 @@ namespace minesweeper {
     /// | state                        | cell_state::unchecked |
     void clear() noexcept;
     
-    bool equals(const cell& rhs) const noexcept override {return has_mine_ == rhs.has_mine_ && number_of_neighboring_mines_ == rhs.number_of_neighboring_mines_ && state_ == rhs.state_ && size_ ==rhs.size_;}
+    [[nodiscard]] bool equals(const cell& rhs) const noexcept override {return has_mine_ == rhs.has_mine_ && number_of_neighboring_mines_ == rhs.number_of_neighboring_mines_ && state_ == rhs.state_ && size_ ==rhs.size_;}
     /// @}
 
   private:

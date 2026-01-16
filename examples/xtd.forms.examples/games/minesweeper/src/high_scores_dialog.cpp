@@ -76,7 +76,7 @@ high_scores_dialog::high_scores_dialog() {
   read_and_update_settings();
 }
 
-void high_scores_dialog::read_and_update_settings() {
+auto high_scores_dialog::read_and_update_settings() -> void {
   beginner_score_label_.text(string::format("{} seconds"_t, properties::settings::default_settings().beginner_high_scores_value()));
   intermediate_score_label_.text(string::format("{} seconds"_t, properties::settings::default_settings().intermediate_high_scores_value()));
   expert_score_label_.text(string::format("{} seconds"_t, properties::settings::default_settings().expert_high_scores_value()));

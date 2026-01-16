@@ -24,40 +24,40 @@ namespace minesweeper {
     /// @brief Gets the custom height for the game area.
     /// @return The height of game area.
     /// @remarks The value is between 8 and 24.
-    int custom_heght() const noexcept;
+    [[nodiscard]] auto custom_heght() const noexcept -> int;
     /// @brief Sets the custom height for the game area.
     /// @param value The height of game area.
     /// @remarks The value is between 8 and 24.
-    void custom_height(int value) noexcept;
+    auto custom_height(int value) noexcept -> void;
     
     /// @brief Gets the custom width for the game area.
     /// @return The width of game area.
     /// @remarks The value is between 8 and 30.
-    int custom_width() const noexcept;
+    [[nodiscard]] auto custom_width() const noexcept -> int;
     /// @brief Sets the custom width for the game area.
     /// @param value The width of game area.
     /// @remarks The value is between 8 and 30.
-    void custom_width(int value) noexcept;
+    auto custom_width(int value) noexcept -> void;
     
     /// @brief Gets the custom mines number.
     /// @return The custom mines number.
     /// @remarks The value is between 10 and 667.
-    int custom_mines() const noexcept;
+    [[nodiscard]] auto custom_mines() const noexcept -> int;
     /// @brief Sets the custom mines number.
     /// @param value The custom mines number.
     /// @remarks The value is between 10 and 667.
-    void custom_mines(int value) noexcept;
+    auto custom_mines(int value) noexcept -> void;
     /// @}
     
   private:
-    void on_text_box_key_press(object& sender, key_press_event_args& e);
+    auto on_text_box_key_press(object& sender, key_press_event_args& e) -> void;
 
-    static constexpr const int minimum_height_ = 8;
-    static constexpr const int maximum_height_ = 24;
-    static constexpr const int minimum_width_ = 8;
-    static constexpr const int maximum_width_ = 30;
-    static constexpr const int minimum_mines_ = 10;
-    static constexpr const int maximum_mines_ = 667;
+    static constexpr int minimum_height_ = 8;
+    static constexpr int maximum_height_ = 24;
+    static constexpr int minimum_width_ = 8;
+    static constexpr int maximum_width_ = 30;
+    static constexpr int minimum_mines_ = 10;
+    static constexpr int maximum_mines_ = 667;
 
     label message_label_;
     label custom_height_label_;

@@ -73,39 +73,39 @@ custom_field_dialog::custom_field_dialog() {
   ok_button_.size({60, 80});
 }
 
-int custom_field_dialog::custom_heght() const noexcept {
+auto custom_field_dialog::custom_heght() const noexcept -> int {
   return custom_height_;
 }
 
-void custom_field_dialog::custom_height(int value) noexcept {
+auto custom_field_dialog::custom_height(int value) noexcept -> void {
   custom_height_ = value;
   if (custom_height_ < minimum_height_) custom_height_ = minimum_height_;
   else if (custom_height_ > maximum_height_) custom_height_ = maximum_height_;
   custom_height_text_box_.text(string::format("{}", custom_height_));
 }
 
-int custom_field_dialog::custom_width() const noexcept {
+auto custom_field_dialog::custom_width() const noexcept -> int {
   return custom_width_;
 }
 
-void custom_field_dialog::custom_width(int value) noexcept {
+auto custom_field_dialog::custom_width(int value) noexcept -> void {
   custom_width_ = value;
   if (custom_width_ < minimum_width_) custom_width_ = minimum_width_;
   else if (custom_width_ > maximum_width_) custom_width_ = maximum_width_;
   custom_width_text_box_.text(string::format("{}", custom_width_));
 }
 
-int custom_field_dialog::custom_mines() const noexcept {
+auto custom_field_dialog::custom_mines() const noexcept -> int {
   return custom_mines_;
 }
 
-void custom_field_dialog::custom_mines(int value) noexcept {
+auto custom_field_dialog::custom_mines(int value) noexcept -> void {
   custom_mines_ = value;
   if (custom_mines_ < minimum_mines_) custom_mines_ = minimum_mines_;
   else if (custom_mines_ > maximum_mines_) custom_mines_ = maximum_mines_;
   custom_mines_text_box_.text(string::format("{}", custom_mines_));
 }
 
-void custom_field_dialog::on_text_box_key_press(object& sender, key_press_event_args& e) {
+auto custom_field_dialog::on_text_box_key_press(object& sender, key_press_event_args& e) -> void {
   e.handled(!isdigit(e.key_char()));
 }

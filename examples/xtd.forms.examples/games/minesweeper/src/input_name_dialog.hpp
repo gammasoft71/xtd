@@ -23,21 +23,21 @@ namespace minesweeper {
     /// @{
     /// @brief Gets the level for which the gammer name is entered.
     /// @return One of minesweeper::level values.
-    minesweeper::level level() const noexcept;
+    [[nodiscard]] auto level() const noexcept -> minesweeper::level;
     /// @brief Sets the level for which the gammer name is entered.
     /// @param level One of minesweeper::level values.
-    void level(minesweeper::level level) noexcept;
+    auto level(minesweeper::level level) noexcept -> void;
     
     /// @brief Gets the gammer name.
     /// @return The gammer name.
-    string gammer_name() const noexcept;
+    [[nodiscard]] auto gammer_name() const noexcept -> string;
     /// @brief Sets the gammer name.
     /// @param gammer_name The gammer name.
-    void gammer_name(const string& gammer_name) noexcept;
+    auto gammer_name(const string& gammer_name) noexcept -> void;
     /// @}
     
   private:
-    string level_to_string() noexcept;
+    [[nodiscard]] auto level_to_string() noexcept -> string;
     
     label message_label_;
     text_box name_text_box_;

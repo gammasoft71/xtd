@@ -2,47 +2,47 @@
 
 using namespace minesweeper;
 
-bool cell::contains_mine() const noexcept {
+auto cell::contains_mine() const noexcept -> bool {
   return has_mine_;
 }
 
-void cell::has_mine(bool value) noexcept {
+auto cell::has_mine(bool value) noexcept -> void {
   has_mine_ = value;
 }
 
-bool cell::has_neighbouring_mines() const noexcept {
+auto cell::has_neighbouring_mines() const noexcept -> bool {
   return number_of_neighboring_mines_;
 }
 
-int cell::height() noexcept {
+auto cell::height() noexcept -> int{
   return size_.height;
 }
 
-int cell::number_of_neighbouring_mines() const noexcept {
+auto cell::number_of_neighbouring_mines() const noexcept -> int{
   return number_of_neighboring_mines_;
 }
 
-void cell::neighbors(int value) noexcept {
+auto cell::neighbors(int value) noexcept -> void {
   number_of_neighboring_mines_ = value;
 }
 
-drawing::size cell::size() noexcept {
+auto cell::size() noexcept -> drawing::size {
   return size_;
 }
 
-cell_state cell::state() const noexcept {
+auto cell::state() const noexcept -> cell_state {
   return state_;
 }
 
-void cell::state(cell_state value) noexcept {
+auto cell::state(cell_state value) noexcept -> void {
   state_ = value;
 }
 
-int cell::width() noexcept {
+auto cell::width() noexcept -> int{
   return size_.width;
 }
 
-void cell::clear() noexcept {
+auto cell::clear() noexcept -> void {
   has_mine_ = false;
   number_of_neighboring_mines_ = 0;
   state_ = cell_state::unchecked;
