@@ -1954,7 +1954,7 @@ macro(write_resources_file_header)
     if (${EXTENSION} IN_LIST AUDIO_EXTENSIONS)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
-        "    static auto ${NAME}() -> const xtd::object& {\n"
+        "    [[nodiscard]] static auto ${NAME}() -> const xtd::object& {\n"
         "      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);\n"
         "    }\n"
         "\n"
@@ -1962,7 +1962,7 @@ macro(write_resources_file_header)
     elseif (${EXTENSION} IN_LIST ICON_EXTENSIONS)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::icon.\n"
-        "    static auto ${NAME}() -> const xtd::drawing::icon& {\n"
+        "    [[nodiscard]] static auto ${NAME}() -> const xtd::drawing::icon& {\n"
         "      static auto icon = xtd::drawing::icon {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")};\n"
         "      return icon;\n"
         "    }\n"
@@ -1971,7 +1971,7 @@ macro(write_resources_file_header)
     elseif (${EXTENSION} IN_LIST PICTURE_EXTENSIONS)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
-        "    static auto ${NAME}() -> const xtd::drawing::bitmap& {\n"
+        "    [[nodiscard]] static auto ${NAME}() -> const xtd::drawing::bitmap& {\n"
         "      static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")};\n"
         "      return bitmap;\n"
         "    }\n"
@@ -1980,7 +1980,7 @@ macro(write_resources_file_header)
     elseif (${EXTENSION} IN_LIST TEXT_EXTENSIONS)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::string.\n"
-        "    static auto ${NAME}() -> const xtd::string& {\n"
+        "    [[nodiscard]] static auto ${NAME}() -> const xtd::string& {\n"
         "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
@@ -1989,7 +1989,7 @@ macro(write_resources_file_header)
     else ()
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::array<xtd::byte>.\n"
-        "    static auto ${NAME}() -> const xtd::array<xtd::byte>& {\n"
+        "    [[nodiscard]] static auto ${NAME}() -> const xtd::array<xtd::byte>& {\n"
         "      static auto bytes = xtd::io::binary_reader(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")).read_bytes(xtd::io::file_info(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")).length());\n"
         "      return bytes;\n"
         "    }\n"
@@ -2004,7 +2004,7 @@ macro(write_resources_file_header)
 
     file(APPEND ${RESOURCES_FILE_HEADER}
       "    /// @brief Looks up a localized resource of type xtd::string.\n"
-      "    static auto ${NAME}() -> const xtd::string& {\n"
+      "    [[nodiscard]] static auto ${NAME}() -> const xtd::string& {\n"
       "      static auto str = xtd::string {${VALUE}};\n"
       "      return str;\n"
       "    }\n"
@@ -2084,7 +2084,7 @@ macro(write_settings_file_header)
       file(APPEND ${SETTINGS_FILE_HEADER}
         "    /// @brief Gets the ${NAME} user setting property.\n"
         "    /// @return A ${TYPE} value.\n"
-        "    auto ${NAME}() const noexcept -> const ${TYPE}& {return ${NAME}_;}\n"
+        "    [[nodiscard]] auto ${NAME}() const noexcept -> const ${TYPE}& {return ${NAME}_;}\n"
         "    /// @brief Sets the ${NAME} user setting property.\n"
         "    /// @param value A ${TYPE} value.\n"
         "    auto ${NAME}(const ${TYPE}& value) noexcept -> settings& {\n"
@@ -2102,7 +2102,7 @@ macro(write_settings_file_header)
       file(APPEND ${SETTINGS_FILE_HEADER}
         "    /// @brief Gets the ${NAME} system setting property.\n"
         "    /// @return A ${TYPE} value.\n"
-        "    auto ${NAME}() const noexcept -> ${TYPE} {return ${VALUE};}\n"
+        "    [[nodiscard]] auto ${NAME}() const noexcept -> ${TYPE} {return ${VALUE};}\n"
         "\n"
       )
     endforeach()
@@ -2166,7 +2166,7 @@ macro(write_settings_file_header)
     "    /// @brief Gets the default instance of settings.\n"
     "    /// @return The default instance.\n"
     "    /// @remarks At the first call all properties are reloaded with the last saved values.\n"
-    "    static auto default_settings() noexcept -> settings& {\n"
+    "    [[nodiscard]] static auto default_settings() noexcept -> settings& {\n"
     "      static auto default_settings = settings {};\n"
     "      return default_settings;\n"
     "    }\n"
