@@ -95,50 +95,50 @@ namespace xtd {
           /// @{
           /// @brief Gets a const iterator to the beginning of the stack.
           /// @return Iterator to the beginning of the stack.
-          auto begin() const -> const_iterator {return base_type::c.cbegin();}
+          [[nodiscard]] auto begin() const -> const_iterator {return base_type::c.cbegin();}
           
           /// @brief Gets the reserved capacity of the stack.
           /// @return The reserved capacity of the stack.
-          auto capacity() const noexcept -> size_type {return capacity_;}
+          [[nodiscard]] auto capacity() const noexcept -> size_type {return capacity_;}
           
           /// @brief Gets a const iterator to the beginning of the stack.
           /// @return Iterator to the beginning of the stack.
-          auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
+          [[nodiscard]] auto cbegin() const -> const_iterator {return base_type::c.cbegin();}
           
           /// @brief Gets a const iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
-          auto cend() const -> const_iterator {return base_type::c.cend();}
+          [[nodiscard]] auto cend() const -> const_iterator {return base_type::c.cend();}
           
           /// @brief Gets a const reverse iterator to the beginning of the stack.
           /// @return Iterator to the beginning of the stack.
-          auto crbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
+          [[nodiscard]] auto crbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
           
           /// @brief Gets a const reverse iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
-          auto crend() const -> const_reverse_iterator {return base_type::c.crend();}
+          [[nodiscard]] auto crend() const -> const_reverse_iterator {return base_type::c.crend();}
           
           /// @brief Gets a const iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
-          auto end() const -> const_iterator {return base_type::c.cend();}
+          [[nodiscard]] auto end() const -> const_iterator {return base_type::c.cend();}
           
           /// @brief Access to the underlying base stack.
           /// @return The underlying base stack.
-          auto items() noexcept -> base_type& {return self_;}
+          [[nodiscard]] auto items() noexcept -> base_type& {return self_;}
           /// @brief Access to the underlying base stack.
           /// @return The underlying base stack.
-          auto items() const noexcept -> const base_type& {return self_;}
+          [[nodiscard]] auto items() const noexcept -> const base_type& {return self_;}
           
           /// @brief Gets a const reverse iterator to the beginning of the stack.
           /// @return Iterator to the beginning of the stack.
-          auto rbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
+          [[nodiscard]] auto rbegin() const -> const_reverse_iterator {return base_type::c.crbegin();}
           
           /// @brief Gets a const reverse iterator to the end of the stack.
           /// @return Iterator to the end of the stack.
-          auto rend() const -> const_reverse_iterator {return base_type::c.crend();}
+          [[nodiscard]] auto rend() const -> const_reverse_iterator {return base_type::c.crend();}
           
           /// @brief Gets the number of elements in the stack.
           /// @return The number of elements in the stack.
-          auto size() const noexcept -> size_type {return base_type::c.size();}
+          [[nodiscard]] auto size() const noexcept -> size_type {return base_type::c.size();}
           /// @}
           
           /// @name Public Methods
