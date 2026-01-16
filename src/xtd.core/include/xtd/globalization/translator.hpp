@@ -33,7 +33,7 @@ namespace xtd {
       /// @brief Gets the current application language.
       /// @return The current application language.
       /// @remarks By default language is initialized with the current system language.
-      static auto language() -> xtd::string;
+      [[nodiscard]] static auto language() -> xtd::string;
       /// @brief Sets the current application language.
       /// @param language The current application language.
       /// @remarks Normally you should use the xtd::globalization::culture_info::current_culture property. This function only exists if you have a good reason to bypass xtd::globalization::culture_info::current_culture.
@@ -47,11 +47,11 @@ namespace xtd {
       
       /// @brief Gets an array of languages supported by the application.
       /// @return An array of languages supported by the application.
-      static auto languages() -> xtd::array<xtd::string>;
+      [[nodiscard]] static auto languages() -> xtd::array<xtd::string>;
       
       /// @brief Gets the current system language.
       /// @return The current system language.
-      static auto system_language() -> xtd::string;
+      [[nodiscard]] static auto system_language() -> xtd::string;
       /// @}
       
       /// @name Public Static Methods
@@ -95,17 +95,17 @@ namespace xtd {
       /// @brief Translates a string into the lganguage specified by the xtd::translate::language property.
       /// @return The translated string.
       /// @remarks If no translation is found, the result is the same as the value.
-      static auto translate(const xtd::string& value) noexcept -> xtd::string {return translate(language(), value);}
+      [[nodiscard]] static auto translate(const xtd::string& value) noexcept -> xtd::string {return translate(language(), value);}
       /// @brief Translates a string into the specified lganguage.
       /// @return The translated string.
       /// @param language The language used to translate the value
       /// @remarks If no translation is found, the result is the same as the value.
-      static auto translate(const xtd::string& language, const xtd::string& value) noexcept -> xtd::string {return translate(language, value.chars().c_str());}
+      [[nodiscard]] static auto translate(const xtd::string& language, const xtd::string& value) noexcept -> xtd::string {return translate(language, value.chars().c_str());}
       /// @}
       
       /// @cond
-      static auto translate(const char* value) noexcept -> const char* {return translate(language(), value);}
-      static auto translate(const xtd::string& language, const char* value) noexcept -> const char* {
+      [[nodiscard]] static auto translate(const char* value) noexcept -> const char* {return translate(language(), value);}
+      [[nodiscard]] static auto translate(const xtd::string& language, const char* value) noexcept -> const char* {
         auto language_name  = to_language_name(language);
         if (!xtd::io::directory::exists(xtd::io::path::combine(application_locale_path(), language_name))) language_name = to_fallback_name(language_name);
         if (!load_language(language_name)) return value;
@@ -115,12 +115,12 @@ namespace xtd {
       /// @endcond
       
     private:
-      static auto application_locale_path() -> xtd::string {return xtd::io::path::combine(xtd::environment::get_folder_path(environment::special_folder::application_resources), "locale");}
-      static auto xtd_locale_path() -> xtd::string {return environment::get_folder_path(xtd::environment::special_folder::xtd_locale);}
+      [[nodiscard]] static auto application_locale_path() -> xtd::string {return xtd::io::path::combine(xtd::environment::get_folder_path(environment::special_folder::application_resources), "locale");}
+      [[nodiscard]] static auto xtd_locale_path() -> xtd::string {return environment::get_folder_path(xtd::environment::special_folder::xtd_locale);}
       static auto load_language(const xtd::string& language) -> bool {return load_language(language, xtd_locale_path(), application_locale_path());}
       static auto load_language(const xtd::string& language, const xtd::string& xtd_locale_path, const xtd::string& application_locale_path) -> bool;
-      static auto to_language_name(const xtd::string& language) -> xtd::string;
-      static auto to_fallback_name(const xtd::string& language) -> xtd::string;
+      [[nodiscard]] static auto to_language_name(const xtd::string& language) -> xtd::string;
+      [[nodiscard]] static auto to_fallback_name(const xtd::string& language) -> xtd::string;
       static xtd::collections::generic::dictionary<xtd::string, xtd::collections::specialized::string_dictionary> language_values_;
       static xtd::collections::specialized::string_dictionary languages_;
       static xtd::optional<xtd::string> language_;

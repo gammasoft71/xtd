@@ -125,13 +125,13 @@ namespace xtd {
       /// @par Example
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
       /// @include culture_info_date_time_format.cpp
-      auto date_time_format() const -> const xtd::globalization::date_time_format_info&;
+      [[nodiscard]] auto date_time_format() const -> const xtd::globalization::date_time_format_info&;
       /// @brief Gets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @return A xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @par Example
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
       /// @include culture_info_date_time_format.cpp
-      auto date_time_format() -> xtd::globalization::date_time_format_info&;
+      [[nodiscard]] auto date_time_format() -> xtd::globalization::date_time_format_info&;
       
       /// @brief Gets the full localized culture name.
       /// @return The full localized culture name in the format languagefull [country/regionfull], where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
@@ -142,7 +142,7 @@ namespace xtd {
       /// @include culture_info_properties.cpp
       /// @remarks This property represents the localized name of the xtd::globalization::culture_info object.
       /// @remarks Culture names may vary due to scripting or formatting conventions. You should use the returned name for display, and not attempt to parse it.
-      auto display_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto display_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the culture name in the format languagefull [country/regionfull] in English.
       /// @return The culture name in the format languagefull [country/regionfull] in English, where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
@@ -151,38 +151,38 @@ namespace xtd {
       /// @include culture_info_properties.cpp
       /// @remarks For example, the xtd::globalization::culture_info::english_name for the specific culture name en-US is "English (United States)".
       /// @remarks The value of this property is the same, regardless of the language version of the xtd.
-      auto english_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto english_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets a value indicateing if the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) corresponding to this instance is available.
       /// @return `true` if the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) is available; otherwise `false`.
       /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to the current xtd::globalization::culture_info; otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
-      auto is_locale_available() const noexcept -> bool;
+      [[nodiscard]] auto is_locale_available() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info is read-only.
       /// @return `true` if the current xtd::globalization::culture_info is read-only; otherwise, `false`. The default is `false`.
       /// @par Examples
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
       /// @include culture_info_lcid.cpp
-      auto is_read_only() const noexcept -> bool;
+      [[nodiscard]] auto is_read_only() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral culture.
       /// @return `true` if the current xtd::globalization::culture_info represents a neutral culture; otherwise, `false`.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
-      auto is_neutral_culture() const noexcept -> bool;
+      [[nodiscard]] auto is_neutral_culture() const noexcept -> bool;
       
       /// @brief Gets the active input locale identifier.
       /// @return A 32-bit signed number that specifies an input locale identifier.
       /// @remarks The input locale identifier was formerly called the keyboard layout. An input locale identifier is a broader concept than a keyboard layout since it can also indicate a speech-to-text converter, an Input Method Editor (IME), or any other form of input.
-      auto keyboard_layout_id() const noexcept -> xtd::size;
+      [[nodiscard]] auto keyboard_layout_id() const noexcept -> xtd::size;
       
       /// @brief Gets the culture identifier for the current xtd::globalization::culture_info.
       /// @return The culture identifier for the current xtd::globalization::culture_info.
       /// @par Examples
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
       /// @include culture_info_lcid.cpp
-      auto lcid() const noexcept -> xtd::size;
+      [[nodiscard]] auto lcid() const noexcept -> xtd::size;
       
       /// @brief Gets the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @return The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
@@ -190,26 +190,26 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
       /// @include culture_info_current_culture.cpp
-      auto locale() const noexcept -> const std::locale&;
+      [[nodiscard]] auto locale() const noexcept -> const std::locale&;
       
       /// @brief Gets the culture name in the format languagecode2-country/regioncode2.
       /// @return The culture name in the format languagecode2-country/regioncode2, if the current xtd::globalization::culture_info is culture-dependent; or an empty string, if it's an invariant culture. languagecode2 is a lowercase two-letter code as defined in ISO 639-1, or, if no two-letter code is available, a three-letter code as defined in ISO 639-3. country/regioncode2 contains a value defined in ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
-      auto name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the culture name, consisting of the language, the country/region, and the optional script, that the culture is set to display.
       /// @return The culture name, consisting of the full name of the language, the full name of the country/region, and the optional script. The format is discussed in the description of the xtd::globalization::culture_info class.
       /// @remarks The value of this property is the same, regardless of the language version of the xtd.
-      auto native_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto native_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets a xtd::globalization::number_format_info that defines the culturally appropriate format of displaying numbers, currency, and percentage.
       /// @return A xtd::globalization::number_format_info that defines the culturally appropriate format of displaying numbers, currency, and percentage.
-      auto number_format() const -> const xtd::globalization::number_format_info&;
+      [[nodiscard]] auto number_format() const -> const xtd::globalization::number_format_info&;
       /// @brief Gets a xtd::globalization::number_format_info that defines the culturally appropriate format of displaying numbers, currency, and percentage.
       /// @return A xtd::globalization::number_format_info that defines the culturally appropriate format of displaying numbers, currency, and percentage.
-      auto number_format() -> xtd::globalization::number_format_info&;
+      [[nodiscard]] auto number_format() -> xtd::globalization::number_format_info&;
       
       /// @brief Gets the xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @return The xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
@@ -218,7 +218,7 @@ namespace xtd {
       /// @include culture_info_parent.cpp
       /// @remarks The cultures have a hierarchy in which the parent of a specific culture is a neutral culture, the parent of a neutral culture is the xtd::globalization::culture_info::invariant_culture, and the parent of the xtd::globalization::culture_info::invariant_culture is the invariant culture itself. The parent culture encompasses only the set of information that is common among its children.
       /// @remarks If the language/respurces for the specific culture are not available in the system, the language/respurces for the neutral culture are used. If the language/respurces for the neutral culture are not available, the resources embedded in the main assembly are used.
-      virtual auto parent() const noexcept -> xtd::globalization::culture_info;
+      [[nodiscard]] virtual auto parent() const noexcept -> xtd::globalization::culture_info;
       
       /// @brief Gets the ISO 639-2 three-letter code for the language of the current xtd::globalization::culture_info.
       /// @return The ISO 639-2 three-letter code for the language of the current xtd::globalization::culture_info.
@@ -226,14 +226,14 @@ namespace xtd {
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
       /// @remarks For example, the three-letter abbreviation for English is "eng".
-      auto three_letter_iso_language_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto three_letter_iso_language_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the three-letter code for the language as defined in the Windows API.
       /// @return The three-letter code for the language as defined in the Windows API.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
-      auto three_letter_windows_language_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto three_letter_windows_language_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets the ISO 639-1 two-letter or ISO 639-3 three-letter code for the language of the current xtd::globalization::culture_info.
       /// @return The ISO 639-1 two-letter code for the language of the current xtd::globalization::culture_info. If no two-letter code is available, the three-letter code from ISO 639-3 is used.
@@ -243,11 +243,11 @@ namespace xtd {
       /// @remarks For example, the two-letter abbreviation for English is "en". The xtd::globalization::culture_info::two_letter_iso_language_name property value for the invariant culture is "iv".
       /// @note When communicating between processes or persisting data it is usually better to use the full xtd::globalization::culture_info::name. Using just the language can lose context and data.
       /// @remarks If ISO 639-1 does not define a two-letter language code for a particular culture, the xtd::globalization::culture_info::two_letter_iso_language_name property returns a string that consists of three or more letters. For more information, see the example.
-      auto two_letter_iso_language_name() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto two_letter_iso_language_name() const noexcept -> const xtd::string&;
       
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info object uses the user-selected culture settings.
       /// @return `true` if the current xtd::globalization::culture_info uses the user-selected culture settings; otherwise, `false`.
-      auto use_user_override() const noexcept -> bool;
+      [[nodiscard]] auto use_user_override() const noexcept -> bool;
       /// @}
       
       /// @name Public Static Properties
@@ -258,7 +258,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
       /// @include culture_info_current_culture.cpp
-      static auto current_culture() noexcept -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto current_culture() noexcept -> xtd::globalization::culture_info;
       /// @brief Sets the xtd::globalization::culture_info object that represents the culture used by the current application.
       /// @param value The culture used by the current application.
       /// @par Examples
@@ -267,7 +267,7 @@ namespace xtd {
       
       /// @brief Gets the xtd::globalization::culture_info object that is culture-independent (invariant).
       /// @return The object that is culture-independent (invariant).
-      static auto invariant_culture() noexcept -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto invariant_culture() noexcept -> xtd::globalization::culture_info;
       /// @}
       
       /// @name Public Methods
@@ -279,7 +279,7 @@ namespace xtd {
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
       /// @include culture_info_date_time_format.cpp
       /// @remarks The clone is writable even if the original xtd::globalization::culture_info is read-only. Therefore, the properties of the clone can be modified.
-      auto clone() const noexcept -> xtd::globalization::culture_info;
+      [[nodiscard]] auto clone() const noexcept -> xtd::globalization::culture_info;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -287,21 +287,21 @@ namespace xtd {
       /// The following code example compares the current instance with another object.
       /// @include object_equals.cpp
       auto equals(const xtd::object& obj) const noexcept -> bool override;
-      /// @brief Indicates whether the current object is equal to another object of the same type.
+      [[nodiscard]] /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      auto equals(const xtd::globalization::culture_info& obj) const noexcept -> bool override;
+      [[nodiscard]] auto equals(const xtd::globalization::culture_info& obj) const noexcept -> bool override;
       
       /// @brief Returns the hash code for this basic_string.
       /// @return A hash code.
-      auto get_hash_code() const noexcept -> xtd::size override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Returns a xtd::string that represents the current object.
       /// @return A string that represents the current object.
       /// @par Examples
       /// The following code example demonstrates what to_string returns.
       /// @include object_to_string.cpp
-      auto to_string() const noexcept -> xtd::string override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -317,14 +317,14 @@ namespace xtd {
       /// @remarks If `name` is xtd::string::empty_string, the method returns the invariant culture. This is equivalent to retrieving the value of the xtd::globalization::culture_info::invariant_culture property.
       /// @par Notes to Callers
       /// This method throws a xtd::globalization::culture_not_found_exception if `name` is not a valid culture name.
-      static auto get_culture_info(const xtd::string& name) -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto get_culture_info(const xtd::string& name) -> xtd::globalization::culture_info;
       /// @brief Retrieves a cached, read-only instance of a culture.
       /// @param name The name of a culture. `name` is not case-sensitive.
       /// @param predefined_only `true` if requesting to create an instance of a culture that is known by the platform. `false` if it is ok to retreive a made-up culture even if the platform does not carry data for it.
       /// @return A read-only xtd::globalization::culture_info object.
       /// @remarks By default, when trying to create any culture and the underlying platform (ICU) does not carry specific data for this culture, the platform will try constructing a culture with data from other cultures or some constant values.
       /// @remarks Setting `predefined_only` to true will ensure a culture is created only if the platform has real data for that culture.
-      static auto get_culture_info(const xtd::string& name, bool predefined_only) -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto get_culture_info(const xtd::string& name, bool predefined_only) -> xtd::globalization::culture_info;
       /// @brief Retrieves a cached, read-only instance of a culture. Parameters specify a culture that is initialized with the TextInfo and CompareInfo objects specified by another culture.
       /// @param name The name of a culture. `name` is not case-sensitive.
       /// @param alt_name The name of a culture that supplies the xtd::globalization::text_info and xtd::globalization::compare_info objects used to initialize name. `alt_name` is not case-sensitive.
@@ -336,7 +336,7 @@ namespace xtd {
       /// @remarks If `name` is xtd::string::empty_string, the method returns the invariant culture. This is equivalent to retrieving the value of the xtd::globalization::culture_info::invariant_culture property.
       /// @par Notes to Callers
       /// This method throws a xtd::globalization::culture_not_found_exception if `name` or `alt_name` is not a valid culture name.
-      static auto get_culture_info(const xtd::string& name, const xtd::string& alt_name) -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto get_culture_info(const xtd::string& name, const xtd::string& alt_name) -> xtd::globalization::culture_info;
       /// @brief Retrieves a cached, read-only instance of a culture by using the specified culture identifier.
       /// @param culture A locale identifier (LCID).
       /// @return A read-only xtd::globalization::culture_info object.
@@ -346,7 +346,7 @@ namespace xtd {
       /// @note LCIDs are being deprecated, and implementers are strongly encouraged to use newer versions of APIs that support BCP 47 locale names instead. Each LCID can be represented by a BCP 47 locale name, but the reverse is not true. The LCID range is restricted and unable to uniquely identify all the possible combinations of language and region.
       /// @par Notes to Callers
       /// This method throws a xtd::globalization::culture_not_found_exception if `culture` is not a valid culture identifier.
-      static auto get_culture_info(xtd::size culture) -> xtd::globalization::culture_info;
+      [[nodiscard]] static auto get_culture_info(xtd::size culture) -> xtd::globalization::culture_info;
       
       /// @brief Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types parameter.
       /// @param types A bitwise combination of the enumeration values that filter the cultures to retrieve.
@@ -359,12 +359,12 @@ namespace xtd {
       ///   * xtd::globalization::culture_types:specific_cultures, which returns all specific cultures.
       ///   * xtd::globalization::culture_types::neutral_cultures, which returns all neutral cultures and the invariant culture.
       ///   * xtd::globalization::culture_types::all_cultures, which returns all neutral and specific cultures, cultures installed in the Windows system.
-      static auto get_cultures(xtd::globalization::culture_types types) -> xtd::array<xtd::globalization::culture_info>;
+      [[nodiscard]] static auto get_cultures(xtd::globalization::culture_types types) -> xtd::array<xtd::globalization::culture_info>;
       
       /// @brief Gets the lists of system locales.
       /// @return An array that contains system locales.
       /// @remarks On unix base system is the same as `locale -a` terminal command.
-      static auto get_system_locales() noexcept -> xtd::array<std::locale>;
+      [[nodiscard]] static auto get_system_locales() noexcept -> xtd::array<std::locale>;
       
       /// @brief Initializes all cultures available in xtd and prevents lazy-loading.
       /// @details This method preloads all culture-related data (including xtd::globalization::date_time_format_info, xtd::globalization::number_format_info, and xtd::globalization::region_info) for all supported cultures. By calling this method, you avoid lazy-loading of cultures when they are first accessed, which can improve performance in scenarios where multiple cultures are accessed repeatedly, or when deterministic initialization order is required.

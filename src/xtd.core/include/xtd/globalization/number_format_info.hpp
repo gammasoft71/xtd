@@ -43,89 +43,89 @@ namespace xtd {
       
       /// @name Public Properties
       /// @{
-      auto currency_decimal_digits() const noexcept -> xtd::int32;
+      [[nodiscard]] auto currency_decimal_digits() const noexcept -> xtd::int32;
       auto currency_decimal_digits(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_decimal_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto currency_decimal_separator() const noexcept -> const xtd::string&;
       auto currency_decimal_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_group_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto currency_group_separator() const noexcept -> const xtd::string&;
       auto currency_group_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
+      [[nodiscard]] auto currency_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
       auto currency_group_sizes(const xtd::array<xtd::int32>& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_negative_pattern() const noexcept -> xtd::int32;
+      [[nodiscard]] auto currency_negative_pattern() const noexcept -> xtd::int32;
       auto currency_negative_pattern(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_positive_pattern() const noexcept -> xtd::int32;
+      [[nodiscard]] auto currency_positive_pattern() const noexcept -> xtd::int32;
       auto currency_positive_pattern(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto currency_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto currency_symbol() const noexcept -> const xtd::string&;
       auto currency_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto digit_substitution() const noexcept -> xtd::int32;
+      [[nodiscard]] auto digit_substitution() const noexcept -> xtd::int32;
       auto digit_substitution(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto nan_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto nan_symbol() const noexcept -> const xtd::string&;
       auto nan_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto negative_infinity_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto negative_infinity_symbol() const noexcept -> const xtd::string&;
       auto negative_infinity_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto negative_sign() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto negative_sign() const noexcept -> const xtd::string&;
       auto negative_sign(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto number_decimal_digits() const noexcept -> xtd::int32;
+      [[nodiscard]] auto number_decimal_digits() const noexcept -> xtd::int32;
       auto number_decimal_digits(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto number_decimal_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto number_decimal_separator() const noexcept -> const xtd::string&;
       auto number_decimal_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto number_group_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto number_group_separator() const noexcept -> const xtd::string&;
       auto number_group_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto number_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
+      [[nodiscard]] auto number_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
       auto number_group_sizes(const xtd::array<xtd::int32>& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto number_negative_pattern() const noexcept -> xtd::int32;
+      [[nodiscard]] auto number_negative_pattern() const noexcept -> xtd::int32;
       auto number_negative_pattern(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_decimal_digits() const noexcept -> xtd::int32;
+      [[nodiscard]] auto percent_decimal_digits() const noexcept -> xtd::int32;
       auto percent_decimal_digits(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_decimal_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto percent_decimal_separator() const noexcept -> const xtd::string&;
       auto percent_decimal_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_group_separator() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto percent_group_separator() const noexcept -> const xtd::string&;
       auto percent_group_separator(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
+      [[nodiscard]] auto percent_group_sizes() const noexcept -> const xtd::array<xtd::int32>& ;
       auto percent_group_sizes(const xtd::array<xtd::int32>& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_negative_pattern() const noexcept -> xtd::int32;
+      [[nodiscard]] auto percent_negative_pattern() const noexcept -> xtd::int32;
       auto percent_negative_pattern(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_positive_pattern() const noexcept -> xtd::int32;
+      [[nodiscard]] auto percent_positive_pattern() const noexcept -> xtd::int32;
       auto percent_positive_pattern(xtd::int32 value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto percent_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto percent_symbol() const noexcept -> const xtd::string&;
       auto percent_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto per_mille_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto per_mille_symbol() const noexcept -> const xtd::string&;
       auto per_mille_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto positive_infinity_symbol() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto positive_infinity_symbol() const noexcept -> const xtd::string&;
       auto positive_infinity_symbol(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       
-      auto positive_sign() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto positive_sign() const noexcept -> const xtd::string&;
       auto positive_sign(const xtd::string& value) noexcept -> xtd::globalization::number_format_info&;
       /// @}
       
       /// @name Public Static Properties
       /// @{
-      static auto current_info() noexcept -> const xtd::globalization::number_format_info&;
-      static auto invariant_info() noexcept -> const xtd::globalization::number_format_info&;
+      [[nodiscard]] static auto current_info() noexcept -> const xtd::globalization::number_format_info&;
+      [[nodiscard]] static auto invariant_info() noexcept -> const xtd::globalization::number_format_info&;
       /// @}
       
       /// @name Public Operators
