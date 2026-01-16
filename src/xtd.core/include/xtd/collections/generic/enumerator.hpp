@@ -59,7 +59,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the element in the collection at the current position of the enumerator.
         /// @return The element in the collection at the current position of the enumerator.
-        const type_t& current() const override {return enumerator_->current();}
+        [[nodiscard]] const type_t& current() const override {return enumerator_->current();}
         /// @}
         
         /// @name Public Methods
@@ -68,7 +68,7 @@ namespace xtd {
         /// @brief Advances the enumerator to the next element of the collection.
         /// @return `true` if the enumerator was successfully advanced to the next element; `false` if the enumerator has passed the end of the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
-        bool move_next() override {return enumerator_->move_next();}
+        [[nodiscard]] bool move_next() override {return enumerator_->move_next();}
         
         /// @brief Sets the enumerator to its initial position, which is before the first element in the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
@@ -118,13 +118,13 @@ namespace xtd {
           public:
             explicit internal_enumerator(const collection_t& items, const version_t* current_version) : items_(items), version_(current_version ? * current_version : version_t {}), current_version_(current_version) {}
             
-            const value_type& current() const override {
+            [[nodiscard]] const value_type& current() const override {
               if (iterator_ == items_.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return *iterator_;
             }
             
-            bool move_next() override {
+            [[nodiscard]] bool move_next() override {
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.cend()) ++iterator_;
               else iterator_ = items_.cbegin();
