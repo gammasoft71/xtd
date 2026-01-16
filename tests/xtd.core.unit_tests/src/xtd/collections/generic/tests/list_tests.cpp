@@ -412,7 +412,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(2_z, items.find_index(2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(4, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(0, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(5, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_index(5, [](auto n) {return n % 2 != 0;});});
     }
     
     auto test_method_(find_index_with_start_index_and_count) {
@@ -423,10 +423,10 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_index(2, 2, [](auto n) {return n == 42;}));
       assert::are_equal(items.npos, items.find_index(0, 2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_index(3, 1, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(3, 2, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_index(3, 2, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(items.npos, items.find_index(4, 0, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(0, 4, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
     }
     
     auto test_method_(find_last) {
@@ -449,9 +449,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_last_index(0, [](auto n) {return n == 42;}));
       assert::are_equal(2_z, items.find_last_index(2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_last_index(3, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(4, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(4, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(items.npos, items.find_last_index(3, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(5, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(5, [](auto n) {return n % 2 != 0;});});
     }
     
     auto test_method_(find_last_index_with_start_index_and_count) {
@@ -462,12 +462,12 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_last_index(0, 1, [](auto n) {return n == 42;}));
       assert::are_equal(2_z, items.find_last_index(2, 2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_last_index(3, 2, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(0, 2, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(0, 2, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(3_z, items.find_last_index(3, 0, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_last_index(3, 4, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(4, 0, [](auto n) {return n % 2 != 0;});});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(0, 4, [](auto n) {return n % 2 != 0;});});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(4, 0, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(0, 4, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
     }
     
     auto test_method_(for_each) {
@@ -538,8 +538,8 @@ namespace xtd::collections::generic::tests {
       auto items = list {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, items.get_range(0, 5));
       collection_assert::are_equal({2, 3, 4}, items.get_range(1, 3));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.get_range(0, 6);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.get_range(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.get_range(0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.get_range(6, 0);});
     }
     
     auto test_method_(index_of) {
@@ -560,7 +560,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(4_z, items.index_of(5, 4));
       assert::are_equal(items.npos, items.index_of(6, 0));
       assert::are_equal(items.npos, items.index_of(6, 4));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.index_of(1, 6);});
     }
     
     auto test_method_(index_of_with_index_and_count) {
@@ -569,10 +569,10 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.index_of(1, 1, 3));
       assert::are_equal(1_z, items.index_of(2, 1, 3));
       assert::are_equal(items.npos, items.index_of(2, 2, 2));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 1, 5);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 5, 1);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 0, 6);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.index_of(1, 1, 5);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.index_of(1, 5, 1);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.index_of(1, 0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.index_of(1, 6, 0);});
     }
     
     auto test_method_(insert) {
@@ -660,7 +660,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.last_index_of(5, 3));
       assert::are_equal(items.npos, items.last_index_of(6, 0));
       assert::are_equal(items.npos, items.last_index_of(6, 4));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.last_index_of(1, 6);});
     }
     
     auto test_method_(last_index_of_with_index_and_count) {
@@ -669,10 +669,10 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.last_index_of(1, 4, 4));
       assert::are_equal(1_z, items.last_index_of(2, 4, 4));
       assert::are_equal(items.npos, items.last_index_of(2, 4, 3));
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 5, 1);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 1, 5);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 6, 0);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.last_index_of(1, 5, 1);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.last_index_of(1, 1, 5);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.last_index_of(1, 6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.last_index_of(1, 0, 6);});
     }
     
     auto test_method_(resize) {
@@ -765,8 +765,8 @@ namespace xtd::collections::generic::tests {
     
     auto test_method_(slice) {
       auto items = list {1, 2, 3, 4, 5};
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.slice(6, 0);});
-      assert::throws<argument_out_of_range_exception>(delegate_ {items.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {[[maybe_unused]] auto result = items.slice(0, 6);});
       collection_assert::are_equal({1, 2, 3, 4, 5}, items.slice(0, items.count()));
       collection_assert::are_equal({2, 3, 4}, items.slice(1, 3));
       collection_assert::are_equal({3}, items.slice(2, 1));
