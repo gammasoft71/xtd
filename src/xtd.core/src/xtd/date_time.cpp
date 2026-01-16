@@ -10,7 +10,6 @@
 #include "../include/xtd/math.hpp"
 #include "../include/xtd/not_implemented_exception.hpp"
 #include "../include/xtd/time_zone_info.hpp"
-#include "../include/xtd/unused.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/date_time>
 #undef __XTD_CORE_NATIVE_LIBRARY__

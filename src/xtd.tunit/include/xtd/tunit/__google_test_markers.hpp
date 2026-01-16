@@ -8,8 +8,6 @@
 #endif
 /// @endcond
 
-#include <xtd/unused>
-
 /// @cond
 // The following variables are a hack to ensure that GoogleTestAdapter (Microsoft Visual Studio) will detect the tunit application as a google test application...
 // See https://github.com/csoltenborn/GoogleTestAdapter/blob/master/GoogleTestAdapter/Core/GoogleTestConstants.cs
@@ -28,13 +26,13 @@ inline static const char* __google_test_executable_markers__[] = {
 };
 
 inline void __unused_google_test_markers__() {
-  unused_(__test_body_signature__);
-  unused_(__parameterized_test_marker__);
-  unused_(__typed_test_marker__);
-  unused_(__google_test_dll_marker__);
-  unused_(__google_test_dll_marker_debug__);
-  unused_(__google_test_main_dll_marker__);
-  unused_(__google_test_main_dll_marker_debug__);
-  unused_(__google_test_executable_markers__);
+  [[maybe_unused]] auto s1 = __test_body_signature__;
+  [[maybe_unused]] auto s2 = __parameterized_test_marker__;
+  [[maybe_unused]] auto s3 = __typed_test_marker__;
+  [[maybe_unused]] auto s4 = __google_test_dll_marker__;
+  [[maybe_unused]] auto s5 = __google_test_dll_marker_debug__;
+  [[maybe_unused]] auto s6 = __google_test_main_dll_marker__;
+  [[maybe_unused]] auto s7 = __google_test_main_dll_marker_debug__;
+  [[maybe_unused]] auto s8 = __google_test_executable_markers__;
 }
 /// @endcond

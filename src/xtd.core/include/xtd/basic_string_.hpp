@@ -394,10 +394,9 @@ void __basic_string_extract_format_arg(const std::locale& loc, std::basic_string
 
 template<class ...args_t>
 void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, std::vector<__format_information<char >>& formats, args_t&&... args) {
-  auto index = xtd::size {0};
+  [[maybe_unused]] auto index = xtd::size {0};
   (__basic_string_extract_format_arg(loc, const_cast<std::basic_string<char>& > (fmt.chars()), index, formats, args), ...);
   //(__basic_string_extract_format_arg(loc, fmt, index, formats, args), ...);
-  unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
 
 template<class target_t, class source_t>

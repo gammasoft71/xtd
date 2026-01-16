@@ -123,8 +123,5 @@ string exception::stack_trace_to_string() const noexcept {
 }
 
 const xtd::string& exception::get_name() const noexcept {
-  call_once_ {
-    environment::__signal_catcher_check__();
-  };
   return (data_->name = get_type().full_name());
 }

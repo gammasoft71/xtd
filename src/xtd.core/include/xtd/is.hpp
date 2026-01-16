@@ -5,7 +5,6 @@
 #include "any.hpp"
 #include "parse.hpp"
 #include "types.hpp"
-#include "unused.hpp"
 #include <limits>
 #include <memory>
 #include <stdexcept>

@@ -658,10 +658,6 @@ namespace xtd {
     static void set_environment_variable(const xtd::string& variable, const xtd::string& value, environment_variable_target target);
     /// @}
     
-    /// @cond
-    static void __signal_catcher_check__();
-    /// @endcond
-    
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);

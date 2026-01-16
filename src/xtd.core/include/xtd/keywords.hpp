@@ -12,5 +12,4 @@
 #include "self.hpp"
 #include "startup.hpp"
 #include "typeof.hpp"
-#include "unused.hpp"
 #include "using.hpp"

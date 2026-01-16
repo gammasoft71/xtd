@@ -12,7 +12,6 @@
 #include "../../include/xtd/interrupt_exception.hpp"
 #include "../../include/xtd/invalid_operation_exception.hpp"
 #include "../../include/xtd/software_termination_exception.hpp"
-#include "../../include/xtd/unused.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -149,7 +148,7 @@ event<environment, signal_cancel_event_handler> environment::cancel_signal;
 
 event<environment, program_exit_event_handler> environment::program_exit;
 
-environment::signal_catcher environment::signal_catcher_;
+[[maybe_unused]] environment::signal_catcher environment::signal_catcher_;
 
 const string& environment::xtd_library::include_path() const noexcept {
   return include_path_;
@@ -404,10 +403,6 @@ void environment::set_environment_variable(const string& variable, const string&
     native::environment::get_environment_variables(as<int32>(target))[variable] = value;
     native::environment::set_environment_variable(variable, value, as<int32>(target));
   }
-}
-
-void environment::__signal_catcher_check__() {
-  unused_(signal_catcher_);
 }
 
 void environment::on_cancel_signal(signal_cancel_event_args& e) {

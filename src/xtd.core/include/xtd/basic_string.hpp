@@ -24,7 +24,6 @@
 #include "object.hpp"
 #include "parse.hpp"
 #include "types.hpp"
-#include "unused.hpp"
 #include <cctype>
 #include <iomanip>
 #include <ostream>

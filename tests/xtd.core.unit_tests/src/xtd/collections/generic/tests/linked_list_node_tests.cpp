@@ -95,21 +95,21 @@ namespace xtd::collections::generic::tests {
       auto list = linked_list<int> {42, 84, 21};
       auto node = *list.first()->next();
       list.clear();
-      assert::throws<invalid_operation_exception>([&] {node.value();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto result = node.value();});
     }
     
     auto test_method_(next_throws_excpetion_when_linked_list_changed) {
       auto list = linked_list<int> {42, 84, 21};
       auto node = *list.first()->next();
       list.clear();
-      assert::throws<invalid_operation_exception>([&] {node.next();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto result = node.next();});
     }
     
     auto test_method_(previous_throws_excpetion_when_linked_list_changed) {
       auto list = linked_list<int> {42, 84, 21};
       auto node = *list.first()->next();
       list.clear();
-      assert::throws<invalid_operation_exception>([&] {node.previous();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto result = node.previous();});
     }
     
     auto test_method_(copy_operator) {

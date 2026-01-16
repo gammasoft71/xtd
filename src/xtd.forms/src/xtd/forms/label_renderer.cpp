@@ -6,7 +6,6 @@
 #include "../../../include/xtd/forms/style_sheets/pseudo_state.hpp"
 #include "../../../include/xtd/forms/style_sheets/style_sheet.hpp"
 #include <xtd/drawing/color_converter>
-#include <xtd/unused>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -50,9 +49,9 @@ void label_renderer::draw_label(const xtd::forms::style_sheets::style_sheet& sty
 void label_renderer::draw_link_label(const xtd::forms::style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::link_label_state link_label_state, const std::optional<xtd::drawing::color>& back_color, const xtd::string& text, const array<xtd::forms::link>& links, const std::optional<xtd::forms::content_alignment>& text_align, const std::optional<xtd::drawing::color>& fore_color, const std::optional<xtd::drawing::color>& link_color, const std::optional<xtd::drawing::color>& visited_link_color, const std::optional<xtd::drawing::font>& font, xtd::forms::link_behavior link_behavior, const xtd::drawing::image& image, const std::optional<xtd::forms::content_alignment>& image_align, const std::optional<xtd::forms::border_style>& border, xtd::forms::border_sides sides, const array<xtd::forms::shadow>& shadows, bool auto_ellipsis) {
   auto pseudo_state_base = pseudo_state::standard;
   
-  auto current_style_sheet = style_sheet.link_label(pseudo_state_base), hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover), pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
-  unused_(hot_style_sheet); /// @todo Remove when used...
-  unused_(pressed_style_sheet); /// @todo Remove when used...
+  auto current_style_sheet = style_sheet.link_label(pseudo_state_base);
+  // auto hot_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::hover);
+  // pressed_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::active);
   
   if (link_label_state == link_label_state::disabled) current_style_sheet = style_sheet.link_label(pseudo_state_base | pseudo_state::disabled);
   

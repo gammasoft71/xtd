@@ -7,7 +7,6 @@
 #include "invalid_cast_exception.hpp"
 #include "static.hpp"
 #include "types.hpp"
-#include "unused.hpp"
 
 /// @cond
 template<class new_type_t, class current_type_t>
@@ -252,7 +251,7 @@ namespace xtd {
     template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(const xtd::sptr<current_type_t>& value) {
       try {
-        unused_(dynamic_cast<new_type_t&>(*value.get()));
+        [[maybe_unused]] auto result = dynamic_cast<new_type_t&>(*value.get());
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
@@ -273,7 +272,7 @@ namespace xtd {
     template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>& value) {
       try {
-        unused_(dynamic_cast<new_type_t&>(*value.get()));
+        [[maybe_unused]] auto& result = dynamic_cast<new_type_t&>(*value.get());
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
@@ -295,7 +294,7 @@ namespace xtd {
     template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>&& value) {
       try {
-        unused_(dynamic_cast<new_type_t&>(*value.get()));
+        [[maybe_unused]] auto& result = dynamic_cast<new_type_t&>(*value.get());
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
