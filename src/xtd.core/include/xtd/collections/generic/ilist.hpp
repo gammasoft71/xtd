@@ -100,7 +100,7 @@ namespace xtd {
         /// @param item The object to locate in the xtd::collections::generic::ilist <type_t>.
         /// @return The index of item if found in the list; otherwise, xtd::collections::generic::ilist::npos.
         /// @remarks If an object occurs multiple times in the list, the xtd::collections::generic::ilist::index_of method always returns the first instance found.
-        virtual auto index_of(const type_t& item) const noexcept -> xtd::size = 0;
+        [[nodiscard]] virtual auto index_of(const type_t& item) const noexcept -> xtd::size = 0;
         
         /// @brief Inserts an item to the xtd::collections::generic::ilist <type_t> at the specified index.
         /// @param index The zero-based index at which item should be inserted.
