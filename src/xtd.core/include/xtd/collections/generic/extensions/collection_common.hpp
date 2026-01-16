@@ -36,11 +36,11 @@ namespace xtd {
           /// @{
           /// @brief Checks whether the container is empty.
           /// @return `true` if container is empty; otherwise `false`.
-          virtual auto empty() const noexcept -> bool {return self().count() == 0;}
+          [[nodiscard]] virtual auto empty() const noexcept -> bool {return self().count() == 0;}
           
           /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
           /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-          virtual auto size() const noexcept -> xtd::size {return self().count();}
+          [[nodiscard]] virtual auto size() const noexcept -> xtd::size {return self().count();}
           /// @}
           
           /// @name Public Operators
