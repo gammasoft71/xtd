@@ -68,12 +68,12 @@ namespace xtd {
         /// @brief Gets an xtd::collections::generic::icollection <type_t> containing the keys of the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @return An xtd::collections::generic::icollection <type_t> containing the keys of the object that implements xtd::collections::generic::idictionary <key_t, value_t>.
         /// @remarks The order of the keys in the returned xtd::collections::generic::icollection <type_t> is unspecified, but it is guaranteed to be the same order as the corresponding values in the xtd::collections::generic::icollection <type_t> returned by the xtd::collections::generic::idictionary::values property.
-        virtual auto keys() const noexcept -> key_collection = 0;
+        [[nodiscard]] virtual auto keys() const noexcept -> key_collection = 0;
         
         /// @brief Gets an xtd::collections::generic::icollection <type_t> containing the values of the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @return An xtd::collections::generic::icollection <type_t> containing the values of the object that implements xtd::collections::generic::idictionary <key_t, value_t>.
         /// @remarks The order of the values in the returned xtd::collections::generic::icollection <type_t> is unspecified, but it is guaranteed to be the same order as the corresponding values in the xtd::collections::generic::icollection <type_t> returned by the xtd::collections::generic::idictionary::keys property.
-        virtual auto values() const noexcept -> value_collection = 0;
+        [[nodiscard]] virtual auto values() const noexcept -> value_collection = 0;
         /// @}
         
         /// @name Public Methods
@@ -93,7 +93,7 @@ namespace xtd {
         /// @param key The key to locate in the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::idictionary <key_t, value_t> contains an element with the key; otherwise, `false`.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer <type_t>.Default, whereas the xtd::collections::generic::dictionary <key_t, value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t>x implementation to use for comparing keys.
-        virtual auto contains_key(const key_t& key) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto contains_key(const key_t& key) const noexcept -> bool = 0;
         
         using xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>>::remove;
         /// @brief Removes the element with the specified key from the xtd::collections::generic::idictionary <key_t, value_t>.
@@ -108,7 +108,7 @@ namespace xtd {
         /// @return `true` if the object that implements xtd::collections::generic::idictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
         /// @remarks This method combines the functionality of the xtd::collections::generic::idictionary::contains_key method and the xtd::collections::generic::idictionary::operator [] property.
         /// @remarks If the key is not found, then the value parameter gets the appropriate default value for the type `value_t`; for example, zero (0) for integer types, `false` for Boolean types, and null for reference types
-        virtual auto try_get_value(const key_t& key, value_t& value) const -> bool = 0;
+        [[nodiscard]] virtual auto try_get_value(const key_t& key, value_t& value) const -> bool = 0;
         /// @}
         
         /// @name Public Operators
@@ -122,7 +122,7 @@ namespace xtd {
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `o`perator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
-        virtual auto operator [](const key_t& key) const -> const value_t& = 0;
+        [[nodiscard]] virtual auto operator [](const key_t& key) const -> const value_t& = 0;
         /// @brief Sets the element with the specified key.
         /// @param key The key of the element to set.
         /// @return The element with the specified key.
@@ -131,7 +131,7 @@ namespace xtd {
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
-        virtual auto operator [](const key_t& key) -> value_t& = 0;
+        [[nodiscard]] virtual auto operator [](const key_t& key) -> value_t& = 0;
         /// @}
       };
     }
