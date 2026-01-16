@@ -40,7 +40,7 @@ namespace xtd {
       /// * std::strong_ordering::less : if lhs less than rhs;
       /// * std::strong_ordering::greater : if lhs greater than rhs;
       /// * std::strong_ordering::equivalent : if lhs is equal to rhs.
-      friend std::strong_ordering operator <=>(const type_t& lhs, const type_t& rhs) noexcept {
+      friend auto operator <=>(const type_t& lhs, const type_t& rhs) noexcept -> std::strong_ordering {
         if (lhs.compare_to(rhs) < 0) return std::strong_ordering::less;
         if (lhs.compare_to(rhs) > 0) return std::strong_ordering::greater;
         return std::strong_ordering::equivalent;

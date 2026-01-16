@@ -138,7 +138,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
-        auto capacity() const noexcept -> size_type {return data_->items.capacity();}
+        [[nodiscard]] auto capacity() const noexcept -> size_type {return data_->items.capacity();}
         /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::stack <type_t>.
         /// @return The number of nodes actually contained in the xtd::collections::generic::stack <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
@@ -146,7 +146,7 @@ namespace xtd {
         
         /// @brief Gets a std::stack<type_t>.
         /// @return A std::stack<type_t>.
-        auto items() const {return std::stack<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
+        [[nodiscard]] auto items() const {return std::stack<type_t>(std::deque<type_t>(data_->items.begin(), data_->items.end()));}
         /// @}
         
         /// @name Public Methods
@@ -164,7 +164,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::stack <type_t>.
         /// @param item The object to locate in the xtd::collections::generic::stack <type_t>.
         /// @return `true` if `item` is found in the xtd::collections::generic::stack <type_t>; otherwise, `false`.
-        auto contains(const_reference value) const noexcept -> bool override {
+        [[nodiscard]] auto contains(const_reference value) const noexcept -> bool override {
           for (const auto& item : data_->items)
             if (xtd::collections::generic::helpers::equator<type_t> {}(item, value)) return true;
           return false;
@@ -219,17 +219,17 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::stack <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::stack <type_t>.
-        enumerator<value_type> get_enumerator() const noexcept override {
+        [[nodiscard]] enumerator<value_type> get_enumerator() const noexcept override {
           struct stack_enumerator : public ienumerator < value_type > {
             explicit stack_enumerator(const stack & items, xtd::size version) : items_(items), version_(version) {}
             
-            const value_type& current() const override {
+            [[nodiscard]] const value_type& current() const override {
               if (iterator_ == items_.data_->items.crend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return *iterator_;
             }
             
-            bool move_next() override {
+            [[nodiscard]] bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.crend()) ++iterator_;
               else iterator_ = items_.data_->items.crbegin();
@@ -263,7 +263,7 @@ namespace xtd {
         
         /// @brief Copies the xtd::collections::generic::stack <type_t> elements to a new array.
         /// @return A new array containing elements copied from the xtd::collections::generic::stack <type_t>.
-        auto to_array() const -> xtd::array<value_type> {
+        [[nodiscard]] auto to_array() const -> xtd::array<value_type> {
           auto array = xtd::array<value_type>(count());
           copy_to(array, 0);
           return array;
@@ -271,7 +271,7 @@ namespace xtd {
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
-        auto to_string() const noexcept -> string override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
+        [[nodiscard]] auto to_string() const noexcept -> string override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
         
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::stack <type_t>, if that number is less than 90 percent of current capacity.
         /// @remarks This method can be used to minimize a collection's memory overhead if no new elements will be added to the collection. The cost of reallocating and copying a large xtd::collections::generic::stack <type_t> can be considerable, however, so the xtd::collections::generic::stack::trim_excess method does nothing if the list is at more than 90 percent of capacity. This avoids incurring a large reallocation cost for a relatively small gain.
