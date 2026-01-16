@@ -56,12 +56,12 @@ namespace xtd {
         /// @{
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
         /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-        virtual auto count() const noexcept -> xtd::size = 0;
+        [[nodiscard]] virtual auto count() const noexcept -> xtd::size = 0;
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
         /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
-        virtual auto is_read_only() const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_read_only() const noexcept -> bool = 0;
         
         /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
         /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
@@ -77,7 +77,7 @@ namespace xtd {
         ///   }
         /// }
         /// @endcode
-        virtual auto is_synchronized() const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_synchronized() const noexcept -> bool = 0;
         
         /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
         /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
@@ -100,7 +100,7 @@ namespace xtd {
         ///   }
         /// }
         /// @endcode
-        virtual auto sync_root() const noexcept -> const xtd::object& = 0;
+        [[nodiscard]] virtual auto sync_root() const noexcept -> const xtd::object& = 0;
         /// @}
         
         /// @name Public Methods
@@ -120,7 +120,7 @@ namespace xtd {
         /// @param item The object to locate in the xtd::collections::generic::icollection <type_t>.
         /// @return `true` if item is found in the xtd::collections::generic::icollection <type_t>; otherwise, `false`.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, xtd::collections::generic::list <type_t> uses xtd::collections::generic::compoarer <type_t>::default_comparer, whereas xtd::collections::generic::dictionary <key_t, value_t> allows the user to specify the xtd::collections::generic::icompoarer <type_t> implementation to use for comparing keys.
-        virtual auto contains(const type_t& item) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto contains(const type_t& item) const noexcept -> bool = 0;
         
         /// @brief Copies the elements of the xtd::collections::generic::icollection <type_t> to an xtd::array, starting at a particular xtd::array index.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
