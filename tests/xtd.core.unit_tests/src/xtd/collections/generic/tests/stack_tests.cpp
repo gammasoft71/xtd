@@ -241,7 +241,7 @@ namespace xtd::collections::generic::tests {
     auto test_method_(get_enumerator) {
       auto items = stack {84, 42, 21};
       auto enumerator = items.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto item = enumerator.current();});
       assert::is_true(enumerator.move_next());
       assert::are_equal(21, enumerator.current());
       assert::is_true(enumerator.move_next());
@@ -249,7 +249,7 @@ namespace xtd::collections::generic::tests {
       assert::is_true(enumerator.move_next());
       assert::are_equal(84, enumerator.current());
       assert::is_false(enumerator.move_next());
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto item = enumerator.current();});
     }
     
     auto test_method_(peek) {
