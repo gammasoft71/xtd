@@ -132,7 +132,7 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>minesweeper;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::main() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  application::run(minesweeper_form());</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -187,7 +187,7 @@ $(function(){ initResizable(false); });
 <div class="line">  change_level(as&lt;level&gt;(properties::settings::default_settings().level()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::change_level(level l) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::change_level(level l) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  properties::settings::default_settings().level(l);</div>
 <div class="line">  properties::settings::default_settings().save();</div>
 <div class="line">  </div>
@@ -202,7 +202,7 @@ $(function(){ initResizable(false); });
 <div class="line">  new_game();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::new_game() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::new_game() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  game_over_ = <span class="keyword">false</span>;</div>
 <div class="line">  stopwatch_timer_.enabled(<span class="keyword">false</span>);</div>
 <div class="line">  checked_cell_count_ = 0;</div>
@@ -237,7 +237,7 @@ $(function(){ initResizable(false); });
 <div class="line">  invalidate();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::check_neighbors(<span class="keyword">const</span> point&amp; cell_location) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::check_neighbors(<span class="keyword">const</span> point&amp; cell_location) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (checked_cell(cell_location) != 0) <span class="keywordflow">return</span>;</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = cell_location.y - 1; y &lt;= cell_location.y + 1; ++y)</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = cell_location.x - 1; x &lt;= cell_location.x + 1; ++x)</div>
@@ -245,7 +245,7 @@ $(function(){ initResizable(false); });
 <div class="line">        check_neighbors({<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>});</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> minesweeper_form::checked_cell(<span class="keyword">const</span> point&amp; cell_location) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::checked_cell(<span class="keyword">const</span> point&amp; cell_location) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (cells_[cell_location.x][cell_location.y].state() == cell_state::unchecked) {</div>
 <div class="line">    cells_[cell_location.x][cell_location.y].state(cell_state::checked);</div>
 <div class="line">    checked_cell_count_++;</div>
@@ -253,16 +253,16 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keywordflow">return</span> cells_[cell_location.x][cell_location.y].number_of_neighbouring_mines();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_cell(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_cell(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keyword">static</span> std::map&lt;cell_state, delegate&lt;void(paint_event_args&amp;, <span class="keyword">const</span> rectangle&amp;, minesweeper::cell)&gt;&gt; draw_state {{cell_state::unchecked, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_unchecked}}, {cell_state::checked, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_checked}}, {cell_state::flag, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_flag}}, {cell_state::question, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_question}}, {cell_state::mine, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_mine}}, {cell_state::exploded_mine, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_exploded_mine}}, {cell_state::error, {*<span class="keyword">this</span>, &amp;minesweeper_form::draw_error}}};</div>
 <div class="line">  draw_state[cell.state()](<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>, clip_rectangle, cell);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_unchecked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_unchecked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_unchecked(e, clip_rectangle);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_checked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_checked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_checked(e, clip_rectangle);</div>
 <div class="line">  color text_color;</div>
 <div class="line">  </div>
@@ -309,7 +309,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_string(text, font(), solid_brush(text_color), x, y);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_flag(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_flag(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_unchecked(e, clip_rectangle);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> flag = bitmap {properties::resources::flag(), {16, 16}};</div>
@@ -318,7 +318,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_image(flag, x, y);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_question(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_question(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_unchecked(e, clip_rectangle);</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = clip_rectangle.left() + (clip_rectangle.width - <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().measure_string(<span class="stringliteral">&quot;?&quot;</span>, font()).width) / 2;</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> = clip_rectangle.top() + (clip_rectangle.height - <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().measure_string(<span class="stringliteral">&quot;?&quot;</span>, font()).height) / 2;</div>
@@ -326,7 +326,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_string(<span class="stringliteral">&quot;?&quot;</span>, font(), solid_brush(question_color), x, y);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_mine(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_mine(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_checked(e, clip_rectangle);</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> mine = bitmap {properties::resources::mine(), {16, 16}};</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = clip_rectangle.left() + (clip_rectangle.width - mine.width()) / 2;</div>
@@ -334,19 +334,19 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_image(mine, x, y);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_exploded_mine(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_exploded_mine(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(brushes::red(), clip_rectangle);</div>
 <div class="line">  draw_mine(e, clip_rectangle, cell);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_error(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_error(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle, minesweeper::cell cell) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  draw_border_checked(e, clip_rectangle);</div>
 <div class="line">  draw_mine(e, clip_rectangle, cell);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color::red, 3}, clip_rectangle.left() + 7, clip_rectangle.top() + 7, clip_rectangle.right() - 7, clip_rectangle.bottom() - 7);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color::red, 3}, clip_rectangle.right() - 7, clip_rectangle.top() + 7, clip_rectangle.left() + 7, clip_rectangle.bottom() - 7);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_border_unchecked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_border_unchecked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (!properties::settings::default_settings().original_color()) {</div>
 <div class="line">    <span class="keywordflow">if</span> (back_color().get_brightness() &lt; 0.5f) <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(solid_brush {color_converter::light(back_color(), 0.1)}, clip_rectangle);</div>
 <div class="line">    <span class="keywordflow">else</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(solid_brush {color_converter::dark(back_color(), 0.1)}, clip_rectangle);</div>
@@ -368,14 +368,14 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::dark(color_converter::dark(color_converter::dark(back_color())))}, clip_rectangle.right() - 1, clip_rectangle.top(), clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::draw_border_checked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::draw_border_checked(paint_event_args&amp; e, <span class="keyword">const</span> rectangle&amp; clip_rectangle) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::dark(back_color())}, clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.right(), clip_rectangle.top());</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::dark(back_color())}, clip_rectangle.left(), clip_rectangle.top(), clip_rectangle.left(), clip_rectangle.bottom());</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(back_color())}, clip_rectangle.left() + 1, clip_rectangle.bottom() - 1, clip_rectangle.right(), clip_rectangle.bottom() - 1);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(back_color())}, clip_rectangle.right() - 1, clip_rectangle.top() + 1, clip_rectangle.right() - 1, clip_rectangle.bottom() - 1);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::game_over() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::game_over() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  stopwatch_timer_.enabled(<span class="keyword">false</span>);</div>
 <div class="line">  game_over_ = <span class="keyword">true</span>;</div>
 <div class="line">  start_game_.image(bitmap {properties::resources::smiley2(), {24, 24}});</div>
@@ -390,7 +390,7 @@ $(function(){ initResizable(false); });
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::mark_cell(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::mark_cell(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; cell = cells_[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>][<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>];</div>
 <div class="line">  <span class="keywordflow">if</span> (cell.state() == cell_state::unchecked) {</div>
 <div class="line">    cell.state(cell_state::flag);</div>
@@ -404,7 +404,7 @@ $(function(){ initResizable(false); });
 <div class="line">  invalidate();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_about_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_about_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> dialog = about_dialog {};</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> information_page = tab_page::create(<span class="stringliteral">&quot;Information&quot;</span>);</div>
 <div class="line">  information_page.auto_scroll(<span class="keyword">true</span>);</div>
@@ -451,11 +451,11 @@ $(function(){ initResizable(false); });
 <div class="line">  dialog.show();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_help_content_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_help_content_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  diagnostics::process::start(diagnostics::process_start_info {<span class="stringliteral">&quot;https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md&quot;</span>}.use_shell_execute(<span class="keyword">true</span>));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_custom_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_custom_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keyword">auto</span> dialog = custom_field_dialog {};</div>
 <div class="line">  dialog.custom_height(properties::settings::default_settings().custom_height());</div>
 <div class="line">  dialog.custom_width(properties::settings::default_settings().custom_width());</div>
@@ -468,7 +468,7 @@ $(function(){ initResizable(false); });
 <div class="line">  change_level(level::custom);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_game_panel_mouse_up(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> mouse_event_args&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_game_panel_mouse_up(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> mouse_event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (game_over_) <span class="keywordflow">return</span>;</div>
 <div class="line">  stopwatch_timer_.enabled(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
@@ -480,7 +480,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button() == mouse_buttons::left) uncover_cell(x, y);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_game_panel_paint(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_game_panel_paint(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().clear(back_color());</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, 0, 0, 0, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().height);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(color_converter::light(back_color()))}, 1, 0, 1, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().height);</div>
@@ -511,18 +511,18 @@ $(function(){ initResizable(false); });
 <div class="line">      draw_cell(e, {15 + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * cell::width(), 15 + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> * cell::height(), cell::width(), cell::height()}, cells_[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>][<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>]);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_marks_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_marks_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  properties::settings::default_settings().marks(!properties::settings::default_settings().marks());</div>
 <div class="line">  properties::settings::default_settings().save();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_original_color_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_original_color_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());</div>
 <div class="line">  properties::settings::default_settings().save();</div>
 <div class="line">  update_colors();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_status_panel_paint(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_status_panel_paint(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().clear(back_color());</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, 0, 0, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().width, 0);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(color_converter::light(back_color()))}, 0, 1, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().width, 1);</div>
@@ -549,17 +549,17 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().width - 1 - offset, offset, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().width - 1 - offset, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle().height - 1);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_status_panel_resize(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_status_panel_resize(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  start_game_.location({status_panel_.size().width / 2 - 21, 17});</div>
 <div class="line">  stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_stopwatch_tick() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::on_stopwatch_tick() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (stopwatch_count_ &lt; 999)</div>
 <div class="line">    stopwatch_label_.text(string::format(<span class="stringliteral">&quot;{:D3}&quot;</span>, ++stopwatch_count_));</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::uncover_cell(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::uncover_cell(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  start_game_.image(bitmap(properties::resources::smiley4(), {24, 24}));</div>
 <div class="line">  application::do_events();</div>
 <div class="line">  <span class="keywordflow">if</span> (cells_[x][y].state() == cell_state::question)</div>
@@ -577,12 +577,12 @@ $(function(){ initResizable(false); });
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::update_colors() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::update_colors() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  back_color(properties::settings::default_settings().original_color() ? color::from_argb(192, 196, 200) : default_back_color());</div>
 <div class="line">  fore_color(properties::settings::default_settings().original_color() ? color::black : default_fore_color());</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::you_win() {</div>
+<div class="line"><span class="keyword">auto</span> minesweeper_form::you_win() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">  stopwatch_timer_.enabled(<span class="keyword">false</span>);</div>
 <div class="line">  game_over_ = <span class="keyword">true</span>;</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a> &lt; grid_size_.height; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)</div>
@@ -624,7 +624,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2026 18:15:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 16 2026 21:07:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

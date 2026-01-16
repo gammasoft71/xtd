@@ -120,20 +120,20 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">using </span>value_type = <span class="keyword">typename</span> <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a1b6f4bbb7a3c18056332b28dae525927">xtd::collections::generic::ienumerable&lt;type_t&gt;::value_type</a>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">virtual</span> <span class="keyword">auto</span> count() const noexcept -&gt; xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> = 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        [[nodiscard]] <span class="keyword">virtual</span> <span class="keyword">auto</span> count() const noexcept -&gt; xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> = 0;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        virtual auto is_read_only() const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        [[nodiscard]] virtual auto is_read_only() const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        virtual auto is_synchronized() const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        [[nodiscard]] virtual auto is_synchronized() const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        virtual auto sync_root() const noexcept -&gt; const xtd::<span class="keywordtype">object</span>&amp; = 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        [[nodiscard]] virtual auto sync_root() const noexcept -&gt; const xtd::<span class="keywordtype">object</span>&amp; = 0;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        virtual auto <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">add</a>(const type_t&amp; item) -&gt; <span class="keywordtype">void</span> = 0;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        virtual auto <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">clear</a>() -&gt; <span class="keywordtype">void</span> = 0;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        virtual auto contains(const type_t&amp; item) const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        [[nodiscard]] virtual auto contains(const type_t&amp; item) const noexcept -&gt; <span class="keywordtype">bool</span> = 0;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        virtual auto <a class="code hl_function" href="namespacextd.html#a308b91f8df5043299f180a996d60cadf">copy_to</a>(xtd::array&lt;type_t&gt;&amp; array, xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> array_index) const -&gt; <span class="keywordtype">void</span> = 0;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        </div>
@@ -160,7 +160,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2026 18:15:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 16 2026 21:07:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

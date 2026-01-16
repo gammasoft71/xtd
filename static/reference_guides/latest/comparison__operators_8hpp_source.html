@@ -116,7 +116,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      </div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classxtd_1_1extensions_1_1comparison__operators.html#a19f5a07dff7a52209dfc48bd9e352a06">   43</a></span>      <span class="keyword">friend</span> std::strong_ordering <a class="code hl_friend" href="classxtd_1_1extensions_1_1comparison__operators.html#a19f5a07dff7a52209dfc48bd9e352a06">operator &lt;=&gt;</a>(<span class="keyword">const</span> type_t&amp; lhs, <span class="keyword">const</span> type_t&amp; rhs) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classxtd_1_1extensions_1_1comparison__operators.html#a8715d122b0fda860c57e3ec87b5b2373">   43</a></span>      <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code hl_friend" href="classxtd_1_1extensions_1_1comparison__operators.html#a8715d122b0fda860c57e3ec87b5b2373">operator &lt;=&gt;</a>(<span class="keyword">const</span> type_t&amp; lhs, <span class="keyword">const</span> type_t&amp; rhs) <span class="keyword">noexcept</span> -&gt; std::strong_ordering {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (lhs.compare_to(rhs) &lt; 0) <span class="keywordflow">return</span> std::strong_ordering::less;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">if</span> (lhs.compare_to(rhs) &gt; 0) <span class="keywordflow">return</span> std::strong_ordering::greater;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> std::strong_ordering::equivalent;</div>
@@ -134,14 +134,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 <div class="ttc" id="a____xtd__std__version_8hpp_html"><div class="ttname"><a href="____xtd__std__version_8hpp.html">__xtd_std_version.hpp</a></div><div class="ttdoc">Contains __xtd_std_version definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1extensions_1_1comparison__operators_html"><div class="ttname"><a href="classxtd_1_1extensions_1_1comparison__operators.html">xtd::extensions::comparison_operators</a></div><div class="ttdoc">Internal comparable operators definition.</div><div class="ttdef"><b>Definition</b> comparison_operators.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1extensions_1_1comparison__operators_html_a19f5a07dff7a52209dfc48bd9e352a06"><div class="ttname"><a href="classxtd_1_1extensions_1_1comparison__operators.html#a19f5a07dff7a52209dfc48bd9e352a06">xtd::extensions::comparison_operators::operator&lt;=&gt;</a></div><div class="ttdeci">friend std::strong_ordering operator&lt;=&gt;(const type_t &amp;lhs, const type_t &amp;rhs) noexcept</div><div class="ttdoc">Three-way comparison operator with specidied lhs ans rhs values.</div><div class="ttdef"><b>Definition</b> comparison_operators.hpp:43</div></div>
+<div class="ttc" id="aclassxtd_1_1extensions_1_1comparison__operators_html_a8715d122b0fda860c57e3ec87b5b2373"><div class="ttname"><a href="classxtd_1_1extensions_1_1comparison__operators.html#a8715d122b0fda860c57e3ec87b5b2373">xtd::extensions::comparison_operators::operator&lt;=&gt;</a></div><div class="ttdeci">friend auto operator&lt;=&gt;(const type_t &amp;lhs, const type_t &amp;rhs) noexcept -&gt; std::strong_ordering</div><div class="ttdoc">Three-way comparison operator with specidied lhs ans rhs values.</div><div class="ttdef"><b>Definition</b> comparison_operators.hpp:43</div></div>
 <div class="ttc" id="anamespacextd_1_1extensions_html"><div class="ttname"><a href="namespacextd_1_1extensions.html">xtd::extensions</a></div><div class="ttdoc">The xtd::extensions namespace contains interface extensions.</div><div class="ttdef"><b>Definition</b> comparison_operators.hpp:13</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 15 2026 18:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 16 2026 21:07:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
