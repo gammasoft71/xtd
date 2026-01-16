@@ -116,42 +116,42 @@ namespace xtd {
         /// @brief Gets the number of nodes actually contained in the xtd::collections::generic::linked_list <type_t>.
         /// @return The number of nodes actually contained in the xtd::collections::generic::linked_list <type_t>.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto count() const noexcept -> size_type override {return data_->items.size();}
+        [[nodiscard]] auto count() const noexcept -> size_type override {return data_->items.size();}
         
         /// @brief Gets the first node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The first xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto first() const noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
+        [[nodiscard]] auto first() const noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version}} : xtd::nullopt;}
         /// @brief Gets the first node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The first xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto first() noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, data_->items.begin(), data_->version}} : xtd::nullopt;}
+        [[nodiscard]] auto first() noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, data_->items.begin(), data_->version}} : xtd::nullopt;}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto items() const noexcept -> const base_type& {return data_->items;}
+        [[nodiscard]] auto items() const noexcept -> const base_type& {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto items() noexcept -> base_type& {return data_->items;}
+        [[nodiscard]] auto items() noexcept -> base_type& {return data_->items;}
         
         /// @brief Gets the last node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The last xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto last() const noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
+        [[nodiscard]] auto last() const noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {const_cast<linked_list&>(self_), --data_->items.end(), data_->version}} : xtd::nullopt;}
         /// @brief Gets the last node of the xtd::collections::generic::linked_list <type_t>.
         /// @return The last xtd::collections::generic::linked_list_node <type_t> of the xtd::collections::generic::linked_list <type_t>.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks If the xtd::collections::generic::linked_list <type_t> is empty, the xtd::collections::generic::linked_list::first and xtd::collections::generic::linked_list::last properties contain std::nullopt.
         /// @remarks Retrieving the value of this property is an O(1) operation.
-        auto last() noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, --data_->items.end(), data_->version}} : xtd::nullopt;}
+        [[nodiscard]] auto last() noexcept -> xtd::optional<linked_list_node<type_t>> {return count() ? xtd::optional<linked_list_node<type_t>> {linked_list_node<type_t> {self_, --data_->items.end(), data_->version}} : xtd::nullopt;}
         /// @}
         
         /// @name Public Methods
@@ -269,7 +269,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::colllections::generic::linked_list <type_t>.
         /// @param value The object to locate in the xtd::colllections::generic::linked_list <type_t>. The value can be null for reference types.
         /// @return `true` if item is found in the xtd::colllections::generic::linked_list <type_t>; otherwise, `false`.
-        auto contains(const type_t& value) const noexcept -> bool override {
+        [[nodiscard]] auto contains(const type_t& value) const noexcept -> bool override {
           for (const auto& item : data_->items)
             if (xtd::collections::generic::helpers::equator<type_t> {}(item, value)) return true;
           return false;
@@ -293,7 +293,7 @@ namespace xtd {
         /// @return The first xtd::collections::generic::linked_list_node <type_t> that contains the specified value, if found; otherwise, xtd::nullopt.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
-        auto find(const type_t value) const noexcept -> xtd::optional<linked_list_node<type_t>> {
+        [[nodiscard]] auto find(const type_t value) const noexcept -> xtd::optional<linked_list_node<type_t>> {
           for (auto node = first(); node; node = node->next())
             if (xtd::collections::generic::helpers::equator<type_t> {}(node->value(), value)) return node;
           return xtd::nullopt;
@@ -304,7 +304,7 @@ namespace xtd {
         /// @return The last xtd::collections::generic::linked_list_node <type_t> that contains the specified value, if found; otherwise, xtd::nullopt.
         /// @remarks xtd::collections::generic::linked_list <type_t> allows duplicate values.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
-        auto find_last(const type_t value) const noexcept -> xtd::optional<linked_list_node<type_t>> {
+        [[nodiscard]] auto find_last(const type_t value) const noexcept -> xtd::optional<linked_list_node<type_t>> {
           for (auto node = last(); node; node = node->previous())
             if (xtd::collections::generic::helpers::equator<type_t> {}(node->value(), value)) return node;
           return xtd::nullopt;
@@ -312,17 +312,17 @@ namespace xtd {
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::linked_list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::linked_list <type_t>.
-        enumerator<value_type> get_enumerator() const noexcept override {
+        [[nodiscard]] enumerator<value_type> get_enumerator() const noexcept override {
           struct linked_list_enumerator : public ienumerator < value_type > {
             explicit linked_list_enumerator(const linked_list & items, xtd::size version) : items_(items), version_(version) {}
             
-            const value_type& current() const override {
+            [[nodiscard]] const value_type& current() const override {
               if (iterator_ == items_.data_->items.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return *iterator_;
             }
             
-            bool move_next() override {
+            [[nodiscard]] bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
               else iterator_ = items_.data_->items.cbegin();
@@ -389,7 +389,7 @@ namespace xtd {
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
-        auto to_string() const noexcept -> xtd::string override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
         /// @}
         
         /// @name Public Operators
