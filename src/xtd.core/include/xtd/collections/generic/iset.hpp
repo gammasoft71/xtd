@@ -50,12 +50,12 @@ namespace xtd {
         /// @{
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
         /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
-        virtual auto count() const noexcept -> xtd::size = 0;
+        [[nodiscard]] virtual auto count() const noexcept -> xtd::size = 0;
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
         /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
-        virtual auto is_read_only() const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_read_only() const noexcept -> bool = 0;
         
         /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
         /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
@@ -71,7 +71,7 @@ namespace xtd {
         ///   }
         /// }
         /// @endcode
-        virtual auto is_synchronized() const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_synchronized() const noexcept -> bool = 0;
         
         /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
         /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
@@ -94,7 +94,7 @@ namespace xtd {
         ///   }
         /// }
         /// @endcode
-        virtual auto sync_root() const noexcept -> const xtd::object& = 0;
+        [[nodiscard]] virtual auto sync_root() const noexcept -> const xtd::object& = 0;
         /// @}
         
         
@@ -115,7 +115,7 @@ namespace xtd {
         /// @param item The object to locate in the xtd::collections::generic::iset <type_t>.
         /// @return `true` if item is found in the xtd::collections::generic::iset <type_t>; otherwise, `false`.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, xtd::collections::generic::list <type_t> uses xtd::collections::generic::compoarer <type_t>::default_comparer, whereas xtd::collections::generic::dictionary <key_t, value_t> allows the user to specify the xtd::collections::generic::icompoarer <type_t> implementation to use for comparing keys.
-        virtual auto contains(const type_t& item) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto contains(const type_t& item) const noexcept -> bool = 0;
         
         /// @brief Copies the elements of the xtd::collections::generic::iset <type_t> to an xtd::array, starting at a particular xtd::array index.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::iset <type_t>. The xtd::array must have zero-based indexing.
@@ -136,27 +136,27 @@ namespace xtd {
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        virtual auto is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_proper_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
         
         /// @brief Determines whether the current set is a proper (strict) superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a proper superset of `other`; otherwise, `false`.
-        virtual auto is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_proper_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
         
         /// @brief Determines whether a set is a subset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a subset of `other`; otherwise, `false`.
-        virtual auto is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_subset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
         
         /// @brief Determines whether a set is a superset of a specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set is a superset of `other`; otherwise, `false`.
-        virtual auto is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto is_superset_of(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
         
         /// @brief Determines whether the current set overlaps with the specified collection.
         /// @param other The collection to compare to the current set.
         /// @return `true` if the current set and `other` share at least one common element; otherwise, `false`.
-        virtual auto overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
+        [[nodiscard]] virtual auto overlaps(const xtd::collections::generic::ienumerable<type_t>& other) const noexcept -> bool = 0;
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::iset <type_t>.
         /// @param item The object to remove from the xtd::collections::generic::iset <type_t>.
