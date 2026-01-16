@@ -81,14 +81,14 @@ namespace xtd {
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        auto list() const noexcept -> xtd::ref<const linked_list<type_t>> {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
+        [[nodiscard]] auto list() const noexcept -> xtd::ref<const linked_list<type_t>> {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
         
         /// @brief Gets the next node in the LinkedList<T>.
         /// @return A reference to the next node in the xtd::collections::generic::linked_list <type_t>, or null if the current node is the last element (Last) of the xtd::collections::generic::linked_list <type_t>.
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        auto next() const -> xtd::optional<linked_list_node> {
+        [[nodiscard]] auto next() const -> xtd::optional<linked_list_node> {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == end()) return xtd::nullopt;
           auto tmp = data_->iterator;
@@ -101,7 +101,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
-        auto previous() const -> xtd::optional<linked_list_node> {
+        [[nodiscard]] auto previous() const -> xtd::optional<linked_list_node> {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
           auto tmp = data_->iterator;
@@ -114,7 +114,7 @@ namespace xtd {
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
         /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
-        auto value() const -> const value_type& {
+        [[nodiscard]] auto value() const -> const value_type& {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
         }
@@ -124,7 +124,7 @@ namespace xtd {
         /// The following code example creates a xtd::collections::generic::linked_list_node <type_t>, adds it to a xtd::collections::generic::linked_list <type_t>, and tracks the values of its properties as the xtd::collections::generic::linked_list <type_t> changes.
         /// @include generic_linked_list_node.cpp
         /// @remarks This property is set in the xtd::collections::generic::linked_list_node <type_t>.
-        auto value() -> value_type& {
+        [[nodiscard]] auto value() -> value_type& {
           check_stale();
           return data_->value.has_value() ? data_->value.value() : *data_->iterator;
         }
