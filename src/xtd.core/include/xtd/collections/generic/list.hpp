@@ -864,7 +864,7 @@ namespace xtd {
         /// @include generic_list_reverse.cpp
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        [[nodiscard]] auto reverse() -> list<type_t>& {return reverse(0, count());}
+        auto reverse() -> list<type_t>& {return reverse(0, count());}
         /// @brief Reverses the order of the elements in the specified range.
         /// @param index The zero-based starting index of the range to reverse.
         /// @param count The number of elements in the range to reverse.
@@ -874,7 +874,7 @@ namespace xtd {
         /// @include generic_list_reverse.cpp
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        [[nodiscard]] auto reverse(size_type index, size_type count) -> list<type_t>& {
+        auto reverse(size_type index, size_type count) -> list<type_t>& {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
           std::reverse(data_->items.begin() + index, data_->items.begin() + index + count);
