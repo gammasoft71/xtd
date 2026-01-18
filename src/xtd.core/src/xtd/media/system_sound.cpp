@@ -10,7 +10,7 @@ using namespace xtd::media;
 system_sound::system_sound(uint32 type) : type_(type) {
 }
 
-void system_sound::play() const {
+auto system_sound::play() const -> void {
   native::system_sound::play(type_);
 }
 

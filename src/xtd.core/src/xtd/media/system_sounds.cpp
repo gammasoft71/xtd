@@ -5,22 +5,22 @@
 
 using namespace xtd::media;
 
-system_sound system_sounds::asterisk() {
+auto system_sounds::asterisk() -> system_sound {
   return system_sound {ST_ICONASTERISK};
 }
 
-system_sound system_sounds::beep() {
+auto system_sounds::beep() -> system_sound {
   return system_sound {ST_BEEP};
 }
 
-system_sound system_sounds::exclamation() {
+auto system_sounds::exclamation() -> system_sound {
   return system_sound {ST_ICONEXCLAMATION};
 }
 
-system_sound system_sounds::hand() {
+auto system_sounds::hand() -> system_sound {
   return system_sound {ST_ICONHAND};
 }
 
-system_sound system_sounds::question() {
+auto system_sounds::question() -> system_sound {
   return system_sound {ST_ICONQUESTION};
 }

@@ -42,12 +42,12 @@ namespace xtd {
       /// // Plays the sound associated with the Asterisk system event.
       /// system_sounds.asterisk().play();
       /// ```
-      void play() const;
+      auto play() const -> void;
       /// @}
       
     private:
       friend class system_sounds;
-      explicit system_sound(uint32 type);
+      explicit system_sound(xtd::uint32 type);
       uint32 type_ = 0;
     };
   }

@@ -38,7 +38,7 @@ namespace xtd {
       /// // Plays the sound associated with the Asterisk system event.
       /// system_sounds.asterisk().play();
       /// ```
-      static system_sound asterisk();
+      [[nodiscard]] static auto asterisk() -> xtd::media::system_sound;
       
       /// @brief Gets the sound associated with the Beep program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Beep program event in the current Windows sound scheme.
@@ -48,7 +48,7 @@ namespace xtd {
       /// // Plays the sound associated with the Beep system event.
       /// system_sounds.asterisk().play();
       /// ```
-      static system_sound beep();
+      [[nodiscard]] static auto beep() -> xtd::media::system_sound;
       
       /// @brief Gets the sound associated with the Exclamation program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Exclamation program event in the current Windows sound scheme.
@@ -58,7 +58,7 @@ namespace xtd {
       /// // Plays the sound associated with the Exclamation system event.
       /// system_sounds.exclamation().play();
       /// ```
-      static system_sound exclamation();
+      [[nodiscard]] static auto exclamation() -> xtd::media::system_sound;
       
       /// @brief Gets the sound associated with the Hand program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Hand program event in the current Windows sound scheme.
@@ -68,7 +68,7 @@ namespace xtd {
       /// // Plays the sound associated with the Hand system event.
       /// system_sounds.hand().play();
       /// ```
-      static system_sound hand();
+      [[nodiscard]] static auto hand() -> xtd::media::system_sound;
       
       /// @brief Gets the sound associated with the Question program event in the current Windows sound scheme.
       /// @return A xtd::media::system_sound associated with the Question program event in the current Windows sound scheme.
@@ -78,7 +78,7 @@ namespace xtd {
       /// // Plays the sound associated with the Question system event.
       /// system_sounds.question().play();
       /// ```
-      static system_sound question();
+      [[nodiscard]] static auto question() -> xtd::media::system_sound;
       /// @}
     };
   }
