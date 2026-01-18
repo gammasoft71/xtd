@@ -8,86 +8,86 @@
 using namespace xtd;
 using namespace xtd::globalization;
 
-std::string __iformatable_to_string(const iformatable& value) noexcept {
+auto __iformatable_to_string(const iformatable& value) noexcept -> std::string {
   return value.to_string("", culture_info::current_culture());
 }
 
-std::ostream& operator <<(std::ostream& os, const char8* str) {
+auto operator <<(std::ostream& os, const char8* str) -> std::ostream& {
   return os << string(str);
 }
 
-std::ostream& operator <<(std::ostream& os, const char16* str) {
+auto operator <<(std::ostream& os, const char16* str) -> std::ostream& {
   return os << string(str);
 }
 
-std::ostream& operator <<(std::ostream& os, const char32* str) {
+auto operator <<(std::ostream& os, const char32* str) -> std::ostream& {
   return os << string(str);
 }
 
-std::ostream& operator <<(std::ostream& os, const wchar* str) {
+auto operator <<(std::ostream& os, const wchar* str) -> std::ostream& {
   return os << string(str);
 }
 
-std::string __format_stringer_to_std_string(const char& c) {
+auto __format_stringer_to_std_string(const char& c) -> std::string {
   return string(c, 1);
 }
 
-std::string __format_stringer_to_std_string(const char8& c) {
+auto __format_stringer_to_std_string(const char8& c) -> std::string {
   return string(std::u8string(c, 1));
 }
 
-std::string __format_stringer_to_std_string(const char16& c) {
+auto __format_stringer_to_std_string(const char16& c) -> std::string {
   return string(std::u16string(c, 1));
 }
 
-std::string __format_stringer_to_std_string(const char32& c) {
+auto __format_stringer_to_std_string(const char32& c) -> std::string {
   return string(std::u32string(1, c));
 }
 
-std::string __format_stringer_to_std_string(const wchar& c) {
+auto __format_stringer_to_std_string(const wchar& c) -> std::string {
   return string(std::wstring(c, 1));
 }
 
-std::string __format_stringer_to_std_string(const char* str) {
+auto __format_stringer_to_std_string(const char* str) -> std::string {
   return str;
 }
 
-std::string __format_stringer_to_std_string(const char8* str) {
+auto __format_stringer_to_std_string(const char8* str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const char16* str) {
+auto __format_stringer_to_std_string(const char16* str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const char32* str) {
+auto __format_stringer_to_std_string(const char32* str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const wchar* str) {
+auto __format_stringer_to_std_string(const wchar* str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const std::string& str) {
+auto __format_stringer_to_std_string(const std::string& str) -> std::string {
   return str;
 }
 
-std::string __format_stringer_to_std_string(const string& str) {
+auto __format_stringer_to_std_string(const string& str) -> std::string {
   return str;
 }
 
-std::string __format_stringer_to_std_string(const std::u8string& str) {
+auto __format_stringer_to_std_string(const std::u8string& str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const std::u16string& str) {
+auto __format_stringer_to_std_string(const std::u16string& str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const std::u32string& str) {
+auto __format_stringer_to_std_string(const std::u32string& str) -> std::string {
   return string(str);
 }
 
-std::string __format_stringer_to_std_string(const std::wstring& str) {
+auto __format_stringer_to_std_string(const std::wstring& str) -> std::string {
   return string(str);
 }
