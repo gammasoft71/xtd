@@ -12,7 +12,7 @@
 
 /// @cond
 template<class char_t, class value_t>
-inline std::basic_string<char_t> __binary_formatter(value_t value, int precision) {
+[[nodiscard]] inline auto __binary_formatter(value_t value, int precision) -> std::basic_string<char_t> {
   std::basic_string<char_t> result = std::bitset<sizeof(value) * 8>(value).to_string(char_t('0'), char_t('1'));
   while (result[0] != 0 && result[0] == char_t('0'))
     result.erase(0, 1);
