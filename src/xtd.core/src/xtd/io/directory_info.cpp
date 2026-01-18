@@ -27,11 +27,11 @@ struct directory_info::directory_iterator::data {
 };
 
 directory_info::directory_iterator::directory_iterator(const string& path, const string& pattern) {
-  data_ = xtd::new_sptr<data>(path, pattern);
+  data_ = new_sptr<data>(path, pattern);
 }
 
 directory_info::directory_iterator::directory_iterator() {
-  data_ = xtd::new_sptr<data>();
+  data_ = new_sptr<data>();
 }
 
 directory_info::directory_iterator& directory_info::directory_iterator::operator ++() {
@@ -77,11 +77,11 @@ struct directory_info::file_iterator::data {
 };
 
 directory_info::file_iterator::file_iterator(const std::string& path, const std::string& pattern) {
-  data_ = xtd::new_sptr<data>(path, pattern);
+  data_ = new_sptr<data>(path, pattern);
 }
 
 directory_info::file_iterator::file_iterator() {
-  data_ = xtd::new_sptr<data>();
+  data_ = new_sptr<data>();
 }
 
 directory_info::file_iterator& directory_info::file_iterator::operator ++() {
@@ -101,10 +101,10 @@ directory_info::file_iterator::value_type directory_info::file_iterator::operato
 }
 
 directory_info::file_iterator directory_info::file_iterator::begin() const {
-  return directory_info::file_iterator(data_->iterator_.path(), data_->iterator_.pattern());
+  return file_iterator(data_->iterator_.path(), data_->iterator_.pattern());
 }
 directory_info::file_iterator directory_info::file_iterator::end() const {
-  return xtd::io::directory_info::file_iterator {};
+  return file_iterator {};
 }
 
 bool directory_info::file_iterator::equals(const directory_info::file_iterator& other) const noexcept {
@@ -126,11 +126,11 @@ struct directory_info::file_system_info_iterator::data {
 };
 
 directory_info::file_system_info_iterator::file_system_info_iterator(const std::string& path, const std::string& pattern) {
-  data_ = xtd::new_sptr<data>(path, pattern);
+  data_ = new_sptr<data>(path, pattern);
 }
 
 directory_info::file_system_info_iterator::file_system_info_iterator() {
-  data_ = xtd::new_sptr<data>();
+  data_ = new_sptr<data>();
 }
 
 directory_info::file_system_info_iterator& directory_info::file_system_info_iterator::operator ++() {
@@ -149,7 +149,7 @@ directory_info::file_system_info_iterator directory_info::file_system_info_itera
 }
 
 directory_info::file_system_info_iterator directory_info::file_system_info_iterator::end() const {
-  return xtd::io::directory_info::file_system_info_iterator {};
+  return file_system_info_iterator {};
 }
 
 bool directory_info::file_system_info_iterator::equals(const directory_info::file_system_info_iterator& other) const noexcept {
@@ -165,51 +165,51 @@ string directory_info::file_system_info_iterator::pattern() const {
 }
 
 directory_info::file_system_info_iterator::value_type directory_info::file_system_info_iterator::operator *() const {
-  if (data_ == nullptr) return xtd::new_sptr<file_info>("");
+  if (data_ == nullptr) return new_sptr<file_info>("");
   auto attributes = -1;
   native::file_system::get_attributes(*data_->iterator_, attributes);
-  if ((as<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return xtd::new_sptr<directory_info>(*data_->iterator_);
-  return xtd::new_sptr<file_info>(*data_->iterator_);
+  if ((as<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory) return new_sptr<directory_info>(*data_->iterator_);
+  return new_sptr<file_info>(*data_->iterator_);
 }
 
 const directory_info directory_info::empty;
 
-directory_info::directory_info(const xtd::string& path) {
+directory_info::directory_info(const string& path) {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw_helper::throws(exception_case::argument);
-  if (xtd::string::is_empty(path) || xtd::string::is_empty(path.trim(' '))) throw_helper::throws(exception_case::argument);
+  if (string::is_empty(path) || string::is_empty(path.trim(' '))) throw_helper::throws(exception_case::argument);
   original_path_ = path.length() == 2 && path[1] == ':' ?  "." : path;
   refresh();
 }
 
-bool directory_info::exists() const {
+auto directory_info::exists() const -> bool {
   auto attributes = 0;
   return native::file_system::get_attributes(full_path_, attributes) == 0 && (static_cast<file_attributes>(attributes) & file_attributes::directory) == file_attributes::directory;
 }
 
-string directory_info::name() const {
+auto directory_info::name() const -> string {
   auto items = full_path_.split(path::directory_separator_char());
   if (items.length() == 0)
     return full_path_;
   return items[~1_z];
 }
 
-directory_info directory_info::parent() const {
+auto directory_info::parent() const -> directory_info {
   if (full_path_ == path::get_path_root(full_path_)) return empty;
   return directory_info(path::combine(full_path_, ".."));
 }
 
-directory_info directory_info::root() const {
+auto directory_info::root() const -> directory_info {
   return directory_info(path::get_path_root(full_path_));
 }
 
-void directory_info::create() {
+auto directory_info::create() -> void {
   if (native::directory::create(full_path_) != 0) throw_helper::throws(exception_case::io);
   refresh();
 }
 
-directory_info directory_info::create_subdirectory(const string& path) const {
+auto directory_info::create_subdirectory(const string& path) const -> directory_info {
   if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw_helper::throws(exception_case::argument);
-  if (xtd::string::is_empty(path) || xtd::string::is_empty(path.trim(' '))) throw_helper::throws(exception_case::argument);
+  if (string::is_empty(path) || string::is_empty(path.trim(' '))) throw_helper::throws(exception_case::argument);
   if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw_helper::throws(exception_case::path_too_long);
   
   auto dir_info = directory_info {path::combine(full_path_, path)};
@@ -217,55 +217,55 @@ directory_info directory_info::create_subdirectory(const string& path) const {
   return dir_info;
 }
 
-directory_info::directory_iterator directory_info::enumerate_directories() const {
+auto directory_info::enumerate_directories() const -> directory_iterator {
   return enumerate_directories("*");
 }
 
-directory_info::directory_iterator directory_info::enumerate_directories(const xtd::string& pattern) const {
+auto directory_info::enumerate_directories(const string& pattern) const -> directory_iterator {
   return directory_iterator {full_path_, pattern};
 }
 
-directory_info::file_iterator directory_info::enumerate_files() const {
+auto directory_info::enumerate_files() const -> file_iterator {
   return enumerate_files("*");
 }
 
-directory_info::file_iterator directory_info::enumerate_files(const xtd::string& pattern) const {
+auto directory_info::enumerate_files(const string& pattern) const -> file_iterator{
   return file_iterator {full_path_, pattern};
 }
 
-directory_info::file_system_info_iterator directory_info::enumerate_file_system_infos() const {
+auto directory_info::enumerate_file_system_infos() const -> file_system_info_iterator {
   return enumerate_file_system_infos("*");
 }
 
-directory_info::file_system_info_iterator directory_info::enumerate_file_system_infos(const xtd::string& pattern) const {
+auto directory_info::enumerate_file_system_infos(const string& pattern) const -> file_system_info_iterator {
   return file_system_info_iterator {full_path_, pattern};
 }
 
-xtd::array<directory_info> directory_info::get_directories() const {
+auto directory_info::get_directories() const -> array<directory_info> {
   return get_directories("*");
 }
 
-xtd::array<directory_info> directory_info::get_directories(const string& pattern) const {
+auto directory_info::get_directories(const string& pattern) const -> array<directory_info> {
   return {std::begin(enumerate_directories(pattern)), std::end(enumerate_directories(pattern))};
 }
 
-xtd::array<file_info> directory_info::get_files() const {
+auto directory_info::get_files() const -> array<file_info> {
   return get_files("*");
 }
 
-xtd::array<file_info> directory_info::get_files(const string& pattern) const {
+auto directory_info::get_files(const string& pattern) const -> array<file_info> {
   return {std::begin(enumerate_files(pattern)), std::end(enumerate_files(pattern))};
 }
 
-xtd::array<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
+auto directory_info::get_file_system_infos() const -> array<sptr<file_system_info>> {
   return get_file_system_infos("*");
 }
 
-xtd::array<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const string& pattern) const {
+auto directory_info::get_file_system_infos(const string& pattern) const -> array<sptr<file_system_info>> {
   return {std::begin(enumerate_file_system_infos(pattern)), std::end(enumerate_file_system_infos(pattern))};
 }
 
-void directory_info::move_to(const string& dest_dir_name) {
+auto directory_info::move_to(const string& dest_dir_name) -> void {
   auto dest_dir_info = directory_info {dest_dir_name};
   if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) throw_helper::throws(exception_case::io);
   
@@ -283,11 +283,11 @@ void directory_info::move_to(const string& dest_dir_name) {
   refresh();
 }
 
-void directory_info::remove() const {
+auto directory_info::remove() const -> void {
   return remove(false);
 }
 
-void directory_info::remove(bool recursive) const {
+auto directory_info::remove(bool recursive) const -> void {
   if (!exists()) throw_helper::throws(exception_case::directory_not_found);
   
   // I don't think is a good think that check recursively directory is read only before...
