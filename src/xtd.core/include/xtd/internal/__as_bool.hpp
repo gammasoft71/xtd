@@ -33,7 +33,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::any value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::any value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(bool value) -> bool {
+  [[nodiscard]] inline auto as<bool>(bool value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::byte value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::byte value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(char value) -> bool {
+  [[nodiscard]] inline auto as<bool>(char value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char8 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char8 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char16 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char16 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char32 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char32 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::wchar value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::wchar value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::decimal value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::decimal value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(double value) -> bool {
+  [[nodiscard]] inline auto as<bool>(double value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(float value) -> bool {
+  [[nodiscard]] inline auto as<bool>(float value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::int16 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::int16 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::int32 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::int32 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::int64 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::int64 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::slong value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::slong value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::sbyte value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::sbyte value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::uint16 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::uint16 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::uint32 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::uint32 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::uint64 value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::uint64 value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::ulong value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::ulong value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const xtd::string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const xtd::string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const std::string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const std::string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(std::string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(std::string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const std::u8string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const std::u8string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(std::u8string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(std::u8string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const std::u16string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const std::u16string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(std::u16string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(std::u16string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const std::u32string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const std::u32string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(std::u32string& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(std::u32string& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const std::wstring& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const std::wstring& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(std::wstring& value) -> bool {
+  [[nodiscard]] inline auto as<bool>(std::wstring& value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const char* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const char* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(char* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(char* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const xtd::char8* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const xtd::char8* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char8* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char8* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const xtd::char16* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const xtd::char16* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char16* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char16* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const xtd::char32* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const xtd::char32* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::char32* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::char32* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(const xtd::wchar* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(const xtd::wchar* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline auto as<bool>(xtd::wchar* value) -> bool {
+  [[nodiscard]] inline auto as<bool>(xtd::wchar* value) -> bool {
     return xtd::convert::to_boolean(value);
   }
 }
