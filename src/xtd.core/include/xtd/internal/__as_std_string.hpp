@@ -30,7 +30,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const std::string& value) {
+  inline auto as<std::string>(const std::string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   /// ```cpp
@@ -38,27 +38,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(std::string& value) {
-    return xtd::convert_string::to_string(value);
-  }
-  
-  /// @brief Casts a type into another type.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/as>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core
-  /// @par Examples
-  /// ```cpp
-  /// string value = "Gammasoft";
-  /// string result = as<string>(value);
-  /// ```
-  template<>
-  inline xtd::string as<xtd::string>(const std::string& value) {
+  inline auto as<std::string>(std::string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -78,7 +58,27 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(std::string& value) {
+  inline auto as<xtd::string>(const std::string& value) -> xtd::string {
+    return xtd::convert_string::to_string(value);
+  }
+  
+  /// @brief Casts a type into another type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/as>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// string value = "Gammasoft";
+  /// string result = as<string>(value);
+  /// ```
+  template<>
+  inline auto as<xtd::string>(std::string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -98,7 +98,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const std::string& value) {
+  inline auto as<std::u8string>(const std::string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -118,7 +118,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(std::string& value) {
+  inline auto as<std::u8string>(std::string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -138,7 +138,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const std::string& value) {
+  inline auto as<std::u16string>(const std::string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -158,7 +158,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(std::string& value) {
+  inline auto as<std::u16string>(std::string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -178,7 +178,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const std::string& value) {
+  inline auto as<std::u32string>(const std::string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -198,7 +198,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(std::string& value) {
+  inline auto as<std::u32string>(std::string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -218,7 +218,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const std::string& value) {
+  inline auto as<std::wstring>(const std::string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -238,7 +238,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(std::string& value) {
+  inline auto as<std::wstring>(std::string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const char* value) {
+  inline auto as<std::string>(const char* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -278,7 +278,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const char* value) {
+  inline auto as<xtd::string>(const char* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -298,7 +298,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const char* value) {
+  inline auto as<std::u8string>(const char* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -318,7 +318,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const char* value) {
+  inline auto as<std::u16string>(const char* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -338,7 +338,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const char* value) {
+  inline auto as<std::u32string>(const char* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -358,7 +358,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const char* value) {
+  inline auto as<std::wstring>(const char* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -378,7 +378,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(char* value) {
+  inline auto as<std::string>(char* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -398,7 +398,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(char* value) {
+  inline auto as<xtd::string>(char* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -418,7 +418,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(char* value) {
+  inline auto as<std::u8string>(char* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -438,7 +438,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(char* value) {
+  inline auto as<std::u16string>(char* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -458,7 +458,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(char* value) {
+  inline auto as<std::u32string>(char* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -478,7 +478,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(char* value) {
+  inline auto as<std::wstring>(char* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -498,7 +498,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const xtd::string& value) {
+  inline auto as<std::string>(const xtd::string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -518,7 +518,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(xtd::string& value) {
+  inline auto as<std::string>(xtd::string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -538,7 +538,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const xtd::string& value) {
+  inline auto as<xtd::string>(const xtd::string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -558,7 +558,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(xtd::string& value) {
+  inline auto as<xtd::string>(xtd::string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -578,7 +578,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const xtd::string& value) {
+  inline auto as<std::u8string>(const xtd::string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -598,7 +598,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(xtd::string& value) {
+  inline auto as<std::u8string>(xtd::string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -618,7 +618,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const xtd::string& value) {
+  inline auto as<std::u16string>(const xtd::string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -638,7 +638,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(xtd::string& value) {
+  inline auto as<std::u16string>(xtd::string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -658,7 +658,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const xtd::string& value) {
+  inline auto as<std::u32string>(const xtd::string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -678,7 +678,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(xtd::string& value) {
+  inline auto as<std::u32string>(xtd::string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -698,7 +698,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const xtd::string& value) {
+  inline auto as<std::wstring>(const xtd::string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -718,7 +718,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(xtd::string& value) {
+  inline auto as<std::wstring>(xtd::string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -738,7 +738,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const std::u8string& value) {
+  inline auto as<std::string>(const std::u8string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -758,7 +758,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(std::u8string& value) {
+  inline auto as<std::string>(std::u8string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const std::u8string& value) {
+  inline auto as<xtd::string>(const std::u8string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -798,7 +798,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(std::u8string& value) {
+  inline auto as<xtd::string>(std::u8string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -818,7 +818,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const std::u8string& value) {
+  inline auto as<std::u8string>(const std::u8string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -838,7 +838,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(std::u8string& value) {
+  inline auto as<std::u8string>(std::u8string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -858,7 +858,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const std::u8string& value) {
+  inline auto as<std::u16string>(const std::u8string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -878,7 +878,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(std::u8string& value) {
+  inline auto as<std::u16string>(std::u8string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -898,7 +898,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const std::u8string& value) {
+  inline auto as<std::u32string>(const std::u8string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -918,7 +918,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(std::u8string& value) {
+  inline auto as<std::u32string>(std::u8string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -938,7 +938,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const std::u8string& value) {
+  inline auto as<std::wstring>(const std::u8string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -958,7 +958,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(std::u8string& value) {
+  inline auto as<std::wstring>(std::u8string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -978,7 +978,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const char8* value) {
+  inline auto as<std::string>(const char8* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -998,7 +998,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const char8* value) {
+  inline auto as<xtd::string>(const char8* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1018,7 +1018,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const char8* value) {
+  inline auto as<std::u8string>(const char8* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1038,7 +1038,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const char8* value) {
+  inline auto as<std::u16string>(const char8* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1058,7 +1058,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const char8* value) {
+  inline auto as<std::u32string>(const char8* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1078,7 +1078,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const char8* value) {
+  inline auto as<std::wstring>(const char8* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1098,7 +1098,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(char8* value) {
+  inline auto as<std::string>(char8* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1118,7 +1118,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(char8* value) {
+  inline auto as<xtd::string>(char8* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1138,7 +1138,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(char8* value) {
+  inline auto as<std::u8string>(char8* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1158,7 +1158,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(char8* value) {
+  inline auto as<std::u16string>(char8* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1178,7 +1178,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(char8* value) {
+  inline auto as<std::u32string>(char8* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1198,7 +1198,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(char8* value) {
+  inline auto as<std::wstring>(char8* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1218,7 +1218,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const std::u16string& value) {
+  inline auto as<std::string>(const std::u16string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1238,7 +1238,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(std::u16string& value) {
+  inline auto as<std::string>(std::u16string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1258,7 +1258,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const std::u16string& value) {
+  inline auto as<xtd::string>(const std::u16string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1278,7 +1278,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(std::u16string& value) {
+  inline auto as<xtd::string>(std::u16string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1298,7 +1298,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const std::u16string& value) {
+  inline auto as<std::u8string>(const std::u16string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1318,7 +1318,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(std::u16string& value) {
+  inline auto as<std::u8string>(std::u16string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1338,7 +1338,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const std::u16string& value) {
+  inline auto as<std::u16string>(const std::u16string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1358,7 +1358,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(std::u16string& value) {
+  inline auto as<std::u16string>(std::u16string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1378,7 +1378,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const std::u16string& value) {
+  inline auto as<std::u32string>(const std::u16string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1398,7 +1398,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(std::u16string& value) {
+  inline auto as<std::u32string>(std::u16string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1418,7 +1418,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const std::u16string& value) {
+  inline auto as<std::wstring>(const std::u16string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1438,7 +1438,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(std::u16string& value) {
+  inline auto as<std::wstring>(std::u16string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1458,7 +1458,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const char16* value) {
+  inline auto as<std::string>(const char16* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1478,7 +1478,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const char16* value) {
+  inline auto as<xtd::string>(const char16* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1498,7 +1498,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const char16* value) {
+  inline auto as<std::u8string>(const char16* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1518,7 +1518,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const char16* value) {
+  inline auto as<std::u16string>(const char16* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1538,7 +1538,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const char16* value) {
+  inline auto as<std::u32string>(const char16* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1558,7 +1558,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const char16* value) {
+  inline auto as<std::wstring>(const char16* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1578,7 +1578,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(char16* value) {
+  inline auto as<std::string>(char16* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1598,7 +1598,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(char16* value) {
+  inline auto as<xtd::string>(char16* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1618,7 +1618,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(char16* value) {
+  inline auto as<std::u8string>(char16* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1638,7 +1638,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(char16* value) {
+  inline auto as<std::u16string>(char16* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1658,7 +1658,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(char16* value) {
+  inline auto as<std::u32string>(char16* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1678,7 +1678,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(char16* value) {
+  inline auto as<std::wstring>(char16* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1698,7 +1698,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const std::u32string& value) {
+  inline auto as<std::string>(const std::u32string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1718,7 +1718,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(std::u32string& value) {
+  inline auto as<std::string>(std::u32string& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1738,7 +1738,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const std::u32string& value) {
+  inline auto as<xtd::string>(const std::u32string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1758,7 +1758,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(std::u32string& value) {
+  inline auto as<xtd::string>(std::u32string& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1778,7 +1778,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const std::u32string& value) {
+  inline auto as<std::u8string>(const std::u32string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1798,7 +1798,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(std::u32string& value) {
+  inline auto as<std::u8string>(std::u32string& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1818,7 +1818,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const std::u32string& value) {
+  inline auto as<std::u16string>(const std::u32string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1838,7 +1838,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(std::u32string& value) {
+  inline auto as<std::u16string>(std::u32string& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -1858,7 +1858,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const std::u32string& value) {
+  inline auto as<std::u32string>(const std::u32string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1878,7 +1878,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(std::u32string& value) {
+  inline auto as<std::u32string>(std::u32string& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -1898,7 +1898,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const std::u32string& value) {
+  inline auto as<std::wstring>(const std::u32string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1918,7 +1918,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(std::u32string& value) {
+  inline auto as<std::wstring>(std::u32string& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -1938,7 +1938,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const char32* value) {
+  inline auto as<std::string>(const char32* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1958,7 +1958,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const char32* value) {
+  inline auto as<xtd::string>(const char32* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -1978,7 +1978,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const char32* value) {
+  inline auto as<std::u8string>(const char32* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -1998,7 +1998,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const char32* value) {
+  inline auto as<std::u16string>(const char32* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2018,7 +2018,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const char32* value) {
+  inline auto as<std::u32string>(const char32* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2038,7 +2038,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const char32* value) {
+  inline auto as<std::wstring>(const char32* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -2058,7 +2058,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(char32* value) {
+  inline auto as<std::string>(char32* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2078,7 +2078,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(char32* value) {
+  inline auto as<xtd::string>(char32* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2098,7 +2098,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(char32* value) {
+  inline auto as<std::u8string>(char32* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -2118,7 +2118,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(char32* value) {
+  inline auto as<std::u16string>(char32* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2138,7 +2138,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(char32* value) {
+  inline auto as<std::u32string>(char32* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2158,7 +2158,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(char32* value) {
+  inline auto as<std::wstring>(char32* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -2178,7 +2178,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const std::wstring& value) {
+  inline auto as<std::string>(const std::wstring& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2198,7 +2198,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(std::wstring& value) {
+  inline auto as<std::string>(std::wstring& value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2218,7 +2218,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const std::wstring& value) {
+  inline auto as<xtd::string>(const std::wstring& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2238,7 +2238,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(std::wstring& value) {
+  inline auto as<xtd::string>(std::wstring& value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2258,7 +2258,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const std::wstring& value) {
+  inline auto as<std::u8string>(const std::wstring& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -2278,7 +2278,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(std::wstring& value) {
+  inline auto as<std::u8string>(std::wstring& value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -2298,7 +2298,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const std::wstring& value) {
+  inline auto as<std::u16string>(const std::wstring& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2318,7 +2318,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(std::wstring& value) {
+  inline auto as<std::u16string>(std::wstring& value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2338,7 +2338,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const std::wstring& value) {
+  inline auto as<std::u32string>(const std::wstring& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2358,7 +2358,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(std::wstring& value) {
+  inline auto as<std::u32string>(std::wstring& value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2378,7 +2378,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const std::wstring& value) {
+  inline auto as<std::wstring>(const std::wstring& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -2398,7 +2398,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(std::wstring& value) {
+  inline auto as<std::wstring>(std::wstring& value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -2418,7 +2418,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(const wchar* value) {
+  inline auto as<std::string>(const wchar* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2438,7 +2438,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(const wchar* value) {
+  inline auto as<xtd::string>(const wchar* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2458,7 +2458,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(const wchar* value) {
+  inline auto as<std::u8string>(const wchar* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -2478,7 +2478,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(const wchar* value) {
+  inline auto as<std::u16string>(const wchar* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2498,7 +2498,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(const wchar* value) {
+  inline auto as<std::u32string>(const wchar* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2518,7 +2518,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(const wchar* value) {
+  inline auto as<std::wstring>(const wchar* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
   
@@ -2538,7 +2538,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline std::string as<std::string>(wchar* value) {
+  inline auto as<std::string>(wchar* value) -> std::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2558,7 +2558,7 @@ namespace xtd {
   /// string result = as<string>(value);
   /// ```
   template<>
-  inline xtd::string as<xtd::string>(wchar* value) {
+  inline auto as<xtd::string>(wchar* value) -> xtd::string {
     return xtd::convert_string::to_string(value);
   }
   
@@ -2578,7 +2578,7 @@ namespace xtd {
   /// u8string result = as<u8string>(value);
   /// ```
   template<>
-  inline std::u8string as<std::u8string>(wchar* value) {
+  inline auto as<std::u8string>(wchar* value) -> std::u8string {
     return xtd::convert_string::to_u8string(value);
   }
   
@@ -2598,7 +2598,7 @@ namespace xtd {
   /// u16string result = as<u16string>(value);
   /// ```
   template<>
-  inline std::u16string as<std::u16string>(wchar* value) {
+  inline auto as<std::u16string>(wchar* value) -> std::u16string {
     return xtd::convert_string::to_u16string(value);
   }
   
@@ -2618,7 +2618,7 @@ namespace xtd {
   /// u32string result = as<u32string>(value);
   /// ```
   template<>
-  inline std::u32string as<std::u32string>(wchar* value) {
+  inline auto as<std::u32string>(wchar* value) -> std::u32string {
     return xtd::convert_string::to_u32string(value);
   }
   
@@ -2638,7 +2638,7 @@ namespace xtd {
   /// wstring result = as<wstring>(value);
   /// ```
   template<>
-  inline std::wstring as<std::wstring>(wchar* value) {
+  inline auto as<std::wstring>(wchar* value) -> std::wstring {
     return xtd::convert_string::to_wstring(value);
   }
 }
