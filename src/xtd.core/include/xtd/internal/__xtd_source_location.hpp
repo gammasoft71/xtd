@@ -37,7 +37,7 @@ public:
   const char* function_name() const noexcept {return data_->func;}
   std::uint32_t column() const noexcept {return data_->column;}
   
-  static __xtd_source_location__ current(const char* file = __builtin_FILE(), std::uint32_t line = __builtin_LINE(), const char* func = __builtin_FUNCTION(), std::uint32_t column = __builtin_COLUMN()) noexcept {
+  [[nodicard]] static auto current(const char* file = __builtin_FILE(), std::uint32_t line = __builtin_LINE(), const char* func = __builtin_FUNCTION(), std::uint32_t column = __builtin_COLUMN()) noexcept -> __xtd_source_location__ {
     auto csl = __xtd_source_location__ {};
     *csl.data_ = {file, line, func, column};
     return csl;
