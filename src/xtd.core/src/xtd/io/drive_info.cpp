@@ -14,66 +14,66 @@ using namespace io;
 const drive_info drive_info::empty;
 
 drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
-  if (xtd::string::is_empty(drive_name)) throw_helper::throws(exception_case::argument);
+  if (string::is_empty(drive_name)) throw_helper::throws(exception_case::argument);
   auto drives = native::drive::get_drives();
   if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw_helper::throws(exception_case::argument);
 }
 
-size_t drive_info::available_free_space() const {
+auto drive_info::available_free_space() const -> size {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return free_bytes;
 }
 
-string drive_info::drive_format() const {
+auto drive_info::drive_format() const -> string {
   auto volume_name = std::string {}, file_system_name = std::string {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw_helper::throws(exception_case::io);
   return file_system_name;
 }
 
-drive_type drive_info::drive_type() const {
-  auto drive_type = native::drive::get_drive_type(drive_name_);
-  return static_cast<xtd::io::drive_type>(drive_type);
+auto drive_info::drive_type() const -> enum drive_type {
+  auto result = native::drive::get_drive_type(drive_name_);
+  return static_cast<enum drive_type>(result);
 }
 
-bool drive_info::is_ready() const noexcept {
+auto drive_info::is_ready() const noexcept -> bool {
   auto volume_name = std::string {}, file_system_name = std::string {};
   return native::drive::get_volume_information(drive_name_, volume_name, file_system_name);
 }
 
-string drive_info::name() const noexcept {
+auto drive_info::name() const noexcept -> string {
   return drive_name_;
 }
 
-directory_info drive_info::root_directory() const noexcept {
+auto drive_info::root_directory() const noexcept -> directory_info {
   return directory_info(drive_name_);
 }
 
-size_t drive_info::total_free_space() const {
+auto drive_info::total_free_space() const -> size {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_free_bytes;
 }
 
-size_t drive_info::total_size() const {
+auto drive_info::total_size() const -> size {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
   if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_bytes;
 }
 
-string drive_info::volume_label() const {
+auto drive_info::volume_label() const -> string {
   auto volume_name = std::string {}, file_system_name = std::string {};
   if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw_helper::throws(exception_case::io);
   return volume_name;
 }
 
-array<drive_info> drive_info::get_drives() noexcept {
+auto drive_info::get_drives() noexcept -> array<drive_info> {
   auto drives = list<drive_info> {};
   auto native_drives = native::drive::get_drives();
   std::for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.add(drive_info(drive));});
   return drives.to_array();
 }
 
-xtd::string drive_info::to_string() const noexcept {
+auto drive_info::to_string() const noexcept -> string {
   return drive_name_;
 }
