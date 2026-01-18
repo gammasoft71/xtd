@@ -33,7 +33,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::any value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::any value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(bool value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(bool value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::byte value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::byte value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(char value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(char value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char8 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char8 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char16 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char16 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char32 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char32 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::wchar value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::wchar value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::decimal value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::decimal value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(double value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(double value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(float value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(float value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::int16 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::int16 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::int32 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::int32 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::int64 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::int64 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::slong value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::slong value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::sbyte value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::sbyte value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::uint16 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::uint16 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::uint32 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::uint32 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::uint64 value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::uint64 value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::ulong value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::ulong value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const xtd::string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const xtd::string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const std::string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const std::string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(std::string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(std::string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const std::u8string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const std::u8string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(std::u8string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(std::u8string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const std::u16string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const std::u16string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(std::u16string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(std::u16string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const std::u32string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const std::u32string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(std::u32string& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(std::u32string& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const std::wstring& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const std::wstring& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(std::wstring& value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(std::wstring& value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const char* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const char* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(char* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(char* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const xtd::char8* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const xtd::char8* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char8* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char8* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const xtd::char16* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const xtd::char16* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char16* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char16* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const xtd::char32* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const xtd::char32* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::char32* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::char32* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(const xtd::wchar* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(const xtd::wchar* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// char32 result = as<char32>(value);
   /// ```
   template<>
-  inline auto as<xtd::char32>(xtd::wchar* value) -> xtd::char32 {
+  [[nodiscard]] inline auto as<xtd::char32>(xtd::wchar* value) -> xtd::char32 {
     return xtd::convert::to_char32(value);
   }
 }
