@@ -6,10 +6,10 @@
 #include "../../../include/xtd/object.hpp"
 #include "../../../include/xtd/string.hpp"
 
-std::string __to_string_iformatable_to_string(const xtd::iformatable* obj, const std::string& format, const std::locale& loc) {
+auto __to_string_iformatable_to_string(const xtd::iformatable* obj, const std::string& format, const std::locale& loc) -> std::string {
   return obj->to_string(format, loc);
 }
 
-std::string __to_string_object_to_string(const xtd::object* obj) {
+auto __to_string_object_to_string(const xtd::object* obj) -> std::string {
   return obj->to_string();
 }
