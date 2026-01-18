@@ -119,7 +119,7 @@ namespace xtd {
       /// @}
       
     private:
-      static xtd::string default_message() noexcept;
+      [[nodiscard]] static auto default_message() noexcept -> xtd::string;
     };
   }
 }
