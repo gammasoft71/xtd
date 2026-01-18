@@ -71,38 +71,38 @@ namespace xtd {
       /// @return The underlying stream.
       /// @warning Using the underlying stream while reading or while using the xtd::io::binary_reader can cause data loss and corruption. For example, the same bytes might be read more than once, bytes might be skipped, or character reading might become unpredictable.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      std::optional<xtd::ref<std::istream>> base_stream() const;
+      [[nodiscard]] auto base_stream() const -> std::optional<xtd::ref<std::istream>>;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return `true` if the current stream position is at the end of the stream; otherwise `false`.
-      bool end_of_stream() const;
+      [[nodiscard]] auto end_of_stream() const -> bool;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::binary_reader object and the underlying stream, and releases any system resources associated with the reader.
-      void close();
+      auto close() -> void;
       
       /// @brief Returns the next available character and does not advance the byte or character position.
       /// @return The next available character, or EOF if no more characters are available or the stream does not support seeking.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      int32 peek_char() const;
+      [[nodiscard]] auto peek_char() const -> xtd::int32;
       
       /// @brief Pop the current top position
-      std::streampos pop();
+      auto pop() -> std::streampos;
       
       /// @brief Push the current position
       /// @param pos The stream position to be push/saved relative to ios_base::beg direction
-      void push(std::streampos pos = 0);
+      auto push(std::streampos pos = 0) -> void;
       
       /// @brief Reads characters from the underlying stream and advances the current position of the stream in accordance with the Encoding used and the specific character being read from the stream.
       /// @return The next character from the input stream, or EOF if no characters are currently available.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual int32 read();
+      [[nodiscard]] virtual auto read() -> xtd::int32;
       
       /// @brief Reads the specified number of bytes from the stream, starting from a specified point in the byte array.
       /// @param buffer The buffer to read data into.
@@ -113,7 +113,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual size_t read(xtd::array<xtd::byte>& buffer, size_t index, size_t count);
+      virtual auto read(xtd::array<xtd::byte>& buffer, xtd::size index, xtd::size count) -> xtd::size;
       
       /// @brief Reads the specified number of characters from the stream, starting from a specified point in the character array.
       /// @param buffer The buffer to read data into.
@@ -123,7 +123,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual size_t read(xtd::array<char>& buffer, size_t index, size_t count);
+      virtual auto read(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
       
       /// @brief Reads a boolean value from the current stream and advances the current position of the stream by one byte.
       /// @return `true` if the byte is nonzero; otherwise, `false`.
@@ -131,7 +131,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual bool read_boolean();
+      [[nodiscard]] virtual auto read_boolean() -> bool;
       
       /// @brief Reads the next byte from the current stream and advances the current position of the stream by one byte.
       /// @return The next byte read from the current stream.
@@ -139,7 +139,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual xtd::byte read_byte();
+      [[nodiscard]] virtual auto read_byte() -> xtd::byte;
       
       /// @brief Reads the specified number of bytes from the current stream into a byte array and advances the current position by that number of bytes.
       /// @param count The number of bytes to read. This value must be 0 or a non-negative number or an exception will occur.
@@ -148,7 +148,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual xtd::array<xtd::byte> read_bytes(size_t count);
+      [[nodiscard]] virtual auto read_bytes(xtd::size count) -> xtd::array<xtd::byte>;
       
       /// @brief Reads the next character from the current stream and advances the current position of the stream by one byte.
       /// @return A character read from the current stream.
@@ -156,7 +156,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual char read_char();
+      [[nodiscard]] virtual auto read_char() -> char;
       
       /// @brief Reads the specified number of characters from the current stream into a byte array and advances the current position by that number of bytes.
       /// @param count The number of characters to read. This value must be 0 or a non-negative number or an exception will occur.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual xtd::array<char> read_chars(size_t count);
+      [[nodiscard]] virtual auto read_chars(xtd::size count) -> xtd::array<char>;
       
       /// @brief Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.
       /// @return An 8-byte floating point value read from the current stream.
@@ -173,7 +173,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual double read_double();
+      [[nodiscard]] virtual auto read_double() -> double;
       
       /// @brief Reads a 2-byte signed integer from the current stream and advances the current position of the stream by two bytes.
       /// @return A 2-byte signed integer read from the current stream.
@@ -181,7 +181,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual int16 read_int16();
+      [[nodiscard]] virtual auto read_int16() -> xtd::int16;
       
       /// @brief Reads a 4-byte signed integer from the current stream and advances the current position of the stream by four bytes.
       /// @return A 4-byte signed integer read from the current stream.
@@ -189,7 +189,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual int32 read_int32();
+      [[nodiscard]] virtual auto read_int32() -> xtd::int32;
       
       /// @brief Reads a 8-byte signed integer from the current stream and advances the current position of the stream by eight bytes.
       /// @return A 8-byte signed integer read from the current stream.
@@ -197,7 +197,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual int64 read_int64();
+      [[nodiscard]] virtual auto read_int64() -> xtd::int64;
       
       /// @brief Reads the a signed byte from the current stream and advances the current position of the stream by one byte.
       /// @return A signed byte read from the current stream.
@@ -205,7 +205,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual sbyte read_sbyte();
+      [[nodiscard]] virtual auto read_sbyte() -> xtd::sbyte;
       
       /// @brief Reads an 4-byte floating point value from the current stream and advances the current position of the stream by four bytes.
       /// @return An 4-byte floating point value read from the current stream.
@@ -213,7 +213,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual float read_single();
+      [[nodiscard]] virtual auto read_single() -> float;
       
       /// @brief Reads a xtd::size from the current stream and advances the current position of the stream by eight bytes.
       /// @return A xtd::size read from the current stream.
@@ -221,7 +221,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual xtd::size read_size();
+      [[nodiscard]] virtual auto read_size() -> xtd::size;
       
       /// @brief Reads a string from the current stream. The string is prefixed with the length.
       /// @return The string being read.
@@ -229,7 +229,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual string read_string();
+      [[nodiscard]] virtual auto read_string() -> xtd::string;
       
       /// @brief Reads a 2-byte unsigned integer from the current stream and advances the current position of the stream by two bytes.
       /// @return A 2-byte unsigned integer read from the current stream.
@@ -237,7 +237,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual uint16 read_uint16();
+      [[nodiscard]] virtual auto read_uint16() -> xtd::uint16;
       
       /// @brief Reads a 4-byte unsigned integer from the current stream and advances the current position of the stream by four bytes.
       /// @return A 4-byte unsigned integer read from the current stream.
@@ -245,7 +245,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual uint32 read_uint32();
+      [[nodiscard]] virtual auto read_uint32() -> xtd::uint32;
       
       /// @brief Reads a 8-byte unsigned integer from the current stream and advances the current position of the stream by eight bytes.
       /// @return A 8-byte unsigned integer read from the current stream.
@@ -253,39 +253,39 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual uint64 read_uint64();
+      [[nodiscard]] virtual auto read_uint64() -> xtd::uint64;
       
       /// @brief Rewind stream
-      void rewind();
+      auto rewind() -> void;
       
       /// @brief Change the position of the readers stream
       /// @param off The offset being added to the direction
       /// @param dir The seek direction. If ommited defaults to ios_base::cur
-      void seekg(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur);
+      virtual auto seek(std::streamoff off, std::ios_base::seekdir dir = std::ios_base::cur) -> void;
       
       /// @brief Tell the current seek position of the readers stream;
       /// @return The current seek position
-      std::streampos tellg();
+      [[nodiscard]] auto tell() -> std::streampos;
       /// @}
       
       /// @cond
-      binary_reader& operator >>(bool& value) {value = read_boolean(); return *this;}
-      binary_reader& operator >>(xtd::byte& value) {value = read_byte(); return *this;}
-      binary_reader& operator >>(char& value) {value = read_char(); return *this;}
-      binary_reader& operator >>(double& value) {value = read_double(); return *this;}
-      binary_reader& operator >>(int16& value) {value = read_int16(); return *this;}
-      binary_reader& operator >>(int32& value) {value = read_int32(); return *this;}
-      binary_reader& operator >>(int64& value) {value = read_int64(); return *this;}
-      binary_reader& operator >>(sbyte& value) {value = read_sbyte(); return *this;}
-      binary_reader& operator >>(float& value) {value = read_single(); return *this;}
-      binary_reader& operator >>(string& value) {value = read_string(); return *this;}
-      binary_reader& operator >>(uint16& value) {value = read_uint16(); return *this;}
-      binary_reader& operator >>(uint32& value) {value = read_uint32(); return *this;}
-      binary_reader& operator >>(uint64& value) {value = read_uint64(); return *this;}
+      auto operator >>(bool& value) -> binary_reader& {value = read_boolean(); return *this;}
+      auto operator >>(xtd::byte& value) -> binary_reader& {value = read_byte(); return *this;}
+      auto operator >>(char& value) -> binary_reader& {value = read_char(); return *this;}
+      auto operator >>(double& value) -> binary_reader& {value = read_double(); return *this;}
+      auto operator >>(int16& value) -> binary_reader& {value = read_int16(); return *this;}
+      auto operator >>(int32& value) -> binary_reader& {value = read_int32(); return *this;}
+      auto operator >>(int64& value) -> binary_reader& {value = read_int64(); return *this;}
+      auto operator >>(sbyte& value) -> binary_reader& {value = read_sbyte(); return *this;}
+      auto operator >>(float& value) -> binary_reader& {value = read_single(); return *this;}
+      auto operator >>(string& value) -> binary_reader& {value = read_string(); return *this;}
+      auto operator >>(uint16& value) -> binary_reader& {value = read_uint16(); return *this;}
+      auto operator >>(uint32& value) -> binary_reader& {value = read_uint32(); return *this;}
+      auto operator >>(uint64& value) -> binary_reader& {value = read_uint64(); return *this;}
       /// @endcond
       
     private:
-      int32 read_7bit_encoded_int();
+      [[nodiscard]] auto read_7bit_encoded_int() -> int32;
       std::istream* stream_ = nullptr;
       std::stack<std::streampos> pos_stack_;
       bool delete_when_destroy_ = false;
