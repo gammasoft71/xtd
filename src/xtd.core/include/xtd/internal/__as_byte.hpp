@@ -33,7 +33,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::any value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::any value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(bool value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(bool value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::byte value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::byte value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(char value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(char value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char8 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char8 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char16 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char16 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char32 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char32 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::wchar value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::wchar value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::decimal value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::decimal value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(double value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(double value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(float value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(float value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::int16 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::int16 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::int32 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::int32 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::int64 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::int64 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::slong value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::slong value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::sbyte value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::sbyte value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::uint16 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::uint16 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::uint32 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::uint32 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::uint64 value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::uint64 value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::ulong value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::ulong value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -526,7 +526,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value, 16);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::string& value, xtd::byte from_base) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::string& value, xtd::byte from_base) -> xtd::byte {
     return xtd::convert::to_byte(value, from_base);
   }
   
@@ -549,7 +549,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const std::string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const std::string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -572,7 +572,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(std::string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(std::string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -595,7 +595,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const std::u8string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const std::u8string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -618,7 +618,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(std::u8string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(std::u8string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -641,7 +641,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const std::u16string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const std::u16string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -664,7 +664,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(std::u16string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(std::u16string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -687,7 +687,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const std::u32string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const std::u32string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -710,7 +710,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(std::u32string& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(std::u32string& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -733,7 +733,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const std::wstring& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const std::wstring& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -756,7 +756,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(std::wstring& value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(std::wstring& value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -779,7 +779,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const char* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const char* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -802,7 +802,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(char* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(char* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -825,7 +825,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::char8* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::char8* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -848,7 +848,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char8* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char8* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -871,7 +871,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::char16* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::char16* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -894,7 +894,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char16* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char16* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -917,7 +917,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::char32* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::char32* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -940,7 +940,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::char32* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::char32* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -963,7 +963,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(const xtd::wchar* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(const xtd::wchar* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
   
@@ -986,7 +986,7 @@ namespace xtd {
   /// xtd::byte result = as<xtd::byte>(value);
   /// ```
   template<>
-  inline auto as<xtd::byte>(xtd::wchar* value) -> xtd::byte {
+  [[nodiscard]] inline auto as<xtd::byte>(xtd::wchar* value) -> xtd::byte {
     return xtd::convert::to_byte(value);
   }
 }
