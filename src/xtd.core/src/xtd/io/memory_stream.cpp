@@ -17,47 +17,47 @@ memory_stream::memory_stream(size capacity) {
   this->capacity(capacity);
 }
 
-bool memory_stream::can_read() const noexcept {
+auto memory_stream::can_read() const noexcept -> bool {
   return true;
 }
 
-bool memory_stream::can_seek() const noexcept {
+auto memory_stream::can_seek() const noexcept -> bool {
   return true;
 }
 
-bool memory_stream::can_write() const noexcept {
+auto memory_stream::can_write() const noexcept -> bool {
   return data_->writable;
 }
 
-size memory_stream::capacity() const {
+auto memory_stream::capacity() const -> size {
   if (data_->static_buffer) data_->static_buffer->length();
   return data_->dynamic_buffer.capacity();
 }
 
-void memory_stream::capacity(size value) {
+auto memory_stream::capacity(size value) -> void {
   if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   if (value != data_->dynamic_buffer.capacity()) data_->dynamic_buffer.capacity(value);
 }
 
-size memory_stream::length() const {
+auto memory_stream::length() const -> size {
   if (data_->static_buffer) return data_->static_buffer->size();
   return data_->dynamic_buffer.count();
 }
 
-size memory_stream::position() const {
+auto memory_stream::position() const -> size {
   return data_->position;
 }
 
-void memory_stream::position(size value) {
+auto memory_stream::position(size value) -> void {
   if (value == data_->position) return;
   data_->position = value;
   seek(data_->position, seek_origin::begin);
 }
 
-void memory_stream::flush() {
+auto memory_stream::flush() -> void {
 }
 
-size memory_stream::read(array<byte>& buffer, size offset, size count) {
+auto memory_stream::read(array<byte>& buffer, size offset, size count) -> size {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -72,20 +72,20 @@ size memory_stream::read(array<byte>& buffer, size offset, size count) {
   return read_count;
 }
 
-size memory_stream::seek(std::streamoff offset, seek_origin loc) {
+auto memory_stream::seek(std::streamoff offset, seek_origin loc) -> size {
   return position();
 }
 
-void memory_stream::set_length(size value) {
+auto memory_stream::set_length(size value) -> void {
   if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   data_->dynamic_buffer.items().resize(value);
 }
 
-array<byte> memory_stream::to_array() const {
+auto memory_stream::to_array() const -> array<byte> {
   return data_->static_buffer ? *data_->static_buffer : data_->dynamic_buffer.to_array();
 }
 
-void memory_stream::write(const array<byte>& buffer, size offset, size count) {
+auto memory_stream::write(const array<byte>& buffer, size offset, size count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
@@ -104,7 +104,7 @@ void memory_stream::write(const array<byte>& buffer, size offset, size count) {
     abstract_write_byte_unchecked(buffer[offset++]);
 }
 
-void memory_stream::write_to(std::ostream& stream) {
+auto memory_stream::write_to(std::ostream& stream) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -114,12 +114,12 @@ void memory_stream::write_to(std::ostream& stream) {
   position(current_postion);
 }
 
-xtd::byte memory_stream::abstract_read_byte_unchecked() {
+auto memory_stream::abstract_read_byte_unchecked() -> xtd::byte {
   if (data_->static_buffer) return (*data_->static_buffer)[data_->position++];
   return data_->dynamic_buffer[data_->position++];
 }
 
-void memory_stream::abstract_write_byte_unchecked(xtd::byte b) {
+auto memory_stream::abstract_write_byte_unchecked(xtd::byte b) -> void {
   if (data_->static_buffer)(*data_->static_buffer)[data_->position] = b;
   else if (data_->position < data_->dynamic_buffer.count()) data_->dynamic_buffer[data_->position] = b;
   else data_->dynamic_buffer.add(b);
