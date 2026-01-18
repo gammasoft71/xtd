@@ -10,7 +10,7 @@
 #include "../decimal.hpp"
 
 /// @cond
-static constexpr xtd::decimal __get_epsilon(xtd::decimal) noexcept {return 0;}
-static constexpr double __get_epsilon(double) noexcept {return 4.94066e-324;}
-static constexpr float __get_epsilon(float) noexcept {return 1.401298E-45f;}
+[[nodiscard]] static constexpr auto __get_epsilon(xtd::decimal) noexcept -> xtd::decimal {return 0;}
+[[nodiscard]] static constexpr auto __get_epsilon(double) noexcept -> double {return 4.94066e-324;}
+[[nodiscard]] static constexpr auto __get_epsilon(float) noexcept -> float {return 1.401298E-45f;}
 /// @endcond
