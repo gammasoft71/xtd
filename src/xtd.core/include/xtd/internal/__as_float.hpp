@@ -33,7 +33,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(xtd::any value) {
+  inline auto as<float>(xtd::any value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(bool value) {
+  inline auto as<float>(bool value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(xtd::byte value) {
+  inline auto as<float>(xtd::byte value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char value) {
+  inline auto as<float>(char value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char8 value) {
+  inline auto as<float>(xtd::char8 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char16 value) {
+  inline auto as<float>(xtd::char16 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char32 value) {
+  inline auto as<float>(xtd::char32 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(wchar value) {
+  inline auto as<float>(xtd::wchar value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(decimal value) {
+  inline auto as<float>(xtd::decimal value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(double value) {
+  inline auto as<float>(double value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(float value) {
+  inline auto as<float>(float value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(int16 value) {
+  inline auto as<float>(xtd::int16 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(int32 value) {
+  inline auto as<float>(xtd::int32 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(int64 value) {
+  inline auto as<float>(xtd::int64 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(slong value) {
+  inline auto as<float>(xtd::slong value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(sbyte value) {
+  inline auto as<float>(xtd::sbyte value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(uint16 value) {
+  inline auto as<float>(xtd::uint16 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(uint32 value) {
+  inline auto as<float>(xtd::uint32 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(uint64 value) {
+  inline auto as<float>(xtd::uint64 value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(xtd::ulong value) {
+  inline auto as<float>(xtd::ulong value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const xtd::string& value) {
+  inline auto as<float>(const xtd::string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(xtd::string& value) {
+  inline auto as<float>(xtd::string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const std::string& value) {
+  inline auto as<float>(const std::string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::string& value) {
+  inline auto as<float>(std::string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const std::u8string& value) {
+  inline auto as<float>(const std::u8string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::u8string& value) {
+  inline auto as<float>(std::u8string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const std::u16string& value) {
+  inline auto as<float>(const std::u16string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::u16string& value) {
+  inline auto as<float>(std::u16string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const std::u32string& value) {
+  inline auto as<float>(const std::u32string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::u32string& value) {
+  inline auto as<float>(std::u32string& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const std::wstring& value) {
+  inline auto as<float>(const std::wstring& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::wstring& value) {
+  inline auto as<float>(std::wstring& value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const char* value) {
+  inline auto as<float>(const char* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char* value) {
+  inline auto as<float>(char* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const char8* value) {
+  inline auto as<float>(const xtd::char8* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char8* value) {
+  inline auto as<float>(xtd::char8* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const char16* value) {
+  inline auto as<float>(const xtd::char16* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char16* value) {
+  inline auto as<float>(xtd::char16* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const char32* value) {
+  inline auto as<float>(const xtd::char32* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(char32* value) {
+  inline auto as<float>(xtd::char32* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(const wchar* value) {
+  inline auto as<float>(const xtd::wchar* value) -> float {
     return xtd::convert::to_single(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(wchar* value) {
+  inline auto as<float>(xtd::wchar* value) -> float {
     return xtd::convert::to_single(value);
   }
 }
