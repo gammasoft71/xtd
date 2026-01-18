@@ -27,7 +27,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(const current_type_t& value) -> const new_type_t& {
+  [[nodiscard]] auto as(const current_type_t& value) -> const new_type_t& {
     thread_local static __as_enum__<new_type_t, current_type_t, typename std::is_enum<current_type_t>::type> e;
     return e.convert(value);
   }
@@ -49,7 +49,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(current_type_t& value) -> new_type_t& {
+  [[nodiscard]] auto as(current_type_t& value) -> new_type_t& {
     thread_local static __as_enum__<new_type_t, current_type_t, typename std::is_enum<current_type_t>::type> e;
     return e.convert(value);
   }
@@ -70,7 +70,7 @@ namespace xtd {
   /// const control* result = as<xtd::forms::control>(value);
   /// ```
   template<class new_type_t, class current_type_t>
-  auto as(const current_type_t* value) -> const new_type_t* {
+  [[nodiscard]] auto as(const current_type_t* value) -> const new_type_t* {
     return xtd::convert_pointer::to_ptr<new_type_t>(value);
   }
   
@@ -90,7 +90,7 @@ namespace xtd {
   /// control* result = as<xtd::forms::control>(value);
   /// ```
   template<class new_type_t, class current_type_t>
-  auto as(current_type_t* value) -> new_type_t* {
+  [[nodiscard]] auto as(current_type_t* value) -> new_type_t* {
     return xtd::convert_pointer::to_ptr<new_type_t>(value);
   }
   
@@ -111,7 +111,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(xtd::uptr<current_type_t>& value) -> xtd::uptr<new_type_t> {
+  [[nodiscard]] auto as(xtd::uptr<current_type_t>& value) -> xtd::uptr<new_type_t> {
     return xtd::convert_pointer::to_unique_ptr<new_type_t>(value);
   }
   
@@ -131,7 +131,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(xtd::uptr<current_type_t>&& value) -> xtd::uptr<new_type_t> {
+  [[nodiscard]] auto as(xtd::uptr<current_type_t>&& value) -> xtd::uptr<new_type_t> {
     return xtd::convert_pointer::to_unique_ptr<new_type_t>(value);
   }
   
@@ -152,7 +152,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(const xtd::sptr<current_type_t>& value) -> xtd::sptr<new_type_t> {
+  [[nodiscard]] auto as(const xtd::sptr<current_type_t>& value) -> xtd::sptr<new_type_t> {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
   
@@ -172,7 +172,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(xtd::sptr<current_type_t>& value) -> xtd::sptr<new_type_t> {
+  [[nodiscard]] auto as(xtd::sptr<current_type_t>& value) -> xtd::sptr<new_type_t> {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
   
@@ -193,7 +193,7 @@ namespace xtd {
   /// ```
   /// @exception xtd::invalid_cast_exception the parameters is bad cast.
   template<class new_type_t, class current_type_t>
-  auto as(xtd::sptr<current_type_t>&& value) -> xtd::sptr<new_type_t> {
+  [[nodiscard]] auto as(xtd::sptr<current_type_t>&& value) -> xtd::sptr<new_type_t> {
     return xtd::convert_pointer::to_shared_ptr<new_type_t>(value);
   }
 }
