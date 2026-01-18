@@ -83,27 +83,27 @@ namespace xtd::linq::tests {
     
     auto test_method_(average_with_enumerable_decimal) {
       assert::are_equal(.3l, enumerable::average(array {.1l, .2l, .3l, .4l, .5l}));
-      assert::throws<invalid_operation_exception>([] {enumerable::average(array<decimal> {});});
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto result = enumerable::average(array<decimal> {});});
     }
     
     auto test_method_(average_with_enumerable_double) {
       assert::are_equal(.3, enumerable::average(array {.1, .2, .3, .4, .5}));
-      assert::throws<invalid_operation_exception>([] {enumerable::average(array<double> {});});
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto result = enumerable::average(array<double> {});});
     }
     
     auto test_method_(average_with_enumerable_float) {
       assert::are_equal(.3f, enumerable::average(array {.1f, .2f, .3f, .4f, .5f}));
-      assert::throws<invalid_operation_exception>([] {enumerable::average(array<float> {});});
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto result = enumerable::average(array<float> {});});
     }
     
     auto test_method_(average_with_enumerable_int32) {
       assert::are_equal(3.0, enumerable::average(array {1, 2, 3, 4, 5}));
-      assert::throws<invalid_operation_exception>([] {enumerable::average(array<int32> {});});
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto result = enumerable::average(array<int32> {});});
     }
     
     auto test_method_(average_with_enumerable_int64) {
       assert::are_equal(3.0, enumerable::average(array {1_s64, 2_s64, 3_s64, 4_s64, 5_s64}));
-      assert::throws<invalid_operation_exception>([] {enumerable::average(array<int64> {});});
+      assert::throws<invalid_operation_exception>([] {[[maybe_unused]] auto result = enumerable::average(array<int64> {});});
     }
     
     auto test_method_(average_with_enumerable_optional_decimal) {
@@ -150,7 +150,7 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({13, 14}, enumerator.current());
       assert::is_false(enumerator.move_next());
       
-      assert::throws<xtd::argument_out_of_range_exception>([&] {enumerable::chunk(s, 0);});
+      assert::throws<xtd::argument_out_of_range_exception>([&] {[[maybe_unused]] auto result = enumerable::chunk(s, 0);});
     }
     
     auto test_method_(concat_with_enumerable_and_enumerable) {
@@ -224,7 +224,7 @@ namespace xtd::linq::tests {
     auto test_method_(range_with_count) {
       collection_assert::are_equal({0, 1, 2, 3, 4}, enumerable::range(5));
       assert::is_zero(enumerable::range(0).count());
-      assert::throws<argument_out_of_range_exception>([] {enumerable::range(-1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto result = enumerable::range(-1);});
     }
     
     auto test_method_(range_with_start_and_count) {
@@ -233,7 +233,7 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({-5, -4, -3, -2, -1}, enumerable::range(-5, 5));
       collection_assert::are_equal({-1, 0, 1, 2, 3}, enumerable::range(-1, 5));
       assert::is_zero(enumerable::range(1, 0).count());
-      assert::throws<argument_out_of_range_exception>([] {enumerable::range(1, -1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto result = enumerable::range(1, -1);});
     }
     
     auto test_method_(range_with_start_count_end_step) {
@@ -241,8 +241,8 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({11, 9, 7, 5, 3}, enumerable::range(11, 5, -2));
       collection_assert::are_equal({-5, -3, -1, 1, 3}, enumerable::range(-5, 5, 2));
       collection_assert::are_equal({-1, -3, -5, -7, -9}, enumerable::range(-1, 5, -2));
-      assert::throws<argument_exception>([] {enumerable::range(1, 5, 0);});
-      assert::throws<argument_out_of_range_exception>([] {enumerable::range(1, -1, 1);});
+      assert::throws<argument_exception>([] {[[maybe_unused]] auto result = enumerable::range(1, 5, 0);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto result = enumerable::range(1, -1, 1);});
     }
     
     auto test_method_(to_list_with_enumerable) {
