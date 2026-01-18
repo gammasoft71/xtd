@@ -16,7 +16,7 @@
 
 /// @cond
 template<class char_t>
-inline std::basic_string<char_t> __currency_formatter(long double value, const std::locale& loc) {
+[[nodiscard]] inline auto __currency_formatter(long double value, const std::locale& loc) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss.imbue(loc);
   ss << std::showbase << std::fixed << std::put_money(value * std::pow(10, std::use_facet<std::moneypunct<char_t >> (loc).frac_digits()));
