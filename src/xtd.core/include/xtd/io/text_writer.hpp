@@ -41,179 +41,179 @@ namespace xtd {
       /// @brief Provides a text_writer with no backing store that can be written to, but not read from.
       /// @remarks Use null to redirect output to a stream that will not consume any operating system resources.
       /// @remarks When the text_writer::write methods are invoked on null, the call simply returns, and no data is actually written to any backing store.
-      static null_text_writer& null() noexcept;
+      [[nodiscard]] static auto null() noexcept -> null_text_writer&;
       /// @}
       
       /// @name Public Properties
       
       /// @{
       /// @brief Gets the line terminator string used by the current text_writer.
-      const xtd::string& new_line() const noexcept;
+      [[nodiscard]] auto new_line() const noexcept -> const xtd::string&;
       /// @brief Sets the line terminator string used by the current text_writer.
-      void new_line(const xtd::string& new_line) noexcept;
+      auto new_line(const xtd::string& new_line) noexcept -> void;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
-      virtual void close();
+      virtual auto close() -> void;
       
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      virtual void flush();
+      virtual auto flush() -> void;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      virtual void write(const xtd::string& value);
+      virtual auto write(const xtd::string& value) -> void;
       
       /// @brief Writes the specified bool value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(bool value);
+      auto write(bool value) -> void;
       
       /// @brief Writes the specified double value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(double value);
+      auto write(double value) -> void;
       
       /// @brief Writes the specified float value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(float value);
+      auto write(float value) -> void;
       
       /// @brief Writes the specified sbyte value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(sbyte value);
+      auto write(sbyte value) -> void;
       
       /// @brief Writes the specified int16 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(int16 value);
+      auto write(int16 value) -> void;
       
       /// @brief Writes the specified int32 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(int32 value);
+      auto write(int32 value) -> void;
       
       /// @brief Writes the specified int64 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(int64 value);
+      auto write(int64 value) -> void;
       
       /// @brief Writes the specified xtd::byte value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(xtd::byte value);
+      auto write(xtd::byte value) -> void;
       
       /// @brief Writes the specified uint16 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(uint16 value);
+      auto write(uint16 value) -> void;
       
       /// @brief Writes the specified uint32 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(uint32 value);
+      auto write(uint32 value) -> void;
       
       /// @brief Writes the specified uint64 value to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write(uint64 value);
+      auto write(uint64 value) -> void;
       
       /// @brief Writes the specified value_t value to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<class value_t>
-      void write(value_t value) {write(xtd::string::format("{}", value));}
+      auto write(value_t value) -> void {write(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format
       /// @exception io::io_exception An I/O error occurs.
       template<class ...args_t>
-      void write(const xtd::string& fmt, args_t&& ... args) noexcept {write(xtd::string::format(fmt, std::forward<args_t>(args)...));}
+      auto write(const xtd::string& fmt, args_t&& ... args) noexcept -> void {write(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       
       /// @brief Writes new line to the text stream.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line();
+      auto write_line() -> void;
       
       /// @brief Writes the specified string value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(const xtd::string& value);
+      auto write_line(const xtd::string& value) -> void;
       
       /// @brief Writes the specified bool value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(bool value);
+      auto write_line(bool value) -> void;
       
       /// @brief Writes the specified double value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(double value);
+      auto write_line(double value) -> void;
       
       /// @brief Writes the specified float value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(float value);
+      auto write_line(float value) -> void;
       
       /// @brief Writes the specified sbyte value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(sbyte value);
+      auto write_line(sbyte value) -> void;
       
       /// @brief Writes the specified int16 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(int16 value);
+      auto write_line(int16 value) -> void;
       
       /// @brief Writes the specified int32 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(int32 value);
+      auto write_line(int32 value) -> void;
       
       /// @brief Writes the specified int64 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(int64 value);
+      auto write_line(int64 value) -> void;
       
       /// @brief Writes the specified xtd::byte value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(xtd::byte value);
+      auto write_line(xtd::byte value) -> void;
       
       /// @brief Writes the specified uint16 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(uint16 value);
+      auto write_line(uint16 value) -> void;
       
       /// @brief Writes the specified uint32 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(uint32 value);
+      auto write_line(uint32 value) -> void;
       
       /// @brief Writes the specified uint64 value and new line to the text stream.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
-      void write_line(uint64 value);
+      auto write_line(uint64 value) -> void;
       
       /// @brief Writes the specified value_t value and new line to the text stream.
       /// @tparam value_t The type of value to write.
       /// @param value The value to write.
       /// @exception io::io_exception An I/O error occurs.
       template<class value_t>
-      void write_line(value_t value) {write_line(xtd::string::format("{}", value));}
+      auto write_line(value_t value) -> void {write_line(xtd::string::format("{}", value));}
       
       /// @brief Writes the specified arguments with specified format to the text stream.
       /// @param format The arguments format to write.
       /// @param args The arguments to write with format.
       /// @exception io::io_exception An I/O error occurs.
       template<class ...args_t>
-      void write_line(const xtd::string& fmt, args_t&& ... args) noexcept {write_line(xtd::string::format(fmt, std::forward<args_t>(args)...));}
+      auto write_line(const xtd::string& fmt, args_t&& ... args) noexcept -> void {write_line(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       /// @}
       
       /// @name Public Static Methods
@@ -222,7 +222,7 @@ namespace xtd {
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_writer object.
       /// @param reader The TextReader object to synchronize.
       /// @return text_writer A thread-safe text_writer object.
-      static synchronized_text_writer synchronised(text_writer& writer) noexcept;
+      [[nodiscard]] static auto synchronised(text_writer& writer) noexcept -> synchronized_text_writer;
       /// @}
       
     protected:
@@ -250,7 +250,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ null_text_writer : public xtd::io::text_writer {
     public:
-      void write(const xtd::string&) override;
+      auto write(const xtd::string&) -> void override;
     };
     
     /// @brief Represents a synchronized text writer.
@@ -266,7 +266,7 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ synchronized_text_writer : public xtd::io::text_writer {
     public:
-      void write(const xtd::string& value) override ;
+      auto write(const xtd::string& value) -> void override ;
       
     private:
       friend class text_writer;
