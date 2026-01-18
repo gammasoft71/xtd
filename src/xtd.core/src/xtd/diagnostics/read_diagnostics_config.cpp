@@ -119,9 +119,11 @@ auto __xtd___read_diagnostics_config__() -> const __xtd__diagnostics_config__& {
           listener = new_ptr<default_trace_listener>(sub_key_values.contains_key("log") ? sub_key_values["log"] : "");
         else if (sub_key_values["type"] == "console")
           listener = new_ptr<console_trace_listener>(sub_key_values.contains_key("error_stream") ? as<bool>(sub_key_values["error_stream"]) : false);
-        else if (sub_key_values["type"] == "file" && sub_key_values.contains_key("path"))
-          listener = new_ptr<ostream_trace_listener>((sub_key_values.contains_key("append") ? as<bool>(sub_key_values["append"]) : false) ? file::append_text(sub_key_values["path"]) : file::write_text(sub_key_values["path"]));
-        else throw_helper::throws(xtd::helpers::exception_case::format);
+        else if (sub_key_values["type"] == "file" && sub_key_values.contains_key("path")) {
+          auto stream = file::open_write(sub_key_values["path"]);
+          if (sub_key_values.contains_key("append") && as<bool>(sub_key_values["append"])) stream.seekp(0, std::ios::end);
+          listener = new_ptr<ostream_trace_listener>(stream);
+        } else throw_helper::throws(xtd::helpers::exception_case::format);
         listener->name(key);
         listeners.add(listener);
       }
