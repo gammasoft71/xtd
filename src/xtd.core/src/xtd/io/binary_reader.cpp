@@ -25,27 +25,27 @@ binary_reader::~binary_reader() {
   }
 }
 
-std::optional<ref<std::istream>> binary_reader::base_stream() const {
+auto binary_reader::base_stream() const -> std::optional<ref<std::istream>> {
   return stream_ ? std::optional<ref<std::istream>>(*stream_) : std::nullopt;
 }
 
-bool binary_reader::end_of_stream() const {
+auto binary_reader::end_of_stream() const -> bool {
   return peek_char() == EOF;
 }
 
-void binary_reader::close() {
+auto binary_reader::close() -> void {
   if (stream_ && dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 
-int32 binary_reader::peek_char() const {
+auto binary_reader::peek_char() const -> int32 {
   if (!stream_) return EOF;
   int32 value = stream_->peek();
   return value;
 }
 
-std::streampos binary_reader::pop() {
+auto binary_reader::pop() -> std::streampos {
   if (!pos_stack_.empty()) {
     stream_->seekg(pos_stack_.top(), std::ios_base::beg);
     pos_stack_.pop();
@@ -53,17 +53,17 @@ std::streampos binary_reader::pop() {
   return stream_->tellg();
 }
 
-void binary_reader::push(std::streampos pos) {
+auto binary_reader::push(std::streampos pos) -> void {
   pos_stack_.push(pos == 0 ? stream_->tellg() : pos);
 }
 
-int32 binary_reader::read() {
+auto binary_reader::read() -> int32 {
   if (!stream_) return EOF;
   auto value = stream_->get();
   return value;
 }
 
-size_t binary_reader::read(array<xtd::byte>& buffer, size_t index, size_t count) {
+auto binary_reader::read(array<xtd::byte>& buffer, size index, size count) -> size {
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -73,7 +73,7 @@ size_t binary_reader::read(array<xtd::byte>& buffer, size_t index, size_t count)
   return count;
 }
 
-size_t binary_reader::read(array<char>& buffer, size_t index, size_t count) {
+auto binary_reader::read(array<char>& buffer, size index, size count) -> size {
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -83,92 +83,92 @@ size_t binary_reader::read(array<char>& buffer, size_t index, size_t count) {
   return count;
 }
 
-bool binary_reader::read_boolean() {
+auto binary_reader::read_boolean() -> bool {
   return bit_converter::to_boolean(read_bytes(sizeof(bool)), 0);
 }
 
-xtd::byte binary_reader::read_byte() {
+auto binary_reader::read_byte() -> xtd::byte {
   return read_bytes(sizeof(xtd::byte))[0];
 }
 
-array<xtd::byte> binary_reader::read_bytes(size_t count) {
+auto binary_reader::read_bytes(size count) -> array<xtd::byte> {
   auto result = array<xtd::byte>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
   return result;
 }
 
-char binary_reader::read_char() {
+auto binary_reader::read_char() -> char {
   return read_bytes(sizeof(char))[0];
 }
 
-array<char> binary_reader::read_chars(size_t count) {
+auto binary_reader::read_chars(size count) -> array<char> {
   auto result = array<char>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
   return result;
 }
 
-double binary_reader::read_double() {
+auto binary_reader::read_double() -> double {
   return bit_converter::to_double(read_bytes(sizeof(double)), 0);
 }
 
-int16 binary_reader::read_int16() {
+auto binary_reader::read_int16() -> int16 {
   return bit_converter::to_int16(read_bytes(sizeof(int16)), 0);
 }
 
-int32 binary_reader::read_int32() {
+auto binary_reader::read_int32() -> int32 {
   return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
 }
 
-int64 binary_reader::read_int64() {
+auto binary_reader::read_int64() -> int64 {
   return bit_converter::to_int64(read_bytes(sizeof(int64)), 0);
 }
 
-sbyte binary_reader::read_sbyte() {
+auto binary_reader::read_sbyte() -> sbyte {
   return read_bytes(sizeof(sbyte))[0];
 }
 
-float binary_reader::read_single() {
+auto binary_reader::read_single() -> float {
   return bit_converter::to_single(read_bytes(sizeof(float)), 0);
 }
 
-size binary_reader::read_size() {
+auto binary_reader::read_size() -> size {
   return bit_converter::to_size(read_bytes(sizeof(size)), 0);
 }
 
-string binary_reader::read_string() {
+auto binary_reader::read_string() -> string {
   auto length = read_7bit_encoded_int();
   if (length == 0) return {};
-  return string(read_chars(length).data(), static_cast<size_t>(length));
+  return string(read_chars(length).data(), static_cast<size>(length));
 }
 
-uint16 binary_reader::read_uint16() {
+auto binary_reader::read_uint16() -> uint16 {
   return bit_converter::to_uint16(read_bytes(sizeof(uint16)), 0);
 }
 
-uint32 binary_reader::read_uint32() {
+auto binary_reader::read_uint32() -> uint32 {
   return bit_converter::to_uint32(read_bytes(sizeof(uint32)), 0);
 }
 
-uint64 binary_reader::read_uint64() {
+auto binary_reader::read_uint64() -> uint64 {
   return bit_converter::to_uint64(read_bytes(sizeof(uint64)), 0);
 }
 
-void binary_reader::rewind() {
+auto binary_reader::rewind() -> void{
   stream_->seekg(0, std::ios_base::beg);
 }
 
-void binary_reader::seekg(std::streamoff pos, std::ios_base::seekdir dir) {
+auto binary_reader::seek(std::streamoff pos, std::ios_base::seekdir dir) -> void {
   stream_->seekg(pos, dir);
 }
 
-std::streampos binary_reader::tellg() {
+auto binary_reader::tell() -> std::streampos {
   return stream_->tellg();
 }
 
 // From : https://github.com/dotnet/runtime/blob/1d1bf92fcf43aa6981804dc53c5174445069c9e4/src/libraries/System.Private.CoreLib/src/System/IO/BinaryReader.cs
-int32 binary_reader::read_7bit_encoded_int() {
+auto binary_reader::read_7bit_encoded_int() -> int32 {
   auto result = 0_u32;
   auto byte_read_just_now = 0_u8;
   
