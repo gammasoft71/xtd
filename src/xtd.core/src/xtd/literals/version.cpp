@@ -3,22 +3,22 @@
 
 using namespace xtd;
 
-version xtd::literals::operator""_vers(const char* s, xtd::size n) {
+auto xtd::literals::operator""_vers(const char* s, size n) -> version {
   return version::parse(string {s});
 }
 
-version xtd::literals::operator""_vers(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_vers(const char8* s, size n) -> version {
   return version::parse(string {s});
 }
 
-version xtd::literals::operator""_vers(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_vers(const char16* s, size n) -> version {
   return version::parse(string {s});
 }
 
-version xtd::literals::operator""_vers(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_vers(const char32* s, size n) -> version {
   return version::parse(string {s});
 }
 
-version xtd::literals::operator""_vers(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_vers(const wchar* s, size n) -> version {
   return version::parse(string {s});
 }

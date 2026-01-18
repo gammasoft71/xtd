@@ -25,7 +25,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 42_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(unsigned long long c);
+    [[nodiscard]] auto operator""_c(unsigned long long c) -> xtd::char32;
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
@@ -37,7 +37,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 'a'_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(char c);
+    [[nodiscard]] auto operator""_c(char c) -> xtd::char32;
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
@@ -49,7 +49,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 'a'_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(char8_t c);
+    [[nodiscard]] auto operator""_c(char8_t c) -> xtd::char32;
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u'a'_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(char16_t c);
+    [[nodiscard]] auto operator""_c(char16_t c) -> xtd::char32;
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
@@ -73,7 +73,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U'a'_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(char32 c);
+    [[nodiscard]] auto operator""_c(char32 c) -> xtd::char32;
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
@@ -85,7 +85,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L'a'_c << xtd::environment::new_line;
     /// ```
-    char32 operator""_c(wchar_t c);
+    [[nodiscard]] auto operator""_c(wchar_t c) -> xtd::char32;
     /// @}
   }
 }

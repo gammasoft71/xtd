@@ -3,22 +3,22 @@
 
 using namespace xtd;
 
-uri xtd::literals::operator""_uri(const char* s, xtd::size n) {
+auto xtd::literals::operator""_uri(const char* s, size n) -> uri {
   return uri(string {s});
 }
 
-uri xtd::literals::operator""_uri(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_uri(const char8* s, size n) -> uri {
   return uri(string {s});
 }
 
-uri xtd::literals::operator""_uri(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_uri(const char16* s, size n) -> uri {
   return uri(string {s});
 }
 
-uri xtd::literals::operator""_uri(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_uri(const char32* s, size n) -> uri {
   return uri(string {s});
 }
 
-uri xtd::literals::operator""_uri(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_uri(const wchar* s, size n) -> uri {
   return uri(string {s});
 }

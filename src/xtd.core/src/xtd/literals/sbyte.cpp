@@ -3,58 +3,58 @@
 
 using namespace xtd;
 
-sbyte xtd::literals::operator""_i8(long double n) {
+auto xtd::literals::operator""_i8(long double n) -> sbyte {
   return as<sbyte>(n);
 }
 
-sbyte xtd::literals::operator""_i8(unsigned long long n) {
+auto xtd::literals::operator""_i8(unsigned long long n) -> sbyte {
   return as<sbyte>(n);
 }
 
-sbyte xtd::literals::operator""_i8(const char* s, xtd::size n) {
+auto xtd::literals::operator""_i8(const char* s, size n) -> sbyte {
   return as<sbyte>(string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_i8(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_i8(const char8* s, size n) -> sbyte {
   return as<sbyte>(string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_i8(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_i8(const char16* s, size n) -> sbyte {
   return as<sbyte>(std::u16string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_i8(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_i8(const char32* s, size n) -> sbyte {
   return as<sbyte>(std::u32string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_i8(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_i8(const wchar* s, size n) -> sbyte {
   return as<sbyte>(std::wstring(s, s + n));
 }
 
-sbyte xtd::literals::operator""_s8(long double n) {
+auto xtd::literals::operator""_s8(long double n) -> sbyte {
   return as<sbyte>(n);
 }
 
-sbyte xtd::literals::operator""_s8(unsigned long long n) {
+auto xtd::literals::operator""_s8(unsigned long long n) -> sbyte {
   return as<sbyte>(n);
 }
 
-sbyte xtd::literals::operator""_s8(const char* s, xtd::size n) {
+auto xtd::literals::operator""_s8(const char* s, size n) -> sbyte {
   return as<sbyte>(string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_s8(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_s8(const char8* s, size n) -> sbyte {
   return as<sbyte>(string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_s8(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_s8(const char16* s, size n) -> sbyte {
   return as<sbyte>(std::u16string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_s8(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_s8(const char32* s, size n) -> sbyte {
   return as<sbyte>(std::u32string(s, s + n));
 }
 
-sbyte xtd::literals::operator""_s8(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_s8(const wchar* s, size n) -> sbyte {
   return as<sbyte>(std::wstring(s, s + n));
 }

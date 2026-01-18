@@ -29,7 +29,7 @@ namespace xtd {
         }
         
         auto test_method_(_uz_operator_on_invalid_char_ptr) {
-          assert::throws<xtd::format_exception>([] {"42str"_uz;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = "42str"_uz;});
         }
         
         auto test_method_(_uz_operator_on_char8_ptr) {
@@ -39,7 +39,7 @@ namespace xtd {
         }
         
         auto test_method_(_uz_operator_on_invalid_char8_ptr) {
-          assert::throws<xtd::format_exception>([] {u8"42str"_uz;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = u8"42str"_uz;});
         }
         
         auto test_method_(_uz_operator_on_char16_ptr) {
@@ -49,7 +49,7 @@ namespace xtd {
         }
         
         auto test_method_(_uz_operator_on_invalid_char16_ptr) {
-          assert::throws<xtd::format_exception>([] {u"42str"_uz;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = u"42str"_uz;});
         }
         
         auto test_method_(_uz_operator_on_char32_ptr) {
@@ -59,7 +59,7 @@ namespace xtd {
         }
         
         auto test_method_(_uz_operator_on_invalid_char32_ptr) {
-          assert::throws<xtd::format_exception>([] {U"42str"_uz;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = U"42str"_uz;});
         }
         
         auto test_method_(_uz_operator_on_wchar_ptr) {
@@ -69,7 +69,7 @@ namespace xtd {
         }
         
         auto test_method_(_uz_operator_on_invalid_wchar_ptr) {
-          assert::throws<xtd::format_exception>([] {L"42str"_uz;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = L"42str"_uz;});
         }
         
         auto test_method_(_z_operator_on_long_double) {
@@ -91,7 +91,7 @@ namespace xtd {
         }
         
         auto test_method_(_z_operator_on_invalid_char_ptr) {
-          assert::throws<xtd::format_exception>([] {"42str"_z;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = "42str"_z;});
         }
         
         auto test_method_(_z_operator_on_char8_ptr) {
@@ -101,7 +101,7 @@ namespace xtd {
         }
         
         auto test_method_(_z_operator_on_invalid_char8_ptr) {
-          assert::throws<xtd::format_exception>([] {u8"42str"_z;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = u8"42str"_z;});
         }
         
         auto test_method_(_z_operator_on_char16_ptr) {
@@ -111,7 +111,7 @@ namespace xtd {
         }
         
         auto test_method_(_z_operator_on_invalid_char16_ptr) {
-          assert::throws<xtd::format_exception>([] {u"42str"_z;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = u"42str"_z;});
         }
         
         auto test_method_(_z_operator_on_char32_ptr) {
@@ -121,7 +121,7 @@ namespace xtd {
         }
         
         auto test_method_(_z_operator_on_invalid_char32_ptr) {
-          assert::throws<xtd::format_exception>([] {U"42str"_z;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = U"42str"_z;});
         }
         
         auto test_method_(_z_operator_on_wchar_ptr) {
@@ -131,7 +131,7 @@ namespace xtd {
         }
         
         auto test_method_(_z_operator_on_invalid_wchar_ptr) {
-          assert::throws<xtd::format_exception>([] {L"42str"_z;});
+          assert::throws<xtd::format_exception>([] {[[maybe_unused]] auto result = L"42str"_z;});
         }
       };
     }

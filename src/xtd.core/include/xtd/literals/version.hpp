@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::version v = "1.2.3"_vers;
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
-    xtd::version operator""_vers(const char* s, xtd::size n);
+    [[nodiscard]] auto operator""_vers(const char* s, xtd::size n) -> xtd::version;
     
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd::version v = u8"1.2.3"_vers;
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
-    xtd::version operator""_vers(const char8* s, xtd::size n);
+    [[nodiscard]] auto operator""_vers(const char8* s, xtd::size n) -> xtd::version;
     
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace
@@ -48,7 +48,7 @@ namespace xtd {
     /// xtd::version v = u"1.2.3"_vers;
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
-    xtd::version operator""_vers(const char16* s, xtd::size n);
+    [[nodiscard]] auto operator""_vers(const char16* s, xtd::size n) -> xtd::version;
     
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// xtd::version v = U"1.2.3"_vers;
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
-    xtd::version operator""_vers(const char32* s, xtd::size n);
+    [[nodiscard]] auto operator""_vers(const char32* s, xtd::size n) -> xtd::version;
     
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd::version v = L"1.2.3"_vers;
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
-    xtd::version operator""_vers(const wchar* s, xtd::size n);
+    [[nodiscard]] auto operator""_vers(const wchar* s, xtd::size n) -> xtd::version;
     /// @}
   }
 }

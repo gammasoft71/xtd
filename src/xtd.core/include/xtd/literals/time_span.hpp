@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::time_span ts = 10_h;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_h(unsigned long long h);
+    [[nodiscard]] auto operator""_h(unsigned long long h) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as minutes to xtd::time_span.
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_m;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_m(unsigned long long m);
+    [[nodiscard]] auto operator""_m(unsigned long long m) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as minutes to xtd::time_span.
     /// @par Namespace
@@ -48,7 +48,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_min;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_min(unsigned long long min);
+    [[nodiscard]] auto operator""_min(unsigned long long min) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as millisconds to xtd::time_span.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_ms;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ms(unsigned long long ms);
+    [[nodiscard]] auto operator""_ms(unsigned long long ms) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as nanoseconds to xtd::time_span.
     /// @par Namespace
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_ns;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ns(unsigned long long ns);
+    [[nodiscard]] auto operator""_ns(unsigned long long ns) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as seconds to xtd::time_span.
     /// @par Namespace
@@ -87,7 +87,7 @@ namespace xtd {
     /// xtd::time_span ts = 42_s;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_s(unsigned long long s);
+    [[nodiscard]] auto operator""_s(unsigned long long s) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as tiks to xtd::time_span.
     /// @par Namespace
@@ -100,7 +100,7 @@ namespace xtd {
     /// xtd::time_span ts = 42_t;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_t(unsigned long long t);
+    [[nodiscard]] auto operator""_t(unsigned long long t) -> xtd::time_span;
     
     /// @brief Used to convert the specified value as microseconds to xtd::time_span.
     /// @par Namespace
@@ -113,7 +113,7 @@ namespace xtd {
     /// xtd::time_span ts = 42_us;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_us(unsigned long long us);
+    [[nodiscard]] auto operator""_us(unsigned long long us) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -126,7 +126,7 @@ namespace xtd {
     /// xtd::time_span ts = "6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ts(const char* s, xtd::size n);
+    [[nodiscard]] auto operator""_ts(const char* s, xtd::size n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -139,7 +139,7 @@ namespace xtd {
     /// xtd::time_span ts = u8"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ts(const char8* s, xtd::size n);
+    [[nodiscard]] auto operator""_ts(const char8* s, xtd::size n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -152,7 +152,7 @@ namespace xtd {
     /// xtd::time_span ts = u"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ts(const char16* s, xtd::size n);
+    [[nodiscard]] auto operator""_ts(const char16* s, xtd::size n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -165,7 +165,7 @@ namespace xtd {
     /// xtd::time_span ts = U"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ts(const char32* s, xtd::size n);
+    [[nodiscard]] auto operator""_ts(const char32* s, xtd::size n) -> xtd::time_span;
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
@@ -178,7 +178,7 @@ namespace xtd {
     /// xtd::time_span ts = L"6::12::24"_ts;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ts(const wchar* s, xtd::size n);
+    [[nodiscard]] auto operator""_ts(const wchar* s, xtd::size n) -> xtd::time_span;
     /// @}
   }
 }

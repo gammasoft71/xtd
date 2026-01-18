@@ -25,7 +25,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 1.6_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(long double n);
+    [[nodiscard]] auto operator""_i8(long double n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -37,7 +37,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 54_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(unsigned long long n);
+    [[nodiscard]] auto operator""_i8(unsigned long long n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -49,7 +49,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(const char* s, std::size_t n);
+    [[nodiscard]] auto operator""_i8(const char* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(const char8_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_i8(const char8_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -73,7 +73,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(const char16_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_i8(const char16_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -85,7 +85,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(const char32_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_i8(const char32_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -97,7 +97,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_i8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_i8(const wchar_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_i8(const wchar_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -109,7 +109,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 1.6_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(long double n);
+    [[nodiscard]] auto operator""_s8(long double n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -121,7 +121,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 54_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(unsigned long long n);
+    [[nodiscard]] auto operator""_s8(unsigned long long n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -133,7 +133,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(const char* s, std::size_t n);
+    [[nodiscard]] auto operator""_s8(const char* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -145,7 +145,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(const char8_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_s8(const char8_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -157,7 +157,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(const char16_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_s8(const char16_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -169,7 +169,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(const char32_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_s8(const char32_t* s, std::size_t n) -> xtd::sbyte;
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -181,7 +181,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_s8 << xtd::environment::new_line;
     /// ```
-    sbyte operator""_s8(const wchar_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_s8(const wchar_t* s, std::size_t n) -> xtd::sbyte;
     /// @}
   }
 }

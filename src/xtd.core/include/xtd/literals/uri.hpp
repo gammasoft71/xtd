@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::uri u = "https://https://gammasoft71.github.io/xtd/"_uri;
     /// xtd::console::out << u << xtd::environment::new_line;
     /// ```
-    xtd::uri operator""_uri(const char* s, xtd::size n);
+    [[nodiscard]] auto operator""_uri(const char* s, xtd::size n) -> xtd::uri;
     
     /// @brief Used to convert specified value into xtd::uri.
     /// @par Namespace
@@ -35,7 +35,7 @@ namespace xtd {
     /// xtd::uri u = u8"https://https://gammasoft71.github.io/xtd/"_uri;
     /// xtd::console::out << u << xtd::environment::new_line;
     /// ```
-    xtd::uri operator""_uri(const char8* s, xtd::size n);
+    [[nodiscard]] auto operator""_uri(const char8* s, xtd::size n) -> xtd::uri;
     
     /// @brief Used to convert specified value into xtd::uri.
     /// @par Namespace
@@ -48,7 +48,7 @@ namespace xtd {
     /// xtd::uri u = u"https://https://gammasoft71.github.io/xtd/"_uri;
     /// xtd::console::out << u << xtd::environment::new_line;
     /// ```
-    xtd::uri operator""_uri(const char16* s, xtd::size n);
+    [[nodiscard]] auto operator""_uri(const char16* s, xtd::size n) -> xtd::uri;
     
     /// @brief Used to convert specified value into xtd::uri.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// xtd::uri u = U"https://https://gammasoft71.github.io/xtd/"_uri;
     /// xtd::console::out << u << xtd::environment::new_line;
     /// ```
-    xtd::uri operator""_uri(const char32* s, xtd::size n);
+    [[nodiscard]] auto operator""_uri(const char32* s, xtd::size n) -> xtd::uri;
     
     /// @brief Used to convert specified value into xtd::uri.
     /// @par Namespace
@@ -74,7 +74,7 @@ namespace xtd {
     /// xtd::uri u = L"https://https://gammasoft71.github.io/xtd/"_uri;
     /// xtd::console::out << u << xtd::environment::new_line;
     /// ```
-    xtd::uri operator""_uri(const wchar* s, xtd::size n);
+    [[nodiscard]] auto operator""_uri(const wchar* s, xtd::size n) -> xtd::uri;
     /// @}
   }
 }

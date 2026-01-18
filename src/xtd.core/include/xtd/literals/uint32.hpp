@@ -25,7 +25,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 1.6_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(long double n);
+    [[nodiscard]] auto operator""_u32(long double n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -37,7 +37,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << 54_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(unsigned long long n);
+    [[nodiscard]] auto operator""_u32(unsigned long long n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -49,7 +49,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << "125"_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(const char* s, std::size_t n);
+    [[nodiscard]] auto operator""_u32(const char* s, std::size_t n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -61,7 +61,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u8"125"_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(const char8_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_u32(const char8_t* s, std::size_t n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -73,7 +73,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << u"125"_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(const char16_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_u32(const char16_t* s, std::size_t n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -85,7 +85,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << U"125"_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(const char32_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_u32(const char32_t* s, std::size_t n) -> xtd::uint32;
     
     /// @brief Used to convert specified value into uint32.
     /// @par Namespace
@@ -97,7 +97,7 @@ namespace xtd {
     /// ```cpp
     /// xtd::console::out << L"125"_u32 << xtd::environment::new_line;
     /// ```
-    uint32 operator""_u32(const wchar_t* s, std::size_t n);
+    [[nodiscard]] auto operator""_u32(const wchar_t* s, std::size_t n) -> xtd::uint32;
     /// @}
   }
 }

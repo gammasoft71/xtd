@@ -3,58 +3,58 @@
 
 using namespace xtd;
 
-int64 xtd::literals::operator""_i64(long double n) {
+auto xtd::literals::operator""_i64(long double n) -> int64 {
   return as<int64>(n);
 }
 
-int64 xtd::literals::operator""_i64(unsigned long long n) {
+auto xtd::literals::operator""_i64(unsigned long long n) -> int64 {
   return as<int64>(n);
 }
 
-int64 xtd::literals::operator""_i64(const char* s, xtd::size n) {
+auto xtd::literals::operator""_i64(const char* s, size n) -> int64 {
   return as<int64>(string(s, s + n));
 }
 
-int64 xtd::literals::operator""_i64(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_i64(const char8* s, size n) -> int64 {
   return as<int64>(string(s, s + n));
 }
 
-int64 xtd::literals::operator""_i64(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_i64(const char16* s, size n) -> int64 {
   return as<int64>(std::u16string(s, s + n));
 }
 
-int64 xtd::literals::operator""_i64(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_i64(const char32* s, size n) -> int64 {
   return as<int64>(std::u32string(s, s + n));
 }
 
-int64 xtd::literals::operator""_i64(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_i64(const wchar* s, size n) -> int64 {
   return as<int64>(std::wstring(s, s + n));
 }
 
-int64 xtd::literals::operator""_s64(long double n) {
+auto xtd::literals::operator""_s64(long double n) -> int64 {
   return as<int64>(n);
 }
 
-int64 xtd::literals::operator""_s64(unsigned long long n) {
+auto xtd::literals::operator""_s64(unsigned long long n) -> int64 {
   return as<int64>(n);
 }
 
-int64 xtd::literals::operator""_s64(const char* s, xtd::size n) {
+auto xtd::literals::operator""_s64(const char* s, size n) -> int64 {
   return as<int64>(string(s, s + n));
 }
 
-int64 xtd::literals::operator""_s64(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_s64(const char8* s, size n) -> int64 {
   return as<int64>(string(s, s + n));
 }
 
-int64 xtd::literals::operator""_s64(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_s64(const char16* s, size n) -> int64 {
   return as<int64>(std::u16string(s, s + n));
 }
 
-int64 xtd::literals::operator""_s64(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_s64(const char32* s, size n) -> int64 {
   return as<int64>(std::u32string(s, s + n));
 }
 
-int64 xtd::literals::operator""_s64(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_s64(const wchar* s, size n) -> int64 {
   return as<int64>(std::wstring(s, s + n));
 }

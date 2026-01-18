@@ -3,26 +3,26 @@
 
 using namespace xtd;
 
-char32 xtd::literals::operator""_c(unsigned long long c) {
+auto xtd::literals::operator""_c(unsigned long long c) -> char32 {
   return as<char32>(c);
 }
 
-char32 xtd::literals::operator""_c(char c) {
+auto xtd::literals::operator""_c(char c) -> char32 {
   return as<char32>(c);
 }
 
-char32 xtd::literals::operator""_c(char8 c) {
+auto xtd::literals::operator""_c(char8 c) -> char32 {
   return as<char32>(c);
 }
 
-char32 xtd::literals::operator""_c(char16 c) {
+auto xtd::literals::operator""_c(char16 c) -> char32 {
   return as<char32>(c);
 }
 
-char32 xtd::literals::operator""_c(char32 c) {
+auto xtd::literals::operator""_c(char32 c) -> char32 {
   return c;
 }
 
-char32 xtd::literals::operator""_c(wchar c) {
+auto xtd::literals::operator""_c(wchar c) -> char32 {
   return as<char32>(c);
 }

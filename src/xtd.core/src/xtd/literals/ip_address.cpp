@@ -4,22 +4,22 @@
 using namespace xtd;
 using namespace xtd::net;
 
-ip_address xtd::literals::operator""_ip(const char* s, xtd::size n) {
+auto xtd::literals::operator""_ip(const char* s, size n) -> ip_address {
   return ip_address::parse(string {s});
 }
 
-ip_address xtd::literals::operator""_ip(const char8* s, xtd::size n) {
+auto xtd::literals::operator""_ip(const char8* s, size n) -> ip_address {
   return ip_address::parse(string {s});
 }
 
-ip_address xtd::literals::operator""_ip(const char16* s, xtd::size n) {
+auto xtd::literals::operator""_ip(const char16* s, size n) -> ip_address {
   return ip_address::parse(string {s});
 }
 
-ip_address xtd::literals::operator""_ip(const char32* s, xtd::size n) {
+auto xtd::literals::operator""_ip(const char32* s, size n) -> ip_address {
   return ip_address::parse(string {s});
 }
 
-ip_address xtd::literals::operator""_ip(const wchar* s, xtd::size n) {
+auto xtd::literals::operator""_ip(const wchar* s, size n) -> ip_address {
   return ip_address::parse(string {s});
 }
