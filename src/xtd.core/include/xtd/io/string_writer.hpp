@@ -41,10 +41,10 @@ namespace xtd {
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      const std::ostream& base_stream() const noexcept;
+      [[nodiscard]] auto base_stream() const noexcept -> const std::ostream&;
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::ostream& base_stream() noexcept;
+      [[nodiscard]] auto base_stream() noexcept -> std::ostream&;
       /// @}
       
       /// @name Public Methods
@@ -52,14 +52,14 @@ namespace xtd {
       /// @{
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      void flush() override;
+      auto flush() -> void override;
       
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::io_exception An I/O error occurs.
-      void write(const xtd::string& value) override;
+      auto write(const xtd::string& value) -> void override;
       /// @}
       
     private:
