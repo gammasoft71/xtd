@@ -130,85 +130,85 @@ Inheritance diagram for xtd::io::stream:</div>
 <tr class="memitem:a54e7926b2964502afbdae81560651651" id="r_a54e7926b2964502afbdae81560651651"><td class="memItemLeft" align="right" valign="top">static xtd::io::null_stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e7926b2964502afbdae81560651651">null_stream</a></td></tr>
 <tr class="memdesc:a54e7926b2964502afbdae81560651651"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Stream with no backing store.  <br /></td></tr>
 <tr class="separator:a54e7926b2964502afbdae81560651651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67820a534703249afed34b22bf72539e" id="r_a67820a534703249afed34b22bf72539e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67820a534703249afed34b22bf72539e">eof</a></td></tr>
-<tr class="memdesc:a67820a534703249afed34b22bf72539e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represnets an eof value.  <br /></td></tr>
-<tr class="separator:a67820a534703249afed34b22bf72539e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e768f12d16ba2fcb919198f58cc355" id="r_af5e768f12d16ba2fcb919198f58cc355"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5e768f12d16ba2fcb919198f58cc355">eof</a></td></tr>
+<tr class="memdesc:af5e768f12d16ba2fcb919198f58cc355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represnets an eof value.  <br /></td></tr>
+<tr class="separator:af5e768f12d16ba2fcb919198f58cc355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a64cf1a27b6c46e18d34ae573e70c9f32" id="r_a64cf1a27b6c46e18d34ae573e70c9f32"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64cf1a27b6c46e18d34ae573e70c9f32">can_read</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a64cf1a27b6c46e18d34ae573e70c9f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets a value indicating whether the current stream supports reading.  <br /></td></tr>
-<tr class="separator:a64cf1a27b6c46e18d34ae573e70c9f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a740fb83e748020132b9dc1a9d3f209ca" id="r_a740fb83e748020132b9dc1a9d3f209ca"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a740fb83e748020132b9dc1a9d3f209ca">can_seek</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a740fb83e748020132b9dc1a9d3f209ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets a value indicating whether the current stream supports seeking.  <br /></td></tr>
-<tr class="separator:a740fb83e748020132b9dc1a9d3f209ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2802d7a0eb3c602ce93db55f951e2eb" id="r_ac2802d7a0eb3c602ce93db55f951e2eb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2802d7a0eb3c602ce93db55f951e2eb">can_timeout</a> () const noexcept</td></tr>
-<tr class="memdesc:ac2802d7a0eb3c602ce93db55f951e2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that determines whether the current stream can time out.  <br /></td></tr>
-<tr class="separator:ac2802d7a0eb3c602ce93db55f951e2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a836b8fc561ef738de18772b03b38a441" id="r_a836b8fc561ef738de18772b03b38a441"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a836b8fc561ef738de18772b03b38a441">can_write</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a836b8fc561ef738de18772b03b38a441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports writing.  <br /></td></tr>
-<tr class="separator:a836b8fc561ef738de18772b03b38a441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff660daa6666cde135768f5262e5e38" id="r_a0ff660daa6666cde135768f5262e5e38"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ff660daa6666cde135768f5262e5e38">is_closed</a> () const noexcept</td></tr>
-<tr class="memdesc:a0ff660daa6666cde135768f5262e5e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the stream is closed.  <br /></td></tr>
-<tr class="separator:a0ff660daa6666cde135768f5262e5e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a876aa9db7471167cc6a8e8f65a72a52d" id="r_a876aa9db7471167cc6a8e8f65a72a52d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876aa9db7471167cc6a8e8f65a72a52d">length</a> () const =0</td></tr>
-<tr class="memdesc:a876aa9db7471167cc6a8e8f65a72a52d"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the length in bytes of the stream.  <br /></td></tr>
-<tr class="separator:a876aa9db7471167cc6a8e8f65a72a52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd5bbba2ef27f8e1103f22dab4c79e22" id="r_acd5bbba2ef27f8e1103f22dab4c79e22"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd5bbba2ef27f8e1103f22dab4c79e22">position</a> () const =0</td></tr>
-<tr class="memdesc:acd5bbba2ef27f8e1103f22dab4c79e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the position within the current stream.  <br /></td></tr>
-<tr class="separator:acd5bbba2ef27f8e1103f22dab4c79e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e393b8a8a406ace7636524d22100d0c" id="r_a5e393b8a8a406ace7636524d22100d0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e393b8a8a406ace7636524d22100d0c">position</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value)=0</td></tr>
-<tr class="memdesc:a5e393b8a8a406ace7636524d22100d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, sets the position within the current stream.  <br /></td></tr>
-<tr class="separator:a5e393b8a8a406ace7636524d22100d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5314582e7f93869a107dea643489e9c3" id="r_a5314582e7f93869a107dea643489e9c3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5314582e7f93869a107dea643489e9c3">read_timeout</a> () const</td></tr>
-<tr class="memdesc:a5314582e7f93869a107dea643489e9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.  <br /></td></tr>
-<tr class="separator:a5314582e7f93869a107dea643489e9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad98c526253406bd4cac55a361ad4f0f4" id="r_ad98c526253406bd4cac55a361ad4f0f4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad98c526253406bd4cac55a361ad4f0f4">read_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
-<tr class="memdesc:ad98c526253406bd4cac55a361ad4f0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.  <br /></td></tr>
-<tr class="separator:ad98c526253406bd4cac55a361ad4f0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bebfb09622fa3b4204764b9e109abe6" id="r_a0bebfb09622fa3b4204764b9e109abe6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bebfb09622fa3b4204764b9e109abe6">write_timeout</a> () const</td></tr>
-<tr class="memdesc:a0bebfb09622fa3b4204764b9e109abe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.  <br /></td></tr>
-<tr class="separator:a0bebfb09622fa3b4204764b9e109abe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb5e8a091ac842a491596bf40e35e8f" id="r_a4fb5e8a091ac842a491596bf40e35e8f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fb5e8a091ac842a491596bf40e35e8f">write_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
-<tr class="memdesc:a4fb5e8a091ac842a491596bf40e35e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.  <br /></td></tr>
-<tr class="separator:a4fb5e8a091ac842a491596bf40e35e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e7ebbf540f3eb87b6dbeced4ca51f29" id="r_a9e7ebbf540f3eb87b6dbeced4ca51f29"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e7ebbf540f3eb87b6dbeced4ca51f29">can_read</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a9e7ebbf540f3eb87b6dbeced4ca51f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets a value indicating whether the current stream supports reading.  <br /></td></tr>
+<tr class="separator:a9e7ebbf540f3eb87b6dbeced4ca51f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93909a195383f144d8800e5b35109455" id="r_a93909a195383f144d8800e5b35109455"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93909a195383f144d8800e5b35109455">can_seek</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a93909a195383f144d8800e5b35109455"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets a value indicating whether the current stream supports seeking.  <br /></td></tr>
+<tr class="separator:a93909a195383f144d8800e5b35109455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa9d424361cd0e410f66cd28174d01d" id="r_abfa9d424361cd0e410f66cd28174d01d"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfa9d424361cd0e410f66cd28174d01d">can_timeout</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:abfa9d424361cd0e410f66cd28174d01d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that determines whether the current stream can time out.  <br /></td></tr>
+<tr class="separator:abfa9d424361cd0e410f66cd28174d01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af571ec94a08bb19fa64d4cf060e5c7" id="r_a3af571ec94a08bb19fa64d4cf060e5c7"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3af571ec94a08bb19fa64d4cf060e5c7">can_write</a> () const noexcept -&gt; bool=0</td></tr>
+<tr class="memdesc:a3af571ec94a08bb19fa64d4cf060e5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports writing.  <br /></td></tr>
+<tr class="separator:a3af571ec94a08bb19fa64d4cf060e5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502067e9af6534d3ac76d1154922a912" id="r_a502067e9af6534d3ac76d1154922a912"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a502067e9af6534d3ac76d1154922a912">is_closed</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a502067e9af6534d3ac76d1154922a912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the stream is closed.  <br /></td></tr>
+<tr class="separator:a502067e9af6534d3ac76d1154922a912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c2894936ae30fe365517af63197c2e" id="r_a26c2894936ae30fe365517af63197c2e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26c2894936ae30fe365517af63197c2e">length</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
+<tr class="memdesc:a26c2894936ae30fe365517af63197c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the length in bytes of the stream.  <br /></td></tr>
+<tr class="separator:a26c2894936ae30fe365517af63197c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd76669b5a92bf86dcb938fcc6258846" id="r_afd76669b5a92bf86dcb938fcc6258846"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd76669b5a92bf86dcb938fcc6258846">position</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
+<tr class="memdesc:afd76669b5a92bf86dcb938fcc6258846"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, gets the position within the current stream.  <br /></td></tr>
+<tr class="separator:afd76669b5a92bf86dcb938fcc6258846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ece2222fe99d7702dc69bf94471caf1" id="r_a0ece2222fe99d7702dc69bf94471caf1"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ece2222fe99d7702dc69bf94471caf1">position</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void=0</td></tr>
+<tr class="memdesc:a0ece2222fe99d7702dc69bf94471caf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, sets the position within the current stream.  <br /></td></tr>
+<tr class="separator:a0ece2222fe99d7702dc69bf94471caf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247407c50f579466d9e52eeb59a89c46" id="r_a247407c50f579466d9e52eeb59a89c46"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a247407c50f579466d9e52eeb59a89c46">read_timeout</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a247407c50f579466d9e52eeb59a89c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.  <br /></td></tr>
+<tr class="separator:a247407c50f579466d9e52eeb59a89c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6c335abc46f484577e21724b2130fd" id="r_afb6c335abc46f484577e21724b2130fd"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb6c335abc46f484577e21724b2130fd">read_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; void</td></tr>
+<tr class="memdesc:afb6c335abc46f484577e21724b2130fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.  <br /></td></tr>
+<tr class="separator:afb6c335abc46f484577e21724b2130fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1627c18d59e9bc372c3903f72f0558de" id="r_a1627c18d59e9bc372c3903f72f0558de"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1627c18d59e9bc372c3903f72f0558de">write_timeout</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a1627c18d59e9bc372c3903f72f0558de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.  <br /></td></tr>
+<tr class="separator:a1627c18d59e9bc372c3903f72f0558de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed93a09cf75eb7dd0d97dc8d245657db" id="r_aed93a09cf75eb7dd0d97dc8d245657db"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed93a09cf75eb7dd0d97dc8d245657db">write_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; void</td></tr>
+<tr class="memdesc:aed93a09cf75eb7dd0d97dc8d245657db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.  <br /></td></tr>
+<tr class="separator:aed93a09cf75eb7dd0d97dc8d245657db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a8225b3c465df28078d3b5303ffd5318c" id="r_a8225b3c465df28078d3b5303ffd5318c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8225b3c465df28078d3b5303ffd5318c">copy_to</a> (std::ostream &amp;destination)</td></tr>
-<tr class="memdesc:a8225b3c465df28078d3b5303ffd5318c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
-<tr class="separator:a8225b3c465df28078d3b5303ffd5318c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac06b45cc7ea1065e275c0edf718cd760" id="r_ac06b45cc7ea1065e275c0edf718cd760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06b45cc7ea1065e275c0edf718cd760">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> buffer_size)</td></tr>
-<tr class="memdesc:ac06b45cc7ea1065e275c0edf718cd760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
-<tr class="separator:ac06b45cc7ea1065e275c0edf718cd760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d03c86a2f08e064dd206ca3c8b797ed" id="r_a7d03c86a2f08e064dd206ca3c8b797ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d03c86a2f08e064dd206ca3c8b797ed">flush</a> ()=0</td></tr>
-<tr class="memdesc:a7d03c86a2f08e064dd206ca3c8b797ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs.  <br /></td></tr>
-<tr class="separator:a7d03c86a2f08e064dd206ca3c8b797ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa878d4ecbb30923c935bfb5eb8cb5ba8" id="r_aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa878d4ecbb30923c935bfb5eb8cb5ba8">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
-<tr class="separator:aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ad6bb09848a8d1cb3418cbc59a0412" id="r_a74ad6bb09848a8d1cb3418cbc59a0412"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ad6bb09848a8d1cb3418cbc59a0412">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count)=0</td></tr>
-<tr class="separator:a74ad6bb09848a8d1cb3418cbc59a0412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e26b1d6940c27423fb236bd9474937" id="r_ae2e26b1d6940c27423fb236bd9474937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e26b1d6940c27423fb236bd9474937">read_at_least</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> minimum_bytes, bool throw_on_end_of_stream=true)</td></tr>
-<tr class="memdesc:ae2e26b1d6940c27423fb236bd9474937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
-<tr class="separator:ae2e26b1d6940c27423fb236bd9474937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af29d3bcbc3b7e74bc1d992411fcc9f25" id="r_af29d3bcbc3b7e74bc1d992411fcc9f25"><td class="memItemLeft" align="right" valign="top"><a id="af29d3bcbc3b7e74bc1d992411fcc9f25" name="af29d3bcbc3b7e74bc1d992411fcc9f25"></a>
-virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_byte</b> ()</td></tr>
-<tr class="separator:af29d3bcbc3b7e74bc1d992411fcc9f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67b120e7c2bb803cfa07dd0c8a11cf65" id="r_a67b120e7c2bb803cfa07dd0c8a11cf65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67b120e7c2bb803cfa07dd0c8a11cf65">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:a67b120e7c2bb803cfa07dd0c8a11cf65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes from the current stream and advances the position within the stream until the buffer is filled.  <br /></td></tr>
-<tr class="separator:a67b120e7c2bb803cfa07dd0c8a11cf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6de77f0d5e60bc23383e0662c492fb6c" id="r_a6de77f0d5e60bc23383e0662c492fb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6de77f0d5e60bc23383e0662c492fb6c">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count)</td></tr>
-<tr class="memdesc:a6de77f0d5e60bc23383e0662c492fb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads <code>count</code> number of bytes from the current stream and advances the position within the stream.  <br /></td></tr>
-<tr class="separator:a6de77f0d5e60bc23383e0662c492fb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c2a7ded63f20d43f4d819d318a65b5" id="r_a37c2a7ded63f20d43f4d819d318a65b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37c2a7ded63f20d43f4d819d318a65b5">set_length</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value)=0</td></tr>
-<tr class="separator:a37c2a7ded63f20d43f4d819d318a65b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b868dcda1bf1c549a75e3d45b1383c" id="r_a53b868dcda1bf1c549a75e3d45b1383c"><td class="memItemLeft" align="right" valign="top"><a id="a53b868dcda1bf1c549a75e3d45b1383c" name="a53b868dcda1bf1c549a75e3d45b1383c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; buffer)</td></tr>
-<tr class="separator:a53b868dcda1bf1c549a75e3d45b1383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c60521af84e94697628e491e98a6c29" id="r_a3c60521af84e94697628e491e98a6c29"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c60521af84e94697628e491e98a6c29">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count)=0</td></tr>
-<tr class="separator:a3c60521af84e94697628e491e98a6c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1770dafeeb76b8a1cb8fa55b9e676504" id="r_a1770dafeeb76b8a1cb8fa55b9e676504"><td class="memItemLeft" align="right" valign="top"><a id="a1770dafeeb76b8a1cb8fa55b9e676504" name="a1770dafeeb76b8a1cb8fa55b9e676504"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value)</td></tr>
-<tr class="separator:a1770dafeeb76b8a1cb8fa55b9e676504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58414130c97fc85d06db93c9f27ffaea" id="r_a58414130c97fc85d06db93c9f27ffaea"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58414130c97fc85d06db93c9f27ffaea">copy_to</a> (std::ostream &amp;destination) -&gt; void</td></tr>
+<tr class="memdesc:a58414130c97fc85d06db93c9f27ffaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
+<tr class="separator:a58414130c97fc85d06db93c9f27ffaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3198a0d6aa410ffbf022928ab7849359" id="r_a3198a0d6aa410ffbf022928ab7849359"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3198a0d6aa410ffbf022928ab7849359">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> buffer_size) -&gt; void</td></tr>
+<tr class="memdesc:a3198a0d6aa410ffbf022928ab7849359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
+<tr class="separator:a3198a0d6aa410ffbf022928ab7849359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c2ecf5c677286c971b8794c2e16469" id="r_a17c2ecf5c677286c971b8794c2e16469"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c2ecf5c677286c971b8794c2e16469">flush</a> () -&gt; void=0</td></tr>
+<tr class="memdesc:a17c2ecf5c677286c971b8794c2e16469"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs.  <br /></td></tr>
+<tr class="separator:a17c2ecf5c677286c971b8794c2e16469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe15845ac389ebe506e6a4552d7aca16" id="r_afe15845ac389ebe506e6a4552d7aca16"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe15845ac389ebe506e6a4552d7aca16">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:afe15845ac389ebe506e6a4552d7aca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
+<tr class="separator:afe15845ac389ebe506e6a4552d7aca16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe39cfb29ed87fd7c455c83b405b5d1b" id="r_afe39cfb29ed87fd7c455c83b405b5d1b"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe39cfb29ed87fd7c455c83b405b5d1b">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>=0</td></tr>
+<tr class="separator:afe39cfb29ed87fd7c455c83b405b5d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4105631ca776eb6742d27a2daf9711" id="r_adf4105631ca776eb6742d27a2daf9711"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf4105631ca776eb6742d27a2daf9711">read_at_least</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> minimum_bytes, bool throw_on_end_of_stream=true) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:adf4105631ca776eb6742d27a2daf9711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
+<tr class="separator:adf4105631ca776eb6742d27a2daf9711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e24120901a801b47c48e3d90eef6e6" id="r_a48e24120901a801b47c48e3d90eef6e6"><td class="memItemLeft" align="right" valign="top"><a id="a48e24120901a801b47c48e3d90eef6e6" name="a48e24120901a801b47c48e3d90eef6e6"></a>
+virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>read_byte</b> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="separator:a48e24120901a801b47c48e3d90eef6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b089e94b3a66e3269ec2dc977137a1e" id="r_a2b089e94b3a66e3269ec2dc977137a1e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b089e94b3a66e3269ec2dc977137a1e">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; void</td></tr>
+<tr class="memdesc:a2b089e94b3a66e3269ec2dc977137a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes from the current stream and advances the position within the stream until the buffer is filled.  <br /></td></tr>
+<tr class="separator:a2b089e94b3a66e3269ec2dc977137a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de5e450098d89999d54a622336d8faf" id="r_a1de5e450098d89999d54a622336d8faf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1de5e450098d89999d54a622336d8faf">read_exactly</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void</td></tr>
+<tr class="memdesc:a1de5e450098d89999d54a622336d8faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads <code>count</code> number of bytes from the current stream and advances the position within the stream.  <br /></td></tr>
+<tr class="separator:a1de5e450098d89999d54a622336d8faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa997bcfe8c222dfceed177cfb190a319" id="r_aa997bcfe8c222dfceed177cfb190a319"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa997bcfe8c222dfceed177cfb190a319">set_length</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void=0</td></tr>
+<tr class="separator:aa997bcfe8c222dfceed177cfb190a319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a8f2dc19aada29bc69bdff6523854d" id="r_a60a8f2dc19aada29bc69bdff6523854d"><td class="memItemLeft" align="right" valign="top"><a id="a60a8f2dc19aada29bc69bdff6523854d" name="a60a8f2dc19aada29bc69bdff6523854d"></a>
+virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; const <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; buffer) -&gt; void</td></tr>
+<tr class="separator:a60a8f2dc19aada29bc69bdff6523854d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c372910c897a610ac0e95586b417a5e" id="r_a9c372910c897a610ac0e95586b417a5e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c372910c897a610ac0e95586b417a5e">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void=0</td></tr>
+<tr class="separator:a9c372910c897a610ac0e95586b417a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fad02f992e3e7d79ce5f3288730b9e" id="r_a49fad02f992e3e7d79ce5f3288730b9e"><td class="memItemLeft" align="right" valign="top"><a id="a49fad02f992e3e7d79ce5f3288730b9e" name="a49fad02f992e3e7d79ce5f3288730b9e"></a>
+virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value) -&gt; void</td></tr>
+<tr class="separator:a49fad02f992e3e7d79ce5f3288730b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected constructors</h2></td></tr>
 <tr class="memitem:a6096e89ac1971d83acb7a71d5789c6ba" id="r_a6096e89ac1971d83acb7a71d5789c6ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6096e89ac1971d83acb7a71d5789c6ba">stream</a> ()</td></tr>
@@ -282,8 +282,8 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a64cf1a27b6c46e18d34ae573e70c9f32" name="a64cf1a27b6c46e18d34ae573e70c9f32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64cf1a27b6c46e18d34ae573e70c9f32">&#9670;&#160;</a></span>can_read()</h2>
+<a id="a9e7ebbf540f3eb87b6dbeced4ca51f29" name="a9e7ebbf540f3eb87b6dbeced4ca51f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e7ebbf540f3eb87b6dbeced4ca51f29">&#9670;&#160;</a></span>can_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,15 +292,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::stream::can_read </td>
+          <td class="memname">virtual auto xtd::io::stream::can_read </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -308,12 +308,12 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports reading. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports reading; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a15210f802de0a097735496431e0e5ef2">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a49b54b2f8893abfdc68edc080ba37576">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a71d8ae56a4acb1cb7c7db641642f3bcc">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a49b54b2f8893abfdc68edc080ba37576">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a740fb83e748020132b9dc1a9d3f209ca" name="a740fb83e748020132b9dc1a9d3f209ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a740fb83e748020132b9dc1a9d3f209ca">&#9670;&#160;</a></span>can_seek()</h2>
+<a id="a93909a195383f144d8800e5b35109455" name="a93909a195383f144d8800e5b35109455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93909a195383f144d8800e5b35109455">&#9670;&#160;</a></span>can_seek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,15 +322,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::stream::can_seek </td>
+          <td class="memname">virtual auto xtd::io::stream::can_seek </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -338,12 +338,12 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports seeking. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports seeking; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a78bb23cd5b0f0e7c9d6c91de01ad1bf4">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af9c46316791b86190ed30e2fb7a589eb">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#af8f8bcefcc308abb48ed523e41cc1638">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af9c46316791b86190ed30e2fb7a589eb">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="ac2802d7a0eb3c602ce93db55f951e2eb" name="ac2802d7a0eb3c602ce93db55f951e2eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2802d7a0eb3c602ce93db55f951e2eb">&#9670;&#160;</a></span>can_timeout()</h2>
+<a id="abfa9d424361cd0e410f66cd28174d01d" name="abfa9d424361cd0e410f66cd28174d01d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa9d424361cd0e410f66cd28174d01d">&#9670;&#160;</a></span>can_timeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,29 +352,29 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::stream::can_timeout </td>
+          <td class="memname">virtual auto xtd::io::stream::can_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a value that determines whether the current stream can time out. </p>
 <dl class="section return"><dt>Returns</dt><dd>A value that determines whether the current stream can time out. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ac2802d7a0eb3c602ce93db55f951e2eb" title="Gets a value that determines whether the current stream can time out.">xtd::io::stream::can_timeout</a> property always returns <code>false</code>. Some stream implementations require different behavior, such as <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return <code>true</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#abfa9d424361cd0e410f66cd28174d01d" title="Gets a value that determines whether the current stream can time out.">xtd::io::stream::can_timeout</a> property always returns <code>false</code>. Some stream implementations require different behavior, such as <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return <code>true</code>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a38b0f7034e608d8b472c6eee2f710217">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a836b8fc561ef738de18772b03b38a441" name="a836b8fc561ef738de18772b03b38a441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a836b8fc561ef738de18772b03b38a441">&#9670;&#160;</a></span>can_write()</h2>
+<a id="a3af571ec94a08bb19fa64d4cf060e5c7" name="a3af571ec94a08bb19fa64d4cf060e5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af571ec94a08bb19fa64d4cf060e5c7">&#9670;&#160;</a></span>can_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,15 +383,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::stream::can_write </td>
+          <td class="memname">virtual auto xtd::io::stream::can_write </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -399,12 +399,12 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>Gets a value indicating whether the current stream supports writing. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports writing; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a75e544c9fd9fc413d3c961dba59e954f">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a378b5d17e663acf2c0019747d94f33d6">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a27e50abf55eb3d2ffd352bb6da1972b0">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a378b5d17e663acf2c0019747d94f33d6">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a0ff660daa6666cde135768f5262e5e38" name="a0ff660daa6666cde135768f5262e5e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ff660daa6666cde135768f5262e5e38">&#9670;&#160;</a></span>is_closed()</h2>
+<a id="a502067e9af6534d3ac76d1154922a912" name="a502067e9af6534d3ac76d1154922a912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502067e9af6534d3ac76d1154922a912">&#9670;&#160;</a></span>is_closed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -413,15 +413,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::stream::is_closed </td>
+          <td class="memname">virtual auto xtd::io::stream::is_closed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -431,8 +431,8 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 
 </div>
 </div>
-<a id="a876aa9db7471167cc6a8e8f65a72a52d" name="a876aa9db7471167cc6a8e8f65a72a52d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a876aa9db7471167cc6a8e8f65a72a52d">&#9670;&#160;</a></span>length()</h2>
+<a id="a26c2894936ae30fe365517af63197c2e" name="a26c2894936ae30fe365517af63197c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c2894936ae30fe365517af63197c2e">&#9670;&#160;</a></span>length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,15 +441,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::io::stream::length </td>
+          <td class="memname">virtual auto xtd::io::stream::length </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -463,12 +463,12 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a76e149e537f3f832e79cd7e9af7b8048">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a46d0ebe58e88514663c278726cdfd53a">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a23302fce746e6442998dcad708f43c41">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a46d0ebe58e88514663c278726cdfd53a">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="acd5bbba2ef27f8e1103f22dab4c79e22" name="acd5bbba2ef27f8e1103f22dab4c79e22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd5bbba2ef27f8e1103f22dab4c79e22">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
+<a id="afd76669b5a92bf86dcb938fcc6258846" name="afd76669b5a92bf86dcb938fcc6258846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd76669b5a92bf86dcb938fcc6258846">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,15 +477,15 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::io::stream::position </td>
+          <td class="memname">virtual auto xtd::io::stream::position </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -498,16 +498,16 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The stream must support seeking to get or set the position. Use the <a class="el" href="#a740fb83e748020132b9dc1a9d3f209ca" title="When overridden in a derived class, gets a value indicating whether the current stream supports seeki...">xtd::io::stream::can_seek</a> property to determine whether the stream supports seeking. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The stream must support seeking to get or set the position. Use the <a class="el" href="#a93909a195383f144d8800e5b35109455" title="When overridden in a derived class, gets a value indicating whether the current stream supports seeki...">xtd::io::stream::can_seek</a> property to determine whether the stream supports seeking. </dd>
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a58db47186e6902dedb5b4a8ab0a39838">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a990bb4d4723898fa5cc1e1b34622b399">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#aff6e3ac4343dff1ea25fcf03b905cec4">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a990bb4d4723898fa5cc1e1b34622b399">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a5e393b8a8a406ace7636524d22100d0c" name="a5e393b8a8a406ace7636524d22100d0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e393b8a8a406ace7636524d22100d0c">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
+<a id="a0ece2222fe99d7702dc69bf94471caf1" name="a0ece2222fe99d7702dc69bf94471caf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ece2222fe99d7702dc69bf94471caf1">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -516,10 +516,10 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::position </td>
+          <td class="memname">virtual auto xtd::io::stream::position </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -542,16 +542,16 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The stream must support seeking to get or set the position. Use the <a class="el" href="#a740fb83e748020132b9dc1a9d3f209ca" title="When overridden in a derived class, gets a value indicating whether the current stream supports seeki...">xtd::io::stream::can_seek</a> property to determine whether the stream supports seeking. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The stream must support seeking to get or set the position. Use the <a class="el" href="#a93909a195383f144d8800e5b35109455" title="When overridden in a derived class, gets a value indicating whether the current stream supports seeki...">xtd::io::stream::can_seek</a> property to determine whether the stream supports seeking. </dd>
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a65738db618dad091f79f0e9cadfe4bf5">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae77a96178fa3d176428c4697b853dd29">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ae8c0df7ee3f16c003ac44cdcd9e5c760">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae77a96178fa3d176428c4697b853dd29">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a5314582e7f93869a107dea643489e9c3" name="a5314582e7f93869a107dea643489e9c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5314582e7f93869a107dea643489e9c3">&#9670;&#160;</a></span>read_timeout() <span class="overload">[1/2]</span></h2>
+<a id="a247407c50f579466d9e52eeb59a89c46" name="a247407c50f579466d9e52eeb59a89c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247407c50f579466d9e52eeb59a89c46">&#9670;&#160;</a></span>read_timeout() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -560,15 +560,15 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream::read_timeout </td>
+          <td class="memname">virtual auto xtd::io::stream::read_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -577,18 +577,18 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A value, in milliseconds, that determines how long the stream will attempt to read before timing out. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a5314582e7f93869a107dea643489e9c3" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a5314582e7f93869a107dea643489e9c3" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae50353e7445092e195c1e1ad6287f081">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="ad98c526253406bd4cac55a361ad4f0f4" name="ad98c526253406bd4cac55a361ad4f0f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad98c526253406bd4cac55a361ad4f0f4">&#9670;&#160;</a></span>read_timeout() <span class="overload">[2/2]</span></h2>
+<a id="afb6c335abc46f484577e21724b2130fd" name="afb6c335abc46f484577e21724b2130fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6c335abc46f484577e21724b2130fd">&#9670;&#160;</a></span>read_timeout() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -597,10 +597,10 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::read_timeout </td>
+          <td class="memname">virtual auto xtd::io::stream::read_timeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -619,18 +619,18 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a5314582e7f93869a107dea643489e9c3" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a5314582e7f93869a107dea643489e9c3" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a50a698c5b16653c830b6d4adc6107009">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a0bebfb09622fa3b4204764b9e109abe6" name="a0bebfb09622fa3b4204764b9e109abe6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bebfb09622fa3b4204764b9e109abe6">&#9670;&#160;</a></span>write_timeout() <span class="overload">[1/2]</span></h2>
+<a id="a1627c18d59e9bc372c3903f72f0558de" name="a1627c18d59e9bc372c3903f72f0558de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1627c18d59e9bc372c3903f72f0558de">&#9670;&#160;</a></span>write_timeout() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -639,15 +639,15 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream::write_timeout </td>
+          <td class="memname">virtual auto xtd::io::stream::write_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -656,18 +656,18 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A value, in milliseconds, that determines how long the stream will attempt to write before timing out. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a0bebfb09622fa3b4204764b9e109abe6" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a0bebfb09622fa3b4204764b9e109abe6" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a5432e7ff91811040df0337d1c3ccc4d7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a4fb5e8a091ac842a491596bf40e35e8f" name="a4fb5e8a091ac842a491596bf40e35e8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fb5e8a091ac842a491596bf40e35e8f">&#9670;&#160;</a></span>write_timeout() <span class="overload">[2/2]</span></h2>
+<a id="aed93a09cf75eb7dd0d97dc8d245657db" name="aed93a09cf75eb7dd0d97dc8d245657db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed93a09cf75eb7dd0d97dc8d245657db">&#9670;&#160;</a></span>write_timeout() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,10 +676,10 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::write_timeout </td>
+          <td class="memname">virtual auto xtd::io::stream::write_timeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -698,27 +698,27 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a0bebfb09622fa3b4204764b9e109abe6" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> method always throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a0bebfb09622fa3b4204764b9e109abe6" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ac70df3802e4d4d673776268a479ca9c7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a8225b3c465df28078d3b5303ffd5318c" name="a8225b3c465df28078d3b5303ffd5318c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8225b3c465df28078d3b5303ffd5318c">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
+<a id="a58414130c97fc85d06db93c9f27ffaea" name="a58414130c97fc85d06db93c9f27ffaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58414130c97fc85d06db93c9f27ffaea">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::stream::copy_to </td>
+          <td class="memname">auto xtd::io::stream::copy_to </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>destination</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -733,21 +733,21 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
-<a id="ac06b45cc7ea1065e275c0edf718cd760" name="ac06b45cc7ea1065e275c0edf718cd760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac06b45cc7ea1065e275c0edf718cd760">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
+<a id="a3198a0d6aa410ffbf022928ab7849359" name="a3198a0d6aa410ffbf022928ab7849359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3198a0d6aa410ffbf022928ab7849359">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::stream::copy_to </td>
+          <td class="memname">auto xtd::io::stream::copy_to </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -763,8 +763,8 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
-<a id="a7d03c86a2f08e064dd206ca3c8b797ed" name="a7d03c86a2f08e064dd206ca3c8b797ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d03c86a2f08e064dd206ca3c8b797ed">&#9670;&#160;</a></span>flush()</h2>
+<a id="a17c2ecf5c677286c971b8794c2e16469" name="a17c2ecf5c677286c971b8794c2e16469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c2ecf5c677286c971b8794c2e16469">&#9670;&#160;</a></span>flush()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -773,10 +773,10 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::flush </td>
+          <td class="memname">virtual auto xtd::io::stream::flush </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -788,12 +788,12 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 <p>When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs. </p>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#acde2ddf886facd268d6681faa8a140b0">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af6f8d6d66af366f3c35a905eca2ec649">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a4aeda1c1cb44365a448675d5e0305376">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af6f8d6d66af366f3c35a905eca2ec649">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="aa878d4ecbb30923c935bfb5eb8cb5ba8" name="aa878d4ecbb30923c935bfb5eb8cb5ba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa878d4ecbb30923c935bfb5eb8cb5ba8">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="afe15845ac389ebe506e6a4552d7aca16" name="afe15845ac389ebe506e6a4552d7aca16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe15845ac389ebe506e6a4552d7aca16">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -802,10 +802,10 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::io::stream::read </td>
+          <td class="memname">virtual auto xtd::io::stream::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -823,12 +823,12 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#aa878d4ecbb30923c935bfb5eb8cb5ba8">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#aa878d4ecbb30923c935bfb5eb8cb5ba8">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#afe15845ac389ebe506e6a4552d7aca16">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#afe15845ac389ebe506e6a4552d7aca16">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a74ad6bb09848a8d1cb3418cbc59a0412" name="a74ad6bb09848a8d1cb3418cbc59a0412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74ad6bb09848a8d1cb3418cbc59a0412">&#9670;&#160;</a></span>read() <span class="overload">[2/2]</span></h2>
+<a id="afe39cfb29ed87fd7c455c83b405b5d1b" name="afe39cfb29ed87fd7c455c83b405b5d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe39cfb29ed87fd7c455c83b405b5d1b">&#9670;&#160;</a></span>read() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,7 +837,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::io::stream::read </td>
+          <td class="memname">virtual auto xtd::io::stream::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -849,7 +849,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -859,18 +859,18 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#adf96eb1feb11fe44b06fa87854e25905">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a733e5204cb52d56708d79087390414c7">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ac92147c77f01ba028b0f2ac29cdca194">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a733e5204cb52d56708d79087390414c7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="ae2e26b1d6940c27423fb236bd9474937" name="ae2e26b1d6940c27423fb236bd9474937"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2e26b1d6940c27423fb236bd9474937">&#9670;&#160;</a></span>read_at_least()</h2>
+<a id="adf4105631ca776eb6742d27a2daf9711" name="adf4105631ca776eb6742d27a2daf9711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4105631ca776eb6742d27a2daf9711">&#9670;&#160;</a></span>read_at_least()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::io::stream::read_at_least </td>
+          <td class="memname">auto xtd::io::stream::read_at_least </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -882,7 +882,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>throw_on_end_of_stream</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>throw_on_end_of_stream</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -908,17 +908,17 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
-<a id="a67b120e7c2bb803cfa07dd0c8a11cf65" name="a67b120e7c2bb803cfa07dd0c8a11cf65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67b120e7c2bb803cfa07dd0c8a11cf65">&#9670;&#160;</a></span>read_exactly() <span class="overload">[1/2]</span></h2>
+<a id="a2b089e94b3a66e3269ec2dc977137a1e" name="a2b089e94b3a66e3269ec2dc977137a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b089e94b3a66e3269ec2dc977137a1e">&#9670;&#160;</a></span>read_exactly() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::stream::read_exactly </td>
+          <td class="memname">auto xtd::io::stream::read_exactly </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -940,14 +940,14 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
-<a id="a6de77f0d5e60bc23383e0662c492fb6c" name="a6de77f0d5e60bc23383e0662c492fb6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6de77f0d5e60bc23383e0662c492fb6c">&#9670;&#160;</a></span>read_exactly() <span class="overload">[2/2]</span></h2>
+<a id="a1de5e450098d89999d54a622336d8faf" name="a1de5e450098d89999d54a622336d8faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de5e450098d89999d54a622336d8faf">&#9670;&#160;</a></span>read_exactly() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::stream::read_exactly </td>
+          <td class="memname">auto xtd::io::stream::read_exactly </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -959,7 +959,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -986,8 +986,8 @@ The range specified by the combination of offset and count exceeds the length of
 
 </div>
 </div>
-<a id="a37c2a7ded63f20d43f4d819d318a65b5" name="a37c2a7ded63f20d43f4d819d318a65b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37c2a7ded63f20d43f4d819d318a65b5">&#9670;&#160;</a></span>set_length()</h2>
+<a id="aa997bcfe8c222dfceed177cfb190a319" name="aa997bcfe8c222dfceed177cfb190a319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa997bcfe8c222dfceed177cfb190a319">&#9670;&#160;</a></span>set_length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -996,10 +996,10 @@ The range specified by the combination of offset and count exceeds the length of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::set_length </td>
+          <td class="memname">virtual auto xtd::io::stream::set_length </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1009,12 +1009,12 @@ The range specified by the combination of offset and count exceeds the length of
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a03b644daf7648f965f8c536fa6c52fde">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a17b8566d7896e36df460ece1ba256894">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a29cc106cf942ded8ebb66405203df348">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a17b8566d7896e36df460ece1ba256894">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
-<a id="a3c60521af84e94697628e491e98a6c29" name="a3c60521af84e94697628e491e98a6c29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c60521af84e94697628e491e98a6c29">&#9670;&#160;</a></span>write()</h2>
+<a id="a9c372910c897a610ac0e95586b417a5e" name="a9c372910c897a610ac0e95586b417a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c372910c897a610ac0e95586b417a5e">&#9670;&#160;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1023,7 +1023,7 @@ The range specified by the combination of offset and count exceeds the length of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::stream::write </td>
+          <td class="memname">virtual auto xtd::io::stream::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -1035,7 +1035,7 @@ The range specified by the combination of offset and count exceeds the length of
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1045,7 +1045,7 @@ The range specified by the combination of offset and count exceeds the length of
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a011700cfbaa7e79108bceb0ffc0a5fec">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a53a0303dccb539d85a272280b526e916">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a289a4fe3c5b578c8e79c6d8a3fbf9002">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a53a0303dccb539d85a272280b526e916">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -1071,12 +1071,12 @@ The range specified by the combination of offset and count exceeds the length of
 </div><div class="memdoc">
 
 <p>A Stream with no backing store. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a> to redirect output to a stream that will not consume any operating system resources. When the methods of <a class="el" href="classxtd_1_1io_1_1stream.html" title="Provides a generic view of a sequence of bytes. This is an abstract class.">xtd::io::stream</a> that provide writing are invoked on <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a>, the call simply returns, and no data is written. <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a> also implements a <a class="el" href="#aa878d4ecbb30923c935bfb5eb8cb5ba8" title="When overridden in a derived class, reads a sequence of bytes from the current stream and advances th...">xtd::io::stream::stream::read</a> method that returns zero without reading data. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a> to redirect output to a stream that will not consume any operating system resources. When the methods of <a class="el" href="classxtd_1_1io_1_1stream.html" title="Provides a generic view of a sequence of bytes. This is an abstract class.">xtd::io::stream</a> that provide writing are invoked on <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a>, the call simply returns, and no data is written. <a class="el" href="#a54e7926b2964502afbdae81560651651" title="A Stream with no backing store.">xtd::io::stream::null_stream</a> also implements a <a class="el" href="#afe15845ac389ebe506e6a4552d7aca16" title="When overridden in a derived class, reads a sequence of bytes from the current stream and advances th...">xtd::io::stream::stream::read</a> method that returns zero without reading data. </dd></dl>
 
 </div>
 </div>
-<a id="a67820a534703249afed34b22bf72539e" name="a67820a534703249afed34b22bf72539e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67820a534703249afed34b22bf72539e">&#9670;&#160;</a></span>eof</h2>
+<a id="af5e768f12d16ba2fcb919198f58cc355" name="af5e768f12d16ba2fcb919198f58cc355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e768f12d16ba2fcb919198f58cc355">&#9670;&#160;</a></span>eof</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1085,7 +1085,7 @@ The range specified by the combination of offset and count exceeds the length of
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream::eof</td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> xtd::io::stream::eof</td>
         </tr>
       </table>
   </td>
@@ -1107,7 +1107,7 @@ The range specified by the combination of offset and count exceeds the length of
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

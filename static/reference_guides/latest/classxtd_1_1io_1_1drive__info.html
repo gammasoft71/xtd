@@ -127,7 +127,7 @@ Inheritance diagram for xtd::io::drive_info:</div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -169,7 +169,7 @@ Inheritance diagram for xtd::io::drive_info:</div>
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1drive__info_html_aea691dfd1bab9a6231aa24a6723ccfb2"><div class="ttname"><a href="#aea691dfd1bab9a6231aa24a6723ccfb2">xtd::io::drive_info::get_drives</a></div><div class="ttdeci">static xtd::array&lt; xtd::io::drive_info &gt; get_drives() noexcept</div><div class="ttdoc">Retrieves the drive names of all logical drives on a computer.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1drive__info_html_aaa51555b1556f7f97bef64a305f12364"><div class="ttname"><a href="#aaa51555b1556f7f97bef64a305f12364">xtd::io::drive_info::get_drives</a></div><div class="ttdeci">static auto get_drives() noexcept -&gt; xtd::array&lt; xtd::io::drive_info &gt;</div><div class="ttdoc">Retrieves the drive names of all logical drives on a computer.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">xtd::console_key::d</a></div><div class="ttdeci">@ d</div><div class="ttdoc">The D key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:94</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -186,43 +186,43 @@ Inheritance diagram for xtd::io::drive_info:</div>
 <tr class="separator:a7315151313b6177dcba0be5d725972f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a77776834c163871c078f640a540b8247" id="r_a77776834c163871c078f640a540b8247"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77776834c163871c078f640a540b8247">available_free_space</a> () const</td></tr>
-<tr class="memdesc:a77776834c163871c078f640a540b8247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the amount of available free space on a drive, in bytes.  <br /></td></tr>
-<tr class="separator:a77776834c163871c078f640a540b8247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab948fc4cb2674573d1e96de7ff6774" id="r_a0ab948fc4cb2674573d1e96de7ff6774"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ab948fc4cb2674573d1e96de7ff6774">drive_format</a> () const</td></tr>
-<tr class="memdesc:a0ab948fc4cb2674573d1e96de7ff6774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the file system, such as NTFS or FAT32.  <br /></td></tr>
-<tr class="separator:a0ab948fc4cb2674573d1e96de7ff6774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0362bdf3ca8a101a71e2283838f82a4f" id="r_a0362bdf3ca8a101a71e2283838f82a4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101">xtd::io::drive_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0362bdf3ca8a101a71e2283838f82a4f">drive_type</a> () const</td></tr>
-<tr class="memdesc:a0362bdf3ca8a101a71e2283838f82a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the drive type, such as CD-ROM, removable, network, or fixed.  <br /></td></tr>
-<tr class="separator:a0362bdf3ca8a101a71e2283838f82a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cab39eb6c3ddf1e09eb43e44b3106fc" id="r_a8cab39eb6c3ddf1e09eb43e44b3106fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc">is_ready</a> () const noexcept</td></tr>
-<tr class="memdesc:a8cab39eb6c3ddf1e09eb43e44b3106fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether a drive is ready.  <br /></td></tr>
-<tr class="separator:a8cab39eb6c3ddf1e09eb43e44b3106fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a305bdb0d59cb83fca9b129df712be2b8" id="r_a305bdb0d59cb83fca9b129df712be2b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a305bdb0d59cb83fca9b129df712be2b8">name</a> () const noexcept</td></tr>
-<tr class="memdesc:a305bdb0d59cb83fca9b129df712be2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of a drive, such as C:.  <br /></td></tr>
-<tr class="separator:a305bdb0d59cb83fca9b129df712be2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99001fa4d5440448d49f29afa4ee1278" id="r_a99001fa4d5440448d49f29afa4ee1278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99001fa4d5440448d49f29afa4ee1278">root_directory</a> () const noexcept</td></tr>
-<tr class="memdesc:a99001fa4d5440448d49f29afa4ee1278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the root directory of a drive.  <br /></td></tr>
-<tr class="separator:a99001fa4d5440448d49f29afa4ee1278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5c3a82222ace6588da7ca9b3833dd4d" id="r_ac5c3a82222ace6588da7ca9b3833dd4d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5c3a82222ace6588da7ca9b3833dd4d">total_free_space</a> () const</td></tr>
-<tr class="memdesc:ac5c3a82222ace6588da7ca9b3833dd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total amount of free space available on a drive, in bytes.  <br /></td></tr>
-<tr class="separator:ac5c3a82222ace6588da7ca9b3833dd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0bc44567efe31e705ae27b5ba0c5ad0" id="r_ae0bc44567efe31e705ae27b5ba0c5ad0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0bc44567efe31e705ae27b5ba0c5ad0">total_size</a> () const</td></tr>
-<tr class="memdesc:ae0bc44567efe31e705ae27b5ba0c5ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total size of storage space on a drive, in bytes.  <br /></td></tr>
-<tr class="separator:ae0bc44567efe31e705ae27b5ba0c5ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a660d6125f8eac7e6de02c902615c0c09" id="r_a660d6125f8eac7e6de02c902615c0c09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a660d6125f8eac7e6de02c902615c0c09">volume_label</a> () const</td></tr>
-<tr class="memdesc:a660d6125f8eac7e6de02c902615c0c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the volume label of a drive.  <br /></td></tr>
-<tr class="separator:a660d6125f8eac7e6de02c902615c0c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99094b1b5d39bd7f7dedeb840320ede" id="r_ab99094b1b5d39bd7f7dedeb840320ede"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab99094b1b5d39bd7f7dedeb840320ede">available_free_space</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:ab99094b1b5d39bd7f7dedeb840320ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the amount of available free space on a drive, in bytes.  <br /></td></tr>
+<tr class="separator:ab99094b1b5d39bd7f7dedeb840320ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66a3cd7d7901dc6e53b681695598e1b" id="r_aa66a3cd7d7901dc6e53b681695598e1b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa66a3cd7d7901dc6e53b681695598e1b">drive_format</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:aa66a3cd7d7901dc6e53b681695598e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the file system, such as NTFS or FAT32.  <br /></td></tr>
+<tr class="separator:aa66a3cd7d7901dc6e53b681695598e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f1547b9879ff1e25f68a5f3731fe8c" id="r_ab4f1547b9879ff1e25f68a5f3731fe8c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4f1547b9879ff1e25f68a5f3731fe8c">drive_type</a> () const -&gt; <a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101">xtd::io::drive_type</a></td></tr>
+<tr class="memdesc:ab4f1547b9879ff1e25f68a5f3731fe8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the drive type, such as CD-ROM, removable, network, or fixed.  <br /></td></tr>
+<tr class="separator:ab4f1547b9879ff1e25f68a5f3731fe8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c022a5644b2e8afdb16f65181428227" id="r_a1c022a5644b2e8afdb16f65181428227"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c022a5644b2e8afdb16f65181428227">is_ready</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a1c022a5644b2e8afdb16f65181428227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether a drive is ready.  <br /></td></tr>
+<tr class="separator:a1c022a5644b2e8afdb16f65181428227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e0f34fa8c7c6f6482810ee2b8fe8e2" id="r_a75e0f34fa8c7c6f6482810ee2b8fe8e2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75e0f34fa8c7c6f6482810ee2b8fe8e2">name</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a75e0f34fa8c7c6f6482810ee2b8fe8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of a drive, such as C:.  <br /></td></tr>
+<tr class="separator:a75e0f34fa8c7c6f6482810ee2b8fe8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524c5f0964bd6a3359d2a68bcbfb1a48" id="r_a524c5f0964bd6a3359d2a68bcbfb1a48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a524c5f0964bd6a3359d2a68bcbfb1a48">root_directory</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></td></tr>
+<tr class="memdesc:a524c5f0964bd6a3359d2a68bcbfb1a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the root directory of a drive.  <br /></td></tr>
+<tr class="separator:a524c5f0964bd6a3359d2a68bcbfb1a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309609b33ead8d21e50564d76a19f15d" id="r_a309609b33ead8d21e50564d76a19f15d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a309609b33ead8d21e50564d76a19f15d">total_free_space</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a309609b33ead8d21e50564d76a19f15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total amount of free space available on a drive, in bytes.  <br /></td></tr>
+<tr class="separator:a309609b33ead8d21e50564d76a19f15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434eb98402b2c48d777992bd23b49708" id="r_a434eb98402b2c48d777992bd23b49708"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a434eb98402b2c48d777992bd23b49708">total_size</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a434eb98402b2c48d777992bd23b49708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total size of storage space on a drive, in bytes.  <br /></td></tr>
+<tr class="separator:a434eb98402b2c48d777992bd23b49708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743bf07a61d6525809dda1eb4a409c54" id="r_a743bf07a61d6525809dda1eb4a409c54"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a743bf07a61d6525809dda1eb4a409c54">volume_label</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a743bf07a61d6525809dda1eb4a409c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the volume label of a drive.  <br /></td></tr>
+<tr class="separator:a743bf07a61d6525809dda1eb4a409c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:ae71236d9a3ec1ec19d91952fb915c6d3" id="r_ae71236d9a3ec1ec19d91952fb915c6d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae71236d9a3ec1ec19d91952fb915c6d3">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:ae71236d9a3ec1ec19d91952fb915c6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a drive name as a string.  <br /></td></tr>
-<tr class="separator:ae71236d9a3ec1ec19d91952fb915c6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579be5a074d836fa0c48297e2b31ddce" id="r_a579be5a074d836fa0c48297e2b31ddce"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a579be5a074d836fa0c48297e2b31ddce">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a579be5a074d836fa0c48297e2b31ddce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a drive name as a string.  <br /></td></tr>
+<tr class="separator:a579be5a074d836fa0c48297e2b31ddce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:aea691dfd1bab9a6231aa24a6723ccfb2" id="r_aea691dfd1bab9a6231aa24a6723ccfb2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1drive__info.html">xtd::io::drive_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea691dfd1bab9a6231aa24a6723ccfb2">get_drives</a> () noexcept</td></tr>
-<tr class="memdesc:aea691dfd1bab9a6231aa24a6723ccfb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the drive names of all logical drives on a computer.  <br /></td></tr>
-<tr class="separator:aea691dfd1bab9a6231aa24a6723ccfb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa51555b1556f7f97bef64a305f12364" id="r_aaa51555b1556f7f97bef64a305f12364"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa51555b1556f7f97bef64a305f12364">get_drives</a> () noexcept -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1drive__info.html">xtd::io::drive_info</a> &gt;</td></tr>
+<tr class="memdesc:aaa51555b1556f7f97bef64a305f12364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the drive names of all logical drives on a computer.  <br /></td></tr>
+<tr class="separator:aaa51555b1556f7f97bef64a305f12364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -293,19 +293,27 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a77776834c163871c078f640a540b8247" name="a77776834c163871c078f640a540b8247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77776834c163871c078f640a540b8247">&#9670;&#160;</a></span>available_free_space()</h2>
+<a id="ab99094b1b5d39bd7f7dedeb840320ede" name="ab99094b1b5d39bd7f7dedeb840320ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99094b1b5d39bd7f7dedeb840320ede">&#9670;&#160;</a></span>available_free_space()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t xtd::io::drive_info::available_free_space </td>
+          <td class="memname">auto xtd::io::drive_info::available_free_space </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Indicates the amount of available free space on a drive, in bytes. </p>
@@ -323,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -365,23 +373,31 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This property indicates the amount of free space available on the drive. Note that this number may be different from the <a class="el" href="#ac5c3a82222ace6588da7ca9b3833dd4d" title="Gets the total amount of free space available on a drive, in bytes.">xtd::io::drive_info::total_free_space</a> number because this property takes into account disk quotas. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property indicates the amount of free space available on the drive. Note that this number may be different from the <a class="el" href="#a309609b33ead8d21e50564d76a19f15d" title="Gets the total amount of free space available on a drive, in bytes.">xtd::io::drive_info::total_free_space</a> number because this property takes into account disk quotas. </dd></dl>
 
 </div>
 </div>
-<a id="a0ab948fc4cb2674573d1e96de7ff6774" name="a0ab948fc4cb2674573d1e96de7ff6774"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ab948fc4cb2674573d1e96de7ff6774">&#9670;&#160;</a></span>drive_format()</h2>
+<a id="aa66a3cd7d7901dc6e53b681695598e1b" name="aa66a3cd7d7901dc6e53b681695598e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66a3cd7d7901dc6e53b681695598e1b">&#9670;&#160;</a></span>drive_format()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::drive_info::drive_format </td>
+          <td class="memname">auto xtd::io::drive_info::drive_format </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the name of the file system, such as NTFS or FAT32. </p>
@@ -399,7 +415,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -441,23 +457,31 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="#a0ab948fc4cb2674573d1e96de7ff6774" title="Gets the name of the file system, such as NTFS or FAT32.">xtd::io::drive_info::drive_format</a> to determine what formatting a drive uses. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use <a class="el" href="#aa66a3cd7d7901dc6e53b681695598e1b" title="Gets the name of the file system, such as NTFS or FAT32.">xtd::io::drive_info::drive_format</a> to determine what formatting a drive uses. </dd></dl>
 
 </div>
 </div>
-<a id="a0362bdf3ca8a101a71e2283838f82a4f" name="a0362bdf3ca8a101a71e2283838f82a4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0362bdf3ca8a101a71e2283838f82a4f">&#9670;&#160;</a></span>drive_type()</h2>
+<a id="ab4f1547b9879ff1e25f68a5f3731fe8c" name="ab4f1547b9879ff1e25f68a5f3731fe8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f1547b9879ff1e25f68a5f3731fe8c">&#9670;&#160;</a></span>drive_type()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101">xtd::io::drive_type</a> xtd::io::drive_info::drive_type </td>
+          <td class="memname">auto xtd::io::drive_info::drive_type </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101">xtd::io::drive_type</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the drive type, such as CD-ROM, removable, network, or fixed. </p>
@@ -467,7 +491,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -509,12 +533,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a0362bdf3ca8a101a71e2283838f82a4f" title="Gets the drive type, such as CD-ROM, removable, network, or fixed.">xtd::io::drive_info::drive_type</a> property indicates whether a drive is one of the following: CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, or Unknown. These values are described in the <a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101" title="Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory,...">xtd::io::drive_type</a> enumeration. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ab4f1547b9879ff1e25f68a5f3731fe8c" title="Gets the drive type, such as CD-ROM, removable, network, or fixed.">xtd::io::drive_info::drive_type</a> property indicates whether a drive is one of the following: CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, or Unknown. These values are described in the <a class="el" href="group__io.html#gad66cd216421818c7230ad351320f2101" title="Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory,...">xtd::io::drive_type</a> enumeration. </dd></dl>
 
 </div>
 </div>
-<a id="a8cab39eb6c3ddf1e09eb43e44b3106fc" name="a8cab39eb6c3ddf1e09eb43e44b3106fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cab39eb6c3ddf1e09eb43e44b3106fc">&#9670;&#160;</a></span>is_ready()</h2>
+<a id="a1c022a5644b2e8afdb16f65181428227" name="a1c022a5644b2e8afdb16f65181428227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c022a5644b2e8afdb16f65181428227">&#9670;&#160;</a></span>is_ready()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,15 +547,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::io::drive_info::is_ready </td>
+          <td class="memname">auto xtd::io::drive_info::is_ready </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -543,7 +567,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -585,14 +609,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> indicates whether a drive is ready. For example, it indicates whether a CD is in a CD drive or whether a removable storage device is ready for read/write operations. If you do not test whether a drive is ready, and it is not ready, querying the drive using <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> will raise an <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a1c022a5644b2e8afdb16f65181428227" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> indicates whether a drive is ready. For example, it indicates whether a CD is in a CD drive or whether a removable storage device is ready for read/write operations. If you do not test whether a drive is ready, and it is not ready, querying the drive using <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> will raise an <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a>. </dd>
 <dd>
-Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> to avoid catching exceptions from other members such as <a class="el" href="#ae0bc44567efe31e705ae27b5ba0c5ad0" title="Gets the total size of storage space on a drive, in bytes.">xtd::io::drive_info::total_size</a>, <a class="el" href="#ac5c3a82222ace6588da7ca9b3833dd4d" title="Gets the total amount of free space available on a drive, in bytes.">xtd::io::drive_info::total_free_space</a>, and <a class="el" href="#a0ab948fc4cb2674573d1e96de7ff6774" title="Gets the name of the file system, such as NTFS or FAT32.">xtd::io::drive_info::drive_format</a>. Between the time that your code checks <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> and then accesses one of the other properties (even if the access occurs immediately after the check), a drive may have been disconnected or a disk may have been removed. </dd></dl>
+Do not rely on <a class="el" href="#a1c022a5644b2e8afdb16f65181428227" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> to avoid catching exceptions from other members such as <a class="el" href="#a434eb98402b2c48d777992bd23b49708" title="Gets the total size of storage space on a drive, in bytes.">xtd::io::drive_info::total_size</a>, <a class="el" href="#a309609b33ead8d21e50564d76a19f15d" title="Gets the total amount of free space available on a drive, in bytes.">xtd::io::drive_info::total_free_space</a>, and <a class="el" href="#aa66a3cd7d7901dc6e53b681695598e1b" title="Gets the name of the file system, such as NTFS or FAT32.">xtd::io::drive_info::drive_format</a>. Between the time that your code checks <a class="el" href="#a1c022a5644b2e8afdb16f65181428227" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> and then accesses one of the other properties (even if the access occurs immediately after the check), a drive may have been disconnected or a disk may have been removed. </dd></dl>
 
 </div>
 </div>
-<a id="a305bdb0d59cb83fca9b129df712be2b8" name="a305bdb0d59cb83fca9b129df712be2b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a305bdb0d59cb83fca9b129df712be2b8">&#9670;&#160;</a></span>name()</h2>
+<a id="a75e0f34fa8c7c6f6482810ee2b8fe8e2" name="a75e0f34fa8c7c6f6482810ee2b8fe8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e0f34fa8c7c6f6482810ee2b8fe8e2">&#9670;&#160;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,15 +625,15 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::drive_info::name </td>
+          <td class="memname">auto xtd::io::drive_info::name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -621,7 +645,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -667,8 +691,8 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 
 </div>
 </div>
-<a id="a99001fa4d5440448d49f29afa4ee1278" name="a99001fa4d5440448d49f29afa4ee1278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99001fa4d5440448d49f29afa4ee1278">&#9670;&#160;</a></span>root_directory()</h2>
+<a id="a524c5f0964bd6a3359d2a68bcbfb1a48" name="a524c5f0964bd6a3359d2a68bcbfb1a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a524c5f0964bd6a3359d2a68bcbfb1a48">&#9670;&#160;</a></span>root_directory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -677,15 +701,15 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> xtd::io::drive_info::root_directory </td>
+          <td class="memname">auto xtd::io::drive_info::root_directory </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -695,19 +719,27 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 
 </div>
 </div>
-<a id="ac5c3a82222ace6588da7ca9b3833dd4d" name="ac5c3a82222ace6588da7ca9b3833dd4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5c3a82222ace6588da7ca9b3833dd4d">&#9670;&#160;</a></span>total_free_space()</h2>
+<a id="a309609b33ead8d21e50564d76a19f15d" name="a309609b33ead8d21e50564d76a19f15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309609b33ead8d21e50564d76a19f15d">&#9670;&#160;</a></span>total_free_space()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t xtd::io::drive_info::total_free_space </td>
+          <td class="memname">auto xtd::io::drive_info::total_free_space </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the total amount of free space available on a drive, in bytes. </p>
@@ -725,7 +757,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -771,19 +803,27 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 
 </div>
 </div>
-<a id="ae0bc44567efe31e705ae27b5ba0c5ad0" name="ae0bc44567efe31e705ae27b5ba0c5ad0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0bc44567efe31e705ae27b5ba0c5ad0">&#9670;&#160;</a></span>total_size()</h2>
+<a id="a434eb98402b2c48d777992bd23b49708" name="a434eb98402b2c48d777992bd23b49708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434eb98402b2c48d777992bd23b49708">&#9670;&#160;</a></span>total_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t xtd::io::drive_info::total_size </td>
+          <td class="memname">auto xtd::io::drive_info::total_size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the total size of storage space on a drive, in bytes. </p>
@@ -801,7 +841,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -847,19 +887,27 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 
 </div>
 </div>
-<a id="a660d6125f8eac7e6de02c902615c0c09" name="a660d6125f8eac7e6de02c902615c0c09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a660d6125f8eac7e6de02c902615c0c09">&#9670;&#160;</a></span>volume_label()</h2>
+<a id="a743bf07a61d6525809dda1eb4a409c54" name="a743bf07a61d6525809dda1eb4a409c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743bf07a61d6525809dda1eb4a409c54">&#9670;&#160;</a></span>volume_label()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::drive_info::volume_label </td>
+          <td class="memname">auto xtd::io::drive_info::volume_label </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the volume label of a drive. </p>
@@ -877,7 +925,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -923,8 +971,8 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 
 </div>
 </div>
-<a id="ae71236d9a3ec1ec19d91952fb915c6d3" name="ae71236d9a3ec1ec19d91952fb915c6d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae71236d9a3ec1ec19d91952fb915c6d3">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a579be5a074d836fa0c48297e2b31ddce" name="a579be5a074d836fa0c48297e2b31ddce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579be5a074d836fa0c48297e2b31ddce">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -933,29 +981,29 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::drive_info::to_string </td>
+          <td class="memname">auto xtd::io::drive_info::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Returns a drive name as a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the drive. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method returns the <a class="el" href="#a305bdb0d59cb83fca9b129df712be2b8" title="Gets the name of a drive, such as C:.">xtd::io::drive_info::name</a> property. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method returns the <a class="el" href="#a75e0f34fa8c7c6f6482810ee2b8fe8e2" title="Gets the name of a drive, such as C:.">xtd::io::drive_info::name</a> property. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">xtd::object</a>.</p>
 
 </div>
 </div>
-<a id="aea691dfd1bab9a6231aa24a6723ccfb2" name="aea691dfd1bab9a6231aa24a6723ccfb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea691dfd1bab9a6231aa24a6723ccfb2">&#9670;&#160;</a></span>get_drives()</h2>
+<a id="aaa51555b1556f7f97bef64a305f12364" name="aaa51555b1556f7f97bef64a305f12364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa51555b1556f7f97bef64a305f12364">&#9670;&#160;</a></span>get_drives()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -964,15 +1012,15 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1drive__info.html">xtd::io::drive_info</a> &gt; xtd::io::drive_info::get_drives </td>
+          <td class="memname">static auto xtd::io::drive_info::get_drives </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1drive__info.html">xtd::io::drive_info</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -991,7 +1039,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aea691dfd1bab9a6231aa24a6723ccfb2">drive_info::get_drives</a>();</div>
+<div class="line">    <span class="keyword">auto</span> all_drives = <a class="code hl_function" href="#aaa51555b1556f7f97bef64a305f12364">drive_info::get_drives</a>();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a> : all_drives) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Drive {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8277e0910d750195b448797616e091ad">d</a>.name());</div>
@@ -1033,7 +1081,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <div class="line"><span class="comment">// The actual output of this code will vary based on machine and the permissions</span></div>
 <div class="line"><span class="comment">// granted to the user executing it.</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> methods and properties. Use the <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> property to test whether a drive is ready because using this method on a drive that is not ready will throw a <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other <a class="el" href="classxtd_1_1io_1_1drive__info.html" title="Provides access to information on a drive.">xtd::io::drive_info</a> methods and properties. Use the <a class="el" href="#a1c022a5644b2e8afdb16f65181428227" title="Gets a value that indicates whether a drive is ready.">xtd::io::drive_info::is_ready</a> property to test whether a drive is ready because using this method on a drive that is not ready will throw a <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a>. </dd></dl>
 
 </div>
 </div>
@@ -1069,7 +1117,7 @@ Do not rely on <a class="el" href="#a8cab39eb6c3ddf1e09eb43e44b3106fc" title="Ge
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

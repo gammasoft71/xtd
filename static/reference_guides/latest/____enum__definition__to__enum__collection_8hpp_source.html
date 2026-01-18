@@ -112,7 +112,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="enum__collection_8hpp.html">../enum_collection.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> enum_t&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;enum_t&gt;</a> __enum_definition_to_enum_collection__(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; enum_definition) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>[[nodiscard]] <span class="keyword">auto</span> __enum_definition_to_enum_collection__(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; enum_definition) -&gt; <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;enum_t&gt;</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_typedef" href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection&lt;enum_t&gt;</a> entries;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">  #if !defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> num_state = 0; num_state &lt; __enumeration_introspection::num_states&lt;enum_t&gt;; ++num_state)</div>
@@ -161,7 +161,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

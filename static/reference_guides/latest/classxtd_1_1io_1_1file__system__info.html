@@ -144,11 +144,11 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="comment">//  Loop through all the immediate subdirectories of C.</span></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> entry : <a class="code hl_function" href="classxtd_1_1io_1_1directory.html#a9de89749aa7524172f4d2315d72054a8">directory::get_directories</a>(<span class="stringliteral">&quot;C:\\&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> entry : <a class="code hl_function" href="classxtd_1_1io_1_1directory.html#a886d0503881222dd046f0b40e590c95e">directory::get_directories</a>(<span class="stringliteral">&quot;C:\\&quot;</span>)) {</div>
 <div class="line">      display_file_system_info_attributes(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a>(entry));</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">//  Loop through all the files in C.</span></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> entry : <a class="code hl_function" href="classxtd_1_1io_1_1directory.html#a43c56131cf7b50721534815b85b0568b">directory::get_files</a>(<span class="stringliteral">&quot;C:\\&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> entry : <a class="code hl_function" href="classxtd_1_1io_1_1directory.html#a6e8fffe0b2fcbe79591d7a80797dbb11">directory::get_files</a>(<span class="stringliteral">&quot;C:\\&quot;</span>)) {</div>
 <div class="line">      display_file_system_info_attributes(<a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a>(entry));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -158,11 +158,11 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">    <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">    <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">      entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -180,13 +180,13 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"><span class="comment">// File entry C:\MSDOS.SYS was created on Tuesday, November 25, 2003</span></div>
 <div class="line"><span class="comment">// File entry C:\pagefile.sys was created on Saturday, December 27, 2003</span></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:130</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a43c56131cf7b50721534815b85b0568b"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html#a43c56131cf7b50721534815b85b0568b">xtd::io::directory::get_files</a></div><div class="ttdeci">static xtd::array&lt; xtd::string &gt; get_files(const xtd::string &amp;path)</div><div class="ttdoc">Returns the names of files (including their paths) in the specified directory.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a9de89749aa7524172f4d2315d72054a8"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html#a9de89749aa7524172f4d2315d72054a8">xtd::io::directory::get_directories</a></div><div class="ttdeci">static xtd::array&lt; xtd::string &gt; get_directories(const xtd::string &amp;path)</div><div class="ttdoc">Returns the names of subdirectories (including their paths) in the specified directory.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a6e8fffe0b2fcbe79591d7a80797dbb11"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html#a6e8fffe0b2fcbe79591d7a80797dbb11">xtd::io::directory::get_files</a></div><div class="ttdeci">static auto get_files(const xtd::string &amp;path) -&gt; xtd::array&lt; xtd::string &gt;</div><div class="ttdoc">Returns the names of files (including their paths) in the specified directory.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory_html_a886d0503881222dd046f0b40e590c95e"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html#a886d0503881222dd046f0b40e590c95e">xtd::io::directory::get_directories</a></div><div class="ttdeci">static auto get_directories(const xtd::string &amp;path) -&gt; xtd::array&lt; xtd::string &gt;</div><div class="ttdoc">Returns the names of subdirectories (including their paths) in the specified directory.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a></div><div class="ttdoc">Provides static methods for the creation, copying, deletion, moving, and opening of files,...</div><div class="ttdef"><b>Definition</b> file_info.hpp:41</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div><div class="ttdoc">Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.</div><div class="ttdef"><b>Definition</b> file_system_info.hpp:87</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_a3e7ed9f3058aa3d86c6f599c8f14032f"><div class="ttname"><a href="#a3e7ed9f3058aa3d86c6f599c8f14032f">xtd::io::file_system_info::creation_time</a></div><div class="ttdeci">const xtd::date_time &amp; creation_time() const</div><div class="ttdoc">Gets the creation time of the current file or directory.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_a4349d3315776ebf72ac6a4069594fb71"><div class="ttname"><a href="#a4349d3315776ebf72ac6a4069594fb71">xtd::io::file_system_info::attributes</a></div><div class="ttdeci">xtd::io::file_attributes attributes() const</div><div class="ttdoc">Gets the attributes for the current file or directory.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_a4fb28d3aa102d283c21a9ac5dc2710b5"><div class="ttname"><a href="#a4fb28d3aa102d283c21a9ac5dc2710b5">xtd::io::file_system_info::full_name</a></div><div class="ttdeci">xtd::string full_name() const</div><div class="ttdoc">Gets the full path of the directory or file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_a47e07fac53c8b9acb2f1a1b804a514be"><div class="ttname"><a href="#a47e07fac53c8b9acb2f1a1b804a514be">xtd::io::file_system_info::creation_time</a></div><div class="ttdeci">auto creation_time() const -&gt; const xtd::date_time &amp;</div><div class="ttdoc">Gets the creation time of the current file or directory.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_a7c8979ea7384c6a079ca342ae383355c"><div class="ttname"><a href="#a7c8979ea7384c6a079ca342ae383355c">xtd::io::file_system_info::full_name</a></div><div class="ttdeci">auto full_name() const -&gt; xtd::string</div><div class="ttdoc">Gets the full path of the directory or file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html_ab745c3243787502e7ab15a4bb92b1921"><div class="ttname"><a href="#ab745c3243787502e7ab15a4bb92b1921">xtd::io::file_system_info::attributes</a></div><div class="ttdeci">auto attributes() const -&gt; xtd::io::file_attributes</div><div class="ttdoc">Gets the attributes for the current file or directory.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20"><div class="ttname"><a href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">xtd::io::file_attributes::directory</a></div><div class="ttdeci">@ directory</div><div class="ttdoc">The file is a directory.</div><div class="ttdef"><b>Definition</b> file_attributes.hpp:32</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
@@ -202,65 +202,65 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <tr class="separator:aa45066e713be4415a7def84b85516072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a4349d3315776ebf72ac6a4069594fb71" id="r_a4349d3315776ebf72ac6a4069594fb71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a> () const</td></tr>
-<tr class="memdesc:a4349d3315776ebf72ac6a4069594fb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the attributes for the current file or directory.  <br /></td></tr>
-<tr class="separator:a4349d3315776ebf72ac6a4069594fb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83ce44f733c03cc9fc70fc485fc8c026" id="r_a83ce44f733c03cc9fc70fc485fc8c026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83ce44f733c03cc9fc70fc485fc8c026">attributes</a> (<a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a> value)</td></tr>
-<tr class="memdesc:a83ce44f733c03cc9fc70fc485fc8c026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the attributes for the current file or directory.  <br /></td></tr>
-<tr class="separator:a83ce44f733c03cc9fc70fc485fc8c026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e7ed9f3058aa3d86c6f599c8f14032f" id="r_a3e7ed9f3058aa3d86c6f599c8f14032f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a> () const</td></tr>
-<tr class="memdesc:a3e7ed9f3058aa3d86c6f599c8f14032f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time of the current file or directory.  <br /></td></tr>
-<tr class="separator:a3e7ed9f3058aa3d86c6f599c8f14032f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80f5c482e755bb85857c1ab860bb8c72" id="r_a80f5c482e755bb85857c1ab860bb8c72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80f5c482e755bb85857c1ab860bb8c72">creation_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:a80f5c482e755bb85857c1ab860bb8c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time of the current file or directory.  <br /></td></tr>
-<tr class="separator:a80f5c482e755bb85857c1ab860bb8c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1dd4201f2e203a4a4e5f65dac7246e" id="r_a3e1dd4201f2e203a4a4e5f65dac7246e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1dd4201f2e203a4a4e5f65dac7246e">creation_time_utc</a> () const</td></tr>
-<tr class="memdesc:a3e1dd4201f2e203a4a4e5f65dac7246e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time, in coordinated universal time (UTC), of the current file or directory.  <br /></td></tr>
-<tr class="separator:a3e1dd4201f2e203a4a4e5f65dac7246e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c2b71f6b25feea7a3f70db731f43b4e" id="r_a6c2b71f6b25feea7a3f70db731f43b4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c2b71f6b25feea7a3f70db731f43b4e">creation_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:a6c2b71f6b25feea7a3f70db731f43b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the creation time, in coordinated universal time (UTC), of the current file or directory.  <br /></td></tr>
-<tr class="separator:a6c2b71f6b25feea7a3f70db731f43b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add411f5f5ab91240dc07aace59fbbe18" id="r_add411f5f5ab91240dc07aace59fbbe18"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add411f5f5ab91240dc07aace59fbbe18">exists</a> () const =0</td></tr>
-<tr class="memdesc:add411f5f5ab91240dc07aace59fbbe18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the file or directory exists.  <br /></td></tr>
-<tr class="separator:add411f5f5ab91240dc07aace59fbbe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6d543605d03a44a4da90eebdc41cb64" id="r_af6d543605d03a44a4da90eebdc41cb64"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d543605d03a44a4da90eebdc41cb64">extension</a> () const</td></tr>
-<tr class="memdesc:af6d543605d03a44a4da90eebdc41cb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the extension part of the file name, including the leading dot . even if it is the entire file name, or an empty string if no extension is present.  <br /></td></tr>
-<tr class="separator:af6d543605d03a44a4da90eebdc41cb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fb28d3aa102d283c21a9ac5dc2710b5" id="r_a4fb28d3aa102d283c21a9ac5dc2710b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a> () const</td></tr>
-<tr class="memdesc:a4fb28d3aa102d283c21a9ac5dc2710b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the full path of the directory or file.  <br /></td></tr>
-<tr class="separator:a4fb28d3aa102d283c21a9ac5dc2710b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137ecb09f64d663e22033301865e231b" id="r_a137ecb09f64d663e22033301865e231b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137ecb09f64d663e22033301865e231b">last_access_time</a> () const</td></tr>
-<tr class="memdesc:a137ecb09f64d663e22033301865e231b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time the current file or directory was last accessed.  <br /></td></tr>
-<tr class="separator:a137ecb09f64d663e22033301865e231b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad164b6069da537569404d6ef098f2d1c" id="r_ad164b6069da537569404d6ef098f2d1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad164b6069da537569404d6ef098f2d1c">last_access_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:ad164b6069da537569404d6ef098f2d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time the current file or directory was last accessed.  <br /></td></tr>
-<tr class="separator:ad164b6069da537569404d6ef098f2d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68dd0569d6362d2cbc303c1a72b3a1fa" id="r_a68dd0569d6362d2cbc303c1a72b3a1fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68dd0569d6362d2cbc303c1a72b3a1fa">last_access_time_utc</a> () const</td></tr>
-<tr class="memdesc:a68dd0569d6362d2cbc303c1a72b3a1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.  <br /></td></tr>
-<tr class="separator:a68dd0569d6362d2cbc303c1a72b3a1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adabaeecc23e18a9bb1a0740365a11577" id="r_adabaeecc23e18a9bb1a0740365a11577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adabaeecc23e18a9bb1a0740365a11577">last_access_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:adabaeecc23e18a9bb1a0740365a11577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.  <br /></td></tr>
-<tr class="separator:adabaeecc23e18a9bb1a0740365a11577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1b03764065fb630784e0a37caa7269f" id="r_ac1b03764065fb630784e0a37caa7269f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1b03764065fb630784e0a37caa7269f">last_write_time</a> () const</td></tr>
-<tr class="memdesc:ac1b03764065fb630784e0a37caa7269f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time when the current file or directory was last written to.  <br /></td></tr>
-<tr class="separator:ac1b03764065fb630784e0a37caa7269f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e5177bbce3c2e42e40fde3396bee3b6" id="r_a1e5177bbce3c2e42e40fde3396bee3b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e5177bbce3c2e42e40fde3396bee3b6">last_write_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:a1e5177bbce3c2e42e40fde3396bee3b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time when the current file or directory was last written to.  <br /></td></tr>
-<tr class="separator:a1e5177bbce3c2e42e40fde3396bee3b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b18b197d101da18134dbf5c5cb65744" id="r_a4b18b197d101da18134dbf5c5cb65744"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b18b197d101da18134dbf5c5cb65744">last_write_time_utc</a> () const</td></tr>
-<tr class="memdesc:a4b18b197d101da18134dbf5c5cb65744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in coordinated universal time (UTC), when the current file or directory was last written to.  <br /></td></tr>
-<tr class="separator:a4b18b197d101da18134dbf5c5cb65744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5d0311ebfa1e6ad0095dc5929d5f73" id="r_a6f5d0311ebfa1e6ad0095dc5929d5f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f5d0311ebfa1e6ad0095dc5929d5f73">last_write_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value)</td></tr>
-<tr class="memdesc:a6f5d0311ebfa1e6ad0095dc5929d5f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.  <br /></td></tr>
-<tr class="separator:a6f5d0311ebfa1e6ad0095dc5929d5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a479045248a94544b2a7281e12a6441b8" id="r_a479045248a94544b2a7281e12a6441b8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a479045248a94544b2a7281e12a6441b8">name</a> () const =0</td></tr>
-<tr class="separator:a479045248a94544b2a7281e12a6441b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b7cc6a8fc0107960171df9c9cbd7e8" id="r_ab2b7cc6a8fc0107960171df9c9cbd7e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b7cc6a8fc0107960171df9c9cbd7e8">permissions</a> () const</td></tr>
-<tr class="memdesc:ab2b7cc6a8fc0107960171df9c9cbd7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the permissions for the current file or directory.  <br /></td></tr>
-<tr class="separator:ab2b7cc6a8fc0107960171df9c9cbd7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c58fa4cf662e1bf7ac8501bef641e29" id="r_a8c58fa4cf662e1bf7ac8501bef641e29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c58fa4cf662e1bf7ac8501bef641e29">permissions</a> (<a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a> value)</td></tr>
-<tr class="memdesc:a8c58fa4cf662e1bf7ac8501bef641e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the permissions for the current file or directory.  <br /></td></tr>
-<tr class="separator:a8c58fa4cf662e1bf7ac8501bef641e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab745c3243787502e7ab15a4bb92b1921" id="r_ab745c3243787502e7ab15a4bb92b1921"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a> () const -&gt; <a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a></td></tr>
+<tr class="memdesc:ab745c3243787502e7ab15a4bb92b1921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the attributes for the current file or directory.  <br /></td></tr>
+<tr class="separator:ab745c3243787502e7ab15a4bb92b1921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8072292f0ccf80b55b2ebb02ea695992" id="r_a8072292f0ccf80b55b2ebb02ea695992"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8072292f0ccf80b55b2ebb02ea695992">attributes</a> (<a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a> value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a8072292f0ccf80b55b2ebb02ea695992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the attributes for the current file or directory.  <br /></td></tr>
+<tr class="separator:a8072292f0ccf80b55b2ebb02ea695992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47e07fac53c8b9acb2f1a1b804a514be" id="r_a47e07fac53c8b9acb2f1a1b804a514be"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a> () const -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a47e07fac53c8b9acb2f1a1b804a514be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time of the current file or directory.  <br /></td></tr>
+<tr class="separator:a47e07fac53c8b9acb2f1a1b804a514be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ba614691ea5496b5c7850bde94c5a2" id="r_a90ba614691ea5496b5c7850bde94c5a2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ba614691ea5496b5c7850bde94c5a2">creation_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a90ba614691ea5496b5c7850bde94c5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the creation time of the current file or directory.  <br /></td></tr>
+<tr class="separator:a90ba614691ea5496b5c7850bde94c5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2355d95328565bbf73c74b1eec15209" id="r_ad2355d95328565bbf73c74b1eec15209"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2355d95328565bbf73c74b1eec15209">creation_time_utc</a> () const -&gt; <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td></tr>
+<tr class="memdesc:ad2355d95328565bbf73c74b1eec15209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the creation time, in coordinated universal time (UTC), of the current file or directory.  <br /></td></tr>
+<tr class="separator:ad2355d95328565bbf73c74b1eec15209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851b4714a3c5789ea83ba5be9638fa12" id="r_a851b4714a3c5789ea83ba5be9638fa12"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851b4714a3c5789ea83ba5be9638fa12">creation_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a851b4714a3c5789ea83ba5be9638fa12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the creation time, in coordinated universal time (UTC), of the current file or directory.  <br /></td></tr>
+<tr class="separator:a851b4714a3c5789ea83ba5be9638fa12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169a8d7a29946308e4d997c3655cca99" id="r_a169a8d7a29946308e4d997c3655cca99"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a169a8d7a29946308e4d997c3655cca99">exists</a> () const -&gt; bool=0</td></tr>
+<tr class="memdesc:a169a8d7a29946308e4d997c3655cca99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the file or directory exists.  <br /></td></tr>
+<tr class="separator:a169a8d7a29946308e4d997c3655cca99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eeed479693980f45206bb2b88907e7a" id="r_a8eeed479693980f45206bb2b88907e7a"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eeed479693980f45206bb2b88907e7a">extension</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a8eeed479693980f45206bb2b88907e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the extension part of the file name, including the leading dot . even if it is the entire file name, or an empty string if no extension is present.  <br /></td></tr>
+<tr class="separator:a8eeed479693980f45206bb2b88907e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8979ea7384c6a079ca342ae383355c" id="r_a7c8979ea7384c6a079ca342ae383355c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:a7c8979ea7384c6a079ca342ae383355c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the full path of the directory or file.  <br /></td></tr>
+<tr class="separator:a7c8979ea7384c6a079ca342ae383355c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715431fb539f914d8ee5cfe44ad2dd00" id="r_a715431fb539f914d8ee5cfe44ad2dd00"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00">last_access_time</a> () const -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a715431fb539f914d8ee5cfe44ad2dd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time the current file or directory was last accessed.  <br /></td></tr>
+<tr class="separator:a715431fb539f914d8ee5cfe44ad2dd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa377a77843eba07f6527d942542944fc" id="r_aa377a77843eba07f6527d942542944fc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa377a77843eba07f6527d942542944fc">last_access_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:aa377a77843eba07f6527d942542944fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time the current file or directory was last accessed.  <br /></td></tr>
+<tr class="separator:aa377a77843eba07f6527d942542944fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc1e50b2774717612ae76d56088bacf" id="r_a0fc1e50b2774717612ae76d56088bacf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fc1e50b2774717612ae76d56088bacf">last_access_time_utc</a> () const -&gt; <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td></tr>
+<tr class="memdesc:a0fc1e50b2774717612ae76d56088bacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.  <br /></td></tr>
+<tr class="separator:a0fc1e50b2774717612ae76d56088bacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e76e8126607e8e516d2d7ebf96eaf95" id="r_a5e76e8126607e8e516d2d7ebf96eaf95"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e76e8126607e8e516d2d7ebf96eaf95">last_access_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a5e76e8126607e8e516d2d7ebf96eaf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.  <br /></td></tr>
+<tr class="separator:a5e76e8126607e8e516d2d7ebf96eaf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f662eca82563ca1547caf2bf02a4bf9" id="r_a2f662eca82563ca1547caf2bf02a4bf9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9">last_write_time</a> () const -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a2f662eca82563ca1547caf2bf02a4bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time when the current file or directory was last written to.  <br /></td></tr>
+<tr class="separator:a2f662eca82563ca1547caf2bf02a4bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce9f9556325dd0ad13c58f4d5d2b0c0" id="r_a7ce9f9556325dd0ad13c58f4d5d2b0c0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ce9f9556325dd0ad13c58f4d5d2b0c0">last_write_time</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a7ce9f9556325dd0ad13c58f4d5d2b0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time when the current file or directory was last written to.  <br /></td></tr>
+<tr class="separator:a7ce9f9556325dd0ad13c58f4d5d2b0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ac6b6f031a95fbc33890ebab9fa457" id="r_aa3ac6b6f031a95fbc33890ebab9fa457"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3ac6b6f031a95fbc33890ebab9fa457">last_write_time_utc</a> () const -&gt; <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td></tr>
+<tr class="memdesc:aa3ac6b6f031a95fbc33890ebab9fa457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time, in coordinated universal time (UTC), when the current file or directory was last written to.  <br /></td></tr>
+<tr class="separator:aa3ac6b6f031a95fbc33890ebab9fa457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7438b780bb3e8d6610bccbf6267c35" id="r_a8d7438b780bb3e8d6610bccbf6267c35"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7438b780bb3e8d6610bccbf6267c35">last_write_time_utc</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:a8d7438b780bb3e8d6610bccbf6267c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.  <br /></td></tr>
+<tr class="separator:a8d7438b780bb3e8d6610bccbf6267c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad971a4c2fa556e094936dc9e807cf9b8" id="r_ad971a4c2fa556e094936dc9e807cf9b8"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad971a4c2fa556e094936dc9e807cf9b8">name</a> () const -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>=0</td></tr>
+<tr class="separator:ad971a4c2fa556e094936dc9e807cf9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01684969ab33900655bbd7773b500da" id="r_af01684969ab33900655bbd7773b500da"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af01684969ab33900655bbd7773b500da">permissions</a> () const -&gt; <a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a></td></tr>
+<tr class="memdesc:af01684969ab33900655bbd7773b500da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the permissions for the current file or directory.  <br /></td></tr>
+<tr class="separator:af01684969ab33900655bbd7773b500da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53a8b6a5fc540bf65db164741345bb4" id="r_af53a8b6a5fc540bf65db164741345bb4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af53a8b6a5fc540bf65db164741345bb4">permissions</a> (<a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a> value) -&gt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td></tr>
+<tr class="memdesc:af53a8b6a5fc540bf65db164741345bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the permissions for the current file or directory.  <br /></td></tr>
+<tr class="separator:af53a8b6a5fc540bf65db164741345bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ab062e3d38143d80d6e2001a3e8873863" id="r_ab062e3d38143d80d6e2001a3e8873863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab062e3d38143d80d6e2001a3e8873863">refresh</a> ()</td></tr>
@@ -269,9 +269,9 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <tr class="memitem:af4c8e4db944ac7b768b81226d5e282cb" id="r_af4c8e4db944ac7b768b81226d5e282cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c8e4db944ac7b768b81226d5e282cb">remove</a> () const =0</td></tr>
 <tr class="memdesc:af4c8e4db944ac7b768b81226d5e282cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a file or directory.  <br /></td></tr>
 <tr class="separator:af4c8e4db944ac7b768b81226d5e282cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b828b45b24a032ddd9dbdc23a574ce" id="r_ac7b828b45b24a032ddd9dbdc23a574ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7b828b45b24a032ddd9dbdc23a574ce">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:ac7b828b45b24a032ddd9dbdc23a574ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the original path. Use the <a class="el" href="#a4fb28d3aa102d283c21a9ac5dc2710b5" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> or xtd::io::file_system_info::name properties for the full path or file/directory name.  <br /></td></tr>
-<tr class="separator:ac7b828b45b24a032ddd9dbdc23a574ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a7c78e3e4c1576a3640dface46d81f" id="r_af7a7c78e3e4c1576a3640dface46d81f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a7c78e3e4c1576a3640dface46d81f">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:af7a7c78e3e4c1576a3640dface46d81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the original path. Use the <a class="el" href="#a7c8979ea7384c6a079ca342ae383355c" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> or xtd::io::file_system_info::name properties for the full path or file/directory name.  <br /></td></tr>
+<tr class="separator:af7a7c78e3e4c1576a3640dface46d81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protcted constructors</h2></td></tr>
 <tr class="memitem:ab39dec20576b8139b90f019e4cc31382" id="r_ab39dec20576b8139b90f019e4cc31382"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a> ()=default</td></tr>
@@ -337,19 +337,27 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4349d3315776ebf72ac6a4069594fb71" name="a4349d3315776ebf72ac6a4069594fb71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4349d3315776ebf72ac6a4069594fb71">&#9670;&#160;</a></span>attributes() <span class="overload">[1/2]</span></h2>
+<a id="ab745c3243787502e7ab15a4bb92b1921" name="ab745c3243787502e7ab15a4bb92b1921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab745c3243787502e7ab15a4bb92b1921">&#9670;&#160;</a></span>attributes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a> xtd::io::file_system_info::attributes </td>
+          <td class="memname">auto xtd::io::file_system_info::attributes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the attributes for the current file or directory. </p>
@@ -364,13 +372,13 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </li>
 </ul>
 </dd>
 <dd>
@@ -380,34 +388,34 @@ If the path doesn't exist as of the last cached state, the return value is stati
 <dd>
 The value of this property is a combination of the archive, compressed, directory, hidden, offline, read-only, system, and temporary file attribute flags. </dd>
 <dd>
-When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property, include the value of the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property in your assignment. For example: <pre class="fragment">example_file.attributes(example_file.attributes() | file_attributes::read_only; </pre> </dd></dl>
+When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property, include the value of the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property in your assignment. For example: <pre class="fragment">example_file.attributes(example_file.attributes() | file_attributes::read_only; </pre> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="classxtd_1_1attribute.html" title="Represents the base class for custom attributes.">xtd::io::file_system_info::attribute</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
 <div class="line">  <span class="comment">//  Assume that this entry is a file.</span></div>
 <div class="line">  <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">    entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a83ce44f733c03cc9fc70fc485fc8c026" name="a83ce44f733c03cc9fc70fc485fc8c026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83ce44f733c03cc9fc70fc485fc8c026">&#9670;&#160;</a></span>attributes() <span class="overload">[2/2]</span></h2>
+<a id="a8072292f0ccf80b55b2ebb02ea695992" name="a8072292f0ccf80b55b2ebb02ea695992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8072292f0ccf80b55b2ebb02ea695992">&#9670;&#160;</a></span>attributes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::attributes </td>
+          <td class="memname">auto xtd::io::file_system_info::attributes </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#gaaf346227f9a44012acb58d9e7e4020a4">xtd::io::file_attributes</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -430,13 +438,13 @@ When you set this value, use the bitwise OR operator (|) to apply more than one 
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </li>
 </ul>
 </dd>
 <dd>
@@ -446,35 +454,43 @@ If the path doesn't exist as of the last cached state, the return value is stati
 <dd>
 The value of this property is a combination of the archive, compressed, directory, hidden, offline, read-only, system, and temporary file attribute flags. </dd>
 <dd>
-When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property, include the value of the <a class="el" href="#a4349d3315776ebf72ac6a4069594fb71" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property in your assignment. For example: <pre class="fragment">example_file.attributes(example_file.attributes() | file_attributes::read_only; </pre> </dd></dl>
+When you set this value, use the bitwise OR operator (|) to apply more than one value. To retain any existing values in the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property, include the value of the <a class="el" href="#ab745c3243787502e7ab15a4bb92b1921" title="Gets the attributes for the current file or directory.">xtd::io::file_system_info::attributes</a> property in your assignment. For example: <pre class="fragment">example_file.attributes(example_file.attributes() | file_attributes::read_only; </pre> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="classxtd_1_1attribute.html" title="Represents the base class for custom attributes.">xtd::io::file_system_info::attribute</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
 <div class="line">  <span class="comment">//  Assume that this entry is a file.</span></div>
 <div class="line">  <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">    entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a3e7ed9f3058aa3d86c6f599c8f14032f" name="a3e7ed9f3058aa3d86c6f599c8f14032f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e7ed9f3058aa3d86c6f599c8f14032f">&#9670;&#160;</a></span>creation_time() <span class="overload">[1/2]</span></h2>
+<a id="a47e07fac53c8b9acb2f1a1b804a514be" name="a47e07fac53c8b9acb2f1a1b804a514be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47e07fac53c8b9acb2f1a1b804a514be">&#9670;&#160;</a></span>creation_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::io::file_system_info::creation_time </td>
+          <td class="memname">auto xtd::io::file_system_info::creation_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the creation time of the current file or directory. </p>
@@ -487,37 +503,37 @@ When you set this value, use the bitwise OR operator (|) to apply more than one 
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
 <div class="line">  <span class="comment">//  Assume that this entry is a file.</span></div>
 <div class="line">  <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">    entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a80f5c482e755bb85857c1ab860bb8c72" name="a80f5c482e755bb85857c1ab860bb8c72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80f5c482e755bb85857c1ab860bb8c72">&#9670;&#160;</a></span>creation_time() <span class="overload">[2/2]</span></h2>
+<a id="a90ba614691ea5496b5c7850bde94c5a2" name="a90ba614691ea5496b5c7850bde94c5a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ba614691ea5496b5c7850bde94c5a2">&#9670;&#160;</a></span>creation_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::creation_time </td>
+          <td class="memname">auto xtd::io::file_system_info::creation_time </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the creation time of the current file or directory. </p>
+<p>Sets the creation time of the current file or directory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The creation date and time of the current <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object. </td></tr>
@@ -532,53 +548,61 @@ When you set this value, use the bitwise OR operator (|) to apply more than one 
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
 <div class="line">  <span class="comment">//  Assume that this entry is a file.</span></div>
 <div class="line">  <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">    entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a3e1dd4201f2e203a4a4e5f65dac7246e" name="a3e1dd4201f2e203a4a4e5f65dac7246e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e1dd4201f2e203a4a4e5f65dac7246e">&#9670;&#160;</a></span>creation_time_utc() <span class="overload">[1/2]</span></h2>
+<a id="ad2355d95328565bbf73c74b1eec15209" name="ad2355d95328565bbf73c74b1eec15209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2355d95328565bbf73c74b1eec15209">&#9670;&#160;</a></span>creation_time_utc() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> xtd::io::file_system_info::creation_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::creation_time_utc </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the creation time, in coordinated universal time (UTC), of the current file or directory. </p>
 <dl class="section return"><dt>Returns</dt><dd>The creation date and time in UTC format of the current <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd>
 <dd>
-The value of the <a class="el" href="#a3e1dd4201f2e203a4a4e5f65dac7246e" title="Gets the creation time, in coordinated universal time (UTC), of the current file or directory.">xtd::io::directory_info::creation_time_utc</a> property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods: </dd>
+The value of the <a class="el" href="#ad2355d95328565bbf73c74b1eec15209" title="Gets the creation time, in coordinated universal time (UTC), of the current file or directory.">xtd::io::directory_info::creation_time_utc</a> property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods: </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </dd>
 <dd>
 To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </dd>
 <dd>
@@ -590,17 +614,17 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
 
 </div>
 </div>
-<a id="a6c2b71f6b25feea7a3f70db731f43b4e" name="a6c2b71f6b25feea7a3f70db731f43b4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c2b71f6b25feea7a3f70db731f43b4e">&#9670;&#160;</a></span>creation_time_utc() <span class="overload">[2/2]</span></h2>
+<a id="a851b4714a3c5789ea83ba5be9638fa12" name="a851b4714a3c5789ea83ba5be9638fa12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851b4714a3c5789ea83ba5be9638fa12">&#9670;&#160;</a></span>creation_time_utc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::creation_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::creation_time_utc </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -615,19 +639,19 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
 <dl class="section return"><dt>Returns</dt><dd>This current object. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd>
 <dd>
-The value of the <a class="el" href="#a3e1dd4201f2e203a4a4e5f65dac7246e" title="Gets the creation time, in coordinated universal time (UTC), of the current file or directory.">xtd::io::directory_info::creation_time_utc</a> property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods: </dd>
+The value of the <a class="el" href="#ad2355d95328565bbf73c74b1eec15209" title="Gets the creation time, in coordinated universal time (UTC), of the current file or directory.">xtd::io::directory_info::creation_time_utc</a> property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods: </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> </dd>
 <dd>
-* <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </dd>
+* <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> </dd>
 <dd>
 To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </dd>
 <dd>
@@ -639,8 +663,8 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
 
 </div>
 </div>
-<a id="add411f5f5ab91240dc07aace59fbbe18" name="add411f5f5ab91240dc07aace59fbbe18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add411f5f5ab91240dc07aace59fbbe18">&#9670;&#160;</a></span>exists()</h2>
+<a id="a169a8d7a29946308e4d997c3655cca99" name="a169a8d7a29946308e4d997c3655cca99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169a8d7a29946308e4d997c3655cca99">&#9670;&#160;</a></span>exists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -649,15 +673,15 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::io::file_system_info::exists </td>
+          <td class="memname">virtual auto xtd::io::file_system_info::exists </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -666,12 +690,12 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file or directory exists; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a709d534c9cb3afe7ed511057530de6cb">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440">xtd::io::file_info</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a310a526948ca984dddab0da033153ecd">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#a4929c465bb28c2134457c75230673a6f">xtd::io::file_info</a>.</p>
 
 </div>
 </div>
-<a id="af6d543605d03a44a4da90eebdc41cb64" name="af6d543605d03a44a4da90eebdc41cb64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d543605d03a44a4da90eebdc41cb64">&#9670;&#160;</a></span>extension()</h2>
+<a id="a8eeed479693980f45206bb2b88907e7a" name="a8eeed479693980f45206bb2b88907e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eeed479693980f45206bb2b88907e7a">&#9670;&#160;</a></span>extension()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -680,15 +704,15 @@ NTFS-formatted drives may cache file meta-info, such as file creation time, for 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::file_system_info::extension </td>
+          <td class="memname">virtual auto xtd::io::file_system_info::extension </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -714,11 +738,11 @@ The following table lists examples of other typical or related I/O tasks. <table
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Read from a text file.   </td><td class="markdownTableBodyNone">How to: Read Text to a File    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Retrieve the fully qualified path of a file.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#a4afe35322bddab3fed7b8b98648899b5" title="Returns the absolute path for the specified path string.">xtd::io::path::get_full_path</a>    </td></tr>
+<td class="markdownTableBodyNone">Retrieve the fully qualified path of a file.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#aea85e9832e626cfe6b0e7f805465fa5f" title="Returns the absolute path for the specified path string.">xtd::io::path::get_full_path</a>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Retrieve only the file name a path.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#ac6a61e6c5268acba70dddd020961b191" title="Returns the file name of the specified path string without the extension.">xtd::io::path::get_file_name_without_extension</a>    </td></tr>
+<td class="markdownTableBodyNone">Retrieve only the file name a path.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#acdc307d35b23a1bcacc5f231bc6b4fcc" title="Returns the file name of the specified path string without the extension.">xtd::io::path::get_file_name_without_extension</a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Retrieve only the directory name from a path.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#a62e9eaf034dd27af981240d354d599d7" title="Returns the directory information for the specified path string.">xtd::io::path::get_directory_name</a>    </td></tr>
+<td class="markdownTableBodyNone">Retrieve only the directory name from a path.   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1io_1_1path.html#a01abc4294120e9d386879e08267856f8" title="Returns the directory information for the specified path string.">xtd::io::path::get_directory_name</a>    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Change the extension of a file.   </td><td class="markdownTableBodyNone">xtd::io::path::change_extrnsion   </td></tr>
 </table>
@@ -726,33 +750,41 @@ The following table lists examples of other typical or related I/O tasks. <table
 
 </div>
 </div>
-<a id="a4fb28d3aa102d283c21a9ac5dc2710b5" name="a4fb28d3aa102d283c21a9ac5dc2710b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fb28d3aa102d283c21a9ac5dc2710b5">&#9670;&#160;</a></span>full_name()</h2>
+<a id="a7c8979ea7384c6a079ca342ae383355c" name="a7c8979ea7384c6a079ca342ae383355c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c8979ea7384c6a079ca342ae383355c">&#9670;&#160;</a></span>full_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::file_system_info::full_name </td>
+          <td class="memname">auto xtd::io::file_system_info::full_name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the full path of the directory or file. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the full path. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a4fb28d3aa102d283c21a9ac5dc2710b5" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#a7c8979ea7384c6a079ca342ae383355c" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> property. This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> class. <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> display_file_system_info_attributes(<span class="keyword">const</span> <a class="code hl_function" href="#ab39dec20576b8139b90f019e4cc31382">file_system_info</a>&amp; fsi) {</div>
 <div class="line">  <span class="comment">//  Assume that this entry is a file.</span></div>
 <div class="line">  <span class="keywordtype">string</span> entry_type = <span class="stringliteral">&quot;File&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Determine if entry is really a directory</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#a4349d3315776ebf72ac6a4069594fb71">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((fsi.<a class="code hl_function" href="#ab745c3243787502e7ab15a4bb92b1921">attributes</a>() &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) == <a class="code hl_enumvalue" href="group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a5f8f22b8cdbaeee8cf857673a9b6ba20">file_attributes::directory</a>) {</div>
 <div class="line">    entry_type = <span class="stringliteral">&quot;Directory&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="comment">//  Show this entry&#39;s type, name, and creation date.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>(), fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} entry {1} was created on {2:D}&quot;</span>, entry_type, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>(), fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt". </dd>
@@ -761,19 +793,27 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="a137ecb09f64d663e22033301865e231b" name="a137ecb09f64d663e22033301865e231b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a137ecb09f64d663e22033301865e231b">&#9670;&#160;</a></span>last_access_time() <span class="overload">[1/2]</span></h2>
+<a id="a715431fb539f914d8ee5cfe44ad2dd00" name="a715431fb539f914d8ee5cfe44ad2dd00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715431fb539f914d8ee5cfe44ad2dd00">&#9670;&#160;</a></span>last_access_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::io::file_system_info::last_access_time </td>
+          <td class="memname">auto xtd::io::file_system_info::last_access_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the time the current file or directory was last accessed. </p>
@@ -786,7 +826,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -797,7 +837,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    <span class="comment">// Make sure a filename was provided.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &gt; 0) {</div>
 <div class="line">      <span class="comment">// Verify that the provided filename exists.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#afec641f427c1c9c065cb3556e8e96a8e">file::exists</a>(args[0])) {</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">file::exists</a>(args[0])) {</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(args[0]);</div>
 <div class="line">        touch_file(fi);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
@@ -809,12 +849,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> touch_file(file_system_info&amp; fsi) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>());</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Update the CreationTime, LastWriteTime and LastAccessTime.</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
+<div class="line">      fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Error: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
@@ -823,35 +863,35 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(touch::main);</div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:124</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file_html_afec641f427c1c9c065cb3556e8e96a8e"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#afec641f427c1c9c065cb3556e8e96a8e">xtd::io::file::exists</a></div><div class="ttdeci">static bool exists(const xtd::string &amp;path) noexcept</div><div class="ttdoc">Determines whether the specified file exists.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file_html_a178c4938dbf396e1b4230c4d699fc58b"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">xtd::io::file::exists</a></div><div class="ttdeci">static auto exists(const xtd::string &amp;path) noexcept -&gt; bool</div><div class="ttdoc">Determines whether the specified file exists.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </li>
 </ul>
 </dd></dl>
 
 </div>
 </div>
-<a id="ad164b6069da537569404d6ef098f2d1c" name="ad164b6069da537569404d6ef098f2d1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad164b6069da537569404d6ef098f2d1c">&#9670;&#160;</a></span>last_access_time() <span class="overload">[2/2]</span></h2>
+<a id="aa377a77843eba07f6527d942542944fc" name="aa377a77843eba07f6527d942542944fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa377a77843eba07f6527d942542944fc">&#9670;&#160;</a></span>last_access_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::last_access_time </td>
+          <td class="memname">auto xtd::io::file_system_info::last_access_time </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -871,7 +911,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -882,7 +922,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    <span class="comment">// Make sure a filename was provided.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &gt; 0) {</div>
 <div class="line">      <span class="comment">// Verify that the provided filename exists.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#afec641f427c1c9c065cb3556e8e96a8e">file::exists</a>(args[0])) {</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">file::exists</a>(args[0])) {</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(args[0]);</div>
 <div class="line">        touch_file(fi);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
@@ -894,12 +934,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> touch_file(file_system_info&amp; fsi) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>());</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Update the CreationTime, LastWriteTime and LastAccessTime.</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
+<div class="line">      fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Error: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
@@ -909,44 +949,52 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(touch::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </li>
 </ul>
 </dd></dl>
 
 </div>
 </div>
-<a id="a68dd0569d6362d2cbc303c1a72b3a1fa" name="a68dd0569d6362d2cbc303c1a72b3a1fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68dd0569d6362d2cbc303c1a72b3a1fa">&#9670;&#160;</a></span>last_access_time_utc() <span class="overload">[1/2]</span></h2>
+<a id="a0fc1e50b2774717612ae76d56088bacf" name="a0fc1e50b2774717612ae76d56088bacf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc1e50b2774717612ae76d56088bacf">&#9670;&#160;</a></span>last_access_time_utc() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> xtd::io::file_system_info::last_access_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::last_access_time_utc </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed. </p>
 <dl class="section return"><dt>Returns</dt><dd>The UTC time that the current file or directory was last accessed. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The value of the xtd::io::file_system::last_access_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
 <li>xtd::io::directory_info::getFile_system_infos</li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method.</li>
 <li>If the file described in the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). </li>
 </ul>
@@ -956,17 +1004,17 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="adabaeecc23e18a9bb1a0740365a11577" name="adabaeecc23e18a9bb1a0740365a11577"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adabaeecc23e18a9bb1a0740365a11577">&#9670;&#160;</a></span>last_access_time_utc() <span class="overload">[2/2]</span></h2>
+<a id="a5e76e8126607e8e516d2d7ebf96eaf95" name="a5e76e8126607e8e516d2d7ebf96eaf95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e76e8126607e8e516d2d7ebf96eaf95">&#9670;&#160;</a></span>last_access_time_utc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::last_access_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::last_access_time_utc </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -981,12 +1029,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <dl class="section return"><dt>Returns</dt><dd>This current object. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The value of the xtd::io::file_system::last_access_time_utc property is pre-cached if the current instance of the FileSystemInfo object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
 <li>xtd::io::directory_info::getFile_system_infos</li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method.</li>
 <li>If the file described in the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). </li>
 </ul>
@@ -997,19 +1045,27 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 
 </div>
 </div>
-<a id="ac1b03764065fb630784e0a37caa7269f" name="ac1b03764065fb630784e0a37caa7269f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1b03764065fb630784e0a37caa7269f">&#9670;&#160;</a></span>last_write_time() <span class="overload">[1/2]</span></h2>
+<a id="a2f662eca82563ca1547caf2bf02a4bf9" name="a2f662eca82563ca1547caf2bf02a4bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f662eca82563ca1547caf2bf02a4bf9">&#9670;&#160;</a></span>last_write_time() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::io::file_system_info::last_write_time </td>
+          <td class="memname">auto xtd::io::file_system_info::last_write_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the time when the current file or directory was last written to. </p>
@@ -1022,7 +1078,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -1033,7 +1089,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    <span class="comment">// Make sure a filename was provided.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &gt; 0) {</div>
 <div class="line">      <span class="comment">// Verify that the provided filename exists.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#afec641f427c1c9c065cb3556e8e96a8e">file::exists</a>(args[0])) {</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">file::exists</a>(args[0])) {</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(args[0]);</div>
 <div class="line">        touch_file(fi);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
@@ -1045,12 +1101,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> touch_file(file_system_info&amp; fsi) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>());</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Update the CreationTime, LastWriteTime and LastAccessTime.</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
+<div class="line">      fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Error: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
@@ -1060,30 +1116,30 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(touch::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may return an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </li>
 </ul>
 </dd></dl>
 
 </div>
 </div>
-<a id="a1e5177bbce3c2e42e40fde3396bee3b6" name="a1e5177bbce3c2e42e40fde3396bee3b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e5177bbce3c2e42e40fde3396bee3b6">&#9670;&#160;</a></span>last_write_time() <span class="overload">[2/2]</span></h2>
+<a id="a7ce9f9556325dd0ad13c58f4d5d2b0c0" name="a7ce9f9556325dd0ad13c58f4d5d2b0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce9f9556325dd0ad13c58f4d5d2b0c0">&#9670;&#160;</a></span>last_write_time() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::last_write_time </td>
+          <td class="memname">auto xtd::io::file_system_info::last_write_time </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1103,7 +1159,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a3e7ed9f3058aa3d86c6f599c8f14032f" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a137ecb09f64d663e22033301865e231b" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the updating of the <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property through a "touch" operation. In this example, the file is "touched", updating the <a class="el" href="#a47e07fac53c8b9acb2f1a1b804a514be" title="Gets the creation time of the current file or directory.">xtd::io::file_system_info::creation_time</a>, <a class="el" href="#a715431fb539f914d8ee5cfe44ad2dd00" title="Gets the time the current file or directory was last accessed.">xtd::io::file_system_info::last_access_time</a> and <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> properties to the current date and time. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
@@ -1114,7 +1170,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">    <span class="comment">// Make sure a filename was provided.</span></div>
 <div class="line">    <span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &gt; 0) {</div>
 <div class="line">      <span class="comment">// Verify that the provided filename exists.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#afec641f427c1c9c065cb3556e8e96a8e">file::exists</a>(args[0])) {</div>
+<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1io_1_1file.html#a178c4938dbf396e1b4230c4d699fc58b">file::exists</a>(args[0])) {</div>
 <div class="line">        <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> fi(args[0]);</div>
 <div class="line">        touch_file(fi);</div>
 <div class="line">      } <span class="keywordflow">else</span> {</div>
@@ -1126,12 +1182,12 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> touch_file(file_system_info&amp; fsi) {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a4fb28d3aa102d283c21a9ac5dc2710b5">full_name</a>());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Touching: {0}&quot;</span>, fsi.<a class="code hl_function" href="#a7c8979ea7384c6a079ca342ae383355c">full_name</a>());</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Update the CreationTime, LastWriteTime and LastAccessTime.</span></div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      fsi.<a class="code hl_function" href="#a3e7ed9f3058aa3d86c6f599c8f14032f">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
+<div class="line">      fsi.<a class="code hl_function" href="#a47e07fac53c8b9acb2f1a1b804a514be">creation_time</a>(now).last_write_time(now).last_access_time(now);</div>
 <div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception&amp; e) {</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Error: {0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
 <div class="line">    }</div>
@@ -1141,32 +1197,40 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(touch::main);</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#ac1b03764065fb630784e0a37caa7269f" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
-<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the <a class="el" href="#a2f662eca82563ca1547caf2bf02a4bf9" title="Gets the time when the current file or directory was last written to.">xtd::io::file_system_info::last_write_time</a> property is pre-cached if the current instance of the <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> object was returned from any of the following <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> methods:<ul>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a6495249abaed072b683c4250dfb933c9" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#aab146fee62c6b883c0b455ce60388c6d" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a371af71bafb5331e365145d9917d637e" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a16c3a746e493bdbf42993925ebae0d5e" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#a512bdeaa412cd25f742c2f05422232aa" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a></li>
+<li><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac336e0117e5552e39b40deb9e0104ebe" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a></li>
 <li>To get the latest value, call the <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_system_info::refresh</a> method. </li>
 </ul>
 </dd></dl>
 
 </div>
 </div>
-<a id="a4b18b197d101da18134dbf5c5cb65744" name="a4b18b197d101da18134dbf5c5cb65744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b18b197d101da18134dbf5c5cb65744">&#9670;&#160;</a></span>last_write_time_utc() <span class="overload">[1/2]</span></h2>
+<a id="aa3ac6b6f031a95fbc33890ebab9fa457" name="aa3ac6b6f031a95fbc33890ebab9fa457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ac6b6f031a95fbc33890ebab9fa457">&#9670;&#160;</a></span>last_write_time_utc() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> xtd::io::file_system_info::last_write_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::last_write_time_utc </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the time, in coordinated universal time (UTC), when the current file or directory was last written to. </p>
@@ -1188,17 +1252,17 @@ If the file or directory described in the <a class="el" href="classxtd_1_1io_1_1
 
 </div>
 </div>
-<a id="a6f5d0311ebfa1e6ad0095dc5929d5f73" name="a6f5d0311ebfa1e6ad0095dc5929d5f73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f5d0311ebfa1e6ad0095dc5929d5f73">&#9670;&#160;</a></span>last_write_time_utc() <span class="overload">[2/2]</span></h2>
+<a id="a8d7438b780bb3e8d6610bccbf6267c35" name="a8d7438b780bb3e8d6610bccbf6267c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7438b780bb3e8d6610bccbf6267c35">&#9670;&#160;</a></span>last_write_time_utc() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::last_write_time_utc </td>
+          <td class="memname">auto xtd::io::file_system_info::last_write_time_utc </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1227,8 +1291,8 @@ If the file or directory described in the <a class="el" href="classxtd_1_1io_1_1
 
 </div>
 </div>
-<a id="a479045248a94544b2a7281e12a6441b8" name="a479045248a94544b2a7281e12a6441b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a479045248a94544b2a7281e12a6441b8">&#9670;&#160;</a></span>name()</h2>
+<a id="ad971a4c2fa556e094936dc9e807cf9b8" name="ad971a4c2fa556e094936dc9e807cf9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad971a4c2fa556e094936dc9e807cf9b8">&#9670;&#160;</a></span>name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1237,36 +1301,44 @@ If the file or directory described in the <a class="el" href="classxtd_1_1io_1_1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::file_system_info::name </td>
+          <td class="memname">virtual auto xtd::io::file_system_info::name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8aaecefb989fa5eed3bfad7af29d9857">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#ab7190f1f212f00ebcb87000595f7ad6f">xtd::io::file_info</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a6a6c57fc12dfd3e9a7b6f23a77f25c42">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#ad6f9a5ea77f12ba4d1ec372873807f51">xtd::io::file_info</a>.</p>
 
 </div>
 </div>
-<a id="ab2b7cc6a8fc0107960171df9c9cbd7e8" name="ab2b7cc6a8fc0107960171df9c9cbd7e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2b7cc6a8fc0107960171df9c9cbd7e8">&#9670;&#160;</a></span>permissions() <span class="overload">[1/2]</span></h2>
+<a id="af01684969ab33900655bbd7773b500da" name="af01684969ab33900655bbd7773b500da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01684969ab33900655bbd7773b500da">&#9670;&#160;</a></span>permissions() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a> xtd::io::file_system_info::permissions </td>
+          <td class="memname">auto xtd::io::file_system_info::permissions </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the permissions for the current file or directory. </p>
@@ -1284,17 +1356,17 @@ If the file or directory described in the <a class="el" href="classxtd_1_1io_1_1
 
 </div>
 </div>
-<a id="a8c58fa4cf662e1bf7ac8501bef641e29" name="a8c58fa4cf662e1bf7ac8501bef641e29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c58fa4cf662e1bf7ac8501bef641e29">&#9670;&#160;</a></span>permissions() <span class="overload">[2/2]</span></h2>
+<a id="af53a8b6a5fc540bf65db164741345bb4" name="af53a8b6a5fc540bf65db164741345bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53a8b6a5fc540bf65db164741345bb4">&#9670;&#160;</a></span>permissions() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp; xtd::io::file_system_info::permissions </td>
+          <td class="memname">auto xtd::io::file_system_info::permissions </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__xtd__core.html#gac1ad31e82b8a9af93776488ad7c14843">xtd::io::file_permissions</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1380,12 +1452,12 @@ Call <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes th
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#afd5e20909458a5fbe3ec677bcb52358b">xtd::io::file_info</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1directory__info.html#a531395e157ff5bdb0f5051797dde71b4">xtd::io::directory_info</a>, and <a class="el" href="classxtd_1_1io_1_1file__info.html#a56d7de42b1e8b2919b27b9f21de49821">xtd::io::file_info</a>.</p>
 
 </div>
 </div>
-<a id="ac7b828b45b24a032ddd9dbdc23a574ce" name="ac7b828b45b24a032ddd9dbdc23a574ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7b828b45b24a032ddd9dbdc23a574ce">&#9670;&#160;</a></span>to_string()</h2>
+<a id="af7a7c78e3e4c1576a3640dface46d81f" name="af7a7c78e3e4c1576a3640dface46d81f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a7c78e3e4c1576a3640dface46d81f">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1394,24 +1466,24 @@ Call <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes th
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::io::file_system_info::to_string </td>
+          <td class="memname">auto xtd::io::file_system_info::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the original path. Use the <a class="el" href="#a4fb28d3aa102d283c21a9ac5dc2710b5" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> or xtd::io::file_system_info::name properties for the full path or file/directory name. </p>
+<p>Returns the original path. Use the <a class="el" href="#a7c8979ea7384c6a079ca342ae383355c" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a> or xtd::io::file_system_info::name properties for the full path or file/directory name. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string with the original path. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The string returned by the xtd::io::file_system_info::tto_string method represents the path that was passed to the constructor of the class implementing <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a>. Instead of calling the <a class="el" href="#ac7b828b45b24a032ddd9dbdc23a574ce" title="Returns the original path. Use the xtd::io::file_system_info::full_name or xtd::io::file_system_info:...">xtd::io::file_system_info::to_string</a> method, you should retrieve the value of either of the following properties, depending on your intent:<ul>
+<dl class="section note"><dt>Note</dt><dd>The string returned by the xtd::io::file_system_info::tto_string method represents the path that was passed to the constructor of the class implementing <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a>. Instead of calling the <a class="el" href="#af7a7c78e3e4c1576a3640dface46d81f" title="Returns the original path. Use the xtd::io::file_system_info::full_name or xtd::io::file_system_info:...">xtd::io::file_system_info::to_string</a> method, you should retrieve the value of either of the following properties, depending on your intent:<ul>
 <li>xtd::io::file_system_info::name, to get the name of the file or directory, without any parent path information.</li>
-<li><a class="el" href="#a4fb28d3aa102d283c21a9ac5dc2710b5" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a>, to get the fully qualified path of the file or directory. </li>
+<li><a class="el" href="#a7c8979ea7384c6a079ca342ae383355c" title="Gets the full path of the directory or file.">xtd::io::file_system_info::full_name</a>, to get the fully qualified path of the file or directory. </li>
 </ul>
 </dd></dl>
 
@@ -1475,7 +1547,7 @@ Call <a class="el" href="#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes th
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

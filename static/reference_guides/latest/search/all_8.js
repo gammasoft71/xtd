@@ -35,7 +35,7 @@ var searchData=
   ['has_5falpha_32',['has_alpha',['../group__xtd__drawing.html#gga51f9e2e6360dcb4f44307de5a884f968a2c56599bd9d336e761b6602d8c93b9dc',1,'xtd::drawing::imaging']]],
   ['has_5fany_5fset_33',['has_any_set',['../classxtd_1_1collections_1_1bit__array.html#aca9004891a68180be31c1ae0ba16a7bb',1,'xtd::collections::bit_array']]],
   ['has_5fexited_34',['has_exited',['../classxtd_1_1diagnostics_1_1process.html#a9481578320363c2c56ea50bc5a9b8acb',1,'xtd::diagnostics::process']]],
-  ['has_5fextension_35',['has_extension',['../classxtd_1_1io_1_1path.html#a1040d0556a03453009a0643675145d9c',1,'xtd::io::path']]],
+  ['has_5fextension_35',['has_extension',['../classxtd_1_1io_1_1path.html#a4c65bda9b816124c91aeebe774fb99f0',1,'xtd::io::path']]],
   ['has_5fflag_36',['has_flag',['../structxtd_1_1enum__object.html#a00873f075288eaa8c80473e02145f4b5',1,'xtd::enum_object']]],
   ['has_5freal_5fdpi_37',['has_real_dpi',['../group__xtd__drawing.html#gga51f9e2e6360dcb4f44307de5a884f968aec84f180156ada3c5d64b4b38f56c638',1,'xtd::drawing::imaging']]],
   ['has_5freal_5fpixel_5fsize_38',['has_real_pixel_size',['../group__xtd__drawing.html#gga51f9e2e6360dcb4f44307de5a884f968aff9519d199365247be17c738cba24360',1,'xtd::drawing::imaging']]],

@@ -137,7 +137,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">const</span> <span class="keywordtype">char</span>* function_name() const noexcept {<span class="keywordflow">return</span> data_-&gt;func;}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::uint32_t column() const noexcept {<span class="keywordflow">return</span> data_-&gt;column;}</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">static</span> __xtd_source_location__ <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* file = __builtin_FILE(), std::uint32_t line = __builtin_LINE(), <span class="keyword">const</span> <span class="keywordtype">char</span>* func = __builtin_FUNCTION(), std::uint32_t column = __builtin_COLUMN()) noexcept {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  [[nodicard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* file = __builtin_FILE(), std::uint32_t line = __builtin_LINE(), <span class="keyword">const</span> <span class="keywordtype">char</span>* func = __builtin_FUNCTION(), std::uint32_t column = __builtin_COLUMN()) noexcept -&gt; __xtd_source_location__ {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span> csl = __xtd_source_location__ {};</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    *csl.data_ = {file, line, <a class="code hl_typedef" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, column};</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> csl;</div>
@@ -161,7 +161,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

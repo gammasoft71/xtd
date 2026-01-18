@@ -110,10 +110,10 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="throw__helper_8hpp.html">../helpers/throw_helper.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> enum_t&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string __enum_to_string__(enum_t value) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>[[nodiscard]] <span class="keyword">auto</span> __enum_to_string__(enum_t value) <span class="keyword">noexcept</span> -&gt; std::string;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __enum_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; format, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __enum_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; format, value_t value, <span class="keyword">const</span> std::locale&amp; loc) -&gt; std::basic_string&lt;char_t&gt; {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">auto</span> fmt = <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (fmt.empty()) fmt = {<span class="charliteral">&#39;G&#39;</span>};</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  </div>
@@ -140,7 +140,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

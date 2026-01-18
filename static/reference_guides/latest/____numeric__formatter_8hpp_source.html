@@ -112,7 +112,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __numeric_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; fmt, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __numeric_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; fmt, value_t value, <span class="keyword">const</span> std::locale&amp; loc) -&gt; std::basic_string&lt;char_t&gt; {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">auto</span> <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a> = fmt;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>.<a class="code hl_function" href="classxtd_1_1basic__string.html#aef419cd969d12d5c760739fa15a2dc72">empty</a>()) <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a> = {<span class="charliteral">&#39;G&#39;</span>};</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  </div>
@@ -159,7 +159,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

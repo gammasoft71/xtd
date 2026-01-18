@@ -135,44 +135,44 @@ Inheritance diagram for xtd::io::stream_reader:</div>
 <tr class="separator:aac9620331e8d4260602a74f051000b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a10bd7be0f47a411dae8ade2ac11ec7b3" id="r_a10bd7be0f47a411dae8ade2ac11ec7b3"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::istream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10bd7be0f47a411dae8ade2ac11ec7b3">base_stream</a> () const</td></tr>
-<tr class="memdesc:a10bd7be0f47a411dae8ade2ac11ec7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying stream.  <br /></td></tr>
-<tr class="separator:a10bd7be0f47a411dae8ade2ac11ec7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af86ae00e44bfc363b2bf51986a9e58d0" id="r_af86ae00e44bfc363b2bf51986a9e58d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af86ae00e44bfc363b2bf51986a9e58d0">end_of_stream</a> () const</td></tr>
-<tr class="memdesc:af86ae00e44bfc363b2bf51986a9e58d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the current stream position is at the end of the stream.  <br /></td></tr>
-<tr class="separator:af86ae00e44bfc363b2bf51986a9e58d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f71bcb2024d19b60f9b9d110d8cb13" id="r_a16f71bcb2024d19b60f9b9d110d8cb13"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16f71bcb2024d19b60f9b9d110d8cb13">base_stream</a> () const -&gt; std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::istream &gt; &gt;</td></tr>
+<tr class="memdesc:a16f71bcb2024d19b60f9b9d110d8cb13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying stream.  <br /></td></tr>
+<tr class="separator:a16f71bcb2024d19b60f9b9d110d8cb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f29eef114ed84b04befdb93925af6a" id="r_aa7f29eef114ed84b04befdb93925af6a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7f29eef114ed84b04befdb93925af6a">end_of_stream</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:aa7f29eef114ed84b04befdb93925af6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the current stream position is at the end of the stream.  <br /></td></tr>
+<tr class="separator:aa7f29eef114ed84b04befdb93925af6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:af0f498a017dadaef3d4d50b7a2ceed6f" id="r_af0f498a017dadaef3d4d50b7a2ceed6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0f498a017dadaef3d4d50b7a2ceed6f">close</a> () override</td></tr>
-<tr class="memdesc:af0f498a017dadaef3d4d50b7a2ceed6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">stream_reader</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
-<tr class="separator:af0f498a017dadaef3d4d50b7a2ceed6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b69963b21f25270e9e3be37b2d0e026" id="r_a5b69963b21f25270e9e3be37b2d0e026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b69963b21f25270e9e3be37b2d0e026">peek</a> () const override</td></tr>
-<tr class="memdesc:a5b69963b21f25270e9e3be37b2d0e026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.  <br /></td></tr>
-<tr class="separator:a5b69963b21f25270e9e3be37b2d0e026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01290d6db05d857260e8b72c811bed0d" id="r_a01290d6db05d857260e8b72c811bed0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01290d6db05d857260e8b72c811bed0d">read</a> () override</td></tr>
-<tr class="memdesc:a01290d6db05d857260e8b72c811bed0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character from the input stream and advances the character position by one character.  <br /></td></tr>
-<tr class="separator:a01290d6db05d857260e8b72c811bed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b9e701e52d19750f0f35f803f39ac5" id="r_a04b9e701e52d19750f0f35f803f39ac5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04b9e701e52d19750f0f35f803f39ac5">close</a> () -&gt; void override</td></tr>
+<tr class="memdesc:a04b9e701e52d19750f0f35f803f39ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">stream_reader</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
+<tr class="separator:a04b9e701e52d19750f0f35f803f39ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8009d9279757b1cc43b79aa8a3ce08d5" id="r_a8009d9279757b1cc43b79aa8a3ce08d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8009d9279757b1cc43b79aa8a3ce08d5">peek</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a8009d9279757b1cc43b79aa8a3ce08d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.  <br /></td></tr>
+<tr class="separator:a8009d9279757b1cc43b79aa8a3ce08d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5703f115a1a71e4d5d28575b5e466cd" id="r_aa5703f115a1a71e4d5d28575b5e466cd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5703f115a1a71e4d5d28575b5e466cd">read</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:aa5703f115a1a71e4d5d28575b5e466cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character from the input stream and advances the character position by one character.  <br /></td></tr>
+<tr class="separator:aa5703f115a1a71e4d5d28575b5e466cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="memitem:ada433e9a68766da487fd74d0714fa345" id="r_ada433e9a68766da487fd74d0714fa345"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#ada433e9a68766da487fd74d0714fa345">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; char &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:ada433e9a68766da487fd74d0714fa345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the characters from the current reader and writes the data to the specified buffer.  <br /></td></tr>
-<tr class="separator:ada433e9a68766da487fd74d0714fa345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a816d8051444a187da00745c53f11562f" id="r_a816d8051444a187da00745c53f11562f"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a816d8051444a187da00745c53f11562f">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, size_t index, size_t count)</td></tr>
-<tr class="memdesc:a816d8051444a187da00745c53f11562f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.  <br /></td></tr>
-<tr class="separator:a816d8051444a187da00745c53f11562f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95ec66d80818a61a162caaeba48ea2f3" id="r_a95ec66d80818a61a162caaeba48ea2f3"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a95ec66d80818a61a162caaeba48ea2f3">read_block</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; char &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:a95ec66d80818a61a162caaeba48ea2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the characters from the current stream and writes the data to a buffer.  <br /></td></tr>
-<tr class="separator:a95ec66d80818a61a162caaeba48ea2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a99a7f2d7d6a46ddc5c94dfd5348494" id="r_a4a99a7f2d7d6a46ddc5c94dfd5348494"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a4a99a7f2d7d6a46ddc5c94dfd5348494">read_block</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, size_t index, size_t count)</td></tr>
-<tr class="memdesc:a4a99a7f2d7d6a46ddc5c94dfd5348494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.  <br /></td></tr>
-<tr class="separator:a4a99a7f2d7d6a46ddc5c94dfd5348494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cf821e2697031031471e69c91cce0ca" id="r_a9cf821e2697031031471e69c91cce0ca"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a9cf821e2697031031471e69c91cce0ca">read_line</a> ()</td></tr>
-<tr class="memdesc:a9cf821e2697031031471e69c91cce0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line of characters from the current stream and returns the data as a string.  <br /></td></tr>
-<tr class="separator:a9cf821e2697031031471e69c91cce0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5814699d7ec7e5eada3a000f0b0475a6" id="r_a5814699d7ec7e5eada3a000f0b0475a6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a5814699d7ec7e5eada3a000f0b0475a6">read_to_end</a> ()</td></tr>
-<tr class="memdesc:a5814699d7ec7e5eada3a000f0b0475a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads all characters from the current position to the end of the <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a> and returns them as one string.  <br /></td></tr>
-<tr class="separator:a5814699d7ec7e5eada3a000f0b0475a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1299c289603673da379dffec8a98a8cc" id="r_a1299c289603673da379dffec8a98a8cc"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a1299c289603673da379dffec8a98a8cc">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; char &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a1299c289603673da379dffec8a98a8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the characters from the current reader and writes the data to the specified buffer.  <br /></td></tr>
+<tr class="separator:a1299c289603673da379dffec8a98a8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d7f860011bc3cd71d3f61aefa138900" id="r_a4d7f860011bc3cd71d3f61aefa138900"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a4d7f860011bc3cd71d3f61aefa138900">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a4d7f860011bc3cd71d3f61aefa138900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.  <br /></td></tr>
+<tr class="separator:a4d7f860011bc3cd71d3f61aefa138900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a002c4e899400e4759efe8349555d6800" id="r_a002c4e899400e4759efe8349555d6800"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a002c4e899400e4759efe8349555d6800">read_block</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; char &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a002c4e899400e4759efe8349555d6800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the characters from the current stream and writes the data to a buffer.  <br /></td></tr>
+<tr class="separator:a002c4e899400e4759efe8349555d6800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb23c87dfdb5c5d72a347748f7df3ce" id="r_a9bb23c87dfdb5c5d72a347748f7df3ce"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#a9bb23c87dfdb5c5d72a347748f7df3ce">read_block</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a9bb23c87dfdb5c5d72a347748f7df3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.  <br /></td></tr>
+<tr class="separator:a9bb23c87dfdb5c5d72a347748f7df3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f3cd83e691e4f282ce7b7967ef8569" id="r_aa0f3cd83e691e4f282ce7b7967ef8569"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#aa0f3cd83e691e4f282ce7b7967ef8569">read_line</a> () -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:aa0f3cd83e691e4f282ce7b7967ef8569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a line of characters from the current stream and returns the data as a string.  <br /></td></tr>
+<tr class="separator:aa0f3cd83e691e4f282ce7b7967ef8569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd2a7b2ba77bb0fdb937f1490c878dd" id="r_adfd2a7b2ba77bb0fdb937f1490c878dd"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#adfd2a7b2ba77bb0fdb937f1490c878dd">read_to_end</a> () -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td></tr>
+<tr class="memdesc:adfd2a7b2ba77bb0fdb937f1490c878dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads all characters from the current position to the end of the <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a> and returns them as one string.  <br /></td></tr>
+<tr class="separator:adfd2a7b2ba77bb0fdb937f1490c878dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +195,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac6e6987016b70aa6cc68d22c3686744a" id="r_ac6e6987016b70aa6cc68d22c3686744a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1io_1_1null__text__reader.html">null_text_reader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#ac6e6987016b70aa6cc68d22c3686744a">null</a> () noexcept</td></tr>
 <tr class="memdesc:ac6e6987016b70aa6cc68d22c3686744a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a> with no data to read from.  <br /></td></tr>
 <tr class="separator:ac6e6987016b70aa6cc68d22c3686744a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad945c6831e8150aa6762b2adc6bcdac1" id="r_ad945c6831e8150aa6762b2adc6bcdac1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1io_1_1synchronized__text__reader.html">synchronized_text_reader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#ad945c6831e8150aa6762b2adc6bcdac1">synchronised</a> (<a class="el" href="classxtd_1_1io_1_1text__reader.html">text_reader</a> &amp;reader) noexcept</td></tr>
-<tr class="memdesc:ad945c6831e8150aa6762b2adc6bcdac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a thread-safe (synchronized) wrapper around the specified <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a> object.  <br /></td></tr>
-<tr class="separator:ad945c6831e8150aa6762b2adc6bcdac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e2917b6c8e54bfb8b843635cf9647b" id="r_ae0e2917b6c8e54bfb8b843635cf9647b"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1text__reader.html#ae0e2917b6c8e54bfb8b843635cf9647b">synchronised</a> (<a class="el" href="classxtd_1_1io_1_1text__reader.html">text_reader</a> &amp;reader) noexcept -&gt; <a class="el" href="classxtd_1_1io_1_1synchronized__text__reader.html">synchronized_text_reader</a></td></tr>
+<tr class="memdesc:ae0e2917b6c8e54bfb8b843635cf9647b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a thread-safe (synchronized) wrapper around the specified <a class="el" href="classxtd_1_1io_1_1text__reader.html" title="Represents a reader that can read a sequential series of characters.">text_reader</a> object.  <br /></td></tr>
+<tr class="separator:ae0e2917b6c8e54bfb8b843635cf9647b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
@@ -284,19 +284,27 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a10bd7be0f47a411dae8ade2ac11ec7b3" name="a10bd7be0f47a411dae8ade2ac11ec7b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10bd7be0f47a411dae8ade2ac11ec7b3">&#9670;&#160;</a></span>base_stream()</h2>
+<a id="a16f71bcb2024d19b60f9b9d110d8cb13" name="a16f71bcb2024d19b60f9b9d110d8cb13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f71bcb2024d19b60f9b9d110d8cb13">&#9670;&#160;</a></span>base_stream()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::istream &gt; &gt; xtd::io::stream_reader::base_stream </td>
+          <td class="memname">auto xtd::io::stream_reader::base_stream </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::istream &gt; &gt;</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns the underlying stream. </p>
@@ -304,19 +312,27 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af86ae00e44bfc363b2bf51986a9e58d0" name="af86ae00e44bfc363b2bf51986a9e58d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af86ae00e44bfc363b2bf51986a9e58d0">&#9670;&#160;</a></span>end_of_stream()</h2>
+<a id="aa7f29eef114ed84b04befdb93925af6a" name="aa7f29eef114ed84b04befdb93925af6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f29eef114ed84b04befdb93925af6a">&#9670;&#160;</a></span>end_of_stream()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::io::stream_reader::end_of_stream </td>
+          <td class="memname">auto xtd::io::stream_reader::end_of_stream </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the current stream position is at the end of the stream. </p>
@@ -326,8 +342,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af0f498a017dadaef3d4d50b7a2ceed6f" name="af0f498a017dadaef3d4d50b7a2ceed6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0f498a017dadaef3d4d50b7a2ceed6f">&#9670;&#160;</a></span>close()</h2>
+<a id="a04b9e701e52d19750f0f35f803f39ac5" name="a04b9e701e52d19750f0f35f803f39ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b9e701e52d19750f0f35f803f39ac5">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,10 +352,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::stream_reader::close </td>
+          <td class="memname">auto xtd::io::stream_reader::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -351,12 +367,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Closes the <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">stream_reader</a> object and the underlying stream, and releases any system resources associated with the reader. </p>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a5f38984ac30075d56b3c1f15475e8ff2">xtd::io::text_reader</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a9455e0fc55862cd99a63fef520f9f02c">xtd::io::text_reader</a>.</p>
 
 </div>
 </div>
-<a id="a5b69963b21f25270e9e3be37b2d0e026" name="a5b69963b21f25270e9e3be37b2d0e026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b69963b21f25270e9e3be37b2d0e026">&#9670;&#160;</a></span>peek()</h2>
+<a id="a8009d9279757b1cc43b79aa8a3ce08d5" name="a8009d9279757b1cc43b79aa8a3ce08d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8009d9279757b1cc43b79aa8a3ce08d5">&#9670;&#160;</a></span>peek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,15 +381,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream_reader::peek </td>
+          <td class="memname">auto xtd::io::stream_reader::peek </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -381,12 +397,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a936b52fc15fbf37f503e166e1cc629fe">xtd::io::text_reader</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#ae83b1511101dfebba6a43a21d18b1258">xtd::io::text_reader</a>.</p>
 
 </div>
 </div>
-<a id="a01290d6db05d857260e8b72c811bed0d" name="a01290d6db05d857260e8b72c811bed0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01290d6db05d857260e8b72c811bed0d">&#9670;&#160;</a></span>read()</h2>
+<a id="aa5703f115a1a71e4d5d28575b5e466cd" name="aa5703f115a1a71e4d5d28575b5e466cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5703f115a1a71e4d5d28575b5e466cd">&#9670;&#160;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,15 +411,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream_reader::read </td>
+          <td class="memname">auto xtd::io::stream_reader::read </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -411,7 +427,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reads the next character from the input stream and advances the character position by one character. </p>
 <dl class="section return"><dt>Returns</dt><dd>The next character from the input stream, or EOF if no more characters are available. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a37eee69944eb3038eaf0107c03b2bcc6">xtd::io::text_reader</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a1d9baca1d9e7ceb609877ccfa7efbfa6">xtd::io::text_reader</a>.</p>
 
 </div>
 </div>
@@ -422,7 +438,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

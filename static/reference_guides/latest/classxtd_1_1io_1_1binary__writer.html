@@ -133,9 +133,9 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_default_values() {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af72de0f8dd56fc2f3bbd419128f2046d">file::open</a>(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = <a class="code hl_function" href="classxtd_1_1io_1_1file.html#a081e0f3f832a8614d4d07227959687cd">file::open</a>(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {</div>
 <div class="line">      <span class="keyword">auto</span> writer = <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> {fs};</div>
-<div class="line">      writer.<a class="code hl_function" href="#ac41c07a8df723bcaed30d973800fe109">write</a>(1.250F);</div>
+<div class="line">      writer.<a class="code hl_function" href="#a8a99ccd1ebe410183a0f7464ea5a2270">write</a>(1.250F);</div>
 <div class="line">      writer.write(R<span class="stringliteral">&quot;(c:\Temp)&quot;);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(10);</span></div>
 <div class="line"><span class="stringliteral">      writer.write(</span><span class="keyword">true</span>);</div>
@@ -176,8 +176,8 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 <div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html"><div class="ttname"><a href="classxtd_1_1io_1_1binary__writer.html">xtd::io::binary_writer</a></div><div class="ttdoc">Writes primitive types in binary to a stream and supports writing strings.</div><div class="ttdef"><b>Definition</b> binary_writer.hpp:47</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html_ac41c07a8df723bcaed30d973800fe109"><div class="ttname"><a href="#ac41c07a8df723bcaed30d973800fe109">xtd::io::binary_writer::write</a></div><div class="ttdeci">virtual void write(bool value)</div><div class="ttdoc">Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing t...</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file_html_af72de0f8dd56fc2f3bbd419128f2046d"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#af72de0f8dd56fc2f3bbd419128f2046d">xtd::io::file::open</a></div><div class="ttdeci">static std::fstream open(const xtd::string &amp;path, std::ios::openmode mode)</div><div class="ttdoc">Opens a FileStream on the specified path.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1binary__writer_html_a8a99ccd1ebe410183a0f7464ea5a2270"><div class="ttname"><a href="#a8a99ccd1ebe410183a0f7464ea5a2270">xtd::io::binary_writer::write</a></div><div class="ttdeci">virtual auto write(bool value) -&gt; void</div><div class="ttdoc">Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing t...</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file_html_a081e0f3f832a8614d4d07227959687cd"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#a081e0f3f832a8614d4d07227959687cd">xtd::io::file::open</a></div><div class="ttdeci">static auto open(const xtd::string &amp;path, std::ios::openmode mode) -&gt; std::fstream</div><div class="ttdoc">Opens a FileStream on the specified path.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -192,7 +192,7 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_default_values() {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af72de0f8dd56fc2f3bbd419128f2046d">file::open</a>(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> fs = <a class="code hl_function" href="classxtd_1_1io_1_1file.html#a081e0f3f832a8614d4d07227959687cd">file::open</a>(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {</div>
 <div class="line">      <span class="keyword">auto</span> writer = <a class="code hl_class" href="classxtd_1_1io_1_1binary__writer.html">binary_writer</a> {fs};</div>
 <div class="line">      writer &lt;&lt; 1.250F;</div>
 <div class="line">      writer &lt;&lt; R<span class="stringliteral">&quot;(c:\Temp)&quot;;</span></div>
@@ -252,79 +252,82 @@ Files written with xtd can be read directly in C# and vice versa, following the 
 <tr class="separator:acd0be5272029b7ccddf7d5ca485d052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:addde260220b11a2650a3fae528a269d2" id="r_addde260220b11a2650a3fae528a269d2"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::ostream &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addde260220b11a2650a3fae528a269d2">base_stream</a> () const</td></tr>
-<tr class="memdesc:addde260220b11a2650a3fae528a269d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying stream.  <br /></td></tr>
-<tr class="separator:addde260220b11a2650a3fae528a269d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa613bca0550cadd9b449e6357c4e9c3b" id="r_aa613bca0550cadd9b449e6357c4e9c3b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa613bca0550cadd9b449e6357c4e9c3b">base_stream</a> () const -&gt; std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::ostream &gt; &gt;</td></tr>
+<tr class="memdesc:aa613bca0550cadd9b449e6357c4e9c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying stream.  <br /></td></tr>
+<tr class="separator:aa613bca0550cadd9b449e6357c4e9c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a938f8b59a0c78de5b3c73873436b085d" id="r_a938f8b59a0c78de5b3c73873436b085d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a938f8b59a0c78de5b3c73873436b085d">close</a> ()</td></tr>
-<tr class="memdesc:a938f8b59a0c78de5b3c73873436b085d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1binary__writer.html" title="Writes primitive types in binary to a stream and supports writing strings.">xtd::io::binary_writer</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
-<tr class="separator:a938f8b59a0c78de5b3c73873436b085d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f5277f64ad652a2a01cfec8135f1d7" id="r_a12f5277f64ad652a2a01cfec8135f1d7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12f5277f64ad652a2a01cfec8135f1d7">flush</a> ()</td></tr>
-<tr class="memdesc:a12f5277f64ad652a2a01cfec8135f1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.  <br /></td></tr>
-<tr class="separator:a12f5277f64ad652a2a01cfec8135f1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68af7f7f342f221dc866805a1fa8aec8" id="r_a68af7f7f342f221dc866805a1fa8aec8"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68af7f7f342f221dc866805a1fa8aec8">seek</a> (size_t offset, std::ios::seekdir origin)</td></tr>
-<tr class="memdesc:a68af7f7f342f221dc866805a1fa8aec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position within the current stream.  <br /></td></tr>
-<tr class="separator:a68af7f7f342f221dc866805a1fa8aec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac41c07a8df723bcaed30d973800fe109" id="r_ac41c07a8df723bcaed30d973800fe109"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac41c07a8df723bcaed30d973800fe109">write</a> (bool value)</td></tr>
-<tr class="memdesc:ac41c07a8df723bcaed30d973800fe109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a one-byte boolean value to the current stream, with 0 representing <code>false</code> and 1 representing <code>true</code>.  <br /></td></tr>
-<tr class="separator:ac41c07a8df723bcaed30d973800fe109"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7801ba1fd85b0205c7267d3b5d77f87" id="r_ac7801ba1fd85b0205c7267d3b5d77f87"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7801ba1fd85b0205c7267d3b5d77f87">write</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value)</td></tr>
-<tr class="memdesc:ac7801ba1fd85b0205c7267d3b5d77f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an unsigned byte to the current stream and advances the stream position by one byte.  <br /></td></tr>
-<tr class="separator:ac7801ba1fd85b0205c7267d3b5d77f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79aa97d6294dc9bf9ec1997398db83df" id="r_a79aa97d6294dc9bf9ec1997398db83df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79aa97d6294dc9bf9ec1997398db83df">write</a> (char value)</td></tr>
-<tr class="memdesc:a79aa97d6294dc9bf9ec1997398db83df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character to the current stream and advances the current position by one byte.  <br /></td></tr>
-<tr class="separator:a79aa97d6294dc9bf9ec1997398db83df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cfb07cf5b9bb5ed93724e31f9defc2d" id="r_a2cfb07cf5b9bb5ed93724e31f9defc2d"><td class="memTemplParams" colspan="2">template&lt;size_t size&gt; </td></tr>
-<tr class="memitem:a2cfb07cf5b9bb5ed93724e31f9defc2d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2cfb07cf5b9bb5ed93724e31f9defc2d">write</a> (const std::array&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:a2cfb07cf5b9bb5ed93724e31f9defc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte array to the underlying stream.  <br /></td></tr>
-<tr class="separator:a2cfb07cf5b9bb5ed93724e31f9defc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a685aafd2412fe01de8be8846de0c66d6" id="r_a685aafd2412fe01de8be8846de0c66d6"><td class="memTemplParams" colspan="2">template&lt;size_t size&gt; </td></tr>
-<tr class="memitem:a685aafd2412fe01de8be8846de0c66d6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a685aafd2412fe01de8be8846de0c66d6">write</a> (const std::array&lt; char, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:a685aafd2412fe01de8be8846de0c66d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character array to the underlying stream.  <br /></td></tr>
-<tr class="separator:a685aafd2412fe01de8be8846de0c66d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2db2883462d8f3beec1708ce253dc3ca" id="r_a2db2883462d8f3beec1708ce253dc3ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2db2883462d8f3beec1708ce253dc3ca">write</a> (const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:a2db2883462d8f3beec1708ce253dc3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte array to the underlying stream.  <br /></td></tr>
-<tr class="separator:a2db2883462d8f3beec1708ce253dc3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a382501ca901103dc526d44d3b42a1cb6" id="r_a382501ca901103dc526d44d3b42a1cb6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a382501ca901103dc526d44d3b42a1cb6">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, size_t index, size_t count)</td></tr>
-<tr class="memdesc:a382501ca901103dc526d44d3b42a1cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a region of a byte array to the current stream.  <br /></td></tr>
-<tr class="separator:a382501ca901103dc526d44d3b42a1cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff2723487d5a5cb1a1f22c8bf04d6800" id="r_aff2723487d5a5cb1a1f22c8bf04d6800"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff2723487d5a5cb1a1f22c8bf04d6800">write</a> (const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; char &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:aff2723487d5a5cb1a1f22c8bf04d6800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character array to the underlying stream.  <br /></td></tr>
-<tr class="separator:aff2723487d5a5cb1a1f22c8bf04d6800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d2cf244e951478ec16ae5c3266ea2d" id="r_a56d2cf244e951478ec16ae5c3266ea2d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56d2cf244e951478ec16ae5c3266ea2d">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, size_t index, size_t count)</td></tr>
-<tr class="memdesc:a56d2cf244e951478ec16ae5c3266ea2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a region of a character array to the current stream.  <br /></td></tr>
-<tr class="separator:a56d2cf244e951478ec16ae5c3266ea2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eca9cf3d2c37ac2b5bda2a208c69d45" id="r_a4eca9cf3d2c37ac2b5bda2a208c69d45"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eca9cf3d2c37ac2b5bda2a208c69d45">write</a> (double value)</td></tr>
-<tr class="memdesc:a4eca9cf3d2c37ac2b5bda2a208c69d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
-<tr class="separator:a4eca9cf3d2c37ac2b5bda2a208c69d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45cd86e7ef40579f0033eb63ef02da8c" id="r_a45cd86e7ef40579f0033eb63ef02da8c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45cd86e7ef40579f0033eb63ef02da8c">write</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> value)</td></tr>
-<tr class="memdesc:a45cd86e7ef40579f0033eb63ef02da8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.  <br /></td></tr>
-<tr class="separator:a45cd86e7ef40579f0033eb63ef02da8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd5d24608b6c588f8df00ea17a3d8c24" id="r_acd5d24608b6c588f8df00ea17a3d8c24"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd5d24608b6c588f8df00ea17a3d8c24">write</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
-<tr class="memdesc:acd5d24608b6c588f8df00ea17a3d8c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.  <br /></td></tr>
-<tr class="separator:acd5d24608b6c588f8df00ea17a3d8c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a254d0f7b3bc1c7fc0fa0225fbcc01e6f" id="r_a254d0f7b3bc1c7fc0fa0225fbcc01e6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a254d0f7b3bc1c7fc0fa0225fbcc01e6f">write</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value)</td></tr>
-<tr class="memdesc:a254d0f7b3bc1c7fc0fa0225fbcc01e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a eight-byte signed integer to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
-<tr class="separator:a254d0f7b3bc1c7fc0fa0225fbcc01e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeac25b45530854065a3d99d1c678c7a" id="r_adeac25b45530854065a3d99d1c678c7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeac25b45530854065a3d99d1c678c7a">write</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> value)</td></tr>
-<tr class="memdesc:adeac25b45530854065a3d99d1c678c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an signed byte to the current stream and advances the stream position by one byte.  <br /></td></tr>
-<tr class="separator:adeac25b45530854065a3d99d1c678c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae036329c9803d478bdba73b23ac7d9f2" id="r_ae036329c9803d478bdba73b23ac7d9f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae036329c9803d478bdba73b23ac7d9f2">write</a> (float value)</td></tr>
-<tr class="memdesc:ae036329c9803d478bdba73b23ac7d9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an four-byte floating-point value to the current stream and advances the stream position by four bytes.  <br /></td></tr>
-<tr class="separator:ae036329c9803d478bdba73b23ac7d9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdb8e36d75629446050ae9e5bcf94523" id="r_afdb8e36d75629446050ae9e5bcf94523"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdb8e36d75629446050ae9e5bcf94523">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;value)</td></tr>
-<tr class="memdesc:afdb8e36d75629446050ae9e5bcf94523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a length-prefixed string to this stream, and advances the current position of the stream and the specific characters being written to the stream.  <br /></td></tr>
-<tr class="separator:afdb8e36d75629446050ae9e5bcf94523"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b58fda4e1c3b276e467220e817ca55" id="r_ac7b58fda4e1c3b276e467220e817ca55"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7b58fda4e1c3b276e467220e817ca55">write</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> value)</td></tr>
-<tr class="memdesc:ac7b58fda4e1c3b276e467220e817ca55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.  <br /></td></tr>
-<tr class="separator:ac7b58fda4e1c3b276e467220e817ca55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789b8e5dc0c9a6cb434eaab2b34764ae" id="r_a789b8e5dc0c9a6cb434eaab2b34764ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a789b8e5dc0c9a6cb434eaab2b34764ae">write</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> value)</td></tr>
-<tr class="memdesc:a789b8e5dc0c9a6cb434eaab2b34764ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a four-byte unsigned integer to the current stream and advances the stream position by four bytes.  <br /></td></tr>
-<tr class="separator:a789b8e5dc0c9a6cb434eaab2b34764ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cf2c9f6fbfdea66b568bfa176b5e285" id="r_a6cf2c9f6fbfdea66b568bfa176b5e285"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cf2c9f6fbfdea66b568bfa176b5e285">write</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> value)</td></tr>
-<tr class="memdesc:a6cf2c9f6fbfdea66b568bfa176b5e285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a eight-byte unsigned integer to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
-<tr class="separator:a6cf2c9f6fbfdea66b568bfa176b5e285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e545c87a08af5c1f372c99d7ab2589" id="r_a33e545c87a08af5c1f372c99d7ab2589"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33e545c87a08af5c1f372c99d7ab2589">close</a> () -&gt; void</td></tr>
+<tr class="memdesc:a33e545c87a08af5c1f372c99d7ab2589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1binary__writer.html" title="Writes primitive types in binary to a stream and supports writing strings.">xtd::io::binary_writer</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
+<tr class="separator:a33e545c87a08af5c1f372c99d7ab2589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdeaef2c27eba0fef8c5ba226a738ad4" id="r_acdeaef2c27eba0fef8c5ba226a738ad4"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdeaef2c27eba0fef8c5ba226a738ad4">flush</a> () -&gt; void</td></tr>
+<tr class="memdesc:acdeaef2c27eba0fef8c5ba226a738ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.  <br /></td></tr>
+<tr class="separator:acdeaef2c27eba0fef8c5ba226a738ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e6c65dc1cce66fa07cd811a0c08f57" id="r_a76e6c65dc1cce66fa07cd811a0c08f57"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76e6c65dc1cce66fa07cd811a0c08f57">seek</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, std::ios::seekdir origin) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a76e6c65dc1cce66fa07cd811a0c08f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position within the current stream.  <br /></td></tr>
+<tr class="separator:a76e6c65dc1cce66fa07cd811a0c08f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345f3c8837775c26e7621f309b8c2ce1" id="r_a345f3c8837775c26e7621f309b8c2ce1"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a345f3c8837775c26e7621f309b8c2ce1">tell</a> () -&gt; std::streampos</td></tr>
+<tr class="memdesc:a345f3c8837775c26e7621f309b8c2ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the current seek position of the readers stream;.  <br /></td></tr>
+<tr class="separator:a345f3c8837775c26e7621f309b8c2ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a99ccd1ebe410183a0f7464ea5a2270" id="r_a8a99ccd1ebe410183a0f7464ea5a2270"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a99ccd1ebe410183a0f7464ea5a2270">write</a> (bool value) -&gt; void</td></tr>
+<tr class="memdesc:a8a99ccd1ebe410183a0f7464ea5a2270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a one-byte boolean value to the current stream, with 0 representing <code>false</code> and 1 representing <code>true</code>.  <br /></td></tr>
+<tr class="separator:a8a99ccd1ebe410183a0f7464ea5a2270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42bcf05b5a63e28b613260cc78f8a85" id="r_ac42bcf05b5a63e28b613260cc78f8a85"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac42bcf05b5a63e28b613260cc78f8a85">write</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value) -&gt; void</td></tr>
+<tr class="memdesc:ac42bcf05b5a63e28b613260cc78f8a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an unsigned byte to the current stream and advances the stream position by one byte.  <br /></td></tr>
+<tr class="separator:ac42bcf05b5a63e28b613260cc78f8a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ff2fbf7f164c8c9afa4b73d1e4a92e" id="r_a91ff2fbf7f164c8c9afa4b73d1e4a92e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ff2fbf7f164c8c9afa4b73d1e4a92e">write</a> (char value) -&gt; void</td></tr>
+<tr class="memdesc:a91ff2fbf7f164c8c9afa4b73d1e4a92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character to the current stream and advances the current position by one byte.  <br /></td></tr>
+<tr class="separator:a91ff2fbf7f164c8c9afa4b73d1e4a92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8493d0624f7f466dd168858499d5d03b" id="r_a8493d0624f7f466dd168858499d5d03b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size&gt; </td></tr>
+<tr class="memitem:a8493d0624f7f466dd168858499d5d03b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8493d0624f7f466dd168858499d5d03b">write</a> (const std::array&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;buffer) -&gt; void</td></tr>
+<tr class="memdesc:a8493d0624f7f466dd168858499d5d03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte array to the underlying stream.  <br /></td></tr>
+<tr class="separator:a8493d0624f7f466dd168858499d5d03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8473b724c32b690cd1a8367ff3d8d9c" id="r_ab8473b724c32b690cd1a8367ff3d8d9c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size&gt; </td></tr>
+<tr class="memitem:ab8473b724c32b690cd1a8367ff3d8d9c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab8473b724c32b690cd1a8367ff3d8d9c">write</a> (const std::array&lt; char, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;buffer) -&gt; void</td></tr>
+<tr class="memdesc:ab8473b724c32b690cd1a8367ff3d8d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character array to the underlying stream.  <br /></td></tr>
+<tr class="separator:ab8473b724c32b690cd1a8367ff3d8d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248cfd868f67189cdde5aec0c71360dc" id="r_a248cfd868f67189cdde5aec0c71360dc"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a248cfd868f67189cdde5aec0c71360dc">write</a> (const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; void</td></tr>
+<tr class="memdesc:a248cfd868f67189cdde5aec0c71360dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte array to the underlying stream.  <br /></td></tr>
+<tr class="separator:a248cfd868f67189cdde5aec0c71360dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928578203e64e6bcba6030a222253216" id="r_a928578203e64e6bcba6030a222253216"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a928578203e64e6bcba6030a222253216">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void</td></tr>
+<tr class="memdesc:a928578203e64e6bcba6030a222253216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a region of a byte array to the current stream.  <br /></td></tr>
+<tr class="separator:a928578203e64e6bcba6030a222253216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83fd71d503aee769f2dc6d1c7b9a6e0" id="r_aa83fd71d503aee769f2dc6d1c7b9a6e0"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa83fd71d503aee769f2dc6d1c7b9a6e0">write</a> (const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; char &gt; &amp;buffer) -&gt; void</td></tr>
+<tr class="memdesc:aa83fd71d503aee769f2dc6d1c7b9a6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a character array to the underlying stream.  <br /></td></tr>
+<tr class="separator:aa83fd71d503aee769f2dc6d1c7b9a6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af592f4e4748a938e237ef6b6934802" id="r_a5af592f4e4748a938e237ef6b6934802"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5af592f4e4748a938e237ef6b6934802">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count) -&gt; void</td></tr>
+<tr class="memdesc:a5af592f4e4748a938e237ef6b6934802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a region of a character array to the current stream.  <br /></td></tr>
+<tr class="separator:a5af592f4e4748a938e237ef6b6934802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358452d6f380517fc4884e0d333664c3" id="r_a358452d6f380517fc4884e0d333664c3"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358452d6f380517fc4884e0d333664c3">write</a> (double value) -&gt; void</td></tr>
+<tr class="memdesc:a358452d6f380517fc4884e0d333664c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
+<tr class="separator:a358452d6f380517fc4884e0d333664c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f3af4c68c44eff5bf47e6e79a5dd86" id="r_ad7f3af4c68c44eff5bf47e6e79a5dd86"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7f3af4c68c44eff5bf47e6e79a5dd86">write</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> value) -&gt; void</td></tr>
+<tr class="memdesc:ad7f3af4c68c44eff5bf47e6e79a5dd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.  <br /></td></tr>
+<tr class="separator:ad7f3af4c68c44eff5bf47e6e79a5dd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07477e4b9730d5149d99643b0153ea0" id="r_aa07477e4b9730d5149d99643b0153ea0"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa07477e4b9730d5149d99643b0153ea0">write</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; void</td></tr>
+<tr class="memdesc:aa07477e4b9730d5149d99643b0153ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.  <br /></td></tr>
+<tr class="separator:aa07477e4b9730d5149d99643b0153ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb37c3c4e2d5ba672a3703a1ca982c6" id="r_addb37c3c4e2d5ba672a3703a1ca982c6"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addb37c3c4e2d5ba672a3703a1ca982c6">write</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> value) -&gt; void</td></tr>
+<tr class="memdesc:addb37c3c4e2d5ba672a3703a1ca982c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a eight-byte signed integer to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
+<tr class="separator:addb37c3c4e2d5ba672a3703a1ca982c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715eacbc823b6500ef5d588c8b630d0a" id="r_a715eacbc823b6500ef5d588c8b630d0a"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a715eacbc823b6500ef5d588c8b630d0a">write</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">xtd::sbyte</a> value) -&gt; void</td></tr>
+<tr class="memdesc:a715eacbc823b6500ef5d588c8b630d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an signed byte to the current stream and advances the stream position by one byte.  <br /></td></tr>
+<tr class="separator:a715eacbc823b6500ef5d588c8b630d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f37ecf6813d1eaca8e969931a077945" id="r_a5f37ecf6813d1eaca8e969931a077945"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f37ecf6813d1eaca8e969931a077945">write</a> (float value) -&gt; void</td></tr>
+<tr class="memdesc:a5f37ecf6813d1eaca8e969931a077945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an four-byte floating-point value to the current stream and advances the stream position by four bytes.  <br /></td></tr>
+<tr class="separator:a5f37ecf6813d1eaca8e969931a077945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a979834dc385ff9d9589c10197c7e6a40" id="r_a979834dc385ff9d9589c10197c7e6a40"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a979834dc385ff9d9589c10197c7e6a40">write</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) -&gt; void</td></tr>
+<tr class="memdesc:a979834dc385ff9d9589c10197c7e6a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a length-prefixed string to this stream, and advances the current position of the stream and the specific characters being written to the stream.  <br /></td></tr>
+<tr class="separator:a979834dc385ff9d9589c10197c7e6a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f9caa2402de330e534ecb75bcd129e" id="r_af3f9caa2402de330e534ecb75bcd129e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3f9caa2402de330e534ecb75bcd129e">write</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> value) -&gt; void</td></tr>
+<tr class="memdesc:af3f9caa2402de330e534ecb75bcd129e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.  <br /></td></tr>
+<tr class="separator:af3f9caa2402de330e534ecb75bcd129e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773ddd3b50f261d514ded28e66c6ac07" id="r_a773ddd3b50f261d514ded28e66c6ac07"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a773ddd3b50f261d514ded28e66c6ac07">write</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> value) -&gt; void</td></tr>
+<tr class="memdesc:a773ddd3b50f261d514ded28e66c6ac07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a four-byte unsigned integer to the current stream and advances the stream position by four bytes.  <br /></td></tr>
+<tr class="separator:a773ddd3b50f261d514ded28e66c6ac07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934c90afc4c32bd3cbd999b1ab114972" id="r_a934c90afc4c32bd3cbd999b1ab114972"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a934c90afc4c32bd3cbd999b1ab114972">write</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> value) -&gt; void</td></tr>
+<tr class="memdesc:a934c90afc4c32bd3cbd999b1ab114972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a eight-byte unsigned integer to the current stream and advances the stream position by eight bytes.  <br /></td></tr>
+<tr class="separator:a934c90afc4c32bd3cbd999b1ab114972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -433,29 +436,8 @@ The system could not retrieve the absolute path. </td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="addde260220b11a2650a3fae528a269d2" name="addde260220b11a2650a3fae528a269d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addde260220b11a2650a3fae528a269d2">&#9670;&#160;</a></span>base_stream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::ostream &gt; &gt; xtd::io::binary_writer::base_stream </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the underlying stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>The underlying stream. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a938f8b59a0c78de5b3c73873436b085d" name="a938f8b59a0c78de5b3c73873436b085d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a938f8b59a0c78de5b3c73873436b085d">&#9670;&#160;</a></span>close()</h2>
+<a id="aa613bca0550cadd9b449e6357c4e9c3b" name="aa613bca0550cadd9b449e6357c4e9c3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa613bca0550cadd9b449e6357c4e9c3b">&#9670;&#160;</a></span>base_stream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -464,10 +446,39 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::close </td>
+          <td class="memname">auto xtd::io::binary_writer::base_stream </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const -&gt;  std::optional&lt; <a class="el" href="group__types.html#gaae70bf6374d3bfeef5a92530d5a88b28">xtd::ref</a>&lt; std::ostream &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the underlying stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>The underlying stream. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a33e545c87a08af5c1f372c99d7ab2589" name="a33e545c87a08af5c1f372c99d7ab2589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e545c87a08af5c1f372c99d7ab2589">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto xtd::io::binary_writer::close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -481,8 +492,8 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="a12f5277f64ad652a2a01cfec8135f1d7" name="a12f5277f64ad652a2a01cfec8135f1d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12f5277f64ad652a2a01cfec8135f1d7">&#9670;&#160;</a></span>flush()</h2>
+<a id="acdeaef2c27eba0fef8c5ba226a738ad4" name="acdeaef2c27eba0fef8c5ba226a738ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdeaef2c27eba0fef8c5ba226a738ad4">&#9670;&#160;</a></span>flush()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -491,10 +502,10 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::flush </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::flush </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -509,8 +520,8 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="a68af7f7f342f221dc866805a1fa8aec8" name="a68af7f7f342f221dc866805a1fa8aec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68af7f7f342f221dc866805a1fa8aec8">&#9670;&#160;</a></span>seek()</h2>
+<a id="a76e6c65dc1cce66fa07cd811a0c08f57" name="a76e6c65dc1cce66fa07cd811a0c08f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e6c65dc1cce66fa07cd811a0c08f57">&#9670;&#160;</a></span>seek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -519,14 +530,14 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual size_t xtd::io::binary_writer::seek </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::seek </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ios::seekdir</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;)</td>
+          <td class="paramtype">std::ios::seekdir</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -555,8 +566,8 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="ac41c07a8df723bcaed30d973800fe109" name="ac41c07a8df723bcaed30d973800fe109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac41c07a8df723bcaed30d973800fe109">&#9670;&#160;</a></span>write() <span class="overload">[1/19]</span></h2>
+<a id="a345f3c8837775c26e7621f309b8c2ce1" name="a345f3c8837775c26e7621f309b8c2ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345f3c8837775c26e7621f309b8c2ce1">&#9670;&#160;</a></span>tell()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,10 +576,38 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::tell </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  std::streampos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tell the current seek position of the readers stream;. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current seek position </dd></dl>
+
+</div>
+</div>
+<a id="a8a99ccd1ebe410183a0f7464ea5a2270" name="a8a99ccd1ebe410183a0f7464ea5a2270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a99ccd1ebe410183a0f7464ea5a2270">&#9670;&#160;</a></span>write() <span class="overload">[1/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -595,8 +634,8 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="ac7801ba1fd85b0205c7267d3b5d77f87" name="ac7801ba1fd85b0205c7267d3b5d77f87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7801ba1fd85b0205c7267d3b5d77f87">&#9670;&#160;</a></span>write() <span class="overload">[2/19]</span></h2>
+<a id="ac42bcf05b5a63e28b613260cc78f8a85" name="ac42bcf05b5a63e28b613260cc78f8a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42bcf05b5a63e28b613260cc78f8a85">&#9670;&#160;</a></span>write() <span class="overload">[2/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -605,10 +644,10 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -635,8 +674,8 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="a79aa97d6294dc9bf9ec1997398db83df" name="a79aa97d6294dc9bf9ec1997398db83df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79aa97d6294dc9bf9ec1997398db83df">&#9670;&#160;</a></span>write() <span class="overload">[3/19]</span></h2>
+<a id="a91ff2fbf7f164c8c9afa4b73d1e4a92e" name="a91ff2fbf7f164c8c9afa4b73d1e4a92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ff2fbf7f164c8c9afa4b73d1e4a92e">&#9670;&#160;</a></span>write() <span class="overload">[3/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,10 +684,10 @@ The system could not retrieve the absolute path. </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -675,22 +714,22 @@ The system could not retrieve the absolute path. </td></tr>
 
 </div>
 </div>
-<a id="a2cfb07cf5b9bb5ed93724e31f9defc2d" name="a2cfb07cf5b9bb5ed93724e31f9defc2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cfb07cf5b9bb5ed93724e31f9defc2d">&#9670;&#160;</a></span>write() <span class="overload">[4/19]</span></h2>
+<a id="a8493d0624f7f466dd168858499d5d03b" name="a8493d0624f7f466dd168858499d5d03b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8493d0624f7f466dd168858499d5d03b">&#9670;&#160;</a></span>write() <span class="overload">[4/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t size&gt; </div>
+template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::binary_writer::write </td>
+          <td class="memname">auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -717,22 +756,22 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a685aafd2412fe01de8be8846de0c66d6" name="a685aafd2412fe01de8be8846de0c66d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a685aafd2412fe01de8be8846de0c66d6">&#9670;&#160;</a></span>write() <span class="overload">[5/19]</span></h2>
+<a id="ab8473b724c32b690cd1a8367ff3d8d9c" name="ab8473b724c32b690cd1a8367ff3d8d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8473b724c32b690cd1a8367ff3d8d9c">&#9670;&#160;</a></span>write() <span class="overload">[5/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t size&gt; </div>
+template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::io::binary_writer::write </td>
+          <td class="memname">auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; char, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -759,8 +798,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a2db2883462d8f3beec1708ce253dc3ca" name="a2db2883462d8f3beec1708ce253dc3ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2db2883462d8f3beec1708ce253dc3ca">&#9670;&#160;</a></span>write() <span class="overload">[6/19]</span></h2>
+<a id="a248cfd868f67189cdde5aec0c71360dc" name="a248cfd868f67189cdde5aec0c71360dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248cfd868f67189cdde5aec0c71360dc">&#9670;&#160;</a></span>write() <span class="overload">[6/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -769,10 +808,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -799,8 +838,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a382501ca901103dc526d44d3b42a1cb6" name="a382501ca901103dc526d44d3b42a1cb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a382501ca901103dc526d44d3b42a1cb6">&#9670;&#160;</a></span>write() <span class="overload">[7/19]</span></h2>
+<a id="a928578203e64e6bcba6030a222253216" name="a928578203e64e6bcba6030a222253216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a928578203e64e6bcba6030a222253216">&#9670;&#160;</a></span>write() <span class="overload">[7/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -809,19 +848,19 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -851,8 +890,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="aff2723487d5a5cb1a1f22c8bf04d6800" name="aff2723487d5a5cb1a1f22c8bf04d6800"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff2723487d5a5cb1a1f22c8bf04d6800">&#9670;&#160;</a></span>write() <span class="overload">[8/19]</span></h2>
+<a id="aa83fd71d503aee769f2dc6d1c7b9a6e0" name="aa83fd71d503aee769f2dc6d1c7b9a6e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa83fd71d503aee769f2dc6d1c7b9a6e0">&#9670;&#160;</a></span>write() <span class="overload">[8/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -861,10 +900,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacextd.html#a2b676b6a3f84c0e49b13b227f6b9cd25">xtd::read_only_span</a>&lt; char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -891,8 +930,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a56d2cf244e951478ec16ae5c3266ea2d" name="a56d2cf244e951478ec16ae5c3266ea2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56d2cf244e951478ec16ae5c3266ea2d">&#9670;&#160;</a></span>write() <span class="overload">[9/19]</span></h2>
+<a id="a5af592f4e4748a938e237ef6b6934802" name="a5af592f4e4748a938e237ef6b6934802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5af592f4e4748a938e237ef6b6934802">&#9670;&#160;</a></span>write() <span class="overload">[9/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -901,19 +940,19 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -943,8 +982,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a4eca9cf3d2c37ac2b5bda2a208c69d45" name="a4eca9cf3d2c37ac2b5bda2a208c69d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eca9cf3d2c37ac2b5bda2a208c69d45">&#9670;&#160;</a></span>write() <span class="overload">[10/19]</span></h2>
+<a id="a358452d6f380517fc4884e0d333664c3" name="a358452d6f380517fc4884e0d333664c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358452d6f380517fc4884e0d333664c3">&#9670;&#160;</a></span>write() <span class="overload">[10/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -953,10 +992,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -983,8 +1022,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a45cd86e7ef40579f0033eb63ef02da8c" name="a45cd86e7ef40579f0033eb63ef02da8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45cd86e7ef40579f0033eb63ef02da8c">&#9670;&#160;</a></span>write() <span class="overload">[11/19]</span></h2>
+<a id="ad7f3af4c68c44eff5bf47e6e79a5dd86" name="ad7f3af4c68c44eff5bf47e6e79a5dd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f3af4c68c44eff5bf47e6e79a5dd86">&#9670;&#160;</a></span>write() <span class="overload">[11/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -993,10 +1032,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1023,8 +1062,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="acd5d24608b6c588f8df00ea17a3d8c24" name="acd5d24608b6c588f8df00ea17a3d8c24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd5d24608b6c588f8df00ea17a3d8c24">&#9670;&#160;</a></span>write() <span class="overload">[12/19]</span></h2>
+<a id="aa07477e4b9730d5149d99643b0153ea0" name="aa07477e4b9730d5149d99643b0153ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07477e4b9730d5149d99643b0153ea0">&#9670;&#160;</a></span>write() <span class="overload">[12/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1033,10 +1072,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1063,8 +1102,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a254d0f7b3bc1c7fc0fa0225fbcc01e6f" name="a254d0f7b3bc1c7fc0fa0225fbcc01e6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a254d0f7b3bc1c7fc0fa0225fbcc01e6f">&#9670;&#160;</a></span>write() <span class="overload">[13/19]</span></h2>
+<a id="addb37c3c4e2d5ba672a3703a1ca982c6" name="addb37c3c4e2d5ba672a3703a1ca982c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb37c3c4e2d5ba672a3703a1ca982c6">&#9670;&#160;</a></span>write() <span class="overload">[13/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1073,10 +1112,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1103,8 +1142,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="adeac25b45530854065a3d99d1c678c7a" name="adeac25b45530854065a3d99d1c678c7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeac25b45530854065a3d99d1c678c7a">&#9670;&#160;</a></span>write() <span class="overload">[14/19]</span></h2>
+<a id="a715eacbc823b6500ef5d588c8b630d0a" name="a715eacbc823b6500ef5d588c8b630d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715eacbc823b6500ef5d588c8b630d0a">&#9670;&#160;</a></span>write() <span class="overload">[14/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1113,10 +1152,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">xtd::sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1143,8 +1182,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="ae036329c9803d478bdba73b23ac7d9f2" name="ae036329c9803d478bdba73b23ac7d9f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae036329c9803d478bdba73b23ac7d9f2">&#9670;&#160;</a></span>write() <span class="overload">[15/19]</span></h2>
+<a id="a5f37ecf6813d1eaca8e969931a077945" name="a5f37ecf6813d1eaca8e969931a077945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f37ecf6813d1eaca8e969931a077945">&#9670;&#160;</a></span>write() <span class="overload">[15/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1153,10 +1192,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1183,8 +1222,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="afdb8e36d75629446050ae9e5bcf94523" name="afdb8e36d75629446050ae9e5bcf94523"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdb8e36d75629446050ae9e5bcf94523">&#9670;&#160;</a></span>write() <span class="overload">[16/19]</span></h2>
+<a id="a979834dc385ff9d9589c10197c7e6a40" name="a979834dc385ff9d9589c10197c7e6a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a979834dc385ff9d9589c10197c7e6a40">&#9670;&#160;</a></span>write() <span class="overload">[16/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1193,10 +1232,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1223,8 +1262,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="ac7b58fda4e1c3b276e467220e817ca55" name="ac7b58fda4e1c3b276e467220e817ca55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7b58fda4e1c3b276e467220e817ca55">&#9670;&#160;</a></span>write() <span class="overload">[17/19]</span></h2>
+<a id="af3f9caa2402de330e534ecb75bcd129e" name="af3f9caa2402de330e534ecb75bcd129e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f9caa2402de330e534ecb75bcd129e">&#9670;&#160;</a></span>write() <span class="overload">[17/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1233,10 +1272,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1263,8 +1302,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a789b8e5dc0c9a6cb434eaab2b34764ae" name="a789b8e5dc0c9a6cb434eaab2b34764ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a789b8e5dc0c9a6cb434eaab2b34764ae">&#9670;&#160;</a></span>write() <span class="overload">[18/19]</span></h2>
+<a id="a773ddd3b50f261d514ded28e66c6ac07" name="a773ddd3b50f261d514ded28e66c6ac07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773ddd3b50f261d514ded28e66c6ac07">&#9670;&#160;</a></span>write() <span class="overload">[18/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1273,10 +1312,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1303,8 +1342,8 @@ template&lt;size_t size&gt; </div>
 
 </div>
 </div>
-<a id="a6cf2c9f6fbfdea66b568bfa176b5e285" name="a6cf2c9f6fbfdea66b568bfa176b5e285"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cf2c9f6fbfdea66b568bfa176b5e285">&#9670;&#160;</a></span>write() <span class="overload">[19/19]</span></h2>
+<a id="a934c90afc4c32bd3cbd999b1ab114972" name="a934c90afc4c32bd3cbd999b1ab114972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934c90afc4c32bd3cbd999b1ab114972">&#9670;&#160;</a></span>write() <span class="overload">[19/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1313,10 +1352,10 @@ template&lt;size_t size&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void xtd::io::binary_writer::write </td>
+          <td class="memname">virtual auto xtd::io::binary_writer::write </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1350,7 +1389,7 @@ template&lt;size_t size&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

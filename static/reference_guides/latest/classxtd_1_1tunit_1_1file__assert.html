@@ -130,13 +130,13 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
-<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a360c0746ee35275b826cb17eff3655b8">path::get_temp_file_name</a>();</div>
+<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">path::get_temp_file_name</a>();</div>
 <div class="line">      <a class="code hl_function" href="#aca2fd9af33af64537de20b05c9fad68e">file_assert::exists</a>(fn);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#ad784ae0a6900657815e292dca56e9724">file::remove</a>(fn);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">file::remove</a>(fn);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case2) {</div>
-<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a539a84b0203c09630a6aaecd01337599">path::get_random_file_name</a>();</div>
+<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#ad0c72dd91db2224d3ccb30cacdfca0ec">path::get_random_file_name</a>();</div>
 <div class="line">      <a class="code hl_function" href="#aca2fd9af33af64537de20b05c9fad68e">file_assert::exists</a>(fn);</div>
 <div class="line">      <span class="comment">// No need to remove fn because the file does not exist.</span></div>
 <div class="line">    }</div>
@@ -170,9 +170,9 @@ Each method may be called without a message, with a simple text message or with 
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   FAILED  2 tests.</span></div>
 <div class="line"><span class="comment">// End 3 tests from 1 test case ran. (0 ms total)</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file_html_ad784ae0a6900657815e292dca56e9724"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#ad784ae0a6900657815e292dca56e9724">xtd::io::file::remove</a></div><div class="ttdeci">static void remove(const xtd::string &amp;path)</div><div class="ttdoc">Deletes the specified file.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a360c0746ee35275b826cb17eff3655b8"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a360c0746ee35275b826cb17eff3655b8">xtd::io::path::get_temp_file_name</a></div><div class="ttdeci">static xtd::string get_temp_file_name()</div><div class="ttdoc">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a539a84b0203c09630a6aaecd01337599"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a539a84b0203c09630a6aaecd01337599">xtd::io::path::get_random_file_name</a></div><div class="ttdeci">static xtd::string get_random_file_name()</div><div class="ttdoc">Returns a random folder name or file name.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file_html_af1f6b61992c57e7442f84ae447d416de"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">xtd::io::file::remove</a></div><div class="ttdeci">static auto remove(const xtd::string &amp;path) -&gt; void</div><div class="ttdoc">Deletes the specified file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a215d1e158bd017585c72c67fd03a3d31"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">xtd::io::path::get_temp_file_name</a></div><div class="ttdeci">static auto get_temp_file_name() -&gt; xtd::string</div><div class="ttdoc">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1path_html_ad0c72dd91db2224d3ccb30cacdfca0ec"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#ad0c72dd91db2224d3ccb30cacdfca0ec">xtd::io::path::get_random_file_name</a></div><div class="ttdeci">static auto get_random_file_name() -&gt; xtd::string</div><div class="ttdoc">Returns a random folder name or file name.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_abcbaf9c1801f29acea0b404acd916f15"><div class="ttname"><a href="#abcbaf9c1801f29acea0b404acd916f15">xtd::tunit::file_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::basic_istream&lt; char_t &gt; &amp;expected, const std::basic_istream&lt; char_t &gt; &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two files are equal.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:51</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__assert_html_aca2fd9af33af64537de20b05c9fad68e"><div class="ttname"><a href="#aca2fd9af33af64537de20b05c9fad68e">xtd::tunit::file_assert::exists</a></div><div class="ttdeci">static void exists(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that file exists.</div><div class="ttdef"><b>Definition</b> file_assert.hpp:330</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
@@ -990,7 +990,7 @@ template&lt;class char_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

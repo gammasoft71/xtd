@@ -111,10 +111,10 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __sprintf(<span class="keyword">const</span> char_t* fmt, ...) {<span class="keywordflow">return</span> std::basic_string&lt;char_t&gt;();}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __sprintf(<span class="keyword">const</span> char_t* fmt, ...) -&gt; std::basic_string&lt;char_t&gt; {<span class="keywordflow">return</span> std::basic_string&lt;char_t&gt;();}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">inline</span> std::basic_string&lt;char&gt; __sprintf&lt;char&gt;(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __sprintf&lt;char&gt;(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) -&gt; std::basic_string&lt;char&gt; {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  va_list args;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  va_start(args, fmt);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::basic_string&lt;char&gt; formatted_string(vsnprintf(<span class="keyword">nullptr</span>, 0, fmt, args), 0);</div>
@@ -129,7 +129,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">inline</span> std::basic_string&lt;xtd::wchar&gt; __sprintf&lt;xtd::wchar&gt;(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga438e2b3e86176afb074a70ed50f6c302">xtd::wchar</a>* fmt, ...) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __sprintf&lt;xtd::wchar&gt;(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga438e2b3e86176afb074a70ed50f6c302">xtd::wchar</a>* fmt, ...) -&gt; std::basic_string&lt;xtd::wchar&gt; {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  va_list args;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">size_t</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> = 1024;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a> = 0;</div>
@@ -158,7 +158,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

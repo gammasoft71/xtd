@@ -105,15 +105,15 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">namespace </span>unit_tests {</div>
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
-<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a360c0746ee35275b826cb17eff3655b8">path::get_temp_file_name</a>();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#ad784ae0a6900657815e292dca56e9724">file::remove</a>(fn);</div>
+<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">path::get_temp_file_name</a>();</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">file::remove</a>(fn);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1file__valid.html#a051ff022992517e61ec02af481972f8b">file_valid::does_not_exist</a>(fn);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
-<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a360c0746ee35275b826cb17eff3655b8">path::get_temp_file_name</a>();</div>
+<div class="line">      <span class="keyword">auto</span> fn = <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">path::get_temp_file_name</a>();</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1file__valid.html#a051ff022992517e61ec02af481972f8b">file_valid::does_not_exist</a>(fn);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#ad784ae0a6900657815e292dca56e9724">file::remove</a>(fn);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">file::remove</a>(fn);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -136,8 +136,8 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
 <div class="line"><span class="comment">//   FAILED  1 test.</span></div>
 <div class="line"><span class="comment">// End 2 tests from 1 test case ran. (0 ms total)</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1file_html_ad784ae0a6900657815e292dca56e9724"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#ad784ae0a6900657815e292dca56e9724">xtd::io::file::remove</a></div><div class="ttdeci">static void remove(const xtd::string &amp;path)</div><div class="ttdoc">Deletes the specified file.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a360c0746ee35275b826cb17eff3655b8"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a360c0746ee35275b826cb17eff3655b8">xtd::io::path::get_temp_file_name</a></div><div class="ttdeci">static xtd::string get_temp_file_name()</div><div class="ttdoc">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1file_html_af1f6b61992c57e7442f84ae447d416de"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#af1f6b61992c57e7442f84ae447d416de">xtd::io::file::remove</a></div><div class="ttdeci">static auto remove(const xtd::string &amp;path) -&gt; void</div><div class="ttdoc">Deletes the specified file.</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a215d1e158bd017585c72c67fd03a3d31"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a215d1e158bd017585c72c67fd03a3d31">xtd::io::path::get_temp_file_name</a></div><div class="ttdeci">static auto get_temp_file_name() -&gt; xtd::string</div><div class="ttdoc">Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1file__valid_html_a051ff022992517e61ec02af481972f8b"><div class="ttname"><a href="classxtd_1_1tunit_1_1file__valid.html#a051ff022992517e61ec02af481972f8b">xtd::tunit::file_valid::does_not_exist</a></div><div class="ttdeci">static void does_not_exist(const xtd::basic_string&lt; char_t &gt; &amp;file, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Validate that file not exists.</div><div class="ttdef"><b>Definition</b> file_valid.hpp:244</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
@@ -148,7 +148,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 18 2026 10:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 20:02:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

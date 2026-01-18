@@ -13,7 +13,7 @@ var searchData=
   ['has_5fall_5fset_10',['has_all_set',['../classxtd_1_1collections_1_1bit__array.html#ad553f27b6ad268990dc0d6e5af65d1d7',1,'xtd::collections::bit_array']]],
   ['has_5fany_5fset_11',['has_any_set',['../classxtd_1_1collections_1_1bit__array.html#aca9004891a68180be31c1ae0ba16a7bb',1,'xtd::collections::bit_array']]],
   ['has_5fexited_12',['has_exited',['../classxtd_1_1diagnostics_1_1process.html#a9481578320363c2c56ea50bc5a9b8acb',1,'xtd::diagnostics::process']]],
-  ['has_5fextension_13',['has_extension',['../classxtd_1_1io_1_1path.html#a1040d0556a03453009a0643675145d9c',1,'xtd::io::path']]],
+  ['has_5fextension_13',['has_extension',['../classxtd_1_1io_1_1path.html#a4c65bda9b816124c91aeebe774fb99f0',1,'xtd::io::path']]],
   ['has_5fflag_14',['has_flag',['../structxtd_1_1enum__object.html#a00873f075288eaa8c80473e02145f4b5',1,'xtd::enum_object']]],
   ['has_5fshutdown_5fstarted_15',['has_shutdown_started',['../classxtd_1_1environment.html#a28d302ff14e862d79bb3afe199a63154',1,'xtd::environment']]],
   ['has_5fvalue_16',['has_value',['../classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb',1,'xtd::any_object']]],

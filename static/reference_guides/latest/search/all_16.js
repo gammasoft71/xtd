@@ -94,9 +94,9 @@ var searchData=
   ['volcano_91',['volcano',['../classxtd_1_1forms_1_1emoticons.html#a1abc7c6dd1aab249fbf2b2bfe035b557',1,'xtd::forms::emoticons']]],
   ['volleyball_92',['volleyball',['../classxtd_1_1forms_1_1emoticons.html#a52a8bfd27219a6e88388b88da0947bf3',1,'xtd::forms::emoticons']]],
   ['volume_5fdown_93',['volume_down',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5484a052412a1490792614e316964a73',1,'xtd::volume_down'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea5484a052412a1490792614e316964a73',1,'xtd::forms::volume_down']]],
-  ['volume_5flabel_94',['volume_label',['../classxtd_1_1io_1_1drive__info.html#a660d6125f8eac7e6de02c902615c0c09',1,'xtd::io::drive_info']]],
+  ['volume_5flabel_94',['volume_label',['../classxtd_1_1io_1_1drive__info.html#a743bf07a61d6525809dda1eb4a409c54',1,'xtd::io::drive_info']]],
   ['volume_5fmute_95',['volume_mute',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a04a5c7a91cad767bb6fa384d29dcfdf6',1,'xtd::volume_mute'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea04a5c7a91cad767bb6fa384d29dcfdf6',1,'xtd::forms::volume_mute']]],
-  ['volume_5fseparator_5fchar_96',['volume_separator_char',['../classxtd_1_1io_1_1path.html#a004bb876e5c06cdf71800b5d27dce032',1,'xtd::io::path::volume_separator_char() noexcept'],['../classxtd_1_1io_1_1path.html#a4d8e03b06b418075907e19753b8ec743',1,'xtd::io::path::volume_separator_char() noexcept']]],
+  ['volume_5fseparator_5fchar_96',['volume_separator_char',['../classxtd_1_1io_1_1path.html#ab3bafaa59fb112846cf476e86ec61b65',1,'xtd::io::path::volume_separator_char() noexcept -&gt; char_t'],['../classxtd_1_1io_1_1path.html#a22f6d77353a198119124c74b6937a03c',1,'xtd::io::path::volume_separator_char() noexcept -&gt; char']]],
   ['volume_5fup_97',['volume_up',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99d8c19a76f587b7c476c802950bea5d',1,'xtd::volume_up'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99d8c19a76f587b7c476c802950bea5d',1,'xtd::forms::volume_up']]],
   ['vsplit_98',['vsplit',['../classxtd_1_1forms_1_1cursors.html#ae4a3fbd6429cb22255c7b0efd985de4d',1,'xtd::forms::cursors']]]
 ];
