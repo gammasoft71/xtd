@@ -20,7 +20,7 @@
 
 /// @cond
 template<class char_t, class floating_point_t>
-inline std::basic_string<char_t> __floating_point_to_binary(floating_point_t value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary(floating_point_t value, int precision) -> std::basic_string<char_t> {
   union {
     double input;
     std::int64_t output;
@@ -30,7 +30,7 @@ inline std::basic_string<char_t> __floating_point_to_binary(floating_point_t val
 }
 
 template <>
-inline std::basic_string<char> __floating_point_to_binary<char, long double>(long double value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<char, long double>(long double value, int precision) -> std::basic_string<char> {
   union {
     long double input;
     std::int64_t output;
@@ -40,7 +40,7 @@ inline std::basic_string<char> __floating_point_to_binary<char, long double>(lon
 }
 
 template <>
-inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, long double>(long double value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<wchar_t, long double>(long double value, int precision) -> std::basic_string<wchar_t> {
   union {
     long double input;
     std::int64_t output;
@@ -50,7 +50,7 @@ inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, long doubl
 }
 
 template <>
-inline std::basic_string<char> __floating_point_to_binary<char, double>(double value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<char, double>(double value, int precision) -> std::basic_string<char> {
   union {
     double input;
     std::int64_t output;
@@ -60,7 +60,7 @@ inline std::basic_string<char> __floating_point_to_binary<char, double>(double v
 }
 
 template <>
-inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, double>(double value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<wchar_t, double>(double value, int precision) -> std::basic_string<wchar_t> {
   union {
     double input;
     std::int64_t output;
@@ -70,7 +70,7 @@ inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, double>(do
 }
 
 template <>
-inline std::basic_string<char> __floating_point_to_binary<char, float>(float value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<char, float>(float value, int precision) -> std::basic_string<char> {
   union {
     float input;
     std::int32_t output;
@@ -80,7 +80,7 @@ inline std::basic_string<char> __floating_point_to_binary<char, float>(float val
 }
 
 template <>
-inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, float>(float value, int precision) {
+[[nodiscard]] inline auto __floating_point_to_binary<wchar_t, float>(float value, int precision) -> std::basic_string<wchar_t> {
   union {
     float input;
     std::int32_t output;
@@ -90,7 +90,7 @@ inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, float>(flo
 }
 
 template<class char_t, class value_t>
-inline std::basic_string<char_t> __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
+[[nodiscard]] inline auto __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) -> std::basic_string<char_t> {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
   
