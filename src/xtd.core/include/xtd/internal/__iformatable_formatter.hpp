@@ -17,13 +17,13 @@ namespace xtd {
   class object;
 }
 
-std::string __to_string_iformatable_to_string(const xtd::iformatable* obj, const std::string& fmt, const std::locale& loc);
+[[nodiscard]] auto __to_string_iformatable_to_string(const xtd::iformatable* obj, const std::string& fmt, const std::locale& loc) -> std::string;
 template<class type_t>
-std::string __to_string_istringable_to_string(const xtd::istringable<type_t>* obj);
-std::string __to_string_object_to_string(const xtd::object* obj);
+[[nodiscard]] auto __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) -> std::string;
+[[nodiscard]] auto __to_string_object_to_string(const xtd::object* obj) -> std::string;
 
 template<class value_t>
-inline static std::string __to_string_polymorphic(const value_t& value, const std::string& fmt, const std::locale& loc) {
+[[nodiscard]] inline static auto __to_string_polymorphic(const value_t& value, const std::string& fmt, const std::locale& loc) -> std::string {
   if constexpr(std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable>) return __to_string_iformatable_to_string(static_cast<const xtd::iformatable*>(&value), fmt, loc);
   else if constexpr(std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable<std::remove_cvref_t<value_t>>>) return __to_string_istringable_to_string(static_cast<const xtd::istringable<value_t>*>(&value));
   else if constexpr(std::derived_from<std::remove_cvref_t<value_t>, xtd::object>) return __to_string_object_to_string(static_cast<const xtd::object*>(&value));
