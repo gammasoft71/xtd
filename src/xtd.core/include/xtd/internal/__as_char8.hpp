@@ -33,7 +33,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(xtd::any value) {
+  inline auto as<xtd::char8>(xtd::any value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(bool value) {
+  inline auto as<xtd::char8>(bool value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(xtd::byte value) {
+  inline auto as<xtd::char8>(xtd::byte value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char value) {
+  inline auto as<xtd::char8>(char value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char8 value) {
+  inline auto as<xtd::char8>(xtd::char8 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char16 value) {
+  inline auto as<xtd::char8>(xtd::char16 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char32 value) {
+  inline auto as<xtd::char8>(xtd::char32 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(wchar value) {
+  inline auto as<xtd::char8>(xtd::wchar value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(decimal value) {
+  inline auto as<xtd::char8>(xtd::decimal value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(double value) {
+  inline auto as<xtd::char8>(double value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(float value) {
+  inline auto as<xtd::char8>(float value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(int16 value) {
+  inline auto as<xtd::char8>(xtd::int16 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(int32 value) {
+  inline auto as<xtd::char8>(xtd::int32 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(int64 value) {
+  inline auto as<xtd::char8>(xtd::int64 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(slong value) {
+  inline auto as<xtd::char8>(xtd::slong value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(sbyte value) {
+  inline auto as<xtd::char8>(xtd::sbyte value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(uint16 value) {
+  inline auto as<xtd::char8>(xtd::uint16 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(uint32 value) {
+  inline auto as<xtd::char8>(xtd::uint32 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(uint64 value) {
+  inline auto as<xtd::char8>(xtd::uint64 value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(xtd::ulong value) {
+  inline auto as<xtd::char8>(xtd::ulong value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const xtd::string& value) {
+  inline auto as<xtd::char8>(const xtd::string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(xtd::string& value) {
+  inline auto as<xtd::char8>(xtd::string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const std::string& value) {
+  inline auto as<xtd::char8>(const std::string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(std::string& value) {
+  inline auto as<xtd::char8>(std::string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const std::u8string& value) {
+  inline auto as<xtd::char8>(const std::u8string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(std::u8string& value) {
+  inline auto as<xtd::char8>(std::u8string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const std::u16string& value) {
+  inline auto as<xtd::char8>(const std::u16string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(std::u16string& value) {
+  inline auto as<xtd::char8>(std::u16string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const std::u32string& value) {
+  inline auto as<xtd::char8>(const std::u32string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(std::u32string& value) {
+  inline auto as<xtd::char8>(std::u32string& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const std::wstring& value) {
+  inline auto as<xtd::char8>(const std::wstring& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(std::wstring& value) {
+  inline auto as<xtd::char8>(std::wstring& value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const char* value) {
+  inline auto as<xtd::char8>(const char* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char* value) {
+  inline auto as<xtd::char8>(char* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const char8* value) {
+  inline auto as<xtd::char8>(const xtd::char8* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char8* value) {
+  inline auto as<xtd::char8>(xtd::char8* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const char16* value) {
+  inline auto as<xtd::char8>(const xtd::char16* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char16* value) {
+  inline auto as<xtd::char8>(xtd::char16* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const char32* value) {
+  inline auto as<xtd::char8>(const xtd::char32* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(char32* value) {
+  inline auto as<xtd::char8>(xtd::char32* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(const wchar* value) {
+  inline auto as<xtd::char8>(const xtd::wchar* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// char8 result = as<char8>(value);
   /// ```
   template<>
-  inline char8 as<char8>(wchar* value) {
+  inline auto as<xtd::char8>(xtd::wchar* value) -> xtd::char8 {
     return xtd::convert::to_char8(value);
   }
 }
