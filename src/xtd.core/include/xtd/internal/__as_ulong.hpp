@@ -33,7 +33,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(xtd::any value) {
+  inline auto as<xtd::ulong>(xtd::any value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(bool value) {
+  inline auto as<xtd::ulong>(bool value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(xtd::byte value) {
+  inline auto as<xtd::ulong>(xtd::byte value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char value) {
+  inline auto as<xtd::ulong>(char value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char8 value) {
+  inline auto as<xtd::ulong>(xtd::char8 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char16 value) {
+  inline auto as<xtd::ulong>(xtd::char16 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char32 value) {
+  inline auto as<xtd::ulong>(xtd::char32 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(wchar value) {
+  inline auto as<xtd::ulong>(xtd::wchar value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(decimal value) {
+  inline auto as<xtd::ulong>(xtd::decimal value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(double value) {
+  inline auto as<xtd::ulong>(double value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(float value) {
+  inline auto as<xtd::ulong>(float value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(int16 value) {
+  inline auto as<xtd::ulong>(xtd::int16 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(int32 value) {
+  inline auto as<xtd::ulong>(xtd::int32 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(int64 value) {
+  inline auto as<xtd::ulong>(xtd::int64 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(slong value) {
+  inline auto as<xtd::ulong>(xtd::slong value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(sbyte value) {
+  inline auto as<xtd::ulong>(xtd::sbyte value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(uint16 value) {
+  inline auto as<xtd::ulong>(xtd::uint16 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(uint32 value) {
+  inline auto as<xtd::ulong>(xtd::uint32 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(uint64 value) {
+  inline auto as<xtd::ulong>(xtd::uint64 value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(xtd::ulong value) {
+  inline auto as<xtd::ulong>(xtd::ulong value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const xtd::string& value) {
+  inline auto as<xtd::ulong>(const xtd::string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(xtd::string& value) {
+  inline auto as<xtd::ulong>(xtd::string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -526,7 +526,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value, 16);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const xtd::string& value, xtd::byte from_base) {
+  inline auto as<xtd::ulong>(const xtd::string& value, xtd::byte from_base) -> xtd::ulong {
     return xtd::convert::to_ullong(value, from_base);
   }
   
@@ -549,7 +549,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const std::string& value) {
+  inline auto as<xtd::ulong>(const std::string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -572,7 +572,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(std::string& value) {
+  inline auto as<xtd::ulong>(std::string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -595,7 +595,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const std::u8string& value) {
+  inline auto as<xtd::ulong>(const std::u8string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -618,7 +618,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(std::u8string& value) {
+  inline auto as<xtd::ulong>(std::u8string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -641,7 +641,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const std::u16string& value) {
+  inline auto as<xtd::ulong>(const std::u16string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -664,7 +664,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(std::u16string& value) {
+  inline auto as<xtd::ulong>(std::u16string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -687,7 +687,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const std::u32string& value) {
+  inline auto as<xtd::ulong>(const std::u32string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -710,7 +710,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(std::u32string& value) {
+  inline auto as<xtd::ulong>(std::u32string& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -733,7 +733,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const std::wstring& value) {
+  inline auto as<xtd::ulong>(const std::wstring& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -756,7 +756,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(std::wstring& value) {
+  inline auto as<xtd::ulong>(std::wstring& value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -779,7 +779,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const char* value) {
+  inline auto as<xtd::ulong>(const char* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -802,7 +802,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char* value) {
+  inline auto as<xtd::ulong>(char* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -825,7 +825,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const char8* value) {
+  inline auto as<xtd::ulong>(const xtd::char8* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -848,7 +848,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char8* value) {
+  inline auto as<xtd::ulong>(xtd::char8* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -871,7 +871,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const char16* value) {
+  inline auto as<xtd::ulong>(const xtd::char16* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -894,7 +894,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char16* value) {
+  inline auto as<xtd::ulong>(xtd::char16* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -917,7 +917,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const char32* value) {
+  inline auto as<xtd::ulong>(const xtd::char32* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -940,7 +940,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(char32* value) {
+  inline auto as<xtd::ulong>(xtd::char32* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -963,7 +963,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(const wchar* value) {
+  inline auto as<xtd::ulong>(const xtd::wchar* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
   
@@ -986,7 +986,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline xtd::ulong as<xtd::ulong>(wchar* value) {
+  inline auto as<xtd::ulong>(xtd::wchar* value) -> xtd::ulong {
     return xtd::convert::to_ullong(value);
   }
 }
