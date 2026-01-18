@@ -47,7 +47,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t alt_directory_separator_char() noexcept {return static_cast<char_t>(alt_directory_separator_char());}
+      [[nodiscard]] static auto alt_directory_separator_char() noexcept -> char_t {return static_cast<char_t>(alt_directory_separator_char());}
       
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char character used to separate directory levels.
@@ -56,7 +56,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char alt_directory_separator_char() noexcept;
+      [[nodiscard]] static auto alt_directory_separator_char() noexcept -> char;
       
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char_t Platform-specific character used to separate directory levels.
@@ -65,7 +65,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t directory_separator_char() noexcept {
+      [[nodiscard]] static auto directory_separator_char() noexcept -> char_t {
         return static_cast<char_t>(directory_separator_char());
       }
       
@@ -75,33 +75,33 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char directory_separator_char() noexcept;
+      [[nodiscard]] static auto directory_separator_char() noexcept -> char;
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
       /// @par Examples
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
+      [[nodiscard]] static auto path_separator() noexcept -> char_t {return static_cast<char_t>(path_separator());}
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
       /// @par Examples
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
-      static char path_separator() noexcept;
+      [[nodiscard]] static auto path_separator() noexcept -> char;
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
+      [[nodiscard]] static auto volume_separator_char() noexcept -> char_t {return  static_cast<char_t>(volume_separator_char());}
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
-      static char volume_separator_char() noexcept;
+      [[nodiscard]] static auto volume_separator_char() noexcept -> char;
       /// @}
       
       /// @name Public Static Methods
@@ -118,14 +118,14 @@ namespace xtd {
       /// @remarks If extension does not contain a leading period, the period is added.
       /// @remarks If path contains a multiple extension separated by multiple periods, the returned string contains the contents of path with the last period and all characters following it replaced by extension. For example, if path is "\Dir1\examples\pathtests.csx.txt" and extension is "cs", the modified path is "\Dir1\examples\pathtests.csx.cs".
       /// @remarks It is not possible to verify that the returned results are valid in all scenarios. For example, if path is empty, extension is appended.
-      static xtd::string change_extension(const xtd::string& path, const xtd::string& extension);
+      [[nodiscard]] static auto change_extension(const xtd::string& path, const xtd::string& extension) -> xtd::string;
       
       /// @brief Combines two path strings.
       /// @param path1 The first path.
       /// @param path2 The second path.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::string combine(const xtd::string& path1, const xtd::string& path2);
+      [[nodiscard]] static auto combine(const xtd::string& path1, const xtd::string& path2) -> xtd::string;
       
       /// @brief Combines three path strings.
       /// @param path1 The first path.
@@ -134,7 +134,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class type1_t, class type2_t, class type3_t>
-      static auto combine(type1_t path1, type2_t path2, type3_t path3) noexcept {
+      [[nodiscard]] static auto combine(type1_t path1, type2_t path2, type3_t path3) noexcept {
         return combine(combine(path1, path2), path3);
       }
       
@@ -146,7 +146,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class type1_t, class type2_t, class type3_t, class type4_t>
-      static auto combine(type1_t path1, type2_t path2, type3_t path3, type4_t path4) noexcept {
+      [[nodiscard]] static auto combine(type1_t path1, type2_t path2, type3_t path3, type4_t path4) noexcept {
         return combine(combine(combine(path1, path2), path3), path4);
       }
       
@@ -155,7 +155,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class path_t>
-      static xtd::string combine(path_t paths) noexcept {
+      [[nodiscard]] static auto combine(path_t paths) noexcept -> xtd::string {
         xtd::string result;
         std::for_each(paths.begin(), paths.end(), [&](auto path) {result = combine(result, path);});
         return result;
@@ -165,79 +165,79 @@ namespace xtd {
       /// @param paths The path array.
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
-      static xtd::string combine(const std::initializer_list<xtd::string>& paths) noexcept;
+      [[nodiscard]] static auto combine(const std::initializer_list<xtd::string>& paths) noexcept -> xtd::string;
       
       /// @brief Returns the directory information for the specified path string.
       /// @param path the path of a file or directory.
       /// @return A string containing directory information for path, or null if path denotes a root directory, is the empty string ("").
       /// @remarks Returns string empty if path does not contain directory information.
-      static xtd::string get_directory_name(const xtd::string& path);
+      [[nodiscard]] static auto get_directory_name(const xtd::string& path) -> xtd::string;
       
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
       /// @return An xtd::string containing the extension of the specified path (including the ".") or xtd::string::empty.
       /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
-      static xtd::string get_extension(const xtd::string& path);
+      [[nodiscard]] static auto get_extension(const xtd::string& path) -> xtd::string;
       
       /// @brief Returns the file name and extension of the specified path string.
       /// @param path The path string from which to obtain the file name and extension.
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
-      static xtd::string get_file_name(const xtd::string& path);
+      [[nodiscard]] static auto get_file_name(const xtd::string& path) -> xtd::string;
       
       /// @brief Returns the file name of the specified path string without the extension.
       /// @param path The path of the file.
       /// @return The string returned by xtd::io::path::get_file_name, minus the last period (.) and all characters following it.
       /// @remarks This method does not verify that the path or file name exists.
-      static xtd::string get_file_name_without_extension(const xtd::string& path);
+      [[nodiscard]] static auto get_file_name_without_extension(const xtd::string& path) -> xtd::string;
       
       /// @brief Returns the absolute path for the specified path string.
       /// @param path The file or directory for which to obtain absolute path information.
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
-      static xtd::string get_full_path(const xtd::string& path);
+      [[nodiscard]] static auto get_full_path(const xtd::string& path) -> xtd::string;
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
       template<class char_t>
-      static xtd::array<char_t> get_invalid_path_chars() noexcept {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
+      [[nodiscard]] static auto get_invalid_path_chars() noexcept -> xtd::array<char_t> {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
-      static xtd::array<char> get_invalid_path_chars() noexcept;
+      [[nodiscard]] static auto get_invalid_path_chars() noexcept -> xtd::array<char>;
       
       /// @brief Gets the root directory information of the specified path.
       /// @param path The path from which to obtain root directory information.
       /// @return A string containing the root directory of path, such as "C:\", or null if
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
-      static xtd::string get_path_root(const xtd::string& path);
+      [[nodiscard]] static auto get_path_root(const xtd::string& path) -> xtd::string;
       
       /// @brief Returns a random folder name or file name.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       /// @remarks The default name length is 8 and the default extension length is 3.
-      static xtd::string get_random_file_name();
+      [[nodiscard]] static auto get_random_file_name() -> xtd::string;
       /// @brief Returns a random folder name or file name with specified name length.
       /// @brief name_length The lname legnth.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       /// @remarks The default extension length is 0.
-      static xtd::string get_random_file_name(size_t name_length);
+      [[nodiscard]] static auto get_random_file_name(size_t name_length) -> xtd::string;
       /// @brief Returns a random folder name or file name with specified name length, and extension length.
       /// @brief name_length The name legnth.
       /// @brief extension_size The extension legnth.
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
-      static xtd::string get_random_file_name(size_t name_size, size_t extension_size);
+      [[nodiscard]] static auto get_random_file_name(size_t name_size, size_t extension_size) -> xtd::string;
       
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
       /// @remarks The GetTempFileName method will raise an xtd::io_exception if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an xtd::io_exception if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
-      static xtd::string get_temp_file_name();
+      [[nodiscard]] static auto get_temp_file_name() -> xtd::string;
       
       /// @brief Returns the path of the current user's temporary folder.
       /// @return string The path to the temporary folder, ending with a backslash.
@@ -246,26 +246,26 @@ namespace xtd {
       /// * The path specified by the TEMP environment variable.
       /// * The path specified by the USERPROFILE environment variable.
       /// * The Windows directory.
-      static xtd::string get_temp_path() noexcept;
+      [[nodiscard]] static auto get_temp_path() noexcept -> xtd::string;
       
       /// @brief Determines whether a path includes a file name extension.
       /// @param path The path to search for an extension.
       /// @return `true` if the characters that follow the last directory separator (\\ or /)
       /// @return or volume separator (:) in the path include a period (.) followed by one
       /// @return or more characters; otherwise, `false`.
-      static bool has_extension(const xtd::string& path);
+      [[nodiscard]] static auto has_extension(const xtd::string& path) -> bool;
       
       /// @brief Gets a value indicating whether the specified path string contains absolute or relative path information.
       /// @param path The path to test.
       /// @return `true` if path contains an absolute path; otherwise, `false`.
       /// @remarks This method also returns `false` if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns `false` regardless of the existence of path.
-      static bool is_path_rooted(const xtd::string& path);
+      [[nodiscard]] static auto is_path_rooted(const xtd::string& path) -> bool;
       /// @}
       
     private:
-      static int32 __get_index_path_rooted(const xtd::string& path);
-      static bool __is_drive(const xtd::string& path) noexcept;
+      [[nodiscard]] static auto __get_index_path_rooted(const xtd::string& path) -> int32;
+      [[nodiscard]] static auto __is_drive(const xtd::string& path) noexcept -> bool;
     };
   }
 }
