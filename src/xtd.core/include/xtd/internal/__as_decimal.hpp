@@ -33,7 +33,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(xtd::any value) {
+  inline auto as<xtd::decimal>(xtd::any value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(bool value) {
+  inline auto as<xtd::decimal>(bool value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(xtd::byte value) {
+  inline auto as<xtd::decimal>(xtd::byte value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char value) {
+  inline auto as<xtd::decimal>(char value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char8 value) {
+  inline auto as<xtd::decimal>(xtd::char8 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char16 value) {
+  inline auto as<xtd::decimal>(xtd::char16 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char32 value) {
+  inline auto as<xtd::decimal>(xtd::char32 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(wchar value) {
+  inline auto as<xtd::decimal>(xtd::wchar value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(decimal value) {
+  inline auto as<xtd::decimal>(xtd::decimal value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(double value) {
+  inline auto as<xtd::decimal>(double value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(float value) {
+  inline auto as<xtd::decimal>(float value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(int16 value) {
+  inline auto as<xtd::decimal>(xtd::int16 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(int32 value) {
+  inline auto as<xtd::decimal>(xtd::int32 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(int64 value) {
+  inline auto as<xtd::decimal>(xtd::int64 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(slong value) {
+  inline auto as<xtd::decimal>(xtd::slong value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(sbyte value) {
+  inline auto as<xtd::decimal>(xtd::sbyte value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(uint16 value) {
+  inline auto as<xtd::decimal>(xtd::uint16 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(uint32 value) {
+  inline auto as<xtd::decimal>(xtd::uint32 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(uint64 value) {
+  inline auto as<xtd::decimal>(xtd::uint64 value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(xtd::ulong value) {
+  inline auto as<xtd::decimal>(xtd::ulong value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const xtd::string& value) {
+  inline auto as<xtd::decimal>(const xtd::string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(xtd::string& value) {
+  inline auto as<xtd::decimal>(xtd::string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const std::string& value) {
+  inline auto as<xtd::decimal>(const std::string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::string& value) {
+  inline auto as<xtd::decimal>(std::string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const std::u8string& value) {
+  inline auto as<xtd::decimal>(const std::u8string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::u8string& value) {
+  inline auto as<xtd::decimal>(std::u8string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const std::u16string& value) {
+  inline auto as<xtd::decimal>(const std::u16string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::u16string& value) {
+  inline auto as<xtd::decimal>(std::u16string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const std::u32string& value) {
+  inline auto as<xtd::decimal>(const std::u32string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::u32string& value) {
+  inline auto as<xtd::decimal>(std::u32string& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const std::wstring& value) {
+  inline auto as<xtd::decimal>(const std::wstring& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::wstring& value) {
+  inline auto as<xtd::decimal>(std::wstring& value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const char* value) {
+  inline auto as<xtd::decimal>(const char* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char* value) {
+  inline auto as<xtd::decimal>(char* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const char8* value) {
+  inline auto as<xtd::decimal>(const xtd::char8* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char8* value) {
+  inline auto as<xtd::decimal>(xtd::char8* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const char16* value) {
+  inline auto as<xtd::decimal>(const xtd::char16* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char16* value) {
+  inline auto as<xtd::decimal>(xtd::char16* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const char32* value) {
+  inline auto as<xtd::decimal>(const xtd::char32* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(char32* value) {
+  inline auto as<xtd::decimal>(xtd::char32* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(const wchar* value) {
+  inline auto as<xtd::decimal>(const xtd::wchar* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(wchar* value) {
+  inline auto as<xtd::decimal>(xtd::wchar* value) -> xtd::decimal {
     return xtd::convert::to_decimal(value);
   }
 }
