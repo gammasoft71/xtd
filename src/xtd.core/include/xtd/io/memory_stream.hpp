@@ -48,37 +48,37 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the current stream supports reading.
       /// @return `true` if the stream supports reading; otherwise, `false`.
-      bool can_read() const noexcept override;
+      [[nodiscard]] auto can_read() const noexcept -> bool override;
       
       /// @brief Gets a value indicating whether the current stream supports seeking.
       /// @return `true` if the stream supports seeking; otherwise, `false`.
-      bool can_seek() const noexcept override;
+      [[nodiscard]] auto can_seek() const noexcept -> bool override;
       
       /// @brief Gets a value indicating whether the current stream supports writing.
       /// @return `true` if the stream supports writing; otherwise, `false`.
-      bool can_write() const noexcept override;
+      [[nodiscard]] auto can_write() const noexcept -> bool override;
       
       /// @brief Gets the number of bytes allocated for this stream.
       /// @return The length of the usable portion of the buffer for the stream.
       /// @exception xtd::argument_out_of_range_exception A capacity is less than the current length of the stream.
       /// @remarks `capacity` is the buffer length for system-provided byte arrays. `capacity` cannot be set to a value less than the current length of the stream.
-      xtd::size capacity() const;
+      [[nodiscard]] auto capacity() const -> xtd::size;
       /// @brief Sets the number of bytes allocated for this stream.
       /// @param value The length of the usable portion of the buffer for the stream.
       /// @exception xtd::argument_out_of_range_exception A capacity is less than the current length of the stream.
       /// @remarks `capacity` is the buffer length for system-provided byte arrays. `capacity` cannot be set to a value less than the current length of the stream.
-      void capacity(xtd::size value);
+      auto capacity(xtd::size value) -> void;
       
       /// @brief Gets the length of the stream in bytes.
       /// @return The length of the stream in bytes.
-      xtd::size length() const override;
+      [[nodiscard]] auto length() const -> xtd::size override;
       
       /// @brief Gets the current position within the stream.
       /// @return The current position within the stream.
-      xtd::size position() const override;
+      [[nodiscard]] auto position() const -> xtd::size override;
       /// @brief Sets the current position within the stream.
       /// @param value The current position within the stream.
-      void position(xtd::size value) override;
+      auto position(xtd::size value) -> void override;
       /// @}
       
       /// @name Public Methods
@@ -87,7 +87,7 @@ namespace xtd {
       /// @brief Overrides the Flush() method so that no action is performed.
       /// @remarks This method overrides the xtd::io::stream::flush method.
       /// @remarks Because any data written to a xtd::io::memory_stream object is written into RAM, this method is redundant.
-      void flush() override;
+      auto flush() -> void override;
       
       using xtd::io::stream::read;
       /// @brief Reads a block of bytes from the current stream and writes the data to a buffer.
@@ -99,24 +99,24 @@ namespace xtd {
       /// @remarks If the read operation is successful, the current position within the stream advances by the number of bytes read. If an exception occurs, the current position within the stream remains unchanged.
       /// @remarks The `read` method will return zero only if the end of the stream is reached. In all other cases, `read` always reads at least one byte from the stream before returning. By definition, if no data is available from the stream upon a call to `read`, the `read` method returns zero (the end of the stream is reached automatically). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
       /// @remarks Use xtd::io::binary_reader for reading primitive data types.
-      xtd::size read(xtd::array<xtd::byte>& buffer, size offset, size count) override;
+      auto read(xtd::array<xtd::byte>& buffer, size offset, size count) -> xtd::size override;
       
       /// @brief Sets the position within the current stream to the specified value.
       /// @param offset The new position within the stream. This is relative to the loc parameter, and can be positive or negative.
       /// @param loc A value of type xtd::io::seek_origin, which acts as the seek reference point.
       /// @return The new position within the stream, calculated by combining the initial reference point and the offset.
-      xtd::size seek(std::streamoff offset, seek_origin loc);
+      auto seek(std::streamoff offset, seek_origin loc) -> xtd::size;
       
       /// @brief Sets the length of the current stream to the specified value.
       /// @param value The value at which to set the length.
       /// @remarks If the specified value is less than the current length of the stream, the stream is truncated. If after the truncation the current position within the stream is past the end of the stream, the xtd::io::memery_stream::read_byte method returns -1, the xtd::io::memery_stream::read method reads zero bytes into the provided byte array, and xtd::io::memery_stream::write and xtd::io::memery_stream::write_byte methods append specified bytes at the end of the stream, increasing its length. If the specified value is larger than the current capacity and the stream is resizable, the capacity is increased, and the current position within the stream is unchanged. If the length is increased, the contents of the stream between the old and the new length are initialized to zeros.
-      void set_length(xtd::size value) override;
+      auto set_length(xtd::size value) -> void override;
       
       /// @brief Writes the stream contents to a byte array, regardless of the Position property.
       /// @return A new byte array.
       /// @remarks This method omits unused bytes in xtd::io::memory_stream from the array. To get the entire buffer, use the xtd::io::memory_stream::get_buffer method.
       /// @remarks This method returns a copy of the contents of the xtd::io::memory_stream as a byte array. If the current instance was constructed on a provided byte array, a copy of the section of the array to which this instance has access is returned. See the xtd::io::memory_stream constructor for details.
-      xtd::array<xtd::byte> to_array() const;
+      [[nodiscard]] auto to_array() const -> xtd::array<xtd::byte>;
       
       using xtd::io::stream::write;
       /// @brief Writes a block of bytes to the current stream using data read from a buffer.
@@ -131,17 +131,17 @@ namespace xtd {
       /// ```
       /// @remarks The `offset` parameter gives the offset of the first byte in `buffer` to write from, and the `count` parameter gives the number of bytes to write. If the write operation is successful, the current position within the stream is advanced by the number of bytes written. If an exception occurs, the current position within the stream is unchanged.
       /// @remarks Except for a `memory_stream` constructed with a byte[] parameter, write operations at the end of a `memory_stream` expand the `memory_stream`.
-      void write(const xtd::array<xtd::byte>& buffer, size offset, size count) override;
+      auto write(const xtd::array<xtd::byte>& buffer, size offset, size count) -> void override;
       
       /// @brief Writes the entire contents of this memory stream to another stream.
       /// @param stream The stream to write this memory stream to.
       /// @exception xtd::bject_closed_exception The current or target stream is closed.
       /// @remarks When the current stream is open, this method is equivalent to calling [std::ostream::write](https://en.cppreference.com/w/cpp/io/basic_ostream/write) on the underlying buffer of this stream.
-      void write_to(std::ostream& stream);
+      auto write_to(std::ostream& stream) -> void;
       /// @}
     private:
-      xtd::byte abstract_read_byte_unchecked();
-      void abstract_write_byte_unchecked(xtd::byte b);
+      [[nodiscard]] auto abstract_read_byte_unchecked() -> xtd::byte;
+      auto abstract_write_byte_unchecked(xtd::byte b) -> void;
       
       struct data {
         xtd::array<byte>* static_buffer = null;
