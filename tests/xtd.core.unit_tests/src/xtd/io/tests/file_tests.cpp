@@ -102,18 +102,18 @@ namespace xtd::io::tests {
     auto test_method_(create_text) {
       auto file = file::create_text(test_file_name);
       
-      assert::is_true(file.good());
-      file.seekp(0, std::ios::end);
-      assert::are_equal(0, file.tellp());
+      assert::is_true(file.base_stream()->to_object().good());
+      file.base_stream()->to_object().seekp(0, std::ios::end);
+      assert::are_equal(0, file.base_stream()->to_object().tellp());
     }
     
     auto test_method_(create_text_with_override) {
       assert::does_not_throw([] {file::append_all_text(test_file_name, "Text");});
       auto file = file::create_text(test_file_name);
       
-      assert::is_true(file.good());
-      file.seekp(0, std::ios::end);
-      assert::are_equal(0, file.tellp());
+      assert::is_true(file.base_stream()->to_object().good());
+      file.base_stream()->to_object().seekp(0, std::ios::end);
+      assert::are_equal(0, file.base_stream()->to_object().tellp());
     }
     
     auto test_method_(exists) {
@@ -173,7 +173,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(open_mode_in_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {file::open(test_file_name, std::ios::in);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::open(test_file_name, std::ios::in);});
     }
     
     auto test_method_(open_mode_out) {
@@ -205,22 +205,19 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(open_read_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {file::open_read(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::open_read(test_file_name);});
     }
     
     auto test_method_(open_text_with_existing_file) {
       std::ofstream existing_file(test_file_name);
       existing_file << "Text";
       existing_file.close();
-      std::ifstream file = file::open_text(test_file_name);
-      
-      assert::is_true(file.good());
-      string contents {std::istreambuf_iterator<char> {file}, std::istreambuf_iterator<char> {}};
-      assert::are_equal("Text", contents);
+      stream_reader file = file::open_text(test_file_name);      
+      assert::are_equal("Text", file.read_to_end());
     }
     
     auto test_method_(open_text_without_existing_file) {
-      assert::throws<file_not_found_exception>([] {file::open_text(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::open_text(test_file_name);});
     }
     
     auto test_method_(open_write) {
@@ -244,7 +241,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_bytes_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {file::read_all_bytes(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::read_all_bytes(test_file_name);});
     }
     
     auto test_method_(read_all_lines) {
@@ -259,7 +256,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_lines_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {file::read_all_lines(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::read_all_lines(test_file_name);});
     }
     
     auto test_method_(read_all_text) {
@@ -271,7 +268,7 @@ namespace xtd::io::tests {
     }
     
     auto test_method_(read_all_text_with_unexisting_file) {
-      assert::throws<file_not_found_exception>([] {file::read_all_text(test_file_name);});
+      assert::throws<file_not_found_exception>([] {[[maybe_unused]] auto result = file::read_all_text(test_file_name);});
     }
     
     auto test_method_(remove) {
