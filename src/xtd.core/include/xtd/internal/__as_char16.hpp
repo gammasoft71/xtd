@@ -33,7 +33,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(xtd::any value) {
+  inline auto as<xtd::char16>(xtd::any value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(bool value) {
+  inline auto as<xtd::char16>(bool value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(xtd::byte value) {
+  inline auto as<xtd::char16>(xtd::byte value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char value) {
+  inline auto as<xtd::char16>(char value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char8 value) {
+  inline auto as<xtd::char16>(xtd::char8 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char16 value) {
+  inline auto as<xtd::char16>(xtd::char16 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char32 value) {
+  inline auto as<xtd::char16>(xtd::char32 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(wchar value) {
+  inline auto as<xtd::char16>(xtd::wchar value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(decimal value) {
+  inline auto as<xtd::char16>(xtd::decimal value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(double value) {
+  inline auto as<xtd::char16>(double value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(float value) {
+  inline auto as<xtd::char16>(float value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(int16 value) {
+  inline auto as<xtd::char16>(xtd::int16 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(int32 value) {
+  inline auto as<xtd::char16>(xtd::int32 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(int64 value) {
+  inline auto as<xtd::char16>(xtd::int64 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(slong value) {
+  inline auto as<xtd::char16>(xtd::slong value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(sbyte value) {
+  inline auto as<xtd::char16>(xtd::sbyte value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(uint16 value) {
+  inline auto as<xtd::char16>(xtd::uint16 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(uint32 value) {
+  inline auto as<xtd::char16>(xtd::uint32 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(uint64 value) {
+  inline auto as<xtd::char16>(xtd::uint64 value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(xtd::ulong value) {
+  inline auto as<xtd::char16>(xtd::ulong value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const xtd::string& value) {
+  inline auto as<xtd::char16>(const xtd::string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(xtd::string& value) {
+  inline auto as<xtd::char16>(xtd::string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const std::string& value) {
+  inline auto as<xtd::char16>(const std::string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(std::string& value) {
+  inline auto as<xtd::char16>(std::string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const std::u8string& value) {
+  inline auto as<xtd::char16>(const std::u8string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(std::u8string& value) {
+  inline auto as<xtd::char16>(std::u8string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const std::u16string& value) {
+  inline auto as<xtd::char16>(const std::u16string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(std::u16string& value) {
+  inline auto as<xtd::char16>(std::u16string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const std::u32string& value) {
+  inline auto as<xtd::char16>(const std::u32string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(std::u32string& value) {
+  inline auto as<xtd::char16>(std::u32string& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const std::wstring& value) {
+  inline auto as<xtd::char16>(const std::wstring& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(std::wstring& value) {
+  inline auto as<xtd::char16>(std::wstring& value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const char* value) {
+  inline auto as<xtd::char16>(const char* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char* value) {
+  inline auto as<xtd::char16>(char* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const char8* value) {
+  inline auto as<xtd::char16>(const xtd::char8* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char8* value) {
+  inline auto as<xtd::char16>(xtd::char8* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const char16* value) {
+  inline auto as<xtd::char16>(const xtd::char16* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char16* value) {
+  inline auto as<xtd::char16>(xtd::char16* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const char32* value) {
+  inline auto as<xtd::char16>(const xtd::char32* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(char32* value) {
+  inline auto as<xtd::char16>(xtd::char32* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(const wchar* value) {
+  inline auto as<xtd::char16>(const xtd::wchar* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// char16 result = as<char16>(value);
   /// ```
   template<>
-  inline char16 as<char16>(wchar* value) {
+  inline auto as<xtd::char16>(xtd::wchar* value) -> xtd::char16 {
     return xtd::convert::to_char16(value);
   }
 }
