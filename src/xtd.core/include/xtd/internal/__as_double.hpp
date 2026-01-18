@@ -33,7 +33,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::any value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::any value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(bool value) -> double {
+  [[nodiscard]] inline auto as<double>(bool value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::byte value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::byte value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(char value) -> double {
+  [[nodiscard]] inline auto as<double>(char value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char8 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char8 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char16 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char16 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char32 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char32 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::wchar value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::wchar value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::decimal value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::decimal value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(double value) -> double {
+  [[nodiscard]] inline auto as<double>(double value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(float value) -> double {
+  [[nodiscard]] inline auto as<double>(float value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::int16 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::int16 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::int32 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::int32 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::int64 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::int64 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::slong value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::slong value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::sbyte value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::sbyte value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::uint16 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::uint16 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::uint32 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::uint32 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::uint64 value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::uint64 value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::ulong value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::ulong value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const xtd::string& value) -> double {
+  [[nodiscard]] inline auto as<double>(const xtd::string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::string& value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const std::string& value) -> double {
+  [[nodiscard]] inline auto as<double>(const std::string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(std::string& value) -> double {
+  [[nodiscard]] inline auto as<double>(std::string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const std::u8string& value) -> double {
+  [[nodiscard]] inline auto as<double>(const std::u8string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(std::u8string& value) -> double {
+  [[nodiscard]] inline auto as<double>(std::u8string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const std::u16string& value) -> double {
+  [[nodiscard]] inline auto as<double>(const std::u16string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(std::u16string& value) -> double {
+  [[nodiscard]] inline auto as<double>(std::u16string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const std::u32string& value) -> double {
+  [[nodiscard]] inline auto as<double>(const std::u32string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(std::u32string& value) -> double {
+  [[nodiscard]] inline auto as<double>(std::u32string& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const std::wstring& value) -> double {
+  [[nodiscard]] inline auto as<double>(const std::wstring& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(std::wstring& value) -> double {
+  [[nodiscard]] inline auto as<double>(std::wstring& value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const char* value) -> double {
+  [[nodiscard]] inline auto as<double>(const char* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(char* value) -> double {
+  [[nodiscard]] inline auto as<double>(char* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const xtd::char8* value) -> double {
+  [[nodiscard]] inline auto as<double>(const xtd::char8* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char8* value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char8* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const xtd::char16* value) -> double {
+  [[nodiscard]] inline auto as<double>(const xtd::char16* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char16* value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char16* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const xtd::char32* value) -> double {
+  [[nodiscard]] inline auto as<double>(const xtd::char32* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::char32* value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::char32* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(const xtd::wchar* value) -> double {
+  [[nodiscard]] inline auto as<double>(const xtd::wchar* value) -> double {
     return xtd::convert::to_double(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// double result = as<double>(value);
   /// ```
   template<>
-  inline auto as<double>(xtd::wchar* value) -> double {
+  [[nodiscard]] inline auto as<double>(xtd::wchar* value) -> double {
     return xtd::convert::to_double(value);
   }
 }
