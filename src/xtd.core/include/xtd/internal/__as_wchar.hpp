@@ -33,7 +33,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::any value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::any value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(bool value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(bool value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::byte value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::byte value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(char value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(char value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char8 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char8 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char16 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char16 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char32 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char32 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::wchar value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::wchar value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::decimal value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::decimal value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(double value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(double value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(float value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(float value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::int16 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::int16 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::int32 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::int32 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::int64 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::int64 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::slong value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::slong value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::sbyte value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::sbyte value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::uint16 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::uint16 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::uint32 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::uint32 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::uint64 value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::uint64 value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::ulong value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::ulong value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const xtd::string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const xtd::string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -525,7 +525,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const std::string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const std::string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -548,7 +548,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(std::string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(std::string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -571,7 +571,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const std::u8string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const std::u8string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -594,7 +594,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(std::u8string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(std::u8string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -617,7 +617,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const std::u16string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const std::u16string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -640,7 +640,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(std::u16string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(std::u16string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -663,7 +663,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const std::u32string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const std::u32string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -686,7 +686,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(std::u32string& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(std::u32string& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -709,7 +709,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const std::wstring& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const std::wstring& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -732,7 +732,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(std::wstring& value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(std::wstring& value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -755,7 +755,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const char* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const char* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -778,7 +778,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(char* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(char* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -801,7 +801,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const xtd::char8* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const xtd::char8* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -824,7 +824,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char8* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char8* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -847,7 +847,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const xtd::char16* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const xtd::char16* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -870,7 +870,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char16* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char16* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -893,7 +893,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const xtd::char32* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const xtd::char32* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -916,7 +916,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::char32* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::char32* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -939,7 +939,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(const xtd::wchar* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(const xtd::wchar* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
   
@@ -962,7 +962,7 @@ namespace xtd {
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline auto as<xtd::wchar>(xtd::wchar* value) -> xtd::wchar {
+  [[nodiscard]] inline auto as<xtd::wchar>(xtd::wchar* value) -> xtd::wchar {
     return xtd::convert::to_wchar(value);
   }
 }
