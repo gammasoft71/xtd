@@ -15,11 +15,11 @@ struct __as_enum__ {};
 
 template<class new_type_t, class current_type_t>
 struct __as_enum__<new_type_t, current_type_t, std::true_type> {
-  const new_type_t& convert(const current_type_t& value) {
+  auto convert(const current_type_t& value) -> const new_type_t& {
     __result__ = static_cast<new_type_t>(value);
     return __result__;
   }
-  new_type_t& convert(current_type_t& value) {
+  auto convert(current_type_t& value) -> new_type_t& {
     __result__ = static_cast<new_type_t>(value);
     return __result__;
   }
@@ -28,10 +28,10 @@ struct __as_enum__<new_type_t, current_type_t, std::true_type> {
 
 template<class new_type_t, class current_type_t>
 struct __as_enum__<new_type_t, current_type_t, std::false_type> {
-  const new_type_t& convert(const current_type_t& value) {
+  auto convert(const current_type_t& value) -> const new_type_t& {
     return xtd::convert_pointer::to_ref<new_type_t>(value);
   }
-  new_type_t& convert(current_type_t& value) {
+  auto convert(current_type_t& value) -> new_type_t& {
     return xtd::convert_pointer::to_ref<new_type_t>(value);
   }
 };
