@@ -70,18 +70,18 @@ namespace xtd {
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      std::optional<xtd::ref<std::ostream>> base_stream() const;
+      [[nodiscard]] auto base_stream() const -> std::optional<xtd::ref<std::ostream>>;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Closes the xtd::io::binary_writer object and the underlying stream, and releases any system resources associated with the reader.
-      virtual void close();
+      virtual auto close() -> void;
       
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      virtual void flush();
+      virtual auto flush() -> void;
       
       /// @brief Sets the position within the current stream.
       /// @param ofsset A byte offset relative to origin.
@@ -89,32 +89,36 @@ namespace xtd {
       /// @return The position with the current stream.
       /// @exception xtd::io::io_exception The file pointer was moved to an invalid location.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual size_t seek(size_t offset, std::ios::seekdir origin);
+      virtual auto seek(xtd::size offset, std::ios::seekdir origin) -> xtd::size;
       
+      /// @brief Tell the current seek position of the readers stream;
+      /// @return The current seek position
+      [[nodiscard]] virtual auto tell() -> std::streampos;
+
       /// @brief Writes a one-byte boolean value to the current stream, with 0 representing `false` and 1 representing `true`.
       /// @param value The boolean value to write (0 or 1).
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(bool value);
+      virtual auto write(bool value) -> void;
       
       /// @brief Writes an unsigned byte to the current stream and advances the stream position by one byte.
       /// @param value The unsigned byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(xtd::byte value);
+      virtual auto write(xtd::byte value) -> void;
       
       /// @brief Writes a character to the current stream and advances the current position by one byte.
       /// @param value The character to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(char value);
+      virtual auto write(char value) -> void;
       
       /// @brief Writes a byte array to the underlying stream.
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      template<size_t size>
-      void write(const std::array<xtd::byte, size>& buffer) {
+      template<xtd::size size>
+      auto write(const std::array<xtd::byte, size>& buffer) -> void {
         for (auto b : buffer)
           write(b);
       }
@@ -123,8 +127,8 @@ namespace xtd {
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      template<size_t size>
-      void write(const std::array<char, size>& buffer) {
+      template<xtd::size size>
+      auto write(const std::array<char, size>& buffer) -> void {
         for (auto c : buffer)
           write(c);
       }
@@ -133,7 +137,7 @@ namespace xtd {
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const xtd::read_only_span<xtd::byte>& buffer);
+      virtual auto write(const xtd::read_only_span<xtd::byte>& buffer) -> void;
       
       /// @brief Writes a region of a byte array to the current stream.
       /// @param buffer A byte array containing the data to write.
@@ -142,13 +146,13 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const xtd::array<xtd::byte>& buffer, size_t index, size_t count);
+      virtual auto write(const xtd::array<xtd::byte>& buffer, xtd::size index, xtd::size count) -> void;
       
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const xtd::read_only_span<char>& buffer);
+      virtual auto write(const xtd::read_only_span<char>& buffer) -> void;
       
       /// @brief Writes a region of a character array to the current stream.
       /// @param buffer A character array containing the data to write.
@@ -157,116 +161,116 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const xtd::array<char>& buffer, size_t index, size_t count);
+      virtual auto write(const xtd::array<char>& buffer, xtd::size index, xtd::size count) -> void;
       
       /// @brief Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte floating-point value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(double value);
+      virtual auto write(double value) -> void;
       
       /// @brief Writes a two-byte signed integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(int16 value);
+      virtual auto write(int16 value) -> void;
       
       /// @brief Writes a four-byte signed integer to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(int32 value);
+      virtual auto write(xtd::int32 value) -> void;
       
       /// @brief Writes a eight-byte signed integer to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte signed integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(int64 value);
+      virtual auto write(xtd::int64 value) -> void;
       
       /// @brief Writes an signed byte to the current stream and advances the stream position by one byte.
       /// @param value The signed byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(sbyte value);
+      virtual auto write(xtd::sbyte value) -> void;
       
       /// @brief Writes an four-byte floating-point value to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte floating-point value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(float value);
+      virtual auto write(float value) -> void;
       
       /// @brief Writes a length-prefixed string to this stream, and advances the current position of the stream and the specific characters being written to the stream.
       /// @param value The value to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const string& value);
+      virtual auto write(const xtd::string& value) -> void;
       /// @cond
-      virtual void write(const std::string& value);
-      virtual void write(const std::u8string& value);
-      virtual void write(const std::u16string& value);
-      virtual void write(const std::u32string& value);
-      virtual void write(const std::wstring& value);
-      virtual void write(const char* value);
-      virtual void write(const char8* value);
-      virtual void write(const char16* value);
-      virtual void write(const char32* value);
-      virtual void write(const wchar* value);
+      virtual auto write(const std::string& value) -> void;
+      virtual auto write(const std::u8string& value) -> void;
+      virtual auto write(const std::u16string& value) -> void;
+      virtual auto write(const std::u32string& value) -> void;
+      virtual auto write(const std::wstring& value) -> void;
+      virtual auto write(const char* value) -> void;
+      virtual auto write(const xtd::char8* value) -> void;
+      virtual auto write(const xtd::char16* value) -> void;
+      virtual auto write(const xtd::char32* value) -> void;
+      virtual auto write(const xtd::wchar* value) -> void;
       /// @endcond
       
       /// @brief Writes a two-byte unsigned integer to the current stream and advances the stream position by two bytes.
       /// @param value The two-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(uint16 value);
+      virtual auto write(xtd::uint16 value) -> void;
       
       /// @brief Writes a four-byte unsigned integer to the current stream and advances the stream position by four bytes.
       /// @param value The four-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(uint32 value);
+      virtual auto write(xtd::uint32 value) -> void;
       
       /// @brief Writes a eight-byte unsigned integer to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte unsigned integer to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(uint64 value);
+      virtual auto write(xtd::uint64 value) -> void;
       
       /// @cond
-      virtual void write(slong value);
-      virtual void write(xtd::ulong value);
+      virtual auto write(xtd::slong value) -> void;
+      virtual auto write(xtd::ulong value) -> void;
       /// @endcond
       
       /// @}
       
       /// @cond
-      binary_writer& operator <<(bool value) {write(value); return *this;}
-      binary_writer& operator <<(byte value) {write(value); return *this;}
-      binary_writer& operator <<(char value) {write(value); return *this;}
-      template<size_t size>
-      binary_writer& operator <<(const xtd::fixed_array<xtd::byte, size>& value) {write(value); return *this;}
-      template<size_t size>
-      binary_writer& operator <<(const xtd::fixed_array<char, size>& value) {write(value); return *this;}
-      binary_writer& operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.length()); return *this;}
-      binary_writer& operator <<(const xtd::array<char>& value) {write(value, 0, value.length()); return *this;}
-      binary_writer& operator <<(double value) {write(value); return *this;}
-      binary_writer& operator <<(int16 value) {write(value); return *this;}
-      binary_writer& operator <<(int32 value) {write(value); return *this;}
-      binary_writer& operator <<(int64 value) {write(value); return *this;}
-      binary_writer& operator <<(sbyte value) {write(value); return *this;}
-      binary_writer& operator <<(float value) {write(value); return *this;}
-      binary_writer& operator <<(const string& value) {write(value); return *this;}
-      binary_writer& operator <<(const char* value) {write(value); return *this;}
-      binary_writer& operator <<(const char8* value) {write(value); return *this;}
-      binary_writer& operator <<(const char16* value) {write(value); return *this;}
-      binary_writer& operator <<(const char32* value) {write(value); return *this;}
-      binary_writer& operator <<(const wchar* value) {write(value); return *this;}
-      binary_writer& operator <<(uint16 value) {write(value); return *this;}
-      binary_writer& operator <<(uint32 value) {write(value); return *this;}
-      binary_writer& operator <<(uint64 value) {write(value); return *this;}
+      auto operator <<(bool value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(byte value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(char value) -> binary_writer& {write(value); return *this;}
+      template<xtd::size size>
+      auto operator <<(const xtd::fixed_array<xtd::byte, size>& value) -> binary_writer& {write(value); return *this;}
+      template<xtd::size size>
+      auto operator <<(const xtd::fixed_array<char, size>& value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const xtd::array<xtd::byte>& value) -> binary_writer& {write(value, 0, value.length()); return *this;}
+      auto operator <<(const xtd::array<char>& value) -> binary_writer& {write(value, 0, value.length()); return *this;}
+      auto operator <<(double value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(int16 value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(int32 value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(int64 value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(sbyte value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(float value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const string& value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const char* value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const char8* value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const char16* value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const char32* value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(const wchar* value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(uint16 value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(uint32 value) -> binary_writer& {write(value); return *this;}
+      auto operator <<(uint64 value) -> binary_writer& {write(value); return *this;}
       /// @endcond
       
     private:
-      void write_7bit_encoded_int(int32 value);
+      auto write_7bit_encoded_int(int32 value) -> void;
       std::ostream* stream_ = nullptr;
       bool delete_when_destroy_ = false;
     };
