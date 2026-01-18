@@ -14,7 +14,7 @@
 
 /// @cond
 template<class char_t>
-inline std::basic_string<char_t> __natural_formatter(long double value, int precision, const std::locale& loc) {
+[[nodiscard]] inline auto __natural_formatter(long double value, int precision, const std::locale& loc) -> std::basic_string<char_t> {
   std::basic_stringstream<char_t> ss;
   ss.imbue(loc);
   ss << std::fixed << std::setprecision(precision) << value;
