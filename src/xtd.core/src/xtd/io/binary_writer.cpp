@@ -32,158 +32,163 @@ binary_writer::~binary_writer() {
   }
 }
 
-std::optional<ref<std::ostream>> binary_writer::base_stream() const {
+auto binary_writer::base_stream() const -> std::optional<ref<std::ostream>> {
   return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream >> ();
 }
 
-void binary_writer::close() {
+auto binary_writer::close() -> void {
   flush();
   if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 
-void binary_writer::flush() {
+auto binary_writer::flush() -> void {
   if (stream_) stream_->flush();
 }
 
-size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
+auto binary_writer::seek(size offset, std::ios::seekdir origin) -> size {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->seekp(offset, origin);
-  return static_cast<size_t>(stream_->tellp());
+  return static_cast<size>(stream_->tellp());
 }
 
-void binary_writer::write(bool value) {
+
+auto binary_writer::tell() -> std::streampos {
+  return stream_->tellp();
+}
+
+auto binary_writer::write(bool value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(xtd::byte value) {
+auto binary_writer::write(xtd::byte value) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->put(static_cast<char>(value));
 }
 
-void binary_writer::write(char value) {
+auto binary_writer::write(char value) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->put(value);
 }
 
-void binary_writer::write(const read_only_span<xtd::byte>& buffer) {
+auto binary_writer::write(const read_only_span<xtd::byte>& buffer) -> void {
   for (const auto& b : buffer)
     write(b);
 }
 
-void binary_writer::write(const array<xtd::byte>& buffer, size_t index, size_t count) {
+auto binary_writer::write(const array<xtd::byte>& buffer, size index, size count) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
 
-void binary_writer::write(const read_only_span<char>& buffer) {
+auto binary_writer::write(const read_only_span<char>& buffer) -> void {
   for (const auto& b : buffer)
     write(b);
 }
 
-void binary_writer::write(const array<char>& buffer, size_t index, size_t count) {
+auto binary_writer::write(const array<char>& buffer, size index, size count) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.length()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
 
-void binary_writer::write(double value) {
+auto binary_writer::write(double value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(int16 value) {
+auto binary_writer::write(int16 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(int32 value) {
+auto binary_writer::write(int32 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(int64 value) {
+auto binary_writer::write(int64 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(sbyte value) {
+auto binary_writer::write(sbyte value) -> void {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->put(static_cast<char>(value));
 }
 
-void binary_writer::write(float value) {
+auto binary_writer::write(float value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(const string& value) {
+auto binary_writer::write(const string& value) -> void {
   write_7bit_encoded_int(static_cast<int32>(value.length()));
   for (auto c : value)
     write(c);
 }
 
-void binary_writer::write(const std::string& value) {
+auto binary_writer::write(const std::string& value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const std::u8string& value) {
+auto binary_writer::write(const std::u8string& value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const std::u16string& value) {
+auto binary_writer::write(const std::u16string& value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const std::u32string& value) {
+auto binary_writer::write(const std::u32string& value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const std::wstring& value) {
+auto binary_writer::write(const std::wstring& value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const char* value) {
+auto binary_writer::write(const char* value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const char8* value) {
+auto binary_writer::write(const char8* value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const char16* value) {
+auto binary_writer::write(const char16* value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const char32* value) {
+auto binary_writer::write(const char32* value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(const wchar* value) {
+auto binary_writer::write(const wchar* value) -> void {
   write(string(value));
 }
 
-void binary_writer::write(uint16 value) {
+auto binary_writer::write(uint16 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(uint32 value) {
+auto binary_writer::write(uint32 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(uint64 value) {
+auto binary_writer::write(uint64 value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(slong value) {
+auto binary_writer::write(slong value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
-void binary_writer::write(xtd::ulong value) {
+auto binary_writer::write(xtd::ulong value) -> void {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 // From https://github.com/dotnet/runtime/blob/1d1bf92fcf43aa6981804dc53c5174445069c9e4/src/libraries/System.Private.CoreLib/src/System/IO/BinaryWriter.cs
-void binary_writer::write_7bit_encoded_int(int32 value) {
+auto binary_writer::write_7bit_encoded_int(int32 value) -> void {
   auto u_value = static_cast<uint32>(value);
   
   while (u_value > 0x7Fu) {
