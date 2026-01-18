@@ -101,27 +101,27 @@ struct std::formatter<xtd::string> : std::formatter<std::string> {
 
 /// @cond
 template<class type_t>
-inline std::string __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) {
+[[nodiscard]] inline auto __to_string_istringable_to_string(const xtd::istringable<type_t>* obj) -> std::string {
   return obj->to_string();
 }
 
 template<class key_t, class value_t>
-inline xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("({}, {})", first, second);}
+[[nodiscard]] inline auto xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("({}, {})", first, second);}
 
 template<class type_t>
-inline xtd::string __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
+[[nodiscard]] inline auto __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const -> xtd::string {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
 
 template<class type_t, class param_t>
-inline xtd::string __opaque_xtd_linq_lazy_enumerable__<type_t, param_t>::to_string() const {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
+[[nodiscard]] inline auto __opaque_xtd_linq_lazy_enumerable__<type_t, param_t>::to_string() const -> xtd::string {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
 
 template<class type_t>
-inline xtd::string xtd::reference_wrapper_object<type_t>::to_string() const noexcept {return xtd::string::format("{} [value={}]", xtd::object::to_string(), !ref_.has_value() ? "(null)" : string::format("{}", get()));}
+[[nodiscard]] inline auto xtd::reference_wrapper_object<type_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("{} [value={}]", xtd::object::to_string(), !ref_.has_value() ? "(null)" : string::format("{}", get()));}
 
 template<class type_t>
-inline xtd::string xtd::shared_ptr_object<type_t>::to_string() const noexcept {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
+[[nodiscard]] inline auto xtd::shared_ptr_object<type_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
 
 template<class type_t, class deleter_t>
-inline xtd::string xtd::unique_ptr_object<type_t, deleter_t>::to_string() const noexcept {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}", get()));}
+[[nodiscard]] inline auto xtd::unique_ptr_object<type_t, deleter_t>::to_string() const noexcept -> xtd::string {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}", get()));}
 /// @endcond
 
 #include "literals/string.hpp"
