@@ -56,7 +56,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
-  inline auto as(any_object& o) -> type_t {
+  [[nodiscard]] inline auto as(any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
@@ -80,7 +80,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
-  inline auto as(const any_object& o) -> type_t {
+  [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
@@ -104,7 +104,7 @@ namespace xtd {
   /// xtd::string result = as<string>(value);
   /// ```
   template<>
-  inline auto as<string>(xtd::any_object& value) -> string {
+  [[nodiscard]] inline auto as<string>(xtd::any_object& value) -> string {
     return xtd::convert::to_string(value);
   }
   
@@ -127,7 +127,7 @@ namespace xtd {
   /// xtd::string result = as<string>(value);
   /// ```
   template<>
-  inline auto as<string>(const xtd::any_object& value) -> string {
+  [[nodiscard]] inline auto as<string>(const xtd::any_object& value) -> string {
     return xtd::convert::to_string(value);
   }
 }
