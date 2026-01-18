@@ -7,22 +7,22 @@ string_writer::string_writer(const string& str) {
   write(str);
 }
 
-const std::ostream& string_writer::base_stream() const noexcept {
+auto string_writer::base_stream() const noexcept -> const std::ostream& {
   return stream_;
 }
 
-std::ostream& string_writer::base_stream() noexcept {
+auto string_writer::base_stream() noexcept -> std::ostream& {
   return stream_;
 }
 
-void string_writer::flush() {
+auto string_writer::flush() -> void {
   stream_.flush();
 }
 
-string string_writer::to_string() const noexcept {
+auto string_writer::to_string() const noexcept -> string {
   return stream_.str();
 }
 
-void string_writer::write(const string& value) {
+auto string_writer::write(const string& value) -> void {
   stream_.write(value.chars().c_str(), value.length());
 }
