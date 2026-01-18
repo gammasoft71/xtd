@@ -12,10 +12,10 @@
 
 /// @cond
 template<class enum_t>
-std::string __enum_to_string__(enum_t value) noexcept;
+[[nodiscard]] auto __enum_to_string__(enum_t value) noexcept -> std::string;
 
 template<class char_t, class value_t>
-inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
+[[nodiscard]] inline auto __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) -> std::basic_string<char_t> {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
   
