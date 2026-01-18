@@ -49,26 +49,26 @@ namespace xtd {
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<xtd::ref<std::istream>> base_stream() const;
+      [[nodiscard]] auto base_stream() const -> std::optional<xtd::ref<std::istream>>;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return `true` if the current stream position is at the end of the stream; otherwise `false`.
-      bool end_of_stream() const;
+      [[nodiscard]] auto end_of_stream() const -> bool;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Closes the stream_reader object and the underlying stream, and releases any system resources associated with the reader.
-      void close() override;
+      auto close() -> void override;
       
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
-      int32 peek() const override;
+      [[nodiscard]] auto peek() const -> xtd::int32 override;
       
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
-      int32 read() override;
+      [[nodiscard]] auto read() -> xtd::int32 override;
       /// @}
       
     private:
