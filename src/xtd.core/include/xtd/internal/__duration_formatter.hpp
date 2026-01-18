@@ -14,7 +14,7 @@
 
 /// @cond
 template<class char_t, class type_t, class period_t = std::ratio<1>>
-inline std::basic_string<char_t> __make_string_from_duration(std::chrono::duration<type_t, period_t> value, bool constant = true) {
+[[nodiscard]] inline auto __make_string_from_duration(std::chrono::duration<type_t, period_t> value, bool constant = true) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   
   if (value.count() < 0)
@@ -30,7 +30,7 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
 }
 
 template<class char_t, class type_t, class period_t = std::ratio<1>>
-inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
+[[nodiscard]] inline auto __duration_formatter(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) -> std::basic_string<char_t> {
   if (fmt.empty()) fmt = std::basic_string<char_t> {'G'};
   if (fmt.size() > 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   
