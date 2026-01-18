@@ -33,7 +33,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(xtd::any value) {
+  inline auto as<xtd::slong>(xtd::any value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(bool value) {
+  inline auto as<xtd::slong>(bool value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(xtd::byte value) {
+  inline auto as<xtd::slong>(xtd::byte value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -100,7 +100,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char value) {
+  inline auto as<xtd::slong>(char value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -123,7 +123,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char8 value) {
+  inline auto as<xtd::slong>(xtd::char8 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -146,7 +146,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char16 value) {
+  inline auto as<xtd::slong>(xtd::char16 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -169,7 +169,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char32 value) {
+  inline auto as<xtd::slong>(xtd::char32 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -192,7 +192,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(wchar value) {
+  inline auto as<xtd::slong>(xtd::wchar value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -214,7 +214,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(decimal value) {
+  inline auto as<xtd::slong>(xtd::decimal value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -236,7 +236,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(double value) {
+  inline auto as<xtd::slong>(double value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -258,7 +258,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(float value) {
+  inline auto as<xtd::slong>(float value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -280,7 +280,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(int16 value) {
+  inline auto as<xtd::slong>(xtd::int16 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -302,7 +302,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(int32 value) {
+  inline auto as<xtd::slong>(xtd::int32 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -324,7 +324,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(int64 value) {
+  inline auto as<xtd::slong>(xtd::int64 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -346,7 +346,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(slong value) {
+  inline auto as<xtd::slong>(xtd::slong value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -368,7 +368,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(sbyte value) {
+  inline auto as<xtd::slong>(xtd::sbyte value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -390,7 +390,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(uint16 value) {
+  inline auto as<xtd::slong>(xtd::uint16 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -412,7 +412,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(uint32 value) {
+  inline auto as<xtd::slong>(xtd::uint32 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -434,7 +434,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(uint64 value) {
+  inline auto as<xtd::slong>(xtd::uint64 value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -456,7 +456,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(xtd::ulong value) {
+  inline auto as<xtd::slong>(xtd::ulong value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -479,7 +479,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const xtd::string& value) {
+  inline auto as<xtd::slong>(const xtd::string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -502,7 +502,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(xtd::string& value) {
+  inline auto as<xtd::slong>(xtd::string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -526,7 +526,7 @@ namespace xtd {
   /// slong result = as<slong>(value, 16);
   /// ```
   template<>
-  inline slong as<slong>(const xtd::string& value, xtd::byte from_base) {
+  inline auto as<xtd::slong>(const xtd::string& value, xtd::byte from_base) -> xtd::slong {
     return xtd::convert::to_llong(value, from_base);
   }
   
@@ -549,7 +549,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const std::string& value) {
+  inline auto as<xtd::slong>(const std::string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -572,7 +572,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::string& value) {
+  inline auto as<xtd::slong>(std::string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -595,7 +595,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const std::u8string& value) {
+  inline auto as<xtd::slong>(const std::u8string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -618,7 +618,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::u8string& value) {
+  inline auto as<xtd::slong>(std::u8string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -641,7 +641,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const std::u16string& value) {
+  inline auto as<xtd::slong>(const std::u16string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -664,7 +664,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::u16string& value) {
+  inline auto as<xtd::slong>(std::u16string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -687,7 +687,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const std::u32string& value) {
+  inline auto as<xtd::slong>(const std::u32string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -710,7 +710,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::u32string& value) {
+  inline auto as<xtd::slong>(std::u32string& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -733,7 +733,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const std::wstring& value) {
+  inline auto as<xtd::slong>(const std::wstring& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -756,7 +756,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::wstring& value) {
+  inline auto as<xtd::slong>(std::wstring& value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -779,7 +779,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const char* value) {
+  inline auto as<xtd::slong>(const char* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -802,7 +802,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char* value) {
+  inline auto as<xtd::slong>(char* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -825,7 +825,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const char8* value) {
+  inline auto as<xtd::slong>(const xtd::char8* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -848,7 +848,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char8* value) {
+  inline auto as<xtd::slong>(xtd::char8* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -871,7 +871,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const char16* value) {
+  inline auto as<xtd::slong>(const xtd::char16* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -894,7 +894,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char16* value) {
+  inline auto as<xtd::slong>(xtd::char16* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -917,7 +917,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const char32* value) {
+  inline auto as<xtd::slong>(const xtd::char32* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -940,7 +940,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(char32* value) {
+  inline auto as<xtd::slong>(xtd::char32* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -963,7 +963,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(const wchar* value) {
+  inline auto as<xtd::slong>(const xtd::wchar* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
   
@@ -986,7 +986,7 @@ namespace xtd {
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(wchar* value) {
+  inline auto as<xtd::slong>(xtd::wchar* value) -> xtd::slong {
     return xtd::convert::to_llong(value);
   }
 }
