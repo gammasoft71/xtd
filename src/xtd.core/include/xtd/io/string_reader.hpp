@@ -39,11 +39,11 @@ namespace xtd {
       /// @{
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
-      int32 peek() const override;
+      [[nodiscard]] auto peek() const -> xtd::int32 override;
       
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
-      int32 read() override;
+      [[nodiscard]] auto read() -> xtd::int32 override;
       /// @}
       
     private:
