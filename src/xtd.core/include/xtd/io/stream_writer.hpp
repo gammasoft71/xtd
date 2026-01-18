@@ -63,35 +63,35 @@ namespace xtd {
       /// @remarks When xtd::io::stream_writer::auto_flush is set to `false`, xtd::io::stream_writer will do a limited amount of buffering, both internally and potentially in the encoder from the encoding you passed in. You can get better performance by setting AutoFlush to `false`, assuming that you always call xtd::io::stream_writer::close (or at least Flush) when you're done writing with a xtd::io::stream_writer.
       /// @remarks For example, set xtd::io::stream_writer::auto_flush to `true` when you are writing to a device where the user expects immediate feedback. xtd::console::out is one of these cases: The xtd::io::stream_writer used internally for writing to xtd::console flushes all its internal state except the encoder state after every call to xtd::io::stream_writer::write.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      bool auto_flush() const;
+      [[nodiscard]] auto auto_flush() const -> bool;
       /// @brief Sets a value indicating whether the xtd::io::stream_writer will flush its buffer to the underlying stream after every call to xtd::io::text_writer::write(char).
       /// @param auto_flush `true` to force xtd::io::stream_writer to flush its buffer; otherwise, `false`.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::io::stream_writer::flush or xtd::io::stream_writer::close. Setting xtd::io::stream_writer::auto_flush to `true` means that data will be flushed from the buffer to the stream after each write operation, but the encoder state will not be flushed.
       /// @remarks When xtd::io::stream_writer::auto_flush is set to `false`, xtd::io::stream_writer will do a limited amount of buffering, both internally and potentially in the encoder from the encoding you passed in. You can get better performance by setting AutoFlush to `false`, assuming that you always call xtd::io::stream_writer::close (or at least Flush) when you're done writing with a xtd::io::stream_writer.
       /// @remarks For example, set xtd::io::stream_writer::auto_flush to `true` when you are writing to a device where the user expects immediate feedback. xtd::console::out is one of these cases: The xtd::io::stream_writer used internally for writing to xtd::console flushes all its internal state except the encoder state after every call to xtd::io::stream_writer::write.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      void auto_flush(bool auto_flush);
+      auto auto_flush(bool auto_flush) -> void;
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<xtd::ref<std::ostream>> base_stream() const;
+      [[nodiscard]] auto base_stream() const -> std::optional<xtd::ref<std::ostream>>;
       /// @}
       
       /// @name Public Methods
       
       /// @{
       /// @brief Closes the stream_writer object and the underlying stream, and releases any system resources associated with the reader.
-      void close() override;
+      auto close() -> void override;
       
       /// @brief Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
       /// @remarks This default method does nothing, but derived classes can virtual the method to provide the appropriate functionality
-      void flush() override;
+      auto flush() -> void override;
       
       using text_writer::write;
       /// @brief Writes the specified string value to the text stream.
       /// @param value The value to write
       /// @exception io::io_exception An I/O error occurs.
-      void write(const xtd::string& value) override;
+      auto write(const xtd::string& value) -> void override;
       /// @}
       
     private:
