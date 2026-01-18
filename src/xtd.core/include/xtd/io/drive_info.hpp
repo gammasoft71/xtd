@@ -66,7 +66,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the amount of free space available on the drive. Note that this number may be different from the xtd::io::drive_info::total_free_space number because this property takes into account disk quotas.
-      size_t available_free_space() const;
+      [[nodiscard]] auto available_free_space() const -> xtd::size;
       
       /// @brief Gets the name of the file system, such as NTFS or FAT32.
       /// @return The name of the file system on the specified drive.
@@ -77,7 +77,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks Use xtd::io::drive_info::drive_format to determine what formatting a drive uses.
-      xtd::string drive_format() const;
+      [[nodiscard]] auto drive_format() const -> xtd::string;
       
       /// @brief Gets the drive type, such as CD-ROM, removable, network, or fixed.
       /// @return One of the enumeration values that specifies a drive type.
@@ -85,7 +85,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks The xtd::io::drive_info::drive_type property indicates whether a drive is one of the following: CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, or Unknown. These values are described in the xtd::io::drive_type enumeration.
-      xtd::io::drive_type drive_type() const;
+      [[nodiscard]] auto drive_type() const -> xtd::io::drive_type;
       
       /// @brief Gets a value that indicates whether a drive is ready.
       /// @return `true` if the drive is ready; `false` if the drive is not ready.
@@ -94,7 +94,7 @@ namespace xtd {
       /// @include drive_info.cpp
       /// @remarks xtd::io::drive_info::is_ready indicates whether a drive is ready. For example, it indicates whether a CD is in a CD drive or whether a removable storage device is ready for read/write operations. If you do not test whether a drive is ready, and it is not ready, querying the drive using xtd::io::drive_info will raise an xtd::io::io_exception.
       /// @remarks Do not rely on xtd::io::drive_info::is_ready to avoid catching exceptions from other members such as xtd::io::drive_info::total_size, xtd::io::drive_info::total_free_space, and xtd::io::drive_info::drive_format. Between the time that your code checks xtd::io::drive_info::is_ready and then accesses one of the other properties (even if the access occurs immediately after the check), a drive may have been disconnected or a disk may have been removed.
-      bool is_ready() const noexcept;
+      [[nodiscard]] auto is_ready() const noexcept -> bool;
       
       /// @brief Gets the name of a drive, such as C:\.
       /// @return The name of the drive.
@@ -102,11 +102,11 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property is the name assigned to the drive, such as C:\ or E:\.
-      xtd::string name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> xtd::string;
       
       /// @brief Gets the root directory of a drive.
       /// @return An object that contains the root directory of the drive.
-      xtd::io::directory_info root_directory() const noexcept;
+      [[nodiscard]] auto root_directory() const noexcept -> xtd::io::directory_info;
       
       /// @brief Gets the total amount of free space available on a drive, in bytes.
       /// @return The total free space available on a drive, in bytes.
@@ -117,7 +117,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total amount of free space available on the drive, not just what is available to the current user.
-      size_t total_free_space() const;
+      [[nodiscard]] auto total_free_space() const -> xtd::size;
       
       /// @brief Gets the total size of storage space on a drive, in bytes.
       /// @return The total size of the drive, in bytes.
@@ -128,7 +128,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This property indicates the total size of the drive in bytes, not just what is available to the current user.
-      size_t total_size() const;
+      [[nodiscard]] auto total_size() const -> xtd::size;
       
       /// @brief Gets the volume label of a drive.
       /// @return The volume label.
@@ -139,7 +139,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks The label length is determined by the operating system. For example, NTFS allows a volume label to be up to 32 characters long.
-      xtd::string volume_label() const;
+      [[nodiscard]] auto volume_label() const -> xtd::string;
       /// @}
       
       /// @name Public Methods
@@ -148,7 +148,7 @@ namespace xtd {
       /// @brief Returns a drive name as a string.
       /// @return The name of the drive.
       /// @remarks This method returns the xtd::io::drive_info::name property.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
       /// @name Public Static Methods
@@ -162,7 +162,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp
       /// @remarks This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other xtd::io::drive_info methods and properties. Use the xtd::io::drive_info::is_ready property to test whether a drive is ready because using this method on a drive that is not ready will throw a xtd::io::io_exception.
-      static xtd::array<xtd::io::drive_info> get_drives() noexcept;
+      [[nodiscard]] static auto get_drives() noexcept -> xtd::array<xtd::io::drive_info>;
       /// @}
       
     private:
