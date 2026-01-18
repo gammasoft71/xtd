@@ -14,7 +14,7 @@
 
 /// @cond
 template<class enum_t>
-xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::string& enum_definition) {
+[[nodiscard]] auto __enum_definition_to_enum_collection__(const xtd::string& enum_definition) -> xtd::enum_collection<enum_t> {
   xtd::enum_collection<enum_t> entries;
   #if !defined(__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
   for (size_t num_state = 0; num_state < __enumeration_introspection::num_states<enum_t>; ++num_state)
