@@ -52,48 +52,48 @@ namespace xtd {
       
       /// @{
       /// @brief Closes the xtd::io::text_reader and releases any system resources associated with the text_reader
-      virtual void close();
+      virtual auto close() -> void;
       
       /// @brief Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.
       /// @return An integer representing the next character to be read, or EOF if no more characters are available or the stream does not support seeking.
-      virtual int32 peek() const;
+      [[nodiscard]] virtual auto peek() const -> xtd::int32;
       
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
-      virtual int32 read();
+      [[nodiscard]] virtual auto read() -> xtd::int32;
       
       /// @brief Reads the characters from the current reader and writes the data to the specified buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether the data is available within the reader. This method returns 0 (zero) if it is called when no more characters are left to read.
-      virtual size_t read(xtd::span<char>& buffer);
+      virtual auto read(xtd::span<char>& buffer) -> xtd::size;
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual size_t read(xtd::array<char>& buffer, size_t index, size_t count);
+      virtual auto read(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
       
       /// @brief Reads the characters from the current stream and writes the data to a buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether all input characters have been read.
-      virtual size_t read_block(xtd::span<char>& buffer);
+      virtual auto read_block(xtd::span<char>& buffer) -> xtd::size;
       
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
-      virtual size_t read_block(xtd::array<char>& buffer, size_t index, size_t count);
+      virtual auto read_block(xtd::array<char>& buffer, xtd::size index, xtd::size count) -> xtd::size;
       
       /// @brief Reads a line of characters from the current stream and returns the data as a string.
       /// @return The next line from the input stream, or the empty string if all characters have been read.
-      virtual xtd::string read_line();
+      [[nodiscard]] virtual auto read_line() -> xtd::string;
       
       /// @brief Reads all characters from the current position to the end of the text_reader and returns them as one string.
       /// @return A string containing all characters from the current position to the end of the text_reader.
       /// @exception io::io_exception An I/O error occurs.
-      virtual xtd::string read_to_end();
+      [[nodiscard]] virtual auto read_to_end() -> xtd::string;
       /// @}
       
       /// @name Public Static Methods
@@ -102,7 +102,7 @@ namespace xtd {
       /// @brief Creates a thread-safe (synchronized) wrapper around the specified text_reader object.
       /// @param reader The text_reader object to synchronize.
       /// @return text_reader A thread-safe text_reader object.
-      static synchronized_text_reader synchronised(text_reader& reader) noexcept;
+      [[nodiscard]] static auto synchronised(text_reader& reader) noexcept -> synchronized_text_reader;
       /// @}
       
     protected:
@@ -130,7 +130,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      int32 read() override;
+      [[nodiscard]] auto read() -> xtd::int32 override;
       /// @}
     };
     
@@ -150,7 +150,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      int32 read() override;
+      [[nodiscard]] auto read() -> xtd::int32 override;
       /// @}
       
     private:
