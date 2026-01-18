@@ -4951,7 +4951,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a40879b595b63ab7c1e4ad108e0898b6b">date_time::days_in_month</a>(year, ctr));</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a40879b595b63ab7c1e4ad108e0898b6b">date_time::days_in_month</a>(year, ctr));</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -4990,7 +4990,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line"><span class="comment">//  2014      october          31</span></div>
 <div class="line"><span class="comment">//  2014      november         30</span></div>
 <div class="line"><span class="comment">//  2014      december         31</span></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga64df7eb27c64ffe5ab208756cbc26cf3"><div class="ttname"><a href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">xtd::as</a></div><div class="ttdeci">auto as(any_object &amp;o) -&gt; type_t</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a40879b595b63ab7c1e4ad108e0898b6b" title="Returns the number of days in the specified month and year.">xtd::date_time::days_in_month</a> method always interprets month and year as the month and year of the Gregorian calendar. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="date_time_days_in_month_8cpp-example.html#a0">date_time_days_in_month.cpp</a>.</dd>
@@ -5082,7 +5082,7 @@ year is less than 1 or greater than 9999. </td></tr>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> year : years) {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 1u; ctr &lt;= 12u; ctr++)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a40879b595b63ab7c1e4ad108e0898b6b">date_time::days_in_month</a>(year, ctr));</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,-10}{1,-15}{2,4}&quot;</span>, year, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;month_of_year&gt;</a>(ctr), <a class="code hl_function" href="#a40879b595b63ab7c1e4ad108e0898b6b">date_time::days_in_month</a>(year, ctr));</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -6699,7 +6699,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 16 2026 21:07:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 10:56:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

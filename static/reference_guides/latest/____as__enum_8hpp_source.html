@@ -113,11 +113,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">struct </span>__as_enum__&lt;new_type_t, current_type_t, std::true_type&gt; {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> new_type_t&amp; convert(<span class="keyword">const</span> current_type_t&amp; value) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  [[nodiscard]] <span class="keyword">auto</span> convert(<span class="keyword">const</span> current_type_t&amp; value) -&gt; <span class="keyword">const</span> new_type_t&amp; {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    __result__ = <span class="keyword">static_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> __result__;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  new_type_t&amp; convert(current_type_t&amp; value) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  [[nodiscard]] <span class="keyword">auto</span> convert(current_type_t&amp; value) -&gt; new_type_t&amp; {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    __result__ = <span class="keyword">static_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> __result__;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
@@ -126,10 +126,10 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">struct </span>__as_enum__&lt;new_type_t, current_type_t, std::false_type&gt; {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> new_type_t&amp; convert(<span class="keyword">const</span> current_type_t&amp; value) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  [[nodiscard]] <span class="keyword">auto</span> convert(<span class="keyword">const</span> current_type_t&amp; value) -&gt; <span class="keyword">const</span> new_type_t&amp; {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga89b9c162ebd8d46d0e1936b2b3ae593e">xtd::convert_pointer::to_ref&lt;new_type_t&gt;</a>(value);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  new_type_t&amp; convert(current_type_t&amp; value) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  [[nodiscard]] <span class="keyword">auto</span> convert(current_type_t&amp; value) -&gt; new_type_t&amp; {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga89b9c162ebd8d46d0e1936b2b3ae593e">xtd::convert_pointer::to_ref&lt;new_type_t&gt;</a>(value);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
@@ -139,7 +139,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 16 2026 21:07:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 10:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -209,7 +209,7 @@ $(function(){ initResizable(false); });
 <div class="line">      effect_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_effect_choice_selected_value_changed};</div>
 <div class="line">      picture_choice.selected_value_changed += {*<span class="keyword">this</span>, &amp;form1::on_picture_choice_selected_value_changed};</div>
 <div class="line"> </div>
-<div class="line">      bitonal_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {bitonal_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(bitonal_threshold_numeric_up_down.value()));};</div>
+<div class="line">      bitonal_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {bitonal_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(bitonal_threshold_numeric_up_down.value()));};</div>
 <div class="line">      bitonal_threshold_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        bitonal_threshold_numeric_up_down.value(bitonal_threshold_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
@@ -217,13 +217,13 @@ $(function(){ initResizable(false); });
 <div class="line">      bitonal_upper_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      bitonal_lower_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line"> </div>
-<div class="line">      blur_horizontal_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {blur_horizontal_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(blur_horizontal_radius_numeric_up_down.value()));};</div>
+<div class="line">      blur_horizontal_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {blur_horizontal_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(blur_horizontal_radius_numeric_up_down.value()));};</div>
 <div class="line">      blur_horizontal_radius_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        blur_horizontal_radius_numeric_up_down.value(blur_horizontal_radius_track_bar.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (blur_sync_horizontal_and_vertical_check_box.checked()) blur_vertical_radius_track_bar.value(blur_horizontal_radius_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
-<div class="line">      blur_vertical_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {blur_vertical_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(blur_vertical_radius_numeric_up_down.value()));};</div>
+<div class="line">      blur_vertical_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {blur_vertical_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(blur_vertical_radius_numeric_up_down.value()));};</div>
 <div class="line">      blur_vertical_radius_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        blur_vertical_radius_numeric_up_down.value(blur_vertical_radius_track_bar.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (blur_sync_horizontal_and_vertical_check_box.checked()) blur_horizontal_radius_track_bar.value(blur_vertical_radius_track_bar.value());</div>
@@ -231,20 +231,20 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      blur_expand_edge_check_box.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      </div>
-<div class="line">      brightness_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {brightness_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(brightness_percent_numeric_up_down.value()));};</div>
+<div class="line">      brightness_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {brightness_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(brightness_percent_numeric_up_down.value()));};</div>
 <div class="line">      brightness_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        brightness_percent_numeric_up_down.value(brightness_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      color_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(color_percent_numeric_up_down.value()));};</div>
+<div class="line">      color_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(color_percent_numeric_up_down.value()));};</div>
 <div class="line">      color_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        color_percent_numeric_up_down.value(color_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      color_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line"> </div>
-<div class="line">      color_extraction_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_extraction_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(color_extraction_threshold_numeric_up_down.value()));};</div>
+<div class="line">      color_extraction_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_extraction_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(color_extraction_threshold_numeric_up_down.value()));};</div>
 <div class="line">      color_extraction_threshold_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        color_extraction_threshold_numeric_up_down.value(color_extraction_threshold_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
@@ -252,13 +252,13 @@ $(function(){ initResizable(false); });
 <div class="line">      color_extraction_extraction_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      color_extraction_other_pixels_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      </div>
-<div class="line">      posterize_levels_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {posterize_levels_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(posterize_levels_numeric_up_down.value()));};</div>
+<div class="line">      posterize_levels_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {posterize_levels_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(posterize_levels_numeric_up_down.value()));};</div>
 <div class="line">      posterize_levels_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        posterize_levels_numeric_up_down.value(posterize_levels_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      color_substitution_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_substitution_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(color_substitution_threshold_numeric_up_down.value()));};</div>
+<div class="line">      color_substitution_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {color_substitution_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(color_substitution_threshold_numeric_up_down.value()));};</div>
 <div class="line">      color_substitution_threshold_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        color_substitution_threshold_numeric_up_down.value(color_substitution_threshold_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
@@ -266,14 +266,14 @@ $(function(){ initResizable(false); });
 <div class="line">      color_substitution_source_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      color_substitution_new_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      </div>
-<div class="line">      contrast_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {contrast_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(contrast_percent_numeric_up_down.value()));};</div>
+<div class="line">      contrast_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {contrast_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(contrast_percent_numeric_up_down.value()));};</div>
 <div class="line">      contrast_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        contrast_percent_numeric_up_down.value(contrast_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_x_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        crop_x_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(crop_x_numeric_up_down.value()));</div>
+<div class="line">        crop_x_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(crop_x_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_x_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        crop_x_numeric_up_down.value(crop_x_track_bar.value());</div>
@@ -281,7 +281,7 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_y_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        crop_y_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(crop_y_numeric_up_down.value()));</div>
+<div class="line">        crop_y_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(crop_y_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_y_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        crop_y_numeric_up_down.value(crop_y_track_bar.value());</div>
@@ -289,7 +289,7 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_width_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        crop_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(crop_width_numeric_up_down.value()));</div>
+<div class="line">        crop_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(crop_width_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_width_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        crop_x_numeric_up_down.set_range(crop_width_track_bar.value() - original_image().width(), 0);</div>
@@ -299,7 +299,7 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_height_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        crop_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(crop_height_numeric_up_down.value()));</div>
+<div class="line">        crop_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(crop_height_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_height_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        crop_y_numeric_up_down.set_range(crop_height_track_bar.value() - original_image().height(), 0);</div>
@@ -310,67 +310,67 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line">      disabled_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      </div>
-<div class="line">      drop_shadow_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(drop_shadow_radius_numeric_up_down.value()));};</div>
+<div class="line">      drop_shadow_radius_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_radius_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(drop_shadow_radius_numeric_up_down.value()));};</div>
 <div class="line">      drop_shadow_radius_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        drop_shadow_radius_numeric_up_down.value(drop_shadow_radius_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
-<div class="line">      drop_shadow_horizontal_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_horizontal_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(drop_shadow_horizontal_numeric_up_down.value()));};</div>
+<div class="line">      drop_shadow_horizontal_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_horizontal_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(drop_shadow_horizontal_numeric_up_down.value()));};</div>
 <div class="line">      drop_shadow_horizontal_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        drop_shadow_horizontal_numeric_up_down.value(drop_shadow_horizontal_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
-<div class="line">      drop_shadow_vertical_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_vertical_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(drop_shadow_vertical_numeric_up_down.value()));};</div>
+<div class="line">      drop_shadow_vertical_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {drop_shadow_vertical_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(drop_shadow_vertical_numeric_up_down.value()));};</div>
 <div class="line">      drop_shadow_vertical_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        drop_shadow_vertical_numeric_up_down.value(drop_shadow_vertical_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      drop_shadow_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line"> </div>
-<div class="line">      gamma_correction_red_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_red_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(gamma_correction_red_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      gamma_correction_red_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_red_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(gamma_correction_red_correction_numeric_up_down.value() * 10));};</div>
 <div class="line">      gamma_correction_red_correction_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        gamma_correction_red_correction_numeric_up_down.value(gamma_correction_red_correction_track_bar.value() / 10.0);</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      gamma_correction_green_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_green_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(gamma_correction_green_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      gamma_correction_green_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_green_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(gamma_correction_green_correction_numeric_up_down.value() * 10));};</div>
 <div class="line">      gamma_correction_green_correction_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        gamma_correction_green_correction_numeric_up_down.value(gamma_correction_green_correction_track_bar.value() / 10.0);</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      gamma_correction_blue_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_blue_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(gamma_correction_blue_correction_numeric_up_down.value() * 10));};</div>
+<div class="line">      gamma_correction_blue_correction_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {gamma_correction_blue_correction_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(gamma_correction_blue_correction_numeric_up_down.value() * 10));};</div>
 <div class="line">      gamma_correction_blue_correction_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        gamma_correction_blue_correction_numeric_up_down.value(gamma_correction_blue_correction_track_bar.value() / 10.0);</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      grayscale_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {grayscale_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(grayscale_percent_numeric_up_down.value()));};</div>
+<div class="line">      grayscale_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {grayscale_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(grayscale_percent_numeric_up_down.value()));};</div>
 <div class="line">      grayscale_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        grayscale_percent_numeric_up_down.value(grayscale_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      hue_rotate_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {hue_rotate_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(hue_rotate_percent_numeric_up_down.value()));};</div>
+<div class="line">      hue_rotate_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {hue_rotate_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(hue_rotate_percent_numeric_up_down.value()));};</div>
 <div class="line">      hue_rotate_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        hue_rotate_percent_numeric_up_down.value(hue_rotate_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      invert_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {invert_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(invert_percent_numeric_up_down.value()));};</div>
+<div class="line">      invert_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {invert_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(invert_percent_numeric_up_down.value()));};</div>
 <div class="line">      invert_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        invert_percent_numeric_up_down.value(invert_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      opacity_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {opacity_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(opacity_percent_numeric_up_down.value()));};</div>
+<div class="line">      opacity_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {opacity_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(opacity_percent_numeric_up_down.value()));};</div>
 <div class="line">      opacity_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        opacity_percent_numeric_up_down.value(opacity_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
 <div class="line">      resize_x_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        resize_x_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(resize_x_numeric_up_down.value()));</div>
+<div class="line">        resize_x_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(resize_x_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      resize_x_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        resize_x_numeric_up_down.value(resize_x_track_bar.value());</div>
@@ -378,7 +378,7 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      resize_y_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        resize_y_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(resize_y_numeric_up_down.value()));</div>
+<div class="line">        resize_y_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(resize_y_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      resize_y_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        resize_y_numeric_up_down.value(resize_y_track_bar.value());</div>
@@ -386,7 +386,7 @@ $(function(){ initResizable(false); });
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      resize_width_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        resize_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(resize_width_numeric_up_down.value()));</div>
+<div class="line">        resize_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(resize_width_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      resize_width_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (resize_width_track_bar.value() &lt; original_image().width()) {</div>
@@ -400,12 +400,12 @@ $(function(){ initResizable(false); });
 <div class="line">          resize_x_track_bar.set_range(0, resize_width_track_bar.value() - original_image().width());</div>
 <div class="line">        }</div>
 <div class="line">        resize_width_numeric_up_down.value(resize_width_track_bar.value());</div>
-<div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(resize_width_track_bar.value() / resize_aspect_ratio));</div>
+<div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(resize_width_track_bar.value() / resize_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
 <div class="line">      resize_height_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        resize_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(resize_height_numeric_up_down.value()));</div>
+<div class="line">        resize_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(resize_height_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      resize_height_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (resize_height_track_bar.value() &lt; original_image().height()) {</div>
@@ -419,7 +419,7 @@ $(function(){ initResizable(false); });
 <div class="line">          resize_y_track_bar.set_range(0, resize_height_track_bar.value() - original_image().height());</div>
 <div class="line">        }</div>
 <div class="line">        resize_height_numeric_up_down.value(resize_height_track_bar.value());</div>
-<div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(resize_height_track_bar.value() * resize_aspect_ratio));</div>
+<div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(resize_height_track_bar.value() * resize_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      resize_fill_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
@@ -430,39 +430,39 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line">      rotate_flip_choice.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line">      </div>
-<div class="line">      saturate_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {saturate_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(saturate_percent_numeric_up_down.value()));};</div>
+<div class="line">      saturate_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {saturate_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(saturate_percent_numeric_up_down.value()));};</div>
 <div class="line">      saturate_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        saturate_percent_numeric_up_down.value(saturate_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      scale_width_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {scale_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(scale_width_numeric_up_down.value()));};</div>
+<div class="line">      scale_width_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {scale_width_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(scale_width_numeric_up_down.value()));};</div>
 <div class="line">      scale_width_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        scale_width_numeric_up_down.value(scale_width_track_bar.value());</div>
-<div class="line">        <span class="keywordflow">if</span> (scale_maintain_aspect_ratio_check_box.checked()) scale_height_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(scale_width_track_bar.value() / rescale_aspect_ratio));</div>
+<div class="line">        <span class="keywordflow">if</span> (scale_maintain_aspect_ratio_check_box.checked()) scale_height_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(scale_width_track_bar.value() / rescale_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
-<div class="line">      scale_height_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {scale_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(scale_height_numeric_up_down.value()));};</div>
+<div class="line">      scale_height_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {scale_height_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(scale_height_numeric_up_down.value()));};</div>
 <div class="line">      scale_height_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        scale_height_numeric_up_down.value(scale_height_track_bar.value());</div>
-<div class="line">        <span class="keywordflow">if</span> (scale_maintain_aspect_ratio_check_box.checked()) scale_width_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(scale_height_track_bar.value() * rescale_aspect_ratio));</div>
+<div class="line">        <span class="keywordflow">if</span> (scale_maintain_aspect_ratio_check_box.checked()) scale_width_numeric_up_down.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int&gt;</a>(scale_height_track_bar.value() * rescale_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      scale_interpolation_mode_choice.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {update_pictures();};</div>
 <div class="line"> </div>
-<div class="line">      sepia_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {sepia_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(sepia_percent_numeric_up_down.value()));};</div>
+<div class="line">      sepia_percent_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {sepia_percent_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(sepia_percent_numeric_up_down.value()));};</div>
 <div class="line">      sepia_percent_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        sepia_percent_numeric_up_down.value(sepia_percent_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      solarize_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {solarize_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(solarize_threshold_numeric_up_down.value()));};</div>
+<div class="line">      solarize_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {solarize_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(solarize_threshold_numeric_up_down.value()));};</div>
 <div class="line">      solarize_threshold_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        solarize_threshold_numeric_up_down.value(solarize_threshold_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      threshold_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {threshold_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int32&gt;</a>(threshold_threshold_numeric_up_down.value()));};</div>
+<div class="line">      threshold_threshold_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {threshold_threshold_track_bar.value(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;int32&gt;</a>(threshold_threshold_numeric_up_down.value()));};</div>
 <div class="line">      threshold_threshold_track_bar.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        threshold_threshold_numeric_up_down.value(threshold_threshold_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
@@ -505,7 +505,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_picture_choice_selected_value_changed() {</div>
-<div class="line">      original_image_ = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;bitmap&gt;</a>(picture_choice.selected_item().tag());</div>
+<div class="line">      original_image_ = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;bitmap&gt;</a>(picture_choice.selected_item().tag());</div>
 <div class="line">      </div>
 <div class="line">      reset_inputs();</div>
 <div class="line">      update_pictures();</div>
@@ -541,11 +541,11 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_panel_image_paint(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().clear(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).back_color());</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().clear(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;control&gt;</a>(sender).back_color());</div>
 <div class="line">      <span class="keywordflow">if</span> (background_choice.selected_item() == <span class="stringliteral">&quot;checker-board&quot;</span>) <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html">hatch_brush</a> {<a class="code hl_enumvalue" href="group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fccaccca669ee0633af7ab496473b8a66324">xtd::drawing::drawing_2d::hatch_style::wide_checker_board</a>, <a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a>(0x66, 0x66, 0x66), <a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a>(0x99, 0x99, 0x99)}, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle());</div>
 <div class="line">      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; img = sender == original_picture_panel ? original_image() : adjusted_image;</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_image(img, <a id="_a7" name="_a7"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {{(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).width() - img.width()) / 2, (<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).height() - img.height()) / 2}, img.size()});</div>
-<div class="line">      control_paint::draw_border_from_back_color(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics(), <a class="code hl_enumvalue" href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10">xtd::forms::border_style::theme</a>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga56260d6433849c6fa239714c85a1d45daa181a603769c1f98ad927e7367c7aa51">xtd::forms::border_sides::all</a>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).back_color(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle());</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_image(img, <a id="_a7" name="_a7"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {{(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;control&gt;</a>(sender).width() - img.width()) / 2, (<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;control&gt;</a>(sender).height() - img.height()) / 2}, img.size()});</div>
+<div class="line">      control_paint::draw_border_from_back_color(<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;control&gt;</a>(sender), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics(), <a class="code hl_enumvalue" href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10">xtd::forms::border_style::theme</a>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga56260d6433849c6fa239714c85a1d45daa181a603769c1f98ad927e7367c7aa51">xtd::forms::border_sides::all</a>, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;control&gt;</a>(sender).back_color(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.clip_rectangle());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a>&amp; original_image()<span class="keyword"> const </span>{</div>
@@ -553,7 +553,7 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">void</span> reset_inputs() {</div>
-<div class="line">      original_image_ = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;bitmap&gt;</a>(picture_choice.selected_item().tag());</div>
+<div class="line">      original_image_ = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;bitmap&gt;</a>(picture_choice.selected_item().tag());</div>
 <div class="line">      </div>
 <div class="line">      bitonal_threshold_track_bar.value(382);</div>
 <div class="line">      bitonal_upper_color_color_picker.color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">color::red</a>);</div>
@@ -611,7 +611,7 @@ $(function(){ initResizable(false); });
 <div class="line">      posterize_levels_track_bar.value(2);</div>
 <div class="line"> </div>
 <div class="line">      scale_maintain_aspect_ratio_check_box.checked(<span class="keyword">false</span>);</div>
-<div class="line">      rescale_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;double&gt;</a>(original_image().width()) / original_image().height();</div>
+<div class="line">      rescale_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;double&gt;</a>(original_image().width()) / original_image().height();</div>
 <div class="line">      scale_width_numeric_up_down.value(original_image_.width());</div>
 <div class="line">      scale_width_numeric_up_down.value(original_image_.height());</div>
 <div class="line">      scale_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
@@ -622,7 +622,7 @@ $(function(){ initResizable(false); });
 <div class="line">      resize_width_numeric_up_down.set_range(1, original_image().width() * 2);</div>
 <div class="line">      resize_height_track_bar.set_range(1, original_image().height() * 2);</div>
 <div class="line">      resize_width_track_bar.set_range(1, original_image().width() * 2);</div>
-<div class="line">      resize_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;double&gt;</a>(original_image().width()) / original_image().height();</div>
+<div class="line">      resize_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;double&gt;</a>(original_image().width()) / original_image().height();</div>
 <div class="line">      resize_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
 <div class="line">      resize_width_track_bar.value(original_image().width() * 4 / 5);</div>
 <div class="line">      resize_fill_color_color_picker.alpha_color(<span class="keyword">true</span>);</div>
@@ -660,9 +660,9 @@ $(function(){ initResizable(false); });
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;opacity&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a23" name="_a23"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1opacity__effect.html">opacity_effect</a> {opacity_percent_track_bar.value() / 100.0});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;posterize&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a24" name="_a24"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect.html">posterize_effect</a> {posterize_levels_track_bar.value()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;resize&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? <a id="_a25" name="_a25"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : <a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {<a class="code hl_function" href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(resize_x_track_bar.value()), <a class="code hl_function" href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rotate-flip&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a26" name="_a26"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html">rotate_flip_effect</a> {<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;rotate_flip_type&gt;</a>(rotate_flip_choice.selected_item().tag())});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rotate-flip&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a26" name="_a26"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html">rotate_flip_effect</a> {<a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;rotate_flip_type&gt;</a>(rotate_flip_choice.selected_item().tag())});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;saturate&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a27" name="_a27"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1saturate__effect.html">saturate_effect</a> {saturate_percent_track_bar.value() / 100.0});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;scale&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a28" name="_a28"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1scale__effect.html">scale_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {scale_width_track_bar.value(), scale_height_track_bar.value()}, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;interpolation_mode&gt;</a>(scale_interpolation_mode_choice.selected_item().tag())});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;scale&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a28" name="_a28"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1scale__effect.html">scale_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {scale_width_track_bar.value(), scale_height_track_bar.value()}, <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;interpolation_mode&gt;</a>(scale_interpolation_mode_choice.selected_item().tag())});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;sepia&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a29" name="_a29"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1sepia__effect.html">sepia_effect</a> {sepia_percent_track_bar.value() / 100.0});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;solarize&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a30" name="_a30"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1solarize__effect.html">solarize_effect</a> {solarize_threshold_track_bar.value()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;threshold&quot;</span>) adjusted_image = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(original_image(), <a id="_a31" name="_a31"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1threshold__effect.html">threshold_effect</a> {threshold_threshold_track_bar.value()});</div>
@@ -672,8 +672,8 @@ $(function(){ initResizable(false); });
 <div class="line">        </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a> original_image_ = properties::resources::pineapple();</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a> adjusted_image = properties::resources::pineapple();</div>
-<div class="line">    <span class="keywordtype">double</span> rescale_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;double&gt;</a>(original_image().<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">size</a>().width) / original_image().size().height;</div>
-<div class="line">    <span class="keywordtype">double</span> resize_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;double&gt;</a>(original_image().<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">size</a>().width) / original_image().size().height;</div>
+<div class="line">    <span class="keywordtype">double</span> rescale_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;double&gt;</a>(original_image().<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">size</a>().width) / original_image().size().height;</div>
+<div class="line">    <span class="keywordtype">double</span> resize_aspect_ratio = <a class="code hl_function" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">as&lt;double&gt;</a>(original_image().<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">size</a>().width) / original_image().size().height;</div>
 <div class="line"> </div>
 <div class="line">    panel bitonal_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    label bitonal_threshold_label = label::create(bitonal_panel, <span class="stringliteral">&quot;Threshold&quot;</span>, {10, 34}, {70, 23});</div>
@@ -895,7 +895,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1math_html_a2d05200926a60c8309120b7b288e22e5"><div class="ttname"><a href="classxtd_1_1math.html#a2d05200926a60c8309120b7b288e22e5">xtd::math::abs</a></div><div class="ttdeci">static decimal abs(decimal value)</div><div class="ttdoc">Returns the absolute value of a decimal number.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:932</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga64df7eb27c64ffe5ab208756cbc26cf3"><div class="ttname"><a href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3">xtd::as</a></div><div class="ttdeci">auto as(any_object &amp;o) -&gt; type_t</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga597cca8c636b502a1dbf11b65c47b017a075a3e36a0a52dcbc568c05788e8a713"><div class="ttname"><a href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a075a3e36a0a52dcbc568c05788e8a713">xtd::drawing::drawing_2d::interpolation_mode::medium</a></div><div class="ttdeci">@ medium</div><div class="ttdoc">Specifies medium quality interpolation.</div><div class="ttdef"><b>Definition</b> interpolation_mode.hpp:42</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657"><div class="ttname"><a href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657">xtd::drawing::drawing_2d::interpolation_mode::box_average</a></div><div class="ttdeci">@ box_average</div><div class="ttdoc">Specifies box average interpolation. Prefiltering is performed to ensure high-quality shrinking.</div><div class="ttdef"><b>Definition</b> interpolation_mode.hpp:40</div></div>
@@ -964,7 +964,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 16 2026 21:07:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 18 2026 10:56:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
