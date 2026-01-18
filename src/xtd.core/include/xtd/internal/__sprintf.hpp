@@ -13,10 +13,10 @@
 
 /// @cond
 template<class char_t>
-inline std::basic_string<char_t> __sprintf(const char_t* fmt, ...) {return std::basic_string<char_t>();}
+[[nodiscard]] inline auto __sprintf(const char_t* fmt, ...) -> std::basic_string<char_t> {return std::basic_string<char_t>();}
 
 template <>
-inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
+[[nodiscard]] inline auto __sprintf<char>(const char* fmt, ...) -> std::basic_string<char> {
   va_list args;
   va_start(args, fmt);
   std::basic_string<char> formatted_string(vsnprintf(nullptr, 0, fmt, args), 0);
@@ -31,7 +31,7 @@ inline std::basic_string<char> __sprintf<char>(const char* fmt, ...) {
 }
 
 template <>
-inline std::basic_string<xtd::wchar> __sprintf<xtd::wchar>(const xtd::wchar* fmt, ...) {
+[[nodiscard]] inline auto __sprintf<xtd::wchar>(const xtd::wchar* fmt, ...) -> std::basic_string<xtd::wchar> {
   va_list args;
   size_t size = 1024;
   int length = 0;
