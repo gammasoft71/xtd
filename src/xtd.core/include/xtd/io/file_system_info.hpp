@@ -128,7 +128,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// ```
-      xtd::io::file_attributes attributes() const;
+      [[nodiscard]] auto attributes() const -> xtd::io::file_attributes;
       /// @brief Sets the attributes for the current file or directory.
       /// @param value xtd::io::file_attributes of the current xtd::io::file_system_info.
       /// @exception xtd::io::file_not_found_exception The specified file doesn't exist. Only thrown when setting the property value.
@@ -164,7 +164,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// ```
-      xtd::io::file_system_info& attributes(xtd::io::file_attributes value);
+      auto attributes(xtd::io::file_attributes value) -> xtd::io::file_system_info&;
       
       /// @brief Gets the creation time of the current file or directory.
       /// @return The creation date and time of the current xtd::io::file_system_info object.
@@ -186,8 +186,8 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// ```
-      const xtd::date_time& creation_time() const;
-      /// @brief Gets the creation time of the current file or directory.
+      [[nodiscard]] auto creation_time() const -> const xtd::date_time&;
+      /// @brief Sets the creation time of the current file or directory.
       /// @param value The creation date and time of the current xtd::io::file_system_info object.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
       /// @exception xtd::io::directory_not_found_exception The specified path is invalid; for example, it is on an unmapped drive.
@@ -207,7 +207,7 @@ namespace xtd {
       ///     console::write_line("{0} entry {1} was created on {2:D}", entry_type, fsi.full_name(), fsi.creation_time());
       ///   }
       /// ```
-      xtd::io::file_system_info& creation_time(const xtd::date_time& value);
+      auto creation_time(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief Gets the creation time, in coordinated universal time (UTC), of the current file or directory.
       /// @return The creation date and time in UTC format of the current xtd::io::file_system_info object.
@@ -223,7 +223,7 @@ namespace xtd {
       /// @remarks If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
       /// @remarks On Unix platforms that do not support creation or birth time, this property returns the older of the time of the last status change and the time of the last modification. On other platforms, it returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
       /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. This process is known as file tunneling. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
-      xtd::date_time creation_time_utc() const;
+      [[nodiscard]] auto creation_time_utc() const -> xtd::date_time;
       /// @brief Sets the creation time, in coordinated universal time (UTC), of the current file or directory.
       /// @param value The creation date and time in UTC format of the current xtd::io::file_system_info object.
       /// @return This current object.
@@ -239,12 +239,12 @@ namespace xtd {
       /// @remarks If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
       /// @remarks On Unix platforms that do not support creation or birth time, this property returns the older of the time of the last status change and the time of the last modification. On other platforms, it returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
       /// @remarks NTFS-formatted drives may cache file meta-info, such as file creation time, for a short period of time. This process is known as file tunneling. As a result, it may be necessary to explicitly set the creation time of a file if you are overwriting or replacing an existing file.
-      xtd::io::file_system_info& creation_time_utc(const xtd::date_time& value);
+      auto creation_time_utc(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief Gets a value indicating whether the file or directory exists.
       /// @return `true` if the file or directory exists; otherwise, `false`.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual bool exists() const = 0;
+      [[nodiscard]] virtual auto exists() const -> bool = 0;
       
       /// @brief Gets the extension part of the file name, including the leading dot . even if it is the entire file name, or an empty string if no extension is present.
       /// @return A string containing the xtd::io::file_system_info extension.
@@ -264,7 +264,7 @@ namespace xtd {
       /// | Retrieve only the file name a path.           | xtd::io::path::get_file_name_without_extension                                                                                                 |
       /// | Retrieve only the directory name from a path. | xtd::io::path::get_directory_name                                                                                                              |
       /// | Change the extension of a file.               | xtd::io::path::change_extrnsion                                                                                                                |
-      virtual xtd::string extension() const;
+      [[nodiscard]] virtual auto extension() const -> xtd::string;
       
       /// @brief Gets the full path of the directory or file.
       /// @return A string containing the full path.
@@ -285,7 +285,7 @@ namespace xtd {
       /// ```
       /// @remarks For example, for a file c:\new_file.txt, this property returns "c:\new_file.txt".
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      xtd::string full_name() const;
+      [[nodiscard]] auto full_name() const -> xtd::string;
       
       /// @brief Gets the time the current file or directory was last accessed.
       /// @return The time that the current file or directory was last accessed.
@@ -341,7 +341,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      const xtd::date_time& last_access_time() const;
+      [[nodiscard]] auto last_access_time() const -> const xtd::date_time&;
       /// @brief Sets the time the current file or directory was last accessed.
       /// @param value The time that the current file or directory was last accessed.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -396,7 +396,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_access_time(const xtd::date_time& value);
+      auto last_access_time(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief Gets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
       /// @return The UTC time that the current file or directory was last accessed.
@@ -411,7 +411,7 @@ namespace xtd {
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      xtd::date_time last_access_time_utc() const;
+      [[nodiscard]] auto last_access_time_utc() const -> xtd::date_time;
       /// @brief Sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
       /// @param vvalue The UTC time that the current file or directory was last accessed.
       /// @return This current object.
@@ -427,7 +427,7 @@ namespace xtd {
       /// * If the file described in the xtd::io::file_system_info object does not exist, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
-      xtd::io::file_system_info& last_access_time_utc(const xtd::date_time& value);
+      auto last_access_time_utc(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief Gets the time when the current file or directory was last written to.
       /// @return The time the current file was last written.
@@ -483,7 +483,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      const xtd::date_time& last_write_time() const;
+      [[nodiscard]] auto last_write_time() const -> const xtd::date_time&;
       /// @brief Sets the time when the current file or directory was last written to.
       /// @param value The time the current file was last written.
       /// @exception xtd::io::io_exception system error when retrieving the file information.
@@ -538,7 +538,7 @@ namespace xtd {
       /// * xtd::io::directory_info::enumerate_files
       /// * xtd::io::directory_info::enumerate_file_system_infos
       /// * To get the latest value, call the xtd::io::file_system_info::refresh method.
-      xtd::io::file_system_info& last_write_time(const xtd::date_time& value);
+      auto last_write_time(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief Gets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
       /// @return The UTC time when the current file was last written to.
@@ -552,7 +552,7 @@ namespace xtd {
       /// * xtd::io::directory_info::EnumerateFileSystemInfos
       /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// @remarks If the file or directory described in the xtd::io::file_system_info object does not exist, or if the file system that contains this file or directory does not support this information, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      xtd::date_time last_write_time_utc() const;
+      [[nodiscard]] auto last_write_time_utc() const -> xtd::date_time;
       /// @brief Sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
       /// @param value The UTC time when the current file was last written to.
       /// @note This method may set an inaccurate value because it uses native functions whose values may not be continuously updated by the operating system.
@@ -565,13 +565,13 @@ namespace xtd {
       /// * xtd::io::directory_info::EnumerateFileSystemInfos
       /// @remarks To get the latest value, call the xtd::io::file_system_info::refresh method.
       /// @remarks If the file or directory described in the xtd::io::file_system_info object does not exist, or if the file system that contains this file or directory does not support this information, this property returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
-      xtd::io::file_system_info& last_write_time_utc(const xtd::date_time& value);
+      auto last_write_time_utc(const xtd::date_time& value) -> xtd::io::file_system_info&;
       
       /// @brief For files, gets the name of the file. For directories, gets the name of the last directory in the hierarchy if a hierarchy exists. Otherwise, the Name property gets the name of the directory.
       /// @return A xtd::string that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
       /// @remarks For a directory, xtd::io::file_system_info::name returns only the name of the parent directory, such as dir, not c:\dir. For a subdirectory, xtd::io::file_system_info::name returns only the name of the subdirectory, such as sub1, not c:\dir\sub1.
       /// @remarks For a file, xtd::io::file_system_info::name returns only the file name and file name extension, such as my_file.txt, not c:\dir\my_file.txt.
-      virtual xtd::string name() const = 0;
+      [[nodiscard]] virtual auto name() const -> xtd::string = 0;
       
       /// @brief Gets the permissions for the current file or directory.
       /// @return xtd::io::file_permissions of the current xtd::io::file_system_info.
@@ -580,7 +580,7 @@ namespace xtd {
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::argument_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::io_exception xtd::io::file_system_info::refresh() cannot initialize the data.
-      xtd::io::file_permissions permissions() const;
+      [[nodiscard]] auto permissions() const -> xtd::io::file_permissions;
       /// @brief Sets the permissions for the current file or directory.
       /// @param value xtd::io::file_permissions of the current xtd::io::file_system_info.
       /// @exception xtd::io::file_not_found_exception The specified file doesn't exist. Only thrown when setting the property value.
@@ -589,7 +589,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The specified path, file name, or both exceed the system-defined maximum length.
       /// @exception xtd::io::io_exception xtd::io::file_system_info::refresh() cannot initialize the data.
       /// @exception xtd::platform_not_supported_exception The opration is not supported on the current operating system.
-      xtd::io::file_system_info& permissions(xtd::io::file_permissions value);
+      auto permissions(xtd::io::file_permissions value) -> xtd::io::file_system_info&;
       /// @}
       
       /// @name Public Methods
@@ -611,7 +611,7 @@ namespace xtd {
       /// @note The string returned by the xtd::io::file_system_info::tto_string method represents the path that was passed to the constructor of the class implementing xtd::io::file_system_info. Instead of calling the xtd::io::file_system_info::to_string method, you should retrieve the value of either of the following properties, depending on your intent:
       /// * xtd::io::file_system_info::name, to get the name of the file or directory, without any parent path information.
       /// * xtd::io::file_system_info::full_name, to get the fully qualified path of the file or directory.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     protected:
