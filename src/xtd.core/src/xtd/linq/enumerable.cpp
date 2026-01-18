@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::helpers;
 using namespace xtd::linq;
 
-decimal enumerable::average(const ienumerable<decimal>& source) {
+auto enumerable::average(const ienumerable<decimal>& source) -> decimal {
   auto average = .0l;
   auto count = 0;
   for (auto item : source) {
@@ -18,7 +18,7 @@ decimal enumerable::average(const ienumerable<decimal>& source) {
   return average / count;
 }
 
-double enumerable::average(const ienumerable<double>& source) {
+auto enumerable::average(const ienumerable<double>& source) -> double {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
@@ -29,7 +29,7 @@ double enumerable::average(const ienumerable<double>& source) {
   return average / count;
 }
 
-float enumerable::average(const ienumerable<float>& source) {
+auto enumerable::average(const ienumerable<float>& source) -> float {
   auto average = .0f;
   auto count = 0;
   for (auto item : source) {
@@ -40,7 +40,7 @@ float enumerable::average(const ienumerable<float>& source) {
   return average / count;
 }
 
-double enumerable::average(const ienumerable<int32>& source) {
+auto enumerable::average(const ienumerable<int32>& source) -> double {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
@@ -51,7 +51,7 @@ double enumerable::average(const ienumerable<int32>& source) {
   return average / count;
 }
 
-double enumerable::average(const ienumerable<int64>& source) {
+auto enumerable::average(const ienumerable<int64>& source) -> double {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
@@ -62,7 +62,7 @@ double enumerable::average(const ienumerable<int64>& source) {
   return average / count;
 }
 
-optional<decimal> enumerable::average(const ienumerable<optional<decimal >>& source) noexcept {
+auto enumerable::average(const ienumerable<optional<decimal >>& source) noexcept -> optional<decimal> {
   auto average = .0l;
   auto count = 0;
   for (auto item : source) {
@@ -74,7 +74,7 @@ optional<decimal> enumerable::average(const ienumerable<optional<decimal >>& sou
   return average / count;
 }
 
-optional<double> enumerable::average(const ienumerable<optional<double >>& source) noexcept {
+auto enumerable::average(const ienumerable<optional<double >>& source) noexcept -> optional<double> {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
@@ -86,7 +86,7 @@ optional<double> enumerable::average(const ienumerable<optional<double >>& sourc
   return average / count;
 }
 
-optional<float> enumerable::average(const ienumerable<optional<float >>& source) noexcept {
+auto enumerable::average(const ienumerable<optional<float >>& source) noexcept -> optional<float> {
   auto average = .0f;
   auto count = 0;
   for (auto item : source) {
@@ -98,7 +98,7 @@ optional<float> enumerable::average(const ienumerable<optional<float >>& source)
   return average / count;
 }
 
-optional<double> enumerable::average(const ienumerable<optional<int32 >>& source) noexcept {
+auto enumerable::average(const ienumerable<optional<int32 >>& source) noexcept -> optional<double> {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
@@ -110,7 +110,7 @@ optional<double> enumerable::average(const ienumerable<optional<int32 >>& source
   return average / count;
 }
 
-optional<double> enumerable::average(const ienumerable<optional<int64 >>& source) noexcept {
+auto enumerable::average(const ienumerable<optional<int64 >>& source) noexcept -> optional<double> {
   auto average = .0;
   auto count = 0;
   for (auto item : source) {
