@@ -12,11 +12,11 @@ using namespace xtd;
 using namespace xtd::helpers;
 using namespace io;
 
-file_attributes file_system_info::attributes() const {
+auto file_system_info::attributes() const -> file_attributes {
   return attributes_;
 }
 
-file_system_info& file_system_info::attributes(file_attributes value) {
+auto file_system_info::attributes(file_attributes value) -> file_system_info& {
   auto result = native::file_system::set_attributes(full_path_, as<int32>(value));
   if (result == -1) throw_helper::throws(exception_case::platform_not_supported);
   if (result != 0) throw_helper::throws(exception_case::io);
@@ -24,11 +24,11 @@ file_system_info& file_system_info::attributes(file_attributes value) {
   return *this;
 }
 
-const date_time& file_system_info::creation_time() const {
+auto file_system_info::creation_time() const -> const date_time& {
   return creation_time_;
 }
 
-file_system_info& file_system_info::creation_time(const date_time& value) {
+auto file_system_info::creation_time(const date_time& value) -> file_system_info& {
   auto result = native::file_system::set_creation_time(full_path_, value.to_time_t());
   if (result == -1) throw_helper::throws(exception_case::platform_not_supported);
   if (result != 0) throw_helper::throws(exception_case::io);
@@ -36,27 +36,27 @@ file_system_info& file_system_info::creation_time(const date_time& value) {
   return *this;
 }
 
-xtd::date_time file_system_info::creation_time_utc() const {
+auto file_system_info::creation_time_utc() const -> date_time {
   return creation_time().to_universal_time();
 }
 
-xtd::io::file_system_info& file_system_info::creation_time_utc(const xtd::date_time& value) {
+auto file_system_info::creation_time_utc(const date_time& value) -> file_system_info& {
   return creation_time(value.to_local_time());
 }
 
-string file_system_info::extension() const {
+auto file_system_info::extension() const -> string {
   return path::get_extension(full_path_);
 }
 
-string file_system_info::full_name() const {
+auto file_system_info::full_name() const -> string {
   return full_path_;
 }
 
-const date_time& file_system_info::last_access_time() const {
+auto file_system_info::last_access_time() const -> const date_time& {
   return last_access_time_;
 }
 
-file_system_info& file_system_info::last_access_time(const date_time& value) {
+auto file_system_info::last_access_time(const date_time& value) -> file_system_info& {
   auto result = native::file_system::set_last_access_time(full_path_, value.to_time_t());
   if (result == -1) throw_helper::throws(exception_case::platform_not_supported);
   if (result != 0) throw_helper::throws(exception_case::io);
@@ -64,19 +64,19 @@ file_system_info& file_system_info::last_access_time(const date_time& value) {
   return *this;
 }
 
-xtd::date_time file_system_info::last_access_time_utc() const {
+auto file_system_info::last_access_time_utc() const -> date_time {
   return last_access_time().to_universal_time();
 }
 
-xtd::io::file_system_info& file_system_info::last_access_time_utc(const xtd::date_time& value) {
+auto file_system_info::last_access_time_utc(const date_time& value) -> file_system_info& {
   return last_access_time(value.to_local_time());
 }
 
-const date_time& file_system_info::last_write_time() const {
+auto file_system_info::last_write_time() const -> const date_time& {
   return last_write_time_;
 }
 
-file_system_info& file_system_info::last_write_time(const date_time& value) {
+auto file_system_info::last_write_time(const date_time& value) -> file_system_info& {
   auto result = native::file_system::set_last_write_time(full_path_, value.to_time_t());
   if (result == -1) throw_helper::throws(exception_case::platform_not_supported);
   if (result != 0) throw_helper::throws(exception_case::io);
@@ -84,19 +84,19 @@ file_system_info& file_system_info::last_write_time(const date_time& value) {
   return *this;
 }
 
-xtd::date_time file_system_info::last_write_time_utc() const {
+auto file_system_info::last_write_time_utc() const -> date_time {
   return last_write_time().to_universal_time();
 }
 
-xtd::io::file_system_info& file_system_info::last_write_time_utc(const xtd::date_time& value) {
+auto file_system_info::last_write_time_utc(const date_time& value) -> file_system_info& {
   return last_write_time(value.to_local_time());
 }
 
-file_permissions file_system_info::permissions() const {
+auto file_system_info::permissions() const -> file_permissions {
   return permissions_;
 }
 
-file_system_info& file_system_info::permissions(file_permissions value) {
+auto file_system_info::permissions(file_permissions value) -> file_system_info& {
   auto result = native::file_system::set_permissions(full_path_, as<int32>(value));
   if (result == -1) throw_helper::throws(exception_case::platform_not_supported);
   if (result != 0) throw_helper::throws(exception_case::io);
@@ -104,7 +104,7 @@ file_system_info& file_system_info::permissions(file_permissions value) {
   return *this;
 }
 
-void file_system_info::refresh() {
+auto file_system_info::refresh() -> void {
   full_path_ = native::file_system::get_full_path(original_path_);
   if (native::file_system::is_path_too_long(full_path_)) throw_helper::throws(exception_case::path_too_long);
   auto attributes = 0;
@@ -120,6 +120,6 @@ void file_system_info::refresh() {
   }
 }
 
-string file_system_info::to_string() const noexcept {
+auto file_system_info::to_string() const noexcept -> string {
   return original_path_;
 }
