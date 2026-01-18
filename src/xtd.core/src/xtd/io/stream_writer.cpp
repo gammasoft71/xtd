@@ -39,31 +39,31 @@ stream_writer::~stream_writer() {
   }
 }
 
-bool stream_writer::auto_flush() const {
+auto stream_writer::auto_flush() const -> bool {
   return auto_flush_;
 }
 
-void stream_writer::auto_flush(bool auto_flush) {
+auto stream_writer::auto_flush(bool auto_flush) -> void {
   auto_flush_ = auto_flush;
   if (auto_flush_) flush();
 }
 
-std::optional<ref<std::ostream>> stream_writer::base_stream() const {
+auto stream_writer::base_stream() const -> std::optional<ref<std::ostream>> {
   return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream >> ();
 }
 
-void stream_writer::close() {
+auto stream_writer::close() -> void {
   flush();
   if (stream_ && dynamic_cast<std::ofstream*>(stream_)) static_cast<std::ofstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 
-void stream_writer::flush() {
+auto stream_writer::flush() -> void {
   if (stream_) stream_->flush();
 }
 
-void stream_writer::write(const string& value) {
+auto stream_writer::write(const string& value) -> void {
   if (stream_) stream_->write(value.chars().c_str(), value.length());
   if (auto_flush_) flush();
 }
