@@ -23,27 +23,27 @@ stream_reader::~stream_reader() {
   }
 }
 
-std::optional<ref<std::istream>> stream_reader::base_stream() const {
+auto stream_reader::base_stream() const -> std::optional<ref<std::istream>> {
   return stream_ ? std::optional<ref<std::istream>>(*stream_) : std::nullopt;
 }
 
-bool stream_reader::end_of_stream() const {
+auto stream_reader::end_of_stream() const -> bool {
   return peek() == EOF;
 }
 
-void stream_reader::close() {
+auto stream_reader::close() -> void {
   if (stream_ && dynamic_cast<std::ifstream*>(stream_)) static_cast<std::ifstream*>(stream_)->close();
   if (delete_when_destroy_) delete stream_;
   stream_ = nullptr;
 }
 
-int32 stream_reader::peek() const {
+auto stream_reader::peek() const -> int32 {
   if (!stream_) return EOF;
   int32 value = stream_->peek();
   return value;
 }
 
-int32 stream_reader::read() {
+auto stream_reader::read() -> int32 {
   if (!stream_) return EOF;
   int32 value = stream_->get();
   return value;
