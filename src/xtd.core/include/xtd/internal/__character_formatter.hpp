@@ -12,7 +12,7 @@
 
 /// @cond
 template<class char_t, class value_t>
-inline std::basic_string<char_t> __character_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
+[[nodiscard]] inline auto __character_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) -> std::basic_string<char_t> {
   std::basic_string<char_t> result;
   xtd::char32 codepoint = value;
   if (codepoint < 0x80)
