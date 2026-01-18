@@ -33,7 +33,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(xtd::any value) {
+  inline auto as<xtd::string>(xtd::any value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -55,7 +55,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(bool value) {
+  inline auto as<xtd::string>(bool value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -77,7 +77,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(xtd::byte value) {
+  inline auto as<xtd::string>(xtd::byte value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -101,7 +101,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(xtd::byte value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::byte value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -124,7 +124,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(char value) {
+  inline auto as<xtd::string>(char value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -147,7 +147,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(char8 value) {
+  inline auto as<xtd::string>(xtd::char8 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -170,7 +170,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(char16 value) {
+  inline auto as<xtd::string>(xtd::char16 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -193,7 +193,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(char32 value) {
+  inline auto as<xtd::string>(xtd::char32 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -216,7 +216,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(wchar value) {
+  inline auto as<xtd::string>(xtd::wchar value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -238,7 +238,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(decimal value) {
+  inline auto as<xtd::string>(xtd::decimal value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -260,7 +260,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(double value) {
+  inline auto as<xtd::string>(double value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -282,7 +282,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(float value) {
+  inline auto as<xtd::string>(float value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -304,7 +304,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(int16 value) {
+  inline auto as<xtd::string>(xtd::int16 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -328,7 +328,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(int16 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::int16 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -350,7 +350,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(int32 value) {
+  inline auto as<xtd::string>(xtd::int32 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -374,7 +374,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(int32 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::int32 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -396,7 +396,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(int64 value) {
+  inline auto as<xtd::string>(xtd::int64 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -420,7 +420,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(int64 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::int64 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -442,7 +442,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(slong value) {
+  inline auto as<xtd::string>(xtd::slong value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -466,7 +466,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(slong value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::slong value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -488,7 +488,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(sbyte value) {
+  inline auto as<xtd::string>(xtd::sbyte value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -512,7 +512,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(sbyte value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::sbyte value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -534,7 +534,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(uint16 value) {
+  inline auto as<xtd::string>(xtd::uint16 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -558,7 +558,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(uint16 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::uint16 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -580,7 +580,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(uint32 value) {
+  inline auto as<xtd::string>(xtd::uint32 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -604,7 +604,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(uint32 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::uint32 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -626,7 +626,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(uint64 value) {
+  inline auto as<xtd::string>(xtd::uint64 value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -650,7 +650,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(uint64 value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::uint64 value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
   
@@ -672,7 +672,7 @@ namespace xtd {
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(xtd::ulong value) {
+  inline auto as<xtd::string>(xtd::ulong value) -> xtd::string {
     return xtd::convert::to_string(value);
   }
   
@@ -696,7 +696,7 @@ namespace xtd {
   /// string result = as<string>(value, 16);
   /// ```
   template<>
-  inline string as<string>(xtd::ulong value, xtd::byte from_base) {
+  inline auto as<xtd::string>(xtd::ulong value, xtd::byte from_base) -> xtd::string {
     return xtd::convert::to_string(value, from_base);
   }
 }
