@@ -29,35 +29,35 @@ stream::streambuf::int_type stream::streambuf::overflow(int_type value) {
   return 1;
 }
 
-bool stream::can_timeout() const noexcept {
+auto stream::can_timeout() const noexcept -> bool {
   return false;
 }
 
-bool stream::is_closed() const noexcept {
+auto stream::is_closed() const noexcept -> bool {
   return closed_;
 }
 
-int32 stream::read_timeout() const {
+auto stream::read_timeout() const -> int32 {
   throw_helper::throws(exception_case::invalid_operation);
 }
 
-void stream::read_timeout(int32 value) {
+auto stream::read_timeout(int32 value) -> void {
   throw_helper::throws(exception_case::invalid_operation);
 }
 
-int32 stream::write_timeout() const {
+auto stream::write_timeout() const -> int32 {
   throw_helper::throws(exception_case::invalid_operation);
 }
 
-void stream::write_timeout(int32 value) {
+auto stream::write_timeout(int32 value) -> void {
   throw_helper::throws(exception_case::invalid_operation);
 }
 
-void stream::copy_to(std::ostream& destination) {
+auto stream::copy_to(std::ostream& destination) -> void {
   copy_to(destination, length());
 }
 
-void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
+auto stream::copy_to(std::ostream& destination, xtd::size buffer_size) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   if (buffer_size == 0_z) throw_helper::throws(exception_case::argument_out_of_range);
@@ -70,7 +70,7 @@ void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
   }
 }
 
-size stream::read(span<byte>& buffer) {
+auto stream::read(span<byte>& buffer) -> size {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -83,7 +83,7 @@ size stream::read(span<byte>& buffer) {
   return buffer.length();
 }
 
-size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_on_end_of_stream) {
+auto stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_on_end_of_stream) -> size {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -95,7 +95,7 @@ size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_o
   return read_count;
 }
 
-int32 stream::read_byte() {
+auto stream::read_byte() -> int32 {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -105,11 +105,11 @@ int32 stream::read_byte() {
   return stream::eof;
 }
 
-void stream::read_exactly(array<byte>& buffer) {
+auto stream::read_exactly(array<byte>& buffer) -> void {
   read_exactly(buffer, 0_z, buffer.length());
 }
 
-void stream::read_exactly(array<byte>& buffer, size offset, size count) {
+auto stream::read_exactly(array<byte>& buffer, size offset, size count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
@@ -125,7 +125,7 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   }
 }
 
-void stream::write(xtd::span<const xtd::byte> buffer) {
+auto stream::write(xtd::span<const xtd::byte> buffer) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
@@ -133,7 +133,7 @@ void stream::write(xtd::span<const xtd::byte> buffer) {
     write_byte(item);
 }
 
-void stream::write_byte(byte value) {
+auto stream::write_byte(byte value) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
