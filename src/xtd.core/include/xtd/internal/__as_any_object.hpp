@@ -15,12 +15,12 @@ namespace xtd {
   
   template<class type_t>
   struct __enum_any_object__<type_t, std::true_type> {
-    type_t operator()(const any_object& o) const {return as<enum_object<type_t>>(o.value());}
+    auto operator()(const any_object& o) const -> type_t {return as<enum_object<type_t>>(o.value());}
   };
   
   template<class type_t>
   struct __enum_any_object__<type_t, std::false_type> {
-    type_t operator()(const any_object& o) const {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}
+    auto operator()(const any_object& o) const -> type_t {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}
   };
   
   template<class type_t, class bool_t>
@@ -28,12 +28,12 @@ namespace xtd {
   
   template<class type_t>
   struct __polymorphic_any_object__<type_t, std::true_type> {
-    type_t operator()(const any_object& o) const {return as<type_t>(o.value());}
+    auto operator()(const any_object& o) const -> type_t {return as<type_t>(o.value());}
   };
   
   template<class type_t>
   struct __polymorphic_any_object__<type_t, std::false_type> {
-    type_t operator()(const any_object& o) const {return __enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
+    auto operator()(const any_object& o) const -> type_t {return __enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
   /// @endcond
   
@@ -56,7 +56,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
-  inline type_t as(any_object& o) {
+  inline auto as(any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
@@ -80,7 +80,7 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
-  inline type_t as(const any_object& o) {
+  inline auto as(const any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
@@ -104,7 +104,7 @@ namespace xtd {
   /// xtd::string result = as<string>(value);
   /// ```
   template<>
-  inline string as<string>(xtd::any_object& value) {
+  inline auto as<string>(xtd::any_object& value) -> string {
     return xtd::convert::to_string(value);
   }
   
@@ -127,7 +127,7 @@ namespace xtd {
   /// xtd::string result = as<string>(value);
   /// ```
   template<>
-  inline string as<string>(const xtd::any_object& value) {
+  inline auto as<string>(const xtd::any_object& value) -> string {
     return xtd::convert::to_string(value);
   }
 }
