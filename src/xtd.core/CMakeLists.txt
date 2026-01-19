@@ -113,8 +113,6 @@ add_sources(
   "include/xtd/char32"
   "include/xtd/char32_object.hpp"
   "include/xtd/char32_object"
-  "include/xtd/character_literals.hpp"
-  "include/xtd/character_literals"
   "include/xtd/check_cpp_version.hpp"
   "include/xtd/check_cpp_version"
   "include/xtd/chrono.hpp"
