@@ -6,39 +6,39 @@ using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-xtd::net::sockets::socket socket_async_event_args::accept_socket() const noexcept {
+auto socket_async_event_args::accept_socket() const noexcept -> socket {
   return accept_socket_;
 }
 
-socket_async_event_args& socket_async_event_args::accept_socket(const xtd::net::sockets::socket& value) noexcept {
+auto socket_async_event_args::accept_socket(const socket& value) noexcept -> socket_async_event_args& {
   accept_socket_ = value;
   return *this;
 }
 
-const xtd::array<xtd::byte>& socket_async_event_args::buffer() const noexcept {
+auto socket_async_event_args::buffer() const noexcept -> const array<xtd::byte>& {
   return buffer_;
 }
 
-xtd::array<xtd::byte>& socket_async_event_args::buffer() noexcept {
+auto socket_async_event_args::buffer() noexcept -> array<xtd::byte>& {
   return buffer_;
 }
 
-void socket_async_event_args::set_buffer(const xtd::array<xtd::byte>& memory_buffer) {
+auto socket_async_event_args::set_buffer(const array<xtd::byte>& memory_buffer) -> void {
   memory_buffer_ = memory_buffer;
 }
 
-void socket_async_event_args::set_buffer(size_t offset, size_t count) {
+auto socket_async_event_args::set_buffer(size offset, size count) -> void {
   set_buffer(buffer_, offset, count);
 }
 
-void socket_async_event_args::set_buffer(const xtd::array<xtd::byte>& buffer, size_t offset, size_t count) {
+auto socket_async_event_args::set_buffer(const array<xtd::byte>& buffer, size offset, size count) -> void {
   if (offset + count > buffer_.length()) throw_helper::throws(exception_case::argument_out_of_range);
   buffer_ = buffer;
   offset_ = offset;
   count_ = count;
 }
 
-void socket_async_event_args::on_complete(const socket_async_event_args& e) {
+auto socket_async_event_args::on_complete(const socket_async_event_args& e) -> void {
   auto safe_completed = completed;
   if (safe_completed.is_empty()) return;
   safe_completed(e);

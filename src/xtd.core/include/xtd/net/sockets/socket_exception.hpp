@@ -70,12 +70,12 @@ namespace xtd {
         /// @return An integer error code that is associated with this exception.
         /// @remarks The xtd::net::sockets::socket_exception::error property contains the error code that is associated with the error that caused the exception.
         /// @remarks The parameterless constructor for xtd::net::sockets::socket_exception sets the xtd::net::sockets::socket_exception::socket_error_code property to the last operating system error that occurred. For more information about socket error codes, see the [Windows Sockets version 2 API error code](https://learn.microsoft.com/en-us/windows/desktop/winsock/windows-sockets-error-codes-2) documentation.
-        int32 socket_error_code() const noexcept;
+        [[nodiscard]] auto socket_error_code() const noexcept -> xtd::int32;
         /// @brief Gets the socket error that is associated with this exception.
         /// @return A socket error that is associated with this exception.
         /// @remarks The xtd::net::sockets::socket_exception::socket_error_code property contains the error code that is associated with the error that caused the exception.
         /// @remarks The parameterless constructor for xtd::net::sockets::socket_exception sets the xtd::net::sockets::socket_exception::socket_error_code property to the last operating system error that occurred. For more information about socket error codes, see the [Windows Sockets version 2 API error code](https://learn.microsoft.com/en-us/windows/desktop/winsock/windows-sockets-error-codes-2) documentation.
-        virtual xtd::net::sockets::socket_error socket_error() const noexcept;
+        virtual auto socket_error() const noexcept -> xtd::net::sockets::socket_error;
         /// @}
         
         /// @name Public Deprecated Constructors

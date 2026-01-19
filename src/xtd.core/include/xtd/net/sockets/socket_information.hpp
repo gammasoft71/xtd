@@ -51,20 +51,20 @@ namespace xtd {
         /// @brief Gets the options for a xtd::net::sockets::socket.
         /// @return A xtd::net::sockets::socket_information_options instance.
         /// @remarks Options include xtd::net::sockets::socket_information_options::connected, xtd::net::sockets::socket_information_options::listening, xtd::net::sockets::socket_information_options::non_blocking, and xtd::net::sockets::socket_information_options::use_only_overlapped_io.
-        xtd::net::sockets::socket_information_options options() const noexcept;
+        [[nodiscard]] auto options() const noexcept -> xtd::net::sockets::socket_information_options;
         /// @brief Sets the options for a xtd::net::sockets::socket.
         /// @param value A xtd::net::sockets::socket_information_options instance.
         /// @return This current instance.
         /// @remarks Options include xtd::net::sockets::socket_information_options::connected, xtd::net::sockets::socket_information_options::listening, xtd::net::sockets::socket_information_options::non_blocking, and xtd::net::sockets::socket_information_options::use_only_overlapped_io.
-        socket_information& options(xtd::net::sockets::socket_information_options value) noexcept;
+        auto options(xtd::net::sockets::socket_information_options value) noexcept -> socket_information&;
         
         /// @brief Gets the protocol information for a xtd::net::sockets::socket.
         /// @return An array of byte.
-        const xtd::array<xtd::byte>& protocol_information() const noexcept;
+        [[nodiscard]] auto protocol_information() const noexcept -> const xtd::array<xtd::byte>&;
         /// @brief Sets the protocol information for a xtd::net::sockets::socket.
         /// @param value An array of byte.
         /// @return This current instance.
-        socket_information& protocol_information(const xtd::array<xtd::byte>& value) noexcept;
+        auto protocol_information(const xtd::array<xtd::byte>& value) noexcept -> socket_information&;
         /// @}
         
       private:

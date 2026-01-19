@@ -54,11 +54,11 @@ namespace xtd {
         /// @{
         /// @brief Gets the origin information of the packet that was received as a result of calling the xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from method.
         /// @return An xtd::net::ip_address that indicates the origin information of the packet that was received as a result of calling the xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from method. For packets that were sent from a unicast address, the xtd::net::sockets::ip_packet_information::address property will return the xtd::net::ip_address of the sender; for multicast or broadcast packets, the xtd::net::sockets::ip_packet_information::address property will return the multicast or broadcast xtd::net::ip_address.
-        const xtd::net::ip_address& address() const noexcept;
+        [[nodiscard]] auto address() const noexcept -> const xtd::net::ip_address&;
         
         /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from method or xtd::net::sockets::socket::end_receive_message_from.
         /// @return An int32 value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
-        int32 interface() const noexcept;
+        [[nodiscard]] auto interface() const noexcept -> xtd::int32;
         /// @}
         
         /// @name Public Methods
@@ -67,21 +67,21 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const xtd::object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const ip_packet_information& other) const noexcept override;
+        [[nodiscard]] auto equals(const ip_packet_information& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size  override;
         /// @}
         
       private:
         friend class socket;
         xtd::net::ip_address address_;
-        int32 address_interface_ = 0;
+        xtd::int32 address_interface_ = 0;
       };
     }
   }

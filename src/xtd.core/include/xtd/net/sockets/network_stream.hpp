@@ -73,56 +73,56 @@ namespace xtd {
         /// @{
         /// @brief Gets a value indicating whether the current stream supports reading.
         /// @return `true` if the stream supports reading; otherwise, `false`.
-        bool can_read() const noexcept override;
+        [[nodiscard]] auto can_read() const noexcept -> bool override;
         
         /// @brief Gets a value indicating whether the current stream supports seeking.
         /// @return `true` if the stream supports seeking; otherwise, `false`.
-        bool can_seek() const noexcept override;
+        [[nodiscard]] auto can_seek() const noexcept -> bool override;
         
         /// @brief Indicates whether timeout properties are usable for xtd::net::sockets::network_stream.
         /// @return `true` in all cases.
-        bool can_timeout() const noexcept override;
+        [[nodiscard]] auto can_timeout() const noexcept -> bool override;
         
         /// @brief Gets a value indicating whether the current stream supports writing.
         /// @return `true` if the stream supports writing; otherwise, `false`.
-        bool can_write() const noexcept override;
+        [[nodiscard]] auto can_write() const noexcept -> bool override;
         
         /// @brief Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be read.
         /// @return `true` if data is available on the stream to be read; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks Use the xtd::net::sockets::network_stream::data_available property to determine if data is ready to be read. If xtd::net::sockets::network_stream::data_available is `true`, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, xtd::net::sockets::network_stream::data_available may throw a xtd::net::sockets::socket_exception.
-        virtual bool data_available() const;
+        [[nodiscard]] virtual auto data_available() const -> bool;
         
         /// @brief Gets the length of the stream in bytes.
         /// @return The length of the stream in bytes.
-        xtd::size length() const override;
+        [[nodiscard]] auto length() const -> xtd::size override;
         
         /// @brief Gets the current position within the stream.
         /// @return The current position within the stream.
-        xtd::size position() const override;
+        [[nodiscard]] auto position() const -> xtd::size override;
         /// @brief Sets the current position within the stream.
         /// @param value The current position within the stream.
-        void position(xtd::size value) override;
+        auto position(xtd::size value) -> void override;
         
         /// @brief Gets the amount of time that a read operation blocks waiting for data.
         /// @return A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
-        int32 read_timeout() const override;
+        [[nodiscard]] auto read_timeout() const -> xtd::int32 override;
         /// @brief Sets the amount of time that a read operation blocks waiting for data.
         /// @param value A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
-        void read_timeout(int32 value) override;
+        auto read_timeout(xtd::int32 value) -> void override;
         
         /// @brief Gets the amount of time that a write operation blocks waiting for data.
         /// @return A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
-        int32 write_timeout() const override;
+        [[nodiscard]] auto write_timeout() const -> xtd::int32 override;
         /// @brief Sets the amount of time that a write operation blocks waiting for data.
         /// @param value A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
-        void write_timeout(int32 value) override;
+        auto write_timeout(xtd::int32 value) -> void override;
         
         /// @brief Gets the underlying xtd::net::sockets::socket.
         /// @return A xtd::net::sockets::socket that represents the underlying network connection.
         /// @remarks Classes deriving from xtd::net::sockets::network_stream can use this property to get the underlying xtd::net::sockets::socket. Use the underlying xtd::net::sockets::socket returned from the xtd::net::sockets::socket property if you require access beyond that which xtd::net::sockets::network_stream provides.
-        xtd::net::sockets::socket socket() const;
+        [[nodiscard]] auto socket() const -> xtd::net::sockets::socket;
         /// @}
         
         /// @name Public Methods
@@ -130,7 +130,7 @@ namespace xtd {
         /// @{
         /// @brief Flushes data from the stream. This method is reserved for future use.
         /// @remarks The Flush method implements the xtd::io::stream::flush method; however, because xtd::net::sockets::network_stream is not buffered, it has no effect on network streams. Calling the xtd::net::sockets::network_stream::flush method does not throw an exception.
-        void flush() override;
+        auto flush() -> void override;
         
         using xtd::io::stream::read;
         /// @brief Reads a block of bytes from the current stream and writes the data to a buffer.
@@ -142,12 +142,12 @@ namespace xtd {
         /// @remarks If the read operation is successful, the current position within the stream advances by the number of bytes read. If an exception occurs, the current position within the stream remains unchanged.
         /// @remarks The `read` method will return zero only if the end of the stream is reached. In all other cases, `read` always reads at least one byte from the stream before returning. By definition, if no data is available from the stream upon a call to `read`, the `read` method returns zero (the end of the stream is reached automatically). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
         /// @remarks Use xtd::io::binary_reader for reading primitive data types.
-        xtd::size read(xtd::array<xtd::byte>& buffer, size offset, size count) override;
+        auto read(xtd::array<xtd::byte>& buffer, size offset, size count) -> xtd::size override;
         
         /// @brief Sets the length of the current stream to the specified value.
         /// @param value The value at which to set the length.
         /// @remarks If the specified value is less than the current length of the stream, the stream is truncated. If after the truncation the current position within the stream is past the end of the stream, the xtd::io::memery_stream::read_byte method returns -1, the xtd::io::memery_stream::read method reads zero bytes into the provided byte array, and xtd::io::memery_stream::write and xtd::io::memery_stream::write_byte methods append specified bytes at the end of the stream, increasing its length. If the specified value is larger than the current capacity and the stream is resizable, the capacity is increased, and the current position within the stream is unchanged. If the length is increased, the contents of the stream between the old and the new length are initialized to zeros.
-        void set_length(xtd::size value) override;
+        auto set_length(xtd::size value) -> void override;
         
         using xtd::io::stream::write;
         /// @brief Writes a block of bytes to the current stream using data read from a buffer.
@@ -162,7 +162,7 @@ namespace xtd {
         /// ```
         /// @remarks The `offset` parameter gives the offset of the first byte in `buffer` to write from, and the `count` parameter gives the number of bytes to write. If the write operation is successful, the current position within the stream is advanced by the number of bytes written. If an exception occurs, the current position within the stream is unchanged.
         /// @remarks Except for a `memory_stream` constructed with a byte[] parameter, write operations at the end of a `memory_stream` expand the `memory_stream`.
-        void write(const xtd::array<xtd::byte>& buffer, size offset, size count) override;
+        auto write(const xtd::array<xtd::byte>& buffer, size offset, size count) -> void override;
         /// @}
         
       private:

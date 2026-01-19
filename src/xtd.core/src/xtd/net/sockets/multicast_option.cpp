@@ -13,43 +13,43 @@ multicast_option::multicast_option(const xtd::net::ip_address& group) : group_(g
 multicast_option::multicast_option(const xtd::net::ip_address& group, uint32 interface_index) : group_(group), interface_index_(interface_index) {
 }
 
-const xtd::net::ip_address& multicast_option::group() const noexcept {
+auto multicast_option::group() const noexcept -> const xtd::net::ip_address& {
   return group_;
 }
 
-multicast_option& multicast_option::group(const xtd::net::ip_address& value) noexcept {
+auto multicast_option::group(const xtd::net::ip_address& value) noexcept -> multicast_option& {
   group_ = value;
   return *this;
 }
 
-uint32 multicast_option::interface_index() const noexcept {
+auto multicast_option::interface_index() const noexcept -> uint32 {
   return interface_index_;
 }
 
-multicast_option& multicast_option::interface_index(uint32 value) noexcept {
+auto multicast_option::interface_index(uint32 value) noexcept -> multicast_option& {
   interface_index_ = value;
   local_address_ = ip_address::none;
   return *this;
 }
 
-const xtd::net::ip_address& multicast_option::local_address() const noexcept {
+auto multicast_option::local_address() const noexcept -> const xtd::net::ip_address& {
   return local_address_;
 }
 
-multicast_option& multicast_option::local_address(const xtd::net::ip_address& value) noexcept {
+auto multicast_option::local_address(const xtd::net::ip_address& value) noexcept -> multicast_option& {
   interface_index_ = 0;
   local_address_ = value;
   return *this;
 }
 
-bool multicast_option::equals(const object& obj) const noexcept {
+auto multicast_option::equals(const object& obj) const noexcept -> bool {
   return is<multicast_option>(obj) && equals(static_cast<const multicast_option&>(obj));
 }
 
-bool multicast_option::equals(const multicast_option& other) const noexcept {
+auto multicast_option::equals(const multicast_option& other) const noexcept -> bool {
   return group_ == other.group_ && interface_index_ == other.interface_index_ && local_address_ == other.local_address_;
 }
 
-size multicast_option::get_hash_code() const noexcept {
+auto multicast_option::get_hash_code() const noexcept -> size {
   return hash_code::combine(group_, interface_index_, local_address_);
 }

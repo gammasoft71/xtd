@@ -51,7 +51,7 @@ namespace xtd {
         /// | `true` (enabled)                      | A zero timeout.                            | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
-        linger_option(bool enabled, uint32 linger_time);
+        linger_option(bool enabled, xtd::uint32 linger_time);
         /// @}
         
         /// @cond
@@ -75,7 +75,7 @@ namespace xtd {
         /// | `true` (enabled)                      | A zero timeout.                            | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
-        bool enabled() const noexcept;
+        [[nodiscard]] auto enabled() const noexcept -> bool;
         /// @brief Sets a value that indicates whether to linger after the xtd::net::sockets::socket is closed.
         /// @param value `true` if the xtd::net::sockets::socket should linger after xtd::net::sockets::socket::close is called; otherwise, `false`.
         /// @remarks You can use the xtd::net::sockets::linger_option::enabled property to determine whether the xtd::net::sockets::socket will linger after closing. Change this value to `true` or `false` and pass the altered xtd::net::sockets::linger_option to the xtd::net::sockets::socket::set_socket_option method or set the xtd::net::sockets::socket::linger_state or xtd::net::sockets::tcp_client::linger_state property to disable or enable lingering.
@@ -88,7 +88,7 @@ namespace xtd {
         /// | `true` (enabled)                      | A zero timeout.                            | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
-        linger_option& enabled(bool value) noexcept;
+        auto enabled(bool value) noexcept -> linger_option&;
         
         /// @brief Gets the amount of time to remain connected after calling the xtd::net::sockets::socket::close method if data remains to be sent.
         /// @return The amount of time, in seconds, to remain connected after calling xtd::net::sockets::socket::close.
@@ -103,7 +103,7 @@ namespace xtd {
         /// | `true` (enabled)                      | A zero timeout.                            | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
-        xtd::uint32 linger_time() const noexcept;
+        [[nodiscard]] auto linger_time() const noexcept -> xtd::uint32;
         /// @brief Sets the amount of time to remain connected after calling the xtd::net::sockets::socket::close method if data remains to be sent.
         /// @param value The amount of time, in seconds, to remain connected after calling xtd::net::sockets::socket::close.
         /// @remarks Use this value if you want to determine how long a closed xtd::net::sockets::socket will attempt to transfer unsent data before timing out. You can also set this value to the desired time-out period, in seconds.
@@ -117,7 +117,7 @@ namespace xtd {
         /// | `true` (enabled)                      | A zero timeout.                            | Discards any pending data. For connection-oriented socket (TCP, for example), Winsock resets the connection.                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a socket when the xtd::net::sockets::socket::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::socket::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
-        linger_option& linger_time(xtd::uint32 value) noexcept;
+        auto linger_time(xtd::uint32 value) noexcept -> linger_option&;
         /// @}
         
         /// @name Public Methods
@@ -126,15 +126,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const linger_option& other) const noexcept override;
+        [[nodiscard]] auto equals(const linger_option& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
         /// @}
         
       private:

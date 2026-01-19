@@ -13,33 +13,33 @@ ip_v6_multicast_option::ip_v6_multicast_option(const ip_address& group, uint64 i
   if (interface_index > 0x00000000FFFFFFFF) throw_helper::throws(exception_case::argument_out_of_range);
 }
 
-const xtd::net::ip_address& ip_v6_multicast_option::group() const noexcept {
+auto ip_v6_multicast_option::group() const noexcept -> const xtd::net::ip_address& {
   return group_;
 }
 
-ip_v6_multicast_option& ip_v6_multicast_option::group(const xtd::net::ip_address& value) noexcept {
+auto ip_v6_multicast_option::group(const xtd::net::ip_address& value) noexcept -> ip_v6_multicast_option& {
   group_ = value;
   return *this;
 }
 
-uint64 ip_v6_multicast_option::interface_index() const noexcept {
+auto ip_v6_multicast_option::interface_index() const noexcept -> uint64 {
   return interface_index_;
 }
 
-ip_v6_multicast_option& ip_v6_multicast_option::interface_index(uint64 value) {
+auto ip_v6_multicast_option::interface_index(uint64 value) -> ip_v6_multicast_option& {
   if (value > 0x00000000FFFFFFFF) throw_helper::throws(exception_case::argument_out_of_range);
   interface_index_ = value;
   return *this;
 }
 
-bool ip_v6_multicast_option::equals(const object& obj) const noexcept {
+auto ip_v6_multicast_option::equals(const object& obj) const noexcept -> bool {
   return is<ip_v6_multicast_option>(obj) && equals(static_cast<const ip_v6_multicast_option&>(obj));
 }
 
-bool ip_v6_multicast_option::equals(const ip_v6_multicast_option& other) const noexcept {
+auto ip_v6_multicast_option::equals(const ip_v6_multicast_option& other) const noexcept -> bool {
   return group_ == other.group_ && interface_index_ == other.interface_index_;
 }
 
-size ip_v6_multicast_option::get_hash_code() const noexcept {
+auto ip_v6_multicast_option::get_hash_code() const noexcept -> size {
   return hash_code::combine(group_, interface_index_);
 }

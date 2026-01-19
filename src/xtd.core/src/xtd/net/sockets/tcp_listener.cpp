@@ -18,10 +18,10 @@ struct tcp_listener::data {
   bool active = false;
 };
 
-tcp_listener::tcp_listener(const ip_end_point& local_end_point) : data_(xtd::new_sptr<tcp_listener::data>()) {
+tcp_listener::tcp_listener(const ip_end_point& local_end_point) : data_(new_sptr<tcp_listener::data>()) {
   data_->local_end_point = local_end_point;
   data_->server_socket = socket(data_->local_end_point.address_family(), socket_type::stream, protocol_type::tcp);
-  data_->server_socket.set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::reuse_address, true);
+  data_->server_socket.set_socket_option(socket_option_level::socket, socket_option_name::reuse_address, true);
 }
 
 tcp_listener::tcp_listener(const ip_address& ip_address, uint16 port) : tcp_listener(ip_end_point(ip_address, port)) {
@@ -31,37 +31,37 @@ tcp_listener::~tcp_listener() {
   if (data_.use_count() == 1) stop();
 }
 
-bool tcp_listener::exclusive_address_use() const {
+auto tcp_listener::exclusive_address_use() const -> bool {
   return data_->server_socket.exclusive_address_use();
 }
 
-tcp_listener& tcp_listener::exclusive_address_use(bool value) {
+auto tcp_listener::exclusive_address_use(bool value) -> tcp_listener& {
   if (active()) throw_helper::throws(exception_case::invalid_operation);
   data_->server_socket.exclusive_address_use(value);
   return *this;
 }
 
-const xtd::net::end_point& tcp_listener::local_end_point() const noexcept {
+auto tcp_listener::local_end_point() const noexcept -> const end_point& {
   return data_->local_end_point;
 }
 
-xtd::net::sockets::socket tcp_listener::server() const noexcept {
+auto tcp_listener::server() const noexcept -> socket {
   return data_->server_socket;
 }
 
-xtd::net::sockets::socket tcp_listener::accept_socket() {
+auto tcp_listener::accept_socket() -> socket {
   if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return data_->server_socket.accept();
 }
 
-xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
+auto tcp_listener::accept_tcp_client() -> tcp_client {
   if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return tcp_client(data_->server_socket.accept());
 }
 
-xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const any_object& state) {
-  auto ar = xtd::new_sptr<async_result_accept_socket>(state);
-  auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
+auto tcp_listener::begin_accept_socket(async_callback callback, const any_object& state) -> sptr<iasync_result> {
+  auto ar = new_sptr<async_result_accept_socket>(state);
+  auto operation_thread = std::thread {[](tcp_listener * listener, sptr<async_result_accept_socket> ar, async_callback callback) {
     try {
       ar->socket_ = listener->accept_socket();
       ar->is_completed_ = true;
@@ -75,9 +75,9 @@ xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callb
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const any_object& state) {
-  auto ar = xtd::new_sptr<async_result_accept_tcp_client>(state);
-  auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
+auto tcp_listener::begin_accept_tcp_client(async_callback callback, const any_object& state) -> sptr<iasync_result> {
+  auto ar = new_sptr<async_result_accept_tcp_client>(state);
+  auto operation_thread = std::thread {[](tcp_listener * listener, sptr<async_result_accept_tcp_client> ar, async_callback callback) {
     try {
       ar->tcp_client_ = listener->accept_tcp_client();
       ar->is_completed_ = true;
@@ -91,11 +91,11 @@ xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_c
   return ar;
 }
 
-tcp_listener tcp_listener::create(uint16 port) {
+auto tcp_listener::create(uint16 port) -> tcp_listener {
   return tcp_listener(ip_address::any, port);
 }
 
-xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_result> async_result) {
+auto tcp_listener::end_accept_socket(sptr<iasync_result> async_result) -> socket {
   if (async_result == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_accept_socket>(async_result)) throw_helper::throws(exception_case::argument);
   async_result->async_wait_handle().wait_one();
@@ -103,7 +103,7 @@ xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_
   return as<async_result_accept_socket>(async_result)->socket_;
 }
 
-xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result) {
+auto tcp_listener::end_accept_tcp_client(sptr<iasync_result> async_result) -> tcp_client {
   if (async_result == nullptr) throw_helper::throws(exception_case::argument_null);
   if (!is<async_result_accept_tcp_client>(async_result)) throw_helper::throws(exception_case::argument);
   async_result->async_wait_handle().wait_one();
@@ -111,24 +111,24 @@ xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd:
   return as<async_result_accept_tcp_client>(async_result)->tcp_client_;
 }
 
-bool tcp_listener::equals(const object& obj) const noexcept {
+auto tcp_listener::equals(const object& obj) const noexcept -> bool {
   return is<tcp_listener>(obj) && equals(static_cast<const tcp_listener&>(obj));
 }
 
-bool tcp_listener::equals(const tcp_listener& other) const noexcept {
+auto tcp_listener::equals(const tcp_listener& other) const noexcept -> bool {
   return data_ == other.data_;
 }
 
-bool tcp_listener::pending() {
+auto tcp_listener::pending() -> bool {
   if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return data_->server_socket.poll(0, select_mode::select_read);
 }
 
-void tcp_listener::start() {
+auto tcp_listener::start() -> void {
   start(static_cast<size_t>(-1));
 }
 
-void tcp_listener::start(size_t backlog) {
+auto tcp_listener::start(size_t backlog) -> void {
   if (!active()) {
     data_->server_socket.bind(data_->local_end_point);
     try {
@@ -141,13 +141,13 @@ void tcp_listener::start(size_t backlog) {
   data_->active = true;
 }
 
-void tcp_listener::stop() {
+auto tcp_listener::stop() -> void {
   bool eau = data_->server_socket.exclusive_address_use();
   data_->active = false;
   data_->server_socket = socket(data_->local_end_point.address_family(), socket_type::stream, protocol_type::tcp);
   data_->server_socket.exclusive_address_use(eau);
 }
 
-bool tcp_listener::active() const noexcept {
+auto tcp_listener::active() const noexcept -> bool {
   return data_->active;
 }

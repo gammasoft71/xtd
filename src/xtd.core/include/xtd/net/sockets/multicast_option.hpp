@@ -54,7 +54,7 @@ namespace xtd {
         /// @param group The xtd::net::ip_address of the multicast group.
         /// @param interface_index The address of the interface.
         /// @exception xtd::argument_out_of_range_exception interface_index > 0x00FFFFFF.
-        multicast_option(const xtd::net::ip_address& group, uint32 interface_index);
+        multicast_option(const xtd::net::ip_address& group, xtd::uint32 interface_index);
         /// @}
         
         /// @cond
@@ -68,29 +68,29 @@ namespace xtd {
         /// @{
         /// @brief Gets the IP address of a multicast group.
         /// @return An xtd::net::ip_address that contains the Internet address of a multicast group.
-        const xtd::net::ip_address& group() const noexcept;
+        [[nodiscard]] auto group() const noexcept -> const xtd::net::ip_address&;
         /// @brief Sets the IP address of a multicast group.
         /// @param value An xtd::net::ip_address that contains the Internet address of a multicast group.
         /// @return the current instance.
-        multicast_option& group(const xtd::net::ip_address& value) noexcept;
+        auto group(const xtd::net::ip_address& value) noexcept -> multicast_option&;
         
         /// @brief Gets the interface index that is associated with a multicast group.
         /// @return A uint32 value that specifies the address of the interface.
         /// @remarks This property specifies the interface on which data is received or sent.
-        uint32 interface_index() const noexcept;
+        [[nodiscard]] auto interface_index() const noexcept -> xtd::uint32;
         /// @brief Sets the interface index that is associated with a multicast group.
         /// @param value A uint32 value that specifies the address of the interface.
         /// @return the current instance.
         /// @remarks This property specifies the interface on which data is received or sent.
-        multicast_option& interface_index(uint32 value) noexcept;
+        auto interface_index(xtd::uint32 value) noexcept -> multicast_option&;
         
         /// @brief Gets the local IP address associated with a multicast group.
         /// @return An xtd::net::ip_address that contains the local address associated with a multicast group.
-        const xtd::net::ip_address& local_address() const noexcept;
+        [[nodiscard]] auto local_address() const noexcept -> const xtd::net::ip_address&;
         /// @brief Sets he local IP address associated with a multicast group.
         /// @param value An xtd::net::ip_address that contains the local address associated with a multicast group.
         /// @return the current instance.
-        multicast_option& local_address(const xtd::net::ip_address& value) noexcept;
+         auto local_address(const xtd::net::ip_address& value) noexcept -> multicast_option&;
         /// @}
         
         /// @name Public Methods
@@ -99,15 +99,15 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const multicast_option& other) const noexcept override;
+        [[nodiscard]] auto equals(const multicast_option& other) const noexcept -> bool override;
         
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
-        xtd::size get_hash_code() const noexcept override;
+        [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
         /// @}
         
       private:

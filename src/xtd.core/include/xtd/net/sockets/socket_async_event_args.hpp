@@ -76,23 +76,23 @@ namespace xtd {
         /// @brief Gets the socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @return The xtd::net::sockets::socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @remarks This property can be used to provide an already created Socket that will be used for an asynchronous socket accept operation. Upon completion of the accept operation, it is the socket representing the accepted connection. If not supplied (set to empty) before calling the xtd::net::sockets::socket::acceptA_async method, a new socket will be created automatically and be accessible in the completion callback with this property.
-        xtd::net::sockets::socket accept_socket() const noexcept;
+        [[nodiscard]] auto accept_socket() const noexcept -> xtd::net::sockets::socket;
         /// @brief Sets the socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @param value The xtd::net::sockets::socket to use or the socket created for accepting a connection with an asynchronous socket method.
         /// @return This current instance.
         /// @remarks This property can be used to provide an already created Socket that will be used for an asynchronous socket accept operation. Upon completion of the accept operation, it is the socket representing the accepted connection. If not supplied (set to empty) before calling the xtd::net::sockets::socket::acceptA_async method, a new socket will be created automatically and be accessible in the completion callback with this property.
-        socket_async_event_args& accept_socket(const xtd::net::sockets::socket& value) noexcept;
+        auto accept_socket(const xtd::net::sockets::socket& value) noexcept -> socket_async_event_args&;
         
         /// @brief Gets the data buffer to use with an asynchronous socket method.
         /// @return A Byte array that represents the data buffer to use with an asynchronous socket method.
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
         /// @remarks This property is used with the xtd::net::sockets::socket::accept_async, xtd::net::sockets::socket::connect_async, xtd::net::sockets::socket::receive_async, xtd::net::sockets::socket::receive_from_async, xtd::net::sockets::socket::receive_message_from_async, xtd::net::sockets::socket::send_async, and xtd::net::sockets::socket::send_to_async methods.
-        const xtd::array<xtd::byte>& buffer() const noexcept;
+        [[nodiscard]] auto buffer() const noexcept -> const xtd::array<xtd::byte>&;
         /// @brief Gets the data buffer to use with an asynchronous socket method.
         /// @return A Byte array that represents the data buffer to use with an asynchronous socket method.
         /// @remarks This property gets the data buffer currently associated with the xtd::net::sockets::socket_async_event_args instance. To set the buffer, the xtd::net::sockets::socket_async_event_args::set_buffer method must be used.
         /// @remarks This property is used with the xtd::net::sockets::socket::accept_async, xtd::net::sockets::socket::connect_async, xtd::net::sockets::socket::receive_async, xtd::net::sockets::socket::receive_from_async, xtd::net::sockets::socket::receive_message_from_async, xtd::net::sockets::socket::send_async, and xtd::net::sockets::socket::send_to_async methods.
-        xtd::array<xtd::byte>& buffer() noexcept;
+        [[nodiscard]] auto buffer() noexcept -> xtd::array<xtd::byte>&;
         /// @}
         
         /// @name Public Methods
@@ -100,7 +100,7 @@ namespace xtd {
         /// @{
         /// @brief Sets the region of memory to use as a buffer with an asynchronous socket method.
         /// @param memory_buffer The region of memory to use as a buffer with an asynchronous socket method.
-        void set_buffer(const xtd::array<xtd::byte>& memory_buffer);
+        auto set_buffer(const xtd::array<xtd::byte>& memory_buffer) -> void;
         
         /// @brief Sets the data buffer to use with an asynchronous socket method.
         /// @param offset The offset, in bytes, in the data buffer where the operation starts.
@@ -109,7 +109,7 @@ namespace xtd {
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the buffer array in the xtd::net::sockets::socket_async_event_args::buffer property.
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::count property to the count parameter and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter. If the xtd::net::sockets::socket_async_event_args::buffer property is empty, this method ignores the offset and count parameters and sets the xtd::net::sockets::socket_async_event_args::offset and xtd::net::sockets::socket_async_event_args::count properties to 0.
         /// @remarks This method does not change the xtd::net::sockets::socket_async_event_args::buffer property.
-        void set_buffer(size_t offset, size_t count);
+        auto set_buffer(size_t offset, size_t count) -> void;
         /// @brief Sets the data buffer to use with an asynchronous socket method.
         /// @param buffer The data buffer to use with an asynchronous socket method.
         /// @param offset The offset, in bytes, in the data buffer where the operation starts.
@@ -117,7 +117,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception An argument was out of range. This exception occurs if the offset parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property. This exception also occurs if the count parameter is greater than the length of the array in the xtd::net::sockets::socket_async_event_args::buffer property minus the offset parameter.
         /// @remarks The offset and count parameters can't be negative numbers. The combination of the offset and count parameters must be in bounds of the data array in the buffer parameter.
         /// @remarks This method sets the xtd::net::sockets::socket_async_event_args::buffer property to the buffer parameter, the xtd::net::sockets::socket_async_event_args::count property to the count parameter, and the xtd::net::sockets::socket_async_event_args::offset property to the offset parameter.
-        void set_buffer(const xtd::array<xtd::byte>& buffer, size_t offset, size_t count);
+        auto set_buffer(const xtd::array<xtd::byte>& buffer, size_t offset, size_t count) -> void;
         /// @}
         
         /// @name Public Events
@@ -142,7 +142,7 @@ namespace xtd {
         /// @remarks This method is used to hook up an event handler to be used as the completion callback for a subsequent asynchronous socket operation. The caller must implement at least one callback delegate inherited from this method prior to starting an asynchronous socket operation using one of the asynchronous (xxx_async) methods on the xtd::net::sockets::socket class.
         /// @remarks The caller's xtd::net::sockets::socket_async_event_args::on_completed method provides a way for client applications to complete an asynchronous socket operation. A callback delegate must be implemented when an asynchronous socket operation is initiated. The completion callback delegate(s) inherited from the xtd::net::sockets::socket_async_event_args::on_completed method must contain program logic to finish processing the asynchronous socket operation for the client.
         /// @remarks When an asynchronous operation is signaled, the application uses the xtd::net::sockets::socket_async_event_args object parameter to obtain status of the completed asynchronous socket operation.
-        virtual void on_complete(const socket_async_event_args& e);
+        virtual auto on_complete(const socket_async_event_args& e) -> void;
         /// @}
         
       private:

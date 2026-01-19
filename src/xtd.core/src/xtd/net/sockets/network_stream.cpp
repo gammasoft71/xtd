@@ -25,74 +25,74 @@ network_stream::~network_stream() {
   if (data_->owns_socket) data_->socket.close();
 }
 
-bool network_stream::can_read() const noexcept {
+auto network_stream::can_read() const noexcept -> bool {
   return (data_->access & file_access::read) == file_access::read;
 }
 
-bool network_stream::can_seek() const noexcept {
+auto network_stream::can_seek() const noexcept -> bool {
   return false;
 }
 
 
-bool network_stream::can_timeout() const noexcept {
+auto network_stream::can_timeout() const noexcept -> bool {
   return true;
 }
 
-bool network_stream::can_write() const noexcept {
+auto network_stream::can_write() const noexcept -> bool {
   return (data_->access & file_access::write) == file_access::write;
 }
 
-bool network_stream::data_available() const {
+auto network_stream::data_available() const -> bool {
   return data_->socket.available() != 0;
 }
 
-size network_stream::length() const {
+auto network_stream::length() const -> size {
   return 1;
 }
 
-size network_stream::position() const {
+auto network_stream::position() const -> size {
   return 0;
 }
 
-void network_stream::position(size value) {
+auto network_stream::position(size value) -> void {
   throw_helper::throws(exception_case::not_supported);
 }
 
-int32 network_stream::read_timeout() const {
+auto network_stream::read_timeout() const -> int32 {
   return data_->socket.receive_timeout();
 }
 
-void network_stream::read_timeout(int32 value) {
+auto network_stream::read_timeout(int32 value) -> void {
   data_->socket.receive_timeout(value);
 }
 
-int32 network_stream::write_timeout() const {
+auto network_stream::write_timeout() const -> int32 {
   return data_->socket.send_timeout();
 }
 
-void network_stream::write_timeout(int32 value) {
+auto network_stream::write_timeout(int32 value) -> void {
   data_->socket.send_timeout(value);
 }
 
-xtd::net::sockets::socket network_stream::socket() const {
+auto network_stream::socket() const -> xtd::net::sockets::socket {
   return data_->socket;
 }
 
-void network_stream::flush() {
+auto network_stream::flush() -> void {
 }
 
-size network_stream::read(array<byte>& buffer, size offset, size count) {
+auto network_stream::read(array<byte>& buffer, size offset, size count) -> size {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   return data_->socket.receive(buffer, offset, count, socket_flags::none);
 }
 
-void network_stream::set_length(size value) {
+auto network_stream::set_length(size value) -> void {
   throw_helper::throws(exception_case::not_supported);
 }
 
-void network_stream::write(const array<byte>& buffer, size offset, size count) {
+auto network_stream::write(const array<byte>& buffer, size offset, size count) -> void {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
   

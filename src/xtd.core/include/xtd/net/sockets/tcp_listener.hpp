@@ -111,7 +111,7 @@ namespace xtd {
         /// @remarks You can use the xtd::net::sockets::tcp_listener::exclusive_address_use property to prevent multiple listeners from listening to a specific port.
         /// @remarks Set this property before calling xtd::net::sockets::tcp_listener::start, or call the xtd::net::sockets::tcp_listener::stop method and then set this property.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        bool exclusive_address_use() const;
+        [[nodiscard]] auto exclusive_address_use() const -> bool;
         /// @brief Sets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlying socket to listen to a specific port.
         /// @param value `true` if the xtd::net::sockets::tcp_listener allows only one xtd::net::sockets::tcp_listener to listen to a specific port; otherwise, `false`. .
         /// @return This current instance.
@@ -123,19 +123,19 @@ namespace xtd {
         /// @remarks You can use the xtd::net::sockets::tcp_listener::exclusive_address_use property to prevent multiple listeners from listening to a specific port.
         /// @remarks Set this property before calling xtd::net::sockets::tcp_listener::start, or call the xtd::net::sockets::tcp_listener::stop method and then set this property.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        tcp_listener& exclusive_address_use(bool value);
+        auto exclusive_address_use(bool value) -> tcp_listener&;
         
         /// @brief Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.
         /// @return The xtd::net::end_point to which the xtd::net::sockets::socket is bound.
         /// @remarks You can use the xtd::net::sockets::tcp_listener::local_end_point property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this xtd::net::end_point to an xtd::net::ip_end_point. You can then call the xtd::net::ip_end_point::address property to retrieve the local IP address, and the xtd::net::ip_end_point::port property to retrieve the local port number.
-        const xtd::net::end_point& local_end_point() const noexcept;
+        [[nodiscard]] auto local_end_point() const noexcept -> const xtd::net::end_point&;
         
         /// @brief Gets the underlying network xtd::net::sockets::socket.
         /// @return The underlying xtd::net::sockets::socket.
         /// @remarks xtd::net::sockets::tcp_listener creates a xtd::net::sockets::socket to listen for incoming client connection requests. Classes deriving from xtd::net::sockets::tcp_listener can use this property to get this xtd::net::sockets::socket.
         /// @remarks Use the underlying xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_listener::server property if you require access beyond that which xtd::net::sockets::tcp_listener provides.
         /// @note The xtd::net::sockets::tcp_listener::server property only returns the xtd::net::sockets::socket used to listen for incoming client connection requests. Use the xtd::net::sockets::tcp_listener::accept_socket method to accept a pending connection request and obtain a xtd::net::sockets::socket for sending and receiving data. You can also use the xtd::net::sockets::tcp_listener::accept_tcp_client method to accept a pending connection request and obtain a xtd::net::sockets::tcp_client for sending and receiving data.
-        xtd::net::sockets::socket server() const noexcept;
+        [[nodiscard]] auto server() const noexcept -> xtd::net::sockets::socket;
         /// @}
         
         /// @name Public Methods
@@ -150,7 +150,7 @@ namespace xtd {
         /// @remarks You can use any of the xtd::net::sockets::socket::send and xtd::net::sockets::socket::receive methods available in the xtd::net::sockets::socket class to communicate with the remote host. When you are finished using the xtd::net::sockets::socket, be sure to call its xtd::net::sockets::tcp_listener::close method. If your application is relatively simple, consider using the xtd::net::sockets::tcp_listener::accept_tcp_client method rather than the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @remarks xtd::net::sockets::tcp_client provides you with simple methods for sending and receiving data over a network in blocking synchronous mode.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::socket accept_socket();
+        [[nodiscard]] auto accept_socket() -> xtd::net::sockets::socket;
         
         /// @brief Accepts a pending connection request.
         /// @return A xtd::net::sockets::tcp_client used to send and receive data.
@@ -159,7 +159,7 @@ namespace xtd {
         /// @remarks xtd::net::sockets::tcp_listener::accept_tcp_client is a blocking method that returns a xtd::net::sockets::tcp_client that you can use to send and receive data. Use the xtd::net::sockets::tcp_listener::pending method to determine if connection  requests are available in the incoming connection queue if you want to avoid blocking.
         /// @remarks Use the xtd::net::sockets::tcp_client::get_stream method to obtain the underlying xtd::net::sockets::network_stream of the returned xtd::net::sockets::tcp_client. The xtd::net::sockets::network_stream will provide you with methods for sending and receiving with the remote host. When you are through with the xtd::net::sockets::tcp_client, be sure to call its xtd::net::sockets::tcp_listener::close method. If you want greater flexibility than a xtd::net::sockets::tcp_client offers, consider using xtd::net::sockets::tcp_listener::accept_socket.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::tcp_client accept_tcp_client();
+        [[nodiscard]] auto accept_tcp_client() -> xtd::net::sockets::tcp_client;
         
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param async_result An xtd::async_callback delegate that references the method to invoke when the operation is complete.
@@ -171,7 +171,7 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const xtd::any_object& state);
+        auto begin_accept_socket(xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
         
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param async_result An xtd::async_callback delegate that references the method to invoke when the operation is complete.
@@ -182,7 +182,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_listener::begin_accept_tcp_client operation must be completed by calling the xtd::net::sockets::tcp_listener::end_accept_tcp_client method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_ccp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const xtd::any_object& state);
+        auto begin_accept_tcp_client(xtd::async_callback callback, const xtd::any_object& state) -> xtd::sptr<xtd::iasync_result>;
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.
         /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, xtd::any_object) method.
@@ -193,7 +193,7 @@ namespace xtd {
         /// @remarks This method blocks until the operation is complete. To perform this operation synchronously, use the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::socket end_accept_socket(xtd::sptr<xtd::iasync_result> async_result);
+        auto end_accept_socket(xtd::sptr<xtd::iasync_result> async_result) -> xtd::net::sockets::socket;
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client to handle remote host communication.
         /// @param async_result An xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client(xtd::async_callback, xtd::any_object) method.
@@ -205,16 +205,16 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_listener::begin_accept_tcp_client operation must be completed by calling the xtd::net::sockets::tcp_listener::end_accept_tcp_client method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_tcp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::net::sockets::tcp_client end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result);
+        auto end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result) -> xtd::net::sockets::tcp_client;
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const tcp_listener& other) const noexcept override;
+        [[nodiscard]] auto equals(const tcp_listener& other) const noexcept -> bool override;
         
         /// @brief Determines if there are pending connection requests.
         /// @return `true` if connections are pending; otherwise, `false`.
@@ -222,7 +222,7 @@ namespace xtd {
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This non-blocking method determines if there are any pending connection requests. Because the xtd::net::sockets::tcp_listener::accept_socket and xtd::net::sockets::tcp_listener::accept_tcp_client methods block execution until
         /// @remarks the xtd::net::sockets::tcp_listener::start method has queued an incoming connection request, the xtd::net::sockets::tcp_listener::pending method can be used to determine if connections are available before attempting to accept them.
-        bool pending();
+        [[nodiscard]] auto pending() -> bool;
         
         /// @brief xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -230,7 +230,7 @@ namespace xtd {
         /// @remarks To remove a connection from the incoming connection queue, use either the xtd::net::sockets::tcp_listener::accept_tcp_client method or the xtd::net::sockets::tcp_listener::accept_socket method. The xtd::net::sockets::tcp_listener::accept_tcp_client method will remove a connection from the queue and return a xtd::net::sockets::tcp_client that you can use to send and receive data. The xtd::net::sockets::tcp_listener::accept_socket method will return a xtd::net::sockets::socket that you can use to do the same. If your application only requires synchronous I/O, use xtd::net::sockets::tcp_listener::accept_tcp_client. For more detailed behavioral control, use xtd::net::sockets::tcp_listener::accept_socket. Both of these methods block until a connection request is available in the queue.
         /// @remarks Use the xtd::net::sockets::tcp_listener::stop method to close the xtd::net::sockets::tcp_listener and stop listening. You are responsible for closing your accepted connections separately.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void start();
+        auto start() -> void;
         
         /// @brief xtd::net::sockets::tcp_listener::starts listening for incoming connection requests with a maximum number of pending connection.
         /// @param backlog The maximum length of the pending connections queue.
@@ -241,14 +241,14 @@ namespace xtd {
         /// @remarks To remove a connection from the incoming connection queue, use either the xtd::net::sockets::tcp_listener::accept_tcp_client method or the xtd::net::sockets::tcp_listener::accept_socket method. The xtd::net::sockets::tcp_listener::accept_tcp_client method will remove a connection from the queue and return a xtd::net::sockets::tcp_client that you can use to send and receive data. The xtd::net::sockets::tcp_listener::accept_socket method will return a xtd::net::sockets::socket that you can use to do the same. If your application only requires synchronous I/O, use xtd::net::sockets::tcp_listener::accept_tcp_client. For more detailed behavioral control, use xtd::net::sockets::tcp_listener::accept_socket. Both of these methods block until a connection request is available in the queue.
         /// @remarks Use the xtd::net::sockets::tcp_listener::stop method to close the xtd::net::sockets::tcp_listener and stop listening. You are responsible for closing your accepted connections separately.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void start(size_t backlog);
+        auto start(size_t backlog) -> void;
         
         /// @brief Closes the listener.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @remarks xtd::net::sockets::tcp_listener::stop closes the listener. Any unaccepted connection requests in the queue will be lost. Remote hosts waiting for a connection to be accepted will throw a xtd::net::sockets::socket_exception. You are responsible for closing your accepted connections separately.
         /// @note The xtd::net::sockets::tcp_listener::stop method also closes the underlying xtd::net::sockets::socket, and creates a new xtd::net::sockets::socket for the xtd::net::sockets::tcp_listener. If you set any properties on the underlying xtd::net::sockets::socket prior to calling the xtd::net::sockets::tcp_listener::stop method, those properties will not carry over to the new xtd::net::sockets::socket.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        void stop();
+        auto stop() -> void;
         /// @}
         
         /// @name Public Static Methods
@@ -257,7 +257,7 @@ namespace xtd {
         /// @brief Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.
         /// @param port The port on which to listen for incoming connection attempts.
         /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
-        static tcp_listener create(uint16 port);
+        [[nodiscard]] static auto create(uint16 port) -> tcp_listener;
         /// @}
         
       protected:
@@ -268,7 +268,7 @@ namespace xtd {
         /// @return `true` if xtd::net::sockets::tcp_listener is actively listening; otherwise, `false`.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_listener can use this property to determine if the xtd::net::sockets::socket is currently listening for incoming connection attempts.
         /// @remarks The Active property can be used to avoid redundant xtd::net::sockets::tcp_listener::start attempts.
-        bool active() const noexcept;
+        [[nodiscard]] auto active() const noexcept -> bool;
         /// @}
         
       private:

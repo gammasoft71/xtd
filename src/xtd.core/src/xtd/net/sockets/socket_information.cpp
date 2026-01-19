@@ -4,20 +4,20 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-xtd::net::sockets::socket_information_options socket_information::options() const noexcept {
+auto socket_information::options() const noexcept -> socket_information_options {
   return options_;
 }
 
-socket_information& socket_information::options(xtd::net::sockets::socket_information_options value) noexcept {
+auto socket_information::options(socket_information_options value) noexcept -> socket_information& {
   options_ = value;
   return *this;
 }
 
-const xtd::array<xtd::byte>& socket_information::protocol_information() const noexcept {
+auto socket_information::protocol_information() const noexcept -> const array<xtd::byte>& {
   return protocol_information_;
 }
 
-socket_information& socket_information::protocol_information(const xtd::array<xtd::byte>& value) noexcept {
+auto socket_information::protocol_information(const array<xtd::byte>& value) noexcept -> socket_information& {
   protocol_information_ = value;
   return *this;
 }

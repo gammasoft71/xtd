@@ -122,43 +122,43 @@ namespace xtd {
         /// @brief Gets the buffer to be sent if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @return The byte buffer to send if the xtd::net::sockets::send_packets_element object was initialized with a buffer parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::buffer property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a buffer parameter.
-        xtd::array<xtd::byte> buffer() const noexcept;
+        [[nodiscard]] auto buffer() const noexcept -> xtd::array<xtd::byte>;
         
         /// @brief Gets the count of bytes to be sent.
         /// @return The count of bytes to send if the xtd::net::sockets::send_packets_element class was initialized with a count parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::count property is zero if the xtd::net::sockets::send_packets_element class was not initialized with a count parameter.
         /// @remarks If Count is zero for a file, the entire file is sent. If xtd::net::sockets::send_packets_element::count is zero for a buffer, no bytes are sent.
-        size_t count() const noexcept;
+        [[nodiscard]] auto count() const noexcept -> xtd::size;
         
         /// @brief Gets a bool value that indicates if this element should not be combined with the next element in a single send request from the sockets layer to the transport.
         /// @return A bool value that indicates if this element should not be combined with the next element in a single send request.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::end_of_packet property is `false` if the xtd::net::sockets::send_packets_element class was not initialized with an end_of_packet parameter set to `true`.
-        bool end_of_packet() const noexcept;
+        [[nodiscard]] auto end_of_packet() const noexcept -> bool;
         
         /// @brief Gets the filename of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a file_path parameter.
         /// @return The filename of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a file_path parameter.
         /// @remarks Universal Naming Convention (UNC) paths are supported by the xtd::net::sockets::send_packets_element::file_path property. If the file is in the current working directory, no path information needs to be specified.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::file_path property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a file_path parameter.
-        const xtd::string& file_path() const noexcept;
+        [[nodiscard]] auto file_path() const noexcept -> const xtd::string&;
         
         /// @brief Gets the object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
         /// @remarks An object representation of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a std::ifstream parameter.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::file_stream property is empty if the xtd::net::sockets::send_packets_element object was not initialized with a file_stream parameter.
-        std::optional<ifstream_ref> file_stream() const noexcept;
+        [[nodiscard]] auto file_stream() const noexcept -> std::optional<ifstream_ref>;
         
         /// @brief Gets the offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @return The offset, in bytes, from the beginning of the data buffer or file to the location in the buffer or file to start sending the data.
         /// @remarks The default value for the xtd::net::sockets::send_packets_element::offset property is zero if the xtd::net::sockets::send_packets_element class was not initialized with an offset parameter.
-        size_t offset() const noexcept;
+        [[nodiscard]] auto offset() const noexcept -> xtd::size;
         /// @}
         
       private:
         xtd::array<xtd::byte> buffer_;
-        size_t count_ = 0;
+        xtd::size count_ = 0;
         bool end_of_packet_ = false;
         xtd::string file_path_;
         std::ifstream* file_stream_ = nullptr;
-        size_t offset_ = 0;
+        xtd::size offset_ = 0;
         bool delete_file_stream_when_destroy_ = false;
       };
     }
