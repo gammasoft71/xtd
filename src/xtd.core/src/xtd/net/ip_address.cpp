@@ -57,58 +57,58 @@ ip_address::ip_address(byte quad_part_address1, byte quad_part_address2, byte qu
 ip_address::ip_address(const array<uint16>& numbers, uint32 scope_id) : address_or_scope_id_(scope_id), numbers_(numbers), address_family_(sockets::address_family::inter_network_v6) {
 }
 
-sockets::address_family ip_address::address_family() const noexcept {
+auto ip_address::address_family() const noexcept -> sockets::address_family {
   return address_family_;
 }
 
-bool ip_address::is_ip_v4_mapped_to_ip_v6() const noexcept {
+auto ip_address::is_ip_v4_mapped_to_ip_v6() const noexcept -> bool {
   if (address_family_ != sockets::address_family::inter_network_v6) return false;
   for (auto index = 0_z; index < 5u; index++)
     if (numbers_[index] != 0) return false;
   return numbers_[5] == 0xFFFF;
 }
 
-bool ip_address::is_ip_v6_link_local() const noexcept {
+auto ip_address::is_ip_v6_link_local() const noexcept -> bool {
   if (address_family_ == sockets::address_family::inter_network) return false;
   auto num = static_cast<uint32>(numbers_[0]) & 0xFFF0;
   return 0xFE80 <= num && num <= 0xFEC0;
 }
 
-bool ip_address::is_ip_v6_multicast() const noexcept {
+auto ip_address::is_ip_v6_multicast() const noexcept -> bool {
   return address_family_ != sockets::address_family::inter_network && (static_cast<int16>(numbers_[0]) & 0xFF00) == 0xFF00;
 }
 
-bool ip_address::is_ip_v6_site_local() const noexcept {
+auto ip_address::is_ip_v6_site_local() const noexcept -> bool {
   if (address_family_ == sockets::address_family::inter_network) return false;
   auto num = static_cast<uint32>(static_cast<int16>(numbers_[0])) & 0xFFF0;
   return 0xFEC0 <= num && num <= 0xFF00;
 }
 
-bool ip_address::is_ip_v6_teredo() const noexcept {
+auto ip_address::is_ip_v6_teredo() const noexcept -> bool {
   return address_family_ == sockets::address_family::inter_network_v6 && numbers_[0] == 0x2001 && numbers_[1] == 0;
 }
 
-uint32 ip_address::scope_id() const {
+auto ip_address::scope_id() const -> uint32 {
   if (address_family_ == sockets::address_family::inter_network) throw_helper::throws(exception_case::socket, socket_error::operation_not_supported);
   return address_or_scope_id_;
 }
 
-ip_address& ip_address::scope_id(uint32 value) {
+auto ip_address::scope_id(uint32 value) -> ip_address& {
   if (address_family_ == sockets::address_family::inter_network) throw_helper::throws(exception_case::socket, socket_error::operation_not_supported);
   
   address_or_scope_id_ = static_cast<uint32>(value);
   return *this;
 }
 
-bool ip_address::equals(const object& obj) const noexcept {
+auto ip_address::equals(const object& obj) const noexcept -> bool {
   return is<ip_address>(obj) && equals(static_cast<const ip_address&>(obj));
 }
 
-bool ip_address::equals(const ip_address& other) const noexcept {
+auto ip_address::equals(const ip_address& other) const noexcept -> bool {
   return address_or_scope_id_ == other.address_or_scope_id_ && numbers_ == other.numbers_ && address_or_scope_id_ == other.address_or_scope_id_ && address_family_ == other.address_family_;
 }
 
-array<byte> ip_address::get_address_bytes() const {
+auto ip_address::get_address_bytes() const -> array<byte> {
   auto bytes = list<byte> {};
   if (address_family_ == sockets::address_family::inter_network) {
     bytes.add(static_cast<byte>(address_or_scope_id_));
@@ -125,7 +125,7 @@ array<byte> ip_address::get_address_bytes() const {
   return bytes.to_array();
 }
 
-size ip_address::get_hash_code() const noexcept {
+auto ip_address::get_hash_code() const noexcept -> size {
   auto result = hash_code {};
   if (address_family_ == sockets::address_family::inter_network)
     result.add(address_or_scope_id_);
@@ -138,55 +138,55 @@ size ip_address::get_hash_code() const noexcept {
   return result.to_hash_code();
 }
 
-double ip_address::host_to_network_order(double host) {
+auto ip_address::host_to_network_order(double host) -> double {
   return bit_converter::int64_bits_to_double(host_to_network_order(bit_converter::double_to_int64_bits(host)));
 }
 
-int16 ip_address::host_to_network_order(int16 host) {
+auto ip_address::host_to_network_order(int16 host) -> int16 {
   return int16(host_to_network_order(static_cast<uint16>(host)));
 }
 
-int32 ip_address::host_to_network_order(int32 host) {
+auto ip_address::host_to_network_order(int32 host) -> int32 {
   return int32(host_to_network_order(static_cast<uint32>(host)));
 }
 
-int64 ip_address::host_to_network_order(int64 host) {
+auto ip_address::host_to_network_order(int64 host) -> int64 {
   return int64(host_to_network_order(static_cast<uint64>(host)));
 }
 
-float ip_address::host_to_network_order(float host) {
+auto ip_address::host_to_network_order(float host) -> float {
   return bit_converter::int32_bits_to_single(host_to_network_order(bit_converter::single_to_int32_bits(host)));
 }
 
-uint16 ip_address::host_to_network_order(uint16 host) {
+auto ip_address::host_to_network_order(uint16 host) -> uint16 {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 8) | (host << 8);
 }
 
-uint32 ip_address::host_to_network_order(uint32 host) {
+auto ip_address::host_to_network_order(uint32 host) -> uint32 {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 24) | ((host << 8) & 0x00FF0000L) | ((host >> 8) & 0x0000FF00L) | (host << 24);
 }
 
-uint64 ip_address::host_to_network_order(uint64 host) {
+auto ip_address::host_to_network_order(uint64 host) -> uint64 {
   if (bit_converter::is_little_endian == false) return host;
   return (host >> 56) | ((host << 40) & 0x00FF000000000000LL) | ((host << 24) & 0x0000FF0000000000LL) | ((host << 8) & 0x000000FF00000000LL) | ((host >> 8) & 0x00000000FF000000LL) | ((host >> 24) & 0x0000000000FF0000LL) | ((host >> 40) & 0x000000000000FF00LL) | (host << 56);
 }
 
-bool ip_address::is_loopback(const ip_address& address) {
+auto ip_address::is_loopback(const ip_address& address) -> bool {
   if (address.address_family_ == sockets::address_family::inter_network) return static_cast<byte>(address.address_or_scope_id_ & 0x00000000000000FF) == 0x7F;
   for (auto index = 0_z; index < number_of_numbers_ - 2; index++)
     if (address.numbers_[index] != 0) return false;
   return address.numbers_[7] == 1u;
 }
 
-ip_address ip_address::map_to_ip_v4() const noexcept {
+auto ip_address::map_to_ip_v4() const noexcept -> ip_address {
   if (address_family_ == sockets::address_family::inter_network) return *this;
   auto address = (((static_cast<uint32>(numbers_[6]) & 0x0000FF00u) >> 8) | ((static_cast<uint32>(numbers_[6]) & 0x000000FFu) << 8)) | ((((static_cast<uint32>(numbers_[7]) & 0x0000FF00u) >> 8) | ((static_cast<uint32>(numbers_[7]) & 0x000000FFu) << 8)) << 16);
   return ip_address(address);
 }
 
-ip_address ip_address::map_to_ip_v6() const noexcept {
+auto ip_address::map_to_ip_v6() const noexcept -> ip_address {
   if (address_family_ == sockets::address_family::inter_network_v6) return *this;
   auto numbers = array<uint16>(number_of_numbers_);
   numbers[5] = 0xFFFF;
@@ -195,15 +195,15 @@ ip_address ip_address::map_to_ip_v6() const noexcept {
   return ip_address(numbers, 0);
 }
 
-double ip_address::network_to_host_order(double network) {
+auto ip_address::network_to_host_order(double network) -> double {
   return host_to_network_order(network);
 }
 
-int16 ip_address::network_to_host_order(int16 network) {
+auto ip_address::network_to_host_order(int16 network) -> int16 {
   return host_to_network_order(network);
 }
 
-int32 ip_address::network_to_host_order(int32 network) {
+auto ip_address::network_to_host_order(int32 network) -> int32 {
   return host_to_network_order(network);
 }
 
@@ -211,23 +211,23 @@ int64 ip_address::network_to_host_order(int64 network) {
   return int64(network_to_host_order(uint64(network)));
 }
 
-float ip_address::network_to_host_order(float network) {
+auto ip_address::network_to_host_order(float network) -> float {
   return host_to_network_order(network);
 }
 
-uint16 ip_address::network_to_host_order(uint16 network) {
+auto ip_address::network_to_host_order(uint16 network) -> uint16 {
   return host_to_network_order(network);
 }
 
-uint32 ip_address::network_to_host_order(uint32 network) {
+auto ip_address::network_to_host_order(uint32 network) -> uint32 {
   return host_to_network_order(network);
 }
 
-uint64 ip_address::network_to_host_order(uint64 network) {
+auto ip_address::network_to_host_order(uint64 network) -> uint64 {
   return host_to_network_order(network);
 }
 
-ip_address ip_address::parse(const string& str) {
+auto ip_address::parse(const string& str) -> ip_address {
   block_scope_(auto address_parts = str.split('.')) {
     if (address_parts.length() == 4) {
       auto addresses = array<byte>(4);
@@ -266,7 +266,7 @@ ip_address ip_address::parse(const string& str) {
   throw_helper::throws(exception_case::format);
 }
 
-string ip_address::to_string() const noexcept {
+auto ip_address::to_string() const noexcept -> string {
   if (address_family_ == sockets::address_family::inter_network)
     return string::join(".", get_address_bytes());
     
@@ -285,7 +285,7 @@ string ip_address::to_string() const noexcept {
   return str;
 }
 
-bool ip_address::try_parse(const string& str, ip_address& address) noexcept {
+auto ip_address::try_parse(const string& str, ip_address& address) noexcept -> bool {
   try {
     address = parse(str);
   } catch (...) {

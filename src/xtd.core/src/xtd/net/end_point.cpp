@@ -6,19 +6,19 @@ using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-sockets::address_family end_point::address_family() const noexcept {
+auto end_point::address_family() const noexcept -> sockets::address_family {
   return address_family_;
 }
 
-xtd::uptr<end_point> end_point::create(const socket_address&) const {
+auto end_point::create(const socket_address&) const -> uptr<end_point> {
   throw_helper::throws(exception_case::not_implemented);
 }
 
-socket_address end_point::serialize() const {
+auto end_point::serialize() const -> socket_address {
   throw_helper::throws(exception_case::not_implemented);
 }
 
-string end_point::to_string() const noexcept {
+auto end_point::to_string() const noexcept -> string {
   return string::format("{}", address_family_);
 }
 

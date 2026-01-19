@@ -4,50 +4,50 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::security;
 
-network_credential::network_credential(const xtd::string& user_name, const xtd::security::secure_string& password) : user_name_(user_name), password_(password) {
+network_credential::network_credential(const string& user_name, const secure_string& password) : user_name_ {user_name}, password_ {password} {
 }
 
-network_credential::network_credential(const xtd::string& user_name, const xtd::string& password) : user_name_(user_name), password_(password.chars().c_str(), password.length()) {
+network_credential::network_credential(const string& user_name, const string& password) : user_name_ {user_name}, password_ {password.chars().c_str(), password.length()} {
 }
 
-network_credential::network_credential(const xtd::string& user_name, const xtd::security::secure_string& password, const xtd::string& domain) : user_name_(user_name), password_(password), domain_(domain) {
+network_credential::network_credential(const string& user_name, const secure_string& password, const string& domain) : user_name_ {user_name}, password_ {password}, domain_ {domain} {
 }
 
-network_credential::network_credential(const xtd::string& user_name, const xtd::string& password, const xtd::string& domain) : user_name_(user_name), password_(password.chars().c_str(), password.length()), domain_(domain) {
+network_credential::network_credential(const string& user_name, const string& password, const string& domain) : user_name_ {user_name}, password_ {password.chars().c_str(), password.length()}, domain_ {domain} {
 }
 
-const xtd::string& network_credential::domain() const noexcept {
+auto network_credential::domain() const noexcept -> const string& {
   return domain_;
 }
 
-network_credential& network_credential::domain(const xtd::string& value) noexcept {
+auto network_credential::domain(const string& value) noexcept -> network_credential& {
   domain_ = value;
-  return *this;
+  return self_;
 }
 
-xtd::string network_credential::password() const noexcept {
+auto network_credential::password() const noexcept -> string {
   return password_.to_unsecure_string();
 }
 
-network_credential& network_credential::password(const xtd::string& value) noexcept {
-  password_ = secure_string(value.chars().c_str(), value.length());
-  return *this;
+auto network_credential::password(const string& value) noexcept -> network_credential& {
+  password_ = secure_string {value.chars().c_str(), value.length()};
+  return self_;
 }
 
-const xtd::security::secure_string& network_credential::secure_password() const noexcept {
+auto network_credential::secure_password() const noexcept -> const secure_string& {
   return password_;
 }
 
-network_credential& network_credential::secure_password(const xtd::security::secure_string& value) noexcept {
+auto network_credential::secure_password(const secure_string& value) noexcept -> network_credential& {
   password_ = value;
-  return *this;
+  return self_;
 }
 
-const xtd::string& network_credential::user_name() const noexcept {
+auto network_credential::user_name() const noexcept -> const string& {
   return user_name_;
 }
 
-network_credential& network_credential::user_name(const xtd::string& value) noexcept {
+auto network_credential::user_name(const string& value) noexcept -> network_credential& {
   user_name_ = value;
-  return *this;
+  return self_;
 }

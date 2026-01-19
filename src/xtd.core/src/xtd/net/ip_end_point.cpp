@@ -17,26 +17,26 @@ ip_end_point::ip_end_point(const ip_address& address, uint16 port) : address_(ad
   address_family_ = address_.address_family();
 }
 
-const xtd::net::ip_address& ip_end_point::address() const noexcept {
+auto ip_end_point::address() const noexcept -> const ip_address& {
   return address_;
 }
 
-ip_end_point& ip_end_point::address(const ip_address& address) {
+auto ip_end_point::address(const ip_address& address) -> ip_end_point& {
   address_family_ = address.address_family();
   address_ = address;
   return *this;
 }
 
-uint16 ip_end_point::port() const noexcept {
+auto ip_end_point::port() const noexcept -> uint16 {
   return port_;
 }
 
-ip_end_point& ip_end_point::port(uint16 port) {
+auto ip_end_point::port(uint16 port) -> ip_end_point& {
   port_ = port;
   return *this;
 }
 
-xtd::uptr<end_point> ip_end_point::create(const socket_address& socket_address) const {
+auto ip_end_point::create(const socket_address& socket_address) const -> uptr<end_point> {
   if (socket_address.address_family() != address_family_ || socket_address.size() < 8) throw_helper::throws(exception_case::argument);
   if (address_family_ != address_family::inter_network && address_family_ != address_family::inter_network_v6) throw_helper::throws(exception_case::socket, socket_error::address_family_not_supported);
   
@@ -55,19 +55,19 @@ xtd::uptr<end_point> ip_end_point::create(const socket_address& socket_address) 
   return xtd::new_uptr<ip_end_point>(ip_address(current_address), current_port);
 }
 
-bool ip_end_point::equals(const object& obj) const noexcept {
+auto ip_end_point::equals(const object& obj) const noexcept -> bool {
   return is<ip_end_point>(obj) && equals(static_cast<const ip_end_point&>(obj));
 }
 
-bool ip_end_point::equals(const ip_end_point& other) const noexcept {
+auto ip_end_point::equals(const ip_end_point& other) const noexcept -> bool {
   return address_family_ == other.address_family_ && address_ == other.address_ && port_ == other.port_;
 }
 
-size ip_end_point::get_hash_code() const noexcept {
+auto ip_end_point::get_hash_code() const noexcept -> size {
   return hash_code::combine(address_family_, address_, port_);
 }
 
-socket_address ip_end_point::serialize() const {
+auto ip_end_point::serialize() const -> socket_address {
   socket_address result(address_family_, address_family_ == address_family::inter_network ? 16 : 28);
   size_t index = 2;
   for (xtd::byte b : bit_converter::get_bytes(ip_address::host_to_network_order(port_)))
@@ -91,7 +91,7 @@ socket_address ip_end_point::serialize() const {
   return result;
 }
 
-string ip_end_point::to_string() const noexcept {
+auto ip_end_point::to_string() const noexcept -> string {
   if (address_family_ == address_family::inter_network_v6) return string::format("[{}]:{:D}", address_, port_);
   return string::format("{}:{:D}", address_, port_);
 }

@@ -52,32 +52,32 @@ namespace xtd {
       /// @brief Gets the domain or computer name that verifies the credentials.
       /// @return The name of the domain associated with the credentials.
       /// @remarks The xtd::net::network_credential::domain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
-      const xtd::string& domain() const noexcept;
+      [[nodiscard]] auto domain() const noexcept -> const xtd::string&;
       /// @brief Sets the domain or computer name that verifies the credentials.
       /// @param value The name of the domain associated with the credentials.
       /// @remarks The xtd::net::network_credential::domain property specifies the domain or realm to which the user name belongs. Typically, this is the host computer name where the application runs or the user domain for the currently logged in user.
-      network_credential& domain(const xtd::string& value) noexcept;
+      auto domain(const xtd::string& value) noexcept -> network_credential&;
       
       /// @brief Gets the password for the user name associated with the credentials.
       /// @return The password associated with the credentials. If this xtd::net::network_credential instance was initialized with the password parameter set to empty (""), then the xtd::net::network_credential::password property will return an empty string.
-      xtd::string password() const noexcept;
+      [[nodiscard]] auto password() const noexcept -> xtd::string;
       /// @brief Sets the password for the user name associated with the credentials.
       /// @param value The password associated with the credentials. If this xtd::net::network_credential instance was initialized with the password parameter set to empty (""), then the xtd::net::network_credential::password property will return an empty string.
-      network_credential& password(const xtd::string& value) noexcept;
+      auto password(const xtd::string& value) noexcept -> network_credential&;
       
       /// @brief Gets the password as a xtd::security::secure_string instance.
       /// @return The password for the user name associated with the credentials.
-      const xtd::security::secure_string& secure_password() const noexcept;
+      [[nodiscard]] auto secure_password() const noexcept -> const xtd::security::secure_string&;
       /// @brief Sets the password as a xtd::security::secure_string instance.
       /// @param value The password for the user name associated with the credentials.
-      network_credential& secure_password(const xtd::security::secure_string& value) noexcept;
+      auto secure_password(const xtd::security::secure_string& value) noexcept -> network_credential&;
       
       /// @brief Gets the user name associated with the credentials.
       /// @return The user name associated with the credentials.
-      const xtd::string& user_name() const noexcept;
+      [[nodiscard]] auto user_name() const noexcept -> const xtd::string&;
       /// @brief Sets the user name associated with the credentials.
       /// @param value The user name associated with the credentials.
-      network_credential& user_name(const xtd::string& value) noexcept;
+      auto user_name(const xtd::string& value) noexcept -> network_credential&;
       /// @}
       
     private:

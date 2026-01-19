@@ -31,9 +31,9 @@ namespace xtd {
       
       /// @{
       /// @brief Specifies the minimum value that can be assigned to the port property. The min_port value is set to 0x0000. This field is read-only.
-      static constexpr uint16 min_port = 0x0000;
+      static constexpr xtd::uint16 min_port = 0x0000;
       /// @brief Specifies the maximum value that can be assigned to the port property. The max_port value is set to 0xFFFF. This field is read-only.
-      static constexpr uint16 max_port = 0xFFFF;
+      static constexpr xtd::uint16 max_port = 0xFFFF;
       /// @}
       
       /// @name Public Constructors
@@ -42,12 +42,12 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address The IP address of the Internet host.
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
-      ip_end_point(uint32 address, uint16 port);
+      ip_end_point(xtd::uint32 address, xtd::uint16 port);
       
       /// @brief Initializes a new instance of the xtd::net::ip_end_point class.
       /// @param address An xtd::net::ip_address.
       /// @param port The port number associated with the address, or 0 to specify any available port. port is in host order.
-      ip_end_point(const xtd::net::ip_address& address, uint16 port);
+      ip_end_point(const xtd::net::ip_address& address, xtd::uint16 port);
       /// @}
       
       /// @cond
@@ -62,18 +62,18 @@ namespace xtd {
       /// @{
       /// @brief Gets the IP address of the endpoint.
       /// @return An xtd::net::ip_address instance containing the IP address of the endpoint.
-      const xtd::net::ip_address& address() const noexcept;
+      [[nodiscard]] auto address() const noexcept -> const xtd::net::ip_address&;
       /// @brief Sets the IP address of the endpoint.
       /// @param value An ip_address instance containing the IP address of the endpoint.
       /// @return The current instance.
-      ip_end_point& address(const xtd::net::ip_address& value);
+      auto address(const xtd::net::ip_address& value) -> ip_end_point&;
       
       /// @brief Gets or sets the port number of the endpoint.
       /// @param value An integer value in the range min_port to max_port indicating the port number of the endpoint.
-      uint16 port() const noexcept;
+      [[nodiscard]] auto port() const noexcept -> xtd::uint16;
       /// @brief Sets the port number of the endpoint.
       /// @param value An integer value in the range min_port to max_port indicating the port number of the endpoint.
-      ip_end_point& port(uint16 value);
+      auto port(xtd::uint16 value) -> ip_end_point&;
       /// @}
       
       /// @name Public Methods
@@ -83,33 +83,33 @@ namespace xtd {
       /// @param socket_address The socket address that serves as the endpoint for a connection.
       /// @return A new end_point instance that is initialized from the specified xtd::net::socket_address instance.
       /// @exception xtd::not_supported_exception Any attempt is made to access the method when the method is not overridden in a descendant class.
-      xtd::uptr<end_point> create(const xtd::net::socket_address& socket_address) const override;
+      [[nodiscard]] auto create(const xtd::net::socket_address& socket_address) const -> xtd::uptr<end_point> override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const ip_end_point& other) const noexcept override;
+      [[nodiscard]] auto equals(const ip_end_point& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.
-      xtd::net::socket_address serialize() const override;
+      [[nodiscard]] auto serialize() const -> xtd::net::socket_address override;
       
       /// @brief Returns a string that represents the current object.
       /// @return string A string that represents the current object.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     private:
       xtd::net::ip_address address_;
-      uint16 port_ = 0;
+      xtd::uint16 port_ = 0;
     };
   }
 }

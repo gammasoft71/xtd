@@ -91,7 +91,7 @@ namespace xtd::net::tests {
     }
     
     auto test_method_(get_scope_id) {
-      assert::throws<socket_exception>([] {ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).scope_id();});
+      assert::throws<socket_exception>([] {[[maybe_unused]] auto result = ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).scope_id();});
       assert::are_equal(0u, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).scope_id());
       assert::are_equal(15u, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).scope_id());
     }
@@ -183,7 +183,7 @@ namespace xtd::net::tests {
     }
     
     auto test_method_(parse_with_bad_string) {
-      assert::throws<format_exception>([] {ip_address::parse("172.16.12.24.1");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto result = ip_address::parse("172.16.12.24.1");});
     }
   };
 }

@@ -4,38 +4,38 @@ using namespace xtd;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-const xtd::array<xtd::net::ip_address>& ip_host_entry::address_list() const noexcept {
+auto ip_host_entry::address_list() const noexcept -> const array<ip_address>& {
   return address_list_;
 }
 
-xtd::array<xtd::net::ip_address>& ip_host_entry::address_list() noexcept {
+auto ip_host_entry::address_list() noexcept -> array<ip_address>& {
   return address_list_;
 }
 
-ip_host_entry& ip_host_entry::address_list(const xtd::array<xtd::net::ip_address>& address_list) noexcept {
+auto ip_host_entry::address_list(const array<ip_address>& address_list) noexcept -> ip_host_entry& {
   address_list_ = address_list;
-  return *this;
+  return self_;
 }
 
-const xtd::array<xtd::string>& ip_host_entry::aliases() const noexcept {
+auto ip_host_entry::aliases() const noexcept -> const array<string>& {
   return aliases_;
 }
 
-xtd::array<xtd::string>& ip_host_entry::aliases() noexcept {
+auto ip_host_entry::aliases() noexcept -> array<string>& {
   return aliases_;
 }
 
-ip_host_entry& ip_host_entry::aliases(const xtd::array<xtd::string>& aliases) noexcept {
+auto ip_host_entry::aliases(const array<string>& aliases) noexcept -> ip_host_entry& {
   aliases_ = aliases;
-  return *this;
+  return self_;
 }
 
-const xtd::string& ip_host_entry::host_name() const noexcept {
+auto ip_host_entry::host_name() const noexcept -> const string& {
   return host_name_;
 }
 
-ip_host_entry& ip_host_entry::host_name(const xtd::string& host_name) noexcept {
+auto ip_host_entry::host_name(const string& host_name) noexcept -> ip_host_entry& {
   host_name_ = host_name;
-  return *this;
+  return self_;
 }
 

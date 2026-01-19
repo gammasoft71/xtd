@@ -43,33 +43,33 @@ namespace xtd {
       /// @{
       /// @brief Gets List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.
-      const xtd::array<xtd::net::ip_address>& address_list() const noexcept;
+      [[nodiscard]] auto address_list() const noexcept -> const xtd::array<xtd::net::ip_address>&;
       /// @brief Gets List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.
-      xtd::array<xtd::net::ip_address>& address_list() noexcept;
+      [[nodiscard]] auto address_list() noexcept -> xtd::array<xtd::net::ip_address>&;
       /// @brief Sets List of IP addresses that are associated with a host.
       /// @param address_list An xtd::net::ip_address array of IP addresses that are associated with a host.
       /// @return The current instance.
-      ip_host_entry& address_list(const xtd::array<xtd::net::ip_address>& address_list) noexcept;
+      auto address_list(const xtd::array<xtd::net::ip_address>& address_list) noexcept -> ip_host_entry&;
       
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      const xtd::array<xtd::string>& aliases() const noexcept;
+      [[nodiscard]] auto aliases() const noexcept -> const xtd::array<xtd::string>&;
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      xtd::array<xtd::string>& aliases() noexcept;
+      [[nodiscard]] auto aliases() noexcept -> xtd::array<xtd::string>&;
       /// @brief Sets List of aliases that are associated with a host.
       /// @param aliases A string array of aliases that are associated with a host.
       /// @return The current instance.
-      ip_host_entry& aliases(const xtd::array<xtd::string>& aliases) noexcept;
+      auto aliases(const xtd::array<xtd::string>& aliases) noexcept -> ip_host_entry&;
       
       /// @brief Gets the DNS name of the host.
       /// @return A string represent the DNS name of the host.
-      const xtd::string& host_name() const noexcept;
+      [[nodiscard]] auto host_name() const noexcept -> const xtd::string&;
       /// @brief Sets the DNS name of the host.
       /// @param hist_name A string represent the DNS name of the host.
       /// @return The current instance.
-      ip_host_entry& host_name(const xtd::string& host_name) noexcept;
+      auto host_name(const xtd::string& host_name) noexcept -> ip_host_entry&;
       /// @}
       
     private:

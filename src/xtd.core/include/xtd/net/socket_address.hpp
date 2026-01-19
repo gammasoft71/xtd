@@ -58,31 +58,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the address family to which the endpoint belongs.
       /// @return One of the sockets::address_family values.
-      sockets::address_family address_family() const;
+      [[nodiscard]] auto address_family() const -> xtd::net::sockets::address_family;
       
       /// @brief Gets the underlying buffer size of the xtd::net::socket_address.
       /// @return The underlying buffer size of the xtd::net::socket_address.
-      size_t size() const;
-      /// @}
-      
-      /// @name Operators
-      
-      /// @{
-      /// @brief Gets or sets the specified index element in the underlying buffer.
-      /// @param index The array index element of the desired information.
-      /// @return The value of the specified index element in the underlying buffer.
-      /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
-      /// @remarks This property gets or sets the specified byte position in the underlying buffer.
-      /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
-      byte& operator [](size_t index);
-      
-      /// @brief Gets the specified index element in the underlying buffer.
-      /// @param index The array index element of the desired information.
-      /// @return The value of the specified index element in the underlying buffer.
-      /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
-      /// @remarks This property gets or sets the specified byte position in the underlying buffer.
-      /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
-      const byte& operator [](size_t index) const;
+      [[nodiscard]] auto size() const -> xtd::size;
       /// @}
       
       /// @name Public Methods
@@ -91,25 +71,44 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const socket_address& other) const noexcept override;
+      [[nodiscard]] auto equals(const socket_address& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Returns information about the socket address.
       /// @return A string that contains information about the xtd::net::socket_address.
       /// @remarks The xtd::net::socket_address::to_string method returns a string that contains the xtd::net::sockets::address_family enumerated value, the size of the underlying buffer of the socket_address structure, and the remaining contents of the buffer.
-      xtd::string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
+      /// @name Public Operators
+      
+      /// @{
+      /// @brief Gets or sets the specified index element in the underlying buffer.
+      /// @param index The array index element of the desired information.
+      /// @return The value of the specified index element in the underlying buffer.
+      /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
+      /// @remarks This property gets or sets the specified byte position in the underlying buffer.
+      /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
+      auto operator [](xtd::size index) -> xtd::byte&;
+      /// @brief Gets the specified index element in the underlying buffer.
+      /// @param index The array index element of the desired information.
+      /// @return The value of the specified index element in the underlying buffer.
+      /// @exception xtd::argument_out_of_range_exception index is equal to or greater than size.
+      /// @remarks This property gets or sets the specified byte position in the underlying buffer.
+      /// @note Be sure to call xtd::net::socket_address::size before referring to elements in the underlying buffer. Referring to an index that does not exist will cause the xtd::net::socket_address to throw an xtd::argument_out_of_range_exception.
+      auto operator [](xtd::size index) const -> const xtd::byte&;
+      /// @}
+
     private:
-      friend class ip_end_point;
-      friend class sockets::socket;
+      friend class xtd::net::ip_end_point;
+      friend class xtd::net::sockets::socket;
       xtd::array<xtd::byte> bytes_;
     };
   }

@@ -52,7 +52,7 @@ namespace xtd::net::tests {
     }
     
     auto test_method_(ip_end_point_ip_v4_create_with_socket_address_ip_v6) {
-      assert::throws<argument_exception>([] {ip_end_point(ip_address::none, 0).create(ip_end_point(ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize());});
+      assert::throws<argument_exception>([] {[[maybe_unused]] auto result = ip_end_point(ip_address::none, 0).create(ip_end_point(ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15), 9500).serialize());});
     }
     
     auto test_method_(ip_end_point_ip_v6_create_with_socket_address_ip_v6) {
@@ -70,7 +70,7 @@ namespace xtd::net::tests {
     }
     
     auto test_method_(ip_end_point_ip_v6_create_with_socket_address_ip_v4) {
-      assert::throws<argument_exception>([] {ip_end_point(ip_address::ip_v6_none, 0).create(ip_end_point(0x230A00AC, 9500).serialize());});
+      assert::throws<argument_exception>([] {[[maybe_unused]] auto result = ip_end_point(ip_address::ip_v6_none, 0).create(ip_end_point(0x230A00AC, 9500).serialize());});
     }
   };
 }

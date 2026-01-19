@@ -73,12 +73,12 @@ namespace xtd::net::tests {
     
     auto test_method_(end_point_create) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&] {ep.create(socket_address(address_family::inter_network));});
+      assert::throws<not_implemented_exception>([&] {[[maybe_unused]] auto result = ep.create(socket_address(address_family::inter_network));});
     }
     
     auto test_method_(end_point_serialize) {
       tend_point ep;
-      assert::throws<not_implemented_exception>([&] {ep.serialize();});
+      assert::throws<not_implemented_exception>([&] {[[maybe_unused]] auto result = ep.serialize();});
     }
   };
 }

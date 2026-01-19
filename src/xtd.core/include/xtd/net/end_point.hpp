@@ -37,7 +37,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the address family to which the endpoint belongs.
       /// @return One of the address_family values.
-      sockets::address_family address_family() const noexcept;
+      [[nodiscard]] auto address_family() const noexcept -> xtd::net::sockets::address_family;
       /// @}
       
       /// @name Public Methods
@@ -47,15 +47,15 @@ namespace xtd {
       /// @param socket_address The socket address that serves as the endpoint for a connection.
       /// @return A new xtd::net::end_point instance that is initialized from the specified xtd::net::socket_address instance.
       /// @exception xtd::not_supported_exception Any attempt is made to access the method when the method is not overridden in a descendant class.
-      virtual xtd::uptr<end_point> create(const socket_address& socket_address) const;
+      [[nodiscard]] virtual auto create(const xtd::net::socket_address& socket_address) const -> xtd::uptr<xtd::net::end_point>;
       
       /// @brief Serializes endpoint information into a socket_address instance.
       /// @return A new xtd::net::socket_address instance that contains the endpoint information.
-      virtual socket_address serialize() const;
+      [[nodiscard]] virtual auto serialize() const -> xtd::net::socket_address;
       
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
-      string to_string() const noexcept override;
+      [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
       /// @}
       
     protected:
@@ -63,13 +63,13 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the xtd::net::end_point class.
-      explicit end_point(sockets::address_family address_family) : address_family_(address_family) {}
+      explicit end_point(xtd::net::sockets::address_family address_family) : address_family_(address_family) {}
       /// @}
       
       /// @cond
       end_point() = default;
       
-      sockets::address_family address_family_ = sockets::address_family::unknown;
+      xtd::net::sockets::address_family address_family_ = xtd::net::sockets::address_family::unknown;
       /// @endcond
     };
   }
