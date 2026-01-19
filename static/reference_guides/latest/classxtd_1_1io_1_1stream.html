@@ -308,7 +308,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports reading. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports reading; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a71d8ae56a4acb1cb7c7db641642f3bcc">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a49b54b2f8893abfdc68edc080ba37576">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a71d8ae56a4acb1cb7c7db641642f3bcc">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae036bcf52d31db8ad2f860f3b68d0b5f">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -338,7 +338,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports seeking. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports seeking; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#af8f8bcefcc308abb48ed523e41cc1638">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af9c46316791b86190ed30e2fb7a589eb">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#af8f8bcefcc308abb48ed523e41cc1638">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a5d71756c2c7b9941d7da4cad9c9d4300">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <dl class="section return"><dt>Returns</dt><dd>A value that determines whether the current stream can time out. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#abfa9d424361cd0e410f66cd28174d01d" title="Gets a value that determines whether the current stream can time out.">xtd::io::stream::can_timeout</a> property always returns <code>false</code>. Some stream implementations require different behavior, such as <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return <code>true</code>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a38b0f7034e608d8b472c6eee2f710217">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#aac5c5c6aba3d47c898ad071f1728aead">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>Gets a value indicating whether the current stream supports writing. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports writing; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a27e50abf55eb3d2ffd352bb6da1972b0">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a378b5d17e663acf2c0019747d94f33d6">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a27e50abf55eb3d2ffd352bb6da1972b0">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a7cf826d167f2bfa7af22ac414190e56e">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -463,7 +463,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a23302fce746e6442998dcad708f43c41">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a46d0ebe58e88514663c278726cdfd53a">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a23302fce746e6442998dcad708f43c41">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a48c4019344db5ab8dc577d66263b4ccf">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -502,7 +502,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#aff6e3ac4343dff1ea25fcf03b905cec4">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a990bb4d4723898fa5cc1e1b34622b399">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#aff6e3ac4343dff1ea25fcf03b905cec4">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a61ab78b2e9e5f5d688ff49f1285d7cc7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -546,7 +546,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ae8c0df7ee3f16c003ac44cdcd9e5c760">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae77a96178fa3d176428c4697b853dd29">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ae8c0df7ee3f16c003ac44cdcd9e5c760">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a4ccd57ceb5baaf23facdf921f916ff6a">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae50353e7445092e195c1e1ad6287f081">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a33aa6b693e8f902c5de5addab03e6b97">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -625,7 +625,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a247407c50f579466d9e52eeb59a89c46" title="Gets a value, in milliseconds, that determines how long the stream will attempt to read before timing...">xtd::io::stream::read_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a50a698c5b16653c830b6d4adc6107009">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#aabb3111ae602c209809836385affa9d5">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a5432e7ff91811040df0337d1c3ccc4d7">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a45eb36b1cb48f1776df66ae0ba6631de">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -704,7 +704,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>The <a class="el" href="#a1627c18d59e9bc372c3903f72f0558de" title="Gets a value, in milliseconds, that determines how long the stream will attempt to write before timin...">xtd::io::stream::write_timeout</a> property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ac70df3802e4d4d673776268a479ca9c7">xtd::net::sockets::network_stream</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#aab0265e05d2546a7eea91867cf8df7dd">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -788,7 +788,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 <p>When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs. </p>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a4aeda1c1cb44365a448675d5e0305376">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af6f8d6d66af366f3c35a905eca2ec649">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a4aeda1c1cb44365a448675d5e0305376">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#acc6e1d8d4e52c583af4f5ba176b693a7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -859,7 +859,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ac92147c77f01ba028b0f2ac29cdca194">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a733e5204cb52d56708d79087390414c7">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#ac92147c77f01ba028b0f2ac29cdca194">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a35803eb7ca3f6ee3eedf9f26be0c04a6">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -1009,7 +1009,7 @@ The range specified by the combination of offset and count exceeds the length of
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a29cc106cf942ded8ebb66405203df348">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a17b8566d7896e36df460ece1ba256894">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a29cc106cf942ded8ebb66405203df348">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#acab49934884f57fe8e0711b09163c4d6">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -1045,7 +1045,7 @@ The range specified by the combination of offset and count exceeds the length of
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a289a4fe3c5b578c8e79c6d8a3fbf9002">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a53a0303dccb539d85a272280b526e916">xtd::net::sockets::network_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a289a4fe3c5b578c8e79c6d8a3fbf9002">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ab5cb7cb29fa5fc13d125166e025266b0">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1107,7 @@ The range specified by the combination of offset and count exceeds the length of
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 19 2026 02:24:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 19 2026 21:54:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

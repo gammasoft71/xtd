@@ -125,19 +125,19 @@ Inheritance diagram for xtd::net::sockets::tcp_listener:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1net_1_1sockets.html" title="The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...">xtd::net::sockets</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> class provides simple methods that listen for and accept incoming connection requests in blocking synchronous mode. You can use either a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> or a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to connect with a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. Create a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> using an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a>, a Local IP address and port number, or just a port number. Specify Any for the local IP address and 0 for the local port number if you want the underlying service provider to assign those values for you. If you choose to do this, you can use the <a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property to identify the assigned information, after the socket has connected. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> class provides simple methods that listen for and accept incoming connection requests in blocking synchronous mode. You can use either a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> or a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to connect with a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. Create a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> using an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a>, a Local IP address and port number, or just a port number. Specify Any for the local IP address and 0 for the local port number if you want the underlying service provider to assign those values for you. If you choose to do this, you can use the <a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property to identify the assigned information, after the socket has connected. </dd>
 <dd>
-Use the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection requests. <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> will queue incoming connections until you either call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method or it has queued <a class="el" href="group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cba0bc91339c0d774f560a9a38fc9dfac30" title="Not supported; will throw a xtd::net::sockets::socket_exception exception if used.">xtd::net::sockets::socket_option_name::max_connections</a>. Use either <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> or <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> to pull a connection from the incoming connection request queue. These two methods will block. If you want to avoid blocking, you can use the <a class="el" href="#a45db673ecc736ed428726946405b4f55" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method first to determine if connection requests are available in the queue. </dd>
+Use the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection requests. <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> will queue incoming connections until you either call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method or it has queued <a class="el" href="group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cba0bc91339c0d774f560a9a38fc9dfac30" title="Not supported; will throw a xtd::net::sockets::socket_exception exception if used.">xtd::net::sockets::socket_option_name::max_connections</a>. Use either <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> or <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> to pull a connection from the incoming connection request queue. These two methods will block. If you want to avoid blocking, you can use the <a class="el" href="#a134e7bb625afdce25a7d6d33e0ed3309" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method first to determine if connection requests are available in the queue. </dd>
 <dd>
-Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method does not close any accepted connections. You are responsible for closing these separately. </dd></dl>
+Call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method does not close any accepted connections. You are responsible for closing these separately. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv4 <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> class with use <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">xtd::io::stream_reader</a> and <a class="el" href="classxtd_1_1io_1_1stream__writer.html" title="Implements a xtd::io::text_writer for writing characters to a stream.">xtd::io::stream_writer</a> classes. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a8eb348a0d20bd323b363a8a83cb646a9">server</a> = thread {[&amp;] {</div>
-<div class="line">    <span class="keyword">auto</span> listener = <a class="code hl_function" href="#a6a185b661201a4ae4c5708dd007a6da0">net::sockets::tcp_listener::create</a>(9400);</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ad5fe89713dcefd2e248f43ae1b796f69">server</a> = thread {[&amp;] {</div>
+<div class="line">    <span class="keyword">auto</span> listener = <a class="code hl_function" href="#af69b1214067e6666756700eef6e2d190">net::sockets::tcp_listener::create</a>(9400);</div>
 <div class="line">    listener.start();</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> = listener.accept_tcp_client().get_stream();</div>
 <div class="line">    <span class="keyword">auto</span> reader = stream_reader {<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>};</div>
@@ -148,7 +148,7 @@ Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes t
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>
 <div class="line">    <span class="keyword">auto</span> client = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">net::sockets::tcp_client</a> {};</div>
-<div class="line">    client.<a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#addc24674cf52a1b5fcb49301f3c3b891">connect</a>(net::ip_address::loopback, 9400);</div>
+<div class="line">    client.<a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#a764afce0f475678c7711bdd76a9e1377">connect</a>(net::ip_address::loopback, 9400);</div>
 <div class="line">    <span class="keyword">auto</span> stream = client.get_stream();</div>
 <div class="line">    <span class="keyword">auto</span> writer = stream_writer {stream};</div>
 <div class="line">    </div>
@@ -178,9 +178,9 @@ Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes t
 <div class="line"><span class="comment">// ...</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__client_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></div><div class="ttdoc">Provides client connections for TCP network services.</div><div class="ttdef"><b>Definition</b> tcp_client.hpp:48</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__client_html_addc24674cf52a1b5fcb49301f3c3b891"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#addc24674cf52a1b5fcb49301f3c3b891">xtd::net::sockets::tcp_client::connect</a></div><div class="ttdeci">void connect(const xtd::net::ip_end_point &amp;remote_end_point)</div><div class="ttdoc">Connects the client to a remote TCP host using the specified remote network endpoint.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_a6a185b661201a4ae4c5708dd007a6da0"><div class="ttname"><a href="#a6a185b661201a4ae4c5708dd007a6da0">xtd::net::sockets::tcp_listener::create</a></div><div class="ttdeci">static tcp_listener create(uint16 port)</div><div class="ttdoc">Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_a8eb348a0d20bd323b363a8a83cb646a9"><div class="ttname"><a href="#a8eb348a0d20bd323b363a8a83cb646a9">xtd::net::sockets::tcp_listener::server</a></div><div class="ttdeci">xtd::net::sockets::socket server() const noexcept</div><div class="ttdoc">Gets the underlying network xtd::net::sockets::socket.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__client_html_a764afce0f475678c7711bdd76a9e1377"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#a764afce0f475678c7711bdd76a9e1377">xtd::net::sockets::tcp_client::connect</a></div><div class="ttdeci">auto connect(const xtd::net::ip_end_point &amp;remote_end_point) -&gt; void</div><div class="ttdoc">Connects the client to a remote TCP host using the specified remote network endpoint.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_ad5fe89713dcefd2e248f43ae1b796f69"><div class="ttname"><a href="#ad5fe89713dcefd2e248f43ae1b796f69">xtd::net::sockets::tcp_listener::server</a></div><div class="ttdeci">auto server() const noexcept -&gt; xtd::net::sockets::socket</div><div class="ttdoc">Gets the underlying network xtd::net::sockets::socket.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_af69b1214067e6666756700eef6e2d190"><div class="ttname"><a href="#af69b1214067e6666756700eef6e2d190">xtd::net::sockets::tcp_listener::create</a></div><div class="ttdeci">static auto create(uint16 port) -&gt; tcp_listener</div><div class="ttdoc">Creates a new xtd::net::sockets::tcp_listener instance to listen on the specified port.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b"><div class="ttname"><a href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">xtd::net::sockets::socket_type::stream</a></div><div class="ttdeci">@ stream</div><div class="ttdoc">Supports reliable, two-way, connection-based byte streams without the duplication of data and without...</div><div class="ttdef"><b>Definition</b> socket_type.hpp:36</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv6 <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> class with use <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">xtd::io::stream_reader</a> and <a class="el" href="classxtd_1_1io_1_1stream__writer.html" title="Implements a xtd::io::text_writer for writing characters to a stream.">xtd::io::stream_writer</a> classes. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -188,9 +188,9 @@ Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes t
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#a8eb348a0d20bd323b363a8a83cb646a9">server</a> = thread {[&amp;] {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="#ad5fe89713dcefd2e248f43ae1b796f69">server</a> = thread {[&amp;] {</div>
 <div class="line">    <span class="keyword">auto</span> listener = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">net::sockets::tcp_listener</a> {<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">net::ip_address::ip_v6_any</a>, 9400)};</div>
-<div class="line">    listener.<a class="code hl_function" href="#a0002f8b9545679a97b5813509937098e">start</a>();</div>
+<div class="line">    listener.<a class="code hl_function" href="#a6337b570c07e6a8e81b6d5d83431fb02">start</a>();</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> = listener.accept_tcp_client().get_stream();</div>
 <div class="line">    <span class="keyword">auto</span> reader = stream_reader {<a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a>};</div>
 <div class="line">    </div>
@@ -231,11 +231,11 @@ Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes t
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_acf923e55451be6452fa679a24983ef2f"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">xtd::net::ip_address::ip_v6_any</a></div><div class="ttdeci">static const ip_address ip_v6_any</div><div class="ttdoc">The Socket::Bind method uses the cIPv6Any field to indicate that a Socket must listen for client acti...</div><div class="ttdef"><b>Definition</b> ip_address.hpp:55</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a></div><div class="ttdoc">Represents a network endpoint as an IP address and a port number.</div><div class="ttdef"><b>Definition</b> ip_end_point.hpp:28</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">xtd::net::sockets::tcp_listener</a></div><div class="ttdoc">Listens for connections from TCP network clients.</div><div class="ttdef"><b>Definition</b> tcp_listener.hpp:40</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_a0002f8b9545679a97b5813509937098e"><div class="ttname"><a href="#a0002f8b9545679a97b5813509937098e">xtd::net::sockets::tcp_listener::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1tcp__listener_html_a6337b570c07e6a8e81b6d5d83431fb02"><div class="ttname"><a href="#a6337b570c07e6a8e81b6d5d83431fb02">xtd::net::sockets::tcp_listener::start</a></div><div class="ttdeci">auto start() -&gt; void</div><div class="ttdoc">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:aec90444f9a3dcd4e1b36ce7d573e1865" id="r_aec90444f9a3dcd4e1b36ce7d573e1865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec90444f9a3dcd4e1b36ce7d573e1865">tcp_listener</a> (const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85">local_end_point</a>)</td></tr>
+<tr class="memitem:aec90444f9a3dcd4e1b36ce7d573e1865" id="r_aec90444f9a3dcd4e1b36ce7d573e1865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec90444f9a3dcd4e1b36ce7d573e1865">tcp_listener</a> (const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1">local_end_point</a>)</td></tr>
 <tr class="memdesc:aec90444f9a3dcd4e1b36ce7d573e1865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> class with the specified local endpoint.  <br /></td></tr>
 <tr class="separator:aec90444f9a3dcd4e1b36ce7d573e1865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae974afc1abc0bfea99c0ded42aedd749" id="r_ae974afc1abc0bfea99c0ded42aedd749"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae974afc1abc0bfea99c0ded42aedd749">tcp_listener</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;<a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
@@ -243,66 +243,66 @@ Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes t
 <tr class="separator:ae974afc1abc0bfea99c0ded42aedd749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a06fe556c836b7bc7bfbfd85c0cb807eb" id="r_a06fe556c836b7bc7bfbfd85c0cb807eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06fe556c836b7bc7bfbfd85c0cb807eb">exclusive_address_use</a> () const</td></tr>
-<tr class="memdesc:a06fe556c836b7bc7bfbfd85c0cb807eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a bool value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one underlying socket to listen to a specific port.  <br /></td></tr>
-<tr class="separator:a06fe556c836b7bc7bfbfd85c0cb807eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a944fc6998f709c7407e8c23fb0da02c0" id="r_a944fc6998f709c7407e8c23fb0da02c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a944fc6998f709c7407e8c23fb0da02c0">exclusive_address_use</a> (bool value)</td></tr>
-<tr class="memdesc:a944fc6998f709c7407e8c23fb0da02c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a bool value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one underlying socket to listen to a specific port.  <br /></td></tr>
-<tr class="separator:a944fc6998f709c7407e8c23fb0da02c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceb080419fee7bfe95687a3f0f7e7a85" id="r_aceb080419fee7bfe95687a3f0f7e7a85"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85">local_end_point</a> () const noexcept</td></tr>
-<tr class="memdesc:aceb080419fee7bfe95687a3f0f7e7a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> of the current <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>.  <br /></td></tr>
-<tr class="separator:aceb080419fee7bfe95687a3f0f7e7a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb348a0d20bd323b363a8a83cb646a9" id="r_a8eb348a0d20bd323b363a8a83cb646a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eb348a0d20bd323b363a8a83cb646a9">server</a> () const noexcept</td></tr>
-<tr class="memdesc:a8eb348a0d20bd323b363a8a83cb646a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying network <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
-<tr class="separator:a8eb348a0d20bd323b363a8a83cb646a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ad94f69a8654afe20c9d942d85ebb7" id="r_aa8ad94f69a8654afe20c9d942d85ebb7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8ad94f69a8654afe20c9d942d85ebb7">exclusive_address_use</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:aa8ad94f69a8654afe20c9d942d85ebb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a bool value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one underlying socket to listen to a specific port.  <br /></td></tr>
+<tr class="separator:aa8ad94f69a8654afe20c9d942d85ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e776f0b8474dd9416b031fa861de01" id="r_a10e776f0b8474dd9416b031fa861de01"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10e776f0b8474dd9416b031fa861de01">exclusive_address_use</a> (bool value) -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;</td></tr>
+<tr class="memdesc:a10e776f0b8474dd9416b031fa861de01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a bool value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one underlying socket to listen to a specific port.  <br /></td></tr>
+<tr class="separator:a10e776f0b8474dd9416b031fa861de01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" id="r_a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1">local_end_point</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a> &amp;</td></tr>
+<tr class="memdesc:a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> of the current <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>.  <br /></td></tr>
+<tr class="separator:a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fe89713dcefd2e248f43ae1b796f69" id="r_ad5fe89713dcefd2e248f43ae1b796f69"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5fe89713dcefd2e248f43ae1b796f69">server</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td></tr>
+<tr class="memdesc:ad5fe89713dcefd2e248f43ae1b796f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying network <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
+<tr class="separator:ad5fe89713dcefd2e248f43ae1b796f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a10b9e983f3bc3be2c57bbf6efa204f37" id="r_a10b9e983f3bc3be2c57bbf6efa204f37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37">accept_socket</a> ()</td></tr>
-<tr class="memdesc:a10b9e983f3bc3be2c57bbf6efa204f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a pending connection request.  <br /></td></tr>
-<tr class="separator:a10b9e983f3bc3be2c57bbf6efa204f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b761bfe126647415046b1aced1544b1" id="r_a0b761bfe126647415046b1aced1544b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b761bfe126647415046b1aced1544b1">accept_tcp_client</a> ()</td></tr>
-<tr class="memdesc:a0b761bfe126647415046b1aced1544b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a pending connection request.  <br /></td></tr>
-<tr class="separator:a0b761bfe126647415046b1aced1544b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8615ffdcf8ecc7dba4f5d6e6647ef596" id="r_a8615ffdcf8ecc7dba4f5d6e6647ef596"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8615ffdcf8ecc7dba4f5d6e6647ef596">begin_accept_socket</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
-<tr class="memdesc:a8615ffdcf8ecc7dba4f5d6e6647ef596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
-<tr class="separator:a8615ffdcf8ecc7dba4f5d6e6647ef596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d8215c1239100011365a5295e97da4" id="r_a38d8215c1239100011365a5295e97da4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38d8215c1239100011365a5295e97da4">begin_accept_tcp_client</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
-<tr class="memdesc:a38d8215c1239100011365a5295e97da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
-<tr class="separator:a38d8215c1239100011365a5295e97da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4473102638c71850a941cdfedae0be" id="r_aca4473102638c71850a941cdfedae0be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca4473102638c71850a941cdfedae0be">end_accept_socket</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>)</td></tr>
-<tr class="memdesc:aca4473102638c71850a941cdfedae0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.  <br /></td></tr>
-<tr class="separator:aca4473102638c71850a941cdfedae0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f5eea52a9d05572e8f96f8fdf4a431d" id="r_a0f5eea52a9d05572e8f96f8fdf4a431d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f5eea52a9d05572e8f96f8fdf4a431d">end_accept_tcp_client</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>)</td></tr>
-<tr class="memdesc:a0f5eea52a9d05572e8f96f8fdf4a431d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously accepts an incoming connection attempt and creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> to handle remote host communication.  <br /></td></tr>
-<tr class="separator:a0f5eea52a9d05572e8f96f8fdf4a431d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad01ddbea312cc6033bb6c40934a12420" id="r_ad01ddbea312cc6033bb6c40934a12420"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01ddbea312cc6033bb6c40934a12420">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:ad01ddbea312cc6033bb6c40934a12420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:ad01ddbea312cc6033bb6c40934a12420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a943e5f7ae283cd3b6af3a88a948a8907" id="r_a943e5f7ae283cd3b6af3a88a948a8907"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a943e5f7ae283cd3b6af3a88a948a8907">equals</a> (const <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a943e5f7ae283cd3b6af3a88a948a8907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a943e5f7ae283cd3b6af3a88a948a8907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45db673ecc736ed428726946405b4f55" id="r_a45db673ecc736ed428726946405b4f55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45db673ecc736ed428726946405b4f55">pending</a> ()</td></tr>
-<tr class="memdesc:a45db673ecc736ed428726946405b4f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if there are pending connection requests.  <br /></td></tr>
-<tr class="separator:a45db673ecc736ed428726946405b4f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0002f8b9545679a97b5813509937098e" id="r_a0002f8b9545679a97b5813509937098e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0002f8b9545679a97b5813509937098e">start</a> ()</td></tr>
-<tr class="memdesc:a0002f8b9545679a97b5813509937098e"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.  <br /></td></tr>
-<tr class="separator:a0002f8b9545679a97b5813509937098e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0f5cbb22a421ccba64fdffab4c8023" id="r_aac0f5cbb22a421ccba64fdffab4c8023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac0f5cbb22a421ccba64fdffab4c8023">start</a> (size_t backlog)</td></tr>
-<tr class="memdesc:aac0f5cbb22a421ccba64fdffab4c8023"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests with a maximum number of pending connection.  <br /></td></tr>
-<tr class="separator:aac0f5cbb22a421ccba64fdffab4c8023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade3b57a1e8f5a7095a91bc09936639f0" id="r_ade3b57a1e8f5a7095a91bc09936639f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0">stop</a> ()</td></tr>
-<tr class="memdesc:ade3b57a1e8f5a7095a91bc09936639f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the listener.  <br /></td></tr>
-<tr class="separator:ade3b57a1e8f5a7095a91bc09936639f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ab7a618424d94d1859ac4a95bd8b6a" id="r_aa7ab7a618424d94d1859ac4a95bd8b6a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a">accept_socket</a> () -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td></tr>
+<tr class="memdesc:aa7ab7a618424d94d1859ac4a95bd8b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a pending connection request.  <br /></td></tr>
+<tr class="separator:aa7ab7a618424d94d1859ac4a95bd8b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3034fca0f0eee3606974446beade129" id="r_ad3034fca0f0eee3606974446beade129"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3034fca0f0eee3606974446beade129">accept_tcp_client</a> () -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></td></tr>
+<tr class="memdesc:ad3034fca0f0eee3606974446beade129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a pending connection request.  <br /></td></tr>
+<tr class="separator:ad3034fca0f0eee3606974446beade129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15122ba55507ad31caf2ed216f04ff2a" id="r_a15122ba55507ad31caf2ed216f04ff2a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15122ba55507ad31caf2ed216f04ff2a">begin_accept_socket</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
+<tr class="memdesc:a15122ba55507ad31caf2ed216f04ff2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
+<tr class="separator:a15122ba55507ad31caf2ed216f04ff2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1006da52df1b11417bb78d9d0d0d126a" id="r_a1006da52df1b11417bb78d9d0d0d126a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1006da52df1b11417bb78d9d0d0d126a">begin_accept_tcp_client</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
+<tr class="memdesc:a1006da52df1b11417bb78d9d0d0d126a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
+<tr class="separator:a1006da52df1b11417bb78d9d0d0d126a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b448f6437777d11a3713cb747caa19" id="r_ad6b448f6437777d11a3713cb747caa19"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6b448f6437777d11a3713cb747caa19">end_accept_socket</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>) -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td></tr>
+<tr class="memdesc:ad6b448f6437777d11a3713cb747caa19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.  <br /></td></tr>
+<tr class="separator:ad6b448f6437777d11a3713cb747caa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1943faa4fe0be5edaea3c6275ddbc8f" id="r_af1943faa4fe0be5edaea3c6275ddbc8f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1943faa4fe0be5edaea3c6275ddbc8f">end_accept_tcp_client</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>) -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></td></tr>
+<tr class="memdesc:af1943faa4fe0be5edaea3c6275ddbc8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asynchronously accepts an incoming connection attempt and creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> to handle remote host communication.  <br /></td></tr>
+<tr class="separator:af1943faa4fe0be5edaea3c6275ddbc8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1404073002cff761f7eb96c08f09c6f7" id="r_a1404073002cff761f7eb96c08f09c6f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1404073002cff761f7eb96c08f09c6f7">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a1404073002cff761f7eb96c08f09c6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a1404073002cff761f7eb96c08f09c6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d2dded7e751c25e4be2d68db017f3bc" id="r_a9d2dded7e751c25e4be2d68db017f3bc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d2dded7e751c25e4be2d68db017f3bc">equals</a> (const <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a9d2dded7e751c25e4be2d68db017f3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a9d2dded7e751c25e4be2d68db017f3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134e7bb625afdce25a7d6d33e0ed3309" id="r_a134e7bb625afdce25a7d6d33e0ed3309"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a134e7bb625afdce25a7d6d33e0ed3309">pending</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a134e7bb625afdce25a7d6d33e0ed3309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if there are pending connection requests.  <br /></td></tr>
+<tr class="separator:a134e7bb625afdce25a7d6d33e0ed3309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6337b570c07e6a8e81b6d5d83431fb02" id="r_a6337b570c07e6a8e81b6d5d83431fb02"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02">start</a> () -&gt; void</td></tr>
+<tr class="memdesc:a6337b570c07e6a8e81b6d5d83431fb02"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.  <br /></td></tr>
+<tr class="separator:a6337b570c07e6a8e81b6d5d83431fb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b307ba7f55081f3bb9c8ad69c5a6a48" id="r_a8b307ba7f55081f3bb9c8ad69c5a6a48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b307ba7f55081f3bb9c8ad69c5a6a48">start</a> (size_t backlog) -&gt; void</td></tr>
+<tr class="memdesc:a8b307ba7f55081f3bb9c8ad69c5a6a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::tcp_listener::starts listening for incoming connection requests with a maximum number of pending connection.  <br /></td></tr>
+<tr class="separator:a8b307ba7f55081f3bb9c8ad69c5a6a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7287aadfb0f0af8cede6e8c9612fb3" id="r_aef7287aadfb0f0af8cede6e8c9612fb3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3">stop</a> () -&gt; void</td></tr>
+<tr class="memdesc:aef7287aadfb0f0af8cede6e8c9612fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the listener.  <br /></td></tr>
+<tr class="separator:aef7287aadfb0f0af8cede6e8c9612fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a6a185b661201a4ae4c5708dd007a6da0" id="r_a6a185b661201a4ae4c5708dd007a6da0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a185b661201a4ae4c5708dd007a6da0">create</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
-<tr class="memdesc:a6a185b661201a4ae4c5708dd007a6da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> instance to listen on the specified port.  <br /></td></tr>
-<tr class="separator:a6a185b661201a4ae4c5708dd007a6da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af69b1214067e6666756700eef6e2d190" id="r_af69b1214067e6666756700eef6e2d190"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af69b1214067e6666756700eef6e2d190">create</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>) -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a></td></tr>
+<tr class="memdesc:af69b1214067e6666756700eef6e2d190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> instance to listen on the specified port.  <br /></td></tr>
+<tr class="separator:af69b1214067e6666756700eef6e2d190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Properties</h2></td></tr>
-<tr class="memitem:acca8afef898fce10e9aa9028ad7f6513" id="r_acca8afef898fce10e9aa9028ad7f6513"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acca8afef898fce10e9aa9028ad7f6513">active</a> () const noexcept</td></tr>
-<tr class="memdesc:acca8afef898fce10e9aa9028ad7f6513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> is actively listening for client connections.  <br /></td></tr>
-<tr class="separator:acca8afef898fce10e9aa9028ad7f6513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895a97991dacb6ed170f5995eeb655cf" id="r_a895a97991dacb6ed170f5995eeb655cf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895a97991dacb6ed170f5995eeb655cf">active</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a895a97991dacb6ed170f5995eeb655cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> is actively listening for client connections.  <br /></td></tr>
+<tr class="separator:a895a97991dacb6ed170f5995eeb655cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -369,9 +369,9 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 Before using this constructor, you must create an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> using the desired local IP address and port number. Pass this <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> to the constructor as the local_end_point parameter. </dd>
 <dd>
-If you do not care which local address is assigned, you can create an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> using <a class="el" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5" title="Provides an IP address that indicates that the server must listen for client activity on all network ...">xtd::net::ip_address::any</a> as the address parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can create an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> using 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000. If you use this approach, you can discover what local network address and port number has been assigned by using the <a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property. </dd>
+If you do not care which local address is assigned, you can create an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> using <a class="el" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5" title="Provides an IP address that indicates that the server must listen for client activity on all network ...">xtd::net::ip_address::any</a> as the address parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can create an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> using 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000. If you use this approach, you can discover what local network address and port number has been assigned by using the <a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property. </dd>
 <dd>
-Call the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection attempts. </dd></dl>
+Call the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection attempts. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The 0 for local port functionality is not available. </dd></dl>
 
 </div>
@@ -407,34 +407,42 @@ Call the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net
 <dd>
 Before calling this constructor you must first create an <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> using the desired local address. Pass this <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> to the constructor as the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">ip_address</a> parameter. </dd>
 <dd>
-If you do not care which local address is assigned, specify <a class="el" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5" title="Provides an IP address that indicates that the server must listen for client activity on all network ...">xtd::net::ip_address::any</a> for the localaddr parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can specify 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000. If you use this approach, you can discover what local network address and port number has been assigned by using the <a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property. </dd>
+If you do not care which local address is assigned, specify <a class="el" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5" title="Provides an IP address that indicates that the server must listen for client activity on all network ...">xtd::net::ip_address::any</a> for the localaddr parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can specify 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 5000. If you use this approach, you can discover what local network address and port number has been assigned by using the <a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property. </dd>
 <dd>
-Call the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection attempts. </dd></dl>
+Call the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method to begin listening for incoming connection attempts. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The 0 for local port functionality is not available. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a06fe556c836b7bc7bfbfd85c0cb807eb" name="a06fe556c836b7bc7bfbfd85c0cb807eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06fe556c836b7bc7bfbfd85c0cb807eb">&#9670;&#160;</a></span>exclusive_address_use() <span class="overload">[1/2]</span></h2>
+<a id="aa8ad94f69a8654afe20c9d942d85ebb7" name="aa8ad94f69a8654afe20c9d942d85ebb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ad94f69a8654afe20c9d942d85ebb7">&#9670;&#160;</a></span>exclusive_address_use() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::tcp_listener::exclusive_address_use </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::exclusive_address_use </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets a bool value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one underlying socket to listen to a specific port. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> allows only one <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> to listen to a specific port; otherwise, <code>false</code>. . </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> has been started. Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop()</a> method and then set the <a class="el" href="#a06fe556c836b7bc7bfbfd85c0cb807eb" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> has been started. Call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop()</a> method and then set the <a class="el" href="#aa8ad94f69a8654afe20c9d942d85ebb7" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
@@ -444,24 +452,24 @@ Call the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net
 <dd>
 If more than one listener attempts to bind to a particular port, then the one with the more specific IP address handles the network traffic sent to that port. </dd>
 <dd>
-You can use the <a class="el" href="#a06fe556c836b7bc7bfbfd85c0cb807eb" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property to prevent multiple listeners from listening to a specific port. </dd>
+You can use the <a class="el" href="#aa8ad94f69a8654afe20c9d942d85ebb7" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property to prevent multiple listeners from listening to a specific port. </dd>
 <dd>
-Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>, or call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method and then set this property. </dd></dl>
+Set this property before calling <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>, or call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method and then set this property. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a944fc6998f709c7407e8c23fb0da02c0" name="a944fc6998f709c7407e8c23fb0da02c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a944fc6998f709c7407e8c23fb0da02c0">&#9670;&#160;</a></span>exclusive_address_use() <span class="overload">[2/2]</span></h2>
+<a id="a10e776f0b8474dd9416b031fa861de01" name="a10e776f0b8474dd9416b031fa861de01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e776f0b8474dd9416b031fa861de01">&#9670;&#160;</a></span>exclusive_address_use() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp; xtd::net::sockets::tcp_listener::exclusive_address_use </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::exclusive_address_use </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -476,7 +484,7 @@ Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509
 <dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> has been started. Call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop()</a> method and then set the <a class="el" href="#a06fe556c836b7bc7bfbfd85c0cb807eb" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> has been started. Call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop()</a> method and then set the <a class="el" href="#aa8ad94f69a8654afe20c9d942d85ebb7" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
@@ -486,15 +494,15 @@ Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509
 <dd>
 If more than one listener attempts to bind to a particular port, then the one with the more specific IP address handles the network traffic sent to that port. </dd>
 <dd>
-You can use the <a class="el" href="#a06fe556c836b7bc7bfbfd85c0cb807eb" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property to prevent multiple listeners from listening to a specific port. </dd>
+You can use the <a class="el" href="#aa8ad94f69a8654afe20c9d942d85ebb7" title="Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlyi...">xtd::net::sockets::tcp_listener::exclusive_address_use</a> property to prevent multiple listeners from listening to a specific port. </dd>
 <dd>
-Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>, or call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method and then set this property. </dd></dl>
+Set this property before calling <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>, or call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method and then set this property. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="aceb080419fee7bfe95687a3f0f7e7a85" name="aceb080419fee7bfe95687a3f0f7e7a85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb080419fee7bfe95687a3f0f7e7a85">&#9670;&#160;</a></span>local_end_point()</h2>
+<a id="a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" name="a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1">&#9670;&#160;</a></span>local_end_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,27 +511,27 @@ Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a> &amp; xtd::net::sockets::tcp_listener::local_end_point </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::local_end_point </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the underlying <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> of the current <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> to which the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is bound. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="#aceb080419fee7bfe95687a3f0f7e7a85" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> to an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a>. You can then call the <a class="el" href="classxtd_1_1net_1_1ip__end__point.html#abe1e072819dd804e0784443619c4959d" title="Gets the IP address of the endpoint.">xtd::net::ip_end_point::address</a> property to retrieve the local IP address, and the <a class="el" href="classxtd_1_1net_1_1ip__end__point.html#a601ccbbb1a46f0c772f814934da8ba50" title="Gets or sets the port number of the endpoint.">xtd::net::ip_end_point::port</a> property to retrieve the local port number. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="#a0f2e7a85f0a5c8ce03b8ad4ec3ca18d1" title="Gets the underlying xtd::net::end_point of the current xtd::net::sockets::tcp_listener.">xtd::net::sockets::tcp_listener::local_end_point</a> property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this <a class="el" href="classxtd_1_1net_1_1end__point.html" title="Identifies a network address. This is an abstract class.">xtd::net::end_point</a> to an <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a>. You can then call the <a class="el" href="classxtd_1_1net_1_1ip__end__point.html#a8c2aa018e9c82a87df0efedbc55d49d7" title="Gets the IP address of the endpoint.">xtd::net::ip_end_point::address</a> property to retrieve the local IP address, and the <a class="el" href="classxtd_1_1net_1_1ip__end__point.html#ad90af222ddb7902d37124f0e0818b9fe" title="Gets or sets the port number of the endpoint.">xtd::net::ip_end_point::port</a> property to retrieve the local port number. </dd></dl>
 
 </div>
 </div>
-<a id="a8eb348a0d20bd323b363a8a83cb646a9" name="a8eb348a0d20bd323b363a8a83cb646a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eb348a0d20bd323b363a8a83cb646a9">&#9670;&#160;</a></span>server()</h2>
+<a id="ad5fe89713dcefd2e248f43ae1b796f69" name="ad5fe89713dcefd2e248f43ae1b796f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5fe89713dcefd2e248f43ae1b796f69">&#9670;&#160;</a></span>server()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -532,15 +540,15 @@ Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a> xtd::net::sockets::tcp_listener::server </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::server </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -549,92 +557,108 @@ Set this property before calling <a class="el" href="#a0002f8b9545679a97b5813509
 <dl class="section return"><dt>Returns</dt><dd>The underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> creates a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to listen for incoming client connection requests. Classes deriving from <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> can use this property to get this <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </dd>
 <dd>
-Use the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> returned by the <a class="el" href="#a8eb348a0d20bd323b363a8a83cb646a9" title="Gets the underlying network xtd::net::sockets::socket.">xtd::net::sockets::tcp_listener::server</a> property if you require access beyond that which <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> provides. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#a8eb348a0d20bd323b363a8a83cb646a9" title="Gets the underlying network xtd::net::sockets::socket.">xtd::net::sockets::tcp_listener::server</a> property only returns the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> used to listen for incoming client connection requests. Use the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method to accept a pending connection request and obtain a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> for sending and receiving data. You can also use the <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method to accept a pending connection request and obtain a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> for sending and receiving data. </dd></dl>
+Use the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> returned by the <a class="el" href="#ad5fe89713dcefd2e248f43ae1b796f69" title="Gets the underlying network xtd::net::sockets::socket.">xtd::net::sockets::tcp_listener::server</a> property if you require access beyond that which <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> provides. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#ad5fe89713dcefd2e248f43ae1b796f69" title="Gets the underlying network xtd::net::sockets::socket.">xtd::net::sockets::tcp_listener::server</a> property only returns the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> used to listen for incoming client connection requests. Use the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method to accept a pending connection request and obtain a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> for sending and receiving data. You can also use the <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method to accept a pending connection request and obtain a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> for sending and receiving data. </dd></dl>
 
 </div>
 </div>
-<a id="a10b9e983f3bc3be2c57bbf6efa204f37" name="a10b9e983f3bc3be2c57bbf6efa204f37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10b9e983f3bc3be2c57bbf6efa204f37">&#9670;&#160;</a></span>accept_socket()</h2>
+<a id="aa7ab7a618424d94d1859ac4a95bd8b6a" name="aa7ab7a618424d94d1859ac4a95bd8b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ab7a618424d94d1859ac4a95bd8b6a">&#9670;&#160;</a></span>accept_socket()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a> xtd::net::sockets::tcp_listener::accept_socket </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::accept_socket </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Accepts a pending connection request. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> used to send and receive data. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> is a blocking method that returns a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to send and receive data. If you want to avoid blocking, use the <a class="el" href="#a45db673ecc736ed428726946405b4f55" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method to determine if connection requests are available in the incoming connection queue. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> is a blocking method that returns a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to send and receive data. If you want to avoid blocking, use the <a class="el" href="#a134e7bb625afdce25a7d6d33e0ed3309" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method to determine if connection requests are available in the incoming connection queue. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> returned is initialized with the IP address and port number of the remote host. </dd>
 <dd>
-You can use any of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a3a24146461be02beb84c2913aa1d8c26" title="Sends data to a connected xtd::net::sockets::socket.">xtd::net::sockets::socket::send</a> and <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ab56e43e51d047a79329cc5c22613f302" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive</a> methods available in the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class to communicate with the remote host. When you are finished using the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, be sure to call its xtd::net::sockets::tcp_listener::close method. If your application is relatively simple, consider using the <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method rather than the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd>
+You can use any of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a99ba44e8a8a9afff16ab9fee93d4fe2a" title="Sends data to a connected xtd::net::sockets::socket.">xtd::net::sockets::socket::send</a> and <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a3b08477b3371d745da98a06a3673f054" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive</a> methods available in the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class to communicate with the remote host. When you are finished using the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, be sure to call its xtd::net::sockets::tcp_listener::close method. If your application is relatively simple, consider using the <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method rather than the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd>
 <dd>
 <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> provides you with simple methods for sending and receiving data over a network in blocking synchronous mode. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a0b761bfe126647415046b1aced1544b1" name="a0b761bfe126647415046b1aced1544b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b761bfe126647415046b1aced1544b1">&#9670;&#160;</a></span>accept_tcp_client()</h2>
+<a id="ad3034fca0f0eee3606974446beade129" name="ad3034fca0f0eee3606974446beade129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3034fca0f0eee3606974446beade129">&#9670;&#160;</a></span>accept_tcp_client()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a> xtd::net::sockets::tcp_listener::accept_tcp_client </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::accept_tcp_client </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Accepts a pending connection request. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> used to send and receive data. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> is a blocking method that returns a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. Use the <a class="el" href="#a45db673ecc736ed428726946405b4f55" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method to determine if connection requests are available in the incoming connection queue if you want to avoid blocking. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> is a blocking method that returns a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. Use the <a class="el" href="#a134e7bb625afdce25a7d6d33e0ed3309" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method to determine if connection requests are available in the incoming connection queue if you want to avoid blocking. </dd>
 <dd>
-Use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#a0dcbcf8806e138b6673107b0dc6d89e6" title="Returns the xtd::net::sockets::network_stream used to send and receive data.">xtd::net::sockets::tcp_client::get_stream</a> method to obtain the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>. The <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> will provide you with methods for sending and receiving with the remote host. When you are through with the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>, be sure to call its xtd::net::sockets::tcp_listener::close method. If you want greater flexibility than a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> offers, consider using <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. </dd></dl>
+Use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#af94e698520d6ab888d75eef80bf8c71f" title="Returns the xtd::net::sockets::network_stream used to send and receive data.">xtd::net::sockets::tcp_client::get_stream</a> method to obtain the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>. The <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> will provide you with methods for sending and receiving with the remote host. When you are through with the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>, be sure to call its xtd::net::sockets::tcp_listener::close method. If you want greater flexibility than a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> offers, consider using <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a8615ffdcf8ecc7dba4f5d6e6647ef596" name="a8615ffdcf8ecc7dba4f5d6e6647ef596"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8615ffdcf8ecc7dba4f5d6e6647ef596">&#9670;&#160;</a></span>begin_accept_socket()</h2>
+<a id="a15122ba55507ad31caf2ed216f04ff2a" name="a15122ba55507ad31caf2ed216f04ff2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15122ba55507ad31caf2ed216f04ff2a">&#9670;&#160;</a></span>begin_accept_socket()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::net::sockets::tcp_listener::begin_accept_socket </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::begin_accept_socket </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -655,30 +679,30 @@ Use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html#a0dcb
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a8615ffdcf8ecc7dba4f5d6e6647ef596" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_socket</a> operation must be completed by calling the <a class="el" href="#aca4473102638c71850a941cdfedae0be" title="Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host ...">xtd::net::sockets::tcp_listener::end_accept_socket</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a15122ba55507ad31caf2ed216f04ff2a" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_socket</a> operation must be completed by calling the <a class="el" href="#ad6b448f6437777d11a3713cb747caa19" title="Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host ...">xtd::net::sockets::tcp_listener::end_accept_socket</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
-This method does not block until the operation completes. To block until the operation completes, use the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You can call the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a548ff7c4cddc156588f095d458103cbf" title="Gets the remote endpoint.">xtd::net::sockets::socket::remote_end_point</a> property of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to identify the remote host's network address and port number. </dd>
+This method does not block until the operation completes. To block until the operation completes, use the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You can call the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ad3f9ac7b1aa0d658f022b6bc14ceecfd" title="Gets the remote endpoint.">xtd::net::sockets::socket::remote_end_point</a> property of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to identify the remote host's network address and port number. </dd>
 <dd>
 If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a38d8215c1239100011365a5295e97da4" name="a38d8215c1239100011365a5295e97da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38d8215c1239100011365a5295e97da4">&#9670;&#160;</a></span>begin_accept_tcp_client()</h2>
+<a id="a1006da52df1b11417bb78d9d0d0d126a" name="a1006da52df1b11417bb78d9d0d0d126a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1006da52df1b11417bb78d9d0d0d126a">&#9670;&#160;</a></span>begin_accept_tcp_client()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::net::sockets::tcp_listener::begin_accept_tcp_client </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::begin_accept_tcp_client </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -699,24 +723,24 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a38d8215c1239100011365a5295e97da4" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> operation must be completed by calling the <a class="el" href="#a0f5eea52a9d05572e8f96f8fdf4a431d" title="Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client...">xtd::net::sockets::tcp_listener::end_accept_tcp_client</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a1006da52df1b11417bb78d9d0d0d126a" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> operation must be completed by calling the <a class="el" href="#af1943faa4fe0be5edaea3c6275ddbc8f" title="Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client...">xtd::net::sockets::tcp_listener::end_accept_tcp_client</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
 This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_ccp_client method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="aca4473102638c71850a941cdfedae0be" name="aca4473102638c71850a941cdfedae0be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4473102638c71850a941cdfedae0be">&#9670;&#160;</a></span>end_accept_socket()</h2>
+<a id="ad6b448f6437777d11a3713cb747caa19" name="ad6b448f6437777d11a3713cb747caa19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b448f6437777d11a3713cb747caa19">&#9670;&#160;</a></span>end_accept_socket()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a> xtd::net::sockets::tcp_listener::end_accept_socket </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::end_accept_socket </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>async_result</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -731,30 +755,30 @@ This method does not block until the operation completes. To block until the ope
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> used to send and receive data. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d" title="Represents the status of an asynchronous operation.">async_result</a> was not returned by a call to the <a class="el" href="#a8615ffdcf8ecc7dba4f5d6e6647ef596" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_socket</a> method. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d" title="Represents the status of an asynchronous operation.">async_result</a> was not returned by a call to the <a class="el" href="#a15122ba55507ad31caf2ed216f04ff2a" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_socket</a> method. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method blocks until the operation is complete. To perform this operation synchronously, use the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You can call the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a548ff7c4cddc156588f095d458103cbf" title="Gets the remote endpoint.">xtd::net::sockets::socket::remote_end_point</a> property of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to identify the remote host's network address and port number. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This method blocks until the operation is complete. To perform this operation synchronously, use the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You can call the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ad3f9ac7b1aa0d658f022b6bc14ceecfd" title="Gets the remote endpoint.">xtd::net::sockets::socket::remote_end_point</a> property of the returned <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> to identify the remote host's network address and port number. </dd>
 <dd>
 If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a0f5eea52a9d05572e8f96f8fdf4a431d" name="a0f5eea52a9d05572e8f96f8fdf4a431d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f5eea52a9d05572e8f96f8fdf4a431d">&#9670;&#160;</a></span>end_accept_tcp_client()</h2>
+<a id="af1943faa4fe0be5edaea3c6275ddbc8f" name="af1943faa4fe0be5edaea3c6275ddbc8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1943faa4fe0be5edaea3c6275ddbc8f">&#9670;&#160;</a></span>end_accept_tcp_client()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a> xtd::net::sockets::tcp_listener::end_accept_tcp_client </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::end_accept_tcp_client </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>async_result</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html">xtd::net::sockets::tcp_client</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -770,21 +794,21 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> that references the asynchronous creation of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d" title="Represents the status of an asynchronous operation.">async_result</a> was not returned by a call to the <a class="el" href="#a38d8215c1239100011365a5295e97da4" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> method. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d" title="Represents the status of an asynchronous operation.">async_result</a> was not returned by a call to the <a class="el" href="#a1006da52df1b11417bb78d9d0d0d126a" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> method. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a38d8215c1239100011365a5295e97da4" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> operation must be completed by calling the <a class="el" href="#a0f5eea52a9d05572e8f96f8fdf4a431d" title="Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client...">xtd::net::sockets::tcp_listener::end_accept_tcp_client</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="#a1006da52df1b11417bb78d9d0d0d126a" title="Begins an asynchronous operation to accept an incoming connection attempt.">xtd::net::sockets::tcp_listener::begin_accept_tcp_client</a> operation must be completed by calling the <a class="el" href="#af1943faa4fe0be5edaea3c6275ddbc8f" title="Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client...">xtd::net::sockets::tcp_listener::end_accept_tcp_client</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
-This method does not block until the operation completes. To block until the operation completes, use the <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method. </dd></dl>
+This method does not block until the operation completes. To block until the operation completes, use the <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="ad01ddbea312cc6033bb6c40934a12420" name="ad01ddbea312cc6033bb6c40934a12420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad01ddbea312cc6033bb6c40934a12420">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a1404073002cff761f7eb96c08f09c6f7" name="a1404073002cff761f7eb96c08f09c6f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1404073002cff761f7eb96c08f09c6f7">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,15 +817,15 @@ This method does not block until the operation completes. To block until the ope
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::tcp_listener::equals </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -819,8 +843,8 @@ This method does not block until the operation completes. To block until the ope
 
 </div>
 </div>
-<a id="a943e5f7ae283cd3b6af3a88a948a8907" name="a943e5f7ae283cd3b6af3a88a948a8907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a943e5f7ae283cd3b6af3a88a948a8907">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a9d2dded7e751c25e4be2d68db017f3bc" name="a9d2dded7e751c25e4be2d68db017f3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d2dded7e751c25e4be2d68db017f3bc">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -829,15 +853,15 @@ This method does not block until the operation completes. To block until the ope
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::tcp_listener::equals </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -853,47 +877,55 @@ This method does not block until the operation completes. To block until the ope
 
 </div>
 </div>
-<a id="a45db673ecc736ed428726946405b4f55" name="a45db673ecc736ed428726946405b4f55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45db673ecc736ed428726946405b4f55">&#9670;&#160;</a></span>pending()</h2>
+<a id="a134e7bb625afdce25a7d6d33e0ed3309" name="a134e7bb625afdce25a7d6d33e0ed3309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134e7bb625afdce25a7d6d33e0ed3309">&#9670;&#160;</a></span>pending()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::tcp_listener::pending </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::pending </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Determines if there are pending connection requests. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if connections are pending; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The listener has not been started with a call to <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a>. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This non-blocking method determines if there are any pending connection requests. Because the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> and <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> methods block execution until </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This non-blocking method determines if there are any pending connection requests. Because the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> and <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> methods block execution until </dd>
 <dd>
-the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method has queued an incoming connection request, the <a class="el" href="#a45db673ecc736ed428726946405b4f55" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method can be used to determine if connections are available before attempting to accept them. </dd></dl>
+the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method has queued an incoming connection request, the <a class="el" href="#a134e7bb625afdce25a7d6d33e0ed3309" title="Determines if there are pending connection requests.">xtd::net::sockets::tcp_listener::pending</a> method can be used to determine if connections are available before attempting to accept them. </dd></dl>
 
 </div>
 </div>
-<a id="a0002f8b9545679a97b5813509937098e" name="a0002f8b9545679a97b5813509937098e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0002f8b9545679a97b5813509937098e">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
+<a id="a6337b570c07e6a8e81b6d5d83431fb02" name="a6337b570c07e6a8e81b6d5d83431fb02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6337b570c07e6a8e81b6d5d83431fb02">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::tcp_listener::start </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -905,26 +937,26 @@ the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::soc
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method initializes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method will queue the request and continue listening for additional requests until you call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method. If <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> receives a connection request after it has already queued the maximum number of connections, it will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> on the client. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method initializes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method will queue the request and continue listening for additional requests until you call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method. If <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> receives a connection request after it has already queued the maximum number of connections, it will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> on the client. </dd>
 <dd>
-To remove a connection from the incoming connection queue, use either the <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method or the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. The <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method will remove a connection from the queue and return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. The <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method will return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to do the same. If your application only requires synchronous I/O, use <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a>. For more detailed behavioral control, use <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. Both of these methods block until a connection request is available in the queue. </dd>
+To remove a connection from the incoming connection queue, use either the <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method or the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. The <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method will remove a connection from the queue and return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. The <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method will return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to do the same. If your application only requires synchronous I/O, use <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a>. For more detailed behavioral control, use <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. Both of these methods block until a connection request is available in the queue. </dd>
 <dd>
-Use the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> and stop listening. You are responsible for closing your accepted connections separately. </dd></dl>
+Use the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> and stop listening. You are responsible for closing your accepted connections separately. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="aac0f5cbb22a421ccba64fdffab4c8023" name="aac0f5cbb22a421ccba64fdffab4c8023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac0f5cbb22a421ccba64fdffab4c8023">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
+<a id="a8b307ba7f55081f3bb9c8ad69c5a6a48" name="a8b307ba7f55081f3bb9c8ad69c5a6a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b307ba7f55081f3bb9c8ad69c5a6a48">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::tcp_listener::start </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::start </td>
           <td>(</td>
           <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>backlog</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -944,26 +976,26 @@ Use the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes th
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method initializes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method will queue the request and continue listening for additional requests until you call the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method. If <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> receives a connection request after it has already queued the maximum number of connections, it will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> on the client. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method initializes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> method will queue the request and continue listening for additional requests until you call the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method. If <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> receives a connection request after it has already queued the maximum number of connections, it will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> on the client. </dd>
 <dd>
-To remove a connection from the incoming connection queue, use either the <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method or the <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. The <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method will remove a connection from the queue and return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. The <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method will return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to do the same. If your application only requires synchronous I/O, use <a class="el" href="#a0b761bfe126647415046b1aced1544b1" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a>. For more detailed behavioral control, use <a class="el" href="#a10b9e983f3bc3be2c57bbf6efa204f37" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. Both of these methods block until a connection request is available in the queue. </dd>
+To remove a connection from the incoming connection queue, use either the <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method or the <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method. The <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a> method will remove a connection from the queue and return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a> that you can use to send and receive data. The <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a> method will return a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that you can use to do the same. If your application only requires synchronous I/O, use <a class="el" href="#ad3034fca0f0eee3606974446beade129" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_tcp_client</a>. For more detailed behavioral control, use <a class="el" href="#aa7ab7a618424d94d1859ac4a95bd8b6a" title="Accepts a pending connection request.">xtd::net::sockets::tcp_listener::accept_socket</a>. Both of these methods block until a connection request is available in the queue. </dd>
 <dd>
-Use the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> and stop listening. You are responsible for closing your accepted connections separately. </dd></dl>
+Use the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method to close the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> and stop listening. You are responsible for closing your accepted connections separately. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="ade3b57a1e8f5a7095a91bc09936639f0" name="ade3b57a1e8f5a7095a91bc09936639f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade3b57a1e8f5a7095a91bc09936639f0">&#9670;&#160;</a></span>stop()</h2>
+<a id="aef7287aadfb0f0af8cede6e8c9612fb3" name="aef7287aadfb0f0af8cede6e8c9612fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7287aadfb0f0af8cede6e8c9612fb3">&#9670;&#160;</a></span>stop()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::tcp_listener::stop </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::stop </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -975,15 +1007,15 @@ Use the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes th
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> closes the listener. Any unaccepted connection requests in the queue will be lost. Remote hosts waiting for a connection to be accepted will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>. You are responsible for closing your accepted connections separately. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method also closes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, and creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> for the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. If you set any properties on the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> prior to calling the <a class="el" href="#ade3b57a1e8f5a7095a91bc09936639f0" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method, those properties will not carry over to the new <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> closes the listener. Any unaccepted connection requests in the queue will be lost. Remote hosts waiting for a connection to be accepted will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>. You are responsible for closing your accepted connections separately. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method also closes the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, and creates a new <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> for the <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>. If you set any properties on the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> prior to calling the <a class="el" href="#aef7287aadfb0f0af8cede6e8c9612fb3" title="Closes the listener.">xtd::net::sockets::tcp_listener::stop</a> method, those properties will not carry over to the new <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </dd>
 <dd>
 If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
 
 </div>
 </div>
-<a id="a6a185b661201a4ae4c5708dd007a6da0" name="a6a185b661201a4ae4c5708dd007a6da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a185b661201a4ae4c5708dd007a6da0">&#9670;&#160;</a></span>create()</h2>
+<a id="af69b1214067e6666756700eef6e2d190" name="af69b1214067e6666756700eef6e2d190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af69b1214067e6666756700eef6e2d190">&#9670;&#160;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,15 +1024,15 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a> xtd::net::sockets::tcp_listener::create </td>
+          <td class="memname">static auto xtd::net::sockets::tcp_listener::create </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html">tcp_listener</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1016,8 +1048,8 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 
 </div>
 </div>
-<a id="acca8afef898fce10e9aa9028ad7f6513" name="acca8afef898fce10e9aa9028ad7f6513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acca8afef898fce10e9aa9028ad7f6513">&#9670;&#160;</a></span>active()</h2>
+<a id="a895a97991dacb6ed170f5995eeb655cf" name="a895a97991dacb6ed170f5995eeb655cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895a97991dacb6ed170f5995eeb655cf">&#9670;&#160;</a></span>active()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1026,15 +1058,15 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::tcp_listener::active </td>
+          <td class="memname">auto xtd::net::sockets::tcp_listener::active </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1043,7 +1075,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> is actively listening; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Classes deriving from <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a> can use this property to determine if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is currently listening for incoming connection attempts. </dd>
 <dd>
-The Active property can be used to avoid redundant <a class="el" href="#a0002f8b9545679a97b5813509937098e" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> attempts. </dd></dl>
+The Active property can be used to avoid redundant <a class="el" href="#a6337b570c07e6a8e81b6d5d83431fb02" title="xtd::net::sockets::tcp_listener::starts listening for incoming connection requests.">xtd::net::sockets::tcp_listener::start</a> attempts. </dd></dl>
 
 </div>
 </div>
@@ -1054,7 +1086,7 @@ The Active property can be used to avoid redundant <a class="el" href="#a0002f8b
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 19 2026 02:24:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 19 2026 21:54:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

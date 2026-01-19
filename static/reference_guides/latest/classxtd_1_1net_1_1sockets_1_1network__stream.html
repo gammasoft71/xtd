@@ -140,7 +140,7 @@ std::iostream::read and std::iostream::write operations can be performed simulta
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> server = thread {[&amp;] {</div>
 <div class="line">    <span class="keyword">auto</span> server_socket = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1socket.html">net::sockets::socket</a> {<a class="code hl_enumvalue" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa">net::sockets::address_family::inter_network</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">net::sockets::socket_type::stream</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3ae20bb202b1d5537b1415e3263a37ed78">net::sockets::protocol_type::tcp</a>};</div>
-<div class="line">    server_socket.<a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#a0440f747b3ca6415815e92b700f0b559">bind</a>(<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5">net::ip_address::any</a>, 9400});</div>
+<div class="line">    server_socket.<a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#abb17c4f2145c64f2839f6a924619494e">bind</a>(<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5">net::ip_address::any</a>, 9400});</div>
 <div class="line">    server_socket.listen();</div>
 <div class="line">    <span class="keyword">auto</span> stream = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1network__stream.html">net::sockets::network_stream</a> {server_socket.accept(), file_access::read};</div>
 <div class="line">    <span class="keyword">auto</span> reader = stream_reader {stream};</div>
@@ -181,7 +181,7 @@ std::iostream::read and std::iostream::write operations can be performed simulta
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a></div><div class="ttdoc">Represents a network endpoint as an IP address and a port number.</div><div class="ttdef"><b>Definition</b> ip_end_point.hpp:28</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1network__stream_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1network__stream.html">xtd::net::sockets::network_stream</a></div><div class="ttdoc">Provides the underlying stream of data for network access.</div><div class="ttdef"><b>Definition</b> network_stream.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></div><div class="ttdoc">Implements the Berkeley sockets interface.</div><div class="ttdef"><b>Definition</b> socket.hpp:77</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_a0440f747b3ca6415815e92b700f0b559"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#a0440f747b3ca6415815e92b700f0b559">xtd::net::sockets::socket::bind</a></div><div class="ttdeci">void bind(const end_point_t &amp;local_end_point)</div><div class="ttdoc">Associates a xtd::net::sockets::socket with a local endpoint.</div><div class="ttdef"><b>Definition</b> socket.hpp:801</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_abb17c4f2145c64f2839f6a924619494e"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#abb17c4f2145c64f2839f6a924619494e">xtd::net::sockets::socket::bind</a></div><div class="ttdeci">auto bind(const end_point_t &amp;local_end_point) -&gt; void</div><div class="ttdoc">Associates a xtd::net::sockets::socket with a local endpoint.</div><div class="ttdef"><b>Definition</b> socket.hpp:801</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa"><div class="ttname"><a href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa">xtd::net::sockets::address_family::inter_network</a></div><div class="ttdeci">@ inter_network</div><div class="ttdoc">Address for IP version 4.</div><div class="ttdef"><b>Definition</b> address_family.hpp:38</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac4690c745045463d3c96d043878cc1e3ae20bb202b1d5537b1415e3263a37ed78"><div class="ttname"><a href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3ae20bb202b1d5537b1415e3263a37ed78">xtd::net::sockets::protocol_type::tcp</a></div><div class="ttdeci">@ tcp</div><div class="ttdoc">Transmission Control Protocol.</div><div class="ttdef"><b>Definition</b> protocol_type.hpp:48</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b"><div class="ttname"><a href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">xtd::net::sockets::socket_type::stream</a></div><div class="ttdeci">@ stream</div><div class="ttdoc">Supports reliable, two-way, connection-based byte streams without the duplication of data and without...</div><div class="ttdef"><b>Definition</b> socket_type.hpp:36</div></div>
@@ -202,59 +202,59 @@ std::iostream::read and std::iostream::write operations can be performed simulta
 <tr class="separator:abb2ae49d79f1b96b5875f24ac929c67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a49b54b2f8893abfdc68edc080ba37576" id="r_a49b54b2f8893abfdc68edc080ba37576"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49b54b2f8893abfdc68edc080ba37576">can_read</a> () const noexcept override</td></tr>
-<tr class="memdesc:a49b54b2f8893abfdc68edc080ba37576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports reading.  <br /></td></tr>
-<tr class="separator:a49b54b2f8893abfdc68edc080ba37576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c46316791b86190ed30e2fb7a589eb" id="r_af9c46316791b86190ed30e2fb7a589eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9c46316791b86190ed30e2fb7a589eb">can_seek</a> () const noexcept override</td></tr>
-<tr class="memdesc:af9c46316791b86190ed30e2fb7a589eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports seeking.  <br /></td></tr>
-<tr class="separator:af9c46316791b86190ed30e2fb7a589eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38b0f7034e608d8b472c6eee2f710217" id="r_a38b0f7034e608d8b472c6eee2f710217"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38b0f7034e608d8b472c6eee2f710217">can_timeout</a> () const noexcept override</td></tr>
-<tr class="memdesc:a38b0f7034e608d8b472c6eee2f710217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether timeout properties are usable for <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>.  <br /></td></tr>
-<tr class="separator:a38b0f7034e608d8b472c6eee2f710217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a378b5d17e663acf2c0019747d94f33d6" id="r_a378b5d17e663acf2c0019747d94f33d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a378b5d17e663acf2c0019747d94f33d6">can_write</a> () const noexcept override</td></tr>
-<tr class="memdesc:a378b5d17e663acf2c0019747d94f33d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports writing.  <br /></td></tr>
-<tr class="separator:a378b5d17e663acf2c0019747d94f33d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afee5b89a260405f037973d3a1b4fc586" id="r_afee5b89a260405f037973d3a1b4fc586"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee5b89a260405f037973d3a1b4fc586">data_available</a> () const</td></tr>
-<tr class="memdesc:afee5b89a260405f037973d3a1b4fc586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether data is available on the <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> to be read.  <br /></td></tr>
-<tr class="separator:afee5b89a260405f037973d3a1b4fc586"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d0ebe58e88514663c278726cdfd53a" id="r_a46d0ebe58e88514663c278726cdfd53a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d0ebe58e88514663c278726cdfd53a">length</a> () const override</td></tr>
-<tr class="memdesc:a46d0ebe58e88514663c278726cdfd53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the length of the stream in bytes.  <br /></td></tr>
-<tr class="separator:a46d0ebe58e88514663c278726cdfd53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a990bb4d4723898fa5cc1e1b34622b399" id="r_a990bb4d4723898fa5cc1e1b34622b399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a990bb4d4723898fa5cc1e1b34622b399">position</a> () const override</td></tr>
-<tr class="memdesc:a990bb4d4723898fa5cc1e1b34622b399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position within the stream.  <br /></td></tr>
-<tr class="separator:a990bb4d4723898fa5cc1e1b34622b399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae77a96178fa3d176428c4697b853dd29" id="r_ae77a96178fa3d176428c4697b853dd29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae77a96178fa3d176428c4697b853dd29">position</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) override</td></tr>
-<tr class="memdesc:ae77a96178fa3d176428c4697b853dd29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current position within the stream.  <br /></td></tr>
-<tr class="separator:ae77a96178fa3d176428c4697b853dd29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae50353e7445092e195c1e1ad6287f081" id="r_ae50353e7445092e195c1e1ad6287f081"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae50353e7445092e195c1e1ad6287f081">read_timeout</a> () const override</td></tr>
-<tr class="memdesc:ae50353e7445092e195c1e1ad6287f081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that a read operation blocks waiting for data.  <br /></td></tr>
-<tr class="separator:ae50353e7445092e195c1e1ad6287f081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50a698c5b16653c830b6d4adc6107009" id="r_a50a698c5b16653c830b6d4adc6107009"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50a698c5b16653c830b6d4adc6107009">read_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) override</td></tr>
-<tr class="memdesc:a50a698c5b16653c830b6d4adc6107009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount of time that a read operation blocks waiting for data.  <br /></td></tr>
-<tr class="separator:a50a698c5b16653c830b6d4adc6107009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5432e7ff91811040df0337d1c3ccc4d7" id="r_a5432e7ff91811040df0337d1c3ccc4d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5432e7ff91811040df0337d1c3ccc4d7">write_timeout</a> () const override</td></tr>
-<tr class="memdesc:a5432e7ff91811040df0337d1c3ccc4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that a write operation blocks waiting for data.  <br /></td></tr>
-<tr class="separator:a5432e7ff91811040df0337d1c3ccc4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac70df3802e4d4d673776268a479ca9c7" id="r_ac70df3802e4d4d673776268a479ca9c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70df3802e4d4d673776268a479ca9c7">write_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) override</td></tr>
-<tr class="memdesc:ac70df3802e4d4d673776268a479ca9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount of time that a write operation blocks waiting for data.  <br /></td></tr>
-<tr class="separator:ac70df3802e4d4d673776268a479ca9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac384227799dd44f449d5ffc38bb60f61" id="r_ac384227799dd44f449d5ffc38bb60f61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac384227799dd44f449d5ffc38bb60f61">socket</a> () const</td></tr>
-<tr class="memdesc:ac384227799dd44f449d5ffc38bb60f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
-<tr class="separator:ac384227799dd44f449d5ffc38bb60f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae036bcf52d31db8ad2f860f3b68d0b5f" id="r_ae036bcf52d31db8ad2f860f3b68d0b5f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae036bcf52d31db8ad2f860f3b68d0b5f">can_read</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ae036bcf52d31db8ad2f860f3b68d0b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports reading.  <br /></td></tr>
+<tr class="separator:ae036bcf52d31db8ad2f860f3b68d0b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d71756c2c7b9941d7da4cad9c9d4300" id="r_a5d71756c2c7b9941d7da4cad9c9d4300"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d71756c2c7b9941d7da4cad9c9d4300">can_seek</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a5d71756c2c7b9941d7da4cad9c9d4300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports seeking.  <br /></td></tr>
+<tr class="separator:a5d71756c2c7b9941d7da4cad9c9d4300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5c5c6aba3d47c898ad071f1728aead" id="r_aac5c5c6aba3d47c898ad071f1728aead"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac5c5c6aba3d47c898ad071f1728aead">can_timeout</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:aac5c5c6aba3d47c898ad071f1728aead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether timeout properties are usable for <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>.  <br /></td></tr>
+<tr class="separator:aac5c5c6aba3d47c898ad071f1728aead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf826d167f2bfa7af22ac414190e56e" id="r_a7cf826d167f2bfa7af22ac414190e56e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cf826d167f2bfa7af22ac414190e56e">can_write</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a7cf826d167f2bfa7af22ac414190e56e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current stream supports writing.  <br /></td></tr>
+<tr class="separator:a7cf826d167f2bfa7af22ac414190e56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665055fb451217afc0e5eb20f883252e" id="r_a665055fb451217afc0e5eb20f883252e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a665055fb451217afc0e5eb20f883252e">data_available</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a665055fb451217afc0e5eb20f883252e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether data is available on the <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> to be read.  <br /></td></tr>
+<tr class="separator:a665055fb451217afc0e5eb20f883252e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c4019344db5ab8dc577d66263b4ccf" id="r_a48c4019344db5ab8dc577d66263b4ccf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c4019344db5ab8dc577d66263b4ccf">length</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a48c4019344db5ab8dc577d66263b4ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the length of the stream in bytes.  <br /></td></tr>
+<tr class="separator:a48c4019344db5ab8dc577d66263b4ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ab78b2e9e5f5d688ff49f1285d7cc7" id="r_a61ab78b2e9e5f5d688ff49f1285d7cc7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61ab78b2e9e5f5d688ff49f1285d7cc7">position</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a61ab78b2e9e5f5d688ff49f1285d7cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position within the stream.  <br /></td></tr>
+<tr class="separator:a61ab78b2e9e5f5d688ff49f1285d7cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccd57ceb5baaf23facdf921f916ff6a" id="r_a4ccd57ceb5baaf23facdf921f916ff6a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ccd57ceb5baaf23facdf921f916ff6a">position</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:a4ccd57ceb5baaf23facdf921f916ff6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current position within the stream.  <br /></td></tr>
+<tr class="separator:a4ccd57ceb5baaf23facdf921f916ff6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33aa6b693e8f902c5de5addab03e6b97" id="r_a33aa6b693e8f902c5de5addab03e6b97"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33aa6b693e8f902c5de5addab03e6b97">read_timeout</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a33aa6b693e8f902c5de5addab03e6b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that a read operation blocks waiting for data.  <br /></td></tr>
+<tr class="separator:a33aa6b693e8f902c5de5addab03e6b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb3111ae602c209809836385affa9d5" id="r_aabb3111ae602c209809836385affa9d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabb3111ae602c209809836385affa9d5">read_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:aabb3111ae602c209809836385affa9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount of time that a read operation blocks waiting for data.  <br /></td></tr>
+<tr class="separator:aabb3111ae602c209809836385affa9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45eb36b1cb48f1776df66ae0ba6631de" id="r_a45eb36b1cb48f1776df66ae0ba6631de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45eb36b1cb48f1776df66ae0ba6631de">write_timeout</a> () const -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
+<tr class="memdesc:a45eb36b1cb48f1776df66ae0ba6631de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that a write operation blocks waiting for data.  <br /></td></tr>
+<tr class="separator:a45eb36b1cb48f1776df66ae0ba6631de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0265e05d2546a7eea91867cf8df7dd" id="r_aab0265e05d2546a7eea91867cf8df7dd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab0265e05d2546a7eea91867cf8df7dd">write_timeout</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:aab0265e05d2546a7eea91867cf8df7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the amount of time that a write operation blocks waiting for data.  <br /></td></tr>
+<tr class="separator:aab0265e05d2546a7eea91867cf8df7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70d1841515743ebc3c17c009796ed18" id="r_ab70d1841515743ebc3c17c009796ed18"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab70d1841515743ebc3c17c009796ed18">socket</a> () const -&gt; <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td></tr>
+<tr class="memdesc:ab70d1841515743ebc3c17c009796ed18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>.  <br /></td></tr>
+<tr class="separator:ab70d1841515743ebc3c17c009796ed18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:af6f8d6d66af366f3c35a905eca2ec649" id="r_af6f8d6d66af366f3c35a905eca2ec649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6f8d6d66af366f3c35a905eca2ec649">flush</a> () override</td></tr>
-<tr class="memdesc:af6f8d6d66af366f3c35a905eca2ec649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes data from the stream. This method is reserved for future use.  <br /></td></tr>
-<tr class="separator:af6f8d6d66af366f3c35a905eca2ec649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a733e5204cb52d56708d79087390414c7" id="r_a733e5204cb52d56708d79087390414c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a733e5204cb52d56708d79087390414c7">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count) override</td></tr>
-<tr class="memdesc:a733e5204cb52d56708d79087390414c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a block of bytes from the current stream and writes the data to a buffer.  <br /></td></tr>
-<tr class="separator:a733e5204cb52d56708d79087390414c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17b8566d7896e36df460ece1ba256894" id="r_a17b8566d7896e36df460ece1ba256894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17b8566d7896e36df460ece1ba256894">set_length</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) override</td></tr>
-<tr class="memdesc:a17b8566d7896e36df460ece1ba256894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length of the current stream to the specified value.  <br /></td></tr>
-<tr class="separator:a17b8566d7896e36df460ece1ba256894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a0303dccb539d85a272280b526e916" id="r_a53a0303dccb539d85a272280b526e916"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53a0303dccb539d85a272280b526e916">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count) override</td></tr>
-<tr class="memdesc:a53a0303dccb539d85a272280b526e916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a block of bytes to the current stream using data read from a buffer.  <br /></td></tr>
-<tr class="separator:a53a0303dccb539d85a272280b526e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6e1d8d4e52c583af4f5ba176b693a7" id="r_acc6e1d8d4e52c583af4f5ba176b693a7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc6e1d8d4e52c583af4f5ba176b693a7">flush</a> () -&gt; void override</td></tr>
+<tr class="memdesc:acc6e1d8d4e52c583af4f5ba176b693a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes data from the stream. This method is reserved for future use.  <br /></td></tr>
+<tr class="separator:acc6e1d8d4e52c583af4f5ba176b693a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35803eb7ca3f6ee3eedf9f26be0c04a6" id="r_a35803eb7ca3f6ee3eedf9f26be0c04a6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35803eb7ca3f6ee3eedf9f26be0c04a6">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a35803eb7ca3f6ee3eedf9f26be0c04a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a block of bytes from the current stream and writes the data to a buffer.  <br /></td></tr>
+<tr class="separator:a35803eb7ca3f6ee3eedf9f26be0c04a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab49934884f57fe8e0711b09163c4d6" id="r_acab49934884f57fe8e0711b09163c4d6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab49934884f57fe8e0711b09163c4d6">set_length</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:acab49934884f57fe8e0711b09163c4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length of the current stream to the specified value.  <br /></td></tr>
+<tr class="separator:acab49934884f57fe8e0711b09163c4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cb7cb29fa5fc13d125166e025266b0" id="r_ab5cb7cb29fa5fc13d125166e025266b0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5cb7cb29fa5fc13d125166e025266b0">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count) -&gt; void override</td></tr>
+<tr class="memdesc:ab5cb7cb29fa5fc13d125166e025266b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a block of bytes to the current stream using data read from a buffer.  <br /></td></tr>
+<tr class="separator:ab5cb7cb29fa5fc13d125166e025266b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe15845ac389ebe506e6a4552d7aca16" id="r_afe15845ac389ebe506e6a4552d7aca16"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe15845ac389ebe506e6a4552d7aca16">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:afe15845ac389ebe506e6a4552d7aca16"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
 <tr class="separator:afe15845ac389ebe506e6a4552d7aca16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -460,8 +460,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a49b54b2f8893abfdc68edc080ba37576" name="a49b54b2f8893abfdc68edc080ba37576"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49b54b2f8893abfdc68edc080ba37576">&#9670;&#160;</a></span>can_read()</h2>
+<a id="ae036bcf52d31db8ad2f860f3b68d0b5f" name="ae036bcf52d31db8ad2f860f3b68d0b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae036bcf52d31db8ad2f860f3b68d0b5f">&#9670;&#160;</a></span>can_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,15 +470,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::network_stream::can_read </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::can_read </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -490,8 +490,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="af9c46316791b86190ed30e2fb7a589eb" name="af9c46316791b86190ed30e2fb7a589eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9c46316791b86190ed30e2fb7a589eb">&#9670;&#160;</a></span>can_seek()</h2>
+<a id="a5d71756c2c7b9941d7da4cad9c9d4300" name="a5d71756c2c7b9941d7da4cad9c9d4300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d71756c2c7b9941d7da4cad9c9d4300">&#9670;&#160;</a></span>can_seek()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,15 +500,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::network_stream::can_seek </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::can_seek </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -520,8 +520,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="a38b0f7034e608d8b472c6eee2f710217" name="a38b0f7034e608d8b472c6eee2f710217"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38b0f7034e608d8b472c6eee2f710217">&#9670;&#160;</a></span>can_timeout()</h2>
+<a id="aac5c5c6aba3d47c898ad071f1728aead" name="aac5c5c6aba3d47c898ad071f1728aead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac5c5c6aba3d47c898ad071f1728aead">&#9670;&#160;</a></span>can_timeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,15 +530,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::network_stream::can_timeout </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::can_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -550,8 +550,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="a378b5d17e663acf2c0019747d94f33d6" name="a378b5d17e663acf2c0019747d94f33d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a378b5d17e663acf2c0019747d94f33d6">&#9670;&#160;</a></span>can_write()</h2>
+<a id="a7cf826d167f2bfa7af22ac414190e56e" name="a7cf826d167f2bfa7af22ac414190e56e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf826d167f2bfa7af22ac414190e56e">&#9670;&#160;</a></span>can_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -560,15 +560,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::sockets::network_stream::can_write </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::can_write </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -580,8 +580,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="afee5b89a260405f037973d3a1b4fc586" name="afee5b89a260405f037973d3a1b4fc586"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afee5b89a260405f037973d3a1b4fc586">&#9670;&#160;</a></span>data_available()</h2>
+<a id="a665055fb451217afc0e5eb20f883252e" name="a665055fb451217afc0e5eb20f883252e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a665055fb451217afc0e5eb20f883252e">&#9670;&#160;</a></span>data_available()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -590,15 +590,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::net::sockets::network_stream::data_available </td>
+          <td class="memname">virtual auto xtd::net::sockets::network_stream::data_available </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -612,12 +612,12 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="#afee5b89a260405f037973d3a1b4fc586" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> property to determine if data is ready to be read. If <a class="el" href="#afee5b89a260405f037973d3a1b4fc586" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> is <code>true</code>, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, <a class="el" href="#afee5b89a260405f037973d3a1b4fc586" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> may throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="#a665055fb451217afc0e5eb20f883252e" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> property to determine if data is ready to be read. If <a class="el" href="#a665055fb451217afc0e5eb20f883252e" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> is <code>true</code>, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, <a class="el" href="#a665055fb451217afc0e5eb20f883252e" title="Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be ...">xtd::net::sockets::network_stream::data_available</a> may throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>. </dd></dl>
 
 </div>
 </div>
-<a id="a46d0ebe58e88514663c278726cdfd53a" name="a46d0ebe58e88514663c278726cdfd53a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46d0ebe58e88514663c278726cdfd53a">&#9670;&#160;</a></span>length()</h2>
+<a id="a48c4019344db5ab8dc577d66263b4ccf" name="a48c4019344db5ab8dc577d66263b4ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c4019344db5ab8dc577d66263b4ccf">&#9670;&#160;</a></span>length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -626,15 +626,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::net::sockets::network_stream::length </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::length </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -646,8 +646,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="a990bb4d4723898fa5cc1e1b34622b399" name="a990bb4d4723898fa5cc1e1b34622b399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a990bb4d4723898fa5cc1e1b34622b399">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
+<a id="a61ab78b2e9e5f5d688ff49f1285d7cc7" name="a61ab78b2e9e5f5d688ff49f1285d7cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ab78b2e9e5f5d688ff49f1285d7cc7">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -656,15 +656,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::net::sockets::network_stream::position </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::position </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -676,8 +676,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="ae77a96178fa3d176428c4697b853dd29" name="ae77a96178fa3d176428c4697b853dd29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae77a96178fa3d176428c4697b853dd29">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
+<a id="a4ccd57ceb5baaf23facdf921f916ff6a" name="a4ccd57ceb5baaf23facdf921f916ff6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ccd57ceb5baaf23facdf921f916ff6a">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,10 +686,10 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::position </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::position </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -711,8 +711,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="ae50353e7445092e195c1e1ad6287f081" name="ae50353e7445092e195c1e1ad6287f081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae50353e7445092e195c1e1ad6287f081">&#9670;&#160;</a></span>read_timeout() <span class="overload">[1/2]</span></h2>
+<a id="a33aa6b693e8f902c5de5addab03e6b97" name="a33aa6b693e8f902c5de5addab03e6b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33aa6b693e8f902c5de5addab03e6b97">&#9670;&#160;</a></span>read_timeout() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -721,15 +721,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::net::sockets::network_stream::read_timeout </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::read_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -741,8 +741,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="a50a698c5b16653c830b6d4adc6107009" name="a50a698c5b16653c830b6d4adc6107009"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50a698c5b16653c830b6d4adc6107009">&#9670;&#160;</a></span>read_timeout() <span class="overload">[2/2]</span></h2>
+<a id="aabb3111ae602c209809836385affa9d5" name="aabb3111ae602c209809836385affa9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb3111ae602c209809836385affa9d5">&#9670;&#160;</a></span>read_timeout() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,10 +751,10 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::read_timeout </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::read_timeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -776,8 +776,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="a5432e7ff91811040df0337d1c3ccc4d7" name="a5432e7ff91811040df0337d1c3ccc4d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5432e7ff91811040df0337d1c3ccc4d7">&#9670;&#160;</a></span>write_timeout() <span class="overload">[1/2]</span></h2>
+<a id="a45eb36b1cb48f1776df66ae0ba6631de" name="a45eb36b1cb48f1776df66ae0ba6631de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45eb36b1cb48f1776df66ae0ba6631de">&#9670;&#160;</a></span>write_timeout() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -786,15 +786,15 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::net::sockets::network_stream::write_timeout </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::write_timeout </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -806,8 +806,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="ac70df3802e4d4d673776268a479ca9c7" name="ac70df3802e4d4d673776268a479ca9c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac70df3802e4d4d673776268a479ca9c7">&#9670;&#160;</a></span>write_timeout() <span class="overload">[2/2]</span></h2>
+<a id="aab0265e05d2546a7eea91867cf8df7dd" name="aab0265e05d2546a7eea91867cf8df7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0265e05d2546a7eea91867cf8df7dd">&#9670;&#160;</a></span>write_timeout() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -816,10 +816,10 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::write_timeout </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::write_timeout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -841,29 +841,8 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 
 </div>
 </div>
-<a id="ac384227799dd44f449d5ffc38bb60f61" name="ac384227799dd44f449d5ffc38bb60f61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac384227799dd44f449d5ffc38bb60f61">&#9670;&#160;</a></span>socket()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a> xtd::net::sockets::network_stream::socket </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that represents the underlying network connection. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Classes deriving from <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> can use this property to get the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. Use the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> returned from the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> property if you require access beyond that which <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> provides. </dd></dl>
-
-</div>
-</div>
-<a id="af6f8d6d66af366f3c35a905eca2ec649" name="af6f8d6d66af366f3c35a905eca2ec649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6f8d6d66af366f3c35a905eca2ec649">&#9670;&#160;</a></span>flush()</h2>
+<a id="ab70d1841515743ebc3c17c009796ed18" name="ab70d1841515743ebc3c17c009796ed18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70d1841515743ebc3c17c009796ed18">&#9670;&#160;</a></span>socket()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -872,10 +851,39 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::flush </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::socket </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html">xtd::net::sockets::socket</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> that represents the underlying network connection. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Classes deriving from <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> can use this property to get the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. Use the underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> returned from the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> property if you require access beyond that which <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> provides. </dd></dl>
+
+</div>
+</div>
+<a id="acc6e1d8d4e52c583af4f5ba176b693a7" name="acc6e1d8d4e52c583af4f5ba176b693a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6e1d8d4e52c583af4f5ba176b693a7">&#9670;&#160;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::net::sockets::network_stream::flush </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -886,14 +894,14 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 </div><div class="memdoc">
 
 <p>Flushes data from the stream. This method is reserved for future use. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The Flush method implements the <a class="el" href="classxtd_1_1io_1_1stream.html#a17c2ecf5c677286c971b8794c2e16469" title="When overridden in a derived class, clears all buffers for this stream and causes any buffered data t...">xtd::io::stream::flush</a> method; however, because <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> is not buffered, it has no effect on network streams. Calling the <a class="el" href="#af6f8d6d66af366f3c35a905eca2ec649" title="Flushes data from the stream. This method is reserved for future use.">xtd::net::sockets::network_stream::flush</a> method does not throw an exception. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The Flush method implements the <a class="el" href="classxtd_1_1io_1_1stream.html#a17c2ecf5c677286c971b8794c2e16469" title="When overridden in a derived class, clears all buffers for this stream and causes any buffered data t...">xtd::io::stream::flush</a> method; however, because <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a> is not buffered, it has no effect on network streams. Calling the <a class="el" href="#acc6e1d8d4e52c583af4f5ba176b693a7" title="Flushes data from the stream. This method is reserved for future use.">xtd::net::sockets::network_stream::flush</a> method does not throw an exception. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1io_1_1stream.html#a17c2ecf5c677286c971b8794c2e16469">xtd::io::stream</a>.</p>
 
 </div>
 </div>
-<a id="a733e5204cb52d56708d79087390414c7" name="a733e5204cb52d56708d79087390414c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a733e5204cb52d56708d79087390414c7">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="a35803eb7ca3f6ee3eedf9f26be0c04a6" name="a35803eb7ca3f6ee3eedf9f26be0c04a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35803eb7ca3f6ee3eedf9f26be0c04a6">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -902,7 +910,7 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::net::sockets::network_stream::read </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -914,7 +922,7 @@ virtual auto&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
@@ -946,8 +954,8 @@ Use <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads prim
 
 </div>
 </div>
-<a id="a17b8566d7896e36df460ece1ba256894" name="a17b8566d7896e36df460ece1ba256894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17b8566d7896e36df460ece1ba256894">&#9670;&#160;</a></span>set_length()</h2>
+<a id="acab49934884f57fe8e0711b09163c4d6" name="acab49934884f57fe8e0711b09163c4d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab49934884f57fe8e0711b09163c4d6">&#9670;&#160;</a></span>set_length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -956,10 +964,10 @@ Use <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads prim
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::set_length </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::set_length </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -982,8 +990,8 @@ Use <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads prim
 
 </div>
 </div>
-<a id="a53a0303dccb539d85a272280b526e916" name="a53a0303dccb539d85a272280b526e916"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53a0303dccb539d85a272280b526e916">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
+<a id="ab5cb7cb29fa5fc13d125166e025266b0" name="ab5cb7cb29fa5fc13d125166e025266b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cb7cb29fa5fc13d125166e025266b0">&#9670;&#160;</a></span>write() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,7 +1000,7 @@ Use <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads prim
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::net::sockets::network_stream::write </td>
+          <td class="memname">auto xtd::net::sockets::network_stream::write </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
@@ -1004,7 +1012,7 @@ Use <a class="el" href="classxtd_1_1io_1_1binary__reader.html" title="Reads prim
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1103,7 +1111,7 @@ Except for a <code>memory_stream</code> constructed with a byte[] parameter, wri
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 19 2026 02:24:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 19 2026 21:54:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

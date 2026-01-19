@@ -142,7 +142,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &lt; 1) {</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
 <div class="line">      <span class="comment">// server name as default.</span></div>
-<div class="line">      server = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a0de06bf85b84f7c75dc98083fc522c02">net::dns::get_host_name</a>();</div>
+<div class="line">      server = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a3c476eaaf93bfec088f0a82fde71f81b">net::dns::get_host_name</a>();</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Using current host: {}&quot;</span>, server);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">      server = args[0];</div>
@@ -163,7 +163,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; server) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Get server related information.</span></div>
-<div class="line">      <span class="keyword">auto</span> heserver = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a2309500bdfa09889fe198850cb1ad9f0">net::dns::get_host_entry</a>(server);</div>
+<div class="line">      <span class="keyword">auto</span> heserver = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a1728b0ce52a52a0f25e9eebb9a0e0aba">net::dns::get_host_entry</a>(server);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Loop on the AddressList</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> cur_add : heserver.address_list()) {</div>
@@ -244,8 +244,8 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:124</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a0de06bf85b84f7c75dc98083fc522c02"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a0de06bf85b84f7c75dc98083fc522c02">xtd::net::dns::get_host_name</a></div><div class="ttdeci">static xtd::string get_host_name()</div><div class="ttdoc">Gets the host name of the local computer.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a2309500bdfa09889fe198850cb1ad9f0"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a2309500bdfa09889fe198850cb1ad9f0">xtd::net::dns::get_host_entry</a></div><div class="ttdeci">static xtd::net::ip_host_entry get_host_entry(const ip_address &amp;address)</div><div class="ttdoc">Resolves an IP address to an xtd::net::ip_host_entry instance.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a1728b0ce52a52a0f25e9eebb9a0e0aba"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a1728b0ce52a52a0f25e9eebb9a0e0aba">xtd::net::dns::get_host_entry</a></div><div class="ttdeci">static auto get_host_entry(const xtd::net::ip_address &amp;address) -&gt; xtd::net::ip_host_entry</div><div class="ttdoc">Resolves an IP address to an xtd::net::ip_host_entry instance.</div></div>
+<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a3c476eaaf93bfec088f0a82fde71f81b"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a3c476eaaf93bfec088f0a82fde71f81b">xtd::net::dns::get_host_name</a></div><div class="ttdeci">static auto get_host_name() -&gt; xtd::string</div><div class="ttdoc">Gets the host name of the local computer.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__strings_html_ga80050d927e8b925c2668c1faebf0b941"><div class="ttname"><a href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a></div><div class="ttdeci">xtd::text::basic_string_builder&lt; char &gt; string_builder</div><div class="ttdoc">Represents a mutable string of characters of UTF-8 code units. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> string_builder.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
@@ -286,7 +286,7 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <tr class="memitem:ac77e5f152f61d50af930db6bd6ef9a22" id="r_ac77e5f152f61d50af930db6bd6ef9a22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77e5f152f61d50af930db6bd6ef9a22">ip_address</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;address)</td></tr>
 <tr class="memdesc:ac77e5f152f61d50af930db6bd6ef9a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> class with the address specified as a byte array.  <br /></td></tr>
 <tr class="separator:ac77e5f152f61d50af930db6bd6ef9a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77dba6be49581561b63b107f9f067b7b" id="r_a77dba6be49581561b63b107f9f067b7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77dba6be49581561b63b107f9f067b7b">ip_address</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;address, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> <a class="el" href="#aa1d968374ecb10a09f3eee6bce458827">scope_id</a>)</td></tr>
+<tr class="memitem:a77dba6be49581561b63b107f9f067b7b" id="r_a77dba6be49581561b63b107f9f067b7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77dba6be49581561b63b107f9f067b7b">ip_address</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;address, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> <a class="el" href="#ac5b2582d964610e8453b541afa17c36a">scope_id</a>)</td></tr>
 <tr class="memdesc:a77dba6be49581561b63b107f9f067b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> class with the address specified as a byte array.  <br /></td></tr>
 <tr class="separator:a77dba6be49581561b63b107f9f067b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe8b6ba90366e5081b4870fda645fa46" id="r_abe8b6ba90366e5081b4870fda645fa46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe8b6ba90366e5081b4870fda645fa46">ip_address</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> quad_part_address1, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> quad_part_address2, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> quad_part_address3, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> quad_part_address4)</td></tr>
@@ -294,112 +294,112 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <tr class="separator:abe8b6ba90366e5081b4870fda645fa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ade09153db33c0c43301983b3b807e89c" id="r_ade09153db33c0c43301983b3b807e89c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade09153db33c0c43301983b3b807e89c">address_family</a> () const noexcept</td></tr>
-<tr class="memdesc:ade09153db33c0c43301983b3b807e89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family of the IP address.  <br /></td></tr>
-<tr class="separator:ade09153db33c0c43301983b3b807e89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af612d35827ddd1cab111165226c1c38c" id="r_af612d35827ddd1cab111165226c1c38c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af612d35827ddd1cab111165226c1c38c">is_ip_v4_mapped_to_ip_v6</a> () const noexcept</td></tr>
-<tr class="memdesc:af612d35827ddd1cab111165226c1c38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the IP address is an IPv4-mapped IPv6 address.  <br /></td></tr>
-<tr class="separator:af612d35827ddd1cab111165226c1c38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3" id="r_a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3">is_ip_v6_link_local</a> () const noexcept</td></tr>
-<tr class="memdesc:a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 link local address.  <br /></td></tr>
-<tr class="separator:a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eee0ed2d8aabaf44ea53316f168a5a3" id="r_a9eee0ed2d8aabaf44ea53316f168a5a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9eee0ed2d8aabaf44ea53316f168a5a3">is_ip_v6_multicast</a> () const noexcept</td></tr>
-<tr class="memdesc:a9eee0ed2d8aabaf44ea53316f168a5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 multicast global address.  <br /></td></tr>
-<tr class="separator:a9eee0ed2d8aabaf44ea53316f168a5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff921c3a571077951246ef3dd5c59e99" id="r_aff921c3a571077951246ef3dd5c59e99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff921c3a571077951246ef3dd5c59e99">is_ip_v6_site_local</a> () const noexcept</td></tr>
-<tr class="memdesc:aff921c3a571077951246ef3dd5c59e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 site local address.  <br /></td></tr>
-<tr class="separator:aff921c3a571077951246ef3dd5c59e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244eb15fc215fca6488aa2118111dc1a" id="r_a244eb15fc215fca6488aa2118111dc1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a244eb15fc215fca6488aa2118111dc1a">is_ip_v6_teredo</a> () const noexcept</td></tr>
-<tr class="memdesc:a244eb15fc215fca6488aa2118111dc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 Teredo address.  <br /></td></tr>
-<tr class="separator:a244eb15fc215fca6488aa2118111dc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1d968374ecb10a09f3eee6bce458827" id="r_aa1d968374ecb10a09f3eee6bce458827"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1d968374ecb10a09f3eee6bce458827">scope_id</a> () const</td></tr>
-<tr class="memdesc:aa1d968374ecb10a09f3eee6bce458827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the IPv6 address scope identifier.  <br /></td></tr>
-<tr class="separator:aa1d968374ecb10a09f3eee6bce458827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8e1c85dce2c65465c7e35d61fe3f210" id="r_ac8e1c85dce2c65465c7e35d61fe3f210"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8e1c85dce2c65465c7e35d61fe3f210">scope_id</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> value)</td></tr>
-<tr class="memdesc:ac8e1c85dce2c65465c7e35d61fe3f210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the IPv6 address scope identifier.  <br /></td></tr>
-<tr class="separator:ac8e1c85dce2c65465c7e35d61fe3f210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636bcbab8a15a28e64bf858f06548335" id="r_a636bcbab8a15a28e64bf858f06548335"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636bcbab8a15a28e64bf858f06548335">address_family</a> () const noexcept -&gt; <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a></td></tr>
+<tr class="memdesc:a636bcbab8a15a28e64bf858f06548335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address family of the IP address.  <br /></td></tr>
+<tr class="separator:a636bcbab8a15a28e64bf858f06548335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b106046fb98c7ce45170eddc972b83" id="r_a40b106046fb98c7ce45170eddc972b83"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40b106046fb98c7ce45170eddc972b83">is_ip_v4_mapped_to_ip_v6</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a40b106046fb98c7ce45170eddc972b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the IP address is an IPv4-mapped IPv6 address.  <br /></td></tr>
+<tr class="separator:a40b106046fb98c7ce45170eddc972b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e375b9eea7beda9f4b03d3b7a44d59" id="r_ae4e375b9eea7beda9f4b03d3b7a44d59"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4e375b9eea7beda9f4b03d3b7a44d59">is_ip_v6_link_local</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ae4e375b9eea7beda9f4b03d3b7a44d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 link local address.  <br /></td></tr>
+<tr class="separator:ae4e375b9eea7beda9f4b03d3b7a44d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac0f1d3216feebf099e859cf4c60e92" id="r_a0ac0f1d3216feebf099e859cf4c60e92"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac0f1d3216feebf099e859cf4c60e92">is_ip_v6_multicast</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a0ac0f1d3216feebf099e859cf4c60e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 multicast global address.  <br /></td></tr>
+<tr class="separator:a0ac0f1d3216feebf099e859cf4c60e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5689a2ce53c27eb09cdf9dda39fc824" id="r_ab5689a2ce53c27eb09cdf9dda39fc824"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5689a2ce53c27eb09cdf9dda39fc824">is_ip_v6_site_local</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ab5689a2ce53c27eb09cdf9dda39fc824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 site local address.  <br /></td></tr>
+<tr class="separator:ab5689a2ce53c27eb09cdf9dda39fc824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e731f845367e7e7fcee55e32ca976d" id="r_a10e731f845367e7e7fcee55e32ca976d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10e731f845367e7e7fcee55e32ca976d">is_ip_v6_teredo</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a10e731f845367e7e7fcee55e32ca976d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the address is an IPv6 Teredo address.  <br /></td></tr>
+<tr class="separator:a10e731f845367e7e7fcee55e32ca976d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b2582d964610e8453b541afa17c36a" id="r_ac5b2582d964610e8453b541afa17c36a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5b2582d964610e8453b541afa17c36a">scope_id</a> () const -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:ac5b2582d964610e8453b541afa17c36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the IPv6 address scope identifier.  <br /></td></tr>
+<tr class="separator:ac5b2582d964610e8453b541afa17c36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41427e060cc32141bc245f694db7e113" id="r_a41427e060cc32141bc245f694db7e113"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41427e060cc32141bc245f694db7e113">scope_id</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> value) -&gt; <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td></tr>
+<tr class="memdesc:a41427e060cc32141bc245f694db7e113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the IPv6 address scope identifier.  <br /></td></tr>
+<tr class="separator:a41427e060cc32141bc245f694db7e113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a22287b601553250cd31584b876c216c9" id="r_a22287b601553250cd31584b876c216c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22287b601553250cd31584b876c216c9">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a22287b601553250cd31584b876c216c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a22287b601553250cd31584b876c216c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ac33b15af7d135a85f7ea83f64e61f9" id="r_a0ac33b15af7d135a85f7ea83f64e61f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac33b15af7d135a85f7ea83f64e61f9">equals</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a0ac33b15af7d135a85f7ea83f64e61f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a0ac33b15af7d135a85f7ea83f64e61f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75b7c17945b3123d966ced1c76d0b0ea" id="r_a75b7c17945b3123d966ced1c76d0b0ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75b7c17945b3123d966ced1c76d0b0ea">get_address_bytes</a> () const</td></tr>
-<tr class="memdesc:a75b7c17945b3123d966ced1c76d0b0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a copy of the IPAddress as an array of bytes.  <br /></td></tr>
-<tr class="separator:a75b7c17945b3123d966ced1c76d0b0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c0984e201c10df4ff03743d72f67fb" id="r_a28c0984e201c10df4ff03743d72f67fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28c0984e201c10df4ff03743d72f67fb">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a28c0984e201c10df4ff03743d72f67fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a28c0984e201c10df4ff03743d72f67fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11920203958cff3746c7d17f6fe988d" id="r_ae11920203958cff3746c7d17f6fe988d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae11920203958cff3746c7d17f6fe988d">map_to_ip_v4</a> () const noexcept</td></tr>
-<tr class="memdesc:ae11920203958cff3746c7d17f6fe988d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> object to an IPv4 address.  <br /></td></tr>
-<tr class="separator:ae11920203958cff3746c7d17f6fe988d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae59f8b5a2d22acba13172a18f5cf553d" id="r_ae59f8b5a2d22acba13172a18f5cf553d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae59f8b5a2d22acba13172a18f5cf553d">map_to_ip_v6</a> () const noexcept</td></tr>
-<tr class="memdesc:ae59f8b5a2d22acba13172a18f5cf553d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> object to an IPv6 address.  <br /></td></tr>
-<tr class="separator:ae59f8b5a2d22acba13172a18f5cf553d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fc22e51712e72c8bcb306a7d306136d" id="r_a0fc22e51712e72c8bcb306a7d306136d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fc22e51712e72c8bcb306a7d306136d">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a0fc22e51712e72c8bcb306a7d306136d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an Internet address to its standard notation.  <br /></td></tr>
-<tr class="separator:a0fc22e51712e72c8bcb306a7d306136d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03985faf699263c84f7001df0e2c3b2" id="r_ae03985faf699263c84f7001df0e2c3b2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae03985faf699263c84f7001df0e2c3b2">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ae03985faf699263c84f7001df0e2c3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:ae03985faf699263c84f7001df0e2c3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925a8288621baeb4560e7bb0086287f1" id="r_a925a8288621baeb4560e7bb0086287f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a925a8288621baeb4560e7bb0086287f1">equals</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a925a8288621baeb4560e7bb0086287f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a925a8288621baeb4560e7bb0086287f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89c1caeb520a053bdf9a0762cced99b" id="r_ab89c1caeb520a053bdf9a0762cced99b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89c1caeb520a053bdf9a0762cced99b">get_address_bytes</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;</td></tr>
+<tr class="memdesc:ab89c1caeb520a053bdf9a0762cced99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a copy of the IPAddress as an array of bytes.  <br /></td></tr>
+<tr class="separator:ab89c1caeb520a053bdf9a0762cced99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a65705e7c48eaf5bd8381bdd046646f" id="r_a5a65705e7c48eaf5bd8381bdd046646f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a65705e7c48eaf5bd8381bdd046646f">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a5a65705e7c48eaf5bd8381bdd046646f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a5a65705e7c48eaf5bd8381bdd046646f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd561d2f60fe8bfa98936d0c989bc23" id="r_a5dd561d2f60fe8bfa98936d0c989bc23"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dd561d2f60fe8bfa98936d0c989bc23">map_to_ip_v4</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td></tr>
+<tr class="memdesc:a5dd561d2f60fe8bfa98936d0c989bc23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> object to an IPv4 address.  <br /></td></tr>
+<tr class="separator:a5dd561d2f60fe8bfa98936d0c989bc23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a938fbbdded848aef56b3528eb3411" id="r_aa0a938fbbdded848aef56b3528eb3411"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0a938fbbdded848aef56b3528eb3411">map_to_ip_v6</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td></tr>
+<tr class="memdesc:aa0a938fbbdded848aef56b3528eb3411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> object to an IPv6 address.  <br /></td></tr>
+<tr class="separator:aa0a938fbbdded848aef56b3528eb3411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa7e7b714edf428a9b2043d3f5f4d7d" id="r_adaa7e7b714edf428a9b2043d3f5f4d7d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaa7e7b714edf428a9b2043d3f5f4d7d">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:adaa7e7b714edf428a9b2043d3f5f4d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an Internet address to its standard notation.  <br /></td></tr>
+<tr class="separator:adaa7e7b714edf428a9b2043d3f5f4d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:adb7843e3ef7df8ab39e71a4f0cd020d7" id="r_adb7843e3ef7df8ab39e71a4f0cd020d7"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb7843e3ef7df8ab39e71a4f0cd020d7">host_to_network_order</a> (double <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:adb7843e3ef7df8ab39e71a4f0cd020d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Double value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:adb7843e3ef7df8ab39e71a4f0cd020d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0f1aa83fffea6627f23be23bdaaed4f" id="r_ac0f1aa83fffea6627f23be23bdaaed4f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0f1aa83fffea6627f23be23bdaaed4f">host_to_network_order</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:ac0f1aa83fffea6627f23be23bdaaed4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:ac0f1aa83fffea6627f23be23bdaaed4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a810c4efd046b6db5c1f7bf38164d9b6e" id="r_a810c4efd046b6db5c1f7bf38164d9b6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a810c4efd046b6db5c1f7bf38164d9b6e">host_to_network_order</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:a810c4efd046b6db5c1f7bf38164d9b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:a810c4efd046b6db5c1f7bf38164d9b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa042c519b186996fa5bb78f48ea1a913" id="r_aa042c519b186996fa5bb78f48ea1a913"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa042c519b186996fa5bb78f48ea1a913">host_to_network_order</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:aa042c519b186996fa5bb78f48ea1a913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:aa042c519b186996fa5bb78f48ea1a913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa88f40e546ba7aa0d1395c5a64b31b58" id="r_aa88f40e546ba7aa0d1395c5a64b31b58"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa88f40e546ba7aa0d1395c5a64b31b58">host_to_network_order</a> (float <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:aa88f40e546ba7aa0d1395c5a64b31b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Single value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:aa88f40e546ba7aa0d1395c5a64b31b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be10f0f82f2b66b89b146eeed914a45" id="r_a4be10f0f82f2b66b89b146eeed914a45"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be10f0f82f2b66b89b146eeed914a45">host_to_network_order</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:a4be10f0f82f2b66b89b146eeed914a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:a4be10f0f82f2b66b89b146eeed914a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b1a22f30fd6e195cb3e8bf6ccd0ee38" id="r_a9b1a22f30fd6e195cb3e8bf6ccd0ee38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b1a22f30fd6e195cb3e8bf6ccd0ee38">host_to_network_order</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:a9b1a22f30fd6e195cb3e8bf6ccd0ee38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:a9b1a22f30fd6e195cb3e8bf6ccd0ee38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a786e37a771ddc9a55c889a4d7c2d50ea" id="r_a786e37a771ddc9a55c889a4d7c2d50ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a786e37a771ddc9a55c889a4d7c2d50ea">host_to_network_order</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:a786e37a771ddc9a55c889a4d7c2d50ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from host byte order to network byte order.  <br /></td></tr>
-<tr class="separator:a786e37a771ddc9a55c889a4d7c2d50ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5835797f1567c87a180992a02421cf7" id="r_ad5835797f1567c87a180992a02421cf7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5835797f1567c87a180992a02421cf7">is_loopback</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;address)</td></tr>
-<tr class="memdesc:ad5835797f1567c87a180992a02421cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified IP address is the loopback address.  <br /></td></tr>
-<tr class="separator:ad5835797f1567c87a180992a02421cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e0c1f0a68652df154405f7744da8a11" id="r_a7e0c1f0a68652df154405f7744da8a11"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e0c1f0a68652df154405f7744da8a11">network_to_host_order</a> (double network)</td></tr>
-<tr class="memdesc:a7e0c1f0a68652df154405f7744da8a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Double value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:a7e0c1f0a68652df154405f7744da8a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc7a406a1491e667f7692b7f30ab79e5" id="r_acc7a406a1491e667f7692b7f30ab79e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc7a406a1491e667f7692b7f30ab79e5">network_to_host_order</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> network)</td></tr>
-<tr class="memdesc:acc7a406a1491e667f7692b7f30ab79e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:acc7a406a1491e667f7692b7f30ab79e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9c0b6366d306c96a7ee95d413a4580" id="r_a0e9c0b6366d306c96a7ee95d413a4580"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e9c0b6366d306c96a7ee95d413a4580">network_to_host_order</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>)</td></tr>
-<tr class="memdesc:a0e9c0b6366d306c96a7ee95d413a4580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:a0e9c0b6366d306c96a7ee95d413a4580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af799e75c01fa4a0a1b2eb3ee6fb3d4ae" id="r_af799e75c01fa4a0a1b2eb3ee6fb3d4ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af799e75c01fa4a0a1b2eb3ee6fb3d4ae">network_to_host_order</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> network)</td></tr>
-<tr class="memdesc:af799e75c01fa4a0a1b2eb3ee6fb3d4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:af799e75c01fa4a0a1b2eb3ee6fb3d4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde0a480c49a1b537c99551865aaf92d" id="r_afde0a480c49a1b537c99551865aaf92d"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afde0a480c49a1b537c99551865aaf92d">network_to_host_order</a> (float network)</td></tr>
-<tr class="memdesc:afde0a480c49a1b537c99551865aaf92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Single value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:afde0a480c49a1b537c99551865aaf92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d3247d8812bb54eb2d761fa3149d78" id="r_a40d3247d8812bb54eb2d761fa3149d78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40d3247d8812bb54eb2d761fa3149d78">network_to_host_order</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> network)</td></tr>
-<tr class="memdesc:a40d3247d8812bb54eb2d761fa3149d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:a40d3247d8812bb54eb2d761fa3149d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6228e4b9ceb8910fca5da84ee61ddcf" id="r_af6228e4b9ceb8910fca5da84ee61ddcf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6228e4b9ceb8910fca5da84ee61ddcf">network_to_host_order</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> network)</td></tr>
-<tr class="memdesc:af6228e4b9ceb8910fca5da84ee61ddcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:af6228e4b9ceb8910fca5da84ee61ddcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc58a95beefbfc487f836ae132e32c9c" id="r_adc58a95beefbfc487f836ae132e32c9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc58a95beefbfc487f836ae132e32c9c">network_to_host_order</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> network)</td></tr>
-<tr class="memdesc:adc58a95beefbfc487f836ae132e32c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from network byte order to host byte order.  <br /></td></tr>
-<tr class="separator:adc58a95beefbfc487f836ae132e32c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad818b91693c5de6adb1d6762bd31d33f" id="r_ad818b91693c5de6adb1d6762bd31d33f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad818b91693c5de6adb1d6762bd31d33f">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str)</td></tr>
-<tr class="memdesc:ad818b91693c5de6adb1d6762bd31d33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an IP address string to an <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> instance.  <br /></td></tr>
-<tr class="separator:ad818b91693c5de6adb1d6762bd31d33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ff5e1caa8caac68db1928a49d33affe" id="r_a1ff5e1caa8caac68db1928a49d33affe"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff5e1caa8caac68db1928a49d33affe">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str, <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;address) noexcept</td></tr>
-<tr class="memdesc:a1ff5e1caa8caac68db1928a49d33affe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a string is a valid IP address.  <br /></td></tr>
-<tr class="separator:a1ff5e1caa8caac68db1928a49d33affe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c8eaad3c24145295f3aebe83748e1b" id="r_a88c8eaad3c24145295f3aebe83748e1b"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88c8eaad3c24145295f3aebe83748e1b">host_to_network_order</a> (double <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; double</td></tr>
+<tr class="memdesc:a88c8eaad3c24145295f3aebe83748e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Double value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:a88c8eaad3c24145295f3aebe83748e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056fb4aabf3ebadf7c89b4ec911967ea" id="r_a056fb4aabf3ebadf7c89b4ec911967ea"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a056fb4aabf3ebadf7c89b4ec911967ea">host_to_network_order</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
+<tr class="memdesc:a056fb4aabf3ebadf7c89b4ec911967ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:a056fb4aabf3ebadf7c89b4ec911967ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f6d9bdc8595bf72b23d0476abd310d" id="r_ab7f6d9bdc8595bf72b23d0476abd310d"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f6d9bdc8595bf72b23d0476abd310d">host_to_network_order</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:ab7f6d9bdc8595bf72b23d0476abd310d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:ab7f6d9bdc8595bf72b23d0476abd310d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58f03deef79816160876b32d9754040" id="r_ae58f03deef79816160876b32d9754040"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae58f03deef79816160876b32d9754040">host_to_network_order</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:ae58f03deef79816160876b32d9754040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:ae58f03deef79816160876b32d9754040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339a9f9891a3530d38c596d1c9155be6" id="r_a339a9f9891a3530d38c596d1c9155be6"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a339a9f9891a3530d38c596d1c9155be6">host_to_network_order</a> (float <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; float</td></tr>
+<tr class="memdesc:a339a9f9891a3530d38c596d1c9155be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Single value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:a339a9f9891a3530d38c596d1c9155be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f8958eaabcd5122a28ca91f06ebe8c" id="r_a11f8958eaabcd5122a28ca91f06ebe8c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11f8958eaabcd5122a28ca91f06ebe8c">host_to_network_order</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td></tr>
+<tr class="memdesc:a11f8958eaabcd5122a28ca91f06ebe8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:a11f8958eaabcd5122a28ca91f06ebe8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cd44b65f84cd23b8d894943dc53153" id="r_aa7cd44b65f84cd23b8d894943dc53153"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7cd44b65f84cd23b8d894943dc53153">host_to_network_order</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:aa7cd44b65f84cd23b8d894943dc53153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:aa7cd44b65f84cd23b8d894943dc53153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1659c46b4421466d9a075fbe347297e" id="r_ab1659c46b4421466d9a075fbe347297e"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1659c46b4421466d9a075fbe347297e">host_to_network_order</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td></tr>
+<tr class="memdesc:ab1659c46b4421466d9a075fbe347297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from host byte order to network byte order.  <br /></td></tr>
+<tr class="separator:ab1659c46b4421466d9a075fbe347297e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac35859a7a8c5198c6b7bbba7fc5e03" id="r_a5ac35859a7a8c5198c6b7bbba7fc5e03"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac35859a7a8c5198c6b7bbba7fc5e03">is_loopback</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;address) -&gt; bool</td></tr>
+<tr class="memdesc:a5ac35859a7a8c5198c6b7bbba7fc5e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified IP address is the loopback address.  <br /></td></tr>
+<tr class="separator:a5ac35859a7a8c5198c6b7bbba7fc5e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735924c2e3100efd12baee67e11609d3" id="r_a735924c2e3100efd12baee67e11609d3"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a735924c2e3100efd12baee67e11609d3">network_to_host_order</a> (double network) -&gt; double</td></tr>
+<tr class="memdesc:a735924c2e3100efd12baee67e11609d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Double value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:a735924c2e3100efd12baee67e11609d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1f3a6fcd932cf3300f0fe7f884dcc0" id="r_a2a1f3a6fcd932cf3300f0fe7f884dcc0"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a1f3a6fcd932cf3300f0fe7f884dcc0">network_to_host_order</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> network) -&gt; <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td></tr>
+<tr class="memdesc:a2a1f3a6fcd932cf3300f0fe7f884dcc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:a2a1f3a6fcd932cf3300f0fe7f884dcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45266549eb31eb308f17df6fdc17852f" id="r_a45266549eb31eb308f17df6fdc17852f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45266549eb31eb308f17df6fdc17852f">network_to_host_order</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba67b3dba8bc6778101892eb77249db32e">host</a>) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td></tr>
+<tr class="memdesc:a45266549eb31eb308f17df6fdc17852f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:a45266549eb31eb308f17df6fdc17852f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a134368dba8766942b23398d8a46bb" id="r_ae0a134368dba8766942b23398d8a46bb"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0a134368dba8766942b23398d8a46bb">network_to_host_order</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> network) -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:ae0a134368dba8766942b23398d8a46bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:ae0a134368dba8766942b23398d8a46bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52d6d61cf443efe66790cd88472a4f9" id="r_ae52d6d61cf443efe66790cd88472a4f9"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae52d6d61cf443efe66790cd88472a4f9">network_to_host_order</a> (float network) -&gt; float</td></tr>
+<tr class="memdesc:ae52d6d61cf443efe66790cd88472a4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a Single value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:ae52d6d61cf443efe66790cd88472a4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509f9689f3aa3c1862cd721520a4bb2b" id="r_a509f9689f3aa3c1862cd721520a4bb2b"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a509f9689f3aa3c1862cd721520a4bb2b">network_to_host_order</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> network) -&gt; <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td></tr>
+<tr class="memdesc:a509f9689f3aa3c1862cd721520a4bb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a short value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:a509f9689f3aa3c1862cd721520a4bb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5703906a60113ac358f56a94683c27c" id="r_ab5703906a60113ac358f56a94683c27c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5703906a60113ac358f56a94683c27c">network_to_host_order</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> network) -&gt; <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td></tr>
+<tr class="memdesc:ab5703906a60113ac358f56a94683c27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a integer value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:ab5703906a60113ac358f56a94683c27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c384702420ad561eff99f06839aea9" id="r_ac4c384702420ad561eff99f06839aea9"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4c384702420ad561eff99f06839aea9">network_to_host_order</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> network) -&gt; <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td></tr>
+<tr class="memdesc:ac4c384702420ad561eff99f06839aea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a long value from network byte order to host byte order.  <br /></td></tr>
+<tr class="separator:ac4c384702420ad561eff99f06839aea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6dc2fc5cd8fdd771ba5854b39b1afe" id="r_a6f6dc2fc5cd8fdd771ba5854b39b1afe"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f6dc2fc5cd8fdd771ba5854b39b1afe">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str) -&gt; <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td></tr>
+<tr class="memdesc:a6f6dc2fc5cd8fdd771ba5854b39b1afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an IP address string to an <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> instance.  <br /></td></tr>
+<tr class="separator:a6f6dc2fc5cd8fdd771ba5854b39b1afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8745e81a00c348e534215a97fd0b0299" id="r_a8745e81a00c348e534215a97fd0b0299"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8745e81a00c348e534215a97fd0b0299">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str, <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;address) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a8745e81a00c348e534215a97fd0b0299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a string is a valid IP address.  <br /></td></tr>
+<tr class="separator:a8745e81a00c348e534215a97fd0b0299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -593,8 +593,8 @@ The byte array is assumed to be in network byte order with the most significant 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ade09153db33c0c43301983b3b807e89c" name="ade09153db33c0c43301983b3b807e89c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade09153db33c0c43301983b3b807e89c">&#9670;&#160;</a></span>address_family()</h2>
+<a id="a636bcbab8a15a28e64bf858f06548335" name="a636bcbab8a15a28e64bf858f06548335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636bcbab8a15a28e64bf858f06548335">&#9670;&#160;</a></span>address_family()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -603,15 +603,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a> xtd::net::ip_address::address_family </td>
+          <td class="memname">auto xtd::net::ip_address::address_family </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -621,8 +621,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="af612d35827ddd1cab111165226c1c38c" name="af612d35827ddd1cab111165226c1c38c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af612d35827ddd1cab111165226c1c38c">&#9670;&#160;</a></span>is_ip_v4_mapped_to_ip_v6()</h2>
+<a id="a40b106046fb98c7ce45170eddc972b83" name="a40b106046fb98c7ce45170eddc972b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b106046fb98c7ce45170eddc972b83">&#9670;&#160;</a></span>is_ip_v4_mapped_to_ip_v6()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -631,15 +631,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::is_ip_v4_mapped_to_ip_v6 </td>
+          <td class="memname">auto xtd::net::ip_address::is_ip_v4_mapped_to_ip_v6 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -650,8 +650,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3" name="a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f5d7c5d30ef7c4e9dbfa9409d7a7bf3">&#9670;&#160;</a></span>is_ip_v6_link_local()</h2>
+<a id="ae4e375b9eea7beda9f4b03d3b7a44d59" name="ae4e375b9eea7beda9f4b03d3b7a44d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e375b9eea7beda9f4b03d3b7a44d59">&#9670;&#160;</a></span>is_ip_v6_link_local()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -660,15 +660,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::is_ip_v6_link_local </td>
+          <td class="memname">auto xtd::net::ip_address::is_ip_v6_link_local </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -678,8 +678,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a9eee0ed2d8aabaf44ea53316f168a5a3" name="a9eee0ed2d8aabaf44ea53316f168a5a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9eee0ed2d8aabaf44ea53316f168a5a3">&#9670;&#160;</a></span>is_ip_v6_multicast()</h2>
+<a id="a0ac0f1d3216feebf099e859cf4c60e92" name="a0ac0f1d3216feebf099e859cf4c60e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac0f1d3216feebf099e859cf4c60e92">&#9670;&#160;</a></span>is_ip_v6_multicast()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -688,15 +688,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::is_ip_v6_multicast </td>
+          <td class="memname">auto xtd::net::ip_address::is_ip_v6_multicast </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -706,8 +706,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="aff921c3a571077951246ef3dd5c59e99" name="aff921c3a571077951246ef3dd5c59e99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff921c3a571077951246ef3dd5c59e99">&#9670;&#160;</a></span>is_ip_v6_site_local()</h2>
+<a id="ab5689a2ce53c27eb09cdf9dda39fc824" name="ab5689a2ce53c27eb09cdf9dda39fc824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5689a2ce53c27eb09cdf9dda39fc824">&#9670;&#160;</a></span>is_ip_v6_site_local()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -716,15 +716,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::is_ip_v6_site_local </td>
+          <td class="memname">auto xtd::net::ip_address::is_ip_v6_site_local </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -734,8 +734,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a244eb15fc215fca6488aa2118111dc1a" name="a244eb15fc215fca6488aa2118111dc1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a244eb15fc215fca6488aa2118111dc1a">&#9670;&#160;</a></span>is_ip_v6_teredo()</h2>
+<a id="a10e731f845367e7e7fcee55e32ca976d" name="a10e731f845367e7e7fcee55e32ca976d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10e731f845367e7e7fcee55e32ca976d">&#9670;&#160;</a></span>is_ip_v6_teredo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -744,15 +744,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::is_ip_v6_teredo </td>
+          <td class="memname">auto xtd::net::ip_address::is_ip_v6_teredo </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -763,19 +763,27 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="aa1d968374ecb10a09f3eee6bce458827" name="aa1d968374ecb10a09f3eee6bce458827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d968374ecb10a09f3eee6bce458827">&#9670;&#160;</a></span>scope_id() <span class="overload">[1/2]</span></h2>
+<a id="ac5b2582d964610e8453b541afa17c36a" name="ac5b2582d964610e8453b541afa17c36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b2582d964610e8453b541afa17c36a">&#9670;&#160;</a></span>scope_id() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> xtd::net::ip_address::scope_id </td>
+          <td class="memname">auto xtd::net::ip_address::scope_id </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the IPv6 address scope identifier. </p>
@@ -789,17 +797,17 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="ac8e1c85dce2c65465c7e35d61fe3f210" name="ac8e1c85dce2c65465c7e35d61fe3f210"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8e1c85dce2c65465c7e35d61fe3f210">&#9670;&#160;</a></span>scope_id() <span class="overload">[2/2]</span></h2>
+<a id="a41427e060cc32141bc245f694db7e113" name="a41427e060cc32141bc245f694db7e113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41427e060cc32141bc245f694db7e113">&#9670;&#160;</a></span>scope_id() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp; xtd::net::ip_address::scope_id </td>
+          <td class="memname">auto xtd::net::ip_address::scope_id </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -820,8 +828,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a22287b601553250cd31584b876c216c9" name="a22287b601553250cd31584b876c216c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22287b601553250cd31584b876c216c9">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="ae03985faf699263c84f7001df0e2c3b2" name="ae03985faf699263c84f7001df0e2c3b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03985faf699263c84f7001df0e2c3b2">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -830,15 +838,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::equals </td>
+          <td class="memname">auto xtd::net::ip_address::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -856,8 +864,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a0ac33b15af7d135a85f7ea83f64e61f9" name="a0ac33b15af7d135a85f7ea83f64e61f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ac33b15af7d135a85f7ea83f64e61f9">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a925a8288621baeb4560e7bb0086287f1" name="a925a8288621baeb4560e7bb0086287f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a925a8288621baeb4560e7bb0086287f1">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -866,15 +874,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::net::ip_address::equals </td>
+          <td class="memname">auto xtd::net::ip_address::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -892,28 +900,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a75b7c17945b3123d966ced1c76d0b0ea" name="a75b7c17945b3123d966ced1c76d0b0ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75b7c17945b3123d966ced1c76d0b0ea">&#9670;&#160;</a></span>get_address_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; xtd::net::ip_address::get_address_bytes </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Provides a copy of the IPAddress as an array of bytes. </p>
-<dl class="section return"><dt>Returns</dt><dd>A byte array. </dd></dl>
-
-</div>
-</div>
-<a id="a28c0984e201c10df4ff03743d72f67fb" name="a28c0984e201c10df4ff03743d72f67fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28c0984e201c10df4ff03743d72f67fb">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ab89c1caeb520a053bdf9a0762cced99b" name="ab89c1caeb520a053bdf9a0762cced99b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89c1caeb520a053bdf9a0762cced99b">&#9670;&#160;</a></span>get_address_bytes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -922,15 +910,43 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::net::ip_address::get_hash_code </td>
+          <td class="memname">auto xtd::net::ip_address::get_address_bytes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides a copy of the IPAddress as an array of bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>A byte array. </dd></dl>
+
+</div>
+</div>
+<a id="a5a65705e7c48eaf5bd8381bdd046646f" name="a5a65705e7c48eaf5bd8381bdd046646f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a65705e7c48eaf5bd8381bdd046646f">&#9670;&#160;</a></span>get_hash_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::net::ip_address::get_hash_code </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -942,8 +958,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="ae11920203958cff3746c7d17f6fe988d" name="ae11920203958cff3746c7d17f6fe988d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11920203958cff3746c7d17f6fe988d">&#9670;&#160;</a></span>map_to_ip_v4()</h2>
+<a id="a5dd561d2f60fe8bfa98936d0c989bc23" name="a5dd561d2f60fe8bfa98936d0c989bc23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd561d2f60fe8bfa98936d0c989bc23">&#9670;&#160;</a></span>map_to_ip_v4()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -952,15 +968,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> xtd::net::ip_address::map_to_ip_v4 </td>
+          <td class="memname">auto xtd::net::ip_address::map_to_ip_v4 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -971,8 +987,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="ae59f8b5a2d22acba13172a18f5cf553d" name="ae59f8b5a2d22acba13172a18f5cf553d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae59f8b5a2d22acba13172a18f5cf553d">&#9670;&#160;</a></span>map_to_ip_v6()</h2>
+<a id="aa0a938fbbdded848aef56b3528eb3411" name="aa0a938fbbdded848aef56b3528eb3411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a938fbbdded848aef56b3528eb3411">&#9670;&#160;</a></span>map_to_ip_v6()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -981,15 +997,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> xtd::net::ip_address::map_to_ip_v6 </td>
+          <td class="memname">auto xtd::net::ip_address::map_to_ip_v6 </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1000,8 +1016,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="a0fc22e51712e72c8bcb306a7d306136d" name="a0fc22e51712e72c8bcb306a7d306136d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fc22e51712e72c8bcb306a7d306136d">&#9670;&#160;</a></span>to_string()</h2>
+<a id="adaa7e7b714edf428a9b2043d3f5f4d7d" name="adaa7e7b714edf428a9b2043d3f5f4d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa7e7b714edf428a9b2043d3f5f4d7d">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,15 +1026,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::net::ip_address::to_string </td>
+          <td class="memname">auto xtd::net::ip_address::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1030,8 +1046,8 @@ The byte array is assumed to be in network byte order with the most significant 
 
 </div>
 </div>
-<a id="adb7843e3ef7df8ab39e71a4f0cd020d7" name="adb7843e3ef7df8ab39e71a4f0cd020d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb7843e3ef7df8ab39e71a4f0cd020d7">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[1/8]</span></h2>
+<a id="a88c8eaad3c24145295f3aebe83748e1b" name="a88c8eaad3c24145295f3aebe83748e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c8eaad3c24145295f3aebe83748e1b">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1040,15 +1056,15 @@ The byte array is assumed to be in network byte order with the most significant 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static double xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1067,8 +1083,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="ac0f1aa83fffea6627f23be23bdaaed4f" name="ac0f1aa83fffea6627f23be23bdaaed4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0f1aa83fffea6627f23be23bdaaed4f">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[2/8]</span></h2>
+<a id="a056fb4aabf3ebadf7c89b4ec911967ea" name="a056fb4aabf3ebadf7c89b4ec911967ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056fb4aabf3ebadf7c89b4ec911967ea">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1077,15 +1093,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1104,8 +1120,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="a810c4efd046b6db5c1f7bf38164d9b6e" name="a810c4efd046b6db5c1f7bf38164d9b6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a810c4efd046b6db5c1f7bf38164d9b6e">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[3/8]</span></h2>
+<a id="ab7f6d9bdc8595bf72b23d0476abd310d" name="ab7f6d9bdc8595bf72b23d0476abd310d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f6d9bdc8595bf72b23d0476abd310d">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1114,15 +1130,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1141,8 +1157,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="aa042c519b186996fa5bb78f48ea1a913" name="aa042c519b186996fa5bb78f48ea1a913"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa042c519b186996fa5bb78f48ea1a913">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[4/8]</span></h2>
+<a id="ae58f03deef79816160876b32d9754040" name="ae58f03deef79816160876b32d9754040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae58f03deef79816160876b32d9754040">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1151,15 +1167,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1178,8 +1194,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="aa88f40e546ba7aa0d1395c5a64b31b58" name="aa88f40e546ba7aa0d1395c5a64b31b58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa88f40e546ba7aa0d1395c5a64b31b58">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[5/8]</span></h2>
+<a id="a339a9f9891a3530d38c596d1c9155be6" name="a339a9f9891a3530d38c596d1c9155be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339a9f9891a3530d38c596d1c9155be6">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1188,15 +1204,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static float xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  float</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1215,8 +1231,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="a4be10f0f82f2b66b89b146eeed914a45" name="a4be10f0f82f2b66b89b146eeed914a45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be10f0f82f2b66b89b146eeed914a45">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[6/8]</span></h2>
+<a id="a11f8958eaabcd5122a28ca91f06ebe8c" name="a11f8958eaabcd5122a28ca91f06ebe8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f8958eaabcd5122a28ca91f06ebe8c">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1225,15 +1241,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1252,8 +1268,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="a9b1a22f30fd6e195cb3e8bf6ccd0ee38" name="a9b1a22f30fd6e195cb3e8bf6ccd0ee38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b1a22f30fd6e195cb3e8bf6ccd0ee38">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[7/8]</span></h2>
+<a id="aa7cd44b65f84cd23b8d894943dc53153" name="aa7cd44b65f84cd23b8d894943dc53153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cd44b65f84cd23b8d894943dc53153">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1262,15 +1278,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1289,8 +1305,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="a786e37a771ddc9a55c889a4d7c2d50ea" name="a786e37a771ddc9a55c889a4d7c2d50ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a786e37a771ddc9a55c889a4d7c2d50ea">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[8/8]</span></h2>
+<a id="ab1659c46b4421466d9a075fbe347297e" name="ab1659c46b4421466d9a075fbe347297e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1659c46b4421466d9a075fbe347297e">&#9670;&#160;</a></span>host_to_network_order() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1299,15 +1315,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> xtd::net::ip_address::host_to_network_order </td>
+          <td class="memname">static auto xtd::net::ip_address::host_to_network_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1326,8 +1342,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="ad5835797f1567c87a180992a02421cf7" name="ad5835797f1567c87a180992a02421cf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5835797f1567c87a180992a02421cf7">&#9670;&#160;</a></span>is_loopback()</h2>
+<a id="a5ac35859a7a8c5198c6b7bbba7fc5e03" name="a5ac35859a7a8c5198c6b7bbba7fc5e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac35859a7a8c5198c6b7bbba7fc5e03">&#9670;&#160;</a></span>is_loopback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1336,15 +1352,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool xtd::net::ip_address::is_loopback </td>
+          <td class="memname">static auto xtd::net::ip_address::is_loopback </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>address</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1360,8 +1376,8 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
 
 </div>
 </div>
-<a id="a7e0c1f0a68652df154405f7744da8a11" name="a7e0c1f0a68652df154405f7744da8a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e0c1f0a68652df154405f7744da8a11">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[1/8]</span></h2>
+<a id="a735924c2e3100efd12baee67e11609d3" name="a735924c2e3100efd12baee67e11609d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735924c2e3100efd12baee67e11609d3">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1370,15 +1386,15 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static double xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  double</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1397,8 +1413,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="acc7a406a1491e667f7692b7f30ab79e5" name="acc7a406a1491e667f7692b7f30ab79e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc7a406a1491e667f7692b7f30ab79e5">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[2/8]</span></h2>
+<a id="a2a1f3a6fcd932cf3300f0fe7f884dcc0" name="a2a1f3a6fcd932cf3300f0fe7f884dcc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1f3a6fcd932cf3300f0fe7f884dcc0">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,15 +1423,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">xtd::int16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1434,8 +1450,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="a0e9c0b6366d306c96a7ee95d413a4580" name="a0e9c0b6366d306c96a7ee95d413a4580"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e9c0b6366d306c96a7ee95d413a4580">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[3/8]</span></h2>
+<a id="a45266549eb31eb308f17df6fdc17852f" name="a45266549eb31eb308f17df6fdc17852f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45266549eb31eb308f17df6fdc17852f">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1444,15 +1460,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1471,8 +1487,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="af799e75c01fa4a0a1b2eb3ee6fb3d4ae" name="af799e75c01fa4a0a1b2eb3ee6fb3d4ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af799e75c01fa4a0a1b2eb3ee6fb3d4ae">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[4/8]</span></h2>
+<a id="ae0a134368dba8766942b23398d8a46bb" name="ae0a134368dba8766942b23398d8a46bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a134368dba8766942b23398d8a46bb">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1481,15 +1497,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1508,8 +1524,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="afde0a480c49a1b537c99551865aaf92d" name="afde0a480c49a1b537c99551865aaf92d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afde0a480c49a1b537c99551865aaf92d">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[5/8]</span></h2>
+<a id="ae52d6d61cf443efe66790cd88472a4f9" name="ae52d6d61cf443efe66790cd88472a4f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52d6d61cf443efe66790cd88472a4f9">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1518,15 +1534,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static float xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  float</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1545,8 +1561,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="a40d3247d8812bb54eb2d761fa3149d78" name="a40d3247d8812bb54eb2d761fa3149d78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40d3247d8812bb54eb2d761fa3149d78">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[6/8]</span></h2>
+<a id="a509f9689f3aa3c1862cd721520a4bb2b" name="a509f9689f3aa3c1862cd721520a4bb2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509f9689f3aa3c1862cd721520a4bb2b">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1555,15 +1571,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">xtd::uint16</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1582,8 +1598,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="af6228e4b9ceb8910fca5da84ee61ddcf" name="af6228e4b9ceb8910fca5da84ee61ddcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6228e4b9ceb8910fca5da84ee61ddcf">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[7/8]</span></h2>
+<a id="ab5703906a60113ac358f56a94683c27c" name="ab5703906a60113ac358f56a94683c27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5703906a60113ac358f56a94683c27c">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1592,15 +1608,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1619,8 +1635,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="adc58a95beefbfc487f836ae132e32c9c" name="adc58a95beefbfc487f836ae132e32c9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc58a95beefbfc487f836ae132e32c9c">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[8/8]</span></h2>
+<a id="ac4c384702420ad561eff99f06839aea9" name="ac4c384702420ad561eff99f06839aea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c384702420ad561eff99f06839aea9">&#9670;&#160;</a></span>network_to_host_order() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1629,15 +1645,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a> xtd::net::ip_address::network_to_host_order </td>
+          <td class="memname">static auto xtd::net::ip_address::network_to_host_order </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>          <td class="paramname"><span class="paramname"><em>network</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">xtd::uint64</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1656,8 +1672,8 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
 
 </div>
 </div>
-<a id="ad818b91693c5de6adb1d6762bd31d33f" name="ad818b91693c5de6adb1d6762bd31d33f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad818b91693c5de6adb1d6762bd31d33f">&#9670;&#160;</a></span>parse()</h2>
+<a id="a6f6dc2fc5cd8fdd771ba5854b39b1afe" name="a6f6dc2fc5cd8fdd771ba5854b39b1afe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6dc2fc5cd8fdd771ba5854b39b1afe">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1666,15 +1682,15 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> xtd::net::ip_address::parse </td>
+          <td class="memname">static auto xtd::net::ip_address::parse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1693,14 +1709,14 @@ The xtd::net::sockets::socket::network_to_host_order method converts multibyte i
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The static <a class="el" href="#ad818b91693c5de6adb1d6762bd31d33f" title="Converts an IP address string to an xtd::net::ip_address instance.">xtd::net::ip_address::parse</a> method creates an <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> instance from an IP address expressed in dotted-quad notation for IPv4 and in colon-hexadecimal notation for IPv6. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The static <a class="el" href="#a6f6dc2fc5cd8fdd771ba5854b39b1afe" title="Converts an IP address string to an xtd::net::ip_address instance.">xtd::net::ip_address::parse</a> method creates an <a class="el" href="classxtd_1_1net_1_1ip__address.html" title="Provides an Internet Protocol (IP) address.">xtd::net::ip_address</a> instance from an IP address expressed in dotted-quad notation for IPv4 and in colon-hexadecimal notation for IPv6. </dd>
 <dd>
 The number of parts (each part is separated by a period) in str determines how the IP address is constructed. A one part address is stored directly in the network address. A two part address, convenient for specifying a class A address, puts the leading part in the first byte and the trailing part in the right-most three bytes of the network address. A three part address, convenient for specifying a class B address, puts the first part in the first byte, the second part in the second byte, and the final part in the right-most two bytes of the network address. </dd></dl>
 
 </div>
 </div>
-<a id="a1ff5e1caa8caac68db1928a49d33affe" name="a1ff5e1caa8caac68db1928a49d33affe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ff5e1caa8caac68db1928a49d33affe">&#9670;&#160;</a></span>try_parse()</h2>
+<a id="a8745e81a00c348e534215a97fd0b0299" name="a8745e81a00c348e534215a97fd0b0299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8745e81a00c348e534215a97fd0b0299">&#9670;&#160;</a></span>try_parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1709,14 +1725,14 @@ The number of parts (each part is separated by a period) in str determines how t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool xtd::net::ip_address::try_parse </td>
+          <td class="memname">static auto xtd::net::ip_address::try_parse </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>address</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1923,7 +1939,7 @@ The <a class="el" href="#a470e4a32d7ceedb7c04ddf3bd884f549" title="Provides an I
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 19 2026 02:24:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 19 2026 21:54:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
