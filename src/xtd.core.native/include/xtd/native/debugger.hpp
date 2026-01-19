@@ -47,11 +47,11 @@ namespace xtd {
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
       /// @return `true` if a debugger is attached; otherwise, `false`.
       /// @warning Internal use only
-      static auto is_attached() -> bool;
+      [[nodiscard]] static auto is_attached() -> bool;
       /// @brief Checks to see if logging is enabled by an attached debugger.
       /// @return `true` if a debugger is attached and logging is enabled; otherwise, `false`.
       /// @warning Internal use only
-      static auto is_logging() -> bool;
+      [[nodiscard]] static auto is_logging() -> bool;
       /// @brief Launches and attaches a debugger to the process.
       /// @return `true` if the startup is successful or if the debugger is already attached; otherwise, `false`.
       /// @remarks If a debugger is already attached, nothing happens.

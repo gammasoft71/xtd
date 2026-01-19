@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Create named semaphore with specified initial count and maxixum count.
       /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static auto create(std::int32_t initial_count, std::int32_t max_count) -> std::intmax_t;
+      [[nodiscard]] static auto create(std::int32_t initial_count, std::int32_t max_count) -> std::intmax_t;
       
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.

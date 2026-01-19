@@ -40,7 +40,7 @@ namespace xtd {
       /// @brief Gets the background color of the console.
       /// @return the background console color.
       /// @warning Internal use only
-      static auto background_color() -> std::int32_t;
+      [[nodiscard]] static auto background_color() -> std::int32_t;
       /// @brief Sets the background color of the console.
       /// @param color the background console color.
       /// @return `true` if successfull; otherwise `false`.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Gets the height of the buffer area.
       /// @return The current height, in rows, of the buffer area.
       /// @warning Internal use only
-      static auto buffer_height() -> std::int32_t;
+      [[nodiscard]] static auto buffer_height() -> std::int32_t;
       /// @brief Sets or sets the height of the buffer area.
       /// @param height The current height, in rows, of the buffer area.
       /// @return `true` if successfull; otherwise `false`.
@@ -67,7 +67,7 @@ namespace xtd {
       /// @return The current width, in columns, of the buffer area.
       /// @warning Internal use only
       
-      static auto buffer_width() -> std::int32_t;
+      [[nodiscard]] static auto buffer_width() -> std::int32_t;
       /// @brief Sets the width of the buffer area.
       /// @param width The current width, in columns, of the buffer area.
       /// @return `true` if successfull; otherwise `false`.
@@ -77,7 +77,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
       /// @return `true` if CAPS LOCK is turned on; `false` if CAPS LOCK is turned off.
       /// @warning Internal use only
-      static auto caps_lock() -> bool;
+      [[nodiscard]] static auto caps_lock() -> bool;
       
       /// @brief Clears the console buffer and corresponding console window of display information.
       /// @return `true` if successfull; otherwise `false`.
@@ -87,12 +87,12 @@ namespace xtd {
       /// @brief Gets the column position of the cursor within the buffer area.
       /// @return The current position, in columns, of the cursor.
       /// @warning Internal use only
-      static auto cursor_left() -> std::int32_t;
+      [[nodiscard]] static auto cursor_left() -> std::int32_t;
       
       /// @brief Gets or sets the height of the cursor within a character cell.
       /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
       /// @warning Internal use only
-      static auto cursor_size() -> std::int32_t;
+      [[nodiscard]] static auto cursor_size() -> std::int32_t;
       /// @brief Sets the height of the cursor within a character cell.
       /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
       /// @return `true` if successfull; otherwise `false`.
@@ -102,12 +102,12 @@ namespace xtd {
       /// @brief Gets the row position of the cursor within the buffer area.
       /// @return The current position, in rows, of the cursor.
       /// @warning Internal use only
-      static auto cursor_top() -> std::int32_t;
+      [[nodiscard]] static auto cursor_top() -> std::int32_t;
       
       /// @brief Gets a value indicating whether the cursor is visible.
       /// @return `true` if the cursor is visible; otherwise, `false`.
       /// @warning Internal use only
-      static auto cursor_visible() -> bool;
+      [[nodiscard]] static auto cursor_visible() -> bool;
       /// @brief Sets a value indicating whether the cursor is visible.
       /// @param visible `true` if the cursor is visible; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
@@ -122,7 +122,7 @@ namespace xtd {
       /// @brief Gets the foreground color of the console.
       /// @return the foreground console color.
       /// @warning Internal use only
-      static auto foreground_color() -> std::int32_t;
+      [[nodiscard]] static auto foreground_color() -> std::int32_t;
       /// @brief Sets the foreground color of the console.
       /// @param color the foreground console color.
       /// @return `true` if successfull; otherwise `false`.
@@ -132,7 +132,7 @@ namespace xtd {
       /// @brief Gets the code page the console uses to read input.
       /// @return The code page used to read console input.
       /// @warning Internal use only
-      static auto input_code_page() -> std::int32_t;
+      [[nodiscard]] static auto input_code_page() -> std::int32_t;
       /// @brief Sets the code page the console uses to read input.
       /// @param code_page The code page used to read console input.
       /// @return `true` if successfull; otherwise `false`.
@@ -142,31 +142,31 @@ namespace xtd {
       /// @brief Gets a value indicating whether a key press is available in the input stream.
       /// @return `true` if a key press is available; otherwise, `false`
       /// @warning Internal use only
-      static auto key_available() -> bool;
+      [[nodiscard]] static auto key_available() -> bool;
       
       /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
       /// @param The height of the largest possible console window measured in rows.
       /// @warning Internal use only
-      static auto largest_window_height() -> std::int32_t;
+      [[nodiscard]] static auto largest_window_height() -> std::int32_t;
       /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
       /// @param The width of the largest possible console window measured in columns.
       /// @warning Internal use only
-      static auto largest_window_width() -> std::int32_t;
+      [[nodiscard]] static auto largest_window_width() -> std::int32_t;
       
       /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
       /// @return `true` if NUM LOCK is turned on; `false` if NUM LOCK is turned off.
       /// @warning Internal use only
-      static auto number_lock() -> bool;
+      [[nodiscard]] static auto number_lock() -> bool;
       
       /// @brief Gets the code page the console uses to write output.
       /// @return The code page used to write console output.
       /// @warning Internal use only
-      static auto output_code_page() -> std::int32_t;
+      [[nodiscard]] static auto output_code_page() -> std::int32_t;
       /// @brief Sets the code page the console uses to write output.
       /// @param code_page The code page used to write console output.
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
-      static auto output_code_page(std::int32_t codePage) -> bool;
+      [[nodiscard]] static auto output_code_page(std::int32_t codePage) -> bool;
       
       /// @brief Obtains the next character or function key pressed by the user.
       /// @param key_char A bitwise combination of the enumeration values. There is no default value.
@@ -207,7 +207,7 @@ namespace xtd {
       /// @brief Gets the title to display in the console title bar.
       /// @return The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
       /// @warning Internal use only
-      static auto title() -> std::string;
+      [[nodiscard]] static auto title() -> std::string;
       /// @brief Sets the title to display in the console title bar.
       /// @param title The string to be displayed in the title bar of the console. The maximum length of the title string is 24500 characters.
       /// @return `true` if successfull; otherwise `false`.
@@ -217,7 +217,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
       /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
       /// @warning Internal use only
-      static auto treat_control_c_as_input() -> bool;
+      [[nodiscard]] static auto treat_control_c_as_input() -> bool;
       /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
       /// @param treat_control_c_as_input `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
@@ -227,7 +227,7 @@ namespace xtd {
       /// @brief Gets the height of the console window area.
       /// @return The height of the console window measured in rows.
       /// @warning Internal use only
-      static auto window_height() -> std::int32_t;
+      [[nodiscard]] static auto window_height() -> std::int32_t;
       /// @brief Sets the height of the console window area.
       /// @param height The height of the console window measured in rows.
       /// @return `true` if successfull; otherwise `false`.
@@ -237,7 +237,7 @@ namespace xtd {
       /// @brief Gets the left of the console window area.
       /// @return The left of the console window measured in columns.
       /// @warning Internal use only
-      static auto window_left() -> std::int32_t;
+      [[nodiscard]] static auto window_left() -> std::int32_t;
       /// @brief Sets the left of the console window area.
       /// @param left The left of the console window measured in columns.
       /// @return `true` if successfull; otherwise `false`.
@@ -247,7 +247,7 @@ namespace xtd {
       /// @brief Gets the top of the console window area.
       /// @return The top of the console window measured in rows.
       /// @warning Internal use only
-      static auto window_top() -> std::int32_t;
+      [[nodiscard]] static auto window_top() -> std::int32_t;
       /// @brief Sets the top of the console window area.
       /// @param top The top of the console window measured in rows.
       /// @return `true` if successfull; otherwise `false`.
@@ -257,7 +257,7 @@ namespace xtd {
       /// @brief Gets the width of the console window area.
       /// @return The width of the console window measured in columns.
       /// @warning Internal use only
-      static auto window_width() -> std::int32_t;
+      [[nodiscard]] static auto window_width() -> std::int32_t;
       /// @brief Sets the width of the console window area.
       /// @param width The width of the console window measured in columns.
       /// @return `true` if successfull; otherwise `false`.

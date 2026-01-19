@@ -44,7 +44,7 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created mutex.
       /// @warning Internal use only
-      static auto create(bool initially_owned) -> std::intmax_t;
+      [[nodiscard]] static auto create(bool initially_owned) -> std::intmax_t;
       
       /// @brief Destroy named mutex with specified mutex handle.
       /// @param name The name of the mutex.

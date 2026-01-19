@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Create critical section.
       /// @return The handle of the created critical section.
       /// @warning Internal use only
-      static auto create() -> std::intmax_t;
+      [[nodiscard]] static auto create() -> std::intmax_t;
       
       /// @brief Destroy critical section with specified critical section handle.
       /// @param handle The critical section handle to destroy.

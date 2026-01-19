@@ -47,7 +47,7 @@ namespace xtd {
       /// @brief Create a speach synthesizer.
       /// @return The new speach synthesizer handle created. .
       /// @warning Internal use only
-      static auto create() -> std::intmax_t;
+      [[nodiscard]] static auto create() -> std::intmax_t;
       /// @brief Destroys the speach synthesizer.
       /// @param handle The speach synthesizer handle.
       /// @warning Internal use only

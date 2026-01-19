@@ -46,27 +46,27 @@ namespace xtd {
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific alternate character used to separate directory levels in a path string.
       /// @warning Internal use only
-      static auto alt_directory_separator_char() -> char;
+      [[nodiscard]] static auto alt_directory_separator_char() -> char;
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return A platform-specific character used to separate directory levels in a path string.
       /// @warning Internal use only
-      static auto directory_separator_char() -> char;
+      [[nodiscard]] static auto directory_separator_char() -> char;
       /// @brief Gets temp path.
       /// @return The temp path.
       /// @warning Internal use only
-      static auto get_temp_path() -> std::string;
+      [[nodiscard]] static auto get_temp_path() -> std::string;
       /// @brief Provides a platform-specific array of characters that cannot be specified in path string arguments passed to members of the Path class.
       /// @return A platform-specific array of characters that cannot be specified in path string.
       /// @warning Internal use only
-      static auto invalid_path_chars() -> std::vector<char>;
+      [[nodiscard]] static auto invalid_path_chars() -> std::vector<char>;
       /// @brief Provides a platform-specific separator character used to separate path strings in environment variables.A platform-specific separator character used to separate path strings in environment variables.
       /// @return A platform-specific separator character used to separate path strings.
       /// @warning Internal use only
-      static auto path_separator() -> char;
+      [[nodiscard]] static auto path_separator() -> char;
       /// @brief Provides a platform-specific volume separator character.
       /// @return A platform-specific volume separator character.
       /// @warning Internal use only
-      static auto volume_separator_char() -> char;
+      [[nodiscard]] static auto volume_separator_char() -> char;
       /// @}
     };
   }

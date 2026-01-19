@@ -50,12 +50,12 @@ namespace xtd {
       /// @param path The file path to check.
       /// @return `true` is file exist; otherwise `false`.
       /// @warning Internal use only
-      static auto exists(const std::string& path) -> bool;
+      [[nodiscard]] static auto exists(const std::string& path) -> bool;
       /// @brief Gets file size of specified path.
       /// @param path The relative or absolute path to the directory to get size.
       /// @return The file size.
       /// @warning Internal use only
-      static auto get_size(const std::string& path) -> std::size_t;
+      [[nodiscard]] static auto get_size(const std::string& path) -> std::size_t;
       /// @brief Moves a file or a directory and its contents to a new location.
       /// @param old_path The path of the file or directory to move.
       /// @param new_path The path to the new location for old_path. If old_path is a file, then new_path must also be a file name.

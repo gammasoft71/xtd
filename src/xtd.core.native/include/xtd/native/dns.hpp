@@ -56,32 +56,32 @@ namespace xtd {
       /// @param host_address_type The  address family (see address_family_constants.h) to resolve.
       /// @return The host handle.
       /// @warning Internal use only
-      static auto get_host_by_address(const std::string& host_address, std::int32_t host_address_type) -> std::intmax_t;
+      [[nodiscard]] static auto get_host_by_address(const std::string& host_address, std::int32_t host_address_type) -> std::intmax_t;
       /// @brief Gets host by host name.
       /// @param host_name The name to resolve.
       /// @return The host handle.
       /// @warning Internal use only
-      static auto get_host_by_name(const std::string& host_name) -> std::intmax_t;
+      [[nodiscard]] static auto get_host_by_name(const std::string& host_name) -> std::intmax_t;
       /// @brief Gets aliases for a host.
       /// @param host The host handle to retrieve aliases.
       /// @return An alias array for yhe host.
       /// @warning Internal use only
-      static auto get_aliases(std::intmax_t host) -> std::vector<std::string>;
+      [[nodiscard]] static auto get_aliases(std::intmax_t host) -> std::vector<std::string>;
       /// @brief Gets IP addresses for a host.
       /// @param host The host handle to retrieve IP addresses.
       /// @return An IP address array for yhe host.
       /// @warning Internal use only
-      static auto get_addresses(std::intmax_t host) -> std::vector<std::vector<std::uint8_t>>;
+      [[nodiscard]] static auto get_addresses(std::intmax_t host) -> std::vector<std::vector<std::uint8_t>>;
       /// @brief Gets name for a host.
       /// @param host The host handle to retrieve name.
       /// @return A string that represent the host.
       /// @warning Internal use only
-      static auto get_host_name(std::intmax_t host) -> std::string;
+      [[nodiscard]] static auto get_host_name(std::intmax_t host) -> std::string;
       /// @brief Gets host name for the current computer.
       /// @param host_name The string that will contain the host name.
       /// @return 0 if succeed; otherwise error.
       /// @warning Internal use only
-      static auto get_host_name(std::string& host_name) -> std::int32_t;
+      [[nodiscard]] static auto get_host_name(std::string& host_name) -> std::int32_t;
       /// @brief Opens the file /etc/hosts.
       /// @warning Internal use only
       static auto startup() -> void;

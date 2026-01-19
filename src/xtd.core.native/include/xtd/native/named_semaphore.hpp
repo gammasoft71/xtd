@@ -42,7 +42,7 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static auto create(std::int32_t initial_count, std::int32_t max_count, const std::string& name) -> std::intmax_t;
+      [[nodiscard]] static auto create(std::int32_t initial_count, std::int32_t max_count, const std::string& name) -> std::intmax_t;
       
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
@@ -53,13 +53,13 @@ namespace xtd {
       /// @brief Gets the maximum name size supported.
       /// @return The maximum name size supported.
       /// @warning Internal use only
-      static auto max_name_size() -> std::size_t;
+      [[nodiscard]] static auto max_name_size() -> std::size_t;
       
       /// @brief Open named semaphore with specified name.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the opened semaphore.
       /// @warning Internal use only
-      static auto open(const std::string& name) -> std::intmax_t;
+      [[nodiscard]] static auto open(const std::string& name) -> std::intmax_t;
       
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.

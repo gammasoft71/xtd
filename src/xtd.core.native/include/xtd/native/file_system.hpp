@@ -84,7 +84,7 @@ namespace xtd {
       /// @param path The path to cjheck the size.
       /// @return `true` if path too long; otherwiser `false`.
       /// @warning Internal use only
-      static auto is_path_too_long(const std::string& path) -> bool;
+      [[nodiscard]] static auto is_path_too_long(const std::string& path) -> bool;
       /// @brief Sets the attributes for the specified file or directory path.
       /// @param path The relative or absolute path to the directory to get attribute.
       /// @param attribute The file or path attribute. (see file_attribute.h)

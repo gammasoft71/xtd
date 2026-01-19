@@ -44,7 +44,7 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created event wait handle.
       /// @warning Internal use only
-      static auto create(bool initial_state, bool manual_reset, const std::string& name) -> std::intmax_t;
+      [[nodiscard]] static auto create(bool initial_state, bool manual_reset, const std::string& name) -> std::intmax_t;
       
       /// @brief Destroy named event wait handle with specified event wait handle handle.
       /// @param name The name of the event wait handle.
@@ -55,13 +55,13 @@ namespace xtd {
       /// @brief Gets the maximum name size supported.
       /// @return The maximum name size supported.
       /// @warning Internal use only
-      static auto max_name_size() -> std::size_t;
+      [[nodiscard]] static auto max_name_size() -> std::size_t;
       
       /// @brief Open named event wait handle with specified name.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the opened event wait handle.
       /// @warning Internal use only
-      static auto open(const std::string& name) -> std::intmax_t;
+      [[nodiscard]] static auto open(const std::string& name) -> std::intmax_t;
       
       /// @brief Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
       /// @param handle The event wait handle handle to set.

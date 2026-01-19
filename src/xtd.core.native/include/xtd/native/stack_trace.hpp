@@ -52,12 +52,12 @@ namespace xtd {
       /// @brief Gets the offset from the start of the native code for the method that is being executed.
       /// @return The offset from the start of the native code for the method that is being executed.
       /// @warning Internal use only
-      static auto get_native_offset() -> std::size_t;
+      [[nodiscard]] static auto get_native_offset() -> std::size_t;
       
       /// @brief Play system sound.
       /// @param sound The sound to play (see souund.h).
       /// @warning Internal use only
-      static auto get_frames(size_t skip_frames, bool need_file_info) -> frame_collection;
+      [[nodiscard]] static auto get_frames(size_t skip_frames, bool need_file_info) -> frame_collection;
       /// @}
     };
   }

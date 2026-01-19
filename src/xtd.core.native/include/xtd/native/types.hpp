@@ -47,11 +47,11 @@ namespace xtd {
       /// @param name The name to demangle.
       /// @return The demangled string of name.
       /// @warning Internal use only
-      static auto demangle(const std::string& name) -> std::string;
+      [[nodiscard]] static auto demangle(const std::string& name) -> std::string;
       
       /// @brief Gets an invalid native operating system handle.
       /// @return An invalid native operating system handle.
-      static auto invalid_handle() noexcept -> std::intmax_t;
+      [[nodiscard]] static auto invalid_handle() noexcept -> std::intmax_t;
       /// @}
     };
   }

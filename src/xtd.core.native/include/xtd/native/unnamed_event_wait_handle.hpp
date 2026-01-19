@@ -45,7 +45,7 @@ namespace xtd {
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created event wait handle.
       /// @warning Internal use only
-      static auto create(bool initial_state, bool manual_reset) -> std::intmax_t;
+      [[nodiscard]] static auto create(bool initial_state, bool manual_reset) -> std::intmax_t;
       
       /// @brief Destroy named event wait handle with specified event wait handle handle.
       /// @param handle The event wait handle handle to destroy.

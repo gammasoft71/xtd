@@ -51,7 +51,7 @@ namespace xtd {
       /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.
       /// @return The thread handle.
       /// @warning Internal use only
-      static auto create(std::function<void(std::intmax_t)> start, std::intmax_t obj, std::int32_t max_stack_size, bool suspended, std::intmax_t& id) -> std::intmax_t;
+      [[nodiscard]] static auto create(std::function<void(std::intmax_t)> start, std::intmax_t obj, std::int32_t max_stack_size, bool suspended, std::intmax_t& id) -> std::intmax_t;
       
       /// @brief Detach thread with specified handle.
       /// @param handle The thread handle.
@@ -62,13 +62,13 @@ namespace xtd {
       /// @brief Gets the current thread handle.
       /// @return The current thread handle.
       /// @warning Internal use only
-      static auto get_current_thread_handle() -> std::intmax_t;
+      [[nodiscard]] static auto get_current_thread_handle() -> std::intmax_t;
       
       /// @brief Gets the thread id.
       /// @param handle The thread handle.
       /// @return The current thread id.
       /// @warning Internal use only
-      static auto get_thread_id(std::intmax_t handle) -> std::intmax_t;
+      [[nodiscard]] static auto get_thread_id(std::intmax_t handle) -> std::intmax_t;
       
       /// @brief Join thread with specified handle.
       /// @param handle The thread handle.

@@ -85,22 +85,22 @@ namespace xtd {
       /// @brief Gets a time_zone_info object that represents the local time zone.
       /// @return An object that represents the local time zone.
       /// @warning Internal use only
-      static auto get_local_time_zone() -> time_zone_info;
+      [[nodiscard]] static auto get_local_time_zone() -> time_zone_info;
       
       /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.
       /// @return An array of time_zone_info objects.
       /// @warning Internal use only
-      static auto get_system_time_zones() -> std::vector<time_zone_info>;
+      [[nodiscard]] static auto get_system_time_zones() -> std::vector<time_zone_info>;
       
       /// @brief Gets the utc offset for the specified local time.
       /// @return the utc offset for the specified local time in seconds.
       /// @warning Internal use only
-      static auto utc_offset(std::time_t time) -> std::time_t;
+      [[nodiscard]] static auto utc_offset(std::time_t time) -> std::time_t;
       
       /// @brief Indicates whether the ttime_t is within the daylight saving time range for the current time zone.
       /// @return `true` if the time is within the daylight saving time range for the local time zone; otherwise `false`.
       /// @warning Internal use only
-      static auto is_daylight(std::time_t time) -> bool;
+      [[nodiscard]] static auto is_daylight(std::time_t time) -> bool;
       /// @}
     };
   }

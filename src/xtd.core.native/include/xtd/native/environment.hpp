@@ -54,56 +54,56 @@ namespace xtd {
       /// @brief Returns a string array containing the command-line arguments for the current process.
       /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
       /// @warning Internal use only
-      static auto get_command_line_args() -> std::vector<std::string>;
+      [[nodiscard]] static auto get_command_line_args() -> std::vector<std::string>;
       /// @brief Gets the desktop environment name.
       /// @return std::string A string containing desktop environment name.
       /// @remarks Returns "windows" on Windows, "macos" on macOS, "budgie" or "cinnamon" or "deepin" or "Enlightenment", "étoilé" or "gnome" or "kde" or "lxqt" or "mate" or "pantheon" or "razor" or "unity" or "xfce" on linux.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_desktop_environment() -> std::string;
+      [[nodiscard]] static auto get_desktop_environment() -> std::string;
       /// @brief Gets the desktop theme name.
       /// @return std::string A string containing desktop theme name.
       /// @remarks Returns a string, such as "Adwaita", "Breeze", "windows dark", "macos dark", ...
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_desktop_theme() -> std::string;
+      [[nodiscard]] static auto get_desktop_theme() -> std::string;
       /// @brief Gets the distribution bug report url.
       /// @return std::string A string containing distribution bug report url.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_bug_report() -> std::string;
+      [[nodiscard]] static auto get_distribution_bug_report() -> std::string;
       /// @brief Gets the distribution code name.
       /// @return std::string A string containing distribution code name.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_code_name() -> std::string;
+      [[nodiscard]] static auto get_distribution_code_name() -> std::string;
       /// @brief Gets the distribution description.
       /// @return std::string A string containing distribution description.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_description() -> std::string;
+      [[nodiscard]] static auto get_distribution_description() -> std::string;
       /// @brief Gets the distribution home url.
       /// @return std::string A string containing distribution home url.
       /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_home() -> std::string;
+      [[nodiscard]] static auto get_distribution_home() -> std::string;
       /// @brief Gets the distribution identifier.
       /// @return std::string A string containing distribution identifier.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_id() -> std::string;
+      [[nodiscard]] static auto get_distribution_id() -> std::string;
       /// @brief Gets the distribution like identifiers array.
       /// @return std::string A string containing distribution like identifiers array.
       /// @remarks Return {} if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_like_ids() -> std::vector<std::string>;
+      [[nodiscard]] static auto get_distribution_like_ids() -> std::vector<std::string>;
       /// @brief Gets the distribution name.
       /// @return std::string A string containing distribution name.
       /// @remarks Returns "Windows" on Windows, "macOS" on macOS, "Ubuntu", "Rocky Linux", ...
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_name() -> std::string;
+      [[nodiscard]] static auto get_distribution_name() -> std::string;
       /// @brief Gets a xtd::version object that identifies the distribution.
       /// @param major return the major version.
       /// @param minor return the minor version, build, and revision numbers for the distribution.
@@ -115,30 +115,30 @@ namespace xtd {
       /// @return std::string A string containing distribution version string.
       /// @remarks Return "" if not found or defined.
       /// @warning Internal use only
-      static auto get_distribution_version_string() -> std::string;
+      [[nodiscard]] static auto get_distribution_version_string() -> std::string;
       /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
       /// @param target The environment variable target (see environment_variable_target.h file).
       /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
       /// @warning Internal use only
-      static auto get_environment_variables(std::int32_t target) -> std::map<std::string, std::string>& ;
+      [[nodiscard]] static auto get_environment_variables(std::int32_t target) -> std::map<std::string, std::string>& ;
       /// @brief Retrieves the value of an environment variable from the current process.
       /// @param variable The name of the environment variable.
       /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
       /// @warning Internal use only
-      static auto get_environment_variable(const std::string& variable, std::int32_t target) -> std::string;
+      [[nodiscard]] static auto get_environment_variable(const std::string& variable, std::int32_t target) -> std::string;
       /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
       /// @param csidl System special folder identifier (see constant_special_item_id_list.h file).
       /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
       /// @warning Internal use only
-      static auto get_know_folder_path(std::int32_t csidl) -> std::string;
+      [[nodiscard]] static auto get_know_folder_path(std::int32_t csidl) -> std::string;
       /// @brief Gets the NetBIOS name of this local computer.
       /// @return A string containing the name of this computer.
       /// @warning Internal use only
-      static auto get_machine_name() -> std::string;
+      [[nodiscard]] static auto get_machine_name() -> std::string;
       /// @brief Gets a platform id that identifies the operating system platform.
       /// @return Operating system platform identifier (see platform_ids.h file).
       /// @warning Internal use only
-      static auto get_os_platform_id() -> std::int32_t;
+      [[nodiscard]] static auto get_os_platform_id() -> std::int32_t;
       /// @brief Gets a xtd::version object that identifies the operating system.
       /// @param major return the major version.
       /// @param minor return the minor version, build, and revision numbers for the operating system.
@@ -149,51 +149,51 @@ namespace xtd {
       /// @brief Gets the number of processors on the current machine.
       /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
       /// @warning Internal use only
-      static auto get_processor_count() -> std::uint32_t;
+      [[nodiscard]] static auto get_processor_count() -> std::uint32_t;
       /// @brief Gets the path of the resources folder.
       /// @return A string that represents the path of the resources folder.
       /// @warning Internal use only
-      static auto get_resources_path(bool gui_app) -> std::string;
+      [[nodiscard]] static auto get_resources_path(bool gui_app) -> std::string;
       /// @brief Gets the service pack version represented by this operating_system object.
       /// @return string The service pack version, if service packs are supported and at least one is installed; otherwise, an empty string ("").
       /// @warning Internal use only
-      static auto get_service_pack() -> std::string;
+      [[nodiscard]] static auto get_service_pack() -> std::string;
       /// @brief Gets the number of bytes in the operating system's memory page.
       /// @return The number of bytes in the system memory page.
       /// @warning Internal use only
-      static auto get_system_page_size() -> std::size_t;
+      [[nodiscard]] static auto get_system_page_size() -> std::size_t;
       /// @brief Gets the number of milliseconds elapsed since the system started.
       /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
       /// @warning Internal use only
-      static auto get_tick_count() -> std::uint32_t;
+      [[nodiscard]] static auto get_tick_count() -> std::uint32_t;
       /// @brief Gets a value indicating whether the current user is an administrator.
       /// @return bool `true` if the current user is an administrator; otherwise, `false`.
       /// @warning Internal use only
-      static auto get_user_administrator() -> bool;
+      [[nodiscard]] static auto get_user_administrator() -> bool;
       /// @brief Gets the network domain name associated with the current user.
       /// @return The network domain name associated with the current user.
       /// @warning Internal use only
-      static auto get_user_domain_name() -> std::string;
+      [[nodiscard]] static auto get_user_domain_name() -> std::string;
       /// @brief Gets the user name of the person who is currently logged on to the operating system.
       /// @return The user name of the person who is logged on to the operating system.
       /// @warning Internal use only
-      static auto get_user_name() -> std::string;
+      [[nodiscard]] static auto get_user_name() -> std::string;
       /// @brief Gets a value that indicates whether the current application domain is shutting down.
       /// @return bool `true` if the current application domain is shutting down; otherwise, `false`.
       /// @warning Internal use only
-      static auto has_shutdown_started() -> bool;
+      [[nodiscard]] static auto has_shutdown_started() -> bool;
       /// @brief Determines whether the current processor is arm.
       /// @return `true` if the processor is is arm; otherwise, `false`.
       /// @warning Internal use only
-      static auto is_processor_arm() -> bool;
+      [[nodiscard]] static auto is_processor_arm() -> bool;
       /// @brief Determines whether the current operating system is a 64-bit operating system.
       /// @return `true` if the operating system is 64-bit; otherwise, `false`.
       /// @warning Internal use only
-      static auto is_os_64_bit() -> bool;
+      [[nodiscard]] static auto is_os_64_bit() -> bool;
       /// @brief Gets the newline string defined for this environment.
       /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
       /// @warning Internal use only
-      static auto new_line() -> std::string;
+      [[nodiscard]] static auto new_line() -> std::string;
       /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
       /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
       /// @warning Internal use only
@@ -210,7 +210,7 @@ namespace xtd {
       /// @brief Gets the amount of physical memory mapped to the process context.
       /// @return Int64 A 64-bit signed integer containing the number of bytes of physical memory mapped to the process context.
       /// @warning Internal use only
-      static auto working_set() -> std::int64_t;
+      [[nodiscard]] static auto working_set() -> std::int64_t;
       /// @}
     };
   }

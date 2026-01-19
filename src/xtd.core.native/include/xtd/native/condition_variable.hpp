@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Create condition variable.
       /// @return The handle of the created condition variable.
       /// @warning Internal use only
-      static auto create() -> std::intmax_t;
+      [[nodiscard]] static auto create() -> std::intmax_t;
       
       /// @brief Destroy condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to destroy.

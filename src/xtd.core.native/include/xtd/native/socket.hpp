@@ -52,17 +52,17 @@ namespace xtd {
       /// @brief Gets the native address family value corresponding to xtd address family.
       /// @return The native address family value corresponding to xtd address family (see address_family_constants.h).
       /// @warning Internal use only
-      static auto address_family_to_native(std::int32_t address_family) -> std::int32_t;
+      [[nodiscard]] static auto address_family_to_native(std::int32_t address_family) -> std::int32_t;
       /// @brief Gets the xtd address family value corresponding to native address family.
       /// @return The xtd address family value corresponding to native address family (see address_family_constants.h).
       /// @warning Internal use only
-      static auto native_to_address_family(std::int32_t address_family) -> std::int32_t;
+      [[nodiscard]] static auto native_to_address_family(std::int32_t address_family) -> std::int32_t;
       /// @brief Accepts a connection on a socket.
       /// @param handle The socket handle.
       /// @param socket_address A byte array socket address is a result parameter that is filled in with the address of the connecting entity, as known to the communications layer.
       /// @return The new socket handle created.
       /// @warning Internal use only
-      static auto accept(std::intmax_t handle, std::vector<std::uint8_t>& socket_address) -> std::intmax_t;
+      [[nodiscard]] static auto accept(std::intmax_t handle, std::vector<std::uint8_t>& socket_address) -> std::intmax_t;
       /// @brief Binds a name to a socket.
       /// @param handle The socket handle.
       /// @param socket_address A byte array socket address to bind.
@@ -84,7 +84,7 @@ namespace xtd {
       /// @param protocol_type One of protocol type values (see protocol_type_constants.h).
       /// @return The new socket handle created.
       /// @warning Internal use only
-      static auto create(std::int32_t address_family, std::int32_t socket_type, std::int32_t protocol_type) -> std::intmax_t;
+      [[nodiscard]] static auto create(std::int32_t address_family, std::int32_t socket_type, std::int32_t protocol_type) -> std::intmax_t;
       /// @brief Destroys the socket.
       /// @param handle The socket handle.
       /// @return Zero (0) if succeed; otherwise on error.
@@ -94,25 +94,25 @@ namespace xtd {
       /// @param int32 The socket error.
       /// @return The string corresponding to the specified socket error.
       /// @warning Internal use only
-      static auto socket_error_to_string(std::int32_t socket_error) -> std::string;
+      [[nodiscard]] static auto socket_error_to_string(std::int32_t socket_error) -> std::string;
       /// @brief Gets the amount of data that has been received from the network and is available to be read.
       /// @param handle The socket handle.
       /// @return The number of bytes of data received from the network and available to be read.
       /// @remarks Return -1 if error.
       /// @warning Internal use only
-      static auto get_available(std::intmax_t handle) -> std::size_t;
+      [[nodiscard]] static auto get_available(std::intmax_t handle) -> std::size_t;
       /// @brief Gets last error.
       /// @return One of socket error value (see socket_error_constants.h).
       /// @warning Internal use only
-      static auto get_last_error() -> std::int32_t;
+      [[nodiscard]] static auto get_last_error() -> std::int32_t;
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
       /// @return bool `true` if the operating system and network adaptors support the IPv4 protocol; otherwise, `false`.
       /// @warning Internal use only
-      static auto get_os_supports_ip_v4() noexcept -> bool;
+      [[nodiscard]] static auto get_os_supports_ip_v4() noexcept -> bool;
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
       /// @return bool `true` if the operating system and network adaptors support the IPv6 protocol; otherwise, `false`.
       /// @warning Internal use only
-      static auto get_os_supports_ip_v6() noexcept -> bool;
+      [[nodiscard]] static auto get_os_supports_ip_v6() noexcept -> bool;
       /// @brief Gets options on socket.
       /// @param handle The socket handle.
       /// @param socket_option_level The platform-defined option level.
