@@ -120,28 +120,29 @@ Inheritance diagram for xtd::runtime::exception_services::exception_dispatch_inf
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1runtime.html" title="Contains advanced types that support diverse namespaces such as the xtd, runtime, and the security na...">xtd::runtime</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>An <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object stores the stack trace information that an exception contains at the point where it's captured. The exception can then be thrown at another time and possibly on another thread by calling the <a class="el" href="#afe58006b5a2687fdcda628831e2df0c6" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info.rethrow</a> method. The exception is thrown as if it had flowed from the point where it was captured to the point where the <a class="el" href="#afe58006b5a2687fdcda628831e2df0c6" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info::rethrow</a> method is called. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>An <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object stores the stack trace information that an exception contains at the point where it's captured. The exception can then be thrown at another time and possibly on another thread by calling the <a class="el" href="#a485af9ea990d2c0596586e0f33639027" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info.rethrow</a> method. The exception is thrown as if it had flowed from the point where it was captured to the point where the <a class="el" href="#a485af9ea990d2c0596586e0f33639027" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info::rethrow</a> method is called. </dd>
 <dd>
 For an example, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices#capture-and-rethrow-exceptions-properly">Capture exceptions to rethrow later</a>. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ae26415ac1a242af4d1cfab0f04d8fda8" id="r_ae26415ac1a242af4d1cfab0f04d8fda8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae26415ac1a242af4d1cfab0f04d8fda8">exception_captured</a> () const noexcept</td></tr>
-<tr class="memdesc:ae26415ac1a242af4d1cfab0f04d8fda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the exception is caught or not.  <br /></td></tr>
-<tr class="separator:ae26415ac1a242af4d1cfab0f04d8fda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3ddec99a92b0e64d3d6096506f3830f" id="r_ae3ddec99a92b0e64d3d6096506f3830f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a>&lt; <a class="el" href="classxtd_1_1exception.html">xtd::exception</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3ddec99a92b0e64d3d6096506f3830f">source_exception</a> () const noexcept</td></tr>
-<tr class="memdesc:ae3ddec99a92b0e64d3d6096506f3830f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the exception that's represented by the current instance.  <br /></td></tr>
-<tr class="separator:ae3ddec99a92b0e64d3d6096506f3830f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe58006b5a2687fdcda628831e2df0c6" id="r_afe58006b5a2687fdcda628831e2df0c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe58006b5a2687fdcda628831e2df0c6">rethrow</a> ()</td></tr>
-<tr class="memdesc:afe58006b5a2687fdcda628831e2df0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rethrows the exception that's represented by the current <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object, after restoring the state that was saved when the exception was captured.  <br /></td></tr>
-<tr class="separator:afe58006b5a2687fdcda628831e2df0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac230fcc4b7084bc41788c2e75a563592" id="r_ac230fcc4b7084bc41788c2e75a563592"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
-<tr class="memitem:ac230fcc4b7084bc41788c2e75a563592"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac230fcc4b7084bc41788c2e75a563592">capture</a> (const exception_t &amp;source)</td></tr>
-<tr class="memdesc:ac230fcc4b7084bc41788c2e75a563592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
-<tr class="separator:ac230fcc4b7084bc41788c2e75a563592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb6b5d52b2c354241ec332467ceb0655" id="r_acb6b5d52b2c354241ec332467ceb0655"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
-<tr class="memitem:acb6b5d52b2c354241ec332467ceb0655"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acb6b5d52b2c354241ec332467ceb0655">rethrow</a> (const exception_t &amp;source)</td></tr>
-<tr class="memdesc:acb6b5d52b2c354241ec332467ceb0655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rehrows the source exception, maintaining the original stack trace information.  <br /></td></tr>
-<tr class="separator:acb6b5d52b2c354241ec332467ceb0655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56964b4baef27c0c0cf2c629445a7465" id="r_a56964b4baef27c0c0cf2c629445a7465"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56964b4baef27c0c0cf2c629445a7465">exception_captured</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a56964b4baef27c0c0cf2c629445a7465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the exception is caught or not.  <br /></td></tr>
+<tr class="separator:a56964b4baef27c0c0cf2c629445a7465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab5b67ddb1580288953b0d285b75c2c" id="r_afab5b67ddb1580288953b0d285b75c2c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afab5b67ddb1580288953b0d285b75c2c">source_exception</a> () const noexcept -&gt; <a class="el" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a>&lt; <a class="el" href="classxtd_1_1exception.html">xtd::exception</a> &gt;</td></tr>
+<tr class="memdesc:afab5b67ddb1580288953b0d285b75c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the exception that's represented by the current instance.  <br /></td></tr>
+<tr class="separator:afab5b67ddb1580288953b0d285b75c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485af9ea990d2c0596586e0f33639027" id="r_a485af9ea990d2c0596586e0f33639027"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a485af9ea990d2c0596586e0f33639027">rethrow</a> () -&gt; void</td></tr>
+<tr class="memdesc:a485af9ea990d2c0596586e0f33639027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rethrows the exception that's represented by the current <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object, after restoring the state that was saved when the exception was captured.  <br /></td></tr>
+<tr class="separator:a485af9ea990d2c0596586e0f33639027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d7d5884fb89041d9a8764b9bb6655c" id="r_af6d7d5884fb89041d9a8764b9bb6655c"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; <br />
+requires std::derived_from&lt;exception_t, <a class="el" href="classxtd_1_1exception.html">xtd::exception</a>&gt;</td></tr>
+<tr class="memitem:af6d7d5884fb89041d9a8764b9bb6655c"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af6d7d5884fb89041d9a8764b9bb6655c">capture</a> (const exception_t &amp;source) -&gt; <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a></td></tr>
+<tr class="memdesc:af6d7d5884fb89041d9a8764b9bb6655c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
+<tr class="separator:af6d7d5884fb89041d9a8764b9bb6655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32970f10aef7d300bc4cc02e67b46dbb" id="r_a32970f10aef7d300bc4cc02e67b46dbb"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
+<tr class="memitem:a32970f10aef7d300bc4cc02e67b46dbb"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a32970f10aef7d300bc4cc02e67b46dbb">rethrow</a> (const exception_t &amp;source) -&gt; void</td></tr>
+<tr class="memdesc:a32970f10aef7d300bc4cc02e67b46dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rehrows the source exception, maintaining the original stack trace information.  <br /></td></tr>
+<tr class="separator:a32970f10aef7d300bc4cc02e67b46dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:ae4903a41b9da58106354ef7e50014752" id="r_ae4903a41b9da58106354ef7e50014752"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4903a41b9da58106354ef7e50014752">operator bool</a> () const noexcept</td></tr>
@@ -179,8 +180,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae26415ac1a242af4d1cfab0f04d8fda8" name="ae26415ac1a242af4d1cfab0f04d8fda8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae26415ac1a242af4d1cfab0f04d8fda8">&#9670;&#160;</a></span>exception_captured()</h2>
+<a id="a56964b4baef27c0c0cf2c629445a7465" name="a56964b4baef27c0c0cf2c629445a7465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56964b4baef27c0c0cf2c629445a7465">&#9670;&#160;</a></span>exception_captured()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,26 +190,26 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::runtime::exception_services::exception_dispatch_info::exception_captured </td>
+          <td class="memname">auto xtd::runtime::exception_services::exception_dispatch_info::exception_captured </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; bool </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the exception is caught or not. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code>if the exception is captured; otherwise <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the exception is captured; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
-<a id="ae3ddec99a92b0e64d3d6096506f3830f" name="ae3ddec99a92b0e64d3d6096506f3830f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3ddec99a92b0e64d3d6096506f3830f">&#9670;&#160;</a></span>source_exception()</h2>
+<a id="afab5b67ddb1580288953b0d285b75c2c" name="afab5b67ddb1580288953b0d285b75c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab5b67ddb1580288953b0d285b75c2c">&#9670;&#160;</a></span>source_exception()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,46 +218,47 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a>&lt; <a class="el" href="classxtd_1_1exception.html">xtd::exception</a> &gt; xtd::runtime::exception_services::exception_dispatch_info::source_exception </td>
+          <td class="memname">auto xtd::runtime::exception_services::exception_dispatch_info::source_exception </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a>&lt;<a class="el" href="classxtd_1_1exception.html">xtd::exception</a>&gt; </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets the exception that's represented by the current instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>The exception that's represented by the current instance. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This property is used by the Task Parallel Library, for example, to combine multiple exceptions in an xtd::aggregate_exception object. It's not intended to be used by application code. Use the <a class="el" href="#afe58006b5a2687fdcda628831e2df0c6" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info::rethrow</a> method to restore the state of the captured exception and throw it. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property is used by the Task Parallel Library, for example, to combine multiple exceptions in an xtd::aggregate_exception object. It's not intended to be used by application code. Use the <a class="el" href="#a485af9ea990d2c0596586e0f33639027" title="Rethrows the exception that&#39;s represented by the current xtd::runtime::exception_services::exception_...">xtd::runtime::exception_services::exception_dispatch_info::rethrow</a> method to restore the state of the captured exception and throw it. </dd></dl>
 
 </div>
 </div>
-<a id="ac230fcc4b7084bc41788c2e75a563592" name="ac230fcc4b7084bc41788c2e75a563592"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac230fcc4b7084bc41788c2e75a563592">&#9670;&#160;</a></span>capture()</h2>
+<a id="af6d7d5884fb89041d9a8764b9bb6655c" name="af6d7d5884fb89041d9a8764b9bb6655c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d7d5884fb89041d9a8764b9bb6655c">&#9670;&#160;</a></span>capture()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class exception_t&gt; </div>
+template&lt;class exception_t&gt; <br />
+requires std::derived_from&lt;exception_t, <a class="el" href="classxtd_1_1exception.html">xtd::exception</a>&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a> xtd::runtime::exception_services::exception_dispatch_info::capture </td>
+          <td class="memname">static auto xtd::runtime::exception_services::exception_dispatch_info::capture </td>
           <td>(</td>
           <td class="paramtype">const exception_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a> </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -275,8 +277,8 @@ If the exception is active when it's captured, the current stack trace informati
 
 </div>
 </div>
-<a id="afe58006b5a2687fdcda628831e2df0c6" name="afe58006b5a2687fdcda628831e2df0c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe58006b5a2687fdcda628831e2df0c6">&#9670;&#160;</a></span>rethrow() <span class="overload">[1/2]</span></h2>
+<a id="a485af9ea990d2c0596586e0f33639027" name="a485af9ea990d2c0596586e0f33639027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485af9ea990d2c0596586e0f33639027">&#9670;&#160;</a></span>rethrow() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,10 +287,10 @@ If the exception is active when it's captured, the current stack trace informati
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::runtime::exception_services::exception_dispatch_info::rethrow </td>
+          <td class="memname">auto xtd::runtime::exception_services::exception_dispatch_info::rethrow </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -302,8 +304,8 @@ If the exception is active when it's captured, the current stack trace informati
 
 </div>
 </div>
-<a id="acb6b5d52b2c354241ec332467ceb0655" name="acb6b5d52b2c354241ec332467ceb0655"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb6b5d52b2c354241ec332467ceb0655">&#9670;&#160;</a></span>rethrow() <span class="overload">[2/2]</span></h2>
+<a id="a32970f10aef7d300bc4cc02e67b46dbb" name="a32970f10aef7d300bc4cc02e67b46dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32970f10aef7d300bc4cc02e67b46dbb">&#9670;&#160;</a></span>rethrow() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,10 +316,10 @@ template&lt;class exception_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void xtd::runtime::exception_services::exception_dispatch_info::rethrow </td>
+          <td class="memname">static auto xtd::runtime::exception_services::exception_dispatch_info::rethrow </td>
           <td>(</td>
           <td class="paramtype">const exception_t &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -366,7 +368,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 19 2026 21:54:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 20 2026 22:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
