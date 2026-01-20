@@ -30,20 +30,20 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_copyright_attribute class.
       /// @param copyright The copyright information.
-      explicit assembly_copyright_attribute(const string& copyright);
+      explicit assembly_copyright_attribute(const xtd::string& copyright);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_copyright_attribute(const string& copyright, const object& executing_assembly);
+      assembly_copyright_attribute(const xtd::string& copyright, const object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
       
       /// @{
       /// @brief Gets copyright information.
-      /// @return A string containing the copyright information.
-      const string& copyright() const noexcept;
+      /// @return A xtd::string containing the copyright information.
+      [[nodiscard]] auto copyright() const noexcept -> const xtd::string&;
       /// @}
       
       /// @name Public Methods
@@ -52,28 +52,28 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const assembly_copyright_attribute& other) const noexcept override;
+      [[nodiscard]] auto equals(const assembly_copyright_attribute& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
     protected:
-      xtd::sptr<object> get_type_id() const noexcept override;
+      [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
     private:
-      string copyright_;
+      xtd::string copyright_;
     };
   }
 }
 
 /// @cond
-xtd::sptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyright_attribute__();
+auto __assembly_copyright_attribute__() -> xtd::sptr<xtd::reflection::assembly_copyright_attribute>&;
 /// @endcond
 
 /// @brief Sets the assembly copoyright information. Must be called once in your application.

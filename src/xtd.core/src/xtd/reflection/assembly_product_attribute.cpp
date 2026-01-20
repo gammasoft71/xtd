@@ -10,27 +10,27 @@ assembly_product_attribute::assembly_product_attribute(const string& product, co
   __assembly_product_attribute__() = xtd::new_sptr<xtd::reflection::assembly_product_attribute>(product);
 }
 
-const string& assembly_product_attribute::product() const noexcept {
+auto assembly_product_attribute::product() const noexcept -> const string& {
   return product_;
 }
 
-bool assembly_product_attribute::equals(const object& obj) const noexcept {
+auto assembly_product_attribute::equals(const object& obj) const noexcept -> bool {
   return is<assembly_product_attribute>(obj) && equals(static_cast<const assembly_product_attribute&>(obj));
 }
 
-bool assembly_product_attribute::equals(const assembly_product_attribute& other) const noexcept {
+auto assembly_product_attribute::equals(const assembly_product_attribute& other) const noexcept -> bool {
   return product_ == other.product_;
 }
 
-size assembly_product_attribute::get_hash_code() const noexcept {
+auto assembly_product_attribute::get_hash_code() const noexcept -> size {
   return hash_code::combine(product_);
 }
 
-xtd::sptr<object> assembly_product_attribute::get_type_id() const noexcept {
+auto assembly_product_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
-xtd::sptr<xtd::reflection::assembly_product_attribute>& __assembly_product_attribute__() {
+auto __assembly_product_attribute__() -> sptr<assembly_product_attribute>& {
   static auto product = xtd::sptr<xtd::reflection::assembly_product_attribute> {};
   return product;
 }

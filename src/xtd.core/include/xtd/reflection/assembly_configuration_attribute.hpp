@@ -30,12 +30,12 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xttd::reflection::assembly_configuration_attribute class.
       /// @param configuration The assembly configuration.
-      explicit assembly_configuration_attribute(const string& configuration);
+      explicit assembly_configuration_attribute(const xtd::string& configuration);
       /// @}
       
       /// @cond
       /// Internal used only
-      assembly_configuration_attribute(const string& value, const object& executing_assembly);
+      assembly_configuration_attribute(const xtd::string& value, const xtd::object& executing_assembly);
       /// @endcond
       
       /// @name Public Properties
@@ -43,7 +43,7 @@ namespace xtd {
       /// @{
       /// @brief Gets assembly configuration information.
       /// @return A string containing the assembly configuration information.
-      const string& configuration() const noexcept;
+      [[nodiscard]] auto configuration() const noexcept -> const xtd::string&;
       /// @}
       
       /// @name Public Methods
@@ -52,28 +52,28 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const xtd::object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const assembly_configuration_attribute& other) const noexcept override;
+      [[nodiscard]] auto equals(const assembly_configuration_attribute& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
     protected:
-      xtd::sptr<object> get_type_id() const noexcept override;
+      [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
     private:
-      string configuration_;
+      xtd::string configuration_;
     };
   }
 }
 
 /// @cond
-xtd::sptr<xtd::reflection::assembly_configuration_attribute>& __assembly_configuration_attribute__();
+auto __assembly_configuration_attribute__() -> xtd::sptr<xtd::reflection::assembly_configuration_attribute>&;
 /// @endcond
 
 /// @brief Sets the assembly configuration information. Must be called once in your application.

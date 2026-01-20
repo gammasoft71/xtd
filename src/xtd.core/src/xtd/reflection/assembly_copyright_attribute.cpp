@@ -10,27 +10,27 @@ assembly_copyright_attribute::assembly_copyright_attribute(const string& copyrig
   __assembly_copyright_attribute__() = xtd::new_sptr<xtd::reflection::assembly_copyright_attribute>(copyright);
 }
 
-const string& assembly_copyright_attribute::copyright() const noexcept {
+auto assembly_copyright_attribute::copyright() const noexcept -> const string& {
   return copyright_;
 }
 
-bool assembly_copyright_attribute::equals(const object& obj) const noexcept {
+auto assembly_copyright_attribute::equals(const object& obj) const noexcept -> bool {
   return is<assembly_copyright_attribute>(obj) && equals(static_cast<const assembly_copyright_attribute&>(obj));
 }
 
-bool assembly_copyright_attribute::equals(const assembly_copyright_attribute& other) const noexcept {
+auto assembly_copyright_attribute::equals(const assembly_copyright_attribute& other) const noexcept -> bool {
   return copyright_ == other.copyright_;
 }
 
-size assembly_copyright_attribute::get_hash_code() const noexcept {
+auto assembly_copyright_attribute::get_hash_code() const noexcept -> size {
   return hash_code::combine(copyright_);
 }
 
-xtd::sptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
+auto assembly_copyright_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
 
-xtd::sptr<xtd::reflection::assembly_copyright_attribute>& __assembly_copyright_attribute__() {
+auto __assembly_copyright_attribute__() -> sptr<assembly_copyright_attribute>& {
   static auto copyright = xtd::sptr<xtd::reflection::assembly_copyright_attribute> {};
   return copyright;
 }

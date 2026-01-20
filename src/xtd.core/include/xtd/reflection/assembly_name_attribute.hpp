@@ -41,7 +41,7 @@ namespace xtd {
       /// @{
       /// @brief Gets name information.
       /// @return A string containing the name information.
-      const string& name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> const xtd::string&;
       /// @}
       
       /// @name Public Methods
@@ -50,19 +50,19 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const assembly_name_attribute& other) const noexcept override;
+      [[nodiscard]] auto equals(const assembly_name_attribute& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
     protected:
-      xtd::sptr<object> get_type_id() const noexcept override;
+      [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
     private:
       string name_;
@@ -71,7 +71,7 @@ namespace xtd {
 }
 
 /// @cond
-xtd::sptr<xtd::reflection::assembly_name_attribute>& __assembly_name_attribute__();
+auto __assembly_name_attribute__() -> xtd::sptr<xtd::reflection::assembly_name_attribute>&;
 /// @endcond
 
 /// @brief Sets the assembly name information. Must be called once in your application.

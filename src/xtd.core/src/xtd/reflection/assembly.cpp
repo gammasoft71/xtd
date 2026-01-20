@@ -7,87 +7,87 @@ using namespace xtd;
 using namespace xtd::io;
 using namespace xtd::reflection;
 
-const string& assembly::company() const noexcept {
+auto assembly::company() const noexcept -> const string& {
   return company_;
 }
 
-const string& assembly::configuration() const noexcept {
+auto assembly::configuration() const noexcept -> const string& {
   return configuration_;
 }
 
-const string& assembly::copyright() const noexcept {
+auto assembly::copyright() const noexcept -> const string& {
   return copyright_;
 }
 
-const string& assembly::culture() const noexcept {
+auto assembly::culture() const noexcept -> const string& {
   return culture_;
 }
 
-const string& assembly::description() const noexcept {
+auto assembly::description() const noexcept -> const string& {
   return description_;
 }
 
-string assembly::file_name() const noexcept {
+auto assembly::file_name() const noexcept -> string {
   return path::get_file_name(location());
 }
 
-const string& assembly::file_version() const noexcept {
+auto assembly::file_version() const noexcept -> const string& {
   return file_version_;
 }
 
-const string& assembly::guid() const noexcept {
+auto assembly::guid() const noexcept -> const string& {
   return guid_;
 }
 
-const string& assembly::identifier() const noexcept {
+auto assembly::identifier() const noexcept -> const string& {
   return identifier_;
 }
 
-string assembly::location() const noexcept {
+auto assembly::location() const noexcept -> string {
   return environment::get_command_line_args()[0];
 }
 
-const string& assembly::name() const noexcept {
+auto assembly::name() const noexcept -> const string& {
   return name_;
 }
 
-string assembly::name_or_file_name() const noexcept {
+auto assembly::name_or_file_name() const noexcept -> string {
   return string::is_empty(name_) ? file_name() : name_;
 }
 
-const string& assembly::product() const noexcept {
+auto assembly::product() const noexcept -> const string& {
   return product_;
 }
 
-string assembly::location_path() const noexcept {
+auto assembly::location_path() const noexcept -> string {
   return path::get_directory_name(location());
 }
 
-const string& assembly::title() const noexcept {
+auto assembly::title() const noexcept -> const string& {
   return title_;
 }
 
-const string& assembly::trademarks() const noexcept {
+auto assembly::trademarks() const noexcept -> const string& {
   return trademarks_;
 }
 
-const string& assembly::version() const noexcept {
+auto assembly::version() const noexcept -> const string& {
   return version_;
 }
 
-bool assembly::equals(const object& obj) const noexcept {
+auto assembly::equals(const object& obj) const noexcept -> bool {
   return is<assembly>(obj) && equals(static_cast<const assembly&>(obj));
 }
 
-bool assembly::equals(const assembly& other) const noexcept {
+auto assembly::equals(const assembly& other) const noexcept -> bool {
   return company_ == other.company_ && configuration_ == other.configuration_ && copyright_ == other.copyright_ && culture_ == other.culture_ && description_ == other.description_ && file_version_ == other.file_version_ && guid_ == other.guid_ && identifier_ == other.identifier_ && name_ == other.name_ && product_ == other.product_ && title_ == other.title_ && trademarks_ == other.trademarks_ && version_ == other.version_;
 }
 
-size assembly::get_hash_code() const noexcept {
+auto assembly::get_hash_code() const noexcept -> size {
   return hash_code::combine(company_, configuration_, copyright_, culture_, description_, file_version_, guid_, identifier_, name_, product_, title_, trademarks_, version_);
 }
 
-const assembly& assembly::get_executing_assembly() noexcept {
+auto assembly::get_executing_assembly() noexcept -> const assembly& {
   static auto current_assembly = assembly {};
   if (__assembly_company_attribute__() && current_assembly.company_ != __assembly_company_attribute__()->company()) current_assembly.company_ = __assembly_company_attribute__()->company();
   if (__assembly_configuration_attribute__() && current_assembly.configuration_ != __assembly_configuration_attribute__()->configuration()) current_assembly.configuration_ = __assembly_configuration_attribute__()->configuration();
