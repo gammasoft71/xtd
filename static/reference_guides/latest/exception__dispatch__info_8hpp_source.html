@@ -118,8 +118,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        exception_dispatch_info() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        exception_dispatch_info(exception_dispatch_info&amp;&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        exception_dispatch_info(<span class="keyword">const</span> exception_dispatch_info&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        exception_dispatch_info&amp; operator =(exception_dispatch_info&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        exception_dispatch_info&amp; operator =(<span class="keyword">const</span> exception_dispatch_info&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">auto</span> operator =(exception_dispatch_info&amp;&amp;) -&gt; exception_dispatch_info&amp; = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">auto</span> operator =(<span class="keyword">const</span> exception_dispatch_info&amp;) -&gt; exception_dispatch_info&amp; = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#a56964b4baef27c0c0cf2c629445a7465">   47</a></span>        [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#a56964b4baef27c0c0cf2c629445a7465">exception_captured</a>() const noexcept -&gt; <span class="keywordtype">bool</span> {<span class="keywordflow">return</span> exception_ptr_ ? true : <span class="keyword">false</span>;}</div>
@@ -175,7 +175,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 12:43:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 18:14:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -113,9 +113,9 @@ Inheritance diagram for xtd::threading::barrier:</div>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a390125fc8e63213b1738fb4be961e20a">barrier</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_function" href="#adcb731c159a665c800b5bab6c39b5ae9">barrier</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a390125fc8e63213b1738fb4be961e20a"><div class="ttname"><a href="#a390125fc8e63213b1738fb4be961e20a">xtd::threading::barrier::barrier</a></div><div class="ttdeci">barrier(int32 participant_count)</div><div class="ttdoc">Initializes a new instance of the xtd::threading::barrier class.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_adcb731c159a665c800b5bab6c39b5ae9"><div class="ttname"><a href="#adcb731c159a665c800b5bab6c39b5ae9">xtd::threading::barrier::barrier</a></div><div class="ttdeci">barrier(xtd::size participant_count)</div><div class="ttdoc">Initializes a new instance of the xtd::threading::barrier class.</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/barrier&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
@@ -131,13 +131,13 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="line">      <span class="comment">// Create a barrier with three participants</span></div>
 <div class="line">      <span class="comment">// Provide a post-phase action that will print out certain information</span></div>
 <div class="line">      <span class="comment">// And the third time through, it will throw an exception</span></div>
-<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="#a390125fc8e63213b1738fb4be961e20a">barrier</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1barrier.html">threading::barrier</a> {3, <a class="code hl_typedef" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action&lt;threading::barrier&amp;&gt;</a> {[&amp;](<a class="code hl_class" href="classxtd_1_1threading_1_1barrier.html">threading::barrier</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) {</div>
+<div class="line">      <span class="keyword">auto</span> <a class="code hl_function" href="#adcb731c159a665c800b5bab6c39b5ae9">barrier</a> = <a class="code hl_class" href="classxtd_1_1threading_1_1barrier.html">threading::barrier</a> {3, <a class="code hl_typedef" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action&lt;threading::barrier&amp;&gt;</a> {[&amp;](<a class="code hl_class" href="classxtd_1_1threading_1_1barrier.html">threading::barrier</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) {</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Post-Phase action: count={0}, phase={1}&quot;</span>, count, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>.current_phase_number());</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>.current_phase_number() == 2) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>(<span class="stringliteral">&quot;D&#39;oh!&quot;</span>);</div>
 <div class="line">      }}};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Nope -- changed my mind.  Let&#39;s make it five participants.</span></div>
-<div class="line">      barrier.<a class="code hl_function" href="#a55da0235555a64ed97098c21fa5bf07e">add_participants</a>(2);</div>
+<div class="line">      barrier.<a class="code hl_function" href="#a1def634cf92bcbf1da621c373cbffd22">add_participants</a>(2);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Nope -- let&#39;s settle on four participants.</span></div>
 <div class="line">      barrier.remove_participant();</div>
@@ -183,7 +183,7 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html"><div class="ttname"><a href="classxtd_1_1threading_1_1barrier.html">xtd::threading::barrier</a></div><div class="ttdoc">Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.</div><div class="ttdef"><b>Definition</b> barrier.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a55da0235555a64ed97098c21fa5bf07e"><div class="ttname"><a href="#a55da0235555a64ed97098c21fa5bf07e">xtd::threading::barrier::add_participants</a></div><div class="ttdeci">int32 add_participants(int32 participant_count)</div><div class="ttdoc">Notifies the xtd::threading::barrier that there will be additional participants.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1barrier_html_a1def634cf92bcbf1da621c373cbffd22"><div class="ttname"><a href="#a1def634cf92bcbf1da621c373cbffd22">xtd::threading::barrier::add_participants</a></div><div class="ttdeci">auto add_participants(xtd::size participant_count) -&gt; xtd::size</div><div class="ttdoc">Notifies the xtd::threading::barrier that there will be additional participants.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga79b9e415252e85714d5549936d31439a"><div class="ttname"><a href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
@@ -191,63 +191,63 @@ Inheritance diagram for xtd::threading::barrier:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>A group of tasks cooperate by moving through a series of phases, where each in the group signals it has arrived at the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> in a given phase and implicitly waits for all others to arrive. The same <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> can be used for multiple phases. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
-<tr class="memitem:a541a2b302cb76a52f869eaded0e0f518" id="r_a541a2b302cb76a52f869eaded0e0f518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541a2b302cb76a52f869eaded0e0f518">post_phase_action</a></td></tr>
-<tr class="memdesc:a541a2b302cb76a52f869eaded0e0f518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate.  <br /></td></tr>
-<tr class="separator:a541a2b302cb76a52f869eaded0e0f518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2c0075ca29c69343078c2aa45916f8" id="r_a0e2c0075ca29c69343078c2aa45916f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8">post_phase_action</a></td></tr>
+<tr class="memdesc:a0e2c0075ca29c69343078c2aa45916f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate.  <br /></td></tr>
+<tr class="separator:a0e2c0075ca29c69343078c2aa45916f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a390125fc8e63213b1738fb4be961e20a" id="r_a390125fc8e63213b1738fb4be961e20a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390125fc8e63213b1738fb4be961e20a">barrier</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>)</td></tr>
-<tr class="memdesc:a390125fc8e63213b1738fb4be961e20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
-<tr class="separator:a390125fc8e63213b1738fb4be961e20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af90668b66f8479c252160d7a22599bb8" id="r_af90668b66f8479c252160d7a22599bb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af90668b66f8479c252160d7a22599bb8">barrier</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>, <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518">barrier::post_phase_action</a> <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518">post_phase_action</a>)</td></tr>
-<tr class="memdesc:af90668b66f8479c252160d7a22599bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
-<tr class="separator:af90668b66f8479c252160d7a22599bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb731c159a665c800b5bab6c39b5ae9" id="r_adcb731c159a665c800b5bab6c39b5ae9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb731c159a665c800b5bab6c39b5ae9">barrier</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a967575b656fbfd89fee459829076404e">participant_count</a>)</td></tr>
+<tr class="memdesc:adcb731c159a665c800b5bab6c39b5ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
+<tr class="separator:adcb731c159a665c800b5bab6c39b5ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0a96c12eff910be323a7d8045187b8" id="r_aec0a96c12eff910be323a7d8045187b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec0a96c12eff910be323a7d8045187b8">barrier</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a967575b656fbfd89fee459829076404e">participant_count</a>, <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8">barrier::post_phase_action</a> <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8">post_phase_action</a>)</td></tr>
+<tr class="memdesc:aec0a96c12eff910be323a7d8045187b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
+<tr class="separator:aec0a96c12eff910be323a7d8045187b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:ae0495f6d30f433d8a87825bd3c094fe8" id="r_ae0495f6d30f433d8a87825bd3c094fe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0495f6d30f433d8a87825bd3c094fe8">current_phase_number</a> () const</td></tr>
-<tr class="memdesc:ae0495f6d30f433d8a87825bd3c094fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of the barrier's current phase.  <br /></td></tr>
-<tr class="separator:ae0495f6d30f433d8a87825bd3c094fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6c99f30a8fa0cd5dc0b0118182bcc4" id="r_a8b6c99f30a8fa0cd5dc0b0118182bcc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a> () const</td></tr>
-<tr class="memdesc:a8b6c99f30a8fa0cd5dc0b0118182bcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of participants in the barrier.  <br /></td></tr>
-<tr class="separator:a8b6c99f30a8fa0cd5dc0b0118182bcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9ee4749a4ad932acf7a66d5064fc0df" id="r_ad9ee4749a4ad932acf7a66d5064fc0df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9ee4749a4ad932acf7a66d5064fc0df">participants_remaining</a> () const</td></tr>
-<tr class="memdesc:ad9ee4749a4ad932acf7a66d5064fc0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of participants in the barrier that haven't yet signaled in the current phase.  <br /></td></tr>
-<tr class="separator:ad9ee4749a4ad932acf7a66d5064fc0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab493e90270ed4bde87438b46762a9eb9" id="r_ab493e90270ed4bde87438b46762a9eb9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab493e90270ed4bde87438b46762a9eb9">current_phase_number</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:ab493e90270ed4bde87438b46762a9eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of the barrier's current phase.  <br /></td></tr>
+<tr class="separator:ab493e90270ed4bde87438b46762a9eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967575b656fbfd89fee459829076404e" id="r_a967575b656fbfd89fee459829076404e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967575b656fbfd89fee459829076404e">participant_count</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a967575b656fbfd89fee459829076404e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of participants in the barrier.  <br /></td></tr>
+<tr class="separator:a967575b656fbfd89fee459829076404e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5dd09f69ffbf8844ffdb1fb6663249" id="r_a0a5dd09f69ffbf8844ffdb1fb6663249"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a5dd09f69ffbf8844ffdb1fb6663249">participants_remaining</a> () const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a0a5dd09f69ffbf8844ffdb1fb6663249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of participants in the barrier that haven't yet signaled in the current phase.  <br /></td></tr>
+<tr class="separator:a0a5dd09f69ffbf8844ffdb1fb6663249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:ab4c0386ecf3f49256ceda6a1a1ed45b0" id="r_ab4c0386ecf3f49256ceda6a1a1ed45b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4c0386ecf3f49256ceda6a1a1ed45b0">add_participant</a> ()</td></tr>
-<tr class="memdesc:ab4c0386ecf3f49256ceda6a1a1ed45b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> that there will be an additional participant.  <br /></td></tr>
-<tr class="separator:ab4c0386ecf3f49256ceda6a1a1ed45b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55da0235555a64ed97098c21fa5bf07e" id="r_a55da0235555a64ed97098c21fa5bf07e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55da0235555a64ed97098c21fa5bf07e">add_participants</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>)</td></tr>
-<tr class="memdesc:a55da0235555a64ed97098c21fa5bf07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> that there will be additional participants.  <br /></td></tr>
-<tr class="separator:a55da0235555a64ed97098c21fa5bf07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7f0e50e3286f72551811ec0ad4918d3" id="r_ac7f0e50e3286f72551811ec0ad4918d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7f0e50e3286f72551811ec0ad4918d3">close</a> ()</td></tr>
-<tr class="memdesc:ac7f0e50e3286f72551811ec0ad4918d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
-<tr class="separator:ac7f0e50e3286f72551811ec0ad4918d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a094feff1de30316394d58a288605051e" id="r_a094feff1de30316394d58a288605051e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a094feff1de30316394d58a288605051e">remove_participant</a> ()</td></tr>
-<tr class="memdesc:a094feff1de30316394d58a288605051e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the Barrier that there will be one less participant.  <br /></td></tr>
-<tr class="separator:a094feff1de30316394d58a288605051e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ae2986fe6430643a65b5bd6b900926" id="r_ac1ae2986fe6430643a65b5bd6b900926"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ae2986fe6430643a65b5bd6b900926">remove_participants</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">participant_count</a>)</td></tr>
-<tr class="memdesc:ac1ae2986fe6430643a65b5bd6b900926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the Barrier that there will be fewer participants.  <br /></td></tr>
-<tr class="separator:ac1ae2986fe6430643a65b5bd6b900926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accca72ab78acd9bbbc2074ab0caca7bd" id="r_accca72ab78acd9bbbc2074ab0caca7bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd">signal_and_wait</a> ()</td></tr>
-<tr class="memdesc:accca72ab78acd9bbbc2074ab0caca7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well.  <br /></td></tr>
-<tr class="separator:accca72ab78acd9bbbc2074ab0caca7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7329f40dfd4a3189b3958c9b539af446" id="r_a7329f40dfd4a3189b3958c9b539af446"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7329f40dfd4a3189b3958c9b539af446">signal_and_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:a7329f40dfd4a3189b3958c9b539af446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout.  <br /></td></tr>
-<tr class="separator:a7329f40dfd4a3189b3958c9b539af446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b32c4cb49d723510fa6a06f5ae5a247" id="r_a8b32c4cb49d723510fa6a06f5ae5a247"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b32c4cb49d723510fa6a06f5ae5a247">signal_and_wait</a> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>)</td></tr>
-<tr class="memdesc:a8b32c4cb49d723510fa6a06f5ae5a247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier, while observing a cancellation token.  <br /></td></tr>
-<tr class="separator:a8b32c4cb49d723510fa6a06f5ae5a247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7232dfd196b4704b49df5ed2ca987062" id="r_a7232dfd196b4704b49df5ed2ca987062"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7232dfd196b4704b49df5ed2ca987062">signal_and_wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a7232dfd196b4704b49df5ed2ca987062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object to measure the time interval.  <br /></td></tr>
-<tr class="separator:a7232dfd196b4704b49df5ed2ca987062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfff586e808ad332f1f71956ae57d5c9" id="r_abfff586e808ad332f1f71956ae57d5c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfff586e808ad332f1f71956ae57d5c9">signal_and_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>)</td></tr>
-<tr class="memdesc:abfff586e808ad332f1f71956ae57d5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout, while observing a cancellation token.  <br /></td></tr>
-<tr class="separator:abfff586e808ad332f1f71956ae57d5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8565a2344b889c7572c2bbd53b39b8d4" id="r_a8565a2344b889c7572c2bbd53b39b8d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8565a2344b889c7572c2bbd53b39b8d4">signal_and_wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>)</td></tr>
-<tr class="memdesc:a8565a2344b889c7572c2bbd53b39b8d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object to measure the time interval, while observing a cancellation token.  <br /></td></tr>
-<tr class="separator:a8565a2344b889c7572c2bbd53b39b8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e7fd98014c8b24617820d5628bd0b8" id="r_a34e7fd98014c8b24617820d5628bd0b8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e7fd98014c8b24617820d5628bd0b8">add_participant</a> () -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a34e7fd98014c8b24617820d5628bd0b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> that there will be an additional participant.  <br /></td></tr>
+<tr class="separator:a34e7fd98014c8b24617820d5628bd0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1def634cf92bcbf1da621c373cbffd22" id="r_a1def634cf92bcbf1da621c373cbffd22"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1def634cf92bcbf1da621c373cbffd22">add_participants</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a967575b656fbfd89fee459829076404e">participant_count</a>) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a1def634cf92bcbf1da621c373cbffd22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> that there will be additional participants.  <br /></td></tr>
+<tr class="separator:a1def634cf92bcbf1da621c373cbffd22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9669c5ea87a6bad367a3b4a26b301f" id="r_afd9669c5ea87a6bad367a3b4a26b301f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd9669c5ea87a6bad367a3b4a26b301f">close</a> () -&gt; void</td></tr>
+<tr class="memdesc:afd9669c5ea87a6bad367a3b4a26b301f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the current instance of the <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> class.  <br /></td></tr>
+<tr class="separator:afd9669c5ea87a6bad367a3b4a26b301f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a408d94db5f430f1f3d4c814c01579137" id="r_a408d94db5f430f1f3d4c814c01579137"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a408d94db5f430f1f3d4c814c01579137">remove_participant</a> () -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a408d94db5f430f1f3d4c814c01579137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the Barrier that there will be one less participant.  <br /></td></tr>
+<tr class="separator:a408d94db5f430f1f3d4c814c01579137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb6db74dae013e0d01999aa4c11b584" id="r_aafb6db74dae013e0d01999aa4c11b584"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb6db74dae013e0d01999aa4c11b584">remove_participants</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a967575b656fbfd89fee459829076404e">participant_count</a>) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:aafb6db74dae013e0d01999aa4c11b584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the Barrier that there will be fewer participants.  <br /></td></tr>
+<tr class="separator:aafb6db74dae013e0d01999aa4c11b584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152b05419eb5f23992d8515846c671b9" id="r_a152b05419eb5f23992d8515846c671b9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a152b05419eb5f23992d8515846c671b9">signal_and_wait</a> () -&gt; void</td></tr>
+<tr class="memdesc:a152b05419eb5f23992d8515846c671b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well.  <br /></td></tr>
+<tr class="separator:a152b05419eb5f23992d8515846c671b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06072bb30365e5eb83be6136905e4c5" id="r_af06072bb30365e5eb83be6136905e4c5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af06072bb30365e5eb83be6136905e4c5">signal_and_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_timeout) -&gt; bool</td></tr>
+<tr class="memdesc:af06072bb30365e5eb83be6136905e4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout.  <br /></td></tr>
+<tr class="separator:af06072bb30365e5eb83be6136905e4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a861191a98de024640b09e4a174134" id="r_a49a861191a98de024640b09e4a174134"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a861191a98de024640b09e4a174134">signal_and_wait</a> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; bool</td></tr>
+<tr class="memdesc:a49a861191a98de024640b09e4a174134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier, while observing a cancellation token.  <br /></td></tr>
+<tr class="separator:a49a861191a98de024640b09e4a174134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2f1e8d8261e277ba3e4e7c2a6e431f" id="r_a3a2f1e8d8261e277ba3e4e7c2a6e431f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2f1e8d8261e277ba3e4e7c2a6e431f">signal_and_wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool</td></tr>
+<tr class="memdesc:a3a2f1e8d8261e277ba3e4e7c2a6e431f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object to measure the time interval.  <br /></td></tr>
+<tr class="separator:a3a2f1e8d8261e277ba3e4e7c2a6e431f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a466b78ea27d0b0dabf34df2def15f" id="r_af2a466b78ea27d0b0dabf34df2def15f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2a466b78ea27d0b0dabf34df2def15f">signal_and_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_timeout, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; bool</td></tr>
+<tr class="memdesc:af2a466b78ea27d0b0dabf34df2def15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout, while observing a cancellation token.  <br /></td></tr>
+<tr class="separator:af2a466b78ea27d0b0dabf34df2def15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af741bc787d4e7ac8a334844e5180dfc8" id="r_af741bc787d4e7ac8a334844e5180dfc8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af741bc787d4e7ac8a334844e5180dfc8">signal_and_wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; bool</td></tr>
+<tr class="memdesc:af741bc787d4e7ac8a334844e5180dfc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object to measure the time interval, while observing a cancellation token.  <br /></td></tr>
+<tr class="separator:af741bc787d4e7ac8a334844e5180dfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -280,25 +280,25 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a541a2b302cb76a52f869eaded0e0f518" name="a541a2b302cb76a52f869eaded0e0f518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a541a2b302cb76a52f869eaded0e0f518">&#9670;&#160;</a></span>post_phase_action</h2>
+<a id="a0e2c0075ca29c69343078c2aa45916f8" name="a0e2c0075ca29c69343078c2aa45916f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2c0075ca29c69343078c2aa45916f8">&#9670;&#160;</a></span>post_phase_action</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518">xtd::threading::barrier::post_phase_action</a></td>
+          <td class="memname">using <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8">xtd::threading::barrier::post_phase_action</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents the <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate. </p>
+<p>Represents the <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8" title="Represents the xtd::threading::barrier::post_phase_action delegate.">xtd::threading::barrier::post_phase_action</a> delegate. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a390125fc8e63213b1738fb4be961e20a" name="a390125fc8e63213b1738fb4be961e20a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a390125fc8e63213b1738fb4be961e20a">&#9670;&#160;</a></span>barrier() <span class="overload">[1/2]</span></h2>
+<a id="adcb731c159a665c800b5bab6c39b5ae9" name="adcb731c159a665c800b5bab6c39b5ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb731c159a665c800b5bab6c39b5ae9">&#9670;&#160;</a></span>barrier() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +309,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::threading::barrier::barrier </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -336,8 +336,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af90668b66f8479c252160d7a22599bb8" name="af90668b66f8479c252160d7a22599bb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af90668b66f8479c252160d7a22599bb8">&#9670;&#160;</a></span>barrier() <span class="overload">[2/2]</span></h2>
+<a id="aec0a96c12eff910be323a7d8045187b8" name="aec0a96c12eff910be323a7d8045187b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0a96c12eff910be323a7d8045187b8">&#9670;&#160;</a></span>barrier() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,12 +345,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::threading::barrier::barrier </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a541a2b302cb76a52f869eaded0e0f518">barrier::post_phase_action</a></td>          <td class="paramname"><span class="paramname"><em>post_phase_action</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8">barrier::post_phase_action</a></td>          <td class="paramname"><span class="paramname"><em>post_phase_action</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -359,7 +359,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">participant_count</td><td>The number of participating threads. </td></tr>
-    <tr><td class="paramname"><a class="el" href="#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a></td><td>The <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action&lt; barrier&amp; &gt;</a> to be executed after each phase. Empty may be passed to indicate no action is taken. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a></td><td>The <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action&lt; barrier&amp; &gt;</a> to be executed after each phase. Empty may be passed to indicate no action is taken. </td></tr>
   </table>
   </dd>
 </dl>
@@ -369,24 +369,32 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a> delegate will be executed after all participants have arrived at the barrier in one phase. The participants will not be released to the next phase until the <a class="el" href="#a541a2b302cb76a52f869eaded0e0f518" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a> delegate has completed execution. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a> delegate will be executed after all participants have arrived at the barrier in one phase. The participants will not be released to the next phase until the <a class="el" href="#a0e2c0075ca29c69343078c2aa45916f8" title="Represents the xtd::threading::barrier::post_phase_action delegate.">post_phase_action</a> delegate has completed execution. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae0495f6d30f433d8a87825bd3c094fe8" name="ae0495f6d30f433d8a87825bd3c094fe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0495f6d30f433d8a87825bd3c094fe8">&#9670;&#160;</a></span>current_phase_number()</h2>
+<a id="ab493e90270ed4bde87438b46762a9eb9" name="ab493e90270ed4bde87438b46762a9eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab493e90270ed4bde87438b46762a9eb9">&#9670;&#160;</a></span>current_phase_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::current_phase_number </td>
+          <td class="memname">auto xtd::threading::barrier::current_phase_number </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the number of the barrier's current phase. </p>
@@ -400,19 +408,27 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b6c99f30a8fa0cd5dc0b0118182bcc4" name="a8b6c99f30a8fa0cd5dc0b0118182bcc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b6c99f30a8fa0cd5dc0b0118182bcc4">&#9670;&#160;</a></span>participant_count()</h2>
+<a id="a967575b656fbfd89fee459829076404e" name="a967575b656fbfd89fee459829076404e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967575b656fbfd89fee459829076404e">&#9670;&#160;</a></span>participant_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::participant_count </td>
+          <td class="memname">auto xtd::threading::barrier::participant_count </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the total number of participants in the barrier. </p>
@@ -426,19 +442,27 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad9ee4749a4ad932acf7a66d5064fc0df" name="ad9ee4749a4ad932acf7a66d5064fc0df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9ee4749a4ad932acf7a66d5064fc0df">&#9670;&#160;</a></span>participants_remaining()</h2>
+<a id="a0a5dd09f69ffbf8844ffdb1fb6663249" name="a0a5dd09f69ffbf8844ffdb1fb6663249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5dd09f69ffbf8844ffdb1fb6663249">&#9670;&#160;</a></span>participants_remaining()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::participants_remaining </td>
+          <td class="memname">auto xtd::threading::barrier::participants_remaining </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the number of participants in the barrier that haven't yet signaled in the current phase. </p>
@@ -453,17 +477,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab4c0386ecf3f49256ceda6a1a1ed45b0" name="ab4c0386ecf3f49256ceda6a1a1ed45b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4c0386ecf3f49256ceda6a1a1ed45b0">&#9670;&#160;</a></span>add_participant()</h2>
+<a id="a34e7fd98014c8b24617820d5628bd0b8" name="a34e7fd98014c8b24617820d5628bd0b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e7fd98014c8b24617820d5628bd0b8">&#9670;&#160;</a></span>add_participant()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::add_participant </td>
+          <td class="memname">auto xtd::threading::barrier::add_participant </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -481,17 +505,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a55da0235555a64ed97098c21fa5bf07e" name="a55da0235555a64ed97098c21fa5bf07e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55da0235555a64ed97098c21fa5bf07e">&#9670;&#160;</a></span>add_participants()</h2>
+<a id="a1def634cf92bcbf1da621c373cbffd22" name="a1def634cf92bcbf1da621c373cbffd22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1def634cf92bcbf1da621c373cbffd22">&#9670;&#160;</a></span>add_participants()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::add_participants </td>
+          <td class="memname">auto xtd::threading::barrier::add_participants </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -517,17 +541,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac7f0e50e3286f72551811ec0ad4918d3" name="ac7f0e50e3286f72551811ec0ad4918d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7f0e50e3286f72551811ec0ad4918d3">&#9670;&#160;</a></span>close()</h2>
+<a id="afd9669c5ea87a6bad367a3b4a26b301f" name="afd9669c5ea87a6bad367a3b4a26b301f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9669c5ea87a6bad367a3b4a26b301f">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::barrier::close </td>
+          <td class="memname">auto xtd::threading::barrier::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -536,17 +560,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a094feff1de30316394d58a288605051e" name="a094feff1de30316394d58a288605051e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a094feff1de30316394d58a288605051e">&#9670;&#160;</a></span>remove_participant()</h2>
+<a id="a408d94db5f430f1f3d4c814c01579137" name="a408d94db5f430f1f3d4c814c01579137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a408d94db5f430f1f3d4c814c01579137">&#9670;&#160;</a></span>remove_participant()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::remove_participant </td>
+          <td class="memname">auto xtd::threading::barrier::remove_participant </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -563,17 +587,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac1ae2986fe6430643a65b5bd6b900926" name="ac1ae2986fe6430643a65b5bd6b900926"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ae2986fe6430643a65b5bd6b900926">&#9670;&#160;</a></span>remove_participants()</h2>
+<a id="aafb6db74dae013e0d01999aa4c11b584" name="aafb6db74dae013e0d01999aa4c11b584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb6db74dae013e0d01999aa4c11b584">&#9670;&#160;</a></span>remove_participants()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::barrier::remove_participants </td>
+          <td class="memname">auto xtd::threading::barrier::remove_participants </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>participant_count</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -598,17 +622,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="accca72ab78acd9bbbc2074ab0caca7bd" name="accca72ab78acd9bbbc2074ab0caca7bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accca72ab78acd9bbbc2074ab0caca7bd">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[1/6]</span></h2>
+<a id="a152b05419eb5f23992d8515846c671b9" name="a152b05419eb5f23992d8515846c671b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152b05419eb5f23992d8515846c671b9">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -617,24 +641,24 @@ Additional Inherited Members</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7329f40dfd4a3189b3958c9b539af446" name="a7329f40dfd4a3189b3958c9b539af446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7329f40dfd4a3189b3958c9b539af446">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[2/6]</span></h2>
+<a id="af06072bb30365e5eb83be6136905e4c5" name="af06072bb30365e5eb83be6136905e4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06072bb30365e5eb83be6136905e4c5">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -651,24 +675,24 @@ Additional Inherited Members</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8b32c4cb49d723510fa6a06f5ae5a247" name="a8b32c4cb49d723510fa6a06f5ae5a247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b32c4cb49d723510fa6a06f5ae5a247">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[3/6]</span></h2>
+<a id="a49a861191a98de024640b09e4a174134" name="a49a861191a98de024640b09e4a174134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a861191a98de024640b09e4a174134">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -685,24 +709,24 @@ Additional Inherited Members</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">cancellation_token</a> has been canceled. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7232dfd196b4704b49df5ed2ca987062" name="a7232dfd196b4704b49df5ed2ca987062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7232dfd196b4704b49df5ed2ca987062">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[4/6]</span></h2>
+<a id="a3a2f1e8d8261e277ba3e4e7c2a6e431f" name="a3a2f1e8d8261e277ba3e4e7c2a6e431f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2f1e8d8261e277ba3e4e7c2a6e431f">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -719,28 +743,28 @@ Additional Inherited Members</h2></td></tr>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="abfff586e808ad332f1f71956ae57d5c9" name="abfff586e808ad332f1f71956ae57d5c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfff586e808ad332f1f71956ae57d5c9">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[5/6]</span></h2>
+<a id="af2a466b78ea27d0b0dabf34df2def15f" name="af2a466b78ea27d0b0dabf34df2def15f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2a466b78ea27d0b0dabf34df2def15f">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -759,28 +783,28 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">cancellation_token</a> has been canceled. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8565a2344b889c7572c2bbd53b39b8d4" name="a8565a2344b889c7572c2bbd53b39b8d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8565a2344b889c7572c2bbd53b39b8d4">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[6/6]</span></h2>
+<a id="af741bc787d4e7ac8a334844e5180dfc8" name="af741bc787d4e7ac8a334844e5180dfc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af741bc787d4e7ac8a334844e5180dfc8">&#9670;&#160;</a></span>signal_and_wait() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::barrier::signal_and_wait </td>
+          <td class="memname">auto xtd::threading::barrier::signal_and_wait </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cancellation_token</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -799,7 +823,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>milliseconds_timeout is a negative number other than -1, which represents an infinite time-out. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">cancellation_token</a> has been canceled. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been disposed. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#accca72ab78acd9bbbc2074ab0caca7bd" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a></td><td>If an exception is thrown from the post phase action of a <a class="el" href="classxtd_1_1threading_1_1barrier.html" title="Enables multiple tasks to cooperatively work on an algorithm in parallel through multiple phases.">xtd::threading::barrier</a> after all participating threads have called <a class="el" href="#a152b05419eb5f23992d8515846c671b9" title="Signals that a participant has reached the barrier and waits for all other participants to reach the ...">xtd::threading::barrier::signal_and_wait</a>, the exception will be wrapped in a <a class="el" href="classxtd_1_1threading_1_1barrier__post__phase__exception.html" title="The exception that is thrown when the post-phase action of a xtd::threading::barrier fails.">xtd::threading::barrier_post_phase_exception</a> and be thrown on all participating threads. </td></tr>
   </table>
   </dd>
 </dl>
@@ -813,7 +837,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 12:44:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 18:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

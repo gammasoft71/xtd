@@ -130,8 +130,8 @@ Inheritance diagram for xtd::threading::cancellation_token_source:</div>
 The general pattern for implementing the cooperative cancellation model is:<ul>
 <li>Instantiate a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object, which manages and sends cancellation notification to the individual cancellation tokens.</li>
 <li>Pass the token returned by the xtd::threading::cancellation_token_source::token property to each task or thread that listens for cancellation.</li>
-<li>Call the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> method from operations that receive the cancellation token. Provide a mechanism for each task or thread to respond to a cancellation request. Whether you choose to cancel an operation, and exactly how you do it, depends on your application logic.</li>
-<li>Call the xtd::threading::cancellation_token_source::cancel method to provide notification of cancellation. This sets the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token.is_cancellation_requested</a> property on every copy of the cancellation token to <code>true</code>.</li>
+<li>Call the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a8403485a9c1b119e67777656a9d30649" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> method from operations that receive the cancellation token. Provide a mechanism for each task or thread to respond to a cancellation request. Whether you choose to cancel an operation, and exactly how you do it, depends on your application logic.</li>
+<li>Call the xtd::threading::cancellation_token_source::cancel method to provide notification of cancellation. This sets the <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html#a8403485a9c1b119e67777656a9d30649" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token.is_cancellation_requested</a> property on every copy of the cancellation token to <code>true</code>.</li>
 <li>Call the xtd::threading::cancellation_token_source::close method when you are finished with the <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object. </li>
 </ul>
 </dd></dl>
@@ -145,12 +145,12 @@ The general pattern for implementing the cooperative cancellation model is:<ul>
 <tr class="separator:ae505f0ca5432766733a953345db947ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:af0a2b86f10e76523dbabe01ab2157f7b" id="r_af0a2b86f10e76523dbabe01ab2157f7b"><td class="memItemLeft" align="right" valign="top"><a id="af0a2b86f10e76523dbabe01ab2157f7b" name="af0a2b86f10e76523dbabe01ab2157f7b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_cancellation_requested</b> () const noexcept</td></tr>
-<tr class="separator:af0a2b86f10e76523dbabe01ab2157f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9100dab1e7e7a897d0151ed3df8af698" id="r_a9100dab1e7e7a897d0151ed3df8af698"><td class="memItemLeft" align="right" valign="top"><a id="a9100dab1e7e7a897d0151ed3df8af698" name="a9100dab1e7e7a897d0151ed3df8af698"></a>
-const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>token</b> () const noexcept</td></tr>
-<tr class="separator:a9100dab1e7e7a897d0151ed3df8af698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d56c9c8263856e12762bc3076bc7fe9" id="r_a9d56c9c8263856e12762bc3076bc7fe9"><td class="memItemLeft" align="right" valign="top"><a id="a9d56c9c8263856e12762bc3076bc7fe9" name="a9d56c9c8263856e12762bc3076bc7fe9"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>is_cancellation_requested</b> () const noexcept -&gt; bool</td></tr>
+<tr class="separator:a9d56c9c8263856e12762bc3076bc7fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b2bb9cef028312c1798ad62d54f78f3" id="r_a4b2bb9cef028312c1798ad62d54f78f3"><td class="memItemLeft" align="right" valign="top"><a id="a4b2bb9cef028312c1798ad62d54f78f3" name="a4b2bb9cef028312c1798ad62d54f78f3"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>token</b> () const noexcept -&gt; const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td></tr>
+<tr class="separator:a4b2bb9cef028312c1798ad62d54f78f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -189,7 +189,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 12:44:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 18:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

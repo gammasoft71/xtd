@@ -126,7 +126,7 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example uses a random number generator to emulate a data collection application that reads 10 integral values from eleven different instruments. A value of zero indicates that the measurement has failed for one instrument, in which case the operation should be cancelled and no overall mean should be computed. To handle the possible cancellation of the operation, the example instantiates a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object that generates a cancellation token that's passed to a xtd::threading::tasks::task_factory object. In turn, the xtd::threading::tasks::task_factory object passes the cancellation token to each of the tasks responsible for collecting readings for a particular instrument. The xtd::threading::tasks::task_factory::continue_when_all&lt;antecedent_result_t,result_t&gt;(xtd::array&lt;xtd::threading::tasks::task&lt;antecedent_result_t&gt;&gt;, xtd::func&lt;xtd::array&lt;xtd::threading::tasks::task&lt;antecedent_tesult_t&gt;&gt;,TResult&gt;, cancellation_token) method is called to ensure that the mean is computed only after all readings have been gathered successfully. If a task has not completed because it was cancelled, the xtd::threading::tasks::task_factory::continue_when_all method throws an exception. <div class="fragment"></div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> enables cooperative cancellation between threads, thread pool work items, or xtd::threading::taks::task objects. You create a cancellation token by instantiating a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object, which manages cancellation tokens retrieved from its xtd::threading::cancellation_token_source::token property. You then pass the cancellation token to any number of threads, tasks, or operations that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls xtd::threading::cancellation_token_source.cancel, the <a class="el" href="#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> property on every copy of the cancellation token is set to <code>true</code>. The objects that receive the notification can respond in whatever manner is appropriate. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html" title="Propagates notification that operations should be canceled.">xtd::threading::cancellation_token</a> enables cooperative cancellation between threads, thread pool work items, or xtd::threading::taks::task objects. You create a cancellation token by instantiating a <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a> object, which manages cancellation tokens retrieved from its xtd::threading::cancellation_token_source::token property. You then pass the cancellation token to any number of threads, tasks, or operations that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls xtd::threading::cancellation_token_source.cancel, the <a class="el" href="#a8403485a9c1b119e67777656a9d30649" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> property on every copy of the cancellation token is set to <code>true</code>. The objects that receive the notification can respond in whatever manner is appropriate. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a7ef52fccdb8b28ce986363f0bcae7e7a" id="r_a7ef52fccdb8b28ce986363f0bcae7e7a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef52fccdb8b28ce986363f0bcae7e7a">none</a></td></tr>
@@ -139,29 +139,29 @@ Inheritance diagram for xtd::threading::cancellation_token:</div>
 <tr class="separator:a5e0cc24f0b9844dc0856eba991386e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a2a6dcdd32a8c82b2bb69ecd08ae95b7d" id="r_a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a6dcdd32a8c82b2bb69ecd08ae95b7d">can_be_canceled</a> () const noexcept</td></tr>
-<tr class="memdesc:a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether this token is capable of being in the canceled state.  <br /></td></tr>
-<tr class="separator:a2a6dcdd32a8c82b2bb69ecd08ae95b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfe1681cb1b9e4a8e16a0a294df3db58" id="r_adfe1681cb1b9e4a8e16a0a294df3db58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfe1681cb1b9e4a8e16a0a294df3db58">is_cancellation_requested</a> () const noexcept</td></tr>
-<tr class="memdesc:adfe1681cb1b9e4a8e16a0a294df3db58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether cancellation has been requested for this token.  <br /></td></tr>
-<tr class="separator:adfe1681cb1b9e4a8e16a0a294df3db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f8b7e9438a541b0e736a2b12697766" id="r_a75f8b7e9438a541b0e736a2b12697766"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html">threading::wait_handle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75f8b7e9438a541b0e736a2b12697766">wait_handle</a> () noexcept</td></tr>
-<tr class="memdesc:a75f8b7e9438a541b0e736a2b12697766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is signaled when the token is canceled.  <br /></td></tr>
-<tr class="separator:a75f8b7e9438a541b0e736a2b12697766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fdedee1558fae27a7102bfa14e71f27" id="r_a3fdedee1558fae27a7102bfa14e71f27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fdedee1558fae27a7102bfa14e71f27">can_be_canceled</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a3fdedee1558fae27a7102bfa14e71f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether this token is capable of being in the canceled state.  <br /></td></tr>
+<tr class="separator:a3fdedee1558fae27a7102bfa14e71f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8403485a9c1b119e67777656a9d30649" id="r_a8403485a9c1b119e67777656a9d30649"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8403485a9c1b119e67777656a9d30649">is_cancellation_requested</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a8403485a9c1b119e67777656a9d30649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether cancellation has been requested for this token.  <br /></td></tr>
+<tr class="separator:a8403485a9c1b119e67777656a9d30649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb3ef626e095e2f0ff074a4a44be23f" id="r_abdb3ef626e095e2f0ff074a4a44be23f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdb3ef626e095e2f0ff074a4a44be23f">wait_handle</a> () noexcept -&gt; <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">threading::wait_handle</a> &amp;</td></tr>
+<tr class="memdesc:abdb3ef626e095e2f0ff074a4a44be23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> that is signaled when the token is canceled.  <br /></td></tr>
+<tr class="separator:abdb3ef626e095e2f0ff074a4a44be23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a829449489be4843c632d78a4bab01953" id="r_a829449489be4843c632d78a4bab01953"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a829449489be4843c632d78a4bab01953">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a829449489be4843c632d78a4bab01953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a829449489be4843c632d78a4bab01953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a813b6f071ab366c7a80cece369b07b05" id="r_a813b6f071ab366c7a80cece369b07b05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a813b6f071ab366c7a80cece369b07b05">equals</a> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
-<tr class="memdesc:a813b6f071ab366c7a80cece369b07b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a813b6f071ab366c7a80cece369b07b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa105a506ed66b320e293dfe34484b1cf" id="r_aa105a506ed66b320e293dfe34484b1cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa105a506ed66b320e293dfe34484b1cf">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:aa105a506ed66b320e293dfe34484b1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:aa105a506ed66b320e293dfe34484b1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ef851ab46202968d71ad6465242edb" id="r_a43ef851ab46202968d71ad6465242edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43ef851ab46202968d71ad6465242edb">throw_if_cancellation_requested</a> () const</td></tr>
-<tr class="memdesc:a43ef851ab46202968d71ad6465242edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws a <a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a> if this token has had cancellation requested.  <br /></td></tr>
-<tr class="separator:a43ef851ab46202968d71ad6465242edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac2229f14ad2df350d22cd7a2d08815" id="r_acac2229f14ad2df350d22cd7a2d08815"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acac2229f14ad2df350d22cd7a2d08815">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:acac2229f14ad2df350d22cd7a2d08815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:acac2229f14ad2df350d22cd7a2d08815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ee5147714fd8ac6f7505b0e2761055" id="r_a66ee5147714fd8ac6f7505b0e2761055"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66ee5147714fd8ac6f7505b0e2761055">equals</a> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a66ee5147714fd8ac6f7505b0e2761055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a66ee5147714fd8ac6f7505b0e2761055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a558c165cb041096a26fd263f6aa0a960" id="r_a558c165cb041096a26fd263f6aa0a960"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a558c165cb041096a26fd263f6aa0a960">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a558c165cb041096a26fd263f6aa0a960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a558c165cb041096a26fd263f6aa0a960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ab13f39b3c14b2396d1fae094da4ee" id="r_a59ab13f39b3c14b2396d1fae094da4ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59ab13f39b3c14b2396d1fae094da4ee">throw_if_cancellation_requested</a> () const -&gt; void</td></tr>
+<tr class="memdesc:a59ab13f39b3c14b2396d1fae094da4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws a <a class="el" href="classxtd_1_1operation__canceled__exception.html" title="The exception that is thrown in a thread upon cancellation of an operation that the thread was execut...">xtd::operation_canceled_exception</a> if this token has had cancellation requested.  <br /></td></tr>
+<tr class="separator:a59ab13f39b3c14b2396d1fae094da4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -213,15 +213,15 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Tokens created with this constructor will remain in the canceled state specified by the canceled parameter. If canceled is <code>false</code>, both <a class="el" href="#a2a6dcdd32a8c82b2bb69ecd08ae95b7d" title="Gets whether this token is capable of being in the canceled state.">xtd::threading::cancellation_token::can_be_canceled</a> and <a class="el" href="#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> will be <code>false</code>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Tokens created with this constructor will remain in the canceled state specified by the canceled parameter. If canceled is <code>false</code>, both <a class="el" href="#a3fdedee1558fae27a7102bfa14e71f27" title="Gets whether this token is capable of being in the canceled state.">xtd::threading::cancellation_token::can_be_canceled</a> and <a class="el" href="#a8403485a9c1b119e67777656a9d30649" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> will be <code>false</code>. </dd>
 <dd>
-If canceled is <code>true</code>, both <a class="el" href="#a2a6dcdd32a8c82b2bb69ecd08ae95b7d" title="Gets whether this token is capable of being in the canceled state.">xtd::threading::cancellation_token::can_be_canceled</a> and <a class="el" href="#adfe1681cb1b9e4a8e16a0a294df3db58" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> will be <code>true</code>. </dd></dl>
+If canceled is <code>true</code>, both <a class="el" href="#a3fdedee1558fae27a7102bfa14e71f27" title="Gets whether this token is capable of being in the canceled state.">xtd::threading::cancellation_token::can_be_canceled</a> and <a class="el" href="#a8403485a9c1b119e67777656a9d30649" title="Gets whether cancellation has been requested for this token.">xtd::threading::cancellation_token::is_cancellation_requested</a> will be <code>true</code>. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2a6dcdd32a8c82b2bb69ecd08ae95b7d" name="a2a6dcdd32a8c82b2bb69ecd08ae95b7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a6dcdd32a8c82b2bb69ecd08ae95b7d">&#9670;&#160;</a></span>can_be_canceled()</h2>
+<a id="a3fdedee1558fae27a7102bfa14e71f27" name="a3fdedee1558fae27a7102bfa14e71f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fdedee1558fae27a7102bfa14e71f27">&#9670;&#160;</a></span>can_be_canceled()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,15 +230,15 @@ If canceled is <code>true</code>, both <a class="el" href="#a2a6dcdd32a8c82b2bb6
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::cancellation_token::can_be_canceled </td>
+          <td class="memname">auto xtd::threading::cancellation_token::can_be_canceled </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -248,8 +248,8 @@ If canceled is <code>true</code>, both <a class="el" href="#a2a6dcdd32a8c82b2bb6
 
 </div>
 </div>
-<a id="adfe1681cb1b9e4a8e16a0a294df3db58" name="adfe1681cb1b9e4a8e16a0a294df3db58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe1681cb1b9e4a8e16a0a294df3db58">&#9670;&#160;</a></span>is_cancellation_requested()</h2>
+<a id="a8403485a9c1b119e67777656a9d30649" name="a8403485a9c1b119e67777656a9d30649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8403485a9c1b119e67777656a9d30649">&#9670;&#160;</a></span>is_cancellation_requested()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,15 +258,15 @@ If canceled is <code>true</code>, both <a class="el" href="#a2a6dcdd32a8c82b2bb6
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::cancellation_token::is_cancellation_requested </td>
+          <td class="memname">auto xtd::threading::cancellation_token::is_cancellation_requested </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -279,8 +279,8 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
 
 </div>
 </div>
-<a id="a75f8b7e9438a541b0e736a2b12697766" name="a75f8b7e9438a541b0e736a2b12697766"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75f8b7e9438a541b0e736a2b12697766">&#9670;&#160;</a></span>wait_handle()</h2>
+<a id="abdb3ef626e095e2f0ff074a4a44be23f" name="abdb3ef626e095e2f0ff074a4a44be23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb3ef626e095e2f0ff074a4a44be23f">&#9670;&#160;</a></span>wait_handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,15 +289,15 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html">threading::wait_handle</a> &amp; xtd::threading::cancellation_token::wait_handle </td>
+          <td class="memname">auto xtd::threading::cancellation_token::wait_handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">threading::wait_handle</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -307,8 +307,8 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
 
 </div>
 </div>
-<a id="a829449489be4843c632d78a4bab01953" name="a829449489be4843c632d78a4bab01953"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a829449489be4843c632d78a4bab01953">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="acac2229f14ad2df350d22cd7a2d08815" name="acac2229f14ad2df350d22cd7a2d08815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac2229f14ad2df350d22cd7a2d08815">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,15 +317,15 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::cancellation_token::equals </td>
+          <td class="memname">auto xtd::threading::cancellation_token::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -343,8 +343,8 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
 
 </div>
 </div>
-<a id="a813b6f071ab366c7a80cece369b07b05" name="a813b6f071ab366c7a80cece369b07b05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a813b6f071ab366c7a80cece369b07b05">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a66ee5147714fd8ac6f7505b0e2761055" name="a66ee5147714fd8ac6f7505b0e2761055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66ee5147714fd8ac6f7505b0e2761055">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,15 +353,15 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::cancellation_token::equals </td>
+          <td class="memname">auto xtd::threading::cancellation_token::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -377,8 +377,8 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
 
 </div>
 </div>
-<a id="aa105a506ed66b320e293dfe34484b1cf" name="aa105a506ed66b320e293dfe34484b1cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa105a506ed66b320e293dfe34484b1cf">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="a558c165cb041096a26fd263f6aa0a960" name="a558c165cb041096a26fd263f6aa0a960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a558c165cb041096a26fd263f6aa0a960">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,15 +387,15 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::threading::cancellation_token::get_hash_code </td>
+          <td class="memname">auto xtd::threading::cancellation_token::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -407,17 +407,17 @@ If this property is <code>true</code>, it only guarantees that cancellation has 
 
 </div>
 </div>
-<a id="a43ef851ab46202968d71ad6465242edb" name="a43ef851ab46202968d71ad6465242edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43ef851ab46202968d71ad6465242edb">&#9670;&#160;</a></span>throw_if_cancellation_requested()</h2>
+<a id="a59ab13f39b3c14b2396d1fae094da4ee" name="a59ab13f39b3c14b2396d1fae094da4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ab13f39b3c14b2396d1fae094da4ee">&#9670;&#160;</a></span>throw_if_cancellation_requested()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::cancellation_token::throw_if_cancellation_requested </td>
+          <td class="memname">auto xtd::threading::cancellation_token::throw_if_cancellation_requested </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -471,7 +471,7 @@ Two empty cancellation tokens are always equal. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 12:44:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 18:15:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

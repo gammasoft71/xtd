@@ -124,22 +124,23 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>(<a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp; operator =(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        [[nodiscard]] <span class="keyword">auto</span> is_completed() const noexcept -&gt; <span class="keywordtype">bool</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      private:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        [[nodiscard]] auto text_to_speak() noexcept -&gt; <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp;;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        auto synthesizer(const speech_synthesizer* synthesizer) noexcept -&gt; <span class="keywordtype">void</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a>&lt;<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>&gt; data_;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      };</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">auto</span> operator =(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp;) -&gt; <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp; = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">auto</span> operator =(<a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp;&amp;) -&gt; <a class="code hl_function" href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">prompt</a>&amp; = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        [[nodiscard]] <span class="keyword">auto</span> is_completed() const noexcept -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      private:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        [[nodiscard]] auto text_to_speak() noexcept -&gt; <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span>&amp;;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        auto synthesizer(const speech_synthesizer* synthesizer) noexcept -&gt; <span class="keywordtype">void</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a>&lt;<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>&gt; data_;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      };</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 <div class="ttc" id="aclassxtd_1_1speech_1_1synthesis_1_1prompt_html_a6b153cf849fb956ce1b683a5f10f47a0"><div class="ttname"><a href="classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0">xtd::speech::synthesis::prompt::prompt</a></div><div class="ttdeci">prompt(const xtd::string &amp;text_to_speak)</div><div class="ttdoc">Initializes a new instance of the xtd::speech::synthesis::speech_synthesizer class.</div></div>
 <div class="ttc" id="aclassxtd_1_1speech_1_1synthesis_1_1speech__synthesizer_html"><div class="ttname"><a href="classxtd_1_1speech_1_1synthesis_1_1speech__synthesizer.html">xtd::speech::synthesis::speech_synthesizer</a></div><div class="ttdoc">Provides access to the functionality of an installed speech synthesis engine.</div><div class="ttdef"><b>Definition</b> speech_synthesizer.hpp:35</div></div>
@@ -156,7 +157,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 12:43:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 18:14:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
