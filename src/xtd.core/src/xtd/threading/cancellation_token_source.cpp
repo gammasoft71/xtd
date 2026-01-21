@@ -27,25 +27,25 @@ cancellation_token_source::cancellation_token_source(const time_span& delay) : c
 cancellation_token_source::cancellation_token_source(const cancellation_token_source& cancellation_token_source) {
 }
 
-cancellation_token_source& cancellation_token_source::operator=(const cancellation_token_source& cancellation_token_source) {
+auto cancellation_token_source::operator=(const cancellation_token_source& cancellation_token_source) -> xtd::threading::cancellation_token_source& {
   return *this;
 }
 
 cancellation_token_source::~cancellation_token_source() {
 }
 
-bool cancellation_token_source::is_cancellation_requested() const noexcept {
+auto cancellation_token_source::is_cancellation_requested() const noexcept -> bool {
   return data_->is_cancellation_requested;
 }
 
-const cancellation_token& cancellation_token_source::token() const noexcept {
+auto cancellation_token_source::token() const noexcept -> const cancellation_token& {
   return data_->token;
 }
 
-bool cancellation_token_source::can_be_canceled() const noexcept {
+auto cancellation_token_source::can_be_canceled() const noexcept -> bool {
   return data_->can_be_canceled;
 }
 
-threading::wait_handle& cancellation_token_source::wait_handle() noexcept {
+auto cancellation_token_source::wait_handle() noexcept -> threading::wait_handle& {
   return data_->wait_handle;
 }

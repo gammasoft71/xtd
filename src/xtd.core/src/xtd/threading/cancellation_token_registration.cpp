@@ -14,7 +14,7 @@ cancellation_token_registration::cancellation_token_registration() {
 cancellation_token_registration::cancellation_token_registration(const cancellation_token_registration& cancellation_token_registration) {
 }
 
-cancellation_token_registration& cancellation_token_registration::operator=(const cancellation_token_registration& cancellation_token_registration) {
+auto cancellation_token_registration::operator=(const cancellation_token_registration& cancellation_token_registration) -> threading::cancellation_token_registration& {
   return *this;
 }
 

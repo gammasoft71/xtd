@@ -35,8 +35,8 @@ namespace xtd {
       
       /// @cond
       cancellation_token_registration();
-      cancellation_token_registration(const cancellation_token_registration& cancellation_token_registration);
-      cancellation_token_registration& operator=(const cancellation_token_registration& cancellation_token_registration);
+      cancellation_token_registration(const cancellation_token_registration&);
+      auto operator=(const cancellation_token_registration&) -> cancellation_token_registration&;
       ~cancellation_token_registration();
       /// @endcond
       

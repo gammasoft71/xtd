@@ -48,16 +48,16 @@ namespace xtd {
       /// @cond
       cancellation_token_source();
       cancellation_token_source(const cancellation_token_source& cancellation_token_source);
-      cancellation_token_source& operator=(const cancellation_token_source& cancellation_token_source);
+      auto operator=(const cancellation_token_source& cancellation_token_source) -> xtd::threading::cancellation_token_source&;
       ~cancellation_token_source();
       /// @endcond
       
       /// @name Public Properties
       
       /// @{
-      bool is_cancellation_requested() const noexcept;
+      [[nodiscard]] auto is_cancellation_requested() const noexcept -> bool;
       
-      const cancellation_token& token() const noexcept;
+      [[nodiscard]] auto token() const noexcept -> const cancellation_token&;
       /// @}
       
       /// @name Public Methods
@@ -66,8 +66,8 @@ namespace xtd {
       /// @}
       
     private:
-      bool can_be_canceled() const noexcept;
-      threading::wait_handle& wait_handle() noexcept;
+      [[nodiscard]] auto can_be_canceled() const noexcept -> bool;
+      [[nodiscard]] auto wait_handle() noexcept -> threading::wait_handle&;
       
       friend class cancellation_token;
       xtd::sptr<data> data_;

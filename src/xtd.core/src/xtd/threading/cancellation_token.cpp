@@ -18,34 +18,34 @@ cancellation_token::cancellation_token(bool canceled) : canceled_(canceled) {
 cancellation_token::~cancellation_token() {
 }
 
-bool cancellation_token::can_be_canceled() const noexcept {
+auto cancellation_token::can_be_canceled() const noexcept -> bool {
   return token_source_ ? token_source_->can_be_canceled() : canceled_;
 }
 
-bool cancellation_token::is_cancellation_requested() const noexcept {
+auto cancellation_token::is_cancellation_requested() const noexcept -> bool {
   return token_source_ ? token_source_->is_cancellation_requested() : canceled_;
 }
 
-threading::wait_handle& cancellation_token::wait_handle() noexcept {
+auto cancellation_token::wait_handle() noexcept -> threading::wait_handle& {
   if (token_source_) return token_source_->wait_handle();
   if (!wait_handle_) wait_handle_ = xtd::new_sptr<manual_reset_event>();
   return *wait_handle_;
 }
 
-bool cancellation_token::equals(const object& obj) const noexcept {
+auto cancellation_token::equals(const object& obj) const noexcept -> bool {
   return is<cancellation_token>(obj) && equals(static_cast<const cancellation_token&>(obj));
 }
 
-bool cancellation_token::equals(const cancellation_token& other) const noexcept {
+auto cancellation_token::equals(const cancellation_token& other) const noexcept -> bool {
   return token_source_ == other.token_source_;
 }
 
-size cancellation_token::get_hash_code() const noexcept {
+auto cancellation_token::get_hash_code() const noexcept -> size {
   if (!token_source_) return hash_code::combine(null);
   return hash_code::combine(*token_source_);
 }
 
-void cancellation_token::throw_if_cancellation_requested() const {
+auto cancellation_token::throw_if_cancellation_requested() const -> void {
   if (!is_cancellation_requested()) return;
   throw_helper::throws(exception_case::operation_canceled);
 }

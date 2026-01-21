@@ -60,8 +60,10 @@ namespace xtd {
       
       /// @cond
       cancellation_token();
-      cancellation_token(const cancellation_token& cancellation_token) = default;
-      cancellation_token& operator=(const cancellation_token& cancellation_token) = default;
+      cancellation_token(cancellation_token&&) = default;
+      cancellation_token(const cancellation_token&) = default;
+      auto operator=(cancellation_token&&) -> cancellation_token& = default;
+      auto operator=(const cancellation_token&) -> cancellation_token& = default;
       ~cancellation_token();
       /// @endcond
       
@@ -70,17 +72,17 @@ namespace xtd {
       /// @{
       /// @brief Gets whether this token is capable of being in the canceled state.
       /// @return `true` if this token is capable of being in the canceled state; otherwise, `false`.
-      bool can_be_canceled() const noexcept;
+      [[nodiscard]] auto can_be_canceled() const noexcept -> bool;
       
       /// @brief Gets whether cancellation has been requested for this token.
       /// @return `true` if cancellation has been requested for this token; otherwise, `false`.
       /// @remarks This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling xtd::threading::cancellation_token_source::cancel on the token's associated xtd::threading::cancellation_token_source.
       /// @remarks If this property is `true`, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently.
-      bool is_cancellation_requested() const noexcept;
+      [[nodiscard]] auto is_cancellation_requested() const noexcept -> bool;
       
       /// @brief Gets a xtd::threading::wait_handle that is signaled when the token is canceled.
       /// @remarks Accessing this property causes a xtd::threading::wait_handle to be instantiated. It is preferable to only use this property when necessary, and to then dispose the associated xtd::threading::cancellation_token_source instance at the earliest opportunity (disposing the source will dispose of this allocated handle). The handle should not be closed directly.
-      threading::wait_handle& wait_handle() noexcept;
+      [[nodiscard]] auto wait_handle() noexcept -> threading::wait_handle&;
       /// @}
       
       /// @name Public Methods
@@ -89,15 +91,15 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const cancellation_token& other) const noexcept override;
+      [[nodiscard]] auto equals(const cancellation_token& other) const noexcept -> bool override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Throws a xtd::operation_canceled_exception if this token has had cancellation requested.
       /// @exception xtd::operation_canceled_exception The token has had cancellation requested.
@@ -106,7 +108,7 @@ namespace xtd {
       /// if (tpken.is_cancellation_requested())
       ///   throw xtd::operation_canceled_exception {};
       /// ```
-      void throw_if_cancellation_requested() const;
+      auto throw_if_cancellation_requested() const -> void;
       /// @}
       
     private:
