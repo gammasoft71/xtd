@@ -11,7 +11,7 @@ namespace monitor_lock_example {
       };
       
       for (auto i = 0; i < 5; ++i)
-        thread::start_new(thread_proc);
+        thread_pool::queue_user_work_item(thread_proc);
       
       countdown_event.wait();
       console::write_line("All threads have signaled countdown_event");
