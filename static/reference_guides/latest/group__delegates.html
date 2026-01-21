@@ -433,11 +433,11 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> represents a callback method that you want to execute on a <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> thread. Create the delegate by passing your callback method to the <a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> constructor. Your method must have the signature shown here. </dd>
 <dd>
-Queue the method for execution by passing the <a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate to <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a>. The callback method executes when a thread pool thread becomes available. </dd>
+Queue the method for execution by passing the <a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate to <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a>. The callback method executes when a thread pool thread becomes available. </dd>
 <dd>
 If you want to pass information to the callback method, create an object that contains the necessary information and pass it to the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, xtd::object&amp;) method as the second argument. Each time the callback method executes, the state parameter contains this object. </dd>
 <dd>
-For examples that use the <a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate, see the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method. </dd></dl>
+For examples that use the <a class="el" href="#ga61f291caf7f77d8408f612e4d311d16b" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate, see the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method. </dd></dl>
 
 </div>
 </div>
@@ -507,7 +507,7 @@ If you want to pass information to your callback method, create an object that c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 18:14:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 23:04:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

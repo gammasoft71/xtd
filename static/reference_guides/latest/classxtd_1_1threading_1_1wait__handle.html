@@ -157,8 +157,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line">      <span class="comment">// wait until all tasks are completed.</span></div>
 <div class="line">      <span class="keyword">auto</span> dt = <a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">date_time::now</a>();</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Main thread is waiting for BOTH tasks to complete.&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">thread_pool::queue_user_work_item</a>(do_task, event1);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">thread_pool::queue_user_work_item</a>(do_task, event2);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a">thread_pool::queue_user_work_item</a>(do_task, event1);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a">thread_pool::queue_user_work_item</a>(do_task, event2);</div>
 <div class="line">      <a class="code hl_function" href="#a217129669f17b6f14201dccd0405450c">wait_handle::wait_all</a>({event1, event2});</div>
 <div class="line">      <span class="comment">// The time shown below should match the longest task.</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Both tasks are completed (time waited={0})&quot;</span>,</div>
@@ -169,8 +169,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line">      dt = <a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">date_time::now</a>();</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The main thread is waiting for either task to complete.&quot;</span>);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">thread_pool::queue_user_work_item</a>(do_task, event1);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">thread_pool::queue_user_work_item</a>(do_task, event2);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a">thread_pool::queue_user_work_item</a>(do_task, event1);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a">thread_pool::queue_user_work_item</a>(do_task, event2);</div>
 <div class="line">      <span class="keyword">auto</span> index = <a class="code hl_function" href="#aee2a73d9052723690ff0e15a338cce35">wait_handle::wait_any</a>({event1, event2});</div>
 <div class="line">      <span class="comment">// The time shown below should match the shortest task.</span></div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Task {0} finished first (time waited={1}).&quot;</span>,</div>
@@ -210,7 +210,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <div class="line"><span class="comment">// Task 2 finished first (time waited=00:00:04:011925000).</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ad94505e74efe9f353836901eda9230ed"><div class="ttname"><a href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">xtd::date_time::now</a></div><div class="ttdeci">static date_time now() noexcept</div><div class="ttdoc">Gets a xtd::date_time object that is set to the current date and time on this computer,...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread__pool_html_a6e1d511cd1dbe0a07b98128042118f3c"><div class="ttname"><a href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">xtd::threading::thread_pool::queue_user_work_item</a></div><div class="ttdeci">static bool queue_user_work_item(const wait_callback &amp;callback)</div><div class="ttdoc">Queues a method for execution. The method executes when a thread pool thread becomes available.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread__pool_html_a68ab6d97f327d923af536673d9fcc39a"><div class="ttname"><a href="classxtd_1_1threading_1_1thread__pool.html#a68ab6d97f327d923af536673d9fcc39a">xtd::threading::thread_pool::queue_user_work_item</a></div><div class="ttdeci">static void queue_user_work_item(const wait_callback &amp;callback)</div><div class="ttdoc">Queues a method for execution. The method executes when a thread pool thread becomes available.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_a217129669f17b6f14201dccd0405450c"><div class="ttname"><a href="#a217129669f17b6f14201dccd0405450c">xtd::threading::wait_handle::wait_all</a></div><div class="ttdeci">static bool wait_all(const collection_t &amp;wait_handles)</div><div class="ttdoc">Waits for all the elements in the specified collection to receive a signal.</div><div class="ttdef"><b>Definition</b> wait_handle.hpp:161</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_aee2a73d9052723690ff0e15a338cce35"><div class="ttname"><a href="#aee2a73d9052723690ff0e15a338cce35">xtd::threading::wait_handle::wait_any</a></div><div class="ttdeci">static size_t wait_any(const collection_t &amp;wait_handles)</div><div class="ttdoc">Waits for any of the elements in the specified collection to receive a signal.</div><div class="ttdef"><b>Definition</b> wait_handle.hpp:198</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
@@ -1153,7 +1153,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 21 2026 18:15:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 21 2026 23:04:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
