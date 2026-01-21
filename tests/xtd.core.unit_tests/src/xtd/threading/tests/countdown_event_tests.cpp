@@ -34,21 +34,17 @@ namespace xtd::threading::tests {
     
     auto test_method_(constructor_with_param) {
       auto ce = countdown_event {10};
-      assert::are_equal(10, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(10_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
       assert::is_false(ce.is_set());
       assert::is_instance_of<manual_reset_event>(ce.wait_handle());
-    }
-    
-    auto test_method_(constructor_with_invalid_param) {
-      assert::throws<argument_out_of_range_exception>([] {countdown_event {-1};});
     }
     
     auto test_method_(copy_constructor) {
       auto ce1 = countdown_event {10};
       auto ce2 = ce1;
-      assert::are_equal(10, ce2.current_count());
-      assert::are_equal(10, ce2.initial_count());
+      assert::are_equal(10_z, ce2.current_count());
+      assert::are_equal(10_z, ce2.initial_count());
       assert::is_false(ce2.is_set());
       assert::is_instance_of<manual_reset_event>(ce2.wait_handle());
     }
@@ -57,8 +53,8 @@ namespace xtd::threading::tests {
       auto ce1 = countdown_event {10};
       auto ce2 = countdown_event {};
       ce2 = ce1;
-      assert::are_equal(10, ce2.current_count());
-      assert::are_equal(10, ce2.initial_count());
+      assert::are_equal(10_z, ce2.current_count());
+      assert::are_equal(10_z, ce2.initial_count());
       assert::is_false(ce2.is_set());
       assert::is_instance_of<manual_reset_event>(ce2.wait_handle());
     }
@@ -66,22 +62,17 @@ namespace xtd::threading::tests {
     auto test_method_(add_count) {
       auto ce = countdown_event {1};
       ce.add_count();
-      assert::are_equal(2, ce.current_count());
-      assert::are_equal(1, ce.initial_count());
+      assert::are_equal(2_z, ce.current_count());
+      assert::are_equal(1_z, ce.initial_count());
       assert::is_false(ce.is_set());
     }
     
     auto test_method_(add_count_with_param) {
       auto ce = countdown_event {5};
       ce.add_count(3);
-      assert::are_equal(8, ce.current_count());
-      assert::are_equal(5, ce.initial_count());
+      assert::are_equal(8_z, ce.current_count());
+      assert::are_equal(5_z, ce.initial_count());
       assert::is_false(ce.is_set());
-    }
-    
-    auto test_method_(add_count_with_invalid_param) {
-      auto ce = countdown_event {5};
-      assert::throws<argument_out_of_range_exception>([&] {ce.add_count(-1);});
     }
     
     auto test_method_(add_count_when_coutdown_event_is_set) {
@@ -116,27 +107,27 @@ namespace xtd::threading::tests {
       ce.add_count(20);
       ce.signal(30);
       ce.reset();
-      assert::are_equal(10, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(10_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
       assert::is_false(ce.is_set());
     }
     
     auto test_method_(signal) {
       auto ce = countdown_event {10};
-      assert::are_equal(10, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(10_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
       ce.signal();
-      assert::are_equal(9, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(9_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
     }
     
     auto test_method_(signal_with_param) {
       auto ce = countdown_event {10};
-      assert::are_equal(10, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(10_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
       ce.signal(4);
-      assert::are_equal(6, ce.current_count());
-      assert::are_equal(10, ce.initial_count());
+      assert::are_equal(6_z, ce.current_count());
+      assert::are_equal(10_z, ce.initial_count());
     }
     
     auto test_method_(signal_with_negative_param) {

@@ -14,15 +14,15 @@ using namespace xtd::threading;
 
 struct countdown_event::data : object {
   const threading::cancellation_token* cancellation_token = nullptr;
-  int32 current_count = 0;
-  int32 initial_count = 0;
+  size current_count = 0;
+  size initial_count = 0;
   manual_reset_event event {false};
 };
 
 countdown_event::countdown_event() : countdown_event(0) {
 }
 
-countdown_event::countdown_event(int32 initial_count) : data_(xtd::new_sptr<data>()) {
+countdown_event::countdown_event(size initial_count) : data_(xtd::new_sptr<data>()) {
   if (initial_count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   data_->current_count = initial_count;
   data_->initial_count = initial_count;
@@ -39,12 +39,12 @@ countdown_event::~countdown_event() {
   if (data_.use_count() == 1) close();
 }
 
-int32 countdown_event::current_count() const {
+size countdown_event::current_count() const {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->current_count;
 }
 
-int32 countdown_event::initial_count() const {
+size countdown_event::initial_count() const {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->initial_count;
 }
@@ -73,9 +73,8 @@ void countdown_event::add_count() {
   add_count(1);
 }
 
-void countdown_event::add_count(int32 count) {
+void countdown_event::add_count(size count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->current_count == 0) throw_helper::throws(exception_case::invalid_operation);
   lock_(*data_) data_->current_count += count;
 }
@@ -85,7 +84,7 @@ void countdown_event::reset() {
   reset(data_->initial_count);
 }
 
-void countdown_event::reset(int32 count) {
+void countdown_event::reset(size count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   lock_(*data_) {
@@ -99,10 +98,10 @@ bool countdown_event::signal() {
   return signal(1);
 }
 
-bool countdown_event::signal(int32 signal_count) {
+bool countdown_event::signal(size signal_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   if (data_->current_count == 0) throw_helper::throws(exception_case::invalid_operation);
-  if (signal_count < 0 || signal_count > data_->current_count) throw_helper::throws(exception_case::argument_out_of_range);
+  if (signal_count > data_->current_count) throw_helper::throws(exception_case::argument_out_of_range);
   auto lock = threading::lock {*data_};
   data_->current_count -= signal_count;
   if (data_->current_count == 0) data_->event.set();
@@ -113,8 +112,8 @@ bool countdown_event::try_add_count() noexcept {
   return try_add_count(1);
 }
 
-bool countdown_event::try_add_count(int32 count) noexcept {
-  if (!data_ || count < 0 || data_->current_count == 0) return false;
+bool countdown_event::try_add_count(size count) noexcept {
+  if (!data_ || data_->current_count == 0) return false;
   lock_(*data_) data_->current_count += count;
   return true;
 }
