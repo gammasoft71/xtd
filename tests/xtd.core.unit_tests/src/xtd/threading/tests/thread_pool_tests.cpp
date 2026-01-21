@@ -15,8 +15,8 @@ namespace xtd::threading::tests {
       size_t max_worker_threads = 0;
       size_t max_completion_port_threads = 0;
       thread_pool::get_max_threads(max_worker_threads, max_completion_port_threads);
-      assert::are_equal(800ul, max_worker_threads);
-      assert::are_equal(800ul, max_completion_port_threads);
+      assert::are_equal(environment::processor_count() * 25, max_worker_threads);
+      assert::are_equal(environment::processor_count() * 25, max_completion_port_threads);
     }
     
     auto test_method_(get_min_threads) {

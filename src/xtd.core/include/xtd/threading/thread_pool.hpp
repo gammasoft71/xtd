@@ -153,19 +153,17 @@ namespace xtd {
       
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
-      /// @return `true` if the method is successfully queued; xtd::not_supported_exception is thrown if the work item could not be queued
-      static bool queue_user_work_item(const wait_callback& callback);
+      static void queue_user_work_item(const wait_callback& callback);
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
       /// @param state An object containing data to be used by the method.
-      /// @return `true` if the method is successfully queued; xtd::not_supported_exception is thrown if the work item could not be queued
-      static bool queue_user_work_item(const wait_callback& callback, const xtd::any_object& state);
+      static void queue_user_work_item(const wait_callback& callback, const xtd::any_object& state);
       
       /// @cond
       template<class callback_t>
-      static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
+      static void queue_user_work_item(callback_t callback) {queue_user_work_item(wait_callback {callback});}
       template<class callback_t>
-      static bool queue_user_work_item(callback_t callback, const xtd::any_object& state) {return queue_user_work_item(wait_callback {callback}, state);}
+      static void queue_user_work_item(callback_t callback, const xtd::any_object& state) {queue_user_work_item(wait_callback {callback}, state);}
       /// @endcond
       
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
