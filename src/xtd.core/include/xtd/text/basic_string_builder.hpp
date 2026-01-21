@@ -329,15 +329,6 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      /// @brief Returns reference to the last character in the string.
-      /// @return Reference to the last character, equivalent to `operator[](size() - 1)`.
-      /// @exception xtd::index_out_of_range_exception If is empty.
-      const_reference back() const {return operator[](size() - 1);}
-      /// @brief Returns reference to the last character in the string.
-      /// @return Reference to the last character, equivalent to `operator[](size() - 1)`.
-      /// @exception xtd::index_out_of_range_exception If is empty.
-      reference back() {return operator[](size() - 1);}
-      
       /// @brief Returns an iterator to the first character of the string.
       /// @return Iterator to the first character.
       const_iterator begin() const {return chars_.begin();}
@@ -361,7 +352,8 @@ namespace xtd {
       /// @brief Sets the number of characters that the string has currently allocated space for.
       /// @param value Capacity of the currently allocated storage, i.e. the storage available for storing elements.
       basic_string_builder& capacity(size_type value) {
-        reserve(value);
+        if (value > max_capacity_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        chars_.reserve(value);
         return *this;
       }
       
@@ -409,15 +401,6 @@ namespace xtd {
       /// @return Iterator to the character following the last character.
       iterator end() {return chars_.end();}
       
-      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is `true`.
-      /// @return Reference to the first character, equivalent to `operator[](0)`.
-      /// @exception xtd::index_out_of_range_exception If is empty.
-      const_reference front() const {return operator[](0);}
-      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is `true`.
-      /// @return Reference to the first character, equivalent to `operator[](0)`.
-      /// @exception xtd::index_out_of_range_exception If is empty.
-      reference front() {return operator[](0);}
-      
       /// @brief Gets or sets the length of the current xtd::text::basic_string_builder object.
       /// @return The length of this instance.
       /// @remarks The length of a xtd::text::basic_string_builder object is defined by its number of xtd::text::basic_string_builder::value_type objects.
@@ -436,17 +419,13 @@ namespace xtd {
       /// @remarks If the specified length is greater than the current capacity, xtd::text::basic_string_builder::capacity increases so that it is greater than or equal to the specified length.
       /// @remarks The xtd::text::basic_string_builder::length property returns the number of xtd::text::basic_string_builder::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::text::basic_string_builder::value_type.
       basic_string_builder& length(size_type value) noexcept {
-        if (value != length()) resize(value);
+        if (value != length()) chars_.resize(value);
         return *this;
       }
       
       /// @brief Returns the number of characters that the string has currently allocated space for.
       /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
       size_type max_capacity() const noexcept {return max_capacity_;}
-      
-      /// @brief Returns the maximum number of elements the string is able to hold due to system or library implementation limitations, i.e. `std::distance(begin(), end())` for the largest string.
-      /// @return Maximum number of characters.
-      size_type max_size() const noexcept {return chars_.max_size();}
       
       /// @brief Returns the number of `char_t` elements in the string, i.e. `std::distance(begin(), end())`.
       /// @return The number of `char_t` elements in the string.
@@ -957,15 +936,6 @@ namespace xtd {
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append_line(const xtd::basic_string<char_t>& value) {return append(value).append_line();}
       
-      /// @brief Returns a reference to the character at specified location `pos`.
-      /// @return Reference to the requested character.
-      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-      const_reference at(size_type pos) const {return operator [](pos);}
-      /// @brief Returns a reference to the character at specified location `pos`.
-      /// @return Reference to the requested character.
-      /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
-      reference at(size_type pos) {return operator [](pos);}
-      
       /// @brief Removes all characters from the current xtd::text::basic_string_builder instance.
       /// @return An object whose xtd::text::basic_string_builder::length is 0 (zero).
       /// @remarks xtd::text::basic_string_builder::clear is a convenience method that is equivalent to setting the xtd::text::basic_string_builder::length property of the current instance to 0 (zero).
@@ -973,181 +943,6 @@ namespace xtd {
       basic_string_builder& clear() {
         chars_.clear();
         return *this;
-      }
-      
-      /// @brief Compares two character sequences.
-      /// @param str The other string to compare to.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares this string to str.
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(const basic_string_builder & str) const {return chars_.compare(str);}
-      /// @brief Compares two character sequences.
-      /// @param pos1 The position of the first character in this string to compare.
-      /// @param count1 The number of characters of this string to compare.
-      /// @param str The other string to compare to.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to `str`.
-      /// * If `count1 > size() - pos1`, the substring is [`pos1`, size()).
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(size_type pos1, size_type count1, const basic_string_builder & str) const {return chars_.compare(pos1, count1, str);}
-      /// @brief Compares two character sequences.
-      /// @param pos1 The position of the first character in this string to compare.
-      /// @param count1 The number of characters of this string to compare.
-      /// @param str The other string to compare to.
-      /// @param pos2 The position of the first character of the given string to compare.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-      /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
-      /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(size_type pos1, size_type count1, const basic_string_builder & str, size_type pos2) const {return chars_.compare(pos1, count1, str, pos2);}
-      /// @brief Compares two character sequences.
-      /// @param pos1 The position of the first character in this string to compare.
-      /// @param count1 The number of characters of this string to compare.
-      /// @param str The other string to compare to.
-      /// @param pos2 The position of the first character of the given string to compare.
-      /// @param count2 The number of characters of the given string to compare.
-      /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to a substring [`pos2`, `pos2 + count2`) of `str`.
-      /// * If `count1 > length() - pos1`, the first substring is [`pos1`, length()).
-      /// * If `count2 > str.length() - pos2`, the second substring is [`pos2`, `str.length()`).
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(size_type pos1, size_type count1, const basic_string_builder & str, size_type pos2, size_type count2) const {return chars_.compare(pos1, count1, str, pos2, count2);}
-      /// @brief Compares two character sequences.
-      /// @param s pointer to the character string to compare to.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares this string to the null-terminated character sequence beginning at the character pointed to by `s` with length `traits_t::length(s)`.
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(const_pointer s) const {return chars_.compare(s);}
-      /// @brief Compares two character sequences.
-      /// @param pos1 The position of the first character in this string to compare.
-      /// @param count1 The number of characters of this string to compare.
-      /// @param s pointer to the character string to compare to.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to the null-terminated character sequence beginning at the character pointed to by `s` with length `traits_t::length(s)`.
-      /// * If `count1 > size() - pos1`, the substring is [`pos1$ , size()).
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(size_type pos1, size_type count1, const_pointer s) const {return chars_.compare(pos1, count1, s);}
-      /// @brief Compares two character sequences.
-      /// @param pos1 The position of the first character in this string to compare.
-      /// @param count1 The number of characters of this string to compare.
-      /// @param s pointer to the character string to compare to.
-      /// @param count2 The number of characters of the given string to compare.
-      /// @return
-      /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
-      /// * Zero if both character sequences compare equivalent.
-      /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
-      /// @remarks Compares a [`pos1`, `pos1 + count1`) substring of this string to the characters in the range [`s`, `s + count2`). The characters in [`s`, `s + count2`) may include null characters.
-      /// * If `count1 > size() - pos1`, the substring is [`pos1`, size()).
-      /// @remarks A character sequence consisting of `count1` characters starting at `data1` is compared to a character sequence consisting of `count2` characters starting at `data2` as follows:
-      /// * First, calculate the number of characters to compare, as if by `size_type rlen = std::min(count1, count2)`.
-      /// * Then compare the sequences by calling `traits_t::compare(data1, data2, rlen)`. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows:
-      /// @remarks
-      /// | Condition                                                     | Result                          | Return value |
-      /// | ------------------------------------------------------------- | ------------------------------- | ------------ |
-      /// | traits_t::compare(data1, data2, rlen) < 0                     | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 < size2  | data1 is **less than** data2    | < 0          |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 == size2 | data1 is **equal to** data2     | 0            |
-      /// | traits_t::compare(data1, data2, rlen) == 0 and size1 > size2  | data1 is **greater than** data2 | > 0          |
-      /// | traits_t::compare(data1, data2, rlen) > 0                     | data1 is **greater than** data2 | > 0          |
-      int32 compare(size_type pos1, size_type count1, const_pointer s, size_type count2) const {return chars_.compare(pos1, count1, s, count2);}
-      
-      /// @brief Copies a substring [`pos`, `pos + count`) to character string pointed to by `dest`. If the requested substring lasts past the end of the string, or if `count == npos`, the copied substring is [`pos`, size()).
-      /// @param dest The pointer to the destination character string.
-      /// @param count length of the substring.
-      /// @return The number of characters copied.
-      /// @remarks The resulting character string is not null-terminated.
-      size_type copy(pointer dest, size_type count) const {
-        if (count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.copy(dest, count);
-      }
-      /// @brief Copies a substring [`pos`, `pos + count`) to character string pointed to by `dest`. If the requested substring lasts past the end of the string, or if `count == npos`, the copied substring is [`pos`, size()).
-      /// @param dest The pointer to the destination character string.
-      /// @param count length of the substring.
-      /// @param pos The position of the first character to include.
-      /// @return The number of characters copied.
-      /// @remarks The resulting character string is not null-terminated.
-      size_type copy(pointer dest, size_type count, size_type pos) const {
-        if (pos > length() || pos + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.copy(dest, count, pos);
       }
       
       /// @brief Copies the characters from a specified segment of this instance to a specified segment of a destination xtd::text::basic_string_builder::value_type array.
@@ -1161,7 +956,7 @@ namespace xtd {
       void copy_to(xtd::size source_index, xtd::array<value_type>& destination, xtd::size destination_index, xtd::size destination_count) const {
         if (source_index > length() || source_index + destination_count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (destination_index >= destination.length() || destination_index + destination_count > destination.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        copy(destination.data() + destination_index, destination_count, source_index);
+        chars_.copy(destination.data() + destination_index, destination_count, source_index);
       }
       
       /// @brief Determines whether this instance and a specified object, which must also be a xtd::text::basic_string_builder object, have the same value.
@@ -1183,269 +978,6 @@ namespace xtd {
         if (this->capacity() < capacity) this->capacity(capacity);
         return this->capacity();
       }
-      
-      /// @brief Removes specified characters from the string.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Removes `std::min(count, size() - index)` characters starting at index.
-      basic_string_builder& erase() {
-        chars_.erase();
-        return *this;
-      }
-      /// @brief Removes specified characters from the string.
-      /// @param index The first character to remove.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Removes `std::min(count, size() - index)` characters starting at index.
-      basic_string_builder& erase(size_type index) {
-        if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        chars_.erase(index);
-        return *this;
-      }
-      /// @brief Removes specified characters from the string.
-      /// @param index The first character to remove.
-      /// @param count The number of characters to remove.
-      /// @return This current instance of xtd::text::basic_string_builder.
-      /// @remarks Removes `std::min(count, size() - index)` characters starting at index.
-      basic_string_builder& erase(size_type index, size_type count) {
-        if (index > length() || index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        chars_.erase(index, count);
-        return *this;
-      }
-      /// @brief Removes specified characters from the string.
-      /// @param position The iterator to the character to remove.
-      /// @return The Iterator pointing to the character immediately following the character erased, or end() if no such character exists.
-      /// @remarks Removes the character at `position`.
-      /// @remarks If `position` is not a dereferenceable iterator on `*this`, the behavior is undefined.
-      iterator erase(const_iterator position) {return chars_.erase(position);}
-      /// @brief Removes specified characters from the string.
-      /// @param first The first iterator of the range of the characters to remove.
-      /// @param last The last iterator of the range of the characters to remove.
-      /// @return The iterator pointing to the character last pointed to before the erase, or end() if no such character exists.
-      /// @remarks Removes the characters in the range [`first`, `last`).
-      /// @remarks If `first` or `last` is not a valid iterator on `*this`, or [`first`, `last`) is not a valid range, the behavior is undefined.
-      iterator erase(const_iterator first, const_iterator last) {return chars_.erase(first, last);}
-      
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to `str`.
-      size_type find(const basic_string_builder & str) const {return chars_.find(str);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
-      /// @param str The string to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to `str`.
-      size_type find(const basic_string_builder & str, size_type pos) const {return chars_.find(str, pos);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
-      /// @param str The string to search for.
-      /// @param pos The position at which to start the search
-      /// @param count The length of substring to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the range [s, s + count).
-      /// @remarks This range may contain null characters. If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type find(const_pointer s, size_type pos, size_type count) const {return chars_.find(s, pos, count);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
-      /// @param s The pointer to a character string to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find(const_pointer s) const {return chars_.find(s);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
-      /// @param s The pointer to a character string to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find(const_pointer s, size_type pos) const {return chars_.find(s, pos);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
-      /// @param ch The character to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
-      size_type find(value_type ch) const {return chars_.find(ch);}
-      /// @brief Finds the first substring equal to the given character sequence. Search begins at `pos`, i.e. the found substring must not begin in a position preceding `pos`.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
-      size_type find(value_type ch, size_type pos) const {return chars_.find(ch, pos);}
-      
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_first_of(const basic_string_builder & str) const {return chars_.find_first_of(str);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_first_of(const basic_string_builder & str, size_type pos) const {return chars_.find_first_of(str, pos);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @param count The length of character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
-      /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type find_first_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_first_of(s, pos, count);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_first_of(const_pointer s) const {return chars_.find_first_of(s);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_first_of(const_pointer s, size_type pos) const {return chars_.find_first_of(s, pos);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_first_of(value_type ch) const {return chars_.find_first_of(ch);}
-      /// @brief Finds the first character equal to one of the characters in the given character sequence. The search considers only the range [`pos`, size()). If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_first_of(value_type ch, size_type pos) const {return chars_.find_first_of(ch, pos);}
-      
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_first_not_of(const basic_string_builder & str) const {return chars_.find_first_not_of(str);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_first_not_of(const basic_string_builder & str, size_type pos) const {return chars_.find_first_not_of(str, pos);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @param count The length of character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
-      /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type find_first_not_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_first_not_of(s, pos, count);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_first_not_of(const_pointer s) const {return chars_.find_first_not_of(s);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_first_not_of(const_pointer s, size_type pos) const {return chars_.find_first_not_of(s, pos);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_first_not_of(value_type ch) const {return chars_.find_first_not_of(ch);}
-      /// @brief Finds the first character equal to none of the characters in the given character sequence. The search considers only the range [`pos`, size()). If all characters in the range can be found in the given character sequence, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_first_not_of(value_type ch, size_type pos) const {return chars_.find_first_not_of(ch, pos);}
-      
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_last_of(const basic_string_builder & str) const {return chars_.find_last_of(str);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_last_of(const basic_string_builder & str, size_type pos) const {return chars_.find_last_of(str, pos);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @param count The length of character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
-      /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type find_last_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_last_of(s, pos, count);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_last_of(const_pointer s) const {return chars_.find_last_of(s);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_last_of(const_pointer s, size_type pos) const {return chars_.find_last_of(s, pos);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_last_of(value_type ch) const {return chars_.find_last_of(ch);}
-      /// @brief Finds the last character equal to one of characters in the given character sequence. The exact search algorithm is not specified. The search considers only the range [​`0`​, `pos`]. If none of the characters in the given character sequence is present in the range, xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_last_of(value_type ch, size_type pos) const {return chars_.find_last_of(ch, pos);}
-      
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_last_not_of(const basic_string_builder & str) const {return chars_.find_last_not_of(str);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param str The string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in `str`.
-      size_type find_last_not_of(const basic_string_builder & str, size_type pos) const {return chars_.find_last_not_of(str, pos);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @param count The length of character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in the range [`s`, `s + count`). This range can include null characters.
-      /// @remarks If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type find_last_not_of(const_pointer s, size_type pos, size_type count) const {return chars_.find_last_not_of(s, pos, count);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_last_not_of(const_pointer s) const {return chars_.find_last_not_of(s);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param s The pointer to a character string identifying characters to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to one of the characters in character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type find_last_not_of(const_pointer s, size_type pos) const {return chars_.find_last_not_of(s, pos);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_last_not_of(value_type ch) const {return chars_.find_last_not_of(ch);}
-      /// @brief Finds the last character equal to none of the characters in the given character sequence. The search considers only the range [​`0`​, `pos`]. If all characters in the range can be found in the given character sequence,xtd::text::basic_string_builder::npos will be returned.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to begin searching.
-      /// @return Position of the found character or xtd::text::basic_string_builder::npos if no such character is found.
-      /// @remarks Finds the first character equal to `ch`.
-      size_type find_last_not_of(value_type ch, size_type pos) const {return chars_.find_last_not_of(ch, pos);}
-      
-      /// @brief Returns the allocator associated with the string.
-      /// @return The associated allocator.
-      allocator_type get_allocator() const {return chars_.get_allocator();}
       
       /// @brief Returns the underlying base type.
       /// @return The underlying base type.
@@ -1693,57 +1225,6 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts a string, obtained by `str.substr(s_index, str.length())` at the position `index.
       basic_string_builder& insert(size_type index, const basic_string_builder & str, size_type s_index) {return insert(index, str.chars_, s_index, str.length() - s_index);}
-      /// @brief Inserts characters into the string.
-      /// @param pos The iterator before which the characters will be inserted.
-      /// @param ch The character to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
-      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
-      /// @remarks Inserts character `ch` before the character pointed by `pos`.
-      iterator insert(const_iterator pos, value_type ch) {return insert(pos, 1, ch);}
-      /// @brief Inserts characters into the string.
-      /// @param pos The iterator before which the characters will be inserted.
-      /// @param count The number of characters to insert.
-      /// @param ch The character to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
-      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
-      /// @remarks Inserts `count` copies of character `ch` before the element (if any) pointed by `pos`.
-      iterator insert(const_iterator pos, size_type count, value_type ch) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.insert(pos, count, ch);
-      }
-      /// @brief Inserts characters into the string.
-      /// @param pos The iterator before which the characters will be inserted.
-      /// @param first The firs position of range defining characters to insert.
-      /// @param last The last position of range defining characters to insert.
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
-      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
-      /// @remarks Inserts characters from the range [`first`, `last`) before the element (if any) pointed by `pos`, as if by `insert(pos - begin(), basic_string(first, last, get_allocator()))`.
-      /// @remarks This overload does not participate in overload resolution if input_iterator_t does not satisfy [LegacyInputIterator](https://en.cppreference.com/w/cpp/named_req/InputIterator).
-      template<class input_iterator_t>
-      iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (length() + std::distance(first, last) > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.insert(pos, first, last);
-      }
-      /// @brief Inserts characters into the string.
-      /// @param pos The iterator before which the characters will be inserted.
-      /// @param ilist The [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list) to insert the characters from
-      /// @return An iterator which refers to the copy of the first inserted character or `pos` if no characters were inserted (`count == 0` or `first == last` or `ilist.count() == 0`)
-      /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
-      /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
-      iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.insert(pos, ilist);
-      }
-      
-      /// @brief Removes the last character from the string.
-      /// @remarks Equivalent to `erase(end() - 1)`. The behavior is undefined if the string is empty.
-      void pop_back() {chars_.pop_back();}
-      
-      /// @brief Appends the given character ch to the end of the string.
-      /// @param ch The character to append.
-      void push_back(value_type ch) {chars_.push_back(ch);}
       
       /// @brief Removes the specified range of characters from this instance.
       /// @param start_index The zero-based position in this instance where removal begins.
@@ -1789,12 +1270,12 @@ namespace xtd {
         auto new_size = new_value.length();
         auto index = xtd::size {0};
         while (true) {
-          index = find(old_value, index);
+          index = chars_.find(old_value, index);
           if (index == npos || index >= start_index + count) break;
           if (index >= start_index) {
             if (old_size == new_size) replace(index, old_size, new_value);
             else {
-              erase(index, old_value.length());
+              chars_.erase(index, old_value.length());
               insert(index, new_value);
             }
           }
@@ -1943,107 +1424,7 @@ namespace xtd {
         chars_.replace(first, last, ilist);
         return *this;
       }
-      
-      /// @brief Informs a xtd::text::basic_string_builder object of a planned change in size, so that it can manage the storage allocation appropriately
-      /// @param new_cap The new capacity of the string.
-      /// @remarks If `new_cap` is greater than the current capacity(), new storage is allocated, and capacity() is made equal or greater than `new_cap`.
-      /// @remarks If `new_cap` is less than or equal to the current capacity(), there is no effect.
-      /// @remarks If a capacity change takes place, all iterators and references, including the past-the-end iterator, are invalidated.
-      void reserve(size_type new_cap) {
-        if (new_cap > max_capacity_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (new_cap <= capacity()) return;
-        chars_.reserve(new_cap);
-      }
-      
-      /// @brief Resizes the string to contain count characters.
-      /// @param count The new size of the string.
-      /// @remarks If the current size is less than `count`, additional characters are appended:
-      /// @remarks Initializes appended characters to value_type() ('\0' if value_type is char).
-      void resize(size_type count) {chars_.resize(count);}
-      /// @brief Resizes the string to contain count characters.
-      /// @param count The new size of the string.
-      /// @param ch The character to initialize the new characters with.
-      /// @remarks If the current size is less than `count`, additional characters are appended:
-      /// @remarks Initializes appended characters to `ch`.
-      void resize(size_type count, value_type ch) {chars_.resize(count, ch);}
-      
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::text::basic_string_builder::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::text::basic_string_builder::npos). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as xtd::text::basic_string_builder::npos, the whole string will be searched.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to `str`.
-      size_type rfind(const basic_string_builder & str) const {return chars_.rfind(str);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as `pos`, the whole string will be searched.
-      /// @param str The string to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to `str`.
-      size_type rfind(const basic_string_builder & str, size_type pos) const {return chars_.rfind(str, pos);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as `pos`, the whole string will be searched.
-      /// @param str The string to search for.
-      /// @param pos The position at which to start the search
-      /// @param count The length of substring to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the range [s, s + count).
-      /// @remarks This range may contain null characters. If [`s`, `s + count`) is not a valid range, the behavior is undefined.
-      size_type rfind(const_pointer s, size_type pos, size_type count) const {return chars_.rfind(s, pos, count);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::text::basic_string_builder::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::text::basic_string_builder::npos). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as xtd::text::basic_string_builder::npos, the whole string will be searched.
-      /// @param s The pointer to a character string to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type rfind(const_pointer s) const {return chars_.rfind(s);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as `pos`, the whole string will be searched.
-      /// @param s The pointer to a character string to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first substring equal to the character string pointed to by `s`. The length of the string is determined by the first null character using `traits_t::length(s)`.
-      /// @remarks If [`s`, `s + traits_t::length(s)`) is not a valid range, the behavior is undefined.
-      size_type rfind(const_pointer s, size_type pos) const {return chars_.rfind(s, pos);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at xtd::text::basic_string_builder::npos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following xtd::text::basic_string_builder::npos). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as xtd::text::basic_string_builder::npos, the whole string will be searched.
-      /// @param ch The character to search for.
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
-      size_type rfind(value_type ch) const {return chars_.rfind(ch);}
-      /// @brief Finds the last substring that is equal to the given character sequence. The search begins at `pos` and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following `pos`). If xtd::text::basic_string_builder::npos or any value not smaller than xtd::text::basic_string_builder::size() - 1 is passed as `pos`, the whole string will be searched.
-      /// @param ch The character to search for.
-      /// @param pos The position at which to start the search
-      /// @return Position of the first character of the found substring or xtd::text::basic_string_builder::npos if no such substring is found.
-      /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
-      size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
-      
-      /// @brief Requests the removal of unused capacity.
-      /// @remarks It is a non-binding request to reduce capacity() to size(). It depends on the implementation if the request is fulfilled.
-      /// @remarks If (and only if) reallocation takes place, all pointers, references, and iterators are invalidated.
-      void shrink_to_fit() {chars_.shrink_to_fit();}
-      
-      /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::text::basic_string_builder::npos), the returned substring is [`pos`, size()).
-      /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
-      /// @exception `std::out_of_range` if `pos > size()`.
-      /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
-      basic_string_builder substr() const {return chars_.substr();}
-      /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::text::basic_string_builder::npos), the returned substring is [`pos`, size()).
-      /// @param pos The position of the first character to include.
-      /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
-      /// @exception `std::out_of_range` if `pos > size()`.
-      /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
-      basic_string_builder substr(size_type pos) const {
-        if (pos > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.substr(pos);
-      }
-      /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::text::basic_string_builder::npos), the returned substring is [`pos`, size()).
-      /// @param pos The position of the first character to include.
-      /// @param count The length of the substring.
-      /// @return String containing the substring [`pos`, `pos + count`) or [pos, size()).
-      /// @exception `std::out_of_range` if `pos > size()`.
-      /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
-      basic_string_builder substr(size_type pos, size_type count) const {
-        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return chars_.substr(pos, count);
-      }
-      
-      /// @brief Exchanges the contents of the string with those of other. All iterators and references may be invalidated.
-      /// @param other The string to exchange the contents with.
-      void swap(basic_string_builder & other) noexcept {chars_.swap(other.chars_);}
-      
+
       /// @brief Converts the value of this instance to a xtd::text::basic_string_builder <char>.
       /// @return The current string.
       /// @todo Uncomment the folllowing line and remove the next..
