@@ -48,19 +48,19 @@ namespace xtd {
         /// @{
         /// @brief Gets a value indicating whether an asynchronous operation has been canceled.
         /// @return `true` if the background operation has been canceled; otherwise `false`. The default is `false`.
-        bool cancelled() const noexcept {return cancelled_;}
+        [[nodiscard]] auto cancelled() const noexcept -> bool {return cancelled_;}
         
         /// @brief Gets a value indicating which error occurred during an asynchronous operation.
         /// @return An xtd::system_exception instance, if an error occurred during an asynchronous operation; otherwise std::nullopt.
-        std::optional<xtd::ref<const xtd::system_exception>> error() const noexcept {return error_ ? std::optional<xtd::ref<const xtd::system_exception >> (*error_) : std::nullopt; }
+        [[nodiscard]] auto error() const noexcept -> std::optional<xtd::ref<const xtd::system_exception>> {return error_ ? std::optional<xtd::ref<const xtd::system_exception >> (*error_) : std::nullopt; }
         
         /// @brief Gets the prompt associated with the event.
         /// @return The Prompt object associated with the event.
-        const xtd::speech::synthesis::prompt& prompt() const noexcept {return *prompt_;}
+        [[nodiscard]] auto prompt() const noexcept -> const xtd::speech::synthesis::prompt& {return *prompt_;}
         
         /// @brief Gets the unique identifier for the asynchronous task.
         /// @return An object reference that uniquely identifies the asynchronous task.
-        xtd::any_object user_state() const noexcept {return user_state_;}
+        [[nodiscard]] auto user_state() const noexcept -> xtd::any_object {return user_state_;}
         /// @}
         
       private:

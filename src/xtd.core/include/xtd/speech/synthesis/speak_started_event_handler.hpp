@@ -26,7 +26,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core synthesis
-      using speak_started_event_handler = xtd::delegate<void(object& sender, const speak_started_event_args& e)>;
+      using speak_started_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::speech::synthesis::speak_started_event_args& e)>;
     }
   }
 }

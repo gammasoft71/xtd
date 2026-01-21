@@ -50,18 +50,18 @@ namespace xtd {
         /// @brief Gets the state of the xtd::speech::synthesis::speech_synthesizer before the xtd::speech::synthesis::speech_synthesizer::state_changed event.
         /// @return The state of the synthesizer before the state changed.
         /// @remarks The xtd::speech::synthesis::state_changed_event_args::previous_state property represents the synthesizer state with a member of the xtd::speech::synthesis::synthesizer_state enumeration.
-        synthesizer_state previous_state() const noexcept {return previous_state_;}
+        [[nodiscard]] auto previous_state() const noexcept -> xtd::speech::synthesis::synthesizer_state {return previous_state_;}
         /// @brief Gets the state of the xtd::speech::synthesis::speech_synthesizer after the xtd::speech::synthesis::speech_synthesizer::state_changed event.
         /// @return The state of the synthesizer after the state changed.
         /// @remarks The xtd::speech::synthesis::state_changed_event_args::state property represents the synthesizer state with a member of the xtd::speech::synthesis::synthesizer_state enumeration.
-        synthesizer_state state() const noexcept {return state_;}
+        [[nodiscard]] auto state() const noexcept -> xtd::speech::synthesis::synthesizer_state {return state_;}
         /// @}
         
       private:
-        state_changed_event_args(synthesizer_state previous_state, synthesizer_state state) : previous_state_(previous_state), state_(state)  {}
+        state_changed_event_args(synthesizer_state previous_state, xtd::speech::synthesis::synthesizer_state state) : previous_state_(previous_state), state_(state)  {}
         
-        synthesizer_state previous_state_;
-        synthesizer_state state_;
+        xtd::speech::synthesis::synthesizer_state previous_state_;
+        xtd::speech::synthesis::synthesizer_state state_;
       };
     }
   }

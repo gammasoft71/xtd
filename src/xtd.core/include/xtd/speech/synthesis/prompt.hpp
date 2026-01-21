@@ -56,12 +56,12 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        bool is_completed() const noexcept;
+        [[nodiscard]] auto is_completed() const noexcept -> bool;
         /// @}
         
       private:
-        xtd::string& text_to_speak() noexcept;
-        void synthesizer(const speech_synthesizer* synthesizer) noexcept;
+        [[nodiscard]] auto text_to_speak() noexcept -> xtd::string&;
+        auto synthesizer(const speech_synthesizer* synthesizer) noexcept -> void;
         xtd::sptr<data> data_;
       };
     }

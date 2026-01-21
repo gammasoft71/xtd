@@ -20,7 +20,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core synthesis
-      using speak_started_event_args = prompt_event_args;
+      using speak_started_event_args = xtd::speech::synthesis::prompt_event_args;
     }
   }
 }

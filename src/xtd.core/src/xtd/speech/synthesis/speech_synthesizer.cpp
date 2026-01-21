@@ -12,8 +12,8 @@ struct speech_synthesizer::data {
   int32 rate = 0;
   synthesizer_state state = synthesizer_state::ready;
   int32 volume = 100;
-  xtd::speech::synthesis::prompt prompt;
-  xtd::speech::synthesis::prompt* used_prompt = &prompt;
+  class prompt prompt;
+  class prompt* used_prompt = &prompt;
 };
 
 speech_synthesizer::speech_synthesizer() : data_(xtd::new_sptr<data>()) {
@@ -24,17 +24,17 @@ speech_synthesizer::~speech_synthesizer() {
   native::speech_synthesizer::destroy(data_->handle);
 }
 
-synthesizer_state speech_synthesizer::state() const noexcept {
+auto speech_synthesizer::state() const noexcept -> synthesizer_state {
   return data_->state;
 }
 
-void speech_synthesizer::speak(const string& text_to_speak) {
+auto speech_synthesizer::speak(const string& text_to_speak) -> void {
   data_->used_prompt = &data_->prompt;
   data_->used_prompt->text_to_speak() = text_to_speak;
   speak(*data_->used_prompt);
 }
 
-void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
+auto speech_synthesizer::speak(prompt& prompt) -> void {
   data_->used_prompt = &prompt;
   data_->used_prompt->synthesizer(this);
   on_speak_started();
@@ -42,14 +42,14 @@ void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
   on_speak_completed();
 }
 
-xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const string& text_to_speak) {
+auto speech_synthesizer::speak_async(const string& text_to_speak) -> prompt& {
   data_->used_prompt = &data_->prompt;
   data_->used_prompt->text_to_speak() = text_to_speak;
   speak_async(*data_->used_prompt);
   return *data_->used_prompt;
 }
 
-void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
+auto speech_synthesizer::speak_async(prompt& prompt) -> void {
   data_->used_prompt = &prompt;
   data_->used_prompt->synthesizer(this);
   on_speak_started();
@@ -57,21 +57,21 @@ void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
   else on_speak_completed();
 }
 
-void speech_synthesizer::on_speak_completed() {
+auto speech_synthesizer::on_speak_completed() -> void {
   set_state(synthesizer_state::ready);
   auto safe_speak_completed = speak_completed;
   if (safe_speak_completed.is_empty()) return;
   safe_speak_completed(self_, {false, nullptr, data_->used_prompt});
 }
 
-void speech_synthesizer::on_speak_started() {
+auto speech_synthesizer::on_speak_started() -> void {
   set_state(synthesizer_state::speaking);
   auto safe_speak_started = speak_started;
   if (safe_speak_started.is_empty()) return;
   safe_speak_started(self_, {false, nullptr, data_->used_prompt});
 }
 
-void speech_synthesizer::set_state(synthesizer_state value) {
+auto speech_synthesizer::set_state(synthesizer_state value) -> void {
   if (data_->state == value) return;
   auto previous_state = data_->state;
   data_->state = value;

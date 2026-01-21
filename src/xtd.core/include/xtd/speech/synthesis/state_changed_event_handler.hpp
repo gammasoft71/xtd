@@ -26,7 +26,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core synthesis
-      using state_changed_event_handler = xtd::delegate<void(object& sender, const state_changed_event_args& e)>;
+      using state_changed_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::speech::synthesis::state_changed_event_args& e)>;
     }
   }
 }
