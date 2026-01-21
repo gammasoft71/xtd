@@ -51,6 +51,8 @@ namespace xtd {
       /// @cond
       socket_address(const socket_address&) = default;
       auto operator =(const socket_address&) -> socket_address& = default;
+      socket_address(socket_address&&) = default;
+      auto operator =(socket_address&&) -> socket_address& = default;
       /// @endcond
       
       /// @name Public Properties
