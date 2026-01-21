@@ -17,9 +17,9 @@ using namespace xtd::threading;
 
 struct barrier::data : object {
   const threading::cancellation_token* cancellation_token = nullptr;
-  std::atomic<int32> current_phase_number = 0;
-  std::atomic<int32> participant_count = 0;
-  std::atomic<int32> participants_remaining = 0;
+  std::atomic<size> current_phase_number = 0;
+  std::atomic<size> participant_count = 0;
+  std::atomic<size> participants_remaining = 0;
   barrier::post_phase_action post_phase_action;
   bool run_post_phase_action = false;
   semaphore phase_semaphore;
@@ -29,11 +29,11 @@ struct barrier::data : object {
 barrier::barrier() : barrier(0) {
 }
 
-barrier::barrier(int32 participant_count) : barrier(participant_count, {}) {
+barrier::barrier(size participant_count) : barrier(participant_count, {}) {
 }
 
-barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
-  if (participant_count < 0 || participant_count > int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
+barrier::barrier(size participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
+  if (participant_count > as<size>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
   data_->post_phase_action = post_phase_action;
@@ -49,29 +49,29 @@ barrier::~barrier() {
   if (data_.use_count() == 1) close();
 }
 
-int32 barrier::current_phase_number() const {
+size barrier::current_phase_number() const {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->current_phase_number;
 }
 
-int32 barrier::participant_count() const {
+size barrier::participant_count() const {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participant_count;
 }
 
-int32 barrier::participants_remaining() const {
+size barrier::participants_remaining() const {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participants_remaining;
 }
 
-int32 barrier::add_participant() {
+size barrier::add_participant() {
   return add_participants(1);
 }
 
-int32 barrier::add_participants(int32 participant_count) {
+size barrier::add_participants(size participant_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
-  if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
+  if (data_->participant_count + participant_count > as<size>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->run_post_phase_action) throw_helper::throws(exception_case::invalid_operation);
   data_->participant_count += participant_count;
   data_->participants_remaining += participant_count;
@@ -82,16 +82,15 @@ void barrier::close() {
   data_.reset();
 }
 
-int32 barrier::remove_participant() {
+size barrier::remove_participant() {
   return remove_participants(1);
 }
 
-int32 barrier::remove_participants(int32 participant_count) {
+size barrier::remove_participants(size participant_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
-  if (participant_count < 0) throw_helper::throws(exception_case::argument_out_of_range);
-  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw_helper::throws(exception_case::invalid_operation);
   if (data_->participant_count < participant_count) throw_helper::throws(exception_case::argument_out_of_range);
+  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw_helper::throws(exception_case::invalid_operation);
   data_->participant_count -= participant_count;
   data_->participants_remaining -= participant_count;
   return data_->current_phase_number;
@@ -119,7 +118,7 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
       ++data_->current_phase_number;
       data_->participants_remaining.exchange(data_->participant_count);
       
-      for (int i = 0; i < data_->participant_count; i++)
+      for (auto i = 0_z; i < data_->participant_count; i++)
         data_->phase_semaphore.release();
     }
   }
