@@ -44,6 +44,7 @@ namespace xtd {
       countdown_event();
       countdown_event(countdown_event&&) = default;
       countdown_event(const countdown_event&) = default;
+      auto operator =(countdown_event&& other) -> countdown_event& = default;
       auto operator =(const countdown_event& other) -> countdown_event&;
       ~countdown_event();
       /// @endcond
@@ -54,18 +55,18 @@ namespace xtd {
       /// @brief Gets the number of remaining signals required to set the event.
       /// @return The number of remaining signals required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      xtd::size current_count() const;
+      [[nodiscard]] xtd::size current_count() const;
       
       /// @brief Gets the numbers of signals initially required to set the event.
       /// @return The number of signals initially required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      xtd::size initial_count() const;
+      [[nodiscard]] xtd::size initial_count() const;
       
       /// @brief ndicates whether the xtd::threading::countdown_event object's current count has reached zero.
       /// @return `true` if the current count is zero; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks The xtd::threading::countdown_event does not raise an event when the countdown has reached zero. Instead, the xtd::threading::countdown_event::current_count property equals zero, and the xtd::threading::countdown_event::is_set property equals `true`.
-      bool is_set() const;
+      [[nodiscard]] bool is_set() const;
       
       /// @brief Gets a xtd::threading::wait_handle that is used to wait for the event to be set.
       /// @return A xtd::threading::wait_handle that is used to wait for the event to be set.

@@ -88,9 +88,9 @@ namespace xtd::threading::tests {
     auto test_method_(close) {
       auto ce = countdown_event {0};
       ce.close();
-      assert::throws<object_closed_exception>([&] {ce.current_count();});
-      assert::throws<object_closed_exception>([&] {ce.initial_count();});
-      assert::throws<object_closed_exception>([&] {ce.is_set();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.current_count();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.initial_count();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.is_set();});
       assert::throws<object_closed_exception>([&] {ce.wait_handle();});
       assert::throws<object_closed_exception>([&] {ce.add_count();});
       assert::throws<object_closed_exception>([&] {ce.add_count(2);});
