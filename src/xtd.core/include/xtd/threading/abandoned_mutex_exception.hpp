@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @cond
       abandoned_mutex_exception(const abandoned_mutex_exception&) = default;
-      abandoned_mutex_exception& operator =(const abandoned_mutex_exception&) = default;
+      auto operator =(const abandoned_mutex_exception&) -> abandoned_mutex_exception& = default;
       /// @endcond
       
     private:

@@ -41,7 +41,8 @@ namespace xtd {
         /// @cond
         state_changed_event_args(const state_changed_event_args&) = default;
         state_changed_event_args(state_changed_event_args&&) = default;
-        state_changed_event_args& operator =(const state_changed_event_args&) = default;
+        auto operator =(const state_changed_event_args&) -> state_changed_event_args& = default;
+        auto operator =(state_changed_event_args&&) -> state_changed_event_args& = default;
         /// @endcond
         
         /// @name Public Properties

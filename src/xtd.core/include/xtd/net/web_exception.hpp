@@ -44,7 +44,7 @@ namespace xtd {
       
       /// @cond
       web_exception(const web_exception&) = default;
-      web_exception& operator =(const web_exception&) = default;
+      auto operator =(const web_exception&) -> web_exception& = default;
       /// @endcond
       
       /// @name Public Deprecated Constructors

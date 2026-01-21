@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @cond
       barrier_post_phase_exception(const barrier_post_phase_exception&) = default;
-      barrier_post_phase_exception& operator =(const barrier_post_phase_exception&) = default;
+      auto operator =(const barrier_post_phase_exception&) -> barrier_post_phase_exception& = default;
       /// @endcond
       
     private:

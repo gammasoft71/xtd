@@ -35,8 +35,8 @@ namespace xtd {
         exception_dispatch_info() = default;
         exception_dispatch_info(exception_dispatch_info&&) = default;
         exception_dispatch_info(const exception_dispatch_info&) = default;
-        exception_dispatch_info& operator =(exception_dispatch_info&&) = default;
-        exception_dispatch_info& operator =(const exception_dispatch_info&) = default;
+        auto operator =(exception_dispatch_info&&) -> exception_dispatch_info& = default;
+        auto operator =(const exception_dispatch_info&) -> exception_dispatch_info& = default;
         /// @endcond
         
         /// @name Public Properties

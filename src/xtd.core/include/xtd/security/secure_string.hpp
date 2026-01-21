@@ -37,7 +37,8 @@ namespace xtd {
       /// @cond
       secure_string(secure_string&&) = default;
       secure_string(const secure_string&) = default;
-      secure_string& operator =(const secure_string&) = default;
+      auto operator =(secure_string&&) -> secure_string& = default;
+      auto operator =(const secure_string&) -> secure_string& = default;
       [[nodiscard]] auto empty() const noexcept -> bool;
       /// @endcond
       

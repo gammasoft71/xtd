@@ -27,9 +27,10 @@ namespace xtd {
     class core_export_ assembly : public xtd::object, public xtd::iequatable<xtd::reflection::assembly> {
     public:
       /// @cond
-      assembly(const assembly&) = default;
       assembly(assembly&&) = default;
-      assembly& operator =(const assembly&) = default;
+      assembly(const assembly&) = default;
+      auto operator =(assembly&&) -> assembly& = default;
+      auto operator =(const assembly&) -> assembly& = default;
       /// @endcond
       
       /// @name Public Properties

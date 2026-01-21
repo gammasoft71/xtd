@@ -129,7 +129,8 @@ namespace xtd {
         udp_client(udp_client&&) = default;
         udp_client(const udp_client&) = default;
         ~udp_client();
-        udp_client& operator =(const udp_client&) = default;
+        auto operator =(const udp_client&) -> udp_client& = default;
+        auto operator =(udp_client&&) -> udp_client& = default;
         /// @endcond
         
         /// @name Public Properties

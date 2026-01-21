@@ -84,7 +84,7 @@ namespace xtd {
         
         /// @cond
         task_canceled_exception(const task_canceled_exception&) = default;
-        task_canceled_exception& operator =(const task_canceled_exception&) = default;
+        auto operator =(const task_canceled_exception&) -> task_canceled_exception& = default;
         /// @endcond
         
       private:

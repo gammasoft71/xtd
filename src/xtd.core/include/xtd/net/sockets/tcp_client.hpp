@@ -79,7 +79,8 @@ namespace xtd {
         tcp_client(tcp_client&&) = default;
         tcp_client(const tcp_client&) = default;
         ~tcp_client();
-        tcp_client& operator =(const tcp_client&) = default;
+        auto operator =(tcp_client&&) -> tcp_client& = default;
+        auto operator =(const tcp_client&) -> tcp_client& = default;
         /// @endcond
         
         /// @name Public Properties

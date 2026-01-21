@@ -40,7 +40,8 @@ namespace xtd {
         /// @cond
         prompt_event_args(const prompt_event_args&) = default;
         prompt_event_args(prompt_event_args&&) = default;
-        prompt_event_args& operator =(const prompt_event_args&) = default;
+        auto operator =(const prompt_event_args&) -> prompt_event_args& = default;
+        auto operator =(prompt_event_args&&) -> prompt_event_args& = default;
         /// @endcond
         
         /// @name Public Properties

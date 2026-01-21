@@ -54,7 +54,8 @@ namespace xtd {
       ip_end_point() = default;
       ip_end_point(ip_end_point&&) = default;
       ip_end_point(const ip_end_point&) = default;
-      ip_end_point& operator =(const ip_end_point&) = default;
+      auto operator =(ip_end_point&&) ->ip_end_point& = default;
+      auto operator =(const ip_end_point&) ->ip_end_point& = default;
       /// @endcond
       
       /// @name Public Properties

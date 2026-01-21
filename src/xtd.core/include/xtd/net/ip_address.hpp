@@ -99,7 +99,8 @@ namespace xtd {
       /// @cond
       ip_address(ip_address&& ip_address) = default;
       ip_address(const ip_address& ip_address) = default;
-      ip_address& operator =(const ip_address&) = default;
+      auto operator =(ip_address&&) -> ip_address& = default;
+      auto operator =(const ip_address&) -> ip_address& = default;
       /// @endcond
       
       /// @name Public Properties

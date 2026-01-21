@@ -95,7 +95,8 @@ namespace xtd {
         tcp_listener(tcp_listener&&) = default;
         tcp_listener(const tcp_listener&) = default;
         ~tcp_listener();
-        tcp_listener& operator =(const tcp_listener&) = default;
+        auto operator =(tcp_listener&&) -> tcp_listener& = default;
+        auto operator =(const tcp_listener&) -> tcp_listener& = default;
         /// @endcond
         
         /// @name Public Properties

@@ -60,7 +60,7 @@ namespace xtd {
         
         /// @cond
         socket_exception(const socket_exception&) = default;
-        socket_exception& operator =(const socket_exception&) = default;
+        auto operator =(const socket_exception&) -> socket_exception& = default;
         /// @endcond
         
         /// @name Public Properties
