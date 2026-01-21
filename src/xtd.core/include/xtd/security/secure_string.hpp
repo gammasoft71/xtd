@@ -31,14 +31,14 @@ namespace xtd {
       /// @param value A pointer to an array of char.
       /// @param length The number of elements of value to include in the new instance.
       /// @remarks This constructor initializes the new xtd::security::secure_string object to the number of characters in value specified by length; the value of the instance is then encrypted.
-      secure_string(const char value[], size_t length);
+      secure_string(const char value[], xtd::size length);
       /// @}
       
       /// @cond
       secure_string(secure_string&&) = default;
       secure_string(const secure_string&) = default;
       secure_string& operator =(const secure_string&) = default;
-      bool empty() const noexcept;
+      [[nodiscard]] auto empty() const noexcept -> bool;
       /// @endcond
       
       /// @name Public Properties
@@ -46,15 +46,15 @@ namespace xtd {
       /// @{
       /// @brief Gets underlying encrypted data.
       /// @return The underlying encrypted data.
-      intptr data() const noexcept;
+      [[nodiscard]] auto data() const noexcept -> intptr;
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
-      size_t length() const noexcept;
+      [[nodiscard]] auto length() const noexcept -> xtd::size;
       
       /// @brief Gets underlying encrypted data size.
       /// @return The underlying encrypted data size.
-      size_t size() const noexcept;
+      [[nodiscard]] auto size() const noexcept -> xtd::size;
       /// @}
       
       /// @name Public Methods
@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Gets decrypted data.
       /// @brief A encrypted byte array.
       /// @warning This is a more convenient but less secure alternative to using xtd::security::secure_string::data.
-      std::string to_unsecure_string() const noexcept;
+      [[nodiscard]] auto to_unsecure_string() const noexcept -> xtd::string;
       /// @}
       
     private:
