@@ -42,8 +42,8 @@ namespace xtd {
       /// @cond
       source_location(xtd::diagnostics::source_location&& other);
       source_location(const xtd::diagnostics::source_location& other);
-      source_location& operator =(xtd::diagnostics::source_location&& other);
-      source_location& operator =(const xtd::diagnostics::source_location& other);
+      auto operator =(xtd::diagnostics::source_location&& other) -> source_location&;
+      auto operator =(const xtd::diagnostics::source_location& other) -> source_location&;
       /// @endcond
       
       /// @name Public Properties

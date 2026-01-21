@@ -62,7 +62,7 @@ namespace xtd {
       
       /// @cond
       process_start_info(const xtd::diagnostics::process_start_info& process_start_info) = default;
-      process_start_info& operator =(const xtd::diagnostics::process_start_info&) = default;
+      auto operator =(const xtd::diagnostics::process_start_info&) -> process_start_info& = default;
       /// @endcond
       /// @}
       

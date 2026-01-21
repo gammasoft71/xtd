@@ -47,7 +47,7 @@ namespace xtd {
       /// @cond
       explicit trace_listener_collection(const base& collection);
       trace_listener_collection(const xtd::diagnostics::trace_listener_collection& collection);
-      trace_listener_collection& operator =(const xtd::diagnostics::trace_listener_collection& collection);
+      auto operator =(const xtd::diagnostics::trace_listener_collection& collection) -> trace_listener_collection&;
       trace_listener_collection(xtd::diagnostics::trace_listener_collection&&) = default;
       /// @endcond
       

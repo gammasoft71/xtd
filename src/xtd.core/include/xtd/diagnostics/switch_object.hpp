@@ -37,7 +37,7 @@ namespace xtd {
     public:
       /// @cond
       switch_object(const xtd::diagnostics::switch_object& value) = default;
-      switch_object& operator =(const xtd::diagnostics::switch_object& value) = default;
+      auto operator =(const xtd::diagnostics::switch_object& value) -> switch_object& = default;
       /// @endcond
       
       /// @name Public Aliases

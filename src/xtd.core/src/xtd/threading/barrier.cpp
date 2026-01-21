@@ -39,7 +39,7 @@ barrier::barrier(size participant_count, barrier::post_phase_action post_phase_a
   data_->post_phase_action = post_phase_action;
 }
 
-barrier& barrier::operator =(const barrier& other) {
+auto barrier::operator =(const barrier& other) -> barrier& {
   close();
   data_ = other.data_;
   return *this;
@@ -49,26 +49,26 @@ barrier::~barrier() {
   if (data_.use_count() == 1) close();
 }
 
-size barrier::current_phase_number() const {
+auto barrier::current_phase_number() const -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->current_phase_number;
 }
 
-size barrier::participant_count() const {
+auto barrier::participant_count() const -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participant_count;
 }
 
-size barrier::participants_remaining() const {
+auto barrier::participants_remaining() const -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participants_remaining;
 }
 
-size barrier::add_participant() {
+auto barrier::add_participant() -> size {
   return add_participants(1);
 }
 
-size barrier::add_participants(size participant_count) {
+auto barrier::add_participants(size participant_count) -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
   if (data_->participant_count + participant_count > as<size>(int16_object::max_value)) throw_helper::throws(exception_case::argument_out_of_range);
@@ -78,15 +78,15 @@ size barrier::add_participants(size participant_count) {
   return data_->current_phase_number;
 }
 
-void barrier::close() {
+auto barrier::close() -> void {
   data_.reset();
 }
 
-size barrier::remove_participant() {
+auto barrier::remove_participant() -> size {
   return remove_participants(1);
 }
 
-size barrier::remove_participants(size participant_count) {
+auto barrier::remove_participants(size participant_count) -> size {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = threading::lock {*data_};
   if (data_->participant_count < participant_count) throw_helper::throws(exception_case::argument_out_of_range);
@@ -96,11 +96,11 @@ size barrier::remove_participants(size participant_count) {
   return data_->current_phase_number;
 }
 
-void barrier::signal_and_wait() {
+auto barrier::signal_and_wait() -> void {
   signal_and_wait(timeout::infinite);
 }
 
-bool barrier::signal_and_wait(int32 milliseconds_timeout) {
+auto barrier::signal_and_wait(int32 milliseconds_timeout) -> bool {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument_out_of_range);
   if (!data_) throw_helper::throws(exception_case::object_closed);
   lock_(*data_) {
@@ -132,24 +132,24 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
   return result;
 }
 
-bool barrier::signal_and_wait(const cancellation_token& cancellation_token) {
+auto barrier::signal_and_wait(const cancellation_token& cancellation_token) -> bool {
   return signal_and_wait(timeout::infinite, cancellation_token);
 }
 
-bool barrier::signal_and_wait(const time_span& timeout) {
+auto barrier::signal_and_wait(const time_span& timeout) -> bool {
   return signal_and_wait(as<int32>(timeout.total_milliseconds()));
 }
 
-bool barrier::signal_and_wait(int32 milliseconds_timeout, const cancellation_token& cancellation_token) {
+auto barrier::signal_and_wait(int32 milliseconds_timeout, const cancellation_token& cancellation_token) -> bool {
   data_->cancellation_token = &cancellation_token;
   return signal_and_wait(milliseconds_timeout);
 }
 
-bool barrier::signal_and_wait(const time_span& timeout, const cancellation_token& cancellation_token) {
+auto barrier::signal_and_wait(const time_span& timeout, const cancellation_token& cancellation_token) -> bool {
   return signal_and_wait(as<int32>(timeout.total_milliseconds()), cancellation_token);
 }
 
-bool barrier::wait_wtih_cancellation_token() {
+auto barrier::wait_wtih_cancellation_token() -> bool {
   auto result = false;
   while (!result) {
     if (data_->cancellation_token->is_cancellation_requested()) throw_helper::throws(exception_case::operation_canceled);
@@ -158,7 +158,7 @@ bool barrier::wait_wtih_cancellation_token() {
   return result;
 }
 
-bool barrier::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
+auto barrier::wait_wtih_cancellation_token(int32 milliseconds_timeout) -> bool {
   auto sw = stopwatch::start_new();
   auto result = false;
   while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {

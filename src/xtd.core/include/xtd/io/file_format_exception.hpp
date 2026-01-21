@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       file_format_exception(const file_format_exception&) = default;
-      file_format_exception& operator =(const file_format_exception&) = default;
+      auto operator =(const file_format_exception&) -> file_format_exception& = default;
       /// @endcond
       
       /// @name Public Deprecated Constructors

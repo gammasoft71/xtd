@@ -59,7 +59,7 @@ namespace xtd {
       barrier();
       barrier(barrier&&) = default;
       barrier(const barrier&) = default;
-      barrier& operator =(const barrier& other);
+      auto operator =(const barrier& other) -> barrier&;
       ~barrier();
       /// @endcond
       
@@ -69,18 +69,18 @@ namespace xtd {
       /// @brief Gets the number of the barrier's current phase.
       /// @return Returns the number of the barrier's current phase.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
-      xtd::size current_phase_number() const;
+      [[nodiscard]] auto current_phase_number() const -> xtd::size;
       
       /// @brief Gets the total number of participants in the barrier.
       /// @return Returns the total number of participants in the barrier.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
-      xtd::size participant_count() const;
+      [[nodiscard]] auto participant_count() const -> xtd::size;
       
       /// @brief Gets the number of participants in the barrier that haven't yet signaled in the current phase.
       /// @return Returns the number of participants in the barrier that haven't yet signaled in the current phase.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @remarks This could be 0 during a post-phase action delegate execution or if the participant_count is 0.
-      xtd::size participants_remaining() const;
+      [[nodiscard]] auto participants_remaining() const -> xtd::size;
       /// @}
       
       /// @name Public Methods
@@ -91,7 +91,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception Adding a participant would cause the barrier's participant count to exceed 32,767.
       /// @remarks If the barrier is currently executing a post phase action, this call is blocked until the post phase action completes and the barrier has moved on to the next phase.
-      xtd::size add_participant();
+      auto add_participant() -> xtd::size;
       
       /// @brief Notifies the xtd::threading::barrier that there will be additional participants.
       /// @param participant_count The number of additional participants to add to the barrier.
@@ -99,49 +99,49 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 <br>-or-<br> Adding participant_count participants would cause the barrier's participant count to exceed 32,767..
       /// @remarks If the barrier is currently executing a post phase action, this call is blocked until the post phase action completes and the barrier has moved on to the next phase.
-      xtd::size add_participants(xtd::size participant_count);
+      auto add_participants(xtd::size participant_count) -> xtd::size;
       
       /// @brief Close the current instance of the xtd::threading::barrier  class.
-      void close();
+      auto close() -> void;
       
       /// @brief Notifies the Barrier that there will be one less participant.
       /// @return The phase number of the barrier in which the new participants will first participate.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception The barrier already has 0 participants.
-      xtd::size remove_participant();
+      auto remove_participant() -> xtd::size;
       
       /// @brief Notifies the Barrier that there will be fewer participants.
       /// @param participant_count The number of additional participants to remove from the barrier.
       /// @return The phase number of the barrier in which the new participants will first participate.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::argument_out_of_range_exception participant_count is less than 0 <br>-or-<br> The total participant count is less than the specified participant_count
-      xtd::size remove_participants(xtd::size participant_count);
+      auto remove_participants(xtd::size participant_count) -> xtd::size;
       
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      void signal_and_wait();
+      auto signal_and_wait() -> void;
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite(-1) to wait indefinitely.
       /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      bool signal_and_wait(xtd::int32 milliseconds_timeout);
+      auto signal_and_wait(xtd::int32 milliseconds_timeout) -> bool;
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier, while observing a cancellation token.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
       /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      bool signal_and_wait(const cancellation_token& cancellation_token);
+      auto signal_and_wait(const cancellation_token& cancellation_token) -> bool;
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a xtd::time_span object to measure the time interval.
       /// @param timout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      bool signal_and_wait(const time_span& timeout);
+      auto signal_and_wait(const time_span& timeout) -> bool;
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout, while observing a cancellation token.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite(-1) to wait indefinitely.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      bool signal_and_wait(xtd::int32 milliseconds_timeout, const cancellation_token& cancellation_token);
+      auto signal_and_wait(xtd::int32 milliseconds_timeout, const cancellation_token& cancellation_token) -> bool;
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a xtd::time_span object to measure the time interval, while observing a cancellation token.
       /// @param timout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
@@ -159,12 +159,12 @@ namespace xtd {
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
-      bool signal_and_wait(const time_span& timeout, const cancellation_token& cancellation_token);
+      auto signal_and_wait(const time_span& timeout, const cancellation_token& cancellation_token) -> bool;
       /// @}
       
     private:
-      bool wait_wtih_cancellation_token();
-      bool wait_wtih_cancellation_token(xtd::int32 milliseconds_timeout);
+      auto wait_wtih_cancellation_token() -> bool;
+      auto wait_wtih_cancellation_token(xtd::int32 milliseconds_timeout) -> bool;
       
       xtd::sptr<data> data_;
     };

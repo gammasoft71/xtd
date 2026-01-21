@@ -258,7 +258,7 @@ namespace xtd {
       
       /// @cond
       process(const xtd::diagnostics::process&) = default;
-      process& operator =(const xtd::diagnostics::process& value);
+      auto operator =(const xtd::diagnostics::process& value) -> process&;
       ~process();
       /// @endcond
       

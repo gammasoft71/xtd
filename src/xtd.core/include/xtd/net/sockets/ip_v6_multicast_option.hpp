@@ -48,9 +48,9 @@ namespace xtd {
         
         /// @cond
         ip_v6_multicast_option(ip_v6_multicast_option&& ip_v6_multicast_option) = default;
-        ip_v6_multicast_option& operator =(ip_v6_multicast_option&&) = default;
+        auto operator =(ip_v6_multicast_option&&) -> ip_v6_multicast_option& = default;
         ip_v6_multicast_option(const ip_v6_multicast_option& ip_v6_multicast_option) = default;
-        ip_v6_multicast_option& operator =(const ip_v6_multicast_option&) = default;
+        auto operator =(const ip_v6_multicast_option&) -> ip_v6_multicast_option& = default;
         /// @endcond
         
         /// @name Public Properties

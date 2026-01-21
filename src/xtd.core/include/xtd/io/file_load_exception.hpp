@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       file_load_exception(const file_load_exception&) = default;
-      file_load_exception& operator =(const file_load_exception&) = default;
+      auto operator =(const file_load_exception&) -> file_load_exception& = default;
       /// @endcond
       
       /// @name Public Deprecated Constructors

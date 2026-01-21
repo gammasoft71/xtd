@@ -104,8 +104,8 @@ namespace xtd {
       /// @cond
       stack_frame(const xtd::diagnostics::stack_frame&) = default;
       stack_frame(xtd::diagnostics::stack_frame&&) = default;
-      stack_frame& operator =(const xtd::diagnostics::stack_frame&) = default;
-      stack_frame& operator =(xtd::diagnostics::stack_frame&&) = default;
+      auto operator =(const xtd::diagnostics::stack_frame&) -> stack_frame& = default;
+      auto operator =(xtd::diagnostics::stack_frame&&) -> stack_frame& = default;
       /// @endcond
       /// @}
       

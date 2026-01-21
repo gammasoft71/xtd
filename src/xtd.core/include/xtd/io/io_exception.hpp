@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       io_exception(const io_exception&) = default;
-      io_exception& operator =(const io_exception&) = default;
+      auto operator =(const io_exception&) -> io_exception& = default;
       /// @endcond
       
       /// @name Public Deprecated Constructors

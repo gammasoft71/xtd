@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       culture_not_found_exception(const culture_not_found_exception&) = default;
-      culture_not_found_exception& operator =(const culture_not_found_exception&) = default;
+      auto operator =(const culture_not_found_exception&) -> culture_not_found_exception& = default;
       /// @endcond
       
     private:

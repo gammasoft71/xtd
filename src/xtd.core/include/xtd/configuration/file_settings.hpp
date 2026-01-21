@@ -65,7 +65,7 @@ namespace xtd {
       /// @cond
       file_settings(file_settings&&) noexcept = default;
       file_settings(const file_settings&) noexcept = default;
-      file_settings& operator =(const file_settings&) noexcept = default;
+      auto operator =(const file_settings&) noexcept -> file_settings& = default;
       ~file_settings();
       /// @endcond
       

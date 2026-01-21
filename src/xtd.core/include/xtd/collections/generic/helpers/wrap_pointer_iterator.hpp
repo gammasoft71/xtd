@@ -67,9 +67,9 @@ namespace xtd {
           
           /// @cond
           wrap_pointer_iterator(const wrap_pointer_iterator& value) noexcept = default;
-          wrap_pointer_iterator& operator =(const wrap_pointer_iterator& value) noexcept = default;
+          auto operator =(const wrap_pointer_iterator& value) noexcept -> wrap_pointer_iterator& = default;
           wrap_pointer_iterator(wrap_pointer_iterator&& value) noexcept = default;
-          wrap_pointer_iterator& operator =(wrap_pointer_iterator&& value) noexcept = default;
+          auto operator =(wrap_pointer_iterator&& value) noexcept -> wrap_pointer_iterator& = default;
           /// @endcond
           
           /// @name Public Properties

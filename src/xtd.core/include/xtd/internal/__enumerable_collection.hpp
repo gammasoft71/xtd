@@ -47,7 +47,7 @@ private:
   __opaque_xtd_linq_lazy_enumerable__() = default;
   __opaque_xtd_linq_lazy_enumerable__(__opaque_xtd_linq_lazy_enumerable__&&) = default;
   __opaque_xtd_linq_lazy_enumerable__(const __opaque_xtd_linq_lazy_enumerable__&) = default;
-  __opaque_xtd_linq_lazy_enumerable__& operator =(const __opaque_xtd_linq_lazy_enumerable__&) = default;
+  auto operator =(const __opaque_xtd_linq_lazy_enumerable__&) -> __opaque_xtd_linq_lazy_enumerable__& = default;
   __opaque_xtd_linq_lazy_enumerable__(const param_type& params, move_next_type move_next, reset_type reset) {
     data_->params = params;
     data_->move_next = move_next;

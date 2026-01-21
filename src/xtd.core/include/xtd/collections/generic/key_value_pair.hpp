@@ -80,8 +80,8 @@ namespace xtd {
         /// @cond
         key_value_pair(key_value_pair&&) = default;
         key_value_pair(const key_value_pair&) = default;
-        key_value_pair& operator =(key_value_pair&&) = default;
-        key_value_pair& operator =(const key_value_pair&) = default;
+        auto operator =(key_value_pair&&) -> key_value_pair& = default;
+        auto operator =(const key_value_pair&) -> key_value_pair& = default;
         /// @endcond
         
         /// @name Public Properties

@@ -55,7 +55,7 @@ namespace xtd {
       
       /// @cond
       trace_listener(const xtd::diagnostics::trace_listener& tl) = delete;
-      trace_listener& operator =(const xtd::diagnostics::trace_listener& tl) = delete;
+      auto operator =(const xtd::diagnostics::trace_listener& tl) -> trace_listener& = delete;
       ~trace_listener();
       /// @endcond
       

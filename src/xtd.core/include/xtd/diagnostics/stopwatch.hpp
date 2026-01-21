@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       stopwatch(const xtd::diagnostics::stopwatch&) = default;
-      stopwatch& operator =(const xtd::diagnostics::stopwatch&) = default;
+      auto operator =(const xtd::diagnostics::stopwatch&) -> stopwatch& = default;
       /// @endcond
       
       /// @name Public Properties

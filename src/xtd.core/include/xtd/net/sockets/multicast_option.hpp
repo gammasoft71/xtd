@@ -60,7 +60,7 @@ namespace xtd {
         /// @cond
         multicast_option(multicast_option&& multicast_option) = default;
         multicast_option(const multicast_option& multicast_option) = default;
-        multicast_option& operator =(const multicast_option&) = default;
+        auto operator =(const multicast_option&) -> multicast_option& = default;
         /// @endcond
         
         /// @name Public Properties

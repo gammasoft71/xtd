@@ -57,7 +57,7 @@ namespace xtd {
         /// @cond
         linger_option(linger_option&& linger_option) = default;
         linger_option(const linger_option& linger_option) = default;
-        linger_option& operator =(const linger_option&) = default;
+        auto operator =(const linger_option&) -> linger_option& = default;
         /// @endcond
         
         /// @name Public Properties

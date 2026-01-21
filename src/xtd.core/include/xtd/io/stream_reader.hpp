@@ -40,7 +40,7 @@ namespace xtd {
       /// @}
       /// @cond
       stream_reader(const stream_reader&) = delete;
-      stream_reader& operator =(const stream_reader&) = delete;
+      auto operator =(const stream_reader&) -> stream_reader& = delete;
       ~stream_reader();
       /// @endcond
       

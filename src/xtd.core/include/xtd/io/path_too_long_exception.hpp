@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @cond
       path_too_long_exception(const path_too_long_exception&) = default;
-      path_too_long_exception& operator =(const path_too_long_exception&) = default;
+      auto operator =(const path_too_long_exception&) -> path_too_long_exception& = default;
       /// @endcond
       
       /// @name Public Deprecated Constructors

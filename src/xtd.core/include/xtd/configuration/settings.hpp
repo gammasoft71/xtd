@@ -81,7 +81,7 @@ namespace xtd {
     ///     // cond
     ///     settings(settings&&) noexcept = default;
     ///     settings(const settings&) noexcept = default;
-    ///     settings& operator =(const settings&) noexcept = default;
+    ///     auto operator =(const settings&) noexcept -> settings& = default;
     ///     // endcond
     ///
     ///     // @name Public Properties

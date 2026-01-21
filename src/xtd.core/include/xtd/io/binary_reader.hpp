@@ -60,7 +60,7 @@ namespace xtd {
       /// @}
       /// @cond
       binary_reader(const binary_reader&) = delete;
-      binary_reader& operator =(const binary_reader&) = delete;
+      auto operator =(const binary_reader&) -> binary_reader& = delete;
       ~binary_reader();
       /// @endcond
       

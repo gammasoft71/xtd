@@ -37,7 +37,7 @@ namespace xtd {
       
       /// @cond
       trace_event_cache(const xtd::diagnostics::trace_event_cache& tec);
-      trace_event_cache& operator =(const xtd::diagnostics::trace_event_cache& tec) = default;
+      auto operator =(const xtd::diagnostics::trace_event_cache& tec) -> trace_event_cache& = default;
       /// @endcond
       
       /// @name Public Properties

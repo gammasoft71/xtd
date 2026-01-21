@@ -193,7 +193,7 @@ namespace xtd {
       stack_trace(const std::exception& exception, bool need_file_info);
       /// @cond
       stack_trace(const xtd::diagnostics::stack_trace&) = default;
-      stack_trace& operator =(const xtd::diagnostics::stack_trace&) = default;
+      auto operator =(const xtd::diagnostics::stack_trace&) -> stack_trace& = default;
       /// @endcond
       /// @}
       

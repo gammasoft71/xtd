@@ -188,7 +188,7 @@ namespace xtd {
         socket(socket&&) = default;
         socket(const socket&) = default;
         ~socket();
-        socket& operator =(const socket&) = default;
+        auto operator =(const socket&) -> socket& = default;
         /// @endcond
         
         /// @name Public Properties
