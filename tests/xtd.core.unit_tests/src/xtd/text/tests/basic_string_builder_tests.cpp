@@ -131,7 +131,7 @@ namespace xtd::text::tests {
     auto test_method_(constructor_with_basic_string_and_index_and_count) {
       assert::are_equal("str", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 3).to_string());
       assert::are_equal("string", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 6).to_string());
-      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto result = basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();});
     }
     
     auto test_method_(move_constructor_with_basic_string) {

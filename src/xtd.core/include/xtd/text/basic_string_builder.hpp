@@ -331,10 +331,10 @@ namespace xtd {
       /// @{
       /// @brief Returns an iterator to the first character of the string.
       /// @return Iterator to the first character.
-      const_iterator begin() const {return chars_.begin();}
+      [[nodiscard]] const_iterator begin() const {return chars_.begin();}
       /// @brief Returns an iterator to the first character of the string.
       /// @return Iterator to the first character.
-      iterator begin() {return chars_.begin();}
+      [[nodiscard]] iterator begin() {return chars_.begin();}
       
       /// @brief Returns a pointer to a null-terminated character array with data equivalent to those stored in the string.
       /// @return Pointer to the underlying character storage.
@@ -344,11 +344,11 @@ namespace xtd {
       /// * Calling non-const member functions on the string, excluding operator[], at(), front(), back(), begin(), rbegin(), end() and rend().
       /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
       /// @remarks c_str() and data() perform the same function.
-      const_pointer c_str() const noexcept {return chars_.c_str();}
+      [[nodiscard]] const_pointer c_str() const noexcept {return chars_.c_str();}
       
       /// @brief Returns the number of characters that the string has currently allocated space for.
       /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
-      size_type capacity() const noexcept {return chars_.capacity();}
+      [[nodiscard]] size_type capacity() const noexcept {return chars_.capacity();}
       /// @brief Sets the number of characters that the string has currently allocated space for.
       /// @param value Capacity of the currently allocated storage, i.e. the storage available for storing elements.
       basic_string_builder& capacity(size_type value) {
@@ -359,19 +359,19 @@ namespace xtd {
       
       /// @brief Returns an iterator to the first character of the string.
       /// @return Iterator to the first character.
-      const_iterator cbegin() const {return chars_.cbegin();}
+      [[nodiscard]] const_iterator cbegin() const {return chars_.cbegin();}
       
       /// @brief Returns a reference to the underlying base type.
       /// @return Reference to the underlying base type.
-      const base_type& chars() const noexcept {return chars_;}
+      [[nodiscard]] const base_type& chars() const noexcept {return chars_;}
       
       /// @brief Returns a reference to the underlying base type.
       /// @return Reference to the underlying base type.
-      base_type& chars() noexcept {return chars_;}
+      [[nodiscard]] base_type& chars() noexcept {return chars_;}
       
       /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
       /// @return Iterator to the character following the last character.
-      const_iterator cend() const {return chars_.cend();}
+      [[nodiscard]] const_iterator cend() const {return chars_.cend();}
       
       /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
       /// @return A pointer to the underlying character storage.
@@ -380,7 +380,7 @@ namespace xtd {
       /// * Calling non-const member functions on the string, excluding operator[](), at(), front(), back(), begin(), end(), rbegin(), rend().
       ///   1. Modifying the character array accessed through the const overload of data has undefined behavior.
       ///   2. Modifying the past-the-end null terminator stored at data() + size() to any value other than char_t() has undefined behavior.
-      const_pointer data() const noexcept {return chars_.data();}
+      [[nodiscard]] const_pointer data() const noexcept {return chars_.data();}
       /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
       /// @return A pointer to the underlying character storage.
       /// @remarks The pointer obtained from `data()` may be invalidated by:
@@ -388,18 +388,18 @@ namespace xtd {
       /// * Calling non-const member functions on the string, excluding operator[](), at(), front(), back(), begin(), end(), rbegin(), rend().
       ///   1. Modifying the character array accessed through the const overload of data has undefined behavior.
       ///   2. Modifying the past-the-end null terminator stored at data() + size() to any value other than char_t() has undefined behavior.
-      pointer data() noexcept {return chars_.data();}
+      [[nodiscard]] pointer data() noexcept {return chars_.data();}
       
       /// @brief Checks if the string has no characters, i.e. whether `begin() == end()`.
       /// @return `true` if the string is empty; otherwise `false`.
-      bool empty() const noexcept {return chars_.empty();}
+      [[nodiscard]] bool empty() const noexcept {return chars_.empty();}
       
       /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
       /// @return Iterator to the character following the last character.
-      const_iterator end() const {return chars_.end();}
+      [[nodiscard]] const_iterator end() const {return chars_.end();}
       /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
       /// @return Iterator to the character following the last character.
-      iterator end() {return chars_.end();}
+      [[nodiscard]] iterator end() {return chars_.end();}
       
       /// @brief Gets or sets the length of the current xtd::text::basic_string_builder object.
       /// @return The length of this instance.
@@ -408,7 +408,7 @@ namespace xtd {
       /// @remarks If the specified length is less than the current length, the current xtd::text::basic_string_builder object is truncated to the specified length. If the specified length is greater than the current length, the end of the string value of the current xtd::text::basic_string_builder object is padded with the Unicode NULL character (U+0000).
       /// @remarks If the specified length is greater than the current capacity, xtd::text::basic_string_builder::capacity increases so that it is greater than or equal to the specified length.
       /// @remarks The xtd::text::basic_string_builder::length property returns the number of xtd::text::basic_string_builder::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::text::basic_string_builder::value_type.
-      size_type length() const noexcept {return chars_.size();}
+      [[nodiscard]] size_type length() const noexcept {return chars_.size();}
       /// @brief Sets or sets the length of the current xtd::text::basic_string_builder object.
       /// @param value The length of this instance.
       /// @return A reference to this instance after the length has been modified.
@@ -425,11 +425,11 @@ namespace xtd {
       
       /// @brief Returns the number of characters that the string has currently allocated space for.
       /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
-      size_type max_capacity() const noexcept {return max_capacity_;}
+      [[nodiscard]] size_type max_capacity() const noexcept {return max_capacity_;}
       
       /// @brief Returns the number of `char_t` elements in the string, i.e. `std::distance(begin(), end())`.
       /// @return The number of `char_t` elements in the string.
-      size_type size() const noexcept {return length();}
+      [[nodiscard]] size_type size() const noexcept {return length();}
       /// @}
       
       /// @name Public Methods
@@ -962,12 +962,12 @@ namespace xtd {
       /// @brief Determines whether this instance and a specified object, which must also be a xtd::text::basic_string_builder object, have the same value.
       /// @param obj The basic_string_builder to compare to this instance.
       /// @return `true` if `obj` is a xtd::text::basic_string_builder and its value is the same as this instance; otherwise, `false`.
-      bool equals(const object & obj) const noexcept override {return dynamic_cast<const basic_string_builder*>(&obj) && equals(static_cast<const basic_string_builder&>(obj));}
+      [[nodiscard]] bool equals(const object & obj) const noexcept override {return dynamic_cast<const basic_string_builder*>(&obj) && equals(static_cast<const basic_string_builder&>(obj));}
       /// @brief Determines whether this instance and another specified xtd::text::basic_string_builder object have the same value.
       /// @param value The basic_string_builder to compare to this instance.
       /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
       /// @remarks This method performs an ordinal (case-sensitive) comparison.
-      bool equals(const basic_string_builder & value) const noexcept override {return chars_ == value.chars_;}
+      [[nodiscard]] bool equals(const basic_string_builder & value) const noexcept override {return chars_ == value.chars_;}
       
       /// @brief Ensures that the capacity of this instance of xtd::text::basic_string_builder is at least the specified value.
       /// @param capacity The minimum capacity to ensure.
@@ -981,11 +981,11 @@ namespace xtd {
       
       /// @brief Returns the underlying base type.
       /// @return The underlying base type.
-      virtual const base_type& get_base_type() const noexcept {return chars_;}
+      [[nodiscard]] virtual const base_type& get_base_type() const noexcept {return chars_;}
       
       /// @brief Returns the hash code for this basic_string_builder.
       /// @return A hash code.
-      xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(chars_);}
+      [[nodiscard]] xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(chars_);}
       
       /// @brief Inserts a string into this instance at the specified character position.
       /// @param index The position in this instance where insertion begins.
@@ -1429,7 +1429,7 @@ namespace xtd {
       /// @return The current string.
       /// @todo Uncomment the folllowing line and remove the next..
       //xtd::string to_string() const noexcept override {return __xtd_convert_to_string<char>(chars_);}
-      xtd::string to_string() const noexcept override {return xtd::string {chars_};}
+      [[nodiscard]] xtd::string to_string() const noexcept override {return xtd::string {chars_};}
       /// @}
       
       /// @name Public Static Methods
