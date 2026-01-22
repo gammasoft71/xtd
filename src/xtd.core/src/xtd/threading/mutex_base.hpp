@@ -4,12 +4,12 @@
 
 class xtd::threading::mutex::mutex_base abstract_ {
 public:
-  virtual intptr handle() const noexcept = 0;
-  virtual void handle(intptr value) = 0;
-  virtual bool create(bool initially_owned) = 0;
-  virtual bool create(bool initially_owned, const string& name) = 0;
-  virtual void destroy() = 0;
-  virtual bool open(const string& name) = 0;
-  virtual bool signal(bool& io_error) = 0;
-  virtual uint32 wait(int32 milliseconds_timeout) = 0;
+  [[nodiscard]] virtual auto handle() const noexcept -> intptr = 0;
+  virtual auto handle(intptr value) -> void = 0;
+  [[nodiscard]] virtual auto create(bool initially_owned) -> bool = 0;
+  [[nodiscard]] virtual auto create(bool initially_owned, const string& name) -> bool = 0;
+  virtual auto destroy() -> void = 0;
+  virtual auto open(const string& name) -> bool = 0;
+  virtual auto signal(bool& io_error) -> bool = 0;
+  virtual auto wait(int32 milliseconds_timeout) -> uint32 = 0;
 };

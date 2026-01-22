@@ -19,13 +19,13 @@ public:
   condition_variable(condition_variable&&) = default;
   ~condition_variable() {if (handle_.use_count() == 1) xtd::native::condition_variable::destroy(*handle_);}
   
-  intptr handle() const noexcept {return *handle_;}
+  [[nodiscard]] auto handle() const noexcept -> intptr {return *handle_;}
   
-  void pulse() {xtd::native::condition_variable::pulse(*handle_);}
+  auto pulse() -> void {xtd::native::condition_variable::pulse(*handle_);}
   
-  void pulse_all() {xtd::native::condition_variable::pulse_all(*handle_);}
+  auto pulse_all() -> void {xtd::native::condition_variable::pulse_all(*handle_);}
   
-  bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return xtd::native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
+  auto wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) -> bool {return xtd::native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}
   
 private:
   xtd::sptr<intptr> handle_;

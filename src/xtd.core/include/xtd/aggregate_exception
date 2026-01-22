@@ -1,0 +1,2 @@
+#pragma once
+#include <xtd/aggregate_exception.hpp>

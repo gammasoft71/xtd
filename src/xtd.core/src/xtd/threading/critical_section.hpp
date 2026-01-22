@@ -19,13 +19,13 @@ public:
   critical_section(critical_section&&) = default;
   ~critical_section() {if (handle_.use_count() == 1) xtd::native::critical_section::destroy(*handle_);}
   
-  intptr handle() const noexcept {return *handle_;}
+  [[nodiscard]] auto handle() const noexcept -> intptr {return *handle_;}
   
-  void enter() const noexcept {xtd::native::critical_section::enter(*handle_);}
+  auto enter() const noexcept -> void {xtd::native::critical_section::enter(*handle_);}
   
-  void leave() const noexcept {xtd::native::critical_section::leave(*handle_);}
+  auto leave() const noexcept -> void {xtd::native::critical_section::leave(*handle_);}
   
-  bool try_enter(int32 milliseconds_timeout) const noexcept {
+  auto try_enter(int32 milliseconds_timeout) const noexcept -> bool {
     if (milliseconds_timeout == timeout::infinite) {
       xtd::native::critical_section::enter(*handle_);
       return true;
