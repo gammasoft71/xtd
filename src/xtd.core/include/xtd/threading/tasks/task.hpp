@@ -56,7 +56,13 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        void start() {
+        auto run_synchronously() -> void {
+          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
+          task_proc(*basic_task<void>::data_->state, false);
+          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_to_run;
+        }
+        
+        auto start() -> void {
           if (basic_task<void>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<void>::data_->milliseconds_delay == -2 && data_->action.is_empty() && data_->parameterized_action.is_empty()))
             xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           
