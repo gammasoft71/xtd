@@ -55,27 +55,27 @@ namespace xtd {
       /// @brief Gets the number of remaining signals required to set the event.
       /// @return The number of remaining signals required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      [[nodiscard]] xtd::size current_count() const;
+      [[nodiscard]] auto current_count() const -> xtd::size;
       
       /// @brief Gets the numbers of signals initially required to set the event.
       /// @return The number of signals initially required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      [[nodiscard]] xtd::size initial_count() const;
+      [[nodiscard]] auto initial_count() const -> xtd::size;
       
       /// @brief ndicates whether the xtd::threading::countdown_event object's current count has reached zero.
       /// @return `true` if the current count is zero; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks The xtd::threading::countdown_event does not raise an event when the countdown has reached zero. Instead, the xtd::threading::countdown_event::current_count property equals zero, and the xtd::threading::countdown_event::is_set property equals `true`.
-      [[nodiscard]] bool is_set() const;
+      [[nodiscard]] auto is_set() const -> bool;
       
       /// @brief Gets a xtd::threading::wait_handle that is used to wait for the event to be set.
       /// @return A xtd::threading::wait_handle that is used to wait for the event to be set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      const xtd::threading::wait_handle& wait_handle() const;
+      [[nodiscard]] auto wait_handle() const -> const xtd::threading::wait_handle&;
       /// @brief Gets a xtd::threading::wait_handle that is used to wait for the event to be set.
       /// @return A xtd::threading::wait_handle that is used to wait for the event to be set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      xtd::threading::wait_handle& wait_handle();
+      [[nodiscard]] auto wait_handle() -> xtd::threading::wait_handle&;
       /// @}
       
       /// @name Public Methods
@@ -84,21 +84,21 @@ namespace xtd {
       /// @brief Increments the xtd::threading::countdown_event's current count by one.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::invalid_operation_exception The current instance is already set.
-      void add_count();
+      auto add_count() -> void;
       /// @brief Increments the xtd::threading::countdown_event's current count by one.
       /// @param count The value by which to increase xtd::threading::countdown_event::current_count.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::invalid_operation_exception The current instance is already set.
       /// @exception xtd::argument_out_of_range_exception count is less than 0.
-      void add_count(xtd::size count);
+      auto add_count(xtd::size count) -> void;
       
       /// @brief Close the current instance of the xtd::threading::countdown_event  class.
-      void close();
+      auto close() -> void;
       
       /// @brief Resets the xtd::threading::countdown_event to the value of xtd::threading::countdown_event::initial_count.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks This method resets xtd::threading::countdown_event::initial_count for all subsequent accesses of the property on the current instance.
-      void reset();
+      auto reset() -> void;
       /// @brief Resets the xtd::threading::countdown_event::initial_count property to a specified value.
       /// @param count he number of signals required to set the xtd::threading::countdown_event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
@@ -110,45 +110,45 @@ namespace xtd {
       /// @return `true` if the signal caused the count to reach zero and the event was set; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::nvalid_operation_exception The current instance is already set.
-      bool signal();
+      auto signal() -> bool;
       /// @brief Registers multiple signals with the xtd::threading::countdown_event, decrementing the value of xtd::threading::countdown_event::current_count by the specified amount.
       /// @param signal_count The number of signals to register.
       /// @return `true` if the signal caused the count to reach zero and the event was set; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::argument_out_of_range_exception signal_count is less than 0.
       /// @exception xtd::nvalid_operation_exception The current instance is already set.
-      bool signal(xtd::size signal_count);
+      auto signal(xtd::size signal_count) -> bool;
       
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by one.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
-      bool try_add_count() noexcept;
+      auto try_add_count() noexcept -> bool;
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by by a specified value.
       /// @param count The value by which to increase xtd::threading::countdown_event::current_count.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
-      bool try_add_count(xtd::size count) noexcept;
+      auto try_add_count(xtd::size count) noexcept -> bool;
       
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
-      void wait();
+      auto wait() -> void;
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set, using a 32-bit signed integer to measure the timeout.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::ifinite (-1) to wait indefinitely.
       /// @return `true` if the xtd::threading::countdown_event was set; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out..
-      bool wait(xtd::int32 milliseconds_timeout);
+      auto wait(xtd::int32 milliseconds_timeout) -> bool;
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set, while observing a xtd::threading::cancellation_token.
       /// @param cancellation_toker The xtd::threading::cancellation_token to observe.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @remarks The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state. If the xtd::threading::cancellation_token being observed is canceled during the wait operation, an xtd::operation_canceled_exception will be thrown.
-      void wait(const cancellation_token& cancellation_token);
+      auto wait(const cancellation_token& cancellation_token) -> void;
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set, using a xtd::time_span to measure the timeout.
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @return `true` if the xtd::threading::countdown_event was set; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out..
-      bool wait(const xtd::time_span& timeout);
+      auto wait(const xtd::time_span& timeout) -> bool;
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set, using a 32-bit signed integer to measure the timeout, while observing a xtd::threading::cancellation_token.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::ifinite (-1) to wait indefinitely.
       /// @param cancellation_toker The xtd::threading::cancellation_token to observe.
@@ -156,7 +156,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out..
-      bool wait(xtd::int32 milliseconds_timeout, const cancellation_token& cancellation_token);
+      auto wait(xtd::int32 milliseconds_timeout, const cancellation_token& cancellation_token) -> bool;
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set, using a xtd::time_span to measure the timeout, while observing a xtd::threading::cancellation_token.
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @param cancellation_toker The xtd::threading::cancellation_token to observe.
@@ -164,13 +164,13 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out..
-      bool wait(const xtd::time_span& timeout, const cancellation_token& cancellation_token);
+      auto wait(const xtd::time_span& timeout, const cancellation_token& cancellation_token) -> bool;
       /// @}
       
     private:
       xtd::sptr<data> data_;
-      bool wait_wtih_cancellation_token();
-      bool wait_wtih_cancellation_token(xtd::int32 milliseconds_timeout);
+      auto wait_wtih_cancellation_token() -> bool;
+      auto wait_wtih_cancellation_token(xtd::int32 milliseconds_timeout) -> bool;
     };
   }
 }

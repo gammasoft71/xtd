@@ -91,7 +91,7 @@ namespace xtd::threading::tests {
       assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.current_count();});
       assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.initial_count();});
       assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto result = ce.is_set();});
-      assert::throws<object_closed_exception>([&] {ce.wait_handle();});
+      assert::throws<object_closed_exception>([&] {[[maybe_unused]] auto& result = ce.wait_handle();});
       assert::throws<object_closed_exception>([&] {ce.add_count();});
       assert::throws<object_closed_exception>([&] {ce.add_count(2);});
       assert::throws<object_closed_exception>([&] {ce.reset();});
