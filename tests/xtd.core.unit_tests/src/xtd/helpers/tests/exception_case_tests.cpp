@@ -236,38 +236,44 @@ namespace xtd::helpers::tests {
       assert_that(enum_object<>::parse<exception_case>("synchronization_lock")).is().equal_to(exception_case::synchronization_lock);
     }
     
+    auto test_method_(task_canceled) {
+      assert_that(enum_object<>::to_int32(exception_case::task_canceled)).is().equal_to(38);
+      assert_that(enum_object<>::to_string(exception_case::task_canceled)).is().equal_to("task_canceled");
+      assert_that(enum_object<>::parse<exception_case>("task_canceled")).is().equal_to(exception_case::task_canceled);
+    }
+    
     auto test_method_(thread_abort) {
-      assert_that(enum_object<>::to_int32(exception_case::thread_abort)).is().equal_to(38);
+      assert_that(enum_object<>::to_int32(exception_case::thread_abort)).is().equal_to(39);
       assert_that(enum_object<>::to_string(exception_case::thread_abort)).is().equal_to("thread_abort");
       assert_that(enum_object<>::parse<exception_case>("thread_abort")).is().equal_to(exception_case::thread_abort);
     }
-    
+
     auto test_method_(thread_interrupted) {
-      assert_that(enum_object<>::to_int32(exception_case::thread_interrupted)).is().equal_to(39);
+      assert_that(enum_object<>::to_int32(exception_case::thread_interrupted)).is().equal_to(40);
       assert_that(enum_object<>::to_string(exception_case::thread_interrupted)).is().equal_to("thread_interrupted");
       assert_that(enum_object<>::parse<exception_case>("thread_interrupted")).is().equal_to(exception_case::thread_interrupted);
     }
     
     auto test_method_(thread_state) {
-      assert_that(enum_object<>::to_int32(exception_case::thread_state)).is().equal_to(40);
+      assert_that(enum_object<>::to_int32(exception_case::thread_state)).is().equal_to(41);
       assert_that(enum_object<>::to_string(exception_case::thread_state)).is().equal_to("thread_state");
       assert_that(enum_object<>::parse<exception_case>("thread_state")).is().equal_to(exception_case::thread_state);
     }
     
     auto test_method_(time_zone_not_found) {
-      assert_that(enum_object<>::to_int32(exception_case::time_zone_not_found)).is().equal_to(41);
+      assert_that(enum_object<>::to_int32(exception_case::time_zone_not_found)).is().equal_to(42);
       assert_that(enum_object<>::to_string(exception_case::time_zone_not_found)).is().equal_to("time_zone_not_found");
       assert_that(enum_object<>::parse<exception_case>("time_zone_not_found")).is().equal_to(exception_case::time_zone_not_found);
     }
     
     auto test_method_(unauthorized_access) {
-      assert_that(enum_object<>::to_int32(exception_case::unauthorized_access)).is().equal_to(42);
+      assert_that(enum_object<>::to_int32(exception_case::unauthorized_access)).is().equal_to(43);
       assert_that(enum_object<>::to_string(exception_case::unauthorized_access)).is().equal_to("unauthorized_access");
       assert_that(enum_object<>::parse<exception_case>("unauthorized_access")).is().equal_to(exception_case::unauthorized_access);
     }
     
     auto test_method_(uri_format) {
-      assert_that(enum_object<>::to_int32(exception_case::uri_format)).is().equal_to(43);
+      assert_that(enum_object<>::to_int32(exception_case::uri_format)).is().equal_to(44);
       assert_that(enum_object<>::to_string(exception_case::uri_format)).is().equal_to("uri_format");
       assert_that(enum_object<>::parse<exception_case>("uri_format")).is().equal_to(exception_case::uri_format);
     }
