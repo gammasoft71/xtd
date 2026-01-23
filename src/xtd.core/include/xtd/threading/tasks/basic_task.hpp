@@ -119,8 +119,8 @@ namespace xtd {
         template<class collection_t>
         static auto wait_all(const collection_t& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : task_pointers)
-            task_pointers.push_back(const_cast<abstract_task*>(xtd::as<abstract_task>(&item)));
+          for (auto& task : task_pointers)
+            task_pointers.push_back(const_cast<abstract_task*>(xtd::as<abstract_task>(&task)));
           return wait_all(array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
 
@@ -140,51 +140,51 @@ namespace xtd {
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
         template<class item_t>
-        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
+        static auto wait_all(const std::initializer_list<item_t>& tasks) -> bool {return wait_all(tasks, timeout::infinite);}
         template<class item_t>
-        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : abstract_tasks)
-            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&item)));
+          for (auto& task : tasks)
+            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&task)));
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
         template<class item_t>
-        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, xtd::threading::timeout::infinite);}
-        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const std::initializer_list<item_t>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : abstract_tasks)
-            task_pointers.push_back(item.get());
+          for (auto& task : tasks)
+            task_pointers.push_back(task.get());
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, xtd::threading::timeout::infinite);}
-        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : abstract_tasks)
-            task_pointers.push_back(item.get());
+          for (auto& task : tasks)
+            task_pointers.push_back(task.get());
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
-        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& tasks) -> bool {return wait_all(tasks, timeout::infinite);}
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : abstract_tasks)
-            task_pointers.push_back(item.get());
+          for (auto& task : tasks)
+            task_pointers.push_back(task.get());
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
-        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& tasks) -> bool {return wait_all(tasks, timeout::infinite);}
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& item : abstract_tasks)
-            task_pointers.push_back(item.get());
+          for (auto& task : tasks)
+            task_pointers.push_back(task.get());
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
-        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
-        static auto wait_all(const xtd::array<abstract_task*>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<abstract_task*>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto result = true;
-          for (auto task : abstract_tasks)
+          for (auto task : tasks)
             if (task->wait(milliseconds_timeout) == false) result = false;
           return result;
         }
