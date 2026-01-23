@@ -68,6 +68,14 @@ namespace xtd {
         /// @name Public Static Methods
         
         /// @{
+        [[nodiscard]] static auto from_result(result_t result) -> task {
+          auto t = task {};
+          t.data_->result = result;
+          t.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+          t.basic_task<result_t>::data_->end_event.set();
+          return t;
+        }
+
         [[nodiscard]] static auto run(const xtd::func<result_t>& func) -> task {
           auto result = task {func};
           result.start();
@@ -89,11 +97,13 @@ namespace xtd {
         /// @}
         
       private:
+        template<class task_result_t>
+        friend class task;
+
         auto set_task_run() -> void {
           basic_task<result_t>::data_->task_run = xtd::action<> {delegate_ {
             if (!data_->func.is_empty()) data_->result = std::move(data_->func());
             else if (!data_->parameterized_func.is_empty()) data_->result = std::move(data_->parameterized_func(*basic_task<result_t>::data_->state));
-            else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           }};
         }
         
@@ -109,14 +119,30 @@ namespace xtd {
       /// @cond
       template<class result_t>
       auto basic_task<result_t>::completed_task() -> task<result_t> {
-        return from_result(result_t {});
+        auto task = xtd::threading::tasks::task<result_t> {};
+        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+        task.basic_task<>::data_->end_event.set();
+        return task;
       }
 
       template<class result_t>
-      template<class from_result_t>
-      auto basic_task<result_t>::from_result(from_result_t result) -> task<from_result_t> {
-        auto task = xtd::threading::tasks::task<from_result_t> {};
-        task.data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+      auto basic_task<result_t>::delay(const xtd::time_span& delay) -> task<> {return basic_task<result_t>::delay(as<int32>(delay.total_milliseconds()));}
+
+      template<class result_t>
+      auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay) -> task<> {
+        auto task = xtd::threading::tasks::task<> {};
+        task.basic_task<>::data_->milliseconds_delay = milliseconds_delay;
+        task.start();
+        return task;
+      }
+
+      template<class result_t>
+      template<class from_exception_t>
+      auto basic_task<result_t>::from_exception(from_exception_t exception) -> task<result_t> {
+        auto task = xtd::threading::tasks::task<result_t> {};
+        task.basic_task<>::data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
+        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::faulted;
+        task.basic_task<>::data_->end_event.set();
         return task;
       }
       /// @endcond

@@ -19,7 +19,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core threading tasks
       template<>
-      class task<void> : public xtd::threading::tasks::basic_task<void> {
+      class task<void> : public xtd::threading::tasks::basic_task<> {
       public:
         /// @cond
         task() = default;
@@ -38,7 +38,7 @@ namespace xtd {
         }
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) {
           data_->parameterized_action = action;
-          basic_task<void>::data_->state = &state;
+          basic_task<>::data_->state = &state;
           set_task_run();
         }
         /// @}
@@ -50,7 +50,7 @@ namespace xtd {
         }
         task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) {
           data_->parameterized_action = action;
-          basic_task<void>::data_->state = &state;
+          basic_task<>::data_->state = &state;
           set_task_run();
         }
         /// @endcond
@@ -64,22 +64,23 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto run_synchronously() -> void {
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
-          task_proc(*basic_task<void>::data_->state, false);
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_to_run;
-        }
-        
         auto start() -> void {
-          if (basic_task<void>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<void>::data_->milliseconds_delay == basic_task<void>::timeout_none && data_->action.is_empty() && data_->parameterized_action.is_empty()))
+          if (basic_task<>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<>::data_->milliseconds_delay == basic_task<>::timeout_none && data_->action.is_empty() && data_->parameterized_action.is_empty()))
             xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          basic_task<void>::start();
+          basic_task<>::start();
         }
         /// @}
         
         /// @name Public Static Methods
         
         /// @{
+        [[nodiscard]] static auto from_result() -> task {
+          auto t = task {};
+          t.basic_task<>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+          t.basic_task<>::data_->end_event.set();
+          return t;
+        }
+        
         [[nodiscard]] static auto run(const xtd::action<>& action) -> task {
           auto result = task {action};
           result.start();
@@ -102,10 +103,9 @@ namespace xtd {
         
       private:
         auto set_task_run() -> void {
-          basic_task<void>::data_->task_run = xtd::action<> {delegate_ {
+          basic_task<>::data_->task_run = xtd::action<> {delegate_ {
             if (!data_->action.is_empty()) data_->action();
-            else if (!data_->parameterized_action.is_empty()) data_->parameterized_action(*basic_task<void>::data_->state);
-            else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+            else if (!data_->parameterized_action.is_empty()) data_->parameterized_action(*basic_task<>::data_->state);
           }};
         }
         

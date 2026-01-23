@@ -35,7 +35,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading tasks
-      template<class result_t>
+      template<class result_t = void>
       class basic_task : public xtd::object, public xtd::iasync_result {
       public:
         /// @name Public Constructors
@@ -70,6 +70,12 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        auto run_synchronously() -> void {
+          data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
+          task_proc(data_->state, false);
+          data_->status = xtd::threading::tasks::task_status::waiting_to_run;
+        }
+        
         auto start() -> void {
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
           thread_pool::register_wait_for_single_object(data_->start_event, task_proc, *data_->state, xtd::threading::timeout::infinite, true);
@@ -83,7 +89,6 @@ namespace xtd {
           bool result = data_->end_event.wait_one(milliseconds_timeout);
           if (data_->status == xtd::threading::tasks::task_status::faulted)
             throw *data_->exception.source_exception();
-          data_->status = xtd::threading::tasks::task_status::ran_to_completion;
           return result;
         }
         /// @}
@@ -91,8 +96,11 @@ namespace xtd {
         /// @name Public Static Methods
         
         /// @{
-        template<class from_result_t>
-        [[nodiscard]] static auto from_result(from_result_t result) -> task<from_result_t>;
+        template<class from_exception_t>
+        [[nodiscard]] static auto from_exception(from_exception_t exception) -> task<result_t>;
+
+        [[nodiscard]] static auto delay(const xtd::time_span& delay) -> task<>;
+        [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay) -> task<>;
         /// @}
         
         /// @name Public Operators
@@ -103,6 +111,8 @@ namespace xtd {
       private:
         template<class task_result_t>
         friend class task;
+        template<class batic_task_result_t>
+        friend class batic_task;
         
         basic_task() = default;
         basic_task(basic_task&&) = default;
@@ -152,7 +162,7 @@ namespace xtd {
             if (data_->milliseconds_delay != timeout_none) thread::sleep(data_->milliseconds_delay);
             if (data_->cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
             data_->task_run();
-            data_->status = xtd::threading::tasks::task_status::waiting_for_children_to_complete;
+            data_->status = xtd::threading::tasks::task_status::ran_to_completion;
           } catch (const xtd::threading::tasks::task_canceled_exception& exception) {
             data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
             data_->status = xtd::threading::tasks::task_status::canceled;
