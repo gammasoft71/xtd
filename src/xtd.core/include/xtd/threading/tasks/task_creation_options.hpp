@@ -49,7 +49,7 @@ namespace xtd {
       [[maybe_unused]] inline task_creation_options operator +(task_creation_options lhs, task_creation_options rhs) {return static_cast<task_creation_options>(static_cast<std::underlying_type<task_creation_options>::type>(lhs) + static_cast<std::underlying_type<task_creation_options>::type>(rhs));}
       [[maybe_unused]] inline task_creation_options operator -(task_creation_options lhs, task_creation_options rhs) {return static_cast<task_creation_options>(static_cast<std::underlying_type<task_creation_options>::type>(lhs) - static_cast<std::underlying_type<task_creation_options>::type>(rhs));}
       [[maybe_unused]] inline task_creation_options operator ~(task_creation_options lhs) {return static_cast<task_creation_options>(~static_cast<std::underlying_type<task_creation_options>::type>(lhs));} \
-      /// @nedcond
+      /// @endcond
     }
   }
 }
