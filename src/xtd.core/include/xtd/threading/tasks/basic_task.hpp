@@ -27,6 +27,14 @@ namespace xtd {
       /// @cond
       template<class result_t = void>
       class task;
+
+      class abstract_task : public xtd::object {
+      public:
+        virtual auto start() -> void = 0;
+        virtual auto wait() -> void = 0;
+        virtual auto wait(xtd::int32 milliseconds_timeout) -> bool = 0;
+        virtual auto wait(const xtd::time_span& timeout) -> bool = 0;
+      };
       /// @endcond
       
       /// @brief Represents an asynchronous operation.
@@ -36,7 +44,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core threading tasks
       template<class result_t = void>
-      class basic_task : public xtd::object, public xtd::iasync_result {
+      class basic_task : public abstract_task, public xtd::iasync_result {
       public:
         /// @name Public Constructors
         
@@ -76,21 +84,24 @@ namespace xtd {
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
         }
         
-        auto start() -> void {
+        auto start() -> void override {
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
           thread_pool::register_wait_for_single_object(data_->start_event, task_proc, *data_->state, xtd::threading::timeout::infinite, true);
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
           data_->start_event.set();
         }
         
-        auto wait() -> void {wait(xtd::threading::timeout::infinite);}
+        auto wait() -> void override {wait(xtd::threading::timeout::infinite);}
         
-        auto wait(xtd::int32 milliseconds_timeout) -> bool {
+        auto wait(xtd::int32 milliseconds_timeout) -> bool override {
           bool result = data_->end_event.wait_one(milliseconds_timeout);
           if (data_->status == xtd::threading::tasks::task_status::faulted)
             throw *data_->exception.source_exception();
           return result;
         }
+        
+        auto wait(const xtd::time_span& timeout) -> bool override {return wait(xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+
         /// @}
         
         /// @name Public Static Methods
@@ -101,7 +112,83 @@ namespace xtd {
 
         [[nodiscard]] static auto delay(const xtd::time_span& delay) -> task<>;
         [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay) -> task<>;
+
+        template<class collection_t>
+        static auto wait_all(const collection_t& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
+
+        template<class collection_t>
+        static auto wait_all(const collection_t& tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : task_pointers)
+            task_pointers.push_back(const_cast<abstract_task*>(xtd::as<abstract_task>(&item)));
+          return wait_all(array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+
+        template<class collection_t>
+        static auto wait_all(const collection_t& tasks, const xtd::time_span& timeout) -> bool {return wait_all(tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
         /// @}
+        
+        /// @cond
+        template<class ...items_t>
+        static auto wait_all(items_t... items) -> bool {return wait_all(xtd::threading::timeout::infinite, items...);}
+        template<class ...items_t>
+        static auto wait_all(const xtd::time_span& timeout, items_t... items) -> bool {return wait_all(xtd::as<xtd::int32>(timeout.total_milliseconds()), items...);}
+        template<class ...items_t>
+        static auto wait_all(xtd::int32 milliseconds_timeout, items_t... items) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          fill_task_pointers(task_pointers, items...);
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        template<class item_t>
+        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
+        template<class item_t>
+        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : abstract_tasks)
+            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&item)));
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        template<class item_t>
+        static auto wait_all(const std::initializer_list<item_t>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, as<int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, xtd::threading::timeout::infinite);}
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : abstract_tasks)
+            task_pointers.push_back(item.get());
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        static auto wait_all(const std::initializer_list<xtd::sptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, xtd::threading::timeout::infinite);}
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : abstract_tasks)
+            task_pointers.push_back(item.get());
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        static auto wait_all(const std::initializer_list<xtd::uptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : abstract_tasks)
+            task_pointers.push_back(item.get());
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        static auto wait_all(const xtd::array<xtd::sptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks) -> bool {return wait_all(abstract_tasks, timeout::infinite);}
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto task_pointers = std::vector<abstract_task*> {};
+          for (auto& item : abstract_tasks)
+            task_pointers.push_back(item.get());
+          return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
+        }
+        static auto wait_all(const xtd::array<xtd::uptr<abstract_task>>& abstract_tasks, const xtd::time_span& timeout) -> bool {return wait_all(abstract_tasks, xtd::as<xtd::int32>(timeout.total_milliseconds_duration().count()));}
+        static auto wait_all(const xtd::array<abstract_task*>& abstract_tasks, xtd::int32 milliseconds_timeout) -> bool {
+          auto result = true;
+          for (auto task : abstract_tasks)
+            if (task->wait(milliseconds_timeout) == false) result = false;
+          return result;
+        }
+        /// @endcond
         
         /// @name Public Operators
         
@@ -122,6 +209,16 @@ namespace xtd {
         
         [[nodiscard]] auto async_wait_handle() noexcept -> xtd::threading::wait_handle& override {return data_->async_event;}
         [[nodiscard]] auto completed_synchronously() const noexcept -> bool override {return false;}
+
+        template<class item_t, class ...items_t>
+        static auto fill_task_pointers(std::vector<abstract_task*>& abstract_task_pointer, item_t& first, items_t& ... rest) -> void {
+          abstract_task_pointer.push_back(const_cast<abstract_task*>(as<abstract_task>(&first)));
+          fill_task_pointers(abstract_task_pointer, rest...);
+        }
+        template<class item_t>
+        static auto fill_task_pointers(std::vector<abstract_task*>& abstract_task_pointer, item_t& item) -> void {
+          abstract_task_pointer.push_back(const_cast<abstract_task*>(as<abstract_task>(&item)));
+        }
 
         static auto generate_id() -> xtd::size {
           static auto id = xtd::size {0};
