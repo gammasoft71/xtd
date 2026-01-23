@@ -106,8 +106,14 @@ $(function(){ initResizable(false); });
 Inheritance diagram for xtd::threading::tasks::task&lt; result_t &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classxtd_1_1threading_1_1tasks_1_1task.png" alt=""/>
- </div></div>
+  <img src="classxtd_1_1threading_1_1tasks_1_1task.png" usemap="#xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map" alt=""/>
+  <map id="xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map" name="xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map">
+<area href="classxtd_1_1threading_1_1tasks_1_1basic__task.html" title="Represents an asynchronous operation." alt="xtd::threading::tasks::basic_task&lt; result_t &gt;" shape="rect" coords="130,112,381,136"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,251,80"/>
+<area href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation." alt="xtd::iasync_result" shape="rect" coords="261,56,512,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="261,0,512,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ab4c68c66f2ed675df2cb87641460ec93" id="r_ab4c68c66f2ed675df2cb87641460ec93"><td class="memItemLeft" align="right" valign="top"><a id="ab4c68c66f2ed675df2cb87641460ec93" name="ab4c68c66f2ed675df2cb87641460ec93"></a>
@@ -131,6 +137,70 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr
 <tr class="memitem:a8171d8d31df146c71d65fee2e7b1f6a4" id="r_a8171d8d31df146c71d65fee2e7b1f6a4"><td class="memItemLeft" align="right" valign="top"><a id="a8171d8d31df146c71d65fee2e7b1f6a4" name="a8171d8d31df146c71d65fee2e7b1f6a4"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (const <a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a>&lt; result_t &gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a></td></tr>
 <tr class="separator:a8171d8d31df146c71d65fee2e7b1f6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a812996373ebb4a05382c6c76fda74d76" id="r_a812996373ebb4a05382c6c76fda74d76"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#a812996373ebb4a05382c6c76fda74d76">async_state</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> override</td></tr>
+<tr class="memdesc:a812996373ebb4a05382c6c76fda74d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a user-defined object that qualifies or contains information about an asynchronous operation.  <br /></td></tr>
+<tr class="separator:a812996373ebb4a05382c6c76fda74d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cacedc684aa6a95894f25d6c2d10d87" id="r_a5cacedc684aa6a95894f25d6c2d10d87"><td class="memItemLeft" align="right" valign="top"><a id="a5cacedc684aa6a95894f25d6c2d10d87" name="a5cacedc684aa6a95894f25d6c2d10d87"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>creation_options</b> () const noexcept -&gt; <a class="el" href="group__tasks.html#gaebb1a1de8a8d6c0f3d6a2ca368f60060">xtd::threading::tasks::task_creation_options</a></td></tr>
+<tr class="separator:a5cacedc684aa6a95894f25d6c2d10d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861f09eef338e055112b7bd694c1834d" id="r_a861f09eef338e055112b7bd694c1834d"><td class="memItemLeft" align="right" valign="top"><a id="a861f09eef338e055112b7bd694c1834d" name="a861f09eef338e055112b7bd694c1834d"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>exception</b> () const noexcept -&gt; const <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__exceptions.html#ga20c7adbb7647c62ac8f58fad6baf5b5b">xtd::aggregate_exception</a> &gt; &amp;</td></tr>
+<tr class="separator:a861f09eef338e055112b7bd694c1834d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129734477a39ff5d5df82b7b38d3d7f6" id="r_a129734477a39ff5d5df82b7b38d3d7f6"><td class="memItemLeft" align="right" valign="top"><a id="a129734477a39ff5d5df82b7b38d3d7f6" name="a129734477a39ff5d5df82b7b38d3d7f6"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>id</b> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="separator:a129734477a39ff5d5df82b7b38d3d7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f9baa4a8c817fda9c7d26bafff8969" id="r_af5f9baa4a8c817fda9c7d26bafff8969"><td class="memItemLeft" align="right" valign="top"><a id="af5f9baa4a8c817fda9c7d26bafff8969" name="af5f9baa4a8c817fda9c7d26bafff8969"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>is_canceled</b> () const noexcept -&gt; bool</td></tr>
+<tr class="separator:af5f9baa4a8c817fda9c7d26bafff8969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592142129dfea773d46d61577856c389" id="r_a592142129dfea773d46d61577856c389"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#a592142129dfea773d46d61577856c389">is_completed</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a592142129dfea773d46d61577856c389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether the asynchronous operation has completed.  <br /></td></tr>
+<tr class="separator:a592142129dfea773d46d61577856c389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c878c5f6eaf65bec409c4aa9d4b786" id="r_a45c878c5f6eaf65bec409c4aa9d4b786"><td class="memItemLeft" align="right" valign="top"><a id="a45c878c5f6eaf65bec409c4aa9d4b786" name="a45c878c5f6eaf65bec409c4aa9d4b786"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>is_faulted</b> () const noexcept -&gt; bool</td></tr>
+<tr class="separator:a45c878c5f6eaf65bec409c4aa9d4b786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262157f9457b1f9df6110e868ccc3fa9" id="r_a262157f9457b1f9df6110e868ccc3fa9"><td class="memItemLeft" align="right" valign="top"><a id="a262157f9457b1f9df6110e868ccc3fa9" name="a262157f9457b1f9df6110e868ccc3fa9"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>status</b> () const noexcept -&gt; <a class="el" href="group__tasks.html#ga3fec4c7ce87865fbf94ea524d39c66eb">xtd::threading::tasks::task_status</a></td></tr>
+<tr class="separator:a262157f9457b1f9df6110e868ccc3fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
+<tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
+<tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2743b6f75405882c28eebe2456f3837b" id="r_a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
+<tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a6bd11aa88ce86568b701b33fd1b3e508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
+<tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
+<tr class="separator:a322144840e8ad539c039538997b0fe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplItemLeft" align="right" valign="top">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
+<tr class="memdesc:aeb2a619fcb313fde8d247463c1f2df18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="separator:aeb2a619fcb313fde8d247463c1f2df18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993133d29c80c8c30a95daf0bdfc379e" id="r_a993133d29c80c8c30a95daf0bdfc379e"><td class="memItemLeft" align="right" valign="top"><a id="a993133d29c80c8c30a95daf0bdfc379e" name="a993133d29c80c8c30a95daf0bdfc379e"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><b>completed_task</b> () -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt; result_t &gt;</td></tr>
+<tr class="separator:a993133d29c80c8c30a95daf0bdfc379e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea712df42a78f0179544246ebf998fa" id="r_a8ea712df42a78f0179544246ebf998fa"><td class="memItemLeft" align="right" valign="top"><a id="a8ea712df42a78f0179544246ebf998fa" name="a8ea712df42a78f0179544246ebf998fa"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><b>current_id</b> () noexcept -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">xtd::optional</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt;</td></tr>
+<tr class="separator:a8ea712df42a78f0179544246ebf998fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06daaf33af883b18f7fcd1322e77c1ee" id="r_a06daaf33af883b18f7fcd1322e77c1ee"><td class="memTemplParams" colspan="2"><a id="a06daaf33af883b18f7fcd1322e77c1ee" name="a06daaf33af883b18f7fcd1322e77c1ee"></a>
+template&lt;class from_result_t&gt; </td></tr>
+<tr class="memitem:a06daaf33af883b18f7fcd1322e77c1ee"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>from_result</b> (from_result_t result) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt; from_result_t &gt;</td></tr>
+<tr class="separator:a06daaf33af883b18f7fcd1322e77c1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
+<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
+<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
+<tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
+<tr class="separator:a772d50f4da23b418b7e3a523f52564b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/threading/tasks/<a class="el" href="task__result_8hpp_source.html">task_result.hpp</a></li>
@@ -139,7 +209,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (const
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 23 2026 00:04:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 23 2026 04:18:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

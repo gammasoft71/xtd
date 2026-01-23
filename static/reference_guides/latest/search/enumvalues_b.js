@@ -63,10 +63,11 @@ var searchData=
   ['lock_5frecursion_60',['lock_recursion',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca818cde618ad0fefbb3f368c1b33b4a29',1,'xtd::helpers']]],
   ['logical_5foperation_5fstack_61',['logical_operation_stack',['../group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfa62b13a7d6b5dbcd1e4bf03b3eaf25162',1,'xtd::diagnostics']]],
   ['long_5fformat_62',['long_format',['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a215dd407d628aca36a2e2fa2b2631b53',1,'xtd::forms']]],
-  ['low_63',['low',['../group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::drawing::drawing_2d::low'],['../group__xtd__forms.html#ggabfcbdab8d51145bfcc9d621c1828cc63a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::forms::low']]],
-  ['lower_64',['lower',['../group__xtd__forms.html#ggaf4ada098194f7c1c262928001ae7c781a81e073b428b50247daba38531dcf412a',1,'xtd::forms']]],
-  ['lowercase_65',['lowercase',['../group__style__sheets.html#ggae92c9bad16e4e07d834be243b217ba55af82413ecc07fb74bf40ccfe963a5c4b6',1,'xtd::forms::style_sheets']]],
-  ['lowest_66',['lowest',['../group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d',1,'xtd::threading']]],
-  ['lshift_5fkey_67',['lshift_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab875fc40cecd3d41341fe39d17ce9693',1,'xtd::forms']]],
-  ['lwin_68',['lwin',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deaf801ee6854e902f73c6dd945ed2bd452',1,'xtd::forms']]]
+  ['long_5frunning_63',['long_running',['../group__tasks.html#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a968cbe1dff92662f8edc9c0d5bb39f16',1,'xtd::threading::tasks']]],
+  ['low_64',['low',['../group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::drawing::drawing_2d::low'],['../group__xtd__forms.html#ggabfcbdab8d51145bfcc9d621c1828cc63a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::forms::low']]],
+  ['lower_65',['lower',['../group__xtd__forms.html#ggaf4ada098194f7c1c262928001ae7c781a81e073b428b50247daba38531dcf412a',1,'xtd::forms']]],
+  ['lowercase_66',['lowercase',['../group__style__sheets.html#ggae92c9bad16e4e07d834be243b217ba55af82413ecc07fb74bf40ccfe963a5c4b6',1,'xtd::forms::style_sheets']]],
+  ['lowest_67',['lowest',['../group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d',1,'xtd::threading']]],
+  ['lshift_5fkey_68',['lshift_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab875fc40cecd3d41341fe39d17ce9693',1,'xtd::forms']]],
+  ['lwin_69',['lwin',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deaf801ee6854e902f73c6dd945ed2bd452',1,'xtd::forms']]]
 ];

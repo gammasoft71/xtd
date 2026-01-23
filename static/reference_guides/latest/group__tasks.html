@@ -104,6 +104,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html">xtd::threading::tasks::basic_task&lt; result_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an asynchronous operation.  <a href="classxtd_1_1threading_1_1tasks_1_1basic__task.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html">xtd::threading::tasks::task&lt; void &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an asynchronous operation.  <a href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,6 +116,24 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:gaebb1a1de8a8d6c0f3d6a2ca368f60060" id="r_gaebb1a1de8a8d6c0f3d6a2ca368f60060"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaebb1a1de8a8d6c0f3d6a2ca368f60060">xtd::threading::tasks::task_creation_options</a> { <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::threading::tasks::task_creation_options::none</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a70c6fac3661e2482106c06d0ade2dde8">xtd::threading::tasks::task_creation_options::prefer_fairness</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a968cbe1dff92662f8edc9c0d5bb39f16">xtd::threading::tasks::task_creation_options::long_running</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060acacc8665b24346e3af501525c2ae40c2">xtd::threading::tasks::task_creation_options::attached_to_parent</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a011bab725317bf062ebf9ac6853f99d3">xtd::threading::tasks::task_creation_options::deny_child_attach</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a802ef898836dd6d03ca5b575a5015205">xtd::threading::tasks::task_creation_options::hide_scheduler</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaebb1a1de8a8d6c0f3d6a2ca368f60060a33391478e3d946bffb840a39361e9e60">xtd::threading::tasks::task_creation_options::run_continuations_asynchronously</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gaebb1a1de8a8d6c0f3d6a2ca368f60060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies flags that control optional behavior for the creation and execution of tasks. This enumeration supports a bitwise combination of its member values.  <a href="#gaebb1a1de8a8d6c0f3d6a2ca368f60060">More...</a><br /></td></tr>
+<tr class="separator:gaebb1a1de8a8d6c0f3d6a2ca368f60060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3fec4c7ce87865fbf94ea524d39c66eb" id="r_ga3fec4c7ce87865fbf94ea524d39c66eb"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3fec4c7ce87865fbf94ea524d39c66eb">xtd::threading::tasks::task_status</a> { <br />
 &#160;&#160;<a class="el" href="#gga3fec4c7ce87865fbf94ea524d39c66ebae2fa538867c3830a859a5b17ab24644b">xtd::threading::tasks::task_status::created</a>
 , <br />
@@ -135,6 +156,53 @@ Enumerations</h2></td></tr>
 <tr class="separator:ga3fec4c7ce87865fbf94ea524d39c66eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gaebb1a1de8a8d6c0f3d6a2ca368f60060" name="gaebb1a1de8a8d6c0f3d6a2ca368f60060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebb1a1de8a8d6c0f3d6a2ca368f60060">&#9670;&#160;</a></span>task_creation_options</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#gaebb1a1de8a8d6c0f3d6a2ca368f60060">xtd::threading::tasks::task_creation_options</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="task__creation__options_8hpp.html">xtd.core/include/xtd/threading/tasks/task_creation_options.hpp</a>&gt;</code></p>
+
+<p>Specifies flags that control optional behavior for the creation and execution of tasks. This enumeration supports a bitwise combination of its member values. </p>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading_1_1tasks.html" title="The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and a...">xtd::threading::tasks</a> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/tasks/task_creation_options&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a334c4a4c42fdb79d7ebc3e73b517e6f8" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"><p>Specifies that the default behavior should be used. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a70c6fac3661e2482106c06d0ade2dde8" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a70c6fac3661e2482106c06d0ade2dde8"></a>prefer_fairness&#160;</td><td class="fielddoc"><p>A hint to a xtd::threading::tasks::task_scheduler to schedule a task in as fair a manner as possible, meaning that tasks scheduled sooner will be more likely to be run sooner, and tasks scheduled later will be more likely to be run later. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a968cbe1dff92662f8edc9c0d5bb39f16" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a968cbe1dff92662f8edc9c0d5bb39f16"></a>long_running&#160;</td><td class="fielddoc"><p>Specifies that a task will be a long-running, coarse-grained operation involving fewer, larger components than fine-grained systems. It provides a hint to the xtd::threading::tasks::task_scheduler that oversubscription may be warranted. Oversubscription lets you create more threads than the available number of hardware threads. It also provides a hint to the task scheduler that an additional thread might be required for the task so that it does not block the forward progress of other threads or work items on the local thread-pool queue. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060acacc8665b24346e3af501525c2ae40c2" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060acacc8665b24346e3af501525c2ae40c2"></a>attached_to_parent&#160;</td><td class="fielddoc"><p>Specifies that a task is attached to a parent in the task hierarchy. By default, a child task (that is, an inner task created by an outer task) executes independently of its parent. You can use the AttachedToParent option so that the parent and child tasks are synchronized.<br  />
+Note that if a parent task is configured with the DenyChildAttach option, the AttachedToParent option in the child task has no effect, and the child task will execute as a detached child task. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a011bab725317bf062ebf9ac6853f99d3" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a011bab725317bf062ebf9ac6853f99d3"></a>deny_child_attach&#160;</td><td class="fielddoc"><p>Specifies that any child task that attempts to execute as an attached child task (that is, it is created with the AttachedToParent option) will not be able to attach to the parent task and will execute instead as a detached child task. For more information, see Attached and Detached Child Tasks. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a802ef898836dd6d03ca5b575a5015205" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a802ef898836dd6d03ca5b575a5015205"></a>hide_scheduler&#160;</td><td class="fielddoc"><p>Prevents the ambient scheduler from being seen as the current scheduler in the created task. This means that operations like StartNew or ContinueWith that are performed in the created task will see Default as the current scheduler. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a33391478e3d946bffb840a39361e9e60" name="ggaebb1a1de8a8d6c0f3d6a2ca368f60060a33391478e3d946bffb840a39361e9e60"></a>run_continuations_asynchronously&#160;</td><td class="fielddoc"><p>Forces continuations added to the current task to be executed asynchronously. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga3fec4c7ce87865fbf94ea524d39c66eb" name="ga3fec4c7ce87865fbf94ea524d39c66eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3fec4c7ce87865fbf94ea524d39c66eb">&#9670;&#160;</a></span>task_status</h2>
 
@@ -187,7 +255,7 @@ Enumerations</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 23 2026 00:04:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 23 2026 04:18:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

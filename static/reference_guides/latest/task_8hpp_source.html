@@ -108,11 +108,10 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">threading</a> {</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacextd_1_1threading_1_1tasks.html">   14</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading_1_1tasks.html">tasks</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading_1_1tasks.html">tasks</a> {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      <span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html">   22</a></span>      <span class="keyword">class </span>task&lt;void&gt; : <span class="keyword">public</span> xtd::threading::tasks::basic_task&lt;void&gt; {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html">   22</a></span>      <span class="keyword">class </span>task&lt;void&gt; : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1threading_1_1tasks_1_1basic__task.html">xtd::threading::tasks::basic_task</a>&lt;void&gt; {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        task() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        task(task&amp;&amp;) = <span class="keywordflow">default</span>;</div>
@@ -207,13 +206,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      };</div>
 </div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
-</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
 <div class="ttc" id="aaction_8hpp_html"><div class="ttname"><a href="action_8hpp.html">action.hpp</a></div><div class="ttdoc">Contains xtd::action delegate.</div></div>
 <div class="ttc" id="abasic__task_8hpp_html"><div class="ttname"><a href="basic__task_8hpp.html">basic_task.hpp</a></div><div class="ttdoc">Contains xtd::threading::tasks::basic_task &lt;&gt; class.</div></div>
 <div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1helpers_1_1throw__helper_html_a986c08b3b386fae3db9406136afd34b7"><div class="ttname"><a href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7">xtd::helpers::throw_helper::throws</a></div><div class="ttdeci">static auto throws(xtd::helpers::exception_case exception_case, const source_location &amp;location=source_location::current()) -&gt; void</div><div class="ttdoc">Throws an exption with specified exception case.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1tasks_1_1basic__task_html"><div class="ttname"><a href="classxtd_1_1threading_1_1tasks_1_1basic__task.html">xtd::threading::tasks::basic_task</a></div><div class="ttdoc">Represents an asynchronous operation.</div><div class="ttdef"><b>Definition</b> basic_task.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread__pool_html_ae289948d4a64e7950f998632087df26c"><div class="ttname"><a href="classxtd_1_1threading_1_1thread__pool.html#ae289948d4a64e7950f998632087df26c">xtd::threading::thread_pool::register_wait_for_single_object</a></div><div class="ttdeci">static registered_wait_handle register_wait_for_single_object(wait_handle &amp;wait_object, const wait_or_timer_callback &amp;callback, const xtd::any_object &amp;state, int32 milliseconds_timeout_interval, bool execute_only_once)</div><div class="ttdoc">Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer fo...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html_af4059e4ae0d201f7382742e6a7dfd1b2"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html#af4059e4ae0d201f7382742e6a7dfd1b2">xtd::threading::timeout::infinite</a></div><div class="ttdeci">static constexpr int32 infinite</div><div class="ttdoc">A constant used to specify an infinite waiting period. This field is constant.</div><div class="ttdef"><b>Definition</b> timeout.hpp:41</div></div>
@@ -232,7 +231,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="agroup__types_html_gaa9a6cd7d720cd7466a0acb01f807b0c5"><div class="ttname"><a href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></div><div class="ttdeci">std::int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga79b9e415252e85714d5549936d31439a"><div class="ttname"><a href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">xtd::action</a></div><div class="ttdeci">delegate&lt; void(arguments_t...)&gt; action</div><div class="ttdoc">Represents a xtd::delegate that has variable parameters and does not return a value.</div><div class="ttdef"><b>Definition</b> action.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7cc491fa6479b6976a467c83b82a902e"><div class="ttname"><a href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr</a></div><div class="ttdeci">sptr&lt; type_t &gt; new_sptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_sptr operator creates a xtd::sptr object.</div><div class="ttdef"><b>Definition</b> new_sptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_1_1tasks_html"><div class="ttname"><a href="namespacextd_1_1threading_1_1tasks.html">xtd::threading::tasks</a></div><div class="ttdoc">The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and a...</div><div class="ttdef"><b>Definition</b> task.hpp:14</div></div>
+<div class="ttc" id="anamespacextd_1_1threading_1_1tasks_html"><div class="ttname"><a href="namespacextd_1_1threading_1_1tasks.html">xtd::threading::tasks</a></div><div class="ttdoc">The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and a...</div><div class="ttdef"><b>Definition</b> basic_task.hpp:20</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="athread__pool_8hpp_html"><div class="ttname"><a href="thread__pool_8hpp.html">thread_pool.hpp</a></div><div class="ttdoc">Contains xtd::threading::thread_pool class.</div></div>
@@ -240,7 +239,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 23 2026 00:03:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 23 2026 04:17:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
