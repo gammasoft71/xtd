@@ -183,21 +183,17 @@ bool wait_handle::wait_all(const array<wait_handle*>& wait_handles, int32 millis
 size_t wait_handle::wait_any(const array<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument);
   
-  if (milliseconds_timeout == timeout::infinite) {
-    while (true) {
-      for (auto index = 0_z; index < wait_handles.length(); ++index) {
-        if (wait_handles[index]->wait_one(0) == true) return index;
-        thread::sleep(1);
-      }
-    }
-  }
-  
+  auto sleep_duration = 1;
+  const auto max_sleep = 10;
   auto sw = stopwatch::start_new();
-  while (sw.elapsed_milliseconds() <= milliseconds_timeout) {
-    for (auto index = 0_z; index < wait_handles.length(); index++) {
-      if (wait_handles[index]->wait_one(0) == true) return index;
-      thread::sleep(1);
-    }
+  
+  while (milliseconds_timeout == timeout::infinite || sw.elapsed_milliseconds() <= milliseconds_timeout) {
+    for (auto index = 0_z; index < wait_handles.length(); ++index)
+      if (wait_handles[index]->wait_one(0)) return index;
+    
+    thread::sleep(sleep_duration);
+    sleep_duration = std::min(sleep_duration + 1, max_sleep);
   }
+
   return wait_timeout;
 }
