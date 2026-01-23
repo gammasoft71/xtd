@@ -2,13 +2,19 @@
 /// @brief Contains xtd::threading::tasks::basic_task <> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "task_canceled_exception.hpp"
 #include "task_creation_options.hpp"
 #include "task_status.hpp"
+#include "../cancellation_token.hpp"
+#include "../../helpers/throw_helper.hpp"
+#include "../../runtime/exception_services/exception_dispatch_info.hpp"
 #include "../../aggregate_exception.hpp"
 #include "../../iasync_result.hpp"
 #include "../../new_sptr.hpp"
 #include "../../object.hpp"
 #include "../../optional.hpp"
+#include "../../ref.hpp"
+#include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
 #include "../auto_reset_event.hpp"
 
@@ -43,7 +49,10 @@ namespace xtd {
         /// @{
         [[nodiscard]] auto async_state() const noexcept -> xtd::any_object override {return data_->async_state;}
         [[nodiscard]] auto creation_options() const noexcept -> xtd::threading::tasks::task_creation_options {return data_->creation_options;}
-        [[nodiscard]] auto exception() const noexcept -> const xtd::optional<xtd::aggregate_exception>& {return data_->exception;}
+        [[nodiscard]] auto exception() const noexcept -> xtd::ref<xtd::exception> {
+          if (data_->exception.exception_captured()) return  *data_->exception.source_exception();
+          return xtd::null;
+        }
         [[nodiscard]] auto id() const noexcept -> xtd::size {return data_->id;}
         [[nodiscard]] auto is_canceled() const noexcept -> bool {return data_->status == xtd::threading::tasks::task_status::canceled;}
         [[nodiscard]] auto is_completed() const noexcept -> bool override {return is_faulted() || is_canceled() || data_->status == xtd::threading::tasks::task_status::ran_to_completion;}
@@ -61,6 +70,22 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        auto start() -> void {
+          data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
+          thread_pool::register_wait_for_single_object(data_->start_event, task_proc, *data_->state, xtd::threading::timeout::infinite, true);
+          data_->status = xtd::threading::tasks::task_status::waiting_to_run;
+          data_->start_event.set();
+        }
+        
+        auto wait() -> void {wait(xtd::threading::timeout::infinite);}
+        
+        auto wait(xtd::int32 milliseconds_timeout) -> bool {
+          bool result = data_->end_event.wait_one(milliseconds_timeout);
+          if (data_->status == xtd::threading::tasks::task_status::faulted)
+            throw *data_->exception.source_exception();
+          data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+          return result;
+        }
         /// @}
         
         /// @name Public Static Methods
@@ -97,20 +122,54 @@ namespace xtd {
           xtd::async_callback async_callback;
           xtd::threading::manual_reset_event async_event;
           xtd::any_object async_state;
+          xtd::threading::cancellation_token cancellation_token;
           xtd::threading::tasks::task_creation_options creation_options = xtd::threading::tasks::task_creation_options::none;
+          const xtd::any_object empty_state;
           xtd::threading::auto_reset_event end_event;
-          xtd::optional<xtd::aggregate_exception> exception;
+          xtd::runtime::exception_services::exception_dispatch_info exception;
           xtd::size id = generate_id();
-          xtd::int32 milliseconds_delay = 0;
+          xtd::int32 milliseconds_delay = timeout_none;
           xtd::threading::auto_reset_event start_event;
           const xtd::any_object* state = &empty_state;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
-          const xtd::any_object empty_state;
+          xtd::action<> task_run;
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
+        
+        xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
+          auto previous_current_id = current_id_;
+          current_id_ = data_->id;
+          
+          scope_exit_ {
+            current_id_ = previous_current_id;
+            data_->end_event.set();
+          };
+          
+          data_->status = xtd::threading::tasks::task_status::running;
+          try {
+            if (data_->cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+            if (data_->milliseconds_delay != timeout_none) thread::sleep(data_->milliseconds_delay);
+            if (data_->cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+            data_->task_run();
+            data_->status = xtd::threading::tasks::task_status::waiting_for_children_to_complete;
+          } catch (const xtd::threading::tasks::task_canceled_exception& exception) {
+            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
+            data_->status = xtd::threading::tasks::task_status::canceled;
+          } catch (const xtd::exception& exception) {
+            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
+            data_->status = xtd::threading::tasks::task_status::faulted;
+          } catch (const std::exception& exception) {
+            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {exception.what()});
+            data_->status = xtd::threading::tasks::task_status::faulted;
+          } catch (...) {
+            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {"Unknown exception"});
+            data_->status = xtd::threading::tasks::task_status::faulted;
+          }
+        }};
 
         inline static thread_local xtd::optional<xtd::size> current_id_;
+        inline static constexpr xtd::int32 timeout_none = -2;
       };
     }
   }

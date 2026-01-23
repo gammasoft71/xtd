@@ -32,18 +32,26 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::action<>& action) {data_->action = action;}
+        task(const xtd::action<>& action) {
+          data_->action = action;
+          set_task_run();
+        }
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) {
           data_->parameterized_action = action;
           basic_task<void>::data_->state = &state;
+          set_task_run();
         }
         /// @}
 
         /// @cond
-        task(const std::function<void()>& action) {data_->action = action;}
+        task(const std::function<void()>& action) {
+          data_->action = action;
+          set_task_run();
+        }
         task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) {
           data_->parameterized_action = action;
           basic_task<void>::data_->state = &state;
+          set_task_run();
         }
         /// @endcond
 
@@ -63,23 +71,9 @@ namespace xtd {
         }
         
         auto start() -> void {
-          if (basic_task<void>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<void>::data_->milliseconds_delay == -2 && data_->action.is_empty() && data_->parameterized_action.is_empty()))
+          if (basic_task<void>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<void>::data_->milliseconds_delay == basic_task<void>::timeout_none && data_->action.is_empty() && data_->parameterized_action.is_empty()))
             xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
-          thread_pool::register_wait_for_single_object(basic_task<void>::data_->start_event, task_proc, *basic_task<void>::data_->state, xtd::threading::timeout::infinite, true);
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_to_run;
-          basic_task<void>::data_->start_event.set();
-        }
-        
-        auto wait() -> void {wait(xtd::threading::timeout::infinite);}
-        
-        auto wait(xtd::int32 milliseconds_timeout) -> bool {
-          bool result = basic_task<void>::data_->end_event.wait_one(milliseconds_timeout);
-          if (basic_task<void>::data_->status == xtd::threading::tasks::task_status::faulted)
-            throw basic_task<void>::data_->exception;
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
-          return result;
+          basic_task<void>::start();
         }
         /// @}
         
@@ -107,29 +101,18 @@ namespace xtd {
         /// @}
         
       private:
+        auto set_task_run() -> void {
+          basic_task<void>::data_->task_run = xtd::action<> {delegate_ {
+            if (!data_->action.is_empty()) data_->action();
+            else if (!data_->parameterized_action.is_empty()) data_->parameterized_action(*basic_task<void>::data_->state);
+            else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          }};
+        }
+        
         struct data {
           xtd::action<> action;
           xtd::action<xtd::any_object> parameterized_action;
         };
-
-        xtd::threading::wait_or_timer_callback task_proc = {delegate_(const xtd::any_object& state, bool timed_out) {
-          basic_task<void>::current_id_ = basic_task<void>::data_->id;
-          basic_task<void>::data_->status = xtd::threading::tasks::task_status::running;
-          try {
-            if (basic_task<void>::data_->milliseconds_delay != -2)
-              thread::sleep(basic_task<void>::data_->milliseconds_delay);
-            if (!data_->action.is_empty())
-              data_->action();
-            else if (!data_->parameterized_action.is_empty())
-              data_->parameterized_action(*basic_task<void>::data_->state);
-            basic_task<void>::data_->status = xtd::threading::tasks::task_status::waiting_for_children_to_complete;
-            basic_task<void>::data_->end_event.set();
-          } catch (...) {
-            basic_task<void>::data_->exception = aggregate_exception {}; // (array<xtd::exception_ptr> {excptr::current_exception()});
-            basic_task<void>::data_->status = xtd::threading::tasks::task_status::faulted;
-            basic_task<void>::data_->end_event.set();
-          }
-        }};
 
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
       };

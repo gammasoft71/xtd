@@ -25,18 +25,26 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::func<result_t>& func) {data_->func = func;}
+        task(const xtd::func<result_t>& func) {
+          data_->func = func;
+          set_task_run();
+        }
         task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           basic_task<result_t>::data_->state = &state;
+          set_task_run();
         }
         /// @}
 
         /// @cond
-        task(const std::function<result_t()>& func) {data_->func = func;}
+        task(const std::function<result_t()>& func) {
+          data_->func = func;
+          set_task_run();
+        }
         task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           basic_task<result_t>::data_->state = &state;
+          set_task_run();
         }
         /// @endcond
 
@@ -44,14 +52,16 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto result() const noexcept -> xtd::any_object {return data_->result;}
+        [[nodiscard]] auto result() const noexcept -> const result_t& {return data_->result;}
         /// @}
         
         /// @name Public Methods
         
         /// @{
         void start() {
-          
+          if (basic_task<result_t>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<result_t>::data_->milliseconds_delay == basic_task<result_t>::timeout_none && data_->func.is_empty() && data_->parameterized_func.is_empty()))
+            xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          basic_task<result_t>::start();
         }
         /// @}
         
@@ -79,10 +89,18 @@ namespace xtd {
         /// @}
         
       private:
+        auto set_task_run() -> void {
+          basic_task<result_t>::data_->task_run = xtd::action<> {delegate_ {
+            if (!data_->func.is_empty()) data_->result = std::move(data_->func());
+            else if (!data_->parameterized_func.is_empty()) data_->result = std::move(data_->parameterized_func(*basic_task<result_t>::data_->state));
+            else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          }};
+        }
+        
         struct data {
           xtd::func<result_t> func;
           xtd::func<result_t, const xtd::any_object&> parameterized_func;
-          xtd::any_object result;
+          result_t result;
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();

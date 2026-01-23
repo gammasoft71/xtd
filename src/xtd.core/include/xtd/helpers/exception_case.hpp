@@ -99,6 +99,8 @@ namespace xtd {
       software_termination,
       /// @brief The lock is not valid.
       synchronization_lock,
+      /// @brief The task is canceled.
+      task_canceled,
       /// @brief The thread is abort.
       thread_abort,
       /// @brief The thread is interrupted.

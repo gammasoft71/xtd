@@ -9,6 +9,7 @@
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
 #include "../../../include/xtd/net/sockets/socket_error.hpp"
 #include "../../../include/xtd/net/sockets/socket_exception.hpp"
+#include "../../../include/xtd/threading/tasks/task_canceled_exception.hpp"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 #include "../../../include/xtd/threading/barrier_post_phase_exception.hpp"
 #include "../../../include/xtd/threading/lock_recursion_exception.hpp"
@@ -51,6 +52,7 @@ using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
+using namespace xtd::threading::tasks;
 
 namespace {
   auto to_stack_frame(const throw_helper::source_location& location) -> stack_frame {
@@ -98,6 +100,7 @@ auto throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::socket: throw socket_exception {to_stack_frame(location)};
     case exception_case::software_termination: throw software_termination_exception {to_stack_frame(location)};
     case exception_case::synchronization_lock: throw synchronization_lock_exception {to_stack_frame(location)};
+    case exception_case::task_canceled: throw task_canceled_exception {to_stack_frame(location)};
     case exception_case::thread_abort: throw thread_abort_exception {to_stack_frame(location)};
     case exception_case::thread_interrupted: throw thread_interrupted_exception {to_stack_frame(location)};
     case exception_case::thread_state: throw thread_state_exception {to_stack_frame(location)};
@@ -148,6 +151,7 @@ auto throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::semaphore_full: throw semaphore_full_exception {message, to_stack_frame(location)};
     case exception_case::software_termination: throw software_termination_exception {message, to_stack_frame(location)};
     case exception_case::synchronization_lock: throw synchronization_lock_exception {message, to_stack_frame(location)};
+    case exception_case::task_canceled: throw task_canceled_exception {to_stack_frame(location)};
     case exception_case::thread_abort: throw thread_abort_exception {message, to_stack_frame(location)};
     case exception_case::thread_interrupted: throw thread_interrupted_exception {message, to_stack_frame(location)};
     case exception_case::thread_state: throw thread_state_exception {message, to_stack_frame(location)};
