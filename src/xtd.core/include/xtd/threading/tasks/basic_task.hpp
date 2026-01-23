@@ -274,22 +274,18 @@ namespace xtd {
         static auto wait_any(const xtd::array<abstract_task*>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
           if (milliseconds_timeout < xtd::threading::timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           
-          if (milliseconds_timeout == xtd::threading::timeout::infinite) {
-            while (true) {
-              for (auto index = xtd::size {0}; index < tasks.length(); ++index) {
-                if (tasks[index]->wait(0) == true) return index;
-                xtd::threading::thread::sleep(1);
-              }
-            }
+          auto sleep_duration = 1;
+          const auto max_sleep = 10;
+          auto sw = xtd::diagnostics::stopwatch::start_new();
+          
+          while (milliseconds_timeout == xtd::threading::timeout::infinite || sw.elapsed_milliseconds() <= milliseconds_timeout) {
+            for (auto index = xtd::size {0}; index < tasks.length(); ++index)
+              if (tasks[index]->wait(0)) return index;
+
+            xtd::threading::thread::sleep(sleep_duration);
+            sleep_duration = std::min(sleep_duration + 1, max_sleep);
           }
           
-          auto sw = xtd::diagnostics::stopwatch::start_new();
-          while (sw.elapsed_milliseconds() <= milliseconds_timeout) {
-            for (auto index = xtd::size {0}; index < tasks.length(); index++) {
-              if (tasks[index]->wait(0) == true) return index;
-              thread::sleep(1);
-            }
-          }
           return wait_timeout;
         }
         /// @endcond
