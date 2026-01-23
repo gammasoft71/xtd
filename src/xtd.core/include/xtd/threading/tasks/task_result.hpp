@@ -120,8 +120,8 @@ namespace xtd {
       template<class result_t>
       auto basic_task<result_t>::completed_task() -> task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
-        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
-        task.basic_task<>::data_->end_event.set();
+        task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
+        task.basic_task<result_t>::data_->end_event.set();
         return task;
       }
 
