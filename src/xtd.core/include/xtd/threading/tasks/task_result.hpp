@@ -29,6 +29,11 @@ namespace xtd {
           data_->func = func;
           set_task_run();
         }
+        task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->func = func;
+          basic_task<result_t>::data_->cancellation_token = cancellation_token;
+          set_task_run();
+        }
         task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           basic_task<result_t>::data_->state = &state;
@@ -58,11 +63,6 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        void start() {
-          if (basic_task<result_t>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<result_t>::data_->milliseconds_delay == basic_task<result_t>::timeout_none && data_->func.is_empty() && data_->parameterized_func.is_empty()))
-            xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          basic_task<result_t>::start();
-        }
         /// @}
         
         /// @name Public Static Methods
@@ -81,11 +81,21 @@ namespace xtd {
           result.start();
           return result;
         }
+        [[nodiscard]] static auto run(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) -> task {
+          auto result = task {func, cancellation_token};
+          result.start();
+          return result;
+        }
         /// @}
         
         /// @cond
         [[nodiscard]] static auto run(const std::function<result_t()>& func) -> task {
           auto result = task {func};
+          result.start();
+          return result;
+        }
+        [[nodiscard]] static auto run(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) -> task {
+          auto result = task {func, cancellation_token};
           result.start();
           return result;
         }
@@ -126,13 +136,28 @@ namespace xtd {
       }
 
       template<class result_t>
-      auto basic_task<result_t>::delay(const xtd::time_span& delay) -> task<> {return basic_task<result_t>::delay(as<int32>(delay.total_milliseconds()));}
-
+      auto basic_task<result_t>::delay(const xtd::time_span& delay) -> task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()));}
+      
+      template<class result_t>
+      auto basic_task<result_t>::delay(const xtd::time_span& delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()), cancellation_token);}
+      
       template<class result_t>
       auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay) -> task<> {
-        auto task = xtd::threading::tasks::task<> {};
-        task.basic_task<>::data_->milliseconds_delay = milliseconds_delay;
-        task.start();
+        return xtd::threading::tasks::task<>::run([milliseconds_delay]{xtd::threading::cancellation_token {}.wait_handle().wait_one(milliseconds_delay);});
+      }
+
+      template<class result_t>
+      auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {
+        return xtd::threading::tasks::task<>::run([cancellation_token, milliseconds_delay]{xtd::threading::cancellation_token {cancellation_token}.wait_handle().wait_one(milliseconds_delay);}, cancellation_token);
+      }
+
+      template<class result_t>
+      auto basic_task<result_t>::from_cancelation(const xtd::threading::cancellation_token& cancellation_token) -> task<result_t> {
+        if (!cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        auto task = xtd::threading::tasks::task<result_t> {};
+        task.basic_task<>::data_->cancellation_token = cancellation_token;
+        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::canceled;
+        task.basic_task<>::data_->end_event.set();
         return task;
       }
 

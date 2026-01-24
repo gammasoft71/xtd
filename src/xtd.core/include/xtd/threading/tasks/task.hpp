@@ -36,6 +36,11 @@ namespace xtd {
           data_->action = action;
           set_task_run();
         }
+        task(const xtd::action<const xtd::any_object&>& action, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->parameterized_action = action;
+          basic_task<>::data_->cancellation_token = cancellation_token;
+          set_task_run();
+        }
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) {
           data_->parameterized_action = action;
           basic_task<>::data_->state = &state;
@@ -64,11 +69,6 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        auto start() -> void {
-          if (basic_task<>::data_->status != xtd::threading::tasks::task_status::created || (basic_task<>::data_->milliseconds_delay == basic_task<>::timeout_none && data_->action.is_empty() && data_->parameterized_action.is_empty()))
-            xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          basic_task<>::start();
-        }
         /// @}
         
         /// @name Public Static Methods
@@ -86,11 +86,22 @@ namespace xtd {
           result.start();
           return result;
         }
+        
+        [[nodiscard]] static auto run(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) -> task {
+          auto result = task {action, cancellation_token};
+          result.start();
+          return result;
+        }
         /// @}
 
         /// @cond
         [[nodiscard]] static auto run(const std::function<void()>& action) -> task {
           auto result = task {action};
+          result.start();
+          return result;
+        }
+        [[nodiscard]] static auto run(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) -> task {
+          auto result = task {action, cancellation_token};
           result.start();
           return result;
         }

@@ -92,6 +92,7 @@ namespace xtd {
         }
         
         auto start() -> void override {
+          if (is_completed()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Start may not be called on a task that has completed.");
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
           thread_pool::register_wait_for_single_object(data_->start_event, task_proc, *data_->state, xtd::threading::timeout::infinite, true);
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
@@ -114,11 +115,15 @@ namespace xtd {
         /// @name Public Static Methods
         
         /// @{
+        [[nodiscard]] static auto from_cancelation(const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
+        
         template<class from_exception_t>
         [[nodiscard]] static auto from_exception(from_exception_t exception) -> task<result_t>;
-
+        
         [[nodiscard]] static auto delay(const xtd::time_span& delay) -> task<>;
+        [[nodiscard]] static auto delay(const xtd::time_span& delay, const xtd::threading::cancellation_token& cancellation_token) -> task<>;
         [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay) -> task<>;
+        [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay, const xtd::threading::cancellation_token& cancellation_token) -> task<>;
 
         template<class collection_t>
         static auto wait_all(const collection_t& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
@@ -335,7 +340,6 @@ namespace xtd {
           xtd::threading::auto_reset_event end_event;
           xtd::runtime::exception_services::exception_dispatch_info exception;
           xtd::size id = generate_id();
-          xtd::int32 milliseconds_delay = timeout_none;
           xtd::threading::auto_reset_event start_event;
           const xtd::any_object* state = &empty_state;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
@@ -355,10 +359,9 @@ namespace xtd {
           
           data_->status = xtd::threading::tasks::task_status::running;
           try {
-            if (data_->cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
-            if (data_->milliseconds_delay != timeout_none) thread::sleep(data_->milliseconds_delay);
-            if (data_->cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+            if (data_->cancellation_token.wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
             data_->task_run();
+            if (data_->cancellation_token.wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
             data_->status = xtd::threading::tasks::task_status::ran_to_completion;
           } catch (const xtd::threading::tasks::task_canceled_exception& exception) {
             data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
@@ -376,7 +379,6 @@ namespace xtd {
         }};
 
         inline static thread_local xtd::optional<xtd::size> current_id_;
-        inline static constexpr xtd::int32 timeout_none = -2;
       };
     }
   }
