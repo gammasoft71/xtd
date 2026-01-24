@@ -8,6 +8,7 @@
 #include "../cancellation_token.hpp"
 #include "../../helpers/throw_helper.hpp"
 #include "../../runtime/exception_services/exception_dispatch_info.hpp"
+#include "../../action.hpp"
 #include "../../aggregate_exception.hpp"
 #include "../../iasync_result.hpp"
 #include "../../new_sptr.hpp"
@@ -27,6 +28,9 @@ namespace xtd {
       /// @cond
       template<class result_t = void>
       class task;
+      
+      template<class result_t>
+      struct task_awaiter;
 
       class abstract_task : public xtd::object {
       public:
@@ -85,6 +89,23 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        auto continue_with(std::function<void()> continuation) -> void {continue_with(xtd::action<> {continuation});}
+        auto continue_with(xtd::action<> continuation) -> void {
+          auto call_now = false;
+          
+          lock_(data_->sync_root) {
+            if (is_completed()) call_now = true;
+            else data_->continuation = continuation;
+          }
+          
+          if (call_now) continuation();
+        }
+        
+        [[noreturn]] auto rethrow_exception() -> void {
+          if (is_faulted () && data_->exception) throw *data_->exception.source_exception();
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "This task is not faulted.");
+        }
+        
         auto run_synchronously() -> void {
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
           task_proc(data_->state, false);
@@ -104,7 +125,7 @@ namespace xtd {
         auto wait(xtd::int32 milliseconds_timeout) -> bool override {
           bool result = data_->end_event.wait_one(milliseconds_timeout);
           if (data_->status == xtd::threading::tasks::task_status::faulted)
-            throw *data_->exception.source_exception();
+            rethrow_exception();
           return result;
         }
         
@@ -298,6 +319,7 @@ namespace xtd {
         /// @name Public Operators
         
         /// @{
+        auto operator co_await() noexcept;
         /// @}
         
       private:
@@ -334,7 +356,8 @@ namespace xtd {
           xtd::async_callback async_callback;
           xtd::threading::manual_reset_event async_event;
           xtd::any_object async_state;
-          xtd::threading::cancellation_token cancellation_token;
+          xtd::optional<xtd::threading::cancellation_token> cancellation_token;
+          xtd::action<> continuation;
           xtd::threading::tasks::task_creation_options creation_options = xtd::threading::tasks::task_creation_options::none;
           const xtd::any_object empty_state;
           xtd::threading::auto_reset_event end_event;
@@ -343,6 +366,7 @@ namespace xtd {
           xtd::threading::auto_reset_event start_event;
           const xtd::any_object* state = &empty_state;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
+          xtd::object sync_root;
           xtd::action<> task_run;
         };
         
@@ -355,13 +379,14 @@ namespace xtd {
           scope_exit_ {
             current_id_ = previous_current_id;
             data_->end_event.set();
+            if (!data_->continuation.is_empty()) data_->continuation();
           };
           
           data_->status = xtd::threading::tasks::task_status::running;
           try {
-            if (data_->cancellation_token.wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+            if (data_->cancellation_token && data_->cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
             data_->task_run();
-            if (data_->cancellation_token.wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+            if (data_->cancellation_token && data_->cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
             data_->status = xtd::threading::tasks::task_status::ran_to_completion;
           } catch (const xtd::threading::tasks::task_canceled_exception& exception) {
             data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);

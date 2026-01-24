@@ -128,6 +128,22 @@ namespace xtd {
       
       /// @cond
       template<class result_t>
+      struct task_awaiter {
+        xtd::threading::tasks::task<result_t>& task;
+        
+        bool await_ready() const noexcept {return task.is_completed();}
+        
+        void await_suspend(std::coroutine_handle<> handle) {
+          task.continue_with([handle] {handle.resume();});
+        }
+        
+        result_t await_resume() {
+          if (task.is_faulted()) task.rethrow_exception();
+          if constexpr (!std::is_void_v<result_t>) return task.result();
+        }
+      };
+
+      template<class result_t>
       auto basic_task<result_t>::completed_task() -> task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
         task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
@@ -169,6 +185,11 @@ namespace xtd {
         task.basic_task<>::data_->status = xtd::threading::tasks::task_status::faulted;
         task.basic_task<>::data_->end_event.set();
         return task;
+      }
+
+      template<class result_t>
+      inline auto basic_task<result_t>::operator co_await() noexcept {
+        return task_awaiter<result_t>{as<task<result_t>>(*this)};
       }
       /// @endcond
     }
