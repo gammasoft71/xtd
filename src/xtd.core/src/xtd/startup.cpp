@@ -125,7 +125,8 @@ int startup::run(async (*main_function)(), int, char* []) {
 }
 
 int startup::run(async (*main_function)()) {
-  main_function();
+  auto a = main_function();
+  a.wait();
   return environment::exit_code();
 }
 
