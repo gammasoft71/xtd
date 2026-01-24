@@ -6,7 +6,7 @@
 #include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
-#include "wait_handle.hpp"
+#include "manual_reset_event.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -64,7 +64,6 @@ namespace xtd {
       cancellation_token(const cancellation_token&) = default;
       auto operator=(cancellation_token&&) -> cancellation_token& = default;
       auto operator=(const cancellation_token&) -> cancellation_token& = default;
-      ~cancellation_token();
       /// @endcond
       
       /// @name Public Properties
@@ -115,9 +114,13 @@ namespace xtd {
       friend class cancellation_token_source;
       explicit cancellation_token(cancellation_token_source& token_source);
       
-      bool canceled_ = false;
-      cancellation_token_source* token_source_ = nullptr;
-      xtd::sptr<threading::wait_handle> wait_handle_;
+      struct data {
+        bool canceled = false;
+        cancellation_token_source* token_source = nullptr;
+        xtd::threading::manual_reset_event wait_handle {false};
+      };
+      xtd::sptr<data> data_ = xtd::new_sptr<data>();
+      
     };
   }
 }

@@ -12,24 +12,21 @@ cancellation_token cancellation_token::none;
 cancellation_token::cancellation_token() {
 }
 
-cancellation_token::cancellation_token(bool canceled) : canceled_(canceled) {
-}
-
-cancellation_token::~cancellation_token() {
+cancellation_token::cancellation_token(bool canceled) {
+  data_->canceled = canceled;
+  if (canceled) data_->wait_handle.set();
 }
 
 auto cancellation_token::can_be_canceled() const noexcept -> bool {
-  return token_source_ ? token_source_->can_be_canceled() : canceled_;
+  return data_->token_source ? data_->token_source->can_be_canceled() : data_->canceled;
 }
 
 auto cancellation_token::is_cancellation_requested() const noexcept -> bool {
-  return token_source_ ? token_source_->is_cancellation_requested() : canceled_;
+  return data_->token_source ? data_->token_source->is_cancellation_requested() : data_->canceled;
 }
 
 auto cancellation_token::wait_handle() noexcept -> threading::wait_handle& {
-  if (token_source_) return token_source_->wait_handle();
-  if (!wait_handle_) wait_handle_ = xtd::new_sptr<manual_reset_event>();
-  return *wait_handle_;
+  return data_->token_source ? data_->token_source->wait_handle() : data_->wait_handle;
 }
 
 auto cancellation_token::equals(const object& obj) const noexcept -> bool {
@@ -37,12 +34,12 @@ auto cancellation_token::equals(const object& obj) const noexcept -> bool {
 }
 
 auto cancellation_token::equals(const cancellation_token& other) const noexcept -> bool {
-  return token_source_ == other.token_source_;
+  return data_ == data_;
 }
 
 auto cancellation_token::get_hash_code() const noexcept -> size {
-  if (!token_source_) return hash_code::combine(null);
-  return hash_code::combine(*token_source_);
+  if (!data_->token_source) return hash_code::combine(data_->canceled);
+  return hash_code::combine(*data_->token_source);
 }
 
 auto cancellation_token::throw_if_cancellation_requested() const -> void {
@@ -51,5 +48,5 @@ auto cancellation_token::throw_if_cancellation_requested() const -> void {
 }
 
 cancellation_token::cancellation_token(cancellation_token_source& token_source) {
-  token_source_ = &token_source;
+  data_->token_source = &token_source;
 }
