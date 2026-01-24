@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "argument_collection.hpp"
+#include "async.hpp"
 #include "core_export.hpp"
 #include "delegate.hpp"
 #include "optional.hpp"
@@ -87,6 +88,10 @@ namespace xtd {
     static int safe_run(xtd::delegate<int(int, char* [])> main_function);
     static int safe_run(xtd::delegate<int(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
     static int safe_run(xtd::delegate<int(const xtd::argument_collection&)> main_function);
+    static int safe_run(xtd::async (*main_function)(int, char* []), int argc, char* argv[]);
+    static int safe_run(xtd::async (*main_function)(int, char* []));
+    static int safe_run(xtd::async (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int safe_run(xtd::async (*main_function)(const xtd::argument_collection&));    
     static int safe_run(void (*main_function)(int, char* []), int argc, char* argv[]);
     static int safe_run(void (*main_function)(int, char* []));
     static int safe_run(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
@@ -121,14 +126,20 @@ namespace xtd {
     
     static int run(xtd::delegate<void()> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<void()> main_function);
+    static int run(xtd::async (*main_function)(), int argc, char* argv[]);
+    static int run(xtd::async (*main_function)());
     static int run(void (*main_function)(), int argc, char* argv[]);
     static int run(void (*main_function)());
     static int run(xtd::delegate<void(int, char* [])> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<void(int, char* [])> main_function);
+    static int run(xtd::async (*main_function)(int, char* []), int argc, char* argv[]);
+    static int run(xtd::async (*main_function)(int, char* []));
     static int run(void (*main_function)(int, char* []), int argc, char* argv[]);
     static int run(void (*main_function)(int, char* []));
     static int run(xtd::delegate<void(const xtd::argument_collection&)> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<void(const xtd::argument_collection&)> main_function);
+    static int run(xtd::async (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
+    static int run(xtd::async (*main_function)(const xtd::argument_collection&));
     static int run(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int run(void (*main_function)(const xtd::argument_collection&));
     static int run(xtd::delegate<int()> main_function, int argc, char* argv[]);

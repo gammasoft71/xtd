@@ -305,6 +305,7 @@
 #include "arithmetic_exception.hpp"
 #include "as.hpp"
 #include "as_const.hpp"
+#include "async.hpp"
 #include "async_callback.hpp"
 #include "attribute.hpp"
 #include "availability_versions.hpp"
