@@ -26,10 +26,11 @@ var searchData=
   ['progress_5fbox_23',['progress_box',['../classxtd_1_1forms_1_1progress__box.html',1,'xtd::forms']]],
   ['progress_5fchanged_5fevent_5fargs_24',['progress_changed_event_args',['../classxtd_1_1forms_1_1progress__changed__event__args.html',1,'xtd::forms']]],
   ['progress_5fdialog_25',['progress_dialog',['../classxtd_1_1forms_1_1progress__dialog.html',1,'xtd::forms']]],
-  ['prompt_26',['prompt',['../classxtd_1_1speech_1_1synthesis_1_1prompt.html',1,'xtd::speech::synthesis']]],
-  ['prompt_5fevent_5fargs_27',['prompt_event_args',['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html',1,'xtd::speech::synthesis']]],
-  ['property_28',['property',['../classxtd_1_1web_1_1css_1_1property.html',1,'xtd::web::css']]],
-  ['property_5fitem_29',['property_item',['../classxtd_1_1drawing_1_1imaging_1_1property__item.html',1,'xtd::drawing::imaging']]],
-  ['protocol_5fviolation_5fexception_30',['protocol_violation_exception',['../classxtd_1_1net_1_1protocol__violation__exception.html',1,'xtd::net']]],
-  ['purple_5fcolors_31',['purple_colors',['../classxtd_1_1drawing_1_1purple__colors.html',1,'xtd::drawing']]]
+  ['promise_5ftype_26',['promise_type',['../structxtd_1_1async_1_1promise__type.html',1,'xtd::async']]],
+  ['prompt_27',['prompt',['../classxtd_1_1speech_1_1synthesis_1_1prompt.html',1,'xtd::speech::synthesis']]],
+  ['prompt_5fevent_5fargs_28',['prompt_event_args',['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html',1,'xtd::speech::synthesis']]],
+  ['property_29',['property',['../classxtd_1_1web_1_1css_1_1property.html',1,'xtd::web::css']]],
+  ['property_5fitem_30',['property_item',['../classxtd_1_1drawing_1_1imaging_1_1property__item.html',1,'xtd::drawing::imaging']]],
+  ['protocol_5fviolation_5fexception_31',['protocol_violation_exception',['../classxtd_1_1net_1_1protocol__violation__exception.html',1,'xtd::net']]],
+  ['purple_5fcolors_32',['purple_colors',['../classxtd_1_1drawing_1_1purple__colors.html',1,'xtd::drawing']]]
 ];

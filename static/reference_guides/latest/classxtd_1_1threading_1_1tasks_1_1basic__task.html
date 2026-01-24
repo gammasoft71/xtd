@@ -152,6 +152,15 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>status</b> () const n
 <tr class="separator:a262157f9457b1f9df6110e868ccc3fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a6c0b31ff1ca6e3bf395492c41d9903be" id="r_a6c0b31ff1ca6e3bf395492c41d9903be"><td class="memItemLeft" align="right" valign="top"><a id="a6c0b31ff1ca6e3bf395492c41d9903be" name="a6c0b31ff1ca6e3bf395492c41d9903be"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>continue_with</b> (std::function&lt; void()&gt; continuation) -&gt; void</td></tr>
+<tr class="separator:a6c0b31ff1ca6e3bf395492c41d9903be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699067f6545cb33b3b141e00f745dddc" id="r_a699067f6545cb33b3b141e00f745dddc"><td class="memItemLeft" align="right" valign="top"><a id="a699067f6545cb33b3b141e00f745dddc" name="a699067f6545cb33b3b141e00f745dddc"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>continue_with</b> (<a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">xtd::action</a>&lt;&gt; continuation) -&gt; void</td></tr>
+<tr class="separator:a699067f6545cb33b3b141e00f745dddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd41c81bb5713d4aa160449fb544e7e" id="r_afdd41c81bb5713d4aa160449fb544e7e"><td class="memItemLeft" align="right" valign="top"><a id="afdd41c81bb5713d4aa160449fb544e7e" name="afdd41c81bb5713d4aa160449fb544e7e"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>rethrow_exception</b> () -&gt; void</td></tr>
+<tr class="separator:afdd41c81bb5713d4aa160449fb544e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae428b997d60896b477e135bb0d69ed51" id="r_ae428b997d60896b477e135bb0d69ed51"><td class="memItemLeft" align="right" valign="top"><a id="ae428b997d60896b477e135bb0d69ed51" name="ae428b997d60896b477e135bb0d69ed51"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>run_synchronously</b> () -&gt; void</td></tr>
 <tr class="separator:ae428b997d60896b477e135bb0d69ed51"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +177,11 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> (<a class="e
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> (const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool override</td></tr>
 <tr class="separator:a415661b095cc7727e8feb13427e118ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:a06401c9ea621e72a7d24ecb8a5e6e820" id="r_a06401c9ea621e72a7d24ecb8a5e6e820"><td class="memItemLeft" align="right" valign="top"><a id="a06401c9ea621e72a7d24ecb8a5e6e820" name="a06401c9ea621e72a7d24ecb8a5e6e820"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator co_await</b> () noexcept</td></tr>
+<tr class="separator:a06401c9ea621e72a7d24ecb8a5e6e820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Properties</h2></td></tr>
 <tr class="memitem:a993133d29c80c8c30a95daf0bdfc379e" id="r_a993133d29c80c8c30a95daf0bdfc379e"><td class="memItemLeft" align="right" valign="top"><a id="a993133d29c80c8c30a95daf0bdfc379e" name="a993133d29c80c8c30a95daf0bdfc379e"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>completed_task</b> () -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt; result_t &gt;</td></tr>
@@ -177,6 +191,9 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><b>current_id</b>
 <tr class="separator:a8ea712df42a78f0179544246ebf998fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
+<tr class="memitem:a21b55b8b6148ac695a52c5484b016d7d" id="r_a21b55b8b6148ac695a52c5484b016d7d"><td class="memItemLeft" align="right" valign="top"><a id="a21b55b8b6148ac695a52c5484b016d7d" name="a21b55b8b6148ac695a52c5484b016d7d"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><b>from_cancelation</b> (const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt; result_t &gt;</td></tr>
+<tr class="separator:a21b55b8b6148ac695a52c5484b016d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9535e36dae2d0bc0dd610eff3f1b4cf" id="r_ac9535e36dae2d0bc0dd610eff3f1b4cf"><td class="memTemplParams" colspan="2"><a id="ac9535e36dae2d0bc0dd610eff3f1b4cf" name="ac9535e36dae2d0bc0dd610eff3f1b4cf"></a>
 template&lt;class from_exception_t&gt; </td></tr>
 <tr class="memitem:ac9535e36dae2d0bc0dd610eff3f1b4cf"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>from_exception</b> (from_exception_t <a class="el" href="classxtd_1_1exception.html">exception</a>) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt; result_t &gt;</td></tr>
@@ -184,9 +201,15 @@ template&lt;class from_exception_t&gt; </td></tr>
 <tr class="memitem:a0729d10dc81d986b3d7eba42308cfba6" id="r_a0729d10dc81d986b3d7eba42308cfba6"><td class="memItemLeft" align="right" valign="top"><a id="a0729d10dc81d986b3d7eba42308cfba6" name="a0729d10dc81d986b3d7eba42308cfba6"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> (const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;delay) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt;&gt;</td></tr>
 <tr class="separator:a0729d10dc81d986b3d7eba42308cfba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4311c3c16d03ac2ce5abb22b56febd9" id="r_af4311c3c16d03ac2ce5abb22b56febd9"><td class="memItemLeft" align="right" valign="top"><a id="af4311c3c16d03ac2ce5abb22b56febd9" name="af4311c3c16d03ac2ce5abb22b56febd9"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> (const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;delay, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt;&gt;</td></tr>
+<tr class="separator:af4311c3c16d03ac2ce5abb22b56febd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d6521c3f3fa9a288bb482e9c804b626" id="r_a6d6521c3f3fa9a288bb482e9c804b626"><td class="memItemLeft" align="right" valign="top"><a id="a6d6521c3f3fa9a288bb482e9c804b626" name="a6d6521c3f3fa9a288bb482e9c804b626"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_delay) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt;&gt;</td></tr>
 <tr class="separator:a6d6521c3f3fa9a288bb482e9c804b626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40115ac47b1fd91c664f1d5218f382e9" id="r_a40115ac47b1fd91c664f1d5218f382e9"><td class="memItemLeft" align="right" valign="top"><a id="a40115ac47b1fd91c664f1d5218f382e9" name="a40115ac47b1fd91c664f1d5218f382e9"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_delay, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a>&lt;&gt;</td></tr>
+<tr class="separator:a40115ac47b1fd91c664f1d5218f382e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbd10f2375a141e1eaf96b80a936d168" id="r_adbd10f2375a141e1eaf96b80a936d168"><td class="memTemplParams" colspan="2"><a id="adbd10f2375a141e1eaf96b80a936d168" name="adbd10f2375a141e1eaf96b80a936d168"></a>
 template&lt;class collection_t&gt; </td></tr>
 <tr class="memitem:adbd10f2375a141e1eaf96b80a936d168"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wait_all</b> (const collection_t &amp;tasks) -&gt; bool</td></tr>
@@ -321,7 +344,7 @@ template&lt;class result_t = void&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 23 2026 23:15:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 24 2026 23:11:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
