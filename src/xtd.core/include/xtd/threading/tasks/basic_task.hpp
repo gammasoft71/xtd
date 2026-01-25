@@ -48,7 +48,6 @@ namespace xtd {
         
         inline static thread_local xtd::optional<xtd::size> current_id_ = 0;
       };
-      
       /// @endcond
       
       /// @brief Represents an asynchronous operation.
@@ -407,7 +406,6 @@ namespace xtd {
             data_->status = xtd::threading::tasks::task_status::faulted;
           }
         }};
-
       };
     }
   }

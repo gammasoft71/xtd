@@ -59,17 +59,6 @@ namespace xtd {
           set_task_run();
         }
         /// @endcond
-
-        
-        /// @name Public Properties
-        
-        /// @{
-        /// @}
-        
-        /// @name Public Methods
-        
-        /// @{
-        /// @}
         
         /// @name Public Static Methods
         
@@ -107,11 +96,6 @@ namespace xtd {
         }
         /// @endcond
 
-        /// @name Public Operators
-        
-        /// @{
-        /// @}
-        
       private:
         auto set_task_run() -> void {
           basic_task<>::data_->task_run = xtd::action<> {delegate_ {
