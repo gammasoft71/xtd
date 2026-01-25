@@ -69,7 +69,7 @@ var searchData=
   ['caption_5fbutton_5fsize_66',['caption_button_size',['../classxtd_1_1forms_1_1system__information.html#a8abacab7a662941bde4a30632c0c77ad',1,'xtd::forms::system_information']]],
   ['caption_5ffont_67',['caption_font',['../classxtd_1_1drawing_1_1system__fonts.html#ae4e596fc9796293732d3051ba670767d',1,'xtd::drawing::system_fonts']]],
   ['caption_5fheight_68',['caption_height',['../classxtd_1_1forms_1_1system__information.html#a949270c664661714ff9a5547b78571b5',1,'xtd::forms::system_information']]],
-  ['capture_69',['capture',['../classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#af6d7d5884fb89041d9a8764b9bb6655c',1,'xtd::runtime::exception_services::exception_dispatch_info']]],
+  ['capture_69',['capture',['../classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#af6d7d5884fb89041d9a8764b9bb6655c',1,'xtd::runtime::exception_services::exception_dispatch_info::capture(const exception_t &amp;source) -&gt; exception_dispatch_info'],['../classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#a849aea5fa0047caf78836d9d80f204ae',1,'xtd::runtime::exception_services::exception_dispatch_info::capture() -&gt; exception_dispatch_info']]],
   ['capture_5fblt_70',['capture_blt',['../group__xtd__drawing.html#gga5a8edc9c35f0925441603048859eef6eadb41dfe98b113b265c6c528bcd9e0878',1,'xtd::drawing']]],
   ['card_5ffile_5fbox_71',['card_file_box',['../classxtd_1_1forms_1_1emoticons.html#ab71bb162f215d1187a2ff3444ee1c967',1,'xtd::forms::emoticons']]],
   ['card_5findex_72',['card_index',['../classxtd_1_1forms_1_1emoticons.html#a3dc6ff45c4f41aa630edb87c5336c063',1,'xtd::forms::emoticons']]],

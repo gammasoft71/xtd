@@ -139,6 +139,9 @@ requires std::derived_from&lt;exception_t, <a class="el" href="classxtd_1_1excep
 <tr class="memitem:af6d7d5884fb89041d9a8764b9bb6655c"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af6d7d5884fb89041d9a8764b9bb6655c">capture</a> (const exception_t &amp;source) -&gt; <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a></td></tr>
 <tr class="memdesc:af6d7d5884fb89041d9a8764b9bb6655c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
 <tr class="separator:af6d7d5884fb89041d9a8764b9bb6655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849aea5fa0047caf78836d9d80f204ae" id="r_a849aea5fa0047caf78836d9d80f204ae"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849aea5fa0047caf78836d9d80f204ae">capture</a> () -&gt; <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a></td></tr>
+<tr class="memdesc:a849aea5fa0047caf78836d9d80f204ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
+<tr class="separator:a849aea5fa0047caf78836d9d80f204ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32970f10aef7d300bc4cc02e67b46dbb" id="r_a32970f10aef7d300bc4cc02e67b46dbb"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
 <tr class="memitem:a32970f10aef7d300bc4cc02e67b46dbb"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a32970f10aef7d300bc4cc02e67b46dbb">rethrow</a> (const exception_t &amp;source) -&gt; void</td></tr>
 <tr class="memdesc:a32970f10aef7d300bc4cc02e67b46dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rehrows the source exception, maintaining the original stack trace information.  <br /></td></tr>
@@ -148,6 +151,12 @@ requires std::derived_from&lt;exception_t, <a class="el" href="classxtd_1_1excep
 <tr class="memitem:ae4903a41b9da58106354ef7e50014752" id="r_ae4903a41b9da58106354ef7e50014752"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4903a41b9da58106354ef7e50014752">operator bool</a> () const noexcept</td></tr>
 <tr class="memdesc:ae4903a41b9da58106354ef7e50014752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to boolean operator.  <br /></td></tr>
 <tr class="separator:ae4903a41b9da58106354ef7e50014752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d259e2e297c6a5558590b093b63a5b" id="r_a03d259e2e297c6a5558590b093b63a5b"><td class="memItemLeft" align="right" valign="top"><a id="a03d259e2e297c6a5558590b093b63a5b" name="a03d259e2e297c6a5558590b093b63a5b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator const std::exception_ptr &amp;</b> () const noexcept</td></tr>
+<tr class="separator:a03d259e2e297c6a5558590b093b63a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd581e45752dfdb34c355e3fc445740" id="r_a2bd581e45752dfdb34c355e3fc445740"><td class="memItemLeft" align="right" valign="top"><a id="a2bd581e45752dfdb34c355e3fc445740" name="a2bd581e45752dfdb34c355e3fc445740"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator std::exception_ptr</b> () noexcept</td></tr>
+<tr class="separator:a2bd581e45752dfdb34c355e3fc445740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -238,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="af6d7d5884fb89041d9a8764b9bb6655c" name="af6d7d5884fb89041d9a8764b9bb6655c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d7d5884fb89041d9a8764b9bb6655c">&#9670;&#160;</a></span>capture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d7d5884fb89041d9a8764b9bb6655c">&#9670;&#160;</a></span>capture() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,6 +279,37 @@ requires std::derived_from&lt;exception_t, <a class="el" href="classxtd_1_1excep
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>An object that represents the specified exception at the current point in code. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that's returned by this method at another time and possibly on another thread to rethrow the specified exception, as if the exception had flowed from the point where it was captured to the point where it's rethrown. </dd>
+<dd>
+If the exception is active when it's captured, the current stack trace information that's contained in the exception is stored. If it's inactive, that is, if it has not been thrown, it doesn't have any stack trace information. </dd></dl>
+
+</div>
+</div>
+<a id="a849aea5fa0047caf78836d9d80f204ae" name="a849aea5fa0047caf78836d9d80f204ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849aea5fa0047caf78836d9d80f204ae">&#9670;&#160;</a></span>capture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::runtime::exception_services::exception_dispatch_info::capture </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html">exception_dispatch_info</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code. </p>
 <dl class="section return"><dt>Returns</dt><dd>An object that represents the specified exception at the current point in code. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::runtime::exception_services::exception_dispatch_info</a> object that's returned by this method at another time and possibly on another thread to rethrow the specified exception, as if the exception had flowed from the point where it was captured to the point where it's rethrown. </dd>
 <dd>
@@ -368,7 +408,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 25 2026 01:25:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 25 2026 21:00:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
