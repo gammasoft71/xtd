@@ -38,7 +38,17 @@ namespace xtd {
         virtual auto wait() -> void = 0;
         virtual auto wait(xtd::int32 milliseconds_timeout) -> bool = 0;
         virtual auto wait(const xtd::time_span& timeout) -> bool = 0;
+      protected:
+        /// @cond
+        static auto generate_id() noexcept -> xtd::size {
+          static auto id = xtd::size {0};
+          return ++id;
+        }
+        /// @endcond
+        
+        inline static thread_local xtd::optional<xtd::size> current_id_ = 0;
       };
+      
       /// @endcond
       
       /// @brief Represents an asynchronous operation.
@@ -347,11 +357,6 @@ namespace xtd {
           abstract_task_pointer.push_back(const_cast<abstract_task*>(as<abstract_task>(&item)));
         }
 
-        static auto generate_id() -> xtd::size {
-          static auto id = xtd::size {0};
-          return ++id;
-        }
-        
         struct data {
           xtd::async_callback async_callback;
           xtd::threading::manual_reset_event async_event;
@@ -403,7 +408,6 @@ namespace xtd {
           }
         }};
 
-        inline static thread_local xtd::optional<xtd::size> current_id_;
       };
     }
   }
