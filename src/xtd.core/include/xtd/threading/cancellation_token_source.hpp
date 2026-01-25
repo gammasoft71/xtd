@@ -63,6 +63,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      auto cancel() -> void;
       /// @}
       
     private:

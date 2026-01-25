@@ -49,3 +49,7 @@ auto cancellation_token_source::can_be_canceled() const noexcept -> bool {
 auto cancellation_token_source::wait_handle() noexcept -> threading::wait_handle& {
   return data_->wait_handle;
 }
+
+auto cancellation_token_source::cancel() -> void {
+  data_->token.data_->wait_handle.set();
+}
