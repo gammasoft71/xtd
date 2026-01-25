@@ -40,6 +40,12 @@ namespace xtd {
         virtual auto wait(const xtd::time_span& timeout) -> bool = 0;
       protected:
         /// @cond
+        abstract_task() = default;
+        abstract_task(abstract_task&&) = default;
+        abstract_task(const abstract_task&) = default;
+        auto operator=(abstract_task&&) -> abstract_task& = default;
+        auto operator=(const abstract_task&) -> abstract_task& = default;
+
         static auto generate_id() noexcept -> xtd::size {
           static auto id = xtd::size {0};
           return ++id;
@@ -117,14 +123,14 @@ namespace xtd {
         
         auto run_synchronously() -> void {
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
-          task_proc(data_->state, false);
+          data_->task_proc(data_->state, false);
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
         }
         
         auto start() -> void override {
           if (is_completed()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Start may not be called on a task that has completed.");
           data_->status = xtd::threading::tasks::task_status::waiting_for_activation;
-          thread_pool::register_wait_for_single_object(data_->start_event, task_proc, *data_->state, xtd::threading::timeout::infinite, true);
+          thread_pool::register_wait_for_single_object(data_->start_event, data_->task_proc, *data_->state, xtd::threading::timeout::infinite, true);
           data_->status = xtd::threading::tasks::task_status::waiting_to_run;
           data_->start_event.set();
         }
@@ -161,8 +167,8 @@ namespace xtd {
         template<class collection_t>
         static auto wait_all(const collection_t& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
-          for (auto& task : task_pointers)
-            task_pointers.push_back(const_cast<abstract_task*>(xtd::as<abstract_task>(&task)));
+          for (auto& task : tasks)
+            task_pointers.push_back(const_cast<decltype(&task)>(&task));
           return wait_all(array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
 
@@ -176,7 +182,7 @@ namespace xtd {
         static size_t wait_any(const collection_t& tasks, int32 milliseconds_timeout) {
           auto task_pointers = std::vector<abstract_task*> {};
           for (auto& task : tasks)
-            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&task)));
+            task_pointers.push_back(const_cast<decltype(&task)>(&task));
           return wait_any(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
         
@@ -201,7 +207,7 @@ namespace xtd {
         static auto wait_all(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> bool {
           auto task_pointers = std::vector<abstract_task*> {};
           for (auto& task : tasks)
-            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&task)));
+            task_pointers.push_back(const_cast<item_t*>(&task));
           return wait_all(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
         template<class item_t>
@@ -269,7 +275,7 @@ namespace xtd {
         static auto wait_any(const std::initializer_list<item_t>& tasks, xtd::int32 milliseconds_timeout) -> xtd::size {
           auto task_pointers = std::vector<abstract_task*> {};
           for (auto& task : tasks)
-            task_pointers.push_back(const_cast<abstract_task*>(as<abstract_task>(&task)));
+            task_pointers.push_back(const_cast<item_t*>(&task));
           return wait_any(xtd::array<abstract_task*> {task_pointers}, milliseconds_timeout);
         }
         template<class item_t>
@@ -348,12 +354,12 @@ namespace xtd {
 
         template<class item_t, class ...items_t>
         static auto fill_task_pointers(std::vector<abstract_task*>& abstract_task_pointer, item_t& first, items_t& ... rest) -> void {
-          abstract_task_pointer.push_back(const_cast<abstract_task*>(as<abstract_task>(&first)));
+          abstract_task_pointer.push_back(&first);
           fill_task_pointers(abstract_task_pointer, rest...);
         }
         template<class item_t>
         static auto fill_task_pointers(std::vector<abstract_task*>& abstract_task_pointer, item_t& item) -> void {
-          abstract_task_pointer.push_back(const_cast<abstract_task*>(as<abstract_task>(&item)));
+          abstract_task_pointer.push_back(&item);
         }
 
         struct data {
@@ -372,40 +378,40 @@ namespace xtd {
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
           xtd::object sync_root;
           xtd::action<> task_run;
+          
+          xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
+            auto previous_current_id = current_id_;
+            current_id_ = id;
+            
+            scope_exit_ {
+              current_id_ = previous_current_id;
+              end_event.set();
+              if (!continuation.is_empty()) continuation();
+            };
+            
+            status = xtd::threading::tasks::task_status::running;
+            try {
+              if (cancellation_token && cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+              task_run();
+              if (cancellation_token && cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
+              status = xtd::threading::tasks::task_status::ran_to_completion;
+            } catch (const xtd::threading::tasks::task_canceled_exception& e) {
+              exception = xtd::runtime::exception_services::exception_dispatch_info::capture(e);
+              status = xtd::threading::tasks::task_status::canceled;
+            } catch (const xtd::exception& e) {
+              exception = xtd::runtime::exception_services::exception_dispatch_info::capture(e);
+              status = xtd::threading::tasks::task_status::faulted;
+            } catch (const std::exception& e) {
+              exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {e.what()});
+              status = xtd::threading::tasks::task_status::faulted;
+            } catch (...) {
+              exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {"Unknown exception"});
+              status = xtd::threading::tasks::task_status::faulted;
+            }
+          }};
         };
         
         xtd::sptr<data> data_ = xtd::new_sptr<data>();
-        
-        xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
-          auto previous_current_id = current_id_;
-          current_id_ = data_->id;
-          
-          scope_exit_ {
-            current_id_ = previous_current_id;
-            data_->end_event.set();
-            if (!data_->continuation.is_empty()) data_->continuation();
-          };
-          
-          data_->status = xtd::threading::tasks::task_status::running;
-          try {
-            if (data_->cancellation_token && data_->cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
-            data_->task_run();
-            if (data_->cancellation_token && data_->cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
-            data_->status = xtd::threading::tasks::task_status::ran_to_completion;
-          } catch (const xtd::threading::tasks::task_canceled_exception& exception) {
-            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
-            data_->status = xtd::threading::tasks::task_status::canceled;
-          } catch (const xtd::exception& exception) {
-            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
-            data_->status = xtd::threading::tasks::task_status::faulted;
-          } catch (const std::exception& exception) {
-            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {exception.what()});
-            data_->status = xtd::threading::tasks::task_status::faulted;
-          } catch (...) {
-            data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(xtd::exception {"Unknown exception"});
-            data_->status = xtd::threading::tasks::task_status::faulted;
-          }
-        }};
       };
     }
   }
