@@ -1,2 +1,2 @@
 #pragma once
-#include <xtd/threading/tasks/task_result.hpp>
+#include <xtd/threading/tasks/wtask.hpp>
