@@ -73,6 +73,27 @@ namespace xtd {
         /// @}
 
         /// @cond
+        auto start_new(const std::function<void()>& action) const -> xtd::threading::tasks::task<> {
+          auto t = xtd::threading::tasks::task<> {action};
+          t.start();
+          return t;
+        }
+        auto start_new(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
+          auto t = xtd::threading::tasks::task<> {action, cancellation_token};
+          t.start();
+          return t;
+        }
+        auto start_new(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) const -> xtd::threading::tasks::task<> {
+          auto t = xtd::threading::tasks::task<> {action, state};
+          t.start();
+          return t;
+        }
+        auto start_new(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) const -> xtd::threading::tasks::task<> {
+          auto t = xtd::threading::tasks::task<> {action, state, cancellation_token};
+          t.start();
+          return t;
+        }
+
         template<class result_t>
         auto start_new(const std::function<result_t()>& action) const -> xtd::threading::tasks::task<result_t> {
           auto t = xtd::threading::tasks::task<result_t> {action};
