@@ -8,7 +8,7 @@ public:
     // This text is added only once to the file.
     if (!fi.exists())  {
       //Create a file to write to.
-      block_scope_(auto sw = fi.create_text()) {
+      using_(auto sw = fi.create_text()) {
         sw.write_line("Hello");
         sw.write_line("And");
         sw.write_line("Welcome");
@@ -17,14 +17,14 @@ public:
     
     // This text will always be added, making the file longer over time
     // if it is not deleted.
-    block_scope_(auto sw = fi.append_text()) {
+    using_(auto sw = fi.append_text()) {
       sw.write_line("This");
       sw.write_line("is Extra");
       sw.write_line("Text");
     }
     
     //Open the file to read from.
-    block_scope_(auto sr = fi.open_text()) {
+    using_(auto sr = fi.open_text()) {
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
     }

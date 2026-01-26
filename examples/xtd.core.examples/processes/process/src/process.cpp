@@ -2,7 +2,7 @@
 
 auto main() -> int {
   try {
-    block_scope_(auto my_process = diagnostics::process {}) {
+    using_(auto my_process = diagnostics::process {}) {
       // You can start any process other guidgen.
       my_process.start_info().file_name("guidgen");
       my_process.start_info().create_no_window(true);

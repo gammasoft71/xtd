@@ -9,7 +9,7 @@ public:
   }
   
   static void write_default_values() {
-    block_scope_(auto fs = file::open(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {
+    using_(auto fs = file::open(file_name, std::ios::out | std::ios::binary | std::ios::trunc)) {
       auto writer = binary_writer {fs};
       writer.write(1.250F);
       writer.write(R"(c:\Temp)");
@@ -25,7 +25,7 @@ public:
     auto show_status_bar = false;
     
     if (file::exists(file_name)) {
-      block_scope_(auto fs = file::open(file_name, std::ios::in | std::ios::binary)) {
+      using_(auto fs = file::open(file_name, std::ios::in | std::ios::binary)) {
         auto reader = binary_reader {fs};
         aspect_ratio = reader.read_single();
         temp_directory = reader.read_string();

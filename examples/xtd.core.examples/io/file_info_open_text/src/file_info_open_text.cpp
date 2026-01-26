@@ -8,7 +8,7 @@ public:
     
     if (!fi.exists()) {
       //Create a file to write to.
-      block_scope_(auto sw = fi.create_text()) {
+      using_(auto sw = fi.create_text()) {
         sw.write_line("Hello");
         sw.write_line("And");
         sw.write_line("Welcome");
@@ -16,7 +16,7 @@ public:
     }
     
     //Open the file to read from.
-    block_scope_(auto sr = fi.open_text()) {
+    using_(auto sr = fi.open_text()) {
       while (!sr.end_of_stream())
         console::write_line(sr.read_line());
     }

@@ -9,7 +9,7 @@ auto main() -> int {
   
   thread::current_thread().name("main");
   console::write_line("({}) begin", thread::current_thread().name());
-  block_scope_(auto thread1 = jthread::start_new(thread_proc)) {
+  using_(auto thread1 = jthread::start_new(thread_proc)) {
     // Remarks :
     // * The `thread1` will be joined when the scope of the current block is closed.
     // * If you create `thread1` with xtd::threading::thread, `thread1` will be joined when the end of main.
