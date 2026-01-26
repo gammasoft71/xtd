@@ -69,6 +69,14 @@ int startup::safe_run(async_task (*main_function)(const argument_collection&), i
   return internal_safe_run(main_function, argc, argv);
 }
 
+int startup::safe_run(wasync_task (*main_function)(int, char* []), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
+int startup::safe_run(wasync_task (*main_function)(const argument_collection&), int argc, char* argv[]) {
+  return internal_safe_run(main_function, argc, argv);
+}
+
 int startup::safe_run(void (*main_function)(int, char* []), int argc, char* argv[]) {
   return internal_safe_run(main_function, argc, argv);
 }
@@ -90,6 +98,14 @@ int startup::safe_run(async_task (*main_function)(int, char* [])) {
 }
 
 int startup::safe_run(async_task (*main_function)(const argument_collection&)) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
+int startup::safe_run(wasync_task (*main_function)(int, char* [])) {
+  return internal_safe_run(main_function, std::nullopt, std::nullopt);
+}
+
+int startup::safe_run(wasync_task (*main_function)(const argument_collection&)) {
   return internal_safe_run(main_function, std::nullopt, std::nullopt);
 }
 
@@ -126,6 +142,16 @@ int startup::run(async_task (*main_function)(), int, char* []) {
 
 int startup::run(async_task (*main_function)()) {
   main_function().wait();
+  return environment::exit_code();
+}
+
+int startup::run(wasync_task (*main_function)(), int, char* []) {
+  main_function();
+  return environment::exit_code();
+}
+
+int startup::run(wasync_task (*main_function)()) {
+  main_function();
   return environment::exit_code();
 }
 
@@ -167,6 +193,20 @@ int startup::run(async_task (*main_function)(int, char* [])) {
   return environment::exit_code();
 }
 
+int startup::run(wasync_task (*main_function)(int, char* []), int argc, char* argv[]) {
+  main_function(argc, argv);
+  return environment::exit_code();
+}
+
+int startup::run(wasync_task (*main_function)(int, char* [])) {
+  auto args = environment::get_command_line_args();
+  auto argv = array<char*>(args.length());
+  for (auto index = 0_z; index < args.length(); ++index)
+    argv[index] = const_cast<char*>(args[index].data());
+  main_function(as<int32>(args.length()), argv.data());
+  return environment::exit_code();
+}
+
 int startup::run(void (*main_function)(int, char* []), int argc, char* argv[]) {
   main_function(argc, argv);
   return environment::exit_code();
@@ -200,6 +240,17 @@ int startup::run(async_task (*main_function)(const argument_collection&), int ar
 int startup::run(async_task (*main_function)(const argument_collection&)) {
   auto args = environment::get_command_line_args();
   main_function({args.begin() + 1, args.end()}).wait();
+  return environment::exit_code();
+}
+
+int startup::run(wasync_task (*main_function)(const argument_collection&), int argc, char* argv[]) {
+  main_function({argv + 1, argv + argc});
+  return environment::exit_code();
+}
+
+int startup::run(wasync_task (*main_function)(const argument_collection&)) {
+  auto args = environment::get_command_line_args();
+  main_function({args.begin() + 1, args.end()});
   return environment::exit_code();
 }
 

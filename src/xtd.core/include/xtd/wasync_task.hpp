@@ -1,30 +1,28 @@
 /// @file
-/// @brief Contains xtd::async_task struct.
+/// @brief Contains xtd::wasync_task struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "runtime/exception_services/exception_dispatch_info.hpp"
-#include "threading/manual_reset_event.hpp"
-#include <coroutine>
+#include "async_task.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represents the async_task struct.
+  /// @brief Represents the wasync_task struct.
   /// @par Header
   /// ```cpp
-  /// #include <xtd/async_task>
+  /// #include <xtd/wasync_task>
   /// ```
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  struct [[nodiscard]] async_task {
+  struct wasync_task {
     struct promise_type {
       xtd::threading::manual_reset_event completed;
       xtd::runtime::exception_services::exception_dispatch_info exception;
       
-      async_task get_return_object() {
-        return async_task{std::coroutine_handle<promise_type>::from_promise(*this)};
+      wasync_task get_return_object() {
+        return wasync_task{std::coroutine_handle<promise_type>::from_promise(*this)};
       }
       
       std::suspend_never initial_suspend() { return {}; }
@@ -45,8 +43,9 @@ namespace xtd {
     };
     
     std::coroutine_handle<promise_type> handle;
-
-    ~async_task() {
+    
+    ~wasync_task() {
+      wait();
       if (handle) handle.destroy();
     }
     
@@ -60,4 +59,4 @@ namespace xtd {
   };
 }
 
-#include "async.hpp"
+#include "wasync.hpp"
