@@ -7,7 +7,7 @@ var searchData=
   ['table_5flayout_5fpanel_4',['table_layout_panel',['../classxtd_1_1forms_1_1table__layout__panel.html',1,'xtd::forms']]],
   ['target_5ftype_5',['target_type',['../classxtd_1_1target__type.html',1,'xtd']]],
   ['task_6',['task',['../classxtd_1_1threading_1_1tasks_1_1task.html',1,'xtd::threading::tasks']]],
-  ['task_3c_20void_20_3e_7',['task&lt; void &gt;',['../classxtd_1_1threading_1_1tasks_1_1task.html',1,'xtd::threading::tasks']]],
+  ['task_3c_20void_20_3e_7',['task&lt; void &gt;',['../classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html',1,'xtd::threading::tasks']]],
   ['task_5fcanceled_5fexception_8',['task_canceled_exception',['../classxtd_1_1threading_1_1tasks_1_1task__canceled__exception.html',1,'xtd::threading::tasks']]],
   ['task_5ffactory_9',['task_factory',['../classxtd_1_1threading_1_1tasks_1_1task__factory.html',1,'xtd::threading::tasks']]],
   ['tcp_5fclient_10',['tcp_client',['../classxtd_1_1net_1_1sockets_1_1tcp__client.html',1,'xtd::net::sockets']]],
