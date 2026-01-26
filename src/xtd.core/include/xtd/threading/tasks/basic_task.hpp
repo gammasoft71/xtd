@@ -75,6 +75,31 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
+        basic_task(const xtd::func<result_t>& func) {
+          data_->func = func;
+        }
+        basic_task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->func = func;
+          data_->cancellation_token = cancellation_token;
+        }
+        basic_task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) {
+          data_->parameterized_func = func;
+          data_->state = &state;
+        }
+        /// @}
+        
+        /// @cond
+        basic_task(const std::function<result_t()>& func) {
+          data_->func = func;
+        }
+        basic_task(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->func = func;
+          data_->cancellation_token = cancellation_token;
+        }
+        basic_task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
+          data_->parameterized_func = func;
+          data_->state = &state;
+        }
         /// @}
 
         
@@ -363,6 +388,8 @@ namespace xtd {
         }
 
         struct data {
+          using result_type = std::conditional_t<std::is_same_v<result_t, void>, std::uint8_t, result_t>;
+          
           xtd::async_callback async_callback;
           xtd::threading::manual_reset_event async_event;
           xtd::any_object async_state;
@@ -372,12 +399,14 @@ namespace xtd {
           const xtd::any_object empty_state;
           xtd::threading::auto_reset_event end_event;
           xtd::runtime::exception_services::exception_dispatch_info exception;
+          xtd::func<result_t> func;
           xtd::size id = generate_id();
-          xtd::threading::auto_reset_event start_event;
+          xtd::func<result_t, const xtd::any_object&> parameterized_func;
+          result_type result;
           const xtd::any_object* state = &empty_state;
+          xtd::threading::auto_reset_event start_event;
           xtd::threading::tasks::task_status status = xtd::threading::tasks::task_status::created;
           xtd::object sync_root;
-          xtd::action<> task_run;
           
           xtd::threading::wait_or_timer_callback task_proc {delegate_(const xtd::any_object& state, bool timed_out) {
             auto previous_current_id = current_id_;
@@ -392,7 +421,13 @@ namespace xtd {
             status = xtd::threading::tasks::task_status::running;
             try {
               if (cancellation_token && cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
-              task_run();
+              if constexpr(std::is_same_v<result_t, void>) {
+                if (!func.is_empty()) func();
+                else if (!parameterized_func.is_empty()) parameterized_func(state);
+              } else {
+                if (!func.is_empty()) result = func();
+                else if (!parameterized_func.is_empty()) result = parameterized_func(state);
+              }
               if (cancellation_token && cancellation_token->wait_handle().wait_one(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::task_canceled);
               status = xtd::threading::tasks::task_status::ran_to_completion;
             } catch (const xtd::threading::tasks::task_canceled_exception& e) {

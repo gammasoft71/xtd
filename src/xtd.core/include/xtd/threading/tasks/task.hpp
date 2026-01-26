@@ -32,32 +32,15 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::action<>& action) {
-          data_->action = action;
-          set_task_run();
-        }
-        task(const xtd::action<const xtd::any_object&>& action, const xtd::threading::cancellation_token& cancellation_token) {
-          data_->parameterized_action = action;
-          basic_task<>::data_->cancellation_token = cancellation_token;
-          set_task_run();
-        }
-        task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) {
-          data_->parameterized_action = action;
-          basic_task<>::data_->state = &state;
-          set_task_run();
-        }
+        task(const xtd::action<>& action) : basic_task<> {action} {}
+        task(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
+        task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
         /// @}
 
         /// @cond
-        task(const std::function<void()>& action) {
-          data_->action = action;
-          set_task_run();
-        }
-        task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) {
-          data_->parameterized_action = action;
-          basic_task<>::data_->state = &state;
-          set_task_run();
-        }
+        task(const std::function<void()>& action) : basic_task<> {action} {}
+        task(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
+        task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
         /// @endcond
         
         /// @name Public Static Methods
@@ -81,6 +64,12 @@ namespace xtd {
           result.start();
           return result;
         }
+        
+        [[nodiscard]] static auto run(const xtd::action<>& action, const xtd::any_object& state) -> task {
+          auto result = task {action, state};
+          result.start();
+          return result;
+        }
         /// @}
 
         /// @cond
@@ -94,22 +83,12 @@ namespace xtd {
           result.start();
           return result;
         }
-        /// @endcond
-
-      private:
-        auto set_task_run() -> void {
-          basic_task<>::data_->task_run = xtd::action<> {delegate_ {
-            if (!data_->action.is_empty()) data_->action();
-            else if (!data_->parameterized_action.is_empty()) data_->parameterized_action(*basic_task<>::data_->state);
-          }};
+        [[nodiscard]] static auto run(const std::function<void()>& action, const xtd::any_object& state) -> task {
+          auto result = task {action, state};
+          result.start();
+          return result;
         }
-        
-        struct data {
-          xtd::action<> action;
-          xtd::action<xtd::any_object> parameterized_action;
-        };
-
-        xtd::sptr<data> data_ = xtd::new_sptr<data>();
+        /// @endcond
       };
     }
   }

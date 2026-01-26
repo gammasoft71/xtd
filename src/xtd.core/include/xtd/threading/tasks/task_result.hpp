@@ -25,39 +25,22 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        task(const xtd::func<result_t>& func) {
-          data_->func = func;
-          set_task_run();
-        }
-        task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) {
-          data_->func = func;
-          basic_task<result_t>::data_->cancellation_token = cancellation_token;
-          set_task_run();
-        }
-        task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) {
-          data_->parameterized_func = func;
-          basic_task<result_t>::data_->state = &state;
-          set_task_run();
-        }
+        task(const xtd::func<result_t>& func) : basic_task<result_t> {func} {}
+        task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
+        task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
         /// @}
 
         /// @cond
-        task(const std::function<result_t()>& func) {
-          data_->func = func;
-          set_task_run();
-        }
-        task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
-          data_->parameterized_func = func;
-          basic_task<result_t>::data_->state = &state;
-          set_task_run();
-        }
+        task(const std::function<result_t()>& func) : basic_task<result_t> {func} {}
+        task(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
+        task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
         /// @endcond
 
         
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto result() const noexcept -> const result_t& {return data_->result;}
+        [[nodiscard]] auto result() const noexcept -> const result_t& {return basic_task<result_t>::data_->result;}
         /// @}
         
         /// @name Public Static Methods
@@ -81,6 +64,11 @@ namespace xtd {
           result.start();
           return result;
         }
+        [[nodiscard]] static auto run(const xtd::func<result_t>& func, const xtd::any_object& state) -> task {
+          auto result = task {func, state};
+          result.start();
+          return result;
+        }
         /// @}
         
         /// @cond
@@ -95,25 +83,11 @@ namespace xtd {
           return result;
         }
         /// @endcond
-        
-      private:
-        template<class task_result_t>
-        friend class task;
-
-        auto set_task_run() -> void {
-          basic_task<result_t>::data_->task_run = xtd::action<> {delegate_ {
-            if (!data_->func.is_empty()) data_->result = std::move(data_->func());
-            else if (!data_->parameterized_func.is_empty()) data_->result = std::move(data_->parameterized_func(*basic_task<result_t>::data_->state));
-          }};
+        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> task {
+          auto result = task {func, state};
+          result.start();
+          return result;
         }
-        
-        struct data {
-          xtd::func<result_t> func;
-          xtd::func<result_t, const xtd::any_object&> parameterized_func;
-          result_t result;
-        };
-        
-        xtd::sptr<data> data_ = xtd::new_sptr<data>();
       };
       
       /// @cond
