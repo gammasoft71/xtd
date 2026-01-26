@@ -393,7 +393,7 @@ var searchData=
   ['project_5fsetting_5finclude_5ffiles_390',['PROJECT_SETTING_INCLUDE_FILES',['../_c_make_commands.html#ProjectSettingIncludeFilesSubSection',1,'']]],
   ['project_5fsources_391',['PROJECT_SOURCES',['../_c_make_commands.html#ProjectSourcesSubSection',1,'']]],
   ['project_5fuser_5fsettings_392',['PROJECT_USER_SETTINGS',['../_c_make_commands.html#ProjectUserSettingsSubSection',1,'']]],
-  ['promise_5ftype_393',['promise_type',['../structxtd_1_1async__task_1_1promise__type.html',1,'xtd::async_task']]],
+  ['promise_5ftype_393',['promise_type',['../structxtd_1_1async__task_1_1promise__type.html',1,'xtd::async_task::promise_type'],['../structxtd_1_1wasync__task_1_1promise__type.html',1,'xtd::wasync_task::promise_type']]],
   ['prompt_394',['prompt',['../classxtd_1_1speech_1_1synthesis_1_1prompt.html',1,'xtd::speech::synthesis::prompt'],['../classxtd_1_1speech_1_1synthesis_1_1prompt.html#a6b153cf849fb956ce1b683a5f10f47a0',1,'xtd::speech::synthesis::prompt::prompt()'],['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html#adba1e469bbd2e10908b10d58ed7cac49',1,'xtd::speech::synthesis::prompt_event_args::prompt()']]],
   ['prompt_2ehpp_395',['prompt.hpp',['../prompt_8hpp.html',1,'']]],
   ['prompt_5fevent_5fargs_396',['prompt_event_args',['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html',1,'xtd::speech::synthesis']]],

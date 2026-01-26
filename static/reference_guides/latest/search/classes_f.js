@@ -26,7 +26,7 @@ var searchData=
   ['progress_5fbox_23',['progress_box',['../classxtd_1_1forms_1_1progress__box.html',1,'xtd::forms']]],
   ['progress_5fchanged_5fevent_5fargs_24',['progress_changed_event_args',['../classxtd_1_1forms_1_1progress__changed__event__args.html',1,'xtd::forms']]],
   ['progress_5fdialog_25',['progress_dialog',['../classxtd_1_1forms_1_1progress__dialog.html',1,'xtd::forms']]],
-  ['promise_5ftype_26',['promise_type',['../structxtd_1_1async__task_1_1promise__type.html',1,'xtd::async_task']]],
+  ['promise_5ftype_26',['promise_type',['../structxtd_1_1async__task_1_1promise__type.html',1,'xtd::async_task::promise_type'],['../structxtd_1_1wasync__task_1_1promise__type.html',1,'xtd::wasync_task::promise_type']]],
   ['prompt_27',['prompt',['../classxtd_1_1speech_1_1synthesis_1_1prompt.html',1,'xtd::speech::synthesis']]],
   ['prompt_5fevent_5fargs_28',['prompt_event_args',['../classxtd_1_1speech_1_1synthesis_1_1prompt__event__args.html',1,'xtd::speech::synthesis']]],
   ['property_29',['property',['../classxtd_1_1web_1_1css_1_1property.html',1,'xtd::web::css']]],
