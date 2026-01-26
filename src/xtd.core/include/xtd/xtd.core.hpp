@@ -241,6 +241,7 @@
 #include "threading/tasks/task.hpp"
 #include "threading/tasks/task_canceled_exception.hpp"
 #include "threading/tasks/task_creation_options.hpp"
+#include "threading/tasks/task_factory.hpp"
 #include "threading/tasks/task_result.hpp"
 #include "threading/tasks/task_status.hpp"
 #include "threading/tasks/wtask.hpp"

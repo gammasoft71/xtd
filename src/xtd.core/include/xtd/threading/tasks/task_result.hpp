@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_task.hpp"
-#include "../../func.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,6 +10,12 @@ namespace xtd {
   namespace threading {
     /// @brief The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and asynchronous code. The main types are xtd::threading::tasks::task which represents an asynchronous operation that can be waited on and cancelled, and xtd::threading::tasks::task <result_t>, which is a task that can return a value. The xtd::threading::tasks::task_factory class provides static methods for creating and starting tasks, and the xtd::threading::tasks::task_scheduler class provides the default thread scheduling infrastructure.
     namespace tasks {
+      /// @brief Represents an asynchronous operation.
+      /// @par Namespace
+      /// xtd::threading::tasks
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading tasks
       template<class result_t>
       class task : public xtd::threading::tasks::basic_task<result_t> {
       public:
@@ -28,12 +33,14 @@ namespace xtd {
         task(const xtd::func<result_t>& func) : basic_task<result_t> {func} {}
         task(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
         task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
+        task(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {}
         /// @}
 
         /// @cond
         task(const std::function<result_t()>& func) : basic_task<result_t> {func} {}
         task(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, cancellation_token} {}
         task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) : basic_task<result_t> {func, state} {}
+        task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<result_t> {func, state, cancellation_token} {}
         /// @endcond
 
         
@@ -53,107 +60,13 @@ namespace xtd {
           t.basic_task<result_t>::data_->end_event.set();
           return t;
         }
-
-        [[nodiscard]] static auto run(const xtd::func<result_t>& func) -> task {
-          auto result = task {func};
-          result.start();
-          return result;
-        }
-        [[nodiscard]] static auto run(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) -> task {
-          auto result = task {func, cancellation_token};
-          result.start();
-          return result;
-        }
-        [[nodiscard]] static auto run(const xtd::func<result_t>& func, const xtd::any_object& state) -> task {
-          auto result = task {func, state};
-          result.start();
-          return result;
-        }
         /// @}
-        
-        /// @cond
-        [[nodiscard]] static auto run(const std::function<result_t()>& func) -> task {
-          auto result = task {func};
-          result.start();
-          return result;
-        }
-        [[nodiscard]] static auto run(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) -> task {
-          auto result = task {func, cancellation_token};
-          result.start();
-          return result;
-        }
-        /// @endcond
-        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> task {
-          auto result = task {func, state};
-          result.start();
-          return result;
-        }
       };
       
       /// @cond
-      template<class result_t>
-      struct task_awaiter {
-        xtd::threading::tasks::task<result_t>& task;
-        
-        auto await_ready() const noexcept -> bool {return task.is_completed();}
-        
-        auto await_suspend(std::coroutine_handle<> handle) -> void {task.continue_with([handle] {handle.resume();});}
-        
-        auto await_resume() -> result_t {
-          if (task.is_faulted()) task.rethrow_exception();
-          if constexpr (!std::is_void_v<result_t>) return task.result();
-        }
-      };
-
-      template<class result_t>
-      auto basic_task<result_t>::completed_task() -> xtd::threading::tasks::task<result_t> {
-        auto task = xtd::threading::tasks::task<result_t> {};
-        task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
-        task.basic_task<result_t>::data_->end_event.set();
-        return task;
-      }
-
-      template<class result_t>
-      auto basic_task<result_t>::delay(const xtd::time_span& delay) -> xtd::threading::tasks::task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()));}
-      
-      template<class result_t>
-      auto basic_task<result_t>::delay(const xtd::time_span& delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {return basic_task<result_t>::delay(xtd::as<xtd::int32>(delay.total_milliseconds()), cancellation_token);}
-      
-      template<class result_t>
-      auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay) -> xtd::threading::tasks::task<> {
-        return xtd::threading::tasks::task<>::run([milliseconds_delay]{xtd::threading::cancellation_token {}.wait_handle().wait_one(milliseconds_delay);});
-      }
-
-      template<class result_t>
-      auto basic_task<result_t>::delay(xtd::int32 milliseconds_delay, const xtd::threading::cancellation_token& cancellation_token) -> task<> {
-        return xtd::threading::tasks::task<>::run([cancellation_token, milliseconds_delay]{xtd::threading::cancellation_token {cancellation_token}.wait_handle().wait_one(milliseconds_delay);}, cancellation_token);
-      }
-
-      template<class result_t>
-      auto basic_task<result_t>::from_cancelation(const xtd::threading::cancellation_token& cancellation_token) -> task<result_t> {
-        if (!cancellation_token.is_cancellation_requested()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        auto task = xtd::threading::tasks::task<result_t> {};
-        task.basic_task<>::data_->cancellation_token = cancellation_token;
-        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::canceled;
-        task.basic_task<>::data_->end_event.set();
-        return task;
-      }
-
-      template<class result_t>
-      template<class from_exception_t>
-      auto basic_task<result_t>::from_exception(from_exception_t exception) -> xtd::threading::tasks::task<result_t> {
-        auto task = xtd::threading::tasks::task<result_t> {};
-        task.basic_task<>::data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
-        task.basic_task<>::data_->status = xtd::threading::tasks::task_status::faulted;
-        task.basic_task<>::data_->end_event.set();
-        return task;
-      }
-
-      template<class result_t>
-      inline auto basic_task<result_t>::operator co_await() noexcept {
-        return xtd::threading::tasks::task_awaiter<result_t> {xtd::as<xtd::threading::tasks::task<result_t>>(*this)};
-      }
       /// @endcond
     }
   }
 }
+
+#include "task_factory.hpp"

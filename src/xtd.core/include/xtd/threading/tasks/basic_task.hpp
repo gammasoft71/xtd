@@ -5,11 +5,14 @@
 #include "task_canceled_exception.hpp"
 #include "task_creation_options.hpp"
 #include "task_status.hpp"
+#include "../auto_reset_event.hpp"
 #include "../cancellation_token.hpp"
+#include "../thread_pool.hpp"
 #include "../../helpers/throw_helper.hpp"
 #include "../../runtime/exception_services/exception_dispatch_info.hpp"
 #include "../../action.hpp"
 #include "../../aggregate_exception.hpp"
+#include "../../func.hpp"
 #include "../../iasync_result.hpp"
 #include "../../new_sptr.hpp"
 #include "../../object.hpp"
@@ -17,7 +20,6 @@
 #include "../../ref.hpp"
 #include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
-#include "../auto_reset_event.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -31,6 +33,8 @@ namespace xtd {
       
       template<class result_t>
       struct task_awaiter;
+
+      class task_factory;
 
       class abstract_task : public xtd::object {
       public:
@@ -86,6 +90,11 @@ namespace xtd {
           data_->parameterized_func = func;
           data_->state = &state;
         }
+        basic_task(const xtd::func<result_t>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->func = func;
+          data_->state = &state;
+          data_->cancellation_token = cancellation_token;
+        }
         /// @}
         
         /// @cond
@@ -99,6 +108,11 @@ namespace xtd {
         basic_task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) {
           data_->parameterized_func = func;
           data_->state = &state;
+        }
+        basic_task(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) {
+          data_->parameterized_func = func;
+          data_->state = &state;
+          data_->cancellation_token = cancellation_token;
         }
         /// @}
 
@@ -124,6 +138,7 @@ namespace xtd {
         /// @{
         [[nodiscard]] static auto completed_task() -> task<result_t>;
         [[nodiscard]] static auto current_id() noexcept -> xtd::optional<xtd::size> {return current_id_;}
+        [[nodiscard]] static auto factory() noexcept -> const xtd::threading::tasks::task_factory&;
         /// @}
         
         /// @name Public Methods
@@ -186,6 +201,11 @@ namespace xtd {
         [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay) -> task<>;
         [[nodiscard]] static auto delay(xtd::int32 milliseconds_delay, const xtd::threading::cancellation_token& cancellation_token) -> task<>;
 
+        [[nodiscard]] static auto run(const xtd::func<result_t>& func) -> task<result_t>;
+        [[nodiscard]] static auto run(const xtd::func<result_t>& func, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
+        [[nodiscard]] static auto run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state) -> task<result_t>;
+        [[nodiscard]] static auto run(const xtd::func<result_t, const xtd::any_object&>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
+
         template<class collection_t>
         static auto wait_all(const collection_t& tasks) -> bool {return wait_all(tasks, xtd::threading::timeout::infinite);}
 
@@ -216,6 +236,11 @@ namespace xtd {
         /// @}
         
         /// @cond
+        [[nodiscard]] static auto run(const std::function<result_t()>& func) -> task<result_t>;
+        [[nodiscard]] static auto run(const std::function<result_t()>& func, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
+        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> task<result_t>;
+        [[nodiscard]] static auto run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> task<result_t>;
+
         template<class ...items_t>
         static auto wait_all(items_t... items) -> bool {return wait_all(xtd::threading::timeout::infinite, items...);}
         template<class ...items_t>

@@ -3,8 +3,6 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_task.hpp"
-#include "../../action.hpp"
-#include "../thread_pool.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -35,12 +33,14 @@ namespace xtd {
         task(const xtd::action<>& action) : basic_task<> {action} {}
         task(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
         task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
+        task(const xtd::action<const xtd::any_object&>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {}
         /// @}
 
         /// @cond
         task(const std::function<void()>& action) : basic_task<> {action} {}
         task(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, cancellation_token} {}
         task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state) : basic_task<> {action, state} {}
+        task(const std::function<void(const xtd::any_object&)>& action, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) : basic_task<> {action, state, cancellation_token} {}
         /// @endcond
         
         /// @name Public Static Methods
@@ -52,44 +52,10 @@ namespace xtd {
           t.basic_task<>::data_->end_event.set();
           return t;
         }
-        
-        [[nodiscard]] static auto run(const xtd::action<>& action) -> task {
-          auto result = task {action};
-          result.start();
-          return result;
-        }
-        
-        [[nodiscard]] static auto run(const xtd::action<>& action, const xtd::threading::cancellation_token& cancellation_token) -> task {
-          auto result = task {action, cancellation_token};
-          result.start();
-          return result;
-        }
-        
-        [[nodiscard]] static auto run(const xtd::action<>& action, const xtd::any_object& state) -> task {
-          auto result = task {action, state};
-          result.start();
-          return result;
-        }
         /// @}
-
-        /// @cond
-        [[nodiscard]] static auto run(const std::function<void()>& action) -> task {
-          auto result = task {action};
-          result.start();
-          return result;
-        }
-        [[nodiscard]] static auto run(const std::function<void()>& action, const xtd::threading::cancellation_token& cancellation_token) -> task {
-          auto result = task {action, cancellation_token};
-          result.start();
-          return result;
-        }
-        [[nodiscard]] static auto run(const std::function<void()>& action, const xtd::any_object& state) -> task {
-          auto result = task {action, state};
-          result.start();
-          return result;
-        }
-        /// @endcond
       };
     }
   }
 }
+
+#include "task_result.hpp"
