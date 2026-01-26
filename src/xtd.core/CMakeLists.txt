@@ -56,6 +56,8 @@ add_sources(
   "include/xtd/async_callback"
   "include/xtd/async_result.hpp"
   "include/xtd/async_result"
+  "include/xtd/async_task.hpp"
+  "include/xtd/async_task"
   "include/xtd/attribute.hpp"
   "include/xtd/attribute"
   "include/xtd/availability_versions.hpp"
