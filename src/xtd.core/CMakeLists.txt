@@ -1211,6 +1211,8 @@ add_sources(
   "include/xtd/threading/tasks/task_result"
   "include/xtd/threading/tasks/task_status.hpp"
   "include/xtd/threading/tasks/task_status"
+  "include/xtd/threading/tasks/wtask.hpp"
+  "include/xtd/threading/tasks/wtask"
   "include/xtd/threading/abandoned_mutex_exception.hpp"
   "include/xtd/threading/abandoned_mutex_exception"
   "include/xtd/threading/auto_reset_event.hpp"

@@ -243,6 +243,7 @@
 #include "threading/tasks/task_creation_options.hpp"
 #include "threading/tasks/task_result.hpp"
 #include "threading/tasks/task_status.hpp"
+#include "threading/tasks/wtask.hpp"
 #include "threading/abandoned_mutex_exception.hpp"
 #include "threading/auto_reset_event.hpp"
 #include "threading/barrier.hpp"
