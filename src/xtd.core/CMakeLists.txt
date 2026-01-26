@@ -1201,6 +1201,8 @@ add_sources(
   "include/xtd/text/wstring_builder"
   "include/xtd/threading/tasks/basic_task.hpp"
   "include/xtd/threading/tasks/basic_task"
+  "include/xtd/threading/tasks/parallel.hpp"
+  "include/xtd/threading/tasks/parallel"
   "include/xtd/threading/tasks/task.hpp"
   "include/xtd/threading/tasks/task"
   "include/xtd/threading/tasks/task_canceled_exception.hpp"

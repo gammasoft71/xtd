@@ -238,6 +238,7 @@
 #include "text/ustring_builder.hpp"
 #include "text/wstring_builder.hpp"
 #include "threading/tasks/basic_task.hpp"
+#include "threading/tasks/parallel.hpp"
 #include "threading/tasks/task.hpp"
 #include "threading/tasks/task_canceled_exception.hpp"
 #include "threading/tasks/task_creation_options.hpp"
