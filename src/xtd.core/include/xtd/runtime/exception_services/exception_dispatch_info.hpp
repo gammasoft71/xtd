@@ -92,6 +92,7 @@ namespace xtd {
         
       private:
         template<class exception_t>
+        requires std::derived_from<exception_t, xtd::exception>
         exception_dispatch_info(const exception_t& source) : source_ {source.template memberwise_clone<exception_t>().release()}, exception_ptr_ {std::make_exception_ptr(source)} {}
         exception_dispatch_info(const std::exception_ptr& exception_ptr) : exception_ptr_ {exception_ptr} {}
 
