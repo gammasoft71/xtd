@@ -98,6 +98,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1threading_1_1tasks_1_1task-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::threading::tasks::task&lt; result_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__threading.html">threading</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__threading.html">threading</a> &raquo; <a class="el" href="group__tasks.html">tasks</a></div></div></div>
 </div><!--header-->
@@ -106,14 +107,24 @@ $(function(){ initResizable(false); });
 Inheritance diagram for xtd::threading::tasks::task&lt; result_t &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classxtd_1_1threading_1_1tasks_1_1task.png" alt=""/>
- </div></div>
+  <img src="classxtd_1_1threading_1_1tasks_1_1task.png" usemap="#xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map" alt=""/>
+  <map id="xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map" name="xtd::threading::tasks::task_3C_20result_5Ft_20_3E_map">
+<area href="classxtd_1_1threading_1_1tasks_1_1wtask.html" alt="xtd::threading::tasks::wtask&lt; result_t &gt;" shape="rect" coords="0,112,251,136"/>
+  </map>
+</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class result_t&gt;<br />
 class xtd::threading::tasks::task&lt; result_t &gt;</div><p>Represents an asynchronous operation. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading_1_1tasks.html" title="The xtd::threading::tasks namespace provides types that simplify the work of writing concurrent and a...">xtd::threading::tasks</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1threading_1_1tasks_1_1task_1_1awaiter.html">awaiter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1threading_1_1tasks_1_1task_1_1promise__type.html">promise_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ab4c68c66f2ed675df2cb87641460ec93" id="r_ab4c68c66f2ed675df2cb87641460ec93"><td class="memItemLeft" align="right" valign="top"><a id="ab4c68c66f2ed675df2cb87641460ec93" name="ab4c68c66f2ed675df2cb87641460ec93"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>task</b> (const <a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a>&lt; result_t &gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>)</td></tr>
@@ -133,6 +144,11 @@ class xtd::threading::tasks::task&lt; result_t &gt;</div><p>Represents an asynch
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>result</b> () const noexcept -&gt; const result_t &amp;</td></tr>
 <tr class="separator:a95576728e3550489eadb91061a475f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:ab1631dda1f4b52ac3efa7d3ab962ca0a" id="r_ab1631dda1f4b52ac3efa7d3ab962ca0a"><td class="memItemLeft" align="right" valign="top"><a id="ab1631dda1f4b52ac3efa7d3ab962ca0a" name="ab1631dda1f4b52ac3efa7d3ab962ca0a"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator co_await</b> () noexcept</td></tr>
+<tr class="separator:ab1631dda1f4b52ac3efa7d3ab962ca0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:af89eab9fa3958ea1c85f24efa7ef32cf" id="r_af89eab9fa3958ea1c85f24efa7ef32cf"><td class="memItemLeft" align="right" valign="top"><a id="af89eab9fa3958ea1c85f24efa7ef32cf" name="af89eab9fa3958ea1c85f24efa7ef32cf"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>from_result</b> (result_t result) -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a></td></tr>
@@ -145,7 +161,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><b>from_result</b
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 26 2026 21:39:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 27 2026 22:21:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

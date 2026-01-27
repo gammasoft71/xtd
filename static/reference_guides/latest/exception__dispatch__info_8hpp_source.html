@@ -152,18 +152,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> exception_t&gt;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        exception_dispatch_info(<span class="keyword">const</span> exception_t&amp; source) : source_ {source.template <a class="code hl_function" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a>&lt;exception_t&gt;().<a class="code hl_enumvalue" href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aa123fead50246387983ee340507115ef4">release</a>()}, exception_ptr_ {std::make_exception_ptr(source)} {}</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        exception_dispatch_info(<span class="keyword">const</span> std::exception_ptr&amp; exception_ptr) : exception_ptr_ {exception_ptr} {}</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr&lt;xtd::exception&gt;</a> source_;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        std::exception_ptr exception_ptr_;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keyword">requires</span> std::derived_from&lt;exception_t, xtd::exception&gt;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        exception_dispatch_info(<span class="keyword">const</span> exception_t&amp; source) : source_ {source.template <a class="code hl_function" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a>&lt;exception_t&gt;().<a class="code hl_enumvalue" href="group__xtd__core.html#gga8672853ea39d932089c60c4970d5bf4aa123fead50246387983ee340507115ef4">release</a>()}, exception_ptr_ {std::make_exception_ptr(source)} {}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        exception_dispatch_info(<span class="keyword">const</span> std::exception_ptr&amp; exception_ptr) : exception_ptr_ {exception_ptr} {}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr&lt;xtd::exception&gt;</a> source_;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        std::exception_ptr exception_ptr_;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      };</div>
 </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
 </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 <div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ac24dbacb9a6e23a1ebd63ad403141a35"><div class="ttname"><a href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">xtd::object::memberwise_clone</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; object_t &gt; memberwise_clone() const</div><div class="ttdoc">Creates a shallow copy of the current object.</div></div>
@@ -184,7 +185,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 26 2026 21:38:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 27 2026 22:20:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

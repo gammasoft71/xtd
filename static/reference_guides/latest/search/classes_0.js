@@ -78,7 +78,7 @@ var searchData=
   ['assert_5ferror_75',['assert_error',['../classxtd_1_1tunit_1_1assert__error.html',1,'xtd::tunit']]],
   ['assert_5fvalue_76',['assert_value',['../classxtd_1_1tunit_1_1constraints_1_1assert__value.html',1,'xtd::tunit::constraints']]],
   ['assume_77',['assume',['../classxtd_1_1tunit_1_1assume.html',1,'xtd::tunit']]],
-  ['async_5ftask_78',['async_task',['../structxtd_1_1async__task.html',1,'xtd']]],
-  ['attribute_79',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]],
-  ['auto_5freset_5fevent_80',['auto_reset_event',['../classxtd_1_1threading_1_1auto__reset__event.html',1,'xtd::threading']]]
+  ['attribute_78',['attribute',['../classxtd_1_1attribute.html',1,'xtd']]],
+  ['auto_5freset_5fevent_79',['auto_reset_event',['../classxtd_1_1threading_1_1auto__reset__event.html',1,'xtd::threading']]],
+  ['awaiter_80',['awaiter',['../structxtd_1_1threading_1_1tasks_1_1task_1_1awaiter.html',1,'xtd::threading::tasks::task&lt; result_t &gt;::awaiter'],['../structxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4_1_1awaiter.html',1,'xtd::threading::tasks::task&lt; void &gt;::awaiter'],['../structxtd_1_1threading_1_1tasks_1_1wtask_1_1awaiter.html',1,'xtd::threading::tasks::wtask&lt; result_t &gt;::awaiter']]]
 ];

@@ -78,9 +78,8 @@ var searchData=
   ['async_2ehpp_75',['async.hpp',['../async_8hpp.html',1,'']]],
   ['async_5fcallback_2ehpp_76',['async_callback.hpp',['../async__callback_8hpp.html',1,'']]],
   ['async_5fresult_2ehpp_77',['async_result.hpp',['../async__result_8hpp.html',1,'']]],
-  ['async_5ftask_2ehpp_78',['async_task.hpp',['../async__task_8hpp.html',1,'']]],
-  ['attribute_2ehpp_79',['attribute.hpp',['../attribute_8hpp.html',1,'']]],
-  ['auto_5freset_5fevent_2ehpp_80',['auto_reset_event.hpp',['../auto__reset__event_8hpp.html',1,'']]],
-  ['auto_5fsize_5fmode_2ehpp_81',['auto_size_mode.hpp',['../auto__size__mode_8hpp.html',1,'']]],
-  ['availability_5fversions_2ehpp_82',['availability_versions.hpp',['../availability__versions_8hpp.html',1,'']]]
+  ['attribute_2ehpp_78',['attribute.hpp',['../attribute_8hpp.html',1,'']]],
+  ['auto_5freset_5fevent_2ehpp_79',['auto_reset_event.hpp',['../auto__reset__event_8hpp.html',1,'']]],
+  ['auto_5fsize_5fmode_2ehpp_80',['auto_size_mode.hpp',['../auto__size__mode_8hpp.html',1,'']]],
+  ['availability_5fversions_2ehpp_81',['availability_versions.hpp',['../availability__versions_8hpp.html',1,'']]]
 ];

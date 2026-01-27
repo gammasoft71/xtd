@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd::wasync_task Struct Reference</title>
+		<title>xtd: xtd::threading::tasks::task&lt; result_t &gt;::awaiter Struct Reference</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -92,57 +92,45 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="structxtd_1_1wasync__task.html">wasync_task</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacextd.html">xtd</a></li><li class="navelem"><a class="el" href="namespacextd_1_1threading.html">threading</a></li><li class="navelem"><a class="el" href="namespacextd_1_1threading_1_1tasks.html">tasks</a></li><li class="navelem"><a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a></li><li class="navelem"><a class="el" href="structxtd_1_1threading_1_1tasks_1_1task_1_1awaiter.html">awaiter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="structxtd_1_1wasync__task-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::wasync_task Struct Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__types.html">types</a></div></div></div>
+<a href="structxtd_1_1threading_1_1tasks_1_1task_1_1awaiter-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">xtd::threading::tasks::task&lt; result_t &gt;::awaiter Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Represents the <a class="el" href="structxtd_1_1wasync__task.html" title="Represents the wasync_task struct.">wasync_task</a> struct. </p>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/wasync_task&gt;</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1wasync__task_1_1promise__type.html">promise_type</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:affb939ed1ad9e6289d6fb3786c661d28" id="r_affb939ed1ad9e6289d6fb3786c661d28"><td class="memItemLeft" align="right" valign="top"><a id="affb939ed1ad9e6289d6fb3786c661d28" name="affb939ed1ad9e6289d6fb3786c661d28"></a>
-std::coroutine_handle&lt; <a class="el" href="structxtd_1_1wasync__task_1_1promise__type.html">promise_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b></td></tr>
-<tr class="separator:affb939ed1ad9e6289d6fb3786c661d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbad83e33300b67ef39111cf7860e03" id="r_a0fbad83e33300b67ef39111cf7860e03"><td class="memItemLeft" align="right" valign="top"><a id="a0fbad83e33300b67ef39111cf7860e03" name="a0fbad83e33300b67ef39111cf7860e03"></a>
+<a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">xtd::threading::tasks::task</a>&lt; result_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>task</b></td></tr>
+<tr class="separator:a0fbad83e33300b67ef39111cf7860e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9d0436872a2549fd501ef108e82fa2b" id="r_aa9d0436872a2549fd501ef108e82fa2b"><td class="memItemLeft" align="right" valign="top"><a id="aa9d0436872a2549fd501ef108e82fa2b" name="aa9d0436872a2549fd501ef108e82fa2b"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> () const -&gt; void</td></tr>
-<tr class="separator:aa9d0436872a2549fd501ef108e82fa2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5797c5c454b7e278e4f84e2c09d9d9ba" id="r_a5797c5c454b7e278e4f84e2c09d9d9ba"><td class="memItemLeft" align="right" valign="top"><a id="a5797c5c454b7e278e4f84e2c09d9d9ba" name="a5797c5c454b7e278e4f84e2c09d9d9ba"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> milliseconds_timeout) const -&gt; bool</td></tr>
-<tr class="separator:a5797c5c454b7e278e4f84e2c09d9d9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b69c159daae51ea2fcb4fbc7e02df19" id="r_a2b69c159daae51ea2fcb4fbc7e02df19"><td class="memItemLeft" align="right" valign="top"><a id="a2b69c159daae51ea2fcb4fbc7e02df19" name="a2b69c159daae51ea2fcb4fbc7e02df19"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> (<a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> timeout) const -&gt; bool</td></tr>
-<tr class="separator:a2b69c159daae51ea2fcb4fbc7e02df19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace913fb0a55d021311deb806f81e555c" id="r_ace913fb0a55d021311deb806f81e555c"><td class="memItemLeft" align="right" valign="top"><a id="ace913fb0a55d021311deb806f81e555c" name="ace913fb0a55d021311deb806f81e555c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>await_ready</b> () const noexcept</td></tr>
+<tr class="separator:ace913fb0a55d021311deb806f81e555c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6967f0064f2218de36ea54d4cd910162" id="r_a6967f0064f2218de36ea54d4cd910162"><td class="memItemLeft" align="right" valign="top"><a id="a6967f0064f2218de36ea54d4cd910162" name="a6967f0064f2218de36ea54d4cd910162"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>await_suspend</b> (std::coroutine_handle&lt;&gt; handle)</td></tr>
+<tr class="separator:a6967f0064f2218de36ea54d4cd910162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09a0452763135e35c381c754221f7e5" id="r_ab09a0452763135e35c381c754221f7e5"><td class="memItemLeft" align="right" valign="top"><a id="ab09a0452763135e35c381c754221f7e5" name="ab09a0452763135e35c381c754221f7e5"></a>
+result_t&#160;</td><td class="memItemRight" valign="bottom"><b>await_resume</b> ()</td></tr>
+<tr class="separator:ab09a0452763135e35c381c754221f7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>xtd.core/include/xtd/<a class="el" href="wasync__task_8hpp_source.html">wasync_task.hpp</a></li>
+<li>xtd.core/include/xtd/threading/tasks/<a class="el" href="task__result_8hpp_source.html">task_result.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 26 2026 21:38:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 27 2026 22:21:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

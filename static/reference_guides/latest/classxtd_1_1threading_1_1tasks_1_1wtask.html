@@ -98,6 +98,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1threading_1_1tasks_1_1wtask-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::threading::tasks::wtask&lt; result_t &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -112,6 +113,13 @@ Inheritance diagram for xtd::threading::tasks::wtask&lt; result_t &gt;:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1threading_1_1tasks_1_1wtask_1_1awaiter.html">awaiter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1threading_1_1tasks_1_1wtask_1_1promise__type.html">promise_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a695bd59fa6a48571cbb88f32a251f27c" id="r_a695bd59fa6a48571cbb88f32a251f27c"><td class="memItemLeft" align="right" valign="top"><a id="a695bd59fa6a48571cbb88f32a251f27c" name="a695bd59fa6a48571cbb88f32a251f27c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>wtask</b> (const <a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a>&lt; result_t &gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>)</td></tr>
@@ -122,6 +130,11 @@ Inheritance diagram for xtd::threading::tasks::wtask&lt; result_t &gt;:</div>
 <tr class="memitem:a71f319c6d6f400977da69b1dcbbe3105" id="r_a71f319c6d6f400977da69b1dcbbe3105"><td class="memItemLeft" align="right" valign="top"><a id="a71f319c6d6f400977da69b1dcbbe3105" name="a71f319c6d6f400977da69b1dcbbe3105"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>wtask</b> (const <a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a>&lt; result_t, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp; &gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
 <tr class="separator:a71f319c6d6f400977da69b1dcbbe3105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:aa55183f095b8c529368e5fcbdcc55b23" id="r_aa55183f095b8c529368e5fcbdcc55b23"><td class="memItemLeft" align="right" valign="top"><a id="aa55183f095b8c529368e5fcbdcc55b23" name="aa55183f095b8c529368e5fcbdcc55b23"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator co_await</b> () noexcept</td></tr>
+<tr class="separator:aa55183f095b8c529368e5fcbdcc55b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -137,6 +150,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aa6924b71e9b47c2d50c003d2810080b0" id="r_aa6924b71e9b47c2d50c003d2810080b0"><td class="memItemLeft" align="right" valign="top"><a id="aa6924b71e9b47c2d50c003d2810080b0" name="aa6924b71e9b47c2d50c003d2810080b0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>task</b> (const <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">xtd::action</a>&lt; const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp; &gt; &amp;<a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, const <a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">xtd::threading::cancellation_token</a> &amp;<a class="el" href="classxtd_1_1threading_1_1cancellation__token.html">cancellation_token</a>)</td></tr>
 <tr class="separator:aa6924b71e9b47c2d50c003d2810080b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a90b1107bb578858fa516a0a409e870" id="r_a8a90b1107bb578858fa516a0a409e870"><td class="memItemLeft" align="right" valign="top"><a id="a8a90b1107bb578858fa516a0a409e870" name="a8a90b1107bb578858fa516a0a409e870"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator co_await</b> () noexcept</td></tr>
+<tr class="separator:a8a90b1107bb578858fa516a0a409e870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4c68c66f2ed675df2cb87641460ec93" id="r_ab4c68c66f2ed675df2cb87641460ec93"><td class="memItemLeft" align="right" valign="top"><a id="ab4c68c66f2ed675df2cb87641460ec93" name="ab4c68c66f2ed675df2cb87641460ec93"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>task</b> (const <a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a>&lt; void &gt; &amp;<a class="el" href="group__delegates.html#ga17814178399a734d83f7c7ee1ca15365">func</a>)</td></tr>
 <tr class="separator:ab4c68c66f2ed675df2cb87641460ec93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +168,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a95576728e3550489eadb91061a475f6c" id="r_a95576728e3550489eadb91061a475f6c"><td class="memItemLeft" align="right" valign="top"><a id="a95576728e3550489eadb91061a475f6c" name="a95576728e3550489eadb91061a475f6c"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><b>result</b> () const noexcept -&gt; const void &amp;</td></tr>
 <tr class="separator:a95576728e3550489eadb91061a475f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1631dda1f4b52ac3efa7d3ab962ca0a" id="r_ab1631dda1f4b52ac3efa7d3ab962ca0a"><td class="memItemLeft" align="right" valign="top"><a id="ab1631dda1f4b52ac3efa7d3ab962ca0a" name="ab1631dda1f4b52ac3efa7d3ab962ca0a"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator co_await</b> () noexcept</td></tr>
+<tr class="separator:ab1631dda1f4b52ac3efa7d3ab962ca0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a454a8290d494fcce60b27d550e91409a" id="r_a454a8290d494fcce60b27d550e91409a"><td class="memItemLeft" align="right" valign="top"><a id="a454a8290d494fcce60b27d550e91409a" name="a454a8290d494fcce60b27d550e91409a"></a>
 static auto&#160;</td><td class="memItemRight" valign="bottom"><b>from_result</b> () -&gt; <a class="el" href="classxtd_1_1threading_1_1tasks_1_1task.html">task</a></td></tr>
 <tr class="separator:a454a8290d494fcce60b27d550e91409a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +185,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><b>from_result</b
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 26 2026 21:39:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 27 2026 22:21:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
