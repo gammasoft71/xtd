@@ -2,10 +2,10 @@
 /// @brief Contains wasync_ keyword.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "wasync_task.hpp"
+#include "threading/tasks/wtask.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
 }
 
-#define wasync_ -> xtd::wasync_task
+#define wasync_ -> xtd::threading::tasks::wtask<>

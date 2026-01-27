@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/wasync_task.hpp>

@@ -14,6 +14,42 @@ namespace xtd {
       template<class result_t = void>
       class wtask : public xtd::threading::tasks::task<result_t> {
       public:
+        struct promise_type {
+          xtd::runtime::exception_services::exception_dispatch_info exception;
+          xtd::ptr<xtd::threading::tasks::wtask<result_t>> task;
+          std::coroutine_handle<promise_type> self;
+          
+          auto final_suspend() noexcept {
+            struct final_awaiter {
+              promise_type& promise;
+              
+              bool await_ready() noexcept {return false;}
+              void await_resume() noexcept {}
+              void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
+                promise.task->start();
+                promise.self.destroy();
+              }
+            };
+            return final_awaiter {*this};
+          }
+          xtd::threading::tasks::wtask<result_t> get_return_object() {
+            task = xtd::new_ptr<xtd::threading::tasks::wtask<result_t>>();
+            self = std::coroutine_handle<promise_type>::from_promise(*this);
+            return *task;
+          }
+          std::suspend_never initial_suspend() {return {};}
+          void return_void() {}
+          void unhandled_exception() {/*exception = task->basic_task<result_t>::data_->exception;*/}
+        };
+        
+        struct awaiter {
+          xtd::threading::tasks::wtask<result_t>& task;
+          
+          bool await_ready() const noexcept {return task.is_completed();}
+          void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
+          void await_resume() {if (task.is_faulted()) task.rethrow_exception();}
+        };
+
         /// @cond
         wtask() = default;
         wtask(wtask&&) = default;
@@ -37,6 +73,12 @@ namespace xtd {
         
         ~wtask() {task<result_t>::wait();}
         /// @endcond
+        
+        /// @name Public Operators
+        
+        /// @{
+        auto operator co_await() noexcept {return awaiter {*this};}
+        /// @}
       };
     }
   }
