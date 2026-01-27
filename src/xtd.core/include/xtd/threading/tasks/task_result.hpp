@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_task.hpp"
+#include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,12 +20,54 @@ namespace xtd {
       template<class result_t>
       class task : public xtd::threading::tasks::basic_task<result_t> {
       public:
+        struct promise_type {
+          xtd::runtime::exception_services::exception_dispatch_info exception;
+          sptr<xtd::threading::tasks::task<result_t>> task;
+          std::coroutine_handle<promise_type> self;
+
+          auto final_suspend() noexcept {
+            struct final_awaiter {
+              promise_type& promise;
+              
+              bool await_ready() noexcept {return false;}
+              void await_resume() noexcept {}
+              void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
+                promise.task->start();
+                promise.self.destroy();
+              }
+            };
+            return final_awaiter {*this};
+          }
+          xtd::threading::tasks::task<result_t> get_return_object() {
+            task = xtd::new_ptr<xtd::threading::tasks::task<result_t>>();
+            self = std::coroutine_handle<promise_type>::from_promise(*this);
+            return *task;
+          }
+          std::suspend_never initial_suspend() {return {};}
+          void return_value(const result_t& result) {task->template basic_task<result_t>::data_->result = result;}
+          void unhandled_exception() {exception = task->template basic_task<result_t>::data_->exception;}
+        };
+        
+        struct awaiter {
+          xtd::threading::tasks::task<result_t>& task;
+          
+          bool await_ready() const noexcept {return task.is_completed();}
+          void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
+          result_t await_resume() {
+            if (task.is_faulted()) task.rethrow_exception();
+            return task.result();
+          }
+        };
+        
         /// @cond
         task() = default;
         task(task&&) = default;
         task(const task&) = default;
         auto operator=(task&&) -> task& = default;
         auto operator=(const task&) -> task& = default;
+        task(const std::coroutine_handle<typename task<result_t>::promise_type>& handle) { {*handle_ = handle;}}
+        ~task() {if (handle_.is_unique() && *handle_) handle_->destroy();}
+
         /// @endcond
         
         /// @name Public Constructors
@@ -61,12 +104,19 @@ namespace xtd {
           return t;
         }
         /// @}
+        
+        /// @name Public Operators
+        
+        /// @{
+        auto operator co_await() noexcept {return awaiter {*this};}
+        /// @}
+
+      private:
+        xtd::ptr<std::coroutine_handle<promise_type>> handle_ = xtd::new_ptr<std::coroutine_handle<promise_type>>();
       };
-      
-      /// @cond
-      /// @endcond
     }
   }
 }
 
 #include "task_factory.hpp"
+

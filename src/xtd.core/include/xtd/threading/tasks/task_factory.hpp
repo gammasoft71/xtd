@@ -186,25 +186,6 @@ namespace xtd {
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state);}
       template<class result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state, cancellation_token);}
-      
-      template<class result_t>
-      struct task_awaiter {
-        xtd::threading::tasks::task<result_t>& task;
-        
-        auto await_ready() const noexcept -> bool {return task.is_completed();}
-        
-        auto await_suspend(std::coroutine_handle<> handle) -> void {task.continue_with([handle] {handle.resume();});}
-        
-        auto await_resume() -> result_t {
-          if (task.is_faulted()) task.rethrow_exception();
-          if constexpr (!std::is_void_v<result_t>) return task.result();
-        }
-      };
-      
-      template<class result_t>
-      inline auto basic_task<result_t>::operator co_await() noexcept {
-        return xtd::threading::tasks::task_awaiter<result_t> {xtd::as<xtd::threading::tasks::task<result_t>>(*this)};
-      }
       /// @endcond
     }
   }

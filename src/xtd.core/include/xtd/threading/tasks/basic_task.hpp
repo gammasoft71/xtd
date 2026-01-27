@@ -7,7 +7,9 @@
 #include "task_status.hpp"
 #include "../auto_reset_event.hpp"
 #include "../cancellation_token.hpp"
+#include "../lock.hpp"
 #include "../thread_pool.hpp"
+#include "../../diagnostics/stopwatch.hpp"
 #include "../../helpers/throw_helper.hpp"
 #include "../../runtime/exception_services/exception_dispatch_info.hpp"
 #include "../../action.hpp"
@@ -401,12 +403,6 @@ namespace xtd {
           return wait_timeout;
         }
         /// @endcond
-        
-        /// @name Public Operators
-        
-        /// @{
-        auto operator co_await() noexcept;
-        /// @}
         
       private:
         template<class task_result_t>

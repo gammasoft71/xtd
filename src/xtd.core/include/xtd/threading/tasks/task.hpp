@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_task.hpp"
+#include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,6 +20,42 @@ namespace xtd {
       template<>
       class task<void> : public xtd::threading::tasks::basic_task<> {
       public:
+        struct promise_type {
+          xtd::runtime::exception_services::exception_dispatch_info exception;
+          xtd::ptr<xtd::threading::tasks::task<>> task;
+          std::coroutine_handle<promise_type> self;
+
+          auto final_suspend() noexcept {
+            struct final_awaiter {
+              promise_type& promise;
+              
+              bool await_ready() noexcept {return false;}
+              void await_resume() noexcept {}
+              void await_suspend(std::coroutine_handle<promise_type> handle) noexcept {
+                promise.task->start();
+                promise.self.destroy();
+              }
+            };
+            return final_awaiter {*this};
+          }
+          xtd::threading::tasks::task<> get_return_object() {
+            task = xtd::new_ptr<xtd::threading::tasks::task<>>();
+            self = std::coroutine_handle<promise_type>::from_promise(*this);
+            return *task;
+          }
+          std::suspend_never initial_suspend() {return {};}
+          void return_void() {}
+          void unhandled_exception() {exception = task->xtd::threading::tasks::basic_task<>::data_->exception;}
+        };
+        
+        struct awaiter {
+          xtd::threading::tasks::task<>& task;
+          
+          bool await_ready() const noexcept {return task.is_completed();}
+          void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
+          void await_resume() {if (task.is_faulted()) task.rethrow_exception();}
+        };
+        
         /// @cond
         task() = default;
         task(task&&) = default;
@@ -52,6 +89,12 @@ namespace xtd {
           t.basic_task<>::data_->end_event.set();
           return t;
         }
+        /// @}
+        
+        /// @name Public Operators
+        
+        /// @{
+        auto operator co_await() noexcept {return awaiter {*this};}
         /// @}
       };
     }
