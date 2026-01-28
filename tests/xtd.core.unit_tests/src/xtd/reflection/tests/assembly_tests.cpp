@@ -21,7 +21,7 @@ namespace xtd::reflection::tests {
     }
     
     auto test_method_(assembly_copyright) {
-      assert::are_equal("Copyright © Gammasoft 2025", assembly::get_executing_assembly().copyright());
+      assert::are_equal("Copyright © Gammasoft 2026", assembly::get_executing_assembly().copyright());
     }
     
     auto test_method_(assembly_culture) {
