@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_task.hpp"
-#include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,8 +51,8 @@ namespace xtd {
           xtd::threading::tasks::task<>& task;
           
           bool await_ready() const noexcept {return task.is_completed();}
-          void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
           void await_resume() {if (task.is_faulted()) task.rethrow_exception();}
+          void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
         };
         
         /// @cond

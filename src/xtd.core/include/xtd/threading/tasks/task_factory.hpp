@@ -123,6 +123,16 @@ namespace xtd {
       
       /// @cond
       template<class result_t>
+      struct xtd::threading::tasks::basic_task<result_t>::yield_awaiter {
+        xtd::threading::tasks::task<result_t> task;
+        
+        yield_awaiter() {task.start();};
+        bool await_ready() const noexcept {return task.is_completed();}
+        void await_resume() {if (task.is_faulted()) task.rethrow_exception();}
+        void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
+      };
+
+      template<class result_t>
       auto basic_task<result_t>::completed_task() -> xtd::threading::tasks::task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
         task.basic_task<result_t>::data_->status = xtd::threading::tasks::task_status::ran_to_completion;
@@ -186,6 +196,11 @@ namespace xtd {
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state);}
       template<class result_t>
       auto xtd::threading::tasks::basic_task<result_t>::run(const std::function<result_t(const xtd::any_object&)>& func, const xtd::any_object& state, const xtd::threading::cancellation_token& cancellation_token) -> xtd::threading::tasks::task<result_t> {return factory().start_new(func, state, cancellation_token);}
+      
+      template<class result_t>
+      auto xtd::threading::tasks::basic_task<result_t>::yield() -> task<result_t> {
+        co_await yield_awaiter {};
+      }
       /// @endcond
     }
   }

@@ -22,6 +22,7 @@
 #include "../../ref.hpp"
 #include "../../scope_exit.hpp"
 #include "../../sptr.hpp"
+#include <coroutine>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -58,7 +59,7 @@ namespace xtd {
         }
         /// @endcond
         
-        inline static thread_local xtd::optional<xtd::size> current_id_ = 0;
+        inline static thread_local xtd::size current_id_ = 0;
       };
       /// @endcond
       
@@ -71,6 +72,8 @@ namespace xtd {
       template<class result_t = void>
       class basic_task : public abstract_task, public xtd::iasync_result {
       public:
+        struct yield_awaiter;
+        
         /// @name Public Fields
         
         /// @{
@@ -160,7 +163,7 @@ namespace xtd {
         
         /// @{
         [[nodiscard]] static auto completed_task() -> task<result_t>;
-        [[nodiscard]] static auto current_id() noexcept -> xtd::optional<xtd::size> {return current_id_;}
+        [[nodiscard]] static auto current_id() noexcept -> xtd::size {return current_id_;}
         [[nodiscard]] static auto factory() noexcept -> const xtd::threading::tasks::task_factory&;
         /// @}
         
@@ -402,6 +405,8 @@ namespace xtd {
           
           return wait_timeout;
         }
+
+        static auto yield() -> task<result_t>;
         /// @endcond
         
       private:

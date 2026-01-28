@@ -3,9 +3,9 @@
 class example {
 public:
   static auto main() async_ {
-    console::write_line("main {}, thread {} -> start", task<>::current_id().value_or(0), thread::current_thread().managed_thread_id());
+    console::write_line("main {}, thread {} -> start", task<>::current_id(), thread::current_thread().managed_thread_id());
     
-    auto task_proc = [] {console::write_line("  task {}, thread {} -> running", *task<>::current_id(), thread::current_thread().managed_thread_id());};
+    auto task_proc = [] {console::write_line("  task {}, thread {} -> running", task<>::current_id(), thread::current_thread().managed_thread_id());};
     auto task1 = task<>::run(task_proc);
     auto task2 = task<>::factory().start_new(task_proc);
     auto task3 = task_factory {}.start_new(task_proc);
@@ -16,13 +16,13 @@ public:
     auto par_proc = [] {console::write_line("  parallel {} running", task<>::current_id());};
     parallel::invoke(par_proc, par_proc, par_proc, par_proc, par_proc, par_proc, par_proc, par_proc, par_proc, par_proc);
     
-    auto task_string_proc = [] {return string::format("task<string> {}, thread {} -> running", *task<>::current_id(), thread::current_thread().managed_thread_id());};
+    auto task_string_proc = [] {return string::format("task<string> {}, thread {} -> running", task<>::current_id(), thread::current_thread().managed_thread_id());};
     auto task5 = task<string>::run(task_string_proc);
     task5.wait();
-    console::write_line("main {}, thread {} -> task5.result = {}", task<>::current_id().value_or(0), thread::current_thread().managed_thread_id(), task5.result());
-    console::write_line("main {}, thread {} -> result co_await = {}", task<>::current_id().value_or(0), thread::current_thread().managed_thread_id(), co_await task<string>::run(task_string_proc));
+    console::write_line("main {}, thread {} -> task5.result = {}", task<>::current_id(), thread::current_thread().managed_thread_id(), task5.result());
+    console::write_line("main {}, thread {} -> result co_await = {}", task<>::current_id(), thread::current_thread().managed_thread_id(), co_await task<string>::run(task_string_proc));
     
-    console::write_line("main {}, thread {} -> end", task<>::current_id().value_or(0), thread::current_thread().managed_thread_id());
+    console::write_line("main {}, thread {} -> end", task<>::current_id(), thread::current_thread().managed_thread_id());
     co_return;
   }
 };
