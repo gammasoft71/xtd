@@ -1,6 +1,6 @@
 # task_delay
 
-Shows how to use [xtd::threadin::tasks:task<>::delay](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) method.
+Shows how to use [xtd::threading::tasks:task::delay](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) method.
 
 ## Sources
 

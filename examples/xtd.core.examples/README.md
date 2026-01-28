@@ -86,6 +86,13 @@
 * [to_int32](convert/to_int32/README.md) shows how to use [xtd::convert::to_int32](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a4d52bf96c567e100f5aba3eca94abe2b) method.
 * [to_ustring](convert/to_ustring/README.md) shows how to use [xtd::convert::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html#a1de05be36bc70b03e74ec7d9586b0199) method and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class.
 
+## [Coroutines](coroutines/README.md)
+
+* [coroutine_task](coroutines/coroutine_task/README.md) Shows how to use coroutine with [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+* [coroutine_method](coroutines/coroutine_method/README.md) Shows how to use coroutine with method and [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+* [coroutine_delegate](coroutines/coroutine_delegate/README.md) Shows how to use coroutine with [delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) and [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+* [coroutine_lambda](coroutines/coroutine_lambda/README.md) Shows how to use coroutine with lambda expression and [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+
 ## [Date time](date_time/README.md)
 
 * [date_time](date_time/date_time/README.md) shows how to use [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) class.
@@ -474,9 +481,9 @@
 
 ## [tasks](tasks/README.md)
 
-* [tasks](tasks/tasks/README.md) shows how to use [xtd::threadin::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
-* [task](tasks/task/README.md) shows how to use [xtd::threadin::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
-* [task_delay](tasks/task_delay/README.md) shows how to use [xtd::threadin::tasks:task::delay](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) method.
+* [tasks](tasks/tasks/README.md) shows how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
+* [task](tasks/task/README.md) shows how to use [xtd::threading::tasks:task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) class.
+* [task_delay](tasks/task_delay/README.md) shows how to use [xtd::threading::tasks:task::delay](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html) method.
 
 ## [text](text/README.md)
 

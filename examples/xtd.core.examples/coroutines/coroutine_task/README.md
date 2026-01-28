@@ -1,0 +1,24 @@
+# coroutine_task
+
+Shows how to use coroutine with [task](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1tasks_1_1task_3_01void_01_4.html).
+
+## Sources
+
+* [src/coroutine_task.cpp](src/coroutine_task.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
+
+## Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```cmake
+xtdc run
+```
+
+## Output
+
+```
+[main], thread 1] -> start
+length : 13
+[main, thread 8] -> end
+```

@@ -4,13 +4,12 @@ class example {
 public:
   static auto main() async_ {
     println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
-
-    auto get_message = [] -> task<string> {co_return "Hello, World!";};
-    auto get_size = [](auto message) -> task<size> {co_return message.length();};
-
-    println("length : {}", co_await get_size(co_await get_message()));
+    
+    auto message = co_await [] -> task<string> {co_return "Hello, World!";}();
+    auto length = co_await [](auto message) -> task<size> {co_return message.length();}(message);
+    
+    println("length : {}", length);
     println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
-    co_return;
   }
 };
 

@@ -14,6 +14,7 @@ add_projects(
   configuration
   console
   convert
+  coroutines
   date_time
   delegates
   diagnostics

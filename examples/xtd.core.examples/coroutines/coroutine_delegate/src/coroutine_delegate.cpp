@@ -4,13 +4,15 @@ class example {
 public:
   static auto main() async_ {
     println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
-
-    auto get_message = [] -> task<string> {co_return "Hello, World!";};
-    auto get_size = [](auto message) -> task<size> {co_return message.length();};
-
-    println("length : {}", co_await get_size(co_await get_message()));
+    
+    auto get_message = delegate<task<string>()> {[] -> task<string> {co_return "Hello, World!";}};
+    auto get_size = func<task<size>, string> {[](auto message) -> task<size> {co_return message.length();}};
+    
+    auto message = co_await get_message();
+    auto length = co_await get_size(message);
+    
+    println("length : {}", length);
     println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
-    co_return;
   }
 };
 
@@ -20,4 +22,4 @@ startup_(example::main);
 //
 // [main], thread 1] -> start
 // length : 13
-// [main, thread 11] -> end
+// [main, thread 4] -> end
