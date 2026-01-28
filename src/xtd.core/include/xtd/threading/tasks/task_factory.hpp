@@ -124,12 +124,12 @@ namespace xtd {
       /// @cond
       template<class result_t>
       struct xtd::threading::tasks::basic_task<result_t>::yield_awaiter {
-        xtd::threading::tasks::task<result_t> task;
+        xtd::threading::tasks::task<result_t> task_;
         
-        yield_awaiter() {task.start();};
-        bool await_ready() const noexcept {return task.is_completed();}
-        void await_resume() {if (task.is_faulted()) task.rethrow_exception();}
-        void await_suspend(std::coroutine_handle<> handle) {task.continue_with([handle] {handle.resume();});}
+        yield_awaiter() {task_.start();};
+        bool await_ready() const noexcept {return task_.is_completed();}
+        void await_resume() {if (task_.is_faulted()) task_.rethrow_exception();}
+        void await_suspend(std::coroutine_handle<> handle) {task_.continue_with([handle] {handle.resume();});}
       };
 
       template<class result_t>
