@@ -204,12 +204,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t&gt;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="keyword">struct </span>xtd::threading::tasks::basic_task&lt;result_t&gt;::yield_awaiter {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        xtd::threading::tasks::task&lt;result_t&gt; task;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        xtd::threading::tasks::task&lt;result_t&gt; task_;</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        yield_awaiter() {task.start();};</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordtype">bool</span> await_ready() const noexcept {<span class="keywordflow">return</span> task.is_completed();}</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordtype">void</span> await_resume() {<span class="keywordflow">if</span> (task.is_faulted()) task.rethrow_exception();}</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">void</span> await_suspend(std::coroutine_handle&lt;&gt; handle) {task.continue_with([handle] {<a class="code hl_function" href="group__threading.html#ga16d5ccbc005f5dd5b47c8cd4b2930767">handle</a>.resume();});}</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        yield_awaiter() {task_.start();};</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordtype">bool</span> await_ready() const noexcept {<span class="keywordflow">return</span> task_.is_completed();}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordtype">void</span> await_resume() {<span class="keywordflow">if</span> (task_.is_faulted()) task_.rethrow_exception();}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">void</span> await_suspend(std::coroutine_handle&lt;&gt; handle) {task_.continue_with([handle] {<a class="code hl_function" href="group__threading.html#ga16d5ccbc005f5dd5b47c8cd4b2930767">handle</a>.resume();});}</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      };</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t&gt;</div>
@@ -313,7 +313,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 28 2026 20:33:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 28 2026 21:37:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
