@@ -905,12 +905,12 @@ If the stream is empty, this is equivalent to using the <a class="el" href="clas
 <dl class="section return"><dt>Returns</dt><dd>Top file comment textr. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Generally used to read descriptions of the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> : authors, copyright, version, etc. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> and use <a class="el" href="#a7953f56d1126766705911235a3339c79" title="Gets top file comment text.">xtd::configuration::file_settings::top_file_comment</a> property, <a class="el" href="#a1ab8a1a44a500e88ccf078587d9b3292" title="Writes a specified value for specified key in the global section.">xtd::configuration::file_settings::write</a> and <a class="el" href="#a6a791cdc8174eb05e2c6965eb93b173b" title="Save current settings in the specified file path.">xtd::configuration::file_settings::save_as</a> methods. <div class="fragment"><div class="line"><span class="keyword">auto</span> file = <a class="code hl_function" href="#a42b09b02441dd275b5408fa93f6375d0">file_settings</a> {};</div>
-<div class="line">file.top_file_comment(<span class="stringliteral">&quot;Contains settings for my_app application.\nCopyright, (c) 2025 MyCompany. All rights reserved.&quot;</span>);</div>
+<div class="line">file.top_file_comment(<span class="stringliteral">&quot;Contains settings for my_app application.\nCopyright, (c) 2026 MyCompany. All rights reserved.&quot;</span>);</div>
 <div class="line">file.write(<span class="stringliteral">&quot;pictures \&quot;Menu\&quot;&quot;</span>, <span class="stringliteral">&quot;file_open&quot;</span>, <span class="stringliteral">&quot;resources/symbolic_open.png&quot;</span>);</div>
 <div class="line">file.write(<span class="stringliteral">&quot;pictures \&quot;Menu\&quot;&quot;</span>, <span class="stringliteral">&quot;file_save&quot;</span>, <span class="stringliteral">&quot;resources/symbolic_save.png&quot;</span>);</div>
 <div class="line">file.save_as(<span class="stringliteral">&quot;my_app.ini&quot;</span>);</div>
 </div><!-- fragment --> my_app.ini: <div class="fragment"><div class="line"># Contains settings for my_app application.</div>
-<div class="line"># Copyright, (c) 2025 MyCompany. All rights reserved.</div>
+<div class="line"># Copyright, (c) 2026 MyCompany. All rights reserved.</div>
 <div class="line"> </div>
 <div class="line">[pictures &quot;Menu&quot;]</div>
 <div class="line">file_open = resources/symbolic_open.png</div>
@@ -952,12 +952,12 @@ If the stream is empty, this is equivalent to using the <a class="el" href="clas
 <dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Generally used to write descriptions of the <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> : authors, copyright, version, etc. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create <a class="el" href="classxtd_1_1configuration_1_1file__settings.html" title="Represents an object for storing and retrieving configuration information using text files in INI for...">xtd::configuration::file_settings</a> and use <a class="el" href="#a7953f56d1126766705911235a3339c79" title="Gets top file comment text.">xtd::configuration::file_settings::top_file_comment</a> property, <a class="el" href="#a1ab8a1a44a500e88ccf078587d9b3292" title="Writes a specified value for specified key in the global section.">xtd::configuration::file_settings::write</a> and <a class="el" href="#a6a791cdc8174eb05e2c6965eb93b173b" title="Save current settings in the specified file path.">xtd::configuration::file_settings::save_as</a> methods. <div class="fragment"><div class="line"><span class="keyword">auto</span> file = <a class="code hl_function" href="#a42b09b02441dd275b5408fa93f6375d0">file_settings</a> {};</div>
-<div class="line">file.top_file_comment(<span class="stringliteral">&quot;Contains settings for my_app application.\nCopyright, (c) 2025 MyCompany. All rights reserved.&quot;</span>);</div>
+<div class="line">file.top_file_comment(<span class="stringliteral">&quot;Contains settings for my_app application.\nCopyright, (c) 2026 MyCompany. All rights reserved.&quot;</span>);</div>
 <div class="line">file.write(<span class="stringliteral">&quot;pictures \&quot;Menu\&quot;&quot;</span>, <span class="stringliteral">&quot;file_open&quot;</span>, <span class="stringliteral">&quot;resources/symbolic_open.png&quot;</span>);</div>
 <div class="line">file.write(<span class="stringliteral">&quot;pictures \&quot;Menu\&quot;&quot;</span>, <span class="stringliteral">&quot;file_save&quot;</span>, <span class="stringliteral">&quot;resources/symbolic_save.png&quot;</span>);</div>
 <div class="line">file.save_as(<span class="stringliteral">&quot;my_app.ini&quot;</span>);</div>
 </div><!-- fragment --> my_app.ini: <div class="fragment"><div class="line"># Contains settings for my_app application.</div>
-<div class="line"># Copyright, (c) 2025 MyCompany. All rights reserved.</div>
+<div class="line"># Copyright, (c) 2026 MyCompany. All rights reserved.</div>
 <div class="line"> </div>
 <div class="line">[pictures &quot;Menu&quot;]</div>
 <div class="line">file_open = resources/symbolic_open.png</div>
@@ -1972,7 +1972,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 28 2026 11:43:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 28 2026 12:01:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
