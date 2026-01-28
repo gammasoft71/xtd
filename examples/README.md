@@ -48,6 +48,7 @@
 * [Sprintf](xtd.core.examples/sprintf/README.md) contains sprintf examples.
 * [Startups](xtd.core.examples/startups/README.md) contains startups examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
+* [Tasks](xtd.core.examples/tasks/README.md) contains tasks examples.
 * [Text](xtd.core.examples/text/README.md) contains text examples.
 * [Threading](xtd.core.examples/threading/README.md) contains threading examples.
 * [Time span](xtd.core.examples/time_span/README.md) contains time span examples.

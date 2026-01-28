@@ -45,6 +45,7 @@ add_projects(
   sprintf
   startups
   strings
+  tasks
   text
   threading
   time_span
