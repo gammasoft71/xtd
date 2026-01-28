@@ -47,7 +47,7 @@ namespace xtd {
         }
 
         template<typename ...args_t>
-        static auto invoke(args_t... args) -> void {invoke(xtd::array<xtd::action<>> {std::forward<args_t>(args)...});}
+        static auto invoke(args_t... args) -> void {invoke(xtd::array<xtd::action<>> {xtd::action<> {std::forward<args_t>(args)}...});}
 
         /// @cond
         static auto invoke(const xtd::array<std::function<void()>>& actions) -> void {
