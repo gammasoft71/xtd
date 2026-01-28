@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #TRACE definition.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
 /// @brief The #TRACE definition.

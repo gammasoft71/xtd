@@ -10,7 +10,7 @@ if "%xtd_version%"== "" (
   exit /B 1
 )
 
-echo Uninstalling xtd libraries version %xtd_version%, copyright © 2025 Gammasoft
+echo Uninstalling xtd libraries version %xtd_version%, copyright © 2026 Gammasoft
 echo.
 
 ::______________________________________________________________________________

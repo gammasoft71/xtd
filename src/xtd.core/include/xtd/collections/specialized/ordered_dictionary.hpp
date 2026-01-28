@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::specialized::ordered_dictionary alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../../any_object.hpp"
 #include "../generic/ordered_dictionary.hpp"

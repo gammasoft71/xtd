@@ -20,4 +20,4 @@ The MY_APP_PATH environment variable is set to "c:\My App".
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::helpers::wrap_pointer_reverse_iterator alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "wrap_pointer_iterator.hpp"
 

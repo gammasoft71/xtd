@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::comparison delegate.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "delegate.hpp"
 #include "int32.hpp"

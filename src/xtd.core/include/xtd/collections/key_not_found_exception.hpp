@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::key_not_found_exception exception.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 /*
 #if defined(_MSC_VER) && __cplusplus < 202302L

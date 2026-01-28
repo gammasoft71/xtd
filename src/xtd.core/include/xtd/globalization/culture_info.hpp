@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::globalization::culture_info class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
 #include "culture_not_found_exception.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::constraints::valid_that method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "valid.hpp"
 

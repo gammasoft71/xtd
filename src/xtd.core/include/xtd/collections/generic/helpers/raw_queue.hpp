@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::helpers::raw_queue class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <queue>
 #include "../../../self.hpp"

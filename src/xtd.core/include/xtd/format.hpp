@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::format methods.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "globalization/culture_info.hpp"
 #include "string.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::create_const_reference_wrapper_object method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "reference_wrapper_object.hpp"
 #include <utility>

@@ -126,4 +126,4 @@ Names of enumeration types (also called enums) in general should follow the stan
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

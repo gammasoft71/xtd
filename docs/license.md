@@ -6,7 +6,7 @@
  
 [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2025 [Gammasoft](https://gammasoft71.github.io).
+Copyright (c) 2026 [Gammasoft](https://gammasoft71.github.io).
 
 
 
@@ -22,4 +22,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

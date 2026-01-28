@@ -110,4 +110,4 @@ void background_worker1_progress_changed(object& sender, const progress_changed_
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

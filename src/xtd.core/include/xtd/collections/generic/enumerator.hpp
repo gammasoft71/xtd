@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::enumerator <type_t> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerator.hpp"
 #include "../../helpers/throw_helper.hpp"

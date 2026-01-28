@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::helpers::less_than_comparable concept.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <type_traits>
 #include <ostream>

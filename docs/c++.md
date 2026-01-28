@@ -39,4 +39,4 @@ More compilers can be used see [C++ compiler support for C++20](https://en.cppre
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::delete_shared_ptr_object method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "null.hpp"
 #include "shared_ptr_object.hpp"

@@ -34,4 +34,4 @@ This structural code demonstrates the Mediator pattern facilitating loosely coup
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

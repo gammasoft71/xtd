@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::text::ustring_builder alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "string_builder.hpp"
 

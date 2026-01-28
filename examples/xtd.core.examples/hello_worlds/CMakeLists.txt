@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   hello_world_console
+  hello_world_coroutine
   hello_world_diagnostics
   hello_world_environment
   hello_world_io

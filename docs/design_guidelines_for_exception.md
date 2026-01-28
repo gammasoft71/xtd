@@ -17,4 +17,4 @@ Exception handling has many advantages over return-value-based error reporting. 
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

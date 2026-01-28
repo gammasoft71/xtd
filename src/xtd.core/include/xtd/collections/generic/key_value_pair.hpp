@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::key_value_pair <key_t, value_t> struct.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../../is.hpp"
 #include "../../object.hpp"

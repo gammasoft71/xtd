@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::formatable concept.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "stream_insertable.hpp"
 #include "iformatable.hpp"

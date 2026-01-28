@@ -30,4 +30,4 @@ For more information, see [Format types](format_overview.md).
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

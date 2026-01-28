@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains __opaque_xtd_linq_enumerable_collection__ <type_t> struct.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_INTERNAL__)

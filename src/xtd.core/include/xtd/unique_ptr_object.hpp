@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::unique_ptr_object class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/throw_helper.hpp"
 #define __XTD_CORE_INTERNAL__

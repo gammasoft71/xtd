@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::helpers::throw_helper class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../internal/__xtd_source_location.hpp"
 #include "../type.hpp"

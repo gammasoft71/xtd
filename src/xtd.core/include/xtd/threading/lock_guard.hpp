@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::lock_guard class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../block_scope.hpp"
 #include "../object.hpp"

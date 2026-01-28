@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::box::to_string method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_BOX_INTERNAL__)

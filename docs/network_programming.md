@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/overview)

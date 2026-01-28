@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::globalization::date_time_format_info class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
 #include "../core_export.hpp"

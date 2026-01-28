@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-localized-exception-messages)

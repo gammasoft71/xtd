@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::specialized::string_collection alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../generic/list.hpp"
 #include "../../string.hpp"

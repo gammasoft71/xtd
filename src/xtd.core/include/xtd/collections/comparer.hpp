@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::comparer alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/comparer.hpp"
 #include "../any_object.hpp"

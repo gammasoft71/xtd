@@ -69,4 +69,4 @@ Total element height = height + top padding + bottom padding + top border + bott
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::is_stream_insertable struct and is_stream_insertable_v struct.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <type_traits>
 #include <ostream>

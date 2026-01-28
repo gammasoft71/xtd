@@ -25,4 +25,4 @@ This chapter offers basic guidelines that should be followed when designing memb
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

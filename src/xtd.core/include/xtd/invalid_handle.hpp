@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::invalid_handle value.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "intptr.hpp"
 #include "core_export.hpp"

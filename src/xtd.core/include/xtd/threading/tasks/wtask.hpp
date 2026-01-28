@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::tasks::task <result_t> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "task_result.hpp"
 #include "../../func.hpp"

@@ -26,4 +26,4 @@ However, abstractions provide extremely powerful extensibility that the other ex
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

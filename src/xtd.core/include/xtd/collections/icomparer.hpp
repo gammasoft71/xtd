@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::icomparer alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/icomparer.hpp"
 #include "enumerator.hpp"

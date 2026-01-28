@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::u16string_comparer alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_string_comparer.hpp"
 #include "char16.hpp"

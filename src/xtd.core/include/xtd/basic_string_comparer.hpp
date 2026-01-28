@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::basic_string_comparer class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/iequality_comparer.hpp"

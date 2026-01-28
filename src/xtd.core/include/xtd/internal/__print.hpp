@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains __xtd_print_with_file_write__ and __xtd_print_with_ostream_write__ methods.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 
 #pragma once
 /// @cond

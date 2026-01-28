@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::stack <value_t> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/raw_stack.hpp"
 #include "icollection.hpp"

@@ -99,4 +99,4 @@ The fixed text is `name = ` and `, age = `. The format items are "{0}", whose in
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

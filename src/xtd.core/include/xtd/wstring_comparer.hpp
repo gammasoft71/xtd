@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::wstring_comparer alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "basic_string_comparer.hpp"
 #include "wchar.hpp"

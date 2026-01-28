@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::new_unique_ptr_object method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "unique_ptr_object.hpp"
 #include <utility>

@@ -32,4 +32,4 @@ If a type can be instantiated, that seems to indicate the type has a place in th
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

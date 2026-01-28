@@ -19,6 +19,7 @@ xtdc run
 
 ```
 [main], thread 1] -> start
-length : 13
+message : Hello, World!
+length  : 13
 [main, thread 3] -> end
 ```

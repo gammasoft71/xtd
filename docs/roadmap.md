@@ -256,4 +256,4 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

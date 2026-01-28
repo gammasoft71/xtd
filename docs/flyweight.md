@@ -34,4 +34,4 @@ This structural code demonstrates the Flyweight pattern in which a relatively sm
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

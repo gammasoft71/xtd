@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #lock_guard_ keyword.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "threading/lock_guard.hpp"
 

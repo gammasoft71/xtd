@@ -18,7 +18,7 @@ xtdc run
 ## Output
 
 ```
-xtdc version 0.2.0, (c) 2025 by Gammasoft
+xtdc version 0.2.0, (c) 2026 by Gammasoft
 
 Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]
 

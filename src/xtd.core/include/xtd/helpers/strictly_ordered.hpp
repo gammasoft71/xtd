@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::helpers::strictly_ordered concept.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "greater_than_comparable.hpp"
 #include "less_than_comparable.hpp"

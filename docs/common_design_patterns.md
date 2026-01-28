@@ -53,4 +53,4 @@ You can see the original source : [C# Design Patterns](https://www.dofactory.com
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

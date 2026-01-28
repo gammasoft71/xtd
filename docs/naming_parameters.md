@@ -28,4 +28,4 @@ Beyond the obvious reason of readability, it is important to follow the guidelin
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

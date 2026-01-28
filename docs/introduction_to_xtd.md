@@ -107,6 +107,6 @@ With CMake, `xtd` support many [Development Environment Tools](https://gammasoft
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.
 
 [//]: # (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::dictionary_entry alias.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/key_value_pair.hpp"
 #include "../any_object.hpp"

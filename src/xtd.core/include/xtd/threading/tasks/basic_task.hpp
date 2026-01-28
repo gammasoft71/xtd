@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::tasks::basic_task <> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "task_canceled_exception.hpp"
 #include "task_creation_options.hpp"

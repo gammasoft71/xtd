@@ -26,7 +26,7 @@ else
     fi
 fi
 
-echo "Install xtd libraries version $xtd_version, copyright © 2025 Gammasoft"
+echo "Install xtd libraries version $xtd_version, copyright © 2026 Gammasoft"
 echo ""
 
 #_______________________________________________________________________________

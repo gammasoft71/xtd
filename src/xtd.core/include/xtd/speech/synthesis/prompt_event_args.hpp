@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::speech::synthesis::prompt_event_args class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "prompt.hpp"
 #include "../../any_object.hpp"

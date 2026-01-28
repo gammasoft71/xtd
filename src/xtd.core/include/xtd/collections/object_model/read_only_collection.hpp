@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::object_model::read_only_collection class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../generic/ilist.hpp"
 #include "../../helpers/throw_helper.hpp"

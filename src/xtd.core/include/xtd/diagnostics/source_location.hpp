@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::source_location method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__xtd_source_location.hpp"

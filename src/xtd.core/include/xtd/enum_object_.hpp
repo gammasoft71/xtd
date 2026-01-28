@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::enum_object::to_string method.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_ENUM_OBJECT_INTERNAL__)

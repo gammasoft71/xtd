@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::memory_stream class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "stream.hpp"
 #include "../collections/generic/list.hpp"

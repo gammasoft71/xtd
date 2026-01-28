@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::ranges::views::order_by_descending value.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
 #define __XTD_STD_INTERNAL__

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::globalization::translator suffixes.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../string.hpp"
 #include "../types.hpp"

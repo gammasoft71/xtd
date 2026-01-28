@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::sptr type.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "shared_ptr_object.hpp"
 

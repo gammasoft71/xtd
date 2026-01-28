@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::constraints::that_value class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "actual_value.hpp"
 #include "does_value.hpp"

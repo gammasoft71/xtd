@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::startup class and #startup_ keyword.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "argument_collection.hpp"
 #include "threading/tasks/task.hpp"

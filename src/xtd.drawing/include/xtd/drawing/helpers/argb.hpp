@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::helpers::argb struct.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/byte>
 #include <xtd/uint32>

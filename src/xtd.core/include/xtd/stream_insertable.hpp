@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::stream_insertable concept.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "is_stream_insertable.hpp"
 

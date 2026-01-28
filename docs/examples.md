@@ -190,4 +190,4 @@ If you face any problems feel free to open an issue at the [issues tracker](http
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

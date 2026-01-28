@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::abandoned_mutex_exception exception.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../system_exception.hpp"
 

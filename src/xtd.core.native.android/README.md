@@ -7,4 +7,4 @@ The [xtd.core.native.android](.) is based on Android Operating System.
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

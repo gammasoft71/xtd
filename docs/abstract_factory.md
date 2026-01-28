@@ -34,4 +34,4 @@ This structural code demonstrates the Abstract Factory pattern creating parallel
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

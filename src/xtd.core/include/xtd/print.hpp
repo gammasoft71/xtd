@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::print methods.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 
 #define __XTD_CORE_INTERNAL__

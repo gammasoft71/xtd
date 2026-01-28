@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::tasks::parallel <result_t> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "task_factory.hpp"
 #include "../../collections/generic/list.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library headers.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/xtd.drawing>
 #include <xtd/forms/window_messages>

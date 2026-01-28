@@ -71,4 +71,4 @@ This section explains how to create, configure, debug, secure, and deploy your .
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

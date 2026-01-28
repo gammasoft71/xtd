@@ -8,7 +8,8 @@ public:
     auto message = co_await get_message();
     auto length = co_await get_size(message);
     
-    println("length : {}", length);
+    println("message : {}", message);
+    println("length  : {}", length);
     println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
   }
   
@@ -27,5 +28,6 @@ startup_(example::main);
 // This code produces the following output :
 //
 // [main], thread 1] -> start
-// length : 13
+// message : Hello, World!
+// length  : 13
 // [main, thread 3] -> end

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #assert_ keyword.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "debug.hpp"
 #include "debug_break.hpp"

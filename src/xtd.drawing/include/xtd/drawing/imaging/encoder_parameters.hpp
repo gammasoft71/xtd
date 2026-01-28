@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::imaging::encoder_parameters struct.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "encoder_parameter.hpp"
 #include <xtd/array>

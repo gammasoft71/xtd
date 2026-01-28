@@ -75,4 +75,4 @@ xtdc-gui contains many project template. All project listed below are created wi
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

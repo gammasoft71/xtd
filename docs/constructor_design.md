@@ -38,4 +38,4 @@ Adding a parameterized constructor to a class prevents the compiler from adding 
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.

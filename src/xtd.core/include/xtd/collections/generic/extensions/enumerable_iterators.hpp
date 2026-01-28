@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::extensions::enumerable_iterators <type_t, enumerable_t> class.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../enumerator.hpp"
 #include "../../../icomparable.hpp"

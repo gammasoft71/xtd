@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::thread_start delegate.
-/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../delegate.hpp"
 

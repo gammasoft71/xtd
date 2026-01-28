@@ -28,4 +28,4 @@ xtd::func<...> and xtd::action<...> represent generic delegates.
 
 ______________________________________________________________________________________________
 
-© 2025 Gammasoft.
+© 2026 Gammasoft.
