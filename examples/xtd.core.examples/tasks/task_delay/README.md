@@ -18,4 +18,5 @@ xtdc run
 ## Output
 
 ```
+Task t status: ran_to_completion, result: 42
 ```
