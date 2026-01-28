@@ -1,23 +1,9 @@
 #include <xtd/xtd>
 
-class example {
-public:
-  static auto main() async_ {
-    println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
-
-    auto get_message = [] -> task<string> {co_return "Hello, World!";};
-    auto get_size = [](auto message) -> task<size> {co_return message.length();};
-
-    println("length : {}", co_await get_size(co_await get_message()));
-    println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
-    co_return;
-  }
-};
-
-startup_(example::main);
+auto main() -> int {
+  println("Hello, World!");
+}
 
 // This code produces the following output :
 //
-// [main], thread 1] -> start
-// length : 13
-// [main, thread 11] -> end
+// Hello, World!
