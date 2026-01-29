@@ -379,12 +379,14 @@ namespace unit_tests {
       valid_that(s.length()).is().equal_to(13_z);
       assert_that(s).does().start_with("Hello,").and_().does().end_with(" World!");
     }
+    
+    static auto main() {
+      console_unit_test {}.run();
+    }
   };
 }
 
-auto main() -> int {
-  return console_unit_test {}.run();
-}
+startup_(unit_tests::hello_world_test::main);
 ```
 
 **or without constraints**
@@ -406,12 +408,14 @@ namespace unit_tests {
       string_assert::starts_with("Hello,", s);
       string_assert::does_end_with(" World!", s);
     }
+    
+    static auto main() {
+      console_unit_test {}.run();
+    }
   };
 }
 
-auto main() -> int {
-  return console_unit_test {}.run();
-}
+startup_(unit_tests::hello_world_test::main);
 ```
 
 #### CMakeLists.txt
