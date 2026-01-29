@@ -29,6 +29,14 @@ namespace xtd {
       /// @remarks The arguments of the unit test application are done with xtd::environment::get_command_line_args method.
       console_unit_test() noexcept;
       /// @}
+      
+      /// @name Public Methods
+      
+      /// @{
+      /// @brief Runs all tests in this unit_test object and prints the result.
+      /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
+      int32 run() noexcept;
+      /// @}
     };
   }
 }

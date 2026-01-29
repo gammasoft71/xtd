@@ -104,7 +104,6 @@ namespace xtd {
       xtd::array<xtd::string> succeed_test_names() const noexcept;
       /// @}
       
-      
       /// @name Public Methods
       
       /// @{
