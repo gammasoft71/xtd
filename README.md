@@ -140,11 +140,16 @@ The classic first application 'Hello World'.
 ```cpp
 #include <xtd/xtd>
 
-auto main() -> int {
-  console::background_color(console_color::blue);
-  console::foreground_color(console_color::white);
-  console::write_line("Hello, World!");
-}
+class example {
+public:
+  static auto main() {
+    console::background_color(console_color::blue);
+    console::foreground_color(console_color::white);
+    console::write_line("Hello, World!");
+  }
+};
+
+startup_(example::main);
 ```
 
 **or simply**
