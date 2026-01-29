@@ -51,7 +51,7 @@ namespace xtd {
   /// @tparam value_t The type to test for stream insertability.
   /// @see is_stream_insertable_v
   template<class value_t>
-struct is_stream_insertable < value_t, std::void_t < decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>()) >> : std::true_type {};
+  struct is_stream_insertable<value_t, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const std::remove_cvref_t<value_t>&>())>> : std::true_type {};
   /// @brief Specialization of is_stream_insertable for types that support stream insertion into std::ostream.
   /// @par Definition
   /// ```cpp
