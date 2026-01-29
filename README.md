@@ -214,6 +214,35 @@ private:
 startup_(example::main);
 ```
 
+**or simply**
+
+```cpp
+#include <xtd/xtd>
+
+auto get_message() -> task<string> {
+  co_return "Hello, World!";
+}
+
+auto get_size(auto message) -> task<size> {
+  co_return message.length();
+}
+
+auto main_async() -> task<> {
+  println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
+  
+  auto message = co_await get_message();
+  auto length = co_await get_size(message);
+  
+  println("message : {}", message);
+  println("length  : {}", length);
+  println("[main, thread {}] -> end", thread::current_thread().managed_thread_id());
+}
+
+auto main() -> int {
+  main_async().wait();
+}
+```
+
 #### CMakeLists.txt
 
 ```cmake
@@ -223,6 +252,23 @@ project(hello_world_coroutine)
 find_package(xtd REQUIRED)
 add_sources(hello_world_coroutine.cpp)
 target_type(CONSOLE_APPLICATION)
+```
+
+#### Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtdc run
+```
+
+#### Output
+
+```
+[main], thread 1] -> start
+message : Hello, World!
+length  : 13
+[main, thread 3] -> end
 ```
 
 ### Forms (GUI like WinForms)
@@ -387,23 +433,6 @@ xtdc run
 #### Visual Studio Output
 
 ![Screenshot](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/examples/hello_world_tunit_vs.png)
-
-#### Build and run
-
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-
-```shell
-xtdc run
-```
-
-#### Output
-
-```
-[main], thread 1] -> start
-message : Hello, World!
-length  : 13
-[main, thread 3] -> end
-```
 
 ## Gallery
 
