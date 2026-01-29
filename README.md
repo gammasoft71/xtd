@@ -280,6 +280,10 @@ length  : 13
 
 class main_form : public form {
 public:
+  static auto main() {
+    application::run(main_form {});
+  }
+  
   main_form() {
     text("Hello world (message_box)");
 
@@ -295,9 +299,7 @@ private:
   button button1;
 };
 
-auto main() -> int {
-  application::run(main_form {});
-}
+startup_(main_form::main);
 ```
 
 **or simply**
