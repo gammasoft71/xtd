@@ -32,12 +32,12 @@
 #include <xtd/optional>
 #include <xtd/target_id>
 #include <xtd/string>
-#include <xtd/is_stream_insertable>
+#include <xtd/stream_insertable>
 
 /// @cond
 template<class char_t, class char_traits_t, class value_t>
 inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
-  if constexpr(xtd::is_stream_insertable_v<value_t>) os.operator << (value);
+  if constexpr(xtd::stream_insertable<value_t>) os << value;
   else {
     auto size = std::min(sizeof(value), size_t {32});
     os << size << "-byte object <";
@@ -49,12 +49,12 @@ inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>
 
 template<class char_t, class char_traits_t, class value_t>
 inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
-  os.operator << (value);
+  os << value;
 }
 
 template<class char_t, class char_traits_t, class value_t>
 inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
-  os.operator << (value);
+  os << value;
 }
 
 template<class char_t, class char_traits_t, class value_t>
