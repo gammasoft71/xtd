@@ -89,7 +89,7 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
 template<class char_t, class char_traits_t, class iterator_t>
 requires xtd::stream_insertable<std::iter_value_t<iterator_t>>
 inline void __xtd_console_print_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
-  for (iterator_t it = begin; it != end; ++it) {
+  for (auto it = begin; it != end; ++it) {
     if (it != begin) os << ',' << ' ';
     os << *it;
   }
@@ -98,7 +98,7 @@ inline void __xtd_console_print_container(std::basic_ostream<char_t, char_traits
 template<class char_t, class char_traits_t, class iterator_t>
 requires (!xtd::stream_insertable<std::iter_value_t<iterator_t>>)
 inline void __xtd_console_print_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
-  for (iterator_t it = begin; it != end; ++it) {
+  for (auto it = begin; it != end; ++it) {
     if (it != begin) os << ',' << ' ';
     os << " ";
   }
