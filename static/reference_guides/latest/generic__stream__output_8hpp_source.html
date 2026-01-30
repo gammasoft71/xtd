@@ -188,7 +188,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> iterator_t&gt;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">requires</span> <a class="code hl_concept" href="conceptxtd_1_1stream__insertable.html">xtd::stream_insertable&lt;std::iter_value_t&lt;iterator_t&gt;</a>&gt;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">inline</span> <span class="keywordtype">void</span> __xtd_console_print_container(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> iterator_t&amp; begin, <span class="keyword">const</span> iterator_t&amp; end) {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">for</span> (iterator_t it = begin; it != <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>; ++it) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin; it != <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>; ++it) {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (it != begin) os &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    os &lt;&lt; *it;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
@@ -197,7 +197,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> iterator_t&gt;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">requires</span> (!<a class="code hl_concept" href="conceptxtd_1_1stream__insertable.html">xtd::stream_insertable&lt;std::iter_value_t&lt;iterator_t&gt;</a>&gt;)</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">inline</span> <span class="keywordtype">void</span> __xtd_console_print_container(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> iterator_t&amp; begin, <span class="keyword">const</span> iterator_t&amp; end) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">for</span> (iterator_t it = begin; it != <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>; ++it) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin; it != <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>; ++it) {</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (it != begin) os &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    os &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
@@ -326,7 +326,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 30 2026 20:55:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 30 2026 20:59:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
