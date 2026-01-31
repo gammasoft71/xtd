@@ -177,7 +177,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        [[nodiscard]] <span class="keyword">auto</span> result() const noexcept -&gt; const result_t&amp; {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          basic_task&lt;result_t&gt;::wait();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          <span class="keyword">static_cast&lt;</span>basic_task&lt;result_t&gt;&amp;<span class="keyword">&gt;</span>(<span class="keyword">const_cast&lt;</span>task&amp;<span class="keyword">&gt;</span>(*this)).wait();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          <span class="keywordflow">return</span> basic_task&lt;result_t&gt;::data_-&gt;result;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        </div>
@@ -222,7 +222,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 31 2026 08:49:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 31 2026 11:46:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
