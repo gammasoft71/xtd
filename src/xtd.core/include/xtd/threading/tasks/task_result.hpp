@@ -89,7 +89,10 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto result() const noexcept -> const result_t& {return basic_task<result_t>::data_->result;}
+        [[nodiscard]] auto result() const noexcept -> const result_t& {
+          wait();
+          return basic_task<result_t>::data_->result;
+        }
         /// @}
         
         /// @name Public Static Methods
