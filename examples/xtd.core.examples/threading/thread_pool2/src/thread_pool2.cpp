@@ -13,7 +13,7 @@ auto main() -> int {
   println("({} {}) -> sleep(200_ms)", thread::current_thread().name(), thread::current_thread().managed_thread_id());
   thread::sleep(200_ms);
   println("({} {}) -> join all threads of thread_pool", thread::current_thread().name(), thread::current_thread().managed_thread_id());
-  thread_pool::join_all();
+  thread_pool::close();
   println("({} {}) -> stop", thread::current_thread().name(), thread::current_thread().managed_thread_id());
 }
 
