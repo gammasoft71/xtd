@@ -35,41 +35,30 @@
 #include <xtd/stream_insertable>
 
 /// @cond
-template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
-  if constexpr(xtd::stream_insertable<value_t>) os << value;
-  else {
-    auto size = std::min(sizeof(value), size_t {32});
-    os << size << "-byte object <";
-    for (size_t index = 0; index != size; index++)
-      os << (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
-    os << (size < sizeof(value) ? "-..." : "") << ">";
-  }
-}
-
-template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
+template<class value_t>
+requires xtd::stream_insertable<value_t>
+inline static void __print(std::ostream& os, const value_t& value) {
   os << value;
 }
 
-template<class char_t, class char_traits_t, class value_t>
-inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
+template<class value_t>
+requires (!xtd::stream_insertable<value_t>)
+inline static void __print(std::ostream& os, const value_t& value) {
+  auto size = std::min(sizeof(value), size_t {32});
+  os << size << "-byte object <";
+  for (size_t index = 0; index != size; index++)
+    os << (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
+  os << (size < sizeof(value) ? "-..." : "") << ">";
+}
+
+template<class value_t>
+inline static void __print(std::ostream& os, value_t* value) {
   os << value;
 }
 
-template<class char_t, class char_traits_t, class value_t>
-inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
-  __tunit_print_value(os, value);
-}
-
-template<class char_t, class char_traits_t, class value_t>
-inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
-  __tunit_print_value(os, value);
-}
-
-template<class char_t, class char_traits_t, class value_t>
-inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
-  __tunit_print_value(os, value);
+template<class value_t>
+inline static void __print(std::ostream& os, const value_t* value) {
+  os << value;
 }
 
 template<class char_t, class char_traits_t, class value_t>
