@@ -669,6 +669,8 @@ add_sources(
   "include/xtd/collections/generic/dictionary"
   "include/xtd/collections/generic/empty_comparer.hpp"
   "include/xtd/collections/generic/empty_comparer"
+  "include/xtd/collections/generic/enumerable_generator.hpp"
+  "include/xtd/collections/generic/enumerable_generator"
   "include/xtd/collections/generic/enumerator.hpp"
   "include/xtd/collections/generic/enumerator"
   "include/xtd/collections/generic/equality_comparer.hpp"
