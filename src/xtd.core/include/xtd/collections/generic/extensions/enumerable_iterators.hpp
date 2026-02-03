@@ -5,6 +5,7 @@
 #include "../enumerator.hpp"
 #include "../../../icomparable.hpp"
 #include "../../../iequatable.hpp"
+#include "../../../npos.hpp"
 #include "../../../ptrdiff.hpp"
 #include "../../../self.hpp"
 #include "../../../size.hpp"
@@ -108,7 +109,13 @@ namespace xtd {
           private:
             auto reset() -> void {
               if (pos_ == npos()) return;
-              enumerator_.reset();
+              try {
+                enumerator_.reset();
+              } catch(...) {
+                if (pos_ != 0 && pos_ != npos()) throw;
+                if (enumerator_.move_next() == false) pos_ = npos();
+                return;
+              }
               for (auto index = xtd::size {}; index <= pos_; ++index)
                 if (enumerator_.move_next() == false) {
                   pos_ = npos();
