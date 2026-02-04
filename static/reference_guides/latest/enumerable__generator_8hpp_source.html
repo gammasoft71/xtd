@@ -130,53 +130,49 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            current_value = std::move(value);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>          }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          std::suspend_always yield_value(type_t&amp;&amp; value) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            current_value = std::move(std::forward&lt;type_t&gt;(value));</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        };</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        enumerable_generator(<span class="keyword">const</span> enumerable_generator&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        enumerable_generator&amp; operator =(<span class="keyword">const</span> enumerable_generator&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        enumerable_generator(enumerable_generator&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept : handle_(std::exchange(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.handle_, {})) {}</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>&amp; operator =(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          handle_ = std::exchange(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.handle_, {});</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        ~enumerable_generator()<span class="keyword"> override </span>{<span class="keywordflow">if</span> (handle_) handle_.destroy();}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        </div>
-<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">   55</a></span>        <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator&lt;type_t&gt;</a> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">get_enumerator</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          <span class="keyword">struct </span>generator_enumerator final : <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html">xtd::collections::generic::ienumerator</a>&lt;type_t&gt; {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">explicit</span> generator_enumerator(std::coroutine_handle&lt;promise_type&gt; handle) : handle_(handle) {}</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">const</span> type_t&amp; current()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> handle_.promise().current_value;}</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>              <span class="keywordflow">if</span> (!handle_ || handle_.done()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>              handle_.resume();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>              <span class="keywordflow">return</span> !handle_.done();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{<a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaa55e82356e9721946aa9ba954733c6f0">xtd::helpers::exception_case::not_supported</a>);}</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            std::coroutine_handle&lt;promise_type&gt; handle_;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          };</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          <span class="keywordflow">return</span> {<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;generator_enumerator&gt;</a>(handle_)};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        enumerable_generator(<span class="keyword">const</span> enumerable_generator&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        enumerable_generator&amp; operator =(<span class="keyword">const</span> enumerable_generator&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        enumerable_generator(enumerable_generator&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept : handle_(std::exchange(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.handle_, {})) {}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>&amp; operator =(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>&amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          handle_ = std::exchange(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.handle_, {});</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ~enumerable_generator()<span class="keyword"> override </span>{<span class="keywordflow">if</span> (handle_) handle_.destroy();}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">   51</a></span>        <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator&lt;type_t&gt;</a> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">get_enumerator</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="keyword">struct </span>generator_enumerator final : <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html">xtd::collections::generic::ienumerator</a>&lt;type_t&gt; {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">explicit</span> generator_enumerator(std::coroutine_handle&lt;promise_type&gt; handle) : handle_(handle) {}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">const</span> type_t&amp; current()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> handle_.promise().current_value;}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>              <span class="keywordflow">if</span> (!handle_ || handle_.done()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>              handle_.resume();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>              <span class="keywordflow">return</span> !handle_.done();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{<a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaa55e82356e9721946aa9ba954733c6f0">xtd::helpers::exception_case::not_supported</a>);}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            std::coroutine_handle&lt;promise_type&gt; handle_;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          <span class="keywordflow">return</span> {<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;generator_enumerator&gt;</a>(handle_)};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>(std::coroutine_handle&lt;promise_type&gt; handle) : handle_(handle) {}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keyword">mutable</span> std::coroutine_handle&lt;promise_type&gt; handle_;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      };</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">enumerable_generator</a>(std::coroutine_handle&lt;promise_type&gt; handle) : handle_(handle) {}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">mutable</span> std::coroutine_handle&lt;promise_type&gt; handle_;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      };</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerable__generator_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html">xtd::collections::generic::enumerable_generator</a></div><div class="ttdoc">Represents an enumerable enumerable_generator.</div><div class="ttdef"><b>Definition</b> enumerable_generator.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerable__generator_html_ab9b2cef3295d88a4e142b2ff4edc7bd3"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">xtd::collections::generic::enumerable_generator::get_enumerator</a></div><div class="ttdeci">xtd::collections::generic::enumerator&lt; type_t &gt; get_enumerator() const override</div><div class="ttdoc">Returns an enumerator that iterates through a collection.</div><div class="ttdef"><b>Definition</b> enumerable_generator.hpp:55</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1enumerable__generator_html_ab9b2cef3295d88a4e142b2ff4edc7bd3"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1enumerable__generator.html#ab9b2cef3295d88a4e142b2ff4edc7bd3">xtd::collections::generic::enumerable_generator::get_enumerator</a></div><div class="ttdeci">xtd::collections::generic::enumerator&lt; type_t &gt; get_enumerator() const override</div><div class="ttdoc">Returns an enumerator that iterates through a collection.</div><div class="ttdef"><b>Definition</b> enumerable_generator.hpp:51</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a></div><div class="ttdoc">Exposes the enumerator, which supports a simple iteration over a collection of a specified type.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerator_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerator.html">xtd::collections::generic::ienumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> ienumerator.hpp:58</div></div>
 <div class="ttc" id="aclassxtd_1_1helpers_1_1throw__helper_html_a986c08b3b386fae3db9406136afd34b7"><div class="ttname"><a href="classxtd_1_1helpers_1_1throw__helper.html#a986c08b3b386fae3db9406136afd34b7">xtd::helpers::throw_helper::throws</a></div><div class="ttdeci">static auto throws(xtd::helpers::exception_case exception_case, const source_location &amp;location=source_location::current()) -&gt; void</div><div class="ttdoc">Throws an exption with specified exception case.</div></div>
@@ -195,7 +191,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 3 2026 22:21:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 4 2026 11:56:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
