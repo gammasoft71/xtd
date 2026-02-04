@@ -37,10 +37,6 @@ namespace xtd {
             current_value = std::move(value);
             return {};
           }
-          std::suspend_always yield_value(type_t&& value) noexcept {
-            current_value = std::move(std::forward<type_t>(value));
-            return {};
-          }
         };
         
         enumerable_generator(const enumerable_generator& other) = delete;
