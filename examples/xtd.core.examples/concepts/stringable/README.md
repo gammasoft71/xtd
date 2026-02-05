@@ -1,6 +1,6 @@
 # stringable
 
-Shows how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1istringable.html) concept.
+Shows how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1stringable.html) concept.
 
 ## Sources
 
