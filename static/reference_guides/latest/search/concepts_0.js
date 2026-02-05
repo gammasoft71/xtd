@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['formatable_0',['formatable',['../conceptxtd_1_1formatable.html',1,'xtd']]]
+  ['comparable_0',['comparable',['../conceptxtd_1_1comparable.html',1,'xtd']]]
 ];
