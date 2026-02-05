@@ -8,10 +8,7 @@ auto odd_numbers_generator(int count = 100, int min_value = 0, int max_value = 1
 
 auto main() -> int {
   println("Odd numbers : ");
-  auto odd_numbers = odd_numbers_generator()
-    .where([](auto n) {return n % 5 == 0;})
-    .distinct();
-  for (auto number : odd_numbers)
+  for (auto number : odd_numbers_generator().where([](auto n) {return n % 5 == 0;}).distinct())
     println("{,4}", number);
   println("Done!");
 }

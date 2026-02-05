@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "../icomparer.hpp"
+#include "../../../comparable.hpp"
 #include "../../../icomparable.hpp"
 #include "../../../int32.hpp"
-#include "../../../helpers/strictly_ordered.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -68,7 +68,7 @@ namespace xtd {
             if (&x == &y) return 0;
             if (comparer_) return comparer_->compare(x, y);
             if constexpr(std::is_polymorphic_v<first_argument_type> && std::is_base_of_v<xtd::icomparable<first_argument_type>, first_argument_type>) return static_cast<const xtd::icomparable<first_argument_type>&>(x).compare_to(y);
-            else if constexpr(xtd::helpers::strictly_ordered<first_argument_type>) return x < y ? -1 : (x > y ? 1 : 0);
+            else if constexpr(xtd::comparable<first_argument_type>) return x < y ? -1 : (x > y ? 1 : 0);
             else return &x < &y ? -1 : 1;
           }
           /// @}
