@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   generic_dictionary
   generic_dictionary_constructor_with_idicationary
+  generic_enumerable_generator
   generic_hash_set
   generic_hash_set2
   generic_icollection
