@@ -218,6 +218,7 @@
 ## [generic_Collections](generic_Collections/README.md)
 
 * [generic_dictionary](generic_Collections/generic_dictionary/README.md) shows how to use [xtd::collections::generic::dictionary](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1dictionary.html) class.
+* [generic_enumerable_generator](generic_Collections/generic_enumerable_generator/README.md) shows how to use [xtd::collections::generic::enumerable_generator](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1enumerable__generator.html) genrator.
 * [generic_hash_set](generic_Collections/generic_hash_set/README.md) shows how to use [xtd::collections::generic: generic_hash_set](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1hash__set.html) class.
 * [generic_hash_set2](generic_Collections/generic_hash_set2/README.md) shows how to use [xtd::collections::generic: generic_hash_set](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1hash__set.html) class.
 * [generic_icollection](generic_Collections/generic_icollection/README.md) shows how to use [xtd::collections::generic::icollection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1icollection.html) interface.
