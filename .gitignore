@@ -71,6 +71,7 @@ examples/xtd.forms.examples/user_forms/ball/properties/startup.cpp
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.hpp
 examples/xtd.cmake.examples/project_commands/settings_command/properties/settings.hpp
 
+doxygen_warnings.txt
 scripts/install/test_wxwidgets/wxwidgets.lck
 src/xtd/include/xtd/xtd.hpp
 src/xtd/include/xtd/export.hpp
