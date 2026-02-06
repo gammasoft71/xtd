@@ -40,8 +40,7 @@ struct my_string {
   string value;
 };
 
-template<stringable value_t>
-auto log_to_console(const value_t& value) noexcept {
+auto log_to_console(const stringable auto& value) noexcept {
   console::write_line(value);
 }
 
