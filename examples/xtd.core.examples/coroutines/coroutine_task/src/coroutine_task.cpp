@@ -6,7 +6,7 @@ public:
     println("[main], thread {}] -> start", thread::current_thread().managed_thread_id());
     
     auto message = co_await task<string>::run([] {return "Hello, World!";});
-    auto length = co_await task<size>::run([](const any_object& message) {return as<string>(message).length();}, message);
+    auto length = co_await task<size>::run([](const any_object& message) {return as<string>(message).size();}, message);
     
     println("message : {}", message);
     println("length  : {}", length);
