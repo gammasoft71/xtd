@@ -19,7 +19,7 @@ private:
   }
   
   static auto get_size(auto message) -> task<size> {
-    co_return message.length();
+    co_return message.size();
   }
 };
 
