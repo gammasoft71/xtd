@@ -4845,7 +4845,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The index of value if found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>; otherwise, xtd::collections::generic::ilist::npos. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`index` and `countù do not specify a valid section in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. [[nodiscard]] auto index_of(const type_t&amp; value, size_type index, size_type count) const -&gt; <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> { return find_index(index, count, <a class="el" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363" title="The declaration of a delegate type is similar to a method signature. It has a return value and any nu...">delegate_(auto n)</a> {return <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html" title="Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...">helpers::equator&lt;type_t&gt;</a> {}(n, value);}); }</td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`index` and `countù do not specify a valid section in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. [[nodiscard]] auto index_of(const type_t&amp; value, size_type index, size_type count) const -&gt; <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> { return find_index(index, count, [&amp;] (auto n) {return <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html" title="Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...">helpers::equator&lt;type_t&gt;</a> {}(n, value);}); }</td></tr>
   </table>
   </dd>
 </dl>
@@ -6808,7 +6808,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 6 2026 14:19:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 7 2026 09:00:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
