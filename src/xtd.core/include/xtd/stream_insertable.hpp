@@ -6,6 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @concept xtd::stream_insertable
   /// @brief Concept stream_insertable.
   /// @par Definition
   /// ```cpp
@@ -22,6 +23,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   /// @return `true` if value_t has stream insertion operator `<<` specialization.
+  /// @par Examples
+  /// The following code shows how to use xtd::stream_insertable conceps
+  /// @include stream_insertable.cpp
   template<typename value_t>
   concept stream_insertable = xtd::is_stream_insertable_v<value_t>;
 }
