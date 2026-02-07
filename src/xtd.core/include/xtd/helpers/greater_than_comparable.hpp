@@ -13,7 +13,7 @@ namespace xtd {
     /// @par Definition
     /// ```cpp
     /// template<typename value_t>
-    /// concept less_than_comparable;
+    /// concept greater_than_comparable;
     /// ```
     /// @par Header
     /// ```cpp
