@@ -13,6 +13,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @concept xtd::stringable
   /// @brief Concept stringable.
   /// @par Definition
   /// ```cpp
@@ -21,7 +22,7 @@ namespace xtd {
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/helpers/stringable>
+  /// #include <xtd/stringable>
   /// ```
   /// @par Namespace
   /// xtd
@@ -30,6 +31,9 @@ namespace xtd {
   /// @ingroup xtd_core system concepts
   /// @return `true` if value_t is derived from xtd::object, or value_t is derived from xtd::istringable, or value_t is derived from xtd::iformatable, or value_t is derived from std::exception, or value_t is an enum, value_t is std::ranges::range, or value_t has output stream operator `<<`; otherwise `false`.
   /// @remarks If a type has only a xtd::to_string specialisation, it is always considered not stringable.
+  /// @par Examples
+  /// The following code shows how to use xtd::stringable conceps
+  /// @include stringable.cpp
   template<class value_t>
   concept stringable =
     std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
