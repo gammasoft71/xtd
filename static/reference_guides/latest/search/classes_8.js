@@ -230,9 +230,11 @@ var searchData=
   ['iset_227',['iset',['../classxtd_1_1collections_1_1generic_1_1iset.html',1,'xtd::collections::generic']]],
   ['istringable_228',['istringable',['../classxtd_1_1istringable.html',1,'xtd']]],
   ['isynchronize_5finvoke_229',['isynchronize_invoke',['../classxtd_1_1isynchronize__invoke.html',1,'xtd']]],
-  ['item_230',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
-  ['item_5fcheck_5fevent_5fargs_231',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
-  ['items_5fadded_5fevent_5fargs_232',['items_added_event_args',['../classxtd_1_1forms_1_1layout_1_1items__added__event__args.html',1,'xtd::forms::layout']]],
-  ['itext_5fmodel_233',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
-  ['iwin32_5fwindow_234',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
+  ['itask_230',['ITask',['../interface_i_task.html',1,'']]],
+  ['itask_231',['itask',['../classxtd_1_1threading_1_1tasks_1_1itask.html',1,'xtd::threading::tasks']]],
+  ['item_232',['item',['../classxtd_1_1forms_1_1checked__list__box_1_1item.html',1,'xtd::forms::checked_list_box::item'],['../classxtd_1_1forms_1_1domain__up__down_1_1item.html',1,'xtd::forms::domain_up_down::item'],['../classxtd_1_1forms_1_1list__control_1_1item.html',1,'xtd::forms::list_control::item']]],
+  ['item_5fcheck_5fevent_5fargs_233',['item_check_event_args',['../classxtd_1_1forms_1_1item__check__event__args.html',1,'xtd::forms']]],
+  ['items_5fadded_5fevent_5fargs_234',['items_added_event_args',['../classxtd_1_1forms_1_1layout_1_1items__added__event__args.html',1,'xtd::forms::layout']]],
+  ['itext_5fmodel_235',['itext_model',['../classxtd_1_1forms_1_1style__sheets_1_1itext__model.html',1,'xtd::forms::style_sheets']]],
+  ['iwin32_5fwindow_236',['iwin32_window',['../classxtd_1_1forms_1_1iwin32__window.html',1,'xtd::forms']]]
 ];
