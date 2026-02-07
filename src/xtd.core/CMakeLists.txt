@@ -1197,6 +1197,8 @@ add_sources(
   "include/xtd/text/ustring_builder"
   "include/xtd/text/wstring_builder.hpp"
   "include/xtd/text/wstring_builder"
+  "include/xtd/threading/tasks/itask.hpp"
+  "include/xtd/threading/tasks/itask"
   "include/xtd/threading/tasks/basic_task.hpp"
   "include/xtd/threading/tasks/basic_task"
   "include/xtd/threading/tasks/parallel.hpp"
