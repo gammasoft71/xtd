@@ -7,6 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @concept xtd::comparable
   /// @brief Concept comparable.
   /// @par Definition
   /// ```cpp
@@ -22,6 +23,9 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core concepts
+  /// @par Examples
+  /// The following code shows how to use xtd::comparable conceps
+  /// @include comparable.cpp
   template<typename value_t>
   concept comparable = xtd::helpers::less_than_comparable<value_t> && xtd::helpers::greater_than_comparable<value_t>;
 }
