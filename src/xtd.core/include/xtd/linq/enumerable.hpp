@@ -785,7 +785,8 @@ namespace xtd {
       template<class source_t>
       [[nodiscard]] static auto order(const ienumerable<source_t>& source, const xtd::collections::generic::icomparer<source_t>& comparer) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = xtd::collections::generic::helpers::raw_array<source_t> {source.begin(), source.end()};
+        for (const auto& item : source)
+          result.items.push_back(item);
         std::sort(result.items.begin(), result.items.end(), xtd::collections::generic::helpers::lesser<source_t>(comparer));
         return result;
       }
@@ -799,7 +800,8 @@ namespace xtd {
       template<class key_t, class source_t>
       [[nodiscard]] static auto order_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = std::vector<source_t> {source.begin(), source.end()};
+        for (const auto& item : source)
+          result.items.push_back(item);
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
         return result;
       }
@@ -813,7 +815,8 @@ namespace xtd {
       template<class source_t>
       [[nodiscard]] static auto order_by(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& key_selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = std::vector<source_t> {source.begin(), source.end()};
+        for (const auto& item : source)
+          result.items.push_back(item);
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
         return result;
       }
@@ -827,7 +830,8 @@ namespace xtd {
       template<class key_t, class source_t>
       [[nodiscard]] static auto order_by_descending(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = std::vector<source_t> {source.begin(), source.end()};
+        for (const auto& item : source)
+          result.items.push_back(item);
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
         return result;
       }
@@ -841,7 +845,8 @@ namespace xtd {
       template<class source_t>
       [[nodiscard]] static auto order_by_descending(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& key_selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result.items = std::vector<source_t> {source.begin(), source.end()};
+        for (const auto& item : source)
+          result.items.push_back(item);
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
         return result;
       }
