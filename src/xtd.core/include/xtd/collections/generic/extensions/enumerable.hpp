@@ -309,14 +309,14 @@ namespace xtd {
           /// @brief Sorts the elements of a sequence in ascending order.
           /// @param source A sequence of values to order.
           /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
-          [[nodiscard]] auto order() {
+          [[nodiscard]] auto order() const {
             return xtd::linq::enumerable::order(self());
           }
           /// @brief Sorts the elements of a sequence in ascending order.
           /// @param source A sequence of values to order.
           /// @param comparer An xtd::collections::generic::icomparer <source_t> to compare keys.
           /// @return An xtd::collections::generic::ienumerable <source_t> whose elements are sorted.
-          [[nodiscard]] auto order(const xtd::collections::generic::icomparer<source_t>& comparer) {
+          [[nodiscard]] auto order(const xtd::collections::generic::icomparer<source_t>& comparer) const {
             return xtd::linq::enumerable::order(self(), comparer);
           }
           
