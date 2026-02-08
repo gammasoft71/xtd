@@ -10,7 +10,7 @@ auto fill_large_log_file(const string& file) -> void {
   println("Done!\n");
 }
 
-auto read_all_lines_generator(const string& file) -> enumerable_generator<string> {
+[[nodiscard]] auto read_all_lines_generator(const string& file) -> enumerable_generator<string> {
   using_(auto sr = stream_reader {file})
   while (!sr.end_of_stream())
     co_yield sr.read_line();
