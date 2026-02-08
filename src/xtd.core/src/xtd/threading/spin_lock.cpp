@@ -31,11 +31,11 @@ bool spin_lock::is_held() const noexcept {
 }
 
 bool spin_lock::is_held_by_current_thread() const noexcept {
-  return data_->enable_thread_owner_tracking;
+  return data_->thread_id == thread::current_thread().thread_id();
 }
 
 bool spin_lock::is_thread_owner_tracking_enabled() const noexcept {
-  return data_->thread_id == thread::current_thread().thread_id();
+  return data_->enable_thread_owner_tracking;
 }
 
 void spin_lock::enter(bool& lock_taken) {
