@@ -8,6 +8,7 @@ namespace xtd::tests {
     template<class value_t>
     requires stream_insertable<value_t>
     auto is_stream_insertable(value_t&& value) -> bool {return true;}
+    
     template<class value_t>
     requires (!stream_insertable<value_t>)
     auto is_stream_insertable(value_t&& value) -> bool {return false;}
@@ -52,7 +53,6 @@ namespace xtd::tests {
     }
 
     auto test_method_(with_bool) {
-      assert_that(is_stream_insertable(true)).is().true_();
       assert_that(is_stream_insertable(false)).is().true_();
     }
     
@@ -66,6 +66,8 @@ namespace xtd::tests {
       assert_that(is_stream_insertable(42_u16)).is().true_();
       assert_that(is_stream_insertable(42_u32)).is().true_();
       assert_that(is_stream_insertable(42_u64)).is().true_();
+
+      assert_that(is_stream_insertable(42_z)).is().true_();
     }
   };
 }
