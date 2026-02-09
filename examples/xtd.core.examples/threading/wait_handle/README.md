@@ -18,7 +18,7 @@ xtdc run
 ## Output
 
 ```
-MMain thread is waiting for BOTH tasks to complete.
+Main thread is waiting for BOTH tasks to complete.
 Performing a task for 4000 milliseconds.
 Performing a task for 9000 milliseconds.
 Both tasks are completed (time waited=00:00:09:011011000)
