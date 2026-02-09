@@ -84,7 +84,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// class enumerator interface_
+      /// class enumerator static_
       /// ```
       /// @par Header
       /// ```cpp
