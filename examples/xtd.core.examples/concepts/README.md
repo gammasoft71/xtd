@@ -3,6 +3,7 @@
 [This folder](.) contains guid examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
 * [comparable](comparable/README.md) shows how to use how to use [xtd::comparable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1comparable.html) concept.
+* [enumerable](enumerable/README.md) shows how to use how to use [xtd::collections::generic::enumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1enumerable.html) concept.
 * [stringable](stringable/README.md) shows how to use how to use [xtd::stringable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1stringable.html) concept.
 
 ## Build and run any project

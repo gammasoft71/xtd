@@ -5,6 +5,7 @@ find_package(xtd REQUIRED)
 
 add_projects(
   comparable
+  enumerable
   stringable
 )
 
