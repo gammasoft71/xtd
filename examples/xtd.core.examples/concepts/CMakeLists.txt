@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   comparable
   enumerable
+  forward_iterable
   stringable
 )
 
