@@ -30,7 +30,7 @@ namespace xtd {
     /// @brief Safely call the specified application's main entry point.
     /// @param main_function The main method to safety call.
     /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
-    /// @remarks The xtd::threading::thread::join_all method are cal before exit. See xtd::threading::thread::join_all for more information.
+    /// @remarks The xtd::threading::thread::join_all method are call before exit. See xtd::threading::thread::join_all for more information.
     /// @remarks The xtd::startup::run method is used by the keyword #startup_.
     /// @param main_class The class that contains the static main method.
     /// @par Examples
@@ -55,7 +55,7 @@ namespace xtd {
     /// @param argc the main argc param.
     /// @param argv the main argv param.
     /// @remarks The main_function is called in try and catch. If an exception occurs, a generic message is displayed.
-    /// @remarks The xtd::threading::thread::join_all method are cal before exit. See xtd::threading::thread::join_all for more information.
+    /// @remarks The xtd::threading::thread::join_all method are call before exit. See xtd::threading::thread::join_all for more information.
     /// @remarks The xtd::startup::run method is used by the keyword #startup_.
     /// @param main_class The class that contains the static main method.
     /// @par Examples
