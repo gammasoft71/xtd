@@ -261,6 +261,12 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @param main_method The main method.
+/// @par Implementation
+/// ```cpp
+/// auto main() -> int {
+///   return xtd::startup::safe_run(main_method);
+/// }
+/// ```
 /// @par Examples
 /// This example show a main method without arguments and without return code
 /// @include main1.cpp
@@ -276,18 +282,5 @@ namespace xtd {
 #define startup_(main_method) \
   auto main() -> int { \
     return xtd::startup::safe_run(main_method); \
-  } \
-  auto __opaque_sftews__ = 0 // force to end with semicolon
-
-/// @brief Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.
-/// @par Namespace
-/// xtd
-/// @par Library
-/// xtd.core
-/// @ingroup xtd_core keywords
-/// @warning The main_class must ba have a static member main method. For other entry point that main use #startup_ keyword.
-#define startup_class_(main_class) \
-  auto main() -> int { \
-    return xtd::startup::safe_run(main_class::main); \
   } \
   auto __opaque_sftews__ = 0 // force to end with semicolon
