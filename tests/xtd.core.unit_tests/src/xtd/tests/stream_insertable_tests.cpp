@@ -7,22 +7,11 @@ namespace xtd::tests {
   class test_class_(stream_insertable_tests) {
     template<class value_t>
     requires stream_insertable<value_t>
-    auto is_stream_insertable(value_t&& value) -> bool {return true;}
+    [[nodiscard]] static auto is_stream_insertable(value_t&& value) noexcept -> bool {return true;}
     
     template<class value_t>
     requires (!stream_insertable<value_t>)
-    auto is_stream_insertable(value_t&& value) -> bool {return false;}
-    
-    struct my_stream_insertable {
-      friend auto operator <<(std::ostream& os, const my_stream_insertable&) -> std::ostream& {return os << "my_stream_insertable";}
-    };
-
-    struct my_stringable : public istringable<my_stringable> {
-      auto to_string() const -> string override {return "my_stringable";}
-    };
-    
-    struct my_stream_not_insertable {
-    };
+    [[nodiscard]] static auto is_stream_insertable(value_t&& value) noexcept -> bool {return false;}
     
     auto test_method_(with_string_literal) {
       assert_that(is_stream_insertable("str")).is().true_();
@@ -40,15 +29,25 @@ namespace xtd::tests {
       assert_that(is_stream_insertable("1.2.3"_vers)).is().false_();
     }
     
+    struct my_stream_insertable {
+      friend auto operator <<(std::ostream& os, const my_stream_insertable&) -> std::ostream& {return os << "my_stream_insertable";}
+    };
+    
     auto test_method_(with_my_stream_insertable) {
       assert_that(is_stream_insertable(my_stream_insertable {})).is().true_();
     }
     
     auto test_method_(with_my_stream_not_insertable) {
+      struct my_stream_not_insertable {};
+      
       assert_that(is_stream_insertable(my_stream_not_insertable {})).is().false_();
     }
     
     auto test_method_(with_my_stringable) {
+      struct my_stringable : public istringable<my_stringable> {
+        auto to_string() const -> string override {return "my_stringable";}
+      };
+      
       assert_that(is_stream_insertable(my_stringable {})).is().true_();
     }
 
