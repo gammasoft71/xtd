@@ -23,7 +23,7 @@ countdown_event::countdown_event() : countdown_event(0) {
 }
 
 countdown_event::countdown_event(size initial_count) : data_(xtd::new_sptr<data>()) {
-  if (initial_count < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  if (initial_count < 0_z) throw_helper::throws(exception_case::argument_out_of_range);
   data_->current_count = initial_count;
   data_->initial_count = initial_count;
   if (data_->current_count == 0) data_->event.set();
@@ -86,7 +86,7 @@ auto countdown_event::reset() -> void {
 
 auto countdown_event::reset(size count) -> void {
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  if (count < 0_z) throw_helper::throws(exception_case::argument_out_of_range);
   lock_(*data_) {
     data_->event.reset();
     data_->initial_count = count;
