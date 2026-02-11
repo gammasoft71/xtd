@@ -65,15 +65,34 @@ namespace xtd {
       /// @brief Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
       /// @param value A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
       /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 7.
-      auto abreviated_day_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
+      auto abreviated_day_names(const xtd::array<xtd::string>& value) -> xtd::globalization::date_time_format_info&;
       
+      /// @brief Gets a string array of abbreviated month names associated with the current xtd::globalization::date_time_format_info object.
+      /// @return An array of abbreviated month names.
       [[nodiscard]] auto abreviated_month_genitive_names() const noexcept -> const xtd::array<xtd::string>& ;
-      auto abreviated_month_genitive_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
-      
+      /// @brief Sets a string array of abbreviated month names associated with the current xtd::globalization::date_time_format_info object.
+      /// @param value An array of abbreviated month names.
+      /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 13.
+      auto abreviated_month_genitive_names(const xtd::array<xtd::string>& value) -> xtd::globalization::date_time_format_info&;
+
+      /// @brief Gets or a one-dimensional string array that contains the culture-specific abbreviated names of the months.
+      /// @return A one-dimensional string array with 13 elements that contains the culture-specific abbreviated names of the months. For 12-month calendars, the 13th element of the array is an empty string. The array for InvariantInfo contains "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", and "".
       [[nodiscard]] auto abreviated_month_names() const noexcept -> const xtd::array<xtd::string>& ;
-      auto abreviated_month_names(const xtd::array<xtd::string>& value) noexcept -> xtd::globalization::date_time_format_info&;
+      /// @brief Sets or a one-dimensional string array that contains the culture-specific abbreviated names of the months.
+      /// @oaram value A one-dimensional string array with 13 elements that contains the culture-specific abbreviated names of the months. For 12-month calendars, the 13th element of the array is an empty string. The array for InvariantInfo contains "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", and "".
+      /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 13.
+      auto abreviated_month_names(const xtd::array<xtd::string>& value) -> xtd::globalization::date_time_format_info&;
       
+      /// @brief Gets the string designator for hours that are "ante meridiem" (before noon).
+      /// @return The string designator for hours that are ante meridiem. The default for InvariantInfo is "AM".
+      /// @remarks The xtd::globalization::date_time_format_info::am_designator property is used for all times from 0:00:00 (midnight) to 11:59:59.999.
+      /// @remarks If a custom format string includes the "tt" format specifier and the time is before noon, the xtd::date_time::to_string method includes the value of the xtd::globalization::date_time_format_info::am_designator property in place of "tt" in the result string. If the custom format string includes the "t" custom format specifier, only the first character of the xtd::globalization::date_time_format_info::am_designator property value is included. You should use "tt" for languages for which it is necessary to maintain the distinction between A.M. and P.M. An example is Japanese, in which the A.M. and P.M. designators differ in the second character instead of the first character.
+      /// @remarks For cultures that do not use an A.M. designator, this property returns an empty string.
       [[nodiscard]] auto am_designator() const noexcept -> const xtd::string&;
+      /// @brief Sets the string designator for hours that are "ante meridiem" (before noon).
+      /// @param value The string designator for hours that are ante meridiem. The default for InvariantInfo is "AM".
+      /// @remarks If a custom format string includes the "tt" format specifier and the time is before noon, the xtd::date_time::to_string method includes the value of the xtd::globalization::date_time_format_info::am_designator property in place of "tt" in the result string. If the custom format string includes the "t" custom format specifier, only the first character of the xtd::globalization::date_time_format_info::am_designator property value is included. You should use "tt" for languages for which it is necessary to maintain the distinction between A.M. and P.M. An example is Japanese, in which the A.M. and P.M. designators differ in the second character instead of the first character.
+      /// @remarks For cultures that do not use an A.M. designator, this property returns an empty string.
       auto am_designator(const xtd::string& value) noexcept -> xtd::globalization::date_time_format_info&;
       
       [[nodiscard]] auto date_separator() const noexcept -> const xtd::string&;
@@ -137,8 +156,14 @@ namespace xtd {
       /// @name Public Static Properties
       
       /// @{
+      /// @brief Gets a read-only xtd::globalization::date_time_format_info object that formats values based on the current culture.
+      /// @return A read-only xtd::globalization::date_time_format_info object based on the xtd::globalization::culture_info object for the current thread.
+      /// @remarks The xtd::globalization::date_time_format_info object returned by the xtd::globalization::date_time_format_info::current_info property reflects user overrides.
       [[nodiscard]] static auto current_info() noexcept -> const xtd::globalization::date_time_format_info&;
-      
+
+      /// @brief Gets the default read-only xtd::globalization::date_time_format_info object that is culture-independent (invariant).
+      /// @return A read-only object that is culture-independent (invariant).
+      /// @remarks This property does not change, regardless of the current culture. Because of this, the invariant culture's xtd::globalization::date_time_format_info object can be used to produce consistent, culture-independent results in parsing and formatting operations on data that is multi-cultural. For example, if date and time data from multiple cultures is to be persisted in string form, it can be formatted by using the xtd::globalization::date_time_format_info object of the invariant culture and saved. It can then be parsed by using the invariant culture's xtd::globalization::date_time_format_info object.
       [[nodiscard]] static auto invariant_info() noexcept -> const xtd::globalization::date_time_format_info&;
       /// @}
       

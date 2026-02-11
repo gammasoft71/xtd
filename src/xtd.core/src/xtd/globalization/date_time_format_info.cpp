@@ -50,7 +50,7 @@ auto date_time_format_info::abreviated_day_names() const noexcept -> const array
   return data_->abreviated_day_names;
 }
 
-auto date_time_format_info::abreviated_day_names(const array<string>& value) noexcept -> date_time_format_info& {
+auto date_time_format_info::abreviated_day_names(const array<string>& value) -> date_time_format_info& {
   if (value.length() != 7_z) throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->abreviated_day_names = value;
   return self_;
@@ -60,7 +60,8 @@ auto date_time_format_info::abreviated_month_genitive_names() const noexcept -> 
   return data_->abreviated_month_genitive_names;
 }
 
-auto date_time_format_info::abreviated_month_genitive_names(const array<string>& value) noexcept -> date_time_format_info& {
+auto date_time_format_info::abreviated_month_genitive_names(const array<string>& value) -> date_time_format_info& {
+  if (value.length() != 13_z) throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->abreviated_month_genitive_names = value;
   return self_;
 }
@@ -69,7 +70,8 @@ auto date_time_format_info::abreviated_month_names() const noexcept -> const arr
   return data_->abreviated_month_names;
 }
 
-auto date_time_format_info::abreviated_month_names(const array<string>& value) noexcept -> date_time_format_info& {
+auto date_time_format_info::abreviated_month_names(const array<string>& value) -> date_time_format_info& {
+  if (value.length() != 13_z) throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->abreviated_month_names = value;
   return self_;
 }
