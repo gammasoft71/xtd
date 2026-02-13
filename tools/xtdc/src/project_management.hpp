@@ -224,9 +224,9 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Open project aborted.";
       auto xtdc_default_ide = xtd::environment::get_environment_variable("XTDC_DEFAULT_IDE");
       if (!xtd::string::is_empty(xtdc_default_ide)) {
-        if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+        if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::string::format("{}.sln{}", xtd::io::path::combine(build_path(), get_name()), xtd::io::file::exists(xtd::string::format("{}.slnx", xtd::io::path::combine(build_path(), get_name()))) ? "x" :""), true, false);
         else launch_and_wait_process(xtdc_default_ide, path_, false, false);
-      } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
+      } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::string::format("{}.sln{}", xtd::io::path::combine(build_path(), get_name()), xtd::io::file::exists(xtd::string::format("{}.slnx", xtd::io::path::combine(build_path(), get_name()))) ? "x" :""), true, false);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::string::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
       else {
         if (xtd::io::file::exists("/usr/bin/code")) launch_and_wait_process("code", path_, false, false);
@@ -559,7 +559,7 @@ namespace xtdc_command {
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && xtd::string::is_empty(name)) name = get_name();
-      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name)))))
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || (!xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.slnx", name))) && !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name))))))
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, verbose);
