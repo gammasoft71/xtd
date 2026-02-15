@@ -132,7 +132,7 @@ namespace xtd::threading::tests {
     
     auto test_method_(signal_with_negative_param) {
       auto ce = countdown_event {10};
-      assert::throws<argument_out_of_range_exception>([&] {ce.signal(-1);});
+      assert::throws<argument_out_of_range_exception>([&] {ce.signal(size {-1});});
     }
     
     auto test_method_(signal_with_greater_param_than_intial_count) {
