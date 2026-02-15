@@ -509,6 +509,7 @@ namespace xtd {
       /// @}
       
     private:
+      friend class control;
       friend class form;
       friend class input_dialog;
       friend class message_box;
@@ -538,6 +539,7 @@ namespace xtd {
       static bool system_font_size_;
       static bool use_wait_cursor_;
       static bool visual_styles_;
+      static xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> top_level_forms_;
     };
   }
 }

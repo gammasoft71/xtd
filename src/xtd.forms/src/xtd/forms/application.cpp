@@ -99,6 +99,7 @@ bool application::system_controls_ = false;
 bool application::system_font_size_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::visual_styles_ = false;
+xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> application::top_level_forms_;
 
 event<application, event_handler> application::application_exit;
 event<application, event_handler> application::enter_thread_modal;
@@ -238,10 +239,16 @@ bool application::message_loop() noexcept {
 
 const form_collection application::open_forms() noexcept {
   auto forms = form_collection {};
+  if (keep_cloned_controls()) {
+    for (auto control : top_level_forms_)
+      forms.push_back(dynamic_cast<form&>(*control));
+    return forms;
+  }
+  
   for (auto control : control::top_level_controls_)
     forms.push_back(dynamic_cast<form&>(control.get()));
   return forms;
-  
+
   /*
   auto forms = form_collection {};
   for (intptr handle : native::application::open_forms()) {
@@ -438,6 +445,7 @@ void application::run(xtd::forms::application_context& context) {
   application::message_loop_ = false;
   internal_context_.main_form(nullptr);
   native::application::cleanup();
+  top_level_forms_.clear();
 }
 
 void application::run(const form& form) {

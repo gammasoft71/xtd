@@ -1206,8 +1206,10 @@ void control::on_control_appearance_changed(const event_args& e) {
 }
 
 void control::on_create_control() {
-  if (!parent().has_value())
-    top_level_controls_.add(*this);
+  if (!parent().has_value()) {
+    if (!application::keep_cloned_controls()) top_level_controls_.add(*this);
+    else top_level_controls_.add(*application::top_level_forms_[~1_z]);
+  }
   for (auto control : data_->controls) {
     control.get().data_->parent = handle();
     control.get().create_control();

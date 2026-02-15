@@ -63,6 +63,7 @@ form::form() : data_(xtd::new_sptr<data>()) {
   fore_color(application::style_sheet().is_system_style_sheet() ? system_colors::control_text() : default_fore_color());
   font(default_font());
   create_control();
+  application::top_level_forms_.add(as<control>(as<iclonable>(*this).clone()));
 }
 
 std::optional<form::ibutton_control_ref> form::accept_button() const noexcept {
