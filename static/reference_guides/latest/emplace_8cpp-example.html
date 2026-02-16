@@ -126,10 +126,10 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = form::create(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
 <div class="line">  form1.controls().emplace_front&lt;button&gt;(<span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
+<div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">  };</div>
 <div class="line">  form1.controls().emplace_at&lt;button&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, drawing::size {200, 75}).auto_repeat(<span class="keyword">true</span>).click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
+<div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">  };</div>
 <div class="line">  form1.controls().emplace_at&lt;label&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
 <div class="line">  form1.controls().emplace_back&lt;label&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, point {50, 230}, drawing::size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
@@ -140,7 +140,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 15 2026 20:32:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Feb 16 2026 21:34:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

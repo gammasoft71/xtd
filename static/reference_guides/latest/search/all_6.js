@@ -612,7 +612,7 @@ var searchData=
   ['form_5fclosing_5fevent_5fargs_2ehpp_609',['form_closing_event_args.hpp',['../form__closing__event__args_8hpp.html',1,'']]],
   ['form_5fclosing_5fevent_5fhandler_610',['form_closing_event_handler',['../group__events.html#ga080d7796ff5079386ef28a824d17e4ba',1,'xtd::forms']]],
   ['form_5fclosing_5fevent_5fhandler_2ehpp_611',['form_closing_event_handler.hpp',['../form__closing__event__handler_8hpp.html',1,'']]],
-  ['form_5fcollection_612',['form_collection',['../group__xtd__forms.html#ga5d701203d84c1e8a81be4cace66126b7',1,'xtd::forms']]],
+  ['form_5fcollection_612',['form_collection',['../classxtd_1_1forms_1_1form__collection.html',1,'xtd::forms::form_collection'],['../classxtd_1_1forms_1_1form__collection.html#a8fb502189f712c1d7775f6c0d6cf1ee6',1,'xtd::forms::form_collection::form_collection()']]],
   ['form_5fcollection_2ehpp_613',['form_collection.hpp',['../form__collection_8hpp.html',1,'']]],
   ['form_5ffrom_5fcss_614',['form_from_css',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#ae48503d7b9f4717cbae5faba4a44bb51',1,'xtd::forms::style_sheets::style_sheet']]],
   ['form_5fowner_5fclosing_615',['form_owner_closing',['../group__xtd__forms.html#ggad306a8c86886e96653e8e813745adb62a6921406a369f3451a59a851525d71a44',1,'xtd::forms']]],
