@@ -8,17 +8,17 @@ namespace control_with_name_operator_example {
       button1.name("button1");
       label1.name("label1");
       
-      controls()["button1"].value().get().location({10, 10});
-      controls()["button1"].value().get().text("Click me");
-      as<button>(controls()["button1"].value().get()).auto_repeat(true);
-      controls()["button1"].value().get().click += delegate_ {
+      controls()["button1"].get().location({10, 10});
+      controls()["button1"].get().text("Click me");
+      as<button>(controls()["button1"].get()).auto_repeat(true);
+      controls()["button1"].get().click += delegate_ {
         static int count = 0;
-        controls()["label1"].value().get().text(string::format("button clicked {} times", ++count));
+        controls()["label1"].get().text(string::format("button clicked {} times", ++count));
       };
 
-      controls()["label1"].value().get().auto_size(true);
-      controls()["label1"].value().get().location({10, 50});
-      controls()["label1"].value().get().text("button clicked 0 times");
+      controls()["label1"].get().auto_size(true);
+      controls()["label1"].get().location({10, 50});
+      controls()["label1"].get().text("button clicked 0 times");
     }
     
   private:
