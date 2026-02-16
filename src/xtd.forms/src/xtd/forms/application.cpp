@@ -241,12 +241,12 @@ const form_collection application::open_forms() noexcept {
   auto forms = form_collection {};
   if (keep_cloned_controls()) {
     for (auto control : top_level_forms_)
-      forms.push_back(dynamic_cast<form&>(*control));
+      forms.add(dynamic_cast<form&>(*control));
     return forms;
   }
   
   for (auto control : control::top_level_controls_)
-    forms.push_back(dynamic_cast<form&>(control.get()));
+    forms.add(dynamic_cast<form&>(control.get()));
   return forms;
 
   /*
