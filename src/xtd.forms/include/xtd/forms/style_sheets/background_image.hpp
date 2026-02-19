@@ -180,7 +180,7 @@ namespace xtd {
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
         xtd::uri url_;
         xtd::array<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
-        int32 angle_ = 180;
+        int32 angle_ = 0;
       };
     }
   }
