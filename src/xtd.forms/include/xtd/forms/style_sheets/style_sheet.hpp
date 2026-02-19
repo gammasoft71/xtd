@@ -505,9 +505,11 @@ namespace xtd {
         //static style_sheet system_style_sheet_windows_light() noexcept; // Declared in system_style_sheet_windows_light.cpp
         
         bool try_parse_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_conic_gradient(const xtd::string& text, background_image& result) const noexcept;
         bool try_parse_hex_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_linear_gradient(const xtd::string& text, background_image& result) const noexcept;
         bool try_parse_named_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
+        bool try_parse_radial_gradient(const xtd::string& text, background_image& result) const noexcept;
         bool try_parse_rgb_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_rgba_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;
         bool try_parse_hsv_color(const xtd::string& text, xtd::drawing::color& result) const noexcept;

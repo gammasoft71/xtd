@@ -506,7 +506,9 @@ color style_sheet::background_color_from_css(const string& css_text, const color
 background_image style_sheet::background_image_from_css(const string& css_text, const background_image& default_value) const noexcept {
   auto result = background_image {};
   if (css_text.starts_with("url(", true) && css_text.ends_with(")", true) && try_parse_uri(css_text, result.url_)) return result;
+  if (css_text.starts_with("conic-gradient(", true) && css_text.ends_with(")", true) && try_parse_conic_gradient(css_text.to_lower(), result)) return result;
   if (css_text.starts_with("linear-gradient(", true) && css_text.ends_with(")", true) && try_parse_linear_gradient(css_text.to_lower(), result)) return result;
+  if (css_text.starts_with("radial-gradient(", true) && css_text.ends_with(")", true) && try_parse_radial_gradient(css_text.to_lower(), result)) return result;
   return default_value;
 }
 
@@ -1137,8 +1139,75 @@ bool style_sheet::try_parse_hex_color(const string& text, color& result) const n
   return false;
 }
 
+bool style_sheet::try_parse_conic_gradient(const string& text, background_image& result) const noexcept {
+  auto arguments = split_values_from_text(text.remove(text.length() - 1).replace("conic-gradient(", string::empty_string));
+  auto colors = list<color> {};
+  auto angle = -1;
+  if (arguments.count() > 0 && arguments[0].starts_with("from")) {
+    auto args = arguments[0].split();
+    if (args.count() < 2) return false;
+    if (!args[1].ends_with("deg")) return false;
+    auto argument = args[1].replace("deg", string::empty_string);
+    if (angle != -1 || string::try_parse<int32>(argument, angle) == false) return false;
+  }
+
+  for (auto argument : arguments) {
+    drawing::color gradient_color;
+    if (try_parse_color(argument, gradient_color))
+      colors.add(gradient_color);
+  }
+  if (colors.count() < 2) return false;
+  try {
+    result = background_image(style_sheets::image_type::conic_gradient, array<color>(colors), angle == -1 ? 0 : angle);
+  } catch (...) {
+    return false;
+  }
+  return true;
+}
+
 bool style_sheet::try_parse_linear_gradient(const string& text, background_image& result) const noexcept {
   auto arguments = split_values_from_text(text.remove(text.length() - 1).replace("linear-gradient(", string::empty_string));
+  auto colors = list<color> {};
+  auto angle = -1;
+  for (auto argument : arguments) {
+    drawing::color gradient_color;
+    if (argument == "to top") {
+      if (angle != -1) return false;
+      angle = 0;
+    } else if (argument == "to top right") {
+      if (angle != -1) return false;
+      angle = 45;
+    } else if (argument == "to right") {
+      if (angle != -1) return false;
+      angle = 90;
+    } else if (argument == "to bottom right") {
+      if (angle != -1) return false;
+      angle = 135;
+    } else if (argument == "to bottom") {
+      if (angle != -1) return false;
+      angle = 180;
+    } else if (argument == "to bottom left") {
+      if (angle != -1) return false;
+      angle = 225;
+    } else if (argument == "to left") {
+      if (angle != -1) return false;
+      angle = 270;
+    } else if (argument == "to top left") {
+      if (angle != -1) return false;
+      angle = 315;
+    } else if (argument.ends_with("deg")) {
+      argument = argument.replace("deg", string::empty_string);
+      if (angle != -1 || string::try_parse<int32>(argument, angle) == false) return false;
+    } else if (try_parse_color(argument, gradient_color))
+      colors.add(gradient_color);
+  }
+  if (colors.count() < 2) return false;
+  result = background_image(style_sheets::image_type::linear_gradient, array<color>(colors), angle == -1 ? 180 : angle);
+  return true;
+}
+
+bool style_sheet::try_parse_radial_gradient(const string& text, background_image& result) const noexcept {
+  auto arguments = split_values_from_text(text.remove(text.length() - 1).replace("radial-gradient(", string::empty_string));
   auto colors = list<color> {};
   auto angle = -1;
   for (auto argument : arguments) {
