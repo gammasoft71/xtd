@@ -2,6 +2,7 @@
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/texture_brush>
 #include <xtd/drawing/system_colors>
+#include <xtd/drawing/drawing_2d/conical_gradient_brush>
 #include <xtd/drawing/drawing_2d/linear_gradient_brush>
 #include <xtd/argument_exception>
 #include <xtd/as>
@@ -29,12 +30,10 @@ background_image::background_image(const array<color>& colors, int32 angle) : im
 
 background_image::background_image(style_sheets::image_type image_type, const array<color>& colors) : image_type_(image_type), colors_(colors) {
   if (colors.length() < 2_z) throw_helper::throws(exception_case::argument);
-  if (image_type != style_sheets::image_type::linear_gradient) throw_helper::throws(exception_case::not_supported);
 }
 
 background_image::background_image(style_sheets::image_type image_type, const array<color>& colors, int32 angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.length() < 2_z) throw_helper::throws(exception_case::argument);
-  if (image_type != style_sheets::image_type::linear_gradient) throw_helper::throws(exception_case::not_supported);
 }
 
 background_image::background_image(const std::initializer_list<xtd::drawing::color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
@@ -75,8 +74,14 @@ void background_image::image_type(style_sheets::image_type value) noexcept {
 }
 
 xtd::uptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect) {
+  auto brush_angle = as<float>(image.angle()) >= 90 ? as<float>(image.angle()) - 90.0 : 360.0f + as<float>(image.angle()) - 90.0f;
+  if (image.image_type() == style_sheets::image_type::conic_gradient) {
+    auto x = rect.x + (rect.width - rect.x) / 2;
+    auto y = rect.y + (rect.height - rect.y) / 2;
+    return xtd::new_uptr<conical_gradient_brush>(xtd::drawing::point {x, y}, image.colors(), brush_angle);
+  }
   if (image.image_type() == style_sheets::image_type::linear_gradient)
-    return xtd::new_uptr<linear_gradient_brush>(rect, image.colors(), as<float>(image.angle()) >= 90 ? as<float>(image.angle()) - 90.0 : 360.0f + as<float>(image.angle()) - 90.0f);
+    return xtd::new_uptr<linear_gradient_brush>(rect, image.colors(), brush_angle);
   if (image.image_type() == style_sheets::image_type::url)
     return xtd::new_uptr<texture_brush>(image::from_file(image.url().to_string()));
   return nullptr;
