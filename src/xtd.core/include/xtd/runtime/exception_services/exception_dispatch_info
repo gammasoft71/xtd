@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/runtime/exception_services/exception_dispatch_info.hpp>

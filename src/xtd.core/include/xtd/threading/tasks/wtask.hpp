@@ -15,7 +15,7 @@ namespace xtd {
       class wtask : public xtd::threading::tasks::task<result_t> {
       public:
         struct promise_type {
-          xtd::runtime::exception_services::exception_dispatch_info exception;
+          xtd::exception_services::exception_dispatch_info exception;
           xtd::ptr<xtd::threading::tasks::wtask<result_t>> task;
           std::coroutine_handle<promise_type> self;
           

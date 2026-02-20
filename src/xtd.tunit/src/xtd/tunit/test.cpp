@@ -2,14 +2,14 @@
 #include "../../../include/xtd/tunit/unit_test.hpp"
 #include <xtd/diagnostics//debug_break>
 #include <xtd/environment>
-#include <xtd/runtime/exception_services/exception_dispatch_info>
+#include <xtd/exception_services/exception_dispatch_info>
 #include <xtd/null_pointer_exception>
 #include <exception>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
-using namespace xtd::runtime::exception_services;
+using namespace xtd::exception_services;
 using namespace xtd::tunit;
 
 test* test::current_test_ = nullptr;

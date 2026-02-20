@@ -20,7 +20,7 @@ namespace xtd {
       class task<void> : public xtd::threading::tasks::basic_task<> {
       public:
         struct promise_type {
-          xtd::runtime::exception_services::exception_dispatch_info exception;
+          xtd::exception_services::exception_dispatch_info exception;
           xtd::ptr<xtd::threading::tasks::task<>> task_;
           std::coroutine_handle<promise_type> self;
 

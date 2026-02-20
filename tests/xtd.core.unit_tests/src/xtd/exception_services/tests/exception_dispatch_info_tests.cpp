@@ -1,4 +1,4 @@
-#include <xtd/runtime/exception_services/exception_dispatch_info>
+#include <xtd/exception_services/exception_dispatch_info>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -6,7 +6,7 @@
 
 using namespace xtd::tunit;
 
-namespace xtd::runtime::exception_services::tests {
+namespace xtd::exception_services::tests {
   class test_class_(exception_dispatch_info_tests) {
     auto test_method_(default_constructor) {
       assert::is_false(exception_dispatch_info {} ? true : false);

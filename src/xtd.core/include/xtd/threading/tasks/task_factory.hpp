@@ -174,7 +174,7 @@ namespace xtd {
       template<class from_exception_t>
       auto basic_task<result_t>::from_exception(from_exception_t exception) -> xtd::threading::tasks::task<result_t> {
         auto task = xtd::threading::tasks::task<result_t> {};
-        task.basic_task<>::data_->exception = xtd::runtime::exception_services::exception_dispatch_info::capture(exception);
+        task.basic_task<>::data_->exception = xtd::exception_services::exception_dispatch_info::capture(exception);
         task.basic_task<>::data_->status = xtd::threading::tasks::task_status::faulted;
         task.basic_task<>::data_->end_event.set();
         return task;
