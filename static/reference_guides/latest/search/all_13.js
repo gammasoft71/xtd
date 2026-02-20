@@ -531,7 +531,7 @@ var searchData=
   ['source_5fcolor_528',['source_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__substitution__effect.html#a63d10972cea8edfdcd8bd70760ec3134',1,'xtd::drawing::imaging::effects::color_substitution_effect']]],
   ['source_5fcopy_529',['source_copy',['../group__xtd__drawing.html#gga5a8edc9c35f0925441603048859eef6ea8aa243708268806f7a22089c410befd1',1,'xtd::drawing::source_copy'],['../group__xtd__drawing.html#ggacf43a9559ec2a8a422bccf24aa0613e5a8aa243708268806f7a22089c410befd1',1,'xtd::drawing::drawing_2d::source_copy']]],
   ['source_5ferase_530',['source_erase',['../group__xtd__drawing.html#gga5a8edc9c35f0925441603048859eef6ea7855d8fe31119e5275e4b1def144e875',1,'xtd::drawing']]],
-  ['source_5fexception_531',['source_exception',['../classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html#afab5b67ddb1580288953b0d285b75c2c',1,'xtd::runtime::exception_services::exception_dispatch_info']]],
+  ['source_5fexception_531',['source_exception',['../classxtd_1_1exception__services_1_1exception__dispatch__info.html#ade8596c339dda574eaf289f9aae53637',1,'xtd::exception_services::exception_dispatch_info']]],
   ['source_5ffilter_532',['source_filter',['../classxtd_1_1diagnostics_1_1source__filter.html',1,'xtd::diagnostics::source_filter'],['../classxtd_1_1diagnostics_1_1source__filter.html#ac92fe96523ca3e9db26dc7484f7194f5',1,'xtd::diagnostics::source_filter::source_filter()']]],
   ['source_5ffilter_2ehpp_533',['source_filter.hpp',['../source__filter_8hpp.html',1,'']]],
   ['source_5finvert_534',['source_invert',['../group__xtd__drawing.html#gga5a8edc9c35f0925441603048859eef6ea88c389fa2d3f86b79122872b8b611300',1,'xtd::drawing']]],

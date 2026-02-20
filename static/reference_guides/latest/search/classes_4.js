@@ -248,6 +248,6 @@ var searchData=
   ['exception_245',['exception',['../classxtd_1_1exception.html',1,'xtd']]],
   ['exception_5fbox_246',['exception_box',['../classxtd_1_1forms_1_1exception__box.html',1,'xtd::forms']]],
   ['exception_5fdialog_247',['exception_dialog',['../classxtd_1_1forms_1_1exception__dialog.html',1,'xtd::forms']]],
-  ['exception_5fdispatch_5finfo_248',['exception_dispatch_info',['../classxtd_1_1runtime_1_1exception__services_1_1exception__dispatch__info.html',1,'xtd::runtime::exception_services']]],
+  ['exception_5fdispatch_5finfo_248',['exception_dispatch_info',['../classxtd_1_1exception__services_1_1exception__dispatch__info.html',1,'xtd::exception_services']]],
   ['exit_5fevent_249',['exit_event',['../classxtd_1_1diagnostics_1_1process_1_1exit__event.html',1,'xtd::diagnostics::process']]]
 ];
