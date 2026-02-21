@@ -13,6 +13,11 @@ namespace {
   static bool is_base64(byte c) {return (std::isalnum(c) || (c == '+') || (c == '/'));}
 }
 
+#if defined(__GNUC__)
+#  pragma GCC diagnostic push
+#  pragma GCC diagnostic ignored "-Warray-bounds"
+#endif
+
 // https://stackoverflow.com/questions/180947/base64-decode-snippet-in-c
 array<byte> convert::from_base64_string(const string& s) {
   //if (s.length() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::format);
@@ -56,6 +61,10 @@ array<byte> convert::from_base64_string(const string& s) {
   
   return ret.to_array();
 }
+
+#if defined(__GNUC__)
+#  pragma GCC diagnostic pop
+#endif
 
 xtd::any convert::to_any(xtd::any value) noexcept {
   return value;
