@@ -155,7 +155,7 @@ if [[ "$OS_NAME" == *"SerenityOS"* ]]; then
 else
     cmake --build . -- -j$build_cores || exit 1
 fi
-if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]] || [[ "$OS_NAME" == *"Haiku"* ]]; then
   cmake --build . --target install || exit 1
 elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
   su -c "cmake --build . --target install || exit 1"
@@ -170,7 +170,7 @@ if [[ "$OS_NAME" == *"SerenityOS"* ]]; then
 else
     cmake --build . -- -j$build_cores || exit 1
 fi
-if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]] || [[ "$OS_NAME" == *"Haiku"* ]]; then
   cmake --build . --target install || exit 1
 elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
   su -c "cmake --build . --target install || exit 1"
