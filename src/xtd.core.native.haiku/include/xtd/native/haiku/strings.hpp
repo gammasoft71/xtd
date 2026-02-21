@@ -92,6 +92,12 @@ namespace xtd::native::haiku {
       return result;
     }
     
+    /// @todo Remove it when the xtd::native::haiku::strings::split fixed.
+#if defined(__GNUC__)
+#  pragma GCC diagnostic push
+#  pragma GCC diagnostic ignored "-Warray-bounds"
+#endif
+    
     static std::vector<std::string> split(const std::string& str, const std::vector<char>& separators, size_t count = std::numeric_limits<size_t>::max(), bool remove_empty_entries = false) noexcept {
       if (count == 0) return {};
       if (count == 1) return {str};
@@ -114,7 +120,12 @@ namespace xtd::native::haiku {
       
       return result;
     }
-    
+
+    /// @todo Remove it when the xtd::native::haiku::strings::split fixed.
+#if defined(__GNUC__)
+#  pragma GCC diagnostic pop
+#endif
+
     static std::string substring(const std::string& str, size_t start_index, size_t length) noexcept {
       if (start_index >= str.size()) return "";
       return str.substr(start_index, length);

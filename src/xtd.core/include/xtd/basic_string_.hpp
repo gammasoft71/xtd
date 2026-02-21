@@ -126,6 +126,12 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   return split(separators, count, xtd::string_split_options::none);
 }
 
+/// @todo Remove it when the xtd::basic_string::split fixed.
+#if defined(__GNUC__)
+#  pragma GCC diagnostic push
+#  pragma GCC diagnostic ignored "-Warray-bounds"
+#endif
+
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd::basic_string<char_t, traits_t, allocator_t>::split(const xtd::array<value_type>& separators, xtd::size count, xtd::string_split_options options) const noexcept {
   if (count == 0) return {};
@@ -155,6 +161,11 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   
   return result;
 }
+
+/// @todo Remove it when the xtd::basic_string::split fixed.
+#if defined(__GNUC__)
+#  pragma GCC diagnostic pop
+#endif
 
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::to_array() const noexcept {
