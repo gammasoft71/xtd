@@ -117,7 +117,7 @@ echo "cmake_install_prefix=\"$cmake_install_prefix\""
 
 #_______________________________________________________________________________
 #                                                    Check and install wxWidgets
-if [ "$OS_NAME" != "Haiku"] && [“$OS_NAME” != "SerenityOS"] && [“$(uname -s)” != "SerenityOS"]; then
+if [[ "$OS_NAME" != "Haiku" ]] && [[ “$OS_NAME” != "SerenityOS" ]] && [[ “$(uname -s)” != "SerenityOS" ]]; then
   echo "Checks wxWidgets..."
   if [ -d "build" ]; then rm -rf "build"; fi
   mkdir build
