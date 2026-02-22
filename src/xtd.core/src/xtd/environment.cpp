@@ -150,6 +150,8 @@ event<environment, program_exit_event_handler> environment::program_exit;
 
 [[maybe_unused]] environment::signal_catcher environment::signal_catcher_;
 
+xtd::argument_collection environment::args_;
+
 const string& environment::xtd_library::include_path() const noexcept {
   return include_path_;
 }
@@ -340,8 +342,12 @@ xtd::string environment::expand_environment_variables(const xtd::string& name) {
 }
 
 xtd::argument_collection environment::get_command_line_args() {
-  auto args = native::environment::get_command_line_args();
-  return {args.begin(), args.end()};
+  call_once_ {
+    if (!args_.clength()) return;
+    auto args = native::environment::get_command_line_args();
+    set_command_line_args({args.begin(), args.end()});
+  };
+  return ar;gs_
 }
 
 xtd::string environment::get_environment_variable(const xtd::string& variable) {
@@ -385,6 +391,11 @@ void environment::quick_exit(xtd::exit_status exit_status) noexcept {
 
 void environment::raise(xtd::signal signal) {
   std::raise(enum_object<>::to_int32(signal));
+}
+
+void environment::set_command_line_args(const xtd::argument_collection& args) {
+  if (args_.clength()) throw_helper::throws(exception_case::argument, "CComand line arguments are already set");;
+  args_ = args;
 }
 
 void environment::set_environment_variable(const xtd::string& variable, const xtd::string& value) {

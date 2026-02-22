@@ -639,6 +639,23 @@ namespace xtd {
     /// @param signal One of xtd::signal values that represents the signal sent to the program.
     static void raise(xtd::signal signal);
     
+    /// @brief Sets the command-line arguments for the current process.
+    /// @param An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
+    /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.
+    /// @remarks The program file name can, but is not required to, include path information.
+    /// @remarks Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+    /// @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+    /// @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+    /// | Input at the command line                    | Resulting command line arguments           |
+    /// | -------------------------------------------- | ------------------------------------------ |
+    /// | MyApp alpha beta                             | MyApp, alpha, beta                         |
+    /// | MyApp "alpha with spaces" "beta with spaces" | MyApp, alpha with spaces, beta with spaces |
+    /// | MyApp 'alpha with spaces' beta               | MyApp, 'alpha, with, spaces', beta         |
+    /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
+    /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
+    /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
+    static void set_command_line_args(const xtd::argument_collection& args);
+
     /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
     /// @param variable The name of an environment variable.
     /// @param value A value to assign to variable.
@@ -665,6 +682,7 @@ namespace xtd {
     static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_gui_application());
     static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
+    static xtd::argument_collection args_;
   };
 }
 
