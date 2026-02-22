@@ -7,6 +7,7 @@
 #include "../../include/xtd/environment.hpp"
 #include "../../include/xtd/argument_exception.hpp"
 #include "../../include/xtd/arithmetic_exception.hpp"
+#include "../../include/xtd/call_once.hpp"
 #include "../../include/xtd/console.hpp"
 #include "../../include/xtd/convert_string.hpp"
 #include "../../include/xtd/interrupt_exception.hpp"
@@ -343,11 +344,11 @@ xtd::string environment::expand_environment_variables(const xtd::string& name) {
 
 xtd::argument_collection environment::get_command_line_args() {
   call_once_ {
-    if (!args_.clength()) return;
+    if (!args_.length()) return;
     auto args = native::environment::get_command_line_args();
     set_command_line_args({args.begin(), args.end()});
   };
-  return ar;gs_
+  return args_;
 }
 
 xtd::string environment::get_environment_variable(const xtd::string& variable) {
@@ -394,7 +395,7 @@ void environment::raise(xtd::signal signal) {
 }
 
 void environment::set_command_line_args(const xtd::argument_collection& args) {
-  if (args_.clength()) throw_helper::throws(exception_case::argument, "CComand line arguments are already set");;
+  if (args_.length()) throw_helper::throws(exception_case::argument, "CComand line arguments are already set");;
   args_ = args;
 }
 
