@@ -251,7 +251,7 @@ Inheritance diagram for xtd::environment:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae25575bcef6ad4fe46723839788ff9bd"><div class="ttname"><a href="#ae25575bcef6ad4fe46723839788ff9bd">xtd::environment::current_directory</a></div><div class="ttdeci">static xtd::string current_directory()</div><div class="ttdoc">Gets the fully qualified path of the current working directory.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae8e1d5bccabf546d46fa9e97f8f7c586"><div class="ttname"><a href="#ae8e1d5bccabf546d46fa9e97f8f7c586">xtd::environment::user_interactive</a></div><div class="ttdeci">static bool user_interactive()</div><div class="ttdoc">Gets a value indicating whether the current process is running in user interactive mode.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_af82b8fefb32163815705541690241316"><div class="ttname"><a href="#af82b8fefb32163815705541690241316">xtd::environment::system_directory</a></div><div class="ttdeci">static xtd::string system_directory()</div><div class="ttdoc">Gets the fully qualified path of the system directory.</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:282</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:283</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb"><div class="ttname"><a href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">xtd::uri_components::query</a></div><div class="ttdeci">@ query</div><div class="ttdoc">The xtd::uri::query data.</div><div class="ttdef"><b>Definition</b> uri_components.hpp:29</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a> class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the xtd framework. </dd></dl>
@@ -576,6 +576,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a3b91849144289ae68816548fb3c6960a" id="r_a3b91849144289ae68816548fb3c6960a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b91849144289ae68816548fb3c6960a">raise</a> (<a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">xtd::signal</a> <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72">signal</a>)</td></tr>
 <tr class="memdesc:a3b91849144289ae68816548fb3c6960a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72" title="Specifies signals that can interrupt the current process.">xtd::signal</a> to the program. The <a class="el" href="#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event is invoked with the specified signal.  <br /></td></tr>
 <tr class="separator:a3b91849144289ae68816548fb3c6960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12db4a1f672f869ebe3eaa33dc19fbb" id="r_ad12db4a1f672f869ebe3eaa33dc19fbb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad12db4a1f672f869ebe3eaa33dc19fbb">set_command_line_args</a> (const <a class="el" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a> &amp;args)</td></tr>
+<tr class="memdesc:ad12db4a1f672f869ebe3eaa33dc19fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the command-line arguments for the current process.  <br /></td></tr>
+<tr class="separator:ad12db4a1f672f869ebe3eaa33dc19fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6d6f6cb00cca470af7640c776205ac" id="r_a2e6d6f6cb00cca470af7640c776205ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e6d6f6cb00cca470af7640c776205ac">set_environment_variable</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;variable, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:a2e6d6f6cb00cca470af7640c776205ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates, modifies, or deletes an environment variable stored in the current process.  <br /></td></tr>
 <tr class="separator:a2e6d6f6cb00cca470af7640c776205ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2513,6 +2516,60 @@ Environment variable names are case-sensitive on Linux and macOS but are not cas
 
 </div>
 </div>
+<a id="ad12db4a1f672f869ebe3eaa33dc19fbb" name="ad12db4a1f672f869ebe3eaa33dc19fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12db4a1f672f869ebe3eaa33dc19fbb">&#9670;&#160;</a></span>set_command_line_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::environment::set_command_line_args </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the command-line arguments for the current process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">An</td><td>array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line. </dd>
+<dd>
+The program file name can, but is not required to, include path information. </dd>
+<dd>
+Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+@remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+@remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+&lt;table class="markdownTable"&gt;
+  &lt;tr class="markdownTableHead"&gt;    &lt;th class="markdownTableHeadNone"&gt; Input at the command line   </dd></dl>
+<p>Resulting command line arguments    </p>
+<p>MyApp alpha beta   </p>
+<p>MyApp, alpha, beta    </p>
+<p>MyApp "alpha with spaces" "beta with spaces"   </p>
+<p>MyApp, alpha with spaces, beta with spaces    </p>
+<p>MyApp 'alpha with spaces' beta   </p>
+<p>MyApp, 'alpha, with, spaces', beta    </p>
+<p>MyApp \\alpha \\"beta   </p>
+<p>MyApp, \\alpha, \beta    </p>
+<p>MyApp \\"alpha "beta   </p>
+<p>MyApp, \"alpha, "beta   </p>
+<dl class="section remark"><dt>Remarks</dt><dd>To obtain the command line as a single string, use the <a class="el" href="#a39afeb06cb3718feac7140072d766adf" title="Gets the command line for this process.">xtd::environment::command_line</a> method. </dd></dl>
+
+</div>
+</div>
 <a id="a2e6d6f6cb00cca470af7640c776205ac" name="a2e6d6f6cb00cca470af7640c776205ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e6d6f6cb00cca470af7640c776205ac">&#9670;&#160;</a></span>set_environment_variable() <span class="overload">[1/2]</span></h2>
 
@@ -2670,7 +2727,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 22 2026 10:23:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Feb 22 2026 12:28:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
