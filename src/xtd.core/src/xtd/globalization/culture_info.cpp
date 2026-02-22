@@ -159,7 +159,10 @@ auto culture_info::current_culture() noexcept -> culture_info {
 auto culture_info::current_culture(const culture_info& value) -> void {
   if (current_culture_.has_value() && current_culture_ == value) return;
   current_culture_ = value;
-  std::locale::global(value.locale());
+  try {
+    std::locale::global(value.locale());
+  } catch (...) {
+  }
 }
 
 auto culture_info::invariant_culture() noexcept -> culture_info {
