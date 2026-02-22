@@ -280,7 +280,7 @@ namespace xtd {
 /// This example show a main method with argument and return code
 /// @include main4.cpp
 #define startup_(main_method) \
-  auto main() -> int { \
-    return xtd::startup::safe_run(main_method); \
+  auto main(int argc, char* argv[]) -> int { \
+    return xtd::startup::safe_run(main_method, argc, argv); \
   } \
   auto __opaque_sftews__ = 0 // force to end with semicolon
