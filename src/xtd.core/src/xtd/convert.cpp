@@ -16,6 +16,9 @@ namespace {
 #if defined(__GNUC__)
 #  pragma GCC diagnostic push
 #  pragma GCC diagnostic ignored "-Warray-bounds"
+#  if !defined(__clang__)
+#    pragma GCC diagnostic ignored "-Wstringop-overflow"
+#  endif
 #endif
 
 // https://stackoverflow.com/questions/180947/base64-decode-snippet-in-c
@@ -24,13 +27,13 @@ array<byte> convert::from_base64_string(const string& s) {
   auto in_len = s.length();
   auto i = 0_z;
   auto j = 0_z;
-  auto in_ = 0_z;
+  auto in = 0_z;
   auto char_array_4 = fixed_array<byte, 4> {};
   auto char_array_3 = fixed_array<byte, 3> {};
   auto ret = list<byte> {};
   
-  while (in_len-- && (s[in_] != '=') && is_base64(s[in_])) {
-    char_array_4[i++] = s[in_]; in_++;
+  while (in_len-- && (s[in] != '=') && is_base64(s[in])) {
+    char_array_4[i++] = s[in]; in++;
     if (i == 4) {
       for (i = 0; i < 4; i++)
         char_array_4[i] = static_cast<byte>(base64_chars.find(char_array_4[i]));
