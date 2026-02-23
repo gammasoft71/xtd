@@ -201,24 +201,33 @@ fi
 #                                      Create xtd root path environment variable
 
 if [[ "$OS_NAME" == *"Darwin"* ]]; then
-  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
-  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
+  echo "export XTD_ROOT_PATH=$cmake_install_prefix" >> ~/.bash_profile
+  echo "export XTD_ROOT_PATH=$cmake_install_prefix" >> ~/.zprofile
 elif [[ "$OS_NAME" == *"FreeBSD"* ]]; then
-  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
+  echo "export XTD_ROOT_PATH=$cmake_install_prefix" >> ~/.cshrc
+elif [[ "$OS_NAME" == *"Haiku"* ]]; then
+  echo "export XTD_ROOT_PATH=$cmake_install_prefix" >> ~/config/settings/profile
 else
-  echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
+  echo "export XTD_ROOT_PATH=$cmake_install_prefix" >> ~/.bashrc
 fi
 export XTD_ROOT_PATH=\"$cmake_install_prefix\"
 
 if [[ "$OS_NAME" == *"Darwin"* ]]; then
-  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
-  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
+  echo "export XTD_TOOLKIT_PATH=$cmake_install_prefix" >> ~/.bash_profile
+  echo "export XTD_TOOLKIT_PATH=$cmake_install_prefix" >> ~/.zprofile
 elif [[ "$OS_NAME" == *"FreeBSD"* ]]; then
-  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
+  echo "export XTD_TOOLKIT_PATH=$cmake_install_prefix" >> ~/.cshrc
+elif [[ "$OS_NAME" == *"Haiku"* ]]; then
+  echo "export XTD_TOOLKIT_PATH=$cmake_install_prefix" >> ~/config/settings/profile
 else
-  echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
+  echo "export XTD_TOOLKIT_PATH=$cmake_install_prefix" >> ~/.bashrc
 fi
 export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"
+
+if [[ "$OS_NAME" == *"Haiku"* ]]; then
+  echo "export CMAKE_INSTALL_PREFIX=$cmake_install_prefix" >> ~/config/settings/profile
+  echo "export PATH=$cmake_install_prefix/bin:$PATH" >> ~/config/settings/profile
+fi
 
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
