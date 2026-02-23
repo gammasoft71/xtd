@@ -395,7 +395,7 @@ void environment::raise(xtd::signal signal) {
 }
 
 void environment::set_command_line_args(const xtd::argument_collection& args) {
-  if (args_.length()) throw_helper::throws(exception_case::argument, "CComand line arguments are already set");;
+  if (!args.length()) throw_helper::throws(exception_case::argument, "Command line arguments must be greater or equal to 1");
   args_ = args;
 }
 
