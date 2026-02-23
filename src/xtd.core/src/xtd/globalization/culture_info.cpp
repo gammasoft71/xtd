@@ -263,7 +263,11 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->english_name = std::move(english_name);
   data_->keyboard_layout_id = keyboard_layout_id;
   data_->lcid = lcid;
-  data_->locale = std::locale {is_system_locale_available(to_locale_name(name)) ? to_locale_name(name) : "C"};
+  try {
+    data_->locale = std::locale {is_system_locale_available(to_locale_name(name)) ? to_locale_name(name) : "C"};
+  } catch(...) {
+    data_->locale = std::locale {"C"};
+  }
   data_->name = std::move(name);
   data_->native_name = std::move(native_name);
   data_->parent_name = std::move(parent_name);
