@@ -8,7 +8,7 @@ add_include_directories("include")
 
 add_references(
   be
-  locale
+  localestub
   network
   xtd.core.native
 )
