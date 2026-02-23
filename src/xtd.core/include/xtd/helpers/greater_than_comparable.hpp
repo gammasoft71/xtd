@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::helpers namespace contains helpers for xtd objects, sush as exception static class.
   namespace helpers {
-    /// @brief Concept greather than comparable.
+    /// @brief Concept greater than comparable.
     /// @par Definition
     /// ```cpp
     /// template<typename value_t>

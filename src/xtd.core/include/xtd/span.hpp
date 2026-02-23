@@ -289,7 +289,7 @@ namespace xtd {
     /// @brief Gets the specified element with bounds checking.
     /// @param pos The position of the element to return.
     /// @return Reference to the requested element.
-    /// @exception xtd::argument_out_of_range_exceptionv if pos greather or equal than length.
+    /// @exception xtd::argument_out_of_range_exceptionv if pos greater or equal than length.
     reference at(size_type pos) {
       if (pos >= length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return *(data_ + pos);
