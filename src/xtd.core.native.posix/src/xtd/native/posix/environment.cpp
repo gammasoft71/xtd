@@ -58,7 +58,7 @@ vector<string> environment::get_command_line_args() {
   auto args = vector<string> {};
   auto arg = string {};
   while (getline(cmdline, arg, '\0'))
-    args.push_back(arg);
+    args.push_back(std::move(arg));
   return args;
 }
 

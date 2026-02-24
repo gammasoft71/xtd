@@ -104,7 +104,7 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 std::vector<std::string> environment::get_command_line_args() {
   auto argc = *_NSGetArgc();
   auto argv = *_NSGetArgv();
-  if (argv == nullptr || argc == 0) return {"a.out"};
+  if (argv == nullptr || argc < 1) return {"a.out"};
   return {argv, argv + argc};
 }
 

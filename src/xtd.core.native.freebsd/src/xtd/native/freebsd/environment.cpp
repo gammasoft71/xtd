@@ -51,7 +51,7 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  if (environment_argv == nullptr || environment_argc == 0) return {"a.out"};
+  if (environment_argv == nullptr || environment_argc < 1) return {"a.out"};
   return {environment_argv, environment_argv + environment_argc};
 }
 

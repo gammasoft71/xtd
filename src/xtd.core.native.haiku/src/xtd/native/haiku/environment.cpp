@@ -12,7 +12,6 @@
 #include <sys/sysinfo.h>
 #endif
 #include <sys/param.h>
-#include <OS.h>
 #include <unistd.h>
 
 using namespace std;
@@ -51,10 +50,12 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   return 0;
 }
 
+extern int __libc_argc;
+extern char** __libc_argv;
+
 vector<string> environment::get_command_line_args() {
-  auto info = team_info {};
-  if (get_team_info(B_CURRENT_TEAM, &info) != B_OK) return {"a.out"};
-  return haiku::strings::split(info.args, {' '});
+  if (__libc_argv == nullptr || __libc_argc < 1) return {"a.out"};
+  return {__libc_argv, __libc_argv + __libc_argc};
 }
 
 string environment::get_desktop_environment() {

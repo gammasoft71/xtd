@@ -574,7 +574,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the xtd::environment::command_line method.
-    static xtd::argument_collection get_command_line_args();
+    static const xtd::argument_collection& get_command_line_args();
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
