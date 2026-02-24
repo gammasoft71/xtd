@@ -10,6 +10,7 @@
 #include <thread>
 #include <TargetConditionals.h>
 #include <time.h>
+#include <crt_externs.h>
 #include <sys/sysctl.h>
 #include <sys/param.h>
 #include <unistd.h>
@@ -17,18 +18,6 @@
 using namespace xtd::native;
 
 namespace {
-  auto environment_argc = 0;
-  char** environment_argv = nullptr;
-  
-  #if defined (__clang__) || defined(__GNUC__)
-  __attribute__((constructor)) void startup_program(std::int32_t argc, char** argv) {
-    environment_argc = argc;
-    environment_argv = argv;
-  }
-  #else
-#  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
-  #endif
-  
   std::tuple<std::string, std::string, std::string> macos_information() {
     // https://en.wikipedia.org/wiki/MacOS_version_history
     static auto build_version = std::string {};
@@ -113,8 +102,10 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 std::vector<std::string> environment::get_command_line_args() {
-  if (environment_argv == nullptr || environment_argc == 0) return {"a.out"};
-  return {environment_argv, environment_argv + environment_argc};
+  auto argc = *_NSGetArgc();
+  auto argv = *_NSGetArgv();
+  if (argv == nullptr || argc == 0) return {"a.out"};
+  return {argv, argv + argc};
 }
 
 std::string environment::get_desktop_environment() {
