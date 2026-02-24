@@ -126,6 +126,10 @@ namespace xtd {
       /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
       /// @warning Internal use only
       [[nodiscard]] static auto get_environment_variable(const std::string& variable, std::int32_t target) -> std::string;
+      /// @brief Gets the absolute executable path.
+      /// @return std::string A string containing absolute executable path..
+      /// @warning Internal use only
+      [[nodiscard]] static auto get_executable_path() -> std::string;
       /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
       /// @param csidl System special folder identifier (see constant_special_item_id_list.h file).
       /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").

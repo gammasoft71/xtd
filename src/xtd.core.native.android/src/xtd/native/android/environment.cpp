@@ -129,6 +129,17 @@ string environment::get_distribution_version_string() {
   return iterator->second;
 }
 
+auto environment::get_executable_path() -> string {
+  /*
+   char executable_path[PATH_MAX];
+   auto len = readlink("/proc/self/exe", executable_path, sizeof(buffer) - 1);
+   if (len == -1) return "a.out";
+   executable_path[len] = '\0';
+   return executable_path;
+   */
+  return "a.out";
+}
+
 string environment::get_environment_variable(const string& variable, int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());

@@ -257,6 +257,15 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
   return envs;
 }
 
+auto environment::get_executable_path() -> string {
+  /*
+  auto executable_path = wstring {MAX_PATH, '\0'};
+  if (GetModuleFileNameW(nullptr, executable_parh.data()), MAX_PATH) == 0) return "a.exe";
+  return win32::strings::to_string(executable_parh);
+   */
+  return "a.exe";
+}
+
 string environment::get_know_folder_path(int32_t id) {
   if (id == CSIDL_HOME)
     return get_environment_variable("HOMEDRIVE", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + get_environment_variable("HOMEPATH", ENVIRONMENT_VARIABLE_TARGET_PROCESS);

@@ -8,6 +8,7 @@
 #include <map>
 #include <numeric>
 #include <thread>
+//#include  <sys/sysctl.h>
 #include <sys/sysinfo.h>
 #include <sys/param.h>
 #include <unistd.h>
@@ -169,6 +170,17 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
   
   static map<string, string> envs;
   return envs;
+}
+
+auto environment::get_executable_path() -> string {
+  /*
+   int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
+   char executable_path[PATH_MAX];
+   auto cb = sizeof(executable_path);
+   if (sysctl(mib, 4, executable_path, &cb, nullptr, 0) > 0) return "a.out";
+   return executable_path;
+   */
+  return "a.out";
 }
 
 string environment::get_know_folder_path(int32_t csidl) {
