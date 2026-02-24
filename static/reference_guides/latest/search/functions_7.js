@@ -14,7 +14,7 @@ var searchData=
   ['has_5fany_5fset_11',['has_any_set',['../classxtd_1_1collections_1_1bit__array.html#aca9004891a68180be31c1ae0ba16a7bb',1,'xtd::collections::bit_array']]],
   ['has_5fexited_12',['has_exited',['../classxtd_1_1diagnostics_1_1process.html#a9481578320363c2c56ea50bc5a9b8acb',1,'xtd::diagnostics::process']]],
   ['has_5fextension_13',['has_extension',['../classxtd_1_1io_1_1path.html#a4c65bda9b816124c91aeebe774fb99f0',1,'xtd::io::path']]],
-  ['has_5fflag_14',['has_flag',['../structxtd_1_1enum__object.html#a00873f075288eaa8c80473e02145f4b5',1,'xtd::enum_object']]],
+  ['has_5fflag_14',['has_flag',['../structxtd_1_1enum__object.html#a00873f075288eaa8c80473e02145f4b5',1,'xtd::enum_object::has_flag()'],['../structxtd_1_1enum__object.html#a00873f075288eaa8c80473e02145f4b5',1,'xtd::enum_object&lt; std::nullptr_t &gt;::has_flag()']]],
   ['has_5fshutdown_5fstarted_15',['has_shutdown_started',['../classxtd_1_1environment.html#a28d302ff14e862d79bb3afe199a63154',1,'xtd::environment']]],
   ['has_5fvalue_16',['has_value',['../classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb',1,'xtd::any_object']]],
   ['hash_5fcode_17',['hash_code',['../classxtd_1_1hash__code.html#a686e1e2d91bc53dd5b887aee010dcccd',1,'xtd::hash_code']]],
@@ -67,6 +67,7 @@ var searchData=
   ['hour_64',['hour',['../classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc',1,'xtd::date_time']]],
   ['hours_65',['hours',['../classxtd_1_1time__span.html#adfa825159a709add812d5243492ff86a',1,'xtd::time_span']]],
   ['hsplit_66',['hsplit',['../classxtd_1_1forms_1_1cursors.html#a477b044367c07c31147f8d02a4f4787f',1,'xtd::forms::cursors']]],
-  ['hue_5frotate_5feffect_67',['hue_rotate_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1hue__rotate__effect.html#a5837daf5913b21aa1c8895e4010c4136',1,'xtd::drawing::imaging::effects::hue_rotate_effect::hue_rotate_effect()=default'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1hue__rotate__effect.html#a894d71f0db22ce53dc99fa0f13824419',1,'xtd::drawing::imaging::effects::hue_rotate_effect::hue_rotate_effect(int32 angle)']]],
-  ['hungary_68',['hungary',['../classxtd_1_1forms_1_1countries.html#a500044eb71847bd73aafcb9d1fe5d7b2',1,'xtd::forms::countries']]]
+  ['hue_5frotate_67',['hue_rotate',['../classxtd_1_1drawing_1_1color__converter.html#acd4ebe979aab7a77cec8e274c105fc69',1,'xtd::drawing::color_converter']]],
+  ['hue_5frotate_5feffect_68',['hue_rotate_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1hue__rotate__effect.html#a5837daf5913b21aa1c8895e4010c4136',1,'xtd::drawing::imaging::effects::hue_rotate_effect::hue_rotate_effect()=default'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1hue__rotate__effect.html#a894d71f0db22ce53dc99fa0f13824419',1,'xtd::drawing::imaging::effects::hue_rotate_effect::hue_rotate_effect(int32 angle)']]],
+  ['hungary_69',['hungary',['../classxtd_1_1forms_1_1countries.html#a500044eb71847bd73aafcb9d1fe5d7b2',1,'xtd::forms::countries']]]
 ];

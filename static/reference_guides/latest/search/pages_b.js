@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_20guide_0',['xtd - Reference Guide',['../index.html',1,'']]]
+  ['numeric_20format_0',['Numeric format',['../_format_page.html#NumericFormatSection',1,'']]]
 ];
