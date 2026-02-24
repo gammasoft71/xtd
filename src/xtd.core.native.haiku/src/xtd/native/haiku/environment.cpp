@@ -12,6 +12,7 @@
 #include <sys/sysinfo.h>
 #endif
 #include <sys/param.h>
+#include <OS.h>
 #include <unistd.h>
 
 using namespace std;
@@ -51,7 +52,9 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  return {"a.out"};
+  auto info = team_info {};
+  if (get_team_info(B_CURRENT_TEAM, &info) != B_OK) return {"a.out"};
+  return haiku::strings::split(info.args, {' '});
 }
 
 string environment::get_desktop_environment() {
