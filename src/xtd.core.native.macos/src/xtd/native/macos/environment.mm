@@ -20,7 +20,7 @@ using namespace std;
 using namespace xtd::native;
 
 namespace {
-  tuple<string, string, string> macos_information() {
+  auto macos_information() -> tuple<string, string, string> {
     // https://en.wikipedia.org/wiki/MacOS_version_history
     static auto build_version = string {};
     static auto codename = string {};
@@ -75,7 +75,7 @@ namespace {
   
   using distribution_dictionary = map<string, string>;
   
-  const distribution_dictionary& get_distribution_key_values() {
+  auto get_distribution_key_values() -> const distribution_dictionary& {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto [name, codename, version] = macos_information();
@@ -95,7 +95,7 @@ namespace {
   void (*__on_quick_exit__)(void) = nullptr;
 }
 
-int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+auto environment::at_quick_exit(void (*on_quick_exit)(void)) -> int32_t {
   /// Workaround quick_exit and at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //return at_quick_exit(on_quick_exit);
@@ -103,64 +103,64 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
   return 0;
 }
 
-vector<string> environment::get_command_line_args() {
+auto environment::get_command_line_args() -> vector<string> {
   auto argc = *_NSGetArgc();
   auto argv = *_NSGetArgv();
   if (argv == nullptr || argc < 1) return {"a.out"};
   return {argv, argv + argc};
 }
 
-string environment::get_desktop_environment() {
+auto environment::get_desktop_environment() -> string {
   return "macos";
 }
 
-string environment::get_desktop_theme() {
+auto environment::get_desktop_theme() -> string {
   return macos::strings::contains(macos::shell_execute::run("defaults", "read -g AppleInterfaceStyle"), "Dark") ? "macos dark" : "macos";
 }
 
-string environment::get_distribution_bug_report() {
+auto environment::get_distribution_bug_report() -> string {
   auto name_it = get_distribution_key_values().find("BUG_REPORT_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_code_name() {
+auto environment::get_distribution_code_name() -> string {
   auto iterator = get_distribution_key_values().find("VERSION_CODENAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_description() {
+auto environment::get_distribution_description() -> string {
   auto iterator = get_distribution_key_values().find("PRETTY_NAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_home() {
+auto environment::get_distribution_home() -> string {
   auto name_it = get_distribution_key_values().find("HOME_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_id() {
+auto environment::get_distribution_id() -> string {
   auto iterator = get_distribution_key_values().find("ID");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-vector<string> environment::get_distribution_like_ids() {
+auto environment::get_distribution_like_ids() -> vector<string> {
   auto iterator = get_distribution_key_values().find("ID_LIKE");
   if (iterator == get_distribution_key_values().end()) return {};
   return macos::strings::split(iterator->second, {' '});
 }
 
-string environment::get_distribution_name() {
+auto environment::get_distribution_name() -> string {
   auto name_it = get_distribution_key_values().find("NAME");
   if (name_it == get_distribution_key_values().end()) return "Unknown";
   return name_it->second;
 }
 
-void environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+auto environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) -> void {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
   auto versions = xtd::native::macos::strings::split(name_it->second, {'.'});
@@ -168,13 +168,13 @@ void environment::get_distribution_version(int32_t& major, int32_t& minor, int32
   if (versions.size() >= 2) minor = stoi(versions[1]);
 }
 
-string environment::get_distribution_version_string() {
+auto environment::get_distribution_version_string() -> string {
   auto iterator = get_distribution_key_values().find("VERSION");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_environment_variable(const string& variable, int32_t target) {
+auto environment::get_environment_variable(const string& variable, int32_t target) -> string {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());
     return value ? value : "";
@@ -190,7 +190,7 @@ string environment::get_environment_variable(const string& variable, int32_t tar
 
 extern char** environ;
 
-map<string, string>& environment::get_environment_variables(int32_t target) {
+auto environment::get_environment_variables(int32_t target) -> map<string, string>& {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static auto envs = map<string, string> {};
     if (envs.size() == 0) {
@@ -218,23 +218,23 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
 
 auto environment::get_executable_path() -> string {
   char executable_path[PATH_MAX];
-  uint32_t size = sizeof(executable_path);
+  auto size = uint32_t {PATH_MAX};
   if (_NSGetExecutablePath(executable_path, &size) != 0) return "a.out";
   return executable_path;
 }
 
-string environment::get_know_folder_path(int32_t csidl) {
+auto environment::get_know_folder_path(int32_t csidl) -> string {
   static auto special_folders = map<int32_t, string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_FAVORITES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Favorites"}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Movies"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Preferences"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_INTERNET_CACHE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Library/Caches"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_SYSTEM, "/System"}, {CSIDL_PROGRAM_FILES, "/Applications"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
 }
 
-string environment::get_machine_name() {
+auto environment::get_machine_name() -> string {
   return macos::strings::replace(macos::shell_execute::run("uname", "-n"), "\n", "");
 }
 
-int32_t environment::get_os_platform_id() {
+auto environment::get_os_platform_id() -> int32_t {
   #if TARGET_OS_SIMULATOR == 1 || TARGET_OS_IPHONE == 1
   return PLATFORM_IOS;
   #else
@@ -242,7 +242,7 @@ int32_t environment::get_os_platform_id() {
   #endif
 }
 
-void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+auto environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) -> void {
   auto numbers = macos::strings::split(macos::shell_execute::run("sw_vers", "-productVersion"), {'.', '\n'});
   if (numbers.size() < 1 || !macos::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !macos::strings::try_parse(numbers[1], minor)) minor = 0;
@@ -250,25 +250,25 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   if (numbers.size() < 4 || !macos::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
-uint32_t environment::get_processor_count() {
+auto environment::get_processor_count() -> uint32_t {
   return thread::hardware_concurrency();
 }
 
-string environment::get_resources_path(bool gui_app) {
+auto environment::get_resources_path(bool gui_app) -> string {
   auto app_path = get_command_line_args()[0];
   auto pos = app_path.rfind('/');
   return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + (gui_app ? "../Resources" : "resources");
 }
 
-string environment::get_service_pack() {
+auto environment::get_service_pack() -> string {
   return "";
 }
 
-size_t environment::get_system_page_size() {
+auto environment::get_system_page_size() -> size_t {
   return sysconf(_SC_PAGESIZE);
 }
 
-uint32_t environment::get_tick_count() {
+auto environment::get_tick_count() -> uint32_t {
   // https://stackoverflow.com/questions/3269321/osx-programmatically-get-uptime
   auto boottime = timeval {};
   auto nowtime = timeval {};
@@ -279,40 +279,40 @@ uint32_t environment::get_tick_count() {
   return static_cast<uint32_t>((nowtime.tv_sec - boottime.tv_sec) * 1000) + static_cast<uint32_t>((nowtime.tv_usec - boottime.tv_usec) / 1000);
 }
 
-bool environment::get_user_administrator() {
+auto environment::get_user_administrator() -> bool {
   // https://stackoverflow.com/questions/3214297/how-can-my-c-c-application-determine-if-the-root-user-is-executing-the-command
   //return getuid() != geteuid();
   return !getuid();
 }
 
-string environment::get_user_domain_name() {
+auto environment::get_user_domain_name() -> string {
   return macos::strings::trim_end(macos::shell_execute::run("uname", "-n"), {'\n'});
 }
 
-string environment::get_user_name() {
+auto environment::get_user_name() -> string {
   auto user_name = getenv("USER");
   return user_name ? user_name : "";
 }
 
-bool environment::has_shutdown_started() {
+auto environment::has_shutdown_started() -> bool {
   // return always `false` on macos.
   return false;
 }
 
-bool environment::is_processor_arm() {
+auto environment::is_processor_arm() -> bool {
   auto uname_result = macos::shell_execute::run("uname", "-m");
   return macos::strings::contains(uname_result, "arm") || macos::strings::contains(uname_result, "aarch64");
 }
 
-bool environment::is_os_64_bit() {
+auto environment::is_os_64_bit() -> bool {
   return macos::strings::contains(macos::shell_execute::run("uname", "-m"), "64");
 }
 
-string environment::new_line() {
+auto environment::new_line() -> string {
   return "\n";
 }
 
-void environment::quick_exit(int32_t exit_code) noexcept {
+auto environment::quick_exit(int32_t exit_code) noexcept -> void {
   /// Workaround quick_exit and at_quick_exit are not implemented on macOS !
   /// See https://github.com/runtimeverification/k/issues/1580 for more informtion
   //quick_exit(exit_code)
@@ -320,7 +320,7 @@ void environment::quick_exit(int32_t exit_code) noexcept {
   _Exit(exit_code);
 }
 
-void environment::set_environment_variable(const string& name, const string& value, int32_t target) {
+auto environment::set_environment_variable(const string& name, const string& value, int32_t target) -> void {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -330,7 +330,7 @@ void environment::set_environment_variable(const string& name, const string& val
   }
 }
 
-void environment::unset_environment_variable(const string& name, int32_t target) {
+auto environment::unset_environment_variable(const string& name, int32_t target) -> void {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     unsetenv(name.c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -340,6 +340,6 @@ void environment::unset_environment_variable(const string& name, int32_t target)
   }
 }
 
-int64_t environment::working_set() {
+auto environment::working_set() -> int64_t {
   return 0;
 }
