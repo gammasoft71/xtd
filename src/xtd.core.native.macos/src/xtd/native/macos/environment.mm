@@ -219,7 +219,7 @@ auto environment::get_environment_variables(int32_t target) -> map<string, strin
 auto environment::get_executable_path() -> string {
   char executable_path[PATH_MAX];
   auto size = uint32_t {PATH_MAX};
-  if (_NSGetExecutablePath(executable_path, &size) != 0) return "a.out";
+  if (_NSGetExecutablePath(executable_path, &size) != 0) return get_command_line_args()[0];
   return executable_path;
 }
 

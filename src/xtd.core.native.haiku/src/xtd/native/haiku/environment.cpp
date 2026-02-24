@@ -8,10 +8,9 @@
 #include <map>
 #include <numeric>
 #include <thread>
-#if !defined(__HAIKU__) && !defined(__serenity__)
-#include <sys/sysinfo.h>
-#endif
+#include <kernel/image.h>
 #include <sys/param.h>
+#include <OS.h>
 #include <unistd.h>
 
 using namespace std;
@@ -179,7 +178,7 @@ auto environment::get_executable_path() -> string {
   auto cookie = 0;
   while (get_next_image_info(B_CURRENT_TEAM, &cookie, &info) == B_OK)
     if (info.type == B_APP_IMAGE) return info.name;
-  return "a.out";
+  return get_command_line_args()[0];
 }
 
 string environment::get_know_folder_path(int32_t csidl) {

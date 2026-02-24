@@ -167,14 +167,11 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
 }
 
 auto environment::get_executable_path() -> string {
-  /*
   char executable_path[PATH_MAX];
-  auto len = readlink("/proc/self/exe", executable_path, sizeof(buffer) - 1);
-  if (len == -1) return "a.out";
+  auto len = readlink("/proc/self/exe", executable_path, sizeof(executable_path) - 1);
+  if (len == -1) return get_command_line_args()[0];
   executable_path[len] = '\0';
   return executable_path;
-   */
-  return "a.out";
 }
 
 string environment::get_know_folder_path(int32_t csidl) {
