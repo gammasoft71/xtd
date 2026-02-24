@@ -14,6 +14,7 @@
 #include <xtd/drawing/native/wx_application>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
+#include <xtd/reflection/assembly>
 #include <xtd/threading/thread>
 #include <xtd/chrono>
 #include <xtd/environment>
@@ -222,7 +223,7 @@ void application::register_wnd_proc(const delegate<intptr(intptr, int32, intptr,
 }
 
 void application::restart(bool exit_after_restart) {
-  auto command_line_args = environment::get_command_line_args()[0];
+  auto command_line_args = xtd::reflection::assembly::get_executing_assembly().location();
   for (auto index = 1_z; index < environment::get_command_line_args().length(); ++index)
     command_line_args += string::format(" {}", (environment::get_command_line_args()[index].find(" ") ? environment::get_command_line_args()[index].quoted() : environment::get_command_line_args()[index]));
   wxExecute(command_line_args.chars());

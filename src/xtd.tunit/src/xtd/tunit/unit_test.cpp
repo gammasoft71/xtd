@@ -10,7 +10,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::globalization;
 using namespace xtd::tunit;
 
-unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : arguments(environment::get_command_line_args()), name_(get_filename(environment::get_command_line_args()[0])), event_listener_(std::move(event_listener)) {
+unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : arguments(environment::get_command_line_args()), name_(get_filename(reflection::assembly::get_executing_assembly().file_name())), event_listener_(std::move(event_listener)) {
 }
 
 unit_test::~unit_test() {

@@ -1317,19 +1317,19 @@ namespace resources_example::properties {
   public:
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& gammasoft() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "gammasoft.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::reflection::assembly::get_executing_assembly().location()), "..", "Resources", "gammasoft.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::string.
     static const xtd::string& information() {
-      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "information.txt"));
+      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::reflection::assembly::get_executing_assembly().location()), "..", "Resources", "information.txt"));
       return text;
     }
 
     /// @brief Looks up a localized resource of type xtd::string.
     static const xtd::string& readme() {
-      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "readme.md"));
+      static xtd::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::reflection::assembly::get_executing_assembly().location()), "..", "Resources", "readme.md"));
       return text;
     }
 
@@ -1340,13 +1340,13 @@ namespace resources_example::properties {
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& xtd() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "xtd.gif"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::reflection::assembly::get_executing_assembly().location()), "..", "Resources", "xtd.gif"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::icon.
     static const xtd::drawing::icon& xtd_forms() {
-      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "xtd_forms.ico"));
+      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::reflection::assembly::get_executing_assembly().location()), "..", "Resources", "xtd_forms.ico"));
       return icon;
     }
 
