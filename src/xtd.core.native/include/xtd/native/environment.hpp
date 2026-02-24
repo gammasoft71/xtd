@@ -21,6 +21,9 @@
 namespace xtd {
   /// @cond
   class environment;
+  namespace reflection {
+    class assembly;
+  }
   /// @endcond
   
   /// @brief The xtd::native namespace contains internal native API definitions to access underlying operating system components used by xtd.core library.
@@ -41,6 +44,8 @@ namespace xtd {
       environment() = delete;
       friend xtd::environment;
       friend xtd::native::translator;
+      friend xtd::reflection::assembly;
+
     protected:
       /// @name Protected Static Methods
       

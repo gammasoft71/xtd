@@ -258,12 +258,9 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
 }
 
 auto environment::get_executable_path() -> string {
-  /*
   auto executable_path = wstring {MAX_PATH, '\0'};
-  if (GetModuleFileNameW(nullptr, executable_parh.data()), MAX_PATH) == 0) return get_command_line_args()[0];
-  return win32::strings::to_string(executable_parh);
-   */
-  return "a.exe";
+  if (GetModuleFileNameW(nullptr, executable_path.data()), MAX_PATH) == 0) return get_command_line_args()[0];
+  return win32::strings::to_string(executable_path);
 }
 
 string environment::get_know_folder_path(int32_t id) {
@@ -297,7 +294,7 @@ uint32_t environment::get_processor_count() {
 }
 
 std::string environment::get_resources_path(bool gui_app) {
-  auto app_path = get_command_line_args()[0];
+  auto app_path = get_executable_path();
   auto pos = app_path.rfind('\\');
   return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '\\') + "resources";
 }

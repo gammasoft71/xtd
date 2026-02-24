@@ -2,6 +2,9 @@
 #include "../../../include/xtd/reflection/assembly_info.hpp"
 #include "../../../include/xtd/io/path.hpp"
 #include "../../../include/xtd/environment.hpp"
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/environment>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::io;
@@ -44,7 +47,7 @@ auto assembly::identifier() const noexcept -> const string& {
 }
 
 auto assembly::location() const noexcept -> string {
-  return environment::get_command_line_args()[0];
+  return native::environment::get_executable_path();
 }
 
 auto assembly::name() const noexcept -> const string& {
