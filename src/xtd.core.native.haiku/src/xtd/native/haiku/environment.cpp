@@ -19,18 +19,6 @@ using namespace std::literals;
 using namespace xtd::native;
 
 namespace {
-  int32_t environment_argc = 0;
-  char** environment_argv = nullptr;
-  
-  #if defined (__clang__) || defined(__GNUC__)
-  __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
-    environment_argc = argc;
-    environment_argv = argv;
-  }
-  #else
-#  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
-  #endif
-  
   using distribution_dictionary = map<string, string>;
   
   const distribution_dictionary& get_distribution_key_values() {
@@ -63,8 +51,7 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  if (environment_argv == nullptr || environment_argc == 0) return {"a.out"};
-  return {environment_argv, environment_argv + environment_argc};
+  return {"a.out"};
 }
 
 string environment::get_desktop_environment() {
