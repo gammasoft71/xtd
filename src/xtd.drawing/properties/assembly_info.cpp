@@ -17,7 +17,7 @@ assembly_company_("Gammasoft");
 assembly_product_("xtd.drawing");
 assembly_copyright_("Copyright © Gammasoft 2026");
 assembly_trademark_("");
-assembly_culture_("en_US.UTF-8");
+assembly_culture_("en-US");
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
