@@ -258,8 +258,8 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
 }
 
 auto environment::get_executable_path() -> string {
-  auto executable_path = wstring {MAX_PATH, '\0'};
-  if (GetModuleFileNameW(nullptr, executable_path.data()), MAX_PATH) == 0) return get_command_line_args()[0];
+  auto executable_path = wstring(MAX_PATH, '\0');
+  if (GetModuleFileName(nullptr, executable_path.data(), MAX_PATH) == 0) return get_command_line_args()[0];
   return win32::strings::to_string(executable_path);
 }
 
