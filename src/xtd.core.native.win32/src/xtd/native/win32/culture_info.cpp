@@ -6,6 +6,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <algorithm>
 #include <cctype>
+#include <locale>
 #include <string>
 #include <vector>
 #include <Windows.h>
@@ -54,12 +55,17 @@ std::string culture_info::current_locale_name() {
 }
 
 std::vector<std::string> culture_info::system_locale_names() {
-  auto locales = std::vector<std::string> {"", "C", "POSIX"};
+  auto locales = std::vector<std::string> {"", "C"};
   locales.reserve(800);
   
   auto callback = [](LPWSTR locale_name, DWORD, LPARAM lparam) -> BOOL {
     auto* locales = reinterpret_cast<std::vector<std::string>*>(lparam);
-    locales->push_back(to_locale_name(win32::strings::to_string(locale_name)));
+    try {
+      auto std_locale = std::locale {to_locale_name(win32::strings::to_string(locale_name))};
+      locales->push_back(std_locale.name());
+    }
+    catch (...) {
+    }
     return TRUE;
   };
   
