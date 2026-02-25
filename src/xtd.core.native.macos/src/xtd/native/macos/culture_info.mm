@@ -6,6 +6,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <algorithm>
 #include <cctype>
+#include <locale>
 #include <string>
 #include <regex>
 
@@ -38,7 +39,10 @@ std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
   for (auto name : macos::strings::split(macos::shell_execute::run("locale", "-a"), {'\n'}))
-    locales.push_back(to_locale_name(name));
+    try {
+      locales.push_back(std::locale {to_locale_name(name)}.name());
+    } catch (...) {
+    }
   std::sort(locales.begin(), locales.end());
   locales.erase(std::unique(locales.begin(), locales.end()), locales.end());
   return locales;

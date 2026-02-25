@@ -270,6 +270,8 @@ if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "
   "$cmake_install_prefix/xtd/bin/xtdc-gui.exe"
 elif [[ "$OS_NAME" == *"Darwin"* ]]; then
   open $cmake_install_prefix/bin/xtdc-gui.app; 
+elif [[ "$OS_NAME" == *"Haiku"* ]]; then
+  echo "Haiku does not support xtdc-gui now."
 elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
   echo "SerenityOS does not support xtdc-gui now."
 else

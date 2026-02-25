@@ -9,6 +9,7 @@
 #include <Roster.h>
 #include <String.h>
 #include <image.h>
+#include <locale>
 #include <string>
 #include <vector>
 
@@ -61,6 +62,9 @@ auto culture_info::system_locale_names() -> std::vector<std::string> {
   auto language = BString{};
   auto locale_names = std::vector<std::string>{};
   for (auto i = 0; languages.FindString("language", i, &language) == B_OK; i++)
-    locale_names.push_back(to_locale_name(language.String()));
+    try {
+      locale_names.push_back(std::locale {to_locale_name(language.String())}.name());
+    } catch (...) {
+    }
   return locale_names;
 }
