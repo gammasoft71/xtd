@@ -150,7 +150,11 @@ auto culture_info::use_user_override() const noexcept -> bool {
 }
 
 auto culture_info::current_culture() noexcept -> culture_info {
-  auto locale = !current_culture_.has_value() ? std::locale {xtd::native::culture_info::current_locale_name()} : std::locale {};
+  auto locale = std::locale {};
+   try {
+   if (!current_culture_.has_value()) locale = std::locale {xtd::native::culture_info::current_locale_name()};
+   } catch (...) {
+   }
   if (!current_culture_.has_value()) current_culture_ = culture_info {locale};
   else if (locale.name() != "C") current_culture_ = culture_info {locale};
   return current_culture_.value();
