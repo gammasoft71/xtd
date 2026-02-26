@@ -25,7 +25,7 @@ struct culture_info::data {
   bool is_read_only = false;
   size keyboard_layout_id = 127;
   size lcid = 127;
-  std::locale locale = std::locale {""};
+  std::locale locale;
   string name;
   string native_name = "Invariant Language (Invariant Country)";
   optional<number_format_info> number_format;
@@ -37,6 +37,10 @@ struct culture_info::data {
 };
 
 culture_info::culture_info() : data_ {new_ptr<data>()} {
+  try {
+    data_->locale = std::locale {""};
+  } catch (...) {
+  }
 }
 
 culture_info::culture_info(const std::locale& locale) : culture_info() {
@@ -235,7 +239,10 @@ auto culture_info::get_system_locales() noexcept -> array<std::locale> {
   static auto result = list<std::locale> {};
   call_once_ {
     for (auto system_locale_name : native::culture_info::system_locale_names())
-      result.add(std::locale {system_locale_name});
+      try {
+        result.add(std::locale {system_locale_name});
+      } catch (...) {
+      }
     result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   };
   return array<std::locale>(result);
@@ -270,7 +277,6 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   try {
     data_->locale = std::locale {is_system_locale_available(to_locale_name(name)) ? to_locale_name(name) : "C"};
   } catch(...) {
-    data_->locale = std::locale {"C"};
   }
   data_->name = std::move(name);
   data_->native_name = std::move(native_name);
