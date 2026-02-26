@@ -1,4 +1,3 @@
-
 /// @file
 /// @brief Contains platform id constants.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
