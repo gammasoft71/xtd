@@ -25,7 +25,7 @@ namespace xtd::reflection::tests {
     }
     
     auto test_method_(assembly_culture) {
-      assert::are_equal("en_US.UTF-8", assembly::get_executing_assembly().culture());
+      assert::are_equal("en-US", assembly::get_executing_assembly().culture());
     }
     
     auto test_method_(assembly_description) {
