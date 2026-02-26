@@ -16,6 +16,15 @@
 #include <sys/param.h>
 #include <unistd.h>
 
+// Macros defined in mach-o/loader.h included by mach-o/dyld.h.
+#undef PLATFORM_UNKNOWN
+#undef PLATFORM_MACOS
+#undef PLATFORM_IOS
+#undef PLATFORM_TVOS
+#undef PLATFORM_WATCHOS
+#undef PLATFORM_BRIDGEOS
+#undef PLATFORM_VISIONOS
+
 using namespace std;
 using namespace xtd::native;
 
