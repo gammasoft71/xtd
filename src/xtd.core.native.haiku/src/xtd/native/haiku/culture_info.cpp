@@ -38,7 +38,7 @@ auto culture_info::current_locale_name() -> std::string {
 }
 
 auto culture_info::system_locale_names() -> std::vector<std::string> {
-  auto locales = std::vector<std::string> {"C", "POSIX"};
+  auto locales = std::vector<std::string> {};
   locales.reserve(800);
   for (auto name : haiku::strings::split(haiku::shell_execute::run("locale", "-a"), {'\n'}))
     try {
