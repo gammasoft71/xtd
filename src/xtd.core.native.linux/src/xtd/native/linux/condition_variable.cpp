@@ -6,7 +6,7 @@
 
 using namespace xtd::native;
 
-intmax_t condition_variable::create() {
+auto condition_variable::create() -> intmax_t {
   auto handle = new pthread_cond_t;
   if (pthread_cond_init(handle, nullptr) != 0) {
     delete handle;
@@ -15,23 +15,23 @@ intmax_t condition_variable::create() {
   return reinterpret_cast<intmax_t>(handle);
 }
 
-void condition_variable::destroy(intmax_t handle) {
+auto condition_variable::destroy(intmax_t handle) -> void {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_destroy(reinterpret_cast<pthread_cond_t*>(handle));
   delete reinterpret_cast<pthread_cond_t*>(handle);
 }
 
-void condition_variable::pulse(intmax_t handle) {
+auto condition_variable::pulse(intmax_t handle) -> void {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_signal(reinterpret_cast<pthread_cond_t*>(handle));
 }
 
-void condition_variable::pulse_all(intmax_t handle) {
+auto condition_variable::pulse_all(intmax_t handle) -> void {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return;
   pthread_cond_broadcast(reinterpret_cast<pthread_cond_t*>(handle));
 }
 
-bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout) {
+auto condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout) -> bool {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
   if (reinterpret_cast<pthread_mutex_t*>(critical_section_handle) == nullptr) return false;
   
