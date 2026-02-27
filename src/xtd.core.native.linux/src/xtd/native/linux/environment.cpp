@@ -20,7 +20,7 @@ using namespace xtd::native;
 namespace {
   using distribution_dictionary = map<string, string>;
   
-  const distribution_dictionary& get_distribution_key_values() {
+  auto get_distribution_key_values() -> const distribution_dictionary& {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto distribution_string = linux::shell_execute::run("cat", "/etc/os-release");
@@ -35,11 +35,11 @@ namespace {
   }
 }
 
-int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+auto environment::at_quick_exit(void (*on_quick_exit)(void)) -> int32_t {
   return std::at_quick_exit(on_quick_exit);
 }
 
-vector<string> environment::get_command_line_args() {
+auto environment::get_command_line_args() -> vector<string> {
   auto cmdline = ifstream {"/proc/self/cmdline", ios::binary};
   if (!cmdline) return {"a.out"};
   
@@ -50,7 +50,7 @@ vector<string> environment::get_command_line_args() {
   return args;
 }
 
-string environment::get_desktop_environment() {
+auto environment::get_desktop_environment() -> string {
   auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS", ENVIRONMENT_VARIABLE_TARGET_PROCESS);
   for (auto environment_desktop : {"budgie", "cinnamon", "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
@@ -59,7 +59,7 @@ string environment::get_desktop_environment() {
   return "";
 }
 
-string environment::get_desktop_theme() {
+auto environment::get_desktop_theme() -> string {
   auto desktop = get_desktop_environment();
   if (desktop != "gnome") return desktop;
   auto current_theme = linux::shell_execute::run("gsettings", "get org.gnome.desktop.interface gtk-theme");
@@ -68,49 +68,49 @@ string environment::get_desktop_theme() {
   return current_theme;
 }
 
-string environment::get_distribution_bug_report() {
+auto environment::get_distribution_bug_report() -> string {
   auto name_it = get_distribution_key_values().find("BUG_REPORT_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_code_name() {
+auto environment::get_distribution_code_name() -> string {
   auto iterator = get_distribution_key_values().find("VERSION_CODENAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_description() {
+auto environment::get_distribution_description() -> string {
   auto iterator = get_distribution_key_values().find("PRETTY_NAME");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_distribution_home() {
+auto environment::get_distribution_home() -> string {
   auto name_it = get_distribution_key_values().find("HOME_URL");
   if (name_it == get_distribution_key_values().end()) return "";
   return name_it->second;
 }
 
-string environment::get_distribution_id() {
+auto environment::get_distribution_id() -> string {
   auto iterator = get_distribution_key_values().find("ID");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-vector<string> environment::get_distribution_like_ids() {
+auto environment::get_distribution_like_ids() -> vector<string> {
   auto iterator = get_distribution_key_values().find("ID_LIKE");
   if (iterator == get_distribution_key_values().end()) return {};
   return linux::strings::split(iterator->second, {' '});
 }
 
-string environment::get_distribution_name() {
+auto environment::get_distribution_name() -> string {
   auto name_it = get_distribution_key_values().find("NAME");
   if (name_it == get_distribution_key_values().end()) return "Unknown";
   return name_it->second;
 }
 
-void environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+auto environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) -> void {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
   auto versions = xtd::native::linux::strings::split(name_it->second, {'.'});
@@ -118,13 +118,13 @@ void environment::get_distribution_version(int32_t& major, int32_t& minor, int32
   if (versions.size() >= 2) minor = stoi(versions[1]);
 }
 
-string environment::get_distribution_version_string() {
+auto environment::get_distribution_version_string() -> string {
   auto iterator = get_distribution_key_values().find("VERSION");
   if (iterator == get_distribution_key_values().end()) return "";
   return iterator->second;
 }
 
-string environment::get_environment_variable(const string& variable, int32_t target) {
+auto environment::get_environment_variable(const string& variable, int32_t target) -> string {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());
     return value ? value : "";
@@ -140,7 +140,7 @@ string environment::get_environment_variable(const string& variable, int32_t tar
 
 extern char** environ;
 
-map<string, string>& environment::get_environment_variables(int32_t target) {
+auto environment::get_environment_variables(int32_t target) -> map<string, string>& {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     static auto envs = map<string, string> {};
     if (envs.size() == 0) {
@@ -174,23 +174,23 @@ auto environment::get_executable_path() -> string {
   return executable_path;
 }
 
-string environment::get_know_folder_path(int32_t csidl) {
+auto environment::get_know_folder_path(int32_t csidl) -> string {
   static auto special_folders = map<int32_t, string> {{CSIDL_DESKTOP, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_PERSONAL, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_MYMUSIC, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Music"}, {CSIDL_MYVIDEO, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Videos"}, {CSIDL_DESKTOPDIRECTORY, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Desktop"}, {CSIDL_FONTS, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.fonts"}, {CSIDL_TEMPLATES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Templates"}, {CSIDL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.config"}, {CSIDL_LOCAL_APPDATA, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/.local/share"}, {CSIDL_COMMON_APPDATA, "/usr/share"}, {CSIDL_MYPICTURES, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS) + "/Pictures"}, {CSIDL_PROFILE, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}, {CSIDL_COMMON_TEMPLATES, "/usr/share/templates"}, {CSIDL_HOME, get_environment_variable("HOME", ENVIRONMENT_VARIABLE_TARGET_PROCESS)}};
   auto it = special_folders.find(csidl);
   if (it == special_folders.end()) return "";
   return it->second;
 }
 
-string environment::get_machine_name() {
+auto environment::get_machine_name() -> string {
   return linux::strings::replace(linux::shell_execute::run("uname", "-n"), "\n", "");
 }
 
-int32_t environment::get_os_platform_id() {
+auto environment::get_os_platform_id() -> int32_t {
   if (linux::shell_execute::run("uname", "-a").find("Linux") != string::npos) return PLATFORM_LINUX;
   return PLATFORM_UNIX;
 }
 
-void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+auto environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) -> void {
   auto numbers = linux::strings::split(linux::shell_execute::run("uname", "-r"), {'.', '-', '\n'});
   if (numbers.size() < 1 || !linux::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !linux::strings::try_parse(numbers[1], minor)) minor = 0;
@@ -198,25 +198,25 @@ void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build,
   if (numbers.size() < 4 || !linux::strings::try_parse(numbers[3], revision)) revision = 0;
 }
 
-uint32_t environment::get_processor_count() {
+auto environment::get_processor_count() -> uint32_t {
   return thread::hardware_concurrency();
 }
 
-std::string environment::get_resources_path(bool gui_app) {
+auto environment::get_resources_path(bool gui_app) -> string {
   auto app_path = get_executable_path();
   auto pos = app_path.rfind('/');
   return (pos == app_path.npos ? "" : app_path.substr(0, pos) + '/') + "resources";
 }
 
-string environment::get_service_pack() {
+auto environment::get_service_pack() -> string {
   return "";
 }
 
-size_t environment::get_system_page_size() {
+auto environment::get_system_page_size() -> size_t {
   return sysconf(_SC_PAGESIZE);
 }
 
-uint32_t environment::get_tick_count() {
+auto environment::get_tick_count() -> uint32_t {
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   using struct_sysinfo = struct sysinfo;
   auto info = struct_sysinfo {};
@@ -224,44 +224,44 @@ uint32_t environment::get_tick_count() {
   return info.uptime * 1000;
 }
 
-bool environment::get_user_administrator() {
+auto environment::get_user_administrator() -> bool {
   // https://stackoverflow.com/questions/3214297/how-can-my-c-c-application-determine-if-the-root-user-is-executing-the-command
   //return getuid() != geteuid();
   return !getuid();
 }
 
-string environment::get_user_domain_name() {
+auto environment::get_user_domain_name() -> string {
   return linux::strings::trim_end(linux::shell_execute::run("uname", "-n"), {'\n'});
 }
 
-string environment::get_user_name() {
+auto environment::get_user_name() -> string {
   auto user_name = getenv("USER");
   return user_name ? user_name : "";
 }
 
-bool environment::has_shutdown_started() {
+auto environment::has_shutdown_started() -> bool {
   // return always false on linux.
   return false;
 }
 
-bool environment::is_processor_arm() {
+auto environment::is_processor_arm() -> bool {
   auto uname_result = linux::shell_execute::run("uname", "-m");
   return linux::strings::contains(uname_result, "arm") || linux::strings::contains(uname_result, "aarch64");
 }
 
-bool environment::is_os_64_bit() {
+auto environment::is_os_64_bit() -> bool {
   return linux::strings::contains(linux::shell_execute::run("uname", "-m"), "64");
 }
 
-string environment::new_line() {
+auto environment::new_line() -> string {
   return "\n";
 }
 
-void environment::quick_exit(int32_t exit_code) noexcept {
+auto environment::quick_exit(int32_t exit_code) noexcept -> void {
   std::quick_exit(exit_code);
 }
 
-void environment::set_environment_variable(const string& name, const string& value, int32_t target) {
+auto environment::set_environment_variable(const string& name, const string& value, int32_t target) -> void {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -271,7 +271,7 @@ void environment::set_environment_variable(const string& name, const string& val
   }
 }
 
-void environment::unset_environment_variable(const string& name, int32_t target) {
+auto environment::unset_environment_variable(const string& name, int32_t target) -> void {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     unsetenv(name.c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -281,6 +281,6 @@ void environment::unset_environment_variable(const string& name, int32_t target)
   }
 }
 
-int64_t environment::working_set() {
+auto environment::working_set() -> int64_t {
   return 0;
 }
