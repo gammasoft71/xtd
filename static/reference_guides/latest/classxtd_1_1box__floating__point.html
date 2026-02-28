@@ -112,7 +112,7 @@ Inheritance diagram for xtd::box_floating_point&lt; type_t &gt;:</div>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t&gt;<br />
 class xtd::box_floating_point&lt; type_t &gt;</div><p>Represents a boxed floating point object. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__floating__point.html">box_floating_point</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structxtd_1_1box.html">xtd::box</a>&lt;type_t&gt;</div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:42</div></div>
 <div class="ttc" id="astructxtd_1_1box_html"><div class="ttname"><a href="structxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:56</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__integer.html" title="Represents a boxed integer object.">xtd::box_integer</a> &lt;type_t&gt; → <a class="el" href="classxtd_1_1box__floating__point.html" title="Represents a boxed floating point object.">box_floating_point</a> &lt;type_t&gt; </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/box°floating_point&gt;</span></div>
@@ -158,6 +158,8 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a46e3d7fc637d34fe35ad3fbfa74d80c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to positive infinity.  <br /></td></tr>
 <tr class="memitem:a3b5945d9579d3a9c5d13775abbfa6441" id="r_a3b5945d9579d3a9c5d13775abbfa6441"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a3b5945d9579d3a9c5d13775abbfa6441">is_NaN</a> (type_t <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
 <tr class="memdesc:a3b5945d9579d3a9c5d13775abbfa6441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating whether the specified number evaluates to not a number.  <br /></td></tr>
+<tr class="memitem:a73069f433f141bb309386512b9c6db90" id="r_a73069f433f141bb309386512b9c6db90"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a73069f433f141bb309386512b9c6db90">is_valid</a> (std::floating_point auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
+<tr class="memdesc:a73069f433f141bb309386512b9c6db90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified floating point value is within the range of type_t.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -213,6 +215,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="memitem:a5afccb7592db155d127dde594cb4af74" id="r_a5afccb7592db155d127dde594cb4af74"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a5afccb7592db155d127dde594cb4af74">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
 <tr class="memdesc:a5afccb7592db155d127dde594cb4af74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
+<tr class="memitem:aa1ceff348bb34f43abc847a16bff6ee7" id="r_aa1ceff348bb34f43abc847a16bff6ee7"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#aa1ceff348bb34f43abc847a16bff6ee7">is_valid</a> (std::signed_integral auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
+<tr class="memdesc:aa1ceff348bb34f43abc847a16bff6ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified signed integral value is within the range of type_t.  <br /></td></tr>
+<tr class="memitem:a29b4beda85fbb46884bbe1735e07ce8a" id="r_a29b4beda85fbb46884bbe1735e07ce8a"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a29b4beda85fbb46884bbe1735e07ce8a">is_valid</a> (std::unsigned_integral auto <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>) noexcept</td></tr>
+<tr class="memdesc:a29b4beda85fbb46884bbe1735e07ce8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified unsigned integral value is within the range of type_t.  <br /></td></tr>
 <tr class="memitem:a9f3925bfeb0b97e6460217daa694840e" id="r_a9f3925bfeb0b97e6460217daa694840e"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1box__integer.html#a9f3925bfeb0b97e6460217daa694840e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, type_t &amp;result, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">xtd::number_styles</a> styles)</td></tr>
 <tr class="memdesc:a9f3925bfeb0b97e6460217daa694840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its type_t equivalent.  <br /></td></tr>
 <tr class="memitem:a69d666347d38df4f67ec9561f132742e" id="r_a69d666347d38df4f67ec9561f132742e"><td class="memItemLeft">static <a class="el" href="structxtd_1_1box.html#ae91aa9821b7140ea6f2aeb25b306f07d">value_type</a>&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a69d666347d38df4f67ec9561f132742e">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>)</td></tr>
@@ -404,6 +410,43 @@ template&lt;class type_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if value evaluates to not a number; otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a73069f433f141bb309386512b9c6db90" name="a73069f433f141bb309386512b9c6db90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73069f433f141bb309386512b9c6db90">&#9670;&#160;</a></span>is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a>&lt; type_t &gt;::is_valid </td>
+          <td>(</td>
+          <td class="paramtype">std::floating_point auto</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified floating point value is within the range of type_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4" title="Gets or sets the underlying value.">value</a></td><td>The floating point value to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the value is outside the valid range defined by min_value and max_value, the method returns false. </dd></dl>
 
 </div>
 </div>

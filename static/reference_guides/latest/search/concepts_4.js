@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['less_5fthan_5fcomparable_0',['less_than_comparable',['../conceptxtd_1_1helpers_1_1less__than__comparable.html',1,'xtd::helpers']]]
+  ['is_5fstring_5fliteral_0',['is_string_literal',['../conceptxtd_1_1is__string__literal.html',1,'xtd']]]
 ];
