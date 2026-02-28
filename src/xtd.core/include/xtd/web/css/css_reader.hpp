@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "selector_map.hpp"
-#include "../..//io/stream_reader.hpp"
+#include "../../io/stream_reader.hpp"
 #include "../../argument_exception.hpp"
 #include "../../format_exception.hpp"
 #include "../../object.hpp"
