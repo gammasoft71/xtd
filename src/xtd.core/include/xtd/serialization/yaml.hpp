@@ -82,15 +82,13 @@ namespace xtd {
       auto as(const xtd::string& key) const -> type_t {
         if constexpr (std::floating_point<type_t>) return xtd::as<type_t>(as_floating_point(key));
         else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return xtd::as<type_t>(as_integer(key));
+        else if constexpr (std::same_as<type_t, null_type>) return nullptr;
         else if constexpr (std::same_as<type_t, boolean_type>) return xtd::as<boolean_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, string_type> || xtd::is_string_literal<type_t>) return xtd::as<string_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, mapping_type>) return xtd::as<mapping_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, sequence_type>) return xtd::as<sequence_type>(nodes_[key]);
         else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      
-      template<>
-      auto as<null_type>(const xtd::string& key) const -> null_type {return as_null(key);}
 
       auto as_boolean(const xtd::string& key) const -> boolean_type {return xtd::as<boolean_type>(nodes_[key]);}
       auto as_byte(const xtd::string& key) const -> xtd::byte {return xtd::as<xtd::byte>(as_integer(key));}
@@ -122,6 +120,7 @@ namespace xtd {
       auto is(const xtd::string& key) const -> bool {
         if constexpr (std::floating_point<type_t>) return is_floating_point(key) && xtd::box_floating_point<type_t>::is_valid(as_floating_point(key));
         else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return is_integer(key) && xtd::box_integer<type_t>::is_valid(as_integer(key));
+        else if constexpr (std::same_as<type_t, null_type>) return contains_key(key) && nodes_[key] == xtd::null;
         else if constexpr (std::same_as<type_t, boolean_type>) return contains_key(key) && xtd::is<boolean_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, string_type> || xtd::is_string_literal<type_t>) return contains_key(key) && xtd::is<string_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, mapping_type>) return contains_key(key) && xtd::is<mapping_type>(nodes_[key]);
@@ -129,9 +128,6 @@ namespace xtd {
         else return false;
       }
       
-      template<>
-      auto is<null_type>(const xtd::string& key) const -> bool {return is_null(key);}
-
       auto is_boolean(const xtd::string& key) const noexcept -> bool {return contains_key(key) && xtd::is<boolean_type>(nodes_[key]);}
       auto is_byte(const xtd::string& key) const -> bool {return is_integer(key) && xtd::byte_object::is_valid(as_integer(key));}
       auto is_decimal(const xtd::string& key) const -> bool {return is_floating_point(key) && xtd::decimal_object::is_valid(as_floating_point(key));}
