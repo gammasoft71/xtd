@@ -16,7 +16,9 @@
 /// @endcond
 
 #include "box.hpp"
+#include "int64.hpp"
 #include "number_styles.hpp"
+#include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -78,6 +80,20 @@ namespace xtd {
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
     static type_t parse(const xtd::string& value, xtd::number_styles styles) {return xtd::parse<type_t>(value, styles);}
+    
+    /// @brief Determines whether the specified signed integral value is within the range of type_t.
+    /// @param value The signed integral value to validate.
+    /// @return true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false.
+    /// @remarks This method checks whether a signed integral value can be safely represented by type_t without overflow.
+    /// @remarks If the value is outside the valid range defined by min_value and max_value, the method returns false.
+    static bool is_valid(std::signed_integral auto value) noexcept {return value >= static_cast<xtd::int64>(min_value) && value <= static_cast<xtd::int64>(max_value);}
+    /// @brief Determines whether the specified unsigned integral value is within the range of type_t.
+    /// @param value The unsigned integral value to validate.
+    /// @return true if value is less than or equal to max_value; otherwise, false.
+    /// @remarks This method checks whether an unsigned integral value can be safely represented by type_t without overflow.
+    /// @remarks Since unsigned values are always greater than or equal to zero, only the upper bound (max_value) is validated.
+    static bool is_valid(std::unsigned_integral auto value) noexcept {return value <= static_cast<xtd::uint64>(max_value);}
+
     using box<type_t>::try_parse;
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
