@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "box_integer.hpp"
+#include "decimal.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__box_floating_point.hpp"
 #undef __XTD_CORE_INTERNAL__
@@ -91,6 +92,12 @@ namespace xtd {
     /// @param value A floating-point number.
     /// @return `true` if value evaluates to not a number; otherwise, `false`.
     static bool is_NaN(type_t value) noexcept {return value != value;}
+    
+    /// @brief Determines whether the specified floating point value is within the range of type_t.
+    /// @param value The floating point value to validate.
+    /// @return true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false.
+    /// @remarks If the value is outside the valid range defined by min_value and max_value, the method returns false.
+    static bool is_valid(std::floating_point auto value) noexcept {return !is_NaN(value) && !is_infinity(value) && value >= static_cast<xtd::decimal>(xtd::box_integer<type_t>::min_value) && value <= static_cast<xtd::decimal>(xtd::box_integer<type_t>::max_value);}
     /// @}
   };
 }
