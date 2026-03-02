@@ -481,6 +481,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class type_t>
+  requires (!std::is_null_pointer_v<type_t>)
   bool is(xtd::any value) {
     try {
       xtd::any_cast<type_t>(value);
@@ -489,7 +490,15 @@ namespace xtd {
       return false;
     }
   }
-  
+
+  /// @cond
+  template<class type_t>
+  requires std::is_null_pointer_v<type_t>
+  bool is(xtd::any value) {
+    return !value.has_value();
+  }
+  /// @endcond
+
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
@@ -551,15 +560,27 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class type_t, class param_t>
+  requires (std::is_polymorphic_v<type_t> && std::is_polymorphic_v<param_t> && !std::is_null_pointer_v<type_t>)
   bool is(param_t* value) {
-    try {
-      if (value == nullptr) return false;
-      return dynamic_cast<type_t*>(value) != nullptr;
-    } catch (const std::bad_cast&) {
-      return false;
-    }
+    if (value == nullptr) return false;
+    return dynamic_cast<type_t*>(value) != nullptr;
+  }
+
+  /// @cond
+  template<class type_t, class param_t>
+  requires ((!std::is_polymorphic_v<type_t> || !std::is_polymorphic_v<param_t>) && !std::is_null_pointer_v<type_t>)
+  bool is(param_t* value) {
+    if (value == nullptr) return false;
+    return typeid(type_t).name() == typeid(param_t).name();
   }
   
+  template<class type_t, class param_t>
+  requires std::is_null_pointer_v<type_t>
+  bool is(param_t* value) {
+    return value == nullptr;
+  }
+  /// @endcond
+
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
