@@ -280,61 +280,76 @@ $(function() {
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    }</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>  }</div>
 </div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>  </div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>  <span class="keyword">template</span>&lt;&gt;</div>
-<div class="foldopen" id="foldopen00504" data-start="{" data-end="}">
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">  504</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">is&lt;xtd::any&gt;</a>(<a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> value) {</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  }</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span></div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>  <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;xtd::null_ptr&gt;</a>(<a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> value) {</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    <span class="keywordflow">return</span> !value.has_value();</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>  }</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span></div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>  <span class="keyword">template</span>&lt;&gt;</div>
+<div class="foldopen" id="foldopen00511" data-start="{" data-end="}">
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">  511</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">is&lt;xtd::any&gt;</a>(<a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> value) {</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>  }</div>
 </div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>  </div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
-<div class="foldopen" id="foldopen00519" data-start="{" data-end="}">
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga0fce835e30d618280ff3efd754ac3041">  519</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<span class="keyword">const</span> param_t* value) {</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>      <span class="keywordflow">if</span> (value == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>      <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>type_t*<span class="keyword">&gt;</span>(value) != <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_cast&amp;) {</div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    }</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>  }</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>  </div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="foldopen" id="foldopen00526" data-start="{" data-end="}">
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga0fce835e30d618280ff3efd754ac3041">  526</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<span class="keyword">const</span> param_t* value) {</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>      <span class="keywordflow">if</span> (value == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>type_t*<span class="keyword">&gt;</span>(value) != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_cast&amp;) {</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    }</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>  }</div>
 </div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>  </div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
-<div class="foldopen" id="foldopen00539" data-start="{" data-end="}">
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9">  539</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<span class="keyword">const</span> param_t&amp; value) {</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;type_t&gt;</a>(&amp;value);</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>  }</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>  </div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="foldopen" id="foldopen00546" data-start="{" data-end="}">
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9">  546</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<span class="keyword">const</span> param_t&amp; value) {</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;type_t&gt;</a>(&amp;value);</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>  }</div>
 </div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>  </div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
-<div class="foldopen" id="foldopen00554" data-start="{" data-end="}">
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gab47f92a22f4a0f253ddbffd86bbb2508">  554</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t* value) {</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>      <span class="keywordflow">if</span> (value == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>      <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>type_t*<span class="keyword">&gt;</span>(value) != <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_cast&amp;) {</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    }</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>  }</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>  </div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>  <span class="keyword">requires</span> (std::is_polymorphic_v&lt;type_t&gt; &amp;&amp; std::is_polymorphic_v&lt;param_t&gt; &amp;&amp; !std::is_null_pointer_v&lt;type_t&gt;)</div>
+<div class="foldopen" id="foldopen00562" data-start="{" data-end="}">
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="group__xtd__core.html#gab47f92a22f4a0f253ddbffd86bbb2508">  562</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t* value) {</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    <span class="keywordflow">if</span> (value == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>type_t*<span class="keyword">&gt;</span>(value) != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  }</div>
 </div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>  </div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
-<div class="foldopen" id="foldopen00574" data-start="{" data-end="}">
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga0a8b1861b61e1d6371264460d8ee4bc6">  574</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t&amp; value) {</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;type_t&gt;</a>(&amp;value);</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  }</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span></div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>  <span class="keyword">requires</span> ((!std::is_polymorphic_v&lt;type_t&gt; || !std::is_polymorphic_v&lt;param_t&gt;) &amp;&amp; !std::is_null_pointer_v&lt;type_t&gt;)</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t* value) {</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">if</span> (value == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    <span class="keywordflow">return</span> <span class="keyword">typeid</span>(type_t).name() == <span class="keyword">typeid</span>(param_t).name();</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  }</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>  </div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  <span class="keyword">requires</span> std::is_null_pointer_v&lt;type_t&gt;</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t* value) {</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <span class="keywordflow">return</span> value == <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>  }</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span></div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> param_t&gt;</div>
+<div class="foldopen" id="foldopen00593" data-start="{" data-end="}">
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga0a8b1861b61e1d6371264460d8ee4bc6">  593</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(param_t&amp; value) {</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;type_t&gt;</a>(&amp;value);</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>  }</div>
 </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  </div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t&gt;</div>
-<div class="foldopen" id="foldopen00589" data-start="{" data-end="}">
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga35e088065fe87da2bfae2c36e0a115ce">  589</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;current_type_t&gt;</a>&amp; value) {</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    <span class="keyword">auto</span> result = std::dynamic_pointer_cast&lt;new_type_t&gt;(value.pointer());</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    <span class="keywordflow">if</span> (result) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>  }</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>  </div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type, <span class="keyword">class</span> current_type&gt;</div>
+<div class="foldopen" id="foldopen00608" data-start="{" data-end="}">
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga5f510817246f6b619ffe7a76b9f94a3c">  608</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>(<a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;current_type&gt;</a>&amp; value) {</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keyword">auto</span> result = std::dynamic_pointer_cast&lt;new_type&gt;(value.pointer());</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordflow">if</span> (result) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  }</div>
 </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>}</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>}</div>
 <div class="ttc" id="aany_8hpp_html"><div class="ttname"><a href="any_8hpp.html">any.hpp</a></div><div class="ttdoc">Contains xtd::any type and std::bad_any_cast exception.</div></div>
 <div class="ttc" id="agroup__types_html_ga0eb6dff59ca8406d303e3e4b7eaf2cc9"><div class="ttname"><a href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></div><div class="ttdeci">std::int64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> int64.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga0eb9264ad13083b74194b8e7d467e1ce"><div class="ttname"><a href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">xtd::uint32</a></div><div class="ttdeci">std::uint32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.hpp:23</div></div>
@@ -363,7 +378,7 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_ga631bd339baa92644e763c4b744eb4d50"><div class="ttname"><a href="group__xtd__core.html#ga631bd339baa92644e763c4b744eb4d50">xtd::is&lt; int64 &gt;</a></div><div class="ttdeci">bool is&lt; int64 &gt;(int64 value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:337</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga83e9552d697fcb5b6b50bf2cdd08820a"><div class="ttname"><a href="group__xtd__core.html#ga83e9552d697fcb5b6b50bf2cdd08820a">xtd::is&lt; char16 &gt;</a></div><div class="ttdeci">bool is&lt; char16 &gt;(char16 value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:117</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:484</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga8681884c9c9c3cdc19126ff503a92c4b"><div class="ttname"><a href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">xtd::is&lt; xtd::any &gt;</a></div><div class="ttdeci">bool is&lt; xtd::any &gt;(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:504</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga8681884c9c9c3cdc19126ff503a92c4b"><div class="ttname"><a href="group__xtd__core.html#ga8681884c9c9c3cdc19126ff503a92c4b">xtd::is&lt; xtd::any &gt;</a></div><div class="ttdeci">bool is&lt; xtd::any &gt;(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:511</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8f1ef6260f6c8ab7396bd402fcd2175b"><div class="ttname"><a href="group__xtd__core.html#ga8f1ef6260f6c8ab7396bd402fcd2175b">xtd::is&lt; char32 &gt;</a></div><div class="ttdeci">bool is&lt; char32 &gt;(char32 value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:139</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga9c2263c0100ca43d1448ac6fb1af24cc"><div class="ttname"><a href="group__xtd__core.html#ga9c2263c0100ca43d1448ac6fb1af24cc">xtd::is&lt; uint64 &gt;</a></div><div class="ttdeci">bool is&lt; uint64 &gt;(uint64 value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:447</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gab02872393dfd0c55acf2f47c980abb35"><div class="ttname"><a href="group__xtd__core.html#gab02872393dfd0c55acf2f47c980abb35">xtd::is&lt; double &gt;</a></div><div class="ttdeci">bool is&lt; double &gt;(double value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:227</div></div>
