@@ -210,17 +210,32 @@ namespace xtd {
   };
   
   template<class type_t>
+  requires (!std::is_null_pointer_v<type_t>)
   bool is(any_object& o) {
+    if (!o.has_value()) return false;
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
   template<class type_t>
+  requires (!std::is_null_pointer_v<type_t>)
   bool is(const any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
+  template<class type_t>
+  requires std::is_null_pointer_v<type_t>
+  bool is(any_object& o) {
+    return !o.has_value();
+  }
+  
+  template<class type_t>
+  requires std::is_null_pointer_v<type_t>
+  bool is(const any_object& o) {
+    return !o.has_value();
+  }
+
   template<class type_t>
   bool is(any_object* o) {
     if (is<box<type_t>>(o->value())) return true;
