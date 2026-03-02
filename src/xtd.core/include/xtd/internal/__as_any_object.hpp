@@ -60,7 +60,15 @@ namespace xtd {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
-  
+
+  /// @cond
+  template<>
+  [[nodiscard]] inline auto as<xtd::null_ptr>(any_object& o) -> xtd::null_ptr {
+    if (o.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return xtd::null;
+  }
+  /// @endcond
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -84,7 +92,15 @@ namespace xtd {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
-  
+ 
+  /// @cond
+  template<>
+  [[nodiscard]] inline auto as<xtd::null_ptr>(const any_object& o) -> xtd::null_ptr {
+    if (o.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    return xtd::null;
+  }
+  /// @endcond
+
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.

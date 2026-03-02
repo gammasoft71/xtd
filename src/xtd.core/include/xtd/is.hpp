@@ -481,7 +481,6 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class type_t>
-  requires (!std::is_null_pointer_v<type_t>)
   bool is(xtd::any value) {
     try {
       xtd::any_cast<type_t>(value);
@@ -492,9 +491,8 @@ namespace xtd {
   }
 
   /// @cond
-  template<class type_t>
-  requires std::is_null_pointer_v<type_t>
-  bool is(xtd::any value) {
+  template<>
+  inline bool is<xtd::null_ptr>(xtd::any value) {
     return !value.has_value();
   }
   /// @endcond
@@ -606,9 +604,9 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<class new_type_t, class current_type_t>
-  bool is(xtd::sptr<current_type_t>& value) {
-    auto result = std::dynamic_pointer_cast<new_type_t>(value.pointer());
+  template<class new_type, class current_type>
+  bool is(xtd::sptr<current_type>& value) {
+    auto result = std::dynamic_pointer_cast<new_type>(value.pointer());
     if (result) return true;
     return false;
   }
