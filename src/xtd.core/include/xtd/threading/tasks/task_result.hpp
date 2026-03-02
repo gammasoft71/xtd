@@ -90,7 +90,7 @@ namespace xtd {
         
         /// @{
         [[nodiscard]] auto result() const noexcept -> const result_t& {
-          static_cast<basic_task<result_t>&>(const_cast<task&>(*this)).wait();
+          if (!basic_task<result_t>::is_completed()) static_cast<basic_task<result_t>&>(const_cast<task&>(*this)).wait();
           return basic_task<result_t>::data_->result;
         }
         /// @}
