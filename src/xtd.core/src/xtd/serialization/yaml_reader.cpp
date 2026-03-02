@@ -31,9 +31,8 @@ namespace xtd::internal {
     if (node.is_integer()) return xtd::as<yaml::integer_type>(node.as_int());
     if (node.is_float_number()) return xtd::as<yaml::floating_point_type>(node.as_float());
     if (node.is_string()) {
-      auto value = node.as_str();
       auto result = uint64 {};
-      if (uint64_object::try_parse(value, result) && result > as<uint64>(int64_object::max_value)) return xtd::as<uint64>(result);
+      if (uint64_object::try_parse(node.as_str(), result) && result > as<uint64>(int64_object::max_value)) return result;
       return xtd::as<yaml::string_type>(node.as_str());
     }
 
