@@ -81,7 +81,7 @@ namespace xtd {
       template<class type_t>
       auto as(const xtd::string& key) const -> type_t {
         if constexpr (std::floating_point<type_t>) return xtd::as<type_t>(as_floating_point(key));
-        else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return xtd::as<type_t>(as_integer(key));
+        else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return xtd::as<type_t>(xtd::is<integer_type>(nodes_[key]) ? xtd::as<int64>(nodes_[key]) : xtd::as<uint64>(nodes_[key]));
         else if constexpr (std::same_as<type_t, null_type>) return nullptr;
         else if constexpr (std::same_as<type_t, boolean_type>) return xtd::as<boolean_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, string_type> || xtd::is_string_literal<type_t>) return xtd::as<string_type>(nodes_[key]);
@@ -91,11 +91,12 @@ namespace xtd {
       }
 
       auto as_boolean(const xtd::string& key) const -> boolean_type;
-      auto as_integer(const xtd::string& key) const -> integer_type;
+      auto as_integer(const xtd::string& key) const {return xtd::is<integer_type>(nodes_[key]) ? xtd::as<integer_type>(nodes_[key]) : xtd::as<uint64>(nodes_[key]);}
       auto as_floating_point(const xtd::string& key) const -> floating_point_type;
       auto as_mapping(const xtd::string& key) const -> mapping_type;
       auto as_null(const xtd::string& key) const -> null_type;
       auto as_sequence(const xtd::string& key) const -> sequence_type;
+      auto as_string(const xtd::string& key) const -> string_type;
 
       auto contains_key(const xtd::string& key) const noexcept -> bool;
       
@@ -103,7 +104,7 @@ namespace xtd {
       auto is(const xtd::string& key) const -> bool {
         if (!contains_key(key)) return false;
         if constexpr (std::floating_point<type_t>) return is_floating_point(key) && xtd::box_floating_point<type_t>::is_valid(as_floating_point(key));
-        else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return is_integer(key) && xtd::box_integer<type_t>::is_valid(as_integer(key));
+        else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return is_integer(key) && xtd::box_integer<type_t>::is_valid(xtd::is<integer_type>(nodes_[key]) ? xtd::as<int64>(nodes_[key]) : xtd::as<uint64>(nodes_[key]));
         else if constexpr (std::same_as<type_t, null_type>) return contains_key(key) && xtd::is<xtd::null_ptr>(nodes_[key]);
         else if constexpr (std::same_as<type_t, boolean_type>) return contains_key(key) && xtd::is<boolean_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, string_type> || xtd::is_string_literal<type_t>) return contains_key(key) && xtd::is<string_type>(nodes_[key]);
@@ -118,6 +119,7 @@ namespace xtd {
       auto is_mapping(const xtd::string& key) const -> bool;
       auto is_null(const xtd::string& key) const noexcept -> bool;
       auto is_sequence(const xtd::string& key) const -> bool;
+      auto is_string(const xtd::string& key) const noexcept -> bool;
       /// @}
       
       /// @name Public Operators
