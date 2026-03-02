@@ -19,24 +19,33 @@ namespace xtd::serialization::tests {
           {"not null", 42}
         }
       };
-      assert::is_true(v["null"] == nullptr);
-      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto r = as<bool>(v["null"]);});
+      assert::is_true(is<null_ptr>(v["null"]));
+      assert::is_true(v.is<null_ptr>("null"));
+      assert::is_true(v.is_null("null"));
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto r = as<int>(v["null"]);});
       
-      assert::is_false(v["not null"] == nullptr);
+      assert::is_false(is<null_ptr>(v["not null"]));
+      assert::is_false(v.is<null_ptr>("not null"));
+      assert::is_false(v.is_null("not null"));
+      assert::does_not_throw([&] {[[maybe_unused]] auto r = as<int>(v["not null"]);});
     }
     
-    auto test_method_(yaml_with_bool) {
+    auto test_method_(yaml_with_boolean) {
       auto v = yaml {
         yaml::nodes_collection {
-          {"bool", true},
-          {"not bool", 42}
+          {"boolean", true},
+          {"not boolean", 42}
         }
       };
-      assert::is_true(is<bool>(v["bool"]));
-      assert::is_true(as<bool>(v["bool"]));
+      assert::is_true(is<boolean>(v["boolean"]));
+      assert::is_true(v.is<boolean>("boolean"));
+      assert::is_true(v.is_boolean("boolean"));
+      assert::is_true(as<boolean>(v["boolean"]));
       
-      assert::is_false(is<bool>(v["not bool"]));
-      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto r = as<bool>(v["not bool"]);});
+      assert::is_false(is<boolean>(v["not boolean"]));
+      assert::is_false(v.is<boolean>("not boolean"));
+      assert::is_false(v.is_boolean("not boolean"));
+      assert::throws<invalid_cast_exception>([&] {[[maybe_unused]] auto r = as<boolean>(v["not boolean"]);});
     }
     
     auto test_method_(yaml_with_integer) {
