@@ -2,7 +2,7 @@
 #include <xtd/format_exception>
 #include <xtd/globalization/culture_info>
 #include <xtd/tunit/assert>
-#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/register_test_class_types>
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
@@ -12,28 +12,8 @@ namespace xtd::tests {
   template<class value_t>
   class format_u32string_numeric_tests;
   
-  test_class_attribute<format_u32string_numeric_tests<unsigned char>> format_u32string_numeric_tests_class_unsigned_char_attr {"format_u32string_numeric_tests<unsigned_char>"};
-  test_class_attribute<format_u32string_numeric_tests<short>> format_u32string_numeric_tests_class_short_attr {"format_u32string_numeric_tests<short>"};
-  test_class_attribute<format_u32string_numeric_tests<unsigned short>> format_u32string_numeric_tests_class_unsigned_short_attr {"format_u32string_numeric_tests<unsigned_short>"};
-  test_class_attribute<format_u32string_numeric_tests<int>> format_u32string_numeric_tests_class_int_attr {"format_u32string_numeric_tests<int>"};
-  test_class_attribute<format_u32string_numeric_tests<unsigned int>> format_u32string_numeric_tests_class_unsigned_int_attr {"format_u32string_numeric_tests<unsigned_int>"};
-  test_class_attribute<format_u32string_numeric_tests<long>> format_u32string_numeric_tests_class_long_attr {"format_u32string_numeric_tests<long>"};
-  test_class_attribute<format_u32string_numeric_tests<unsigned long>> format_u32string_numeric_tests_class_unsigned_long_attr {"format_u32string_numeric_tests<unsigned_long>"};
-  test_class_attribute<format_u32string_numeric_tests<long long>> format_u32string_numeric_tests_class_long_long_attr {"format_u32string_numeric_tests<long_long>"};
-  test_class_attribute<format_u32string_numeric_tests<unsigned long long>> format_u32string_numeric_tests_class_unsigned_long_long_attr {"format_u32string_numeric_tests<unsigned_long_long>"};
-  test_class_attribute<format_u32string_numeric_tests<sbyte>> format_u32string_numeric_tests_class_sbyte_attr {"format_u32string_numeric_tests<sbyte>"};
-  test_class_attribute<format_u32string_numeric_tests<int16>> format_u32string_numeric_tests_class_int16_attr {"format_u32string_numeric_tests<int16>"};
-  test_class_attribute<format_u32string_numeric_tests<int32>> format_u32string_numeric_tests_class_int32_attr {"format_u32string_numeric_tests<int32>"};
-  test_class_attribute<format_u32string_numeric_tests<int64>> format_u32string_numeric_tests_class_int64_attr {"format_u32string_numeric_tests<int64>"};
-  test_class_attribute<format_u32string_numeric_tests<intptr>> format_u32string_numeric_tests_class_intptr_attr {"format_u32string_numeric_tests<intptr>"};
-  test_class_attribute<format_u32string_numeric_tests<ptrdiff_t>> format_u32string_numeric_tests_class_ptrdiff_t_attr {"format_u32string_numeric_tests<ptrdiff_t>"};
-  test_class_attribute<format_u32string_numeric_tests<size_t>> format_u32string_numeric_tests_class_size_t_attr {"format_u32string_numeric_tests<size_t>"};
-  test_class_attribute<format_u32string_numeric_tests<xtd::byte>> format_u32string_numeric_tests_class_byte_attr {"format_u32string_numeric_tests<xtd::byte>"};
-  test_class_attribute<format_u32string_numeric_tests<uint16>> format_u32string_numeric_tests_class_uint16_attr {"format_u32string_numeric_tests<uint16>"};
-  test_class_attribute<format_u32string_numeric_tests<uint32>> format_u32string_numeric_tests_class_uint32_attr {"format_u32string_numeric_tests<uint32>"};
-  test_class_attribute<format_u32string_numeric_tests<uint64>> format_u32string_numeric_tests_class_uint64_attr {"format_u32string_numeric_tests<uint64>"};
-  test_class_attribute<format_u32string_numeric_tests<uintptr>> format_u32string_numeric_tests_class_uintptr_attr {"format_u32string_numeric_tests<uintptr>"};
-  
+  auto register_format_u32string_numeric_tests = register_test_class_types<format_u32string_numeric_tests, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr> {};
+
   template<class value_t>
   class format_u32string_numeric_tests : public test_class {
     inline static xtd::globalization::culture_info previous_culture;
