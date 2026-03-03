@@ -56,12 +56,29 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
+  requires (!std::integral<type_t> || std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
 
   /// @cond
+  template<class type_t>
+  requires (std::integral<type_t> && !std::same_as<type_t, bool>)
+  [[nodiscard]] inline auto as(any_object& o) -> type_t {
+    if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int16>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int16>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int32>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int32>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int64>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int64>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::sbyte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::sbyte>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::slong>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::slong>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint16>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint16>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint32>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint32>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint64>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint64>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::ulong>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::ulong>&>(o.value()).value);
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  }
+
   template<>
   [[nodiscard]] inline auto as<xtd::null_ptr>(any_object& o) -> xtd::null_ptr {
     if (o.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
@@ -88,12 +105,29 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
+  requires (!std::integral<type_t> || std::same_as<type_t, bool>)
   [[nodiscard]] inline auto as(const any_object& o) -> type_t {
     if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
  
   /// @cond
+  template<class type_t>
+  requires (std::integral<type_t> && !std::same_as<type_t, bool>)
+  [[nodiscard]] inline auto as(const any_object& o) -> type_t {
+    if (xtd::is<xtd::box_integer<xtd::byte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::byte>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int16>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int16>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int32>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int32>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::int64>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::int64>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::sbyte>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::sbyte>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::slong>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::slong>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint16>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint16>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint32>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint32>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::uint64>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::uint64>&>(o.value()).value);
+    if (xtd::is<xtd::box_integer<xtd::ulong>>(o.value())) return xtd::as<type_t>(static_cast<const xtd::box_integer<xtd::ulong>&>(o.value()).value);
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  }
+  
   template<>
   [[nodiscard]] inline auto as<xtd::null_ptr>(const any_object& o) -> xtd::null_ptr {
     if (o.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
