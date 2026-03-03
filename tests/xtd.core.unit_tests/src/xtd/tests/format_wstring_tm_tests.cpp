@@ -4,7 +4,7 @@
 #include <xtd/globalization/culture_info>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
-#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/register_test_class_types>
 #include <xtd/tunit/test_method_attribute>
 
 #include <time.h>
@@ -86,9 +86,8 @@ namespace xtd::tests {
   template<class value_t>
   class format_wstring_tm_tests;
   
-  test_class_attribute<format_wstring_tm_tests<std::tm>> format_wstring_tm_tests_class_std_tm_attr {"format_wstring_tm_tests<std::tm>"};
-  test_class_attribute<format_wstring_tm_tests<std::chrono::system_clock::time_point>> format_wstring_tm_tests_class_std_chrono_system_clock_time_point_attr {"format_wstring_tm_tests<std::chrono::system_clock::time_point>"};
-  
+  auto register_format_wstring_tm_tests = register_test_class_types<format_wstring_tm_tests, std::tm, std::chrono::system_clock::time_point> {};
+
   template<class value_t>
   class format_wstring_tm_tests : public test_class {
     inline static xtd::globalization::culture_info previous_culture;
