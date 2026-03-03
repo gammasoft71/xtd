@@ -7,6 +7,7 @@
 #include "threading/tasks/wtask.hpp"
 #include "core_export.hpp"
 #include "delegate.hpp"
+#include "environment.hpp"
 #include "optional.hpp"
 #include "static.hpp"
 #include <exception>
@@ -157,7 +158,7 @@ namespace xtd {
     static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
       try {
         init_safe_run();
-        if (argv.has_value() && argc.has_value()) environment::set_command_line_args({argv.value(), argv.value() + argc.value()});
+        if (argv.has_value() && argc.has_value()) xtd::environment::set_command_line_args({argv.value(), argv.value() + argc.value()});
         auto exit_code = argc == std::nullopt && argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());
         end_safe_run();
         return exit_code;
