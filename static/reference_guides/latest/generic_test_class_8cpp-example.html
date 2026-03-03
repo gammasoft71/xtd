@@ -114,11 +114,7 @@ $(function() {
 <div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line">  <span class="keyword">class </span>test;</div>
 <div class="line">  </div>
-<div class="line">  test_class_attribute&lt;test&lt;bool&gt;&gt; test_bool_class_attr {<span class="stringliteral">&quot;test&lt;bool&gt;&quot;</span>};</div>
-<div class="line">  test_class_attribute&lt;test&lt;int&gt;&gt; test_int_class_attr {<span class="stringliteral">&quot;test&lt;int&gt;&quot;</span>};</div>
-<div class="line">  test_class_attribute&lt;test&lt;long int&gt;&gt; test_double_class_attr {<span class="stringliteral">&quot;test&lt;long_int&gt;&quot;</span>};</div>
-<div class="line">  test_class_attribute&lt;test&lt;sbyte&gt;&gt; test_int8_t_class_attr {<span class="stringliteral">&quot;test&lt;sbyte&gt;&quot;</span>};</div>
-<div class="line">  test_class_attribute&lt;test&lt;byte&gt;&gt; test_uint8_t_class_attr {<span class="stringliteral">&quot;test&lt;byte&gt;&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> register_test = register_test_class_types&lt;test, bool, int, long int, sbyte, byte&gt; {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// The test class must be inherit from test_class class.</span></div>
 <div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
