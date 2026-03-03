@@ -11,7 +11,7 @@
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/string_assert>
-#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/register_test_class_types>
 #include <xtd/tunit/test_method_attribute>
 #include <sstream>
 
@@ -24,11 +24,7 @@ namespace xtd::text::tests {
   template<class value_t>
   class basic_string_builder_tests;
   
-  test_class_attribute<basic_string_builder_tests<char>> basic_string_builder_tests_class_char_attr {"basic_string_builder_tests<char>"};
-  test_class_attribute<basic_string_builder_tests<char16>> basic_string_builder_tests_class_char16_attr {"basic_string_builder_tests<char16>"};
-  test_class_attribute<basic_string_builder_tests<char32>> basic_string_builder_tests_class_char32_attr {"basic_string_builder_tests<char32>"};
-  test_class_attribute<basic_string_builder_tests<char8>> basic_string_builder_tests_class_char8_attr {"basic_string_builder_tests<char8>"};
-  test_class_attribute<basic_string_builder_tests<wchar>> basic_string_builder_tests_class_wchar_attr {"basic_string_builder_tests<wchar>"};
+  auto register_basic_string_builder_tests = register_test_class_types<basic_string_builder_tests, char, char8, char16, char32, wchar> {};
   
   template<class char_t>
   class basic_string_builder_tests : public test_class {
