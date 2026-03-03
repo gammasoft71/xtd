@@ -2,7 +2,7 @@
 #include <xtd/format_exception>
 #include <xtd/globalization/culture_info>
 #include <xtd/tunit/assert>
-#include <xtd/tunit/test_class_attribute>
+#include <xtd/tunit/register_test_class_types>
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
@@ -12,9 +12,7 @@ namespace xtd::tests {
   template<class value_t>
   class format_u32string_fixed_point_tests;
   
-  test_class_attribute<format_u32string_fixed_point_tests<float>> format_u32string_fixed_point_tests_class_float_attr {"format_u32string_fixed_point_tests<float>"};
-  test_class_attribute<format_u32string_fixed_point_tests<double>> format_u32string_fixed_point_tests_class_double_attr {"format_u32string_fixed_point_tests<double>"};
-  test_class_attribute<format_u32string_fixed_point_tests<long double>> format_u32string_fixed_point_tests_class_long_double_attr {"format_u32string_fixed_point_tests<long_double>"};
+  auto register_format_u32string_fixed_point_tests = register_test_class_types<format_u32string_fixed_point_tests, float, double, decimal> {};
   
   template<class value_t>
   class format_u32string_fixed_point_tests : public test_class {
