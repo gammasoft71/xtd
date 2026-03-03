@@ -41,6 +41,7 @@
 #include "tunit/ignore_error.hpp"
 #include "tunit/ostream_event_listener.hpp"
 #include "tunit/ostream_unit_test.hpp"
+#include "tunit/register_test_class_types.hpp"
 #include "tunit/registered_test_class.hpp"
 #include "tunit/settings.hpp"
 #include "tunit/string_assert.hpp"
