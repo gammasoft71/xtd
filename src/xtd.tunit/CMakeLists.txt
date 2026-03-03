@@ -98,6 +98,7 @@ add_sources(
   "include/xtd/tunit/string_valid"
   "include/xtd/tunit/test.hpp"
   "include/xtd/tunit/test"
+  "include/xtd/tunit/register_test_class_types.hpp"
   "include/xtd/tunit/registered_test_class.hpp"
   "include/xtd/tunit/registered_test_class"
   "include/xtd/tunit/test_cleanup_attribute.hpp"
