@@ -38,6 +38,7 @@
 #include "tunit/file_assert.hpp"
 #include "tunit/file_assume.hpp"
 #include "tunit/file_valid.hpp"
+#include "tunit/generic_test_class.hpp"
 #include "tunit/ignore_error.hpp"
 #include "tunit/ostream_event_listener.hpp"
 #include "tunit/ostream_unit_test.hpp"

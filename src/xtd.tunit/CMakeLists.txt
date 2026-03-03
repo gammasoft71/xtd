@@ -84,6 +84,8 @@ add_sources(
   "include/xtd/tunit/file_valid"
   "include/xtd/tunit/ignore_error.hpp"
   "include/xtd/tunit/ignore_error"
+  "include/xtd/tunit/generic_test_class.hpp"
+  "include/xtd/tunit/generic_test_class"
   "include/xtd/tunit/ostream_event_listener.hpp"
   "include/xtd/tunit/ostream_event_listener"
   "include/xtd/tunit/ostream_unit_test.hpp"
