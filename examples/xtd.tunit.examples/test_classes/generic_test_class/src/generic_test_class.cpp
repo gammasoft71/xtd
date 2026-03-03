@@ -28,11 +28,7 @@ namespace unit_tests {
   template<typename type_t>
   class test;
   
-  test_class_attribute<test<bool>> test_bool_class_attr {"test<bool>"};
-  test_class_attribute<test<int>> test_int_class_attr {"test<int>"};
-  test_class_attribute<test<long int>> test_double_class_attr {"test<long_int>"};
-  test_class_attribute<test<sbyte>> test_int8_t_class_attr {"test<sbyte>"};
-  test_class_attribute<test<byte>> test_uint8_t_class_attr {"test<byte>"};
+  auto register_test = register_test_class_types<test, bool, int, long int, sbyte, byte> {};
   
   // The test class must be inherit from test_class class.
   template<typename type_t>
