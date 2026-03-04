@@ -109,7 +109,7 @@ $(function() {
 <div class="foldopen" id="foldopen00043" data-start="" data-end="">
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">   43</a></span><span class="preprocessor">#define test_class_(class_name) \</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">  class_name; \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  xtd::tunit::test_class_attribute&lt;class_name&gt; __##class_name##_attribute {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  inline auto __##class_name##_attribute = xtd::tunit::test_class_attribute&lt;class_name&gt; {typeof_&lt;class_name&gt;().full_name()}; \</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  class class_name : public xtd::tunit::test_class</span></div>
 </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
