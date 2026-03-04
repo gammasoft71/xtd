@@ -1,12 +1,28 @@
 /// @file
-/// @brief Contains xtd::tunit::generic_test_class_ helper.
+/// @brief Contains #generic_test_class_ helper.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "register_test_class_types.hpp"
 
-#define generic_test_class_(test_class_type, ...) \
+/// @brief Helper to create a generic test_class in a test unit.
+/// @param class_name The test class to add to unit test.
+/// @param ... type list.
+/// @ingroup xtd_tunit tunit
+/// @par Examples
+/// The following example shows how to use #generic_test_class_ helper.
+/// ```cpp
+/// #include <xtd/tunit/tunit>
+///
+/// generic_test_class_(vector_tests, int, char, bool) {
+///    auto test_method_(default_constructor) {
+///      auto v = std::vector<type_t> {};
+///      collection_assert::is_empty(v);
+///    }
+/// };
+/// ```
+#define generic_test_class_(class_name, ...) \
   template<class type_t> \
-  class test_class_type; \
-  auto register_##test_class_type = register_test_class_types<test_class_type, __VA_ARGS__> {}; \
+  class class_name; \
+  inline auto __register_##class_name = register_test_class_types<class_name, __VA_ARGS__> {}; \
   template<class type_t> \
-  class test_class_type : public test_class
+  class class_name : public test_class
