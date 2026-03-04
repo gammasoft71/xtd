@@ -17,7 +17,7 @@ namespace xtd {
     /// @ingroup xtd_tunit tunit
     /// @par Examples
     /// The following example shows how to regeister types for a specified test class.
-    /// ```
+    /// ```cpp
     /// #include <xtd/tunit/tunit>
     ///
     /// template<class type_t>
