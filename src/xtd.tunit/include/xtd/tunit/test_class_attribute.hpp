@@ -42,7 +42,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define test_class_(class_name) \
   class_name; \
-  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {typeof_<class_name>().full_name()}; \
+  inline auto __##class_name##_attribute = xtd::tunit::test_class_attribute<class_name> {typeof_<class_name>().full_name()}; \
   class class_name : public xtd::tunit::test_class
 
 /// @brief Helper to create a test_class in a test unit from a specified class base.
