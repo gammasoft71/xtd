@@ -20,7 +20,7 @@ string type_object::full_name() const noexcept {
 
 string type_object::name() const noexcept {
   auto full_name = this->full_name();
-  auto length = full_name.last_index_of("<");
+  auto length = full_name.index_of("<");
   if (length == string::npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == string::npos) return full_name;
   return full_name.substring(full_name.last_index_of("::", 0, length) + 2);
@@ -28,7 +28,7 @@ string type_object::name() const noexcept {
 
 string type_object::namespace_() const noexcept {
   auto full_name = this->full_name();
-  auto length = full_name.last_index_of("<");
+  auto length = full_name.index_of("<");
   if (length == string::npos) length = full_name.length();
   if (full_name.last_index_of("::", 0, length) == string::npos) return full_name;
   return full_name.remove(full_name.last_index_of("::", 0, length));
