@@ -1,10 +1,12 @@
 #include <xtd/box_integer>
+#include <xtd/io/memory_stream>
+#include <xtd/io/stream_writer>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/generic_test_class>
 #include <xtd/tunit/test_method_attribute>
 
 namespace xtd::tests {
-  generic_test_class_(box_integer_typeests, char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
+  generic_test_class_(box_integer_typeests, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
     auto test_method_(box_type_type) {
       assert::is_instance_of<box<type_t>>(box_integer<type_t> {});
     }
@@ -100,6 +102,35 @@ namespace xtd::tests {
       assert::is_positive(box_integer<type_t> {5}.compare_to(box_integer<type_t> {4}));
     }
     
+    auto test_method_(equals) {
+      assert::is_true(box_integer<type_t> {5}.equals(box_integer<type_t> {5}));
+      assert::is_false(box_integer<type_t> {4}.equals(box_integer<type_t> {5}));
+      assert::is_false(box_integer<type_t> {5}.equals(box_integer<type_t> {4}));
+    }
+    
+    auto test_method_(get_hash_code) {
+      assert::are_equal(box_integer<type_t> {5}.get_hash_code(), box_integer<type_t> {5}.get_hash_code());
+      assert::are_not_equal(box_integer<type_t> {4}.get_hash_code(), box_integer<type_t> {5}.get_hash_code());
+    }
+    
+    auto test_method_(to_string) {
+      assert::are_equal("5", box_integer<type_t> {5}.to_string());
+      assert::are_equal("42", box_integer<type_t> {42}.to_string());
+      assert::are_equal("120", box_integer<type_t> {120}.to_string());
+    }
+    
+    auto test_method_(to_string_with_format) {
+      assert::are_equal("0005", box_integer<type_t> {5}.to_string("X4"));
+      assert::are_equal("002A", box_integer<type_t> {42}.to_string("X4"));
+      assert::are_equal("0078", box_integer<type_t> {120}.to_string("X4"));
+    }
+    
+    auto test_method_(to_string_with_format_and_culture) {
+      assert::are_equal("0005", box_integer<type_t> {5}.to_string("X4", globalization::culture_info {"en-US"}));
+      assert::are_equal("002A", box_integer<type_t> {42}.to_string("X4", globalization::culture_info {"en-US"}));
+      assert::are_equal("0078", box_integer<type_t> {120}.to_string("X4", globalization::culture_info {"en-US"}));
+    }
+
     auto test_method_(less_operator) {
       assert::is_false(box_integer<type_t> {5} < box_integer<type_t> {5});
       assert::is_true(box_integer<type_t> {4} < box_integer<type_t> {5});
@@ -110,6 +141,33 @@ namespace xtd::tests {
       assert::is_true(box_integer<type_t> {5} <= box_integer<type_t> {5});
       assert::is_true(box_integer<type_t> {4} <= box_integer<type_t> {5});
       assert::is_false(box_integer<type_t> {5} <= box_integer<type_t> {4});
+    }
+    
+    auto test_method_(greater_than_operator) {
+      assert::is_false(box_integer<type_t> {5} > box_integer<type_t> {5});
+      assert::is_false(box_integer<type_t> {4} > box_integer<type_t> {5});
+      assert::is_true(box_integer<type_t> {5} > box_integer<type_t> {4});
+    }
+    
+    auto test_method_(greater_than_or_equal_operator) {
+      assert::is_true(box_integer<type_t> {5} >= box_integer<type_t> {5});
+      assert::is_false(box_integer<type_t> {4} >= box_integer<type_t> {5});
+      assert::is_true(box_integer<type_t> {5} >= box_integer<type_t> {4});
+    }
+    
+    auto test_method_(equal_operator) {
+      assert::is_true(box_integer<type_t> {5} == box_integer<type_t> {5});
+      assert::is_false(box_integer<type_t> {4} == box_integer<type_t> {5});
+      assert::is_false(box_integer<type_t> {5} == box_integer<type_t> {4});
+    }
+    
+    auto test_method_(input_stream_operator) {
+      auto ms = memory_stream {};
+      ms << box_integer<type_t> {5};
+      ms.seek(0, seek_origin::begin);
+      auto s = string {};
+      ms >> s;
+      assert::are_equal("5", s);
     }
   };
 }
