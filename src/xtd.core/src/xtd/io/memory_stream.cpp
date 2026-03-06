@@ -50,8 +50,7 @@ auto memory_stream::position() const -> size {
 
 auto memory_stream::position(size value) -> void {
   if (value == data_->position) return;
-  data_->position = value;
-  seek(data_->position, seek_origin::begin);
+  seek(value, seek_origin::begin);
 }
 
 auto memory_stream::flush() -> void {
@@ -73,6 +72,13 @@ auto memory_stream::read(array<byte>& buffer, size offset, size count) -> size {
 }
 
 auto memory_stream::seek(std::streamoff offset, seek_origin loc) -> size {
+  if (!enum_object<>::is_defined(loc)) throw_helper::throws(exception_case::argument);
+  switch(loc) {
+    case seek_origin::begin: data_->position = offset; break;
+    case seek_origin::current: data_->position += offset; break;
+    case seek_origin::end: data_->position = length() + offset; break;
+  }
+  if (data_->position > length()) throw_helper::throws(exception_case::argument_out_of_range);
   return position();
 }
 
