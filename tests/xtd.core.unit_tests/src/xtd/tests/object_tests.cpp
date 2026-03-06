@@ -28,7 +28,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(get_type_on_object) {
-      //assert::are_equal("xtd::object", object().get_type().full_name());
+      assert::are_equal("xtd::object", object().get_type().full_name());
     }
     
     auto test_method_(memberwise_clone_on_object) {
