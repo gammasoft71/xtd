@@ -11,11 +11,9 @@
 namespace xtd {
   class type_object;
   
-  namespace __s__ {
-    template<class type_t> xtd::type_object __typeof_() noexcept;
-    template<class type_t> xtd::type_object __typeof_(const type_t& value) noexcept;
-    xtd::type_object __typeof_(const xtd::type& value) noexcept;
-  }
+  template<class type_t> xtd::type_object type_of() noexcept;
+  template<class type_t> xtd::type_object type_of(const type_t& value) noexcept;
+  xtd::type_object type_of(const xtd::type& value) noexcept;
 }
 /// @endcond
 
@@ -83,10 +81,10 @@ namespace xtd {
     
   private:
     template<class type_t>
-    friend type_object xtd::__s__::__typeof_() noexcept;
+    friend type_object xtd::type_of() noexcept;
     template<class type_t>
-    friend type_object xtd::__s__::__typeof_(const type_t& value) noexcept;
-    friend type_object xtd::__s__::__typeof_(const xtd::type& value) noexcept;
+    friend type_object xtd::type_of(const type_t& value) noexcept;
+    friend type_object xtd::type_of(const xtd::type& value) noexcept;
     friend class xtd::object;
     
     type_object() noexcept;
