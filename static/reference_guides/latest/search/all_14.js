@@ -598,8 +598,7 @@ var searchData=
   ['type_5fobject_2ehpp_595',['type_object.hpp',['../type__object_8hpp.html',1,'']]],
   ['type_5fof_5fservice_596',['type_of_service',['../group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cba652177ed5065e61fd713096e373f1e57',1,'xtd::net::sockets']]],
   ['typeof_2ehpp_597',['typeof.hpp',['../typeof_8hpp.html',1,'']]],
-  ['typeof_5f_598',['typeof_',['../group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99',1,'typeof.hpp']]],
-  ['types_599',['Formatting Types',['../_format_page.html#FormattingType',1,'']]],
-  ['types_600',['types',['../group__types.html',1,'']]],
-  ['types_2ehpp_601',['types.hpp',['../types_8hpp.html',1,'']]]
+  ['types_598',['Formatting Types',['../_format_page.html#FormattingType',1,'']]],
+  ['types_599',['types',['../group__types.html',1,'']]],
+  ['types_2ehpp_600',['types.hpp',['../types_8hpp.html',1,'']]]
 ];

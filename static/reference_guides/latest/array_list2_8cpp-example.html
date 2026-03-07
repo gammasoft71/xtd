@@ -95,7 +95,7 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : items) {</div>
 <div class="line">    <span class="keywordflow">if</span> (is&lt;string&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, as&lt;string&gt;(item).to_upper().quoted());</div>
-<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is&lt;platform_id&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}::{}&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(as&lt;platform_id&gt;(item)).name(), item);</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is&lt;platform_id&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}::{}&quot;</span>, typeof_(as&lt;platform_id&gt;(item)).name(), item);</div>
 <div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -112,7 +112,6 @@ $(function() {
 <div class="line"><span class="comment">// &quot;ANOTHER STRING&quot;</span></div>
 <div class="line"><span class="comment">// 4.2</span></div>
 <div class="line"><span class="comment">// 02:25:43</span></div>
-<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
