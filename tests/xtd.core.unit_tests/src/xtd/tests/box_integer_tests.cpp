@@ -1,6 +1,5 @@
 #include <xtd/box_integer>
-#include <xtd/io/memory_stream>
-#include <xtd/io/stream_writer>
+#include <strstream>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/generic_test_class>
 #include <xtd/tunit/test_method_attribute>
@@ -162,12 +161,9 @@ namespace xtd::tests {
     }
     
     auto test_method_(input_stream_operator) {
-      auto ms = memory_stream {};
-      ms << box_integer<type_t> {5};
-      ms.seek(0, seek_origin::begin);
-      auto s = string {};
-      ms >> s;
-      assert::are_equal("5", s);
+      auto ss = std::stringstream {};
+      ss << box_integer<type_t> {5};
+      assert::are_equal("5", ss.str());
     }
   };
 }
