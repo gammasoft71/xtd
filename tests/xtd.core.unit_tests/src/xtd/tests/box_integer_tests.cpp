@@ -5,7 +5,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 namespace xtd::tests {
-  generic_test_class_(box_integer_typeests, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
+  generic_test_class_(box_integer_typeests, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
     auto test_method_(box_type_type) {
       assert::is_instance_of<box<type_t>>(box_integer<type_t> {});
     }
@@ -164,6 +164,42 @@ namespace xtd::tests {
       auto ss = std::stringstream {};
       ss << box_integer<type_t> {5};
       assert::are_equal("5", ss.str());
+    }
+    
+    auto test_method_(parse) {
+      assert::are_equal(type_t {5}, box_integer<type_t>::parse("5"));
+      assert::are_equal(type_t {42}, box_integer<type_t>::parse("42"));
+      assert::are_equal(type_t {120}, box_integer<type_t>::parse("120"));
+      assert::throws<format_exception>([]{box_integer<type_t>::parse("value");});
+    }
+    
+    auto test_method_(parse_with_number_style) {
+      assert::are_equal(type_t {5}, box_integer<type_t>::parse("0x5", number_styles::hex_number));
+      assert::are_equal(type_t {42}, box_integer<type_t>::parse("0x2A", number_styles::hex_number));
+      assert::are_equal(type_t {120}, box_integer<type_t>::parse("0x78", number_styles::hex_number));
+      assert::throws<format_exception>([]{box_integer<type_t>::parse("value", number_styles::hex_number);});
+    }
+
+    auto test_method_(try_parse) {
+      auto value = type_t {};
+      assert::is_true(box_integer<type_t>::try_parse("5", value));
+      assert::are_equal(type_t {5}, value);
+      assert::is_true(box_integer<type_t>::try_parse("42", value));
+      assert::are_equal(type_t {42}, value);
+      assert::is_true(box_integer<type_t>::try_parse("120", value));
+      assert::are_equal(type_t {120}, value);
+      assert::is_false(box_integer<type_t>::try_parse("value", value));
+    }
+
+    auto test_method_(try_parse_with_number_style) {
+      auto value = type_t {};
+      assert::is_true(box_integer<type_t>::try_parse("0x5", value, number_styles::hex_number));
+      assert::are_equal(type_t {5}, value);
+      assert::is_true(box_integer<type_t>::try_parse("0x2A", value, number_styles::hex_number));
+      assert::are_equal(type_t {42}, value);
+      assert::is_true(box_integer<type_t>::try_parse("0x78", value, number_styles::hex_number));
+      assert::are_equal(type_t {120}, value);
+      assert::is_false(box_integer<type_t>::try_parse("value", value, number_styles::hex_number));
     }
   };
 }
