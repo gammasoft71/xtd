@@ -5,7 +5,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 namespace xtd::tests {
-  generic_test_class_(box_integer_typeests, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
+  generic_test_class_(box_integer_typeests, signed char, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
     auto test_method_(box_type_type) {
       assert::is_instance_of<box<type_t>>(box_integer<type_t> {});
     }
