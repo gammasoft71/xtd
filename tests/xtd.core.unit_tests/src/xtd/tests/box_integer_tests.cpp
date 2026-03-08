@@ -5,7 +5,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 namespace xtd::tests {
-  generic_test_class_(box_integer_typeests, signed char, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
+  generic_test_class_(box_integer_typeests, signed char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, sbyte, int16, int32, int64, intptr, ptrdiff, size, byte, uint16, uint32, uint64, uintptr) {
     auto test_method_(box_type_type) {
       assert::is_instance_of<box<type_t>>(box_integer<type_t> {});
     }
@@ -110,6 +110,23 @@ namespace xtd::tests {
     auto test_method_(get_hash_code) {
       assert::are_equal(box_integer<type_t> {5}.get_hash_code(), box_integer<type_t> {5}.get_hash_code());
       assert::are_not_equal(box_integer<type_t> {4}.get_hash_code(), box_integer<type_t> {5}.get_hash_code());
+    }
+    
+    auto test_method_(is_valid) {
+      assert::is_true(box_integer<type_t>::is_valid(5));
+      assert::is_true(box_integer<type_t>::is_valid(42));
+      assert::is_true(box_integer<type_t>::is_valid(120));
+      auto sined_overflow_values = dictionary<string, int64> {
+        {typeof_<short>().full_name(), 32768},
+        {typeof_<int>().full_name(), 2147483648},
+        {typeof_<long>().full_name(), 2147483648},
+      };
+      auto unsined_overflow_values = dictionary<string, int64> {
+        {typeof_<unsigned char>().full_name(), 256},
+        {typeof_<unsigned short>().full_name(), 65536},
+        {typeof_<unsigned int>().full_name(), 4294967296},
+        {typeof_<unsigned long>().full_name(), 4294967296},
+      };
     }
     
     auto test_method_(to_string) {
