@@ -100,13 +100,13 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> f1 = foo {42};</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;f1 {{type = {}, value = {}}}&quot;</span>, typeof_(f1), f1);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;f1 {{type = {}, value = {}}}&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(f1), f1);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a> = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.clone();</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;f2 {{type = {}, value = {}}}&quot;</span>, typeof_(f2), *f2);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;f2 {{type = {}, value = {}}}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(f2), *f2);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a> = as&lt;foo&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.clone());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;f3 {{type = {}, value = {}}}&quot;</span>, typeof_(f3), *f3);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;f3 {{type = {}, value = {}}}&quot;</span>, <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(f3), *f3);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -115,6 +115,7 @@ $(function() {
 <div class="line"><span class="comment">// f2 {type = std::unique_ptr&lt;xtd::object, std::default_delete&lt;xtd::object&gt;&gt;, value = 42}</span></div>
 <div class="line"><span class="comment">// f3 {type = std::unique_ptr&lt;foo, std::default_delete&lt;foo&gt;&gt;, value = 42}</span></div>
 <div class="line"> </div>
+<div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">xtd::console_key::f3</a></div><div class="ttdeci">@ f3</div><div class="ttdoc">The F3 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:184</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">xtd::console_key::f2</a></div><div class="ttdeci">@ f2</div><div class="ttdoc">The F2 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:182</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">xtd::console_key::f1</a></div><div class="ttdeci">@ f1</div><div class="ttdoc">The F1 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:180</div></div>
