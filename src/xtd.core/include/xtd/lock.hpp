@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "threading/lock.hpp"
+#include "using.hpp"
 
 /// @brief The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
 /// ```cpp
@@ -65,4 +66,4 @@
 /// @include lock_keyword.cpp
 /// @ingroup Keywords
 #define lock_(object)\
-  block_scope_(xtd::threading::lock __xtd_lock__(object))
+  using_(xtd::threading::lock __xtd_lock__ {object})
