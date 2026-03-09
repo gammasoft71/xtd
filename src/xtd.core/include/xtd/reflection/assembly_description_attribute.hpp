@@ -34,11 +34,8 @@ namespace xtd {
       /// @param description The description information.
       explicit assembly_description_attribute(const string& description);
       /// @}
-      
-      /// @cond
-      /// Internal used only
-      assembly_description_attribute(const string& description, const object& executing_assembly);
-      /// @endcond
+            
+      /// @name Public Properties
       
       /// @name Public Properties
       
@@ -65,6 +62,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly description information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param description The description information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& description) -> assembly_description_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -78,10 +89,10 @@ namespace xtd {
 auto __assembly_description_attribute__() -> xtd::sptr<xtd::reflection::assembly_description_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly description information. Must be called once in your application.
+/// @brief Creates the assembly description information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param description The description information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_description_attribute>
@@ -94,4 +105,4 @@ auto __assembly_description_attribute__() -> xtd::sptr<xtd::reflection::assembly
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_description_(description) \
-  xtd::reflection::assembly_description_attribute __assembly_description_attribute {description, xtd::object()}
+  auto __assembly_description_attribute = xtd::reflection::assembly_description_attribute::create(description)

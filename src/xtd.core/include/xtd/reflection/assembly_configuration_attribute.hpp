@@ -33,11 +33,6 @@ namespace xtd {
       explicit assembly_configuration_attribute(const xtd::string& configuration);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_configuration_attribute(const xtd::string& value, const xtd::object& executing_assembly);
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
@@ -63,6 +58,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly configuration information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param configuration The configuration information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const xtd::string& configuration) -> assembly_configuration_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -76,10 +85,10 @@ namespace xtd {
 auto __assembly_configuration_attribute__() -> xtd::sptr<xtd::reflection::assembly_configuration_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly configuration information. Must be called once in your application.
+/// @brief Creates the assembly configuration information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param configuration The configuration information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_configuration_attribute>
@@ -92,5 +101,5 @@ auto __assembly_configuration_attribute__() -> xtd::sptr<xtd::reflection::assemb
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_configuration_(configuration) \
-  xtd::reflection::assembly_configuration_attribute __assembly_configuration_attribute {configuration, xtd::object()}
+  auto __assembly_configuration_attribute = xtd::reflection::assembly_configuration_attribute::create(configuration)
 

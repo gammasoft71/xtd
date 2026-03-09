@@ -33,11 +33,6 @@ namespace xtd {
       explicit assembly_culture_attribute(const string& culture);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_culture_attribute(const string& culture, const object& executing_assembly);
-      /// @endcond
-      
       /// @name Public Properties
       
       /// @{
@@ -63,6 +58,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly culture information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param culture The culture information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& culture) -> assembly_culture_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -76,10 +85,10 @@ namespace xtd {
 auto __assembly_culture_attribute__() -> xtd::sptr<xtd::reflection::assembly_culture_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly culture information. Must be called once in your application.
+/// @brief Creates the assembly culture information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param culture The culture information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_culture_attribute>
@@ -92,5 +101,4 @@ auto __assembly_culture_attribute__() -> xtd::sptr<xtd::reflection::assembly_cul
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_culture_(culture) \
-  xtd::reflection::assembly_culture_attribute __assembly_culture_attribute {culture, xtd::object()}
-
+  auto __assembly_culture_attribute = xtd::reflection::assembly_culture_attribute::create(culture)

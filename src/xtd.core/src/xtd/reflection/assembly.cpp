@@ -70,7 +70,7 @@ auto assembly::title() const noexcept -> const string& {
   return title_;
 }
 
-auto assembly::trademarks() const noexcept -> const string& {
+auto assembly::trademark() const noexcept -> const string& {
   return trademarks_;
 }
 

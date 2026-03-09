@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_description_attribute::assembly_description_attribute(const string& description) : description_(description) {
 }
 
-assembly_description_attribute::assembly_description_attribute(const string& description, const object& executing_assembly) : description_(description) {
-  __assembly_description_attribute__() = xtd::new_sptr<xtd::reflection::assembly_description_attribute>(description);
-}
-
 auto assembly_description_attribute::description() const noexcept -> const string& {
   return description_;
 }
@@ -28,6 +24,11 @@ auto assembly_description_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_description_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_description_attribute::create(const string& description) -> assembly_description_attribute {
+  __assembly_description_attribute__() = xtd::new_sptr<xtd::reflection::assembly_description_attribute>(description);
+  return assembly_description_attribute {description};
 }
 
 auto __assembly_description_attribute__() -> sptr<assembly_description_attribute>& {

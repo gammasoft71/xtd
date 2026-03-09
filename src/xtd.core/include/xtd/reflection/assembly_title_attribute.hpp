@@ -33,10 +33,7 @@ namespace xtd {
       explicit assembly_title_attribute(const string& title);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_title_attribute(const string& title, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets title information.
@@ -61,6 +58,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly title information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param title The title information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& title) -> assembly_title_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -74,10 +85,10 @@ namespace xtd {
 auto __assembly_title_attribute__() -> xtd::sptr<xtd::reflection::assembly_title_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly title information. Must be called once in your application.
+/// @brief Creates the assembly title information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param title The title information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_title_attribute>
@@ -90,5 +101,5 @@ auto __assembly_title_attribute__() -> xtd::sptr<xtd::reflection::assembly_title
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_title_(title) \
-  xtd::reflection::assembly_title_attribute __assembly_title_attribute {title, xtd::object()}
+  auto __assembly_title_attribute = xtd::reflection::assembly_title_attribute::create(title)
 

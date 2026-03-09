@@ -38,10 +38,7 @@ namespace xtd {
       explicit assembly_version_attribute(const string& version);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_version_attribute(const string& version, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets version information.
@@ -66,6 +63,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly version information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param version The version information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& version) -> assembly_version_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -79,7 +90,7 @@ namespace xtd {
 auto __assembly_version_attribute__() -> xtd::sptr<xtd::reflection::assembly_version_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly version information. Must be called once in your application.
+/// @brief Creates the assembly version information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
 /// @param version The version information.
@@ -95,4 +106,4 @@ auto __assembly_version_attribute__() -> xtd::sptr<xtd::reflection::assembly_ver
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_version_(version) \
-  xtd::reflection::assembly_version_attribute __assembly_version_attribute {xtd::string(version) == "" || xtd::string(version) == "*" ? __XTD_ASSEMBLY_VERSION__ : version, xtd::object()}
+  auto __assembly_version_attribute = xtd::reflection::assembly_version_attribute::create(xtd::string(version) == "" || xtd::string(version) == "*" ? __XTD_ASSEMBLY_VERSION__ : version)

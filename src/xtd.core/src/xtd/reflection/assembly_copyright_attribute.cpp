@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_copyright_attribute::assembly_copyright_attribute(const string& copyright) : copyright_(copyright) {
 }
 
-assembly_copyright_attribute::assembly_copyright_attribute(const string& copyright, const object& executing_assembly) : copyright_(copyright) {
-  __assembly_copyright_attribute__() = xtd::new_sptr<xtd::reflection::assembly_copyright_attribute>(copyright);
-}
-
 auto assembly_copyright_attribute::copyright() const noexcept -> const string& {
   return copyright_;
 }
@@ -28,6 +24,11 @@ auto assembly_copyright_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_copyright_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_copyright_attribute::create(const string& copyright) -> assembly_copyright_attribute {
+  __assembly_copyright_attribute__() = xtd::new_sptr<xtd::reflection::assembly_copyright_attribute>(copyright);
+  return assembly_copyright_attribute {copyright};
 }
 
 auto __assembly_copyright_attribute__() -> sptr<assembly_copyright_attribute>& {

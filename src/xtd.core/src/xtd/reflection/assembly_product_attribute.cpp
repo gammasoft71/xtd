@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_product_attribute::assembly_product_attribute(const string& product) : product_(product) {
 }
 
-assembly_product_attribute::assembly_product_attribute(const string& product, const object& executing_assembly) : product_(product) {
-  __assembly_product_attribute__() = xtd::new_sptr<xtd::reflection::assembly_product_attribute>(product);
-}
-
 auto assembly_product_attribute::product() const noexcept -> const string& {
   return product_;
 }
@@ -28,6 +24,11 @@ auto assembly_product_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_product_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_product_attribute::create(const string& product) -> assembly_product_attribute {
+  __assembly_product_attribute__() = xtd::new_sptr<xtd::reflection::assembly_product_attribute>(product);
+  return assembly_product_attribute {product};
 }
 
 auto __assembly_product_attribute__() -> sptr<assembly_product_attribute>& {

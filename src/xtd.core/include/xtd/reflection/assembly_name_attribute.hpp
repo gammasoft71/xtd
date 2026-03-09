@@ -33,10 +33,7 @@ namespace xtd {
       explicit assembly_name_attribute(const string& name);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_name_attribute(const string& name, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets name information.
@@ -61,6 +58,27 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly name information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param name The name information.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/reflection/assembly_name_attribute>
+      /// ```
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core keywords
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& name) -> assembly_name_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -74,10 +92,10 @@ namespace xtd {
 auto __assembly_name_attribute__() -> xtd::sptr<xtd::reflection::assembly_name_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly name information. Must be called once in your application.
+/// @brief Creates the assembly name information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param name The name information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_name_attribute>
@@ -90,5 +108,5 @@ auto __assembly_name_attribute__() -> xtd::sptr<xtd::reflection::assembly_name_a
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_name_(name) \
-  xtd::reflection::assembly_name_attribute __assembly_name_attribute {name, xtd::object()}
+  auto __assembly_name_attribute = xtd::reflection::assembly_name_attribute::create(name)
 

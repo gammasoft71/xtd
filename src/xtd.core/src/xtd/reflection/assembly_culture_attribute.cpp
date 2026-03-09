@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_culture_attribute::assembly_culture_attribute(const string& culture) : culture_(culture) {
 }
 
-assembly_culture_attribute::assembly_culture_attribute(const string& culture, const object& executing_assembly) : culture_(culture) {
-  __assembly_culture_attribute__() = xtd::new_sptr<xtd::reflection::assembly_culture_attribute>(culture);
-}
-
 auto assembly_culture_attribute::culture() const noexcept -> const string& {
   return culture_;
 }
@@ -28,6 +24,11 @@ auto assembly_culture_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_culture_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_culture_attribute::create(const string& culture) -> assembly_culture_attribute {
+  __assembly_culture_attribute__() = xtd::new_sptr<xtd::reflection::assembly_culture_attribute>(culture);
+  return assembly_culture_attribute {culture};
 }
 
 auto __assembly_culture_attribute__() -> sptr<assembly_culture_attribute>& {

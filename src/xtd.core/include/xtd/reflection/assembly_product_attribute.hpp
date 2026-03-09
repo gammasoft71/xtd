@@ -33,10 +33,7 @@ namespace xtd {
       explicit assembly_product_attribute(const string& product);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_product_attribute(const string& product, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets product information.
@@ -61,6 +58,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly product information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param product The product information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& product) -> assembly_product_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -74,10 +85,10 @@ namespace xtd {
 auto __assembly_product_attribute__() -> xtd::sptr<xtd::reflection::assembly_product_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly product information. Must be called once in your application.
+/// @brief Creates the assembly product information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param product The product information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_product_attribute>
@@ -90,4 +101,4 @@ auto __assembly_product_attribute__() -> xtd::sptr<xtd::reflection::assembly_pro
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_product_(product) \
-  xtd::reflection::assembly_product_attribute __assembly_product_attribute {product, xtd::object()}
+  auto __assembly_product_attribute = xtd::reflection::assembly_product_attribute::create(product)

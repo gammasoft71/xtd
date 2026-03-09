@@ -33,10 +33,7 @@ namespace xtd {
       explicit assembly_guid_attribute(const string& guid);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_guid_attribute(const string& guid, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets guid information.
@@ -61,6 +58,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly guid information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param guid The guid information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& guid) -> assembly_guid_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -74,10 +85,10 @@ namespace xtd {
 auto __assembly_guid_attribute__() -> xtd::sptr<xtd::reflection::assembly_guid_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly guid information. Must be called once in your application.
+/// @brief Creates the assembly guid information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param guid The guid information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_guid_attribute>
@@ -90,4 +101,4 @@ auto __assembly_guid_attribute__() -> xtd::sptr<xtd::reflection::assembly_guid_a
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_guid_(guid) \
-  xtd::reflection::assembly_guid_attribute __assembly_guid_attribute {guid, xtd::object()}
+  auto __assembly_guid_attribute = xtd::reflection::assembly_guid_attribute::create(guid)

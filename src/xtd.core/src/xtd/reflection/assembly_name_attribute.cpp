@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_name_attribute::assembly_name_attribute(const string& name) : name_(name) {
 }
 
-assembly_name_attribute::assembly_name_attribute(const string& name, const object& executing_assembly) : name_(name) {
-  __assembly_name_attribute__() = xtd::new_sptr<xtd::reflection::assembly_name_attribute>(name);
-}
-
 auto assembly_name_attribute::name() const noexcept -> const string& {
   return name_;
 }
@@ -28,6 +24,11 @@ auto assembly_name_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_name_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_name_attribute::create(const string& name) -> assembly_name_attribute {
+  __assembly_name_attribute__() = xtd::new_sptr<xtd::reflection::assembly_name_attribute>(name);
+  return assembly_name_attribute {name};
 }
 
 auto __assembly_name_attribute__() -> sptr<assembly_name_attribute>& {

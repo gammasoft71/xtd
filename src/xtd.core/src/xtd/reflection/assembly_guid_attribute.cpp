@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_guid_attribute::assembly_guid_attribute(const string& guid) : guid_(guid) {
 }
 
-assembly_guid_attribute::assembly_guid_attribute(const string& guid, const object& executing_assembly) : guid_(guid) {
-  __assembly_guid_attribute__() = xtd::new_sptr<xtd::reflection::assembly_guid_attribute>(guid);
-}
-
 auto assembly_guid_attribute::guid() const noexcept -> const string& {
   return guid_;
 }
@@ -28,6 +24,11 @@ auto assembly_guid_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_guid_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_guid_attribute::create(const string& guid) -> assembly_guid_attribute {
+  __assembly_guid_attribute__() = xtd::new_sptr<xtd::reflection::assembly_guid_attribute>(guid);
+  return assembly_guid_attribute {guid};
 }
 
 auto __assembly_guid_attribute__() -> sptr<assembly_guid_attribute>& {

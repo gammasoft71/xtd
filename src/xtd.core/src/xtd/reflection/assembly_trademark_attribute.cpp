@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_trademark_attribute::assembly_trademark_attribute(const string& trademark) : trademark_(trademark) {
 }
 
-assembly_trademark_attribute::assembly_trademark_attribute(const string& trademark, const object& executing_assembly) : trademark_(trademark) {
-  __assembly_trademark_attribute__() = xtd::new_sptr<xtd::reflection::assembly_trademark_attribute>(trademark);
-}
-
 auto assembly_trademark_attribute::trademark() const noexcept -> const string& {
   return trademark_;
 }
@@ -28,6 +24,11 @@ auto assembly_trademark_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_trademark_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_trademark_attribute::create(const string& trademark) -> assembly_trademark_attribute {
+  __assembly_trademark_attribute__() = xtd::new_sptr<xtd::reflection::assembly_trademark_attribute>(trademark);
+  return assembly_trademark_attribute {trademark};
 }
 
 auto __assembly_trademark_attribute__() -> sptr<assembly_trademark_attribute>& {

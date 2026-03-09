@@ -98,7 +98,7 @@ namespace xtd {
       
       /// @brief Gets trademark information.
       /// @return A string containing the trademark information.
-      [[nodiscard]] auto trademarks() const noexcept -> const xtd::string&;
+      [[nodiscard]] auto trademark() const noexcept -> const xtd::string&;
       
       /// @brief Gets version information.
       /// @return A string containing the version information.

@@ -31,10 +31,7 @@ namespace xtd {
       explicit assembly_trademark_attribute(const string& trademark);
       /// @}
       
-      /// @cond
-      /// Internal used only
-      assembly_trademark_attribute(const string& trademark, const object& executing_assembly);
-      /// @endcond
+      /// @name Public Properties
       
       /// @{
       /// @brief Gets trademark information.
@@ -59,6 +56,20 @@ namespace xtd {
       [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       /// @}
       
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Creates the assembly trademark information. Must be called once in your application.
+      /// @remarks Use this keyword if you create create assembly informations manually.
+      /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
+      /// @param trademark The trademark information.
+      /// @par Examples
+      /// The following example shows how to use assembly information manually.
+      /// @include application_with_manual_assembly_info.cpp
+      /// @include assembly_info.cpp
+      static auto create(const string& trademark) -> assembly_trademark_attribute;
+      /// @}
+      
     protected:
       [[nodiscard]] auto get_type_id() const noexcept -> xtd::sptr<xtd::object> override;
       
@@ -72,10 +83,10 @@ namespace xtd {
 auto __assembly_trademark_attribute__() -> xtd::sptr<xtd::reflection::assembly_trademark_attribute>&;
 /// @endcond
 
-/// @brief Sets the assembly trademark information. Must be called once in your application.
+/// @brief Creates the assembly trademark information. Must be called once in your application.
 /// @remarks Use this keyword if you create create assembly informations manually.
 /// @remarks Use CMake assembly macro if you want create assembly informations with CMake scripts.
-/// @param version The version information.
+/// @param trademark The trademark information.
 /// @par Header
 /// ```cpp
 /// #include <xtd/reflection/assembly_trademark_attribute>
@@ -88,4 +99,4 @@ auto __assembly_trademark_attribute__() -> xtd::sptr<xtd::reflection::assembly_t
 /// @include application_with_manual_assembly_info.cpp
 /// @include assembly_info.cpp
 #define assembly_trademark_(trademark) \
-  xtd::reflection::assembly_trademark_attribute __assembly_trademark_attribute {trademark, xtd::object()}
+  auto __assembly_trademark_attribute = xtd::reflection::assembly_trademark_attribute::create(trademark)

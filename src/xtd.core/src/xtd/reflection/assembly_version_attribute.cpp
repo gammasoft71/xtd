@@ -6,10 +6,6 @@ using namespace xtd::reflection;
 assembly_version_attribute::assembly_version_attribute(const string& version) : version_(version) {
 }
 
-assembly_version_attribute::assembly_version_attribute(const string& version, const object& executing_assembly) : version_(version) {
-  __assembly_version_attribute__() = xtd::new_sptr<xtd::reflection::assembly_version_attribute>(version);
-}
-
 auto assembly_version_attribute::version() const noexcept -> const string& {
   return version_;
 }
@@ -28,6 +24,11 @@ auto assembly_version_attribute::get_hash_code() const noexcept -> size {
 
 auto assembly_version_attribute::get_type_id() const noexcept -> sptr<object> {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
+}
+
+auto assembly_version_attribute::create(const string& version) -> assembly_version_attribute {
+  __assembly_version_attribute__() = xtd::new_sptr<xtd::reflection::assembly_version_attribute>(version);
+  return assembly_version_attribute {version};
 }
 
 auto __assembly_version_attribute__() -> sptr<assembly_version_attribute>& {
