@@ -539,6 +539,8 @@ add_sources(
   "include/xtd/type"
   "include/xtd/type_object.hpp"
   "include/xtd/type_object"
+  "include/xtd/type_of.hpp"
+  "include/xtd/type_of"
   "include/xtd/typeof.hpp"
   "include/xtd/typeof"
   "include/xtd/types.hpp"
