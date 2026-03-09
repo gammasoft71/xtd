@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "threading/lock_guard.hpp"
+#include "using.hpp"
 
 /// @brief The lock_guard_ keyword marks a statement block_guard as a critical section by obtaining the mutual-exclusion lock_guard for a given object, executing a statement, and then releasing the lock_guard. The following example includes a lock_guard statement.
 /// ```cpp
@@ -62,4 +63,4 @@
 /// @include lock_guard_keyword.cpp
 /// @ingroup Keywords
 #define lock_guard_(object)\
-  block_scope_(xtd::threading::lock_guard __xtd_lock_guard__(object))
+  using_(xtd::threading::lock_guard __xtd_lock_guard__ {object})
