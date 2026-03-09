@@ -37,23 +37,4 @@ namespace xtd {
     ~abstract_object() override = default;
     /// @endcond
   };
-  
-  /// @brief This keyword is used to represents an abstract class.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/abstract_object>
-  /// ```
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core keywords
-  /// @remarks This keyword has no other use than to tag a class to abstract.
-  /// @par Examples
-  /// ```cpp
-  /// class foo abstract_object_ {
-  /// public:
-  ///   virtual xtd::string to_string() = 0;
-  /// };
-  /// ```
-#define abstract_object_ \
-: xtd::abstract_object
 }
