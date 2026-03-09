@@ -57,7 +57,7 @@ namespace xtd::reflection::tests {
     }
     
     auto test_method_(assembly_trademark) {
-      assert::is_empty(assembly::get_executing_assembly().trademarks());
+      assert::is_empty(assembly::get_executing_assembly().trademark());
     }
     
     auto test_method_(assembly_version) {
