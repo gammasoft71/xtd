@@ -36,7 +36,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
     template<class type_t> // Can't be explicit by design.
-    any_object(type_t&& value) noexcept : value_(boxing_ptr(value)) {}
+    any_object(type_t&& value) noexcept : value_(boxing_ptr(std::forward<type_t>(value))) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
     template<class type_t> // Can't be explicit by design.
