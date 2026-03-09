@@ -2,14 +2,7 @@
 /// @brief Contains #foreach_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "from.hpp"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
-  namespace linq {
-  }
-}
+#include "linq/from.hpp"
 
 /// @brief The #foreach_ keyword executes a statement or a block of statements for each element in an instance of the type that implements the xtd::collections::ienumerable or xtd::collections::generic::ienumerable <type_t> interfaces.
 /// ```cpp

@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/linq/foreach.hpp>

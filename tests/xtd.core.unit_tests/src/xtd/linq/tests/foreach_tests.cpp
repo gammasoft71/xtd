@@ -1,4 +1,4 @@
-#include <xtd/linq/foreach>
+#include <xtd/foreach>
 #include <xtd/collections/generic/list>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
