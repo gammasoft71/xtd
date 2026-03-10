@@ -424,7 +424,7 @@ On Unix systems, use a forward slash (/) as path separator. </dd></dl>
          
                 array&lt;string&gt; dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
          
-                for (auto dir : dirs) {
+                for (const auto&amp; dir : dirs) {
                   console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
                 }
                 console::write_line("{} directories found.", dirs.length()); } catch (const <a class="el" href="classxtd_1_1unauthorized__access__exception.html" title="The exception that is thrown when the operating system denies access because of an I/O error or a spe...">unauthorized_access_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } catch (const <a class="el" href="classxtd_1_1io_1_1path__too__long__exception.html" title="The exception that is thrown when a path or file name is longer than the system-defined maximum lengt...">path_too_long_exception</a>&amp; ex) { <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">console::write_line</a>(ex.message()); } } };</td></tr>
@@ -499,7 +499,7 @@ The <a class="el" href="#aec212dec9c49f433c0f304243b0b48e9" title="Returns an en
                 auto dirs = array&lt;string&gt;(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
          
                 // Show results.
-                for (auto dir : dirs) {
+                for (const auto&amp; dir : dirs) {
                   // Remove path information from string.
                   console::write_line("{0}", dir.substring(dir.last_index_of("\") + 1));
                 }

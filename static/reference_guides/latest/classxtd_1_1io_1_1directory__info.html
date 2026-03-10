@@ -883,7 +883,7 @@ A file or directory already has the name specified by path. </td></tr>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="#a31cdfc5744db82e70c57e08e20608e22">directory_info</a> dirs(doc_path);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> di : dirs.enumerate_directories()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; di : dirs.enumerate_directories()) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}&quot;</span>, di.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1027,7 +1027,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">    <span class="keyword">auto</span> files = dir_info.enumerate_files();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Show results.</span></div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> f : files) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; f : files) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1045,21 +1045,21 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <a class="code hl_function" href="#a31cdfc5744db82e70c57e08e20608e22">directory_info</a> di(R<span class="stringliteral">&quot;(C:\ExampleDir)&quot;);</span></div>
 <div class="line"><span class="stringliteral">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(</span><span class="stringliteral">&quot;No search pattern returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files()) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern *2* returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern test?.txt returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1154,21 +1154,21 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <a class="code hl_function" href="#a31cdfc5744db82e70c57e08e20608e22">directory_info</a> di(R<span class="stringliteral">&quot;(C:\ExampleDir)&quot;);</span></div>
 <div class="line"><span class="stringliteral">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(</span><span class="stringliteral">&quot;No search pattern returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files()) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern *2* returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern test?.txt returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.enumerate_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.enumerate_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1546,21 +1546,21 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <a class="code hl_function" href="#a31cdfc5744db82e70c57e08e20608e22">directory_info</a> di(R<span class="stringliteral">&quot;(C:\ExampleDir)&quot;);</span></div>
 <div class="line"><span class="stringliteral">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(</span><span class="stringliteral">&quot;No search pattern returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files()) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern *2* returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern test?.txt returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -1655,21 +1655,21 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <a class="code hl_function" href="#a31cdfc5744db82e70c57e08e20608e22">directory_info</a> di(R<span class="stringliteral">&quot;(C:\ExampleDir)&quot;);</span></div>
 <div class="line"><span class="stringliteral">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(</span><span class="stringliteral">&quot;No search pattern returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files()) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files()) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern *2* returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files(<span class="stringliteral">&quot;*2*&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Search pattern test?.txt returns:&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fi : di.get_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fi : di.get_files(<span class="stringliteral">&quot;test?.txt&quot;</span>)) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fi.name());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>

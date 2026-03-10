@@ -4803,6 +4803,13 @@ template&lt;class type_t, class... args_t&gt; </td></tr>
 <tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c" id="r_a1c08d0448e9b9992ccb43141fe50761c"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c08d0448e9b9992ccb43141fe50761c">println</a> (const wchar_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a1c08d0448e9b9992ccb43141fe50761c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
+<tr class="memitem:a1bca34783f132aa4fc07410dcba16056" id="r_a1bca34783f132aa4fc07410dcba16056"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a1bca34783f132aa4fc07410dcba16056 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bca34783f132aa4fc07410dcba16056">size_of</a> () noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
+<tr class="memdesc:a1bca34783f132aa4fc07410dcba16056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
+<tr class="memitem:a31ae80957bd7946a56f48b6695c41472" id="r_a31ae80957bd7946a56f48b6695c41472"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a31ae80957bd7946a56f48b6695c41472">size_of</a> (const auto &amp;value) noexcept</td></tr>
+<tr class="memdesc:a31ae80957bd7946a56f48b6695c41472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
+<tr class="memitem:aa824b8b4bbd74152417184468d3e9169" id="r_aa824b8b4bbd74152417184468d3e9169"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa824b8b4bbd74152417184468d3e9169">size_of</a> (const <a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">xtd::type</a> &amp;value) noexcept</td></tr>
+<tr class="memdesc:aa824b8b4bbd74152417184468d3e9169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
 <tr class="memitem:gaff2066a7f848bededf4de7fce4c4e8d3" id="r_gaff2066a7f848bededf4de7fce4c4e8d3"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gaff2066a7f848bededf4de7fce4c4e8d3 template"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="group__format__parse.html#gaff2066a7f848bededf4de7fce4c4e8d3">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gaff2066a7f848bededf4de7fce4c4e8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> using the specified format information.  <br /></td></tr>
@@ -9186,6 +9193,116 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a1bca34783f132aa4fc07410dcba16056" name="a1bca34783f132aa4fc07410dcba16056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bca34783f132aa4fc07410dcba16056">&#9670;&#160;</a></span>size_of() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::size_of </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to obtain the size in bytes of the object representation of type or expression. </p>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// Get the size of a type :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size1 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of&lt;int&gt;</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 42;</div>
+<div class="line"><span class="comment">// Get the size of an object :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size2 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
+<div class="ttc" id="anamespacextd_html_a1bca34783f132aa4fc07410dcba16056"><div class="ttname"><a href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of</a></div><div class="ttdeci">auto size_of() noexcept -&gt; xtd::size</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.hpp:21</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The size_of operator cannot be overloaded. </dd></dl>
+
+</div>
+</div>
+<a id="a31ae80957bd7946a56f48b6695c41472" name="a31ae80957bd7946a56f48b6695c41472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ae80957bd7946a56f48b6695c41472">&#9670;&#160;</a></span>size_of() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::size_of </td>
+          <td>(</td>
+          <td class="paramtype">const auto &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to obtain the size in bytes of the object representation of type or expression. </p>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// Get the size of a type :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size1 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of&lt;int&gt;</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 42;</div>
+<div class="line"><span class="comment">// Get the size of an object :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size2 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The size_of operator cannot be overloaded. </dd></dl>
+
+</div>
+</div>
+<a id="aa824b8b4bbd74152417184468d3e9169" name="aa824b8b4bbd74152417184468d3e9169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa824b8b4bbd74152417184468d3e9169">&#9670;&#160;</a></span>size_of() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::size_of </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">xtd::type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to obtain the size in bytes of the object representation of type or expression. </p>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// Get the size of a type :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size1 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of&lt;int&gt;</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 42;</div>
+<div class="line"><span class="comment">// Get the size of an object :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size2 = <a class="code hl_function" href="#a1bca34783f132aa4fc07410dcba16056">xtd::size_of</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The size_of operator cannot be overloaded. </dd></dl>
 
 </div>
 </div>

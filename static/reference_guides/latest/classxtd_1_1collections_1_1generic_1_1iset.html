@@ -423,7 +423,7 @@ Enumerating through a collection is intrinsically not a thread-safe procedure. E
 <dd>
 The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration. <div class="fragment"><div class="line">icollection&amp; my_collection = some_collection;</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.sync_root()) {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : my_collection) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : my_collection) {</div>
 <div class="line">    <span class="comment">// Insert your code here.</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -473,7 +473,7 @@ In the absence of a <span class="tt">synchronized</span> method on a collection,
 <div class="line">@code</div>
 <div class="line"><a class="code hl_typedef" href="group__collections.html#ga1b47db13b305f030158b2fa55445a9ec">icollection</a>&amp; my_collection = some_collection;</div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(my_collection.sync_root()) {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : my_collection) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : my_collection) {</div>
 <div class="line">    <span class="comment">// Insert your code here.</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
