@@ -125,4 +125,5 @@ namespace xtd {
 /// // always (scope_exit)
 /// // caught exception!
 /// ```
-#define scope_exit_ [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&]
+#define scope_exit_ \
+  [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&]

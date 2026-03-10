@@ -41,7 +41,7 @@ namespace {
   
   drawing::size get_closed_size(const drawing::size& size) {
     static auto default_sizes = array<drawing::size> {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
-    for (auto default_size : default_sizes)
+    for (const auto& default_size : default_sizes)
       if (default_size.width >= size.width && default_size.height >= size.height) return default_size;
     return {1024, 1024};
   }

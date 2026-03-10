@@ -231,19 +231,19 @@ auto culture_info::get_cultures(xtd::globalization::culture_types types) -> arra
   for (const auto& [name, culture] : cultures())
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture.clone());
-  result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
+  result.sort({[](const auto& v1, const auto& v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   return array<culture_info>(result);
 }
 
 auto culture_info::get_system_locales() noexcept -> array<std::locale> {
   static auto result = list<std::locale> {};
   call_once_ {
-    for (auto system_locale_name : native::culture_info::system_locale_names())
+    for (const auto& system_locale_name : native::culture_info::system_locale_names())
       try {
         result.add(std::locale {system_locale_name});
       } catch (...) {
       }
-    result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
+    result.sort({[](const auto& v1, const auto& v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   };
   return array<std::locale>(result);
 }

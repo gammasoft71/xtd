@@ -239,7 +239,7 @@ auto directory::get_directories(const string& path, const string& search_pattern
 auto directory::get_directories(const string& path, const string& search_pattern, search_option search_option) -> array<string> {
   if (search_option == io::search_option::top_directory_only) return {std::begin(enumerate_directories(path, search_pattern)), std::end(enumerate_directories(path, search_pattern))};
   auto directories = list<string> {};
-  for (auto directory : get_directories(path, search_pattern, io::search_option::top_directory_only)) {
+  for (const auto& directory : get_directories(path, search_pattern, io::search_option::top_directory_only)) {
     directories.add(directory);
     directories.add_range(get_directories(directory, search_pattern, io::search_option::all_directories));
   }
@@ -261,7 +261,7 @@ auto directory::get_files(const string& path, const string& search_pattern) -> a
 auto directory::get_files(const string& path, const string& search_pattern, io::search_option search_option) -> array<string>{
   if (search_option == io::search_option::top_directory_only) return {std::begin(enumerate_files(path, search_pattern)), std::end(enumerate_files(path, search_pattern))};
   auto files = list<string> {};
-  for (auto directory : get_directories(path, search_pattern, io::search_option::all_directories))
+  for (const auto& directory : get_directories(path, search_pattern, io::search_option::all_directories))
     files.add_range(get_files(directory, search_pattern, io::search_option::top_directory_only));
   return array<string>(files);
 }
@@ -299,7 +299,7 @@ auto directory::get_last_write_time(const string& path) -> date_time {
 auto directory::get_logical_drives() -> array<string> {
   auto logical_drives = list<string> {};
   auto drives = drive_info::get_drives();
-  std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.add(drive.name());});
+  std::for_each(drives.begin(), drives.end(), [&](const auto& drive) {logical_drives.add(drive.name());});
   return logical_drives.to_array();
 }
 

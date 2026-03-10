@@ -38,7 +38,7 @@ std::string culture_info::current_locale_name() {
 std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
-  for (auto name : macos::strings::split(macos::shell_execute::run("locale", "-a"), {'\n'}))
+  for (const auto& name : macos::strings::split(macos::shell_execute::run("locale", "-a"), {'\n'}))
     try {
       locales.push_back(std::locale {to_locale_name(name)}.name());
     } catch (...) {

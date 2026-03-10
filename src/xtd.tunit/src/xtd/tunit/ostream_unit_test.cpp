@@ -21,20 +21,20 @@ int ostream_unit_test::count_tests(int32 count) {
 
 int ostream_unit_test::list_tests(const array<string>& tests) {
   if (!settings::default_settings().gtest_compatibility()) {
-    for (auto name : tests)
+    for (const auto& name : tests)
       os_ << name << std::endl;
   } else {
     std::map<std::string, list<string>> lists;
-    for (auto name : tests) {
+    for (const auto& name : tests) {
       auto key_value = string(name).split('.');
       if (key_value.length() == 2) {
         if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
         lists.at(key_value[0]).add(key_value[1]);
       }
     }
-    for (auto key_value : lists) {
+    for (const auto& key_value : lists) {
       os_ << key_value.first << "." << std::endl;
-      for (auto value : key_value.second)
+      for (const auto& value : key_value.second)
         os_ << "  " << value << std::endl;
     }
   }
@@ -42,7 +42,7 @@ int ostream_unit_test::list_tests(const array<string>& tests) {
 }
 
 bool ostream_unit_test::parse_arguments(const array<string>& args) {
-  for (auto arg : args)
+  for (const auto& arg : args)
     if (arg == "--help" || arg == "--gtest_help") {
       write_help();
       return true;

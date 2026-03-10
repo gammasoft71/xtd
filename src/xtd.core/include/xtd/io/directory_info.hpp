@@ -560,7 +560,7 @@ namespace xtd {
       ///
       ///     directory_info dirs(doc_path);
       ///
-      ///     for (auto di : dirs.enumerate_directories()) {
+      ///     for (const auto& di : dirs.enumerate_directories()) {
       ///       console::write_line("{}", di.name());
       ///     }
       ///   }
@@ -624,7 +624,7 @@ namespace xtd {
       ///     auto files = dir_info.enumerate_files();
       ///
       ///     // Show results.
-      ///     for (auto f : files) {
+      ///     for (const auto& f : files) {
       ///       console::write_line("{0}", f.name());
       ///     }
       ///   }
@@ -645,21 +645,21 @@ namespace xtd {
       ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
-      ///     for (auto fi : di.enumerate_files()) {
+      ///     for (const auto& fi : di.enumerate_files()) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern *2* returns:");
-      ///     for (auto fi : di.enumerate_files("*2*")) {
+      ///     for (const auto& fi : di.enumerate_files("*2*")) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern test?.txt returns:");
-      ///     for (auto fi : di.enumerate_files("test?.txt")) {
+      ///     for (const auto& fi : di.enumerate_files("test?.txt")) {
       ///       console::write_line(fi.name());
       ///     }
       ///   }
@@ -716,21 +716,21 @@ namespace xtd {
       ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
-      ///     for (auto fi : di.enumerate_files()) {
+      ///     for (const auto& fi : di.enumerate_files()) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern *2* returns:");
-      ///     for (auto fi : di.enumerate_files("*2*")) {
+      ///     for (const auto& fi : di.enumerate_files("*2*")) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern test?.txt returns:");
-      ///     for (auto fi : di.enumerate_files("test?.txt")) {
+      ///     for (const auto& fi : di.enumerate_files("test?.txt")) {
       ///       console::write_line(fi.name());
       ///     }
       ///   }
@@ -918,21 +918,21 @@ namespace xtd {
       ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
-      ///     for (auto fi : di.get_files()) {
+      ///     for (const auto& fi : di.get_files()) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern *2* returns:");
-      ///     for (auto fi : di.get_files("*2*")) {
+      ///     for (const auto& fi : di.get_files("*2*")) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern test?.txt returns:");
-      ///     for (auto fi : di.get_files("test?.txt")) {
+      ///     for (const auto& fi : di.get_files("test?.txt")) {
       ///       console::write_line(fi.name());
       ///     }
       ///   }
@@ -989,21 +989,21 @@ namespace xtd {
       ///   static auto main() {
       ///     directory_info di(R"(C:\ExampleDir)");
       ///     console::write_line("No search pattern returns:");
-      ///     for (auto fi : di.get_files()) {
+      ///     for (const auto& fi : di.get_files()) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern *2* returns:");
-      ///     for (auto fi : di.get_files("*2*")) {
+      ///     for (const auto& fi : di.get_files("*2*")) {
       ///       console::write_line(fi.name());
       ///     }
       ///
       ///     console::write_line();
       ///
       ///     console::write_line("Search pattern test?.txt returns:");
-      ///     for (auto fi : di.get_files("test?.txt")) {
+      ///     for (const auto& fi : di.get_files("test?.txt")) {
       ///       console::write_line(fi.name());
       ///     }
       ///   }

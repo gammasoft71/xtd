@@ -17,5 +17,5 @@ namespace xtd {
 /// @par Examples
 /// The following example shows how to use the #self_ keyword
 /// @include self.cpp
-#define self_\
+#define self_ \
   (*this)

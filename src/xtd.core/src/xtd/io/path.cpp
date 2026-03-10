@@ -38,7 +38,7 @@ auto path::combine(const string& path1, const string& path2) -> string {
 
 auto path::combine(const std::initializer_list<string>& paths) noexcept -> string {
   auto result = string::empty_string;
-  for (auto path : paths)
+  for (const auto& path : paths)
     result = combine(result, path);
   return result;
 }
@@ -146,7 +146,7 @@ auto path::__get_index_path_rooted(const string& path) -> int32 {
 }
 
 auto path::__is_drive(const string& path) noexcept -> bool {
-  for (auto drive : drive_info::get_drives())
+  for (const auto& drive : drive_info::get_drives())
     if (drive.name() == path) return true;
   return false;
 }

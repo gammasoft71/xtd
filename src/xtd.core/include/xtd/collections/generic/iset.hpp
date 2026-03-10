@@ -66,7 +66,7 @@ namespace xtd {
         /// @code
         /// icollection& my_collection = some_collection;
         /// lock_(my_collection.sync_root()) {
-        ///   for (auto item : my_collection) {
+        ///   for (const auto& item : my_collection) {
         ///     // Insert your code here.
         ///   }
         /// }
@@ -89,7 +89,7 @@ namespace xtd {
         /// @code
         /// icollection& my_collection = some_collection;
         /// lock_(my_collection.sync_root()) {
-        ///   for (auto item : my_collection) {
+        ///   for (const auto& item : my_collection) {
         ///     // Insert your code here.
         ///   }
         /// }

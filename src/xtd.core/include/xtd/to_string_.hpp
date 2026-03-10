@@ -389,7 +389,7 @@ inline xtd::string xtd::to_string(const std::unordered_set<key_t, compare_t, all
 template<class type_t>
 inline xtd::string xtd::to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il) {
   std::map<type_t, xtd::string, std::greater<type_t>> values;
-  for (auto item : il) values[item.first] = item.second;
+  for (const auto& item : il) values[item.first] = item.second;
   return to_string(value, values);
 }
 
@@ -416,7 +416,7 @@ inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t, st
   if (it != values.end()) return it->second;
   string_t result;
   long long rest = static_cast<long long>(value);
-  for (auto item : values) {
+  for (const auto& item : values) {
     if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
       if (!result.empty()) result = string_t {',', ' '} + result;
       result = item.second + result;
@@ -430,7 +430,7 @@ inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t, st
 template<class type_t, class string_t>
 inline string_t xtd::to_string(type_t value, const std::map<type_t, string_t>& values) {
   std::map<type_t, string_t, std::greater<type_t>> descending_values;
-  for (auto item : values) descending_values[item.first] = item.second;
+  for (const auto& item : values) descending_values[item.first] = item.second;
   return to_string(value, descending_values);
 }
 

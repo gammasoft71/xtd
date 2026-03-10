@@ -6,40 +6,60 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @cond
-  namespace __s__ {
-    template<class type_t>
-    xtd::size __sizeof_() noexcept {
-      return sizeof(type_t);
-    }
-    
-    template<class type_t>
-    xtd::size __sizeof_(const type_t& value) noexcept {
-      return sizeof(value);
-    }
-    
-    inline xtd::size __sizeof_(const xtd::type& value) noexcept {
-      return sizeof(value);
-    }
-  }
-  /// @endcond
-  
   /// @brief Used to obtain the size in bytes of the object representation of type or expression.
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core keywords
   /// @par Examples
   /// ```cpp
   /// // Get the size of a type :
-  /// xtd::size size1 = sizeof_<int32>();
+  /// xtd::size size1 = xtd::size_of<int>();
   ///
-  /// int32 i = 42;
+  /// int i = 42;
   /// // Get the size of an object :
-  /// xtd::size size2 = sizeof_(i);
+  /// xtd::size size2 = xtd::size_of(i);
   /// ```
-  /// @remarks The typeof_ operator cannot be overloaded.
-#define sizeof_ \
-  xtd::__s__::__sizeof_
+  /// @remarks The size_of operator cannot be overloaded.
+  template<class type_t>
+  auto size_of() noexcept -> xtd::size {return sizeof(type_t);}
+  /// @brief Used to obtain the size in bytes of the object representation of type or expression.
+  /// @par Examples
+  /// ```cpp
+  /// // Get the size of a type :
+  /// xtd::size size1 = xtd::size_of<int>();
+  ///
+  /// int i = 42;
+  /// // Get the size of an object :
+  /// xtd::size size2 = xtd::size_of(i);
+  /// ```
+  /// @remarks The size_of operator cannot be overloaded.
+  xtd::size size_of(const auto& value) noexcept {return sizeof(value);}
+  /// @brief Used to obtain the size in bytes of the object representation of type or expression.
+  /// @par Examples
+  /// ```cpp
+  /// // Get the size of a type :
+  /// xtd::size size1 = xtd::size_of<int>();
+  ///
+  /// int i = 42;
+  /// // Get the size of an object :
+  /// xtd::size size2 = xtd::size_of(i);
+  /// ```
+  /// @remarks The size_of operator cannot be overloaded.
+  inline xtd::size size_of(const xtd::type& value) noexcept {return sizeof(value);}
 }
+
+/// @brief Used to obtain the size in bytes of the object representation of type or expression.
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @par Examples
+/// ```cpp
+/// // Get the size of a type :
+/// xtd::size size1 = sizeof_<int>();
+///
+/// int i = 42;
+/// // Get the size of an object :
+/// xtd::size size2 = sizeof_(i);
+/// ```
+/// @remarks The #sizeof_ operator cannot be overloaded.
+#define sizeof_ \
+  xtd::size_of

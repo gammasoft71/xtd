@@ -214,7 +214,7 @@ namespace xtd {
             height = std::abs(height);
           }
           auto results = strings;
-          std::transform(results.begin(), results.end(), results.begin(), [&](auto string) {return FormatString(dc, string, width, hotKeyPrefix, trimming);});
+          std::transform(results.begin(), results.end(), results.begin(), [&](const auto& string) {return FormatString(dc, string, width, hotKeyPrefix, trimming);});
           return results;
         }
         
@@ -267,7 +267,7 @@ namespace xtd {
           auto strings = wxSplit(string, '\n');
           wxArrayString results;
           
-          for (auto sentence : strings) {
+          for (const auto& sentence : strings) {
             auto words = wxSplit(sentence, ' ');
             if (words.size() == 0) results.push_back(" ");
             else for (auto index = 0_z; index < words.size(); ++index) {

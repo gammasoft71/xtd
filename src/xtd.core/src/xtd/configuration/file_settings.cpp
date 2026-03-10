@@ -68,14 +68,14 @@ auto file_settings::keys() const noexcept -> file_settings::string_collection {
 auto file_settings::keys(const string& section) const noexcept -> string_collection {
   if (section_key_values_.find(section) == section_key_values_.end()) return {};
   auto keys = string_collection {};
-  for (auto [key, value] : section_key_values_.at(section))
+  for (const auto& [key, value] : section_key_values_.at(section))
     keys.add(key);
   return keys;
 }
 
 auto file_settings::sections() const noexcept -> string_collection {
   auto sections = string_collection {};
-  for (auto [section, key_value] : section_key_values_)
+  for (const auto& [section, key_value] : section_key_values_)
     sections.add(section);
   return sections;
 }
@@ -222,14 +222,14 @@ auto file_settings::save_as(std::ostream& stream) -> void {
 auto file_settings::to_string() const noexcept -> string {
   auto split_comment = [](const string & comments) {
     auto result = string::empty_string;
-    for (auto comment : comments.split({10, 13}))
+    for (const auto& comment : comments.split({10, 13}))
       result += string::format("{}\n", comment);
     return result;
   };
   auto text = string::empty_string;
   if (!string::is_empty(top_file_comment_))
     text += split_comment(top_file_comment_);
-  for (auto [section, key_value] : section_key_values_) {
+  for (const auto& [section, key_value] : section_key_values_) {
     text += text.length() == 0 ? "" : environment::new_line();
     auto bs_it = before_section_comment_.find(section);
     if (bs_it != before_section_comment_.end() && !string::is_empty(bs_it->second)) text += split_comment(bs_it->second);
@@ -237,7 +237,7 @@ auto file_settings::to_string() const noexcept -> string {
     if (!string::is_empty(section)) text += string::format("{}{}{}{}\n", section_start_delimiter, section, section_end_delimiter, s_it != section_comment_.end() && !string::is_empty(s_it->second) ? string::format(" {}", s_it->second) : "");
     auto as_it = after_section_comment_.find(section);
     if (as_it != after_section_comment_.end() && !string::is_empty(as_it->second)) text += split_comment(as_it->second);
-    for (auto [key, value] : key_value) {
+    for (const auto& [key, value] : key_value) {
       if (before_key_value_comment_.find(section) != before_key_value_comment_.end()) {
         auto bk_it = before_key_value_comment_.at(section).find(key);
         if (bk_it != before_key_value_comment_.at(section).end() && !string::is_empty(bk_it->second)) text += split_comment(bk_it->second);

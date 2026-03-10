@@ -686,7 +686,7 @@ namespace xtd {
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
         [[nodiscard]] auto index_of(const type_t& value, size_type index, size_type count) const -> size_type {
-          return find_index(index, count, delegate_(auto n) {return helpers::equator<type_t> {}(n, value);});
+          return find_index(index, count, delegate_(const auto& n) {return helpers::equator<type_t> {}(n, value);});
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -779,7 +779,7 @@ namespace xtd {
         /// @return The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
         /// @exception xd::argument_out_of_range_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         [[nodiscard]] auto last_index_of(const type_t& value, size_type index, size_type count) const -> size_type {
-          return find_last_index(index, count, delegate_(auto n) {return helpers::equator<type_t> {}(n, value);});
+          return find_last_index(index, count, delegate_(const auto& n) {return helpers::equator<type_t> {}(n, value);});
         }
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::list <type_t>.

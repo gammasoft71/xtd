@@ -43,7 +43,7 @@ namespace {
         codename = xtd::native::macos::strings::replace(macos::shell_execute::run("awk", "'/SOFTWARE LICENSE AGREEMENT FOR macOS/' '/System/Library/CoreServices/Setup Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf' | awk -F 'macOS ' '{print $NF}' | awk '{print substr($0, 0, length($0)-1)}'"), "\n", "");
         auto distribution_string = macos::shell_execute::run("sw_vers");
         auto distribution_lines = xtd::native::macos::strings::split(distribution_string, {'\n'});
-        for (auto distribution_line : distribution_lines) {
+        for (const auto& distribution_line : distribution_lines) {
           auto key_value = xtd::native::macos::strings::split(distribution_line, {'\t'});
           if (key_value[0] == "BuildVersion:") build_version = key_value[key_value.size() - 1];
           if (key_value[0] == "ProductVersion:") version = key_value[key_value.size() - 1];
@@ -216,7 +216,7 @@ auto environment::get_environment_variables(int32_t target) -> map<string, strin
     static auto envs = map<string, string> {};
     envs.clear();
     //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-    //for (auto name : key.get_value_names())
+    //for (const auto& name : key.get_value_names())
     //  envs[name] = key.get_value(name).to_string();
     return envs;
   }

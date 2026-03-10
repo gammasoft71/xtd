@@ -93,7 +93,7 @@ void vertical_layout_panel::on_control_added(const xtd::forms::control_event_arg
 
 void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
-  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == e.control();});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const auto& item) {return item.first.get() == e.control();});
   if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   control_layout_styles_.erase(it);
 }
@@ -102,7 +102,7 @@ void vertical_layout_panel::on_layout(const event_args& e) {
   panel::on_layout(e);
   if (!parent() && controls().count() == 0) return;
   
-  auto auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
+  auto auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](const auto& layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
   auto auto_size_height = client_size().height - static_cast<int32>(control_layout_styles().size() * padding().top()) - static_cast<int32>(control_layout_styles().size() * padding().bottom());
   
   auto absolute_height = 0;

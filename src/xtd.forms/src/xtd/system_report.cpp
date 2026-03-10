@@ -22,14 +22,14 @@ namespace {
   string generate_stack_trace_string_report(int32 indent) {
     string report = string::format("{}Stack trace{}", indent_string(indent), environment::new_line());
     auto stack_trace = system_report::stack_trace();
-    for (auto frame : stack_trace.get_frames())
+    for (const auto& frame : stack_trace.get_frames())
       report += string::format("{}{}", indent_string(indent + 1), frame);
     return report + environment::new_line();
   }
   
   string generate_libraries_string_report(int32 indent) {
     string report = string::format("{}xtd libraries{}", indent_string(indent), environment::new_line());
-    for (auto library : system_report::xtd_libraries()) {
+    for (const auto& library : system_report::xtd_libraries()) {
       report += string::format("{}{}{}", indent_string(indent + 1), library.name(), environment::new_line());
       report += string::format("{}Version: {}{}", indent_string(indent + 2), library.version(), environment::new_line());
       report += string::format("{}include path: {}{}", indent_string(indent + 2), library.include_path(), environment::new_line());
@@ -50,7 +50,7 @@ namespace {
   }
   
   string generate_operating_system_string_report(int32 indent) {
-    auto to_time_since_boot_string = [](auto time_since_boot) {
+    auto to_time_since_boot_string = [](const auto& time_since_boot) {
       return string::format("{}{}{}", time_since_boot.days() ? string::format("{} days, ", time_since_boot.days()) : string::empty_string, time_since_boot.days() || time_since_boot.hours()  % 24 ? string::format("{} hours, ", time_since_boot.hours() % 24) : string::empty_string, string::format("{} minutes", time_since_boot.minutes() % 60));
     };
     string report = string::format("{}Operating System{}", indent_string(indent), environment::new_line());
@@ -109,42 +109,42 @@ namespace {
   
   string generate_environment_variables_string_report(int32 indent) {
     string report = string::format("{}Environment variables{}", indent_string(indent), environment::new_line());
-    for (auto environment_variable : system_report::environment_variables())
+    for (const auto& environment_variable : system_report::environment_variables())
       report += string::format("{}{}={}{}", indent_string(indent + 1), environment_variable.first, environment_variable.second, environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_special_folders_string_report(int32 indent) {
     string report = string::format("{}Special folders{}", indent_string(indent), environment::new_line());
-    for (auto special_folder : system_report::special_folders())
+    for (const auto& special_folder : system_report::special_folders())
       report += string::format("{}{}: {}{}", indent_string(indent + 1), special_folder.first, special_folder.second, environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_system_colors_string_report(int32 indent) {
     string report = string::format("{}System colors{}", indent_string(indent), environment::new_line());
-    for (auto system_color : system_report::system_colors())
+    for (const auto& system_color : system_report::system_colors())
       report += string::format("{}{}: {}{}", indent_string(indent + 1), system_color.first, system_color.second, environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_generic_font_families_string_report(int32 indent) {
     string report = string::format("{}Generic font families{}", indent_string(indent), environment::new_line());
-    for (auto font_family : system_report::generic_font_families())
+    for (const auto& font_family : system_report::generic_font_families())
       report += string::format("{}{}: {}{}", indent_string(indent + 1), font_family.first, font_family.second, environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_system_fonts_string_report(int32 indent) {
     string report = string::format("{}System fonts{}", indent_string(indent), environment::new_line());
-    for (auto system_font : system_report::system_fonts())
+    for (const auto& system_font : system_report::system_fonts())
       report += string::format("{}{}: {}{}", indent_string(indent + 1), system_font.first, system_font.second, environment::new_line());
     return report + environment::new_line();
   }
   
   string generate_screens_report(int32 indent) {
     string report = string::format("{}Screens{}", indent_string(indent), environment::new_line());
-    for (auto screen : system_report::screens()) {
+    for (const auto& screen : system_report::screens()) {
       report += string::format("{}{}{}", indent_string(indent + 1), screen.device_name(), environment::new_line());
       report += string::format("{}Bounds: {}{}", indent_string(indent + 2), screen.bounds(), environment::new_line());
       report += string::format("{}Working area: {}{}", indent_string(indent + 2), screen.working_area(), environment::new_line());
@@ -156,7 +156,7 @@ namespace {
   
   string generate_system_informations_string_report(int32 indent) {
     string report = string::format("{}System informations{}", indent_string(indent), environment::new_line());
-    for (auto system_information : system_report::system_informations())
+    for (const auto& system_information : system_report::system_informations())
       report += string::format("{}{}: {}{}", indent_string(indent + 1), system_information.first, system_information.second, environment::new_line());
     return report + environment::new_line();
   }
@@ -169,7 +169,7 @@ xtd::compiler system_report::compiler() noexcept {
 system_report::environment_variable_collection system_report::environment_variables() noexcept {
   environment_variable_collection environment_variables;
   auto envs = xtd::environment::get_environment_variables();
-  std::for_each(envs.begin(), envs.end(), [&](auto environment_variable) {environment_variables.add({environment_variable});});
+  std::for_each(envs.begin(), envs.end(), [&](const auto& environment_variable) {environment_variables.add({environment_variable});});
   return environment_variables;
 }
 
@@ -217,7 +217,7 @@ xtd::diagnostics::stack_trace system_report::stack_trace(size_t skip_frames) noe
 const system_report::system_color_collection& system_report::system_colors() noexcept {
   static system_color_collection colors;
   if (colors.count() != 0) return colors;
-  std::for_each(system_colors::get_colors().begin(), system_colors::get_colors().end(), [&](auto color) {colors.add({color.name().replace("_", " ").to_title_case(), drawing::color::from_argb(color.to_argb())});});
+  std::for_each(system_colors::get_colors().begin(), system_colors::get_colors().end(), [&](const auto& color) {colors.add({color.name().replace("_", " ").to_title_case(), drawing::color::from_argb(color.to_argb())});});
   return colors;
 }
 

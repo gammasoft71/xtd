@@ -26,7 +26,7 @@ namespace {
   string get_css_string_from_path(const string& path_name) {
     if (!directory::exists(path_name)) throw_helper::throws(exception_case::directory_not_found);
     auto theme_css = string::empty_string;
-    for (auto theme_file : directory::enumerate_files(path_name, "*.css"))
+    for (const auto& theme_file : directory::enumerate_files(path_name, "*.css"))
       theme_css += file::read_all_text(theme_file);
     return theme_css;
   }
@@ -313,9 +313,9 @@ const style_sheet::status_bar_panels_t& style_sheet::status_bar_panels() const n
 const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
   if (!style_sheets_.empty()) return style_sheets_;
   
-  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
+  for (const auto& theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     auto theme_css = string::empty_string;
-    for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
+    for (const auto& theme_file : directory::enumerate_files(theme_dir, "*.css"))
       theme_css += file::read_all_text(theme_file);
     auto style = style_sheet {theme_css};
     if (!xtd::string::is_empty(style.theme().name()))
@@ -327,7 +327,7 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
 const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcept {
   if (style_sheet_names_.count() != 0) return style_sheet_names_;
   
-  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
+  for (const auto& theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
     auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
     auto selectors_iterator = reader.selectors().find("theme");
@@ -440,14 +440,14 @@ style_sheet::forms_t style_sheet::form_from_css(const  string& css_text) {
 }
 
 style_sheet style_sheet::get_style_sheet_from_name(const string& name) {
-  for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
+  for (const auto& theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     auto reader = css_reader {file::read_all_text(path::combine(theme_dir, "theme.css"))};
     auto selectors_iterator = reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) break;
     auto properties_iterator = selectors_iterator->second.properties().find("name");
     if (properties_iterator != selectors_iterator->second.properties().end() && properties_iterator->second.to_string().trim().trim('\"') == name) {
       auto theme_css = string::empty_string;
-      for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
+      for (const auto& theme_file : directory::enumerate_files(theme_dir, "*.css"))
         theme_css += file::read_all_text(theme_file);
       return style_sheet(theme_css);
     }
@@ -779,7 +779,7 @@ void style_sheet::on_system_colors_changed(const event_args& e) {
 array<string> style_sheet::split_values_from_text(const string& text) const noexcept {
   static auto color_keywords = list<string> {"rgb(", "rgba(", "argb(", "hsl(", "hsla(", "ahsl(", "hsv(", "hsva(", "ahsv(", "system-color("};
   auto string_starts_with_any = [](const string & text, const list<string>& values)->string {
-    for (auto value : values)
+    for (const auto& value : values)
       if (text.starts_with(value)) return value;
     return "";
   };
@@ -806,7 +806,7 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
   static auto button_states = list<key_value_pair<string, pseudo_state>> {{"button", pseudo_state::standard}, {"button:default", pseudo_state::default_state}};
   for (auto button : button_states) {
-    for (auto state : states) {
+    for (const auto& state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
       if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->buttons[button.second] = xtd::forms::style_sheets::button();
@@ -818,7 +818,7 @@ void style_sheet::button_reader(xtd::web::css::css_reader& reader) noexcept {
 
 void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->controls[pseudo_state::standard] = xtd::forms::style_sheets::control();
@@ -828,7 +828,7 @@ void style_sheet::control_reader(xtd::web::css::css_reader& reader) noexcept {
 }
 
 void style_sheet::fill_control(const xtd::web::css::selector_map::const_iterator& selectors_iterator, xtd::forms::style_sheets::control& control) noexcept {
-  for (auto property : selectors_iterator->second.properties()) {
+  for (const auto& property : selectors_iterator->second.properties()) {
     if (property.first == "margin") control.margin(margin_from_css(property.second.to_string(), margin(length(0))));
     if (property.first == "margin-bottom") control.margin(margin_bottom_from_css(property.second.to_string(), control.margin()));
     if (property.first == "margin-left") control.margin(margin_left_from_css(property.second.to_string(), control.margin()));
@@ -865,8 +865,8 @@ void style_sheet::fill_control(const xtd::web::css::selector_map::const_iterator
 void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
   static auto button_states = list<key_value_pair<string, pseudo_state>> {{"flat-button", pseudo_state::standard}, {"flat-button:default", pseudo_state::standard | pseudo_state::default_state}};
-  for (auto button : button_states) {
-    for (auto state : states) {
+  for (const auto& button : button_states) {
+    for (const auto& state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
       if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->flat_buttons[button.second] = xtd::forms::style_sheets::button();
@@ -878,7 +878,7 @@ void style_sheet::flat_button_reader(xtd::web::css::css_reader& reader) noexcept
 
 void style_sheet::flat_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("flat-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->flat_toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
@@ -889,7 +889,7 @@ void style_sheet::flat_toggle_button_reader(xtd::web::css::css_reader& reader) n
 
 void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("form" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->forms[pseudo_state::standard] = xtd::forms::style_sheets::form();
@@ -900,7 +900,7 @@ void style_sheet::form_reader(xtd::web::css::css_reader& reader) noexcept {
 
 void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->labels[pseudo_state::standard] = xtd::forms::style_sheets::label();
@@ -911,7 +911,7 @@ void style_sheet::label_reader(xtd::web::css::css_reader& reader) noexcept {
 
 void style_sheet::link_label_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":link", pseudo_state::link}, {":visited", pseudo_state::visited}, {":hover", pseudo_state::hover}, {":active", pseudo_state::active}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("link-label" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->link_labels[pseudo_state::standard] = xtd::forms::style_sheets::link_label();
@@ -922,7 +922,7 @@ void style_sheet::link_label_reader(xtd::web::css::css_reader& reader) noexcept 
 
 void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("panel" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->panels[pseudo_state::standard] = xtd::forms::style_sheets::panel();
@@ -934,8 +934,8 @@ void style_sheet::panel_reader(xtd::web::css::css_reader& reader) noexcept {
 void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":disabled", pseudo_state::disabled}};
   static auto button_states = list<key_value_pair<string, pseudo_state>> {{"popup-button", pseudo_state::standard}, {"popup-button:default", pseudo_state::standard | pseudo_state::default_state}};
-  for (auto button : button_states) {
-    for (auto state : states) {
+  for (const auto& button : button_states) {
+    for (const auto& state : states) {
       selector_map::const_iterator selectors_iterator = reader.selectors().find(button.first + state.first);
       if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
       if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->popup_buttons[button.second] = xtd::forms::style_sheets::button();
@@ -947,7 +947,7 @@ void style_sheet::popup_button_reader(xtd::web::css::css_reader& reader) noexcep
 
 void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("popup-toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->popup_toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
@@ -958,7 +958,7 @@ void style_sheet::popup_toggle_button_reader(xtd::web::css::css_reader& reader) 
 
 void style_sheet::status_bar_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("status-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->status_bars[pseudo_state::standard] = xtd::forms::style_sheets::status_bar();
@@ -969,7 +969,7 @@ void style_sheet::status_bar_reader(xtd::web::css::css_reader& reader) noexcept 
 
 void style_sheet::status_bar_panel_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->status_bar_panels[pseudo_state::standard] = xtd::forms::style_sheets::status_bar_panel();
@@ -980,7 +980,7 @@ void style_sheet::status_bar_panel_reader(xtd::web::css::css_reader& reader) noe
 
 void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->tool_bars[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar();
@@ -991,7 +991,7 @@ void style_sheet::tool_bar_reader(xtd::web::css::css_reader& reader) noexcept {
 
 void style_sheet::tool_bar_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("tool-bar-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->tool_bar_buttons[pseudo_state::standard] = xtd::forms::style_sheets::tool_bar_button();
@@ -1002,7 +1002,7 @@ void style_sheet::tool_bar_button_reader(xtd::web::css::css_reader& reader) noex
 
 void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":hover", pseudo_state::hover}, {":pressed", pseudo_state::pressed}, {":disabled", pseudo_state::disabled}, {":checked", pseudo_state::checked}, {":checked:hover", pseudo_state::checked | pseudo_state::hover}, {":checked:pressed", pseudo_state::checked | pseudo_state::pressed}, {":checked:disabled", pseudo_state::checked | pseudo_state::disabled}, {":mixed", pseudo_state::mixed}, {":mixed:hover", pseudo_state::mixed | pseudo_state::hover}, {":mixed:pressed", pseudo_state::mixed | pseudo_state::pressed}, {":mixed:disabled", pseudo_state::mixed | pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("toggle-button" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->toggle_buttons[pseudo_state::standard] = xtd::forms::style_sheets::button();
@@ -1013,7 +1013,7 @@ void style_sheet::toggle_button_reader(xtd::web::css::css_reader& reader) noexce
 
 void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcept {
   static auto states = list<key_value_pair<string, pseudo_state>> {{"", pseudo_state::standard}, {":pressed", pseudo_state::pressed}, {":checked", pseudo_state::checked}, {":hover", pseudo_state::hover}, {":disabled", pseudo_state::disabled}};
-  for (auto state : states) {
+  for (const auto& state : states) {
     selector_map::const_iterator selectors_iterator = reader.selectors().find("user-control" + state.first);
     if (selectors_iterator == reader.selectors().end() && state.second == pseudo_state::standard) return;
     if (selectors_iterator != reader.selectors().end() && state.second == pseudo_state::standard) data_->user_controls[pseudo_state::standard] = xtd::forms::style_sheets::user_control();
@@ -1025,7 +1025,7 @@ void style_sheet::user_control_reader(xtd::web::css::css_reader& reader) noexcep
 void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexcept {
   auto selectors_iterator = reader.selectors().find("system-colors");
   if (selectors_iterator == reader.selectors().end()) return;
-  for (auto property : selectors_iterator->second.properties()) {
+  for (const auto& property : selectors_iterator->second.properties()) {
     if (property.first == "accent") data_->system_colors.accent(color_from_css(property.second.to_string(), drawing::system_colors::accent()));
     if (property.first == "accent-text") data_->system_colors.accent_text(color_from_css(property.second.to_string(), drawing::system_colors::accent_text()));
     if (property.first == "active-border") data_->system_colors.active_border(color_from_css(property.second.to_string(), drawing::system_colors::active_border()));
@@ -1073,7 +1073,7 @@ void style_sheet::system_colors_reader(xtd::web::css::css_reader& reader) noexce
 void style_sheet::theme_reader(xtd::web::css::css_reader& reader) noexcept {
   auto selectors_iterator = reader.selectors().find("theme");
   if (selectors_iterator == reader.selectors().end()) return;
-  for (auto property : selectors_iterator->second.properties()) {
+  for (const auto& property : selectors_iterator->second.properties()) {
     if (property.first == "name") data_->theme.name(string_from_css(property.second.to_string(), string()));
     if (property.first == "description") data_->theme.description(string_from_css(property.second.to_string(), string()));
     if (property.first == "authors") data_->theme.authors(string_from_css(property.second.to_string(), string()));
@@ -1151,7 +1151,7 @@ bool style_sheet::try_parse_conic_gradient(const string& text, background_image&
     if (angle != -1 || string::try_parse<int32>(argument, angle) == false) return false;
   }
 
-  for (auto argument : arguments) {
+  for (const auto& argument : arguments) {
     drawing::color gradient_color;
     if (try_parse_color(argument, gradient_color))
       colors.add(gradient_color);

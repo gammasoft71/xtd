@@ -34,7 +34,7 @@ auto translator::language(xtd::null_ptr) -> void {
 auto translator::languages() -> array<string> {
   static auto languages = list<string> {};
   if (languages.count() != 0) return languages.to_array();
-  std::for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.add(language_value.first);});
+  std::for_each(language_values_.begin(), language_values_.end(), [&](const auto& language_value) {languages.add(language_value.first);});
   return languages.to_array();
 }
 
@@ -48,9 +48,9 @@ auto translator::parse_locale(const string& locale_path) -> bool {
 
 auto translator::parse_locale(const string& locale_path, const string& language) -> bool {
   if (!directory::exists(locale_path)) return false;
-  for (auto locale_item : directory::get_directories(locale_path)) {
+  for (const auto& locale_item : directory::get_directories(locale_path)) {
     if (to_language_name(language) != path::get_file_name(locale_item)) continue;
-    for (auto language_item : directory::get_files(locale_item))
+    for (const auto& language_item : directory::get_files(locale_item))
       if (path::get_extension(language_item) == ".strings") parse_file(language_item, path::get_file_name(locale_item));
   }
   return true;

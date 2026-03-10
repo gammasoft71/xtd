@@ -356,7 +356,7 @@ auto socket::begin_connect(const xtd::net::ip_address& address, uint16 port, asy
 }
 
 auto socket::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, async_callback callback, const any_object& state) -> sptr<iasync_result> {
-  for (auto address : addresses) {
+  for (const auto& address : addresses) {
     if (data_->is_connected == false)
       return begin_connect(address, port, callback, state);
   }
@@ -818,18 +818,18 @@ auto socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ilist
   if (check_read.count() == 0 && check_write.count() == 0 && check_error.count() == 0) throw_helper::throws(exception_case::argument);
   
   auto check_read_handles = list<intptr> {};
-  std::for_each(check_read.begin(), check_read.end(), [&](auto s) {check_read_handles.add(s.data_->handle);});
+  std::for_each(check_read.begin(), check_read.end(), [&](const auto& s) {check_read_handles.add(s.data_->handle);});
   
   auto check_write_handles = list<intptr> {};
-  std::for_each(check_write.begin(), check_write.end(), [&](auto s) {check_write_handles.add(s.data_->handle);});
+  std::for_each(check_write.begin(), check_write.end(), [&](const auto& s) {check_write_handles.add(s.data_->handle);});
   
   auto check_error_handles = list<intptr> {};
-  std::for_each(check_error.begin(), check_error.end(), [&](auto s) {check_error_handles.add(s.data_->handle);});
+  std::for_each(check_error.begin(), check_error.end(), [&](const auto& s) {check_error_handles.add(s.data_->handle);});
   
   auto status = native::socket::select(check_read_handles, check_write_handles, check_error_handles, microseconds);
   if (status < 0) throw_helper::throws(exception_case::socket, get_last_error_());
   
-  auto update_check_sockets = [](auto & sockets, auto & handles) {
+  auto update_check_sockets = [](auto& sockets, auto& handles) {
     for (auto i = 0_z, j = 0_z; i < handles.count() && j < sockets.count(); ++i, ++j)
       if (handles[i] == 0)
         sockets.remove_at(j--);

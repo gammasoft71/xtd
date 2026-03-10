@@ -30,7 +30,7 @@ bool unit_test::repeat_tests() const noexcept {
 
 size_t unit_test::test_cases_count() const noexcept {
   auto count = 0_z;
-  for (auto test_class : test_classes())
+  for (const auto& test_class : test_classes())
     if (test_class.test()->test_count())
       count ++;
   return count;
@@ -38,23 +38,23 @@ size_t unit_test::test_cases_count() const noexcept {
 
 size_t unit_test::test_count() const noexcept {
   auto count = 0_z;
-  for (auto test_class : test_classes())
+  for (const auto& test_class : test_classes())
     count += test_class.test()->test_count();
   return count;
 }
 
 size_t unit_test::aborted_test_count() const noexcept {
   auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
   return count;
 }
 
 array<string> unit_test::aborted_test_names() const noexcept {
   auto names = list<string> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.add(test_class.test()->name() + "." + test.name());
   return array<string>(names);
 }
@@ -67,47 +67,47 @@ time_span unit_test::elapsed_time() const noexcept {
 
 size_t unit_test::ignored_test_count() const noexcept {
   auto count = 0_z;
-  for (auto test_class : test_classes())
+  for (const auto& test_class : test_classes())
     count += test_class.test()->ignored_test_count();
   return count;
 }
 
 array<string> unit_test::ignored_test_names() const noexcept {
   auto names = list<string> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.add(test_class.test()->name() + "." + test.name());
   return array<string>(names);
 }
 
 size_t unit_test::failed_test_count() const noexcept {
   auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
   return count;
 }
 
 array<string> unit_test::failed_test_names() const noexcept {
   auto names = list<string> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.add(test_class.test()->name() + "." + test.name());
   return array<string>(names);
 }
 
 size_t unit_test::succeed_test_count() const noexcept {
   auto count = 0_z;
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
   return count;
 }
 
 array<string> unit_test::succeed_test_names() const noexcept {
   auto names = list<string> {};
-  for (auto& test_class : test_classes())
-    for (auto& test : test_class.test()->tests())
+  for (const auto& test_class : test_classes())
+    for (const auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.add(test_class.test()->name() + "." + test.name());
   return array<string>(names);
 }
@@ -119,17 +119,16 @@ int32 unit_test::run() noexcept {
       
     if (settings::default_settings().count_tests()) {
       auto count = 0;
-      for (auto test_class : test_classes())
-        for (auto test : test_class.test()->tests())
-          count++;
+      for (const auto& test_class : test_classes())
+        count += test_class.test()->tests().size();
           
       return count_tests(count);
     }
     
     if (settings::default_settings().list_tests()) {
       auto tests = list<string> {};
-      for (auto test_class : test_classes())
-        for (auto test : test_class.test()->tests())
+      for (const auto& test_class : test_classes())
+        for (const auto& test : test_class.test()->tests())
           tests.add(test_class.test()->name() + '.' + test.name());
           
       if (settings::default_settings().output_json()) write_list_tests_json();

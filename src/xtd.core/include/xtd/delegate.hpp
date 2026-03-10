@@ -229,8 +229,8 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](auto function) {
-        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](auto item) {return are_equals(item, function);});
+      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](const auto& function) {
+        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
         if (iterator != result.data_->functions.rend()) result.data_->functions.erase((iterator + 1).base());
       });
       return result;
@@ -369,7 +369,7 @@ namespace xtd {
     }
     
     static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
-      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
@@ -692,13 +692,13 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate & source, const delegate & value) noexcept {
       delegate result = source;
-      std::for_each(value.data_->no_arguments_functions.begin(), value.data_->no_arguments_functions.end(), [&](auto no_arguments_function) {
-        auto iterator = std::find_if(result.data_->no_arguments_functions.rbegin(), result.data_->no_arguments_functions.rend(), [&](auto item) {return are_equals(item, no_arguments_function);});
+      std::for_each(value.data_->no_arguments_functions.begin(), value.data_->no_arguments_functions.end(), [&](const auto& no_arguments_function) {
+        auto iterator = std::find_if(result.data_->no_arguments_functions.rbegin(), result.data_->no_arguments_functions.rend(), [&](const auto& item) {return are_equals(item, no_arguments_function);});
         if (iterator != result.data_->no_arguments_functions.rend()) result.data_->no_arguments_functions.erase((iterator + 1).base());
       });
       
-      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](auto function) {
-        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](auto item) {return are_equals(item, function);});
+      std::for_each(value.data_->functions.begin(), value.data_->functions.end(), [&](const auto& function) {
+        auto iterator = std::find_if(result.data_->functions.rbegin(), result.data_->functions.rend(), [&](const auto& item) {return are_equals(item, function);});
         if (iterator != result.data_->functions.rend()) result.data_->functions.erase((iterator + 1).base());
       });
       return result;
@@ -902,13 +902,13 @@ namespace xtd {
     }
     
     static typename no_arguments_function_collection::const_iterator find(typename no_arguments_function_collection::const_iterator begin, typename no_arguments_function_collection::const_iterator end, const no_arguments_function_t& function) noexcept {
-      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
     
     static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
-      auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
+      auto iterator = std::find_if(begin, end, [&](const auto& item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }

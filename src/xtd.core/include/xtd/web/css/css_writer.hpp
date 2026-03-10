@@ -38,9 +38,9 @@ namespace xtd {
         /// @{
         void write() {
           if (!text_writer_) return;
-          for (auto selector : selectors_) {
+          for (const auto& selector : selectors_) {
             text_writer_->write_line("{} {{", selector.first);
-            for (auto property : selector.second.properties())
+            for (const auto& property : selector.second.properties())
               text_writer_->write_line("  {}: {};", property.first, property.second);
             text_writer_->write_line("}");
           }

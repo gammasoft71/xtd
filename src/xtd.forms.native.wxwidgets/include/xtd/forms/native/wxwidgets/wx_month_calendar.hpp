@@ -77,7 +77,7 @@ namespace xtd {
           wxCalendarCtrl* wx_calendar_ctrl = static_cast<wxMonthCalendar*>(wx_month_calendar->control())->calendarCtrl;
           for (size_t day = 1; day <= 31; ++day)
             wx_calendar_ctrl->ResetAttr(day);
-          for (auto date : wx_month_calendar->annually_bolded_dates) {
+          for (const auto& date : wx_month_calendar->annually_bolded_dates) {
             if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
               if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
@@ -89,7 +89,7 @@ namespace xtd {
             }
           }
           
-          for (auto date : wx_month_calendar->monthly_bolded_dates) {
+          for (const auto& date : wx_month_calendar->monthly_bolded_dates) {
             wxCalendarDateAttr* attr = new wxCalendarDateAttr();
             if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)
               *attr = *wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day()));
@@ -99,7 +99,7 @@ namespace xtd {
             wx_calendar_ctrl->SetAttr(static_cast<size_t>(date.day()), attr);
           }
           
-          for (auto date : wx_month_calendar->bolded_dates) {
+          for (const auto& date : wx_month_calendar->bolded_dates) {
             if (static_cast<uint32>(wx_calendar_ctrl->GetDate().GetMonth()) + 1 == date.month() && static_cast<uint32>(wx_calendar_ctrl->GetDate().GetYear()) == date.year()) {
               wxCalendarDateAttr* attr = new wxCalendarDateAttr();
               if (wx_calendar_ctrl->GetAttr(static_cast<size_t>(date.day())) != nullptr)

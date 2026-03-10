@@ -58,7 +58,7 @@ private:
       for (auto angle = startAngle; angle < endAngle; angle += 360.0 / length) {
         auto alpha = Alpha(angle, startAngle, endAngle, startColor, endColor);
         auto point = GetPointForAngle(angle, size, center);
-        for (auto p : GetPointsOnLine(center.x, center.y, point.x, point.y)) {
+        for (const auto& p : GetPointsOnLine(center.x, center.y, point.x, point.y)) {
           if (p.x >= 0 && p.x < size.GetWidth() && p.y >= 0 && p.y < size.GetHeight())
             image.SetAlpha(p.x, p.y, alpha);
         }

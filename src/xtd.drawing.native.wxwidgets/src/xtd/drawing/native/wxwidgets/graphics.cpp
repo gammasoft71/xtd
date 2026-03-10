@@ -849,7 +849,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
   height = 0;
   size_t line_index = 0_z;
   auto strings = text.split({ '\n' });
-  for (auto string : strings) {
+  for (const auto& string : strings) {
     wxString text_to_draw = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
     if (++line_index > lines_filled) break;
     double line_width = 0, line_height = 0;
@@ -875,7 +875,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
   size_t line_index = 0_z;
   auto strings = text.split('\n');
   wxString formated_text;
-  for (auto string : strings) {
+  for (const auto& string : strings) {
     wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string).chars().c_str(), max_width, hot_key_prefix, trimming);
     if (++line_index > lines_filled) break;
     formated_text += line_string + wxString("\n");

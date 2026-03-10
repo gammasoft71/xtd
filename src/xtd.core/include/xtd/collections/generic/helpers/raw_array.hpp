@@ -173,7 +173,7 @@ namespace xtd {
           raw_array(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) requires(!std::is_same_v<type_t, bool>) : items_(items, alloc) {}
           raw_array(std::initializer_list<bool> items, const allocator_type& alloc = allocator_type()) requires(std::is_same_v<type_t, bool>)  : items_(alloc) {
             items_.reserve(items.size());
-            for (auto b : items)
+            for (const auto& b : items)
               items_.push_back(b ? 1 : 0);
           }
           raw_array(raw_array&& other) : items_(std::move(other.items_)) {}
@@ -286,7 +286,7 @@ namespace xtd {
             ++version_;
             items_.clear();
             items_.reserve(items.size());
-            for (auto b : items)
+            for (const auto& b : items)
               items_.push_back(b ? 1 : 0);
             return *this;
           }

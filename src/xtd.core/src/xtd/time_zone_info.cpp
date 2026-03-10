@@ -160,7 +160,7 @@ const std::list<time_zone_info>& time_zone_info::get_system_time_zones() noexcep
   static auto system_time_zones = std::list<time_zone_info> {};
   if (system_time_zones.size()) return system_time_zones;
   auto stzs = native::date_time::get_system_time_zones();
-  std::for_each(stzs.begin(), stzs.end(), [&](auto item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});
+  std::for_each(stzs.begin(), stzs.end(), [&](const auto& item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});
   return system_time_zones;
 }
 
@@ -233,7 +233,7 @@ time_zone_info time_zone_info::time_find_system_time_zone_by_id(const string& id
   if (utc().id_ == id) return utc();
   
   auto stzs = get_system_time_zones();
-  auto iterator = std::find_if(stzs.begin(), stzs.end(), [&](auto item) {return item.id_ == id;});
+  auto iterator = std::find_if(stzs.begin(), stzs.end(), [&](const auto& item) {return item.id_ == id;});
   if (iterator != stzs.end()) return *iterator;
   
   throw_helper::throws(exception_case::time_zone_not_found);

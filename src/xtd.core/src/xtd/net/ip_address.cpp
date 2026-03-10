@@ -228,7 +228,7 @@ auto ip_address::network_to_host_order(uint64 network) -> uint64 {
 }
 
 auto ip_address::parse(const string& str) -> ip_address {
-  block_scope_(auto address_parts = str.split('.')) {
+  block_scope_(const auto& address_parts = str.split('.')) {
     if (address_parts.length() == 4) {
       auto addresses = array<byte>(4);
       for (auto index = 0_z; index < address_parts.length(); ++index)

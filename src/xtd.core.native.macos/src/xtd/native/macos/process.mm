@@ -76,12 +76,12 @@ namespace {
     
     static auto standard_extensions = std::set<std::string> {"", ".action", ".apk", ".app", ".bin", ".command", ".csh", ".ipa", ".ksh", ".osx", ".out", ".run", ".sh", ".workflow"};
     auto extensions = std::filesystem::path(file_name).has_extension() ? std::set<std::string> {""} : standard_extensions;
-    for (auto extension : extensions) {
+    for (const auto& extension : extensions) {
       auto file_name_with_extension = file_name + extension;
       if (working_directory != "" && exists(std::filesystem::path(working_directory) / file_name_with_extension)) return (std::filesystem::path(working_directory) / file_name_with_extension).string();
       if (std::filesystem::path(file_name_with_extension).has_root_directory()) return file_name_with_extension;
       if (std::filesystem::exists(std::filesystem::current_path() / file_name_with_extension)) return (std::filesystem::current_path() / file_name_with_extension).string();
-      for (auto directory : splitter(path_directories, {':'}, std::numeric_limits<size_t>::max(), false))
+      for (const auto& directory : splitter(path_directories, {':'}, std::numeric_limits<size_t>::max(), false))
         if (exists(std::filesystem::path(directory) / file_name_with_extension)) return (std::filesystem::path(directory) / file_name_with_extension).string();
     }
     return file_name;
@@ -94,7 +94,7 @@ namespace {
   
   bool is_valid_uri(const std::string& command_line) {
     static auto schemes = std::vector<std::string> {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
-    auto iterator = std::find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});
+    auto iterator = std::find_if(schemes.begin(), schemes.end(), [&](const auto& scheme) {return command_line.find(scheme + ":") == 0;});
     return iterator != schemes.end();
   }
   
@@ -172,7 +172,7 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
   if (process == 0) {
     auto is_shell_execute = is_valid_shell_execute_process(&macos::strings::split, file_name, working_directory);
     if (is_shell_execute) {
-      for (auto arg : split_arguments(arguments))
+      for (const auto& arg : split_arguments(arguments))
         if (!(is_shell_execute = is_valid_shell_execute_process(&macos::strings::split, arg, working_directory))) break;
     }
     auto command_line_args = std::vector<std::string> {};

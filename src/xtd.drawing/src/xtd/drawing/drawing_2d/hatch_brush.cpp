@@ -24,7 +24,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -34,7 +34,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -45,9 +45,9 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : antialiasing_points)
+    for (const auto& point : antialiasing_points)
       graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -58,9 +58,9 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : antialiasing_points)
+    for (const auto& point : antialiasing_points)
       graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -70,7 +70,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -81,9 +81,9 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : antialiasing_points)
+    for (const auto& point : antialiasing_points)
       graphics.draw_point(pen(color::from_argb(64, fore_color), 1), point);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -93,7 +93,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -103,7 +103,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -113,7 +113,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -123,7 +123,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -133,7 +133,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -143,7 +143,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -183,7 +183,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -193,7 +193,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -203,7 +203,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -213,7 +213,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -231,7 +231,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -241,7 +241,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -251,7 +251,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -261,7 +261,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -271,7 +271,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -281,7 +281,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -291,7 +291,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -301,7 +301,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -311,7 +311,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -321,7 +321,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -331,7 +331,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -341,7 +341,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -351,7 +351,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -361,7 +361,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -371,7 +371,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -381,7 +381,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -391,7 +391,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -401,7 +401,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     for (int32 y = 4, index = 0; y < 8; y++, index++)
       for (int32 x = 0; x < 8; x++, index++)
@@ -414,7 +414,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -424,7 +424,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -434,7 +434,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -444,7 +444,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -454,7 +454,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -464,7 +464,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -474,7 +474,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -484,7 +484,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -494,7 +494,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -504,7 +504,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -514,7 +514,7 @@ namespace {
     auto bitmap = drawing::bitmap(8, 8);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }
@@ -524,7 +524,7 @@ namespace {
     auto bitmap = drawing::bitmap(16, 16);
     auto graphics = drawing::graphics::from_image(bitmap);
     graphics.clear(back_color);
-    for (auto point : points)
+    for (const auto& point : points)
       graphics.draw_point(pen(fore_color, 1), point);
     return bitmap;
   }

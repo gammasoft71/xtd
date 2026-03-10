@@ -42,7 +42,7 @@ namespace xtd {
         /// // ...
         /// parts.add(part {"item n", guid::new_guid()}});
         ///
-        /// for (auto part : parts)
+        /// for (const auto& part : parts)
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.

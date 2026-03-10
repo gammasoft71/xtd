@@ -236,7 +236,7 @@ date_time::time_zone_info date_time::get_local_time_zone() {
   auto local_time_zone = time_zone_info {};
   tzset();
   auto stzis = get_system_time_zones();
-  auto iterator = std::find_if(stzis.begin(), stzis.end(), [&](auto tzi) {return tzi.id == reinterpret_cast<const char*>(tzname[0]);});
+  auto iterator = std::find_if(stzis.begin(), stzis.end(), [&](const auto& tzi) {return tzi.id == reinterpret_cast<const char*>(tzname[0]);});
   if (iterator != stzis.end()) {
     local_time_zone = *iterator;
     local_time_zone.id = reinterpret_cast<const char*>(tzname[0]);

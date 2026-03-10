@@ -283,7 +283,7 @@ namespace xtd {
       ///
       ///       array<string> dirs(begin(directory::enumerate_directories(doc_path)), end(directory::enumerate_directories(doc_path)));
       ///
-      ///       for (auto dir : dirs) {
+      ///       for (const auto& dir : dirs) {
       ///         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
       ///       }
       ///       console::write_line("{} directories found.", dirs.length());
@@ -328,7 +328,7 @@ namespace xtd {
       ///       auto dirs = array<string>(begin(directory::enumerate_directories(dir_path, "dv_*")), end(directory::enumerate_directories(dir_path, "dv_*")));
       ///
       ///       // Show results.
-      ///       for (auto dir : dirs) {
+      ///       for (const auto& dir : dirs) {
       ///         // Remove path information from string.
       ///         console::write_line("{0}", dir.substring(dir.last_index_of("\\") + 1));
       ///       }

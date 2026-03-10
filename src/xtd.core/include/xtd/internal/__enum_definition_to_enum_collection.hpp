@@ -23,14 +23,14 @@ template<class enum_t>
   using namespace xtd;
   if (xtd::string::is_empty(enum_definition)) return entries;
   xtd::int64 current_value = 0;
-  for (auto entry : enum_definition.split(',')) {
+  for (const auto& entry : enum_definition.split(',')) {
     auto key_value = entry.trim().split('=');
     if (key_value.length() < 1 || key_value.length() > 2 || (key_value.length() == 2 && xtd::string::is_empty(key_value[1])))
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Not a valid enum declaration");
     xtd::int64 value = current_value;
     if (key_value.length() == 2) {
       if (!xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::hex_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::binary_number) && xtd::try_parse<xtd::int64>(key_value[1].trim(), value, xtd::number_styles::octal_number)) {
-        auto iterator = std::find_if(entries.begin(), entries.end(), [&](auto item)->bool {return item.second == key_value[1].trim();});
+        auto iterator = std::find_if(entries.begin(), entries.end(), [&](const auto& item)->bool {return item.second == key_value[1].trim();});
         if (iterator != entries.end()) value = static_cast<xtd::int64>(iterator->first);
     
         /// @todo Add parse arithmetic operation...

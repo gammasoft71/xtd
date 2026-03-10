@@ -195,7 +195,7 @@ image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()
   
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
-  for (auto frame_resolution : frame_resolutions) {
+  for (const auto& frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
@@ -212,7 +212,7 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
   data_->handle = native::image::create(stream, use_icm, frame_resolutions);
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
-  for (auto frame_resolution : frame_resolutions) {
+  for (const auto& frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
@@ -281,7 +281,7 @@ int32 image::flags() const noexcept {
 
 array<guid> image::frame_dimentions_list() const noexcept {
   auto result = list<guid> {};
-  std::for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.add(frame.first);});
+  std::for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](const auto& frame) {result.add(frame.first);});
   return result.to_array();
 }
 
@@ -408,7 +408,7 @@ encoder_parameters image::get_encoder_parameter_list(guid encoder) const noexcep
 }
 
 xtd::size image::get_frame_count(const frame_dimension& dimension) const {
-  auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
+  auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](const auto& frame) {return frame.first == dimension.guid();});
   if (iterator == data_->frame_dimensions.end()) throw_helper::throws(exception_case::argument);
   return iterator->second;
 }
@@ -443,7 +443,7 @@ int32 image::get_pixel_format_size(enum pixel_format pixfmt) noexcept {
 }
 
 property_item image::get_property_item(int32 propid) {
-  for (auto property_tiem : data_->property_items)
+  for (const auto& property_tiem : data_->property_items)
     if (property_tiem.id() == propid) return property_tiem;
   throw_helper::throws(exception_case::argument);
 }
@@ -516,7 +516,7 @@ bitmap image::from_xbm_data(const unsigned char* bits, int32 width, int32 height
   img.data_->handle = native::image::create(bits, width, height, frame_resolutions);
   if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   img.data_->raw_format = imaging::image_format::memory_xpm();
-  for (auto frame_resolution : frame_resolutions) {
+  for (const auto& frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) img.data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) img.data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) img.data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
@@ -532,7 +532,7 @@ bitmap image::from_xpm_data(const char* const* bits) {
   img.data_->handle = native::image::create(bits, frame_resolutions);
   if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   img.data_->raw_format = imaging::image_format::memory_xpm();
-  for (auto frame_resolution : frame_resolutions) {
+  for (const auto& frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) img.data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) img.data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_TIME) img.data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;

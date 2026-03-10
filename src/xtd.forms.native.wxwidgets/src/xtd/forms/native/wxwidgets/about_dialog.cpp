@@ -36,13 +36,13 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const strin
   #if defined(__WXGTK__)
   about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
   about_info.SetWebSite(convert_string::to_wstring(website).chars().c_str(), convert_string::to_wstring(website_label).chars().c_str());
-  for (auto creator : creators)
+  for (const auto& creator : creators)
     about_info.AddDeveloper(convert_string::to_wstring(creator).chars().c_str());
-  for (auto doc_writer : doc_writers)
+  for (const auto& doc_writer : doc_writers)
     about_info.AddDocWriter(convert_string::to_wstring(doc_writer).chars().c_str());
-  for (auto translator : translators)
+  for (const auto& translator : translators)
     about_info.AddTranslator(convert_string::to_wstring(translator).chars().c_str());
-  for (auto designer : designers)
+  for (const auto& designer : designers)
     about_info.AddArtist(convert_string::to_wstring(designer).chars().c_str());
   about_info.SetLicense(convert_string::to_wstring(license).chars().c_str());
   #endif

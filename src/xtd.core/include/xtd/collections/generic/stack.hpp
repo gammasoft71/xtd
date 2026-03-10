@@ -107,7 +107,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::collections::generic::stack <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new xtd::collections::generic::stack <type_t>.
         stack(const ienumerable<value_type>& collection) {
-          for (auto item : collection)
+          for (const auto& item : collection)
             data_->items.push(item);
           ensure_capacity(count());
         }

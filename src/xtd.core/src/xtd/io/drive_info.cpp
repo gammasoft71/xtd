@@ -70,7 +70,7 @@ auto drive_info::volume_label() const -> string {
 auto drive_info::get_drives() noexcept -> array<drive_info> {
   auto drives = list<drive_info> {};
   auto native_drives = native::drive::get_drives();
-  std::for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.add(drive_info(drive));});
+  std::for_each(native_drives.begin(), native_drives.end(), [&](const auto& drive) {drives.add(drive_info(drive));});
   return drives.to_array();
 }
 

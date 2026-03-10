@@ -35,13 +35,13 @@ int32_t drive::get_drive_type(const std::string& root_path_name) {
   if (root_drive == root_path_name) return DRIVE_FIXED;
   if (find(ram_drives.begin(), ram_drives.end(), root_path_name) != ram_drives.end()) return DRIVE_RAMDISK;
   if (find(network_drives.begin(), network_drives.end(), root_path_name) != network_drives.end()) return DRIVE_REMOTE;
-  for (auto network_drive : network_drive_points)
+  for (const auto& network_drive : network_drive_points)
     if (root_path_name.find(network_drive) == 0) {
       struct statfs stat;
       if (statfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
       return DRIVE_REMOTE;
     }
-  for (auto amovible_mounted_point : amovible_mounted_points)
+  for (const auto& amovible_mounted_point : amovible_mounted_points)
     if (root_path_name.find(amovible_mounted_point) == 0) {
       struct statfs stat;
       if (statfs(root_path_name.c_str(), &stat) == 0 && (stat.f_flags & ST_RDONLY) == ST_RDONLY) return DRIVE_CDROM;
@@ -70,9 +70,9 @@ std::vector<std::string> drive::get_drives() {
   
   drives.insert(drives.end(), network_drives.begin(), network_drives.end());
   
-  for (auto network_drive : network_drive_points) {
+  for (const auto& network_drive : network_drive_points) {
     if ((file_system::get_attributes(network_drive, file_attributes) == 0 && (file_attributes & FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY)) {
-      for (auto drive : directory::enumerate_directories(network_drive, "*")) {
+      for (const auto& drive : directory::enumerate_directories(network_drive, "*")) {
         struct statfs stat;
         if (statfs(drive.c_str(), &stat) == 0 && std::string(stat.f_mntonname) != root_drive  && !macos::strings::ends_with(drive, ".timemachine")  && !macos::strings::ends_with(drive, ".localsnapshots"))
           drives.push_back(drive);
