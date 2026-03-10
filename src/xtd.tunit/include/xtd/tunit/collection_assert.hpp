@@ -55,8 +55,8 @@ namespace xtd {
       /// ```
       template<class expected_t, class collection_t>
       static void all_items_are_instances_of(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : collection)
-          if (dynamic_cast<expected_t>(item) == nullptr) {
+        for (auto iterator = collection.begin(); iterator != collection.end(); ++iterator)
+          if (dynamic_cast<expected_t>(*iterator) == nullptr) {
             fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", join_items(collection), message, stack_frame);
             return;
           }
@@ -68,8 +68,8 @@ namespace xtd {
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_instances_of<expected_t>(collection, xtd::string::empty_string, stack_frame);}
       template<class expected_t, class item_t>
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : collection)
-          if (dynamic_cast<expected_t>(item) == nullptr) {
+        for (auto iterator = collection.begin(); iterator != collection.end(); ++iterator)
+          if (dynamic_cast<expected_t>(*iterator) == nullptr) {
             fail("all items instance of <" + typeof_<expected_t>().full_name() + ">", join_items(collection), message, stack_frame);
             return;
           }
@@ -107,7 +107,7 @@ namespace xtd {
       /// ```
       template<class collection_t>
       static void all_items_are_not_null(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : collection)
+        for (const auto& item : collection)
           if (item == nullptr) {
             fail("all items are not null", join_items(collection), message, stack_frame);
             return;
@@ -120,7 +120,7 @@ namespace xtd {
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_not_null(collection, xtd::string::empty_string, stack_frame);}
       template<class item_t>
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        for (auto item : collection)
+        for (const auto& item : collection)
           if (item == nullptr) {
             fail("all items are not null", join_items(collection), message, stack_frame);
             return;
@@ -159,7 +159,7 @@ namespace xtd {
       static void all_items_are_unique(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto value = *collection.cbegin();
         std::map<decltype(value), int32> counts;
-        for (auto item : collection) {
+        for (const auto& item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
             fail("all items are unique", join_items(collection), message, stack_frame);
@@ -173,7 +173,7 @@ namespace xtd {
       template<class item_t>
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         std::map<item_t, int32> counts;
-        for (auto item : collection) {
+        for (const auto& item : collection) {
           auto result = counts.emplace(item, 1);
           if (result.second == false)
             fail("all items are unique", join_items(collection), message, stack_frame);
