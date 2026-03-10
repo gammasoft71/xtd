@@ -476,6 +476,8 @@ add_sources(
   "include/xtd/size"
   "include/xtd/size_object.hpp"
   "include/xtd/size_object"
+  "include/xtd/size_of.hpp"
+  "include/xtd/size_of"
   "include/xtd/sizeof.hpp"
   "include/xtd/sizeof"
   "include/xtd/slong.hpp"
