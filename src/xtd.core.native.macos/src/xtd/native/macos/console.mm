@@ -603,8 +603,31 @@ bool console::background_color(std::int32_t color) {
 
 namespace {
   class audio {
+    struct hide_log {
+      hide_log() {
+        stderr_copy = dup(STDERR_FILENO);
+        if (stderr_copy == -1) return;
+        auto dev_null = open("/dev/null", O_WRONLY);
+        if (dup2(dev_null, STDERR_FILENO) == -1) {
+          close(stderr_copy);
+          stderr_copy = -1;
+          return;
+        }
+        close(dev_null);
+
+      }
+      ~hide_log() {
+        if (stderr_copy == -1) return;
+        if (dup2(stderr_copy, STDERR_FILENO) != -1)
+          close(stderr_copy);
+      }
+      
+      int stderr_copy = -1;
+    };
+    
   public:
     audio() noexcept {
+      auto hl = hide_log {};
       auto audio_component_description = AudioComponentDescription {kAudioUnitType_Output, kAudioUnitSubType_DefaultOutput, kAudioUnitManufacturer_Apple, 0, 0};
       if (AudioComponentInstanceNew(AudioComponentFindNext(nullptr, &audio_component_description), &audio_unit) != noErr) return;
       
@@ -621,6 +644,7 @@ namespace {
     
     ~audio() noexcept {
       if (!initialized) return;
+      auto hl = hide_log {};
       dispatch_semaphore_signal(idle_semaphore);
       dispatch_semaphore_signal(start_playing_semaphore);
       dispatch_semaphore_signal(end_playing_semaphore);
@@ -634,6 +658,7 @@ namespace {
       
       if (!initialized || frequency < 37 || frequency > 32767) return false;
       
+      auto hl = hide_log {};
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
       
       beep_freq = frequency;
