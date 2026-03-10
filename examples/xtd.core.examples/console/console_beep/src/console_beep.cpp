@@ -7,7 +7,7 @@ auto main(int argc, char* argv[]) -> int {
     for (auto i = 1; i <= x; ++i) {
       console::write_line("Beep number {}.", i);
       console::beep();
-      thread::sleep(100_ms);
+      thread::sleep(300_ms);
     }
   } else
     console::write_line("Usage: Enter the number of times (between 1 and 9) to beep.");
