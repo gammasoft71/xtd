@@ -164,8 +164,6 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga44bd440a34d147923e428eacd1c8eedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.  <br /></td></tr>
 <tr class="memitem:ga28796443ec37b938df7072c79595e3f6" id="r_ga28796443ec37b938df7072c79595e3f6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga28796443ec37b938df7072c79595e3f6">static_</a></td></tr>
 <tr class="memdesc:ga28796443ec37b938df7072c79595e3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).  <br /></td></tr>
-<tr class="memitem:gadf2fc01c525cce1b8255c8308b2fb004" id="r_gadf2fc01c525cce1b8255c8308b2fb004"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a></td></tr>
-<tr class="memdesc:gadf2fc01c525cce1b8255c8308b2fb004"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).  <br /></td></tr>
 <tr class="memitem:gafa2ffd9b4a6568b57ab2731bec095d99" id="r_gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></td></tr>
 <tr class="memdesc:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the type object of a specified type or object.  <br /></td></tr>
 <tr class="memitem:ga73249a3d4ad48e36724bccf5f3e48f2f" id="r_ga73249a3d4ad48e36724bccf5f3e48f2f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a>(...)</td></tr>
@@ -3246,7 +3244,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line"><span class="keywordtype">int</span> i = 42;</div>
 <div class="line"><span class="comment">// Get the size of an object :</span></div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> size2 = <a class="code hl_define" href="#ga7e5173499dc845cf977362c967c8589e">sizeof_</a>(i);</div>
-<div class="ttc" id="agroup__keywords_html_ga7e5173499dc845cf977362c967c8589e"><div class="ttname"><a href="#ga7e5173499dc845cf977362c967c8589e">sizeof_</a></div><div class="ttdeci">#define sizeof_</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.hpp:64</div></div>
+<div class="ttc" id="agroup__keywords_html_ga7e5173499dc845cf977362c967c8589e"><div class="ttname"><a href="#ga7e5173499dc845cf977362c967c8589e">sizeof_</a></div><div class="ttdeci">#define sizeof_</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ga7e5173499dc845cf977362c967c8589e" title="Used to obtain the size in bytes of the object representation of type or expression.">sizeof_</a> operator cannot be overloaded. </dd></dl>
@@ -3436,37 +3434,9 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:37</div></div>
+<div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_firework_8cpp-example.html#_a0">console_firework.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#_a0">environment_cancel_signal.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#_a0">environment_program_exit.cpp</a>, and <a class="el" href="static_8cpp-example.html#_a0">static.cpp</a>.</dd>
-</dl>
-
-</div>
-</div>
-<a id="gadf2fc01c525cce1b8255c8308b2fb004" name="gadf2fc01c525cce1b8255c8308b2fb004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf2fc01c525cce1b8255c8308b2fb004">&#9670;&#160;</a></span>static_object_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define static_object_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="static_8hpp.html">static.hpp</a>&gt;</code></p>
-
-<p>This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted). </p>
-<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a> {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
-<div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_gadf2fc01c525cce1b8255c8308b2fb004"><div class="ttname"><a href="#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a></div><div class="ttdeci">#define static_object_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:53</div></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="static_object_8cpp-example.html#_a0">static_object.cpp</a>.</dd>
 </dl>
 
 </div>
