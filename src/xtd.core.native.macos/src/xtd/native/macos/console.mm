@@ -621,12 +621,17 @@ namespace {
     
     ~audio() noexcept {
       if (!initialized) return;
-      // The following method blocks on an internal semaphore when application exit.
-      //if (AudioOutputUnitStop(audio_unit) != noErr) return;
-      //if (AudioUnitUninitialize(audio_unit) != noErr) return;
+      dispatch_semaphore_signal(idle_semaphore);
+      dispatch_semaphore_signal(start_playing_semaphore);
+      dispatch_semaphore_signal(end_playing_semaphore);
+      if (AudioOutputUnitStop(audio_unit) != noErr) return;
+      if (AudioUnitUninitialize(audio_unit) != noErr) return;
+      AudioComponentInstanceDispose(audio_unit);
     }
     
     static bool beep(uint32_t frequency, std::uint32_t duration) {
+      static auto audio_instance = audio {};
+      
       if (!initialized || frequency < 37 || frequency > 32767) return false;
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
@@ -671,7 +676,7 @@ namespace {
     inline static unsigned int beep_freq = 0;
     inline static std::int32_t beep_samples = 0;
     inline static bool initialized = false;
-  } __audio__;
+  };
 }
 
 bool console::beep(uint32_t frequency, std::uint32_t duration) {
