@@ -20,36 +20,20 @@ namespace xtd {
   class static_object {
     static_object() = delete;
   };
-  
-  /// @brief This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core keywords
-  /// @par Examples
-  /// ```cpp
-  /// class foo static_ {
-  /// public:
-  ///   static xtd::string to_string() {return "foo";}
-  /// };
-  /// ```
-#define static_ \
-: xtd::static_object
-  
-  /// @brief This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core keywords
-  /// @par Examples
-  /// ```cpp
-  /// class foo static_object_ {
-  /// public:
-  ///   static xtd::string to_string() {return "foo";}
-  /// };
-  /// ```
-#define static_object_ \
-: xtd::static_object
 }
+
+/// @brief This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @par Examples
+/// ```cpp
+/// class foo static_ {
+/// public:
+///   static xtd::string to_string() {return "foo";}
+/// };
+/// ```
+#define static_ \
+  : xtd::static_object
