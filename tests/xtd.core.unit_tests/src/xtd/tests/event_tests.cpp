@@ -42,7 +42,7 @@ namespace xtd::tests {
     
     auto test_method_(add_event_with_auto_argument) {
       auto c = 0;
-      auto l = [&](auto sender, auto e) {++c;};
+      auto l = [&](const auto& sender, const auto& e) {++c;};
       auto o = test_object {};
       o.updated += l;
       assert::is_zero(c);
@@ -50,7 +50,7 @@ namespace xtd::tests {
     
     auto test_method_(add_event_with_auto_argument_and_invoke_it) {
       auto c = 0;
-      auto l = [&](auto sender, auto e) {++c;};
+      auto l = [&](const auto& sender, const auto& e) {++c;};
       auto o = test_object {};
       o.updated += l;
       o.update();

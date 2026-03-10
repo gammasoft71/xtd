@@ -66,14 +66,14 @@ namespace xtdc_gui {
   private:
     static xtd::array<xtd_example_item> get_examples(const xtd::string& examples_path) {
       auto examples = xtd::collections::generic::list<xtd_example_item> {};
-      for (auto group_item : xtd::io::directory::enumerate_directories(examples_path)) {
-        for (auto item : xtd::io::directory::enumerate_directories(group_item)) {
+      for (const auto& group_item : xtd::io::directory::enumerate_directories(examples_path)) {
+        for (const auto& item : xtd::io::directory::enumerate_directories(group_item)) {
           if (xtd::io::path::get_file_name(item) != "src") {
             examples.add({xtd::string::format("{} - {}", xtd::io::path::get_file_name(group_item), xtd::io::path::get_file_name(item)), get_description(xtd::io::path::combine(item, "README.md")), item, get_picture(xtd::io::path::get_file_name(item)), get_output(xtd::io::path::combine(item, "README.md")) });
           }
         }
       }
-      std::sort(examples.items().begin(), examples.items().end(), [](auto a, auto b)->bool {return a.name() < b.name();});
+      std::sort(examples.items().begin(), examples.items().end(), [](const auto& a, const auto& b)->bool {return a.name() < b.name();});
       return examples.to_array();
     }
     

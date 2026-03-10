@@ -320,7 +320,7 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.location({30, 110});
   open_xtd_example_core_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_core_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-  for (auto item : xtd_example_item::get_core_examples())
+  for (const auto& item : xtd_example_item::get_core_examples())
     open_xtd_example_core_list_box_.items().add({item.name(), item});
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
@@ -336,7 +336,7 @@ main_form::main_form() {
   open_xtd_example_drawing_list_box_.location({30, 110});
   open_xtd_example_drawing_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_drawing_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-  for (auto item : xtd_example_item::get_drawing_examples())
+  for (const auto& item : xtd_example_item::get_drawing_examples())
     open_xtd_example_drawing_list_box_.items().add({item.name(), item});
   open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
@@ -352,7 +352,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.location({30, 110});
   open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_forms_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-  for (auto item : xtd_example_item::get_forms_examples())
+  for (const auto& item : xtd_example_item::get_forms_examples())
     open_xtd_example_forms_list_box_.items().add({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
@@ -368,7 +368,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.location({30, 110});
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_tunit_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-  for (auto item : xtd_example_item::get_tunit_examples())
+  for (const auto& item : xtd_example_item::get_tunit_examples())
     open_xtd_example_tunit_list_box_.items().add({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
@@ -384,7 +384,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.location({30, 110});
   open_xtd_example_cmake_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_cmake_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-  for (auto item : xtd_example_item::get_cmake_examples())
+  for (const auto& item : xtd_example_item::get_cmake_examples())
     open_xtd_example_cmake_list_box_.items().add({item.name(), item});
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
@@ -686,14 +686,14 @@ void main_form::init() {
 void main_form::init_create_create_recent_projects_list_box() {
   auto project_type_items = create_project_type_items_control_.project_type_items();
   create_create_recent_projects_list_box_.items().clear();
-  for (auto item : properties::settings::default_settings().create_recent_propjects().split(';'))
+  for (const auto& item : properties::settings::default_settings().create_recent_propjects().split(';'))
     create_create_recent_projects_list_box_.items().add(project_type_items[parse<size_t>(item)].name());
   create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }
 
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
-  for (auto item : properties::settings::default_settings().open_recent_propjects().split(';'))
+  for (const auto& item : properties::settings::default_settings().open_recent_propjects().split(';'))
     startup_open_recent_projects_list_box_.items().add(string::format("{} ({})", path::get_file_name(item), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }

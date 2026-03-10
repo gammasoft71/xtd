@@ -456,7 +456,7 @@ namespace xtdc_command {
     
     static string get_xtd_version() noexcept {
       auto result = string::format("xtd Framework:{}", environment::new_line());
-      for (auto library : environment::xtd_libraries()) {
+      for (const auto& library : environment::xtd_libraries()) {
         result += string::format("  {}", library.name(), environment::new_line());
         result += string::format("    Version: {}{}", library.version(), environment::new_line());
         result += string::format("    include path: {}{}", library.include_path(), environment::new_line());

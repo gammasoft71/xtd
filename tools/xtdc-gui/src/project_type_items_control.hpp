@@ -76,7 +76,7 @@ namespace xtdc_gui {
         {xtd::drawing::bitmap::from_xpm_data(xtd_gui_icon), "xtd_c GUI Application (c)", "A project for creating a xtd_c application with a graphic user interface.", project_language::xtd_c, project_sdk::none, project_platform::all, project_type::gui},
       };
       
-      for (auto item : project_type_items) {
+      for (const auto& item : project_type_items) {
         auto item_control = xtd::new_sptr<project_type_item_control>(item);
         item_control->parent(*this);
         item_control->dock(xtd::forms::dock_style::top);
@@ -110,7 +110,7 @@ namespace xtdc_gui {
     }
     
     void filter_items(project_language language, project_platform platform, project_type type) {
-      for (auto item : project_type_item_controls_)
+      for (const auto& item : project_type_item_controls_)
         item->visible((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type));
       perform_layout();
       selected_index(npos);
@@ -165,7 +165,7 @@ namespace xtdc_gui {
     }
     
     void on_selected_project_type_item_changed(const xtd::event_args& e) {
-      for (auto item : project_type_item_controls_)
+      for (const auto& item : project_type_item_controls_)
         if (item->project_type_item() == selected_project_type_item_) {
           selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(item->tag()));
           break;

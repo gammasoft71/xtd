@@ -93,9 +93,9 @@ namespace xtdc_command {
       lines.add("find_package(GTest REQUIRED)");
       lines.add("set(SOURCES");
       auto [headers, sources] = get_cpp_sources(path, path);
-      for (auto file : headers)
+      for (const auto& file : headers)
         lines.add(xtd::string::format("  {}", file));
-      for (auto file : sources)
+      for (const auto& file : sources)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("source_group(src FILES ${SOURCES})");

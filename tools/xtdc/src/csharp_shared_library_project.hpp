@@ -98,11 +98,11 @@ namespace xtdc_command {
       lines.add("include(CSharpUtilities)");
       lines.add("set(SOURCES");
       auto [sources, configs, xamls] = get_csharp_sources(path, path);
-      for (auto file : sources)
+      for (const auto& file : sources)
         lines.add(xtd::string::format("  {}", file));
-      for (auto file : configs)
+      for (const auto& file : configs)
         lines.add(xtd::string::format("  {}", file));
-      for (auto file : xamls)
+      for (const auto& file : xamls)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("source_group(src FILES ${SOURCES})");

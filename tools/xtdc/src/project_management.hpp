@@ -289,7 +289,7 @@ namespace xtdc_command {
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), "install_manifest.txt"))) return xtd::string::format("File {} does not exists! Uninstall project aborted.", xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : xtd::io::path::combine(build_path(), "install_manifest.txt"));
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       
-      for (auto system_file : xtd::io::file::read_all_lines(xtd::io::path::combine((xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()), "install_manifest.txt"))) {
+      for (const auto& system_file : xtd::io::file::read_all_lines(xtd::io::path::combine((xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()), "install_manifest.txt"))) {
         if (xtd::io::directory::exists(system_file)) xtd::io::directory::remove(system_file, true);
         else if (xtd::io::file::exists(system_file)) {
           if (xtd::environment::os_version().is_macos_platform() && system_file.contains("Contents/MacOS")) xtd::io::directory::remove(system_file.remove(system_file.index_of("Contents/MacOS")), true);
@@ -353,7 +353,7 @@ namespace xtdc_command {
       auto config_file = xtd::io::path::combine({xtd::environment::get_folder_path(xtd::environment::special_folder::home), ".local", "share", "applications", xtd::string::format("{}.desktop", xtd::io::path::get_file_name(path))});
       if (!xtd::io::file::exists(config_file)) return false;
       auto lines = xtd::io::file::read_all_lines(config_file);
-      for (auto line : lines)
+      for (const auto& line : lines)
         if (line.to_lower() == "terminael=false") return true;
       return false;
     }

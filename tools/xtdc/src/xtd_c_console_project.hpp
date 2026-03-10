@@ -86,9 +86,9 @@ namespace xtdc_command {
       lines.add("find_package(xtd_c REQUIRED)");
       lines.add("add_sources(");
       auto [headers, sources] = get_c_sources(path, path);
-      for (auto file : headers)
+      for (const auto& file : headers)
         lines.add(xtd::string::format("  {}", file));
-      for (auto file : sources)
+      for (const auto& file : sources)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("target_type(C_CONSOLE_APPLICATION)");

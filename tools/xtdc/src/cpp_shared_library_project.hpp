@@ -148,11 +148,11 @@ namespace xtdc_command {
       lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
       auto [headers, sources] = get_cpp_sources(path, path);
       lines.add("set(INCLUDES");
-      for (auto file : headers)
+      for (const auto& file : headers)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("set(SOURCES");
-      for (auto file : sources)
+      for (const auto& file : sources)
         lines.add(xtd::string::format("  {}", file));
       lines.add(")");
       lines.add("source_group(include FILES ${INCLUDES})");

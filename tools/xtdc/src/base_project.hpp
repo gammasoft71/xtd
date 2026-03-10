@@ -35,16 +35,16 @@ namespace xtdc_command {
     static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_c_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
-      for (auto file : xtd::io::directory::get_files(path, "*.h"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.h"))
         headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-      for (auto file : xtd::io::directory::get_files(path, "*.c"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.c"))
         sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
         
-      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_c_sources(current_path, sub_path);
-        for (auto file : sub_headers)
+        for (const auto& file : sub_headers)
           headers.add(file);
-        for (auto file : sub_sources)
+        for (const auto& file : sub_sources)
           sources.add(file);
       }
       
@@ -54,16 +54,16 @@ namespace xtdc_command {
     static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_cpp_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
-      for (auto file : xtd::io::directory::get_files(path, "*.hpp"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.hpp"))
         headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-      for (auto file : xtd::io::directory::get_files(path, "*.cpp"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.cpp"))
         sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
         
-      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_cpp_sources(current_path, sub_path);
-        for (auto file : sub_headers)
+        for (const auto& file : sub_headers)
           headers.add(file);
-        for (auto file : sub_sources)
+        for (const auto& file : sub_sources)
           sources.add(file);
       }
       
@@ -74,20 +74,20 @@ namespace xtdc_command {
       xtd::collections::generic::list<xtd::string> sources;
       xtd::collections::generic::list<xtd::string> configs;
       xtd::collections::generic::list<xtd::string> xamls;
-      for (auto file : xtd::io::directory::get_files(path, "*.cs"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.cs"))
         sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-      for (auto file : xtd::io::directory::get_files(path, "*.config"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.config"))
         configs.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-      for (auto file : xtd::io::directory::get_files(path, "*.xaml"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.xaml"))
         xamls.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
         
-      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_sources, sub_configs, sub_xamls] = get_csharp_sources(current_path, sub_path);
-        for (auto file : sub_sources)
+        for (const auto& file : sub_sources)
           sources.add(file);
-        for (auto file : sub_configs)
+        for (const auto& file : sub_configs)
           configs.add(file);
-        for (auto file : sub_xamls)
+        for (const auto& file : sub_xamls)
           xamls.add(file);
       }
       
@@ -97,16 +97,16 @@ namespace xtdc_command {
     static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_objectivec_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
-      for (auto file : xtd::io::directory::get_files(path, "*.h"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.h"))
         headers.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
-      for (auto file : xtd::io::directory::get_files(path, "*.m"))
+      for (const auto& file : xtd::io::directory::get_files(path, "*.m"))
         sources.add(file.replace(current_path + xtd::io::path::directory_separator_char(), xtd::string::empty_string));
         
-      for (auto sub_path : xtd::io::directory::get_directories(path)) {
+      for (const auto& sub_path : xtd::io::directory::get_directories(path)) {
         auto [sub_headers, sub_sources] = get_objectivec_sources(current_path, sub_path);
-        for (auto file : sub_headers)
+        for (const auto& file : sub_headers)
           headers.add(file);
-        for (auto file : sub_sources)
+        for (const auto& file : sub_sources)
           sources.add(file);
       }
       
