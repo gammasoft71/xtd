@@ -2621,7 +2621,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">      <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Beep number {}.&quot;</span>, i);</div>
 <div class="line">      <a class="code hl_function" href="#aab2e161c3a72cb14f808ed40e2b59ef2">console::beep</a>();</div>
-<div class="line">      thread::sleep(100_ms);</div>
+<div class="line">      thread::sleep(300_ms);</div>
 <div class="line">    }</div>
 <div class="line">  } <span class="keywordflow">else</span></div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Usage: Enter the number of times (between 1 and 9) to beep.&quot;</span>);</div>
