@@ -22,4 +22,4 @@
 /// ```
 /// @remarks The typeof_ operator cannot be overloaded.
 #define typeof_ \
-xtd::type_of
+  xtd::type_of
