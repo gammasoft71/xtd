@@ -365,7 +365,7 @@ namespace xtd {
     
   private:
     static bool are_equals(const std::function < result_t() >& fct1, const std::function < result_t() >& fct2) noexcept {
-      return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)() > () == fct2.template target < result_t(*)()>() || *fct1.template target<result_t(*)() > () == *fct2.template target < result_t(*)() > ());
+      return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());
     }
     
     static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
