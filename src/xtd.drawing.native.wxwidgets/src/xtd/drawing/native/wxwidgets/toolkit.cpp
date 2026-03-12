@@ -74,10 +74,10 @@ intptr xtd::drawing::native::toolkit::initialize() {
   // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
   #if defined(__APPLE__)
   call_once_ {
-    wxTheApp->CallOnInit();
+    as<wx_application>(wxApp::GetInstance())->CallOnInit();
   };
   #else
-  wxTheApp->CallOnInit();
+  as<wx_application>(wxApp::GetInstance())->CallOnInit();
   #endif
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
