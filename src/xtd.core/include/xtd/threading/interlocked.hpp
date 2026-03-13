@@ -46,47 +46,47 @@ namespace xtd {
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
       /// @return int32 The new value stored at location.
-      static int32 add(int32& location, int32 value) noexcept;
+      static auto add(int32& location, int32 value) noexcept -> int32;
       /// @brief Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
       /// @param value The value to be added to the integer at location.
       /// @return int64 The new value stored at location.
-      static int64 add(int64& location, int64 value) noexcept;
+      static auto add(int64& location, int64 value) noexcept -> int64;
       
       /// @brief Compares two Double for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static double compare_exchange(double& location, double value, double comparand) noexcept;
+      static auto compare_exchange(double& location, double value, double comparand) noexcept -> double;
       /// @brief Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with Comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param Comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static int32 compare_exchange(int32& location, int32 value, int32 comparand) noexcept;
+      static auto compare_exchange(int32& location, int32 value, int32 comparand) noexcept -> int32;
       /// @brief Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static int64 compare_exchange(int64& location, int64 value, int64 comparand) noexcept;
+      static auto compare_exchange(int64& location, int64 value, int64 comparand) noexcept -> int64;
       /// @cond
-      static slong compare_exchange(slong& location, slong value, slong comparand) noexcept;
+      static auto compare_exchange(slong& location, slong value, slong comparand) noexcept -> slong;
       /// @endcond
       /// @brief Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static void* compare_exchange(void*& location, void* value, void* comparand) noexcept;
+      static auto compare_exchange(void*& location, void* value, void* comparand) noexcept -> void*;
       /// @brief Compares two objects for equality and, if they are equal, replaces one of them.
       /// @param location The destination, whose value is compared with comparand and possibly replaced.
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       template<class type_t>
-      static type_t compare_exchange(object& location, const object& value, const object& comparand) noexcept {
+      static auto compare_exchange(object& location, const object& value, const object& comparand) noexcept -> type_t {
         type_t retValue = location;
         lock_(location) {
           if (location.equals(comparand)) location = value;
@@ -99,7 +99,7 @@ namespace xtd {
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
       template<class type_t>
-      static type_t compare_exchange(type_t& location, type_t value, type_t comparand) noexcept {
+      static auto compare_exchange(type_t& location, type_t value, type_t comparand) noexcept -> type_t {
         type_t retValue = location;
         lock_(location) {
           if (location == comparand) location = value;
@@ -111,7 +111,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      static float compare_exchange(float& location, float value, float comparand) noexcept;
+      static auto compare_exchange(float& location, float value, float comparand) noexcept -> float;
       
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
@@ -119,18 +119,18 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
-      static int32 decrement(int32& location) noexcept;
+      static auto decrement(int32& location) noexcept -> int32;
       /// @brief Decrements a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be decremented.
       /// @return The decremented value.
-      static int64 decrement(int64& location) noexcept;
+      static auto decrement(int64& location) noexcept -> int64;
       
       /// @brief Sets a variable of the specified type type_t to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       template<class type_t>
-      static type_t exchange(type_t& location, type_t value) {
+      static auto exchange(type_t& location, type_t value) -> type_t {
         type_t original = location;
         lock_(location)
         location = value;
@@ -140,7 +140,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location_d parameter is set.
       /// @return The original value of location_d.
-      static double exchange(double& location, double value) noexcept;
+      static auto exchange(double& location, double value) noexcept -> double;
       /// @brief Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
@@ -148,26 +148,26 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe resource locking mechanism.
       /// @include interlocked.cpp
-      static int32 exchange(int32& location, int32 value) noexcept;
-      /// @brief Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
+      static auto exchange(int32& location, int32 value) noexcept -> int32;
+      /// @briefautoSets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      static int64 exchange(int64& location, int64 value) noexcept;
+      static auto exchange(int64& location, int64 value) noexcept -> int64;
       /// @cond
-      static slong exchange(slong& location, slong value) noexcept;
+      static auto exchange(slong& location, slong value) noexcept -> slong;
       /// @endcond
       /// @brief Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      static void* exchange(void*& location, void* value) noexcept;
+      static auto exchange(void*& location, void* value) noexcept -> void*;
       /// @brief Sets an object to a specified value and returns the original value, as an atomic operation.
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
       template<class type_t>
-      static type_t exchange(object& location, const object& value) noexcept {
+      static auto exchange(object& location, const object& value) noexcept -> type_t {
         type_t original = location;
         lock_(location)
         location = value;
@@ -177,7 +177,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location_f parameter is set.
       /// @return The original value of location_f.
-      static float exchange(float& location, float value) noexcept;
+      static auto exchange(float& location, float value) noexcept -> float;
       
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
@@ -185,22 +185,22 @@ namespace xtd {
       /// @par Examples
       /// The following code example shows a thread-safe way to increment and decrement an integer value. SafeInstanceCount will always be zero. However, UnsafeInstanceCount will not necessarily be zero because a race condition occurs between incrementing and decrementing the count. This effect is especially marked on a multiprocessor computer.
       /// @include interlocked_decrement.cpp
-      static int32 increment(int32& location) noexcept;
+      static auto increment(int32& location) noexcept -> int32;
       /// @brief Increments a specified variable and stores the result, as an atomic operation.
       /// @param location The variable whose value is to be incremented.
       /// @return The incremented value.
-      static int64 increment(int64& location) noexcept;
+      static auto increment(int64& location) noexcept -> int64;
       
       /// @brief Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to xtd::threading::interlocked::memory_barrier execute after memory accesses that follow the call to xtd::threading::interlocked::memory_barrier.
       /// @remarks This method was added to the xtd::threading::interlocked class as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method.
       /// @remarks xtd::threading::interlocked::memory_barrier is required only on multiprocessor systems that have weak memory ordering (for example, a system that employs multiple Intel Itanium processors).
       /// @remarks For most purposes, the lock_ statement, or the Monitor class provide easier ways to synchronize data.
-      static void memory_barrier() noexcept;
+      static auto memory_barrier() noexcept -> void;
       
       /// @brief Returns a 64-bit value, loaded as an atomic operation.
       /// @param location The 64-bit value to be loaded.
       /// @return The loaded value.
-      static int64 read(int64& location) noexcept;
+      static auto read(int64& location) noexcept -> int64;
       /// @}
     };
   }
