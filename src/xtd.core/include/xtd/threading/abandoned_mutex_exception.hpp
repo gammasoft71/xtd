@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "The wait completed due to an abandoned mutex.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "The wait completed due to an abandoned mutex.";}
     };
   }
 }
