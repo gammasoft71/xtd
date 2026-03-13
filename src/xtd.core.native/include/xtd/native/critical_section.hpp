@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Attempts to enter critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
       /// @return `true` if succeed; otherwise `false`.
-      static auto try_enter(std::intmax_t handle) -> bool;
+      [[nodiscard]] static auto try_enter(std::intmax_t handle) -> bool;
       
       /// @brief Release`critical section with specified critical section handle.
       /// @param handle The critical section handle to release.
