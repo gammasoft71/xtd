@@ -65,12 +65,12 @@ namespace xtd {
       /// @{
       /// @brief Enters the lock_guard, waiting if necessary until the lock_guard can be entered.
       /// @remarks When the method returns, the current thread is the only thread that holds the lock_guard. If the lock_guard can't be entered immediately, the method waits until the lock_guard can be entered. If the lock_guard is already held by the current thread, the lock_guard is entered again. To fully exit the lock_guard and allow other threads to enter the lock_guard, the current thread should exit the lock_guard as many times as it has entered the lock_guard.
-      void enter();
+      auto enter() -> void;
       
       /// @brief Exits the lock_guard.
       /// @exception xtd::object_closed_exception the handle is invalid
       /// @remarks If the current thread holds the lock_guard multiple times, such as recursively, the lock_guard is exited only once. The current thread should ensure that each enter is matched with an exit.
-      void exit();
+      auto exit() -> void;
       /// @}
       
     private:
