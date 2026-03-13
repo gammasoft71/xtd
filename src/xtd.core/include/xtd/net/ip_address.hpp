@@ -309,7 +309,7 @@ namespace xtd {
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool `true` if str is a valid IP address; otherwise, `false`.
-      static auto try_parse(const xtd::string& str, ip_address& address) noexcept -> bool;
+      [[nodiscard]] static auto try_parse(const xtd::string& str, ip_address& address) noexcept -> bool;
       /// @}
       
     private:
