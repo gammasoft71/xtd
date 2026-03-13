@@ -148,25 +148,25 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      intptr handle() const noexcept override;
-      void handle(intptr value) override;
+      [[nodiscard]] auto handle() const noexcept -> intptr override;
+      auto handle(intptr value) -> void override;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void close() override;
+      auto close() -> void override;
       
-      int32 compare_to(const semaphore& value) const noexcept override;
+      [[nodiscard]] auto compare_to(const semaphore& value) const noexcept -> int32 override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const semaphore& other) const noexcept override;
+      [[nodiscard]] auto equals(const semaphore& other) const noexcept -> bool override;
       
       /// @brief Exits the semaphore and returns the previous count.
       /// @return The count on the semaphore before the xtd::threading::semaphore::release method was called.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception A Win32 or pthred error occurred with a named semaphore.
       /// @remarks Threads typically use the xtd::threading::wait_handle::wait_one method to enter the semaphore, and they typically use this method overload to exit.
       /// @remarks If a xtd::threading::semaphore_full_exception is thrown by the xtd::threading::release method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
-      int32 release();
+      auto release() -> int32;
       /// @brief Exits the semaphore a specified number of times and returns the previous count.
       /// @param release_count The number of times to exit the semaphore.
       /// @return The count on the semaphore before the xtd::threading::semaphore::release method was called.
@@ -182,7 +182,7 @@ namespace xtd {
       /// @exception xtd::threading::semaphore_full_exception The semaphore count is already at the maximum value.
       /// @remarks Threads typically use the xtd::threading::wait_handle::wait_one method to enter the semaphore, and they typically use this method overload to exit.
       /// @remarks If a xtd::threading::semaphore_full_exception is thrown by the xtd::threading::release method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
-      int32 release(int32 release_count);
+      auto release(int32 release_count) -> int32;
       /// @}
       
       /// @name Public Static Methods
@@ -196,7 +196,7 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
-      static semaphore open_existing(const string& name);
+      [[nodiscard]] static auto open_existing(const string& name) -> semaphore;
       
       /// @brief Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
@@ -205,20 +205,20 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
-      static bool try_open_existing(const string& name, semaphore& result) noexcept;
+      [[nodiscard]] static auto try_open_existing(const string& name, semaphore& result) noexcept -> bool;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      bool signal() override;
+      auto signal() -> bool override;
       
-      bool wait(int32 milliseconds_timeout) override;
+      auto wait(int32 milliseconds_timeout) -> bool override;
       /// @}
       
     private:
-      void create(int32 initial_count, int32 maximum_count, bool& created_new);
+      auto create(int32 initial_count, int32 maximum_count, bool& created_new) -> void;
       xtd::sptr<semaphore_base> semaphore_;
       xtd::sptr<data> data_;
     };
