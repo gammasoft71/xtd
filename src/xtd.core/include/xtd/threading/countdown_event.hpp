@@ -121,11 +121,11 @@ namespace xtd {
       
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by one.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
-      auto try_add_count() noexcept -> bool;
+      [[nodiscard]] auto try_add_count() noexcept -> bool;
       /// @brief Attempts to increment xtd::threading::countdown_event::current_count by by a specified value.
       /// @param count The value by which to increase xtd::threading::countdown_event::current_count.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
-      auto try_add_count(xtd::size count) noexcept -> bool;
+      [[nodiscard]] auto try_add_count(xtd::size count) noexcept -> bool;
       
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
