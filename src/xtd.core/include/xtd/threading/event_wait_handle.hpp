@@ -110,30 +110,30 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      intptr handle() const noexcept override;
+      [[nodiscard]] auto handle() const noexcept -> intptr override;
       void handle(intptr value) override;
       /// @}
       
       /// @name Public Methods
       
       /// @{
-      void close() override;
+      auto close() -> void override;
       
-      int32 compare_to(const event_wait_handle& value) const noexcept override;
+      [[nodiscard]] auto compare_to(const event_wait_handle& value) const noexcept -> int32 override;
       
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept override;
+      [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const event_wait_handle& other) const noexcept override;
+      [[nodiscard]] auto equals(const event_wait_handle& other) const noexcept -> bool override;
       
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @return `true` if the operation succeeds; otherwise, `false`.
       /// @exception xtd::object_closed_exception The xtd::threading::wait_handle::close() method was previously called on this xtd::threading::event_wait_handle.
-      bool reset();
+      auto reset() -> bool;
       
       /// @brief Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
       /// @return `true` if the operation succeeds; otherwise, `false`.
@@ -141,7 +141,7 @@ namespace xtd {
       /// @remarks For an xtd::threading::event_wait_handle with xtd::threading::event_reset_mode::auto_reset (including xtd::threading:::auto_reset_event), the xtd::threading::event_wait_handle::set method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its xtd::threading::event_wait_handle::reset method is called.
       /// @warning There is no guarantee that every call to the xtd::threading::auto_reset_event::set method will release a thread. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It's as if the second call did not happen. Also, if xtd::threading::auto_reset_event::set is called when there are no threads waiting and the xtd::threading::auto_reset_event is already signaled, the call has no effect.
       /// @remarks For an xtd::threading::event_wait_handle with xtd::threading::event_reset_mode::manual_reset (including xtd::threading:::manual_reset_event), calling the Set method leaves the wait handle in a signaled state until its xtd::threading::event_wait_handle::reset method is called.
-      bool set();
+      auto set() -> bool;
       /// @}
       
       /// @name Public Static Methods
@@ -158,7 +158,7 @@ namespace xtd {
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a xtd::threading::wait_handle_cannot_be_opened_exception is thrown
       /// @remarks The xtd::threading::event_wait_handle::open_existing method tries to open the specified named system event. To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
-      static event_wait_handle open_existing(const string& name);
+      [[nodiscard]] static auto open_existing(const string& name) -> event_wait_handle;
       
       /// @brief Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
@@ -172,20 +172,20 @@ namespace xtd {
       /// @remarks To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
       /// @remarks If you are uncertain whether a named synchronization event exists, use this method overload instead of the xtd::threading::event_xait_handle::open_existing(xtd::uttring) method overload, which throws an exception if the synchronization event does not exist.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
-      static bool try_open_existing(const string& name, event_wait_handle& result) noexcept;
+      [[nodiscard]] static auto try_open_existing(const string& name, event_wait_handle& result) noexcept -> bool;
       /// @}
       
     protected:
       /// @name Protected Methods
       
       /// @{
-      bool signal() override;
+      auto signal() -> bool override;
       
-      bool wait(int32 milliseconds_timeout) override;
+      auto wait(int32 milliseconds_timeout) -> bool override;
       /// @}
       
     private:
-      void create(bool initial_state, bool& created_new);
+      auto create(bool initial_state, bool& created_new) -> void;
       
       xtd::sptr<data> data_;
     };
