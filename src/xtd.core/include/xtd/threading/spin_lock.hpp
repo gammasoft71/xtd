@@ -59,16 +59,16 @@ namespace xtd {
       /// @{
       /// @brief Gets whether the lock is currently held by any thread.
       /// @return `true` if the lock is currently held by any thread; otherwise `false`.
-      bool is_held() const noexcept;
+      [[nodiscard]] auto is_held() const noexcept -> bool;
       
       /// @brief Gets whether the lock is held by the current thread.
       /// @return `true` if the lock is held by the current thread; otherwise `false`.
       /// @remarks If the lock was initialized to track owner threads, this will return whether the lock is acquired by the current thread. It is invalid to use this property when the lock was initialized to not track thread ownership.
-      bool is_held_by_current_thread() const noexcept;
+      [[nodiscard]] auto is_held_by_current_thread() const noexcept -> bool;
       
       /// @brief Gets whether thread ownership tracking is enabled for this instance.
       /// @return `true` if thread ownership tracking is enabled for this instance; otherwise `false`.
-      bool is_thread_owner_tracking_enabled() const noexcept;
+      [[nodiscard]] auto is_thread_owner_tracking_enabled() const noexcept -> bool;
       /// @}
       
       /// @name Public Methods
@@ -78,37 +78,37 @@ namespace xtd {
       /// @param lock_taken True if the lock is acquired; otherwise, `false`.
       /// @exception xtd::threading::lock_recursion_exception Thread ownership tracking is enabled, and the current thread has already acquired this lock.
       /// @remarks xtd::threading::spin_lock is a non-reentrant lock, meaning that if a thread holds the lock, it is not allowed to enter the lock again. If thread ownership tracking is enabled (whether it's enabled is available through xtd::threading::spin_lock::is_thread_owner_tracking_enabled), an exception will be thrown when a thread tries to re-enter a lock it already holds. However, if thread ownership tracking is disabled, attempting to enter a lock already held will result in deadlock.
-      void enter(bool& lock_taken);
+      auto enter(bool& lock_taken) -> void;
       
       /// @brief Releases the lock.
       /// @exception xtd::threading::synchronization_lock_exception Thread ownership tracking is enabled, and the current thread is not the owner of this lock.
       /// @remarks The default overload of Exit provides the same behavior as if calling Exit using `true` as the argument.
       /// @remarks If you call xtd::threading::spin_lock::exit without having first called xtd::threading::spin_lock::enter the internal state of the xtd::threading::spin_lock can become corrupted.
-      void exit();
+      auto exit() -> void;
       /// @brief Releases the lock.
       /// @param use_memory_barrier A bool value that indicates whether a memory fence should be issued in order to immediately publish the exit operation to other threads.
       /// @exception xtd::threading::synchronization_lock_exception Thread ownership tracking is enabled, and the current thread is not the owner of this lock.
       /// @remarks Calling Exit with the use_memory_barrier argument set to `true` will improve the fairness of the lock at the expense of some performance. The default xtd::threading::spin_lock::exit overload behaves as if specifying `true` for use_memory_barrier.
       /// @remarks If you call xtd::threading::spin_lock::exit without having first called xtd::threading::spin_lock::enter the internal state of the xtd::threading::spin_lock can become corrupted.
-      void exit(bool use_memory_barrier);
+      auto exit(bool use_memory_barrier) -> void;
       
       /// @brief Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.
       /// @param lock_taken True if the lock is acquired; otherwise, `false`.
       /// @exception xtd::threading::lock_recursion_exception Thread ownership tracking is enabled, and the current thread has already acquired this lock.
       /// @remarks Unlike xtd::threading::spin_lock::enter, xtd::threading::spin_lock::try_enter will not block waiting for the lock to be available. If the lock is not available when xtd::threading::spin_lock::try_enter is called, it will return immediately without any further spinning.
-      void try_enter(bool& lock_taken);
+      auto try_enter(bool& lock_taken) -> void;
       /// @brief Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite (-1) to wait indefinitely.
       /// @param lock_taken True if the lock is acquired; otherwise, `false`.
       /// @exception xtd::threading::lock_recursion_exception Thread ownership tracking is enabled, and the current thread has already acquired this lock.
       /// @remarks Unlike xtd::threading::spin_lock::enter, xtd::threading::spin_lock::try_enter will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the milliseconds_timeout has expired.
-      void try_enter(int32 milliseconds_timeout, bool& lock_taken);
+      auto try_enter(int32 milliseconds_timeout, bool& lock_taken) -> void;
       /// @brief Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired
       /// @param timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @param lock_taken True if the lock is acquired; otherwise, `false`.
       /// @exception xtd::threading::lock_recursion_exception Thread ownership tracking is enabled, and the current thread has already acquired this lock.
       /// @remarks Unlike xtd::threading::spin_lock::enter, xtd::threading::spin_lock::try_enter will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the timeout has expired.
-      void try_enter(const time_span& timeout, bool& lock_taken);
+      auto try_enter(const time_span& timeout, bool& lock_taken) -> void;
       /// @}
       
     private:
