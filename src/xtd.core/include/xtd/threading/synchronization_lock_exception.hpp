@@ -90,7 +90,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "Object synchronization method was called from an unsynchronized block of code.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Object synchronization method was called from an unsynchronized block of code.";}
     };
   }
 }
