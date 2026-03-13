@@ -25,7 +25,7 @@ public:
   
   auto leave() const noexcept -> void {xtd::native::critical_section::leave(*handle_);}
   
-  auto try_enter(int32 milliseconds_timeout) const noexcept -> bool {
+  [[nodiscard]] auto try_enter(int32 milliseconds_timeout) const noexcept -> bool {
     if (milliseconds_timeout == timeout::infinite) {
       xtd::native::critical_section::enter(*handle_);
       return true;
