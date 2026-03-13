@@ -109,19 +109,19 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating the current thread wiil be joined when destroyed.
       /// @return `true` if this thread will be joined when destroyed; otherwise, `false`.
-      bool auto_join() const noexcept;
+      [[nodiscard]] auto auto_join() const noexcept -> bool;
       /// @brief Sets a value indicating the current thread wiil be joined when destroyed.
       /// @param value `true` if this thread will be joined when destroyed; otherwise, `false`.
       /// @return The xtd::threading::thread current instance.
-      thread& auto_join(bool value);
+      auto auto_join(bool value) -> thread&;
       
       /// @brief Gets the native operating system handle.
       /// @return An intptr representing the native operating system handle.
-      intptr handle() const noexcept;
+      [[nodiscard]] auto handle() const noexcept -> intptr;
       
       /// @brief Gets a value indicating the execution status of the current thread.
       /// @return `true` if this thread has been started and has not terminated normally or aborted; otherwise, `false`.
-      bool is_alive() const noexcept;
+      [[nodiscard]] auto is_alive() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether or not a thread is a background thread.
       /// @return `true` if this thread is or is to become a background thread; otherwise, `false`.
@@ -133,7 +133,7 @@ namespace xtd {
       /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns `true`):
       /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
       /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
-      bool is_background() const noexcept;
+      [[nodiscard]] auto is_background() const noexcept -> bool;
       /// @brief Sets a value indicating whether or not a thread is a background thread.
       /// @param value `true` if this thread is or is to become a background thread; otherwise, `false`.
       /// @return The xtd::threading::thread current instance.
@@ -145,36 +145,36 @@ namespace xtd {
       /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns `true`):
       /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
       /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
-      thread& is_background(bool value);
+      auto is_background(bool value) -> thread&;
       
       /// @brief Gets a value indicating the current thread is the main thread.
       /// @return `true` if this thread is the main thread; otherwise, `false`.
-      bool is_main_thread() const noexcept;
+      [[nodiscard]] auto is_main_thread() const noexcept -> bool;
       
       /// @brief Gets a value indicating whether or not a thread belongs to the managed thread pool.
       /// @return `true` if this thread belongs to the managed thread pool; otherwise, `false`.
       /// @remarks For more information see xtd::threading::thread_pool.
-      bool is_thread_pool_thread() const noexcept;
+      [[nodiscard]] auto is_thread_pool_thread() const noexcept -> bool;
       
       /// @brief Gets a value indicating the current thread is joinable.
       /// @return `true` if this thread is joinable; otherwise, `false`.
       /// @remarks A thread is joinable if it started, not stopped and if is not a background thread.
       /// @remarks if the thread is joinable you can call the xtd::threading::thread::join method.
-      bool joinable() const noexcept;
+      [[nodiscard]] auto joinable() const noexcept -> bool;
       
       /// @brief Gets a unique identifier for the current managed thread.
       /// @return An integer that represents a unique identifier for this managed thread.
       /// @remarks A thread's xtd::threading::thread::managed_thread_id property value serves to uniquely identify that thread within its process.
       /// @remarks The value of the xtd::threading::thread::managed_thread_id property does not vary over time
-      int32 managed_thread_id() const noexcept;
+      [[nodiscard]] auto managed_thread_id() const noexcept -> int32;
       
       /// @brief Gets the name of the thread.
       /// @return A string containing the name of the thread, or empty ("") if no name was set.
-      string name() const noexcept;
+      [[nodiscard]] auto name() const noexcept -> string;
       /// @brief Sets the name of the thread.
       /// @param value A string containing the name of the thread, or empty ("") if no name was set.
       /// @return The xtd::threading::thread current instance.
-      thread& name(const string& value);
+      auto name(const string& value) -> thread&;
       
       /// @brief Gets a value indicating the scheduling priority of a thread.
       /// @return One of the xtd::threading::thread_priority values. The default value is xtd::threading::thread_priority::normal.
@@ -186,7 +186,7 @@ namespace xtd {
       /// * normal
       /// * below_normal
       /// * lowest
-      xtd::threading::thread_priority priority() const noexcept;
+      [[nodiscard]] auto priority() const noexcept -> xtd::threading::thread_priority;
       /// @brief Sets a value indicating the scheduling priority of a thread.
       /// @param value One of the xtd::threading::thread_priority values. The default value is xtd::threading::thread_priority::normal.
       /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
@@ -197,31 +197,31 @@ namespace xtd {
       /// * normal
       /// * below_normal
       /// * lowest
-      thread& priority(xtd::threading::thread_priority value);
+      auto priority(xtd::threading::thread_priority value) -> thread&;
       
       /// @brief Gets the processors on which the associated thread can run.
       /// @return An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
       /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
       /// @remarks If the array is empty, no affinity is defined.
       /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
-      const xtd::array<xtd::size>& processor_affinity() const noexcept;
+      [[nodiscard]] auto processor_affinity() const noexcept -> const xtd::array<xtd::size>&;
       /// @brief Sets the processors on which the associated thread can run.
       /// @param value An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
       /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
       /// @remarks If the array is empty, no affinity is defined.
       /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
-      thread& processor_affinity(const xtd::array<xtd::size>& value);
+      auto processor_affinity(const xtd::array<xtd::size>& value) -> thread&;
       
       /// @brief Gets the native operating system thread id.
       /// @return An intptr representing the native operating thread id.
       /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_thread_id.
-      intptr thread_id() const noexcept;
+      [[nodiscard]] auto thread_id() const noexcept -> intptr;
       
       /// @brief Gets a value containing the states of the current thread.
       /// @return One of the xtd::threading::thread_state values indicating the state of the current thread. The initial value is xtd::threading::thread_state::unstarted.
       /// @remarks The xtd::threading::thread::thread_state property provides more specific information than the xtd::threading::thread::is_alive property.
       /// @warning Thread state is only of interest in debugging scenarios. Your code should never use thread state to synchronize the activities of threads.
-      xtd::threading::thread_state thread_state() const noexcept;
+      [[nodiscard]] auto thread_state() const noexcept -> xtd::threading::thread_state;
       /// @}
       
       /// @name Public Static Properties
@@ -229,12 +229,12 @@ namespace xtd {
       /// @{
       /// @brief Gets the currently running thread.
       /// @return A xtd::threading::thread that is the representation of the currently running thread.
-      static thread& current_thread() noexcept;
+      [[nodiscard]] static auto current_thread() noexcept -> thread&;
       
       /// @brief Gets the main thread.
       /// @return A xtd::threading::thread that is the representation of the main thread.
       /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_handle.
-      static thread& main_thread();
+      [[nodiscard]] static auto main_thread() -> thread&;
       /// @}
       
       /// @name Public Methods
@@ -242,59 +242,59 @@ namespace xtd {
       /// @{
       /// @brief Raises a xtd::threading::thread_aborted_exception in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
       /// @exception xtd::threading::thread_aborted_exception The thread that is being aborted is currently suspended.
-      void abort();
+      auto abort() -> void;
       
       /// @brief Sets the thread background.
       /// @remarks This method is identical to the call to xtd::threading::thread::is_background(true).
-      void detach();
+      auto detach() -> void;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
-      xtd::size get_hash_code() const noexcept override;
+      [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override;
       
       /// @brief Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.
       /// @remarks If this thread is not currently blocked in a thread_state::wait, thread_state::sleep, or thread_state::join state, it will be interrupted when it next begins to block.
       /// @remarks xtd::threading::thread_interrupted_exception is thrown in the interrupted thread, but not until the thread blocks. If the thread never blocks, the exception is never thrown, and thus the thread might complete without ever being interrupted.
-      void interrupt();
+      auto interrupt() -> void;
       
       /// @brief Blocks the calling thread until this thread object terminates, while continuing to perform standard COM and SendMessage pumping.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
-      void join();
+      auto join() -> void;
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param milliseconds_timeout The number of milliseconds to wait for the thread to terminate.
       /// @return `true` if the thread has terminated; `false` if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_out_of_range_rxception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
-      bool join(int32 milliseconds_timeout);
+      auto join(int32 milliseconds_timeout) -> bool;
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param timeout A xtd::time_span set to the amount of time to wait for the thread to terminate.
       /// @return `true` if the thread has terminated; `false` if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents <br>-or-<br> timeout is greater than xtd::int32_object::max_value.
-      bool join(const time_span& timeout);
+      auto join(const time_span& timeout) -> bool;
       
       /// @brief Resumes a thread that has been suspended (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started, is dead, or is not in the suspended state.
       /// @remarks Works only on Windows operating syetm.
       /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
-      void resume();
+      auto resume() -> void;
       
       /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
       /// @exception xtd::threading::thread_state_exception The thread has already been started.
-      void start();
+      auto start() -> void;
       
       /// @brief Causes the operating system to change the state of the current instance to xtd::threading::thread_state::running.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::threading::thread_state_exception The thread has already been started.
-      void start(const xtd::any_object& obj);
+      auto start(const xtd::any_object& obj) -> void;
       
       /// @brief Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started or is dead.
       /// @remarks Works only on Windows operating syetm, no effect on others.
       /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
-      void suspend();
+      auto suspend() -> void;
       /// @}
       
       /// @name Public Static Methods
@@ -303,46 +303,46 @@ namespace xtd {
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static thread start_new(const xtd::threading::thread_start& start);
+      [[nodiscard]] static auto start_new(const xtd::threading::thread_start& start) -> thread;
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static thread start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj);
+      [[nodiscard]] static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> thread;
       
       /// @brief Blocks the calling thread until all joinable threads terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks The xtd::startup::run method and #startup_ keyword call the xtd::threading::thread::join_all method.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
-      static void join_all();
+      static auto join_all() -> void;
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
       /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
-      static bool join_all(int32 milliseconds_timeout);
+      static auto join_all(int32 milliseconds_timeout) -> bool;
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
       /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
-      static bool join_all(const time_span& timeout);
+      static auto join_all(const time_span& timeout) -> bool;
       
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
-      static void join_all(const collection_t& threads) {join_all(threads, timeout::infinite);}
+      static auto join_all(const collection_t& threads) -> void {join_all(threads, timeout::infinite);}
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
       /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
-      static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
+      static auto join_all(const collection_t& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
@@ -354,61 +354,61 @@ namespace xtd {
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
-      static bool join_all(const collection_t& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
+      static auto join_all(const collection_t& threads, const time_span& timeout) -> bool {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
       
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
-      static void sleep(int32 milliseconds_timeout);
+      static auto sleep(int32 milliseconds_timeout) -> void;
       
       /// @brief Suspends the current thread for a specified time.
       /// @param timeout A std::chrono::duration set to the amount of time for which the thread is blocked. Specify zero to indicate that this thread should be suspended to allow other waiting threads to execute. Specify xtd::threading::Timeout.Infinite to block the thread indefinitely.
       /// @exception xtd::argument_exception The value of timeout is negative and is not equal to xtd::threading::timeout::infinite in milliseconds, or is greater than xtd::Int32.MaxValue milliseconds.
-      static void sleep(const time_span& timeout);
+      static auto sleep(const time_span& timeout) -> void;
       
       /// @brief Causes a thread to wait the number of times defined by the iterations parameter.
       /// @param iterations A 32-bit signed integer that defines how long a thread is to wait.
       /// @remarks The xtd::threading::thread::spin_wait method is useful for implementing locks. Classes in the xtd, such as xtd::threading::monitor and xtd::threading::reader_writer_lock, use this method internally. xtd::threading::thread::spin_wait essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor.
       /// @remarks Contrast this with the xtd::threading::thread::sleep method. A thread that calls xtd::threading::thread::sleep yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for xtd::threading::thread::sleep removes the thread from consideration by the thread scheduler until the time interval has elapsed.
       /// @remarks xtd::threading::thread::spin_wait is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the xtd Framework; for example, call xtd::threading::monitor::enter or a statement that wraps xtd::threading::thread::monitor::enter
-      static void spin_wait(int32 iterations);
+      static auto spin_wait(int32 iterations) -> void;
       
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
       /// @return `true` if the operating system switched execution to another thread; otherwise, `false`.
       /// @remarks If this method succeeds, the rest of the thread's current time slice is yielded. The operating system schedules the calling thread for another time slice, according to its priority and the status of other threads that are available to run.
       /// @remarks yielding is limited to the processor that is executing the calling thread. The operating system will not switch execution to another processor, even if that processor is idle or is running a thread of lower priority. If there are no other threads that are ready to execute on the current processor, the operating system does not yield execution, and this method returns `false`.
       /// @remarks This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the xtd::threading::thread::yield method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested.
-      static bool yield() noexcept;
+      static auto yield() noexcept -> bool;
       /// @}
       
       /// @cond
       template<class item_t>
-      static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
+      static auto join_all(const std::initializer_list<item_t>& threads) -> bool {return join_all(threads, timeout::infinite);}
       template<class item_t>
-      static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
+      static auto join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) -> bool {
         auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.length() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       template<class item_t>
-      static bool join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
-      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads);
-      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::initializer_list<xtd::sptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads);
-      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout);
+      static auto join_all(const std::initializer_list<item_t>& threads, const time_span& timeout) -> bool {return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));}
+      static auto join_all(const std::initializer_list<xtd::sptr<thread>>& threads) -> bool;
+      static auto join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
+      static auto join_all(const std::initializer_list<xtd::sptr<thread>>& threads, const time_span& timeout) -> bool;
+      static auto join_all(const std::initializer_list<xtd::uptr<thread>>& threads) -> bool;
+      static auto join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
+      static auto join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout) -> bool;
+      static auto join_all(const xtd::array<xtd::sptr<thread>>& threads) -> bool;
+      static auto join_all(const xtd::array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
+      static auto join_all(const xtd::array<xtd::sptr<thread>>& threads, const time_span& timeout) -> bool;
+      static auto join_all(const xtd::array<xtd::uptr<thread>>& threads) -> bool;
+      static auto join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) -> bool;
+      static auto join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout) -> bool;
       template<class start_t>
-      static thread start_new(start_t start) {return start_new(thread_start {start});}
+      static auto start_new(start_t start) -> thread {return start_new(thread_start {start});}
       template<class start_t>
-      static thread start_new(start_t start, const xtd::any_object& obj) {return start_new(parameterized_thread_start {start}, obj);}
+      static auto start_new(start_t start, const xtd::any_object& obj) -> thread {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       
     private:
@@ -416,23 +416,23 @@ namespace xtd {
       friend class wait_handle;
       
       void close();
-      static bool do_wait(wait_handle& wait_handle, int32 milliseconds_timeout);
-      static int32 generate_managed_thread_id() noexcept;
-      static intptr get_current_thread_handle();
-      static intptr get_current_thread_id() noexcept;
-      static static_data& get_static_data();
-      static thread& get_thread(intptr thread_id);
-      void interrupt_internal();
-      bool is_aborted() const noexcept;
-      bool is_stopped() const noexcept;
-      bool is_suspended() const noexcept;
-      void is_thread_pool_thread(bool value) noexcept;
-      bool is_unmanaged_thread() const noexcept;
-      bool is_unstarted() const noexcept;
-      bool is_wait_sleep_join() const noexcept;
-      static bool join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout);
-      void thread_proc();
-      static thread& unmanaged_thread();
+      static auto do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) -> bool;
+      [[nodiscard]] static auto generate_managed_thread_id() noexcept -> int32;
+      [[nodiscard]] static auto get_current_thread_handle() -> intptr;
+      [[nodiscard]] static auto get_current_thread_id() noexcept -> intptr;
+      [[nodiscard]] static auto get_static_data() -> static_data&;
+      [[nodiscard]] static auto get_thread(intptr thread_id) -> thread&;
+      auto interrupt_internal() -> void;
+      [[nodiscard]] auto is_aborted() const noexcept -> bool;
+      [[nodiscard]] auto is_stopped() const noexcept -> bool;
+      [[nodiscard]] auto is_suspended() const noexcept -> bool;
+      auto is_thread_pool_thread(bool value) noexcept -> void;
+      [[nodiscard]] auto is_unmanaged_thread() const noexcept -> bool;
+      [[nodiscard]] auto is_unstarted() const noexcept -> bool;
+      [[nodiscard]] auto is_wait_sleep_join() const noexcept -> bool;
+      static auto join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout) -> bool;
+      auto thread_proc() -> void;
+      [[nodiscard]] static auto unmanaged_thread() -> thread&;
       
       static constexpr int32 main_managed_thread_id = 1;
       static constexpr int32 unmanaged_thread_id = 0;
@@ -457,7 +457,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::intptr handle() noexcept;
+      [[nodiscard]] auto handle() noexcept -> xtd::intptr;
       
       /// @brief Gets the managed thread id of the current thread.
       /// @return The managed thread id of the current thread.
@@ -470,7 +470,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::int32 managed_thread_id() noexcept;
+      [[nodiscard]] auto managed_thread_id() noexcept -> xtd::int32;
       
       /// @brief Gets the thread name of the current thread.
       /// @return The thread name of the current thread.
@@ -483,7 +483,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::string name() noexcept;
+      [[nodiscard]] auto name() noexcept -> xtd::string;
       /// @brief Sets the thread name of the current thread.
       /// @param name The thread name of the current thread.
       /// @par Header
@@ -495,7 +495,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      void name(const xtd::string& name);
+      auto name(const xtd::string& name) -> void;
       
       /// @brief Gets the thread priority of the current thread.
       /// @return The thread priority of the current thread.
@@ -508,7 +508,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::threading::thread_priority priority() noexcept;
+      [[nodiscard]] auto priority() noexcept -> xtd::threading::thread_priority;
       /// @brief Sets the thread priority of the current thread.
       /// @param priority The thread priority of the current thread.
       /// @par Header
@@ -520,7 +520,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      void priority(xtd::threading::thread_priority priority);
+      auto priority(xtd::threading::thread_priority priority) -> void;
       
       /// @brief Gets the thread id of the current thread.
       /// @return The thread id of the current thread.
@@ -533,7 +533,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::intptr thread_id() noexcept;
+      [[nodiscard]] auto thread_id() noexcept -> xtd::intptr;
       /// @}
       
       /// @name Public Static Methods
@@ -550,7 +550,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      xtd::intptr get_id() noexcept;
+      [[nodiscard]] auto get_id() noexcept -> xtd::intptr;
       
       /// @brief Stops the execution of the current thread for a specified time duration.
       /// @param sleep_duration The   time duration to sleep.
@@ -564,7 +564,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      void sleep_for(const xtd::time_span& sleep_duration);
+      auto sleep_for(const xtd::time_span& sleep_duration) -> void;
       
       /// @brief Stops the execution of the current thread until a specified time point.
       /// @param sleep_time The time to block until.
@@ -578,7 +578,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      void sleep_until(const xtd::date_time& sleep_time);
+      auto sleep_until(const xtd::date_time& sleep_time) -> void;
       
       /// @brief Suggests that the implementation reschedule execution of threads.
       /// @return `true` if the operating system switched execution to another thread; otherwise, `false`.
@@ -591,7 +591,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core threading
-      bool yield() noexcept;
+      auto yield() noexcept -> bool;
       /// @}
     }
   }
