@@ -123,7 +123,7 @@ Inheritance diagram for xtd::threading::thread:</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 10; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;thread_proc: {0}&quot;</span>, i);</div>
 <div class="line">      <span class="comment">// Yield the rest of the time slice.</span></div>
-<div class="line">      <a class="code hl_function" href="#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(0);</div>
+<div class="line">      <a class="code hl_function" href="#a330d3bf0916af42f3ca433010cd585a0">thread::sleep</a>(0);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -176,7 +176,7 @@ Inheritance diagram for xtd::threading::thread:</div>
 <div class="line"><span class="comment">// Main thread: thread_proc.join has returned.  Press Enter to end program.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a330d3bf0916af42f3ca433010cd585a0"><div class="ttname"><a href="#a330d3bf0916af42f3ca433010cd585a0">xtd::threading::thread::sleep</a></div><div class="ttdeci">static auto sleep(int32 milliseconds_timeout) -&gt; void</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:126</div></div>
@@ -192,115 +192,115 @@ Public Fields</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Cosntructors</h2></td></tr>
-<tr class="memitem:a01ebb1fb46c9f74b982192f216f8951f" id="r_a01ebb1fb46c9f74b982192f216f8951f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>)</td></tr>
+<tr class="memitem:a01ebb1fb46c9f74b982192f216f8951f" id="r_a01ebb1fb46c9f74b982192f216f8951f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>)</td></tr>
 <tr class="memdesc:a01ebb1fb46c9f74b982192f216f8951f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying a delegate that allows an object to be passed to the thread when the thread is started.  <br /></td></tr>
-<tr class="memitem:adeca95c7f2b871dc2a67e9afba1dec4f" id="r_adeca95c7f2b871dc2a67e9afba1dec4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adeca95c7f2b871dc2a67e9afba1dec4f">thread</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_stack_size)</td></tr>
+<tr class="memitem:adeca95c7f2b871dc2a67e9afba1dec4f" id="r_adeca95c7f2b871dc2a67e9afba1dec4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adeca95c7f2b871dc2a67e9afba1dec4f">thread</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_stack_size)</td></tr>
 <tr class="memdesc:adeca95c7f2b871dc2a67e9afba1dec4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying a delegate that allows an object to be passed to the thread when the thread is started and specifying the maximum stack size for the thread.  <br /></td></tr>
-<tr class="memitem:a0342b2526bddc655fa2bcffc67f849ab" id="r_a0342b2526bddc655fa2bcffc67f849ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0342b2526bddc655fa2bcffc67f849ab">thread</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>)</td></tr>
+<tr class="memitem:a0342b2526bddc655fa2bcffc67f849ab" id="r_a0342b2526bddc655fa2bcffc67f849ab"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0342b2526bddc655fa2bcffc67f849ab">thread</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>)</td></tr>
 <tr class="memdesc:a0342b2526bddc655fa2bcffc67f849ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class.  <br /></td></tr>
-<tr class="memitem:abc22c606eb31b612d4bc93c37f26a3d0" id="r_abc22c606eb31b612d4bc93c37f26a3d0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc22c606eb31b612d4bc93c37f26a3d0">thread</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_stack_size)</td></tr>
+<tr class="memitem:abc22c606eb31b612d4bc93c37f26a3d0" id="r_abc22c606eb31b612d4bc93c37f26a3d0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abc22c606eb31b612d4bc93c37f26a3d0">thread</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> max_stack_size)</td></tr>
 <tr class="memdesc:abc22c606eb31b612d4bc93c37f26a3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying the maximum stack size for the thread.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a51cda22580b84272a3c2a32a27206395" id="r_a51cda22580b84272a3c2a32a27206395"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a51cda22580b84272a3c2a32a27206395">auto_join</a> () const noexcept</td></tr>
-<tr class="memdesc:a51cda22580b84272a3c2a32a27206395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread wiil be joined when destroyed.  <br /></td></tr>
-<tr class="memitem:a8b38f90148168dcd5e3e7407a0c78e19" id="r_a8b38f90148168dcd5e3e7407a0c78e19"><td class="memItemLeft"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a8b38f90148168dcd5e3e7407a0c78e19">auto_join</a> (bool value)</td></tr>
-<tr class="memdesc:a8b38f90148168dcd5e3e7407a0c78e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating the current thread wiil be joined when destroyed.  <br /></td></tr>
-<tr class="memitem:a29842cf40d3f56315dc81e4f6ebd1dbb" id="r_a29842cf40d3f56315dc81e4f6ebd1dbb"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a29842cf40d3f56315dc81e4f6ebd1dbb">handle</a> () const noexcept</td></tr>
-<tr class="memdesc:a29842cf40d3f56315dc81e4f6ebd1dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
-<tr class="memitem:a85a5574f517670f6d31435c93584d933" id="r_a85a5574f517670f6d31435c93584d933"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a85a5574f517670f6d31435c93584d933">is_alive</a> () const noexcept</td></tr>
-<tr class="memdesc:a85a5574f517670f6d31435c93584d933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the execution status of the current thread.  <br /></td></tr>
-<tr class="memitem:a11f3c0ca7be2108803058899a895193e" id="r_a11f3c0ca7be2108803058899a895193e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a11f3c0ca7be2108803058899a895193e">is_background</a> () const noexcept</td></tr>
-<tr class="memdesc:a11f3c0ca7be2108803058899a895193e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether or not a thread is a background thread.  <br /></td></tr>
-<tr class="memitem:a279a9302f894d851e302670c9f4a515f" id="r_a279a9302f894d851e302670c9f4a515f"><td class="memItemLeft"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a279a9302f894d851e302670c9f4a515f">is_background</a> (bool value)</td></tr>
-<tr class="memdesc:a279a9302f894d851e302670c9f4a515f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether or not a thread is a background thread.  <br /></td></tr>
-<tr class="memitem:a86b508bda2790cd16858559f372f74ae" id="r_a86b508bda2790cd16858559f372f74ae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a86b508bda2790cd16858559f372f74ae">is_main_thread</a> () const noexcept</td></tr>
-<tr class="memdesc:a86b508bda2790cd16858559f372f74ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread is the main thread.  <br /></td></tr>
-<tr class="memitem:ae2395ced1ac1ab57d0e7d53e7e8f3aec" id="r_ae2395ced1ac1ab57d0e7d53e7e8f3aec"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae2395ced1ac1ab57d0e7d53e7e8f3aec">is_thread_pool_thread</a> () const noexcept</td></tr>
-<tr class="memdesc:ae2395ced1ac1ab57d0e7d53e7e8f3aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether or not a thread belongs to the managed thread pool.  <br /></td></tr>
-<tr class="memitem:ac2e8e55c7181e495e824ff4e0f74216f" id="r_ac2e8e55c7181e495e824ff4e0f74216f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac2e8e55c7181e495e824ff4e0f74216f">joinable</a> () const noexcept</td></tr>
-<tr class="memdesc:ac2e8e55c7181e495e824ff4e0f74216f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread is joinable.  <br /></td></tr>
-<tr class="memitem:a5a65a2da3e743b8d710749633e10eacc" id="r_a5a65a2da3e743b8d710749633e10eacc"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5a65a2da3e743b8d710749633e10eacc">managed_thread_id</a> () const noexcept</td></tr>
-<tr class="memdesc:a5a65a2da3e743b8d710749633e10eacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a unique identifier for the current managed thread.  <br /></td></tr>
-<tr class="memitem:a49144c9d57db3cb0eb4dd76abd5d3bff" id="r_a49144c9d57db3cb0eb4dd76abd5d3bff"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a49144c9d57db3cb0eb4dd76abd5d3bff">name</a> () const noexcept</td></tr>
-<tr class="memdesc:a49144c9d57db3cb0eb4dd76abd5d3bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the thread.  <br /></td></tr>
-<tr class="memitem:a239fdba4dd9a69da1e9a05c907a9dc48" id="r_a239fdba4dd9a69da1e9a05c907a9dc48"><td class="memItemLeft"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a239fdba4dd9a69da1e9a05c907a9dc48">name</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;value)</td></tr>
-<tr class="memdesc:a239fdba4dd9a69da1e9a05c907a9dc48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the thread.  <br /></td></tr>
-<tr class="memitem:a0afdfeb3abfb6ccc0f229bfb49c199f9" id="r_a0afdfeb3abfb6ccc0f229bfb49c199f9"><td class="memItemLeft"><a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0afdfeb3abfb6ccc0f229bfb49c199f9">priority</a> () const noexcept</td></tr>
-<tr class="memdesc:a0afdfeb3abfb6ccc0f229bfb49c199f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the scheduling priority of a thread.  <br /></td></tr>
-<tr class="memitem:a93f0434156fb0f1d24763a645b9af70c" id="r_a93f0434156fb0f1d24763a645b9af70c"><td class="memItemLeft"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a93f0434156fb0f1d24763a645b9af70c">priority</a> (<a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a> value)</td></tr>
-<tr class="memdesc:a93f0434156fb0f1d24763a645b9af70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating the scheduling priority of a thread.  <br /></td></tr>
-<tr class="memitem:a43262e94f7f115380c9546e253d29f2f" id="r_a43262e94f7f115380c9546e253d29f2f"><td class="memItemLeft">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a43262e94f7f115380c9546e253d29f2f">processor_affinity</a> () const noexcept</td></tr>
-<tr class="memdesc:a43262e94f7f115380c9546e253d29f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the processors on which the associated thread can run.  <br /></td></tr>
-<tr class="memitem:a048f7ad1168e16001be404f16dbaf254" id="r_a048f7ad1168e16001be404f16dbaf254"><td class="memItemLeft"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a048f7ad1168e16001be404f16dbaf254">processor_affinity</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;value)</td></tr>
-<tr class="memdesc:a048f7ad1168e16001be404f16dbaf254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the processors on which the associated thread can run.  <br /></td></tr>
-<tr class="memitem:a1b7d950d7fb12c145e136c71e7b58609" id="r_a1b7d950d7fb12c145e136c71e7b58609"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1b7d950d7fb12c145e136c71e7b58609">thread_id</a> () const noexcept</td></tr>
-<tr class="memdesc:a1b7d950d7fb12c145e136c71e7b58609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system thread id.  <br /></td></tr>
-<tr class="memitem:ae289e05ff28dc8ac1d20cdba703381f4" id="r_ae289e05ff28dc8ac1d20cdba703381f4"><td class="memItemLeft"><a class="el" href="group__threading.html#gad404f38f7d4e370680b792bc0f397d04">xtd::threading::thread_state</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae289e05ff28dc8ac1d20cdba703381f4">thread_state</a> () const noexcept</td></tr>
-<tr class="memdesc:ae289e05ff28dc8ac1d20cdba703381f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value containing the states of the current thread.  <br /></td></tr>
+<tr class="memitem:ab8e5ff39c60792db31c24c4f5ed6b02a" id="r_ab8e5ff39c60792db31c24c4f5ed6b02a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab8e5ff39c60792db31c24c4f5ed6b02a">auto_join</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ab8e5ff39c60792db31c24c4f5ed6b02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread wiil be joined when destroyed.  <br /></td></tr>
+<tr class="memitem:a0f95fc387b5209775fdc21f4a76f880d" id="r_a0f95fc387b5209775fdc21f4a76f880d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f95fc387b5209775fdc21f4a76f880d">auto_join</a> (bool value) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a0f95fc387b5209775fdc21f4a76f880d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating the current thread wiil be joined when destroyed.  <br /></td></tr>
+<tr class="memitem:a1aeca4d3fee76eb5b2b0a2386b670e4e" id="r_a1aeca4d3fee76eb5b2b0a2386b670e4e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aeca4d3fee76eb5b2b0a2386b670e4e">handle</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td></tr>
+<tr class="memdesc:a1aeca4d3fee76eb5b2b0a2386b670e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:ac14e98926dd3bcfe63daee55e2dd92e7" id="r_ac14e98926dd3bcfe63daee55e2dd92e7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac14e98926dd3bcfe63daee55e2dd92e7">is_alive</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ac14e98926dd3bcfe63daee55e2dd92e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the execution status of the current thread.  <br /></td></tr>
+<tr class="memitem:a1805e192ef580170f9dba30162639b5f" id="r_a1805e192ef580170f9dba30162639b5f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1805e192ef580170f9dba30162639b5f">is_background</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a1805e192ef580170f9dba30162639b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether or not a thread is a background thread.  <br /></td></tr>
+<tr class="memitem:a5402db9eb6542837df3188dbbd1980ad" id="r_a5402db9eb6542837df3188dbbd1980ad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5402db9eb6542837df3188dbbd1980ad">is_background</a> (bool value) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a5402db9eb6542837df3188dbbd1980ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether or not a thread is a background thread.  <br /></td></tr>
+<tr class="memitem:a26a8a59026f0b9f0d322e0a0e20178cc" id="r_a26a8a59026f0b9f0d322e0a0e20178cc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a26a8a59026f0b9f0d322e0a0e20178cc">is_main_thread</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a26a8a59026f0b9f0d322e0a0e20178cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread is the main thread.  <br /></td></tr>
+<tr class="memitem:a31762273c4665894c376f44ce05a7096" id="r_a31762273c4665894c376f44ce05a7096"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a31762273c4665894c376f44ce05a7096">is_thread_pool_thread</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a31762273c4665894c376f44ce05a7096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether or not a thread belongs to the managed thread pool.  <br /></td></tr>
+<tr class="memitem:a0bc2ee452875c7090fdd208888bdde62" id="r_a0bc2ee452875c7090fdd208888bdde62"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0bc2ee452875c7090fdd208888bdde62">joinable</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a0bc2ee452875c7090fdd208888bdde62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the current thread is joinable.  <br /></td></tr>
+<tr class="memitem:a7a4e84cafc807b8d70804f18286d940b" id="r_a7a4e84cafc807b8d70804f18286d940b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a4e84cafc807b8d70804f18286d940b">managed_thread_id</a> () const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a7a4e84cafc807b8d70804f18286d940b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a unique identifier for the current managed thread.  <br /></td></tr>
+<tr class="memitem:adfcb93a0a30df05076f74b29977cb727" id="r_adfcb93a0a30df05076f74b29977cb727"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adfcb93a0a30df05076f74b29977cb727">name</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a></td></tr>
+<tr class="memdesc:adfcb93a0a30df05076f74b29977cb727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the thread.  <br /></td></tr>
+<tr class="memitem:af574c5fb9901b573eb7c3d822dce79c7" id="r_af574c5fb9901b573eb7c3d822dce79c7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af574c5fb9901b573eb7c3d822dce79c7">name</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;value) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:af574c5fb9901b573eb7c3d822dce79c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the thread.  <br /></td></tr>
+<tr class="memitem:a8dedbe3b11941425a7c57c204e74bcb8" id="r_a8dedbe3b11941425a7c57c204e74bcb8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8dedbe3b11941425a7c57c204e74bcb8">priority</a> () const noexcept -&gt; <a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a></td></tr>
+<tr class="memdesc:a8dedbe3b11941425a7c57c204e74bcb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating the scheduling priority of a thread.  <br /></td></tr>
+<tr class="memitem:a70d3d41aab4f6a8b9bf020ee766a39d9" id="r_a70d3d41aab4f6a8b9bf020ee766a39d9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a70d3d41aab4f6a8b9bf020ee766a39d9">priority</a> (<a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a> value) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a70d3d41aab4f6a8b9bf020ee766a39d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating the scheduling priority of a thread.  <br /></td></tr>
+<tr class="memitem:a81e472932a1c1dec95e355ca7741f2d3" id="r_a81e472932a1c1dec95e355ca7741f2d3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a81e472932a1c1dec95e355ca7741f2d3">processor_affinity</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;</td></tr>
+<tr class="memdesc:a81e472932a1c1dec95e355ca7741f2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the processors on which the associated thread can run.  <br /></td></tr>
+<tr class="memitem:a640da650d5b6a6975a971f62b7ccc2a4" id="r_a640da650d5b6a6975a971f62b7ccc2a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a640da650d5b6a6975a971f62b7ccc2a4">processor_affinity</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;value) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a640da650d5b6a6975a971f62b7ccc2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the processors on which the associated thread can run.  <br /></td></tr>
+<tr class="memitem:ae7c718016c4604a5e55d8faeefae4425" id="r_ae7c718016c4604a5e55d8faeefae4425"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7c718016c4604a5e55d8faeefae4425">thread_id</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td></tr>
+<tr class="memdesc:ae7c718016c4604a5e55d8faeefae4425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system thread id.  <br /></td></tr>
+<tr class="memitem:aa3a8b76cc97a9d0c84337350f7029dc9" id="r_aa3a8b76cc97a9d0c84337350f7029dc9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3a8b76cc97a9d0c84337350f7029dc9">thread_state</a> () const noexcept -&gt; <a class="el" href="group__threading.html#gad404f38f7d4e370680b792bc0f397d04">xtd::threading::thread_state</a></td></tr>
+<tr class="memdesc:aa3a8b76cc97a9d0c84337350f7029dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value containing the states of the current thread.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ae43084289f013543e52cd573eaffa55c" id="r_ae43084289f013543e52cd573eaffa55c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae43084289f013543e52cd573eaffa55c">abort</a> ()</td></tr>
-<tr class="memdesc:ae43084289f013543e52cd573eaffa55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises a xtd::threading::thread_aborted_exception in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.  <br /></td></tr>
-<tr class="memitem:a5251f21f947f99a446a8bf6fbdd4cf95" id="r_a5251f21f947f99a446a8bf6fbdd4cf95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5251f21f947f99a446a8bf6fbdd4cf95">detach</a> ()</td></tr>
-<tr class="memdesc:a5251f21f947f99a446a8bf6fbdd4cf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thread background.  <br /></td></tr>
-<tr class="memitem:a547137846df20cafba5cfb998b3f297c" id="r_a547137846df20cafba5cfb998b3f297c"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a547137846df20cafba5cfb998b3f297c">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:a547137846df20cafba5cfb998b3f297c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a23a6354206f5d065d706198b3afac452" id="r_a23a6354206f5d065d706198b3afac452"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23a6354206f5d065d706198b3afac452">interrupt</a> ()</td></tr>
-<tr class="memdesc:a23a6354206f5d065d706198b3afac452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a39c85f6d7fe5d8369799963a01b17f3b" title="The thread_state is blocked. This could be the result of calling System::Threading::Thread....">xtd::threading::thread_state::wait_sleep_join</a> thread state.  <br /></td></tr>
-<tr class="memitem:a65fc3f1079b67eb775925c7f1cb69a56" id="r_a65fc3f1079b67eb775925c7f1cb69a56"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a65fc3f1079b67eb775925c7f1cb69a56">join</a> ()</td></tr>
-<tr class="memdesc:a65fc3f1079b67eb775925c7f1cb69a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
-<tr class="memitem:aa124f538ba5237af29df40faa2286b5e" id="r_aa124f538ba5237af29df40faa2286b5e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa124f538ba5237af29df40faa2286b5e">join</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:aa124f538ba5237af29df40faa2286b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
-<tr class="memitem:a6fa46ed49e7a0525099618680e1cd509" id="r_a6fa46ed49e7a0525099618680e1cd509"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6fa46ed49e7a0525099618680e1cd509">join</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a6fa46ed49e7a0525099618680e1cd509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
-<tr class="memitem:aa0e94d71691111ef5efb7d3c01086f51" id="r_aa0e94d71691111ef5efb7d3c01086f51"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0e94d71691111ef5efb7d3c01086f51">resume</a> ()</td></tr>
-<tr class="memdesc:aa0e94d71691111ef5efb7d3c01086f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes a thread that has been suspended (Should not be used).  <br /></td></tr>
-<tr class="memitem:a573cca51d21d56dcf79eaace281b74b0" id="r_a573cca51d21d56dcf79eaace281b74b0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a> ()</td></tr>
-<tr class="memdesc:a573cca51d21d56dcf79eaace281b74b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the operating system to change the state of the current instance to <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" title="The thread_state has been started, it is not blocked, and there is no pending xtd::threading::thread_...">xtd::threading::thread_state::running</a>.  <br /></td></tr>
-<tr class="memitem:a24caec3c59051d52cbb11d7a7359723d" id="r_a24caec3c59051d52cbb11d7a7359723d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a24caec3c59051d52cbb11d7a7359723d">start</a> (const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;obj)</td></tr>
-<tr class="memdesc:a24caec3c59051d52cbb11d7a7359723d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the operating system to change the state of the current instance to <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" title="The thread_state has been started, it is not blocked, and there is no pending xtd::threading::thread_...">xtd::threading::thread_state::running</a>.  <br /></td></tr>
-<tr class="memitem:a2416048e9a9f8adffc8cb8a969bb2760" id="r_a2416048e9a9f8adffc8cb8a969bb2760"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2416048e9a9f8adffc8cb8a969bb2760">suspend</a> ()</td></tr>
-<tr class="memdesc:a2416048e9a9f8adffc8cb8a969bb2760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).  <br /></td></tr>
+<tr class="memitem:a560b4d348f9fe05f9ef43ce850bd1c62" id="r_a560b4d348f9fe05f9ef43ce850bd1c62"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a560b4d348f9fe05f9ef43ce850bd1c62">abort</a> () -&gt; void</td></tr>
+<tr class="memdesc:a560b4d348f9fe05f9ef43ce850bd1c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises a xtd::threading::thread_aborted_exception in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.  <br /></td></tr>
+<tr class="memitem:a26617fcebfab9d1ebfb15059e8d4b50a" id="r_a26617fcebfab9d1ebfb15059e8d4b50a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a26617fcebfab9d1ebfb15059e8d4b50a">detach</a> () -&gt; void</td></tr>
+<tr class="memdesc:a26617fcebfab9d1ebfb15059e8d4b50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thread background.  <br /></td></tr>
+<tr class="memitem:aec21dd5ca38496bfcddc29893d6f23ae" id="r_aec21dd5ca38496bfcddc29893d6f23ae"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aec21dd5ca38496bfcddc29893d6f23ae">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:aec21dd5ca38496bfcddc29893d6f23ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:aec80eb0e7637b866ae64fa7759a8713a" id="r_aec80eb0e7637b866ae64fa7759a8713a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aec80eb0e7637b866ae64fa7759a8713a">interrupt</a> () -&gt; void</td></tr>
+<tr class="memdesc:aec80eb0e7637b866ae64fa7759a8713a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a39c85f6d7fe5d8369799963a01b17f3b" title="The thread_state is blocked. This could be the result of calling System::Threading::Thread....">xtd::threading::thread_state::wait_sleep_join</a> thread state.  <br /></td></tr>
+<tr class="memitem:a798fc903a4460369e5325edf60fea9e0" id="r_a798fc903a4460369e5325edf60fea9e0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a798fc903a4460369e5325edf60fea9e0">join</a> () -&gt; void</td></tr>
+<tr class="memdesc:a798fc903a4460369e5325edf60fea9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
+<tr class="memitem:a7e8400041b4e5979aa4c046aad23785f" id="r_a7e8400041b4e5979aa4c046aad23785f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7e8400041b4e5979aa4c046aad23785f">join</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool</td></tr>
+<tr class="memdesc:a7e8400041b4e5979aa4c046aad23785f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
+<tr class="memitem:aff78119f96936ab2867c2c1262107898" id="r_aff78119f96936ab2867c2c1262107898"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff78119f96936ab2867c2c1262107898">join</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool</td></tr>
+<tr class="memdesc:aff78119f96936ab2867c2c1262107898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.  <br /></td></tr>
+<tr class="memitem:ad98d54b82506193af65451659da966c6" id="r_ad98d54b82506193af65451659da966c6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad98d54b82506193af65451659da966c6">resume</a> () -&gt; void</td></tr>
+<tr class="memdesc:ad98d54b82506193af65451659da966c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes a thread that has been suspended (Should not be used).  <br /></td></tr>
+<tr class="memitem:a80756f186df96a1c8540ed56db74b2b5" id="r_a80756f186df96a1c8540ed56db74b2b5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a> () -&gt; void</td></tr>
+<tr class="memdesc:a80756f186df96a1c8540ed56db74b2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the operating system to change the state of the current instance to <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" title="The thread_state has been started, it is not blocked, and there is no pending xtd::threading::thread_...">xtd::threading::thread_state::running</a>.  <br /></td></tr>
+<tr class="memitem:abfe26a3b708d2b7008d483dba9ff5680" id="r_abfe26a3b708d2b7008d483dba9ff5680"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abfe26a3b708d2b7008d483dba9ff5680">start</a> (const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;obj) -&gt; void</td></tr>
+<tr class="memdesc:abfe26a3b708d2b7008d483dba9ff5680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the operating system to change the state of the current instance to <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a75101dcdfc88455bcafc9e53e0b06689" title="The thread_state has been started, it is not blocked, and there is no pending xtd::threading::thread_...">xtd::threading::thread_state::running</a>.  <br /></td></tr>
+<tr class="memitem:a4bad9a5ea7bfdf3620506d5534a56881" id="r_a4bad9a5ea7bfdf3620506d5534a56881"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4bad9a5ea7bfdf3620506d5534a56881">suspend</a> () -&gt; void</td></tr>
+<tr class="memdesc:a4bad9a5ea7bfdf3620506d5534a56881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Properties</h2></td></tr>
-<tr class="memitem:a278b3fabeade100cbc012968115792fd" id="r_a278b3fabeade100cbc012968115792fd"><td class="memItemLeft">static <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a278b3fabeade100cbc012968115792fd">current_thread</a> () noexcept</td></tr>
-<tr class="memdesc:a278b3fabeade100cbc012968115792fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently running thread.  <br /></td></tr>
-<tr class="memitem:a9f1760f9c70f6d4c9aefbb9b8fc8eef1" id="r_a9f1760f9c70f6d4c9aefbb9b8fc8eef1"><td class="memItemLeft">static <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9f1760f9c70f6d4c9aefbb9b8fc8eef1">main_thread</a> ()</td></tr>
-<tr class="memdesc:a9f1760f9c70f6d4c9aefbb9b8fc8eef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the main thread.  <br /></td></tr>
+<tr class="memitem:a56cf6a462e943a302e4c93a28bb9caaf" id="r_a56cf6a462e943a302e4c93a28bb9caaf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a56cf6a462e943a302e4c93a28bb9caaf">current_thread</a> () noexcept -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a56cf6a462e943a302e4c93a28bb9caaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently running thread.  <br /></td></tr>
+<tr class="memitem:a55d07b1ba8b8c2d2457dc51b56e600d2" id="r_a55d07b1ba8b8c2d2457dc51b56e600d2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a55d07b1ba8b8c2d2457dc51b56e600d2">main_thread</a> () -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td></tr>
+<tr class="memdesc:a55d07b1ba8b8c2d2457dc51b56e600d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the main thread.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a42a6bb9b87bc4bd70c1714a1933711b4" id="r_a42a6bb9b87bc4bd70c1714a1933711b4"><td class="memItemLeft">static <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a>&#160;</td><td class="memItemRight"><a class="el" href="#a42a6bb9b87bc4bd70c1714a1933711b4">start_new</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>)</td></tr>
-<tr class="memdesc:a42a6bb9b87bc4bd70c1714a1933711b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method.  <br /></td></tr>
-<tr class="memitem:aca8260305986f58f91cab6f479827834" id="r_aca8260305986f58f91cab6f479827834"><td class="memItemLeft">static <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a>&#160;</td><td class="memItemRight"><a class="el" href="#aca8260305986f58f91cab6f479827834">start_new</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a573cca51d21d56dcf79eaace281b74b0">start</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;obj)</td></tr>
-<tr class="memdesc:aca8260305986f58f91cab6f479827834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method.  <br /></td></tr>
-<tr class="memitem:a6998fa3ca4218452ae93143d120174ba" id="r_a6998fa3ca4218452ae93143d120174ba"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6998fa3ca4218452ae93143d120174ba">join_all</a> ()</td></tr>
-<tr class="memdesc:a6998fa3ca4218452ae93143d120174ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate.  <br /></td></tr>
-<tr class="memitem:af862f9b072e29e78324d76af04ed5ed1" id="r_af862f9b072e29e78324d76af04ed5ed1"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#af862f9b072e29e78324d76af04ed5ed1">join_all</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:af862f9b072e29e78324d76af04ed5ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.  <br /></td></tr>
-<tr class="memitem:aa78f49e122e15aba2a9ca013e12e0bee" id="r_aa78f49e122e15aba2a9ca013e12e0bee"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aa78f49e122e15aba2a9ca013e12e0bee">join_all</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:aa78f49e122e15aba2a9ca013e12e0bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.  <br /></td></tr>
-<tr class="memitem:a21c59038a37bef5fe9a32936fd4ec997" id="r_a21c59038a37bef5fe9a32936fd4ec997"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a21c59038a37bef5fe9a32936fd4ec997 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a21c59038a37bef5fe9a32936fd4ec997">join_all</a> (const collection_t &amp;threads)</td></tr>
-<tr class="memdesc:a21c59038a37bef5fe9a32936fd4ec997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate.  <br /></td></tr>
-<tr class="memitem:aa075ec069e9a67da9aaadef6a80b7f95" id="r_aa075ec069e9a67da9aaadef6a80b7f95"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:aa075ec069e9a67da9aaadef6a80b7f95 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aa075ec069e9a67da9aaadef6a80b7f95">join_all</a> (const collection_t &amp;threads, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:aa075ec069e9a67da9aaadef6a80b7f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.  <br /></td></tr>
-<tr class="memitem:a6b1fa6882ba1f0d0bdac7451c3e58cf9" id="r_a6b1fa6882ba1f0d0bdac7451c3e58cf9"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a6b1fa6882ba1f0d0bdac7451c3e58cf9 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a6b1fa6882ba1f0d0bdac7451c3e58cf9">join_all</a> (const collection_t &amp;threads, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:a6b1fa6882ba1f0d0bdac7451c3e58cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.  <br /></td></tr>
-<tr class="memitem:a42bc6e2bb805f928e50ae73d243b95f2" id="r_a42bc6e2bb805f928e50ae73d243b95f2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2">sleep</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:a42bc6e2bb805f928e50ae73d243b95f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends the current thread for a specified time.  <br /></td></tr>
-<tr class="memitem:ab7a26e99e726b6e86effa2339238b941" id="r_ab7a26e99e726b6e86effa2339238b941"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab7a26e99e726b6e86effa2339238b941">sleep</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
-<tr class="memdesc:ab7a26e99e726b6e86effa2339238b941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends the current thread for a specified time.  <br /></td></tr>
-<tr class="memitem:a7861e3838380ffe3e0382ea52032d178" id="r_a7861e3838380ffe3e0382ea52032d178"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7861e3838380ffe3e0382ea52032d178">spin_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> iterations)</td></tr>
-<tr class="memdesc:a7861e3838380ffe3e0382ea52032d178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes a thread to wait the number of times defined by the iterations parameter.  <br /></td></tr>
-<tr class="memitem:a7ce63292cb3e6dfbd89e34d0769d56cb" id="r_a7ce63292cb3e6dfbd89e34d0769d56cb"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a7ce63292cb3e6dfbd89e34d0769d56cb">yield</a> () noexcept</td></tr>
-<tr class="memdesc:a7ce63292cb3e6dfbd89e34d0769d56cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.  <br /></td></tr>
+<tr class="memitem:a6d0778651736bc5645ce540d3b57dbc0" id="r_a6d0778651736bc5645ce540d3b57dbc0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d0778651736bc5645ce540d3b57dbc0">start_new</a> (const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a></td></tr>
+<tr class="memdesc:a6d0778651736bc5645ce540d3b57dbc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method.  <br /></td></tr>
+<tr class="memitem:a2fcb0733bfd0ac95183c3b2b4ea092f1" id="r_a2fcb0733bfd0ac95183c3b2b4ea092f1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2fcb0733bfd0ac95183c3b2b4ea092f1">start_new</a> (const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;<a class="el" href="#a80756f186df96a1c8540ed56db74b2b5">start</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;obj) -&gt; <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a></td></tr>
+<tr class="memdesc:a2fcb0733bfd0ac95183c3b2b4ea092f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method.  <br /></td></tr>
+<tr class="memitem:aa03ec5ab6d35f7445f3e590fd1c20468" id="r_aa03ec5ab6d35f7445f3e590fd1c20468"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa03ec5ab6d35f7445f3e590fd1c20468">join_all</a> () -&gt; void</td></tr>
+<tr class="memdesc:aa03ec5ab6d35f7445f3e590fd1c20468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate.  <br /></td></tr>
+<tr class="memitem:a683a9cb17c6a204725d9a91d46ed679f" id="r_a683a9cb17c6a204725d9a91d46ed679f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a683a9cb17c6a204725d9a91d46ed679f">join_all</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool</td></tr>
+<tr class="memdesc:a683a9cb17c6a204725d9a91d46ed679f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.  <br /></td></tr>
+<tr class="memitem:a9725619487e967461a67ad17a2d89d5d" id="r_a9725619487e967461a67ad17a2d89d5d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9725619487e967461a67ad17a2d89d5d">join_all</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool</td></tr>
+<tr class="memdesc:a9725619487e967461a67ad17a2d89d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.  <br /></td></tr>
+<tr class="memitem:a09b29d4677f5722546d08f7b3628e01a" id="r_a09b29d4677f5722546d08f7b3628e01a"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a09b29d4677f5722546d08f7b3628e01a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a09b29d4677f5722546d08f7b3628e01a">join_all</a> (const collection_t &amp;threads) -&gt; void</td></tr>
+<tr class="memdesc:a09b29d4677f5722546d08f7b3628e01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate.  <br /></td></tr>
+<tr class="memitem:a86b633af73aa981876360b69b268e259" id="r_a86b633af73aa981876360b69b268e259"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a86b633af73aa981876360b69b268e259 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86b633af73aa981876360b69b268e259">join_all</a> (const collection_t &amp;threads, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool</td></tr>
+<tr class="memdesc:a86b633af73aa981876360b69b268e259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.  <br /></td></tr>
+<tr class="memitem:aa95232903e72161ff5016153d5c50ebd" id="r_aa95232903e72161ff5016153d5c50ebd"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:aa95232903e72161ff5016153d5c50ebd template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa95232903e72161ff5016153d5c50ebd">join_all</a> (const collection_t &amp;threads, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; bool</td></tr>
+<tr class="memdesc:aa95232903e72161ff5016153d5c50ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.  <br /></td></tr>
+<tr class="memitem:a330d3bf0916af42f3ca433010cd585a0" id="r_a330d3bf0916af42f3ca433010cd585a0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a330d3bf0916af42f3ca433010cd585a0">sleep</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; void</td></tr>
+<tr class="memdesc:a330d3bf0916af42f3ca433010cd585a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends the current thread for a specified time.  <br /></td></tr>
+<tr class="memitem:ada6bf17914cf07a0fe92976cbd8a1203" id="r_ada6bf17914cf07a0fe92976cbd8a1203"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ada6bf17914cf07a0fe92976cbd8a1203">sleep</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) -&gt; void</td></tr>
+<tr class="memdesc:ada6bf17914cf07a0fe92976cbd8a1203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends the current thread for a specified time.  <br /></td></tr>
+<tr class="memitem:a37a25c6ef433b949a915360b036841c4" id="r_a37a25c6ef433b949a915360b036841c4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a37a25c6ef433b949a915360b036841c4">spin_wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> iterations) -&gt; void</td></tr>
+<tr class="memdesc:a37a25c6ef433b949a915360b036841c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes a thread to wait the number of times defined by the iterations parameter.  <br /></td></tr>
+<tr class="memitem:a1979588320ddb0b94799a6e0fa65a207" id="r_a1979588320ddb0b94799a6e0fa65a207"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1979588320ddb0b94799a6e0fa65a207">yield</a> () noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a1979588320ddb0b94799a6e0fa65a207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -349,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying a delegate that allows an object to be passed to the thread when the thread is started. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,7 +359,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. To pass a data object to the thread, use the <a class="el" href="#a24caec3c59051d52cbb11d7a7359723d" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start(const xtd::any_object&amp;)</a> method overload. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. To pass a data object to the thread, use the xtd::threading::thread::start(const xtd::any_object&amp;) method overload. </dd></dl>
 
 </div>
 </div>
@@ -385,7 +385,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying a delegate that allows an object to be passed to the thread when the thread is started and specifying the maximum stack size for the thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
     <tr><td class="paramname">max_stack_size</td><td>The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br  />
 Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown. </td></tr>
   </table>
@@ -397,7 +397,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. To pass a data object to the thread, use the <a class="el" href="#a24caec3c59051d52cbb11d7a7359723d" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start(const xtd::any_object&amp;)</a> method overload. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. To pass a data object to the thread, use the xtd::threading::thread::start(const xtd::any_object&amp;) method overload. </dd></dl>
 
 </div>
 </div>
@@ -427,7 +427,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69" title="Represents the method that executes on a xtd::threading::thread.">xtd::threading::thread_start</a> delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69" title="Represents the method that executes on a xtd::threading::thread.">xtd::threading::thread_start</a> delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
     <tr><td class="paramname">max_stack_size</td><td>The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br  />
 Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown. </td></tr>
   </table>
@@ -439,7 +439,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. </dd></dl>
 
 </div>
 </div>
@@ -465,7 +465,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class, specifying the maximum stack size for the thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69" title="Represents the method that executes on a xtd::threading::thread.">xtd::threading::thread_start</a> delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69" title="Represents the method that executes on a xtd::threading::thread.">xtd::threading::thread_start</a> delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
     <tr><td class="paramname">max_stack_size</td><td>The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br  />
 Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown. </td></tr>
   </table>
@@ -477,13 +477,13 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A thread does not begin executing when it is created. To schedule the thread for execution, call the <a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">xtd::threading::thread::start</a> method. </dd></dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a51cda22580b84272a3c2a32a27206395" name="a51cda22580b84272a3c2a32a27206395"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51cda22580b84272a3c2a32a27206395">&#9670;&#160;</a></span>auto_join() <span class="overload">[1/2]</span></h2>
+<a id="ab8e5ff39c60792db31c24c4f5ed6b02a" name="ab8e5ff39c60792db31c24c4f5ed6b02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e5ff39c60792db31c24c4f5ed6b02a">&#9670;&#160;</a></span>auto_join() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -492,15 +492,15 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::auto_join </td>
+          <td class="memname">auto xtd::threading::thread::auto_join </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -510,17 +510,17 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 
 </div>
 </div>
-<a id="a8b38f90148168dcd5e3e7407a0c78e19" name="a8b38f90148168dcd5e3e7407a0c78e19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b38f90148168dcd5e3e7407a0c78e19">&#9670;&#160;</a></span>auto_join() <span class="overload">[2/2]</span></h2>
+<a id="a0f95fc387b5209775fdc21f4a76f880d" name="a0f95fc387b5209775fdc21f4a76f880d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f95fc387b5209775fdc21f4a76f880d">&#9670;&#160;</a></span>auto_join() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::auto_join </td>
+          <td class="memname">auto xtd::threading::thread::auto_join </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -536,8 +536,8 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 
 </div>
 </div>
-<a id="a29842cf40d3f56315dc81e4f6ebd1dbb" name="a29842cf40d3f56315dc81e4f6ebd1dbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29842cf40d3f56315dc81e4f6ebd1dbb">&#9670;&#160;</a></span>handle()</h2>
+<a id="a1aeca4d3fee76eb5b2b0a2386b670e4e" name="a1aeca4d3fee76eb5b2b0a2386b670e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aeca4d3fee76eb5b2b0a2386b670e4e">&#9670;&#160;</a></span>handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,15 +546,15 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::threading::thread::handle </td>
+          <td class="memname">auto xtd::threading::thread::handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -564,8 +564,8 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 
 </div>
 </div>
-<a id="a85a5574f517670f6d31435c93584d933" name="a85a5574f517670f6d31435c93584d933"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85a5574f517670f6d31435c93584d933">&#9670;&#160;</a></span>is_alive()</h2>
+<a id="ac14e98926dd3bcfe63daee55e2dd92e7" name="ac14e98926dd3bcfe63daee55e2dd92e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14e98926dd3bcfe63daee55e2dd92e7">&#9670;&#160;</a></span>is_alive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -574,15 +574,15 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::is_alive </td>
+          <td class="memname">auto xtd::threading::thread::is_alive </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -592,8 +592,8 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 
 </div>
 </div>
-<a id="a11f3c0ca7be2108803058899a895193e" name="a11f3c0ca7be2108803058899a895193e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11f3c0ca7be2108803058899a895193e">&#9670;&#160;</a></span>is_background() <span class="overload">[1/2]</span></h2>
+<a id="a1805e192ef580170f9dba30162639b5f" name="a1805e192ef580170f9dba30162639b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1805e192ef580170f9dba30162639b5f">&#9670;&#160;</a></span>is_background() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -602,15 +602,15 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::is_background </td>
+          <td class="memname">auto xtd::threading::thread::is_background </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -625,13 +625,13 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete. </dd>
 <dd>
-By default, the following threads execute in the foreground (that is, their <a class="el" href="#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns false):<ul>
+By default, the following threads execute in the foreground (that is, their <a class="el" href="#a1805e192ef580170f9dba30162639b5f" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns false):<ul>
 <li>The primary thread (or main application thread).</li>
 <li>All threads created by calling a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class constructor. </li>
 </ul>
 </dd>
 <dd>
-By default, the following threads execute in the background (that is, their <a class="el" href="#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">true</span>):<ul>
+By default, the following threads execute in the background (that is, their <a class="el" href="#a1805e192ef580170f9dba30162639b5f" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">true</span>):<ul>
 <li>Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> class.</li>
 <li>All threads create without <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class (std::thread or threads create by oparating system API). </li>
 </ul>
@@ -639,17 +639,17 @@ By default, the following threads execute in the background (that is, their <a c
 
 </div>
 </div>
-<a id="a279a9302f894d851e302670c9f4a515f" name="a279a9302f894d851e302670c9f4a515f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a279a9302f894d851e302670c9f4a515f">&#9670;&#160;</a></span>is_background() <span class="overload">[2/2]</span></h2>
+<a id="a5402db9eb6542837df3188dbbd1980ad" name="a5402db9eb6542837df3188dbbd1980ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5402db9eb6542837df3188dbbd1980ad">&#9670;&#160;</a></span>is_background() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::is_background </td>
+          <td class="memname">auto xtd::threading::thread::is_background </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -670,13 +670,13 @@ By default, the following threads execute in the background (that is, their <a c
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete. </dd>
 <dd>
-By default, the following threads execute in the foreground (that is, their <a class="el" href="#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">false</span>):<ul>
+By default, the following threads execute in the foreground (that is, their <a class="el" href="#a1805e192ef580170f9dba30162639b5f" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">false</span>):<ul>
 <li>The primary thread (or main application thread).</li>
 <li>All threads created by calling a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class constructor. </li>
 </ul>
 </dd>
 <dd>
-By default, the following threads execute in the background (that is, their <a class="el" href="#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">true</span>):<ul>
+By default, the following threads execute in the background (that is, their <a class="el" href="#a1805e192ef580170f9dba30162639b5f" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> property returns <span class="tt">true</span>):<ul>
 <li>Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> class.</li>
 <li>All threads create without <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> class (std::thread or threads create by oparating system API). </li>
 </ul>
@@ -684,8 +684,8 @@ By default, the following threads execute in the background (that is, their <a c
 
 </div>
 </div>
-<a id="a86b508bda2790cd16858559f372f74ae" name="a86b508bda2790cd16858559f372f74ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86b508bda2790cd16858559f372f74ae">&#9670;&#160;</a></span>is_main_thread()</h2>
+<a id="a26a8a59026f0b9f0d322e0a0e20178cc" name="a26a8a59026f0b9f0d322e0a0e20178cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a8a59026f0b9f0d322e0a0e20178cc">&#9670;&#160;</a></span>is_main_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -694,15 +694,15 @@ By default, the following threads execute in the background (that is, their <a c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::is_main_thread </td>
+          <td class="memname">auto xtd::threading::thread::is_main_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -712,8 +712,8 @@ By default, the following threads execute in the background (that is, their <a c
 
 </div>
 </div>
-<a id="ae2395ced1ac1ab57d0e7d53e7e8f3aec" name="ae2395ced1ac1ab57d0e7d53e7e8f3aec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2395ced1ac1ab57d0e7d53e7e8f3aec">&#9670;&#160;</a></span>is_thread_pool_thread()</h2>
+<a id="a31762273c4665894c376f44ce05a7096" name="a31762273c4665894c376f44ce05a7096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31762273c4665894c376f44ce05a7096">&#9670;&#160;</a></span>is_thread_pool_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -722,15 +722,15 @@ By default, the following threads execute in the background (that is, their <a c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::is_thread_pool_thread </td>
+          <td class="memname">auto xtd::threading::thread::is_thread_pool_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -741,8 +741,8 @@ By default, the following threads execute in the background (that is, their <a c
 
 </div>
 </div>
-<a id="ac2e8e55c7181e495e824ff4e0f74216f" name="ac2e8e55c7181e495e824ff4e0f74216f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2e8e55c7181e495e824ff4e0f74216f">&#9670;&#160;</a></span>joinable()</h2>
+<a id="a0bc2ee452875c7090fdd208888bdde62" name="a0bc2ee452875c7090fdd208888bdde62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc2ee452875c7090fdd208888bdde62">&#9670;&#160;</a></span>joinable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,15 +751,15 @@ By default, the following threads execute in the background (that is, their <a c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::joinable </td>
+          <td class="memname">auto xtd::threading::thread::joinable </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -768,12 +768,12 @@ By default, the following threads execute in the background (that is, their <a c
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if this thread is joinable; otherwise, <span class="tt">false</span>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A thread is joinable if it started, not stopped and if is not a background thread. </dd>
 <dd>
-if the thread is joinable you can call the <a class="el" href="#a65fc3f1079b67eb775925c7f1cb69a56" title="Blocks the calling thread until this thread object terminates, while continuing to perform standard C...">xtd::threading::thread::join</a> method. </dd></dl>
+if the thread is joinable you can call the <a class="el" href="#a798fc903a4460369e5325edf60fea9e0" title="Blocks the calling thread until this thread object terminates, while continuing to perform standard C...">xtd::threading::thread::join</a> method. </dd></dl>
 
 </div>
 </div>
-<a id="a5a65a2da3e743b8d710749633e10eacc" name="a5a65a2da3e743b8d710749633e10eacc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a65a2da3e743b8d710749633e10eacc">&#9670;&#160;</a></span>managed_thread_id()</h2>
+<a id="a7a4e84cafc807b8d70804f18286d940b" name="a7a4e84cafc807b8d70804f18286d940b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a4e84cafc807b8d70804f18286d940b">&#9670;&#160;</a></span>managed_thread_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,29 +782,29 @@ if the thread is joinable you can call the <a class="el" href="#a65fc3f1079b67eb
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::thread::managed_thread_id </td>
+          <td class="memname">auto xtd::threading::thread::managed_thread_id </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a unique identifier for the current managed thread. </p>
 <dl class="section return"><dt>Returns</dt><dd>An integer that represents a unique identifier for this managed thread. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A thread's <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property value serves to uniquely identify that thread within its process. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A thread's <a class="el" href="#a7a4e84cafc807b8d70804f18286d940b" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property value serves to uniquely identify that thread within its process. </dd>
 <dd>
-The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property does not vary over time </dd></dl>
+The value of the <a class="el" href="#a7a4e84cafc807b8d70804f18286d940b" title="Gets a unique identifier for the current managed thread.">xtd::threading::thread::managed_thread_id</a> property does not vary over time </dd></dl>
 
 </div>
 </div>
-<a id="a49144c9d57db3cb0eb4dd76abd5d3bff" name="a49144c9d57db3cb0eb4dd76abd5d3bff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49144c9d57db3cb0eb4dd76abd5d3bff">&#9670;&#160;</a></span>name() <span class="overload">[1/2]</span></h2>
+<a id="adfcb93a0a30df05076f74b29977cb727" name="adfcb93a0a30df05076f74b29977cb727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfcb93a0a30df05076f74b29977cb727">&#9670;&#160;</a></span>name() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -813,15 +813,15 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> xtd::threading::thread::name </td>
+          <td class="memname">auto xtd::threading::thread::name </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -831,17 +831,17 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
 
 </div>
 </div>
-<a id="a239fdba4dd9a69da1e9a05c907a9dc48" name="a239fdba4dd9a69da1e9a05c907a9dc48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a239fdba4dd9a69da1e9a05c907a9dc48">&#9670;&#160;</a></span>name() <span class="overload">[2/2]</span></h2>
+<a id="af574c5fb9901b573eb7c3d822dce79c7" name="af574c5fb9901b573eb7c3d822dce79c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af574c5fb9901b573eb7c3d822dce79c7">&#9670;&#160;</a></span>name() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::name </td>
+          <td class="memname">auto xtd::threading::thread::name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -857,8 +857,8 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
 
 </div>
 </div>
-<a id="a0afdfeb3abfb6ccc0f229bfb49c199f9" name="a0afdfeb3abfb6ccc0f229bfb49c199f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0afdfeb3abfb6ccc0f229bfb49c199f9">&#9670;&#160;</a></span>priority() <span class="overload">[1/2]</span></h2>
+<a id="a8dedbe3b11941425a7c57c204e74bcb8" name="a8dedbe3b11941425a7c57c204e74bcb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dedbe3b11941425a7c57c204e74bcb8">&#9670;&#160;</a></span>priority() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -867,15 +867,15 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a> xtd::threading::thread::priority </td>
+          <td class="memname">auto xtd::threading::thread::priority </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -900,17 +900,17 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
 
 </div>
 </div>
-<a id="a93f0434156fb0f1d24763a645b9af70c" name="a93f0434156fb0f1d24763a645b9af70c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f0434156fb0f1d24763a645b9af70c">&#9670;&#160;</a></span>priority() <span class="overload">[2/2]</span></h2>
+<a id="a70d3d41aab4f6a8b9bf020ee766a39d9" name="a70d3d41aab4f6a8b9bf020ee766a39d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d3d41aab4f6a8b9bf020ee766a39d9">&#9670;&#160;</a></span>priority() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::priority </td>
+          <td class="memname">auto xtd::threading::thread::priority </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -940,8 +940,8 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
 
 </div>
 </div>
-<a id="a43262e94f7f115380c9546e253d29f2f" name="a43262e94f7f115380c9546e253d29f2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43262e94f7f115380c9546e253d29f2f">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[1/2]</span></h2>
+<a id="a81e472932a1c1dec95e355ca7741f2d3" name="a81e472932a1c1dec95e355ca7741f2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e472932a1c1dec95e355ca7741f2d3">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -950,15 +950,15 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp; xtd::threading::thread::processor_affinity </td>
+          <td class="memname">auto xtd::threading::thread::processor_affinity </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -977,17 +977,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a048f7ad1168e16001be404f16dbaf254" name="a048f7ad1168e16001be404f16dbaf254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a048f7ad1168e16001be404f16dbaf254">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[2/2]</span></h2>
+<a id="a640da650d5b6a6975a971f62b7ccc2a4" name="a640da650d5b6a6975a971f62b7ccc2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640da650d5b6a6975a971f62b7ccc2a4">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::processor_affinity </td>
+          <td class="memname">auto xtd::threading::thread::processor_affinity </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1011,8 +1011,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a1b7d950d7fb12c145e136c71e7b58609" name="a1b7d950d7fb12c145e136c71e7b58609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b7d950d7fb12c145e136c71e7b58609">&#9670;&#160;</a></span>thread_id()</h2>
+<a id="ae7c718016c4604a5e55d8faeefae4425" name="ae7c718016c4604a5e55d8faeefae4425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c718016c4604a5e55d8faeefae4425">&#9670;&#160;</a></span>thread_id()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1021,15 +1021,15 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::threading::thread::thread_id </td>
+          <td class="memname">auto xtd::threading::thread::thread_id </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1040,8 +1040,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="ae289e05ff28dc8ac1d20cdba703381f4" name="ae289e05ff28dc8ac1d20cdba703381f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae289e05ff28dc8ac1d20cdba703381f4">&#9670;&#160;</a></span>thread_state()</h2>
+<a id="aa3a8b76cc97a9d0c84337350f7029dc9" name="aa3a8b76cc97a9d0c84337350f7029dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a8b76cc97a9d0c84337350f7029dc9">&#9670;&#160;</a></span>thread_state()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,28 +1050,28 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__threading.html#gad404f38f7d4e370680b792bc0f397d04">xtd::threading::thread_state</a> xtd::threading::thread::thread_state </td>
+          <td class="memname">auto xtd::threading::thread::thread_state </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__threading.html#gad404f38f7d4e370680b792bc0f397d04">xtd::threading::thread_state</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a value containing the states of the current thread. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__threading.html#gad404f38f7d4e370680b792bc0f397d04" title="Specifies the execution states of a System::Threading::Thread.">xtd::threading::thread_state</a> values indicating the state of the current thread. The initial value is <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ae289e05ff28dc8ac1d20cdba703381f4" title="Gets a value containing the states of the current thread.">xtd::threading::thread::thread_state</a> property provides more specific information than the <a class="el" href="#a85a5574f517670f6d31435c93584d933" title="Gets a value indicating the execution status of the current thread.">xtd::threading::thread::is_alive</a> property. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#aa3a8b76cc97a9d0c84337350f7029dc9" title="Gets a value containing the states of the current thread.">xtd::threading::thread::thread_state</a> property provides more specific information than the <a class="el" href="#ac14e98926dd3bcfe63daee55e2dd92e7" title="Gets a value indicating the execution status of the current thread.">xtd::threading::thread::is_alive</a> property. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Thread state is only of interest in debugging scenarios. Your code should never use thread state to synchronize the activities of threads. </dd></dl>
 
 </div>
 </div>
-<a id="a278b3fabeade100cbc012968115792fd" name="a278b3fabeade100cbc012968115792fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a278b3fabeade100cbc012968115792fd">&#9670;&#160;</a></span>current_thread()</h2>
+<a id="a56cf6a462e943a302e4c93a28bb9caaf" name="a56cf6a462e943a302e4c93a28bb9caaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56cf6a462e943a302e4c93a28bb9caaf">&#9670;&#160;</a></span>current_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1080,15 +1080,15 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::current_thread </td>
+          <td class="memname">auto xtd::threading::thread::current_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1098,8 +1098,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a9f1760f9c70f6d4c9aefbb9b8fc8eef1" name="a9f1760f9c70f6d4c9aefbb9b8fc8eef1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f1760f9c70f6d4c9aefbb9b8fc8eef1">&#9670;&#160;</a></span>main_thread()</h2>
+<a id="a55d07b1ba8b8c2d2457dc51b56e600d2" name="a55d07b1ba8b8c2d2457dc51b56e600d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d07b1ba8b8c2d2457dc51b56e600d2">&#9670;&#160;</a></span>main_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1108,15 +1108,15 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp; xtd::threading::thread::main_thread </td>
+          <td class="memname">auto xtd::threading::thread::main_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1127,17 +1127,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="ae43084289f013543e52cd573eaffa55c" name="ae43084289f013543e52cd573eaffa55c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae43084289f013543e52cd573eaffa55c">&#9670;&#160;</a></span>abort()</h2>
+<a id="a560b4d348f9fe05f9ef43ce850bd1c62" name="a560b4d348f9fe05f9ef43ce850bd1c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560b4d348f9fe05f9ef43ce850bd1c62">&#9670;&#160;</a></span>abort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::abort </td>
+          <td class="memname">auto xtd::threading::thread::abort </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1152,17 +1152,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a5251f21f947f99a446a8bf6fbdd4cf95" name="a5251f21f947f99a446a8bf6fbdd4cf95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5251f21f947f99a446a8bf6fbdd4cf95">&#9670;&#160;</a></span>detach()</h2>
+<a id="a26617fcebfab9d1ebfb15059e8d4b50a" name="a26617fcebfab9d1ebfb15059e8d4b50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26617fcebfab9d1ebfb15059e8d4b50a">&#9670;&#160;</a></span>detach()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::detach </td>
+          <td class="memname">auto xtd::threading::thread::detach </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1172,8 +1172,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a547137846df20cafba5cfb998b3f297c" name="a547137846df20cafba5cfb998b3f297c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a547137846df20cafba5cfb998b3f297c">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="aec21dd5ca38496bfcddc29893d6f23ae" name="aec21dd5ca38496bfcddc29893d6f23ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec21dd5ca38496bfcddc29893d6f23ae">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1182,15 +1182,15 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::threading::thread::get_hash_code </td>
+          <td class="memname">auto xtd::threading::thread::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1202,17 +1202,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a23a6354206f5d065d706198b3afac452" name="a23a6354206f5d065d706198b3afac452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23a6354206f5d065d706198b3afac452">&#9670;&#160;</a></span>interrupt()</h2>
+<a id="aec80eb0e7637b866ae64fa7759a8713a" name="aec80eb0e7637b866ae64fa7759a8713a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec80eb0e7637b866ae64fa7759a8713a">&#9670;&#160;</a></span>interrupt()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::interrupt </td>
+          <td class="memname">auto xtd::threading::thread::interrupt </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1224,17 +1224,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a65fc3f1079b67eb775925c7f1cb69a56" name="a65fc3f1079b67eb775925c7f1cb69a56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65fc3f1079b67eb775925c7f1cb69a56">&#9670;&#160;</a></span>join() <span class="overload">[1/3]</span></h2>
+<a id="a798fc903a4460369e5325edf60fea9e0" name="a798fc903a4460369e5325edf60fea9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798fc903a4460369e5325edf60fea9e0">&#9670;&#160;</a></span>join() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::join </td>
+          <td class="memname">auto xtd::threading::thread::join </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1249,17 +1249,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="aa124f538ba5237af29df40faa2286b5e" name="aa124f538ba5237af29df40faa2286b5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa124f538ba5237af29df40faa2286b5e">&#9670;&#160;</a></span>join() <span class="overload">[2/3]</span></h2>
+<a id="a7e8400041b4e5979aa4c046aad23785f" name="a7e8400041b4e5979aa4c046aad23785f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8400041b4e5979aa4c046aad23785f">&#9670;&#160;</a></span>join() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join </td>
+          <td class="memname">auto xtd::threading::thread::join </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1282,17 +1282,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a6fa46ed49e7a0525099618680e1cd509" name="a6fa46ed49e7a0525099618680e1cd509"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fa46ed49e7a0525099618680e1cd509">&#9670;&#160;</a></span>join() <span class="overload">[3/3]</span></h2>
+<a id="aff78119f96936ab2867c2c1262107898" name="aff78119f96936ab2867c2c1262107898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff78119f96936ab2867c2c1262107898">&#9670;&#160;</a></span>join() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join </td>
+          <td class="memname">auto xtd::threading::thread::join </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1317,17 +1317,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="aa0e94d71691111ef5efb7d3c01086f51" name="aa0e94d71691111ef5efb7d3c01086f51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0e94d71691111ef5efb7d3c01086f51">&#9670;&#160;</a></span>resume()</h2>
+<a id="ad98d54b82506193af65451659da966c6" name="ad98d54b82506193af65451659da966c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98d54b82506193af65451659da966c6">&#9670;&#160;</a></span>resume()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::resume </td>
+          <td class="memname">auto xtd::threading::thread::resume </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1340,21 +1340,21 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Works only on Windows operating syetm. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Do not use the <a class="el" href="#a2416048e9a9f8adffc8cb8a969bb2760" title="Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used)...">xtd::threading::thread::suspend</a> and <a class="el" href="#aa0e94d71691111ef5efb7d3c01086f51" title="Resumes a thread that has been suspended (Should not be used).">xtd::threading::thread::resume</a> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Do not use the <a class="el" href="#a4bad9a5ea7bfdf3620506d5534a56881" title="Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used)...">xtd::threading::thread::suspend</a> and <a class="el" href="#ad98d54b82506193af65451659da966c6" title="Resumes a thread that has been suspended (Should not be used).">xtd::threading::thread::resume</a> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily. </dd></dl>
 
 </div>
 </div>
-<a id="a573cca51d21d56dcf79eaace281b74b0" name="a573cca51d21d56dcf79eaace281b74b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a573cca51d21d56dcf79eaace281b74b0">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
+<a id="a80756f186df96a1c8540ed56db74b2b5" name="a80756f186df96a1c8540ed56db74b2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80756f186df96a1c8540ed56db74b2b5">&#9670;&#160;</a></span>start() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::start </td>
+          <td class="memname">auto xtd::threading::thread::start </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1369,17 +1369,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a24caec3c59051d52cbb11d7a7359723d" name="a24caec3c59051d52cbb11d7a7359723d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24caec3c59051d52cbb11d7a7359723d">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
+<a id="abfe26a3b708d2b7008d483dba9ff5680" name="abfe26a3b708d2b7008d483dba9ff5680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe26a3b708d2b7008d483dba9ff5680">&#9670;&#160;</a></span>start() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::start </td>
+          <td class="memname">auto xtd::threading::thread::start </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1400,17 +1400,17 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a2416048e9a9f8adffc8cb8a969bb2760" name="a2416048e9a9f8adffc8cb8a969bb2760"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2416048e9a9f8adffc8cb8a969bb2760">&#9670;&#160;</a></span>suspend()</h2>
+<a id="a4bad9a5ea7bfdf3620506d5534a56881" name="a4bad9a5ea7bfdf3620506d5534a56881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bad9a5ea7bfdf3620506d5534a56881">&#9670;&#160;</a></span>suspend()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::suspend </td>
+          <td class="memname">auto xtd::threading::thread::suspend </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1423,12 +1423,12 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Works only on Windows operating syetm, no effect on others. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Do not use the <a class="el" href="#a2416048e9a9f8adffc8cb8a969bb2760" title="Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used)...">xtd::threading::thread::suspend</a> and <a class="el" href="#aa0e94d71691111ef5efb7d3c01086f51" title="Resumes a thread that has been suspended (Should not be used).">xtd::threading::thread::resume</a> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Do not use the <a class="el" href="#a4bad9a5ea7bfdf3620506d5534a56881" title="Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used)...">xtd::threading::thread::suspend</a> and <a class="el" href="#ad98d54b82506193af65451659da966c6" title="Resumes a thread that has been suspended (Should not be used).">xtd::threading::thread::resume</a> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily. </dd></dl>
 
 </div>
 </div>
-<a id="a42a6bb9b87bc4bd70c1714a1933711b4" name="a42a6bb9b87bc4bd70c1714a1933711b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42a6bb9b87bc4bd70c1714a1933711b4">&#9670;&#160;</a></span>start_new() <span class="overload">[1/2]</span></h2>
+<a id="a6d0778651736bc5645ce540d3b57dbc0" name="a6d0778651736bc5645ce540d3b57dbc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0778651736bc5645ce540d3b57dbc0">&#9670;&#160;</a></span>start_new() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1437,10 +1437,10 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> xtd::threading::thread::start_new </td>
+          <td class="memname">auto xtd::threading::thread::start_new </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>start</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a></td>
         </tr>
       </table>
   </td>
@@ -1453,7 +1453,7 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 <p>Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1466,8 +1466,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="aca8260305986f58f91cab6f479827834" name="aca8260305986f58f91cab6f479827834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca8260305986f58f91cab6f479827834">&#9670;&#160;</a></span>start_new() <span class="overload">[2/2]</span></h2>
+<a id="a2fcb0733bfd0ac95183c3b2b4ea092f1" name="a2fcb0733bfd0ac95183c3b2b4ea092f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcb0733bfd0ac95183c3b2b4ea092f1">&#9670;&#160;</a></span>start_new() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1476,14 +1476,14 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a> xtd::threading::thread::start_new </td>
+          <td class="memname">auto xtd::threading::thread::start_new </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__delegates.html#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span>&#160;) -&gt;  <a class="el" href="#a01ebb1fb46c9f74b982192f216f8951f">thread</a></td>
         </tr>
       </table>
   </td>
@@ -1496,7 +1496,7 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 <p>Create and immedialtely start a <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> with specified method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a573cca51d21d56dcf79eaace281b74b0" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a80756f186df96a1c8540ed56db74b2b5" title="Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...">start</a></td><td>A delegate that represents the methods to be invoked when this thread begins executing. </td></tr>
     <tr><td class="paramname">obj</td><td>An object that contains data to be used by the method the thread executes. </td></tr>
   </table>
   </dd>
@@ -1510,8 +1510,8 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 
 </div>
 </div>
-<a id="a6998fa3ca4218452ae93143d120174ba" name="a6998fa3ca4218452ae93143d120174ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6998fa3ca4218452ae93143d120174ba">&#9670;&#160;</a></span>join_all() <span class="overload">[1/6]</span></h2>
+<a id="aa03ec5ab6d35f7445f3e590fd1c20468" name="aa03ec5ab6d35f7445f3e590fd1c20468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa03ec5ab6d35f7445f3e590fd1c20468">&#9670;&#160;</a></span>join_all() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1520,10 +1520,10 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1542,14 +1542,14 @@ Works only on Windows and Linux operating syetms, no effect on others. </dd></dl
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
-The xtd::startup::run method and <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> keyword call the <a class="el" href="#a6998fa3ca4218452ae93143d120174ba" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method. </dd>
+The xtd::startup::run method and <a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_</a> keyword call the <a class="el" href="#aa03ec5ab6d35f7445f3e590fd1c20468" title="Blocks the calling thread until all joinable threads terminate.">xtd::threading::thread::join_all</a> method. </dd>
 <dd>
 Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e154215c14cf459b9d0f3ed" title="Close all resources and worker threads.">xtd::threading::thread_pool::close</a> method to join the end of running worker threads too. </dd></dl>
 
 </div>
 </div>
-<a id="af862f9b072e29e78324d76af04ed5ed1" name="af862f9b072e29e78324d76af04ed5ed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af862f9b072e29e78324d76af04ed5ed1">&#9670;&#160;</a></span>join_all() <span class="overload">[2/6]</span></h2>
+<a id="a683a9cb17c6a204725d9a91d46ed679f" name="a683a9cb17c6a204725d9a91d46ed679f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683a9cb17c6a204725d9a91d46ed679f">&#9670;&#160;</a></span>join_all() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1558,10 +1558,10 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1591,8 +1591,8 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
 
 </div>
 </div>
-<a id="aa78f49e122e15aba2a9ca013e12e0bee" name="aa78f49e122e15aba2a9ca013e12e0bee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa78f49e122e15aba2a9ca013e12e0bee">&#9670;&#160;</a></span>join_all() <span class="overload">[3/6]</span></h2>
+<a id="a9725619487e967461a67ad17a2d89d5d" name="a9725619487e967461a67ad17a2d89d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9725619487e967461a67ad17a2d89d5d">&#9670;&#160;</a></span>join_all() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1601,10 +1601,10 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1634,8 +1634,8 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
 
 </div>
 </div>
-<a id="a21c59038a37bef5fe9a32936fd4ec997" name="a21c59038a37bef5fe9a32936fd4ec997"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21c59038a37bef5fe9a32936fd4ec997">&#9670;&#160;</a></span>join_all() <span class="overload">[4/6]</span></h2>
+<a id="a09b29d4677f5722546d08f7b3628e01a" name="a09b29d4677f5722546d08f7b3628e01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b29d4677f5722546d08f7b3628e01a">&#9670;&#160;</a></span>join_all() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1646,10 +1646,10 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>threads</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1670,8 +1670,8 @@ template&lt;class collection_t&gt; </div>
 
 </div>
 </div>
-<a id="aa075ec069e9a67da9aaadef6a80b7f95" name="aa075ec069e9a67da9aaadef6a80b7f95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa075ec069e9a67da9aaadef6a80b7f95">&#9670;&#160;</a></span>join_all() <span class="overload">[5/6]</span></h2>
+<a id="a86b633af73aa981876360b69b268e259" name="a86b633af73aa981876360b69b268e259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b633af73aa981876360b69b268e259">&#9670;&#160;</a></span>join_all() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1682,14 +1682,14 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1717,8 +1717,8 @@ template&lt;class collection_t&gt; </div>
 
 </div>
 </div>
-<a id="a6b1fa6882ba1f0d0bdac7451c3e58cf9" name="a6b1fa6882ba1f0d0bdac7451c3e58cf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b1fa6882ba1f0d0bdac7451c3e58cf9">&#9670;&#160;</a></span>join_all() <span class="overload">[6/6]</span></h2>
+<a id="aa95232903e72161ff5016153d5c50ebd" name="aa95232903e72161ff5016153d5c50ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa95232903e72161ff5016153d5c50ebd">&#9670;&#160;</a></span>join_all() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1729,14 +1729,14 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::join_all </td>
+          <td class="memname">auto xtd::threading::thread::join_all </td>
           <td>(</td>
           <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>threads</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1764,8 +1764,8 @@ template&lt;class collection_t&gt; </div>
 
 </div>
 </div>
-<a id="a42bc6e2bb805f928e50ae73d243b95f2" name="a42bc6e2bb805f928e50ae73d243b95f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42bc6e2bb805f928e50ae73d243b95f2">&#9670;&#160;</a></span>sleep() <span class="overload">[1/2]</span></h2>
+<a id="a330d3bf0916af42f3ca433010cd585a0" name="a330d3bf0916af42f3ca433010cd585a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330d3bf0916af42f3ca433010cd585a0">&#9670;&#160;</a></span>sleep() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1774,10 +1774,10 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::sleep </td>
+          <td class="memname">auto xtd::threading::thread::sleep </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1803,8 +1803,8 @@ template&lt;class collection_t&gt; </div>
 
 </div>
 </div>
-<a id="ab7a26e99e726b6e86effa2339238b941" name="ab7a26e99e726b6e86effa2339238b941"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7a26e99e726b6e86effa2339238b941">&#9670;&#160;</a></span>sleep() <span class="overload">[2/2]</span></h2>
+<a id="ada6bf17914cf07a0fe92976cbd8a1203" name="ada6bf17914cf07a0fe92976cbd8a1203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6bf17914cf07a0fe92976cbd8a1203">&#9670;&#160;</a></span>sleep() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1813,10 +1813,10 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::sleep </td>
+          <td class="memname">auto xtd::threading::thread::sleep </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1842,8 +1842,8 @@ template&lt;class collection_t&gt; </div>
 
 </div>
 </div>
-<a id="a7861e3838380ffe3e0382ea52032d178" name="a7861e3838380ffe3e0382ea52032d178"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7861e3838380ffe3e0382ea52032d178">&#9670;&#160;</a></span>spin_wait()</h2>
+<a id="a37a25c6ef433b949a915360b036841c4" name="a37a25c6ef433b949a915360b036841c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a25c6ef433b949a915360b036841c4">&#9670;&#160;</a></span>spin_wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1852,10 +1852,10 @@ template&lt;class collection_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::thread::spin_wait </td>
+          <td class="memname">auto xtd::threading::thread::spin_wait </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>iterations</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1872,16 +1872,16 @@ template&lt;class collection_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a7861e3838380ffe3e0382ea52032d178" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> method is useful for implementing locks. Classes in the xtd, such as <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> and xtd::threading::reader_writer_lock, use this method internally. <a class="el" href="#a7861e3838380ffe3e0382ea52032d178" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a37a25c6ef433b949a915360b036841c4" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> method is useful for implementing locks. Classes in the xtd, such as <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> and xtd::threading::reader_writer_lock, use this method internally. <a class="el" href="#a37a25c6ef433b949a915360b036841c4" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> essentially puts the processor into a very tight loop, with the loop count specified by the iterations parameter. The duration of the wait therefore depends on the speed of the processor. </dd>
 <dd>
-Contrast this with the <a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method. A thread that calls <a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> removes the thread from consideration by the thread scheduler until the time interval has elapsed. </dd>
+Contrast this with the <a class="el" href="#a330d3bf0916af42f3ca433010cd585a0" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method. A thread that calls <a class="el" href="#a330d3bf0916af42f3ca433010cd585a0" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <a class="el" href="#a330d3bf0916af42f3ca433010cd585a0" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> removes the thread from consideration by the thread scheduler until the time interval has elapsed. </dd>
 <dd>
-<a class="el" href="#a7861e3838380ffe3e0382ea52032d178" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the xtd Framework; for example, call <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> or a statement that wraps <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::thread::monitor::enter</a> </dd></dl>
+<a class="el" href="#a37a25c6ef433b949a915360b036841c4" title="Causes a thread to wait the number of times defined by the iterations parameter.">xtd::threading::thread::spin_wait</a> is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the xtd Framework; for example, call <a class="el" href="classxtd_1_1threading_1_1monitor.html#a509b4103623850e0a45874ffefa664ec" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> or a statement that wraps <a class="el" href="classxtd_1_1threading_1_1monitor.html#a509b4103623850e0a45874ffefa664ec" title="Acquires an exclusive lock on the specified obj.">xtd::threading::thread::monitor::enter</a> </dd></dl>
 
 </div>
 </div>
-<a id="a7ce63292cb3e6dfbd89e34d0769d56cb" name="a7ce63292cb3e6dfbd89e34d0769d56cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ce63292cb3e6dfbd89e34d0769d56cb">&#9670;&#160;</a></span>yield()</h2>
+<a id="a1979588320ddb0b94799a6e0fa65a207" name="a1979588320ddb0b94799a6e0fa65a207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1979588320ddb0b94799a6e0fa65a207">&#9670;&#160;</a></span>yield()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1890,10 +1890,10 @@ Contrast this with the <a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2" t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::thread::yield </td>
+          <td class="memname">auto xtd::threading::thread::yield </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1909,7 +1909,7 @@ Contrast this with the <a class="el" href="#a42bc6e2bb805f928e50ae73d243b95f2" t
 <dd>
 yielding is limited to the processor that is executing the calling thread. The operating system will not switch execution to another processor, even if that processor is idle or is running a thread of lower priority. If there are no other threads that are ready to execute on the current processor, the operating system does not yield execution, and this method returns <span class="tt">false</span>. </dd>
 <dd>
-This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the <a class="el" href="#a7ce63292cb3e6dfbd89e34d0769d56cb" title="Causes the calling thread to yield execution to another thread that is ready to run on the current pr...">xtd::threading::thread::yield</a> method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested. </dd></dl>
+This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the <a class="el" href="#a1979588320ddb0b94799a6e0fa65a207" title="Causes the calling thread to yield execution to another thread that is ready to run on the current pr...">xtd::threading::thread::yield</a> method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested. </dd></dl>
 
 </div>
 </div>
@@ -1960,7 +1960,7 @@ This method is equivalent to using platform invoke to call the native Win32 swit
 </div><div class="memdoc">
 
 <p>Represents an invalid native operating system thread id. This field is read-only. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Used internally to initialize the <a class="el" href="#a1b7d950d7fb12c145e136c71e7b58609" title="Gets the native operating system thread id.">xtd::threading::thread::thread_id</a> property. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Used internally to initialize the <a class="el" href="#ae7c718016c4604a5e55d8faeefae4425" title="Gets the native operating system thread id.">xtd::threading::thread::thread_id</a> property. </dd></dl>
 
 </div>
 </div>

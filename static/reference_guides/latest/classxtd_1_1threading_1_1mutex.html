@@ -120,14 +120,14 @@ Inheritance diagram for xtd::threading::mutex:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>When two or more threads need to access a shared resource at the same time, the system needs a synchronization mechanism to ensure that only one thread at a time uses the resource. <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> is a synchronization primitive that grants exclusive access to the shared resource to only one thread. If a thread acquires a mutex, the second thread that wants to acquire that mutex is suspended until the first thread releases the mutex. </dd>
 <dd>
 You can use the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method to request ownership of a mutex. The calling thread blocks until one of the following occurs:<ul>
-<li>The mutex is signaled to indicate that it is not owned. When this happens, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method returns <span class="tt">true</span>, and the calling thread assumes ownership of the mutex and accesses the resource protected by the mutex. When it has finished accessing the resource, the thread must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. The first example in the Examples section illustrates this pattern.</li>
-<li>The time-out interval specified in the call to a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method that has a <pre class="fragment">milliseconds_timeout </pre> or timeout parameter has elapsed. When this happens, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method returns <span class="tt">false</span>, and the calling thread makes no further attempt to acquire ownership of the mutex. In this case, you should structure your code so that access to the resource that is protected by the mutex is denied to the calling thread. Because the thread never acquired ownership of the mutex, it must not call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method. The second example in the Examples section illustrates this pattern. </li>
+<li>The mutex is signaled to indicate that it is not owned. When this happens, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method returns <span class="tt">true</span>, and the calling thread assumes ownership of the mutex and accesses the resource protected by the mutex. When it has finished accessing the resource, the thread must call the <a class="el" href="#afc79b828508c49060ed0f0adcba2c9a6" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. The first example in the Examples section illustrates this pattern.</li>
+<li>The time-out interval specified in the call to a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method that has a <pre class="fragment">milliseconds_timeout </pre> or timeout parameter has elapsed. When this happens, the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method returns <span class="tt">false</span>, and the calling thread makes no further attempt to acquire ownership of the mutex. In this case, you should structure your code so that access to the resource that is protected by the mutex is denied to the calling thread. Because the thread never acquired ownership of the mutex, it must not call the <a class="el" href="#afc79b828508c49060ed0f0adcba2c9a6" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method. The second example in the Examples section illustrates this pattern. </li>
 </ul>
 </dd>
 <dd>
 The <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class does not enforce thread identity. A mutex can also be passed across application domain boundaries. </dd>
 <dd>
-The thread that owns a mutex can request the same mutex in repeated calls to <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> without blocking its execution. However, the thread must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method the same number of times to release ownership of the mutex. </dd>
+The thread that owns a mutex can request the same mutex in repeated calls to <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> without blocking its execution. However, the thread must call the <a class="el" href="#afc79b828508c49060ed0f0adcba2c9a6" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method the same number of times to release ownership of the mutex. </dd>
 <dd>
 Because the <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> class inherits from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, you can also call the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> methods to synchronize access to a protected resource. </dd>
 <dd>
@@ -137,14 +137,14 @@ If a thread terminates while owning a mutex, the mutex is said to be abandoned. 
 <dd>
 Mutexes are of two types: local mutexes, which are unnamed, and named system mutexes. A local mutex exists only within your process. It can be used by any thread in your process that has a reference to the <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object that represents the mutex. Each unnamed <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object represents a separate local mutex. </dd>
 <dd>
-Named system mutexes are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create a <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object that represents a named system mutex by using a constructor that accepts a name. The operating-system object can be created at the same time, or it can exist before the creation of the <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object. You can create multiple <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> objects that represent the same named system mutex, and you can use the <a class="el" href="#a057d2bfcac2af8b73c71fedcf0ccd170" title="Opens an existing named mutex.">xtd::threading::mutex::open_existing</a> method to open an existing named system mutex. </dd></dl>
+Named system mutexes are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create a <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object that represents a named system mutex by using a constructor that accepts a name. The operating-system object can be created at the same time, or it can exist before the creation of the <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object. You can create multiple <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> objects that represent the same named system mutex, and you can use the <a class="el" href="#a873c8a57b6f9e80ef2962a58005ed925" title="Opens an existing named mutex.">xtd::threading::mutex::open_existing</a> method to open an existing named system mutex. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The backslash () and slash(/) are a reserved character in a mutex name. Don't use a backslash () and slash (/) in a mutex name except as specified in the note on using mutexes in terminal server sessions. Otherwise, a <a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a> may be thrown, even though the name of the mutex represents an existing file. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The unnamed mutex is a <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> of C++17. You can therefore use <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> or <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a> indifferently in your projects. </dd>
 <dd>
 If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> among others to synchronize all your objects. </dd>
 <dd>
 On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#afc79b828508c49060ed0f0adcba2c9a6" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mutex_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -171,11 +171,11 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> Use_resource() {</div>
 <div class="line">      <span class="comment">// Wait until it is safe to enter.</span></div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
-<div class="line">                        thread::current_thread().<a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
+<div class="line">                        thread::current_thread().<a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">      mut.wait_one();</div>
 <div class="line">      </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
-<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
+<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Place code to access non-reentrant resources here.</span></div>
 <div class="line">      </div>
@@ -183,12 +183,12 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line">      thread::sleep(500);</div>
 <div class="line">      </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
-<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
+<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Release the mutex.</span></div>
 <div class="line">      mut.release_mutex();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
-<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
+<div class="line">                          thread::current_thread().<a class="code hl_function" href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">name</a>());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> list&lt;thread&gt; threads;</div>
@@ -217,7 +217,7 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line"><span class="comment">// thread_3 has released the mutex</span></div>
 <div class="ttc" id="agroup__format__parse_html_ga591487f7c52877614fd80f43a332d455"><div class="ttname"><a href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::basic_string&lt; char &gt;::format</a></div><div class="ttdeci">static basic_string format(const basic_string&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args)</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
-<div class="ttc" id="agroup__threading_html_ga5ee11cda9ca27346d53de02c7c4883ea"><div class="ttname"><a href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">xtd::threading::this_thread::name</a></div><div class="ttdeci">xtd::string name() noexcept</div><div class="ttdoc">Gets the thread name of the current thread.</div></div>
+<div class="ttc" id="agroup__threading_html_ga11053dd7cd30de5f92b108c9f94f8af2"><div class="ttname"><a href="group__threading.html#ga11053dd7cd30de5f92b108c9f94f8af2">xtd::threading::this_thread::name</a></div><div class="ttdeci">auto name() noexcept -&gt; xtd::string</div><div class="ttdoc">Gets the thread name of the current thread.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -243,49 +243,49 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:aa4b414b099d21ce89c3dd9c6d9dd9793" id="r_aa4b414b099d21ce89c3dd9c6d9dd9793"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa4b414b099d21ce89c3dd9c6d9dd9793">handle</a> () const noexcept override</td></tr>
-<tr class="memdesc:aa4b414b099d21ce89c3dd9c6d9dd9793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
-<tr class="memitem:a0edfd2414178ff3f1e79ce4d29c8e972" id="r_a0edfd2414178ff3f1e79ce4d29c8e972"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0edfd2414178ff3f1e79ce4d29c8e972">handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> value) override</td></tr>
-<tr class="memdesc:a0edfd2414178ff3f1e79ce4d29c8e972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
-<tr class="memitem:ae9bd35dea959247ffd3f359c41b2d45b" id="r_ae9bd35dea959247ffd3f359c41b2d45b"><td class="memItemLeft"><a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae9bd35dea959247ffd3f359c41b2d45b">native_handle</a> () const noexcept</td></tr>
-<tr class="memdesc:ae9bd35dea959247ffd3f359c41b2d45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying implementation-defined native handle object.  <br /></td></tr>
+<tr class="memitem:a412ed7f6f55c75bdcc13ed535241c2b9" id="r_a412ed7f6f55c75bdcc13ed535241c2b9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a412ed7f6f55c75bdcc13ed535241c2b9">handle</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> override</td></tr>
+<tr class="memdesc:a412ed7f6f55c75bdcc13ed535241c2b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:a84ed7e165d00e87253b7646f75231b08" id="r_a84ed7e165d00e87253b7646f75231b08"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a84ed7e165d00e87253b7646f75231b08">handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:a84ed7e165d00e87253b7646f75231b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:a186f6d2a725152ca36678029c4416f97" id="r_a186f6d2a725152ca36678029c4416f97"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a186f6d2a725152ca36678029c4416f97">native_handle</a> () const noexcept -&gt; <a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a></td></tr>
+<tr class="memdesc:a186f6d2a725152ca36678029c4416f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying implementation-defined native handle object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:aad7c66ee04153877e8933cdcfa375043" id="r_aad7c66ee04153877e8933cdcfa375043"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aad7c66ee04153877e8933cdcfa375043">close</a> () override</td></tr>
-<tr class="memdesc:aad7c66ee04153877e8933cdcfa375043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
-<tr class="memitem:a7a7bf412a6af20f33768a77951ad602b" id="r_a7a7bf412a6af20f33768a77951ad602b"><td class="memItemLeft"><a id="a7a7bf412a6af20f33768a77951ad602b" name="a7a7bf412a6af20f33768a77951ad602b"></a>
-<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><b>compare_to</b> (const <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;value) const noexcept override</td></tr>
-<tr class="memitem:a3096315309ba2ef8be4cb2db94f70f78" id="r_a3096315309ba2ef8be4cb2db94f70f78"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3096315309ba2ef8be4cb2db94f70f78">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a3096315309ba2ef8be4cb2db94f70f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a1729b66445133f74b8afc5482d5c8bc4" id="r_a1729b66445133f74b8afc5482d5c8bc4"><td class="memItemLeft"><a id="a1729b66445133f74b8afc5482d5c8bc4" name="a1729b66445133f74b8afc5482d5c8bc4"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;other) const noexcept override</td></tr>
-<tr class="memitem:a6ddc38175a9924e96308d50a3b876f07" id="r_a6ddc38175a9924e96308d50a3b876f07"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6ddc38175a9924e96308d50a3b876f07">lock</a> ()</td></tr>
-<tr class="memdesc:a6ddc38175a9924e96308d50a3b876f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired.  <br /></td></tr>
-<tr class="memitem:a02f2e273ef08cdf7008087b9966de53d" id="r_a02f2e273ef08cdf7008087b9966de53d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02f2e273ef08cdf7008087b9966de53d">release_mutex</a> ()</td></tr>
-<tr class="memdesc:a02f2e273ef08cdf7008087b9966de53d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the Mutex once.  <br /></td></tr>
-<tr class="memitem:af6f2b2901ae223419bef4baed022caee" id="r_af6f2b2901ae223419bef4baed022caee"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af6f2b2901ae223419bef4baed022caee">try_lock</a> () noexcept</td></tr>
-<tr class="memdesc:af6f2b2901ae223419bef4baed022caee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Returns immediately. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
-<tr class="memitem:af91f77df7a9ecbdf7d7ff45874d76399" id="r_af91f77df7a9ecbdf7d7ff45874d76399"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af91f77df7a9ecbdf7d7ff45874d76399">try_lock_for</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) noexcept</td></tr>
-<tr class="memdesc:af91f77df7a9ecbdf7d7ff45874d76399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
-<tr class="memitem:a2486cf6791c2f805dab4682645ed64d0" id="r_a2486cf6791c2f805dab4682645ed64d0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2486cf6791c2f805dab4682645ed64d0">try_lock_until</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;timeout_time) noexcept</td></tr>
-<tr class="memdesc:a2486cf6791c2f805dab4682645ed64d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
-<tr class="memitem:acc9adcf7d62eddfb67d3d6e079603c54" id="r_acc9adcf7d62eddfb67d3d6e079603c54"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54">unlock</a> ()</td></tr>
-<tr class="memdesc:acc9adcf7d62eddfb67d3d6e079603c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex.  <br /></td></tr>
+<tr class="memitem:acf8084be064a8d3b38e5e3bff7354c8e" id="r_acf8084be064a8d3b38e5e3bff7354c8e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acf8084be064a8d3b38e5e3bff7354c8e">close</a> () -&gt; void override</td></tr>
+<tr class="memdesc:acf8084be064a8d3b38e5e3bff7354c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
+<tr class="memitem:a4d7572a0d1e0b774b0cb5cbc3935547f" id="r_a4d7572a0d1e0b774b0cb5cbc3935547f"><td class="memItemLeft"><a id="a4d7572a0d1e0b774b0cb5cbc3935547f" name="a4d7572a0d1e0b774b0cb5cbc3935547f"></a>
+auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
+<tr class="memitem:ade4734cbb7c53428b1e6c4f71da0f575" id="r_ade4734cbb7c53428b1e6c4f71da0f575"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ade4734cbb7c53428b1e6c4f71da0f575">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ade4734cbb7c53428b1e6c4f71da0f575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:ae83a3dcef802560edc061715e1a96231" id="r_ae83a3dcef802560edc061715e1a96231"><td class="memItemLeft"><a id="ae83a3dcef802560edc061715e1a96231" name="ae83a3dcef802560edc061715e1a96231"></a>
+auto&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memitem:a50ae23e9e0a19f29fbca7301916d8381" id="r_a50ae23e9e0a19f29fbca7301916d8381"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a50ae23e9e0a19f29fbca7301916d8381">lock</a> () -&gt; void</td></tr>
+<tr class="memdesc:a50ae23e9e0a19f29fbca7301916d8381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired.  <br /></td></tr>
+<tr class="memitem:afc79b828508c49060ed0f0adcba2c9a6" id="r_afc79b828508c49060ed0f0adcba2c9a6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afc79b828508c49060ed0f0adcba2c9a6">release_mutex</a> () -&gt; void</td></tr>
+<tr class="memdesc:afc79b828508c49060ed0f0adcba2c9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the Mutex once.  <br /></td></tr>
+<tr class="memitem:a565ed07cdb42324a2d5be300602eba28" id="r_a565ed07cdb42324a2d5be300602eba28"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a565ed07cdb42324a2d5be300602eba28">try_lock</a> () noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a565ed07cdb42324a2d5be300602eba28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Returns immediately. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
+<tr class="memitem:a84e1ad44d29f2510ca60e2e9b665f5dc" id="r_a84e1ad44d29f2510ca60e2e9b665f5dc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a84e1ad44d29f2510ca60e2e9b665f5dc">try_lock_for</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a84e1ad44d29f2510ca60e2e9b665f5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
+<tr class="memitem:a342800b5b3dbd77e6edc8b3c802fdd69" id="r_a342800b5b3dbd77e6edc8b3c802fdd69"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a342800b5b3dbd77e6edc8b3c802fdd69">try_lock_until</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;timeout_time) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a342800b5b3dbd77e6edc8b3c802fdd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns <span class="tt">true</span>, otherwise returns <span class="tt">false</span>.  <br /></td></tr>
+<tr class="memitem:ac874134eafbe5b5a8dd82eb46212f211" id="r_ac874134eafbe5b5a8dd82eb46212f211"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211">unlock</a> () -&gt; void</td></tr>
+<tr class="memdesc:ac874134eafbe5b5a8dd82eb46212f211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a057d2bfcac2af8b73c71fedcf0ccd170" id="r_a057d2bfcac2af8b73c71fedcf0ccd170"><td class="memItemLeft">static <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a>&#160;</td><td class="memItemRight"><a class="el" href="#a057d2bfcac2af8b73c71fedcf0ccd170">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name)</td></tr>
-<tr class="memdesc:a057d2bfcac2af8b73c71fedcf0ccd170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens an existing named mutex.  <br /></td></tr>
-<tr class="memitem:affc38bb3bb68fae549371049ba063e5d" id="r_affc38bb3bb68fae549371049ba063e5d"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#affc38bb3bb68fae549371049ba063e5d">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;result) noexcept</td></tr>
-<tr class="memdesc:affc38bb3bb68fae549371049ba063e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
+<tr class="memitem:a873c8a57b6f9e80ef2962a58005ed925" id="r_a873c8a57b6f9e80ef2962a58005ed925"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a873c8a57b6f9e80ef2962a58005ed925">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name) -&gt; <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a></td></tr>
+<tr class="memdesc:a873c8a57b6f9e80ef2962a58005ed925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens an existing named mutex.  <br /></td></tr>
+<tr class="memitem:a0d5ecea2e0c72e80eb3fcc863fa83861" id="r_a0d5ecea2e0c72e80eb3fcc863fa83861"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0d5ecea2e0c72e80eb3fcc863fa83861">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a0d5ecea2e0c72e80eb3fcc863fa83861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:a9fdaa8f872d88a427616d3a309b8bdb9" id="r_a9fdaa8f872d88a427616d3a309b8bdb9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9fdaa8f872d88a427616d3a309b8bdb9">signal</a> () override</td></tr>
-<tr class="memdesc:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
-<tr class="memitem:ae9bb2824e6fda49dc1a7d843b269fcd4" id="r_ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae9bb2824e6fda49dc1a7d843b269fcd4">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) override</td></tr>
-<tr class="memdesc:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
+<tr class="memitem:ae7f44738b99ae5048714cc6ab0b1694f" id="r_ae7f44738b99ae5048714cc6ab0b1694f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7f44738b99ae5048714cc6ab0b1694f">signal</a> () -&gt; bool override</td></tr>
+<tr class="memdesc:ae7f44738b99ae5048714cc6ab0b1694f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
+<tr class="memitem:acbe903095f5cb73b5c512a573f60bd0c" id="r_acbe903095f5cb73b5c512a573f60bd0c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acbe903095f5cb73b5c512a573f60bd0c">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool override</td></tr>
+<tr class="memdesc:acbe903095f5cb73b5c512a573f60bd0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -584,8 +584,8 @@ There was some other error. The HResult property may provide more information. <
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aa4b414b099d21ce89c3dd9c6d9dd9793" name="aa4b414b099d21ce89c3dd9c6d9dd9793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4b414b099d21ce89c3dd9c6d9dd9793">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
+<a id="a412ed7f6f55c75bdcc13ed535241c2b9" name="a412ed7f6f55c75bdcc13ed535241c2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412ed7f6f55c75bdcc13ed535241c2b9">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -594,15 +594,15 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::threading::mutex::handle </td>
+          <td class="memname">auto xtd::threading::mutex::handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -614,8 +614,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="a0edfd2414178ff3f1e79ce4d29c8e972" name="a0edfd2414178ff3f1e79ce4d29c8e972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0edfd2414178ff3f1e79ce4d29c8e972">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
+<a id="a84ed7e165d00e87253b7646f75231b08" name="a84ed7e165d00e87253b7646f75231b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ed7e165d00e87253b7646f75231b08">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,10 +624,10 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::mutex::handle </td>
+          <td class="memname">auto xtd::threading::mutex::handle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -649,8 +649,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="ae9bd35dea959247ffd3f359c41b2d45b" name="ae9bd35dea959247ffd3f359c41b2d45b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9bd35dea959247ffd3f359c41b2d45b">&#9670;&#160;</a></span>native_handle()</h2>
+<a id="a186f6d2a725152ca36678029c4416f97" name="a186f6d2a725152ca36678029c4416f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186f6d2a725152ca36678029c4416f97">&#9670;&#160;</a></span>native_handle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -659,10 +659,10 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a> xtd::threading::mutex::native_handle </td>
+          <td class="memname">auto xtd::threading::mutex::native_handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a></td>
         </tr>
       </table>
   </td>
@@ -677,8 +677,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="aad7c66ee04153877e8933cdcfa375043" name="aad7c66ee04153877e8933cdcfa375043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7c66ee04153877e8933cdcfa375043">&#9670;&#160;</a></span>close()</h2>
+<a id="acf8084be064a8d3b38e5e3bff7354c8e" name="acf8084be064a8d3b38e5e3bff7354c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf8084be064a8d3b38e5e3bff7354c8e">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -687,10 +687,10 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::mutex::close </td>
+          <td class="memname">auto xtd::threading::mutex::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -707,8 +707,8 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="a3096315309ba2ef8be4cb2db94f70f78" name="a3096315309ba2ef8be4cb2db94f70f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3096315309ba2ef8be4cb2db94f70f78">&#9670;&#160;</a></span>equals()</h2>
+<a id="ade4734cbb7c53428b1e6c4f71da0f575" name="ade4734cbb7c53428b1e6c4f71da0f575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4734cbb7c53428b1e6c4f71da0f575">&#9670;&#160;</a></span>equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -717,15 +717,15 @@ There was some other error. The HResult property may provide more information. <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::equals </td>
+          <td class="memname">auto xtd::threading::mutex::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -766,17 +766,17 @@ There was some other error. The HResult property may provide more information. <
 
 </div>
 </div>
-<a id="a6ddc38175a9924e96308d50a3b876f07" name="a6ddc38175a9924e96308d50a3b876f07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ddc38175a9924e96308d50a3b876f07">&#9670;&#160;</a></span>lock()</h2>
+<a id="a50ae23e9e0a19f29fbca7301916d8381" name="a50ae23e9e0a19f29fbca7301916d8381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ae23e9e0a19f29fbca7301916d8381">&#9670;&#160;</a></span>lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::mutex::lock </td>
+          <td class="memname">auto xtd::threading::mutex::lock </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -784,22 +784,22 @@ There was some other error. The HResult property may provide more information. <
 <p>Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>If lock is called by a thread that already owns the mutex, the behavior is undefined: for example, the program may deadlock. An implementation that can detect the invalid usage is encouraged to throw a std::system_error with error condition resource_deadlock_would_occur instead of deadlocking. </dd>
 <dd>
-Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the mutex.">unlock()</a> operations on the same mutex synchronize-with (as defined in std::memory_order) this operation. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="#a6ddc38175a9924e96308d50a3b876f07" title="Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution ...">xtd::threading::mutex::lock()</a> is usually not called directly: std::unique_lock, std::scoped_lock, and std::lock_guard are used to manage exclusive locking. </dd></dl>
+Prior <a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211" title="Unlocks the mutex.">unlock()</a> operations on the same mutex synchronize-with (as defined in std::memory_order) this operation. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="#a50ae23e9e0a19f29fbca7301916d8381" title="Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution ...">xtd::threading::mutex::lock()</a> is usually not called directly: std::unique_lock, std::scoped_lock, and std::lock_guard are used to manage exclusive locking. </dd></dl>
 
 </div>
 </div>
-<a id="a02f2e273ef08cdf7008087b9966de53d" name="a02f2e273ef08cdf7008087b9966de53d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f2e273ef08cdf7008087b9966de53d">&#9670;&#160;</a></span>release_mutex()</h2>
+<a id="afc79b828508c49060ed0f0adcba2c9a6" name="afc79b828508c49060ed0f0adcba2c9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc79b828508c49060ed0f0adcba2c9a6">&#9670;&#160;</a></span>release_mutex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::mutex::release_mutex </td>
+          <td class="memname">auto xtd::threading::mutex::release_mutex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -814,8 +814,8 @@ Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the
 
 </div>
 </div>
-<a id="af6f2b2901ae223419bef4baed022caee" name="af6f2b2901ae223419bef4baed022caee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6f2b2901ae223419bef4baed022caee">&#9670;&#160;</a></span>try_lock()</h2>
+<a id="a565ed07cdb42324a2d5be300602eba28" name="a565ed07cdb42324a2d5be300602eba28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565ed07cdb42324a2d5be300602eba28">&#9670;&#160;</a></span>try_lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,15 +824,15 @@ Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::try_lock </td>
+          <td class="memname">auto xtd::threading::mutex::try_lock </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -849,12 +849,12 @@ Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the
 <dd>
 If try_lock is called by a thread that already owns the mutex, the behavior is undefined. </dd>
 <dd>
-Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. Note that prior <a class="el" href="#a6ddc38175a9924e96308d50a3b876f07" title="Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution ...">lock()</a> does not synchronize with this operation if it returns <span class="tt">false</span>. </dd></dl>
+Prior <a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. Note that prior <a class="el" href="#a50ae23e9e0a19f29fbca7301916d8381" title="Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution ...">lock()</a> does not synchronize with this operation if it returns <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
-<a id="af91f77df7a9ecbdf7d7ff45874d76399" name="af91f77df7a9ecbdf7d7ff45874d76399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af91f77df7a9ecbdf7d7ff45874d76399">&#9670;&#160;</a></span>try_lock_for()</h2>
+<a id="a84e1ad44d29f2510ca60e2e9b665f5dc" name="a84e1ad44d29f2510ca60e2e9b665f5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e1ad44d29f2510ca60e2e9b665f5dc">&#9670;&#160;</a></span>try_lock_for()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -863,15 +863,15 @@ Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::try_lock_for </td>
+          <td class="memname">auto xtd::threading::mutex::try_lock_for </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -884,22 +884,22 @@ Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the lock was acquired successfully, otherwise <span class="tt">false</span>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If timeout_duration is less or equal timeout_duration.zero(), the function behaves like <a class="el" href="#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>If timeout_duration is less or equal timeout_duration.zero(), the function behaves like <a class="el" href="#a565ed07cdb42324a2d5be300602eba28" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
 <dd>
 This function may block for longer than timeout_duration due to scheduling or resource contention delays. </dd>
 <dd>
 The standard recommends that a steady_clock is used to measure the duration. If an implementation uses a system_clock instead, the wait time may also be sensitive to clock adjustments. </dd>
 <dd>
-As with <a class="el" href="#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>, this function is allowed to fail spuriously and return <span class="tt">false</span> even if the mutex was not locked by any other thread at some point during timeout_duration. </dd>
+As with <a class="el" href="#a565ed07cdb42324a2d5be300602eba28" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>, this function is allowed to fail spuriously and return <span class="tt">false</span> even if the mutex was not locked by any other thread at some point during timeout_duration. </dd>
 <dd>
-Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. </dd>
+Prior <a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. </dd>
 <dd>
 If try_lock_for is called by a thread that already owns the mutex, the behavior is undefined. </dd></dl>
 
 </div>
 </div>
-<a id="a2486cf6791c2f805dab4682645ed64d0" name="a2486cf6791c2f805dab4682645ed64d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2486cf6791c2f805dab4682645ed64d0">&#9670;&#160;</a></span>try_lock_until()</h2>
+<a id="a342800b5b3dbd77e6edc8b3c802fdd69" name="a342800b5b3dbd77e6edc8b3c802fdd69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a342800b5b3dbd77e6edc8b3c802fdd69">&#9670;&#160;</a></span>try_lock_until()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -908,15 +908,15 @@ If try_lock_for is called by a thread that already owns the mutex, the behavior 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::try_lock_until </td>
+          <td class="memname">auto xtd::threading::mutex::try_lock_until </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout_time</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -929,31 +929,31 @@ If try_lock_for is called by a thread that already owns the mutex, the behavior 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the lock was acquired successfully, otherwise <span class="tt">false</span>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If timeout_time has already passed, this function behaves like <a class="el" href="#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>If timeout_time has already passed, this function behaves like <a class="el" href="#a565ed07cdb42324a2d5be300602eba28" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
 <dd>
 Clock must meet the Clock requirements. The program is ill-formed if std::chrono::is_clock_v&lt;Clock&gt; is <span class="tt">false</span> (since C++20). </dd>
 <dd>
 The standard recommends that the clock tied to timeout_time be used, in which case adjustments of the clock may be taken into account. Thus, the duration of the block might be more or less than timeout_time - Clock::now() at the time of the call, depending on the direction of the adjustment and whether it is honored by the implementation. The function also may block until after timeout_time has been reached due to process scheduling or resource contention delays. </dd>
 <dd>
-As with <a class="el" href="#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>, this function is allowed to fail spuriously and return <span class="tt">false</span> even if the mutex was not locked by any other thread at some point before timeout_time. </dd>
+As with <a class="el" href="#a565ed07cdb42324a2d5be300602eba28" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>, this function is allowed to fail spuriously and return <span class="tt">false</span> even if the mutex was not locked by any other thread at some point before timeout_time. </dd>
 <dd>
-Prior <a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. </dd>
+Prior <a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211" title="Unlocks the mutex.">unlock()</a> operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns <span class="tt">true</span>. </dd>
 <dd>
 If try_lock_until is called by a thread that already owns the mutex, the behavior is undefined. </dd></dl>
 
 </div>
 </div>
-<a id="acc9adcf7d62eddfb67d3d6e079603c54" name="acc9adcf7d62eddfb67d3d6e079603c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc9adcf7d62eddfb67d3d6e079603c54">&#9670;&#160;</a></span>unlock()</h2>
+<a id="ac874134eafbe5b5a8dd82eb46212f211" name="ac874134eafbe5b5a8dd82eb46212f211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac874134eafbe5b5a8dd82eb46212f211">&#9670;&#160;</a></span>unlock()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::mutex::unlock </td>
+          <td class="memname">auto xtd::threading::mutex::unlock </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -963,12 +963,12 @@ If try_lock_until is called by a thread that already owns the mutex, the behavio
 <dd>
 This operation synchronizes-with (as defined in std::memory_order) any subsequent lock operation that obtains ownership of the same mutex. </dd>
 <dd>
-<a class="el" href="#acc9adcf7d62eddfb67d3d6e079603c54" title="Unlocks the mutex.">xtd::threading::mutex::unlock()</a> is usually not called directly: std::unique_lock and std::lock_guard are used to manage exclusive locking. </dd></dl>
+<a class="el" href="#ac874134eafbe5b5a8dd82eb46212f211" title="Unlocks the mutex.">xtd::threading::mutex::unlock()</a> is usually not called directly: std::unique_lock and std::lock_guard are used to manage exclusive locking. </dd></dl>
 
 </div>
 </div>
-<a id="a057d2bfcac2af8b73c71fedcf0ccd170" name="a057d2bfcac2af8b73c71fedcf0ccd170"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a057d2bfcac2af8b73c71fedcf0ccd170">&#9670;&#160;</a></span>open_existing()</h2>
+<a id="a873c8a57b6f9e80ef2962a58005ed925" name="a873c8a57b6f9e80ef2962a58005ed925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873c8a57b6f9e80ef2962a58005ed925">&#9670;&#160;</a></span>open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -977,15 +977,15 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> xtd::threading::mutex::open_existing </td>
+          <td class="memname">auto xtd::threading::mutex::open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1010,8 +1010,8 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
 
 </div>
 </div>
-<a id="affc38bb3bb68fae549371049ba063e5d" name="affc38bb3bb68fae549371049ba063e5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affc38bb3bb68fae549371049ba063e5d">&#9670;&#160;</a></span>try_open_existing()</h2>
+<a id="a0d5ecea2e0c72e80eb3fcc863fa83861" name="a0d5ecea2e0c72e80eb3fcc863fa83861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5ecea2e0c72e80eb3fcc863fa83861">&#9670;&#160;</a></span>try_open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1020,19 +1020,19 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::try_open_existing </td>
+          <td class="memname">auto xtd::threading::mutex::try_open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#aa7652ef5f76f63d3c267fd07210bbbfd">mutex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1049,8 +1049,8 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
 
 </div>
 </div>
-<a id="a9fdaa8f872d88a427616d3a309b8bdb9" name="a9fdaa8f872d88a427616d3a309b8bdb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fdaa8f872d88a427616d3a309b8bdb9">&#9670;&#160;</a></span>signal()</h2>
+<a id="ae7f44738b99ae5048714cc6ab0b1694f" name="ae7f44738b99ae5048714cc6ab0b1694f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f44738b99ae5048714cc6ab0b1694f">&#9670;&#160;</a></span>signal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,10 +1059,10 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::signal </td>
+          <td class="memname">auto xtd::threading::mutex::signal </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1080,8 +1080,8 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
 
 </div>
 </div>
-<a id="ae9bb2824e6fda49dc1a7d843b269fcd4" name="ae9bb2824e6fda49dc1a7d843b269fcd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9bb2824e6fda49dc1a7d843b269fcd4">&#9670;&#160;</a></span>wait()</h2>
+<a id="acbe903095f5cb73b5c512a573f60bd0c" name="acbe903095f5cb73b5c512a573f60bd0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe903095f5cb73b5c512a573f60bd0c">&#9670;&#160;</a></span>wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1090,10 +1090,10 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::mutex::wait </td>
+          <td class="memname">auto xtd::threading::mutex::wait </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1106,7 +1106,7 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
 <p>wait ownership of the specified mutex object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aa4b414b099d21ce89c3dd9c6d9dd9793" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a412ed7f6f55c75bdcc13ed535241c2b9" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or -1 to wait indefinitely. </td></tr>
   </table>
   </dd>

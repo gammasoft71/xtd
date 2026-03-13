@@ -129,27 +129,27 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:acdc54498e82b31d71af62424ffbc2cb8" id="r_acdc54498e82b31d71af62424ffbc2cb8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acdc54498e82b31d71af62424ffbc2cb8">is_held</a> () const noexcept</td></tr>
-<tr class="memdesc:acdc54498e82b31d71af62424ffbc2cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is currently held by any thread.  <br /></td></tr>
-<tr class="memitem:a92fa245a6e054558dd7d4272602c93d0" id="r_a92fa245a6e054558dd7d4272602c93d0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a92fa245a6e054558dd7d4272602c93d0">is_held_by_current_thread</a> () const noexcept</td></tr>
-<tr class="memdesc:a92fa245a6e054558dd7d4272602c93d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is held by the current thread.  <br /></td></tr>
-<tr class="memitem:a531972816dbf8084244030140a9db621" id="r_a531972816dbf8084244030140a9db621"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a531972816dbf8084244030140a9db621">is_thread_owner_tracking_enabled</a> () const noexcept</td></tr>
-<tr class="memdesc:a531972816dbf8084244030140a9db621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether thread ownership tracking is enabled for this instance.  <br /></td></tr>
+<tr class="memitem:a19718ae1b7842899e700686d4e3aa79e" id="r_a19718ae1b7842899e700686d4e3aa79e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a19718ae1b7842899e700686d4e3aa79e">is_held</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a19718ae1b7842899e700686d4e3aa79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is currently held by any thread.  <br /></td></tr>
+<tr class="memitem:a526f8b2c77b8f9722ff5174166333a05" id="r_a526f8b2c77b8f9722ff5174166333a05"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a526f8b2c77b8f9722ff5174166333a05">is_held_by_current_thread</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a526f8b2c77b8f9722ff5174166333a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the lock is held by the current thread.  <br /></td></tr>
+<tr class="memitem:a8e4f73b3f9f45bee5451d1a1cff3f7ad" id="r_a8e4f73b3f9f45bee5451d1a1cff3f7ad"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e4f73b3f9f45bee5451d1a1cff3f7ad">is_thread_owner_tracking_enabled</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a8e4f73b3f9f45bee5451d1a1cff3f7ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether thread ownership tracking is enabled for this instance.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a24e13fcd4189869a3d23e187b42c792a" id="r_a24e13fcd4189869a3d23e187b42c792a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a24e13fcd4189869a3d23e187b42c792a">enter</a> (bool &amp;lock_taken)</td></tr>
-<tr class="memdesc:a24e13fcd4189869a3d23e187b42c792a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:a61ee56319b6e02c8c404321d04f6347e" id="r_a61ee56319b6e02c8c404321d04f6347e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a61ee56319b6e02c8c404321d04f6347e">exit</a> ()</td></tr>
-<tr class="memdesc:a61ee56319b6e02c8c404321d04f6347e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
-<tr class="memitem:a1b66f6109eea3da0fe54e44886419782" id="r_a1b66f6109eea3da0fe54e44886419782"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1b66f6109eea3da0fe54e44886419782">exit</a> (bool use_memory_barrier)</td></tr>
-<tr class="memdesc:a1b66f6109eea3da0fe54e44886419782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
-<tr class="memitem:a18e1ebdce78eacbba641ca8cb0d36ada" id="r_a18e1ebdce78eacbba641ca8cb0d36ada"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18e1ebdce78eacbba641ca8cb0d36ada">try_enter</a> (bool &amp;lock_taken)</td></tr>
-<tr class="memdesc:a18e1ebdce78eacbba641ca8cb0d36ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:aef47de7e0dec014b37778a0a6558433d" id="r_aef47de7e0dec014b37778a0a6558433d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef47de7e0dec014b37778a0a6558433d">try_enter</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout, bool &amp;lock_taken)</td></tr>
-<tr class="memdesc:aef47de7e0dec014b37778a0a6558433d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
-<tr class="memitem:ac80299f8d1b5945954a087b17c3213e6" id="r_ac80299f8d1b5945954a087b17c3213e6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac80299f8d1b5945954a087b17c3213e6">try_enter</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, bool &amp;lock_taken)</td></tr>
-<tr class="memdesc:ac80299f8d1b5945954a087b17c3213e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
+<tr class="memitem:a0598fbe7628988fc545359f061b67e08" id="r_a0598fbe7628988fc545359f061b67e08"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0598fbe7628988fc545359f061b67e08">enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memdesc:a0598fbe7628988fc545359f061b67e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
+<tr class="memitem:a11f3d7ce3560f3495d64d07fb34fb959" id="r_a11f3d7ce3560f3495d64d07fb34fb959"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959">exit</a> () -&gt; void</td></tr>
+<tr class="memdesc:a11f3d7ce3560f3495d64d07fb34fb959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
+<tr class="memitem:aaf718a0d1305a192573f94d0430cd343" id="r_aaf718a0d1305a192573f94d0430cd343"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf718a0d1305a192573f94d0430cd343">exit</a> (bool use_memory_barrier) -&gt; void</td></tr>
+<tr class="memdesc:aaf718a0d1305a192573f94d0430cd343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock.  <br /></td></tr>
+<tr class="memitem:a68fc665da7d8c36cb9dca3f295aafa43" id="r_a68fc665da7d8c36cb9dca3f295aafa43"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43">try_enter</a> (bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memdesc:a68fc665da7d8c36cb9dca3f295aafa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
+<tr class="memitem:a5c60351f4d252649587f515b731a9255" id="r_a5c60351f4d252649587f515b731a9255"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c60351f4d252649587f515b731a9255">try_enter</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout, bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memdesc:a5c60351f4d252649587f515b731a9255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
+<tr class="memitem:ae9ac0e0c4ee7df93820ec12ad6639bb9" id="r_ae9ac0e0c4ee7df93820ec12ad6639bb9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae9ac0e0c4ee7df93820ec12ad6639bb9">try_enter</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, bool &amp;lock_taken) -&gt; void</td></tr>
+<tr class="memdesc:ae9ac0e0c4ee7df93820ec12ad6639bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -220,8 +220,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acdc54498e82b31d71af62424ffbc2cb8" name="acdc54498e82b31d71af62424ffbc2cb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdc54498e82b31d71af62424ffbc2cb8">&#9670;&#160;</a></span>is_held()</h2>
+<a id="a19718ae1b7842899e700686d4e3aa79e" name="a19718ae1b7842899e700686d4e3aa79e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19718ae1b7842899e700686d4e3aa79e">&#9670;&#160;</a></span>is_held()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,15 +230,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::spin_lock::is_held </td>
+          <td class="memname">auto xtd::threading::spin_lock::is_held </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -248,8 +248,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a92fa245a6e054558dd7d4272602c93d0" name="a92fa245a6e054558dd7d4272602c93d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92fa245a6e054558dd7d4272602c93d0">&#9670;&#160;</a></span>is_held_by_current_thread()</h2>
+<a id="a526f8b2c77b8f9722ff5174166333a05" name="a526f8b2c77b8f9722ff5174166333a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526f8b2c77b8f9722ff5174166333a05">&#9670;&#160;</a></span>is_held_by_current_thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,15 +258,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::spin_lock::is_held_by_current_thread </td>
+          <td class="memname">auto xtd::threading::spin_lock::is_held_by_current_thread </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -277,8 +277,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a531972816dbf8084244030140a9db621" name="a531972816dbf8084244030140a9db621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a531972816dbf8084244030140a9db621">&#9670;&#160;</a></span>is_thread_owner_tracking_enabled()</h2>
+<a id="a8e4f73b3f9f45bee5451d1a1cff3f7ad" name="a8e4f73b3f9f45bee5451d1a1cff3f7ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4f73b3f9f45bee5451d1a1cff3f7ad">&#9670;&#160;</a></span>is_thread_owner_tracking_enabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,15 +287,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::spin_lock::is_thread_owner_tracking_enabled </td>
+          <td class="memname">auto xtd::threading::spin_lock::is_thread_owner_tracking_enabled </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -305,17 +305,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a24e13fcd4189869a3d23e187b42c792a" name="a24e13fcd4189869a3d23e187b42c792a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24e13fcd4189869a3d23e187b42c792a">&#9670;&#160;</a></span>enter()</h2>
+<a id="a0598fbe7628988fc545359f061b67e08" name="a0598fbe7628988fc545359f061b67e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0598fbe7628988fc545359f061b67e08">&#9670;&#160;</a></span>enter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::enter </td>
+          <td class="memname">auto xtd::threading::spin_lock::enter </td>
           <td>(</td>
           <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -333,21 +333,21 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> is a non-reentrant lock, meaning that if a thread holds the lock, it is not allowed to enter the lock again. If thread ownership tracking is enabled (whether it's enabled is available through <a class="el" href="#a531972816dbf8084244030140a9db621" title="Gets whether thread ownership tracking is enabled for this instance.">xtd::threading::spin_lock::is_thread_owner_tracking_enabled</a>), an exception will be thrown when a thread tries to re-enter a lock it already holds. However, if thread ownership tracking is disabled, attempting to enter a lock already held will result in deadlock. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> is a non-reentrant lock, meaning that if a thread holds the lock, it is not allowed to enter the lock again. If thread ownership tracking is enabled (whether it's enabled is available through <a class="el" href="#a8e4f73b3f9f45bee5451d1a1cff3f7ad" title="Gets whether thread ownership tracking is enabled for this instance.">xtd::threading::spin_lock::is_thread_owner_tracking_enabled</a>), an exception will be thrown when a thread tries to re-enter a lock it already holds. However, if thread ownership tracking is disabled, attempting to enter a lock already held will result in deadlock. </dd></dl>
 
 </div>
 </div>
-<a id="a61ee56319b6e02c8c404321d04f6347e" name="a61ee56319b6e02c8c404321d04f6347e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61ee56319b6e02c8c404321d04f6347e">&#9670;&#160;</a></span>exit() <span class="overload">[1/2]</span></h2>
+<a id="a11f3d7ce3560f3495d64d07fb34fb959" name="a11f3d7ce3560f3495d64d07fb34fb959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f3d7ce3560f3495d64d07fb34fb959">&#9670;&#160;</a></span>exit() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::exit </td>
+          <td class="memname">auto xtd::threading::spin_lock::exit </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -361,21 +361,21 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default overload of Exit provides the same behavior as if calling Exit using <span class="tt">true</span> as the argument. </dd>
 <dd>
-If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
+If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="#a0598fbe7628988fc545359f061b67e08" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
 
 </div>
 </div>
-<a id="a1b66f6109eea3da0fe54e44886419782" name="a1b66f6109eea3da0fe54e44886419782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b66f6109eea3da0fe54e44886419782">&#9670;&#160;</a></span>exit() <span class="overload">[2/2]</span></h2>
+<a id="aaf718a0d1305a192573f94d0430cd343" name="aaf718a0d1305a192573f94d0430cd343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf718a0d1305a192573f94d0430cd343">&#9670;&#160;</a></span>exit() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::exit </td>
+          <td class="memname">auto xtd::threading::spin_lock::exit </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>use_memory_barrier</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -393,23 +393,23 @@ If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Relea
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling Exit with the use_memory_barrier argument set to <span class="tt">true</span> will improve the fairness of the lock at the expense of some performance. The default <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> overload behaves as if specifying <span class="tt">true</span> for use_memory_barrier. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Calling Exit with the use_memory_barrier argument set to <span class="tt">true</span> will improve the fairness of the lock at the expense of some performance. The default <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Releases the lock.">xtd::threading::spin_lock::exit</a> overload behaves as if specifying <span class="tt">true</span> for use_memory_barrier. </dd>
 <dd>
-If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
+If you call <a class="el" href="#a11f3d7ce3560f3495d64d07fb34fb959" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="#a0598fbe7628988fc545359f061b67e08" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
 
 </div>
 </div>
-<a id="a18e1ebdce78eacbba641ca8cb0d36ada" name="a18e1ebdce78eacbba641ca8cb0d36ada"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18e1ebdce78eacbba641ca8cb0d36ada">&#9670;&#160;</a></span>try_enter() <span class="overload">[1/3]</span></h2>
+<a id="a68fc665da7d8c36cb9dca3f295aafa43" name="a68fc665da7d8c36cb9dca3f295aafa43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fc665da7d8c36cb9dca3f295aafa43">&#9670;&#160;</a></span>try_enter() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::try_enter </td>
+          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -427,25 +427,25 @@ If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Relea
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a18e1ebdce78eacbba641ca8cb0d36ada" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block waiting for the lock to be available. If the lock is not available when <a class="el" href="#a18e1ebdce78eacbba641ca8cb0d36ada" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> is called, it will return immediately without any further spinning. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a0598fbe7628988fc545359f061b67e08" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block waiting for the lock to be available. If the lock is not available when <a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> is called, it will return immediately without any further spinning. </dd></dl>
 
 </div>
 </div>
-<a id="aef47de7e0dec014b37778a0a6558433d" name="aef47de7e0dec014b37778a0a6558433d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef47de7e0dec014b37778a0a6558433d">&#9670;&#160;</a></span>try_enter() <span class="overload">[2/3]</span></h2>
+<a id="a5c60351f4d252649587f515b731a9255" name="a5c60351f4d252649587f515b731a9255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c60351f4d252649587f515b731a9255">&#9670;&#160;</a></span>try_enter() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::try_enter </td>
+          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span>&#160;)</td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -464,25 +464,25 @@ If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Relea
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a18e1ebdce78eacbba641ca8cb0d36ada" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the milliseconds_timeout has expired. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a0598fbe7628988fc545359f061b67e08" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the milliseconds_timeout has expired. </dd></dl>
 
 </div>
 </div>
-<a id="ac80299f8d1b5945954a087b17c3213e6" name="ac80299f8d1b5945954a087b17c3213e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac80299f8d1b5945954a087b17c3213e6">&#9670;&#160;</a></span>try_enter() <span class="overload">[3/3]</span></h2>
+<a id="ae9ac0e0c4ee7df93820ec12ad6639bb9" name="ae9ac0e0c4ee7df93820ec12ad6639bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9ac0e0c4ee7df93820ec12ad6639bb9">&#9670;&#160;</a></span>try_enter() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::spin_lock::try_enter </td>
+          <td class="memname">auto xtd::threading::spin_lock::try_enter </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span>&#160;)</td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>lock_taken</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -501,7 +501,7 @@ If you call <a class="el" href="#a61ee56319b6e02c8c404321d04f6347e" title="Relea
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a18e1ebdce78eacbba641ca8cb0d36ada" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the timeout has expired. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="#a0598fbe7628988fc545359f061b67e08" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a>, <a class="el" href="#a68fc665da7d8c36cb9dca3f295aafa43" title="Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the m...">xtd::threading::spin_lock::try_enter</a> will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the timeout has expired. </dd></dl>
 
 </div>
 </div>

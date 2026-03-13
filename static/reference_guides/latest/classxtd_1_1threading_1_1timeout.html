@@ -109,7 +109,7 @@ Inheritance diagram for xtd::threading::timeout:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following example shows a thread going to sleep for an infinite time and subsequently being woken up. As the <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> method only works on the Windows operating system, on other platforms the result may be different. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Example</dt><dd>The following example shows a thread going to sleep for an infinite time and subsequently being woken up. As the <a class="el" href="classxtd_1_1threading_1_1thread.html#aec80eb0e7637b866ae64fa7759a8713a" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> method only works on the Windows operating system, on other platforms the result may be different. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>timeout_example {</div>
 <div class="line">  <span class="keyword">class </span>stay_awake {</div>
@@ -125,7 +125,7 @@ Inheritance diagram for xtd::threading::timeout:</div>
 <div class="line">      <span class="keywordflow">while</span>(!sleep_switch_) {</div>
 <div class="line">        <span class="comment">// Use SpinWait instead of Sleep to demonstrate the</span></div>
 <div class="line">        <span class="comment">// effect of calling Interrupt on a running thread.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a7861e3838380ffe3e0382ea52032d178">thread::spin_wait</a>(10000000);</div>
+<div class="line">        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a37a25c6ef433b949a915360b036841c4">thread::spin_wait</a>(10000000);</div>
 <div class="line">      }</div>
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;new_thread going to sleep.&quot;</span>);</div>
@@ -176,7 +176,7 @@ Inheritance diagram for xtd::threading::timeout:</div>
 <div class="line"><span class="comment">// new_thread going to sleep.</span></div>
 <div class="line"><span class="comment">// new_thread cannot go to sleep - interrupted by main thread.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a7861e3838380ffe3e0382ea52032d178"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a7861e3838380ffe3e0382ea52032d178">xtd::threading::thread::spin_wait</a></div><div class="ttdeci">static void spin_wait(int32 iterations)</div><div class="ttdoc">Causes a thread to wait the number of times defined by the iterations parameter.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a37a25c6ef433b949a915360b036841c4"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a37a25c6ef433b949a915360b036841c4">xtd::threading::thread::spin_wait</a></div><div class="ttdeci">static auto spin_wait(int32 iterations) -&gt; void</div><div class="ttdoc">Causes a thread to wait the number of times defined by the iterations parameter.</div></div>
 <div class="ttc" id="agroup__delegates_html_gacea3e237aac11920ba29f784740cba69"><div class="ttname"><a href="group__delegates.html#gacea3e237aac11920ba29f784740cba69">xtd::threading::thread_start</a></div><div class="ttdeci">xtd::delegate&lt; void()&gt; thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> thread_start.hpp:24</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 </div><!-- fragment --> </dd></dl>

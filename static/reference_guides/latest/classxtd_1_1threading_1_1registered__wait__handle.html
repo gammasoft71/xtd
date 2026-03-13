@@ -111,10 +111,10 @@ Inheritance diagram for xtd::threading::registered_wait_handle:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a40877f733c6916e500a29dbcffe41d4a" id="r_a40877f733c6916e500a29dbcffe41d4a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a40877f733c6916e500a29dbcffe41d4a">unregister</a> ()</td></tr>
-<tr class="memdesc:a40877f733c6916e500a29dbcffe41d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a registered wait operation issued by the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ae289948d4a64e7950f998632087df26c" title="Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer fo...">xtd::threading::thread_pool::register_wait_for_single_object</a> method.  <br /></td></tr>
-<tr class="memitem:a2b5d0329c1136153b10490adea9364f8" id="r_a2b5d0329c1136153b10490adea9364f8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2b5d0329c1136153b10490adea9364f8">unregister</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_obbject)</td></tr>
-<tr class="memdesc:a2b5d0329c1136153b10490adea9364f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a registered wait operation issued by the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ae289948d4a64e7950f998632087df26c" title="Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer fo...">xtd::threading::thread_pool::register_wait_for_single_object</a> method.  <br /></td></tr>
+<tr class="memitem:a6d1f2c3e7426e6c17426f54d315c395f" id="r_a6d1f2c3e7426e6c17426f54d315c395f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d1f2c3e7426e6c17426f54d315c395f">unregister</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a6d1f2c3e7426e6c17426f54d315c395f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a registered wait operation issued by the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ae289948d4a64e7950f998632087df26c" title="Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer fo...">xtd::threading::thread_pool::register_wait_for_single_object</a> method.  <br /></td></tr>
+<tr class="memitem:a282d36c0a71b78c41af74f8842830bdb" id="r_a282d36c0a71b78c41af74f8842830bdb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a282d36c0a71b78c41af74f8842830bdb">unregister</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_obbject) -&gt; bool</td></tr>
+<tr class="memdesc:a282d36c0a71b78c41af74f8842830bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a registered wait operation issued by the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ae289948d4a64e7950f998632087df26c" title="Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer fo...">xtd::threading::thread_pool::register_wait_for_single_object</a> method.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -139,17 +139,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a40877f733c6916e500a29dbcffe41d4a" name="a40877f733c6916e500a29dbcffe41d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40877f733c6916e500a29dbcffe41d4a">&#9670;&#160;</a></span>unregister() <span class="overload">[1/2]</span></h2>
+<a id="a6d1f2c3e7426e6c17426f54d315c395f" name="a6d1f2c3e7426e6c17426f54d315c395f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d1f2c3e7426e6c17426f54d315c395f">&#9670;&#160;</a></span>unregister() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::registered_wait_handle::unregister </td>
+          <td class="memname">auto xtd::threading::registered_wait_handle::unregister </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,17 +161,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2b5d0329c1136153b10490adea9364f8" name="a2b5d0329c1136153b10490adea9364f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b5d0329c1136153b10490adea9364f8">&#9670;&#160;</a></span>unregister() <span class="overload">[2/2]</span></h2>
+<a id="a282d36c0a71b78c41af74f8842830bdb" name="a282d36c0a71b78c41af74f8842830bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282d36c0a71b78c41af74f8842830bdb">&#9670;&#160;</a></span>unregister() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::registered_wait_handle::unregister </td>
+          <td class="memname">auto xtd::threading::registered_wait_handle::unregister </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>wait_obbject</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">

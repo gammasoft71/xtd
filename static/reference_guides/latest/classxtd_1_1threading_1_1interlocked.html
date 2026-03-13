@@ -111,7 +111,7 @@ Inheritance diagram for xtd::threading::interlocked:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The methods of this class help protect against errors that can occur when the scheduler switches contexts while a thread is updating a variable that can be accessed by other threads, or when two threads are executing concurrently on separate processors. The members of this class do not throw exceptions. </dd>
 <dd>
-The <a class="el" href="#a66c4f39315d4166efc26075e14b8e74b" title="Increments a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::increment</a> and <a class="el" href="#a87dc180d9e778435f75b8314c2139792" title="Decrements a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::decrement</a> methods increment or decrement a variable and store the resulting value in a single operation. On most computers, incrementing a variable is not an atomic operation, requiring the following steps: </dd>
+The <a class="el" href="#a65d4309898b6f48a2dd912cee77a4db3" title="Increments a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::increment</a> and <a class="el" href="#a28c4429b3c8f721591da12751106e50f" title="Decrements a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::decrement</a> methods increment or decrement a variable and store the resulting value in a single operation. On most computers, incrementing a variable is not an atomic operation, requiring the following steps: </dd>
 <dd>
 1. Load a value from an instance variable into a register. </dd>
 <dd>
@@ -119,7 +119,7 @@ The <a class="el" href="#a66c4f39315d4166efc26075e14b8e74b" title="Increments a 
 <dd>
 3. Store the value in the instance variable. </dd>
 <dd>
-If you do not use <a class="el" href="#a66c4f39315d4166efc26075e14b8e74b" title="Increments a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::increment</a> and <a class="el" href="#a87dc180d9e778435f75b8314c2139792" title="Decrements a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::decrement</a>, a thread can be preempted after executing the first two steps. Another thread can then execute all three steps. When the first thread resumes execution, it overwrites the value in the instance variable, and the effect of the increment or decrement performed by the second thread is lost. </dd>
+If you do not use <a class="el" href="#a65d4309898b6f48a2dd912cee77a4db3" title="Increments a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::increment</a> and <a class="el" href="#a28c4429b3c8f721591da12751106e50f" title="Decrements a specified variable and stores the result, as an atomic operation.">xtd::threading::interlocked::decrement</a>, a thread can be preempted after executing the first two steps. Another thread can then execute all three steps. When the first thread resumes execution, it overwrites the value in the instance variable, and the effect of the increment or decrement performed by the second thread is lost. </dd>
 <dd>
 The xtd::threading::exchange method atomically exchanges the values of the specified variables. The compare_exchange method combines two operations: comparing two values and storing a third value in one of the variables, based on the outcome of the comparison. The compare and exchange operations are performed as an atomic operation. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows a thread-safe resource locking mechanism. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -267,58 +267,57 @@ The xtd::threading::exchange method atomically exchanges the values of the speci
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a35d4d7219315784e960dfc7667181f3d" id="r_a35d4d7219315784e960dfc7667181f3d"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a35d4d7219315784e960dfc7667181f3d">add</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept</td></tr>
-<tr class="memdesc:a35d4d7219315784e960dfc7667181f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a6e9c12719786c6734d7ddb0c3332e2d0" id="r_a6e9c12719786c6734d7ddb0c3332e2d0"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6e9c12719786c6734d7ddb0c3332e2d0">add</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value) noexcept</td></tr>
-<tr class="memdesc:a6e9c12719786c6734d7ddb0c3332e2d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a4fa1c7713e0a72e4544044b7e5229277" id="r_a4fa1c7713e0a72e4544044b7e5229277"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#a4fa1c7713e0a72e4544044b7e5229277">compare_exchange</a> (double &amp;location, double value, double comparand) noexcept</td></tr>
-<tr class="memdesc:a4fa1c7713e0a72e4544044b7e5229277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two Double for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
-<tr class="memitem:aac8858f8a4bcc463ba66c79f637e92b9" id="r_aac8858f8a4bcc463ba66c79f637e92b9"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aac8858f8a4bcc463ba66c79f637e92b9">compare_exchange</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> comparand) noexcept</td></tr>
-<tr class="memdesc:aac8858f8a4bcc463ba66c79f637e92b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
-<tr class="memitem:a8d579e461eade7ab76255cfc7bd4a9c6" id="r_a8d579e461eade7ab76255cfc7bd4a9c6"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8d579e461eade7ab76255cfc7bd4a9c6">compare_exchange</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> comparand) noexcept</td></tr>
-<tr class="memdesc:a8d579e461eade7ab76255cfc7bd4a9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
-<tr class="memitem:ab8b0bc5ff488c6971722451133904f0f" id="r_ab8b0bc5ff488c6971722451133904f0f"><td class="memItemLeft">static void *&#160;</td><td class="memItemRight"><a class="el" href="#ab8b0bc5ff488c6971722451133904f0f">compare_exchange</a> (void *&amp;location, void *value, void *comparand) noexcept</td></tr>
-<tr class="memdesc:ab8b0bc5ff488c6971722451133904f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.  <br /></td></tr>
-<tr class="memitem:a9b7acdd3dd001f7b211557968798f278" id="r_a9b7acdd3dd001f7b211557968798f278"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a9b7acdd3dd001f7b211557968798f278 template"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="#a9b7acdd3dd001f7b211557968798f278">compare_exchange</a> (<a class="el" href="classxtd_1_1object.html">object</a> &amp;location, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;value, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;comparand) noexcept</td></tr>
-<tr class="memdesc:a9b7acdd3dd001f7b211557968798f278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two objects for equality and, if they are equal, replaces one of them.  <br /></td></tr>
-<tr class="memitem:a83e72c5c31aa8de63db8f3c06ca6d2ee" id="r_a83e72c5c31aa8de63db8f3c06ca6d2ee"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a83e72c5c31aa8de63db8f3c06ca6d2ee template"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="#a83e72c5c31aa8de63db8f3c06ca6d2ee">compare_exchange</a> (type_t &amp;location, type_t value, type_t comparand) noexcept</td></tr>
-<tr class="memdesc:a83e72c5c31aa8de63db8f3c06ca6d2ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.  <br /></td></tr>
-<tr class="memitem:ab4657b849ba5f95c7093cabf707a04f0" id="r_ab4657b849ba5f95c7093cabf707a04f0"><td class="memItemLeft">static float&#160;</td><td class="memItemRight"><a class="el" href="#ab4657b849ba5f95c7093cabf707a04f0">compare_exchange</a> (float &amp;location, float value, float comparand) noexcept</td></tr>
-<tr class="memdesc:ab4657b849ba5f95c7093cabf707a04f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two Single for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
-<tr class="memitem:a87dc180d9e778435f75b8314c2139792" id="r_a87dc180d9e778435f75b8314c2139792"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a87dc180d9e778435f75b8314c2139792">decrement</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location) noexcept</td></tr>
-<tr class="memdesc:a87dc180d9e778435f75b8314c2139792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:acb977ef29126f5d6d36438b477a53d83" id="r_acb977ef29126f5d6d36438b477a53d83"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#acb977ef29126f5d6d36438b477a53d83">decrement</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept</td></tr>
-<tr class="memdesc:acb977ef29126f5d6d36438b477a53d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:af651a4e7265de60e36605b2b2bc6fe02" id="r_af651a4e7265de60e36605b2b2bc6fe02"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:af651a4e7265de60e36605b2b2bc6fe02 template"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="#af651a4e7265de60e36605b2b2bc6fe02">exchange</a> (type_t &amp;location, type_t value)</td></tr>
-<tr class="memdesc:af651a4e7265de60e36605b2b2bc6fe02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a variable of the specified type type_t to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a25d8dcbbea3a4c5545f8bd64e8b6c7a5" id="r_a25d8dcbbea3a4c5545f8bd64e8b6c7a5"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#a25d8dcbbea3a4c5545f8bd64e8b6c7a5">exchange</a> (double &amp;location, double value) noexcept</td></tr>
-<tr class="memdesc:a25d8dcbbea3a4c5545f8bd64e8b6c7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:ace7d65e5175e9352cb135a83492797ec" id="r_ace7d65e5175e9352cb135a83492797ec"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ace7d65e5175e9352cb135a83492797ec">exchange</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept</td></tr>
-<tr class="memdesc:ace7d65e5175e9352cb135a83492797ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a404824e102fcf36080936fa559b6013d" id="r_a404824e102fcf36080936fa559b6013d"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a404824e102fcf36080936fa559b6013d">exchange</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value) noexcept</td></tr>
-<tr class="memdesc:a404824e102fcf36080936fa559b6013d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a84f8575c6c3e89d1020f576b37a8423e" id="r_a84f8575c6c3e89d1020f576b37a8423e"><td class="memItemLeft">static void *&#160;</td><td class="memItemRight"><a class="el" href="#a84f8575c6c3e89d1020f576b37a8423e">exchange</a> (void *&amp;location, void *value) noexcept</td></tr>
-<tr class="memdesc:a84f8575c6c3e89d1020f576b37a8423e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a557caac3e8c6375a456a5e1723ed9b6c" id="r_a557caac3e8c6375a456a5e1723ed9b6c"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a557caac3e8c6375a456a5e1723ed9b6c template"><td class="memItemLeft">static type_t&#160;</td><td class="memItemRight"><a class="el" href="#a557caac3e8c6375a456a5e1723ed9b6c">exchange</a> (<a class="el" href="classxtd_1_1object.html">object</a> &amp;location, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;value) noexcept</td></tr>
-<tr class="memdesc:a557caac3e8c6375a456a5e1723ed9b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:abdbf57765932b8da6f9d177ee16408c1" id="r_abdbf57765932b8da6f9d177ee16408c1"><td class="memItemLeft">static float&#160;</td><td class="memItemRight"><a class="el" href="#abdbf57765932b8da6f9d177ee16408c1">exchange</a> (float &amp;location, float value) noexcept</td></tr>
-<tr class="memdesc:abdbf57765932b8da6f9d177ee16408c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a66c4f39315d4166efc26075e14b8e74b" id="r_a66c4f39315d4166efc26075e14b8e74b"><td class="memItemLeft">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a66c4f39315d4166efc26075e14b8e74b">increment</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location) noexcept</td></tr>
-<tr class="memdesc:a66c4f39315d4166efc26075e14b8e74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:ac7e5c3d50ec453fe74c2af6165684122" id="r_ac7e5c3d50ec453fe74c2af6165684122"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac7e5c3d50ec453fe74c2af6165684122">increment</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept</td></tr>
-<tr class="memdesc:ac7e5c3d50ec453fe74c2af6165684122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
-<tr class="memitem:a6506b65f92ae0ed6fa25596b4911850f" id="r_a6506b65f92ae0ed6fa25596b4911850f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f">memory_barrier</a> () noexcept</td></tr>
-<tr class="memdesc:a6506b65f92ae0ed6fa25596b4911850f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to <a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> execute after memory accesses that follow the call to <a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a>.  <br /></td></tr>
-<tr class="memitem:a270b1d6b07eb8012eb4aa5ea37a9e35b" id="r_a270b1d6b07eb8012eb4aa5ea37a9e35b"><td class="memItemLeft">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a270b1d6b07eb8012eb4aa5ea37a9e35b">read</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept</td></tr>
-<tr class="memdesc:a270b1d6b07eb8012eb4aa5ea37a9e35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a 64-bit value, loaded as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a2df7ed4e9de9e4df902996914695038f" id="r_a2df7ed4e9de9e4df902996914695038f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2df7ed4e9de9e4df902996914695038f">add</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a2df7ed4e9de9e4df902996914695038f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:acf6889565feb3682ad81d3150db9bbea" id="r_acf6889565feb3682ad81d3150db9bbea"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acf6889565feb3682ad81d3150db9bbea">add</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memdesc:acf6889565feb3682ad81d3150db9bbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two 64-bit integers and replaces the first integer with the sum, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:aed99b0e0c33b3be44b0e67ff7fd2773d" id="r_aed99b0e0c33b3be44b0e67ff7fd2773d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aed99b0e0c33b3be44b0e67ff7fd2773d">compare_exchange</a> (double &amp;location, double value, double comparand) noexcept -&gt; double</td></tr>
+<tr class="memdesc:aed99b0e0c33b3be44b0e67ff7fd2773d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two Double for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
+<tr class="memitem:a210daf231aa497bd8dffd7a6aabab477" id="r_a210daf231aa497bd8dffd7a6aabab477"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a210daf231aa497bd8dffd7a6aabab477">compare_exchange</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> comparand) noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a210daf231aa497bd8dffd7a6aabab477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 32-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
+<tr class="memitem:a6ba8bfc77025abc85b883fd6e52ef978" id="r_a6ba8bfc77025abc85b883fd6e52ef978"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ba8bfc77025abc85b883fd6e52ef978">compare_exchange</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> comparand) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memdesc:a6ba8bfc77025abc85b883fd6e52ef978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two 64-bit signed integers for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
+<tr class="memitem:a5860ff4bcdf2d0379bed3f3cefdf4c06" id="r_a5860ff4bcdf2d0379bed3f3cefdf4c06"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5860ff4bcdf2d0379bed3f3cefdf4c06">compare_exchange</a> (void *&amp;location, void *value, void *comparand) noexcept -&gt; void *</td></tr>
+<tr class="memdesc:a5860ff4bcdf2d0379bed3f3cefdf4c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two platform-specific handles or pointers for equality and, if they are equal, replaces one of them.  <br /></td></tr>
+<tr class="memitem:a6795075e800a9392733031e3cb278a96" id="r_a6795075e800a9392733031e3cb278a96"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a6795075e800a9392733031e3cb278a96 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6795075e800a9392733031e3cb278a96">compare_exchange</a> (<a class="el" href="classxtd_1_1object.html">object</a> &amp;location, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;value, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;comparand) noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a6795075e800a9392733031e3cb278a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two objects for equality and, if they are equal, replaces one of them.  <br /></td></tr>
+<tr class="memitem:a4e1fc2feae82db8330d919c6bfa8be01" id="r_a4e1fc2feae82db8330d919c6bfa8be01"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a4e1fc2feae82db8330d919c6bfa8be01 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e1fc2feae82db8330d919c6bfa8be01">compare_exchange</a> (type_t &amp;location, type_t value, type_t comparand) noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a4e1fc2feae82db8330d919c6bfa8be01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two instances of the specified reference type type_t for equality and, if they are equal, replaces one of them.  <br /></td></tr>
+<tr class="memitem:ad12f87cc9c9ee9005a7304c97f2765aa" id="r_ad12f87cc9c9ee9005a7304c97f2765aa"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad12f87cc9c9ee9005a7304c97f2765aa">compare_exchange</a> (float &amp;location, float value, float comparand) noexcept -&gt; float</td></tr>
+<tr class="memdesc:ad12f87cc9c9ee9005a7304c97f2765aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two Single for equality and, if they are equal, replaces one of the values.  <br /></td></tr>
+<tr class="memitem:a28c4429b3c8f721591da12751106e50f" id="r_a28c4429b3c8f721591da12751106e50f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a28c4429b3c8f721591da12751106e50f">decrement</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location) noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a28c4429b3c8f721591da12751106e50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:ae9e57aeb87b7aaebe335301ec116c350" id="r_ae9e57aeb87b7aaebe335301ec116c350"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae9e57aeb87b7aaebe335301ec116c350">decrement</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memdesc:ae9e57aeb87b7aaebe335301ec116c350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a864b216f57ec87417e86252e23fef4d6" id="r_a864b216f57ec87417e86252e23fef4d6"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a864b216f57ec87417e86252e23fef4d6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a864b216f57ec87417e86252e23fef4d6">exchange</a> (type_t &amp;location, type_t value) -&gt; type_t</td></tr>
+<tr class="memdesc:a864b216f57ec87417e86252e23fef4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a variable of the specified type type_t to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:af702b11583747a95890dfe2bf38ee7df" id="r_af702b11583747a95890dfe2bf38ee7df"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af702b11583747a95890dfe2bf38ee7df">exchange</a> (double &amp;location, double value) noexcept -&gt; double</td></tr>
+<tr class="memdesc:af702b11583747a95890dfe2bf38ee7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:ab6cf2c7a1b0136d1d438acea64f6fe5f" id="r_ab6cf2c7a1b0136d1d438acea64f6fe5f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab6cf2c7a1b0136d1d438acea64f6fe5f">exchange</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:ab6cf2c7a1b0136d1d438acea64f6fe5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a 32-bit signed integer to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a179af72fa8904ab8c047bdb95832f5ad" id="r_a179af72fa8904ab8c047bdb95832f5ad"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a179af72fa8904ab8c047bdb95832f5ad">exchange</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memitem:ac493dd493e833d97484ad233224022ac" id="r_ac493dd493e833d97484ad233224022ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac493dd493e833d97484ad233224022ac">exchange</a> (void *&amp;location, void *value) noexcept -&gt; void *</td></tr>
+<tr class="memdesc:ac493dd493e833d97484ad233224022ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a platform-specific handles or pointers to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a6ce5877d09ba6ef4123d6503b16bf91e" id="r_a6ce5877d09ba6ef4123d6503b16bf91e"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a6ce5877d09ba6ef4123d6503b16bf91e template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ce5877d09ba6ef4123d6503b16bf91e">exchange</a> (<a class="el" href="classxtd_1_1object.html">object</a> &amp;location, const <a class="el" href="classxtd_1_1object.html">object</a> &amp;value) noexcept -&gt; type_t</td></tr>
+<tr class="memdesc:a6ce5877d09ba6ef4123d6503b16bf91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:ab24ff69d874330c7c7952e0df916cc6b" id="r_ab24ff69d874330c7c7952e0df916cc6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab24ff69d874330c7c7952e0df916cc6b">exchange</a> (float &amp;location, float value) noexcept -&gt; float</td></tr>
+<tr class="memdesc:ab24ff69d874330c7c7952e0df916cc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a65d4309898b6f48a2dd912cee77a4db3" id="r_a65d4309898b6f48a2dd912cee77a4db3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a65d4309898b6f48a2dd912cee77a4db3">increment</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;location) noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a65d4309898b6f48a2dd912cee77a4db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:a5aaf7b1be7ff138b61a584b6fa2fe69c" id="r_a5aaf7b1be7ff138b61a584b6fa2fe69c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5aaf7b1be7ff138b61a584b6fa2fe69c">increment</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memdesc:a5aaf7b1be7ff138b61a584b6fa2fe69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments a specified variable and stores the result, as an atomic operation.  <br /></td></tr>
+<tr class="memitem:ad695e08642380026492c691a6453f794" id="r_ad695e08642380026492c691a6453f794"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad695e08642380026492c691a6453f794">memory_barrier</a> () noexcept -&gt; void</td></tr>
+<tr class="memdesc:ad695e08642380026492c691a6453f794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to <a class="el" href="#ad695e08642380026492c691a6453f794" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> execute after memory accesses that follow the call to <a class="el" href="#ad695e08642380026492c691a6453f794" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a>.  <br /></td></tr>
+<tr class="memitem:a7b056e9f7ca8fbe03d81f3621863459c" id="r_a7b056e9f7ca8fbe03d81f3621863459c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7b056e9f7ca8fbe03d81f3621863459c">read</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;location) noexcept -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td></tr>
+<tr class="memdesc:a7b056e9f7ca8fbe03d81f3621863459c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a 64-bit value, loaded as an atomic operation.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a35d4d7219315784e960dfc7667181f3d" name="a35d4d7219315784e960dfc7667181f3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d4d7219315784e960dfc7667181f3d">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+<a id="a2df7ed4e9de9e4df902996914695038f" name="a2df7ed4e9de9e4df902996914695038f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df7ed4e9de9e4df902996914695038f">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,14 +326,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::interlocked::add </td>
+          <td class="memname">auto xtd::threading::interlocked::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
@@ -356,8 +355,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e9c12719786c6734d7ddb0c3332e2d0" name="a6e9c12719786c6734d7ddb0c3332e2d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e9c12719786c6734d7ddb0c3332e2d0">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
+<a id="acf6889565feb3682ad81d3150db9bbea" name="acf6889565feb3682ad81d3150db9bbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6889565feb3682ad81d3150db9bbea">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,14 +365,14 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::add </td>
+          <td class="memname">auto xtd::threading::interlocked::add </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>
@@ -395,8 +394,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a4fa1c7713e0a72e4544044b7e5229277" name="a4fa1c7713e0a72e4544044b7e5229277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fa1c7713e0a72e4544044b7e5229277">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[1/7]</span></h2>
+<a id="aed99b0e0c33b3be44b0e67ff7fd2773d" name="aed99b0e0c33b3be44b0e67ff7fd2773d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed99b0e0c33b3be44b0e67ff7fd2773d">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +404,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -417,7 +416,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt;  double</td>
         </tr>
       </table>
   </td>
@@ -440,8 +439,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aac8858f8a4bcc463ba66c79f637e92b9" name="aac8858f8a4bcc463ba66c79f637e92b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac8858f8a4bcc463ba66c79f637e92b9">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[2/7]</span></h2>
+<a id="a210daf231aa497bd8dffd7a6aabab477" name="a210daf231aa497bd8dffd7a6aabab477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210daf231aa497bd8dffd7a6aabab477">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +449,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -462,7 +461,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
@@ -485,8 +484,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a8d579e461eade7ab76255cfc7bd4a9c6" name="a8d579e461eade7ab76255cfc7bd4a9c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d579e461eade7ab76255cfc7bd4a9c6">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[3/7]</span></h2>
+<a id="a6ba8bfc77025abc85b883fd6e52ef978" name="a6ba8bfc77025abc85b883fd6e52ef978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba8bfc77025abc85b883fd6e52ef978">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +494,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -507,7 +506,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>
@@ -530,8 +529,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ab8b0bc5ff488c6971722451133904f0f" name="ab8b0bc5ff488c6971722451133904f0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8b0bc5ff488c6971722451133904f0f">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[4/7]</span></h2>
+<a id="a5860ff4bcdf2d0379bed3f3cefdf4c06" name="a5860ff4bcdf2d0379bed3f3cefdf4c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5860ff4bcdf2d0379bed3f3cefdf4c06">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -540,7 +539,7 @@ Public Static Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype">void *&amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -552,7 +551,7 @@ Public Static Methods</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt;  void *</td>
         </tr>
       </table>
   </td>
@@ -575,8 +574,8 @@ Public Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b7acdd3dd001f7b211557968798f278" name="a9b7acdd3dd001f7b211557968798f278"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b7acdd3dd001f7b211557968798f278">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[5/7]</span></h2>
+<a id="a6795075e800a9392733031e3cb278a96" name="a6795075e800a9392733031e3cb278a96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6795075e800a9392733031e3cb278a96">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -587,7 +586,7 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -599,7 +598,7 @@ template&lt;class type_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt; type_t</td>
         </tr>
       </table>
   </td>
@@ -622,8 +621,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a83e72c5c31aa8de63db8f3c06ca6d2ee" name="a83e72c5c31aa8de63db8f3c06ca6d2ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83e72c5c31aa8de63db8f3c06ca6d2ee">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[6/7]</span></h2>
+<a id="a4e1fc2feae82db8330d919c6bfa8be01" name="a4e1fc2feae82db8330d919c6bfa8be01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e1fc2feae82db8330d919c6bfa8be01">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,7 +633,7 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype">type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -646,7 +645,7 @@ template&lt;class type_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt; type_t</td>
         </tr>
       </table>
   </td>
@@ -669,8 +668,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="ab4657b849ba5f95c7093cabf707a04f0" name="ab4657b849ba5f95c7093cabf707a04f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4657b849ba5f95c7093cabf707a04f0">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[7/7]</span></h2>
+<a id="ad12f87cc9c9ee9005a7304c97f2765aa" name="ad12f87cc9c9ee9005a7304c97f2765aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12f87cc9c9ee9005a7304c97f2765aa">&#9670;&#160;</a></span>compare_exchange() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -679,7 +678,7 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float xtd::threading::interlocked::compare_exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::compare_exchange </td>
           <td>(</td>
           <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
@@ -691,7 +690,7 @@ template&lt;class type_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>comparand</em></span>&#160;) -&gt;  float</td>
         </tr>
       </table>
   </td>
@@ -714,8 +713,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a87dc180d9e778435f75b8314c2139792" name="a87dc180d9e778435f75b8314c2139792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87dc180d9e778435f75b8314c2139792">&#9670;&#160;</a></span>decrement() <span class="overload">[1/2]</span></h2>
+<a id="a28c4429b3c8f721591da12751106e50f" name="a28c4429b3c8f721591da12751106e50f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c4429b3c8f721591da12751106e50f">&#9670;&#160;</a></span>decrement() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -724,10 +723,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::interlocked::decrement </td>
+          <td class="memname">auto xtd::threading::interlocked::decrement </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
@@ -757,12 +756,12 @@ template&lt;class type_t&gt; </div>
 <div class="line">      </div>
 <div class="line">      count_class() {</div>
 <div class="line">        unsafe_instance_count++;</div>
-<div class="line">        <a class="code hl_function" href="#a66c4f39315d4166efc26075e14b8e74b">interlocked::increment</a>(safe_instance_count);</div>
+<div class="line">        <a class="code hl_function" href="#a65d4309898b6f48a2dd912cee77a4db3">interlocked::increment</a>(safe_instance_count);</div>
 <div class="line">      }</div>
 <div class="line">      </div>
 <div class="line">      ~count_class() {</div>
 <div class="line">        unsafe_instance_count--;</div>
-<div class="line">        <a class="code hl_function" href="#a87dc180d9e778435f75b8314c2139792">interlocked::decrement</a>(safe_instance_count);</div>
+<div class="line">        <a class="code hl_function" href="#a28c4429b3c8f721591da12751106e50f">interlocked::decrement</a>(safe_instance_count);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -795,15 +794,15 @@ template&lt;class type_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// unsafe_instance_count: 253</span></div>
 <div class="line"><span class="comment">// safe_instance_count: 0</span></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a66c4f39315d4166efc26075e14b8e74b"><div class="ttname"><a href="#a66c4f39315d4166efc26075e14b8e74b">xtd::threading::interlocked::increment</a></div><div class="ttdeci">static int32 increment(int32 &amp;location) noexcept</div><div class="ttdoc">Increments a specified variable and stores the result, as an atomic operation.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a87dc180d9e778435f75b8314c2139792"><div class="ttname"><a href="#a87dc180d9e778435f75b8314c2139792">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static int32 decrement(int32 &amp;location) noexcept</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a28c4429b3c8f721591da12751106e50f"><div class="ttname"><a href="#a28c4429b3c8f721591da12751106e50f">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static auto decrement(int32 &amp;location) noexcept -&gt; int32</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a65d4309898b6f48a2dd912cee77a4db3"><div class="ttname"><a href="#a65d4309898b6f48a2dd912cee77a4db3">xtd::threading::interlocked::increment</a></div><div class="ttdeci">static auto increment(int32 &amp;location) noexcept -&gt; int32</div><div class="ttdoc">Increments a specified variable and stores the result, as an atomic operation.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="acb977ef29126f5d6d36438b477a53d83" name="acb977ef29126f5d6d36438b477a53d83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb977ef29126f5d6d36438b477a53d83">&#9670;&#160;</a></span>decrement() <span class="overload">[2/2]</span></h2>
+<a id="ae9e57aeb87b7aaebe335301ec116c350" name="ae9e57aeb87b7aaebe335301ec116c350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e57aeb87b7aaebe335301ec116c350">&#9670;&#160;</a></span>decrement() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -812,10 +811,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::decrement </td>
+          <td class="memname">auto xtd::threading::interlocked::decrement </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>
@@ -836,8 +835,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="af651a4e7265de60e36605b2b2bc6fe02" name="af651a4e7265de60e36605b2b2bc6fe02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af651a4e7265de60e36605b2b2bc6fe02">&#9670;&#160;</a></span>exchange() <span class="overload">[1/7]</span></h2>
+<a id="a864b216f57ec87417e86252e23fef4d6" name="a864b216f57ec87417e86252e23fef4d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a864b216f57ec87417e86252e23fef4d6">&#9670;&#160;</a></span>exchange() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -848,14 +847,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype">type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; type_t</td>
         </tr>
       </table>
   </td>
@@ -877,8 +876,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a25d8dcbbea3a4c5545f8bd64e8b6c7a5" name="a25d8dcbbea3a4c5545f8bd64e8b6c7a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25d8dcbbea3a4c5545f8bd64e8b6c7a5">&#9670;&#160;</a></span>exchange() <span class="overload">[2/7]</span></h2>
+<a id="af702b11583747a95890dfe2bf38ee7df" name="af702b11583747a95890dfe2bf38ee7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af702b11583747a95890dfe2bf38ee7df">&#9670;&#160;</a></span>exchange() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -887,14 +886,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  double</td>
         </tr>
       </table>
   </td>
@@ -916,8 +915,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="ace7d65e5175e9352cb135a83492797ec" name="ace7d65e5175e9352cb135a83492797ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace7d65e5175e9352cb135a83492797ec">&#9670;&#160;</a></span>exchange() <span class="overload">[3/7]</span></h2>
+<a id="ab6cf2c7a1b0136d1d438acea64f6fe5f" name="ab6cf2c7a1b0136d1d438acea64f6fe5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6cf2c7a1b0136d1d438acea64f6fe5f">&#9670;&#160;</a></span>exchange() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -926,14 +925,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
@@ -1092,8 +1091,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a404824e102fcf36080936fa559b6013d" name="a404824e102fcf36080936fa559b6013d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a404824e102fcf36080936fa559b6013d">&#9670;&#160;</a></span>exchange() <span class="overload">[4/7]</span></h2>
+<a id="a179af72fa8904ab8c047bdb95832f5ad" name="a179af72fa8904ab8c047bdb95832f5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179af72fa8904ab8c047bdb95832f5ad">&#9670;&#160;</a></span>exchange() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1102,14 +1101,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>
@@ -1118,9 +1117,7 @@ template&lt;class type_t&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Sets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>@briefautoSets a 64-bit signed integer to a specified value and returns the original value, as an atomic operation. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">location</td><td>The variable to set to the specified value. </td></tr>
     <tr><td class="paramname">value</td><td>The value to which the location parameter is set. </td></tr>
@@ -1131,8 +1128,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a84f8575c6c3e89d1020f576b37a8423e" name="a84f8575c6c3e89d1020f576b37a8423e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f8575c6c3e89d1020f576b37a8423e">&#9670;&#160;</a></span>exchange() <span class="overload">[5/7]</span></h2>
+<a id="ac493dd493e833d97484ad233224022ac" name="ac493dd493e833d97484ad233224022ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac493dd493e833d97484ad233224022ac">&#9670;&#160;</a></span>exchange() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1141,14 +1138,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype">void *&amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  void *</td>
         </tr>
       </table>
   </td>
@@ -1170,8 +1167,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a557caac3e8c6375a456a5e1723ed9b6c" name="a557caac3e8c6375a456a5e1723ed9b6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a557caac3e8c6375a456a5e1723ed9b6c">&#9670;&#160;</a></span>exchange() <span class="overload">[6/7]</span></h2>
+<a id="a6ce5877d09ba6ef4123d6503b16bf91e" name="a6ce5877d09ba6ef4123d6503b16bf91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce5877d09ba6ef4123d6503b16bf91e">&#9670;&#160;</a></span>exchange() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1182,14 +1179,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt; type_t</td>
         </tr>
       </table>
   </td>
@@ -1211,8 +1208,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="abdbf57765932b8da6f9d177ee16408c1" name="abdbf57765932b8da6f9d177ee16408c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdbf57765932b8da6f9d177ee16408c1">&#9670;&#160;</a></span>exchange() <span class="overload">[7/7]</span></h2>
+<a id="ab24ff69d874330c7c7952e0df916cc6b" name="ab24ff69d874330c7c7952e0df916cc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24ff69d874330c7c7952e0df916cc6b">&#9670;&#160;</a></span>exchange() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1221,14 +1218,14 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float xtd::threading::interlocked::exchange </td>
+          <td class="memname">auto xtd::threading::interlocked::exchange </td>
           <td>(</td>
           <td class="paramtype">float &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;) -&gt;  float</td>
         </tr>
       </table>
   </td>
@@ -1250,8 +1247,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a66c4f39315d4166efc26075e14b8e74b" name="a66c4f39315d4166efc26075e14b8e74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66c4f39315d4166efc26075e14b8e74b">&#9670;&#160;</a></span>increment() <span class="overload">[1/2]</span></h2>
+<a id="a65d4309898b6f48a2dd912cee77a4db3" name="a65d4309898b6f48a2dd912cee77a4db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d4309898b6f48a2dd912cee77a4db3">&#9670;&#160;</a></span>increment() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1260,10 +1257,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::interlocked::increment </td>
+          <td class="memname">auto xtd::threading::interlocked::increment </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
   </td>
@@ -1293,12 +1290,12 @@ template&lt;class type_t&gt; </div>
 <div class="line">      </div>
 <div class="line">      count_class() {</div>
 <div class="line">        unsafe_instance_count++;</div>
-<div class="line">        <a class="code hl_function" href="#a66c4f39315d4166efc26075e14b8e74b">interlocked::increment</a>(safe_instance_count);</div>
+<div class="line">        <a class="code hl_function" href="#a65d4309898b6f48a2dd912cee77a4db3">interlocked::increment</a>(safe_instance_count);</div>
 <div class="line">      }</div>
 <div class="line">      </div>
 <div class="line">      ~count_class() {</div>
 <div class="line">        unsafe_instance_count--;</div>
-<div class="line">        <a class="code hl_function" href="#a87dc180d9e778435f75b8314c2139792">interlocked::decrement</a>(safe_instance_count);</div>
+<div class="line">        <a class="code hl_function" href="#a28c4429b3c8f721591da12751106e50f">interlocked::decrement</a>(safe_instance_count);</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -1335,8 +1332,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="ac7e5c3d50ec453fe74c2af6165684122" name="ac7e5c3d50ec453fe74c2af6165684122"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7e5c3d50ec453fe74c2af6165684122">&#9670;&#160;</a></span>increment() <span class="overload">[2/2]</span></h2>
+<a id="a5aaf7b1be7ff138b61a584b6fa2fe69c" name="a5aaf7b1be7ff138b61a584b6fa2fe69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aaf7b1be7ff138b61a584b6fa2fe69c">&#9670;&#160;</a></span>increment() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1345,10 +1342,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::increment </td>
+          <td class="memname">auto xtd::threading::interlocked::increment </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>
@@ -1369,8 +1366,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a6506b65f92ae0ed6fa25596b4911850f" name="a6506b65f92ae0ed6fa25596b4911850f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6506b65f92ae0ed6fa25596b4911850f">&#9670;&#160;</a></span>memory_barrier()</h2>
+<a id="ad695e08642380026492c691a6453f794" name="ad695e08642380026492c691a6453f794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad695e08642380026492c691a6453f794">&#9670;&#160;</a></span>memory_barrier()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1379,10 +1376,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::interlocked::memory_barrier </td>
+          <td class="memname">auto xtd::threading::interlocked::memory_barrier </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -1392,17 +1389,17 @@ template&lt;class type_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to <a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> execute after memory accesses that follow the call to <a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a>. </p>
+<p>Synchronizes memory access as follows: The processor that executes the current thread cannot reorder instructions in such a way that memory accesses before the call to <a class="el" href="#ad695e08642380026492c691a6453f794" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> execute after memory accesses that follow the call to <a class="el" href="#ad695e08642380026492c691a6453f794" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a>. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>This method was added to the <a class="el" href="classxtd_1_1threading_1_1interlocked.html" title="Provides atomic operations for variables that are shared by multiple threads.">xtd::threading::interlocked</a> class as a convenience; it's a wrapper for the xtd::threading::thread::memory_barrier method. </dd>
 <dd>
-<a class="el" href="#a6506b65f92ae0ed6fa25596b4911850f" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> is required only on multiprocessor systems that have weak memory ordering (for example, a system that employs multiple Intel Itanium processors). </dd>
+<a class="el" href="#ad695e08642380026492c691a6453f794" title="Synchronizes memory access as follows: The processor that executes the current thread cannot reorder ...">xtd::threading::interlocked::memory_barrier</a> is required only on multiprocessor systems that have weak memory ordering (for example, a system that employs multiple Intel Itanium processors). </dd>
 <dd>
 For most purposes, the lock_ statement, or the Monitor class provide easier ways to synchronize data. </dd></dl>
 
 </div>
 </div>
-<a id="a270b1d6b07eb8012eb4aa5ea37a9e35b" name="a270b1d6b07eb8012eb4aa5ea37a9e35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a270b1d6b07eb8012eb4aa5ea37a9e35b">&#9670;&#160;</a></span>read()</h2>
+<a id="a7b056e9f7ca8fbe03d81f3621863459c" name="a7b056e9f7ca8fbe03d81f3621863459c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b056e9f7ca8fbe03d81f3621863459c">&#9670;&#160;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1411,10 +1408,10 @@ For most purposes, the lock_ statement, or the Monitor class provide easier ways
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::threading::interlocked::read </td>
+          <td class="memname">auto xtd::threading::interlocked::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>location</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>
         </tr>
       </table>
   </td>

@@ -136,7 +136,7 @@ Inheritance diagram for xtd::threading::lock_guard:</div>
 <div class="line">            thread_total += value;</div>
 <div class="line">          </div>
 <div class="line">          console::write_line(<span class="stringliteral">&quot;Mean for task {0,2}: {1:N2} (N={2:N0})&quot;</span>,</div>
-<div class="line">                              thread::current_thread().<a class="code hl_function" href="group__threading.html#ga5858ca2012c7c2fc94bade40e745a9cb">managed_thread_id</a>(),</div>
+<div class="line">                              thread::current_thread().<a class="code hl_function" href="group__threading.html#ga8464fd29de86c18f58867cbf9b6d1664">managed_thread_id</a>(),</div>
 <div class="line">                              (thread_total * 1.0) / thread_n, thread_n);</div>
 <div class="line">          interlocked::add(n, thread_n);</div>
 <div class="line">          interlocked::add(total, thread_total);</div>
@@ -173,7 +173,7 @@ Inheritance diagram for xtd::threading::lock_guard:</div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:44</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
 <div class="ttc" id="agroup__keywords_html_ga73249a3d4ad48e36724bccf5f3e48f2f"><div class="ttname"><a href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f">using_</a></div><div class="ttdeci">#define using_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> using.hpp:36</div></div>
-<div class="ttc" id="agroup__threading_html_ga5858ca2012c7c2fc94bade40e745a9cb"><div class="ttname"><a href="group__threading.html#ga5858ca2012c7c2fc94bade40e745a9cb">xtd::threading::this_thread::managed_thread_id</a></div><div class="ttdeci">xtd::int32 managed_thread_id() noexcept</div><div class="ttdoc">Gets the managed thread id of the current thread.</div></div>
+<div class="ttc" id="agroup__threading_html_ga8464fd29de86c18f58867cbf9b6d1664"><div class="ttname"><a href="group__threading.html#ga8464fd29de86c18f58867cbf9b6d1664">xtd::threading::this_thread::managed_thread_id</a></div><div class="ttdeci">auto managed_thread_id() noexcept -&gt; xtd::int32</div><div class="ttdoc">Gets the managed thread id of the current thread.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:114</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -189,10 +189,10 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ac1a0483e7bcd0656f05f6ca1a3f24c78" id="r_ac1a0483e7bcd0656f05f6ca1a3f24c78"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac1a0483e7bcd0656f05f6ca1a3f24c78">enter</a> ()</td></tr>
-<tr class="memdesc:ac1a0483e7bcd0656f05f6ca1a3f24c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a>, waiting if necessary until the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a> can be entered.  <br /></td></tr>
-<tr class="memitem:a9624f938ceeb9763a472d27259cebc17" id="r_a9624f938ceeb9763a472d27259cebc17"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9624f938ceeb9763a472d27259cebc17">exit</a> ()</td></tr>
-<tr class="memdesc:a9624f938ceeb9763a472d27259cebc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a>.  <br /></td></tr>
+<tr class="memitem:a82f04e6ca592e253a00cb967a1435cf2" id="r_a82f04e6ca592e253a00cb967a1435cf2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a82f04e6ca592e253a00cb967a1435cf2">enter</a> () -&gt; void</td></tr>
+<tr class="memdesc:a82f04e6ca592e253a00cb967a1435cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a>, waiting if necessary until the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a> can be entered.  <br /></td></tr>
+<tr class="memitem:a12af382cf0c5061b0e35c086668e74d1" id="r_a12af382cf0c5061b0e35c086668e74d1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a12af382cf0c5061b0e35c086668e74d1">exit</a> () -&gt; void</td></tr>
+<tr class="memdesc:a12af382cf0c5061b0e35c086668e74d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">lock_guard</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -288,17 +288,17 @@ template&lt;class object_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac1a0483e7bcd0656f05f6ca1a3f24c78" name="ac1a0483e7bcd0656f05f6ca1a3f24c78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1a0483e7bcd0656f05f6ca1a3f24c78">&#9670;&#160;</a></span>enter()</h2>
+<a id="a82f04e6ca592e253a00cb967a1435cf2" name="a82f04e6ca592e253a00cb967a1435cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f04e6ca592e253a00cb967a1435cf2">&#9670;&#160;</a></span>enter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::lock_guard::enter </td>
+          <td class="memname">auto xtd::threading::lock_guard::enter </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -308,17 +308,17 @@ template&lt;class object_t&gt; </div>
 
 </div>
 </div>
-<a id="a9624f938ceeb9763a472d27259cebc17" name="a9624f938ceeb9763a472d27259cebc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9624f938ceeb9763a472d27259cebc17">&#9670;&#160;</a></span>exit()</h2>
+<a id="a12af382cf0c5061b0e35c086668e74d1" name="a12af382cf0c5061b0e35c086668e74d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12af382cf0c5061b0e35c086668e74d1">&#9670;&#160;</a></span>exit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::lock_guard::exit </td>
+          <td class="memname">auto xtd::threading::lock_guard::exit </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">

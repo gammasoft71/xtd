@@ -118,20 +118,20 @@ Inheritance diagram for xtd::threading::semaphore:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class to control access to a pool of resources. Threads enter the semaphore by calling the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method, which is inherited from the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class, and release the semaphore by calling the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class to control access to a pool of resources. Threads enter the semaphore by calling the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method, which is inherited from the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> class, and release the semaphore by calling the <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method. </dd>
 <dd>
 The count on a semaphore is decremented each time a thread enters the semaphore, and incremented when a thread releases the semaphore. When the count is zero, subsequent requests block until other threads release the semaphore. When all threads have released the semaphore, the count is at the maximum value specified when the semaphore was created. </dd>
 <dd>
 There is no guaranteed order, such as FIFO or LIFO, in which blocked threads enter the semaphore. </dd>
 <dd>
-A thread can enter the semaphore multiple times, by calling the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method repeatedly. To release some or all of these entries, the thread can call the parameterless <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload multiple times, or it can call the <a class="el" href="#aef9176db04539a533a40b9d7983c182d" title="Exits the semaphore a specified number of times and returns the previous count.">xtd::threading::semaphore::release(int32)</a> method overload that specifies the number of entries to be released. </dd>
+A thread can enter the semaphore multiple times, by calling the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> method repeatedly. To release some or all of these entries, the thread can call the parameterless <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload multiple times, or it can call the xtd::threading::semaphore::release(int32) method overload that specifies the number of entries to be released. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class does not enforce thread identity on calls to <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> or <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a>. It is the programmer's responsibility to ensure that threads do not release the semaphore too many times. For example, suppose a semaphore has a maximum count of two, and that thread A and thread B both enter the semaphore. If a programming error in thread B causes it to call <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> twice, both calls succeed. The count on the semaphore is full, and when thread A eventually calls <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a>, a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::threading::semaphore_full_exception</a> is thrown. </dd>
+The <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> class does not enforce thread identity on calls to <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a> or <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a>. It is the programmer's responsibility to ensure that threads do not release the semaphore too many times. For example, suppose a semaphore has a maximum count of two, and that thread A and thread B both enter the semaphore. If a programming error in thread B causes it to call <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> twice, both calls succeed. The count on the semaphore is full, and when thread A eventually calls <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a>, a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::threading::semaphore_full_exception</a> is thrown. </dd>
 <dd>
-Semaphores are of two types: local semaphores and named system semaphores. If you create a <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object using a constructor that accepts a name, it is associated with an operating-system semaphore of that name. Named system semaphores are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create multiple <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> objects that represent the same named system semaphore, and you can use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method to open an existing named system semaphore. </dd>
+Semaphores are of two types: local semaphores and named system semaphores. If you create a <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object using a constructor that accepts a name, it is associated with an operating-system semaphore of that name. Named system semaphores are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create multiple <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> objects that represent the same named system semaphore, and you can use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method to open an existing named system semaphore. </dd>
 <dd>
 A local semaphore exists only within your process. It can be used by any thread in your process that has a reference to the local <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object. Each <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object is a separate local semaphore. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <a class="el" href="#aef9176db04539a533a40b9d7983c182d" title="Exits the semaphore a specified number of times and returns the previous count.">xtd::threading::semaphore::release(int32)</a> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method to wait for one second, to simulate work, and then calls the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Example</dt><dd>The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the xtd::threading::semaphore::release(int32) method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <a class="el" href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method to wait for one second, to simulate work, and then calls the <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mutex_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -267,39 +267,39 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a9005ebcf73d9ee2f23b8c4b70ca7166e" id="r_a9005ebcf73d9ee2f23b8c4b70ca7166e"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9005ebcf73d9ee2f23b8c4b70ca7166e">handle</a> () const noexcept override</td></tr>
-<tr class="memdesc:a9005ebcf73d9ee2f23b8c4b70ca7166e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
-<tr class="memitem:aa15c99471106762834b06f16e67151a1" id="r_aa15c99471106762834b06f16e67151a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa15c99471106762834b06f16e67151a1">handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> value) override</td></tr>
-<tr class="memdesc:aa15c99471106762834b06f16e67151a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:a3ee06eb214fed7cd1e7bec08d1a1dcb6" id="r_a3ee06eb214fed7cd1e7bec08d1a1dcb6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3ee06eb214fed7cd1e7bec08d1a1dcb6">handle</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> override</td></tr>
+<tr class="memdesc:a3ee06eb214fed7cd1e7bec08d1a1dcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:ae4a62efb130d6c8f6af8d841dedaa226" id="r_ae4a62efb130d6c8f6af8d841dedaa226"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae4a62efb130d6c8f6af8d841dedaa226">handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> value) -&gt; void override</td></tr>
+<tr class="memdesc:ae4a62efb130d6c8f6af8d841dedaa226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:aa0dd699b9c1eb2f4cf87b4a42fdfa3b5" id="r_aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0dd699b9c1eb2f4cf87b4a42fdfa3b5">close</a> () override</td></tr>
-<tr class="memdesc:aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
-<tr class="memitem:ac0eec4fd53b46dfd5fea97da9febb6f3" id="r_ac0eec4fd53b46dfd5fea97da9febb6f3"><td class="memItemLeft"><a id="ac0eec4fd53b46dfd5fea97da9febb6f3" name="ac0eec4fd53b46dfd5fea97da9febb6f3"></a>
-<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><b>compare_to</b> (const <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;value) const noexcept override</td></tr>
-<tr class="memitem:a2b7642bef7c193ec39295daac2b0fb51" id="r_a2b7642bef7c193ec39295daac2b0fb51"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2b7642bef7c193ec39295daac2b0fb51">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a2b7642bef7c193ec39295daac2b0fb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a0ec552fa74b43cff956d3dcc28d4d0f7" id="r_a0ec552fa74b43cff956d3dcc28d4d0f7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0ec552fa74b43cff956d3dcc28d4d0f7">equals</a> (const <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:a0ec552fa74b43cff956d3dcc28d4d0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:ae91d68be55143e6563e3a6462b567195" id="r_ae91d68be55143e6563e3a6462b567195"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae91d68be55143e6563e3a6462b567195">release</a> ()</td></tr>
-<tr class="memdesc:ae91d68be55143e6563e3a6462b567195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the semaphore and returns the previous count.  <br /></td></tr>
-<tr class="memitem:aef9176db04539a533a40b9d7983c182d" id="r_aef9176db04539a533a40b9d7983c182d"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef9176db04539a533a40b9d7983c182d">release</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> release_count)</td></tr>
-<tr class="memdesc:aef9176db04539a533a40b9d7983c182d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the semaphore a specified number of times and returns the previous count.  <br /></td></tr>
+<tr class="memitem:af4d6c3f5e17eff44297265056426ef02" id="r_af4d6c3f5e17eff44297265056426ef02"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4d6c3f5e17eff44297265056426ef02">close</a> () -&gt; void override</td></tr>
+<tr class="memdesc:af4d6c3f5e17eff44297265056426ef02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
+<tr class="memitem:a8c52836d44220950879245975d420d2e" id="r_a8c52836d44220950879245975d420d2e"><td class="memItemLeft"><a id="a8c52836d44220950879245975d420d2e" name="a8c52836d44220950879245975d420d2e"></a>
+auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
+<tr class="memitem:a16fcf5775c9ec3ff4e4be17fe924b7e4" id="r_a16fcf5775c9ec3ff4e4be17fe924b7e4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a16fcf5775c9ec3ff4e4be17fe924b7e4">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a16fcf5775c9ec3ff4e4be17fe924b7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a3bf2593a88cdf62960c9aac968600cd7" id="r_a3bf2593a88cdf62960c9aac968600cd7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3bf2593a88cdf62960c9aac968600cd7">equals</a> (const <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a3bf2593a88cdf62960c9aac968600cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:ae848ee14f87eac9b3243f490af568355" id="r_ae848ee14f87eac9b3243f490af568355"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae848ee14f87eac9b3243f490af568355">release</a> () -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:ae848ee14f87eac9b3243f490af568355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the semaphore and returns the previous count.  <br /></td></tr>
+<tr class="memitem:a5944b3550160786998fed419ac4f3c90" id="r_a5944b3550160786998fed419ac4f3c90"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5944b3550160786998fed419ac4f3c90">release</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> release_count) -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td></tr>
+<tr class="memdesc:a5944b3550160786998fed419ac4f3c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the semaphore a specified number of times and returns the previous count.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:adecddb2165236cfdd2a94298ba6e6c9e" id="r_adecddb2165236cfdd2a94298ba6e6c9e"><td class="memItemLeft">static <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a>&#160;</td><td class="memItemRight"><a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name)</td></tr>
-<tr class="memdesc:adecddb2165236cfdd2a94298ba6e6c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named semaphore, if it already exists.  <br /></td></tr>
-<tr class="memitem:a8f1e62fef3d81bc11570ed24ba649da2" id="r_a8f1e62fef3d81bc11570ed24ba649da2"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a8f1e62fef3d81bc11570ed24ba649da2">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;result) noexcept</td></tr>
-<tr class="memdesc:a8f1e62fef3d81bc11570ed24ba649da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
+<tr class="memitem:a91e83866f403458ee32e49ab96273e32" id="r_a91e83866f403458ee32e49ab96273e32"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a91e83866f403458ee32e49ab96273e32">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name) -&gt; <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a></td></tr>
+<tr class="memdesc:a91e83866f403458ee32e49ab96273e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named semaphore, if it already exists.  <br /></td></tr>
+<tr class="memitem:ac1018878fde34d025cd8bbfcb8919385" id="r_ac1018878fde34d025cd8bbfcb8919385"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac1018878fde34d025cd8bbfcb8919385">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ac1018878fde34d025cd8bbfcb8919385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:aaa4697bd9662757ea8545edcaf66edb6" id="r_aaa4697bd9662757ea8545edcaf66edb6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aaa4697bd9662757ea8545edcaf66edb6">signal</a> () override</td></tr>
-<tr class="memdesc:aaa4697bd9662757ea8545edcaf66edb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
-<tr class="memitem:ae682af05e36bcda4a9270490678c9128" id="r_ae682af05e36bcda4a9270490678c9128"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae682af05e36bcda4a9270490678c9128">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) override</td></tr>
-<tr class="memdesc:ae682af05e36bcda4a9270490678c9128"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
+<tr class="memitem:a5141b2a1e07adafb8e1aba2c484c382e" id="r_a5141b2a1e07adafb8e1aba2c484c382e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5141b2a1e07adafb8e1aba2c484c382e">signal</a> () -&gt; bool override</td></tr>
+<tr class="memdesc:a5141b2a1e07adafb8e1aba2c484c382e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
+<tr class="memitem:a0a70c4f5ce228532fbeee9e91f2acf8f" id="r_a0a70c4f5ce228532fbeee9e91f2acf8f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a70c4f5ce228532fbeee9e91f2acf8f">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool override</td></tr>
+<tr class="memdesc:a0a70c4f5ce228532fbeee9e91f2acf8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -432,7 +432,7 @@ If you specify an empty string ("") for name, a local semaphore is created, as i
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
@@ -489,7 +489,7 @@ If you specify an empty string ("") for name, a local semaphore is created, as i
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
@@ -581,7 +581,7 @@ If you specify an empty string ("") for name, a local semaphore is created, as i
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ If you specify an empty string ("") for name, a local semaphore is created, as i
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
@@ -738,7 +738,7 @@ If initial_count is less than maximum_count, the effect is the same as if the cu
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
@@ -803,13 +803,13 @@ If you specify an empty string ("") for name, a local semaphore is created, as i
 <dd>
 Because named semaphores are visible throughout the operating system, they can be used to coordinate resource use across process boundaries. </dd>
 <dd>
-If you want to find out whether a named system semaphore exists, use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
+If you want to find out whether a named system semaphore exists, use the <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method. The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist. </dd></dl>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a9005ebcf73d9ee2f23b8c4b70ca7166e" name="a9005ebcf73d9ee2f23b8c4b70ca7166e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9005ebcf73d9ee2f23b8c4b70ca7166e">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
+<a id="a3ee06eb214fed7cd1e7bec08d1a1dcb6" name="a3ee06eb214fed7cd1e7bec08d1a1dcb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee06eb214fed7cd1e7bec08d1a1dcb6">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -818,15 +818,15 @@ If you want to find out whether a named system semaphore exists, use the <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::threading::semaphore::handle </td>
+          <td class="memname">auto xtd::threading::semaphore::handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -838,8 +838,8 @@ If you want to find out whether a named system semaphore exists, use the <a clas
 
 </div>
 </div>
-<a id="aa15c99471106762834b06f16e67151a1" name="aa15c99471106762834b06f16e67151a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa15c99471106762834b06f16e67151a1">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
+<a id="ae4a62efb130d6c8f6af8d841dedaa226" name="ae4a62efb130d6c8f6af8d841dedaa226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a62efb130d6c8f6af8d841dedaa226">&#9670;&#160;</a></span>handle() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -848,10 +848,10 @@ If you want to find out whether a named system semaphore exists, use the <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::semaphore::handle </td>
+          <td class="memname">auto xtd::threading::semaphore::handle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -873,8 +873,8 @@ If you want to find out whether a named system semaphore exists, use the <a clas
 
 </div>
 </div>
-<a id="aa0dd699b9c1eb2f4cf87b4a42fdfa3b5" name="aa0dd699b9c1eb2f4cf87b4a42fdfa3b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0dd699b9c1eb2f4cf87b4a42fdfa3b5">&#9670;&#160;</a></span>close()</h2>
+<a id="af4d6c3f5e17eff44297265056426ef02" name="af4d6c3f5e17eff44297265056426ef02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d6c3f5e17eff44297265056426ef02">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -883,10 +883,10 @@ If you want to find out whether a named system semaphore exists, use the <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::semaphore::close </td>
+          <td class="memname">auto xtd::threading::semaphore::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -903,8 +903,8 @@ If you want to find out whether a named system semaphore exists, use the <a clas
 
 </div>
 </div>
-<a id="a2b7642bef7c193ec39295daac2b0fb51" name="a2b7642bef7c193ec39295daac2b0fb51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b7642bef7c193ec39295daac2b0fb51">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a16fcf5775c9ec3ff4e4be17fe924b7e4" name="a16fcf5775c9ec3ff4e4be17fe924b7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fcf5775c9ec3ff4e4be17fe924b7e4">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -913,15 +913,15 @@ If you want to find out whether a named system semaphore exists, use the <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::semaphore::equals </td>
+          <td class="memname">auto xtd::threading::semaphore::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -939,8 +939,8 @@ If you want to find out whether a named system semaphore exists, use the <a clas
 
 </div>
 </div>
-<a id="a0ec552fa74b43cff956d3dcc28d4d0f7" name="a0ec552fa74b43cff956d3dcc28d4d0f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ec552fa74b43cff956d3dcc28d4d0f7">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a3bf2593a88cdf62960c9aac968600cd7" name="a3bf2593a88cdf62960c9aac968600cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bf2593a88cdf62960c9aac968600cd7">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -949,15 +949,15 @@ If you want to find out whether a named system semaphore exists, use the <a clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::semaphore::equals </td>
+          <td class="memname">auto xtd::threading::semaphore::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -973,23 +973,23 @@ If you want to find out whether a named system semaphore exists, use the <a clas
 
 </div>
 </div>
-<a id="ae91d68be55143e6563e3a6462b567195" name="ae91d68be55143e6563e3a6462b567195"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae91d68be55143e6563e3a6462b567195">&#9670;&#160;</a></span>release() <span class="overload">[1/2]</span></h2>
+<a id="ae848ee14f87eac9b3243f490af568355" name="ae848ee14f87eac9b3243f490af568355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae848ee14f87eac9b3243f490af568355">&#9670;&#160;</a></span>release() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::semaphore::release </td>
+          <td class="memname">auto xtd::threading::semaphore::release </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Exits the semaphore and returns the previous count. </p>
-<dl class="section return"><dt>Returns</dt><dd>The count on the semaphore before the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method was called. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The count on the semaphore before the <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method was called. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">xtd::threading::semaphore_full_exception</a></td><td>The semaphore count is already at the maximum value. </td></tr>
@@ -1003,17 +1003,17 @@ If a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.htm
 
 </div>
 </div>
-<a id="aef9176db04539a533a40b9d7983c182d" name="aef9176db04539a533a40b9d7983c182d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef9176db04539a533a40b9d7983c182d">&#9670;&#160;</a></span>release() <span class="overload">[2/2]</span></h2>
+<a id="a5944b3550160786998fed419ac4f3c90" name="a5944b3550160786998fed419ac4f3c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5944b3550160786998fed419ac4f3c90">&#9670;&#160;</a></span>release() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::threading::semaphore::release </td>
+          <td class="memname">auto xtd::threading::semaphore::release </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>release_count</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1025,7 +1025,7 @@ If a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.htm
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The count on the semaphore before the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method was called. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The count on the semaphore before the <a class="el" href="#ae848ee14f87eac9b3243f490af568355" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release</a> method was called. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>releaseCount is less than 1. </td></tr>
@@ -1039,8 +1039,8 @@ If a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.htm
 
 </div>
 </div>
-<a id="adecddb2165236cfdd2a94298ba6e6c9e" name="adecddb2165236cfdd2a94298ba6e6c9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adecddb2165236cfdd2a94298ba6e6c9e">&#9670;&#160;</a></span>open_existing()</h2>
+<a id="a91e83866f403458ee32e49ab96273e32" name="a91e83866f403458ee32e49ab96273e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91e83866f403458ee32e49ab96273e32">&#9670;&#160;</a></span>open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1049,15 +1049,15 @@ If a <a class="el" href="classxtd_1_1threading_1_1semaphore__full__exception.htm
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> xtd::threading::semaphore::open_existing </td>
+          <td class="memname">auto xtd::threading::semaphore::open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1081,14 +1081,14 @@ There was some other error. The HResult property may provide more information. <
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. </dd>
 <dd>
-The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> constructors that has a name parameter. </dd>
+The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> constructors that has a name parameter. </dd>
 <dd>
 Multiple calls to this method that use the same value for name do not necessarily return the same <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object, even though the objects that are returned represent the same named system semaphore. </dd></dl>
 
 </div>
 </div>
-<a id="a8f1e62fef3d81bc11570ed24ba649da2" name="a8f1e62fef3d81bc11570ed24ba649da2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f1e62fef3d81bc11570ed24ba649da2">&#9670;&#160;</a></span>try_open_existing()</h2>
+<a id="ac1018878fde34d025cd8bbfcb8919385" name="ac1018878fde34d025cd8bbfcb8919385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1018878fde34d025cd8bbfcb8919385">&#9670;&#160;</a></span>try_open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1097,19 +1097,19 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::semaphore::try_open_existing </td>
+          <td class="memname">auto xtd::threading::semaphore::try_open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1125,14 +1125,14 @@ Multiple calls to this method that use the same value for name do not necessaril
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the named semaphore was opened successfully; otherwise, <span class="tt">false</span>. In some cases, <span class="tt">false</span> may be returned for invalid names. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. </dd>
 <dd>
-The <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> constructors that has a name parameter. </dd>
+The <a class="el" href="#a91e83866f403458ee32e49ab96273e32" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> constructors that has a name parameter. </dd>
 <dd>
 Multiple calls to this method that use the same value for name do not necessarily return the same <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object, even though the objects that are returned represent the same named system semaphore. </dd></dl>
 
 </div>
 </div>
-<a id="aaa4697bd9662757ea8545edcaf66edb6" name="aaa4697bd9662757ea8545edcaf66edb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa4697bd9662757ea8545edcaf66edb6">&#9670;&#160;</a></span>signal()</h2>
+<a id="a5141b2a1e07adafb8e1aba2c484c382e" name="a5141b2a1e07adafb8e1aba2c484c382e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5141b2a1e07adafb8e1aba2c484c382e">&#9670;&#160;</a></span>signal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1141,10 +1141,10 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::semaphore::signal </td>
+          <td class="memname">auto xtd::threading::semaphore::signal </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1162,8 +1162,8 @@ Multiple calls to this method that use the same value for name do not necessaril
 
 </div>
 </div>
-<a id="ae682af05e36bcda4a9270490678c9128" name="ae682af05e36bcda4a9270490678c9128"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae682af05e36bcda4a9270490678c9128">&#9670;&#160;</a></span>wait()</h2>
+<a id="a0a70c4f5ce228532fbeee9e91f2acf8f" name="a0a70c4f5ce228532fbeee9e91f2acf8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a70c4f5ce228532fbeee9e91f2acf8f">&#9670;&#160;</a></span>wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1172,10 +1172,10 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::semaphore::wait </td>
+          <td class="memname">auto xtd::threading::semaphore::wait </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1188,7 +1188,7 @@ Multiple calls to this method that use the same value for name do not necessaril
 <p>wait ownership of the specified mutex object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a9005ebcf73d9ee2f23b8c4b70ca7166e" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a3ee06eb214fed7cd1e7bec08d1a1dcb6" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or -1 to wait indefinitely. </td></tr>
   </table>
   </dd>

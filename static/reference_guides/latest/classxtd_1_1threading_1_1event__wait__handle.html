@@ -118,13 +118,13 @@ Inheritance diagram for xtd::threading::event_wait_handle:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class allows threads to communicate with each other by signaling. Typically, one or more threads block on an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> until an unblocked thread calls the <a class="el" href="#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method, releasing one or more of the blocked threads. A thread can signal an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> and then block on it, by calling the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a> method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class allows threads to communicate with each other by signaling. Typically, one or more threads block on an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> until an unblocked thread calls the <a class="el" href="#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method, releasing one or more of the blocked threads. A thread can signal an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> and then block on it, by calling the static <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait</a> method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class provides access to named system synchronization events. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The behavior of an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> that has been signaled depends on its reset mode. An <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> flag resets automatically when signaled, after releasing a single waiting thread. An <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> created with the <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> flag remains signaled until its Reset method is called. </dd>
 <dd>
 Automatic reset events provide exclusive access to a resource. If an automatic reset event is signaled when no threads are waiting, it remains signaled until a thread attempts to wait on it. The event releases the thread and immediately resets, blocking subsequent threads. </dd>
 <dd>
-Manual reset events are like gates. When the event is not signaled, threads that wait on it will block. When the event is signaled, all waiting threads are released, and the event remains signaled (that is, subsequent waits do not block) until its <a class="el" href="#afad8a8b6d18cec770c3688e02e2154da" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. Manual reset events are useful when one thread must complete an activity before other threads can proceed. </dd>
+Manual reset events are like gates. When the event is not signaled, threads that wait on it will block. When the event is signaled, all waiting threads are released, and the event remains signaled (that is, subsequent waits do not block) until its <a class="el" href="#a37be5a0e9f438e7ed43ae7e648001960" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. Manual reset events are useful when one thread must complete an activity before other threads can proceed. </dd>
 <dd>
 <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> objects can be used with the static xtd::threading::wait_handle::wWait_all and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> methods. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7" title="Signals one xtd::threading::wait_handle and waits on another.">xtd::threading::wait_handle::signal_and_wait(xtd::threading::wait_handle&amp;, xtd::threading::wait_handle&amp;)</a> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.<br  />
@@ -170,7 +170,7 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">    <span class="comment">// Interlocked class to guarantee thread safety.</span></div>
 <div class="line">    <span class="comment">//</span></div>
 <div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &lt; 5) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(500);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0">thread::sleep</a>(500);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Release one thread each time the user presses ENTER,</span></div>
@@ -205,7 +205,7 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">    <span class="comment">// Wait until all the threads have started and blocked.</span></div>
 <div class="line">    <span class="comment">//</span></div>
 <div class="line">    <span class="keywordflow">while</span> (interlocked::read(thread_count) &lt; 5) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(500);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0">thread::sleep</a>(500);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Because the event_wait_handle was created with</span></div>
@@ -214,27 +214,27 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="line">    <span class="comment">//</span></div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Press ENTER to release the waiting threads.&quot;</span>);</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    ewh.<a class="code hl_function" href="#a3254163aa012cb3dc8f99ff16c0c7d6c">set</a>();</div>
+<div class="line">    ewh.<a class="code hl_function" href="#a1701b04407b640070fbc3683ee32c1c0">set</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> thread_proc(any_object data) {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} blocks.&quot;</span>, as&lt;int&gt;(data));</div>
 <div class="line">    <span class="comment">// Increment the count of blocked threads.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a66c4f39315d4166efc26075e14b8e74b">interlocked::increment</a>(thread_count);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a65d4309898b6f48a2dd912cee77a4db3">interlocked::increment</a>(thread_count);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Wait on the event_wait_handle.</span></div>
 <div class="line">    ewh.<a class="code hl_function" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a>();</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Thread {0} exits.&quot;</span>, as&lt;int&gt;(data));</div>
 <div class="line">    <span class="comment">// Decrement the count of blocked threads.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a87dc180d9e778435f75b8314c2139792">interlocked::decrement</a>(thread_count);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a28c4429b3c8f721591da12751106e50f">interlocked::decrement</a>(thread_count);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// After signaling ewh, the main thread blocks on</span></div>
 <div class="line">    <span class="comment">// clear_count until the signaled thread has</span></div>
 <div class="line">    <span class="comment">// decremented the count. Signal it now.</span></div>
 <div class="line">    <span class="comment">//</span></div>
-<div class="line">    clear_count.<a class="code hl_function" href="#a3254163aa012cb3dc8f99ff16c0c7d6c">set</a>();</div>
+<div class="line">    clear_count.<a class="code hl_function" href="#a1701b04407b640070fbc3683ee32c1c0">set</a>();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> std::array&lt;thread, 5&gt; threads;</div>
@@ -280,10 +280,10 @@ Manual reset events are like gates. When the event is not signaled, threads that
 <div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html"><div class="ttname"><a href="classxtd_1_1threading_1_1event__wait__handle.html">xtd::threading::event_wait_handle</a></div><div class="ttdoc">Represents a thread synchronization event.</div><div class="ttdef"><b>Definition</b> event_wait_handle.hpp:37</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html_a3254163aa012cb3dc8f99ff16c0c7d6c"><div class="ttname"><a href="#a3254163aa012cb3dc8f99ff16c0c7d6c">xtd::threading::event_wait_handle::set</a></div><div class="ttdeci">bool set()</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a66c4f39315d4166efc26075e14b8e74b"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a66c4f39315d4166efc26075e14b8e74b">xtd::threading::interlocked::increment</a></div><div class="ttdeci">static int32 increment(int32 &amp;location) noexcept</div><div class="ttdoc">Increments a specified variable and stores the result, as an atomic operation.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a87dc180d9e778435f75b8314c2139792"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a87dc180d9e778435f75b8314c2139792">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static int32 decrement(int32 &amp;location) noexcept</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1event__wait__handle_html_a1701b04407b640070fbc3683ee32c1c0"><div class="ttname"><a href="#a1701b04407b640070fbc3683ee32c1c0">xtd::threading::event_wait_handle::set</a></div><div class="ttdeci">auto set() -&gt; bool</div><div class="ttdoc">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a28c4429b3c8f721591da12751106e50f"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a28c4429b3c8f721591da12751106e50f">xtd::threading::interlocked::decrement</a></div><div class="ttdeci">static auto decrement(int32 &amp;location) noexcept -&gt; int32</div><div class="ttdoc">Decrements a specified variable and stores the result, as an atomic operation.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a65d4309898b6f48a2dd912cee77a4db3"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a65d4309898b6f48a2dd912cee77a4db3">xtd::threading::interlocked::increment</a></div><div class="ttdeci">static auto increment(int32 &amp;location) noexcept -&gt; int32</div><div class="ttdoc">Increments a specified variable and stores the result, as an atomic operation.</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a330d3bf0916af42f3ca433010cd585a0"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a330d3bf0916af42f3ca433010cd585a0">xtd::threading::thread::sleep</a></div><div class="ttdeci">static auto sleep(int32 milliseconds_timeout) -&gt; void</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_a01c82b06ca8a5d14aba5f1fb396c16f7"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7">xtd::threading::wait_handle::signal_and_wait</a></div><div class="ttdeci">static bool signal_and_wait(wait_handle &amp;to_signal, wait_handle &amp;to_wait)</div><div class="ttdoc">Signals one xtd::threading::wait_handle and waits on another.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_ab53dcefc6844ecf0d6d9967ac489ac87"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">xtd::threading::wait_handle::wait_one</a></div><div class="ttdeci">virtual bool wait_one()</div><div class="ttdoc">Blocks the current thread until the current xtd::threading::wait_handle receives a signal.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:284</div></div>
@@ -313,39 +313,39 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a96d6a6e016d598ac4eab6916b1fe756c" id="r_a96d6a6e016d598ac4eab6916b1fe756c"><td class="memItemLeft"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a96d6a6e016d598ac4eab6916b1fe756c">handle</a> () const noexcept override</td></tr>
-<tr class="memdesc:a96d6a6e016d598ac4eab6916b1fe756c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
+<tr class="memitem:aaf294d6763273d4a9c3d12447b53b6fb" id="r_aaf294d6763273d4a9c3d12447b53b6fb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf294d6763273d4a9c3d12447b53b6fb">handle</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> override</td></tr>
+<tr class="memdesc:aaf294d6763273d4a9c3d12447b53b6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system handle.  <br /></td></tr>
 <tr class="memitem:a9768d5b08aa592b96e4fb7880471b041" id="r_a9768d5b08aa592b96e4fb7880471b041"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9768d5b08aa592b96e4fb7880471b041">handle</a> (<a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> value) override</td></tr>
 <tr class="memdesc:a9768d5b08aa592b96e4fb7880471b041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the native operating system handle.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a25cd50beb10d27e546af15506fa98465" id="r_a25cd50beb10d27e546af15506fa98465"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a25cd50beb10d27e546af15506fa98465">close</a> () override</td></tr>
-<tr class="memdesc:a25cd50beb10d27e546af15506fa98465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
-<tr class="memitem:a5dc2c05478fe39adf25ea9c51bcc194c" id="r_a5dc2c05478fe39adf25ea9c51bcc194c"><td class="memItemLeft"><a id="a5dc2c05478fe39adf25ea9c51bcc194c" name="a5dc2c05478fe39adf25ea9c51bcc194c"></a>
-<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><b>compare_to</b> (const event_wait_handle &amp;value) const noexcept override</td></tr>
-<tr class="memitem:a2d2095458ca8d32f8c497b6c1014dde0" id="r_a2d2095458ca8d32f8c497b6c1014dde0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2d2095458ca8d32f8c497b6c1014dde0">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a2d2095458ca8d32f8c497b6c1014dde0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:af81c2f1c23839796cdd7486131df22a4" id="r_af81c2f1c23839796cdd7486131df22a4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af81c2f1c23839796cdd7486131df22a4">equals</a> (const event_wait_handle &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:af81c2f1c23839796cdd7486131df22a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:afad8a8b6d18cec770c3688e02e2154da" id="r_afad8a8b6d18cec770c3688e02e2154da"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afad8a8b6d18cec770c3688e02e2154da">reset</a> ()</td></tr>
-<tr class="memdesc:afad8a8b6d18cec770c3688e02e2154da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the event to nonsignaled, causing threads to block.  <br /></td></tr>
-<tr class="memitem:a3254163aa012cb3dc8f99ff16c0c7d6c" id="r_a3254163aa012cb3dc8f99ff16c0c7d6c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3254163aa012cb3dc8f99ff16c0c7d6c">set</a> ()</td></tr>
-<tr class="memdesc:a3254163aa012cb3dc8f99ff16c0c7d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.  <br /></td></tr>
+<tr class="memitem:af49ca0e066d4a1c01c6ed7e3021edbc6" id="r_af49ca0e066d4a1c01c6ed7e3021edbc6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af49ca0e066d4a1c01c6ed7e3021edbc6">close</a> () -&gt; void override</td></tr>
+<tr class="memdesc:af49ca0e066d4a1c01c6ed7e3021edbc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
+<tr class="memitem:a6ce7b3d82f179cd75c9ec190c1d9e775" id="r_a6ce7b3d82f179cd75c9ec190c1d9e775"><td class="memItemLeft"><a id="a6ce7b3d82f179cd75c9ec190c1d9e775" name="a6ce7b3d82f179cd75c9ec190c1d9e775"></a>
+auto&#160;</td><td class="memItemRight"><b>compare_to</b> (const event_wait_handle &amp;value) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
+<tr class="memitem:ad0e9394064d04041fa4f054acca6011d" id="r_ad0e9394064d04041fa4f054acca6011d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0e9394064d04041fa4f054acca6011d">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ad0e9394064d04041fa4f054acca6011d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a51b613810352cddd5a46ae8271705b0b" id="r_a51b613810352cddd5a46ae8271705b0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a51b613810352cddd5a46ae8271705b0b">equals</a> (const event_wait_handle &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a51b613810352cddd5a46ae8271705b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a37be5a0e9f438e7ed43ae7e648001960" id="r_a37be5a0e9f438e7ed43ae7e648001960"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a37be5a0e9f438e7ed43ae7e648001960">reset</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a37be5a0e9f438e7ed43ae7e648001960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the event to nonsignaled, causing threads to block.  <br /></td></tr>
+<tr class="memitem:a1701b04407b640070fbc3683ee32c1c0" id="r_a1701b04407b640070fbc3683ee32c1c0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1701b04407b640070fbc3683ee32c1c0">set</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a1701b04407b640070fbc3683ee32c1c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the event to signaled, allowing one or more waiting threads to proceed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a56828ae6ec5f9e8e7388ef22e4bf5178" id="r_a56828ae6ec5f9e8e7388ef22e4bf5178"><td class="memItemLeft">static event_wait_handle&#160;</td><td class="memItemRight"><a class="el" href="#a56828ae6ec5f9e8e7388ef22e4bf5178">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name)</td></tr>
-<tr class="memdesc:a56828ae6ec5f9e8e7388ef22e4bf5178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists.  <br /></td></tr>
-<tr class="memitem:a02cf66c2ec8b0399cdf28500a0b06782" id="r_a02cf66c2ec8b0399cdf28500a0b06782"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a02cf66c2ec8b0399cdf28500a0b06782">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, event_wait_handle &amp;result) noexcept</td></tr>
-<tr class="memdesc:a02cf66c2ec8b0399cdf28500a0b06782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
+<tr class="memitem:a0c7e01f4786633d8d28b60e7ae649555" id="r_a0c7e01f4786633d8d28b60e7ae649555"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0c7e01f4786633d8d28b60e7ae649555">open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name) -&gt; event_wait_handle</td></tr>
+<tr class="memdesc:a0c7e01f4786633d8d28b60e7ae649555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists.  <br /></td></tr>
+<tr class="memitem:a1966fd9412be4ba777d5bf8bf853fc77" id="r_a1966fd9412be4ba777d5bf8bf853fc77"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1966fd9412be4ba777d5bf8bf853fc77">try_open_existing</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;name, event_wait_handle &amp;result) noexcept -&gt; bool</td></tr>
+<tr class="memdesc:a1966fd9412be4ba777d5bf8bf853fc77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Protected Methods</h2></td></tr>
-<tr class="memitem:aaa4488a58c5f9a3d9275edcef7db8506" id="r_aaa4488a58c5f9a3d9275edcef7db8506"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aaa4488a58c5f9a3d9275edcef7db8506">signal</a> () override</td></tr>
-<tr class="memdesc:aaa4488a58c5f9a3d9275edcef7db8506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
-<tr class="memitem:a307798f8a6772759c3bd9941bb7eab5d" id="r_a307798f8a6772759c3bd9941bb7eab5d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a307798f8a6772759c3bd9941bb7eab5d">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) override</td></tr>
-<tr class="memdesc:a307798f8a6772759c3bd9941bb7eab5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
+<tr class="memitem:a273aa7290a15d16035cd3eb39a392919" id="r_a273aa7290a15d16035cd3eb39a392919"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a273aa7290a15d16035cd3eb39a392919">signal</a> () -&gt; bool override</td></tr>
+<tr class="memdesc:a273aa7290a15d16035cd3eb39a392919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
+<tr class="memitem:a2705c6bf3269176e0ff498f3435ed65b" id="r_a2705c6bf3269176e0ff498f3435ed65b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2705c6bf3269176e0ff498f3435ed65b">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) -&gt; bool override</td></tr>
+<tr class="memdesc:a2705c6bf3269176e0ff498f3435ed65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -725,8 +725,8 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a96d6a6e016d598ac4eab6916b1fe756c" name="a96d6a6e016d598ac4eab6916b1fe756c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96d6a6e016d598ac4eab6916b1fe756c">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
+<a id="aaf294d6763273d4a9c3d12447b53b6fb" name="aaf294d6763273d4a9c3d12447b53b6fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf294d6763273d4a9c3d12447b53b6fb">&#9670;&#160;</a></span>handle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -735,15 +735,15 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a> xtd::threading::event_wait_handle::handle </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::handle </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga4caacfecf928a301a87e8b7accd31f1f">intptr</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -790,8 +790,8 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 
 </div>
 </div>
-<a id="a25cd50beb10d27e546af15506fa98465" name="a25cd50beb10d27e546af15506fa98465"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25cd50beb10d27e546af15506fa98465">&#9670;&#160;</a></span>close()</h2>
+<a id="af49ca0e066d4a1c01c6ed7e3021edbc6" name="af49ca0e066d4a1c01c6ed7e3021edbc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49ca0e066d4a1c01c6ed7e3021edbc6">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -800,10 +800,10 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::event_wait_handle::close </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -820,8 +820,8 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 
 </div>
 </div>
-<a id="a2d2095458ca8d32f8c497b6c1014dde0" name="a2d2095458ca8d32f8c497b6c1014dde0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d2095458ca8d32f8c497b6c1014dde0">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="ad0e9394064d04041fa4f054acca6011d" name="ad0e9394064d04041fa4f054acca6011d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e9394064d04041fa4f054acca6011d">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -830,15 +830,15 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::equals </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -856,8 +856,8 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 
 </div>
 </div>
-<a id="af81c2f1c23839796cdd7486131df22a4" name="af81c2f1c23839796cdd7486131df22a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af81c2f1c23839796cdd7486131df22a4">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a51b613810352cddd5a46ae8271705b0b" name="a51b613810352cddd5a46ae8271705b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b613810352cddd5a46ae8271705b0b">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -866,15 +866,15 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::equals </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::equals </td>
           <td>(</td>
           <td class="paramtype">const event_wait_handle &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -890,17 +890,17 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 
 </div>
 </div>
-<a id="afad8a8b6d18cec770c3688e02e2154da" name="afad8a8b6d18cec770c3688e02e2154da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afad8a8b6d18cec770c3688e02e2154da">&#9670;&#160;</a></span>reset()</h2>
+<a id="a37be5a0e9f438e7ed43ae7e648001960" name="a37be5a0e9f438e7ed43ae7e648001960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37be5a0e9f438e7ed43ae7e648001960">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::reset </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -916,17 +916,17 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 
 </div>
 </div>
-<a id="a3254163aa012cb3dc8f99ff16c0c7d6c" name="a3254163aa012cb3dc8f99ff16c0c7d6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3254163aa012cb3dc8f99ff16c0c7d6c">&#9670;&#160;</a></span>set()</h2>
+<a id="a1701b04407b640070fbc3683ee32c1c0" name="a1701b04407b640070fbc3683ee32c1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1701b04407b640070fbc3683ee32c1c0">&#9670;&#160;</a></span>set()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::set </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::set </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -939,14 +939,14 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> with <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> (including <a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a>:::auto_reset_event), the <a class="el" href="#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its <a class="el" href="#afad8a8b6d18cec770c3688e02e2154da" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>There is no guarantee that every call to the <a class="el" href="#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::auto_reset_event::set</a> method will release a thread. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It's as if the second call did not happen. Also, if <a class="el" href="#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::auto_reset_event::set</a> is called when there are no threads waiting and the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> is already signaled, the call has no effect. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> with <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> (including <a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a>:::manual_reset_event), calling the Set method leaves the wait handle in a signaled state until its <a class="el" href="#afad8a8b6d18cec770c3688e02e2154da" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> with <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a> (including <a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a>:::auto_reset_event), the <a class="el" href="#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its <a class="el" href="#a37be5a0e9f438e7ed43ae7e648001960" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>There is no guarantee that every call to the <a class="el" href="#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::auto_reset_event::set</a> method will release a thread. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It's as if the second call did not happen. Also, if <a class="el" href="#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::auto_reset_event::set</a> is called when there are no threads waiting and the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> is already signaled, the call has no effect. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For an <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> with <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> (including <a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a>:::manual_reset_event), calling the Set method leaves the wait handle in a signaled state until its <a class="el" href="#a37be5a0e9f438e7ed43ae7e648001960" title="Sets the state of the event to nonsignaled, causing threads to block.">xtd::threading::event_wait_handle::reset</a> method is called. </dd></dl>
 
 </div>
 </div>
-<a id="a56828ae6ec5f9e8e7388ef22e4bf5178" name="a56828ae6ec5f9e8e7388ef22e4bf5178"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56828ae6ec5f9e8e7388ef22e4bf5178">&#9670;&#160;</a></span>open_existing()</h2>
+<a id="a0c7e01f4786633d8d28b60e7ae649555" name="a0c7e01f4786633d8d28b60e7ae649555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7e01f4786633d8d28b60e7ae649555">&#9670;&#160;</a></span>open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -955,15 +955,15 @@ If the initial state of the event is nonsignaled, threads that wait on the event
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">event_wait_handle xtd::threading::event_wait_handle::open_existing </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  event_wait_handle</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -991,14 +991,14 @@ There was some other error. The HResult property may provide more information. <
 <dd>
 If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a <a class="el" href="classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::wait_handle_cannot_be_opened_exception</a> is thrown </dd>
 <dd>
-The <a class="el" href="#a56828ae6ec5f9e8e7388ef22e4bf5178" title="Opens the specified named synchronization event, if it already exists.">xtd::threading::event_wait_handle::open_existing</a> method tries to open the specified named system event. To create the system event when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> constructors that has a name parameter. </dd>
+The <a class="el" href="#a0c7e01f4786633d8d28b60e7ae649555" title="Opens the specified named synchronization event, if it already exists.">xtd::threading::event_wait_handle::open_existing</a> method tries to open the specified named system event. To create the system event when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> constructors that has a name parameter. </dd>
 <dd>
 Multiple calls to this method that use the same value for name do not necessarily return the same <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> object, even though the objects that are returned represent the same named system event. </dd></dl>
 
 </div>
 </div>
-<a id="a02cf66c2ec8b0399cdf28500a0b06782" name="a02cf66c2ec8b0399cdf28500a0b06782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02cf66c2ec8b0399cdf28500a0b06782">&#9670;&#160;</a></span>try_open_existing()</h2>
+<a id="a1966fd9412be4ba777d5bf8bf853fc77" name="a1966fd9412be4ba777d5bf8bf853fc77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1966fd9412be4ba777d5bf8bf853fc77">&#9670;&#160;</a></span>try_open_existing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1007,19 +1007,19 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::try_open_existing </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::try_open_existing </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">event_wait_handle &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+          <td class="paramtype">event_wait_handle &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1055,8 +1055,8 @@ Multiple calls to this method that use the same value for name do not necessaril
 
 </div>
 </div>
-<a id="aaa4488a58c5f9a3d9275edcef7db8506" name="aaa4488a58c5f9a3d9275edcef7db8506"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa4488a58c5f9a3d9275edcef7db8506">&#9670;&#160;</a></span>signal()</h2>
+<a id="a273aa7290a15d16035cd3eb39a392919" name="a273aa7290a15d16035cd3eb39a392919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273aa7290a15d16035cd3eb39a392919">&#9670;&#160;</a></span>signal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1065,10 +1065,10 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::signal </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::signal </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1086,8 +1086,8 @@ Multiple calls to this method that use the same value for name do not necessaril
 
 </div>
 </div>
-<a id="a307798f8a6772759c3bd9941bb7eab5d" name="a307798f8a6772759c3bd9941bb7eab5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a307798f8a6772759c3bd9941bb7eab5d">&#9670;&#160;</a></span>wait()</h2>
+<a id="a2705c6bf3269176e0ff498f3435ed65b" name="a2705c6bf3269176e0ff498f3435ed65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2705c6bf3269176e0ff498f3435ed65b">&#9670;&#160;</a></span>wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1096,10 +1096,10 @@ Multiple calls to this method that use the same value for name do not necessaril
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::threading::event_wait_handle::wait </td>
+          <td class="memname">auto xtd::threading::event_wait_handle::wait </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1112,7 +1112,7 @@ Multiple calls to this method that use the same value for name do not necessaril
 <p>wait ownership of the specified mutex object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a96d6a6e016d598ac4eab6916b1fe756c" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#aaf294d6763273d4a9c3d12447b53b6fb" title="Gets the native operating system handle.">handle</a></td><td>A valid handle to an open object. </td></tr>
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or -1 to wait indefinitely. </td></tr>
   </table>
   </dd>
