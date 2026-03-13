@@ -55,7 +55,7 @@ namespace xtd {
       /// @remarks Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and xtd::threading::monitor::wait methods must be invoked from within a synchronized block of code.
       /// @remarks To signal multiple threads, use the xtd::threading::monitor::pulse_all method.
-      void pulse();
+      auto pulse() -> void;
       
       /// @brief Notifies all waiting threads of a change in the object's state.
       /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked xtd::threading::monitor::xtd::threading::monitor::pulse_all releases the lock, the next thread in the ready queue acquires the lock.
@@ -63,7 +63,7 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       /// @remarks To signal a single thread, use the xtd::threading::monitor::pulse method.
-      void pulse_all();
+      auto pulse_all() -> void;
       
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
       /// @param obj The object on which to wait.
@@ -79,7 +79,7 @@ namespace xtd {
       /// @note A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
-      bool wait(int32 milliseconds_timeout);
+      auto wait(int32 milliseconds_timeout) -> bool;
       
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
       /// @param timeout A xtd::time_span representing the amount of time to wait before the thread enters the ready queue.
@@ -94,7 +94,7 @@ namespace xtd {
       /// @note A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
-      bool wait(const time_span& timeout);
+      auto wait(const time_span& timeout) -> bool;
       
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock.
       /// @return `true` if the call returned because the caller reacquired the lock for the specified object. This method does not return if the lock is not reacquired.
@@ -108,7 +108,7 @@ namespace xtd {
       /// @note A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
-      bool wait();
+      auto wait() -> bool;
       /// @}
       
     private:
