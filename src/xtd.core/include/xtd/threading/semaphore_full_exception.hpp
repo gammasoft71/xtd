@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "Adding the specified count to the semaphore would cause it to exceed its maximum count.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Adding the specified count to the semaphore would cause it to exceed its maximum count.";}
     };
   }
 }
