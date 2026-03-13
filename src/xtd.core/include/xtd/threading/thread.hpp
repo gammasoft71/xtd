@@ -303,12 +303,12 @@ namespace xtd {
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
-      [[nodiscard]] static auto start_new(const xtd::threading::thread_start& start) -> thread;
+      static auto start_new(const xtd::threading::thread_start& start) -> thread;
       /// @brief Create and immedialtely start a xtd::threading::thread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      [[nodiscard]] static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> thread;
+      static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> thread;
       
       /// @brief Blocks the calling thread until all joinable threads terminate.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.

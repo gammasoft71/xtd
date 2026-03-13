@@ -64,12 +64,12 @@ namespace xtd {
       /// @brief Create and immedialtely start a xtd::threading::jthread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
-      [[nodiscard]] static auto start_new(const xtd::threading::thread_start& start) -> jthread;
+      static auto start_new(const xtd::threading::thread_start& start) -> jthread;
       /// @brief Create and immedialtely start a xtd::threading::jthread with specified method.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      [[nodiscard]] static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> jthread;
+      static auto start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj) -> jthread;
       /// @}
       
       /// @cond
@@ -83,9 +83,9 @@ namespace xtd {
       jthread& operator=(const jthread&) = default;
       template<class start_t>
       
-      [[nodiscard]] static auto start_new(start_t start) -> jthread {return start_new(thread_start {start});}
+      static auto start_new(start_t start) -> jthread {return start_new(thread_start {start});}
       template<class start_t>
-      [[nodiscard]] static auto start_new(start_t start, const xtd::any_object& obj) -> jthread {return start_new(parameterized_thread_start {start}, obj);}
+      static auto start_new(start_t start, const xtd::any_object& obj) -> jthread {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       
     private:
