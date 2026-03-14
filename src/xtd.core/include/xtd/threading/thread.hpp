@@ -100,7 +100,8 @@ namespace xtd {
       thread(start_t start, int32 max_stack_size) : thread(parameterized_thread_start {start}, max_stack_size) {}
       thread(thread&&) = default;
       thread(const thread&) = default;
-      thread& operator=(const thread&);
+      auto operator=(thread&&) -> thread& = default;
+      auto operator=(const thread&) -> thread&;
       ~thread();
       /// @endcond
       
