@@ -85,11 +85,11 @@ namespace xtd {
       
       /// @cond
       thread_state_exception(const thread_state_exception&) = default;
-      thread_state_exception& operator =(const thread_state_exception&) = default;
+      auto operator =(const thread_state_exception&) -> thread_state_exception& = default;
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "Thread was in an invalid state for the operation being executed.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Thread was in an invalid state for the operation being executed.";}
     };
   }
 }
