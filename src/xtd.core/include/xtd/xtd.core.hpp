@@ -273,6 +273,7 @@
 #include "threading/semaphore_full_exception.hpp"
 #include "threading/spin_lock.hpp"
 #include "threading/synchronization_lock_exception.hpp"
+#include "threading/this_thread.hpp"
 #include "threading/thread.hpp"
 #include "threading/thread_abort_exception.hpp"
 #include "threading/thread_interrupted_exception.hpp"
