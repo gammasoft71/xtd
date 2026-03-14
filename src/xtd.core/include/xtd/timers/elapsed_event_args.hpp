@@ -30,7 +30,7 @@ namespace xtd {
       
       /// @cond
       elapsed_event_args(const elapsed_event_args&) = default;
-      elapsed_event_args& operator =(const elapsed_event_args&) = default;
+      auto operator =(const elapsed_event_args&) -> elapsed_event_args& = default;
       /// @endcond
       
       /// @name Public Properties
@@ -38,7 +38,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the date/time when the xtd::timers::timer::elapsed event was raised.
       /// @return The time the xtd::timers::timer::elapsed event was raised.
-      const xtd::date_time& signal_time() const noexcept;
+      [[nodiscard]] auto signal_time() const noexcept -> const xtd::date_time&;
       /// @}
       
     private:
