@@ -85,11 +85,11 @@ namespace xtd {
       
       /// @cond
       thread_abort_exception(const thread_abort_exception&) = default;
-      thread_abort_exception& operator =(const thread_abort_exception&) = default;
+      auto operator =(const thread_abort_exception&) -> thread_abort_exception& = default;
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "Thread was being aborted.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "Thread was being aborted.";}
     };
   }
 }
