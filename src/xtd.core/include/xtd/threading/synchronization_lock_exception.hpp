@@ -86,7 +86,7 @@ namespace xtd {
       
       /// @cond
       synchronization_lock_exception(const synchronization_lock_exception&) = default;
-      synchronization_lock_exception& operator =(const synchronization_lock_exception&) = default;
+      auto operator =(const synchronization_lock_exception&) -> synchronization_lock_exception& = default;
       /// @endcond
       
     private:
