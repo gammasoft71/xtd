@@ -85,11 +85,11 @@ namespace xtd {
       
       /// @cond
       wait_handle_cannot_be_opened_exception(const wait_handle_cannot_be_opened_exception&) = default;
-      wait_handle_cannot_be_opened_exception& operator =(const wait_handle_cannot_be_opened_exception&) = default;
+      auto operator =(const wait_handle_cannot_be_opened_exception&) -> wait_handle_cannot_be_opened_exception& = default;
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "No handle of the given name exists.";}
+      [[nodiscard]] auto default_message() const noexcept -> const char* {return "No handle of the given name exists.";}
     };
   }
 }
