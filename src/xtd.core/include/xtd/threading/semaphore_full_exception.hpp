@@ -85,7 +85,7 @@ namespace xtd {
       
       /// @cond
       semaphore_full_exception(const semaphore_full_exception&) = default;
-      semaphore_full_exception& operator =(const semaphore_full_exception&) = default;
+      auto operator =(const semaphore_full_exception&) -> semaphore_full_exception& = default;
       /// @endcond
       
     private:
