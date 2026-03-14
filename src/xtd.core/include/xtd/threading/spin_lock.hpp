@@ -51,7 +51,8 @@ namespace xtd {
       /// @cond
       spin_lock(spin_lock&&) = default;
       spin_lock(const spin_lock&) = default;
-      spin_lock& operator =(const spin_lock& other) = default;
+      auto operator =(const spin_lock&) -> spin_lock& = default;
+      auto operator =(spin_lock&&) -> spin_lock& = default;
       /// @endcond
       
       /// @name Public Properties
