@@ -84,7 +84,7 @@ namespace xtd {
       explicit thread_local_object(func_t value_factory, bool track_all_values) : thread_local_object(func<value_t> {value_factory}, track_all_values) {}
       thread_local_object(thread_local_object&&) = default;
       thread_local_object(const thread_local_object&) = default;
-      thread_local_object& operator =(const thread_local_object& other) = default;
+      auto operator =(const thread_local_object& other) -> thread_local_object& = default;
       /// @endcond
       
       /// @name Public Properties
@@ -92,7 +92,7 @@ namespace xtd {
       /// @{
       /// @brief Gets whether xtd::threading::thread_local_object::value is initialized on the current thread.
       /// @return `true` if xtd::threading::thread_local_object::value is initialized on the current thread; otherwise `false`.
-      bool is_value_created() const noexcept {
+      [[nodiscard]] auto is_value_created() const noexcept -> bool {
         lock_guard_mutex lock {data_->mutex};
         return data_->values.find(thread::current_thread().thread_id()) != data_->values.end();
       }
@@ -100,16 +100,15 @@ namespace xtd {
       /// @brief Gets the value of this instance for the current thread.
       /// @return Returns an instance of the object that this xtd::threading::thread_local_object::value is responsible for initializing.
       /// @remarks If this instance was not previously initialized for the current thread, accessing xtd::threading::thread_local_object::value will attempt to initialize it. If an initialization function was supplied during the construction, that initialization will happen by invoking the function to retrieve the initial value for xtd::threading::thread_local_object::value. Otherwise, the default value of value_t will be used.
-      value_t value() const noexcept {
+      [[nodiscard]] auto value() const noexcept -> value_t {
         lock_guard_mutex lock {data_->mutex};
         if (!is_value_created()) data_->values[thread::current_thread().thread_id()] = data_->value_factory.is_empty() ? value_t {} : data_->values[thread::current_thread().thread_id()] = data_->value_factory();
         return data_->values.find(thread::current_thread().thread_id())->second;
       }
-      
       /// @brief Sets the value of this instance for the current thread.
       /// @param value An instance of the object that this xtd::threading::thread_local_object::value is responsible for initializing.
       /// @remarks If this instance was not previously initialized for the current thread, accessing xtd::threading::thread_local_object::value will attempt to initialize it. If an initialization function was supplied during the construction, that initialization will happen by invoking the function to retrieve the initial value for xtd::threading::thread_local_object::value. Otherwise, the default value of value_t will be used.
-      void value(value_t value) noexcept {
+      auto value(value_t value) noexcept -> void {
         lock_guard_mutex lock {data_->mutex};
         data_->values[thread::current_thread().thread_id()] = value;
       }
@@ -118,7 +117,7 @@ namespace xtd {
       /// @return A list for all of the values stored by all of the threads that have accessed this instance.
       /// @exception xtd::invalid_operation_exception Values stored by all threads are not available because this instance was initialized with the track_all_values argument set to `false` in the call to a class constructor.
       /// @remarks Each thread that has ever accessed this instance will contribute to this list the value last stored into the instance. This includes threads that have since exited.
-      xtd::array<value_t> values() const {
+      [[nodiscard]] auto values() const -> xtd::array<value_t> {
         if (!data_->track_all_values) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
         lock_guard_mutex lock {data_->mutex};
         auto values = xtd::array<value_t> {};
@@ -131,7 +130,7 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      string to_string() const noexcept override {
+      [[nodiscard]] auto to_string() const noexcept -> string override {
         return string::format("{}", value());
       }
       /// @}
