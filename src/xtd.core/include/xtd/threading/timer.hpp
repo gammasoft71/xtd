@@ -140,7 +140,7 @@ namespace xtd {
       timer(callback_t callback, const xtd::any_object& state, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
       timer();
       timer(const timer& timer);
-      timer& operator=(const timer& timer);
+      auto operator=(const timer&) -> timer&;
       ~timer();
       /// @endcond
       
@@ -151,25 +151,25 @@ namespace xtd {
       /// @param due_time The amount of time to delay before callback is invoked, in milliseconds. Specify Timeout::Infinite to prevent the timer from starting. Specify zero (0) to start the timer immediately.
       /// @param period The time interval between invocations of callback, in milliseconds. Specify Timeout::Infinite to disable periodic signaling.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
-      void change(int32 due_time, int32 period);
+      auto change(int32 due_time, int32 period) -> void;
       /// @brief changes the start time and the interval between method invocations for a timer, using 64-bit signed integers to measure time intervals.
       /// @param due_time The amount of time to delay before callback is invoked, in milliseconds. Specify Timeout::Infinite to prevent the timer from starting. Specify zero (0) to start the timer immediately.
       /// @param period The time interval between invocations of callback, in milliseconds. Specify Timeout::Infinite to disable periodic signaling.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
-      void change(int64 due_time, int64 period);
+      auto change(int64 due_time, int64 period) -> void;
       /// @brief changes the start time and the interval between method invocations for a timer, using time_span values to measure time intervals.
       /// @param due_time The amount of time to delay before callback is invoked, in milliseconds. Specify Timeout::Infinite to prevent the timer from starting. Specify zero (0) to start the timer immediately.
       /// @param period The time interval between invocations of callback, in milliseconds. Specify Timeout::Infinite to disable periodic signaling.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
-      void change(const time_span& due_time, const time_span& period);
+      auto change(const time_span& due_time, const time_span& period) -> void;
       /// @brief changes the start time and the interval between method invocations for a timer, using 32-bit unsigned integers to measure time intervals.
       /// @param due_time The amount of time to delay before callback is invoked, in milliseconds. Specify Timeout::Infinite to prevent the timer from starting. Specify zero (0) to start the timer immediately.
       /// @param period The time interval between invocations of callback, in milliseconds. Specify Timeout::Infinite to disable periodic signaling.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
-      void change(uint32 due_time, uint32 period);
+      auto change(uint32 due_time, uint32 period) -> void;
       
       /// @brief Releases all resources used by the current instance of xtd::threading::timer.
-      void close();
+      auto close() -> void;
       /// @}
       
     private:
