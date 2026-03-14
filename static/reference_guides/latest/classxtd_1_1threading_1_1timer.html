@@ -109,7 +109,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga293522a3ff73c41f5dd170bbcf95df9f" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the <a class="el" href="#a40a6be3e9255cbd751f859efe127923e" title="changes the start time and the interval between method invocations for a timer, using 32-bit signed i...">xtd::threading::timer::change(int32, int32)</a> method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga293522a3ff73c41f5dd170bbcf95df9f" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a1701b04407b640070fbc3683ee32c1c0" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the xtd::threading::timer::change(int32, int32) method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>timer_example {</div>
 <div class="line">  <span class="keyword">class </span>status_checker {</div>
@@ -240,16 +240,16 @@ Public Constructors</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a40a6be3e9255cbd751f859efe127923e" id="r_a40a6be3e9255cbd751f859efe127923e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40a6be3e9255cbd751f859efe127923e">change</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> due_time, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> period)</td></tr>
-<tr class="memdesc:a40a6be3e9255cbd751f859efe127923e"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.  <br /></td></tr>
-<tr class="memitem:a14690f7ea0e1352c308ff460399be830" id="r_a14690f7ea0e1352c308ff460399be830"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14690f7ea0e1352c308ff460399be830">change</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> due_time, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> period)</td></tr>
-<tr class="memdesc:a14690f7ea0e1352c308ff460399be830"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 64-bit signed integers to measure time intervals.  <br /></td></tr>
-<tr class="memitem:ac7b1c245a09f24db778aaad61bff7e90" id="r_ac7b1c245a09f24db778aaad61bff7e90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac7b1c245a09f24db778aaad61bff7e90">change</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period)</td></tr>
-<tr class="memdesc:ac7b1c245a09f24db778aaad61bff7e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">time_span</a> values to measure time intervals.  <br /></td></tr>
-<tr class="memitem:a478a322e775c15d535c789a1b677d097" id="r_a478a322e775c15d535c789a1b677d097"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a478a322e775c15d535c789a1b677d097">change</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> due_time, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> period)</td></tr>
-<tr class="memdesc:a478a322e775c15d535c789a1b677d097"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 32-bit unsigned integers to measure time intervals.  <br /></td></tr>
-<tr class="memitem:af749396425ac3fe19ca3041eb0ec26c4" id="r_af749396425ac3fe19ca3041eb0ec26c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af749396425ac3fe19ca3041eb0ec26c4">close</a> ()</td></tr>
-<tr class="memdesc:af749396425ac3fe19ca3041eb0ec26c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources used by the current instance of <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a>.  <br /></td></tr>
+<tr class="memitem:af9fb0eb818b01b95e7964ebfa6a0624a" id="r_af9fb0eb818b01b95e7964ebfa6a0624a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af9fb0eb818b01b95e7964ebfa6a0624a">change</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> due_time, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> period) -&gt; void</td></tr>
+<tr class="memdesc:af9fb0eb818b01b95e7964ebfa6a0624a"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.  <br /></td></tr>
+<tr class="memitem:a09e09fae2821d2f1a2309a81742f967a" id="r_a09e09fae2821d2f1a2309a81742f967a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a09e09fae2821d2f1a2309a81742f967a">change</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> due_time, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> period) -&gt; void</td></tr>
+<tr class="memdesc:a09e09fae2821d2f1a2309a81742f967a"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 64-bit signed integers to measure time intervals.  <br /></td></tr>
+<tr class="memitem:af804714e7d759562f39bd0df344bcc32" id="r_af804714e7d759562f39bd0df344bcc32"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af804714e7d759562f39bd0df344bcc32">change</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period) -&gt; void</td></tr>
+<tr class="memdesc:af804714e7d759562f39bd0df344bcc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">time_span</a> values to measure time intervals.  <br /></td></tr>
+<tr class="memitem:ab4d38f706837593988a8f36c6f277785" id="r_ab4d38f706837593988a8f36c6f277785"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4d38f706837593988a8f36c6f277785">change</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> due_time, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> period) -&gt; void</td></tr>
+<tr class="memdesc:ab4d38f706837593988a8f36c6f277785"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the start time and the interval between method invocations for a timer, using 32-bit unsigned integers to measure time intervals.  <br /></td></tr>
+<tr class="memitem:a3ceec88c1eae4ff0382ac9c25e835449" id="r_a3ceec88c1eae4ff0382ac9c25e835449"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3ceec88c1eae4ff0382ac9c25e835449">close</a> () -&gt; void</td></tr>
+<tr class="memdesc:a3ceec88c1eae4ff0382ac9c25e835449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources used by the current instance of <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -679,21 +679,21 @@ This constructor specifies an infinite due time before the first callback and an
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a40a6be3e9255cbd751f859efe127923e" name="a40a6be3e9255cbd751f859efe127923e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40a6be3e9255cbd751f859efe127923e">&#9670;&#160;</a></span>change() <span class="overload">[1/4]</span></h2>
+<a id="af9fb0eb818b01b95e7964ebfa6a0624a" name="af9fb0eb818b01b95e7964ebfa6a0624a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fb0eb818b01b95e7964ebfa6a0624a">&#9670;&#160;</a></span>change() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::timer::change </td>
+          <td class="memname">auto xtd::threading::timer::change </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>due_time</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -715,21 +715,21 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="a14690f7ea0e1352c308ff460399be830" name="a14690f7ea0e1352c308ff460399be830"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14690f7ea0e1352c308ff460399be830">&#9670;&#160;</a></span>change() <span class="overload">[2/4]</span></h2>
+<a id="a09e09fae2821d2f1a2309a81742f967a" name="a09e09fae2821d2f1a2309a81742f967a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e09fae2821d2f1a2309a81742f967a">&#9670;&#160;</a></span>change() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::timer::change </td>
+          <td class="memname">auto xtd::threading::timer::change </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>due_time</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -751,21 +751,21 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="ac7b1c245a09f24db778aaad61bff7e90" name="ac7b1c245a09f24db778aaad61bff7e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7b1c245a09f24db778aaad61bff7e90">&#9670;&#160;</a></span>change() <span class="overload">[3/4]</span></h2>
+<a id="af804714e7d759562f39bd0df344bcc32" name="af804714e7d759562f39bd0df344bcc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af804714e7d759562f39bd0df344bcc32">&#9670;&#160;</a></span>change() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::timer::change </td>
+          <td class="memname">auto xtd::threading::timer::change </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>due_time</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -787,21 +787,21 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="a478a322e775c15d535c789a1b677d097" name="a478a322e775c15d535c789a1b677d097"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a478a322e775c15d535c789a1b677d097">&#9670;&#160;</a></span>change() <span class="overload">[4/4]</span></h2>
+<a id="ab4d38f706837593988a8f36c6f277785" name="ab4d38f706837593988a8f36c6f277785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d38f706837593988a8f36c6f277785">&#9670;&#160;</a></span>change() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::timer::change </td>
+          <td class="memname">auto xtd::threading::timer::change </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>due_time</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;) -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -823,17 +823,17 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="af749396425ac3fe19ca3041eb0ec26c4" name="af749396425ac3fe19ca3041eb0ec26c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af749396425ac3fe19ca3041eb0ec26c4">&#9670;&#160;</a></span>close()</h2>
+<a id="a3ceec88c1eae4ff0382ac9c25e835449" name="a3ceec88c1eae4ff0382ac9c25e835449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ceec88c1eae4ff0382ac9c25e835449">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::timer::close </td>
+          <td class="memname">auto xtd::threading::timer::close </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">

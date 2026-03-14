@@ -108,13 +108,13 @@ Inheritance diagram for xtd::timers::elapsed_event_args:</div>
 Public Constructors</h2></td></tr>
 <tr class="memitem:af41cfffb9116654d5db87ee13ea27e8a" id="r_af41cfffb9116654d5db87ee13ea27e8a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af41cfffb9116654d5db87ee13ea27e8a">elapsed_event_args</a> ()=default</td></tr>
 <tr class="memdesc:af41cfffb9116654d5db87ee13ea27e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1timers_1_1elapsed__event__args.html" title="Provides data for the xtd::timers::timer::elapsed event.">elapsed_event_args</a> class.  <br /></td></tr>
-<tr class="memitem:a346eee3977360acd52ae414571afad10" id="r_a346eee3977360acd52ae414571afad10"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a346eee3977360acd52ae414571afad10">elapsed_event_args</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;<a class="el" href="#a46ce1c25f18577b473d637aa639140f5">signal_time</a>)</td></tr>
+<tr class="memitem:a346eee3977360acd52ae414571afad10" id="r_a346eee3977360acd52ae414571afad10"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a346eee3977360acd52ae414571afad10">elapsed_event_args</a> (const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;<a class="el" href="#a9a33f229b39f56c1e136ea2b763e5832">signal_time</a>)</td></tr>
 <tr class="memdesc:a346eee3977360acd52ae414571afad10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1timers_1_1elapsed__event__args.html" title="Provides data for the xtd::timers::timer::elapsed event.">elapsed_event_args</a> class with specified signal time.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a46ce1c25f18577b473d637aa639140f5" id="r_a46ce1c25f18577b473d637aa639140f5"><td class="memItemLeft">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a46ce1c25f18577b473d637aa639140f5">signal_time</a> () const noexcept</td></tr>
-<tr class="memdesc:a46ce1c25f18577b473d637aa639140f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date/time when the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event was raised.  <br /></td></tr>
+<tr class="memitem:a9a33f229b39f56c1e136ea2b763e5832" id="r_a9a33f229b39f56c1e136ea2b763e5832"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9a33f229b39f56c1e136ea2b763e5832">signal_time</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td></tr>
+<tr class="memdesc:a9a33f229b39f56c1e136ea2b763e5832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date/time when the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event was raised.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -196,7 +196,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1timers_1_1elapsed__event__args.html" title="Provides data for the xtd::timers::timer::elapsed event.">elapsed_event_args</a> class with specified signal time. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a46ce1c25f18577b473d637aa639140f5" title="Gets the date/time when the xtd::timers::timer::elapsed event was raised.">signal_time</a></td><td>The time the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event was raised. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a9a33f229b39f56c1e136ea2b763e5832" title="Gets the date/time when the xtd::timers::timer::elapsed event was raised.">signal_time</a></td><td>The time the <a class="el" href="classxtd_1_1timers_1_1timer.html#af215ca0b8340a7031266ee49a7ca38c8" title="Occurs when the interval elapses.">xtd::timers::timer::elapsed</a> event was raised. </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,8 +204,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a46ce1c25f18577b473d637aa639140f5" name="a46ce1c25f18577b473d637aa639140f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46ce1c25f18577b473d637aa639140f5">&#9670;&#160;</a></span>signal_time()</h2>
+<a id="a9a33f229b39f56c1e136ea2b763e5832" name="a9a33f229b39f56c1e136ea2b763e5832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a33f229b39f56c1e136ea2b763e5832">&#9670;&#160;</a></span>signal_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,15 +214,15 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp; xtd::timers::elapsed_event_args::signal_time </td>
+          <td class="memname">auto xtd::timers::elapsed_event_args::signal_time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
