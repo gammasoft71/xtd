@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/web/css/property_map.hpp Source File</title>
+		<title>xtd: xtd.core/include/xtd/web/css/property_dictionary.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -84,25 +84,27 @@ $(function() {
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">property_map.hpp</div></div>
+  <div class="headertitle"><div class="title">property_dictionary.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="property__map_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<a href="property__dictionary_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="property_8hpp.html">property.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="sorted__dictionary_8hpp.html">../../collections/generic/sorted_dictionary.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1web.html">web</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">namespace </span>css {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">   13</a></span>      <span class="keyword">using </span><a class="code hl_typedef" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">property_map</a> = std::map&lt;xtd::string, xtd::web::css::property&gt;;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="property__dictionary_8hpp.html#a7db923e9434f3e57eb3ea80f405f6d20">   13</a></span>      <span class="keyword">using </span><a class="code hl_typedef" href="property__dictionary_8hpp.html#a7db923e9434f3e57eb3ea80f405f6d20">property_dictionary</a> = <a class="code hl_typedef" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b">xtd::collections::generic::sorted_dictionary&lt;xtd::string, xtd::web::css::property&gt;</a>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="ttc" id="agroup__generic__collections_html_ga49fc8f84e06c44f96cbc96b8d7705a5b"><div class="ttname"><a href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b">xtd::collections::generic::sorted_dictionary</a></div><div class="ttdeci">std::map&lt; key_t, value_t, lesser_t, allocator_t &gt; sorted_dictionary</div><div class="ttdoc">Represents a collection of key/value pairs that are sorted on the key.</div><div class="ttdef"><b>Definition</b> sorted_dictionary.hpp:38</div></div>
 <div class="ttc" id="anamespacextd_1_1web_html"><div class="ttname"><a href="namespacextd_1_1web.html">xtd::web</a></div><div class="ttdoc">Contains classes and interfaces that enable browser-server communication. This namespace includes the...</div><div class="ttdef"><b>Definition</b> css_reader.hpp:14</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="aproperty_8hpp_html"><div class="ttname"><a href="property_8hpp.html">property.hpp</a></div><div class="ttdoc">Contains xtd::web::css::property class.</div></div>
-<div class="ttc" id="aproperty__map_8hpp_html_a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2"><div class="ttname"><a href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">xtd::web::css::property_map</a></div><div class="ttdeci">std::map&lt; xtd::string, xtd::web::css::property &gt; property_map</div><div class="ttdoc">Represents the map of a property name - property pair.</div><div class="ttdef"><b>Definition</b> property_map.hpp:13</div></div>
+<div class="ttc" id="aproperty__dictionary_8hpp_html_a7db923e9434f3e57eb3ea80f405f6d20"><div class="ttname"><a href="property__dictionary_8hpp.html#a7db923e9434f3e57eb3ea80f405f6d20">xtd::web::css::property_dictionary</a></div><div class="ttdeci">xtd::collections::generic::sorted_dictionary&lt; xtd::string, xtd::web::css::property &gt; property_dictionary</div><div class="ttdoc">Represents the dictionary of a property name - property pair.</div><div class="ttdef"><b>Definition</b> property_dictionary.hpp:13</div></div>
+<div class="ttc" id="asorted__dictionary_8hpp_html"><div class="ttname"><a href="sorted__dictionary_8hpp.html">sorted_dictionary.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::sorted_dictionary &lt;key_t, value_t&gt; class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->

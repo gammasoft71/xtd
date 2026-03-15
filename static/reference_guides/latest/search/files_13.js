@@ -27,7 +27,7 @@ var searchData=
   ['selection_5fmode_2ehpp_24',['selection_mode.hpp',['../selection__mode_8hpp.html',1,'']]],
   ['selection_5frange_2ehpp_25',['selection_range.hpp',['../selection__range_8hpp.html',1,'']]],
   ['selector_2ehpp_26',['selector.hpp',['../selector_8hpp.html',1,'']]],
-  ['selector_5fmap_2ehpp_27',['selector_map.hpp',['../selector__map_8hpp.html',1,'']]],
+  ['selector_5fdictionary_2ehpp_27',['selector_dictionary.hpp',['../selector__dictionary_8hpp.html',1,'']]],
   ['self_2ehpp_28',['self.hpp',['../self_8hpp.html',1,'']]],
   ['semaphore_2ehpp_29',['semaphore.hpp',['../semaphore_8hpp.html',1,'']]],
   ['semaphore_5ffull_5fexception_2ehpp_30',['semaphore_full_exception.hpp',['../semaphore__full__exception_8hpp.html',1,'']]],

@@ -6,7 +6,7 @@ var searchData=
   ['second_5ftype_3',['second_type',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ad6ec8ac13c3abb6ca687d4a34a130af4',1,'xtd::collections::generic::key_value_pair::second_type'],['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ad6ec8ac13c3abb6ca687d4a34a130af4',1,'xtd::collections::generic::key_value_pair&lt; &gt;::second_type']]],
   ['selected_5findex_5fcollection_4',['selected_index_collection',['../classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b',1,'xtd::forms::list_box']]],
   ['selected_5fobject_5fcollection_5',['selected_object_collection',['../classxtd_1_1forms_1_1checked__list__box.html#a1b778c0d856fb645421295976986d0aa',1,'xtd::forms::checked_list_box::selected_object_collection'],['../classxtd_1_1forms_1_1list__box.html#a8620f2db8fcb1db585b56e0b12b59a44',1,'xtd::forms::list_box::selected_object_collection']]],
-  ['selector_5fmap_6',['selector_map',['../selector__map_8hpp.html#ab47130c9b3dd46ad51b4f09d616068c3',1,'xtd::web::css']]],
+  ['selector_5fdictionary_6',['selector_dictionary',['../selector__dictionary_8hpp.html#a5827a5804c708a230b74506ccabe82a1',1,'xtd::web::css']]],
   ['shadows_7',['shadows',['../group__xtd__forms.html#ga3dffab3339ddfa061380bb5b967efde6',1,'xtd::forms::shadows'],['../group__xtd__forms.html#ga38bb09f3701a2886ed5724a017c14d78',1,'xtd::forms::style_sheets::shadows']]],
   ['signal_5fcancel_5fevent_5fhandler_8',['signal_cancel_event_handler',['../group__events.html#gac0ee2ac5887b20685ae3f74584543bf4',1,'xtd']]],
   ['single_9',['single',['../group__types.html#gaf9f0ae6db9fc51931d88c537c2bb7a4d',1,'xtd']]],
