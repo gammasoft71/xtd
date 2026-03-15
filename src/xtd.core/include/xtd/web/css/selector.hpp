@@ -2,7 +2,7 @@
 /// @brief Contains xtd::web::css::selector class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "property_map.hpp"
+#include "property_dictionary.hpp"
 #include "../../object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -31,14 +31,14 @@ namespace xtd {
         [[nodiscard]] auto name() const noexcept -> const xtd::string& {return name_;}
         auto name(const xtd::string& name) noexcept -> void {name_ = name;}
         
-        [[nodiscard]] auto properties() const noexcept -> const xtd::web::css::property_map& {return properties_;}
-        [[nodiscard]] auto properties() noexcept -> xtd::web::css::property_map& {return properties_;}
-        auto properties(const xtd::web::css::property_map& properties) noexcept -> void {properties_ = properties;}
+        [[nodiscard]] auto properties() const noexcept -> const xtd::web::css::property_dictionary& {return properties_;}
+        [[nodiscard]] auto properties() noexcept -> xtd::web::css::property_dictionary& {return properties_;}
+        auto properties(const xtd::web::css::property_dictionary& properties) noexcept -> void {properties_ = properties;}
         /// @}
         
       private:
         xtd::string name_;
-        xtd::web::css::property_map properties_;
+        xtd::web::css::property_dictionary properties_;
       };
     }
   }

@@ -296,7 +296,7 @@
 #include "web/css/css_reader.hpp"
 #include "web/css/css_writer.hpp"
 #include "web/css/property.hpp"
-#include "web/css/property_map.hpp"
+#include "web/css/property_dictionary.hpp"
 #include "web/css/selector.hpp"
 #include "web/css/selector_map.hpp"
 #include "abstract.hpp"
