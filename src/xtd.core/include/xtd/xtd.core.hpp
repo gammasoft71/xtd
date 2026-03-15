@@ -200,6 +200,7 @@
 #include "ranges/views/order_by_view.hpp"
 #include "ranges/views/order_by_descending.hpp"
 #include "ranges/views/order_by_descending_view.hpp"
+#include "ranges/views/range.hpp"
 #include "ranges/views/select.hpp"
 #include "ranges/views/select_view.hpp"
 #include "ranges/views/to_array.hpp"

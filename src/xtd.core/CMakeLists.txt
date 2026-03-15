@@ -1133,6 +1133,8 @@ add_sources(
   "include/xtd/ranges/views/order_by_descending"
   "include/xtd/ranges/views/order_by_descending_view.hpp"
   "include/xtd/ranges/views/order_by_descending_view"
+  "include/xtd/ranges/views/range.hpp"
+  "include/xtd/ranges/views/range"
   "include/xtd/ranges/views/select.hpp"
   "include/xtd/ranges/views/select"
   "include/xtd/ranges/views/select_view.hpp"
