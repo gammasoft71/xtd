@@ -18,6 +18,10 @@ namespace xtd {
         /// @{
         property() = default;
         explicit property(const xtd::string& value) : value_(value) {}
+        property(const property&) = default;
+        property& operator =(const property&) = default;
+        property(property&&) = default;
+        property& operator =(property&&) = default;
         /// @}
         
         /// @name Operators
