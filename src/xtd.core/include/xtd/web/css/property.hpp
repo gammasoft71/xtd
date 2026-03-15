@@ -4,6 +4,7 @@
 #pragma once
 #include "../../object.hpp"
 #include "../../string.hpp"
+#include "../../single.hpp"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -28,49 +29,48 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        const xtd::string& value() const noexcept {return value_;}
+        [[nodiscard]] auto value() const noexcept -> const xtd::string& {return value_;}
         template<class value_t>
-        uintptr value() const noexcept {return xtd::parse<value_t>(value_);}
+        [[nodiscard]] auto value() const noexcept -> value_t {return xtd::parse<value_t>(value_);}
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        bool to_boolean() const {return xtd::parse<bool>(value_);}
-        double to_double() const {return xtd::parse<double>(value_);}
-        sbyte to_int8() const {return xtd::parse<sbyte>(value_);}
-        int16 to_int16() const {return xtd::parse<int16>(value_);}
-        int32 to_int32() const {return xtd::parse<int32>(value_);}
-        int64 to_int64() const {return xtd::parse<int64>(value_);}
-        intptr to_intptr() const {return xtd::parse<intptr>(value_);}
-        float to_single() const {return xtd::parse<float>(value_);}
-        xtd::string to_string() const noexcept override {return value_;}
-        xtd::byte to_uint8() const {return xtd::parse<xtd::byte>(value_);}
-        uint16 to_uint16() const {return xtd::parse<uint16>(value_);}
-        uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
-        uint64 to_uint64() const {return xtd::parse<uint64>(value_);}
-        uintptr to_uintptr() const {return xtd::parse<uintptr>(value_);}
+        [[nodiscard]] auto to_boolean() const -> bool {return xtd::parse<bool>(value_);}
+        [[nodiscard]] auto to_double() const -> double {return xtd::parse<double>(value_);}
+        [[nodiscard]] auto to_int8() const -> xtd::sbyte  {return xtd::parse<xtd::sbyte>(value_);}
+        [[nodiscard]] auto to_int16() const -> xtd::int16 {return xtd::parse<xtd::int16>(value_);}
+        [[nodiscard]] auto to_int32() const -> xtd::int32 {return xtd::parse<xtd::int32>(value_);}
+        [[nodiscard]] auto to_int64() const -> xtd::int64 {return xtd::parse<xtd::int64>(value_);}
+        [[nodiscard]] auto to_intptr() const -> xtd::intptr {return xtd::parse<xtd::intptr>(value_);}
+        [[nodiscard]] auto to_single() const -> xtd::single {return xtd::parse<float>(value_);}
+        [[nodiscard]] auto to_string() const noexcept -> xtd::string override {return value_;}
+        [[nodiscard]] auto to_uint8() const -> xtd::byte {return xtd::parse<xtd::byte>(value_);}
+        [[nodiscard]] auto to_uint16() const -> xtd::uint16 {return xtd::parse<xtd::uint16>(value_);}
+        [[nodiscard]] auto to_uint32() const -> xtd::uint32 {return xtd::parse<xtd::uint32>(value_);}
+        [[nodiscard]] auto to_uint64() const -> xtd::uint64 {return xtd::parse<xtd::uint64>(value_);}
+        [[nodiscard]] auto to_uintptr() const -> xtd::uintptr {return xtd::parse<xtd::uintptr>(value_);}
         template<class value_t>
-        uintptr to() const {return xtd::parse<value_t>(value_);}
+        [[nodiscard]] auto to() const -> value_t {return xtd::parse<value_t>(value_);}
         /// @}
         
         /// @name Public Static Methods
         
         /// @{
-        static property from(bool value) {return property(string::format("{}", value));}
-        static property from(double value) {return property(string::format("{}", value));}
-        static property from(float value) {return property(string::format("{}", value));}
-        static property from(sbyte value) {return property(string::format("{}", value));}
-        static property from(int16 value) {return property(string::format("{}", value));}
-        static property from(int32 value) {return property(string::format("{}", value));}
-        static property from(int64 value) {return property(string::format("{}", value));}
-        static property from(const xtd::string& value) {return property(string::format("{}", value));}
-        static property from(xtd::byte value) {return property(string::format("{}", value));}
-        static property from(uint16 value) {return property(string::format("{}", value));}
-        static property from(uint32 value) {return property(string::format("{}", value));}
-        static property from(uint64 value) {return property(string::format("{}", value));}
-        template<class value_t>
-        static property from(value_t value) {return property(string::format("{}", value));}
+        static auto from(bool value) -> property {return property(string::format("{}", value));}
+        static auto from(double value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::single value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::sbyte value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::int16 value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::int32 value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::int64 value) -> property {return property(string::format("{}", value));}
+        static auto from(const xtd::string& value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::byte value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::uint16 value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::uint32 value) -> property {return property(string::format("{}", value));}
+        static auto from(xtd::uint64 value) -> property {return property(string::format("{}", value));}
+        static auto from(const auto& value) -> property {return property(string::format("{}", value));}
         /// @}
         
       private:
