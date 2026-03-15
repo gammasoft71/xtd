@@ -26,11 +26,11 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}
+        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_map& {return selectors_;}
         /// @}
         
       private:
-        void parse_text(const xtd::string& text) {
+        auto parse_text(const xtd::string& text) -> void {
           enum class parse_status {
             selector,
             key,
