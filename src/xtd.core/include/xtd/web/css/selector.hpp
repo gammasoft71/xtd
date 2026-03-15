@@ -21,17 +21,19 @@ namespace xtd {
         selector() = default;
         selector(const selector&) = default;
         selector& operator =(const selector&) = default;
+        selector(selector&&) = default;
+        selector& operator =(selector&&) = default;
         /// @endcond
         
         /// @name Public Properties
         
         /// @{
-        const xtd::string& name() const noexcept {return name_;}
-        void name(const xtd::string& name) noexcept {name_ = name;}
+        [[nodiscard]] auto name() const noexcept -> const xtd::string& {return name_;}
+        auto name(const xtd::string& name) noexcept -> void {name_ = name;}
         
-        const xtd::web::css::property_map& properties() const noexcept {return properties_;}
-        void properties(const xtd::web::css::property_map& properties) noexcept {properties_ = properties;}
-        xtd::web::css::property_map& properties() noexcept {return properties_;}
+        [[nodiscard]] auto properties() const noexcept -> const xtd::web::css::property_map& {return properties_;}
+        [[nodiscard]] auto properties() noexcept -> xtd::web::css::property_map& {return properties_;}
+        auto properties(const xtd::web::css::property_map& properties) noexcept -> void {properties_ = properties;}
         /// @}
         
       private:
