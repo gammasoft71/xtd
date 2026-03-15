@@ -105,7 +105,7 @@ namespace xtd {
     
     /// @cond
     access_violation_exception(const access_violation_exception&) = default;
-    access_violation_exception& operator =(const access_violation_exception&) = default;
+    auto operator =(const access_violation_exception&) -> access_violation_exception& = default;
     /// @endcond
   };
 }
