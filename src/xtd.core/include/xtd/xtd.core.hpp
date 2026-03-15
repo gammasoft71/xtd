@@ -298,7 +298,7 @@
 #include "web/css/property.hpp"
 #include "web/css/property_dictionary.hpp"
 #include "web/css/selector.hpp"
-#include "web/css/selector_map.hpp"
+#include "web/css/selector_dictionary.hpp"
 #include "abstract.hpp"
 #include "abstract_object.hpp"
 #include "access_violation_exception.hpp"

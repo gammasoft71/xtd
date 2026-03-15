@@ -1335,8 +1335,8 @@ add_sources(
   "include/xtd/web/css/property_dictionary"
   "include/xtd/web/css/selector.hpp"
   "include/xtd/web/css/selector"
-  "include/xtd/web/css/selector_map.hpp"
-  "include/xtd/web/css/selector_map"
+  "include/xtd/web/css/selector_dictionary.hpp"
+  "include/xtd/web/css/selector_dictionary"
 )
 add_sources(
   "src/xtd/environment_version.cpp"

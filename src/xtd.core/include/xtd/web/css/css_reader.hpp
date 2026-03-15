@@ -2,7 +2,7 @@
 /// @brief Contains xtd::web::css::reader class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "selector_map.hpp"
+#include "selector_dictionary.hpp"
 #include "../../io/stream_reader.hpp"
 #include "../../argument_exception.hpp"
 #include "../../format_exception.hpp"
@@ -26,7 +26,7 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_map& {return selectors_;}
+        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_dictionary& {return selectors_;}
         /// @}
         
       private:
@@ -74,7 +74,7 @@ namespace xtd {
           }
         }
         
-        xtd::web::css::selector_map selectors_;
+        xtd::web::css::selector_dictionary selectors_;
       };
     }
   }

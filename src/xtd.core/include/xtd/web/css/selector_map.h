@@ -7,4 +7,15 @@
 #else
 #  warning "Deprecated : Replaced by #include <xtd/web/css/selector_map.hpp> - Will be removed in version 0.4.0."
 #endif
-#include "selector_map.hpp"
+#include "selector_dictionary.hpp"
+
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  namespace web {
+    namespace css {
+      /// @brief Represents the map of a selector name - selector pair.
+      /// @deprecated Replaced by xtd::web::css::selector_dictionary - Will be removed in version 0.4.0.
+      using selector_map [[deprecated("Replaced by xtd::web::css::selector_dictionary - Will be removed in version 0.4.0.")]] = xtd::web::css::selector_dictionary;
+    }
+  }
+}

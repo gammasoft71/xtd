@@ -2,7 +2,7 @@
 /// @brief Contains xtd::web::css::writer class.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "selector_map.hpp"
+#include "selector_dictionary.hpp"
 #include "../../io/stream_writer.hpp"
 #include "../../argument_exception.hpp"
 #include "../../format_exception.hpp"
@@ -28,9 +28,9 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_map& {return selectors_;}
-        [[nodiscard]] auto selectors() noexcept -> xtd::web::css::selector_map& {return selectors_;}
-        auto selectors(const xtd::web::css::selector_map& selector) -> void {selectors_ = selector;}
+        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_dictionary& {return selectors_;}
+        [[nodiscard]] auto selectors() noexcept -> xtd::web::css::selector_dictionary& {return selectors_;}
+        auto selectors(const xtd::web::css::selector_dictionary& selector) -> void {selectors_ = selector;}
         /// @}
         
         /// @name Public Methods
@@ -48,7 +48,7 @@ namespace xtd {
         /// @}
         
       private:
-        xtd::web::css::selector_map selectors_;
+        xtd::web::css::selector_dictionary selectors_;
         xtd::io::text_writer* text_writer_ = nullptr;
         bool delete_when_destroy_ = true;
       };

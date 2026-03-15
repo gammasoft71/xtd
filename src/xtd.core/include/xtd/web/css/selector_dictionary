@@ -1,0 +1,2 @@
+#pragma once
+#include <xtd/web/css/selector_dictionary.hpp>
