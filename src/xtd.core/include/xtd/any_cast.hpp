@@ -19,7 +19,7 @@ namespace xtd {
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   template<class type_t>
-  type_t any_cast(const xtd::any& operand) {
+  [[nodiscard]] auto any_cast(const xtd::any& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
   /// @brief Performs type-safe access to the contained object.
@@ -36,7 +36,7 @@ namespace xtd {
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   template<class type_t>
-  type_t any_cast(xtd::any& operand) {
+  [[nodiscard]] auto any_cast(xtd::any& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
   /// @brief Performs type-safe access to the contained object.
@@ -53,7 +53,7 @@ namespace xtd {
   /// @return The type_t value contained in the `operand`.
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   template<class type_t>
-  type_t any_cast(xtd::any&& operand) {
+  [[nodiscard]] auto any_cast(xtd::any&& operand) -> type_t {
     return std::any_cast<type_t>(operand);
   }
   /// @brief Performs type-safe access to the contained object.
@@ -71,7 +71,7 @@ namespace xtd {
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   /// @remarks If the `operand` is null poinetr, the result is null pointer.
   template<class type_t>
-  type_t* any_cast(xtd::any* operand) {
+  [[nodiscard]] auto any_cast(xtd::any* operand) -> type_t* {
     return std::any_cast<type_t>(operand);
   }
   /// @brief Performs type-safe access to the contained object.
@@ -89,7 +89,7 @@ namespace xtd {
   /// @exception std::bad_any_cast if the typeid of the requested `type_t` does not match that of the contents of `operand`.
   /// @remarks If the `operand` is null poinetr, the result is null pointer.
   template<class type_t>
-  type_t* any_cast(const xtd::any* operand) {
+  [[nodiscard]] auto any_cast(const xtd::any* operand) -> type_t* {
     return std::any_cast<type_t>(operand);
   }
 }
