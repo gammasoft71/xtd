@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::abstract_object class.
+/// @brief Contains #abstract_ keyword.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "abstract_object.hpp"
