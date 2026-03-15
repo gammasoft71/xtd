@@ -28,15 +28,15 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        const xtd::web::css::selector_map& selectors() const noexcept {return selectors_;}
-        xtd::web::css::selector_map& selectors() noexcept {return selectors_;}
-        void selectors(const xtd::web::css::selector_map& selector) {selectors_ = selector;}
+        [[nodiscard]] auto selectors() const noexcept -> const xtd::web::css::selector_map& {return selectors_;}
+        [[nodiscard]] auto selectors() noexcept -> xtd::web::css::selector_map& {return selectors_;}
+        auto selectors(const xtd::web::css::selector_map& selector) -> void {selectors_ = selector;}
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        void write() {
+        auto write() -> void {
           if (!text_writer_) return;
           for (const auto& selector : selectors_) {
             text_writer_->write_line("{} {{", selector.first);
