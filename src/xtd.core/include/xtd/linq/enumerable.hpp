@@ -884,27 +884,13 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       template<class type_t>
       [[nodiscard]] static auto range(type_t start, type_t count, type_t step) {
-        using param_type = std::tuple<type_t, type_t, type_t, type_t>;
-        auto numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
-        
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         
-        numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
-          std::make_tuple(start, count, step, type_t {}),
-          [](param_type & params) {
-            auto& result = std::get<0>(params);
-            auto& count = std::get<1>(params);
-            auto& step = std::get<2>(params);
-            auto& index = std::get<3>(params);
-            if (index != 0) result += step;
-            return index++ < count;
-          },
-          [start, count, step](param_type & params) {
-            params = std::make_tuple(start, count, step, type_t {});
-          }
-        };
-        return numbers;
+        auto result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
+        for (auto index = type_t {}; index < count; ++index)
+          result.items.push_back(start + (index * step));
+        return result;
       }
       
       /// @brief Projects each element of a sequence into a new form.

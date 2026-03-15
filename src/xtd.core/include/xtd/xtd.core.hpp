@@ -202,6 +202,8 @@
 #include "ranges/views/order_by_descending_view.hpp"
 #include "ranges/views/select.hpp"
 #include "ranges/views/select_view.hpp"
+#include "ranges/views/to_list.hpp"
+#include "ranges/views/to_list_view.hpp"
 #include "ranges/views/where.hpp"
 #include "ranges/views/where_view.hpp"
 #include "reflection/assembly.hpp"
