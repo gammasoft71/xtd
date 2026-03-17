@@ -30,7 +30,7 @@ auto memory_stream::can_write() const noexcept -> bool {
 }
 
 auto memory_stream::capacity() const -> size {
-  if (data_->static_buffer) data_->static_buffer->length();
+  if (data_->static_buffer) return data_->static_buffer->length();
   return data_->dynamic_buffer.capacity();
 }
 
