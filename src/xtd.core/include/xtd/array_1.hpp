@@ -161,7 +161,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the rank of an array.
     /// @include array_get_length.cpp
-    xtd::size rank() const noexcept override {return 1;}
+    [[nodiscard]] auto rank() const noexcept -> xtd::size override {return 1;}
     /// @}
     
     /// @name Public Methods
@@ -182,7 +182,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to copy an Array to another native Array.
     /// @include ArrayCopyTo.cpp
-    void copy_to(xtd::array<type_t>& array, size_type index) const override {basic_array<type_t, allocator_t>::copy_to(array, index);}
+    auto copy_to(xtd::array<type_t>& array, size_type index) const -> void override {basic_array<type_t, allocator_t>::copy_to(array, index);}
     
     using xtd::basic_array<type_t, allocator_t>::get_value;
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -190,7 +190,7 @@ namespace xtd {
     /// @return The value at the specified position in the one-dimensional Array.
     /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
-    const value_type& get_value(size_type index) const {return operator()(index);}
+    [[nodiscard]] auto get_value(size_type index) const -> const value_type& {return operator()(index);}
     
     using xtd::basic_array<type_t, allocator_t>::set_value;
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -198,11 +198,11 @@ namespace xtd {
     /// @param index The position of the Array element to set.
     /// @exception xtd::argument_exception The current Array does ! have exactly one dimension.
     /// @exception xtd::index_out_of_range_exception index is outside the range of valid indexes for the current Array.
-    void set_value(const value_type& value, size_type index) {operator()(index) = value;}
+    auto set_value(const value_type& value, size_type index) -> void {operator()(index) = value;}
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @}
     
     /// @name Public Operators
@@ -211,11 +211,11 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another container to use as data source.
     /// @return This current instance.
-    array& operator=(const array&) = default;
+    auto operator=(const array&) -> array& = default;
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
     /// @param other Another base type container to use as data source.
     /// @return This current instance.
-    array& operator=(array&&) = default;
+    auto operator=(array&&) -> array& = default;
     
     using xtd::basic_array<type_t, allocator_t>::operator();
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
@@ -226,7 +226,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    value_type& operator()(size_type index) {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator()(size_type index) -> value_type& {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index A 32-bit integer that represents the position of the Array element to get.
@@ -236,7 +236,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator () to list the elements of an array.
     /// @include ArrayArrayOperatorFunctor.cpp
-    const value_type& operator()(size_type index) const {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator()(size_type index) const -> const value_type& {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param value The new value for the specified element.
@@ -246,7 +246,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include ArrayArrayOperator.cpp
-    value_type& operator[](size_type index) override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator[](size_type index) -> value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     
     /// @brief Gets the element at the specified index.
     /// @param index The zero-based index of the element to get.
@@ -256,7 +256,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include ArrayArrayOperator.cpp
-    const value_type& operator[](size_type index) const override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
+    [[nodiscard]] auto operator[](size_type index) const -> const value_type& override {return xtd::basic_array<type_t, allocator_t>::operator[](index);}
     /// @}
   };
 }
