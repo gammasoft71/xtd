@@ -35,7 +35,7 @@ namespace xtd {
     /// @{
     /// @brief When implemented in a derived class, gets a unique identifier for this attribute.
     /// @remarks As implemented, this identifier is merely the Type of the attribute. However, it is intended that the unique identifier be used to identify two attributes of the same type.
-    xtd::sptr<object> type_id() const noexcept;
+    [[nodiscard]] auto type_id() const noexcept -> xtd::sptr<object>;
     /// @}
     
   protected:
@@ -52,7 +52,7 @@ namespace xtd {
     /// @{
     /// @brief When implemented in a derived class, gets a unique identifier for this attribute.
     /// @remarks As implemented, this identifier is merely the Type of the attribute. However, it is intended that the unique identifier be used to identify two attributes of the same type.
-    virtual xtd::sptr<object> get_type_id() const noexcept = 0;
+    [[nodiscard]] virtual auto get_type_id() const noexcept -> xtd::sptr<object> = 0;
     /// @}
   };
 }
