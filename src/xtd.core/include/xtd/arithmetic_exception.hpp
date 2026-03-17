@@ -80,10 +80,10 @@ namespace xtd {
     
     /// @cond
     arithmetic_exception(const arithmetic_exception&) = default;
-    arithmetic_exception& operator =(const arithmetic_exception&) = default;
+    auto operator =(const arithmetic_exception&) -> arithmetic_exception& = default;
     /// @endcond
     
   private:
-    const char* default_message() const noexcept {return "Overflow or underflow in the arithmetic operation.";}
+    [[nodiscard]] auto default_message() const noexcept -> const char* {return "Overflow or underflow in the arithmetic operation.";}
   };
 }
