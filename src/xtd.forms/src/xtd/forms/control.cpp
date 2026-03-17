@@ -691,9 +691,9 @@ control& control::parent(const control& value) {
   if (value.handle() != data_->parent) {
     if (parent().has_value()) parent(nullptr);
     else on_parent_changed(event_args::empty);
-    if (value.is_handle_created()) const_cast < control& > (value).data_->controls.add(*this);
+    if (value.is_handle_created()) const_cast<control&>(value).data_->controls.add(*this);
   } else if (!value.is_handle_created())
-    const_cast < control& > (value).data_->controls.add(*this);
+    const_cast<control&>(value).data_->controls.add(*this);
   return *this;
 }
 
@@ -875,7 +875,7 @@ async_result control::begin_invoke(delegate < void() > method) {
   return begin_invoke(delegate < void(array < any_object>) > (method), {});
 }
 
-async_result control::begin_invoke(delegate < void(array < any_object>)> method, const array < any_object >& args) {
+async_result control::begin_invoke(delegate<void(array<any_object>)> method, const array<any_object>& args) {
   xtd::sptr < async_result_invoke > async = xtd::new_sptr < async_result_invoke > (this);
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
@@ -966,14 +966,12 @@ void control::destroy_control() {
     parent_prev.value().get().suspend_layout();
     parent(nullptr);
     parent_prev.value().get().resume_layout(false);
-  } else {
-    for (auto index = 0_z; index < top_level_controls_.count(); ++index) {
+  } else
+    for (auto index = 0_z; index < top_level_controls_.count(); ++index)
       if (top_level_controls_[index].get().handle() == handle()) {
         top_level_controls_.remove_at(index);
         break;
       }
-    }
-  }
   destroy_handle();
   set_state(state::destroyed, true);
   set_state(state::destroying, false);
@@ -1000,7 +998,7 @@ bool control::focus() {
   return true;
 }
 
-std::optional < control_ref > control::from_child_handle(intptr handle) {
+std::optional<control_ref> control::from_child_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -1011,7 +1009,7 @@ std::optional < control_ref > control::from_child_handle(intptr handle) {
   }
 }
 
-std::optional < control_ref > control::from_handle(intptr handle) {
+std::optional<control_ref> control::from_handle(intptr handle) {
   try {
     auto it = handles_.find(handle);
     if (it != handles_.end())
@@ -1026,15 +1024,15 @@ forms::auto_size_mode control::get_auto_size_mode() const {
   return data_->auto_size_mode;
 }
 
-std::optional < xtd::drawing::color > control::get_back_color() const noexcept {
+std::optional<xtd::drawing::color> control::get_back_color() const noexcept {
   return data_->back_color;
 }
 
-std::optional < xtd::drawing::font > control::get_font() const noexcept {
+std::optional<xtd::drawing::font> control::get_font() const noexcept {
   return data_->font;
 }
 
-std::optional < xtd::drawing::color > control::get_fore_color() const noexcept {
+std::optional<xtd::drawing::color> control::get_fore_color() const noexcept {
   return data_->fore_color;
 }
 
