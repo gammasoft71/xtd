@@ -113,7 +113,7 @@ Inheritance diagram for xtd::any_object:</div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>foo1 : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">icomparable</a>&lt;foo1&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;foo1&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> foo1(<span class="keywordtype">int</span> v) : <a class="code hl_function" href="#aef3445700d50ea9699aec36b46299cac">value</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) {}</div>
+<div class="line">  <span class="keyword">explicit</span> foo1(<span class="keywordtype">int</span> v) : <a class="code hl_function" href="#a4aac324c61225774eae3432bc18a5a41">value</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) {}</div>
 <div class="line">  <span class="keywordtype">int</span> value = 0;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a>() const noexcept -&gt; <span class="keywordtype">string</span><span class="keyword"> override </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
@@ -165,7 +165,7 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"><span class="comment">// a = 42 =&gt; 42 (foo1)</span></div>
 <div class="line"><span class="comment">// a = foo2 =&gt; NA (foo2)</span></div>
 <div class="line"><span class="comment">// a = wednesday =&gt; wednesday (xtd::day_of_week)</span></div>
-<div class="ttc" id="aclassxtd_1_1any__object_html_aef3445700d50ea9699aec36b46299cac"><div class="ttname"><a href="#aef3445700d50ea9699aec36b46299cac">xtd::any_object::value</a></div><div class="ttdeci">const object &amp; value() const</div><div class="ttdoc">Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html_a4aac324c61225774eae3432bc18a5a41"><div class="ttname"><a href="#a4aac324c61225774eae3432bc18a5a41">xtd::any_object::value</a></div><div class="ttdeci">auto value() const -&gt; const object &amp;</div><div class="ttdoc">Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...</div></div>
 <div class="ttc" id="aclassxtd_1_1hash__code_html_aeca6f45b8de9d6bf5359c3d2a02bc640"><div class="ttname"><a href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::size combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
@@ -191,43 +191,43 @@ Public Constructors</h2></td></tr>
 <tr class="memitem:a7a574a2f1f7bf730d27765e441cbf14a" id="r_a7a574a2f1f7bf730d27765e441cbf14a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> () noexcept=default</td></tr>
 <tr class="memdesc:a7a574a2f1f7bf730d27765e441cbf14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class.  <br /></td></tr>
 <tr class="memitem:a34446e806d597898a271125399dbecda" id="r_a34446e806d597898a271125399dbecda"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a34446e806d597898a271125399dbecda template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34446e806d597898a271125399dbecda">any_object</a> (type_t &amp;&amp;<a class="el" href="#aef3445700d50ea9699aec36b46299cac">value</a>) noexcept</td></tr>
+<tr class="memitem:a34446e806d597898a271125399dbecda template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a34446e806d597898a271125399dbecda">any_object</a> (type_t &amp;&amp;<a class="el" href="#a4aac324c61225774eae3432bc18a5a41">value</a>) noexcept</td></tr>
 <tr class="memdesc:a34446e806d597898a271125399dbecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value.  <br /></td></tr>
 <tr class="memitem:a09f2b77caf068e85e277987a2506775c" id="r_a09f2b77caf068e85e277987a2506775c"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a09f2b77caf068e85e277987a2506775c template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a09f2b77caf068e85e277987a2506775c">any_object</a> (type_t &amp;<a class="el" href="#aef3445700d50ea9699aec36b46299cac">value</a>) noexcept</td></tr>
+<tr class="memitem:a09f2b77caf068e85e277987a2506775c template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a09f2b77caf068e85e277987a2506775c">any_object</a> (type_t &amp;<a class="el" href="#a4aac324c61225774eae3432bc18a5a41">value</a>) noexcept</td></tr>
 <tr class="memdesc:a09f2b77caf068e85e277987a2506775c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value.  <br /></td></tr>
 <tr class="memitem:a0665ef5db15d12d8afe28faec58eeb5f" id="r_a0665ef5db15d12d8afe28faec58eeb5f"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a0665ef5db15d12d8afe28faec58eeb5f template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0665ef5db15d12d8afe28faec58eeb5f">any_object</a> (const type_t &amp;<a class="el" href="#aef3445700d50ea9699aec36b46299cac">value</a>) noexcept</td></tr>
+<tr class="memitem:a0665ef5db15d12d8afe28faec58eeb5f template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0665ef5db15d12d8afe28faec58eeb5f">any_object</a> (const type_t &amp;<a class="el" href="#a4aac324c61225774eae3432bc18a5a41">value</a>) noexcept</td></tr>
 <tr class="memdesc:a0665ef5db15d12d8afe28faec58eeb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a6c644ac6583e871820b545ffa1cddeeb" id="r_a6c644ac6583e871820b545ffa1cddeeb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c644ac6583e871820b545ffa1cddeeb">has_value</a> () const noexcept</td></tr>
-<tr class="memdesc:a6c644ac6583e871820b545ffa1cddeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a valid value of its underlying type.  <br /></td></tr>
-<tr class="memitem:aef3445700d50ea9699aec36b46299cac" id="r_aef3445700d50ea9699aec36b46299cac"><td class="memItemLeft">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aef3445700d50ea9699aec36b46299cac">value</a> () const</td></tr>
-<tr class="memdesc:aef3445700d50ea9699aec36b46299cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if it has been assigned a valid underlying value.  <br /></td></tr>
+<tr class="memitem:ab82393b1ac8ee94597e1caa3116966a1" id="r_ab82393b1ac8ee94597e1caa3116966a1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab82393b1ac8ee94597e1caa3116966a1">has_value</a> () const noexcept -&gt; bool</td></tr>
+<tr class="memdesc:ab82393b1ac8ee94597e1caa3116966a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a valid value of its underlying type.  <br /></td></tr>
+<tr class="memitem:a4aac324c61225774eae3432bc18a5a41" id="r_a4aac324c61225774eae3432bc18a5a41"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4aac324c61225774eae3432bc18a5a41">value</a> () const -&gt; const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td></tr>
+<tr class="memdesc:a4aac324c61225774eae3432bc18a5a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if it has been assigned a valid underlying value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:ab66e8167b4e6e2126f3a936407764cdc" id="r_ab66e8167b4e6e2126f3a936407764cdc"><td class="memItemLeft"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab66e8167b4e6e2126f3a936407764cdc">compare_to</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:ab66e8167b4e6e2126f3a936407764cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
-<tr class="memitem:a45e2b9e89c39e64ecbbbedd094ba1924" id="r_a45e2b9e89c39e64ecbbbedd094ba1924"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a45e2b9e89c39e64ecbbbedd094ba1924">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:a45e2b9e89c39e64ecbbbedd094ba1924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a42e12ad969a9f3be8c265cca4e524ea6" id="r_a42e12ad969a9f3be8c265cca4e524ea6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a42e12ad969a9f3be8c265cca4e524ea6">equals</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) const noexcept override</td></tr>
-<tr class="memdesc:a42e12ad969a9f3be8c265cca4e524ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:aea66527054bd2dca61b4fa4b0f7305cf" id="r_aea66527054bd2dca61b4fa4b0f7305cf"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#aea66527054bd2dca61b4fa4b0f7305cf">get_hash_code</a> () const noexcept override</td></tr>
-<tr class="memdesc:aea66527054bd2dca61b4fa4b0f7305cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="memitem:a18d9fee9685c5c890f11d1af3c6c9cc0" id="r_a18d9fee9685c5c890f11d1af3c6c9cc0"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a18d9fee9685c5c890f11d1af3c6c9cc0">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a18d9fee9685c5c890f11d1af3c6c9cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a6a014861bcf453a936e4123fcddbdda0" id="r_a6a014861bcf453a936e4123fcddbdda0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6a014861bcf453a936e4123fcddbdda0">reset</a> () noexcept</td></tr>
-<tr class="memdesc:a6a014861bcf453a936e4123fcddbdda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current object. Set the current object to null.  <br /></td></tr>
+<tr class="memitem:a1f2e12b4f33cf96d93499091e836b5ef" id="r_a1f2e12b4f33cf96d93499091e836b5ef"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1f2e12b4f33cf96d93499091e836b5ef">compare_to</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> override</td></tr>
+<tr class="memdesc:a1f2e12b4f33cf96d93499091e836b5ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="memitem:a0f70cfcce620c75b7b322de9b30c8b30" id="r_a0f70cfcce620c75b7b322de9b30c8b30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f70cfcce620c75b7b322de9b30c8b30">equals</a> (const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a0f70cfcce620c75b7b322de9b30c8b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:a2bf92ad4b02925876aa59ff3f6b9cda5" id="r_a2bf92ad4b02925876aa59ff3f6b9cda5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2bf92ad4b02925876aa59ff3f6b9cda5">equals</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a2bf92ad4b02925876aa59ff3f6b9cda5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memitem:ae7573f1028f1c35e4f603bb5ee309969" id="r_ae7573f1028f1c35e4f603bb5ee309969"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7573f1028f1c35e4f603bb5ee309969">get_hash_code</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:ae7573f1028f1c35e4f603bb5ee309969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="memitem:a4935d2f8e0a029e87de04812bc0940bf" id="r_a4935d2f8e0a029e87de04812bc0940bf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4935d2f8e0a029e87de04812bc0940bf">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a4935d2f8e0a029e87de04812bc0940bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:ac347a9d497ffcaef486d2fcf394782cf" id="r_ac347a9d497ffcaef486d2fcf394782cf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac347a9d497ffcaef486d2fcf394782cf">reset</a> () noexcept -&gt; void</td></tr>
+<tr class="memdesc:ac347a9d497ffcaef486d2fcf394782cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current object. Set the current object to null.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:a43cd2623291ac9c95e69a09b755450b0" id="r_a43cd2623291ac9c95e69a09b755450b0"><td class="memItemLeft"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a43cd2623291ac9c95e69a09b755450b0">operator=</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) noexcept=default</td></tr>
-<tr class="memdesc:a43cd2623291ac9c95e69a09b755450b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
-<tr class="memitem:ae2a24d9e9f71bbe55d69e8a4d609fe59" id="r_ae2a24d9e9f71bbe55d69e8a4d609fe59"><td class="memItemLeft"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae2a24d9e9f71bbe55d69e8a4d609fe59">operator=</a> (<a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:ae2a24d9e9f71bbe55d69e8a4d609fe59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="memitem:aa08f3afb2368f33caba5c1ae905dbf93" id="r_aa08f3afb2368f33caba5c1ae905dbf93"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa08f3afb2368f33caba5c1ae905dbf93">operator=</a> (const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;other) noexcept -&gt; <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;=default</td></tr>
+<tr class="memdesc:aa08f3afb2368f33caba5c1ae905dbf93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="memitem:af7c81f48651c2cec22e79f05a036a3ee" id="r_af7c81f48651c2cec22e79f05a036a3ee"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af7c81f48651c2cec22e79f05a036a3ee">operator=</a> (<a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;&amp;other) noexcept -&gt; <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td></tr>
+<tr class="memdesc:af7c81f48651c2cec22e79f05a036a3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -301,7 +301,7 @@ template&lt;class type_t&gt; </div>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a4aac324c61225774eae3432bc18a5a41" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -336,7 +336,7 @@ template&lt;class type_t&gt; </div>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a4aac324c61225774eae3432bc18a5a41" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -371,7 +371,7 @@ template&lt;class type_t&gt; </div>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class with specified value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a4aac324c61225774eae3432bc18a5a41" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">value</a></td><td>The value to initialize the contained value with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,8 +379,8 @@ template&lt;class type_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a6c644ac6583e871820b545ffa1cddeeb" name="a6c644ac6583e871820b545ffa1cddeeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c644ac6583e871820b545ffa1cddeeb">&#9670;&#160;</a></span>has_value()</h2>
+<a id="ab82393b1ac8ee94597e1caa3116966a1" name="ab82393b1ac8ee94597e1caa3116966a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab82393b1ac8ee94597e1caa3116966a1">&#9670;&#160;</a></span>has_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,53 +389,27 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::any_object::has_value </td>
+          <td class="memname">auto xtd::any_object::has_value </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a valid value of its underlying type. </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a value; <span class="tt">false</span> if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has no value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">true</span>, the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object can be accessed with the <a class="el" href="#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">xtd::any_object::value</a> property. Otherwise, attempting to access its value throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="#ab82393b1ac8ee94597e1caa3116966a1" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">true</span>, the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object can be accessed with the <a class="el" href="#a4aac324c61225774eae3432bc18a5a41" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">xtd::any_object::value</a> property. Otherwise, attempting to access its value throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
 
 </div>
 </div>
-<a id="aef3445700d50ea9699aec36b46299cac" name="aef3445700d50ea9699aec36b46299cac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef3445700d50ea9699aec36b46299cac">&#9670;&#160;</a></span>value()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp; xtd::any_object::value </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if it has been assigned a valid underlying value. </p>
-<dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if the <a class="el" href="#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">true</span>. An exception is thrown if the <a class="el" href="#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">false</span>. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is `false`. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab66e8167b4e6e2126f3a936407764cdc" name="ab66e8167b4e6e2126f3a936407764cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66e8167b4e6e2126f3a936407764cdc">&#9670;&#160;</a></span>compare_to()</h2>
+<a id="a4aac324c61225774eae3432bc18a5a41" name="a4aac324c61225774eae3432bc18a5a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aac324c61225774eae3432bc18a5a41">&#9670;&#160;</a></span>value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,15 +418,49 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::any_object::compare_to </td>
+          <td class="memname">auto xtd::any_object::value </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if it has been assigned a valid underlying value. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if the <a class="el" href="#ab82393b1ac8ee94597e1caa3116966a1" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">true</span>. An exception is thrown if the <a class="el" href="#ab82393b1ac8ee94597e1caa3116966a1" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <span class="tt">false</span>. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="#ab82393b1ac8ee94597e1caa3116966a1" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is `false`. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f2e12b4f33cf96d93499091e836b5ef" name="a1f2e12b4f33cf96d93499091e836b5ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2e12b4f33cf96d93499091e836b5ef">&#9670;&#160;</a></span>compare_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto xtd::any_object::compare_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -480,8 +488,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a45e2b9e89c39e64ecbbbedd094ba1924" name="a45e2b9e89c39e64ecbbbedd094ba1924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e2b9e89c39e64ecbbbedd094ba1924">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a0f70cfcce620c75b7b322de9b30c8b30" name="a0f70cfcce620c75b7b322de9b30c8b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f70cfcce620c75b7b322de9b30c8b30">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -490,15 +498,15 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::any_object::equals </td>
+          <td class="memname">auto xtd::any_object::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -516,8 +524,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a42e12ad969a9f3be8c265cca4e524ea6" name="a42e12ad969a9f3be8c265cca4e524ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42e12ad969a9f3be8c265cca4e524ea6">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a2bf92ad4b02925876aa59ff3f6b9cda5" name="a2bf92ad4b02925876aa59ff3f6b9cda5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf92ad4b02925876aa59ff3f6b9cda5">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,15 +534,15 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool xtd::any_object::equals </td>
+          <td class="memname">auto xtd::any_object::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  bool</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -552,8 +560,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="aea66527054bd2dca61b4fa4b0f7305cf" name="aea66527054bd2dca61b4fa4b0f7305cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea66527054bd2dca61b4fa4b0f7305cf">&#9670;&#160;</a></span>get_hash_code()</h2>
+<a id="ae7573f1028f1c35e4f603bb5ee309969" name="ae7573f1028f1c35e4f603bb5ee309969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7573f1028f1c35e4f603bb5ee309969">&#9670;&#160;</a></span>get_hash_code()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,15 +570,15 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::any_object::get_hash_code </td>
+          <td class="memname">auto xtd::any_object::get_hash_code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -582,8 +590,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a18d9fee9685c5c890f11d1af3c6c9cc0" name="a18d9fee9685c5c890f11d1af3c6c9cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18d9fee9685c5c890f11d1af3c6c9cc0">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a4935d2f8e0a029e87de04812bc0940bf" name="a4935d2f8e0a029e87de04812bc0940bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4935d2f8e0a029e87de04812bc0940bf">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,15 +600,15 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> xtd::any_object::to_string </td>
+          <td class="memname">auto xtd::any_object::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -614,8 +622,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a6a014861bcf453a936e4123fcddbdda0" name="a6a014861bcf453a936e4123fcddbdda0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a014861bcf453a936e4123fcddbdda0">&#9670;&#160;</a></span>reset()</h2>
+<a id="ac347a9d497ffcaef486d2fcf394782cf" name="ac347a9d497ffcaef486d2fcf394782cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac347a9d497ffcaef486d2fcf394782cf">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -624,10 +632,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::any_object::reset </td>
+          <td class="memname">auto xtd::any_object::reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
   </td>
@@ -642,8 +650,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="a43cd2623291ac9c95e69a09b755450b0" name="a43cd2623291ac9c95e69a09b755450b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43cd2623291ac9c95e69a09b755450b0">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="aa08f3afb2368f33caba5c1ae905dbf93" name="aa08f3afb2368f33caba5c1ae905dbf93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08f3afb2368f33caba5c1ae905dbf93">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -652,10 +660,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp; xtd::any_object::operator= </td>
+          <td class="memname">auto xtd::any_object::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;=default</td>
         </tr>
       </table>
   </td>
@@ -676,8 +684,8 @@ template&lt;class type_t&gt; </div>
 
 </div>
 </div>
-<a id="ae2a24d9e9f71bbe55d69e8a4d609fe59" name="ae2a24d9e9f71bbe55d69e8a4d609fe59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2a24d9e9f71bbe55d69e8a4d609fe59">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="af7c81f48651c2cec22e79f05a036a3ee" name="af7c81f48651c2cec22e79f05a036a3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c81f48651c2cec22e79f05a036a3ee">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,10 +694,10 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp; xtd::any_object::operator= </td>
+          <td class="memname">auto xtd::any_object::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> &amp;</td>
         </tr>
       </table>
   </td>

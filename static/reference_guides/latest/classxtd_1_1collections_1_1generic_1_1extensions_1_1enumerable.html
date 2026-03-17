@@ -1208,14 +1208,14 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <div class="line">    pet {.name = <span class="stringliteral">&quot;Whiskers&quot;</span>, .vaccinated = <span class="keyword">false</span>}</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.<a class="code hl_function" href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">count</a>([](<span class="keyword">const</span> pet&amp; pet) {<span class="keywordflow">return</span> !pet.vaccinated;});</div>
+<div class="line">  <span class="keyword">auto</span> number_unvaccinated = pets.<a class="code hl_function" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a>([](<span class="keyword">const</span> pet&amp; pet) {<span class="keywordflow">return</span> !pet.vaccinated;});</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;There are {} unvaccinated animals.&quot;</span>, number_unvaccinated);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:74</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a63ea4c7a305ecdff5882d1cf2336c739"><div class="ttname"><a href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">xtd::basic_array::count</a></div><div class="ttdeci">auto count() const noexcept -&gt; size_type override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:74</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

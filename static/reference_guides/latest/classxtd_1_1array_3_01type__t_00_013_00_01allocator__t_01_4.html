@@ -133,7 +133,7 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <dd>
 The xtd::array::copy method copies elements not only between arrays of the same type but also between standard arrays of different types; it handles type casting automatically. </dd>
 <dd>
-Some methods, such as xtd::array::create_instance, xtd::array::copy, <a class="el" href="classxtd_1_1basic__array.html#a4849a87889688d2fd26302e51a9519cc">xtd::array::copy_to</a>, <a class="el" href="classxtd_1_1basic__array.html#a21516522b32f0b1a6f92ab99d7cf271c">xtd::array::get_value</a>, and <a class="el" href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">xtd::array::set_value</a>, provide overloads that accept 64-bit integers as parameters to accommodate large capacity arrays. <a class="el" href="classxtd_1_1basic__array.html#a48551f7aa950699c881a79fdd70f4f39">xtd::array::long_length</a> and <a class="el" href="classxtd_1_1basic__array.html#a06fe84abedf478ba9a5059c08b7ff020">xtd::array::get_long_length</a> return 64-bit integers indicating the length of the array. </dd>
+Some methods, such as xtd::array::create_instance, xtd::array::copy, <a class="el" href="classxtd_1_1basic__array.html#a115fdb7979161abb86f9b801ad027379">xtd::array::copy_to</a>, <a class="el" href="classxtd_1_1basic__array.html#a13b38da738d06c131d4cfe0afd76ae1b">xtd::array::get_value</a>, and <a class="el" href="classxtd_1_1basic__array.html#a8dbb1a5dabdfd618c478ec27beefa35e">xtd::array::set_value</a>, provide overloads that accept 64-bit integers as parameters to accommodate large capacity arrays. <a class="el" href="classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206">xtd::array::long_length</a> and <a class="el" href="classxtd_1_1basic__array.html#a6038cd48ab703d6867dd2f4713967983">xtd::array::get_long_length</a> return 64-bit integers indicating the length of the array. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> is not guaranteed to be sorted. You must sort the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> prior to performing operations (such as xtd::array::binary_search) that require the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to be sorted. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates different methods to create an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
@@ -174,7 +174,7 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="line">  print_values(my_obj_array);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Copies the last two elements from the object array to the integer array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1array_3_4.html#a4734a1accda10c5d05265755d9498a7e">xtd::array&lt;&gt;::copy</a>(my_obj_array, my_obj_array.get_upper_bound(0) - 1, my_int_array, my_int_array.get_upper_bound(0) - 1, 2);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1array_3_4.html#a40df9fc2a75d0b8c99f32abddb45a47e">xtd::array&lt;&gt;::copy</a>(my_obj_array, my_obj_array.get_upper_bound(0) - 1, my_int_array, my_int_array.get_upper_bound(0) - 1, 2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;\nAfter copying the last two elements of the Object array to the integer array,&quot;</span>);</div>
@@ -197,7 +197,7 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="line"><span class="comment">// After copying the last two elements of the Object array to the integer array,</span></div>
 <div class="line"><span class="comment">// integer array:  1  2  3  29  30</span></div>
 <div class="line"><span class="comment">// Object array:   1  2  28  29  30</span></div>
-<div class="ttc" id="aclassxtd_1_1array_3_4_html_a4734a1accda10c5d05265755d9498a7e"><div class="ttname"><a href="classxtd_1_1array_3_4.html#a4734a1accda10c5d05265755d9498a7e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static void copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array)</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:239</div></div>
+<div class="ttc" id="aclassxtd_1_1array_3_4_html_a40df9fc2a75d0b8c99f32abddb45a47e"><div class="ttname"><a href="classxtd_1_1array_3_4.html#a40df9fc2a75d0b8c99f32abddb45a47e">xtd::array&lt;&gt;::copy</a></div><div class="ttdeci">static auto copy(const array&lt; source_type_t, source_rank, source_allocator_t &gt; &amp;source_array, const array&lt; destination_type_t, destination_rank, destination_allocator_t &gt; &amp;destination_array) -&gt; void</div><div class="ttdoc">Copies a range of elements from an xtd::array starting at the first element and pastes them into anot...</div><div class="ttdef"><b>Definition</b> array_static.hpp:239</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:64</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -259,35 +259,35 @@ Public Constructors</h2></td></tr>
 <tr class="memitem:abb90de3d87fb6bdcdfac6a4c6da4abb7" id="r_abb90de3d87fb6bdcdfac6a4c6da4abb7"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
 <tr class="memitem:abb90de3d87fb6bdcdfac6a4c6da4abb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abb90de3d87fb6bdcdfac6a4c6da4abb7">array</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
 <tr class="memdesc:abb90de3d87fb6bdcdfac6a4c6da4abb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
-<tr class="memitem:a90a01ad6b03db6546bc05a2e76f3307a" id="r_a90a01ad6b03db6546bc05a2e76f3307a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a90a01ad6b03db6546bc05a2e76f3307a">array</a> (std::vector&lt; std::vector&lt; std::vector&lt; type_t &gt; &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>)</td></tr>
+<tr class="memitem:a90a01ad6b03db6546bc05a2e76f3307a" id="r_a90a01ad6b03db6546bc05a2e76f3307a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a90a01ad6b03db6546bc05a2e76f3307a">array</a> (std::vector&lt; std::vector&lt; std::vector&lt; type_t &gt; &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a>)</td></tr>
 <tr class="memdesc:a90a01ad6b03db6546bc05a2e76f3307a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list.  <br /></td></tr>
-<tr class="memitem:a2f7a8144ba93fdf6a790ae2b5132eb2c" id="r_a2f7a8144ba93fdf6a790ae2b5132eb2c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2f7a8144ba93fdf6a790ae2b5132eb2c">array</a> (std::initializer_list&lt; std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>)</td></tr>
+<tr class="memitem:a2f7a8144ba93fdf6a790ae2b5132eb2c" id="r_a2f7a8144ba93fdf6a790ae2b5132eb2c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2f7a8144ba93fdf6a790ae2b5132eb2c">array</a> (std::initializer_list&lt; std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a>)</td></tr>
 <tr class="memdesc:a2f7a8144ba93fdf6a790ae2b5132eb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Properties</h2></td></tr>
-<tr class="memitem:a5dacc6a3783b27ebe998d4008e46b177" id="r_a5dacc6a3783b27ebe998d4008e46b177"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5dacc6a3783b27ebe998d4008e46b177">rank</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5dacc6a3783b27ebe998d4008e46b177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rank (number of dimensions) of the array.  <br /></td></tr>
+<tr class="memitem:a0a4f1e73e45ad145c29f035535d7b6a3" id="r_a0a4f1e73e45ad145c29f035535d7b6a3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a4f1e73e45ad145c29f035535d7b6a3">rank</a> () const noexcept -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> override</td></tr>
+<tr class="memdesc:a0a4f1e73e45ad145c29f035535d7b6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rank (number of dimensions) of the array.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Methods</h2></td></tr>
-<tr class="memitem:a70a6a419ce93fec85980ca80e46ffeee" id="r_a70a6a419ce93fec85980ca80e46ffeee"><td class="memItemLeft">const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a70a6a419ce93fec85980ca80e46ffeee">get_value</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) const</td></tr>
-<tr class="memdesc:a70a6a419ce93fec85980ca80e46ffeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
-<tr class="memitem:ab635d5724165d68c0e0e32e03c1629f9" id="r_ab635d5724165d68c0e0e32e03c1629f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab635d5724165d68c0e0e32e03c1629f9">set_value</a> (const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;value, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3)</td></tr>
-<tr class="memdesc:ab635d5724165d68c0e0e32e03c1629f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
-<tr class="memitem:a9e033b9f7571781dae18b05f0e4a1a1c" id="r_a9e033b9f7571781dae18b05f0e4a1a1c"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9e033b9f7571781dae18b05f0e4a1a1c">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:a9e033b9f7571781dae18b05f0e4a1a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:a0269d769b0bf811b9b654ea2bd7435e3" id="r_a0269d769b0bf811b9b654ea2bd7435e3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0269d769b0bf811b9b654ea2bd7435e3">get_value</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) const -&gt; const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td></tr>
+<tr class="memdesc:a0269d769b0bf811b9b654ea2bd7435e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:a9a4cffe53c57525be9221f380dad4964" id="r_a9a4cffe53c57525be9221f380dad4964"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9a4cffe53c57525be9221f380dad4964">set_value</a> (const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;value, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) -&gt; void</td></tr>
+<tr class="memdesc:a9a4cffe53c57525be9221f380dad4964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:a90a2006719c8c072bb2b8b9bf730e339" id="r_a90a2006719c8c072bb2b8b9bf730e339"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a90a2006719c8c072bb2b8b9bf730e339">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a90a2006719c8c072bb2b8b9bf730e339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Operators</h2></td></tr>
-<tr class="memitem:ac2469652f7fa2400c7178d2f40ee7de1" id="r_ac2469652f7fa2400c7178d2f40ee7de1"><td class="memItemLeft"><a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac2469652f7fa2400c7178d2f40ee7de1">operator=</a> (const <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;)=default</td></tr>
-<tr class="memdesc:ac2469652f7fa2400c7178d2f40ee7de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
-<tr class="memitem:a268b7ca273f8d7c66ee67da3d47c10ee" id="r_a268b7ca273f8d7c66ee67da3d47c10ee"><td class="memItemLeft"><a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a268b7ca273f8d7c66ee67da3d47c10ee">operator=</a> (<a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:a268b7ca273f8d7c66ee67da3d47c10ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.  <br /></td></tr>
-<tr class="memitem:a2e18c268a1d99e87a88c17bf4aefc814" id="r_a2e18c268a1d99e87a88c17bf4aefc814"><td class="memItemLeft"><a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2e18c268a1d99e87a88c17bf4aefc814">operator()</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3)</td></tr>
-<tr class="memdesc:a2e18c268a1d99e87a88c17bf4aefc814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
-<tr class="memitem:a63c2abeb85cb7892d78cf04ff46674b1" id="r_a63c2abeb85cb7892d78cf04ff46674b1"><td class="memItemLeft">const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a63c2abeb85cb7892d78cf04ff46674b1">operator()</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) const</td></tr>
-<tr class="memdesc:a63c2abeb85cb7892d78cf04ff46674b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:a41557a0b30784cc138d960517224ddc4" id="r_a41557a0b30784cc138d960517224ddc4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a41557a0b30784cc138d960517224ddc4">operator=</a> (const <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;) -&gt; <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;=default</td></tr>
+<tr class="memdesc:a41557a0b30784cc138d960517224ddc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="memitem:a70423910cb5463f3adc6a19f019b407d" id="r_a70423910cb5463f3adc6a19f019b407d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a70423910cb5463f3adc6a19f019b407d">operator=</a> (<a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;&amp;) -&gt; <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;=default</td></tr>
+<tr class="memdesc:a70423910cb5463f3adc6a19f019b407d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.  <br /></td></tr>
+<tr class="memitem:a8ca62d20c3305cf888cdc2ce6dd9427d" id="r_a8ca62d20c3305cf888cdc2ce6dd9427d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ca62d20c3305cf888cdc2ce6dd9427d">operator()</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) -&gt; <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td></tr>
+<tr class="memdesc:a8ca62d20c3305cf888cdc2ce6dd9427d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
+<tr class="memitem:ab2bb819a32026c812d1a7cc442ba4668" id="r_ab2bb819a32026c812d1a7cc442ba4668"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab2bb819a32026c812d1a7cc442ba4668">operator()</a> (<a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index1, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index2, <a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a> index3) const -&gt; const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td></tr>
+<tr class="memdesc:ab2bb819a32026c812d1a7cc442ba4668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -317,70 +317,70 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a5536e320ab3d45bf74383c0d0990ac88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reverse iterator of array value type.  <br /></td></tr>
 <tr class="memitem:ab92164fa9ed1f6b91383771d47951032" id="r_ab92164fa9ed1f6b91383771d47951032"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ab92164fa9ed1f6b91383771d47951032">const_reverse_iterator</a></td></tr>
 <tr class="memdesc:ab92164fa9ed1f6b91383771d47951032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reverse iterator of array value type.  <br /></td></tr>
-<tr class="memitem:a2e50b538f5aa4913d3180fcee49499c2" id="r_a2e50b538f5aa4913d3180fcee49499c2"><td class="memItemLeft"><a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">count</a> () const noexcept override</td></tr>
-<tr class="memdesc:a2e50b538f5aa4913d3180fcee49499c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a5b5a9ce8373768ab8c68b261b33d5b6f" id="r_a5b5a9ce8373768ab8c68b261b33d5b6f"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1basic__array.html#a58756d2450f08851d601a29456ba4273">pointer</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a5b5a9ce8373768ab8c68b261b33d5b6f">data</a> () noexcept</td></tr>
-<tr class="memdesc:a5b5a9ce8373768ab8c68b261b33d5b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
-<tr class="memitem:acdb6f585d484eac04eb282dd0a5fe9fd" id="r_acdb6f585d484eac04eb282dd0a5fe9fd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#acdb6f585d484eac04eb282dd0a5fe9fd">is_fixed_size</a> () const noexcept override</td></tr>
-<tr class="memdesc:acdb6f585d484eac04eb282dd0a5fe9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the xtd::collections::generic::ilist &lt;type_t&gt; has a fixed size.  <br /></td></tr>
-<tr class="memitem:ad95524d29f8f4a218254d137c5046cb1" id="r_ad95524d29f8f4a218254d137c5046cb1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ad95524d29f8f4a218254d137c5046cb1">is_read_only</a> () const noexcept override</td></tr>
-<tr class="memdesc:ad95524d29f8f4a218254d137c5046cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the xtd::collections::generic::icollection &lt;type_t&gt; is read-only.  <br /></td></tr>
-<tr class="memitem:a5cbb0b954165a263596fe7fd433d6125" id="r_a5cbb0b954165a263596fe7fd433d6125"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a5cbb0b954165a263596fe7fd433d6125">is_synchronized</a> () const noexcept override</td></tr>
-<tr class="memdesc:a5cbb0b954165a263596fe7fd433d6125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the xtd::collections::generic::icollection &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
-<tr class="memitem:ab5d7c124db651f72d7f2b4971c5862f5" id="r_ab5d7c124db651f72d7f2b4971c5862f5"><td class="memItemLeft">virtual const <a class="el" href="classxtd_1_1basic__array.html#a9e6ec253d5e769b3a82e5c189bbecb17">base_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a> () const noexcept</td></tr>
-<tr class="memdesc:ab5d7c124db651f72d7f2b4971c5862f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
-<tr class="memitem:aaf70989e6cabeaccefd32e3b760753ef" id="r_aaf70989e6cabeaccefd32e3b760753ef"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a> () const noexcept</td></tr>
-<tr class="memdesc:aaf70989e6cabeaccefd32e3b760753ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a size that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
-<tr class="memitem:a48551f7aa950699c881a79fdd70f4f39" id="r_a48551f7aa950699c881a79fdd70f4f39"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a48551f7aa950699c881a79fdd70f4f39">long_length</a> ()</td></tr>
-<tr class="memdesc:a48551f7aa950699c881a79fdd70f4f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
-<tr class="memitem:aef2f30e89231c16afc7395d71e559655" id="r_aef2f30e89231c16afc7395d71e559655"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aef2f30e89231c16afc7395d71e559655">max_length</a> () const noexcept</td></tr>
-<tr class="memdesc:aef2f30e89231c16afc7395d71e559655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::array::begin(), xtd::array::end()) for the largest container.  <br /></td></tr>
-<tr class="memitem:aee5a20a84786e5ae303364a521972609" id="r_aee5a20a84786e5ae303364a521972609"><td class="memItemLeft">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aee5a20a84786e5ae303364a521972609">sync_root</a> () const noexcept override</td></tr>
-<tr class="memdesc:aee5a20a84786e5ae303364a521972609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a564a11cba948c390dcce1e3d4002fde5" id="r_a564a11cba948c390dcce1e3d4002fde5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a564a11cba948c390dcce1e3d4002fde5">contains</a> (const type_t &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:a564a11cba948c390dcce1e3d4002fde5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the array.  <br /></td></tr>
-<tr class="memitem:a4849a87889688d2fd26302e51a9519cc" id="r_a4849a87889688d2fd26302e51a9519cc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a4849a87889688d2fd26302e51a9519cc">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const</td></tr>
-<tr class="memdesc:a4849a87889688d2fd26302e51a9519cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
-<tr class="memitem:a391534692d321eadc7a5810486c16650" id="r_a391534692d321eadc7a5810486c16650"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a391534692d321eadc7a5810486c16650">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
-<tr class="memdesc:a391534692d321eadc7a5810486c16650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="memitem:a92ef003c8174b830377e38610e743e4f" id="r_a92ef003c8174b830377e38610e743e4f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a92ef003c8174b830377e38610e743e4f">fill</a> (const <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &amp;value) noexcept</td></tr>
-<tr class="memdesc:a92ef003c8174b830377e38610e743e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the value to all elements in the container.  <br /></td></tr>
-<tr class="memitem:a6753ddfe99de81064d777312541cea34" id="r_a6753ddfe99de81064d777312541cea34"><td class="memItemLeft"><a id="a6753ddfe99de81064d777312541cea34" name="a6753ddfe99de81064d777312541cea34"></a>
-<a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &gt;&#160;</td><td class="memItemRight"><b>get_enumerator</b> () const noexcept override</td></tr>
-<tr class="memitem:a4132e3affe66da23dc58780f520124e2" id="r_a4132e3affe66da23dc58780f520124e2"><td class="memItemLeft">constexpr <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const</td></tr>
-<tr class="memdesc:a4132e3affe66da23dc58780f520124e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of elements in all the dimensions of the array.  <br /></td></tr>
-<tr class="memitem:adf2b0e9b1579f51755893946a0bdf369" id="r_adf2b0e9b1579f51755893946a0bdf369"><td class="memItemLeft"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>, 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#adf2b0e9b1579f51755893946a0bdf369">get_lengths</a> () const</td></tr>
-<tr class="memdesc:adf2b0e9b1579f51755893946a0bdf369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of the number of elements of all the dimensions of the array.  <br /></td></tr>
-<tr class="memitem:a06fe84abedf478ba9a5059c08b7ff020" id="r_a06fe84abedf478ba9a5059c08b7ff020"><td class="memItemLeft">constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a06fe84abedf478ba9a5059c08b7ff020">get_long_length</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const</td></tr>
-<tr class="memdesc:a06fe84abedf478ba9a5059c08b7ff020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
-<tr class="memitem:a6ac6c2f6144b73e261745e2bec9f6771" id="r_a6ac6c2f6144b73e261745e2bec9f6771"><td class="memItemLeft">constexpr <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const</td></tr>
-<tr class="memdesc:a6ac6c2f6144b73e261745e2bec9f6771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lower bound of the specified dimension in the array.  <br /></td></tr>
-<tr class="memitem:ab74ed5a54361b742c7e27ff7b180a986" id="r_ab74ed5a54361b742c7e27ff7b180a986"><td class="memItemLeft">constexpr <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const</td></tr>
-<tr class="memdesc:ab74ed5a54361b742c7e27ff7b180a986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the upper bound of the specified dimension in the array.  <br /></td></tr>
-<tr class="memitem:a21516522b32f0b1a6f92ab99d7cf271c" id="r_a21516522b32f0b1a6f92ab99d7cf271c"><td class="memItemLeft">const <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a21516522b32f0b1a6f92ab99d7cf271c">get_value</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes) const</td></tr>
-<tr class="memdesc:a21516522b32f0b1a6f92ab99d7cf271c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the multidimensional array. The indexes are specified as 32-bit integers array.  <br /></td></tr>
-<tr class="memitem:a63ff23cf9bbd59f42928e36dcc042425" id="r_a63ff23cf9bbd59f42928e36dcc042425"><td class="memItemLeft"><a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a63ff23cf9bbd59f42928e36dcc042425">index_of</a> (const type_t &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:a63ff23cf9bbd59f42928e36dcc042425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a16b80cc0f2926f2b4fcfb5f5c1346eb7" id="r_a16b80cc0f2926f2b4fcfb5f5c1346eb7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">set_value</a> (const type_t &amp;value, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes)</td></tr>
-<tr class="memdesc:a16b80cc0f2926f2b4fcfb5f5c1346eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <span class="tt"><a class="el" href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">count</a></span> elements, does nothing if <span class="tt"><a class="el" href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">count</a> == <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length()</a>.
+<tr class="memitem:a63ea4c7a305ecdff5882d1cf2336c739" id="r_a63ea4c7a305ecdff5882d1cf2336c739"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> override</td></tr>
+<tr class="memdesc:a63ea4c7a305ecdff5882d1cf2336c739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:af02da392442bf73622bb9c4283fd278e" id="r_af02da392442bf73622bb9c4283fd278e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#af02da392442bf73622bb9c4283fd278e">data</a> () noexcept -&gt; <a class="el" href="classxtd_1_1basic__array.html#a58756d2450f08851d601a29456ba4273">pointer</a></td></tr>
+<tr class="memdesc:af02da392442bf73622bb9c4283fd278e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
+<tr class="memitem:a11f585c378ccca2d5e97023065fe0623" id="r_a11f585c378ccca2d5e97023065fe0623"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a11f585c378ccca2d5e97023065fe0623">is_fixed_size</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a11f585c378ccca2d5e97023065fe0623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the xtd::collections::generic::ilist &lt;type_t&gt; has a fixed size.  <br /></td></tr>
+<tr class="memitem:a075d59c8f688cafa6cfaf1c4b14d8358" id="r_a075d59c8f688cafa6cfaf1c4b14d8358"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a075d59c8f688cafa6cfaf1c4b14d8358">is_read_only</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a075d59c8f688cafa6cfaf1c4b14d8358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the xtd::collections::generic::icollection &lt;type_t&gt; is read-only.  <br /></td></tr>
+<tr class="memitem:a0a9f649382374a1df934da7dbe725724" id="r_a0a9f649382374a1df934da7dbe725724"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a0a9f649382374a1df934da7dbe725724">is_synchronized</a> () const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:a0a9f649382374a1df934da7dbe725724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the xtd::collections::generic::icollection &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
+<tr class="memitem:a4fe92dec108d26e4dadb8b5a5d48b0b6" id="r_a4fe92dec108d26e4dadb8b5a5d48b0b6"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1basic__array.html#a9e6ec253d5e769b3a82e5c189bbecb17">base_type</a> &amp;</td></tr>
+<tr class="memdesc:a4fe92dec108d26e4dadb8b5a5d48b0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type items.  <br /></td></tr>
+<tr class="memitem:a9d5d3b513ccae2470ae034fac4cb85ad" id="r_a9d5d3b513ccae2470ae034fac4cb85ad"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">length</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a></td></tr>
+<tr class="memdesc:a9d5d3b513ccae2470ae034fac4cb85ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a size that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
+<tr class="memitem:a59e5c7b4cfb9357fa83500c67604e206" id="r_a59e5c7b4cfb9357fa83500c67604e206"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a59e5c7b4cfb9357fa83500c67604e206">long_length</a> () -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a59e5c7b4cfb9357fa83500c67604e206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
+<tr class="memitem:ac57d96a707393507b5c9918f159b2145" id="r_ac57d96a707393507b5c9918f159b2145"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ac57d96a707393507b5c9918f159b2145">max_length</a> () const noexcept -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a></td></tr>
+<tr class="memdesc:ac57d96a707393507b5c9918f159b2145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::array::begin(), xtd::array::end()) for the largest container.  <br /></td></tr>
+<tr class="memitem:a39461bb5181ea0df0a44bea2b3530034" id="r_a39461bb5181ea0df0a44bea2b3530034"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a39461bb5181ea0df0a44bea2b3530034">sync_root</a> () const noexcept -&gt; const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;override</td></tr>
+<tr class="memdesc:a39461bb5181ea0df0a44bea2b3530034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:ab5b3f34724ba576d0fb4cfde172405e0" id="r_ab5b3f34724ba576d0fb4cfde172405e0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ab5b3f34724ba576d0fb4cfde172405e0">contains</a> (const type_t &amp;value) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ab5b3f34724ba576d0fb4cfde172405e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the array.  <br /></td></tr>
+<tr class="memitem:a115fdb7979161abb86f9b801ad027379" id="r_a115fdb7979161abb86f9b801ad027379"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a115fdb7979161abb86f9b801ad027379">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const -&gt; void</td></tr>
+<tr class="memdesc:a115fdb7979161abb86f9b801ad027379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
+<tr class="memitem:ac587f9080f690e2488c54d5d1282f35e" id="r_ac587f9080f690e2488c54d5d1282f35e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ac587f9080f690e2488c54d5d1282f35e">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
+<tr class="memdesc:ac587f9080f690e2488c54d5d1282f35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="memitem:abd622143ef204b594a90c66610eb8a64" id="r_abd622143ef204b594a90c66610eb8a64"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#abd622143ef204b594a90c66610eb8a64">fill</a> (const <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &amp;value) noexcept -&gt; void</td></tr>
+<tr class="memdesc:abd622143ef204b594a90c66610eb8a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the value to all elements in the container.  <br /></td></tr>
+<tr class="memitem:a8776aa26c06f15e42aa5975b23dff939" id="r_a8776aa26c06f15e42aa5975b23dff939"><td class="memItemLeft"><a id="a8776aa26c06f15e42aa5975b23dff939" name="a8776aa26c06f15e42aa5975b23dff939"></a>
+auto&#160;</td><td class="memItemRight"><b>get_enumerator</b> () const noexcept -&gt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &gt; override</td></tr>
+<tr class="memitem:a50da68839327b033061b1b162896223e" id="r_a50da68839327b033061b1b162896223e"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a50da68839327b033061b1b162896223e">get_length</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a></td></tr>
+<tr class="memdesc:a50da68839327b033061b1b162896223e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of elements in all the dimensions of the array.  <br /></td></tr>
+<tr class="memitem:a2d2d52189984138963480595a37a8898" id="r_a2d2d52189984138963480595a37a8898"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a2d2d52189984138963480595a37a8898">get_lengths</a> () const -&gt; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a>, 1 &gt;</td></tr>
+<tr class="memdesc:a2d2d52189984138963480595a37a8898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of the number of elements of all the dimensions of the array.  <br /></td></tr>
+<tr class="memitem:a6038cd48ab703d6867dd2f4713967983" id="r_a6038cd48ab703d6867dd2f4713967983"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a6038cd48ab703d6867dd2f4713967983">get_long_length</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const -&gt; <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a></td></tr>
+<tr class="memdesc:a6038cd48ab703d6867dd2f4713967983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.  <br /></td></tr>
+<tr class="memitem:abc63e4b552c2301f63ce2bf6190c6d2d" id="r_abc63e4b552c2301f63ce2bf6190c6d2d"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#abc63e4b552c2301f63ce2bf6190c6d2d">get_lower_bound</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a></td></tr>
+<tr class="memdesc:abc63e4b552c2301f63ce2bf6190c6d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lower bound of the specified dimension in the array.  <br /></td></tr>
+<tr class="memitem:af1720ec1c6298e41e6dacf9224c7254a" id="r_af1720ec1c6298e41e6dacf9224c7254a"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#af1720ec1c6298e41e6dacf9224c7254a">get_upper_bound</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> dimension) const -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a></td></tr>
+<tr class="memdesc:af1720ec1c6298e41e6dacf9224c7254a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the upper bound of the specified dimension in the array.  <br /></td></tr>
+<tr class="memitem:a13b38da738d06c131d4cfe0afd76ae1b" id="r_a13b38da738d06c131d4cfe0afd76ae1b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a13b38da738d06c131d4cfe0afd76ae1b">get_value</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes) const -&gt; const <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> &amp;</td></tr>
+<tr class="memdesc:a13b38da738d06c131d4cfe0afd76ae1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the multidimensional array. The indexes are specified as 32-bit integers array.  <br /></td></tr>
+<tr class="memitem:acd5b0bac1d3196be86b4eca88edc6e04" id="r_acd5b0bac1d3196be86b4eca88edc6e04"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#acd5b0bac1d3196be86b4eca88edc6e04">index_of</a> (const type_t &amp;value) const noexcept -&gt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> override</td></tr>
+<tr class="memdesc:acd5b0bac1d3196be86b4eca88edc6e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memitem:a8dbb1a5dabdfd618c478ec27beefa35e" id="r_a8dbb1a5dabdfd618c478ec27beefa35e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a8dbb1a5dabdfd618c478ec27beefa35e">set_value</a> (const type_t &amp;value, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes) -&gt; void</td></tr>
+<tr class="memdesc:a8dbb1a5dabdfd618c478ec27beefa35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <span class="tt"><a class="el" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a></span> elements, does nothing if <span class="tt"><a class="el" href="classxtd_1_1basic__array.html#a63ea4c7a305ecdff5882d1cf2336c739">count</a> == <a class="el" href="classxtd_1_1basic__array.html#a9d5d3b513ccae2470ae034fac4cb85ad">length()</a>.
     @param new_size The new <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size</a> of the container.
     @<a class="el" href="classxtd_1_1exception.html" title="Defines the base class for predefined exceptions in the xtd namespace.">exception</a> <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac9ed6c7b1177cbe562ba3a1af1b228db" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> set to a value that <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a0168e83b95232afde2aa19da18350096" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>.
     @remarks If the current <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size</a> <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> greater than </span>count<span class="tt">, the container <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> reduced to its <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a> </span>count<span class="tt"> elements.
-    @remarks If the current <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size</a> <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> less than </span>count`, additional default-inserted elements are appended. */ void resize(size_type new_size) {resize(new_size, <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> {});}.  <br /></td></tr>
-<tr class="memitem:ab88cfef04f0ae0cb609068f0a2ff0a25" id="r_ab88cfef04f0ae0cb609068f0a2ff0a25"><td class="memItemLeft">basic_array&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ab88cfef04f0ae0cb609068f0a2ff0a25">sort</a> ()</td></tr>
-<tr class="memdesc:ab88cfef04f0ae0cb609068f0a2ff0a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
-<tr class="memitem:ac4ec27387ef0582948fc499fde1eba65" id="r_ac4ec27387ef0582948fc499fde1eba65"><td class="memItemLeft"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ac4ec27387ef0582948fc499fde1eba65">to_string</a> () const noexcept override</td></tr>
-<tr class="memdesc:ac4ec27387ef0582948fc499fde1eba65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a9ca38a735b49019beb5e5f14ab8d4ac1" id="r_a9ca38a735b49019beb5e5f14ab8d4ac1"><td class="memItemLeft">basic_array &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a9ca38a735b49019beb5e5f14ab8d4ac1">operator=</a> (const basic_array &amp;other)</td></tr>
-<tr class="memdesc:a9ca38a735b49019beb5e5f14ab8d4ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
-<tr class="memitem:ac5c62871eef03c2d45676040e137e604" id="r_ac5c62871eef03c2d45676040e137e604"><td class="memItemLeft"><a class="el" href="classxtd_1_1basic__array.html#a01a0d032eb60a2a8f0bdf84ba3fe1204">const_reference</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ac5c62871eef03c2d45676040e137e604">operator[]</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> index) const override</td></tr>
-<tr class="memdesc:ac5c62871eef03c2d45676040e137e604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at specified location index.  <br /></td></tr>
+    @remarks If the current <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size</a> <a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f" title="Checks if the result of an expression is compatible with a given type.">is</a> less than </span>count`, additional default-inserted elements are appended. */ auto resize(size_type new_size) -&gt; void {resize(new_size, <a class="el" href="classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe">value_type</a> {});}.  <br /></td></tr>
+<tr class="memitem:aca5c8811956342206d87b1fdd0340895" id="r_aca5c8811956342206d87b1fdd0340895"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aca5c8811956342206d87b1fdd0340895">sort</a> () -&gt; basic_array&lt; type_t &gt; &amp;</td></tr>
+<tr class="memdesc:aca5c8811956342206d87b1fdd0340895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
+<tr class="memitem:a40d1b6c8ecb3e93cd595bcaf3a10da30" id="r_a40d1b6c8ecb3e93cd595bcaf3a10da30"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a40d1b6c8ecb3e93cd595bcaf3a10da30">to_string</a> () const noexcept -&gt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> override</td></tr>
+<tr class="memdesc:a40d1b6c8ecb3e93cd595bcaf3a10da30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:ac8971bc6051a1789bbe26ff264329699" id="r_ac8971bc6051a1789bbe26ff264329699"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#ac8971bc6051a1789bbe26ff264329699">operator=</a> (const basic_array &amp;other) -&gt; basic_array &amp;</td></tr>
+<tr class="memdesc:ac8971bc6051a1789bbe26ff264329699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="memitem:aae7bd14a0027a228fccd8fe4761d8092" id="r_aae7bd14a0027a228fccd8fe4761d8092"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aae7bd14a0027a228fccd8fe4761d8092">operator[]</a> (<a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> index) const -&gt; <a class="el" href="classxtd_1_1basic__array.html#a01a0d032eb60a2a8f0bdf84ba3fe1204">const_reference</a> override</td></tr>
+<tr class="memdesc:aae7bd14a0027a228fccd8fe4761d8092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at specified location index.  <br /></td></tr>
 <tr class="memitem:a49c15ccc5efbe20ca6656e87436036c3" id="r_a49c15ccc5efbe20ca6656e87436036c3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a49c15ccc5efbe20ca6656e87436036c3">operator const base_type &amp;</a> () const noexcept</td></tr>
 <tr class="memdesc:a49c15ccc5efbe20ca6656e87436036c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the underlying base type.  <br /></td></tr>
 <tr class="memitem:a3eac9b62b7209d7ef1bda73d4b77c8a7" id="r_a3eac9b62b7209d7ef1bda73d4b77c8a7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a3eac9b62b7209d7ef1bda73d4b77c8a7">operator base_type &amp;</a> () noexcept</td></tr>
 <tr class="memdesc:a3eac9b62b7209d7ef1bda73d4b77c8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the underlying base type.  <br /></td></tr>
-<tr class="memitem:aee7c8053e686383179fc57895fc0d3d9" id="r_aee7c8053e686383179fc57895fc0d3d9"><td class="memItemLeft">type_t &amp;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#aee7c8053e686383179fc57895fc0d3d9">operator()</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes)</td></tr>
-<tr class="memdesc:aee7c8053e686383179fc57895fc0d3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.  <br /></td></tr>
+<tr class="memitem:a62df2b8b2ac4c45f34da762d4a9fa40e" id="r_a62df2b8b2ac4c45f34da762d4a9fa40e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1basic__array.html#a62df2b8b2ac4c45f34da762d4a9fa40e">operator()</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes) -&gt; type_t &amp;</td></tr>
+<tr class="memdesc:a62df2b8b2ac4c45f34da762d4a9fa40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.  <br /></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f" id="r_ad2cab851376bb6ca085b567bf5da0f5f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508" id="r_a6bd11aa88ce86568b701b33fd1b3e508"><td class="memItemLeft">virtual <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
@@ -1132,7 +1132,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <p>Constructs the container with the contents of the specified initializer list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a></td><td>The std::vector to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a></td><td>The std::vector to initialize the elements of the container with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1167,7 +1167,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <p>Constructs the container with the contents of the specified initializer list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a></td><td>The initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1basic__array.html#a4fe92dec108d26e4dadb8b5a5d48b0b6">items</a></td><td>The initializer list to initialize the elements of the container with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1175,8 +1175,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a5dacc6a3783b27ebe998d4008e46b177" name="a5dacc6a3783b27ebe998d4008e46b177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dacc6a3783b27ebe998d4008e46b177">&#9670;&#160;</a></span>rank()</h2>
+<a id="a0a4f1e73e45ad145c29f035535d7b6a3" name="a0a4f1e73e45ad145c29f035535d7b6a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4f1e73e45ad145c29f035535d7b6a3">&#9670;&#160;</a></span>rank()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1187,15 +1187,15 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::rank </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::rank </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1204,12 +1204,12 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The rank (number of dimensions) of the array. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates methods to get the rank of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1basic__array.html#a0f0e476086ae44f64d6ed64a8cfbfc73">xtd::basic_array&lt; type_t, allocator_t &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1basic__array.html#a27c852468ce22a80f36a9cb39062f2a4">xtd::basic_array&lt; type_t, allocator_t &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a70a6a419ce93fec85980ca80e46ffeee" name="a70a6a419ce93fec85980ca80e46ffeee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70a6a419ce93fec85980ca80e46ffeee">&#9670;&#160;</a></span>get_value()</h2>
+<a id="a0269d769b0bf811b9b654ea2bd7435e3" name="a0269d769b0bf811b9b654ea2bd7435e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0269d769b0bf811b9b654ea2bd7435e3">&#9670;&#160;</a></span>get_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1220,7 +1220,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::get_value </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::get_value </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index1</em></span>, </td>
         </tr>
@@ -1232,12 +1232,12 @@ template&lt;class type_t, class allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) const -&gt; const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1261,8 +1261,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="ab635d5724165d68c0e0e32e03c1629f9" name="ab635d5724165d68c0e0e32e03c1629f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab635d5724165d68c0e0e32e03c1629f9">&#9670;&#160;</a></span>set_value()</h2>
+<a id="a9a4cffe53c57525be9221f380dad4964" name="a9a4cffe53c57525be9221f380dad4964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4cffe53c57525be9221f380dad4964">&#9670;&#160;</a></span>set_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1273,7 +1273,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::set_value </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::set_value </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
@@ -1290,7 +1290,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) -&gt; void</td>
         </tr>
       </table>
   </td>
@@ -1319,8 +1319,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a9e033b9f7571781dae18b05f0e4a1a1c" name="a9e033b9f7571781dae18b05f0e4a1a1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e033b9f7571781dae18b05f0e4a1a1c">&#9670;&#160;</a></span>to_string()</h2>
+<a id="a90a2006719c8c072bb2b8b9bf730e339" name="a90a2006719c8c072bb2b8b9bf730e339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a2006719c8c072bb2b8b9bf730e339">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1331,15 +1331,15 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::to_string </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt;  <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1351,8 +1351,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="ac2469652f7fa2400c7178d2f40ee7de1" name="ac2469652f7fa2400c7178d2f40ee7de1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2469652f7fa2400c7178d2f40ee7de1">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a41557a0b30784cc138d960517224ddc4" name="a41557a0b30784cc138d960517224ddc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41557a0b30784cc138d960517224ddc4">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1363,10 +1363,10 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a>&lt; type_t, 3, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;=default</td>
         </tr>
       </table>
   </td>
@@ -1387,8 +1387,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a268b7ca273f8d7c66ee67da3d47c10ee" name="a268b7ca273f8d7c66ee67da3d47c10ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268b7ca273f8d7c66ee67da3d47c10ee">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="a70423910cb5463f3adc6a19f019b407d" name="a70423910cb5463f3adc6a19f019b407d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70423910cb5463f3adc6a19f019b407d">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1399,10 +1399,10 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator= </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a>&lt; type_t, 3, allocator_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> -&gt;  <a class="el" href="#a217de0e26deb393ff94aae8db3b1890f">array</a> &amp;=default</td>
         </tr>
       </table>
   </td>
@@ -1423,8 +1423,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a2e18c268a1d99e87a88c17bf4aefc814" name="a2e18c268a1d99e87a88c17bf4aefc814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e18c268a1d99e87a88c17bf4aefc814">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="a8ca62d20c3305cf888cdc2ce6dd9427d" name="a8ca62d20c3305cf888cdc2ce6dd9427d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca62d20c3305cf888cdc2ce6dd9427d">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1435,7 +1435,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator() </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index1</em></span>, </td>
         </tr>
@@ -1447,12 +1447,12 @@ template&lt;class type_t, class allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) -&gt; <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1478,8 +1478,8 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="a63c2abeb85cb7892d78cf04ff46674b1" name="a63c2abeb85cb7892d78cf04ff46674b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63c2abeb85cb7892d78cf04ff46674b1">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<a id="ab2bb819a32026c812d1a7cc442ba4668" name="ab2bb819a32026c812d1a7cc442ba4668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bb819a32026c812d1a7cc442ba4668">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1490,7 +1490,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp; <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator() </td>
+          <td class="memname">auto <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 3, allocator_t &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index1</em></span>, </td>
         </tr>
@@ -1502,12 +1502,12 @@ template&lt;class type_t, class allocator_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) const</td>
+          <td class="paramtype"><a class="el" href="#abe30251ed71b7360281662e9598304f4">size_type</a></td>          <td class="paramname"><span class="paramname"><em>index3</em></span>&#160;) const -&gt; const <a class="el" href="#aa82f89940f9a2fa101394df838bff19e">value_type</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
