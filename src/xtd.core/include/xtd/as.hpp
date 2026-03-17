@@ -52,12 +52,12 @@
 
 /// @cond
 template<class new_type, class current_type>
-new_type* __convert_value__(current_type* value) {
+[[nodiscard]] auto __convert_value__(current_type* value) -> new_type* {
   return xtd::as<new_type>(value);
 }
 
 template<class result_t, class source_t>
-inline auto xtd::linq::enumerable::cast(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+[[nodiscard]] inline auto xtd::linq::enumerable::cast(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
   auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
   result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
   for (const auto& item : source)
@@ -67,48 +67,48 @@ inline auto xtd::linq::enumerable::cast(const xtd::collections::generic::ienumer
 
 template<class type_t>
 template<typename target_t>
-target_t xtd::reference_wrapper_object<type_t>::to_object() const {
+[[nodiscard]] auto xtd::reference_wrapper_object<type_t>::to_object() const -> target_t {
   if (is_empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   return xtd::as<target_t>(to_object());
 }
 
 template<class type_t>
 template<typename target_t>
-target_t xtd::reference_wrapper_object<type_t>::to_reference() const {
+[[nodiscard]] auto xtd::reference_wrapper_object<type_t>::to_reference() const -> target_t {
   if (is_empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   return xtd::as<target_t>(to_reference());
 }
 
 template<class type_t>
 template<typename target_t>
-target_t xtd::shared_ptr_object<type_t>::to_object() const {
+[[nodiscard]] auto xtd::shared_ptr_object<type_t>::to_object() const -> target_t {
   if (to_pointer() == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   return xtd::as<target_t>(to_object());
 }
 
 template<class type_t>
 template<typename target_t>
-target_t* xtd::shared_ptr_object<type_t>::to_pointer() const {
+[[nodiscard]] auto xtd::shared_ptr_object<type_t>::to_pointer() const -> target_t* {
   if (to_pointer() == null) return null;
   return xtd::as<target_t>(to_pointer());
 }
 
 template<class type_t, class deleter_t>
 template<typename target_t>
-target_t xtd::unique_ptr_object<type_t, deleter_t>::to_object() const {
+[[nodiscard]] auto xtd::unique_ptr_object<type_t, deleter_t>::to_object() const -> target_t {
   if (to_pointer() == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   return xtd::as<target_t>(to_object());
 }
 
 template<class type_t, class deleter_t>
 template<typename target_t>
-target_t* xtd::unique_ptr_object<type_t, deleter_t>::to_pointer() const {
+[[nodiscard]] auto xtd::unique_ptr_object<type_t, deleter_t>::to_pointer() const -> target_t* {
   if (to_pointer() == null) return null;
   return xtd::as<target_t>(to_pointer());
 }
 
 template<class source_type_t, xtd::size source_rank, class source_allocator_t, class destination_type_t, xtd::size destination_rank, class destination_allocator_t>
-inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, xtd::size source_index, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size destination_index, xtd::size length) {
+inline auto xtd::array<>::copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, xtd::size source_index, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size destination_index, xtd::size length) -> void {
   if (source_array.rank() != destination_array.rank()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
   for (auto r = xtd::size{}; r < source_array.rank(); ++r)
     if (source_array.get_length(r) != destination_array.get_length(r)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
@@ -121,8 +121,8 @@ inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_al
 
 namespace std {
   template<class type_t>
-  type_t any_cast(const xtd::any_object& value) {return xtd::as<type_t>(value);}
+  [[nodiscard]] auto any_cast(const xtd::any_object& value) -> type_t {return xtd::as<type_t>(value);}
   template<class type_t>
-  type_t any_cast(xtd::any_object& value) {return xtd::as<type_t>(value);}
+  [[nodiscard]] auto any_cast(xtd::any_object& value) -> type_t {return xtd::as<type_t>(value);}
 }
 /// @endcond
