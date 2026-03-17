@@ -9,7 +9,7 @@ namespace xtd::tunit::tests {
   public:
     auto test_method_(test_case_failed) {
       auto a = array {1, 2, 3, 4};
-      xtd::tunit::assert::throws_any([&] {a[2];});
+      xtd::tunit::assert::throws_any([&] {[[maybe_unused]] auto v = a[2];});
     }
   };
   
