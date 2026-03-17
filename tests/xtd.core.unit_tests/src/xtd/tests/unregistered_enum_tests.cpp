@@ -52,7 +52,7 @@ namespace xtd::tests {
     
     auto test_method_(parse_with_invalid_enum) {
       assert::are_equal(as<unregistered_enum_test>(5), string::parse<unregistered_enum_test>("5"));
-      assert::throws<format_exception>([] {string::parse<unregistered_enum_test>("one");});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = string::parse<unregistered_enum_test>("one");});
     }
   };
 }

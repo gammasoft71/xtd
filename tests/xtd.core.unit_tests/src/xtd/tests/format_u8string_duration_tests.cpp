@@ -18,7 +18,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_without_format_argument_separator) {
-      assert::throws<format_exception>([] {string::format(u8"{0G}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = string::format(u8"{0G}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
     }
     
     auto test_method_(format_with_left_alignment) {
@@ -42,7 +42,7 @@ namespace xtd::tests {
     }
     
     auto test_method_(format_with_alignment_invalid) {
-      assert::throws<format_exception>([] {string::format(u8"{0,a}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
+      assert::throws<format_exception>([] {[[maybe_unused]] auto v = string::format(u8"{0,a}", std::chrono::hours {2} + std::chrono::minutes {3} + std::chrono::seconds {32});});
     }
     
     auto test_method_(format_with_invalid_argument) {

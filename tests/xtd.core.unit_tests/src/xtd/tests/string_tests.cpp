@@ -955,11 +955,11 @@ namespace xtd::tests {
     }
     
     auto test_method_(remove_start_index_out_of_range) {
-      assert::throws<index_out_of_range_exception>([] {string("0123456").remove(10);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = string("0123456").remove(10);});
     }
     
     auto test_method_(remove_start_index_count_out_of_range) {
-      assert::throws<index_out_of_range_exception>([] {string("0123456").remove(3, 10);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = string("0123456").remove(3, 10);});
     }
     
     auto test_method_(replace_char) {
@@ -1037,11 +1037,11 @@ namespace xtd::tests {
     }
     
     auto test_method_(substring_start_index_out_of_range) {
-      assert::throws<argument_out_of_range_exception>([] {string("0123456").substring(10);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = string("0123456").substring(10);});
     }
     
     auto test_method_(substring_count_out_of_range) {
-      assert::throws<argument_out_of_range_exception>([] {string("0123456").substring(2, 10);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = string("0123456").substring(2, 10);});
     }
     
     auto test_method_(to_array) {

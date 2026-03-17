@@ -47,18 +47,18 @@ namespace xtd::tests {
     }
     
     auto test_method_(parse) {
-      assert::are_equal(unregistered_enum_struct_flags_test::none, string::parse < unregistered_enum_struct_flags_test > ("0"));
-      assert::are_equal(unregistered_enum_struct_flags_test::one, string::parse < unregistered_enum_struct_flags_test > ("1"));
-      assert::are_equal(unregistered_enum_struct_flags_test::two, string::parse < unregistered_enum_struct_flags_test > ("2"));
-      assert::are_equal(unregistered_enum_struct_flags_test::three, string::parse < unregistered_enum_struct_flags_test > ("4"));
-      assert::are_equal(unregistered_enum_struct_flags_test::four, string::parse < unregistered_enum_struct_flags_test > ("8"));
-      assert::are_equal(unregistered_enum_struct_flags_test::one | unregistered_enum_struct_flags_test::two, string::parse < unregistered_enum_struct_flags_test > ("3"));
-      assert::are_equal(unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four, string::parse < unregistered_enum_struct_flags_test > ("12"));
+      assert::are_equal(unregistered_enum_struct_flags_test::none, string::parse<unregistered_enum_struct_flags_test> ("0"));
+      assert::are_equal(unregistered_enum_struct_flags_test::one, string::parse<unregistered_enum_struct_flags_test> ("1"));
+      assert::are_equal(unregistered_enum_struct_flags_test::two, string::parse<unregistered_enum_struct_flags_test> ("2"));
+      assert::are_equal(unregistered_enum_struct_flags_test::three, string::parse<unregistered_enum_struct_flags_test> ("4"));
+      assert::are_equal(unregistered_enum_struct_flags_test::four, string::parse<unregistered_enum_struct_flags_test> ("8"));
+      assert::are_equal(unregistered_enum_struct_flags_test::one | unregistered_enum_struct_flags_test::two, string::parse<unregistered_enum_struct_flags_test> ("3"));
+      assert::are_equal(unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four, string::parse<unregistered_enum_struct_flags_test> ("12"));
     }
     
     auto test_method_(parse_with_invalid_enum) {
-      assert::are_equal(as < unregistered_enum_struct_flags_test > (16), string::parse < unregistered_enum_struct_flags_test > ("16"));
-      assert::throws < format_exception > ([] {string::parse < unregistered_enum_struct_flags_test > ("one");});
+      assert::are_equal(as < unregistered_enum_struct_flags_test > (16), string::parse<unregistered_enum_struct_flags_test> ("16"));
+      assert::throws <format_exception>([] {[[maybe_unused]] auto v = string::parse<unregistered_enum_struct_flags_test> ("one");});
     }
   };
 }
