@@ -193,22 +193,22 @@ int32 unit_test::list_tests(const array<string>& tests) {
 bool unit_test::parse_arguments(const array<string>& args) {
   auto gtest_compatibility = settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
-    if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
+    if (arg == "--gtest_compatibility" || arg.chars().find("--gtest") == 0) gtest_compatibility = true;
     // Test selection :
     if (arg == "--count_tests") settings::default_settings().count_tests(true);
     else if (arg == "--list_tests") settings::default_settings().list_tests(true);
     else if (arg == "--gtest_list_tests") settings::default_settings().list_tests(true);
-    else if (arg.find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split('|'));
-    else if (arg.find("--gtest_filter=") == 0) settings::default_settings().filter_tests(arg.substring(15).split(':'));
+    else if (arg.chars().find("--filter_tests=") == 0) settings::default_settings().filter_tests(arg.substring(15).split('|'));
+    else if (arg.chars().find("--gtest_filter=") == 0) settings::default_settings().filter_tests(arg.substring(15).split(':'));
     else if (arg == "--also_run_ignored_tests") settings::default_settings().also_run_ignored_tests(true);
     else if (arg == "--gtest_also_run_disabled_tests") settings::default_settings().also_run_ignored_tests(true);
     // Test execution:
-    else if (arg.find("--repeat_tests=") == 0) settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
-    else if (arg.find("--gtest_repeat=") == 0) settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
+    else if (arg.chars().find("--repeat_tests=") == 0) settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
+    else if (arg.chars().find("--gtest_repeat=") == 0) settings::default_settings().repeat_tests(convert::to_int32(arg.substring(15)));
     else if (arg == "--shuffle_tests") settings::default_settings().shuffle_test(true);
     else if (arg == "--gtest_shuffle") settings::default_settings().shuffle_test(true);
-    else if (arg.find("--random_seed=") == 0) settings::default_settings().random_seed(convert::to_uint32(arg.substring(14)));
-    else if (arg.find("--gtest_random_seed=") == 0) settings::default_settings().random_seed(convert::to_uint32(arg.substring(20)));
+    else if (arg.chars().find("--random_seed=") == 0) settings::default_settings().random_seed(convert::to_uint32(arg.substring(14)));
+    else if (arg.chars().find("--gtest_random_seed=") == 0) settings::default_settings().random_seed(convert::to_uint32(arg.substring(20)));
     else if (arg == "--enable_stack_trace=true") settings::default_settings().enable_stack_trace(true);
     else if (arg == "--enable_stack_trace=false") settings::default_settings().enable_stack_trace(false);
     // Test output
@@ -224,16 +224,16 @@ bool unit_test::parse_arguments(const array<string>& args) {
     else if (arg == "--gtest_print_time=1") settings::default_settings().show_duration(true);
     else if (arg == "--show_duration=false") settings::default_settings().show_duration(false);
     else if (arg == "--gtest_print_time=0") settings::default_settings().show_duration(false);
-    else if (arg.find("--output=json") == 0) {
+    else if (arg.chars().find("--output=json") == 0) {
       settings::default_settings().output_json(true);
       if (arg[13] == ':') settings::default_settings().output_json_path(arg.substring(14));
-    } else if (arg.find("--gtest_output=json") == 0) {
+    } else if (arg.chars().find("--gtest_output=json") == 0) {
       settings::default_settings().output_json(true);
       if (arg[19] == ':') settings::default_settings().output_json_path(arg.substring(20));
-    } else if (arg.find("--output=xml") == 0) {
+    } else if (arg.chars().find("--output=xml") == 0) {
       settings::default_settings().output_xml(true);
       if (arg[12] == ':') settings::default_settings().output_xml_path(arg.substring(13));
-    } else if (arg.find("--gtest_output=xml") == 0) {
+    } else if (arg.chars().find("--gtest_output=xml") == 0) {
       settings::default_settings().output_xml(true);
       if (arg[18] == ':') settings::default_settings().output_xml_path(arg.substring(19));
     }
@@ -258,11 +258,11 @@ list<registered_test_class>& unit_test::test_classes() {
 
 string unit_test::get_filename(const string& path) {
   auto filename = path;
-  const auto last_slash_idx = filename.find_last_of("\\/");
+  const auto last_slash_idx = filename.chars().find_last_of("\\/");
   if (string::npos != last_slash_idx)
     filename = filename.remove(0, last_slash_idx + 1);
     
-  const auto period_idx = filename.rfind('.');
+  const auto period_idx = filename.chars().rfind('.');
   if (string::npos != period_idx)
     filename = filename.remove(period_idx);
   return filename;

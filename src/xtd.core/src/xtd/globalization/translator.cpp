@@ -100,6 +100,6 @@ auto translator::to_language_name(const xtd::string& language) -> string {
 
 auto translator::to_fallback_name(const xtd::string& language) -> string {
   auto language_name = to_language_name(language);
-  auto index = language_name.find_first_of("_");
+  auto index = language_name.chars().find_first_of("_");
   return index != npos ? language_name.remove(index) : language_name;
 }

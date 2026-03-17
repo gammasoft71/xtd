@@ -162,7 +162,7 @@ namespace {
   }
   
   static string to_string_custom_escaped_string(const string& format, size& index) {
-    auto next_index = format.find_first_of(format[index], index + 1);
+    auto next_index = format.chars().find_first_of(format[index], index + 1);
     if (next_index == npos) throw_helper::throws(xtd::helpers::exception_case::format);
     auto result = format.substring(index + 1, next_index - index - 1);
     index = next_index;
@@ -176,7 +176,7 @@ namespace {
     auto result = string::format(string::format("{{:D{}}}", count), fraction);
     if (!remove_trailing_zeros) return result;
     while (!string::is_empty(result) && result[result.length() - 1] == '0')
-      result = result.substr(0, result.length() - 1);
+      result = result.chars().substr(0, result.length() - 1);
     return result;
   }
   
@@ -604,7 +604,7 @@ string date_time::to_string(const string& format) const {
 }
 
 string date_time::to_string(const string& format, const globalization::culture_info& culture) const {
-  if (format.length() > 1 && format.find_first_of('%') != npos) return to_string_put_time(format, culture);
+  if (format.length() > 1 && format.chars().find_first_of('%') != npos) return to_string_put_time(format, culture);
   if (format.length() > 1) return to_string_custom(format, culture);
   return to_string_standard(xtd::string::is_empty(format) ? 'G' : format[0], culture);
 }

@@ -83,7 +83,7 @@ auto path::get_invalid_path_chars() noexcept -> array<char> {
 
 auto path::get_path_root(const string& path) -> string {
   if (string::is_empty(path)) throw_helper::throws(exception_case::argument);
-  return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";
+  return is_path_rooted(path) ? path.chars().substr(0, __get_index_path_rooted(path) + 1) : "";
 }
 
 auto path::get_random_file_name() -> string {
@@ -141,7 +141,7 @@ auto path::volume_separator_char() noexcept -> char {
 }
 
 auto path::__get_index_path_rooted(const string& path) -> int32 {
-  auto index = path.find(directory_separator_char());
+  auto index = path.chars().find(directory_separator_char());
   return (index == string::npos || index == path.length() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32>(index);
 }
 

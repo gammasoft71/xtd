@@ -262,7 +262,7 @@ bool color_translator::try_parse_html_color(const string& text, color& result) n
 }
 
 bool color_translator::try_parse_named_color(const string& text, color& result) noexcept {
-  if (text.trim().find(' ') != string::npos) return false;
+  if (text.trim().chars().find(' ') != string::npos) return false;
   auto named_color = color::from_name(text);
   if (!named_color.is_known_color()) return false;
   result = named_color;

@@ -55,7 +55,7 @@ string& command_link_button::text() const noexcept {
 }
 
 control& command_link_button::text(const string& value) {
-  auto separator_index = value.find_first_of("\n");
+  auto separator_index = value.chars().find_first_of("\n");
   if (separator_index == string::npos) return texts({value, string::empty_string});
   return texts({value.remove(separator_index), value.substring(separator_index + 1)});
 }

@@ -382,7 +382,7 @@ namespace xtd::tests {
       auto& o1 = static_cast<object&>(s2);
       auto o2 = object {};
       assert::is_zero(s1.compare_to(o1));
-      assert::throws<argument_exception>([&] {s1.compare_to(o2);});
+      assert::throws<argument_exception>([&] {[[maybe_unused]] auto v = s1.compare_to(o2);});
     }
     
     auto test_method_(compare_to) {
@@ -490,35 +490,6 @@ namespace xtd::tests {
       assert::is_false(basic_string<type_t> {"B test strong"}.equals("A test string", true));
     }
     
-    auto test_method_(find) {
-      assert::are_equal(2_z, basic_string<type_t> {"A test string"}.find("test"));
-      assert::are_equal(4_z, basic_string<type_t> {"A test string"}.find(type_t {'s'}));
-    }
-    
-    auto test_method_(find_first_of) {
-      assert::are_equal(2_z, basic_string<type_t> {"A test string to test"}.find_first_of("tuvw"));
-      assert::are_equal(4_z, basic_string<type_t> {"A test string to test"}.find_first_of(type_t {'s'}));
-    }
-    
-    auto test_method_(find_first_not_of) {
-      assert::are_equal(15_z, basic_string<type_t> {"A test string to test"}.find_first_not_of("Aeginrst "));
-      assert::are_equal(1_z, basic_string<type_t> {"A test string to test"}.find_first_not_of(type_t {'A'}));
-    }
-    
-    auto test_method_(find_last_of) {
-      assert::are_equal(15_z, basic_string<type_t> {"A test string to test"}.find_last_of("Baco"));
-      assert::are_equal(16_z, basic_string<type_t> {"A test string to test"}.find_last_of(type_t {' '}));
-    }
-    
-    auto test_method_(find_last_not_of) {
-      assert::are_equal(12_z, basic_string<type_t> {"A test string to test"}.find_last_not_of("eost "));
-      assert::are_equal(19_z, basic_string<type_t> {"A test string to test"}.find_last_not_of(type_t {'t'}));
-    }
-    
-    auto test_method_(get_allocator) {
-      assert::are_equal(typeof_<typename std::allocator<type_t>>(), typeof_(basic_string<type_t> {"A test string"}.get_allocator()));
-    }
-    
     auto test_method_(get_base_type) {
       assert::are_equal(typeof_<typename std::basic_string<type_t>>(), typeof_(basic_string<type_t> {}.get_base_type()));
       assert::is_empty(basic_string<type_t> {}.get_base_type());
@@ -567,7 +538,7 @@ namespace xtd::tests {
       assert::are_equal(17_z, basic_string<type_t> {"A test string to test"}.index_of("test", 3));
       assert::are_equal(17_z, basic_string<type_t> {"A test string to test"}.index_of("test", 17));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.index_of("test", 18));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of("test", 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of("test", 22);});
     }
     
     auto test_method_(index_of_string_with_start_index_and_count) {
@@ -587,7 +558,7 @@ namespace xtd::tests {
       assert::are_equal(7_z, basic_string<type_t> {"A test string to test"}.index_of(type_t {'s'}, 7));
       assert::are_equal(19_z, basic_string<type_t> {"A test string to test"}.index_of(type_t {'s'}, 19));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.index_of(type_t {'s'}, 20));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of('s', 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of('s', 22);});
     }
     
     auto test_method_(index_of_any) {
@@ -598,19 +569,19 @@ namespace xtd::tests {
     auto test_method_(index_of_any_with_start_index) {
       assert::are_equal(7_z, basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);});
     }
     
     auto test_method_(index_of_any_with_start_index_and_count) {
       assert::are_equal(10_z, basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 'u', 'v'}, 6, 5));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6, 5));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6, 16);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6, 16);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22, 5);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22, 5);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 6, 16);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 6, 16);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'i', 'o', 's', 't'}, 22, 5);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.index_of_any({'b', 'c', 'h', 'v'}, 22, 5);});
     }
     
     auto test_method_(insert) {
@@ -629,7 +600,7 @@ namespace xtd::tests {
       assert::are_equal(17_z, basic_string<type_t> {"A test string to test"}.last_index_of("test", 16));
       assert::are_equal(17_z, basic_string<type_t> {"A test string to test"}.last_index_of("test", 17));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.last_index_of("test", 18));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of("test", 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of("test", 22);});
     }
     
     auto test_method_(last_index_of_string_with_start_index_and_count) {
@@ -649,7 +620,7 @@ namespace xtd::tests {
       assert::are_equal(19_z, basic_string<type_t> {"A test string to test"}.last_index_of(type_t {'s'}, 17));
       assert::are_equal(19_z, basic_string<type_t> {"A test string to test"}.last_index_of(type_t {'s'}, 19));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.last_index_of(type_t {'s'}, 20));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of('s', 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of('s', 22);});
     }
     
     auto test_method_(last_index_of_any) {
@@ -660,19 +631,19 @@ namespace xtd::tests {
     auto test_method_(last_index_of_any_with_start_index) {
       assert::are_equal(20_z, basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 6));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);});
     }
     
     auto test_method_(last_index_of_any_with_start_index_and_count) {
       assert::are_equal(10_z, basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 'u', 'v'}, 6, 5));
       assert::are_equal(basic_string<type_t>::npos, basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6, 5));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 6, 16);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6, 16);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22, 5);});
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22, 5);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 6, 16);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 6, 16);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'i', 'o', 's', 't'}, 22, 5);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string to test"}.last_index_of_any({'b', 'c', 'h', 'v'}, 22, 5);});
     }
     
     auto test_method_(pad_left) {
@@ -726,13 +697,13 @@ namespace xtd::tests {
       assert::are_equal("", basic_string<type_t> {"abc123ABC"}.remove(0));
       assert::are_equal("abc", basic_string<type_t> {"abc123ABC"}.remove(3));
       assert::are_equal("abc123ABC", basic_string<type_t> {"abc123ABC"}.remove(9));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"abc123ABC"}.remove(10);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"abc123ABC"}.remove(10);});
     }
     
     auto test_method_(remove_with_index_and_count) {
       assert::are_equal("abcABC", basic_string<type_t> {"abc123ABC"}.remove(3, 3));
       assert::are_equal("abc", basic_string<type_t> {"abc123ABC"}.remove(3, 6));
-      assert::throws<index_out_of_range_exception>([] {basic_string<type_t> {"abc123ABC"}.remove(8, 2);});
+      assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"abc123ABC"}.remove(8, 2);});
     }
     
     auto test_method_(replace_value_type) {
@@ -744,11 +715,6 @@ namespace xtd::tests {
       assert::are_equal("Thare are the beast of the beast", basic_string<type_t> {"This is the beast of the beast"}.replace("is", "are"));
       assert::are_equal("Th  the beast of the beast", basic_string<type_t> {"This is the beast of the beast"}.replace("is", ""));
       assert::are_equal("This text has\\_unescaped\\_\\_underscores !", basic_string<type_t> {"This text has_unescaped__underscores !"}.replace("_", "\\_"));
-    }
-    
-    auto test_method_(rfind) {
-      assert::are_equal(17_z, basic_string<type_t> {"A test string to test"}.rfind("test"));
-      assert::are_equal(19_z, basic_string<type_t> {"A test string to test"}.rfind(type_t {'s'}));
     }
     
     auto test_method_(split) {
@@ -836,32 +802,16 @@ namespace xtd::tests {
       assert::are_equal(false, basic_string<type_t> {"A test string"}.starts_with("a StRiNg", string_comparison::ordinal_ignore_case));
     }
     
-    auto test_method_(substr) {
-      assert::are_equal("A test string", basic_string<type_t> {"A test string"}.substr());
-    }
-    
-    auto test_method_(substr_with_start_index) {
-      assert::are_equal("test string", basic_string<type_t> {"A test string"}.substr(2));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substr(14);});
-      assert::are_equal("test", basic_string<type_t> {"A test string"}.substr(2, 4));
-    }
-    
-    auto test_method_(substr_with_start_index_and_length) {
-      assert::are_equal("test", basic_string<type_t> {"A test string"}.substr(2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substr(2, 12);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substr(14, 4);});
-    }
-    
     auto test_method_(substring_with_start_index) {
       assert::are_equal("test string", basic_string<type_t> {"A test string"}.substring(2));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substring(14);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string"}.substring(14);});
       assert::are_equal("test", basic_string<type_t> {"A test string"}.substring(2, 4));
     }
     
     auto test_method_(substring_with_start_index_and_length) {
       assert::are_equal("test", basic_string<type_t> {"A test string"}.substring(2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substring(2, 12);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t> {"A test string"}.substring(14, 4);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string"}.substring(2, 12);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t> {"A test string"}.substring(14, 4);});
     }
     
     auto test_method_(to_lower) {
@@ -1091,34 +1041,34 @@ namespace xtd::tests {
     
     auto test_method_(compare_with_string_index_string_index_and_length) {
       assert::is_zero(basic_string<type_t>::compare(basic_string<type_t> {""}, 0, basic_string<type_t>::empty_string, 0, 0));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {""}, 1, basic_string<type_t>::empty_string, 0, 0);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {""}, 0, basic_string<type_t>::empty_string, 1, 0);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {""}, 0, basic_string<type_t>::empty_string, 0, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {""}, 1, basic_string<type_t>::empty_string, 0, 0);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {""}, 0, basic_string<type_t>::empty_string, 1, 0);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {""}, 0, basic_string<type_t>::empty_string, 0, 1);});
       
       assert::is_zero(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 0, basic_string<type_t> {"A test string"}, 0, 13));
       assert::is_zero(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test string"}, 2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
       
       assert::is_negative(basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 0, basic_string<type_t> {"A test string"}, 0, 13));
       assert::is_negative(basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 2, basic_string<type_t> {"A test string"}, 2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A TeSt StRiNg"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
       
       assert::is_positive(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 0, basic_string<type_t> {"A TeSt StRiNg"}, 0, 13));
       assert::is_positive(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A TeSt StRiNg"}, 2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A TeSt StRiNg"}, 2, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A TeSt StRiNg"}, 13, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A TeSt StRiNg"}, 2, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A TeSt StRiNg"}, 13, 1);});
       
       assert::is_negative(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 0, basic_string<type_t> {"A test strong"}, 0, 13));
       assert::is_zero(basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test strong"}, 2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A test strong"}, 2, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test strong"}, 13, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 13, basic_string<type_t> {"A test strong"}, 2, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test string"}, 2, basic_string<type_t> {"A test strong"}, 13, 1);});
       
       assert::is_positive(basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 0, basic_string<type_t> {"A test string"}, 0, 13));
       assert::is_zero(basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 2, basic_string<type_t> {"A test string"}, 2, 4));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 13, basic_string<type_t> {"A test string"}, 2, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::compare(basic_string<type_t> {"A test strong"}, 2, basic_string<type_t> {"A test string"}, 13, 1);});
     }
     
     auto test_method_(concat_with_four_string_literals) {
@@ -1373,16 +1323,16 @@ namespace xtd::tests {
     auto test_method_(join_with_index) {
       assert::are_equal("3, 4, 5", basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 2));
       assert::are_equal("", basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 5));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 6);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 6);});
     }
     
     auto test_method_(join_with_index_and_count) {
       assert::are_equal("3, 4, 5", basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 2, 3));
       assert::are_equal("1, 2, 3, 4, 5", basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 0, 5));
       assert::are_equal("", basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 5, 0));
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 6, 0);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 5, 1);});
-      assert::throws<argument_out_of_range_exception>([] {basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 2, 4);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 6, 0);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 5, 1);});
+      assert::throws<argument_out_of_range_exception>([] {[[maybe_unused]] auto v = basic_string<type_t>::join(", ", {1, 2, 3, 4, 5}, 2, 4);});
     }
     
     auto test_method_(parse) {

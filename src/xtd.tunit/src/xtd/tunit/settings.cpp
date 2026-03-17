@@ -8,8 +8,8 @@ namespace {
     if (pattern == "") return name == "";
     if (name == "") return false;
     if (pattern == "*" || pattern == "*.*") return true;
-    if (pattern[0] == '*') return pattern_compare(name, pattern.substr(1)) || pattern_compare(name.substr(1), pattern);
-    return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.substr(1), pattern.substr(1));
+    if (pattern[0] == '*') return pattern_compare(name, pattern.chars().substr(1)) || pattern_compare(name.chars().substr(1), pattern);
+    return ((pattern[0] == '?') || (name[0] == pattern[0])) && pattern_compare(name.chars().substr(1), pattern.chars().substr(1));
   }
 }
 

@@ -788,15 +788,15 @@ array<string> style_sheet::split_values_from_text(const string& text) const noex
   while (!xtd::string::is_empty(value)) {
     auto color_keyword = string_starts_with_any(value, color_keywords);
     if (color_keyword != "") {
-      result.add(value.substring(0, value.find(')') + 1).trim());
-      value = value.remove(0, value.find(')') + 1).trim();
+      result.add(value.substring(0, value.chars().find(')') + 1).trim());
+      value = value.remove(0, value.chars().find(')') + 1).trim();
       if (value.length() && value[0] == ',') value = value.remove(0, 1).trim();
-    } else if (value.find(',') == string::npos) {
+    } else if (value.chars().find(',') == string::npos) {
       result.add(value.trim());
       value = "";
-    } else if (value.find(',') != string::npos) {
-      result.add(value.substring(0, value.find(',')).trim());
-      value = value.remove(0, value.find(',') + 1).trim();
+    } else if (value.chars().find(',') != string::npos) {
+      result.add(value.substring(0, value.chars().find(',')).trim());
+      value = value.remove(0, value.chars().find(',') + 1).trim();
     }
   }
   return result.to_array();
@@ -1338,7 +1338,7 @@ bool style_sheet::try_parse_hsla_color(const string& text, color& result) const 
 }
 
 bool style_sheet::try_parse_named_color(const string& text, color& result) const noexcept {
-  if (text.trim().find(' ') != string::npos) return false;
+  if (text.trim().chars().find(' ') != string::npos) return false;
   auto named_color = color::from_name(text);
   if (!named_color.is_known_color()) return false;
   result = named_color;
