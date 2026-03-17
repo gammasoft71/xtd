@@ -5,4 +5,4 @@
 #include "delegate.hpp"
 #include "iasync_result.hpp"
 
-// The async_callback alias is declared in the delegate.h file.
+// The async_callback alias is declared in the delegate.hpp file.
