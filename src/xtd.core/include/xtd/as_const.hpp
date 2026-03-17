@@ -10,7 +10,7 @@ namespace xtd {
   /// @return The const reference of `type`.
   /// @remarks Forms lvalue reference to const type of `type`.
   template<class type_t>
-  constexpr std::add_const_t<type_t>& as_const(type_t& type) noexcept {
+  [[nodiscard]] constexpr auto as_const(type_t& type) noexcept -> std::add_const_t<type_t>& {
     return type;
   }
   /// @brief Obtains a pointer to `const` to its argument
@@ -18,11 +18,11 @@ namespace xtd {
   /// @return The const pointer of `type`.
   /// @remarks Forms lvalue pointer to const type of `type`.
   template<class type_t>
-  constexpr std::add_const_t<type_t>* as_const(type_t* type) noexcept {
+  [[nodiscard]] constexpr auto as_const(type_t* type) noexcept -> std::add_const_t<type_t>* {
     return type;
   }
   /// @cond
   template<class type_t>
-  void as_const(const type_t&&) = delete;
+  auto as_const(const type_t&&) -> void = delete;
   /// @endcond
 }
