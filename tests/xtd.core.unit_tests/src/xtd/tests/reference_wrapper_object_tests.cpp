@@ -273,7 +273,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<object> {s}.to_object<string>());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_object<byte>());
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<object> {}.to_object<string>();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto v = reference_wrapper_object<object> {}.to_object<string>();});
     }
     
     auto test_method_(to_reference) {
@@ -289,7 +289,7 @@ namespace xtd::tests {
       auto s = string {"value"};
       assert::are_equal("value", reference_wrapper_object<object> {s}.to_reference<string>());
       assert::are_equal(42, reference_wrapper_object<int> {i}.to_reference<byte>());
-      assert::throws<null_pointer_exception>([] {reference_wrapper_object<object> {}.to_reference<string>();});
+      assert::throws<null_pointer_exception>([] {[[maybe_unused]] auto v = reference_wrapper_object<object> {}.to_reference<string>();});
     }
     
     auto test_method_(to_string) {
