@@ -86,7 +86,7 @@ namespace xtd {
       
       /// @cond
       lock_recursion_exception(const lock_recursion_exception&) = default;
-      lock_recursion_exception& operator =(const lock_recursion_exception&) = default;
+      auto operator =(const lock_recursion_exception&) -> lock_recursion_exception& = default;
       /// @endcond
       
     private:
