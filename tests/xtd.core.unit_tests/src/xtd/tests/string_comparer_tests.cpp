@@ -11,22 +11,22 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(string_comparer_tests) {
     auto test_method_(string_comparer_current_culture) {
-      assert::throws<not_implemented_exception>([] {string_comparer::current_culture();});
+      assert::throws<not_implemented_exception>([] {[[maybe_unused]] auto v = string_comparer::current_culture();});
       //assert::are_not_same(string_comparer::current_culture(), string_comparer::current_culture());
     }
     
     auto test_method_(string_comparer_current_culture_ignore_case) {
-      assert::throws<not_implemented_exception>([] {string_comparer::current_culture_ignore_case();});
+      assert::throws<not_implemented_exception>([] {[[maybe_unused]] auto v = string_comparer::current_culture_ignore_case();});
       //assert::are_not_same(string_comparer::current_culture_ignore_case(), string_comparer::current_culture_ignore_case());
     }
     
     auto test_method_(invariant_culture) {
-      assert::throws<not_implemented_exception>([] {string_comparer::invariant_culture();});
+      assert::throws<not_implemented_exception>([] {[[maybe_unused]] auto v = string_comparer::invariant_culture();});
       //assert::are_not_same(string_comparer::invariant_culture(), string_comparer::invariant_culture());
     }
     
     auto test_method_(invariant_culture_ignore_case) {
-      assert::throws<not_implemented_exception>([] {string_comparer::invariant_culture_ignore_case();});
+      assert::throws<not_implemented_exception>([] {[[maybe_unused]] auto v = string_comparer::invariant_culture_ignore_case();});
       //assert::are_not_same(string_comparer::invariant_culture_ignore_case(), string_comparer::invariant_culture_ignore_case());
     }
     
@@ -261,7 +261,7 @@ namespace xtd::tests {
     auto test_method_(from_comparison) {
       assert::are_equal(string_comparer::ordinal(), string_comparer::from_comparison(string_comparison::ordinal));
       assert::are_equal(string_comparer::ordinal_ignore_case(), string_comparer::from_comparison(string_comparison::ordinal_ignore_case));
-      assert::throws<argument_exception>([] {string_comparer::from_comparison(static_cast<string_comparison>(42));});
+      assert::throws<argument_exception>([] {[[maybe_unused]] auto v = string_comparer::from_comparison(static_cast<string_comparison>(42));});
     }
   };
 }
