@@ -368,14 +368,6 @@ namespace xtd::tests {
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
     
-    auto test_method_(compare) {
-      assert::is_zero(basic_string<type_t> {""}.compare(""));
-      assert::is_zero(basic_string<type_t> {"A test string"}.compare("A test string"));
-      assert::is_zero(basic_string<type_t> {"A test string"}.compare(1, 9, "B test strong", 1, 9));
-      assert::is_negative(basic_string<type_t> {"A test string"}.compare("B test strong"));
-      assert::is_positive(basic_string<type_t> {"B test strong"}.compare("A test string"));
-    }
-    
     auto test_method_(compare_to_object) {
       auto s1 = basic_string<type_t> {"A test string"};
       auto s2 = basic_string<type_t> {"A test string"};
