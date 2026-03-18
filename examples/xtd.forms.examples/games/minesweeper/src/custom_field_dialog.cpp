@@ -1,5 +1,6 @@
 #include <xtd/drawing/texts>
 #include <xtd/globalization/translator>
+#include <xtd/char_object>
 #include "custom_field_dialog.hpp"
 #include "../properties/settings.hpp"
 
@@ -107,5 +108,5 @@ auto custom_field_dialog::custom_mines(int value) noexcept -> void {
 }
 
 auto custom_field_dialog::on_text_box_key_press(object& sender, key_press_event_args& e) -> void {
-  e.handled(!isdigit(e.key_char()));
+  e.handled(!char_object::is_number(e.key_char()));
 }
