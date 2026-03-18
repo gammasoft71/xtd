@@ -12,14 +12,14 @@ namespace numeric_tex_box_example {
       return result;
     }
     
-    void value(double value) {text(xtd::to_string(value, "G"));}
+    void value(double value) {text(string::format("{}", value));}
     
     event<numeric_text_box, event_handler> value_changed;
     
   protected:
     void on_key_press(key_press_event_args& e) override {
       text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<string>(text()).index_of('.') != string::npos));
+      e.handled((!char_object::is_number(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && as<string>(text()).index_of('.') != string::npos));
     }
     
     void on_text_changed(const event_args& e) override {
