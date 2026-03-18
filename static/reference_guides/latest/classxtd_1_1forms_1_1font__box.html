@@ -143,7 +143,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="line">    button_font.parent(*<span class="keyword">this</span>)</div>
 <div class="line">    .location({10, 10})</div>
 <div class="line">    .<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;Select a font&quot;</span>)</div>
-<div class="line">    .<a class="code hl_function" href="classxtd_1_1basic__string.html#a4fea19f6ba5247838ff740e584820d2d">size</a>({200, 45})</div>
+<div class="line">    .<a class="code hl_function" href="classxtd_1_1basic__string.html#afbaddf90724a6a53beb932cd7e4b7f1e">size</a>({200, 45})</div>
 <div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> font = system_fonts::default_font();</div>
 <div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="#acc876cdd0c7108ee0e9489e644a2a4a6">font_box::show</a>(font, *<span class="keyword">this</span>);</div>
@@ -154,7 +154,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="line">    button_font_and_color.parent(*<span class="keyword">this</span>)</div>
 <div class="line">    .location({10, 60})</div>
 <div class="line">    .<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;Select a font and a font color&quot;</span>)</div>
-<div class="line">    .<a class="code hl_function" href="classxtd_1_1basic__string.html#a4fea19f6ba5247838ff740e584820d2d">size</a>({200, 45})</div>
+<div class="line">    .<a class="code hl_function" href="classxtd_1_1basic__string.html#afbaddf90724a6a53beb932cd7e4b7f1e">size</a>({200, 45})</div>
 <div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      drawing::font <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">font</a>(drawing::font_family::generic_sans_serif(), 16);</div>
 <div class="line">      drawing::color color = drawing::color::blue;</div>
@@ -172,7 +172,7 @@ Inheritance diagram for xtd::forms::font_box:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a4fea19f6ba5247838ff740e584820d2d"><div class="ttname"><a href="classxtd_1_1basic__string.html#a4fea19f6ba5247838ff740e584820d2d">xtd::basic_string::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:385</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_afbaddf90724a6a53beb932cd7e4b7f1e"><div class="ttname"><a href="classxtd_1_1basic__string.html#afbaddf90724a6a53beb932cd7e4b7f1e">xtd::basic_string::size</a></div><div class="ttdeci">virtual auto size() const noexcept -&gt; size_type</div><div class="ttdoc">Gets the number of characters in the current xtd::basic_string object.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:385</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a2a2a45ce0f1d7d2794c2cbc44cbbf352"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a2a2a45ce0f1d7d2794c2cbc44cbbf352">xtd::forms::control::client_size</a></div><div class="ttdeci">virtual const drawing::size &amp; client_size() const noexcept</div><div class="ttdoc">Gets the height and width of the client area of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a5a4bc61bebeea8b848b4371ca82db09e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">xtd::forms::control::font</a></div><div class="ttdeci">virtual drawing::font font() const noexcept</div><div class="ttdoc">Gets the font of the text displayed by the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
