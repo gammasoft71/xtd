@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/is_string_literal.hpp>

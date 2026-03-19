@@ -1,2 +1,0 @@
-#pragma once
-#include <xtd/helpers/greater_than_comparable.hpp>

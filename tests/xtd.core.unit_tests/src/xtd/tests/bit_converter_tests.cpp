@@ -518,7 +518,7 @@ namespace xtd::tests {
                         }
                         
                           auto test_method_(to_boolean) {
-                          assert::throws<index_out_of_range_exception>([] {bit_converter::to_boolean(array<byte> {0}, 1);});
+                          assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_boolean(array<byte> {0}, 1);});
                           
                           assert::is_false(bit_converter::to_boolean(array<byte> {0}, 0));
                           assert::is_true(bit_converter::to_boolean(array<byte> {1}, 0));
@@ -533,8 +533,8 @@ namespace xtd::tests {
                         }
                         
                           auto test_method_(to_char) {
-                          assert::throws<index_out_of_range_exception>([] {bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
-                          assert::throws<index_out_of_range_exception>([] {bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
+                          assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
+                          assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_char(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                           
                           assert::are_equal(U' ', bit_converter::to_char(array<byte> {0x20, 0x00, 0x00, 0x00}, 0));
                           assert::are_equal(U'*', bit_converter::to_char(array<byte> {0x2A, 0x00, 0x00, 0x00}, 0));
@@ -546,8 +546,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_double) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0.0, bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(1.0, bit_converter::to_double(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x3F}, 0));
@@ -569,8 +569,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_int16) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 2);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int16(array<byte> {0x00, 0x00}, 2);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int16(array<byte> {0x00, 0x00}, 1);});
                               
                               assert::are_equal(0_s16, bit_converter::to_int16(array<byte> {0x00, 0x00}, 0));
                               assert::are_equal(15_s16, bit_converter::to_int16(array<byte> {0x0F, 0x00}, 0));
@@ -582,8 +582,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_int32) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0_s32, bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(15_s32, bit_converter::to_int32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
@@ -597,8 +597,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_int64) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(0xFFFFFF_s64, bit_converter::to_int64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
@@ -615,8 +615,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_single) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0.0, bit_converter::to_single(array<byte> {0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(1.0f, bit_converter::to_single(array<byte> {0x00, 0x00, 0x80, 0x3F}, 0));
@@ -659,11 +659,11 @@ namespace xtd::tests {
                               assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0));
                               assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1));
                               assert::are_equal("09", bit_converter::to_string(vectorOne, 2));
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorOne, 3);});
                               
                               array<xtd::byte> vectorEmpty;
                               assert::is_empty(bit_converter::to_string(vectorEmpty, 0));
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorEmpty, 1);});
                             }
                             
                               auto test_method_(to_string_with_start_index_and_length) {
@@ -673,26 +673,26 @@ namespace xtd::tests {
                               assert::are_equal("03", bit_converter::to_string(vectorOne, 0, 1));
                               assert::are_equal("03-06", bit_converter::to_string(vectorOne, 0, 2));
                               assert::are_equal("03-06-09", bit_converter::to_string(vectorOne, 0, 3));
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 0, 4);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorOne, 0, 4);});
                               
                               assert::is_empty(bit_converter::to_string(vectorOne, 1, 0));
                               assert::are_equal("06", bit_converter::to_string(vectorOne, 1, 1));
                               assert::are_equal("06-09", bit_converter::to_string(vectorOne, 1, 2));
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 1, 3);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorOne, 1, 3);});
                               
                               assert::is_empty(bit_converter::to_string(vectorOne, 2, 0));
                               assert::are_equal("09", bit_converter::to_string(vectorOne, 2, 1));
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 2, 2);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorOne, 2, 2);});
                               
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorOne, 3, 1);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorOne, 3, 1);});
                               
                               array<xtd::byte> vectorEmpty;
-                              assert::throws<argument_out_of_range_exception>([&] {bit_converter::to_string(vectorEmpty, 1);});
+                              assert::throws<argument_out_of_range_exception>([&] {[[maybe_unused]] auto v = bit_converter::to_string(vectorEmpty, 1);});
                             }
                             
                               auto test_method_(to_uint16) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 2);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint16(array<byte> {0x00, 0x00}, 2);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint16(array<byte> {0x00, 0x00}, 1);});
                               
                               assert::are_equal(15_u16, bit_converter::to_uint16(array<byte> {0x0F, 0x00}, 0));
                               assert::are_equal(1023_u16, bit_converter::to_uint16(array<byte> {0xFF, 0x03}, 0));
@@ -703,8 +703,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_uint32) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(15_u32, bit_converter::to_uint32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(1023_u32, bit_converter::to_uint32(array<byte> {0xFF, 0x03, 0x00, 0x00}, 0));
@@ -715,8 +715,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_uint64) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0xFFFFFF_u64, bit_converter::to_uint64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(1000000000_u64, bit_converter::to_uint64(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
@@ -729,8 +729,8 @@ namespace xtd::tests {
                             }
                             
                               auto test_method_(to_size) {
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
-                              assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
+                              assert::throws<index_out_of_range_exception>([] {[[maybe_unused]] auto v = bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
                               
                               assert::are_equal(0xFFFFFF_z, bit_converter::to_size(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
                               assert::are_equal(1000000000_z, bit_converter::to_size(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));

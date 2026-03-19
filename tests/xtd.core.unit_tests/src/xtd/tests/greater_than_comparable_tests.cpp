@@ -1,10 +1,8 @@
-#include <xtd/helpers/greater_than_comparable.hpp>
+#include <xtd/greater_than_comparable.hpp>
 #include <xtd/enum_set_attribute.hpp>
 #include <xtd/tunit/constraints/assert_that.hpp>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-
-using namespace xtd::helpers;
 
 namespace xtd::helpers::tests {
   class test_class_(greater_than_comparable_tests) {

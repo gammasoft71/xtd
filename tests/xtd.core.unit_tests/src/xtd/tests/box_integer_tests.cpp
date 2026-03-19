@@ -183,14 +183,14 @@ namespace xtd::tests {
       assert::are_equal(type_t {5}, box_integer<type_t>::parse("5"));
       assert::are_equal(type_t {42}, box_integer<type_t>::parse("42"));
       assert::are_equal(type_t {120}, box_integer<type_t>::parse("120"));
-      assert::throws<format_exception>([]{box_integer<type_t>::parse("value");});
+      assert::throws<format_exception>([]{[[maybe_unused]] auto v = box_integer<type_t>::parse("value");});
     }
     
     auto test_method_(parse_with_number_style) {
       assert::are_equal(type_t {5}, box_integer<type_t>::parse("0x5", number_styles::hex_number));
       assert::are_equal(type_t {42}, box_integer<type_t>::parse("0x2A", number_styles::hex_number));
       assert::are_equal(type_t {120}, box_integer<type_t>::parse("0x78", number_styles::hex_number));
-      assert::throws<format_exception>([]{box_integer<type_t>::parse("value", number_styles::hex_number);});
+      assert::throws<format_exception>([]{[[maybe_unused]] auto v = box_integer<type_t>::parse("value", number_styles::hex_number);});
     }
 
     auto test_method_(try_parse) {
