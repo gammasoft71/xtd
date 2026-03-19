@@ -79,7 +79,7 @@ xtd also defines several concepts to be able to classify and manage the differen
 
 | xtd type           | std type                           | xtd::numeric | xtd::integer | xtd::signed_integer | xtd::unsigned_integer | xtd::real | xtd::character | xtd::text | xtd::enumeration |
 | ------------------ |----------------------------------- | ------------ | ------------ | ------------------- | --------------------- | --------- | -------------- | --------- | ---------------- |
-| xtd::byte          | unsigend char / std::uint8_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::byte          | unsigned char / std::uint8_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
 | char               | char                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
 | xtd::char8         | char8_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
 | xtd::char16        | char16_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
