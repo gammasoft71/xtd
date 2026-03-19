@@ -2,8 +2,10 @@
 /// @brief Contains xtd::signed_integer concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include "types"
-#include <type_traits>
+#include "signed_integer_16.hpp"
+#include "signed_integer_32.hpp"
+#include "signed_integer_64.hpp"
+#include "signed_integer_8.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,7 +14,7 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<typename value_t>
-  /// concept signed_integer;
+  /// concept xtd::signed_integer = xtd::signed_integer_8<value_t> || xtd::signed_integer_16<value_t> || xtd::signed_integer_32<value_t> || xtd::signed_integer_64<value_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -75,9 +77,8 @@ namespace xtd {
   /// ```
   template<typename value_t>
   concept signed_integer =
-  std::same_as<value_t, xtd::int16> ||
-  std::same_as<value_t, xtd::int32> ||
-  std::same_as<value_t, xtd::int64> ||
-  std::same_as<value_t, xtd::slong> ||
-  std::same_as<value_t, xtd::sbyte>;
+  xtd::signed_integer_8<value_t> ||
+  xtd::signed_integer_16<value_t> ||
+  xtd::signed_integer_32<value_t> ||
+  xtd::signed_integer_64<value_t>;
 }

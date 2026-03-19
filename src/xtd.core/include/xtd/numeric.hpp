@@ -2,6 +2,7 @@
 /// @brief Contains xtd::numeric concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "integer.hpp"
 #include "types"
 #include <type_traits>
 
@@ -12,7 +13,7 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<typename value_t>
-  /// concept numeric;
+  /// concept xtd::numeric = xtd::integer<value_t> || xtd::real<value_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -75,17 +76,8 @@ namespace xtd {
   /// ```
   template<typename value_t>
   concept numeric =
-  std::same_as<value_t, xtd::byte> ||
+  xtd::integer<value_t> ||
   std::same_as<value_t, xtd::decimal> ||
   std::same_as<value_t, xtd::double_> ||
-  std::same_as<value_t, xtd::int16> ||
-  std::same_as<value_t, xtd::int32> ||
-  std::same_as<value_t, xtd::int64> ||
-  std::same_as<value_t, xtd::slong> ||
-  std::same_as<value_t, xtd::sbyte> ||
-  std::same_as<value_t, xtd::single> ||
-  std::same_as<value_t, xtd::uint16> ||
-  std::same_as<value_t, xtd::uint32> ||
-  std::same_as<value_t, xtd::uint64> ||
-  std::same_as<value_t, xtd::ulong>;
+  std::same_as<value_t, xtd::single>;
 }
