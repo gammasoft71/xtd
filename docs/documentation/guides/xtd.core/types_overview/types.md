@@ -73,6 +73,35 @@ xtd define the minimum and maximum constant value for each types.
 | [xtd::decimal_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga19d2fddd55b417489b4cf929a40a293e) | [xtd::decimal_object::min_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d) | [xtd::decimal_object::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box__integer.html#a21847edbb248c1b0d07a35e2a8c08232) | -1.79769e+308             | 1.79769e+308                |
 | [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html)                                | [xtd::date_time::min_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd)        | [xtd::date_time::max_value](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html#af86fd0f8e3f55ca8f3ffa6daeb7187bb)        | 00:00:00, January 1, 0001 | 23:59:59, December 31, 9999 |
 
+## Concepts
+
+Xtd also defines several concepts to be able to classify and manage the different types.
+
+| xtd type     | std type                           | xtd::numeric | xtd::integer | xtd::signed_integer | xtd::unsigned_integer | xtd::real | xtd::character | xtd::enumeration |
+| ------------ |----------------------------------- | ------------ | ------------ | ------------------- | --------------------- | --------- | -------------- | ---------------- |
+| xtd::byte    | unsigend char / std::uint8_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
+| char         | char                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
+| xtd::char8   | char8_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
+| xtd::char16  | char16_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
+| xtd::char32  | char32_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
+| xtd::decimal | long double                        | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
+| double       | double                             | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
+| xtd::int16   | short / std::int16_t               | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
+| xtd::int32   | int / std::int32_t                 | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
+| xtd::int64   | long long / std::int64_t           | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
+| xtd::sbyte   | signed char / std::int8_t          | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
+| xtd::single  | float                              | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
+| xtd::size    | size_t                             | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
+| xtd::uint16  | unsigned short / std::uint16_t     | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
+| xtd::uint32  | unsigned int / std::uint32_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
+| xtd::uint64  | unsigned long long / std::uint64_t | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
+| xtd::wchar   | wchar_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
+| enum         | enum                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
+| enum class   | enum class                         | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
+| enum struct  | enum struct                        | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
+| xtd::object  | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌                |
+| user type    | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌                |
+
 ### Remarks
 
 Of course, [std::numeric_limits](https://en.cppreference.com/w/cpp/types/numeric_limits) works for the types described above except for [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html).
