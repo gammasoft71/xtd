@@ -195,7 +195,7 @@ var searchData=
   ['sin_192',['sin',['../classxtd_1_1math.html#a9a4285e5c81dd09375d7149c36401563',1,'xtd::math']]],
   ['singapore_193',['singapore',['../classxtd_1_1forms_1_1countries.html#a3005788f5012367b1655699e7f03ad19',1,'xtd::forms::countries']]],
   ['single_5fmonth_5fsize_194',['single_month_size',['../classxtd_1_1forms_1_1month__calendar.html#a6f88a6ebe8776fc8918c8e803168384e',1,'xtd::forms::month_calendar']]],
-  ['single_5fto_5fint32_5fbits_195',['single_to_int32_bits',['../classxtd_1_1bit__converter.html#a9914aa0a9e7ea7d3eb8fe4cfa22d144b',1,'xtd::bit_converter']]],
+  ['single_5fto_5fint32_5fbits_195',['single_to_int32_bits',['../classxtd_1_1bit__converter.html#af6e16f9dd3367036b705bb05ec5fd166',1,'xtd::bit_converter']]],
   ['sinh_196',['sinh',['../classxtd_1_1math.html#aabb5d1bc262ae51d085d110bb3bb30c5',1,'xtd::math']]],
   ['sint_5fmaarten_5fdutch_5fpart_197',['sint_maarten_dutch_part',['../classxtd_1_1forms_1_1countries.html#a044868c8f532bc790e96eb1546342982',1,'xtd::forms::countries']]],
   ['sixteen_5fsegment_5fdisplay_198',['sixteen_segment_display',['../classxtd_1_1forms_1_1sixteen__segment__display.html#a06eee1eb0e531b085bf778ea8152fa30',1,'xtd::forms::sixteen_segment_display']]],

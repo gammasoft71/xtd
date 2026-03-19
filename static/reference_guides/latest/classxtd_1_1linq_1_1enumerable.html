@@ -4055,12 +4055,12 @@ template&lt;class source_t&gt; </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {0, 30, 20, 15, 90, 85, 40, 75};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where([](<span class="keywordtype">int</span> number, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where([](<span class="keywordtype">int</span> <a class="code hl_concept" href="conceptxtd_1_1number.html">number</a>, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) {</div>
 <div class="line">    <span class="keywordflow">return</span> number &lt;= as&lt;int&gt;(index * 10);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; number : query)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(number);</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_concept" href="conceptxtd_1_1number.html">number</a> : query)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_concept" href="conceptxtd_1_1number.html">number</a>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -4069,6 +4069,7 @@ template&lt;class source_t&gt; </div>
 <div class="line"><span class="comment">// 20</span></div>
 <div class="line"><span class="comment">// 15</span></div>
 <div class="line"><span class="comment">// 40</span></div>
+<div class="ttc" id="aconceptxtd_1_1number_html"><div class="ttname"><a href="conceptxtd_1_1number.html">xtd::number</a></div><div class="ttdef"><b>Definition</b> number.hpp:76</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 </div><!-- fragment --> </dd></dl>
 

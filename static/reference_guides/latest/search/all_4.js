@@ -375,7 +375,7 @@ var searchData=
   ['double_5fexclamation_5fmark_372',['double_exclamation_mark',['../classxtd_1_1forms_1_1emoticons.html#a970d85e83ce125919edb5c71bef7c860',1,'xtd::forms::emoticons']]],
   ['double_5fobject_373',['double_object',['../group__types.html#ga61722ba8d9b774764930359fb670f428',1,'xtd']]],
   ['double_5fobject_2ehpp_374',['double_object.hpp',['../double__object_8hpp.html',1,'']]],
-  ['double_5fto_5fint64_5fbits_375',['double_to_int64_bits',['../classxtd_1_1bit__converter.html#a35202c1c711f7e9ff0c2d349de668208',1,'xtd::bit_converter']]],
+  ['double_5fto_5fint64_5fbits_375',['double_to_int64_bits',['../classxtd_1_1bit__converter.html#ac9e82458997a5399706ad877c756c1c0',1,'xtd::bit_converter']]],
   ['double_5fvertical_5fbar_376',['double_vertical_bar',['../classxtd_1_1forms_1_1emoticons.html#a9887334221d25cfd938979ae9e93e67c',1,'xtd::forms::emoticons']]],
   ['doughnut_377',['doughnut',['../classxtd_1_1forms_1_1emoticons.html#a4c81b565e6a3798d159fae21e2be4d36',1,'xtd::forms::emoticons']]],
   ['dove_5fof_5fpeace_378',['dove_of_peace',['../classxtd_1_1forms_1_1emoticons.html#a2f63020a1479e1031ecfa0f42fc29a84',1,'xtd::forms::emoticons']]],

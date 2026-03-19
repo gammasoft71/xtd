@@ -106,7 +106,7 @@ var searchData=
   ['leo_103',['leo',['../classxtd_1_1forms_1_1emoticons.html#a2cdd53a5042801e9d1b0707c47fc5308',1,'xtd::forms::emoticons']]],
   ['leopard_104',['leopard',['../classxtd_1_1forms_1_1emoticons.html#a262ff58147d43ec15e355682751d9e4c',1,'xtd::forms::emoticons']]],
   ['lesotho_105',['lesotho',['../classxtd_1_1forms_1_1countries.html#a269015ebc8ce9e785e7d009ca4a4df80',1,'xtd::forms::countries']]],
-  ['less_5fthan_5fcomparable_106',['less_than_comparable',['../conceptxtd_1_1helpers_1_1less__than__comparable.html',1,'xtd::helpers']]],
+  ['less_5fthan_5fcomparable_106',['less_than_comparable',['../conceptxtd_1_1less__than__comparable.html',1,'xtd']]],
   ['less_5fthan_5fcomparable_2ehpp_107',['less_than_comparable.hpp',['../less__than__comparable_8hpp.html',1,'']]],
   ['lesser_108',['lesser',['../structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html',1,'xtd::collections::generic::helpers::lesser&lt; value_t &gt;'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a81644fb4332f6e956e64dcf1c5246153',1,'xtd::collections::generic::helpers::lesser::lesser()=default'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html#a981fcc4a2854658de0bafd11cb57ff83',1,'xtd::collections::generic::helpers::lesser::lesser(const xtd::collections::generic::icomparer&lt; value_t &gt; &amp;comparer)']]],
   ['lesser_2ehpp_109',['lesser.hpp',['../lesser_8hpp.html',1,'']]],

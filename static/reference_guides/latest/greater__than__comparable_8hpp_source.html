@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/helpers/greater_than_comparable.hpp Source File</title>
+		<title>xtd: xtd.core/include/xtd/greater_than_comparable.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -79,7 +79,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>xtd.core</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li><li class="navelem"><b>helpers</b></li>  </ul>
+<li class="navelem"><b>xtd.core</b></li><li class="navelem"><b>include</b></li><li class="navelem"><b>xtd</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -93,15 +93,15 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1helpers.html">helpers</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="conceptxtd_1_1helpers_1_1greater__than__comparable.html">   28</a></span>    <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1helpers_1_1greater__than__comparable.html">greater_than_comparable</a> = <span class="keyword">requires</span>(<span class="keyword">const</span> value_t&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="keyword">const</span> value_t&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) {{ <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> } -&gt; std::convertible_to&lt;bool&gt;;};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
-<div class="ttc" id="aconceptxtd_1_1helpers_1_1greater__than__comparable_html"><div class="ttname"><a href="conceptxtd_1_1helpers_1_1greater__than__comparable.html">xtd::helpers::greater_than_comparable</a></div><div class="ttdoc">Concept greater than comparable.</div><div class="ttdef"><b>Definition</b> greater_than_comparable.hpp:28</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="conceptxtd_1_1greater__than__comparable.html">   26</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1greater__than__comparable.html">greater_than_comparable</a> =</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keyword">requires</span>(<span class="keyword">const</span> value_t&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <span class="keyword">const</span> value_t&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) {{ <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a> } -&gt; std::convertible_to&lt;bool&gt;;};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aconceptxtd_1_1greater__than__comparable_html"><div class="ttname"><a href="conceptxtd_1_1greater__than__comparable.html">xtd::greater_than_comparable</a></div><div class="ttdoc">Concept greater than comparable.</div><div class="ttdef"><b>Definition</b> greater_than_comparable.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
-<div class="ttc" id="anamespacextd_1_1helpers_html"><div class="ttname"><a href="namespacextd_1_1helpers.html">xtd::helpers</a></div><div class="ttdoc">The xtd::helpers namespace contains helpers for xtd objects, sush as exception static class.</div><div class="ttdef"><b>Definition</b> exception_case.hpp:9</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
