@@ -75,32 +75,42 @@ xtd define the minimum and maximum constant value for each types.
 
 ## Concepts
 
-Xtd also defines several concepts to be able to classify and manage the different types.
+xtd also defines several concepts to be able to classify and manage the different types.
 
-| xtd type     | std type                           | xtd::numeric | xtd::integer | xtd::signed_integer | xtd::unsigned_integer | xtd::real | xtd::character | xtd::enumeration |
-| ------------ |----------------------------------- | ------------ | ------------ | ------------------- | --------------------- | --------- | -------------- | ---------------- |
-| xtd::byte    | unsigend char / std::uint8_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
-| char         | char                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
-| xtd::char8   | char8_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
-| xtd::char16  | char16_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
-| xtd::char32  | char32_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
-| xtd::decimal | long double                        | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
-| double       | double                             | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
-| xtd::int16   | short / std::int16_t               | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
-| xtd::int32   | int / std::int32_t                 | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
-| xtd::int64   | long long / std::int64_t           | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
-| xtd::sbyte   | signed char / std::int8_t          | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌                |
-| xtd::single  | float                              | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌                |
-| xtd::size    | size_t                             | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
-| xtd::uint16  | unsigned short / std::uint16_t     | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
-| xtd::uint32  | unsigned int / std::uint32_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
-| xtd::uint64  | unsigned long long / std::uint64_t | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌                |
-| xtd::wchar   | wchar_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌                |
-| enum         | enum                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
-| enum class   | enum class                         | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
-| enum struct  | enum struct                        | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅                |
-| xtd::object  | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌                |
-| user type    | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌                |
+| xtd type           | std type                           | xtd::numeric | xtd::integer | xtd::signed_integer | xtd::unsigned_integer | xtd::real | xtd::character | xtd::text | xtd::enumeration |
+| ------------------ |----------------------------------- | ------------ | ------------ | ------------------- | --------------------- | --------- | -------------- | --------- | ---------------- |
+| xtd::byte          | unsigend char / std::uint8_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| char               | char                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
+| xtd::char8         | char8_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
+| xtd::char16        | char16_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
+| xtd::char32        | char32_t                           | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
+| xtd::decimal       | long double                        | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌         | ❌                |
+| double             | double                             | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌         | ❌                |
+| xtd::int16         | short / std::int16_t               | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::int32         | int / std::int32_t                 | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::int64         | long long / std::int64_t           | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::sbyte         | signed char / std::int8_t          | ✅            | ✅            | ✅                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::single        | float                              | ✅            | ❌            | ❌                   | ❌                     | ✅         | ❌              | ❌         | ❌                |
+| xtd::size          | size_t                             | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::uint16        | unsigned short / std::uint16_t     | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::uint32        | unsigned int / std::uint32_t       | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::uint64        | unsigned long long / std::uint64_t | ✅            | ✅            | ❌                   | ✅                     | ❌         | ❌              | ❌         | ❌                |
+| xtd::wchar         | wchar_t                            | ❌            | ❌            | ❌                   | ❌                     | ❌         | ✅              | ❌         | ❌                |
+| xtd::string        | std::string                        | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| xtd::u8string      | std::u8string                      | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| xtd::u16string     | std::u16string                     | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| xtd::u32string     | std::u32string                     | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| xtd::wstring       | std::wstring                       | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| const char*        | const char*                        | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| const xtd::char8*  | const char8_t*                     | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| const xtd::char16* | const char16_t*                    | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| const xtd::char32* | const char32_t*                    | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| const xtd::wchar*  | const wchar_t*                     | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ✅         | ❌                |
+| enum               | enum                               | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌         | ✅                |
+| enum class         | enum class                         | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌         | ✅                |
+| enum struct        | enum struct                        | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌         | ✅                |
+| xtd::object        | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
+| user type          | /                                  | ❌            | ❌            | ❌                   | ❌                     | ❌         | ❌              | ❌         | ❌                |
 
 ### Remarks
 
