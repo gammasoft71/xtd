@@ -127,33 +127,33 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const box& value) const noexcept override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
+    [[nodiscard]] auto compare_to(const box& value) const noexcept -> xtd::int32 override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>& > (obj));}
+    [[nodiscard]] auto equals(const object& obj) const noexcept -> bool override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>& > (obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
+    [[nodiscard]] auto equals(const box& value) const noexcept -> bool override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
     
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return hash_code::combine(value);}
+    [[nodiscard]] auto get_hash_code() const noexcept -> xtd::size override {return hash_code::combine(value);}
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override;
+    [[nodiscard]] auto to_string() const noexcept -> xtd::string override;
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::string to_string(const xtd::string& format) const;
+    [[nodiscard]] auto to_string(const xtd::string& format) const -> xtd::string;
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format, and locale.
     /// @param format A value type format string.
     /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::string to_string(const xtd::string& format, const globalization::culture_info& culture) const override;
+    [[nodiscard]] auto to_string(const xtd::string& format, const globalization::culture_info& culture) const -> xtd::string override;
     /// @}
     
     /// @cond
@@ -166,13 +166,13 @@ namespace xtd {
     /// @brief Converts the string to its `value_type` equivalent.
     /// @param value A string containing a `value_type` to convert.
     /// @return A `value_type` equivalent to the native value contained in value.
-    static value_type parse(const xtd::string& value) {return xtd::parse<value_type>(value);}
+    [[nodiscard]] static auto parse(const xtd::string& value) -> value_type {return xtd::parse<value_type>(value);}
     
     /// @brief Converts the string to its `value_type` equivalent. A return value indicates whether the conversion succeeded or failed.
     /// @param value A string containing a `value_type` to convert.
     /// @param result A `value_type` equivalent to the native value contained in value.
     /// @return `true` if s was converted successfully; otherwise, `false`.
-    static bool try_parse(const xtd::string& value, reference result) noexcept {return xtd::try_parse<value_type>(value.chars(), result);}
+    static auto try_parse(const xtd::string& value, reference result) noexcept -> bool {return xtd::try_parse<value_type>(value.chars(), result);}
     /// @}
   };
 }
