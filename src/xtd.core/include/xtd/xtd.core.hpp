@@ -467,6 +467,7 @@
 #include "null.hpp"
 #include "nullopt.hpp"
 #include "null_pointer_exception.hpp"
+#include "number.hpp"
 #include "number_styles.hpp"
 #include "numeric.hpp"
 #include "numeric_literals.hpp"

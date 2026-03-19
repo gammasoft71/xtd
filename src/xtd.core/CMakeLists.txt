@@ -392,6 +392,8 @@ add_sources(
   "include/xtd/nullopt"
   "include/xtd/null_pointer_exception.hpp"
   "include/xtd/null_pointer_exception"
+  "include/xtd/number.hpp"
+  "include/xtd/number"
   "include/xtd/number_styles.hpp"
   "include/xtd/number_styles"
   "include/xtd/numeric.hpp"
