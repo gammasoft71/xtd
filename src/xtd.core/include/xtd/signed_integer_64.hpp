@@ -4,7 +4,7 @@
 #pragma once
 #include "int64.hpp"
 #include "slong.hpp"
-#include <type_traits>
+#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,8 +12,8 @@ namespace xtd {
   /// @brief Concept signed_integer_64.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::signed_integer_64 = std::same_as<value_t, xtd::int64> || std::same_as<value_t, xtd::slong>
+  /// template<typename type_t>
+  /// concept xtd::signed_integer_64 = std::same_as<xtd::raw_type<type_t>, xtd::int64> || std::same_as<xtd::raw_type<type_t>, xtd::slong>
   /// ```
   /// @par Header
   /// ```cpp
@@ -74,8 +74,8 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not signed_integer_64
   /// // wednesday (xtd::day_of_week) is not signed_integer_64
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept signed_integer_64 =
-  std::same_as<value_t, xtd::int64> ||
-  std::same_as<value_t, xtd::slong>;
+  std::same_as<xtd::raw_type<type_t>, xtd::int64> ||
+  std::same_as<xtd::raw_type<type_t>, xtd::slong>;
 }

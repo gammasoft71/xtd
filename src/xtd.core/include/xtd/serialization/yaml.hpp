@@ -7,7 +7,7 @@
 #include "../helpers/throw_helper.hpp"
 #include "../any_object.hpp"
 #include "../string.hpp"
-#include "../text_literal.hpp"
+#include "../textual_literal.hpp"
 #include <type_traits>
 #include <concepts>
 
@@ -84,7 +84,7 @@ namespace xtd {
         else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return xtd::as<type_t>(xtd::is<integer_type>(nodes_[key]) ? xtd::as<int64>(nodes_[key]) : xtd::as<uint64>(nodes_[key]));
         else if constexpr (std::same_as<type_t, null_type>) return nullptr;
         else if constexpr (std::same_as<type_t, boolean_type>) return xtd::as<boolean_type>(nodes_[key]);
-        else if constexpr (std::same_as<type_t, string_type> || xtd::text_literal<type_t>) return xtd::as<string_type>(nodes_[key]);
+        else if constexpr (std::same_as<type_t, string_type> || xtd::textual_literal<type_t>) return xtd::as<string_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, mapping_type>) return xtd::as<mapping_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, sequence_type>) return xtd::as<sequence_type>(nodes_[key]);
         else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
@@ -107,7 +107,7 @@ namespace xtd {
         else if constexpr (std::integral<type_t> && !std::same_as<type_t, boolean_type>) return is_integer(key) && xtd::box_integer<type_t>::is_valid(xtd::is<integer_type>(nodes_[key]) ? xtd::as<int64>(nodes_[key]) : xtd::as<uint64>(nodes_[key]));
         else if constexpr (std::same_as<type_t, null_type>) return contains_key(key) && xtd::is<xtd::null_ptr>(nodes_[key]);
         else if constexpr (std::same_as<type_t, boolean_type>) return contains_key(key) && xtd::is<boolean_type>(nodes_[key]);
-        else if constexpr (std::same_as<type_t, string_type> || xtd::text_literal<type_t>) return contains_key(key) && xtd::is<string_type>(nodes_[key]);
+        else if constexpr (std::same_as<type_t, string_type> || xtd::textual_literal<type_t>) return contains_key(key) && xtd::is<string_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, mapping_type>) return contains_key(key) && xtd::is<mapping_type>(nodes_[key]);
         else if constexpr (std::same_as<type_t, sequence_type>) return contains_key(key) && xtd::is<sequence_type>(nodes_[key]);
         else return false;

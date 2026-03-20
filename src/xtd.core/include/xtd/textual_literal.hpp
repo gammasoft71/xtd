@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::text_literal struct and text_literal_v struct.
+/// @brief Contains xtd::textual_literal concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include <type_traits>
@@ -11,11 +11,11 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<class type_t>
-  /// concept xtd::text_literal = std::same_as<type_t, const char*> || std::same_as<type_t, const wchar_t*> || std::same_as<type_t, const char8_t*> || std::same_as<type_t, const char16_t*> || std::same_as<type_t, const char32_t*>;
+  /// concept xtd::textual_literal = std::same_as<type_t, const char*> || std::same_as<type_t, const wchar_t*> || std::same_as<type_t, const char8_t*> || std::same_as<type_t, const char16_t*> || std::same_as<type_t, const char32_t*>;
   /// ```
   /// @par Header
   /// ```cpp
-  /// #include <xtd/text_literal>
+  /// #include <xtd/textual_literal>
   /// ```
   /// @par Namespace
   /// xtd
@@ -23,7 +23,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   template<class type_t>
-  concept text_literal =
+  concept textual_literal =
   std::same_as<type_t, const char*> ||
   std::same_as<type_t, const wchar_t*> ||
   std::same_as<type_t, const char8_t*> ||

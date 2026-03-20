@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "byte.hpp"
-#include <type_traits>
+#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,8 +11,8 @@ namespace xtd {
   /// @brief Concept unsigned_integer_8.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::unsigned_integer_8 = std::same_as<value_t, xtd::byte>;
+  /// template<typename type_t>
+  /// concept xtd::unsigned_integer_8 = std::same_as<xtd::raw_type<type_t>, xtd::byte>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -73,7 +73,7 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not unsigned_integer_8
   /// // wednesday (xtd::day_of_week) is not unsigned_integer_8
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept unsigned_integer_8 =
-  std::same_as<value_t, xtd::byte>;
+  std::same_as<xtd::raw_type<type_t>, xtd::byte>;
 }

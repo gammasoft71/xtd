@@ -13,8 +13,8 @@ namespace xtd {
   /// @brief Concept unsigned_integer.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::unsigned_integer = xtd::unsigned_integer_8<value_t> || xtd::unsigned_integer_16<value_t> || xtd::unsigned_integer_32<value_t> || xtd::unsigned_integer_64<value_t>;
+  /// template<typename type_t>
+  /// concept xtd::unsigned_integer = xtd::unsigned_integer_8<type_t> || xtd::unsigned_integer_16<type_t> || xtd::unsigned_integer_32<type_t> || xtd::unsigned_integer_64<type_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -75,10 +75,10 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not unsigned_integer
   /// // wednesday (xtd::day_of_week) is not unsigned_integer
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept unsigned_integer =
-  xtd::unsigned_integer_8<value_t> ||
-  xtd::unsigned_integer_16<value_t> ||
-  xtd::unsigned_integer_32<value_t> ||
-  xtd::unsigned_integer_64<value_t>;
+  xtd::unsigned_integer_8<type_t> ||
+  xtd::unsigned_integer_16<type_t> ||
+  xtd::unsigned_integer_32<type_t> ||
+  xtd::unsigned_integer_64<type_t>;
 }

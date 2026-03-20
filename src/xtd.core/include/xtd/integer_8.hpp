@@ -11,8 +11,8 @@ namespace xtd {
   /// @brief Concept integer_8.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::integer_8 = xtd::signed_integer_8<value_t> || xtd::unsigned_integer_8<value_t>;
+  /// template<typename type_t>
+  /// concept xtd::integer_8 = xtd::signed_integer_8<type_t> || xtd::unsigned_integer_8<type_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -73,8 +73,8 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not integer_8
   /// // wednesday (xtd::day_of_week) is not integer_8
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept integer_8 =
-  xtd::signed_integer_8<value_t> ||
-  xtd::unsigned_integer_8<value_t>;
+  xtd::signed_integer_8<type_t> ||
+  xtd::unsigned_integer_8<type_t>;
 }

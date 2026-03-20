@@ -12,8 +12,8 @@ namespace xtd {
   /// @brief Concept numeric.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::numeric = xtd::integer<value_t> || xtd::real<value_t>;
+  /// template<typename type_t>
+  /// concept xtd::numeric = xtd::integer<type_t> || xtd::real<type_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -74,10 +74,10 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not numeric
   /// // wednesday (xtd::day_of_week) is not numeric
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept numeric =
-  xtd::integer<value_t> ||
-  std::same_as<value_t, xtd::decimal> ||
-  std::same_as<value_t, xtd::double_> ||
-  std::same_as<value_t, xtd::single>;
+  xtd::integer<type_t> ||
+  std::same_as<xtd::raw_type<type_t>, xtd::decimal> ||
+  std::same_as<xtd::raw_type<type_t>, xtd::double_> ||
+  std::same_as<xtd::raw_type<type_t>, xtd::single>;
 }

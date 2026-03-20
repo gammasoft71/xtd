@@ -13,8 +13,8 @@ namespace xtd {
   /// @brief Concept signed_integer.
   /// @par Definition
   /// ```cpp
-  /// template<typename value_t>
-  /// concept xtd::signed_integer = xtd::signed_integer_8<value_t> || xtd::signed_integer_16<value_t> || xtd::signed_integer_32<value_t> || xtd::signed_integer_64<value_t>;
+  /// template<typename type_t>
+  /// concept xtd::signed_integer = xtd::signed_integer_8<type_t> || xtd::signed_integer_16<type_t> || xtd::signed_integer_32<type_t> || xtd::signed_integer_64<type_t>;
   /// ```
   /// @par Header
   /// ```cpp
@@ -75,10 +75,10 @@ namespace xtd {
   /// // 01:12:24.0480000 (xtd::time_span) is not signed_integer
   /// // wednesday (xtd::day_of_week) is not signed_integer
   /// ```
-  template<typename value_t>
+  template<typename type_t>
   concept signed_integer =
-  xtd::signed_integer_8<value_t> ||
-  xtd::signed_integer_16<value_t> ||
-  xtd::signed_integer_32<value_t> ||
-  xtd::signed_integer_64<value_t>;
+  xtd::signed_integer_8<type_t> ||
+  xtd::signed_integer_16<type_t> ||
+  xtd::signed_integer_32<type_t> ||
+  xtd::signed_integer_64<type_t>;
 }
