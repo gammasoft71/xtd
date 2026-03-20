@@ -13,7 +13,7 @@
 #if defined(__xtd__cpp_lib_ranges)
 #include <ranges>
 #endif
-#include <type_traits>
+#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,13 +39,13 @@ namespace xtd {
   /// @include stringable.cpp
   template<class value_t>
   concept stringable =
-    std::derived_from<std::remove_cvref_t<value_t>, xtd::object> ||
-    std::derived_from<std::remove_cvref_t<value_t>, xtd::istringable<std::remove_cvref_t<value_t>>> ||
-    std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> ||
-    std::derived_from<std::remove_cvref_t<value_t>, std::exception> ||
-    std::is_enum_v<std::remove_cvref_t<value_t>> ||
+    std::derived_from<xtd::raw_type<value_t>, xtd::object> ||
+    std::derived_from<xtd::raw_type<value_t>, xtd::istringable<xtd::raw_type<value_t>>> ||
+    std::derived_from<xtd::raw_type<value_t>, xtd::iformatable> ||
+    std::derived_from<xtd::raw_type<value_t>, std::exception> ||
+    std::is_enum_v<xtd::raw_type<value_t>> ||
     #if defined(__xtd__cpp_lib_ranges)
-    std::ranges::range<std::remove_cvref_t<value_t>> ||
+    std::ranges::range<xtd::raw_type<value_t>> ||
     #endif
-    xtd::stream_insertable<std::remove_cvref_t<value_t>>;
+    xtd::stream_insertable<xtd::raw_type<value_t>>;
 }

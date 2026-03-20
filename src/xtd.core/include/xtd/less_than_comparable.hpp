@@ -2,7 +2,7 @@
 /// @brief Contains xtd::helpers::less_than_comparable concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
-#include <type_traits>
+#include "raw_type.hpp"
 #include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -23,6 +23,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core helpers concepts
   template<typename type_t>
-  concept less_than_comparable =
-  requires(const type_t& a, const type_t& b) {{ a < b } -> std::convertible_to<bool>;};
+  concept less_than_comparable = requires(const xtd::raw_type<type_t>& a, const xtd::raw_type<type_t>& b) {
+    {a < b} -> std::convertible_to<bool>;
+  };
 }

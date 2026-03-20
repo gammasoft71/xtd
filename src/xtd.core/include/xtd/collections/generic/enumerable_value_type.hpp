@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "enumerable.hpp"
+#include "../../raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
@@ -29,7 +30,7 @@ namespace xtd {
       /// The following code shows how to use xtd::collections::generic::enumerable conceps
       /// @include generic_enumerable.cpp
       template <xtd::collections::generic::enumerable enumerable_type>
-      using enumerable_value_type = std::remove_cvref_t<decltype(*std::begin(std::declval<enumerable_type&>()))>;
+      using enumerable_value_type = xtd::raw_type<decltype(*std::begin(std::declval<enumerable_type&>()))>;
     }
   }
 }

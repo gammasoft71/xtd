@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "forward_iterable.hpp"
+#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -25,5 +26,5 @@ namespace xtd {
   /// The following code shows how to use xtd::forward_iterable_value_type conceps
   /// @include forward_iterable_value_type.cpp
   template <xtd::forward_iterable forward_iterable_type>
-  using forward_iterable_value_type = std::remove_cvref_t<decltype(*std::begin(std::declval<forward_iterable_type&>()))>;
+  using forward_iterable_value_type = xtd::raw_type<decltype(*std::begin(std::declval<forward_iterable_type&>()))>;
 }

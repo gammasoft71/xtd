@@ -4,7 +4,7 @@
 #pragma once
 #include "stream_insertable.hpp"
 #include "iformatable.hpp"
-#include <type_traits>
+#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -29,5 +29,7 @@ namespace xtd {
   /// The following code shows how to use xtd::formatbale conceps
   /// @include formatbale.cpp
   template<class value_t>
-  concept formatable = std::derived_from<std::remove_cvref_t<value_t>, xtd::iformatable> || xtd::stream_insertable<std::remove_cvref_t<value_t>>;
+  concept formatable =
+  std::derived_from<xtd::raw_type<value_t>, xtd::iformatable> ||
+  xtd::stream_insertable<xtd::raw_type<value_t>>;
 }

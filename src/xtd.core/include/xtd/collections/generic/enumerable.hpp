@@ -3,8 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerable.hpp"
-#include <concepts>
-#include <type_traits>
+#include "../../raw_type"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
@@ -32,8 +31,8 @@ namespace xtd {
       /// @include generic_enumerable.cpp
       template<class type_t>
       concept enumerable =
-        requires {typename std::remove_cvref_t<type_t>::value_type;} &&
-        std::derived_from<std::remove_cvref_t<type_t>, xtd::collections::generic::ienumerable<typename std::remove_cvref_t<type_t>::value_type>>;
+      requires {typename xtd::raw_type<type_t>::value_type;} &&
+      std::derived_from<xtd::raw_type<type_t>, xtd::collections::generic::ienumerable<typename xtd::raw_type<type_t>::value_type>>;
     }
   }
 }
