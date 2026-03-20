@@ -19,9 +19,7 @@ jobs:
         fetch-depth: 0
 
     - name: Install Graphviz (for Doxygen diagrams)
-      run: |
-        sudo apt-get install graphviz
-        doxygen --version
+      run: sudo apt-get install graphviz
 
     - name: Generate Doxygen documentation
       uses: mattnotmitt/doxygen-action@v1.1.0
@@ -34,6 +32,7 @@ jobs:
 
     - name: Copy reference guide into website static folder
       run: |
+        doxygen --version
         rm -rf site-docs/static/reference_guides/latest
         mkdir -p site-docs/static/reference_guides/latest
         cp -r reference_guide/html/* site-docs/static/reference_guides/latest/
