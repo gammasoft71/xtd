@@ -3,8 +3,7 @@
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "integer.hpp"
-#include "types"
-#include <type_traits>
+#include "real.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -76,7 +75,5 @@ namespace xtd {
   template<typename type_t>
   concept numeric =
   xtd::integer<type_t> ||
-  std::same_as<xtd::raw_type<type_t>, xtd::decimal> ||
-  std::same_as<xtd::raw_type<type_t>, xtd::double_> ||
-  std::same_as<xtd::raw_type<type_t>, xtd::single>;
+  xtd::real<type_t>;
 }
