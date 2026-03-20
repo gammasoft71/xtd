@@ -12,7 +12,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a string literal concept.
+  /// @brief Represent a text concept.
   /// @par Definition
   /// ```cpp
   /// template<class value_t>

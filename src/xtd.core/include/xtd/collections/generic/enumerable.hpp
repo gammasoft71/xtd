@@ -12,7 +12,6 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @concept xtd::collections::generic::enumerable
       /// @brief Concept enumerable.
       /// @par Definition
       /// ```cpp

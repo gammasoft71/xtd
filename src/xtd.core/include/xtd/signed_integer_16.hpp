@@ -7,7 +7,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @concept xtd::signed_integer_16
   /// @brief Concept signed_integer_16.
   /// @par Definition
   /// ```cpp

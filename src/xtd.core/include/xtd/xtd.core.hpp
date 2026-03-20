@@ -454,6 +454,7 @@
 #include "less_than_comparable.hpp"
 #include "lock_guard.hpp"
 #include "lock.hpp"
+#include "logical.hpp"
 #include "make_any_object.hpp"
 #include "make_error_code.hpp"
 #include "math.hpp"

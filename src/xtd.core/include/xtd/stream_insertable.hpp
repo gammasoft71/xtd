@@ -6,7 +6,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @concept xtd::stream_insertable
   /// @brief Concept stream_insertable.
   /// @par Definition
   /// ```cpp

@@ -360,6 +360,8 @@ add_sources(
   "include/xtd/lock_guard"
   "include/xtd/lock.hpp"
   "include/xtd/lock"
+  "include/xtd/logical.hpp"
+  "include/xtd/logical"
   "include/xtd/make_any.hpp"
   "include/xtd/make_any"
   "include/xtd/make_any_object.hpp"

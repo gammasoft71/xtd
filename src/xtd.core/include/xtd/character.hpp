@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::character struct and character_v struct.
+/// @brief Contains xtd::character concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
 #include "char.hpp"
@@ -12,11 +12,11 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a string literal concept.
+  /// @brief Represent a character concept.
   /// @par Definition
   /// ```cpp
   /// template<class type_t>
-  /// concept xtd::character = std::same_as<type_t, xtd::char_> || std::same_as<type_t, xtd::char8> || std::same_as<type_t, xtd::char16> || std::same_as<type_t, xtd::char32> || std::same_as<type_t, xtd::wchar>;
+  /// concept xtd::character = std::same_as<xtd::raw_type<type_t>, xtd::char_> || std::same_as<xtd::raw_type<type_t>, xtd::char8> || std::same_as<xtd::raw_type<type_t>, xtd::char16> || std::same_as<xtd::raw_type<type_t>, xtd::char32> || std::same_as<xtd::raw_type<type_t>, xtd::wchar>;
   /// ```
   /// @par Header
   /// ```cpp
