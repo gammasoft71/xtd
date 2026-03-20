@@ -39,5 +39,6 @@ var searchData=
   ['loading_5findicators_2ehpp_36',['loading_indicators.hpp',['../loading__indicators_8hpp.html',1,'']]],
   ['lock_2ehpp_37',['lock.hpp',['../lock_8hpp.html',1,'(Global Namespace)'],['../threading_2lock_8hpp.html',1,'(Global Namespace)']]],
   ['lock_5fguard_2ehpp_38',['lock_guard.hpp',['../lock__guard_8hpp.html',1,'(Global Namespace)'],['../threading_2lock__guard_8hpp.html',1,'(Global Namespace)']]],
-  ['lock_5frecursion_5fexception_2ehpp_39',['lock_recursion_exception.hpp',['../lock__recursion__exception_8hpp.html',1,'']]]
+  ['lock_5frecursion_5fexception_2ehpp_39',['lock_recursion_exception.hpp',['../lock__recursion__exception_8hpp.html',1,'']]],
+  ['logical_2ehpp_40',['logical.hpp',['../logical_8hpp.html',1,'']]]
 ];

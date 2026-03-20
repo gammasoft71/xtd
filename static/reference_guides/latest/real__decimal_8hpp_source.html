@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/text_literal.hpp File Reference</title>
+		<title>xtd: xtd.core/include/xtd/real_decimal.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -84,25 +84,25 @@ $(function() {
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">text_literal.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">real_decimal.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
-<code>#include &lt;concepts&gt;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="conceptxtd_1_1text__literal.html" title="Represent a string literal concept.">xtd::text_literal</a> struct and text_literal_v struct. </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2026 Gammasoft. All rights reserved. </dd></dl>
-</div>
-<p><a href="text__literal_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:xtd" id="r_xtd"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacextd.html">xtd</a></td></tr>
-<tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
-</table>
-</div><!-- contents -->
+<a href="real__decimal_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="decimal_8hpp.html">decimal.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="raw__type_8hpp.html">raw_type.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="conceptxtd_1_1real__decimal.html">   76</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1real__decimal.html">real_decimal</a> =</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  std::same_as&lt;xtd::raw_type&lt;type_t&gt;, <a class="code hl_typedef" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a>&gt;;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="ttc" id="aconceptxtd_1_1real__decimal_html"><div class="ttname"><a href="conceptxtd_1_1real__decimal.html">xtd::real_decimal</a></div><div class="ttdoc">Concept real_decimal.</div><div class="ttdef"><b>Definition</b> real_decimal.hpp:76</div></div>
+<div class="ttc" id="adecimal_8hpp_html"><div class="ttname"><a href="decimal_8hpp.html">decimal.hpp</a></div><div class="ttdoc">Contains xtd::decimal type.</div></div>
+<div class="ttc" id="agroup__types_html_ga7d41c91f9bcab8feb762da96973525fd"><div class="ttname"><a href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.hpp:23</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
+<div class="ttc" id="araw__type_8hpp_html"><div class="ttname"><a href="raw__type_8hpp.html">raw_type.hpp</a></div><div class="ttdoc">Contains xtd::raw_type alias.</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
