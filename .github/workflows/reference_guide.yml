@@ -32,7 +32,6 @@ jobs:
 
     - name: Copy reference guide into website static folder
       run: |
-        doxygen --version
         rm -rf site-docs/static/reference_guides/latest
         mkdir -p site-docs/static/reference_guides/latest
         cp -r reference_guide/html/* site-docs/static/reference_guides/latest/
