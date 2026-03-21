@@ -388,6 +388,8 @@ add_sources(
   "include/xtd/month_of_year"
   "include/xtd/modable.hpp"
   "include/xtd/modable"
+  "include/xtd/multipliable.hpp"
+  "include/xtd/multipliable"
   "include/xtd/nameof.hpp"
   "include/xtd/nameof"
   "include/xtd/new_ptr.hpp"
