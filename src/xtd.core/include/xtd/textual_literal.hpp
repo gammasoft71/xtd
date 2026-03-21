@@ -2,6 +2,11 @@
 /// @brief Contains xtd::textual_literal concept.
 /// @copyright Copyright (c) 2026 Gammasoft. All rights reserved.
 #pragma once
+#include "char.hpp"
+#include "char8.hpp"
+#include "char16.hpp"
+#include "char32.hpp"
+#include "wchar.hpp"
 #include <type_traits>
 #include <concepts>
 
@@ -24,9 +29,9 @@ namespace xtd {
   /// @ingroup xtd_core concepts
   template<class type_t>
   concept textual_literal =
-  std::same_as<type_t, const char*> ||
-  std::same_as<type_t, const wchar_t*> ||
-  std::same_as<type_t, const char8_t*> ||
-  std::same_as<type_t, const char16_t*> ||
-  std::same_as<type_t, const char32_t*>;
+  std::same_as<type_t, const xtd::char_*> ||
+  std::same_as<type_t, const xtd::wchar*> ||
+  std::same_as<type_t, const xtd::char8*> ||
+  std::same_as<type_t, const xtd::char16*> ||
+  std::same_as<type_t, const xtd::char32*>;
 }

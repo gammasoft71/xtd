@@ -9,6 +9,7 @@
 #include "u32string.hpp"
 #include "u8string.hpp"
 #include "wstring.hpp"
+#include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

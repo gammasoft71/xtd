@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a raw taype alies same as std::remove_cvref_t<value_t>.
+  /// @brief Represents a raw type alias equivalent to std::remove_cvref_t<value_t>.
   /// @par Definition
   /// ```cpp
   /// template<class value_t>

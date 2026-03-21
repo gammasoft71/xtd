@@ -4,6 +4,7 @@
 #pragma once
 #include "raw_type.hpp"
 #include "uint16.hpp"
+#include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

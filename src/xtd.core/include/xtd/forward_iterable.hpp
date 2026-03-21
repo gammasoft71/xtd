@@ -8,6 +8,7 @@
 #if defined(__xtd__cpp_lib_ranges)
 #include <ranges>
 #endif
+#include <concepts>
 #include <iterator>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

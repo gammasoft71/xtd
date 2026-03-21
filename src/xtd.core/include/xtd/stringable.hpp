@@ -9,11 +9,11 @@
 #include "iformatable.hpp"
 #include "istringable.hpp"
 #include "object.hpp"
+#include "raw_type.hpp"
 #include <concepts>
 #if defined(__xtd__cpp_lib_ranges)
 #include <ranges>
 #endif
-#include "raw_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -5,6 +5,7 @@
 #include "stream_insertable.hpp"
 #include "iformatable.hpp"
 #include "raw_type.hpp"
+#include <concepts>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
