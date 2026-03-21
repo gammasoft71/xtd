@@ -439,6 +439,7 @@
 #include "integer_32.hpp"
 #include "integer_64.hpp"
 #include "integer_8.hpp"
+#include "integer_arithmeticable.hpp"
 #include "interface.hpp"
 #include "intptr.hpp"
 #include "intptr_object.hpp"

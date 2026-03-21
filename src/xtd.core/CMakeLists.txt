@@ -326,6 +326,8 @@ add_sources(
   "include/xtd/integer_64"
   "include/xtd/integer_8.hpp"
   "include/xtd/integer_8"
+  "include/xtd/integer_arithmeticable.hpp"
+  "include/xtd/integer_arithmeticable"
   "include/xtd/interface.hpp"
   "include/xtd/interface"
   "include/xtd/interrupt_exception.hpp"
