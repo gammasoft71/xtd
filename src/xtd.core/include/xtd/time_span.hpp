@@ -149,18 +149,18 @@ namespace xtd {
     time_span& operator =(const time_span&) = default;
     time_span& operator +=(const time_span& value);
     time_span& operator -=(const time_span& value);
-    time_span operator +(const time_span& value);
-    time_span operator -(const time_span& value);
-    double operator *(const time_span& value);
-    time_span operator *(double value);
-    double operator /(const time_span& value);
-    time_span operator /(double value);
-    time_span operator +();
-    time_span operator -();
+    time_span operator +(const time_span& value) const;
+    time_span operator -(const time_span& value) const;
+    double operator *(const time_span& value) const;
+    time_span operator *(double value) const;
+    double operator /(const time_span& value) const;
+    time_span operator /(double value) const;
+    time_span operator +() const;
+    time_span operator -() const;
     time_span& operator ++();
-    time_span operator ++(int);
+    time_span operator ++(int) const;
     time_span& operator --();
-    time_span operator --(int);
+    time_span operator --(int) const;
     friend auto operator << (std::ostream& os, const time_span& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
     

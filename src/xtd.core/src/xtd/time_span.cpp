@@ -63,35 +63,35 @@ time_span& time_span::operator -=(const time_span& value) {
   return *this;
 }
 
-time_span time_span::operator +(const time_span& value) {
+time_span time_span::operator +(const time_span& value) const {
   return add(value);
 }
 
-time_span time_span::operator -(const time_span& value) {
+time_span time_span::operator -(const time_span& value) const {
   return subtract(value);
 }
 
-double time_span::operator *(const time_span& value) {
+double time_span::operator *(const time_span& value) const {
   return multiply(value);
 }
 
-time_span time_span::operator *(double value) {
+time_span time_span::operator *(double value) const {
   return multiply(value);
 }
 
-double time_span::operator /(const time_span& value) {
+double time_span::operator /(const time_span& value) const {
   return divide(value);
 }
 
-time_span time_span::operator /(double value) {
+time_span time_span::operator /(double value) const {
   return divide(value);
 }
 
-time_span time_span::operator +() {
+time_span time_span::operator +() const {
   return *this;
 }
 
-time_span time_span::operator -() {
+time_span time_span::operator -() const {
   return negate();
 }
 
@@ -100,8 +100,8 @@ time_span& time_span::operator ++() {
   return *this;
 }
 
-time_span time_span::operator ++(int) {
-  return time_span(ticks_++);
+time_span time_span::operator ++(int) const {
+  return time_span(ticks_+ 1);
 }
 
 time_span& time_span::operator --() {
@@ -109,8 +109,8 @@ time_span& time_span::operator --() {
   return *this;
 }
 
-time_span time_span::operator --(int) {
-  return time_span(ticks_--);
+time_span time_span::operator --(int) const {
+  return time_span(ticks_- 1);
 }
 
 int32 time_span::days() const noexcept {
