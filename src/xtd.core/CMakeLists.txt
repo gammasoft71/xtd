@@ -203,6 +203,8 @@ add_sources(
   "include/xtd/distribution"
   "include/xtd/divided_by_zero_exception.hpp"
   "include/xtd/divided_by_zero_exception"
+  "include/xtd/divisible.hpp"
+  "include/xtd/divisible"
   "include/xtd/domain_exception.hpp"
   "include/xtd/domain_exception"
   "include/xtd/double.hpp"

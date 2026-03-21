@@ -379,6 +379,7 @@
 #include "delete_uptr.hpp"
 #include "distribution.hpp"
 #include "divided_by_zero_exception.hpp"
+#include "divisible.hpp"
 #include "domain_exception.hpp"
 #include "double.hpp"
 #include "double_object.hpp"
