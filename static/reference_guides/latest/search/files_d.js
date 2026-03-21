@@ -32,13 +32,14 @@ var searchData=
   ['message_5fdialog_5foptions_2ehpp_29',['message_dialog_options.hpp',['../message__dialog__options_8hpp.html',1,'']]],
   ['message_5floop_5fcallback_2ehpp_30',['message_loop_callback.hpp',['../message__loop__callback_8hpp.html',1,'']]],
   ['mimetypes_5fsystem_5fimages_2ehpp_31',['mimetypes_system_images.hpp',['../mimetypes__system__images_8hpp.html',1,'']]],
-  ['monitor_2ehpp_32',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
-  ['month_5fcalendar_2ehpp_33',['month_calendar.hpp',['../month__calendar_8hpp.html',1,'']]],
-  ['month_5fof_5fyear_2ehpp_34',['month_of_year.hpp',['../month__of__year_8hpp.html',1,'']]],
-  ['mouse_5fbuttons_2ehpp_35',['mouse_buttons.hpp',['../mouse__buttons_8hpp.html',1,'']]],
-  ['mouse_5fevent_5fargs_2ehpp_36',['mouse_event_args.hpp',['../mouse__event__args_8hpp.html',1,'']]],
-  ['mouse_5fevent_5fhandler_2ehpp_37',['mouse_event_handler.hpp',['../mouse__event__handler_8hpp.html',1,'']]],
-  ['multicast_5foption_2ehpp_38',['multicast_option.hpp',['../multicast__option_8hpp.html',1,'']]],
-  ['multipliable_2ehpp_39',['multipliable.hpp',['../multipliable_8hpp.html',1,'']]],
-  ['mutex_2ehpp_40',['mutex.hpp',['../mutex_8hpp.html',1,'']]]
+  ['modable_2ehpp_32',['modable.hpp',['../modable_8hpp.html',1,'']]],
+  ['monitor_2ehpp_33',['monitor.hpp',['../monitor_8hpp.html',1,'']]],
+  ['month_5fcalendar_2ehpp_34',['month_calendar.hpp',['../month__calendar_8hpp.html',1,'']]],
+  ['month_5fof_5fyear_2ehpp_35',['month_of_year.hpp',['../month__of__year_8hpp.html',1,'']]],
+  ['mouse_5fbuttons_2ehpp_36',['mouse_buttons.hpp',['../mouse__buttons_8hpp.html',1,'']]],
+  ['mouse_5fevent_5fargs_2ehpp_37',['mouse_event_args.hpp',['../mouse__event__args_8hpp.html',1,'']]],
+  ['mouse_5fevent_5fhandler_2ehpp_38',['mouse_event_handler.hpp',['../mouse__event__handler_8hpp.html',1,'']]],
+  ['multicast_5foption_2ehpp_39',['multicast_option.hpp',['../multicast__option_8hpp.html',1,'']]],
+  ['multipliable_2ehpp_40',['multipliable.hpp',['../multipliable_8hpp.html',1,'']]],
+  ['mutex_2ehpp_41',['mutex.hpp',['../mutex_8hpp.html',1,'']]]
 ];
