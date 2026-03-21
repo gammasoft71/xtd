@@ -90,13 +90,14 @@ $(function() {
 <a href="enumeration_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="raw__type_8hpp.html">raw_type.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="conceptxtd_1_1enumeration.html">   25</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1enumeration.html">enumeration</a> =</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::is_enum_v&lt;xtd::raw_type&lt;type_t&gt;&gt;;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="ttc" id="aconceptxtd_1_1enumeration_html"><div class="ttname"><a href="conceptxtd_1_1enumeration.html">xtd::enumeration</a></div><div class="ttdoc">Represent a enumeration concept.</div><div class="ttdef"><b>Definition</b> enumeration.hpp:25</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="conceptxtd_1_1enumeration.html">   26</a></span>  <span class="keyword">concept </span><a class="code hl_concept" href="conceptxtd_1_1enumeration.html">enumeration</a> =</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::is_enum_v&lt;xtd::raw_type&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aconceptxtd_1_1enumeration_html"><div class="ttname"><a href="conceptxtd_1_1enumeration.html">xtd::enumeration</a></div><div class="ttdoc">Represent a enumeration concept.</div><div class="ttdef"><b>Definition</b> enumeration.hpp:26</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="araw__type_8hpp_html"><div class="ttname"><a href="raw__type_8hpp.html">raw_type.hpp</a></div><div class="ttdoc">Contains xtd::raw_type alias.</div></div>
 </div><!-- fragment --></div><!-- contents -->

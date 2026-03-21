@@ -270,20 +270,20 @@ $(function() {
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    }</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    delegate operator +(<span class="keyword">const</span> delegate&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    delegate operator +(<span class="keyword">const</span> delegate&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      result += <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    }</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    delegate operator +(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    delegate operator +(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      result += <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    }</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    </div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keyword">template</span> &lt; <span class="keyword">class</span> fn_t &gt;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    delegate operator +(fn_t function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    delegate operator +(fn_t function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      result += <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <span class="keywordflow">return</span> result;</div>
@@ -305,20 +305,20 @@ $(function() {
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    }</div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    delegate operator -(<span class="keyword">const</span> delegate&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    delegate operator -(<span class="keyword">const</span> delegate&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      result -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    delegate operator -(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    delegate operator -(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      result -= <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    </div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keyword">template</span> &lt; <span class="keyword">class</span> fn_t &gt;</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    delegate operator -(fn_t function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    delegate operator -(fn_t function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      result -= <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      <span class="keywordflow">return</span> result;</div>
@@ -673,26 +673,26 @@ $(function() {
 <div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    }</div>
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    </div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>    delegate operator +(<span class="keyword">const</span> delegate &amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>    delegate operator +(<span class="keyword">const</span> delegate &amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>      result += <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>    }</div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    </div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    delegate operator +(<span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    delegate operator +(<span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>      result += <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    }</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    </div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    delegate operator +(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    delegate operator +(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>      result += <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>    }</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>    </div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>    <span class="keyword">template</span> &lt; <span class="keyword">class</span> fn_t &gt;</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>    delegate operator +(fn_t function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>    delegate operator +(fn_t function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>      result += <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>      <span class="keywordflow">return</span> result;</div>
@@ -719,26 +719,26 @@ $(function() {
 <div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    }</div>
 <div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>    </div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>    delegate operator -(<span class="keyword">const</span> delegate &amp; other) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>    delegate operator -(<span class="keyword">const</span> delegate &amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      result -= <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>;</div>
 <div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    }</div>
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    </div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    delegate operator -(<span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    delegate operator -(<span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>      result -= <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    }</div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    </div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    delegate operator -(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    delegate operator -(<span class="keyword">const</span> function_t&amp; function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>      result -= <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    }</div>
 <div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    </div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    <span class="keyword">template</span> &lt; <span class="keyword">class</span> fn_t &gt;</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    delegate operator -(fn_t function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    delegate operator -(fn_t function) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>      delegate result = *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>      result -= <a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac1c425268e68385d1ab5074c17a94f14">function</a>;</div>
 <div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>      <span class="keywordflow">return</span> result;</div>

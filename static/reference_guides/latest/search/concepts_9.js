@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['textual_0',['textual',['../conceptxtd_1_1textual.html',1,'xtd']]],
-  ['textual_5fliteral_1',['textual_literal',['../conceptxtd_1_1textual__literal.html',1,'xtd']]]
+  ['number_0',['number',['../conceptxtd_1_1number.html',1,'xtd']]],
+  ['numeric_1',['numeric',['../conceptxtd_1_1numeric.html',1,'xtd']]]
 ];
