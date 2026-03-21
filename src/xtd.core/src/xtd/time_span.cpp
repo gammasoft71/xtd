@@ -100,8 +100,8 @@ time_span& time_span::operator ++() {
   return *this;
 }
 
-time_span time_span::operator ++(int) const {
-  return time_span(ticks_+ 1);
+time_span time_span::operator ++(int) {
+  return time_span(ticks_++);
 }
 
 time_span& time_span::operator --() {
@@ -109,8 +109,8 @@ time_span& time_span::operator --() {
   return *this;
 }
 
-time_span time_span::operator --(int) const {
-  return time_span(ticks_- 1);
+time_span time_span::operator --(int) {
+  return time_span(ticks_--);
 }
 
 int32 time_span::days() const noexcept {

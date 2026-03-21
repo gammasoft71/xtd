@@ -158,9 +158,9 @@ namespace xtd {
     time_span operator +() const;
     time_span operator -() const;
     time_span& operator ++();
-    time_span operator ++(int) const;
+    time_span operator ++(int);
     time_span& operator --();
-    time_span operator --(int) const;
+    time_span operator --(int);
     friend auto operator << (std::ostream& os, const time_span& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
     
