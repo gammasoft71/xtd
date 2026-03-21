@@ -846,11 +846,11 @@ time_span date_time::operator -=(const time_span& value) {
   return subtract(value);
 }
 
-date_time date_time::operator +() {
+date_time date_time::operator +() const {
   return date_time(+value_, kind_);
 }
 
-date_time date_time::operator -() {
+date_time date_time::operator -() const {
   return date_time(-value_, kind_);
 }
 
@@ -875,8 +875,9 @@ date_time& date_time::operator ++() {
   return self_;
 }
 
-date_time date_time::operator ++(int32) {
-  return date_time(value_++, kind_);
+date_time date_time::operator ++(int32) const {
+  auto v = value_;
+  return date_time(v++, kind_);
 }
 
 date_time& date_time::operator --() {
@@ -884,8 +885,9 @@ date_time& date_time::operator --() {
   return self_;
 }
 
-date_time date_time::operator --(int32) {
-  return date_time {value_--, kind_};
+date_time date_time::operator --(int32) const {
+  auto v = value_;
+  return date_time {v--, kind_};
 }
 
 std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> date_time::get_date_time() const {

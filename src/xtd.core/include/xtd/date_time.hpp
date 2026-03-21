@@ -1393,16 +1393,16 @@ namespace xtd {
     date_time operator +=(const time_span& value);
     time_span operator -=(const date_time& value);
     time_span operator -=(const time_span& value);
-    date_time operator +();
-    date_time operator -();
+    date_time operator +() const;
+    date_time operator -() const;
     date_time operator +(const date_time& value) const = delete;
     date_time operator +(const time_span& value) const;
     time_span operator -(const date_time& value) const;
     date_time operator -(const time_span& value) const;
     date_time& operator ++();
-    date_time operator ++(int32);
+    date_time operator ++(int32) const;
     date_time& operator --();
-    date_time operator --(int32);
+    date_time operator --(int32) const;
     friend auto operator << (std::ostream& os, const date_time& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
     
