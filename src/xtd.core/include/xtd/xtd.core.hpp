@@ -463,6 +463,7 @@
 #include "math.hpp"
 #include "memory_information.hpp"
 #include "month_of_year.hpp"
+#include "multipliable.hpp"
 #include "nameof.hpp"
 #include "new_ptr.hpp"
 #include "new_sptr.hpp"

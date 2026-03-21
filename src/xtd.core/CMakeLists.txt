@@ -380,6 +380,8 @@ add_sources(
   "include/xtd/memory_information"
   "include/xtd/month_of_year.hpp"
   "include/xtd/month_of_year"
+  "include/xtd/multipliable.hpp"
+  "include/xtd/multipliable"
   "include/xtd/nameof.hpp"
   "include/xtd/nameof"
   "include/xtd/new_ptr.hpp"
