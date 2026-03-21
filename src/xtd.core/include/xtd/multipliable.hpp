@@ -11,7 +11,7 @@ namespace xtd {
   /// @par Definition
   /// ```cpp
   /// template<typename type_t>
-  /// concept xtd::multipliable = requires(const xtd::raw_type<type_t>& a, const xtd::raw_type<type_t>& b) {{a + b} -> std::same_as<xtd::raw_type<type_t>>;};
+  /// concept xtd::multipliable = requires(const xtd::raw_type<type_t>& a, const xtd::raw_type<type_t>& b) {{a * b} -> std::same_as<xtd::raw_type<type_t>>;};
   /// ```
   /// @par Header
   /// ```cpp
