@@ -307,6 +307,7 @@
 #include "access_violation_exception.hpp"
 #include "action.hpp"
 #include "add_last_arg_to_command.hpp"
+#include "addable.hpp"
 #include "any_object.hpp"
 #include "architecture_id.hpp"
 #include "argument_exception.hpp"

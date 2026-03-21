@@ -18,6 +18,8 @@ add_sources(
   "include/xtd/action"
   "include/xtd/add_last_arg_to_command.hpp"
   "include/xtd/add_last_arg_to_command"
+  "include/xtd/addable.hpp"
+  "include/xtd/addable"
   "include/xtd/aggregate_exception.hpp"
   "include/xtd/aggregate_exception"
   "include/xtd/any_cast.hpp"
