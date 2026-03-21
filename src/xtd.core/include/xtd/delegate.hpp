@@ -292,20 +292,20 @@ namespace xtd {
     /// @}
     
     /// @cond
-    delegate operator +(const delegate& other) noexcept {
+    delegate operator +(const delegate& other) const noexcept {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator +(const function_t& function) noexcept {
+    delegate operator +(const function_t& function) const noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
     template < class fn_t >
-    delegate operator +(fn_t function) noexcept {
+    delegate operator +(fn_t function) const noexcept {
       delegate result = *this;
       result += function;
       return result;
@@ -327,20 +327,20 @@ namespace xtd {
       return *this;
     }
     
-    delegate operator -(const delegate& other) noexcept {
+    delegate operator -(const delegate& other) const noexcept {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator -(const function_t& function) noexcept {
+    delegate operator -(const function_t& function) const noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
     template < class fn_t >
-    delegate operator -(fn_t function) noexcept {
+    delegate operator -(fn_t function) const noexcept {
       delegate result = *this;
       result -= function;
       return result;
@@ -797,26 +797,26 @@ namespace xtd {
       return *this;
     }
     
-    delegate operator +(const delegate & other) noexcept {
+    delegate operator +(const delegate & other) const noexcept {
       delegate result = *this;
       result += other;
       return result;
     }
     
-    delegate operator +(const no_arguments_function_t& function) noexcept {
+    delegate operator +(const no_arguments_function_t& function) const noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
-    delegate operator +(const function_t& function) noexcept {
+    delegate operator +(const function_t& function) const noexcept {
       delegate result = *this;
       result += function;
       return result;
     }
     
     template < class fn_t >
-    delegate operator +(fn_t function) noexcept {
+    delegate operator +(fn_t function) const noexcept {
       delegate result = *this;
       result += function;
       return result;
@@ -843,26 +843,26 @@ namespace xtd {
       return *this;
     }
     
-    delegate operator -(const delegate & other) noexcept {
+    delegate operator -(const delegate & other) const noexcept {
       delegate result = *this;
       result -= other;
       return result;
     }
     
-    delegate operator -(const no_arguments_function_t& function) noexcept {
+    delegate operator -(const no_arguments_function_t& function) const noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
-    delegate operator -(const function_t& function) noexcept {
+    delegate operator -(const function_t& function) const noexcept {
       delegate result = *this;
       result -= function;
       return result;
     }
     
     template < class fn_t >
-    delegate operator -(fn_t function) noexcept {
+    delegate operator -(fn_t function) const noexcept {
       delegate result = *this;
       result -= function;
       return result;
