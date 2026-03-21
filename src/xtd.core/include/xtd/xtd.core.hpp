@@ -314,6 +314,7 @@
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
 #include "arithmetic_exception.hpp"
+#include "arithmeticable.hpp"
 #include "as.hpp"
 #include "as_const.hpp"
 #include "async.hpp"

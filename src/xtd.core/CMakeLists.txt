@@ -40,6 +40,8 @@ add_sources(
   "include/xtd/argument_out_of_range_exception"
   "include/xtd/arithmetic_exception.hpp"
   "include/xtd/arithmetic_exception"
+  "include/xtd/arithmeticable.hpp"
+  "include/xtd/arithmeticable"
   "include/xtd/array.hpp"
   "include/xtd/array"
   "include/xtd/array_.hpp"
