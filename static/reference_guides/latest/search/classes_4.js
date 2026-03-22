@@ -17,7 +17,7 @@ var searchData=
   ['enum_5fobject_3c_20std_3a_3anullptr_5ft_20_3e_14',['enum_object&lt; std::nullptr_t &gt;',['../structxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html',1,'xtd']]],
   ['enum_5fregister_15',['enum_register',['../structxtd_1_1enum__register.html',1,'xtd']]],
   ['enum_5fset_5fattribute_16',['enum_set_attribute',['../structxtd_1_1enum__set__attribute.html',1,'xtd']]],
-  ['enumerable_17',['enumerable',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html',1,'xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source_t &gt;'],['../classxtd_1_1linq_1_1enumerable.html',1,'xtd::linq::enumerable']]],
+  ['enumerable_17',['enumerable',['../structxtd_1_1collections_1_1generic_1_1enumerable.html',1,'xtd::collections::generic::enumerable&lt; type_t &gt;'],['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html',1,'xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source_t &gt;'],['../classxtd_1_1linq_1_1enumerable.html',1,'xtd::linq::enumerable']]],
   ['enumerable_3c_20ienumerable_3c_20char_5ft_20_3e_2c_20char_5ft_20_3e_18',['enumerable&lt; ienumerable&lt; char_t &gt;, char_t &gt;',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html',1,'xtd::collections::generic::extensions']]],
   ['enumerable_3c_20ienumerable_3c_20type_5ft_20_3e_2c_20type_5ft_20_3e_19',['enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html',1,'xtd::collections::generic::extensions']]],
   ['enumerable_5fgenerator_20',['enumerable_generator',['../classxtd_1_1collections_1_1generic_1_1enumerable__generator.html',1,'xtd::collections::generic']]],
