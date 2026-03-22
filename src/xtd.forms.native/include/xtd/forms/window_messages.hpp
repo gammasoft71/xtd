@@ -1883,7 +1883,7 @@ constexpr xtd::uint32 NM_CUSTOMTEXT = NM_FIRST - 24; // uses NMCUSTOMTEXT struct
 constexpr xtd::uint32 NM_TVSTATEIMAGECHANGING = NM_FIRST - 24; // uses NMTVSTATEIMAGECHANGING struct, defined after HTREEITEM
 
 // Up down notifications
-constexpr xtd::int32 UDN_DELTAPOS = UDN_FIRST - 1;
+constexpr xtd::uint32 UDN_DELTAPOS = UDN_FIRST - 1;
 
 constexpr xtd::int32 HELPINFO_WINDOW = 0x0001;
 constexpr xtd::int32 HELPINFO_MENUITEM = 0x0002;
