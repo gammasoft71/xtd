@@ -18,7 +18,8 @@
 #include "box.hpp"
 #include "int64.hpp"
 #include "number_styles.hpp"
-#include <concepts>
+#include "signed_integer.hpp"
+#include "unsigned_integer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -81,7 +82,7 @@ namespace xtd {
     /// @return true if value is greater than or equal to min_value and less than or equal to max_value; otherwise, false.
     /// @remarks This method checks whether a signed integral value can be safely represented by type_t without overflow.
     /// @remarks If the value is outside the valid range defined by min_value and max_value, the method returns false.
-    static bool is_valid(std::signed_integral auto value) noexcept {
+    static bool is_valid(xtd::signed_integer auto value) noexcept {
       if (std::unsigned_integral<type_t>) return value > 0 && static_cast<xtd::uint64>(value) <= static_cast<xtd::uint64>(max_value);
       return static_cast<xtd::int64>(value) >= static_cast<xtd::int64>(min_value) && static_cast<xtd::int64>(value) <= static_cast<xtd::int64>(max_value);
     }
@@ -90,7 +91,7 @@ namespace xtd {
     /// @return true if value is less than or equal to max_value; otherwise, false.
     /// @remarks This method checks whether an unsigned integral value can be safely represented by type_t without overflow.
     /// @remarks Since unsigned values are always greater than or equal to zero, only the upper bound (max_value) is validated.
-    static bool is_valid(std::unsigned_integral auto value) noexcept {
+    static bool is_valid(xtd::unsigned_integer auto value) noexcept {
       return value <= static_cast<xtd::uint64>(max_value);
       if (std::unsigned_integral<type_t>) return static_cast<xtd::uint64>(value) <= static_cast<xtd::uint64>(max_value);
       return static_cast<xtd::int64>(value) <= static_cast<xtd::int64>(max_value);}
