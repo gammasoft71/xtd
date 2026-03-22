@@ -875,7 +875,7 @@ date_time& date_time::operator ++() {
   return self_;
 }
 
-date_time date_time::operator ++(int32) {
+date_time date_time::operator ++(int) {
   return date_time(value_++, kind_);
 }
 
@@ -884,7 +884,7 @@ date_time& date_time::operator --() {
   return self_;
 }
 
-date_time date_time::operator --(int32) {
+date_time date_time::operator --(int) {
   return date_time {value_--, kind_};
 }
 

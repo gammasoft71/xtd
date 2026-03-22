@@ -120,7 +120,7 @@ namespace xtd {
         directory_iterator(directory_iterator&&) = default;
         
         directory_iterator& operator ++();
-        directory_iterator operator ++(int32);
+        directory_iterator operator ++(int);
         value_type operator *() const;
         xtd::io::directory::directory_iterator begin() const;
         xtd::io::directory::directory_iterator end() const;
@@ -182,7 +182,7 @@ namespace xtd {
         file_system_entry_iterator(file_system_entry_iterator&&) = default;
         
         file_system_entry_iterator& operator ++();
-        file_system_entry_iterator operator ++(int32);
+        file_system_entry_iterator operator ++(int);
         value_type operator *() const;
         xtd::io::directory::file_system_entry_iterator begin() const;
         xtd::io::directory::file_system_entry_iterator end() const;

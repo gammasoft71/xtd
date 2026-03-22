@@ -1400,9 +1400,9 @@ namespace xtd {
     time_span operator -(const date_time& value) const;
     date_time operator -(const time_span& value) const;
     date_time& operator ++();
-    date_time operator ++(int32);
+    date_time operator ++(int);
     date_time& operator --();
-    date_time operator --(int32);
+    date_time operator --(int);
     friend auto operator << (std::ostream& os, const date_time& value) -> std::ostream& {return os << value.to_string();}
     /// @endcond
     
