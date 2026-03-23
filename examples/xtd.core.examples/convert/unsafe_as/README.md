@@ -1,6 +1,6 @@
 # as
 
-Shows how to use [xtd::unsafe::as](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operator.
+Shows how to use [xtd::unsafe::as](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1unsafe.html) operator.
 
 ## Sources
 
