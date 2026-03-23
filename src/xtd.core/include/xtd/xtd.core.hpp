@@ -601,6 +601,7 @@
 #include "uri_template_match_exception.hpp"
 #include "using.hpp"
 #include "ustring.hpp"
+#include "value_type.hpp"
 #include "version.hpp"
 #include "wasync.hpp"
 #include "wchar.hpp"

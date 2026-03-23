@@ -684,6 +684,8 @@ add_sources(
   "include/xtd/using"
   "include/xtd/ustring.hpp"
   "include/xtd/ustring"
+  "include/xtd/value_type.hpp"
+  "include/xtd/value_type"
   "include/xtd/version.hpp"
   "include/xtd/version"
   "include/xtd/wasync.hpp"
