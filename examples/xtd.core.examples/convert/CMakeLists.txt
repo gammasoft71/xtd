@@ -8,5 +8,6 @@ add_projects(
   to_byte
   to_int32
   to_string
+  unsafe_as
 )
 
