@@ -27,7 +27,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core system concepts
       /// @par Examples
-      /// The following code shows how to use xtd::collections::generic::enumerable conceps
+      /// The following code shows how to use xtd::collections::generic::enumerable concept
       /// @include generic_enumerable.cpp
       template <xtd::collections::generic::enumerable enumerable_type>
       using enumerable_value_type = xtd::raw_type<decltype(*std::begin(std::declval<enumerable_type&>()))>;
