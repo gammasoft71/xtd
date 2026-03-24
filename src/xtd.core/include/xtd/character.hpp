@@ -12,21 +12,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a character concept.
-  /// @par Definition
-  /// ```cpp
-  /// template<class type_t>
-  /// concept xtd::character = std::same_as<xtd::raw_type<type_t>, xtd::char_> || std::same_as<xtd::raw_type<type_t>, xtd::char8> || std::same_as<xtd::raw_type<type_t>, xtd::char16> || std::same_as<xtd::raw_type<type_t>, xtd::char32> || std::same_as<xtd::raw_type<type_t>, xtd::wchar>;
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/character>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core concepts
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/character_.hpp
   template<class type_t>
   concept character =
   std::same_as<xtd::raw_type<type_t>, xtd::char_> ||
