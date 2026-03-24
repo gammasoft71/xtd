@@ -13,6 +13,8 @@ var searchData=
   ['null_5fpointer_5fexception_10',['null_pointer_exception',['../classxtd_1_1null__pointer__exception.html',1,'xtd']]],
   ['null_5ftext_5freader_11',['null_text_reader',['../classxtd_1_1io_1_1null__text__reader.html',1,'xtd::io']]],
   ['null_5ftext_5fwriter_12',['null_text_writer',['../classxtd_1_1io_1_1null__text__writer.html',1,'xtd::io']]],
-  ['number_5fformat_5finfo_13',['number_format_info',['../classxtd_1_1globalization_1_1number__format__info.html',1,'xtd::globalization']]],
-  ['numeric_5fup_5fdown_14',['numeric_up_down',['../classxtd_1_1forms_1_1numeric__up__down.html',1,'xtd::forms']]]
+  ['number_13',['number',['../structxtd_1_1number.html',1,'xtd']]],
+  ['number_5fformat_5finfo_14',['number_format_info',['../classxtd_1_1globalization_1_1number__format__info.html',1,'xtd::globalization']]],
+  ['numeric_15',['numeric',['../structxtd_1_1numeric.html',1,'xtd']]],
+  ['numeric_5fup_5fdown_16',['numeric_up_down',['../classxtd_1_1forms_1_1numeric__up__down.html',1,'xtd::forms']]]
 ];

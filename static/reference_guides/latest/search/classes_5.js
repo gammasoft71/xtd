@@ -38,7 +38,9 @@ var searchData=
   ['form_5fcollection_35',['form_collection',['../classxtd_1_1forms_1_1form__collection.html',1,'xtd::forms']]],
   ['form_5frenderer_36',['form_renderer',['../classxtd_1_1forms_1_1form__renderer.html',1,'xtd::forms']]],
   ['format_5fexception_37',['format_exception',['../classxtd_1_1format__exception.html',1,'xtd']]],
-  ['formatter_38',['formatter',['../structxtd_1_1formatter.html',1,'xtd']]],
-  ['fourteen_5fsegment_5fdisplay_39',['fourteen_segment_display',['../classxtd_1_1forms_1_1fourteen__segment__display.html',1,'xtd::forms']]],
-  ['frame_5fdimension_40',['frame_dimension',['../classxtd_1_1drawing_1_1imaging_1_1frame__dimension.html',1,'xtd::drawing::imaging']]]
+  ['formatable_38',['formatable',['../structxtd_1_1formatable.html',1,'xtd']]],
+  ['formatter_39',['formatter',['../structxtd_1_1formatter.html',1,'xtd']]],
+  ['forward_5fiterable_40',['forward_iterable',['../structxtd_1_1forward__iterable.html',1,'xtd']]],
+  ['fourteen_5fsegment_5fdisplay_41',['fourteen_segment_display',['../classxtd_1_1forms_1_1fourteen__segment__display.html',1,'xtd::forms']]],
+  ['frame_5fdimension_42',['frame_dimension',['../classxtd_1_1drawing_1_1imaging_1_1frame__dimension.html',1,'xtd::drawing::imaging']]]
 ];
