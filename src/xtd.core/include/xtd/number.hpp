@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/number_.hpp
+  // Since Doxygen does not work properly with the C++ concept, the documentation for this concept is declared in xtd/number_.hpp
   template<typename value_t>
   concept number = xtd::numeric<value_t>;
 }
