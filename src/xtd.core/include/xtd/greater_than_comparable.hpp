@@ -8,21 +8,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept greater than comparable.
-  /// @par Definition
-  /// ```cpp
-  /// template<typename type_t>
-  /// concept xtd::greater_than_comparable = requires(const type_t& a, const type_t& b) {{ a > b } -> std::convertible_to<bool>;};
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/greater_than_comparable>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core helpers concepts
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/greater_than_comparable_.hpp
   template<typename type_t>
   concept greater_than_comparable = requires(const xtd::raw_type<type_t>& a, const xtd::raw_type<type_t>& b) {
     {a > b} -> std::convertible_to<bool>;
