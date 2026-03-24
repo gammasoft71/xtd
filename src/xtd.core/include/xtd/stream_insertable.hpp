@@ -7,25 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept stream_insertable.
-  /// @par Definition
-  /// ```cpp
-  /// template<class value_t>
-  /// concept xtd::stream_insertable;
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/stream_insertable>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core concepts
-  /// @return `true` if value_t has stream insertion operator `<<` specialization.
-  /// @par Examples
-  /// The following code shows how to use xtd::stream_insertable conceps
-  /// @include stream_insertable.cpp
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/stream_insertable_.hpp
   template<typename value_t>
   concept stream_insertable = xtd::is_stream_insertable_v<value_t>;
 }
