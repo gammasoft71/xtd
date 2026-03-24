@@ -8,21 +8,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represent a logical concept.
-  /// @par Definition
-  /// ```cpp
-  /// template<class type_t>
-  /// concept xtd::logical = std::same_as<xtd::raw_type<type_t>, xtd::boolean>;
-  /// ```
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/logical>
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core concepts
+  // Since Doxygen does not work properly with the C++20 concept, the documentation for this concept is declared in xtd/logical_.hpp
   template<class type_t>
   concept logical =
   std::same_as<xtd::raw_type<type_t>, xtd::boolean>;
