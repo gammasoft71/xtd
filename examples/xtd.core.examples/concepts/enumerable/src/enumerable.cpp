@@ -9,17 +9,17 @@ auto int_generator() -> enumerable_generator<int> {
 }
 
 template <collections::generic::enumerable enumerable_t>
-[[nodiscard]] auto as_enumerable(enumerable_t&& enumerable) -> enumerable_generator<enumerable_value_type<enumerable_t>> {
+[[nodiscard]] auto enumerate(enumerable_t&& enumerable) -> enumerable_generator<enumerable_value_type<enumerable_t>> {
   for (const auto& item : enumerable)
     co_yield item;
 }
 
 auto main() -> int {
-  for (auto item : as_enumerable(array {5, 1, 3, 4, 2}).select([](auto v) {return v * 2;}).order())
+  for (auto item : enumerate(array {5, 1, 3, 4, 2}).select([](auto v) {return v * 2;}).order())
     println("{,2}", item);
-  for (auto item : as_enumerable(list {10, 6, 8, 9, 7}).select([](auto v) {return v * 3;}).order())
+  for (auto item : enumerate(list {10, 6, 8, 9, 7}).select([](auto v) {return v * 3;}).order())
     println("{,2}", item);
-  for (auto item : as_enumerable(int_generator()).select([](auto v) {return v * 4;}).order())
+  for (auto item : enumerate(int_generator()).select([](auto v) {return v * 4;}).order())
     println("{,2}", item);
 }
 
