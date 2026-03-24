@@ -8,18 +8,18 @@ auto int_generator() -> enumerable_generator<int> {
   co_yield 12;
 }
 
-template <forward_iterable forward_iterable_type>
-[[nodiscard]] auto from_forward_iterable(forward_iterable_type&& iterable) -> enumerable_generator<forward_iterable_value_type<forward_iterable_type>> {
+template <forward_iterable iterable_t>
+[[nodiscard]] auto as_enumerable(iterable_t&& iterable) -> enumerable_generator<forward_iterable_value_type<iterable_t>> {
   for (const auto& item : iterable)
     co_yield item;
 }
 
 auto main() -> int {
-  for (auto item : from_forward_iterable(std::vector {5, 1, 3, 4, 2}).select([](auto v) {return v * 2;}).order())
+  for (auto item : as_enumerable(std::vector {5, 1, 3, 4, 2}).select([](auto v) {return v * 2;}).order())
     println("{,2}", item);
-  for (auto item : from_forward_iterable(list {10, 6, 8, 9, 7}).select([](auto v) {return v * 3;}).order())
+  for (auto item : as_enumerable(list {10, 6, 8, 9, 7}).select([](auto v) {return v * 3;}).order())
     println("{,2}", item);
-  for (auto item : from_forward_iterable(int_generator()).select([](auto v) {return v * 4;}).order())
+  for (auto item : as_enumerable(int_generator()).select([](auto v) {return v * 4;}).order())
     println("{,2}", item);
 }
 
