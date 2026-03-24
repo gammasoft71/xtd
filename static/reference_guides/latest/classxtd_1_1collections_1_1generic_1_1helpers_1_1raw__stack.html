@@ -96,7 +96,7 @@ Inheritance diagram for xtd::collections::generic::helpers::raw_stack&lt; type_t
   <img src="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.png" alt=""/>
  </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt;<br />
 class xtd::collections::generic::helpers::raw_stack&lt; type_t, container_t &gt;</div><p>Provides a raw, contiguous memory based LIFO (last-in, first-out) stack. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/helpers/raw_stack&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -150,10 +150,10 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:aa891da0afdf5511e35430c152e147ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
 <tr class="memitem:a9bbe03ed4bb9d572b72acab8fb2faace" id="r_a9bbe03ed4bb9d572b72acab8fb2faace"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9bbe03ed4bb9d572b72acab8fb2faace">raw_stack</a> (raw_stack &amp;&amp;other)</td></tr>
 <tr class="memdesc:a9bbe03ed4bb9d572b72acab8fb2faace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <br /></td></tr>
-<tr class="memitem:a83be028315bb4688982bd76d885c0efc" id="r_a83be028315bb4688982bd76d885c0efc"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:a83be028315bb4688982bd76d885c0efc" id="r_a83be028315bb4688982bd76d885c0efc"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a83be028315bb4688982bd76d885c0efc template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a83be028315bb4688982bd76d885c0efc">raw_stack</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
 <tr class="memdesc:a83be028315bb4688982bd76d885c0efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stack from a range of iterators.  <br /></td></tr>
-<tr class="memitem:a1353556483a15d8aba760f2983c2a713" id="r_a1353556483a15d8aba760f2983c2a713"><td class="memTemplParams" colspan="2">template&lt;class allocator_t&gt; </td></tr>
+<tr class="memitem:a1353556483a15d8aba760f2983c2a713" id="r_a1353556483a15d8aba760f2983c2a713"><td class="memTemplParams" colspan="2">template&lt;typename allocator_t&gt; </td></tr>
 <tr class="memitem:a1353556483a15d8aba760f2983c2a713 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1353556483a15d8aba760f2983c2a713">raw_stack</a> (const allocator_t &amp;alloc)</td></tr>
 <tr class="memdesc:a1353556483a15d8aba760f2983c2a713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a stack with a specific allocator.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -217,7 +217,7 @@ Public Operators</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::base_type</td>
@@ -235,7 +235,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::container_type</td>
@@ -253,7 +253,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::value_type</td>
@@ -271,7 +271,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::size_type</td>
@@ -289,7 +289,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::reference</td>
@@ -307,7 +307,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::const_reference</td>
@@ -325,7 +325,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::const_iterator</td>
@@ -343,7 +343,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__stack.html">xtd::collections::generic::helpers::raw_stack</a>&lt; type_t, container_t &gt;::const_reverse_iterator</td>
@@ -362,7 +362,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -392,7 +392,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -428,7 +428,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -457,7 +457,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -493,9 +493,9 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -541,9 +541,9 @@ template&lt;class input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class allocator_t&gt; </div>
+template&lt;typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -573,7 +573,7 @@ template&lt;class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -603,7 +603,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -633,7 +633,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -663,7 +663,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -693,7 +693,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -723,7 +723,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -753,7 +753,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -783,7 +783,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -813,7 +813,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -843,7 +843,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -873,7 +873,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -903,7 +903,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -933,7 +933,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -962,7 +962,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -998,7 +998,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1034,7 +1034,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1064,7 +1064,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1100,7 +1100,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1130,7 +1130,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1159,7 +1159,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1188,7 +1188,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1217,7 +1217,7 @@ template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class container_t = std::deque&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename container_t = std::deque&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

@@ -119,12 +119,12 @@ Public Properties</h2></td></tr>
 <tr class="memdesc:ade8596c339dda574eaf289f9aae53637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the exception that's represented by the current instance.  <br /></td></tr>
 <tr class="memitem:a69d6192580b3be03091dcc8f0d4fe26e" id="r_a69d6192580b3be03091dcc8f0d4fe26e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a69d6192580b3be03091dcc8f0d4fe26e">rethrow</a> () -&gt; void</td></tr>
 <tr class="memdesc:a69d6192580b3be03091dcc8f0d4fe26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rethrows the exception that's represented by the current <a class="el" href="classxtd_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::exception_services::exception_dispatch_info</a> object, after restoring the state that was saved when the exception was captured.  <br /></td></tr>
-<tr class="memitem:a50901ae564d6937ff83c04f405f316f8" id="r_a50901ae564d6937ff83c04f405f316f8"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
+<tr class="memitem:a50901ae564d6937ff83c04f405f316f8" id="r_a50901ae564d6937ff83c04f405f316f8"><td class="memTemplParams" colspan="2">template&lt;typename exception_t&gt; </td></tr>
 <tr class="memitem:a50901ae564d6937ff83c04f405f316f8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a50901ae564d6937ff83c04f405f316f8">capture</a> (const exception_t &amp;source) -&gt; exception_dispatch_info</td></tr>
 <tr class="memdesc:a50901ae564d6937ff83c04f405f316f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
 <tr class="memitem:a51ce3c1c3c2de8c7247787ec7a8dbcc3" id="r_a51ce3c1c3c2de8c7247787ec7a8dbcc3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a51ce3c1c3c2de8c7247787ec7a8dbcc3">capture</a> () -&gt; exception_dispatch_info</td></tr>
 <tr class="memdesc:a51ce3c1c3c2de8c7247787ec7a8dbcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1exception__services_1_1exception__dispatch__info.html" title="Represents an exception whose state is captured at a certain point in code.">xtd::exception_services::exception_dispatch_info</a> object that represents the specified exception at the current point in code.  <br /></td></tr>
-<tr class="memitem:a82b0bbb690f68b09aef5215241ca7b99" id="r_a82b0bbb690f68b09aef5215241ca7b99"><td class="memTemplParams" colspan="2">template&lt;class exception_t&gt; </td></tr>
+<tr class="memitem:a82b0bbb690f68b09aef5215241ca7b99" id="r_a82b0bbb690f68b09aef5215241ca7b99"><td class="memTemplParams" colspan="2">template&lt;typename exception_t&gt; </td></tr>
 <tr class="memitem:a82b0bbb690f68b09aef5215241ca7b99 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a82b0bbb690f68b09aef5215241ca7b99">rethrow</a> (const exception_t &amp;source) -&gt; void</td></tr>
 <tr class="memdesc:a82b0bbb690f68b09aef5215241ca7b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rehrows the source exception, maintaining the original stack trace information.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -147,15 +147,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
 <tr class="memdesc:aeb2a619fcb313fde8d247463c1f2df18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -223,7 +223,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class exception_t&gt; </div>
+template&lt;typename exception_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -320,7 +320,7 @@ If the exception is active when it's captured, the current stack trace informati
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class exception_t&gt; </div>
+template&lt;typename exception_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

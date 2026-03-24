@@ -102,7 +102,7 @@ Inheritance diagram for xtd::text::basic_string_builder&lt; char_t, traits_t, al
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt;<br />
 class xtd::text::basic_string_builder&lt; char_t, traits_t, allocator_t &gt;</div><p>Represents a mutable string of characters. This class cannot be inherited. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1text.html" title="Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...">xtd::text</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -219,10 +219,10 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a56b43fccbf6aebef6e176b699a44c63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> with specified string to copy.  <br /></td></tr>
 <tr class="memitem:a3e09d04571bf80582564efa57e5de001" id="r_a3e09d04571bf80582564efa57e5de001"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e09d04571bf80582564efa57e5de001">basic_string_builder</a> (const std::basic_string&lt; <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; &amp;str, const <a class="el" href="#aeb22ca3eb2fea9a222bddac1b5282675">allocator_type</a> &amp;allocator) noexcept</td></tr>
 <tr class="memdesc:a3e09d04571bf80582564efa57e5de001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> with specified string to copy and allocator.  <br /></td></tr>
-<tr class="memitem:a124dac9dfd4970e6409eb140fb4d21c3" id="r_a124dac9dfd4970e6409eb140fb4d21c3"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:a124dac9dfd4970e6409eb140fb4d21c3" id="r_a124dac9dfd4970e6409eb140fb4d21c3"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a124dac9dfd4970e6409eb140fb4d21c3 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a124dac9dfd4970e6409eb140fb4d21c3">basic_string_builder</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
 <tr class="memdesc:a124dac9dfd4970e6409eb140fb4d21c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> with specified first and last iterators of substring.  <br /></td></tr>
-<tr class="memitem:abca9835968f490d8e16087d3a3374768" id="r_abca9835968f490d8e16087d3a3374768"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:abca9835968f490d8e16087d3a3374768" id="r_abca9835968f490d8e16087d3a3374768"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:abca9835968f490d8e16087d3a3374768 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abca9835968f490d8e16087d3a3374768">basic_string_builder</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, const <a class="el" href="#aeb22ca3eb2fea9a222bddac1b5282675">allocator_type</a> &amp;allocator)</td></tr>
 <tr class="memdesc:abca9835968f490d8e16087d3a3374768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> with specified first and last iterators of substring and allocator.  <br /></td></tr>
 <tr class="memitem:abe22469b9a3a43e3c96898f3f6fbbf65" id="r_abe22469b9a3a43e3c96898f3f6fbbf65"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abe22469b9a3a43e3c96898f3f6fbbf65">basic_string_builder</a> (std::initializer_list&lt; <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; il)</td></tr>
@@ -303,7 +303,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:ac677bb4edf37461afbf104b69cf31634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the string representation of a specified <a class="el" href="#afc4750931de93fb98ca4024209bd18cc" title="Represents the basic string value type.">xtd::text::basic_string_builder::value_type</a> value to this instance.  <br /></td></tr>
 <tr class="memitem:aff58065d10b7d0e7cfbfd9c3b2faa7bf" id="r_aff58065d10b7d0e7cfbfd9c3b2faa7bf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff58065d10b7d0e7cfbfd9c3b2faa7bf">append</a> (<a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> value, <a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> repeat_count) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:aff58065d10b7d0e7cfbfd9c3b2faa7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a specified number of copies of the string representation of a Unicode character to this instance.  <br /></td></tr>
-<tr class="memitem:a177b2122aa38178c7338585cd28eb1d0" id="r_a177b2122aa38178c7338585cd28eb1d0"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:a177b2122aa38178c7338585cd28eb1d0" id="r_a177b2122aa38178c7338585cd28eb1d0"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:a177b2122aa38178c7338585cd28eb1d0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a177b2122aa38178c7338585cd28eb1d0">append</a> (object_t value) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a177b2122aa38178c7338585cd28eb1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the string representation of a specified object to this instance.  <br /></td></tr>
 <tr class="memitem:a01f06d051f3ef431043374039ab374f3" id="r_a01f06d051f3ef431043374039ab374f3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a01f06d051f3ef431043374039ab374f3">append</a> (<a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> count, <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> ch) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
@@ -318,18 +318,18 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:aa86e0b475ca31fb589aac89bfb775f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends additional characters to the string.  <br /></td></tr>
 <tr class="memitem:ae26288c9e4accfea177674664c72ae9d" id="r_ae26288c9e4accfea177674664c72ae9d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae26288c9e4accfea177674664c72ae9d">append</a> (<a class="el" href="#a5c11cf7a49f5f7c9bea14c37f003fafa">const_pointer</a> s) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:ae26288c9e4accfea177674664c72ae9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends additional characters to the string.  <br /></td></tr>
-<tr class="memitem:a54e969c94431ad625c0da0ce2d1a64a7" id="r_a54e969c94431ad625c0da0ce2d1a64a7"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:a54e969c94431ad625c0da0ce2d1a64a7" id="r_a54e969c94431ad625c0da0ce2d1a64a7"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a54e969c94431ad625c0da0ce2d1a64a7 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a54e969c94431ad625c0da0ce2d1a64a7">append</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a54e969c94431ad625c0da0ce2d1a64a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends additional characters to the string.  <br /></td></tr>
 <tr class="memitem:a0189e6f043b9bbaae1d67ea3da0d08bd" id="r_a0189e6f043b9bbaae1d67ea3da0d08bd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0189e6f043b9bbaae1d67ea3da0d08bd">append</a> (std::initializer_list&lt; <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> &gt; ilist) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a0189e6f043b9bbaae1d67ea3da0d08bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends additional characters to the string.  <br /></td></tr>
-<tr class="memitem:aaf17343486a9520ff73e2aa6187ed3cb" id="r_aaf17343486a9520ff73e2aa6187ed3cb"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:aaf17343486a9520ff73e2aa6187ed3cb" id="r_aaf17343486a9520ff73e2aa6187ed3cb"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:aaf17343486a9520ff73e2aa6187ed3cb template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf17343486a9520ff73e2aa6187ed3cb">append_format</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args_t &amp;&amp;... args) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:aaf17343486a9520ff73e2aa6187ed3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a corresponding argument in a parameters.  <br /></td></tr>
-<tr class="memitem:a3978d94e2b9bf2da2c0f4659b37dea1b" id="r_a3978d94e2b9bf2da2c0f4659b37dea1b"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a3978d94e2b9bf2da2c0f4659b37dea1b" id="r_a3978d94e2b9bf2da2c0f4659b37dea1b"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a3978d94e2b9bf2da2c0f4659b37dea1b template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3978d94e2b9bf2da2c0f4659b37dea1b">append_join</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;separator, const collection_t &amp;values) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a3978d94e2b9bf2da2c0f4659b37dea1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates and appends the members of a collection, using the specified separator between each member.  <br /></td></tr>
-<tr class="memitem:a592ac55d7dd485edfc507305a5828076" id="r_a592ac55d7dd485edfc507305a5828076"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a592ac55d7dd485edfc507305a5828076" id="r_a592ac55d7dd485edfc507305a5828076"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a592ac55d7dd485edfc507305a5828076 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a592ac55d7dd485edfc507305a5828076">append_join</a> (<a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> separator, const collection_t &amp;values) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a592ac55d7dd485edfc507305a5828076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates and appends the members of a collection, using the specified xtd::basic_string_builder::value_type separator between each member.  <br /></td></tr>
 <tr class="memitem:a8b5dbf78262f776d6ee03971c7c530a4" id="r_a8b5dbf78262f776d6ee03971c7c530a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8b5dbf78262f776d6ee03971c7c530a4">append_line</a> () -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
@@ -382,7 +382,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a571ac1d4da536ca0470c347bb21eea25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the string representation of a specified Unicode character into this instance at the specified character position.  <br /></td></tr>
 <tr class="memitem:a85ce3c34f9810deaec61a8df7ba27e52" id="r_a85ce3c34f9810deaec61a8df7ba27e52"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a85ce3c34f9810deaec61a8df7ba27e52">insert</a> (<a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> index, <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> value, <a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> repeat_count) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:a85ce3c34f9810deaec61a8df7ba27e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a specified number of copies of the string representation of a Unicode character to this instance at the specified character position.  <br /></td></tr>
-<tr class="memitem:ade9b0dcd2d77b8bbb804a677a6a7f018" id="r_ade9b0dcd2d77b8bbb804a677a6a7f018"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ade9b0dcd2d77b8bbb804a677a6a7f018" id="r_ade9b0dcd2d77b8bbb804a677a6a7f018"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ade9b0dcd2d77b8bbb804a677a6a7f018 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ade9b0dcd2d77b8bbb804a677a6a7f018">insert</a> (<a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> index, object_t value) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
 <tr class="memdesc:ade9b0dcd2d77b8bbb804a677a6a7f018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the string representation of a specified object into this instance at the specified character position.  <br /></td></tr>
 <tr class="memitem:afd18927cb6acee9080bf06ab3ab2386c" id="r_afd18927cb6acee9080bf06ab3ab2386c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afd18927cb6acee9080bf06ab3ab2386c">insert</a> (<a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> index, <a class="el" href="#a00d3525c87b582cd9dbf27852cf1199f">size_type</a> count, <a class="el" href="#afc4750931de93fb98ca4024209bd18cc">value_type</a> ch) -&gt; <a class="el" href="#a6bbc2dc030748cdd71c255645df68db7">basic_string_builder</a> &amp;</td></tr>
@@ -455,15 +455,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const type_t &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -474,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::base_type</td>
@@ -493,7 +493,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::traits_type</td>
@@ -511,7 +511,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::value_type</td>
@@ -529,7 +529,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::allocator_type</td>
@@ -547,7 +547,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::size_type</td>
@@ -565,7 +565,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::difference_type</td>
@@ -583,7 +583,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::reference</td>
@@ -601,7 +601,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::const_reference</td>
@@ -619,7 +619,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::pointer</td>
@@ -637,7 +637,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::const_pointer</td>
@@ -655,7 +655,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::iterator</td>
@@ -674,7 +674,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::const_iterator</td>
@@ -693,7 +693,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::reverse_iterator</td>
@@ -711,7 +711,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a>&lt; char_t, traits_t, allocator_t &gt;::const_reverse_iterator</td>
@@ -730,7 +730,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -762,7 +762,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -810,7 +810,7 @@ The string value of this instance is set to <a class="el" href="classxtd_1_1basi
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -866,7 +866,7 @@ The <span class="tt"><a class="el" href="#a21b37f354ed1d1d353c07b71fd563e0d" tit
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -904,7 +904,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -949,7 +949,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1015,7 +1015,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1050,7 +1050,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1085,7 +1085,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1125,7 +1125,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1171,7 +1171,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1223,7 +1223,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1275,7 +1275,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1333,7 +1333,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1368,7 +1368,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1408,7 +1408,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1447,7 +1447,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1493,7 +1493,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1533,7 +1533,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1579,7 +1579,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1614,7 +1614,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1654,7 +1654,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1693,7 +1693,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1739,7 +1739,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1774,7 +1774,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1814,9 +1814,9 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1856,9 +1856,9 @@ template&lt;class input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1904,7 +1904,7 @@ template&lt;class input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1939,7 +1939,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1980,7 +1980,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2010,7 +2010,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2040,7 +2040,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2081,7 +2081,7 @@ Writing to the character array accessed through <a class="el" href="#a0a11fb937a
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2111,7 +2111,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2146,7 +2146,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2176,7 +2176,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2206,7 +2206,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2236,7 +2236,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2266,7 +2266,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2305,7 +2305,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2344,7 +2344,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2374,7 +2374,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2404,7 +2404,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2434,7 +2434,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2473,7 +2473,7 @@ The <a class="el" href="#af4661eb652eca22f370347dc32df1339" title="Gets or sets 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2524,7 +2524,7 @@ The <a class="el" href="#af4661eb652eca22f370347dc32df1339" title="Gets or sets 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2554,7 +2554,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2584,7 +2584,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2641,7 +2641,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2721,7 +2721,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2775,7 +2775,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2831,7 +2831,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2885,7 +2885,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2939,7 +2939,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2993,7 +2993,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3047,7 +3047,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3101,7 +3101,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3155,7 +3155,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3210,7 +3210,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3264,7 +3264,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3318,7 +3318,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3372,7 +3372,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3430,7 +3430,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3489,9 +3489,9 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3571,7 +3571,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3622,7 +3622,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3668,7 +3668,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3723,7 +3723,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3784,7 +3784,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3837,7 +3837,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3883,9 +3883,9 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3937,7 +3937,7 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3983,9 +3983,9 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
+template&lt;typename ... args_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4058,9 +4058,9 @@ The capacity of this instance is adjusted as needed. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4109,9 +4109,9 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4160,7 +4160,7 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4198,7 +4198,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4242,7 +4242,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4275,7 +4275,7 @@ All pointers, references, and iterators are invalidated. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4338,7 +4338,7 @@ For example, your code could populate a <a class="el" href="classxtd_1_1text_1_1
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4376,7 +4376,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4413,7 +4413,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4456,7 +4456,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4486,7 +4486,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4518,7 +4518,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4570,7 +4570,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4628,7 +4628,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4680,7 +4680,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4732,7 +4732,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4784,7 +4784,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4836,7 +4836,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4888,7 +4888,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4940,7 +4940,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4992,7 +4992,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5044,7 +5044,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5096,7 +5096,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5147,7 +5147,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5199,7 +5199,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5251,7 +5251,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5303,7 +5303,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5361,9 +5361,9 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5421,7 +5421,7 @@ This instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5476,7 +5476,7 @@ Enlarging the value of this instance would exceed <a class="el" href="#a21b37f35
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5538,7 +5538,7 @@ auto insert(size_type index, const_pointer s) -&gt; <a class="el" href="classxtd
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5587,7 +5587,7 @@ Enlarging the value of this instance would exceed <a class="el" href="#a21b37f35
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5668,7 +5668,7 @@ auto <a class="el" href="#ac4165b63e45246678f62ee844dc7d430" title="Inserts a st
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5710,7 +5710,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5764,7 +5764,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5838,7 +5838,7 @@ Enlarging the value of this instance would exceed <a class="el" href="#a21b37f35
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5904,7 +5904,7 @@ auto <a class="el" href="#ad6ecd8d9979ab46624ff73afbbe072a0" title="Replaces all
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5964,7 +5964,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6019,7 +6019,7 @@ If [<span class="tt">cstr</span>, <span class="tt">cstr + count2</span>) is not 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6082,7 +6082,7 @@ auto replace(const_iterator first, const_iterator last, const_pointer cstr, size
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6146,7 +6146,7 @@ auto replace(const_iterator first, const_iterator last, const_pointer cstr) -&gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6189,7 +6189,7 @@ auto replace(const_iterator first, const_iterator last, size_type count2, value_
     @param last2 The <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d" title="Obtains a subspan consisting of the last N elements of the sequence.">last</a> itrator of range of characters to use for replacement.
     @return This current instance of <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a>.
     @remarks Those characters are replaced with the characters in the range [</span>first2<span class="tt">, </span>last2<span class="tt">) <a class="el" href="group__xtd__core.html#ga64df7eb27c64ffe5ab208756cbc26cf3" title="Casts a type into another type.">as</a> if by </span>replace(first, last, basic_string(first2, last2, get_allocator()))<span class="tt">.
-    @remarks If [</span><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a><span class="tt">, </span>first<span class="tt">) or [</span>first<span class="tt">, <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d" title="Obtains a subspan consisting of the last N elements of the sequence.">last</a></span>) is not a valid range, the behavior is undefined. */ template&lt;class input_iterator_t&gt; auto replace(const_iterator first, const_iterator last, input_iterator_t first2, input_iterator_t last2) -&gt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">basic_string_builder</a>&amp; { chars_.replace(first, last, first2, last2); return (*this) ; } /** Replaces the characters in the range [<span class="tt"><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a> + pos</span>, <span class="tt"><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a> + std::min(pos + count, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>)</span>) or [<span class="tt"><a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a></span>, <span class="tt"><a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d" title="Obtains a subspan consisting of the last N elements of the sequence.">last</a></span>) with given characters. </dd></dl>
+    @remarks If [</span><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a><span class="tt">, </span>first<span class="tt">) or [</span>first<span class="tt">, <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d" title="Obtains a subspan consisting of the last N elements of the sequence.">last</a></span>) is not a valid range, the behavior is undefined. */ template&lt;typename input_iterator_t&gt; auto replace(const_iterator first, const_iterator last, input_iterator_t first2, input_iterator_t last2) -&gt; <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">basic_string_builder</a>&amp; { chars_.replace(first, last, first2, last2); return (*this) ; } /** Replaces the characters in the range [<span class="tt"><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a> + pos</span>, <span class="tt"><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" title="Returns an iterator to the first character of the string.">begin()</a> + std::min(pos + count, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>)</span>) or [<span class="tt"><a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a></span>, <span class="tt"><a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d" title="Obtains a subspan consisting of the last N elements of the sequence.">last</a></span>) with given characters. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f" title="Obtains a subspan consisting of the first count elements of the sequence.">first</a></td><td>The first itrator of range of characters that is going to be replaced. </td></tr>
@@ -6215,7 +6215,7 @@ If [<span class="tt"><a class="el" href="#ae64bd5867f0771e5bbe0bff040e35146" tit
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6257,7 +6257,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6299,7 +6299,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6329,7 +6329,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6359,7 +6359,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6395,7 +6395,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6431,7 +6431,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6467,7 +6467,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6503,7 +6503,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6539,7 +6539,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6575,7 +6575,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6617,7 +6617,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6653,7 +6653,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6689,7 +6689,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6725,7 +6725,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6761,7 +6761,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6797,7 +6797,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6834,7 +6834,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6865,7 +6865,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6897,7 +6897,7 @@ template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t = std::char_traits&lt;char_t&gt;, class allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
+template&lt;typename char_t, typename traits_t = std::char_traits&lt;char_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;char_t &gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

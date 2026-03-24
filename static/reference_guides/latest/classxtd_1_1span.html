@@ -102,9 +102,9 @@ Inheritance diagram for xtd::span&lt; type_t, extent &gt;:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt;<br />
 class xtd::span&lt; type_t, extent &gt;</div><p>Represents a non-owning view over a contiguous sequence of objects. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, xtd::size extent = dynamic_extent&gt;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, xtd::size extent = dynamic_extent&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a74d48b0a681a79ef10c79b8d4810d437">span</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::span&lt;type_t, extent&gt;&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:45</div></div>
@@ -251,27 +251,27 @@ Public Constructors</h2></td></tr>
 <tr class="memitem:a74d48b0a681a79ef10c79b8d4810d437" id="r_a74d48b0a681a79ef10c79b8d4810d437"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count = 0&gt; </td></tr>
 <tr class="memitem:a74d48b0a681a79ef10c79b8d4810d437 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a74d48b0a681a79ef10c79b8d4810d437">span</a> ()</td></tr>
 <tr class="memdesc:a74d48b0a681a79ef10c79b8d4810d437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> whose <a class="el" href="#a2bdd4be772fff0a8157cfdd209fe24e3" title="Gets direct access to the underlying contiguous storage.">xtd::span::data</a> is null and <a class="el" href="#af6f98a51149f6eb2722259dd1de148ec" title="Returns the number of elements.">xtd::span::size</a> is 0.  <br /></td></tr>
-<tr class="memitem:a7cbf3a6b889c696d0e1cf5117db6c167" id="r_a7cbf3a6b889c696d0e1cf5117db6c167"><td class="memTemplParams" colspan="2">template&lt;class iterator_t&gt; </td></tr>
+<tr class="memitem:a7cbf3a6b889c696d0e1cf5117db6c167" id="r_a7cbf3a6b889c696d0e1cf5117db6c167"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t&gt; </td></tr>
 <tr class="memitem:a7cbf3a6b889c696d0e1cf5117db6c167 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a7cbf3a6b889c696d0e1cf5117db6c167">span</a> (iterator_t <a class="el" href="#a28ca7fbc2221b70c8ae7016443ecee3a">first</a>, iterator_t <a class="el" href="#a94fdb7cbc08a50d96e916bbecc8f6c9a">last</a>)</td></tr>
 <tr class="memdesc:a7cbf3a6b889c696d0e1cf5117db6c167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified iterators.  <br /></td></tr>
 <tr class="memitem:a0c5b490092f6baac1d056ec76a5b3702" id="r_a0c5b490092f6baac1d056ec76a5b3702"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </td></tr>
 <tr class="memitem:a0c5b490092f6baac1d056ec76a5b3702 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a0c5b490092f6baac1d056ec76a5b3702">span</a> (<a class="el" href="#ab813979acabeb4cbb9dde8f4f492e33e">element_type</a>(&amp;<a class="el" href="classxtd_1_1array.html">array</a>)[len]) noexcept</td></tr>
 <tr class="memdesc:a0c5b490092f6baac1d056ec76a5b3702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified native array.  <br /></td></tr>
-<tr class="memitem:a085891c610710a74a0209b9036a71060" id="r_a085891c610710a74a0209b9036a71060"><td class="memTemplParams" colspan="2">template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </td></tr>
+<tr class="memitem:a085891c610710a74a0209b9036a71060" id="r_a085891c610710a74a0209b9036a71060"><td class="memTemplParams" colspan="2">template&lt;typename array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </td></tr>
 <tr class="memitem:a085891c610710a74a0209b9036a71060 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a085891c610710a74a0209b9036a71060">span</a> (const std::array&lt; array_type_t, len &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) noexcept</td></tr>
 <tr class="memdesc:a085891c610710a74a0209b9036a71060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified std::array.  <br /></td></tr>
-<tr class="memitem:a8fbc96d1dd903329e4c0d639118f87ea" id="r_a8fbc96d1dd903329e4c0d639118f87ea"><td class="memTemplParams" colspan="2">template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </td></tr>
+<tr class="memitem:a8fbc96d1dd903329e4c0d639118f87ea" id="r_a8fbc96d1dd903329e4c0d639118f87ea"><td class="memTemplParams" colspan="2">template&lt;typename array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </td></tr>
 <tr class="memitem:a8fbc96d1dd903329e4c0d639118f87ea template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a8fbc96d1dd903329e4c0d639118f87ea">span</a> (std::array&lt; array_type_t, len &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) noexcept</td></tr>
 <tr class="memdesc:a8fbc96d1dd903329e4c0d639118f87ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified std::array.  <br /></td></tr>
-<tr class="memitem:a1c2c64643af26723354661070fca48aa" id="r_a1c2c64643af26723354661070fca48aa"><td class="memTemplParams" colspan="2">template&lt;class range_t&gt; </td></tr>
+<tr class="memitem:a1c2c64643af26723354661070fca48aa" id="r_a1c2c64643af26723354661070fca48aa"><td class="memTemplParams" colspan="2">template&lt;typename range_t&gt; </td></tr>
 <tr class="memitem:a1c2c64643af26723354661070fca48aa template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a1c2c64643af26723354661070fca48aa">span</a> (range_t &amp;&amp;range) noexcept</td></tr>
 <tr class="memdesc:a1c2c64643af26723354661070fca48aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified range.  <br /></td></tr>
 <tr class="memitem:afcdcb8880025565d35c9af5d02d762f2" id="r_afcdcb8880025565d35c9af5d02d762f2"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#afcdcb8880025565d35c9af5d02d762f2">span</a> (std::initializer_list&lt; type_t &gt; items) noexcept</td></tr>
 <tr class="memdesc:afcdcb8880025565d35c9af5d02d762f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified initializer list.  <br /></td></tr>
-<tr class="memitem:af091093546285d50623dbe801f8aea34" id="r_af091093546285d50623dbe801f8aea34"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:af091093546285d50623dbe801f8aea34" id="r_af091093546285d50623dbe801f8aea34"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:af091093546285d50623dbe801f8aea34 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#af091093546285d50623dbe801f8aea34">span</a> (collection_t &amp;items, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
 <tr class="memdesc:af091093546285d50623dbe801f8aea34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count.  <br /></td></tr>
-<tr class="memitem:a95959e101619ce5fcba0973dad2311e0" id="r_a95959e101619ce5fcba0973dad2311e0"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a95959e101619ce5fcba0973dad2311e0" id="r_a95959e101619ce5fcba0973dad2311e0"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a95959e101619ce5fcba0973dad2311e0 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a95959e101619ce5fcba0973dad2311e0">span</a> (collection_t &amp;items, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> start, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
 <tr class="memdesc:a95959e101619ce5fcba0973dad2311e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection, offest and count.  <br /></td></tr>
 <tr class="memitem:ae07642e51c5bc9ed57117117ba4a5954" id="r_ae07642e51c5bc9ed57117117ba4a5954"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ae07642e51c5bc9ed57117117ba4a5954">span</a> (type_t *const <a class="el" href="#a2bdd4be772fff0a8157cfdd209fe24e3">data</a>, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
@@ -339,15 +339,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const type_t &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -358,7 +358,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::element_type</td>
@@ -376,7 +376,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::value_type</td>
@@ -394,7 +394,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::size_type</td>
@@ -412,7 +412,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::difference_type</td>
@@ -430,7 +430,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::pointer</td>
@@ -448,7 +448,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_pointer</td>
@@ -466,7 +466,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::reference</td>
@@ -484,7 +484,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_reference</td>
@@ -502,7 +502,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::iterator</td>
@@ -520,7 +520,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_iterator</td>
@@ -538,7 +538,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::reverse_iterator</td>
@@ -556,7 +556,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_reverse_iterator</td>
@@ -575,7 +575,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count = 0&gt; </div>
 <table class="mlabels">
@@ -606,9 +606,9 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class iterator_t&gt; </div>
+template&lt;typename iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -648,7 +648,7 @@ template&lt;class iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
 <table class="mlabels">
@@ -685,9 +685,9 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
+template&lt;typename array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -722,9 +722,9 @@ template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b82
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
+template&lt;typename array_type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> len&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -759,9 +759,9 @@ template&lt;class array_type_t, <a class="el" href="group__types.html#ga221e5b82
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class range_t&gt; </div>
+template&lt;typename range_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -796,7 +796,7 @@ template&lt;class range_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -831,9 +831,9 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -879,9 +879,9 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -933,7 +933,7 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -974,7 +974,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1010,7 +1010,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1040,7 +1040,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1070,7 +1070,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1100,7 +1100,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1130,7 +1130,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1160,7 +1160,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1190,7 +1190,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1220,7 +1220,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1250,7 +1250,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1280,7 +1280,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1310,7 +1310,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1346,7 +1346,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1376,7 +1376,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1406,7 +1406,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1436,7 +1436,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1466,7 +1466,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1496,7 +1496,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1526,7 +1526,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1556,7 +1556,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1586,7 +1586,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1628,7 +1628,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1670,7 +1670,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1700,7 +1700,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length&gt; </div>
 <table class="mlabels">
@@ -1743,7 +1743,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1781,7 +1781,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1817,7 +1817,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1852,7 +1852,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count&gt; </div>
 <table class="mlabels">
@@ -1890,7 +1890,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1926,7 +1926,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1958,7 +1958,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count&gt; </div>
 <table class="mlabels">
@@ -1996,7 +1996,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2032,7 +2032,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> lenght = xtd::dynamic_extent&gt; </div>
 <table class="mlabels">
@@ -2077,7 +2077,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2119,7 +2119,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2166,7 +2166,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="#a4dab3665205c1aac0e5749a643510256">size_type</a> count = xtd::dynamic_extent&gt; </div>
 <table class="mlabels">
@@ -2211,7 +2211,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2258,7 +2258,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2288,7 +2288,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2321,7 +2321,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <div class="memtemplate">
 template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> length&gt; </div>
 <table class="mlabels">
@@ -2360,7 +2360,7 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2402,7 +2402,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2445,7 +2445,7 @@ template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;typename type_t, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> extent = dynamic_extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

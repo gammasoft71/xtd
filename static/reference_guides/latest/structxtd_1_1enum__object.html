@@ -107,9 +107,9 @@ Inheritance diagram for xtd::enum_object&lt; enum_t &gt;:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class enum_t = std::nullptr_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename enum_t = std::nullptr_t&gt;<br />
 struct xtd::enum_object&lt; enum_t &gt;</div><p>Provides the base class for enumerations. </p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> enum_t = std::<span class="keywordtype">nullptr</span>_t&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t = std::<span class="keywordtype">nullptr</span>_t&gt;</div>
 <div class="line"><span class="keyword">struct </span><a class="code hl_function" href="#ad83a0a2f3a6287e2b47e7c2271bf8088">enum_object</a> : <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <a class="code hl_class" href="classxtd_1_1icomparable.html">xtd::icomparable</a>&lt;enum_object&lt;enum_t&gt;&gt;, <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;enum_object&lt;enum_t&gt;&gt;, <a class="code hl_class" href="classxtd_1_1iformatable.html">xtd::iformatable</a>;</div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
@@ -218,7 +218,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a7854c2efb516c7ada1ea6dfe5558aa7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:ade2ca76218273c342516131e9ea361b7" id="r_ade2ca76218273c342516131e9ea361b7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ade2ca76218273c342516131e9ea361b7">equals</a> (<a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept</td></tr>
 <tr class="memdesc:ade2ca76218273c342516131e9ea361b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:ad75ecc4ea7a05157a027ccfb8b3fb7f3" id="r_ad75ecc4ea7a05157a027ccfb8b3fb7f3"><td class="memTemplParams" colspan="2">template&lt;class attribute_t&gt; </td></tr>
+<tr class="memitem:ad75ecc4ea7a05157a027ccfb8b3fb7f3" id="r_ad75ecc4ea7a05157a027ccfb8b3fb7f3"><td class="memTemplParams" colspan="2">template&lt;typename attribute_t&gt; </td></tr>
 <tr class="memitem:ad75ecc4ea7a05157a027ccfb8b3fb7f3 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad75ecc4ea7a05157a027ccfb8b3fb7f3">equals</a> (attribute_t <a class="el" href="#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>) const noexcept</td></tr>
 <tr class="memdesc:ad75ecc4ea7a05157a027ccfb8b3fb7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object with defferent type.  <br /></td></tr>
 <tr class="memitem:a751cb18de899f55a0d0bad16889d8c9e" id="r_a751cb18de899f55a0d0bad16889d8c9e"><td class="memItemLeft"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight"><a class="el" href="#a751cb18de899f55a0d0bad16889d8c9e">get_hash_code</a> () const noexcept override</td></tr>
@@ -257,17 +257,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const <a class="el" href="structxtd_1_1enum__object.html">enum_object</a>&lt; std::nullptr_t &gt; &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const <a class="el" href="structxtd_1_1enum__object.html">enum_object</a>&lt; std::nullptr_t &gt; &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -278,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::enum_type</td>
@@ -296,7 +296,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::value_type</td>
@@ -315,7 +315,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -344,7 +344,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -380,7 +380,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -419,7 +419,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -465,7 +465,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -503,7 +503,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -539,7 +539,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -575,9 +575,9 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <div class="memtemplate">
-template&lt;class attribute_t&gt; </div>
+template&lt;typename attribute_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -613,7 +613,7 @@ template&lt;class attribute_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -645,7 +645,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -675,7 +675,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -705,7 +705,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -735,7 +735,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -765,7 +765,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -795,7 +795,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -825,7 +825,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -855,7 +855,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -885,7 +885,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -917,7 +917,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -968,7 +968,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1023,7 +1023,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1060,7 +1060,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class enum_t = std::nullptr_t&gt; </div>
+template&lt;typename enum_t = std::nullptr_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="#a96fcf375790c9a544567f9a532b37c6c">enum_type</a> <a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object</a>&lt; enum_t &gt;::value</td>

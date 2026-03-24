@@ -109,7 +109,7 @@ Inheritance diagram for xtd::box_floating_point&lt; type_t &gt;:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t&gt;<br />
 class xtd::box_floating_point&lt; type_t &gt;</div><p>Represents a boxed floating point object. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1box__floating__point.html">box_floating_point</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structxtd_1_1box.html">xtd::box</a>&lt;type_t&gt;</div>
 <div class="ttc" id="aclassxtd_1_1box__floating__point_html"><div class="ttname"><a href="classxtd_1_1box__floating__point.html">xtd::box_floating_point</a></div><div class="ttdoc">Represents a boxed floating point object.</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:42</div></div>
@@ -183,7 +183,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a5e6950ecad0d9454193185bd48e170ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> object.  <br /></td></tr>
 <tr class="memitem:a971667ebd76171abde7165af082cf5ec" id="r_a971667ebd76171abde7165af082cf5ec"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a971667ebd76171abde7165af082cf5ec">box</a> (<a class="el" href="structxtd_1_1box.html#a96117dedaafd93a12a60eaef6a18d9aa">const_reference</a> <a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>)</td></tr>
 <tr class="memdesc:a971667ebd76171abde7165af082cf5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> object with specified value.  <br /></td></tr>
-<tr class="memitem:a38890a214912ba8d451ac6b98063398b" id="r_a38890a214912ba8d451ac6b98063398b"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:a38890a214912ba8d451ac6b98063398b" id="r_a38890a214912ba8d451ac6b98063398b"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:a38890a214912ba8d451ac6b98063398b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a38890a214912ba8d451ac6b98063398b">box</a> (args_t &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a38890a214912ba8d451ac6b98063398b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> object with specified value.  <br /></td></tr>
 <tr class="memitem:a8e2e94cbe5b1b4684a3b76bbc9122467" id="r_a8e2e94cbe5b1b4684a3b76bbc9122467"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a8e2e94cbe5b1b4684a3b76bbc9122467">operator value_type</a> () const noexcept</td></tr>
@@ -206,7 +206,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const type_t &amp;obj) const noexcept=0</td></tr>
@@ -225,10 +225,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad9d8855ee372e5a3520a218c434e1c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a></span> equivalent.  <br /></td></tr>
 <tr class="memitem:a1bcd653b5ebcdfa65de42df0a888ad2e" id="r_a1bcd653b5ebcdfa65de42df0a888ad2e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="structxtd_1_1box.html#a1bcd653b5ebcdfa65de42df0a888ad2e">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="structxtd_1_1box.html#aa386b4b7a8149a336dbdbc9a1180a8a4">value</a>, <a class="el" href="structxtd_1_1box.html#aa4e5555032a0c3ec377bdbb400ce8b74">reference</a> result) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a1bcd653b5ebcdfa65de42df0a888ad2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string to its <span class="tt"><a class="el" href="structxtd_1_1value__type.html" title="Represents a value_type struct.">value_type</a></span> equivalent. A return value indicates whether the conversion succeeded or failed.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -239,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -275,7 +275,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -311,7 +311,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -347,7 +347,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -383,7 +383,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -419,7 +419,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -457,7 +457,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -484,7 +484,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -511,7 +511,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -538,7 +538,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

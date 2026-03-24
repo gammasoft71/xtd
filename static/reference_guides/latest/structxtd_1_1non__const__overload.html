@@ -90,20 +90,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class ... args_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename ... args_t&gt;<br />
 struct xtd::non_const_overload&lt; args_t &gt;</div><p>Represents class that use to determine one of non const overloaded methods. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Operators</h2></td></tr>
-<tr class="memitem:ac4d6c9a5c1ae0599dd0be7fffd03ac05" id="r_ac4d6c9a5c1ae0599dd0be7fffd03ac05"><td class="memTemplParams" colspan="2">template&lt;class result_t, class type_t&gt; </td></tr>
+<tr class="memitem:ac4d6c9a5c1ae0599dd0be7fffd03ac05" id="r_ac4d6c9a5c1ae0599dd0be7fffd03ac05"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename type_t&gt; </td></tr>
 <tr class="memitem:ac4d6c9a5c1ae0599dd0be7fffd03ac05 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4d6c9a5c1ae0599dd0be7fffd03ac05">operator()</a> (result_t(type_t::*method)(args_t...)) const noexcept -&gt; decltype(method)</td></tr>
 <tr class="memdesc:ac4d6c9a5c1ae0599dd0be7fffd03ac05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Public Static Methods</h2></td></tr>
-<tr class="memitem:a4738e083706b9783ac1f2199f1685870" id="r_a4738e083706b9783ac1f2199f1685870"><td class="memTemplParams" colspan="2">template&lt;class result_t, class type_t&gt; </td></tr>
+<tr class="memitem:a4738e083706b9783ac1f2199f1685870" id="r_a4738e083706b9783ac1f2199f1685870"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename type_t&gt; </td></tr>
 <tr class="memitem:a4738e083706b9783ac1f2199f1685870 template"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a4738e083706b9783ac1f2199f1685870">of</a> (result_t(type_t::*method)(args_t...)) noexcept -&gt; decltype(method)</td></tr>
 <tr class="memdesc:a4738e083706b9783ac1f2199f1685870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.  <br /></td></tr>
 </table>
@@ -114,9 +114,9 @@ Public Static Methods</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
+template&lt;typename ... args_t&gt; </div>
 <div class="memtemplate">
-template&lt;class result_t, class type_t&gt; </div>
+template&lt;typename result_t, typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -152,9 +152,9 @@ template&lt;class result_t, class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
+template&lt;typename ... args_t&gt; </div>
 <div class="memtemplate">
-template&lt;class result_t, class type_t&gt; </div>
+template&lt;typename result_t, typename type_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

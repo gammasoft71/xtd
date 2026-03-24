@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">extern</span> std::unordered_map&lt;std::type_index, std::function&lt;std::string(<a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> <span class="keyword">const</span>&amp;)&gt;&gt; __any_stringer__;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">   33</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">unregister_any_stringer</a>() {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span> it = __any_stringer__.find(std::type_index(<span class="keyword">typeid</span>(type_t)));</div>

@@ -251,10 +251,10 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:aae783ac4add6c161de1e11f926d39c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to the specified year, month, day, hour, minute, second, and millisecond.  <br /></td></tr>
 <tr class="memitem:a0369194a9fc6564450a4e09f9083bec1" id="r_a0369194a9fc6564450a4e09f9083bec1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0369194a9fc6564450a4e09f9083bec1">date_time</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#a9f66207e64a3cdc030e9a3d98fc0c416">year</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#a800ef26e317f901a263d31e18319b4d7">month</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#a64d8c6b7c2a6ad3628934e5058cca23a">day</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#af6d5ec7775b954da23afcf5543cb7fbc">hour</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#a55d9fe3569709cbbb4b229cbf615d306">minute</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#ae084c4d68a46500b8e64f4aec4869a15">second</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#aab8d1f41e620866ff93a0a04a611940a">millisecond</a>, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
 <tr class="memdesc:a0369194a9fc6564450a4e09f9083bec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.  <br /></td></tr>
-<tr class="memitem:ab2c74f1580df9837bc86cca709ad4981" id="r_ab2c74f1580df9837bc86cca709ad4981"><td class="memTemplParams" colspan="2">template&lt;class clock_t, class duration_t = clock_t::duration&gt; </td></tr>
+<tr class="memitem:ab2c74f1580df9837bc86cca709ad4981" id="r_ab2c74f1580df9837bc86cca709ad4981"><td class="memTemplParams" colspan="2">template&lt;typename clock_t, typename duration_t = clock_t::duration&gt; </td></tr>
 <tr class="memitem:ab2c74f1580df9837bc86cca709ad4981 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab2c74f1580df9837bc86cca709ad4981">date_time</a> (const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;time_point)</td></tr>
 <tr class="memdesc:ab2c74f1580df9837bc86cca709ad4981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point.  <br /></td></tr>
-<tr class="memitem:a63d78408e788e58570f1792cf7d0113f" id="r_a63d78408e788e58570f1792cf7d0113f"><td class="memTemplParams" colspan="2">template&lt;class clock_t, class duration_t = clock_t::duration&gt; </td></tr>
+<tr class="memitem:a63d78408e788e58570f1792cf7d0113f" id="r_a63d78408e788e58570f1792cf7d0113f"><td class="memTemplParams" colspan="2">template&lt;typename clock_t, typename duration_t = clock_t::duration&gt; </td></tr>
 <tr class="memitem:a63d78408e788e58570f1792cf7d0113f template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a63d78408e788e58570f1792cf7d0113f">date_time</a> (const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;time_point, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
 <tr class="memdesc:a63d78408e788e58570f1792cf7d0113f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point, and Coordinated Universal Time (UTC) or local time.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -417,13 +417,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -1064,7 +1064,7 @@ millisecond is less than 0 or greater than 999. </td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class clock_t, class duration_t = clock_t::duration&gt; </div>
+template&lt;typename clock_t, typename duration_t = clock_t::duration&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1100,7 +1100,7 @@ template&lt;class clock_t, class duration_t = clock_t::duration&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class clock_t, class duration_t = clock_t::duration&gt; </div>
+template&lt;typename clock_t, typename duration_t = clock_t::duration&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

@@ -96,15 +96,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga6aa9a3d2680df2fc027c12383aa9e7cc" id="r_ga6aa9a3d2680df2fc027c12383aa9e7cc"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:ga6aa9a3d2680df2fc027c12383aa9e7cc" id="r_ga6aa9a3d2680df2fc027c12383aa9e7cc"><td class="memTemplParams" colspan="2">template&lt;typename type_t&gt; </td></tr>
 <tr class="memitem:ga6aa9a3d2680df2fc027c12383aa9e7cc template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga6aa9a3d2680df2fc027c12383aa9e7cc">xtd::comparison</a></td></tr>
 <tr class="memdesc:ga6aa9a3d2680df2fc027c12383aa9e7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that compares two objects of the same type.  <br /></td></tr>
-<tr class="memitem:gaa65321588890f6f9d441562931072818" id="r_gaa65321588890f6f9d441562931072818"><td class="memTemplParams" colspan="2">template&lt;class output_t, class input_t&gt; </td></tr>
+<tr class="memitem:gaa65321588890f6f9d441562931072818" id="r_gaa65321588890f6f9d441562931072818"><td class="memTemplParams" colspan="2">template&lt;typename output_t, typename input_t&gt; </td></tr>
 <tr class="memitem:gaa65321588890f6f9d441562931072818 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gaa65321588890f6f9d441562931072818">xtd::converter</a></td></tr>
 <tr class="memdesc:gaa65321588890f6f9d441562931072818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a method that converts an object from one type to another type.  <br /></td></tr>
 <tr class="memitem:gac1b0c46b56f76e46835af785a4165b0a" id="r_gac1b0c46b56f76e46835af785a4165b0a"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a></td></tr>
 <tr class="memdesc:gac1b0c46b56f76e46835af785a4165b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">References a method to be called when a corresponding asynchronous operation completes.  <br /></td></tr>
-<tr class="memitem:ga17814178399a734d83f7c7ee1ca15365" id="r_ga17814178399a734d83f7c7ee1ca15365"><td class="memTemplParams" colspan="2">template&lt;class result_t, class ... arguments_t&gt; </td></tr>
+<tr class="memitem:ga17814178399a734d83f7c7ee1ca15365" id="r_ga17814178399a734d83f7c7ee1ca15365"><td class="memTemplParams" colspan="2">template&lt;typename result_t, typename ... arguments_t&gt; </td></tr>
 <tr class="memitem:ga17814178399a734d83f7c7ee1ca15365 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a></td></tr>
 <tr class="memdesc:ga17814178399a734d83f7c7ee1ca15365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type.  <br /></td></tr>
 <tr class="memitem:ga1961ded285db6ac6d364694eda5379a3" id="r_ga1961ded285db6ac6d364694eda5379a3"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ga1961ded285db6ac6d364694eda5379a3">xtd::threading::parameterized_thread_start</a></td></tr>
@@ -125,7 +125,7 @@ Typedefs</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t&gt; </div>
+template&lt;typename type_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#ga6aa9a3d2680df2fc027c12383aa9e7cc">xtd::comparison</a></td>
@@ -136,7 +136,7 @@ template&lt;class type_t&gt; </div>
 <p><code>#include &lt;<a class="el" href="comparison_8hpp.html">comparison.hpp</a>&gt;</code></p>
 
 <p>Represents the method that compares two objects of the same type. </p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="#ga6aa9a3d2680df2fc027c12383aa9e7cc">comparison</a> = xtd::delegate&lt;<a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>(type_t <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>, type_t <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>)&gt;;</div>
 <div class="ttc" id="agroup__delegates_html_ga6aa9a3d2680df2fc027c12383aa9e7cc"><div class="ttname"><a href="#ga6aa9a3d2680df2fc027c12383aa9e7cc">xtd::comparison</a></div><div class="ttdeci">xtd::delegate&lt; int32(type_t x, type_t y)&gt; comparison</div><div class="ttdoc">Represents the method that compares two objects of the same type.</div><div class="ttdef"><b>Definition</b> comparison.hpp:33</div></div>
 <div class="ttc" id="agroup__types_html_gaa9a6cd7d720cd7466a0acb01f807b0c5"><div class="ttname"><a href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a></div><div class="ttdeci">std::int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:25</div></div>
@@ -173,7 +173,7 @@ template&lt;class type_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class output_t, class input_t&gt; </div>
+template&lt;typename output_t, typename input_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#gaa65321588890f6f9d441562931072818">xtd::converter</a></td>
@@ -184,7 +184,7 @@ template&lt;class output_t, class input_t&gt; </div>
 <p><code>#include &lt;<a class="el" href="converter_8hpp.html">converter.hpp</a>&gt;</code></p>
 
 <p>Represents a method that converts an object from one type to another type. </p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> output_t, <span class="keyword">class</span> input_t&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> output_t, <span class="keyword">typename</span> input_t&gt;</div>
 <div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="#gaa65321588890f6f9d441562931072818">converter</a> = xtd::delegate&lt;output_t(input_t input)&gt;;</div>
 <div class="ttc" id="agroup__delegates_html_gaa65321588890f6f9d441562931072818"><div class="ttname"><a href="#gaa65321588890f6f9d441562931072818">xtd::converter</a></div><div class="ttdeci">xtd::delegate&lt; output_t(input_t input)&gt; converter</div><div class="ttdoc">Represents a method that converts an object from one type to another type.</div><div class="ttdef"><b>Definition</b> converter.hpp:33</div></div>
 </div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -287,7 +287,7 @@ template&lt;class output_t, class input_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;typename result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#ga17814178399a734d83f7c7ee1ca15365">xtd::func</a></td>

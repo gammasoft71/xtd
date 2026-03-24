@@ -92,14 +92,14 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="any_8hpp.html">any.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>type_t, <span class="keyword">class</span>... args_t&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, <span class="keyword">typename</span>... args_t&gt;</div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga64ba89da4535bb58995e6a6f058309ef">   21</a></span>  <a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> <a class="code hl_function" href="group__xtd__core.html#ga64ba89da4535bb58995e6a6f058309ef">make_any</a>(args_t&amp;&amp;... args) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> std::make_any&lt;type_t&gt;(std::forward&lt;args_t&gt;(args)...);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">template</span>&lt;<span class="keyword">class </span>type_t, <span class="keyword">class </span>il_type_t, <span class="keyword">class</span>... args_t&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, <span class="keyword">typename</span> il_type_t, <span class="keyword">typename</span>... args_t&gt;</div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__xtd__core.html#ga93a95cb3f5ab7fe27ecde7fabc495488">   39</a></span>  <a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> <a class="code hl_function" href="group__xtd__core.html#ga64ba89da4535bb58995e6a6f058309ef">make_any</a>(std::initializer_list&lt;il_type_t&gt; il, args_t&amp;&amp;... args) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> std::make_any&lt;type_t&gt;(il, std::forward&lt;args_t&gt;(args)...);</div>

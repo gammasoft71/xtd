@@ -100,7 +100,7 @@ Inheritance diagram for xtd::forms::layout::arranged_element_collection&lt; type
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class sorter_t = sorter_none&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, typename sorter_t = sorter_none&gt;<br />
 class xtd::forms::layout::arranged_element_collection&lt; type_t, sorter_t &gt;</div><p>Represents a collection of objects. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/layout/arranged_element_collection&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -211,10 +211,10 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a27cafaa85215dfbe666c2f4f6765c7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="memitem:a6e149002ff57f377e9fbeec76309abb5" id="r_a6e149002ff57f377e9fbeec76309abb5"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6e149002ff57f377e9fbeec76309abb5">add_range</a> (const std::initializer_list&lt; type_t &gt; &amp;collection)</td></tr>
 <tr class="memdesc:a6e149002ff57f377e9fbeec76309abb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
-<tr class="memitem:a47fcc1c4b63e58c45ef50f8d0d30f371" id="r_a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a47fcc1c4b63e58c45ef50f8d0d30f371" id="r_a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a47fcc1c4b63e58c45ef50f8d0d30f371 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a47fcc1c4b63e58c45ef50f8d0d30f371">add_range</a> (collection_t &amp;&amp;collection)</td></tr>
 <tr class="memdesc:a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
-<tr class="memitem:af0e64a4bdecaf7f851bb67f5d54eca6e" id="r_af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:af0e64a4bdecaf7f851bb67f5d54eca6e" id="r_af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:af0e64a4bdecaf7f851bb67f5d54eca6e template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af0e64a4bdecaf7f851bb67f5d54eca6e">add_range</a> (const collection_t &amp;collection)</td></tr>
 <tr class="memdesc:af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="memitem:a06e51db3ffba8dc2ca0692b8d47fe8eb" id="r_a06e51db3ffba8dc2ca0692b8d47fe8eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a06e51db3ffba8dc2ca0692b8d47fe8eb">clear</a> () override</td></tr>
@@ -282,10 +282,10 @@ Public Deprecated Methods</h2></td></tr>
 <tr class="memdesc:a203f5f4eba73dfa1e42886a5a979ccaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the first element.  <br /></td></tr>
 <tr class="memitem:a2beafbfbadbd32abdf63d34f79abac12" id="r_a2beafbfbadbd32abdf63d34f79abac12"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2beafbfbadbd32abdf63d34f79abac12">get_allocator</a> () const noexcept</td></tr>
 <tr class="memdesc:a2beafbfbadbd32abdf63d34f79abac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the associated allocator.  <br /></td></tr>
-<tr class="memitem:aa6cde490d9b23fa106a830cff4a9253c" id="r_aa6cde490d9b23fa106a830cff4a9253c"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:aa6cde490d9b23fa106a830cff4a9253c" id="r_aa6cde490d9b23fa106a830cff4a9253c"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:aa6cde490d9b23fa106a830cff4a9253c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa6cde490d9b23fa106a830cff4a9253c">emplace</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt;<a class="el" href="namespacextd.html#ae6793b0b2ed42d1d5b577e83c1bd186d">::const_iterator</a> pos, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:aa6cde490d9b23fa106a830cff4a9253c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts specified element at specified position.  <br /></td></tr>
-<tr class="memitem:a1223925eaa6f21ed5a4c0d356979af34" id="r_a1223925eaa6f21ed5a4c0d356979af34"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:a1223925eaa6f21ed5a4c0d356979af34" id="r_a1223925eaa6f21ed5a4c0d356979af34"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:a1223925eaa6f21ed5a4c0d356979af34 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1223925eaa6f21ed5a4c0d356979af34">emplace_back</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a1223925eaa6f21ed5a4c0d356979af34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end.  <br /></td></tr>
 <tr class="memitem:afed45b612a5d82773c1a189c6400facd" id="r_afed45b612a5d82773c1a189c6400facd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afed45b612a5d82773c1a189c6400facd">erase</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt;<a class="el" href="namespacextd.html#a00b898d039dd0095b53d7d0a07df4c46">::iterator</a> pos)</td></tr>
@@ -316,10 +316,10 @@ Public Deprecated Methods</h2></td></tr>
 <tr class="memdesc:a4144a9e8d371a14bc08a5ec55b5790e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="memitem:ae2da530629cd4618a876de1ba4026a24" id="r_ae2da530629cd4618a876de1ba4026a24"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae2da530629cd4618a876de1ba4026a24">push_back_range</a> (const std::initializer_list&lt; type_t &gt; &amp;collection)</td></tr>
 <tr class="memdesc:ae2da530629cd4618a876de1ba4026a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
-<tr class="memitem:a630840911d14800cb1bf5791ae4ced21" id="r_a630840911d14800cb1bf5791ae4ced21"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a630840911d14800cb1bf5791ae4ced21" id="r_a630840911d14800cb1bf5791ae4ced21"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a630840911d14800cb1bf5791ae4ced21 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a630840911d14800cb1bf5791ae4ced21">push_back_range</a> (collection_t &amp;&amp;collection)</td></tr>
 <tr class="memdesc:a630840911d14800cb1bf5791ae4ced21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
-<tr class="memitem:ad5d89b984a7196d272984539cbe4db58" id="r_ad5d89b984a7196d272984539cbe4db58"><td class="memTemplParams" colspan="2">template&lt;class iterator_t&gt; </td></tr>
+<tr class="memitem:ad5d89b984a7196d272984539cbe4db58" id="r_ad5d89b984a7196d272984539cbe4db58"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t&gt; </td></tr>
 <tr class="memitem:ad5d89b984a7196d272984539cbe4db58 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad5d89b984a7196d272984539cbe4db58">push_back_range</a> (iterator_t <a class="el" href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">begin</a>, iterator_t <a class="el" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>)</td></tr>
 <tr class="memdesc:ad5d89b984a7196d272984539cbe4db58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="memitem:aac81158712ee9ae7f98d7b2a4251f39b" id="r_aac81158712ee9ae7f98d7b2a4251f39b"><td class="memItemLeft">std::vector&lt; type_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aac81158712ee9ae7f98d7b2a4251f39b">to_vector</a> () const noexcept</td></tr>
@@ -356,15 +356,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
 <tr class="memdesc:aeb2a619fcb313fde8d247463c1f2df18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -375,7 +375,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::base_type</td>
@@ -393,7 +393,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::const_base_type</td>
@@ -411,7 +411,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::size_type</td>
@@ -429,7 +429,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::reference</td>
@@ -447,7 +447,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::const_reference</td>
@@ -465,7 +465,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::pointer</td>
@@ -483,7 +483,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::const_pointer</td>
@@ -501,7 +501,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::read_only_collection</td>
@@ -520,7 +520,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -647,7 +647,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -784,7 +784,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -912,7 +912,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -947,7 +947,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -982,7 +982,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1017,7 +1017,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1052,7 +1052,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1087,7 +1087,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
 template&lt;std::input_iterator input_iterator_t&gt; </div>
 <table class="mlabels">
@@ -1131,7 +1131,7 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1167,7 +1167,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1204,7 +1204,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1234,7 +1234,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1264,7 +1264,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1294,7 +1294,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1324,7 +1324,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1354,7 +1354,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1384,7 +1384,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1419,7 +1419,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1454,7 +1454,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1489,7 +1489,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1524,7 +1524,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1559,7 +1559,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1594,9 +1594,9 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1631,9 +1631,9 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1668,7 +1668,7 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1698,7 +1698,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1734,7 +1734,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1780,7 +1780,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1810,7 +1810,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1852,7 +1852,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1881,7 +1881,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1920,7 +1920,7 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1955,7 +1955,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1985,7 +1985,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2021,7 +2021,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2057,7 +2057,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2093,7 +2093,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2129,7 +2129,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2165,7 +2165,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2195,7 +2195,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2225,7 +2225,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2256,7 +2256,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2298,7 +2298,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2340,7 +2340,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2371,7 +2371,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2402,7 +2402,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2433,7 +2433,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2464,7 +2464,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2495,7 +2495,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2526,7 +2526,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2557,9 +2557,9 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
+template&lt;typename ... args_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2600,9 +2600,9 @@ template&lt;class ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
+template&lt;typename ... args_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2638,7 +2638,7 @@ template&lt;class ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2674,7 +2674,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2710,7 +2710,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2751,7 +2751,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2792,7 +2792,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2828,7 +2828,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2869,7 +2869,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2910,7 +2910,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2951,7 +2951,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2981,7 +2981,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3017,7 +3017,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3053,7 +3053,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3089,7 +3089,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3125,7 +3125,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3161,9 +3161,9 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3199,9 +3199,9 @@ template&lt;class collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <div class="memtemplate">
-template&lt;class iterator_t&gt; </div>
+template&lt;typename iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3241,7 +3241,7 @@ template&lt;class iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3272,7 +3272,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3303,7 +3303,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3334,7 +3334,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3365,7 +3365,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3396,7 +3396,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3426,7 +3426,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3456,7 +3456,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3496,7 +3496,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3536,7 +3536,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3579,7 +3579,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3612,7 +3612,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3644,7 +3644,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3681,7 +3681,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a>, delegate&lt;void(size_t, type_t&amp; item)&gt; &gt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::item_added</td>
@@ -3700,7 +3700,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a>, delegate&lt;void(size_t, type_t&amp; item)&gt; &gt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::item_updated</td>
@@ -3719,7 +3719,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+template&lt;typename type_t, typename sorter_t = sorter_none&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a>, delegate&lt;void(size_t, type_t&amp; item)&gt; &gt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::item_removed</td>

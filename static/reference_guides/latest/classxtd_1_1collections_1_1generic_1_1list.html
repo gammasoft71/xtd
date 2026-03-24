@@ -102,9 +102,9 @@ Inheritance diagram for xtd::collections::generic::list&lt; type_t, allocator_t 
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class allocator_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, typename allocator_t&gt;<br />
 class xtd::collections::generic::list&lt; type_t, allocator_t &gt;</div><p>Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists. </p>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#a84c3e29f04a6474378357709ee06c800">list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, xtd::collections::generic::ilist&lt;type_t&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::collections::generic::list&lt;type_t&gt;&gt;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a84c3e29f04a6474378357709ee06c800"><div class="ttname"><a href="#a84c3e29f04a6474378357709ee06c800">xtd::collections::generic::list::list</a></div><div class="ttdeci">list() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::list class that is empty.</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:23</div></div>
@@ -457,7 +457,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:ac73f3d09267499bee70df3405adc888e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a9c5ef76f74aedc9fcfb2645bb9866586" id="r_a9c5ef76f74aedc9fcfb2645bb9866586"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c5ef76f74aedc9fcfb2645bb9866586">contains</a> (const type_t &amp;value) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a9c5ef76f74aedc9fcfb2645bb9866586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the xtd::colllections::generic::list &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:aee5601b1023666159dcd573eb1d44896" id="r_aee5601b1023666159dcd573eb1d44896"><td class="memTemplParams" colspan="2">template&lt;class output_t, class converter_t&gt; </td></tr>
+<tr class="memitem:aee5601b1023666159dcd573eb1d44896" id="r_aee5601b1023666159dcd573eb1d44896"><td class="memTemplParams" colspan="2">template&lt;typename output_t, typename converter_t&gt; </td></tr>
 <tr class="memitem:aee5601b1023666159dcd573eb1d44896 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee5601b1023666159dcd573eb1d44896">convert_all</a> (converter_t <a class="el" href="group__delegates.html#gaa65321588890f6f9d441562931072818">converter</a>) const -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a>&lt; output_t &gt;</td></tr>
 <tr class="memdesc:aee5601b1023666159dcd573eb1d44896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the elements in the current xtd::colllections::generic::list &lt;type_t&gt; to another type, and returns a list containing the converted elements.  <br /></td></tr>
 <tr class="memitem:ad0e4b57527915bd3bc98b982b177c674" id="r_ad0e4b57527915bd3bc98b982b177c674"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0e4b57527915bd3bc98b982b177c674">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const -&gt; void</td></tr>
@@ -472,37 +472,37 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a0ee20ee8460dbe3b7c3b9490ffa86d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="memitem:ac444abce835730f764e63ca578a265b8" id="r_ac444abce835730f764e63ca578a265b8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac444abce835730f764e63ca578a265b8">equals</a> (const <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> &amp;obj) const noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:ac444abce835730f764e63ca578a265b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:aa85c3e8fa6071e3fe60c22c91f0d0872" id="r_aa85c3e8fa6071e3fe60c22c91f0d0872"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:aa85c3e8fa6071e3fe60c22c91f0d0872" id="r_aa85c3e8fa6071e3fe60c22c91f0d0872"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:aa85c3e8fa6071e3fe60c22c91f0d0872 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa85c3e8fa6071e3fe60c22c91f0d0872">exists</a> (predicate_t match) const -&gt; bool</td></tr>
 <tr class="memdesc:aa85c3e8fa6071e3fe60c22c91f0d0872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains elements that match the conditions defined by the specified predicate.  <br /></td></tr>
-<tr class="memitem:aebb8b376af188ece2b23e75799214798" id="r_aebb8b376af188ece2b23e75799214798"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:aebb8b376af188ece2b23e75799214798" id="r_aebb8b376af188ece2b23e75799214798"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:aebb8b376af188ece2b23e75799214798 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aebb8b376af188ece2b23e75799214798">find</a> (predicate_t match) const -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:aebb8b376af188ece2b23e75799214798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:adcca0a8031d535eb4276ea30b7e19cd7" id="r_adcca0a8031d535eb4276ea30b7e19cd7"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:adcca0a8031d535eb4276ea30b7e19cd7" id="r_adcca0a8031d535eb4276ea30b7e19cd7"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:adcca0a8031d535eb4276ea30b7e19cd7 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adcca0a8031d535eb4276ea30b7e19cd7">find_all</a> (predicate_t match) const -&gt; <a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a></td></tr>
 <tr class="memdesc:adcca0a8031d535eb4276ea30b7e19cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all the elements that match the conditions defined by the specified predicate.  <br /></td></tr>
-<tr class="memitem:a0f460562bad1cd7102862d4b0a233cdf" id="r_a0f460562bad1cd7102862d4b0a233cdf"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:a0f460562bad1cd7102862d4b0a233cdf" id="r_a0f460562bad1cd7102862d4b0a233cdf"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:a0f460562bad1cd7102862d4b0a233cdf template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0f460562bad1cd7102862d4b0a233cdf">find_index</a> (predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:a0f460562bad1cd7102862d4b0a233cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a66ed9470f8e7a6ba9ba8fdd33f255199" id="r_a66ed9470f8e7a6ba9ba8fdd33f255199"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:a66ed9470f8e7a6ba9ba8fdd33f255199" id="r_a66ed9470f8e7a6ba9ba8fdd33f255199"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:a66ed9470f8e7a6ba9ba8fdd33f255199 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66ed9470f8e7a6ba9ba8fdd33f255199">find_index</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start_index, predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:a66ed9470f8e7a6ba9ba8fdd33f255199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that extends from the specified index to the last element.  <br /></td></tr>
-<tr class="memitem:aad712854621699cae3b04fb73c23aedb" id="r_aad712854621699cae3b04fb73c23aedb"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:aad712854621699cae3b04fb73c23aedb" id="r_aad712854621699cae3b04fb73c23aedb"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:aad712854621699cae3b04fb73c23aedb template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aad712854621699cae3b04fb73c23aedb">find_index</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start_index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a0168e83b95232afde2aa19da18350096">count</a>, predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:aad712854621699cae3b04fb73c23aedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that starts at the specified index and contains the specified number of elements.  <br /></td></tr>
-<tr class="memitem:a63472993d1001094faf5bca2a9c93da5" id="r_a63472993d1001094faf5bca2a9c93da5"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:a63472993d1001094faf5bca2a9c93da5" id="r_a63472993d1001094faf5bca2a9c93da5"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:a63472993d1001094faf5bca2a9c93da5 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a63472993d1001094faf5bca2a9c93da5">find_last</a> (predicate_t match) const -&gt; <a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a63472993d1001094faf5bca2a9c93da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:a78662da3b4f3d31be5d8410cbfd52f0b" id="r_a78662da3b4f3d31be5d8410cbfd52f0b"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:a78662da3b4f3d31be5d8410cbfd52f0b" id="r_a78662da3b4f3d31be5d8410cbfd52f0b"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:a78662da3b4f3d31be5d8410cbfd52f0b template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a78662da3b4f3d31be5d8410cbfd52f0b">find_last_index</a> (predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:a78662da3b4f3d31be5d8410cbfd52f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:af44e31d5f448b504a6bcdd7d208a6260" id="r_af44e31d5f448b504a6bcdd7d208a6260"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:af44e31d5f448b504a6bcdd7d208a6260" id="r_af44e31d5f448b504a6bcdd7d208a6260"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:af44e31d5f448b504a6bcdd7d208a6260 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af44e31d5f448b504a6bcdd7d208a6260">find_last_index</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start_index, predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:af44e31d5f448b504a6bcdd7d208a6260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that extends from the first element to the specified index.  <br /></td></tr>
-<tr class="memitem:a875f06fa795e11b273c035dcdeb4a7c9" id="r_a875f06fa795e11b273c035dcdeb4a7c9"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:a875f06fa795e11b273c035dcdeb4a7c9" id="r_a875f06fa795e11b273c035dcdeb4a7c9"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:a875f06fa795e11b273c035dcdeb4a7c9 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a875f06fa795e11b273c035dcdeb4a7c9">find_last_index</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start_index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a0168e83b95232afde2aa19da18350096">count</a>, predicate_t match) const -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:a875f06fa795e11b273c035dcdeb4a7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that contains the specified number of elements and ends at the specified index.  <br /></td></tr>
-<tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a" id="r_a9a008eefbbd66aa32e8802a281dd313a"><td class="memTemplParams" colspan="2">template&lt;class action_t&gt; </td></tr>
+<tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a" id="r_a9a008eefbbd66aa32e8802a281dd313a"><td class="memTemplParams" colspan="2">template&lt;typename action_t&gt; </td></tr>
 <tr class="memitem:a9a008eefbbd66aa32e8802a281dd313a template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9a008eefbbd66aa32e8802a281dd313a">for_each</a> (action_t action) -&gt; void</td></tr>
 <tr class="memdesc:a9a008eefbbd66aa32e8802a281dd313a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the specified action on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:ab0e759973f7728389fde69b1bc862d70" id="r_ab0e759973f7728389fde69b1bc862d70"><td class="memItemLeft"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab0e759973f7728389fde69b1bc862d70">get_enumerator</a> () const noexcept override</td></tr>
@@ -527,7 +527,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a000ba4a288452a87e008385706f0b9b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="memitem:a495e45f3c152a657154637c993e124a6" id="r_a495e45f3c152a657154637c993e124a6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a495e45f3c152a657154637c993e124a6">remove</a> (const type_t &amp;item) noexcept -&gt; bool override</td></tr>
 <tr class="memdesc:a495e45f3c152a657154637c993e124a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="memitem:aa170cb8f02c9b9570565f3be35096301" id="r_aa170cb8f02c9b9570565f3be35096301"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:aa170cb8f02c9b9570565f3be35096301" id="r_aa170cb8f02c9b9570565f3be35096301"><td class="memTemplParams" colspan="2">template&lt;typename predicate_t&gt; </td></tr>
 <tr class="memitem:aa170cb8f02c9b9570565f3be35096301 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa170cb8f02c9b9570565f3be35096301">remove_all</a> (predicate_t match) -&gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td></tr>
 <tr class="memdesc:aa170cb8f02c9b9570565f3be35096301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all the elements that match the conditions defined by the specified predicate.  <br /></td></tr>
 <tr class="memitem:ad03e1e0a70d582d5075cff06d933d21c" id="r_ad03e1e0a70d582d5075cff06d933d21c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad03e1e0a70d582d5075cff06d933d21c">remove_at</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index) -&gt; void override</td></tr>
@@ -560,7 +560,7 @@ virtual auto resize(size_type count) -&gt; void {resize(<a class="el" href="#a01
 <tr class="memdesc:a4cd322a914239a10ce6a0ca8d9cf9b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="memitem:af4fcb550385f38f63d1f22e118369a1b" id="r_af4fcb550385f38f63d1f22e118369a1b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4fcb550385f38f63d1f22e118369a1b">trim_excess</a> () -&gt; void</td></tr>
 <tr class="memdesc:af4fcb550385f38f63d1f22e118369a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the capacity to the actual number of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, if that number is less than a threshold value.  <br /></td></tr>
-<tr class="memitem:aa88e81c8f03d599a1bc2827293f83cc6" id="r_aa88e81c8f03d599a1bc2827293f83cc6"><td class="memTemplParams" colspan="2">template&lt;class prediacate_t&gt; </td></tr>
+<tr class="memitem:aa88e81c8f03d599a1bc2827293f83cc6" id="r_aa88e81c8f03d599a1bc2827293f83cc6"><td class="memTemplParams" colspan="2">template&lt;typename prediacate_t&gt; </td></tr>
 <tr class="memitem:aa88e81c8f03d599a1bc2827293f83cc6 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa88e81c8f03d599a1bc2827293f83cc6">true_for_all</a> (prediacate_t match) const -&gt; bool</td></tr>
 <tr class="memdesc:aa88e81c8f03d599a1bc2827293f83cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether every element in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; matches the conditions defined by the specified predicate.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -589,15 +589,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const type_t &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -608,7 +608,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::value_type</td>
@@ -626,7 +626,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::base_type</td>
@@ -644,7 +644,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::const_base_type</td>
@@ -662,7 +662,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::size_type</td>
@@ -680,7 +680,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::reference</td>
@@ -698,7 +698,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::const_reference</td>
@@ -716,7 +716,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::pointer</td>
@@ -734,7 +734,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::const_pointer</td>
@@ -752,7 +752,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::read_only_collection</td>
@@ -771,7 +771,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -903,7 +903,7 @@ This constructor is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1040,7 +1040,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1169,7 +1169,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1204,7 +1204,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1239,7 +1239,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1274,7 +1274,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1309,7 +1309,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1344,7 +1344,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
 template&lt;std::input_iterator input_iterator_t&gt; </div>
 <table class="mlabels">
@@ -1387,7 +1387,7 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1604,7 +1604,7 @@ Retrieving the value of this property is an O(1) operation; setting the property
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1822,7 +1822,7 @@ Retrieving the value of this property is an O(1) operation; setting the property
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2033,7 +2033,7 @@ Retrieving the value of this property is an O(1) operation; setting the property
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2064,7 +2064,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2095,7 +2095,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2125,7 +2125,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2155,7 +2155,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2403,7 +2403,7 @@ If <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the numbe
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2651,7 +2651,7 @@ If <a class="el" href="#a0168e83b95232afde2aa19da18350096" title="Gets the numbe
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2780,7 +2780,7 @@ If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" titl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2909,7 +2909,7 @@ If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" titl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2942,7 +2942,7 @@ This method is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3070,7 +3070,7 @@ The following code example demonstrates the <a class="el" href="#a20f55886f37022
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3128,7 +3128,7 @@ This method is an O(log n) operation, where n is the number of elements in the r
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3199,7 +3199,7 @@ This method is an O(log n) operation, where n is the number of elements in the r
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3233,7 +3233,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3269,9 +3269,9 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class output_t, class converter_t&gt; </div>
+template&lt;typename output_t, typename converter_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3354,7 +3354,7 @@ template&lt;class output_t, class converter_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3401,7 +3401,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3452,7 +3452,7 @@ This method is an O(n) operation, where n is xtd::colllections::generic::list::c
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3517,7 +3517,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3559,7 +3559,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3619,7 +3619,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3655,9 +3655,9 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3784,9 +3784,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3912,9 +3912,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4040,9 +4040,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4081,9 +4081,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4133,9 +4133,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4193,9 +4193,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4321,9 +4321,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4362,9 +4362,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4414,9 +4414,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4474,9 +4474,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class action_t&gt; </div>
+template&lt;typename action_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4554,7 +4554,7 @@ Modifying the underlying collection in the body of the Action&lt;T&gt; delegate 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4584,7 +4584,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4639,7 +4639,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4675,7 +4675,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4722,7 +4722,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4784,7 +4784,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4831,7 +4831,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4969,7 +4969,7 @@ The order of the elements in the collection is preserved in the <a class="el" hr
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5107,7 +5107,7 @@ The order of the elements in the collection is preserved in the <a class="el" hr
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5143,7 +5143,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5210,7 +5210,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5249,9 +5249,9 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class predicate_t&gt; </div>
+template&lt;typename predicate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5377,7 +5377,7 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5418,7 +5418,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5554,7 +5554,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5666,7 +5666,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5773,7 +5773,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5820,7 +5820,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5937,7 +5937,7 @@ The following code example demonstrates the <a class="el" href="#a20f55886f37022
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5977,7 +5977,7 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6017,7 +6017,7 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6074,7 +6074,7 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6196,7 +6196,7 @@ This method is an O(n) operation, where n is <a class="el" href="#a0168e83b95232
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6228,7 +6228,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6438,9 +6438,9 @@ The capacity can also be set using the <a class="el" href="#ac9ed6c7b1177cbe562b
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class prediacate_t&gt; </div>
+template&lt;typename prediacate_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6566,7 +6566,7 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6602,7 +6602,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6638,7 +6638,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6674,7 +6674,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6716,7 +6716,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6758,7 +6758,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6788,7 +6788,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
+template&lt;typename type_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

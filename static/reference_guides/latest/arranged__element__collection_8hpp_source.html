@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">forms</a> {</div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacextd_1_1forms_1_1layout.html">   25</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms_1_1layout.html">layout</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> sorter_t = sorter_none&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, <span class="keyword">typename</span> sorter_t = sorter_none&gt;</div>
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">   41</a></span>      <span class="keyword">class </span><a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, <span class="keyword">public</span> xtd::collections::generic::icollection&lt;type_t&gt; {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">public</span>:</div>
@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <a class="code hl_typedef" href="namespacextd.html#adfbc20e0683a39b75bd34b7d805cf207">value_type</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <a class="code hl_typedef" href="namespacextd.html#adfbc20e0683a39b75bd34b7d805cf207">value_type</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a>&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          <a class="code hl_typedef" href="namespacextd.html#adfbc20e0683a39b75bd34b7d805cf207">value_type</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...args_t&gt;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          <a class="code hl_typedef" href="namespacextd.html#adfbc20e0683a39b75bd34b7d805cf207">value_type</a>(args_t&amp;&amp; ...args) : type_t(args...) {}</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <a class="code hl_class" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a>&amp; <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ae2b6378af1d2fbae478ee3a6ebf32cc2">operator =</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a>&amp; value) {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span> (value.owner) owner = value.owner;</div>
@@ -251,7 +251,7 @@ $(function() {
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        }</div>
 </div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
 <div class="foldopen" id="foldopen00279" data-start="{" data-end="}">
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a47fcc1c4b63e58c45ef50f8d0d30f371">  279</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a47fcc1c4b63e58c45ef50f8d0d30f371">add_range</a>(collection_t&amp;&amp; collection) {</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; item : collection)</div>
@@ -259,7 +259,7 @@ $(function() {
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        }</div>
 </div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
 <div class="foldopen" id="foldopen00286" data-start="{" data-end="}">
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#af0e64a4bdecaf7f851bb67f5d54eca6e">  286</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#af0e64a4bdecaf7f851bb67f5d54eca6e">add_range</a>(<span class="keyword">const</span> collection_t&amp; collection) {</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; item : collection)</div>
@@ -467,7 +467,7 @@ $(function() {
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>        [[deprecated(<span class="stringliteral">&quot;Replaced by xtd::forms::layout::arranged_element_collection::items().get_allocator - Will be removed in version 0.4.0.&quot;</span>)]]</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a2beafbfbadbd32abdf63d34f79abac12">  554</a></span>        <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a2beafbfbadbd32abdf63d34f79abac12">get_allocator</a>() const noexcept {<span class="keywordflow">return</span> data_-&gt;items.get_allocator();}</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        </div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...args_t&gt;</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        [[deprecated(<span class="stringliteral">&quot;Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.&quot;</span>)]]</div>
 <div class="foldopen" id="foldopen00562" data-start="{" data-end="}">
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">  562</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">emplace</a>(<a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt;value_type&gt;::const_iterator</a> pos, args_t&amp;&amp; ... args) {</div>
@@ -483,7 +483,7 @@ $(function() {
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        }</div>
 </div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...args_t&gt;</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        [[deprecated(<span class="stringliteral">&quot;Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.&quot;</span>)]]</div>
 <div class="foldopen" id="foldopen00579" data-start="{" data-end="}">
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a1223925eaa6f21ed5a4c0d356979af34">  579</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a1223925eaa6f21ed5a4c0d356979af34">emplace_back</a>(args_t&amp;&amp; ... args) {</div>
@@ -626,7 +626,7 @@ $(function() {
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        }</div>
 </div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span></div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        [[deprecated(<span class="stringliteral">&quot;Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.&quot;</span>)]]</div>
 <div class="foldopen" id="foldopen00734" data-start="{" data-end="}">
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a630840911d14800cb1bf5791ae4ced21">  734</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a630840911d14800cb1bf5791ae4ced21">push_back_range</a>(collection_t&amp;&amp; collection) {</div>
@@ -634,7 +634,7 @@ $(function() {
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        }</div>
 </div>
 <div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span></div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> iterator_t&gt;</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_t&gt;</div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        [[deprecated(<span class="stringliteral">&quot;Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.&quot;</span>)]]</div>
 <div class="foldopen" id="foldopen00742" data-start="{" data-end="}">
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad5d89b984a7196d272984539cbe4db58">  742</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad5d89b984a7196d272984539cbe4db58">push_back_range</a>(iterator_t <a class="code hl_function" href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">begin</a>, iterator_t <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>) {</div>

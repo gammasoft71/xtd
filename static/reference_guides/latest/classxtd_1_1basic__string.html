@@ -112,7 +112,7 @@ Inheritance diagram for xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class char_t, class traits_t, class allocator_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename char_t, typename traits_t, typename allocator_t&gt;<br />
 class xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;</div><p>Represents text as a sequence of character units. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -155,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:a4d2fbc3e59bb8d3c04f670a5d8ba4f12" id="r_a4d2fbc3e59bb8d3c04f670a5d8ba4f12"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a4d2fbc3e59bb8d3c04f670a5d8ba4f12">begin</a> () const -&gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a37d5d971f36778bdd43d0e8eb5cc62e8">const_iterator</a></td></tr>
@@ -213,26 +213,26 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a095f93076e4873ed38f230ecdf0d6260" id="r_a095f93076e4873ed38f230ecdf0d6260"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:a095f93076e4873ed38f230ecdf0d6260" id="r_a095f93076e4873ed38f230ecdf0d6260"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:a095f93076e4873ed38f230ecdf0d6260 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a095f93076e4873ed38f230ecdf0d6260">class_name</a> () -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a095f93076e4873ed38f230ecdf0d6260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the class name of the object_t.  <br /></td></tr>
-<tr class="memitem:af17a792578de52a319a070786cc62bc6" id="r_af17a792578de52a319a070786cc62bc6"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:af17a792578de52a319a070786cc62bc6" id="r_af17a792578de52a319a070786cc62bc6"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:af17a792578de52a319a070786cc62bc6 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af17a792578de52a319a070786cc62bc6">class_name</a> (const object_t &amp;<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:af17a792578de52a319a070786cc62bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the class name of the specified object.  <br /></td></tr>
 <tr class="memitem:aa468a09c36805efa28344d5e0298eb53" id="r_aa468a09c36805efa28344d5e0298eb53"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa468a09c36805efa28344d5e0298eb53">class_name</a> (const std::type_info &amp;info) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:aa468a09c36805efa28344d5e0298eb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the class name of the specified object.  <br /></td></tr>
-<tr class="memitem:a240eb7c362f14b10924dd535212f04b2" id="r_a240eb7c362f14b10924dd535212f04b2"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:a240eb7c362f14b10924dd535212f04b2" id="r_a240eb7c362f14b10924dd535212f04b2"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:a240eb7c362f14b10924dd535212f04b2 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a240eb7c362f14b10924dd535212f04b2">full_class_name</a> () -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a240eb7c362f14b10924dd535212f04b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.  <br /></td></tr>
-<tr class="memitem:a6ede879320160a73dd1d8796c2cdb172" id="r_a6ede879320160a73dd1d8796c2cdb172"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:a6ede879320160a73dd1d8796c2cdb172" id="r_a6ede879320160a73dd1d8796c2cdb172"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:a6ede879320160a73dd1d8796c2cdb172 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ede879320160a73dd1d8796c2cdb172">full_class_name</a> (const object_t &amp;<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a6ede879320160a73dd1d8796c2cdb172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the fully qualified class name of the specified object, including the namespace of the specified object.  <br /></td></tr>
 <tr class="memitem:aa2ba739327b678941e8ee276cc26a13c" id="r_aa2ba739327b678941e8ee276cc26a13c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2ba739327b678941e8ee276cc26a13c">full_class_name</a> (const std::type_info &amp;info) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:aa2ba739327b678941e8ee276cc26a13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the fully qualified class name of the specified object, including the namespace of the specified object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 <tr class="memitem:aa90e33edbf92dc99e369674abb843d63" id="r_aa90e33edbf92dc99e369674abb843d63"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#aa90e33edbf92dc99e369674abb843d63">to_const_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept -&gt; typename target_collection_t::const_iterator</td></tr>
@@ -469,7 +469,7 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a0111166f70c46c24dfc392d5e9c13b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> with specified substring and count characters.  <br /></td></tr>
 <tr class="memitem:a5e1aa0e10ee1ed4c77c3b61daad135dd" id="r_a5e1aa0e10ee1ed4c77c3b61daad135dd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5e1aa0e10ee1ed4c77c3b61daad135dd">basic_string</a> (const <a class="el" href="group__types.html#ga438e2b3e86176afb074a70ed50f6c302">xtd::wchar</a> *str, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#ae53d703cf61469c797db5367f481539c">count</a>)</td></tr>
 <tr class="memdesc:a5e1aa0e10ee1ed4c77c3b61daad135dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> with specified substring and count characters.  <br /></td></tr>
-<tr class="memitem:a38cffd0ccb520bac458db8c1e69e8dee" id="r_a38cffd0ccb520bac458db8c1e69e8dee"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:a38cffd0ccb520bac458db8c1e69e8dee" id="r_a38cffd0ccb520bac458db8c1e69e8dee"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a38cffd0ccb520bac458db8c1e69e8dee template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a38cffd0ccb520bac458db8c1e69e8dee">basic_string</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
 <tr class="memdesc:a38cffd0ccb520bac458db8c1e69e8dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> with specified first and last iterators of substring.  <br /></td></tr>
 <tr class="memitem:a2881dd6b562f0ac26f56ac028efd28be" id="r_a2881dd6b562f0ac26f56ac028efd28be"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2881dd6b562f0ac26f56ac028efd28be">basic_string</a> (const std::basic_string_view&lt; char_t &gt; &amp;str)</td></tr>
@@ -689,63 +689,63 @@ Public Static Methods</h2></td></tr>
 <tr class="memdesc:a3a2aca48b8c80d76dc649f69515b89a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares substrings of two specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> objects using the specified rules, and returns an integer that indicates their relative position in the sort order.  <br /></td></tr>
 <tr class="memitem:a737da8d878d367c479e706a41216d872" id="r_a737da8d878d367c479e706a41216d872"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a737da8d878d367c479e706a41216d872">concat</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_a, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_b, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_c, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_d) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a737da8d878d367c479e706a41216d872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates four specified instances of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:a608660a61abf221ce975cf03eb72bba8" id="r_a608660a61abf221ce975cf03eb72bba8"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t, class object_c_t, class object_d_t&gt; </td></tr>
+<tr class="memitem:a608660a61abf221ce975cf03eb72bba8" id="r_a608660a61abf221ce975cf03eb72bba8"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t&gt; </td></tr>
 <tr class="memitem:a608660a61abf221ce975cf03eb72bba8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a608660a61abf221ce975cf03eb72bba8">concat</a> (object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a608660a61abf221ce975cf03eb72bba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates four specified instances of object.  <br /></td></tr>
 <tr class="memitem:a8141bd1e60d3d17fe386c81f31d49c53" id="r_a8141bd1e60d3d17fe386c81f31d49c53"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8141bd1e60d3d17fe386c81f31d49c53">concat</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_a, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_b, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_c) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a8141bd1e60d3d17fe386c81f31d49c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates three specified instances of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:ad099852d64cda7b10df668bf9701668b" id="r_ad099852d64cda7b10df668bf9701668b"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t, class object_c_t&gt; </td></tr>
+<tr class="memitem:ad099852d64cda7b10df668bf9701668b" id="r_ad099852d64cda7b10df668bf9701668b"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t, typename object_c_t&gt; </td></tr>
 <tr class="memitem:ad099852d64cda7b10df668bf9701668b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad099852d64cda7b10df668bf9701668b">concat</a> (object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:ad099852d64cda7b10df668bf9701668b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates three specified instances of object.  <br /></td></tr>
 <tr class="memitem:ad8d80db2b4a994cabbd010b7e29a8e3e" id="r_ad8d80db2b4a994cabbd010b7e29a8e3e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad8d80db2b4a994cabbd010b7e29a8e3e">concat</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_a, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str_b) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:ad8d80db2b4a994cabbd010b7e29a8e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two specified instances of <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:a08d7e8cd74dc20d7f8c9c7f41a0fc7f2" id="r_a08d7e8cd74dc20d7f8c9c7f41a0fc7f2"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a08d7e8cd74dc20d7f8c9c7f41a0fc7f2" id="r_a08d7e8cd74dc20d7f8c9c7f41a0fc7f2"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a08d7e8cd74dc20d7f8c9c7f41a0fc7f2 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a08d7e8cd74dc20d7f8c9c7f41a0fc7f2">concat</a> (object_a_t obj_a, object_b_t obj_b) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a08d7e8cd74dc20d7f8c9c7f41a0fc7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two specified instances of object.  <br /></td></tr>
 <tr class="memitem:a6c3af61ae6410478d156b2b8bdd9c53e" id="r_a6c3af61ae6410478d156b2b8bdd9c53e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6c3af61ae6410478d156b2b8bdd9c53e">concat</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &gt; &amp;values) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a6c3af61ae6410478d156b2b8bdd9c53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the elements of a specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> array.  <br /></td></tr>
-<tr class="memitem:aa16a2887340b5d5060b72ca84dd86259" id="r_aa16a2887340b5d5060b72ca84dd86259"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:aa16a2887340b5d5060b72ca84dd86259" id="r_aa16a2887340b5d5060b72ca84dd86259"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:aa16a2887340b5d5060b72ca84dd86259 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa16a2887340b5d5060b72ca84dd86259">concat</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; object_t &gt; &amp;args) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:aa16a2887340b5d5060b72ca84dd86259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> representations of the elements in a specified object array.  <br /></td></tr>
-<tr class="memitem:aa5768e86782c1fc569d8c12a0b4cbbb1" id="r_aa5768e86782c1fc569d8c12a0b4cbbb1"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; </td></tr>
+<tr class="memitem:aa5768e86782c1fc569d8c12a0b4cbbb1" id="r_aa5768e86782c1fc569d8c12a0b4cbbb1"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:aa5768e86782c1fc569d8c12a0b4cbbb1 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa5768e86782c1fc569d8c12a0b4cbbb1">concat</a> (value_t value) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:aa5768e86782c1fc569d8c12a0b4cbbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> representation of a specified object.  <br /></td></tr>
 <tr class="memitem:ac5f6d2ab7df4317d6ed5c29f9ae0bcae" id="r_ac5f6d2ab7df4317d6ed5c29f9ae0bcae"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac5f6d2ab7df4317d6ed5c29f9ae0bcae">demangle</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;name) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:ac5f6d2ab7df4317d6ed5c29f9ae0bcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets demangled <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> of name,.  <br /></td></tr>
 <tr class="memitem:a12bfe25b19b4bf26f10e377b400563cf" id="r_a12bfe25b19b4bf26f10e377b400563cf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a12bfe25b19b4bf26f10e377b400563cf">equals</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;a, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a12bfe25b19b4bf26f10e377b400563cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> objects have the same value.  <br /></td></tr>
-<tr class="memitem:ae3a7f050013eb47e7d2318f6e281b5e8" id="r_ae3a7f050013eb47e7d2318f6e281b5e8"><td class="memTemplParams" colspan="2">template&lt;class char_a_t, class char_b_t&gt; </td></tr>
+<tr class="memitem:ae3a7f050013eb47e7d2318f6e281b5e8" id="r_ae3a7f050013eb47e7d2318f6e281b5e8"><td class="memTemplParams" colspan="2">template&lt;typename char_a_t, typename char_b_t&gt; </td></tr>
 <tr class="memitem:ae3a7f050013eb47e7d2318f6e281b5e8 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae3a7f050013eb47e7d2318f6e281b5e8">equals</a> (const char_a_t *a, const char_b_t *b) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:ae3a7f050013eb47e7d2318f6e281b5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> objects have the same value.  <br /></td></tr>
 <tr class="memitem:ae60c35cb5feeb830db499133ac300a54" id="r_ae60c35cb5feeb830db499133ac300a54"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae60c35cb5feeb830db499133ac300a54">equals</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;a, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;b, bool ignore_case) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:ae60c35cb5feeb830db499133ac300a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> objects have the same value, ignoring or honoring their case.  <br /></td></tr>
-<tr class="memitem:a9b68edf143181f71972200bdd5b3207b" id="r_a9b68edf143181f71972200bdd5b3207b"><td class="memTemplParams" colspan="2">template&lt;class char_a_t, class char_b_t&gt; </td></tr>
+<tr class="memitem:a9b68edf143181f71972200bdd5b3207b" id="r_a9b68edf143181f71972200bdd5b3207b"><td class="memTemplParams" colspan="2">template&lt;typename char_a_t, typename char_b_t&gt; </td></tr>
 <tr class="memitem:a9b68edf143181f71972200bdd5b3207b template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9b68edf143181f71972200bdd5b3207b">equals</a> (const char_a_t *a, const char_b_t *b, bool ignore_case) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a9b68edf143181f71972200bdd5b3207b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether two specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> objects have the same value, ignoring or honoring their case.  <br /></td></tr>
-<tr class="memitem:gab67eb80458cad40e22a5036b84c9a5c7" id="r_gab67eb80458cad40e22a5036b84c9a5c7"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:gab67eb80458cad40e22a5036b84c9a5c7" id="r_gab67eb80458cad40e22a5036b84c9a5c7"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:gab67eb80458cad40e22a5036b84c9a5c7 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="group__format__parse.html#gab67eb80458cad40e22a5036b84c9a5c7">format</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a>&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:gab67eb80458cad40e22a5036b84c9a5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
-<tr class="memitem:gac5589e491364e6e4612ed7c5a7b43cc3" id="r_gac5589e491364e6e4612ed7c5a7b43cc3"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:gac5589e491364e6e4612ed7c5a7b43cc3" id="r_gac5589e491364e6e4612ed7c5a7b43cc3"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:gac5589e491364e6e4612ed7c5a7b43cc3 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="group__format__parse.html#gac5589e491364e6e4612ed7c5a7b43cc3">format</a> (const std::locale &amp;loc, const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a>&lt; char &gt; &amp;fmt, args_t &amp;&amp;... args) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:gac5589e491364e6e4612ed7c5a7b43cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="memitem:aefab10b253feb0e3d5391462491b5295" id="r_aefab10b253feb0e3d5391462491b5295"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aefab10b253feb0e3d5391462491b5295">is_empty</a> (const <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="#aba30f417a9a6e82bb49c465428af7aa5">value_type</a>, <a class="el" href="#a4d949b3e7337c9e935ad6f8de390076f">traits_type</a>, <a class="el" href="#a19ed007365ca191ac40587fe9365f02a">allocator_type</a> &gt; &amp;<a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a>) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:aefab10b253feb0e3d5391462491b5295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specifeid <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> is an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> ("").  <br /></td></tr>
-<tr class="memitem:a311796df207f48060b5c20b1553c5d0a" id="r_a311796df207f48060b5c20b1553c5d0a"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a311796df207f48060b5c20b1553c5d0a" id="r_a311796df207f48060b5c20b1553c5d0a"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a311796df207f48060b5c20b1553c5d0a template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a311796df207f48060b5c20b1553c5d0a">join</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;separator, const collection_t &amp;values) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a311796df207f48060b5c20b1553c5d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates a specified separator <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> between each element of a specified object array, yielding a single concatenated <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:a634542aaf6ec6109a02b8339fdccee07" id="r_a634542aaf6ec6109a02b8339fdccee07"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a634542aaf6ec6109a02b8339fdccee07" id="r_a634542aaf6ec6109a02b8339fdccee07"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a634542aaf6ec6109a02b8339fdccee07 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a634542aaf6ec6109a02b8339fdccee07">join</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;separator, const collection_t &amp;values, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a634542aaf6ec6109a02b8339fdccee07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates a specified separator <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> between each element of a specified object array, yielding a single concatenated <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:a17a51d1d12fce6d2300245f258c2f049" id="r_a17a51d1d12fce6d2300245f258c2f049"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a17a51d1d12fce6d2300245f258c2f049" id="r_a17a51d1d12fce6d2300245f258c2f049"><td class="memTemplParams" colspan="2">template&lt;typename collection_t&gt; </td></tr>
 <tr class="memitem:a17a51d1d12fce6d2300245f258c2f049 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a17a51d1d12fce6d2300245f258c2f049">join</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;separator, const collection_t &amp;values, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#ae53d703cf61469c797db5367f481539c">count</a>) -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:a17a51d1d12fce6d2300245f258c2f049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates a specified separator <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> between each element of a specified Object array, yielding a single concatenated <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>.  <br /></td></tr>
-<tr class="memitem:a02b7d1db603ea33fa422cc4df17bdd38" id="r_a02b7d1db603ea33fa422cc4df17bdd38"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; </td></tr>
+<tr class="memitem:a02b7d1db603ea33fa422cc4df17bdd38" id="r_a02b7d1db603ea33fa422cc4df17bdd38"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:a02b7d1db603ea33fa422cc4df17bdd38 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a02b7d1db603ea33fa422cc4df17bdd38">parse</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str) -&gt; value_t</td></tr>
 <tr class="memdesc:a02b7d1db603ea33fa422cc4df17bdd38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into a value_t type.  <br /></td></tr>
-<tr class="memitem:ga966e9ecd3bef06f62e591b802b3d89cf" id="r_ga966e9ecd3bef06f62e591b802b3d89cf"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:ga966e9ecd3bef06f62e591b802b3d89cf" id="r_ga966e9ecd3bef06f62e591b802b3d89cf"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:ga966e9ecd3bef06f62e591b802b3d89cf template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="group__format__parse.html#ga966e9ecd3bef06f62e591b802b3d89cf">sprintf</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;fmt, args_t &amp;&amp;... args) noexcept -&gt; <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a></td></tr>
 <tr class="memdesc:ga966e9ecd3bef06f62e591b802b3d89cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> using the specified format information.  <br /></td></tr>
-<tr class="memitem:a89e5515817d9bda411d0bcb0ccea3800" id="r_a89e5515817d9bda411d0bcb0ccea3800"><td class="memTemplParams" colspan="2">template&lt;class value_t&gt; </td></tr>
+<tr class="memitem:a89e5515817d9bda411d0bcb0ccea3800" id="r_a89e5515817d9bda411d0bcb0ccea3800"><td class="memTemplParams" colspan="2">template&lt;typename value_t&gt; </td></tr>
 <tr class="memitem:a89e5515817d9bda411d0bcb0ccea3800 template"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a89e5515817d9bda411d0bcb0ccea3800">try_parse</a> (const <a class="el" href="#acb6d598b5155fe5ee9339537f3dae900">basic_string</a> &amp;str, value_t &amp;value) noexcept -&gt; bool</td></tr>
 <tr class="memdesc:a89e5515817d9bda411d0bcb0ccea3800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to convert a <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into a value_t type.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -777,7 +777,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::base_type</td>
@@ -796,7 +796,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::traits_type</td>
@@ -814,7 +814,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::value_type</td>
@@ -832,7 +832,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::allocator_type</td>
@@ -850,7 +850,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::size_type</td>
@@ -868,7 +868,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::difference_type</td>
@@ -886,7 +886,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::reference</td>
@@ -904,7 +904,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::const_reference</td>
@@ -922,7 +922,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::pointer</td>
@@ -940,7 +940,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::const_pointer</td>
@@ -958,7 +958,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::iterator</td>
@@ -977,7 +977,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::const_iterator</td>
@@ -996,7 +996,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::reverse_iterator</td>
@@ -1014,7 +1014,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::const_reverse_iterator</td>
@@ -1032,7 +1032,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t, traits_t, allocator_t &gt;::enumerator_type</td>
@@ -1051,7 +1051,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1080,7 +1080,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1115,7 +1115,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1150,7 +1150,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1185,7 +1185,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1220,7 +1220,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1255,7 +1255,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1290,7 +1290,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1325,7 +1325,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1360,7 +1360,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1395,7 +1395,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1430,7 +1430,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1465,7 +1465,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1500,7 +1500,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1540,7 +1540,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1580,7 +1580,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1620,7 +1620,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1660,7 +1660,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1700,7 +1700,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1735,7 +1735,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1770,7 +1770,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1805,7 +1805,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1840,7 +1840,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1875,7 +1875,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1914,7 +1914,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1953,7 +1953,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1992,7 +1992,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2031,7 +2031,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2070,9 +2070,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2112,7 +2112,7 @@ template&lt;class input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2147,7 +2147,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2182,7 +2182,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2217,7 +2217,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2252,7 +2252,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2287,7 +2287,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2323,7 +2323,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2364,7 +2364,7 @@ Writing to the character array accessed through <a class="el" href="#a7c8839ff77
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2394,7 +2394,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2424,7 +2424,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2455,7 +2455,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2494,7 +2494,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2524,7 +2524,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2555,7 +2555,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2586,7 +2586,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2638,7 +2638,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2686,7 +2686,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2722,7 +2722,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2758,7 +2758,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2796,7 +2796,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2835,7 +2835,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2877,7 +2877,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2913,7 +2913,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2954,7 +2954,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2990,7 +2990,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3031,7 +3031,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3072,7 +3072,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3102,7 +3102,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3134,7 +3134,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3166,7 +3166,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3202,7 +3202,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3243,7 +3243,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3296,7 +3296,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3332,7 +3332,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3373,7 +3373,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3426,7 +3426,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3462,7 +3462,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3509,7 +3509,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3562,7 +3562,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3606,7 +3606,7 @@ For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc". </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3642,7 +3642,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3689,7 +3689,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3742,7 +3742,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3778,7 +3778,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3825,7 +3825,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3879,7 +3879,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3915,7 +3915,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3956,7 +3956,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4003,7 +4003,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4042,7 +4042,7 @@ The pad_left(const std::basic_string&lt;char_t&gt;&amp;, int) method pads the be
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4086,7 +4086,7 @@ The pad_left(const std::basic_string&lt;char_t&gt;&amp;, int) method pads the be
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4125,7 +4125,7 @@ The PadRight(const std::basic_string&lt;char_t&gt;&amp;, int) method pads the en
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4169,7 +4169,7 @@ The <a class="el" href="#affaabb3e1bbddd9f9242d0133267d8a0" title="Left-aligns t
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4202,7 +4202,7 @@ for more information see <a href="https://en.cppreference.com/w/cpp/io/manip/quo
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4239,7 +4239,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4281,7 +4281,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4317,7 +4317,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4358,7 +4358,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4399,7 +4399,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4441,7 +4441,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4474,7 +4474,7 @@ If the specified <a class="el" href="classxtd_1_1basic__string.html" title="Repr
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4513,7 +4513,7 @@ If the specified <a class="el" href="classxtd_1_1basic__string.html" title="Repr
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4574,7 +4574,7 @@ If count is greater than the number of substrings, the available substrings are 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4623,7 +4623,7 @@ If there are more than count substrings in the specified <a class="el" href="cla
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4681,7 +4681,7 @@ If count is greater than the number of substrings, the available substrings are 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4720,7 +4720,7 @@ If the specified <a class="el" href="classxtd_1_1basic__string.html" title="Repr
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4781,7 +4781,7 @@ If count is greater than the number of substrings, the available substrings are 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4830,7 +4830,7 @@ If there are more than count substrings in the specified <a class="el" href="cla
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4888,7 +4888,7 @@ If count is greater than the number of substrings, the available substrings are 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4925,7 +4925,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -4967,7 +4967,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5004,7 +5004,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5046,7 +5046,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5087,7 +5087,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5130,7 +5130,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5177,7 +5177,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5207,7 +5207,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5243,7 +5243,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5284,7 +5284,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5314,7 +5314,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5355,7 +5355,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5385,7 +5385,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5418,7 +5418,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5448,7 +5448,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5478,7 +5478,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5508,7 +5508,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5538,7 +5538,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5568,7 +5568,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5598,7 +5598,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5635,7 +5635,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5672,7 +5672,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5709,7 +5709,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5746,7 +5746,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5783,7 +5783,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5820,7 +5820,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5857,7 +5857,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5894,7 +5894,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5931,7 +5931,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -5982,7 +5982,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6039,7 +6039,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6096,7 +6096,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6165,7 +6165,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6240,7 +6240,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6315,7 +6315,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6368,9 +6368,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_a_t, class object_b_t, class object_c_t, class object_d_t&gt; </div>
+template&lt;typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6423,7 +6423,7 @@ template&lt;class object_a_t, class object_b_t, class object_c_t, class object_d
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6470,9 +6470,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_a_t, class object_b_t, class object_c_t&gt; </div>
+template&lt;typename object_a_t, typename object_b_t, typename object_c_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6519,7 +6519,7 @@ template&lt;class object_a_t, class object_b_t, class object_c_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6560,9 +6560,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_a_t, class object_b_t&gt; </div>
+template&lt;typename object_a_t, typename object_b_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6603,7 +6603,7 @@ template&lt;class object_a_t, class object_b_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6639,9 +6639,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6677,9 +6677,9 @@ template&lt;class object_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class value_t&gt; </div>
+template&lt;typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6715,7 +6715,7 @@ template&lt;class value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6769,7 +6769,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6811,9 +6811,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class char_a_t, class char_b_t&gt; </div>
+template&lt;typename char_a_t, typename char_b_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6855,7 +6855,7 @@ template&lt;class char_a_t, class char_b_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6903,9 +6903,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class char_a_t, class char_b_t&gt; </div>
+template&lt;typename char_a_t, typename char_b_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6953,7 +6953,7 @@ template&lt;class char_a_t, class char_b_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -6989,9 +6989,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7035,9 +7035,9 @@ stream &lt;&lt; operator is called on each object to generate the content. </dd>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7087,9 +7087,9 @@ stream &lt;&lt; operator is called on each object to generate the content. </dd>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class collection_t&gt; </div>
+template&lt;typename collection_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7145,9 +7145,9 @@ stream &lt;&lt; operator is called on each object to generate the content. </dd>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class value_t&gt; </div>
+template&lt;typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7183,9 +7183,9 @@ template&lt;class value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class value_t&gt; </div>
+template&lt;typename value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7226,7 +7226,7 @@ template&lt;class value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7268,7 +7268,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7298,7 +7298,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7334,7 +7334,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7370,7 +7370,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7406,7 +7406,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7442,7 +7442,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7478,7 +7478,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7514,7 +7514,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7550,7 +7550,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7586,7 +7586,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7622,7 +7622,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7658,7 +7658,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7694,7 +7694,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7730,7 +7730,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7766,7 +7766,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7802,7 +7802,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7838,7 +7838,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7874,7 +7874,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7910,7 +7910,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7946,7 +7946,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -7982,7 +7982,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8018,7 +8018,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8060,7 +8060,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8102,7 +8102,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8144,7 +8144,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8186,7 +8186,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8228,7 +8228,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8264,7 +8264,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8300,7 +8300,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8336,7 +8336,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8372,7 +8372,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8408,7 +8408,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8444,7 +8444,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8480,7 +8480,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8516,7 +8516,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8552,7 +8552,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8588,7 +8588,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8624,7 +8624,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8660,7 +8660,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8696,7 +8696,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8732,7 +8732,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8768,7 +8768,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8804,7 +8804,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8840,7 +8840,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8876,7 +8876,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8912,7 +8912,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8948,7 +8948,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -8984,7 +8984,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9020,7 +9020,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9056,7 +9056,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9092,7 +9092,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9128,7 +9128,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9164,7 +9164,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9200,7 +9200,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9236,7 +9236,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9272,7 +9272,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9308,7 +9308,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9344,7 +9344,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9380,7 +9380,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9416,7 +9416,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9452,7 +9452,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9488,7 +9488,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9519,9 +9519,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9554,9 +9554,9 @@ template&lt;class object_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9588,7 +9588,7 @@ template&lt;class object_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9620,9 +9620,9 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9654,9 +9654,9 @@ template&lt;class object_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object_t&gt; </div>
+template&lt;typename object_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9688,7 +9688,7 @@ template&lt;class object_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9721,7 +9721,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9748,7 +9748,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9779,7 +9779,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -9811,7 +9811,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
+template&lt;typename char_t, typename traits_t, typename allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

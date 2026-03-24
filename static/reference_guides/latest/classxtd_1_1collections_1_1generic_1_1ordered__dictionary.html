@@ -100,9 +100,9 @@ Inheritance diagram for xtd::collections::generic::ordered_dictionary&lt; key_t,
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;<br />
 class xtd::collections::generic::ordered_dictionary&lt; key_t, value_t, allocator_t &gt;</div><p>Represents a collection of key/value pairs that are accessible by the key or index. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> allocator_t = xtd::collections::<span class="keyword">generic</span>::helpers::allocator &lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t, <span class="keyword">typename</span> allocator_t = xtd::collections::<span class="keyword">generic</span>::helpers::allocator &lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_function" href="#adb9f2f5dcc150f5e9d45e7d44d54427b">ordered_dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ordered__dictionary_html_adb9f2f5dcc150f5e9d45e7d44d54427b"><div class="ttname"><a href="#adb9f2f5dcc150f5e9d45e7d44d54427b">xtd::collections::generic::ordered_dictionary::ordered_dictionary</a></div><div class="ttdeci">ordered_dictionary() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::ordered_dictionary class.</div></div>
@@ -161,7 +161,7 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:ae35d19e9d18e43e1fb68231a6f0bbc3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <span class="tt">bucket_count</span> as a minimal number of buckets to create, <span class="tt">hash</span> as the hash function, <span class="tt">equal</span> as the function to compare keys and <span class="tt">alloc</span> as the allocator.  <br /></td></tr>
 <tr class="memitem:a0bb01a96a0ccb33da8b360c58c71ef89" id="r_a0bb01a96a0ccb33da8b360c58c71ef89"><td class="memItemLeft"><a id="a0bb01a96a0ccb33da8b360c58c71ef89" name="a0bb01a96a0ccb33da8b360c58c71ef89"></a>
 &#160;</td><td class="memItemRight"><b>ordered_dictionary</b> (std::initializer_list&lt; <a class="el" href="#ab613405f6897108c5c07c1a07aed3d88">base_value_type</a> &gt; init)</td></tr>
-<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6" id="r_a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplParams" colspan="2">template&lt;class init_key_t, class init_value_t&gt; </td></tr>
+<tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6" id="r_a9aef358cb8c51730cb37dc3f3314b5a6"><td class="memTemplParams" colspan="2">template&lt;class init_key_t, typename init_value_t&gt; </td></tr>
 <tr class="memitem:a9aef358cb8c51730cb37dc3f3314b5a6 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9aef358cb8c51730cb37dc3f3314b5a6">ordered_dictionary</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init)</td></tr>
 <tr class="memdesc:a9aef358cb8c51730cb37dc3f3314b5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html" title="Represents a collection of key/value pairs that are accessible by the key or index.">xtd::collections::generic::ordered_dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -221,7 +221,7 @@ Public Operators</h2></td></tr>
 <tr class="memdesc:aec1a01fc7adaa961676bad7131db18a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of <span class="tt">other</span>.  <br /></td></tr>
 <tr class="memitem:a6c0ca2ac6352c936ec0e7b17bae27e57" id="r_a6c0ca2ac6352c936ec0e7b17bae27e57"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6c0ca2ac6352c936ec0e7b17bae27e57">operator=</a> (std::initializer_list&lt; <a class="el" href="#ab613405f6897108c5c07c1a07aed3d88">base_value_type</a> &gt; ilist) -&gt; <a class="el" href="#adb9f2f5dcc150f5e9d45e7d44d54427b">ordered_dictionary</a> &amp;</td></tr>
 <tr class="memdesc:a6c0ca2ac6352c936ec0e7b17bae27e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of <span class="tt">other</span>.  <br /></td></tr>
-<tr class="memitem:afebe190db5bf6bb00dbbf09c238fb4a8" id="r_afebe190db5bf6bb00dbbf09c238fb4a8"><td class="memTemplParams" colspan="2">template&lt;class init_key_t, class init_value_t&gt; </td></tr>
+<tr class="memitem:afebe190db5bf6bb00dbbf09c238fb4a8" id="r_afebe190db5bf6bb00dbbf09c238fb4a8"><td class="memTemplParams" colspan="2">template&lt;class init_key_t, typename init_value_t&gt; </td></tr>
 <tr class="memitem:afebe190db5bf6bb00dbbf09c238fb4a8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afebe190db5bf6bb00dbbf09c238fb4a8">operator=</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; ilist) -&gt; <a class="el" href="#adb9f2f5dcc150f5e9d45e7d44d54427b">ordered_dictionary</a> &amp;</td></tr>
 <tr class="memdesc:afebe190db5bf6bb00dbbf09c238fb4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of <span class="tt">other</span>.  <br /></td></tr>
 <tr class="memitem:a540de8a286600704ce4a2cc2b8d1a979" id="r_a540de8a286600704ce4a2cc2b8d1a979"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a540de8a286600704ce4a2cc2b8d1a979">operator()</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) const -&gt; const value_t &amp;</td></tr>
@@ -261,13 +261,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -278,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::key_type</td>
@@ -296,7 +296,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::mapped_type</td>
@@ -314,7 +314,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::value_type</td>
@@ -332,7 +332,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::size_type</td>
@@ -350,7 +350,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::base_value_type</td>
@@ -368,7 +368,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::base_type</td>
@@ -386,7 +386,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::list_type</td>
@@ -404,7 +404,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::key_collection</td>
@@ -422,7 +422,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html">xtd::collections::generic::ordered_dictionary</a>&lt; key_t, value_t, allocator_t &gt;::value_collection</td>
@@ -441,7 +441,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -481,7 +481,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -529,7 +529,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -582,7 +582,7 @@ This constructor is an O(<span class="tt">n</span>) operation, where <span class
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -623,7 +623,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -669,7 +669,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -715,7 +715,7 @@ xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -766,7 +766,7 @@ xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -812,7 +812,7 @@ xtd::collections::generic::ordered_dictionary::capacity and xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <div class="memtemplate">
 template&lt;class input_iterator_t&gt; </div>
 <table class="mlabels">
@@ -863,7 +863,7 @@ xtd::collections::generic::ordered_dictionary::bucket_count and xtd::collections
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -899,7 +899,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -935,9 +935,9 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class init_key_t, class init_value_t&gt; </div>
+template&lt;class init_key_t, typename init_value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -982,7 +982,7 @@ template&lt;class init_key_t, class init_value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1017,7 +1017,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1048,7 +1048,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1078,7 +1078,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1108,7 +1108,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1143,7 +1143,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1178,7 +1178,7 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1228,7 +1228,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1269,7 +1269,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1299,7 +1299,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1335,7 +1335,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1374,7 +1374,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1411,7 +1411,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1457,7 +1457,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1487,7 +1487,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1534,7 +1534,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1587,7 +1587,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1626,7 +1626,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1662,7 +1662,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1705,7 +1705,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1737,7 +1737,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1780,7 +1780,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1816,7 +1816,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1852,7 +1852,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1888,9 +1888,9 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class init_key_t, class init_value_t&gt; </div>
+template&lt;class init_key_t, typename init_value_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1926,7 +1926,7 @@ template&lt;class init_key_t, class init_value_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1971,7 +1971,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2016,7 +2016,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2062,7 +2062,7 @@ You can also use the <span class="tt">operator []</span> to add new elements by 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2109,7 +2109,7 @@ You can also use the <span class="tt">operator []</span> to add new elements by 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2139,7 +2139,7 @@ template&lt;class key_t, class value_t, class allocator_t = xtd::collections::ge
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;typename key_t, typename value_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

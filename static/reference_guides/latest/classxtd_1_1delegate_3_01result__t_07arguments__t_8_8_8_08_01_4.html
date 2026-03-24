@@ -102,7 +102,7 @@ Inheritance diagram for xtd::delegate&lt; result_t(arguments_t...) &gt;:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class result_t, class ... arguments_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class result_t, typename ... arguments_t&gt;<br />
 class xtd::delegate&lt; result_t(arguments_t...) &gt;</div><p>Represents a delegate, which is a data structure that refers to a static method or to a class instance &amp;&amp; an instance method of that class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/delegate&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -165,10 +165,10 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a4f15b3b3d8090ec91c6bda22a334ca64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an empty delegate.  <br /></td></tr>
 <tr class="memitem:a1d6adc7fbb5aa2a8bfec03301302a51f" id="r_a1d6adc7fbb5aa2a8bfec03301302a51f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1d6adc7fbb5aa2a8bfec03301302a51f">delegate</a> (const <a class="el" href="#a8b61010f96bf0b5d8297be76ce68eb49">function_t</a> &amp;function) noexcept</td></tr>
 <tr class="memdesc:a1d6adc7fbb5aa2a8bfec03301302a51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified instance method.  <br /></td></tr>
-<tr class="memitem:a99640e94816da262be0a512704132e52" id="r_a99640e94816da262be0a512704132e52"><td class="memTemplParams" colspan="2">template&lt;class object1_t, class object2_t&gt; </td></tr>
+<tr class="memitem:a99640e94816da262be0a512704132e52" id="r_a99640e94816da262be0a512704132e52"><td class="memTemplParams" colspan="2">template&lt;class object1_t, typename object2_t&gt; </td></tr>
 <tr class="memitem:a99640e94816da262be0a512704132e52 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a99640e94816da262be0a512704132e52">delegate</a> (const object1_t &amp;<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, result_t(object2_t::*method)() const) noexcept</td></tr>
 <tr class="memdesc:a99640e94816da262be0a512704132e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified instance method on the specified class instance.  <br /></td></tr>
-<tr class="memitem:af3ad733b1179dd47a65ccbf7f83a43d0" id="r_af3ad733b1179dd47a65ccbf7f83a43d0"><td class="memTemplParams" colspan="2">template&lt;class object1_t, class object2_t&gt; </td></tr>
+<tr class="memitem:af3ad733b1179dd47a65ccbf7f83a43d0" id="r_af3ad733b1179dd47a65ccbf7f83a43d0"><td class="memTemplParams" colspan="2">template&lt;class object1_t, typename object2_t&gt; </td></tr>
 <tr class="memitem:af3ad733b1179dd47a65ccbf7f83a43d0 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af3ad733b1179dd47a65ccbf7f83a43d0">delegate</a> (const object1_t &amp;<a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, result_t(object2_t::*method)()) noexcept</td></tr>
 <tr class="memdesc:af3ad733b1179dd47a65ccbf7f83a43d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a delegate that invokes the specified instance method on the specified class instance.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -226,17 +226,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
 <tr class="memdesc:aeb2a619fcb313fde8d247463c1f2df18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const delegate&lt; result_t(arguments_t...) &gt; &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -247,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using xtd::delegate&lt; result_t(arguments_t...) &gt;::no_arguments_function_t</td>
@@ -265,7 +265,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using xtd::delegate&lt; result_t(arguments_t...) &gt;::function_t</td>
@@ -283,7 +283,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using xtd::delegate&lt; result_t(arguments_t...) &gt;::no_arguments_function_collection</td>
@@ -301,7 +301,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using xtd::delegate&lt; result_t(arguments_t...) &gt;::function_collection</td>
@@ -320,7 +320,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -349,7 +349,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -384,9 +384,9 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object1_t, class object2_t&gt; </div>
+template&lt;class object1_t, typename object2_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -426,9 +426,9 @@ template&lt;class object1_t, class object2_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <div class="memtemplate">
-template&lt;class object1_t, class object2_t&gt; </div>
+template&lt;class object1_t, typename object2_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -469,7 +469,7 @@ template&lt;class object1_t, class object2_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -499,7 +499,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -529,7 +529,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -559,7 +559,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -589,7 +589,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -619,7 +619,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a> xtd::delegate&lt; result_t(arguments_t...) &gt;::begin_invoke </td>
@@ -671,7 +671,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a> xtd::delegate&lt; result_t(arguments_t...) &gt;::begin_invoke </td>
@@ -724,7 +724,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a> xtd::delegate&lt; result_t(arguments_t...) &gt;::begin_invoke </td>
@@ -781,7 +781,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">result_t xtd::delegate&lt; result_t(arguments_t...) &gt;::end_invoke </td>
@@ -828,7 +828,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -884,7 +884,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -922,7 +922,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -958,7 +958,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -997,7 +997,7 @@ The invocation list can contain duplicate entries; that is, entries that refer t
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1039,7 +1039,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1081,7 +1081,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1123,7 +1123,7 @@ template&lt;class result_t, class ... arguments_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class result_t, class ... arguments_t&gt; </div>
+template&lt;class result_t, typename ... arguments_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

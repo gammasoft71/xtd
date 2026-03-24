@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;bitset&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> value_t&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">auto</span> __binary_formatter(value_t value, <span class="keywordtype">int</span> precision) -&gt; std::basic_string&lt;char_t&gt; {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  std::basic_string&lt;char_t&gt; result = std::bitset&lt;sizeof(value) * 8&gt;(value).to_string(char_t(<span class="charliteral">&#39;0&#39;</span>), char_t(<span class="charliteral">&#39;1&#39;</span>));</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">while</span> (result[0] != 0 &amp;&amp; result[0] == char_t(<span class="charliteral">&#39;0&#39;</span>))</div>

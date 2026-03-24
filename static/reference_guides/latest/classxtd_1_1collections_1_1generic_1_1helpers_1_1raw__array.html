@@ -90,7 +90,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt;<br />
 class xtd::collections::generic::helpers::raw_array&lt; type_t, allocator_t &gt;</div><p>Internal vector-like container used as a storage backend for xtd collections. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/helpers/raw_array&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -147,7 +147,7 @@ Public Constructors</h2></td></tr>
 <tr class="memdesc:a50744042d262f9fa7e342ed9d8e3719d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html" title="Internal vector-like container used as a storage backend for xtd collections.">raw_array</a> instance with specified count, value, and allocator.  <br /></td></tr>
 <tr class="memitem:a0d559e68943ad670e86fb8ddd425ccb8" id="r_a0d559e68943ad670e86fb8ddd425ccb8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0d559e68943ad670e86fb8ddd425ccb8">raw_array</a> (<a class="el" href="#a1582e7121e36b922064e9354bf8cc8e6">size_type</a> <a class="el" href="namespacextd_1_1collections_1_1generic.html#afa5f26ea3b998768c61a908016b99fa3">count</a>, const <a class="el" href="#ac713535ceee64f19d6e461d5e1a3435e">allocator_type</a> &amp;alloc=<a class="el" href="#ac713535ceee64f19d6e461d5e1a3435e">allocator_type</a>())</td></tr>
 <tr class="memdesc:a0d559e68943ad670e86fb8ddd425ccb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html" title="Internal vector-like container used as a storage backend for xtd collections.">raw_array</a> instance with specified count, and allocator.  <br /></td></tr>
-<tr class="memitem:a7afa876c89cdc262c78e3face512b3cc" id="r_a7afa876c89cdc262c78e3face512b3cc"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:a7afa876c89cdc262c78e3face512b3cc" id="r_a7afa876c89cdc262c78e3face512b3cc"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a7afa876c89cdc262c78e3face512b3cc template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a7afa876c89cdc262c78e3face512b3cc">raw_array</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, const <a class="el" href="#ac713535ceee64f19d6e461d5e1a3435e">allocator_type</a> &amp;alloc=<a class="el" href="#ac713535ceee64f19d6e461d5e1a3435e">allocator_type</a>())</td></tr>
 <tr class="memdesc:a7afa876c89cdc262c78e3face512b3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html" title="Internal vector-like container used as a storage backend for xtd collections.">raw_array</a> instance with specified first iterator, last iterator, and allocator.  <br /></td></tr>
 <tr class="memitem:a3336a9319b026e61ba1f3a65a0d3350e" id="r_a3336a9319b026e61ba1f3a65a0d3350e"><td class="memItemLeft"><a id="a3336a9319b026e61ba1f3a65a0d3350e" name="a3336a9319b026e61ba1f3a65a0d3350e"></a>
@@ -229,7 +229,7 @@ Public Methods</h2></td></tr>
 <tr class="memitem:a641aa5a8098f4b2af123fd3bab7a5431" id="r_a641aa5a8098f4b2af123fd3bab7a5431"><td class="memItemLeft"><a id="a641aa5a8098f4b2af123fd3bab7a5431" name="a641aa5a8098f4b2af123fd3bab7a5431"></a>
 auto&#160;</td><td class="memItemRight"><b>assign</b> (<a class="el" href="#a1582e7121e36b922064e9354bf8cc8e6">size_type</a> <a class="el" href="namespacextd_1_1collections_1_1generic.html#afa5f26ea3b998768c61a908016b99fa3">count</a>, const type_t &amp;value) -&gt; void</td></tr>
 <tr class="memitem:af54c15df6ec870c9775ac3a25bc82d60" id="r_af54c15df6ec870c9775ac3a25bc82d60"><td class="memTemplParams" colspan="2"><a id="af54c15df6ec870c9775ac3a25bc82d60" name="af54c15df6ec870c9775ac3a25bc82d60"></a>
-template&lt;class input_iterator_t&gt; </td></tr>
+template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:af54c15df6ec870c9775ac3a25bc82d60 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>assign</b> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>) -&gt; void</td></tr>
 <tr class="memitem:ac7e846a44879ff8c3f4a9dc1c6739a6e" id="r_ac7e846a44879ff8c3f4a9dc1c6739a6e"><td class="memItemLeft"><a id="ac7e846a44879ff8c3f4a9dc1c6739a6e" name="ac7e846a44879ff8c3f4a9dc1c6739a6e"></a>
 auto&#160;</td><td class="memItemRight"><b>assign</b> (std::initializer_list&lt; type_t &gt; items) -&gt; void</td></tr>
@@ -240,10 +240,10 @@ auto&#160;</td><td class="memItemRight"><b>at</b> (<a class="el" href="#a1582e71
 <tr class="memitem:ab14a037846c2ec62c36075565d57ab6a" id="r_ab14a037846c2ec62c36075565d57ab6a"><td class="memItemLeft"><a id="ab14a037846c2ec62c36075565d57ab6a" name="ab14a037846c2ec62c36075565d57ab6a"></a>
 auto&#160;</td><td class="memItemRight"><b>clear</b> () -&gt; void</td></tr>
 <tr class="memitem:af05fd5d63b0c691df2536a6f42af0caf" id="r_af05fd5d63b0c691df2536a6f42af0caf"><td class="memTemplParams" colspan="2"><a id="af05fd5d63b0c691df2536a6f42af0caf" name="af05fd5d63b0c691df2536a6f42af0caf"></a>
-template&lt;class ... args_t&gt; </td></tr>
+template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:af05fd5d63b0c691df2536a6f42af0caf template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>emplace</b> (<a class="el" href="#a1f9edb1d810a88c1f2712c0772a13de1">const_iterator</a> pos, args_t &amp;&amp;... args) -&gt; <a class="el" href="#a5a57494113845c26c795737c45974cc9">iterator</a></td></tr>
 <tr class="memitem:a97d380190d3fe6304dda9a75d5fc54a8" id="r_a97d380190d3fe6304dda9a75d5fc54a8"><td class="memTemplParams" colspan="2"><a id="a97d380190d3fe6304dda9a75d5fc54a8" name="a97d380190d3fe6304dda9a75d5fc54a8"></a>
-template&lt;class ... args_t&gt; </td></tr>
+template&lt;typename ... args_t&gt; </td></tr>
 <tr class="memitem:a97d380190d3fe6304dda9a75d5fc54a8 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>emplace_back</b> (args_t &amp;&amp;... args) -&gt; <a class="el" href="#ab2d6bd302d6e34f9fb9c78a4fb052eac">reference</a></td></tr>
 <tr class="memitem:ade5e1b8f0b3f3a3c992f3027118e6b4b" id="r_ade5e1b8f0b3f3a3c992f3027118e6b4b"><td class="memItemLeft"><a id="ade5e1b8f0b3f3a3c992f3027118e6b4b" name="ade5e1b8f0b3f3a3c992f3027118e6b4b"></a>
 auto&#160;</td><td class="memItemRight"><b>erase</b> (<a class="el" href="#a1f9edb1d810a88c1f2712c0772a13de1">const_iterator</a> pos) -&gt; <a class="el" href="#a5a57494113845c26c795737c45974cc9">iterator</a></td></tr>
@@ -262,7 +262,7 @@ auto&#160;</td><td class="memItemRight"><b>insert</b> (<a class="el" href="#a1f9
 <tr class="memitem:a9685ba8c2047d8f548d376708717f0a1" id="r_a9685ba8c2047d8f548d376708717f0a1"><td class="memItemLeft"><a id="a9685ba8c2047d8f548d376708717f0a1" name="a9685ba8c2047d8f548d376708717f0a1"></a>
 auto&#160;</td><td class="memItemRight"><b>insert</b> (<a class="el" href="#a1f9edb1d810a88c1f2712c0772a13de1">const_iterator</a> pos, <a class="el" href="#a1582e7121e36b922064e9354bf8cc8e6">size_type</a> <a class="el" href="namespacextd_1_1collections_1_1generic.html#afa5f26ea3b998768c61a908016b99fa3">count</a>, type_t &amp;&amp;value) -&gt; <a class="el" href="#a5a57494113845c26c795737c45974cc9">iterator</a></td></tr>
 <tr class="memitem:a1e68c28313f003b326a862ca36eb1b3c" id="r_a1e68c28313f003b326a862ca36eb1b3c"><td class="memTemplParams" colspan="2"><a id="a1e68c28313f003b326a862ca36eb1b3c" name="a1e68c28313f003b326a862ca36eb1b3c"></a>
-template&lt;class input_iterator_t&gt; </td></tr>
+template&lt;typename input_iterator_t&gt; </td></tr>
 <tr class="memitem:a1e68c28313f003b326a862ca36eb1b3c template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><b>insert</b> (<a class="el" href="#a1f9edb1d810a88c1f2712c0772a13de1">const_iterator</a> pos, input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>) -&gt; <a class="el" href="#a5a57494113845c26c795737c45974cc9">iterator</a></td></tr>
 <tr class="memitem:ad96d5e005d9840e7a128c8432bb333e0" id="r_ad96d5e005d9840e7a128c8432bb333e0"><td class="memItemLeft"><a id="ad96d5e005d9840e7a128c8432bb333e0" name="ad96d5e005d9840e7a128c8432bb333e0"></a>
 auto&#160;</td><td class="memItemRight"><b>insert</b> (<a class="el" href="#a1f9edb1d810a88c1f2712c0772a13de1">const_iterator</a> pos, const std::initializer_list&lt; type_t &gt; &amp;items) -&gt; <a class="el" href="#a5a57494113845c26c795737c45974cc9">iterator</a></td></tr>
@@ -309,7 +309,7 @@ auto&#160;</td><td class="memItemRight"><b>operator[]</b> (<a class="el" href="#
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::value_type</td>
@@ -327,7 +327,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::base_type</td>
@@ -345,7 +345,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::const_base_type</td>
@@ -363,7 +363,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::allocator_type</td>
@@ -381,7 +381,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::size_type</td>
@@ -399,7 +399,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::difference_type</td>
@@ -417,7 +417,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::reference</td>
@@ -435,7 +435,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::const_reference</td>
@@ -453,7 +453,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::pointer</td>
@@ -471,7 +471,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::const_pointer</td>
@@ -489,7 +489,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::iterator</td>
@@ -507,7 +507,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::const_iterator</td>
@@ -525,7 +525,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::reverse_iterator</td>
@@ -543,7 +543,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1raw__array.html">xtd::collections::generic::helpers::raw_array</a>&lt; type_t, allocator_t &gt;::const_reverse_iterator</td>
@@ -562,7 +562,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -591,7 +591,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -626,7 +626,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -672,7 +672,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -712,9 +712,9 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class input_iterator_t&gt; </div>
+template&lt;typename input_iterator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -761,7 +761,7 @@ template&lt;class input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -787,7 +787,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -813,7 +813,7 @@ template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; <
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
+template&lt;typename type_t, typename allocator_t = std::allocator&lt;type_t&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

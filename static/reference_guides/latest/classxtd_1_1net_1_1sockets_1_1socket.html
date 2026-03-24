@@ -232,7 +232,7 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a1a587b516d597a36ca0c34b7212f7d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
 <tr class="memitem:a8d0766aa58c0c42b2b2ed02e3e623348" id="r_a8d0766aa58c0c42b2b2ed02e3e623348"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8d0766aa58c0c42b2b2ed02e3e623348">begin_accept</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
 <tr class="memdesc:a8d0766aa58c0c42b2b2ed02e3e623348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous operation to accept an incoming connection attempt.  <br /></td></tr>
-<tr class="memitem:af8da88e2726c1aaa7c8b80313f9022b0" id="r_af8da88e2726c1aaa7c8b80313f9022b0"><td class="memTemplParams" colspan="2">template&lt;class end_point_t&gt; </td></tr>
+<tr class="memitem:af8da88e2726c1aaa7c8b80313f9022b0" id="r_af8da88e2726c1aaa7c8b80313f9022b0"><td class="memTemplParams" colspan="2">template&lt;typename end_point_t&gt; </td></tr>
 <tr class="memitem:af8da88e2726c1aaa7c8b80313f9022b0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af8da88e2726c1aaa7c8b80313f9022b0">begin_connect</a> (const end_point_t &amp;<a class="el" href="#ad3f9ac7b1aa0d658f022b6bc14ceecfd">remote_end_point</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
 <tr class="memdesc:af8da88e2726c1aaa7c8b80313f9022b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins an asynchronous request for a remote host connection.  <br /></td></tr>
 <tr class="memitem:afa0c56f6bac2b14525ed6cc4e9a7c019" id="r_afa0c56f6bac2b14525ed6cc4e9a7c019"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afa0c56f6bac2b14525ed6cc4e9a7c019">begin_connect</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;address, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> port, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
@@ -257,14 +257,14 @@ Public Methods</h2></td></tr>
 <tr class="memdesc:a08bb9c6ae0483f858d22bf44f3dafd0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data asynchronously to a connected <a class="el" href="#ac48927243d1569fdc755b77aceed6dbb" title="Initializes a new instance of the xtd::net::sockets::socket class.">xtd::net::sockets::socket::socket</a>.  <br /></td></tr>
 <tr class="memitem:abf6e93743d1f7aeb244a519adc2d2818" id="r_abf6e93743d1f7aeb244a519adc2d2818"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abf6e93743d1f7aeb244a519adc2d2818">begin_send_to</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> offset, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>, <a class="el" href="group__xtd__core.html#gacff43f3cb6c04f3be61be0a43cdbda16">xtd::net::sockets::socket_flags</a> <a class="el" href="group__xtd__core.html#gacff43f3cb6c04f3be61be0a43cdbda16">socket_flags</a>, const <a class="el" href="classxtd_1_1net_1_1end__point.html">xtd::net::end_point</a> &amp;<a class="el" href="#ad3f9ac7b1aa0d658f022b6bc14ceecfd">remote_end_point</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state) -&gt; <a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
 <tr class="memdesc:abf6e93743d1f7aeb244a519adc2d2818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data asynchronously to a specific remote host.  <br /></td></tr>
-<tr class="memitem:abb17c4f2145c64f2839f6a924619494e" id="r_abb17c4f2145c64f2839f6a924619494e"><td class="memTemplParams" colspan="2">template&lt;class end_point_t&gt; </td></tr>
+<tr class="memitem:abb17c4f2145c64f2839f6a924619494e" id="r_abb17c4f2145c64f2839f6a924619494e"><td class="memTemplParams" colspan="2">template&lt;typename end_point_t&gt; </td></tr>
 <tr class="memitem:abb17c4f2145c64f2839f6a924619494e template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abb17c4f2145c64f2839f6a924619494e">bind</a> (const end_point_t &amp;<a class="el" href="#aa3fc8d23dcc86ad758989433ddced0d4">local_end_point</a>) -&gt; void</td></tr>
 <tr class="memdesc:abb17c4f2145c64f2839f6a924619494e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associates a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> with a local endpoint.  <br /></td></tr>
 <tr class="memitem:ac16ba574c798543743124c5b8891732a" id="r_ac16ba574c798543743124c5b8891732a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac16ba574c798543743124c5b8891732a">close</a> () -&gt; void</td></tr>
 <tr class="memdesc:ac16ba574c798543743124c5b8891732a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> connection and releases all associated resources.  <br /></td></tr>
 <tr class="memitem:af371862bbe205dfbb02f5192da1621ff" id="r_af371862bbe205dfbb02f5192da1621ff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af371862bbe205dfbb02f5192da1621ff">compare_to</a> (const <a class="el" href="#ac48927243d1569fdc755b77aceed6dbb">socket</a> &amp;obj) const noexcept -&gt; <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">xtd::int32</a> override</td></tr>
 <tr class="memdesc:af371862bbe205dfbb02f5192da1621ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
-<tr class="memitem:aea7df3788b6ff70e458eeda0cd2cb2d6" id="r_aea7df3788b6ff70e458eeda0cd2cb2d6"><td class="memTemplParams" colspan="2">template&lt;class end_point_t&gt; </td></tr>
+<tr class="memitem:aea7df3788b6ff70e458eeda0cd2cb2d6" id="r_aea7df3788b6ff70e458eeda0cd2cb2d6"><td class="memTemplParams" colspan="2">template&lt;typename end_point_t&gt; </td></tr>
 <tr class="memitem:aea7df3788b6ff70e458eeda0cd2cb2d6 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aea7df3788b6ff70e458eeda0cd2cb2d6">connect</a> (const end_point_t &amp;<a class="el" href="#ad3f9ac7b1aa0d658f022b6bc14ceecfd">remote_end_point</a>) -&gt; void</td></tr>
 <tr class="memdesc:aea7df3788b6ff70e458eeda0cd2cb2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a connection to a remote host.  <br /></td></tr>
 <tr class="memitem:ac08cce92e92fc2329455a989834af14d" id="r_ac08cce92e92fc2329455a989834af14d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac08cce92e92fc2329455a989834af14d">connect</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;address, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> port) -&gt; void</td></tr>
@@ -394,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40" id="r_a322144840e8ad539c039538997b0fe40"><td class="memItemLeft">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
-<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35" id="r_ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplParams" colspan="2">template&lt;typename object_t&gt; </td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 template"><td class="memItemLeft">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="memitem:aeb2a619fcb313fde8d247463c1f2df18" id="r_aeb2a619fcb313fde8d247463c1f2df18"><td class="memItemLeft">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#aeb2a619fcb313fde8d247463c1f2df18">to_string</a> () const</td></tr>
@@ -403,10 +403,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const socket &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
+<tr class="memitem:a772d50f4da23b418b7e3a523f52564b5" id="r_a772d50f4da23b418b7e3a523f52564b5"><td class="memTemplParams" colspan="2">template&lt;typename object_a_t, typename object_b_t&gt; </td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 </table>
@@ -2110,7 +2110,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class end_point_t&gt; </div>
+template&lt;typename end_point_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2961,7 +2961,7 @@ If you specify the <a class="el" href="group__xtd__core.html#ggacff43f3cb6c04f3b
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class end_point_t&gt; </div>
+template&lt;typename end_point_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -3084,7 +3084,7 @@ If you need to call <a class="el" href="#ac16ba574c798543743124c5b8891732a" titl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class end_point_t&gt; </div>
+template&lt;typename end_point_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
