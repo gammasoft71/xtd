@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Concept subtractable.
+  /// @brief Represents the subtractable concept.
   /// @par Definition
   /// ```cpp
   /// template<typename type_t>
