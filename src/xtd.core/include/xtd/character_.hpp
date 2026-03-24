@@ -22,7 +22,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core concepts
   /// @par Examples
-  /// The following code shows how to use xtd::integer conceps
+  /// The following code shows how to use xtd::character concept
   /// ```cpp
   /// #include <xtd/xtd>
   ///
