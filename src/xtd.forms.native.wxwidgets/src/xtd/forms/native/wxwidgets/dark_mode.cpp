@@ -201,7 +201,7 @@ void FixDarkScrollBar() {
             hWnd = nullptr;
             classList = L"Explorer::ScrollBar";
           }
-          return _OpenNcThemeData(hWnd, typenameList);
+          return _OpenNcThemeData(hWnd, classList);
         };
         
         addr->u1.Function = reinterpret_cast<ULONG_PTR>(static_cast<fnOpenNcThemeData>(MyOpenThemeData));
