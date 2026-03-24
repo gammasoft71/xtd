@@ -25,7 +25,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core system concepts
       /// @par Examples
-      /// The following code shows how to use xtd::collections::generic::enumerable conceps
+      /// The following code shows how to use xtd::collections::generic::enumerable concept
       /// @include generic_enumerable.cpp
       template<class type_t>
       struct enumerable;
